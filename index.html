@@ -1,16 +1,41 @@
 <!doctype html>
+<!-- build: v6 -->
 <html lang="en" id="top">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>EMS ProtoQuiz — Learn your protocols</title>
   <meta name="description" content="Turns your agency’s protocol PDF into quick quizzes and realistic scenarios—each item cites the exact page." />
+
+  <!-- SEO -->
+  <link rel="canonical" href="https://protoquiz.com/">
+  <meta name="robots" content="index,follow" />
+
+  <!-- Social -->
   <meta property="og:title" content="EMS ProtoQuiz — Learn your protocols" />
   <meta property="og:description" content="PDF-faithful training: quizzes and scenarios that follow your local rules and doses." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://protoquiz.com/" />
   <meta property="og:image" content="logo.png" />
   <meta name="theme-color" content="#05080c" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"SoftwareApplication",
+    "name":"EMS ProtoQuiz",
+    "operatingSystem":"iOS",
+    "applicationCategory":"EducationalApplication",
+    "url":"https://protoquiz.com/",
+    "publisher":{"@type":"Organization","name":"Teach Me to Live LLC"},
+    "description":"Turns your protocol PDF into quick quizzes and realistic scenarios with page-cited answers."
+  }
+  </script>
+
+  <!-- Analytics (privacy-friendly) -->
+  <script defer data-domain="protoquiz.com" src="https://plausible.io/js/script.js"></script>
+
   <style>
     :root{
       --bg:#05080c; --panel:#0a0f15; --ink:#e6edf7; --muted:#9aa4b2; --line:#16202b;
@@ -41,7 +66,7 @@
     header.nav{background:linear-gradient(180deg, rgba(255,255,255,.03), transparent); border-bottom:1px solid var(--line); border-radius:0 0 14px 14px}
     .navbar{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:16px 20px}
     .brand-link{display:flex; align-items:center; gap:12px}
-    .brand-link img{width:56px; height:56px; border-radius:12px; display:block} /* bigger logo */
+    .brand-link img{width:64px; height:64px; border-radius:12px; display:block} /* bigger logo */
     .brand-name{font-weight:800; letter-spacing:.2px; font-size:18px}
     .links{display:flex; gap:10px; flex-wrap:wrap}
     .chip{font-size:13px; padding:6px 10px; border-radius:999px; border:1px solid #243246; color:#cfd8e3; opacity:.9; background:rgba(255,255,255,.02)}
@@ -127,11 +152,11 @@
   <header class="nav">
     <div class="wrap navbar">
       <a class="brand-link" href="#top" aria-label="EMS ProtoQuiz — Home">
-        <img src="logo.png" alt="EMS ProtoQuiz logo" />
+        <img src="logo.png" alt="EMS ProtoQuiz logo" width="64" height="64" decoding="async" />
         <span class="brand-name">EMS ProtoQuiz</span>
       </a>
       <nav class="links">
-        <a class="chip" href="agency.html">For Agencies</a>
+        <a class="chip" href="agency.html" id="navAgency">For Agencies</a>
         <a class="chip" href="#why">Why</a>
         <a class="chip" href="#what">What</a>
         <a class="chip" href="#how">How</a>
@@ -194,7 +219,7 @@
 
   <footer class="wrap" id="contact">
     <div class="foot">
-      <div>Questions or want a department pilot? <button class="chip" type="button" id="openContact3">Open contact form</button></div>
+      <div>Questions or want a <a href="agency.html" id="footAgencyLink">department pilot</a>? <button class="chip" type="button" id="openContact3">Open contact form</button></div>
       <div class="small">© 2025 Teach Me to Live LLC</div>
     </div>
   </footer>
@@ -232,7 +257,7 @@
         </div>
         <div class="row" style="justify-content:space-between; align-items:center">
           <button class="btn" type="submit">Send email</button>
-          <a class="chip" href="agency.html">Get it for my agency</a>
+          <a class="chip" href="agency.html" id="dlgAgencyLink">Get it for my agency</a>
         </div>
       </form>
       <p class="small" style="margin-top:10px; color:#8fa3ba">Submitting opens your email app with a prefilled message. Replace the address in the code with yours.</p>
@@ -244,10 +269,24 @@
     const SUPPORT_EMAIL = "YOUR@EMAIL"; // <-- replace me
     // --------------------------
 
-    const openers = ["openContact","openContact2","openContact3"].map(id=>document.getElementById(id));
-    const dlg = document.getElementById("contactDialog");
-    openers.forEach(b=>b && b.addEventListener("click", ()=> dlg.showModal()));
+    // Analytics events (safe if Plausible isn't loaded)
+    const track = (name)=>window.plausible && window.plausible(name);
 
+    // Contact openers + focus return
+    const openerIds = ["openContact","openContact2","openContact3"];
+    const openers = openerIds.map(id=>document.getElementById(id)).filter(Boolean);
+    const dlg = document.getElementById("contactDialog");
+    let lastOpener = null;
+    openers.forEach(btn=>{
+      btn.addEventListener("click", ()=>{
+        lastOpener = btn;
+        dlg.showModal();
+        track("ContactOpen");
+      });
+    });
+    dlg.addEventListener("close", ()=>{ if(lastOpener) lastOpener.focus(); });
+
+    // Contact form -> mailto
     document.getElementById("contactForm").addEventListener("submit", (e)=>{
       e.preventDefault();
       const data = new FormData(e.target);
@@ -259,7 +298,13 @@
       const body = [`Name: ${name}`, `Email: ${email}`, `Type: ${type}`, "", msg].join("\n");
       const url = `mailto:${encodeURIComponent(SUPPORT_EMAIL)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       window.location.href = url;
+      track("ContactSubmit");
     });
+
+    // Track Agency nav/footer clicks
+    document.getElementById("navAgency")?.addEventListener("click", ()=>track("AgencyPage"));
+    document.getElementById("footAgencyLink")?.addEventListener("click", ()=>track("AgencyPage"));
+    document.getElementById("dlgAgencyLink")?.addEventListener("click", ()=>track("AgencyPage"));
   </script>
 </body>
 </html>
