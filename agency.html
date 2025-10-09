@@ -1,13 +1,24 @@
 <!doctype html>
+<!-- build: v6 -->
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>EMS ProtoQuiz for Agencies</title>
   <meta name="description" content="Region-accurate, page-cited EMS quizzes and scenarios for departments and training officers." />
+
+  <!-- SEO -->
+  <link rel="canonical" href="https://protoquiz.com/agency.html">
+  <meta name="robots" content="index,follow" />
+
+  <!-- Social -->
   <meta property="og:title" content="EMS ProtoQuiz — For Agencies" />
   <meta property="og:image" content="logo.png" />
   <meta name="theme-color" content="#05080c" />
+
+  <!-- Analytics -->
+  <script defer data-domain="protoquiz.com" src="https://plausible.io/js/script.js"></script>
+
   <style>
     :root{
       --bg:#05080c; --panel:#0a0f15; --ink:#e6edf7; --muted:#9aa4b2; --line:#16202b;
@@ -25,7 +36,7 @@
     header{border-bottom:1px solid var(--line); background:linear-gradient(180deg, rgba(255,255,255,.03), transparent)}
     .nav{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:16px 20px}
     .brand-link{display:flex; align-items:center; gap:12px}
-    .brand-link img{width:52px; height:52px; border-radius:12px}
+    .brand-link img{width:64px; height:64px; border-radius:12px}
     .brand-name{font-weight:800}
     .chip{font-size:13px; padding:6px 10px; border-radius:999px; border:1px solid #243246; color:#cfd8e3; opacity:.9; background:rgba(255,255,255,.02)}
     h1{margin:18px 0 6px; font-size:clamp(30px,6.2vw,48px); letter-spacing:-.01em}
@@ -37,18 +48,27 @@
     .cta{display:flex; gap:12px; flex-wrap:wrap; margin:18px 0}
     .btn{display:inline-flex; align-items:center; gap:8px; padding:11px 16px; border-radius:12px; background:linear-gradient(90deg, var(--cyan), var(--violet)); color:#061018; font-weight:800}
     footer{margin-top:36px; padding:36px 20px 60px; color:var(--muted); border-top:1px solid var(--line)}
+    /* Dialog (same as main) */
+    dialog{width:min(640px, 96vw); border:1px solid #223041; border-radius:16px; padding:0; background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015)); color:var(--ink)}
+    dialog::backdrop{background:rgba(0,0,0,.6); backdrop-filter:blur(2px)}
+    .dlg-head{display:flex; align-items:center; justify-content:space-between; padding:14px 16px; border-bottom:1px solid var(--line)}
+    .dlg-body{padding:16px}
+    .field{display:grid; gap:6px; margin:10px 0}
+    input, textarea, select{width:100%; background:#0c1219; color:var(--ink); border:1px solid #223041; border-radius:12px; padding:10px 12px; font:inherit}
+    textarea{min-height:120px; resize:vertical}
+    .row{display:flex; gap:10px; flex-wrap:wrap}
   </style>
 </head>
 <body>
   <header>
     <div class="wrap nav">
-      <a class="brand-link" href="index.html" aria-label="EMS ProtoQuiz — Home">
-        <img src="logo.png" alt="EMS ProtoQuiz logo" />
+      <a class="brand-link" href="index.html#top" aria-label="EMS ProtoQuiz — Home">
+        <img src="logo.png" alt="EMS ProtoQuiz logo" width="64" height="64" decoding="async" />
         <span class="brand-name">EMS ProtoQuiz</span>
       </a>
       <nav>
         <a class="chip" href="index.html">Back to main</a>
-        <a class="chip" href="#contact" id="openContact">Contact</a>
+        <button class="chip" id="openContact">Contact</button>
       </nav>
     </div>
   </header>
@@ -60,23 +80,88 @@
     <div class="grid">
       <article class="card"><h3>Local-accurate</h3><p>Quizzes and scenarios are generated from your document. Adult/peds splits, routes, repeats, and base-contact are enforced.</p></article>
       <article class="card"><h3>Traceable</h3><p>Every item links to the exact page. Zero dose errors and clear auditability for QA.</p></article>
-      <article class="card"><h3>Low lift</h3><p>Upload a PDF and go. No installs for the pilot; iOS app when you’re ready.</p></article>
-
+      <article class="card"><h3>Low lift</h3><p>Upload a PDF and go. Pilot quickly; add seats only if it works for your crews.</p></article>
       <article class="card"><h3>Onboarding & refreshers</h3><p>Give new hires and seasoned medics short daily reps that match your region.</p></article>
       <article class="card"><h3>Analytics (premium)</h3><p>See coverage and weak areas by topic. Compare protocol versions when you update.</p></article>
-      <article class="card"><h3>Budget-friendly</h3><p>Start with a small pilot. Scale seats only if it works for your crews.</p></article>
+      <article class="card"><h3>Budget-friendly</h3><p>Start small. Scale if outcomes improve.</p></article>
     </div>
 
     <div class="cta">
-      <a class="btn" href="index.html#contact">Request a pilot</a>
+      <button class="btn" id="openContact2">Request a pilot</button>
       <a class="chip" href="mailto:YOUR@EMAIL">Email us</a>
     </div>
-
-    <section id="contact">
-      <p class="lead">Questions? <a href="mailto:YOUR@EMAIL">YOUR@EMAIL</a></p>
-    </section>
   </main>
 
   <footer class="wrap">© 2025 Teach Me to Live LLC</footer>
+
+  <!-- Contact dialog (same behavior as main, default reason = Agency pilot) -->
+  <dialog id="contactDialog" aria-labelledby="dlgTitle">
+    <div class="dlg-head">
+      <strong id="dlgTitle">Contact</strong>
+      <form method="dialog"><button class="chip" value="close">Close</button></form>
+    </div>
+    <div class="dlg-body">
+      <form id="contactForm">
+        <div class="row">
+          <div class="field" style="flex:1 1 220px">
+            <label for="name">Name</label>
+            <input id="name" name="name" autocomplete="name" />
+          </div>
+          <div class="field" style="flex:1 1 220px">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </div>
+        </div>
+        <div class="field">
+          <label for="type">Reason</label>
+          <select id="type" name="type">
+            <option>Agency pilot</option>
+            <option>Question</option>
+            <option>Feedback</option>
+            <option>Press/Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="msg">Message</label>
+          <textarea id="msg" name="message" placeholder="Tell us about your department and goals…"></textarea>
+        </div>
+        <div class="row" style="justify-content:space-between; align-items:center">
+          <button class="btn" type="submit">Send email</button>
+          <a class="chip" href="index.html#top">Back to main</a>
+        </div>
+      </form>
+      <p class="lead" style="font-size:14px; color:#8fa3ba; margin-top:10px">Submitting opens your email app with a prefilled message. Replace the address in the code with yours.</p>
+    </div>
+  </dialog>
+
+  <script>
+    // -------- settings --------
+    const SUPPORT_EMAIL = "YOUR@EMAIL"; // <-- replace me
+    // --------------------------
+
+    const track = (name)=>window.plausible && window.plausible(name);
+
+    const dlg = document.getElementById("contactDialog");
+    const openers = [document.getElementById("openContact"), document.getElementById("openContact2")].filter(Boolean);
+    let lastOpener = null;
+    openers.forEach(btn=>{
+      btn.addEventListener("click", ()=>{ lastOpener = btn; dlg.showModal(); track("AgencyContactOpen"); });
+    });
+    dlg.addEventListener("close", ()=>{ if(lastOpener) lastOpener.focus(); });
+
+    document.getElementById("contactForm").addEventListener("submit", (e)=>{
+      e.preventDefault();
+      const data = new FormData(e.target);
+      const name = data.get("name") || "";
+      const email = data.get("email") || "";
+      const type = data.get("type") || "Agency pilot";
+      const msg  = data.get("message") || "";
+      const subject = `ProtoQuiz ${type}: ${name || "New message"}`;
+      const body = [`Name: ${name}`, `Email: ${email}`, `Type: ${type}`, "", msg].join("\n");
+      const url = `mailto:${encodeURIComponent(SUPPORT_EMAIL)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = url;
+      track("AgencyContactSubmit");
+    });
+  </script>
 </body>
 </html>
