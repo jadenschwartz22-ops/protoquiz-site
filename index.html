@@ -11,7 +11,6 @@
   <meta property="og:url" content="https://protoquiz.com/" />
   <meta property="og:image" content="logo.png" />
   <meta name="theme-color" content="#05080c" />
-
   <style>
     :root{
       --bg:#05080c; --panel:#0a0f15; --ink:#e6edf7; --muted:#9aa4b2; --line:#16202b;
@@ -28,14 +27,12 @@
         var(--bg);
       -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
     }
-    /* faint rain texture */
     .fx{position:fixed; inset:0; pointer-events:none; opacity:.12; mix-blend-mode:soft-light;
       background:repeating-linear-gradient(-75deg, rgba(255,255,255,.05) 0 2px, transparent 2px 7px);}
     @media (prefers-reduced-motion: no-preference){
       .fx{animation:rain 18s linear infinite}
       @keyframes rain{to{background-position:600px 1200px}}
     }
-
     a{color:inherit; text-decoration:none}
     :focus-visible{outline:2px solid var(--cyan); outline-offset:2px; border-radius:10px}
     .wrap{max-width:var(--max); margin:0 auto; padding:28px 20px}
@@ -118,9 +115,7 @@
     .dlg-head{display:flex; align-items:center; justify-content:space-between; padding:14px 16px; border-bottom:1px solid var(--line)}
     .dlg-body{padding:16px}
     .field{display:grid; gap:6px; margin:10px 0}
-    input, textarea, select{
-      width:100%; background:#0c1219; color:var(--ink); border:1px solid #223041; border-radius:12px; padding:10px 12px; font:inherit;
-    }
+    input, textarea, select{width:100%; background:#0c1219; color:var(--ink); border:1px solid #223041; border-radius:12px; padding:10px 12px; font:inherit}
     textarea{min-height:120px; resize:vertical}
     .row{display:flex; gap:10px; flex-wrap:wrap}
   </style>
@@ -131,7 +126,7 @@
 
   <header class="nav">
     <div class="wrap navbar">
-      <a class="brand-link" href="index.html" aria-label="EMS ProtoQuiz — Home">
+      <a class="brand-link" href="#top" aria-label="EMS ProtoQuiz — Home">
         <img src="logo.png" alt="EMS ProtoQuiz logo" />
         <span class="brand-name">EMS ProtoQuiz</span>
       </a>
@@ -204,7 +199,7 @@
     </div>
   </footer>
 
-  <!-- Contact / Feedback dialog (client-side: opens your email app) -->
+  <!-- Contact / Feedback dialog -->
   <dialog id="contactDialog" aria-labelledby="dlgTitle">
     <div class="dlg-head">
       <strong id="dlgTitle">Contact</strong>
@@ -245,9 +240,9 @@
   </dialog>
 
   <script>
-    // ---------- settings ----------
+    // -------- settings --------
     const SUPPORT_EMAIL = "YOUR@EMAIL"; // <-- replace me
-    // ------------------------------
+    // --------------------------
 
     const openers = ["openContact","openContact2","openContact3"].map(id=>document.getElementById(id));
     const dlg = document.getElementById("contactDialog");
@@ -260,22 +255,11 @@
       const email = data.get("email") || "";
       const type = data.get("type") || "Message";
       const msg  = data.get("message") || "";
-
       const subject = `ProtoQuiz ${type}: ${name || "New message"}`;
-      const body = [
-        `Name: ${name}`,
-        `Email: ${email}`,
-        `Type: ${type}`,
-        ``,
-        msg
-      ].join("\n");
-
+      const body = [`Name: ${name}`, `Email: ${email}`, `Type: ${type}`, "", msg].join("\n");
       const url = `mailto:${encodeURIComponent(SUPPORT_EMAIL)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       window.location.href = url;
     });
-
-    // Footer year (kept if you ever change)
-    // document.querySelector(".small").append(``);
   </script>
 </body>
 </html>
