@@ -1,207 +1,160 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  $1  <link rel="icon" href="logo.png" />
-<title>EMS ProtoQuiz — Region‑accurate protocol training</title>
-  <meta name="description" content="EMS ProtoQuiz turns your agency’s protocol PDF into region‑accurate quizzes and AI scenarios that cite the exact page/anchor." />
-
-  <!-- Open Graph / Social -->
-  <meta property="og:title" content="EMS ProtoQuiz — Protocol mastery, locally accurate" />
-  <meta property="og:description" content="Quizzes and AI scenarios generated from your agency’s protocol PDF. Meds, procedures, policies — with citations." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EMS ProtoQuiz — Stay sharp between calls</title>
+  <meta name="description" content="High-yield EMS protocol quizzes & micro-scenarios. 2–4 minute reps that hard-wire good decisions between calls." />
+  <meta property="og:title" content="EMS ProtoQuiz" />
+  <meta property="og:description" content="Protocol-accurate quizzes and micro-scenarios for EMTs & medics." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="logo.png" />
-  <meta property="og:url" content="https://protoquiz.com" />
+  <meta property="og:url" content="https://jadenschwartz22-ops.github.io/protoquiz-site/" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚑</text></svg>">
 
   <style>
-    :root {
-      --bg: #0d0d0d;
-      --fg: #ffffff;
-      --muted: #aaaaaa;
-      --accent: #8b5cf6; /* violet */
-      --card: #141414;
-      --border: #2a2a2a;
-      --maxw: 1040px;
-      --radius: 18px;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    :root{
+      --bg:#0b0f12;
+      --surface:#10161d;
+      --ink:#e9eef6;
+      --muted:#97a3b3;
+      --line:#1a2330;
+      --accent:#5B8CFF; /* ← change this one color to rebrand */
+      --ring: rgba(91,140,255,.35);
+      --radius:18px;
+      --max:1080px;
     }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      background: var(--bg); color: var(--fg);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; color:var(--ink);
+      font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+      background:
+        radial-gradient(1200px 600px at 80% -10%, #1b2433 0%, transparent 60%),
+        radial-gradient(900px 400px at -10% 10%, #151c27 0%, transparent 60%),
+        var(--bg);
+      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
     }
-    a { color: var(--fg); text-decoration: none; }
-    a:hover { opacity: .9; }
-
-    /* Layout */
-    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 24px; }
-    header { position: sticky; top: 0; backdrop-filter: saturate(180%) blur(8px); background: rgba(13,13,13,.75); border-bottom: 1px solid var(--border); z-index: 20; }
-    .nav { display: flex; align-items: center; justify-content: space-between; }
-    .brand { display:flex; align-items:center; gap: 10px; font-weight: 700; letter-spacing: .2px; }
-    .brand-mark { width: 28px; height: 28px; border-radius: 8px; box-shadow: var(--shadow); object-fit: cover; display:block; }
-    .nav a { color: var(--muted); margin-left: 18px; font-size: 14px; }
-
-    /* Hero */
-    .hero { padding: 72px 0 40px; text-align: center; }
-    .eyebrow { color: var(--muted); text-transform: uppercase; letter-spacing: .18em; font-size: 12px; }
-    h1 { font-size: clamp(32px, 6vw, 56px); line-height: 1.1; margin: 10px 0 12px; }
-    .tag { color: #d4d4d4; font-size: clamp(16px, 2.3vw, 20px); max-width: 760px; margin: 0 auto 24px; }
-    .cta { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; }
-    .btn { border: 1px solid var(--border); background: #1a1a1a; padding: 12px 18px; border-radius: 999px; font-weight: 600; }
-    .btn.primary { background: var(--accent); border-color: transparent; color: #0e0a1f; }
-
-    /* Feature grid */
-    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; margin: 56px 0 24px; }
-    .card { grid-column: span 4; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); }
-    .card h3 { margin: 8px 0; font-size: 18px; }
-    .card p { color: #cfcfcf; font-size: 15px; }
-    @media (max-width: 900px) { .card { grid-column: span 6; } }
-    @media (max-width: 600px) { .card { grid-column: span 12; } }
-
-    /* Screenshot block (optional image placeholders) */
-    .shot { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 28px 0 0; }
-    .shot .frame { border: 1px solid var(--border); border-radius: 14px; background: #0f0f0f; min-height: 220px; display: grid; place-items: center; color: var(--muted); }
-
-    /* How it works */
-    .steps { display:grid; gap: 12px; grid-template-columns: repeat(3,1fr); }
-    .step { border:1px dashed var(--border); padding:16px; border-radius:12px; background:#111; }
-    .step b { display:block; margin-bottom:6px; }
-    @media (max-width: 800px) { .steps { grid-template-columns: 1fr; } }
-
-    /* Footer */
-    footer { margin-top: 64px; padding: 28px 0; border-top: 1px solid var(--border); color: var(--muted); font-size: 14px; }
-    .foot { display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content: space-between; }
-
-    /* Tiny animation */
-    .fade-in { opacity: 0; transform: translateY(6px); animation: fade .7s ease .1s forwards; }
-    .fade-in-2 { opacity: 0; transform: translateY(6px); animation: fade .7s ease .2s forwards; }
-    .fade-in-3 { opacity: 0; transform: translateY(6px); animation: fade .7s ease .3s forwards; }
-    @keyframes fade { to { opacity:1; transform: none; } }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 20px}
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:12px}
+    .logo{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px}
+    .badge{width:36px;height:36px; display:grid; place-items:center; border-radius:12px;
+      background:linear-gradient(135deg,#273245,#1a232f); border:1px solid #2a3446}
+    .links{display:flex; gap:10px; flex-wrap:wrap}
+    .chip{font-size:13px; padding:6px 10px; border-radius:999px; border:1px solid #2a3446; color:#cfd8e3; opacity:.8}
+    .btn{
+      display:inline-flex; align-items:center; gap:8px; padding:11px 16px; border-radius:12px;
+      background:var(--accent); color:#0c1118; font-weight:800;
+      box-shadow:0 10px 24px -12px var(--ring); transition:transform .12s ease, box-shadow .12s ease, opacity .2s ease;
+    }
+    .btn:hover{transform:translateY(-1px); box-shadow:0 16px 36px -16px var(--ring)}
+    .ghost{background:transparent; color:var(--ink); border:1px solid #2a3446}
+    .hero{padding:72px 20px 36px}
+    h1{
+      margin:0 0 8px 0; font-size:clamp(34px,6vw,56px); line-height:1.05; letter-spacing:-.02em;
+      background:linear-gradient(180deg,#fff,#cfd8e3 60%,#aab6c7);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    }
+    .lead{max-width:800px; color:var(--muted); font-size:clamp(16px,2vw,20px); margin:0 0 18px}
+    .cta{display:flex; gap:12px; flex-wrap:wrap; margin:16px 0 6px}
+    .mute{color:var(--muted); font-size:14px}
+    .grid{display:grid; gap:16px}
+    @media (min-width:900px){ .grid{grid-template-columns:repeat(3,1fr)} }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      border:1px solid var(--line); border-radius:var(--radius); padding:20px;
+      backdrop-filter:saturate(130%) blur(6px);
+    }
+    .card h3{margin:0 0 8px; font-size:18px}
+    .card p{margin:0; color:var(--muted)}
+    section{scroll-margin-top:90px}
+    .steps{padding:38px 0}
+    .steps ol{list-style:none; margin:0; padding:0; display:grid; gap:12px}
+    .steps li{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:18px}
+    .steps li strong{color:#dfe8f7}
+    .faq details{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:16px}
+    .faq summary{cursor:pointer; font-weight:700}
+    .faq details+details{margin-top:10px}
+    footer{padding:40px 20px 60px; color:var(--muted); border-top:1px solid var(--line); background:linear-gradient(180deg,transparent, rgba(255,255,255,.02))}
+    /* Focus states */
+    :focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:10px}
+    /* Motion respect */
+    @media (prefers-reduced-motion: reduce){ .btn{transition:none} }
   </style>
 </head>
 <body>
-  <header>
-    <div class="wrap nav">
-      <a class="brand" href="#home"><img src="logo.png" class="brand-mark" alt="EMS ProtoQuiz logo" /> <span>EMS ProtoQuiz</span></a>
-      <nav aria-label="Primary">
-        <a href="#features">Features</a>
-        <a href="#how">How it works</a>
-        <a href="#faq">FAQ</a>
-        <a href="#download">Download</a>
-      </nav>
+  <a href="#main" class="chip wrap" style="position:absolute;left:-999px;top:auto">Skip to content</a>
+
+  <header class="wrap nav">
+    <div class="logo">
+      <div class="badge">🚑</div><span>EMS ProtoQuiz</span>
     </div>
+    <nav class="links">
+      <a class="chip" href="#how">How it works</a>
+      <a class="chip" href="#why">Why it matters</a>
+      <a class="chip" href="#faq">FAQ</a>
+      <a class="btn ghost" href="#cta">Try the demo</a>
+    </nav>
   </header>
 
-  <main id="home" class="wrap">
+  <main id="main" class="wrap">
     <section class="hero">
-      <div class="eyebrow fade-in">iOS • for EMS agencies & crews</div>
-      <h1 class="fade-in-2">Turn your protocol PDF into training that sticks</h1>
-      <p class="tag fade-in-3">Region‑accurate quizzes and premium AI scenarios that follow <em>your</em> algorithms and <em>your</em> doses — every item cites the exact page/anchor in your PDF.</p>
-      <div class="cta">
-        <a class="btn primary" href="#download">Get the App</a>
-        <a class="btn" href="#features">See Features</a>
+      <h1>Stay sharp between calls.</h1>
+      <p class="lead">High-yield protocol quizzes and micro-scenarios for EMTs & medics. 2–4 minute reps that hard-wire good decisions and speed up on-scene thinking.</p>
+      <div class="cta" id="cta">
+        <a class="btn" href="https://jadenschwartz22-ops.github.io/protoquiz-site/">Launch demo</a>
+        <a class="btn ghost" href="mailto:YOUR@EMAIL">Get updates</a>
       </div>
-    </section>
-
-    <section id="features" class="grid" aria-label="App features">
-      <article class="card">
-        <h3>Region‑accurate quizzes</h3>
-        <p>Meds, procedures, policies — generated from your agency’s protocol PDF.</p>
-      </article>
-      <article class="card">
-        <h3>AI scenarios that follow your algorithms</h3>
-        <p>Scenarios adapt to your local pathways, doses, and base‑contact rules.</p>
-      </article>
-      <article class="card">
-        <h3>Every item is cited</h3>
-        <p>Each question and scenario links back to the exact page/anchor in your PDF.</p>
-      </article>
+      <p class="mute">Built by EMS for EMS. Minimal time, maximal reps.</p>
     </section>
 
     <section class="grid" aria-label="Highlights">
-      <article class="card" style="grid-column: span 6;">
-        <h3>What it is</h3>
-        <ul>
-          <li>A lightweight iOS app for protocol mastery</li>
-          <li>Region‑accurate quizzes (meds, procedures, policies)</li>
-          <li>Premium AI scenarios that follow your algorithms and your doses</li>
-          <li>Every question/scenario cites the exact page/anchor in your PDF</li>
-        </ul>
-        <div class="shot">
-          <div class="frame">Add an iPhone screenshot (1200×675)</div>
-        </div>
-      </article>
-      <article class="card" style="grid-column: span 6;">
-        <h3 id="how">Why it matters</h3>
-        <ul>
-          <li>NREMT is baseline — protocols differ locally</li>
-          <li>Stop guessing med lists, doses, or indications</li>
-          <li>Train on base‑contact & local policy nuances</li>
-        </ul>
-        <div class="steps" style="margin-top:10px;">
-          <div class="step"><b>1. Import</b> Drop in your PDF or share a link.</div>
-          <div class="step"><b>2. Generate</b> ProtoQuiz builds quizzes & scenarios with citations.</div>
-          <div class="step"><b>3. Drill</b> Crew‑ready practice keyed to your protocols.</div>
-        </div>
-        <div class="shot">
-          <div class="frame">Add a second screenshot</div>
-        </div>
-      </article>
+      <article class="card"><h3>Protocol-perfect</h3><p>Items align to your state/agency protocols so practice mirrors the field.</p></article>
+      <article class="card"><h3>Micro-scenarios</h3><p>Realistic calls with vitals and evolving cues—like the radio, not a textbook.</p></article>
+      <article class="card"><h3>On-shift friendly</h3><p>Finish a set in minutes. Keep the edge without killing downtime.</p></article>
     </section>
 
-    <section id="faq" class="grid" aria-label="FAQ">
-      <article class="card" style="grid-column: span 12;">
-        <h3>FAQ</h3>
-        <details>
-          <summary>Is this page mobile friendly?</summary>
-          <p>Yes — the layout adapts from 1–3 columns and buttons are finger‑friendly.</p>
-        </details>
-        <details>
-          <summary>How do I add screenshots?</summary>
-          <p>Replace the placeholder <code>div.frame</code> blocks with <code>&lt;img src="/path/to/shot.png" alt="App screenshot" /&gt;</code>.</p>
-        </details>
-        <details>
-          <summary>Can I use email sign‑ups?</summary>
-          <p>You can link to a Mailchimp/ConvertKit form or embed a simple form handler like Formspree. Keep it minimal.</p>
-        </details>
-      </article>
+    <section class="steps" id="how">
+      <h2>How it works</h2>
+      <ol>
+        <li><strong>Pick a pack:</strong> Airway, Cardiac, Trauma, Pedi, OB—more coming.</li>
+        <li><strong>Run 5–10 items:</strong> quick protocol checks, rapid differentials, short scenarios.</li>
+        <li><strong>See the why:</strong> tight rationales and links to the exact protocol lines.</li>
+      </ol>
     </section>
 
-    <section id="download" class="grid" aria-label="Download">
-      <article class="card" style="grid-column: span 12; text-align:center;">
-        <h3>Download</h3>
-        <p>iOS first. Add your App Store or TestFlight link here.</p>
-        <div class="cta" style="justify-content:center; margin-top:8px;">
-          <a class="btn primary" href="#">App Store</a>
-          <a class="btn" href="mailto:hello@protoquiz.com">Contact</a>
-        </div>
-      </article>
+    <section class="grid" id="why" aria-label="Why it matters">
+      <article class="card"><h3>Better patient care</h3><p>Reps make good choices automatic so attention stays on the patient in front of you.</p></article>
+      <article class="card"><h3>Raise the floor</h3><p>Standardized scenarios + consistent feedback for crews and new hires.</p></article>
+      <article class="card"><h3>Low lift for agencies</h3><p>Open the link, run a set, review—no installs required for the demo.</p></article>
     </section>
 
-    <section class="grid" aria-label="Privacy">
-      <article class="card" style="grid-column: span 12;">
-        <h3>Privacy</h3>
-        <p>We respect your privacy and only collect what’s necessary to run the app. Add or link your full privacy policy here.</p>
-      </article>
+    <section class="faq" id="faq" style="margin-top:36px">
+      <h2>FAQ</h2>
+      <details>
+        <summary>Is this tied to a specific protocol set?</summary>
+        <div class="mute">The demo uses common patterns. Department pilots can map directly to your protocols.</div>
+      </details>
+      <details>
+        <summary>Can I use this for training?</summary>
+        <div class="mute">Yes—great for pre-briefs, new-hire refreshers, or quick reps during slow shifts.</div>
+      </details>
+      <details>
+        <summary>Do I need to sign in?</summary>
+        <div class="mute">No sign-in for the demo. Pilots can add scoring and tracking if desired.</div>
+      </details>
     </section>
   </main>
 
-  <footer>
-    <div class="wrap foot">
-      <div>© <span id="year"></span> EMS ProtoQuiz</div>
-      <div style="display:flex; gap:14px;">
-        <a href="#privacy">Privacy</a>
-        <span aria-hidden="true">·</span>
-        <a href="#faq">FAQ</a>
-      </div>
+  <footer class="wrap" id="contact">
+    <div style="display:grid;gap:14px">
+      <div>Questions or want a department pilot? <a href="mailto:YOUR@EMAIL">Email us</a>.</div>
+      <div class="mute">© <span id="y"></span> EMS ProtoQuiz</div>
     </div>
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
