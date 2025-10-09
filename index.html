@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" id="top">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>EMS ProtoQuiz — Learn your protocols</title>
-  <meta name="description" content="A lightweight iOS app that turns your agency’s protocol PDF into quick quizzes and realistic scenarios—every item cites the exact page." />
+  <meta name="description" content="Turns your agency’s protocol PDF into quick quizzes and realistic scenarios—each item cites the exact page." />
   <meta property="og:title" content="EMS ProtoQuiz — Learn your protocols" />
   <meta property="og:description" content="PDF-faithful training: quizzes and scenarios that follow your local rules and doses." />
   <meta property="og:type" content="website" />
@@ -14,16 +14,8 @@
 
   <style>
     :root{
-      /* Night-city minimal */
-      --bg:#05080c;          /* page bg (darker) */
-      --panel:#0a0f15;       /* cards */
-      --ink:#e6edf7;         /* primary text */
-      --muted:#9aa4b2;       /* secondary text */
-      --line:#16202b;        /* borders */
-      --cyan:#22d3ee;        /* neon cyan */
-      --violet:#a855f7;      /* neon violet */
-      --radius:18px;
-      --max:1080px;
+      --bg:#05080c; --panel:#0a0f15; --ink:#e6edf7; --muted:#9aa4b2; --line:#16202b;
+      --cyan:#22d3ee; --violet:#a855f7; --radius:18px; --max:1080px;
     }
     *{box-sizing:border-box}
     html,body{height:100%}
@@ -36,7 +28,7 @@
         var(--bg);
       -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
     }
-    /* subtle “rain” texture */
+    /* faint rain texture */
     .fx{position:fixed; inset:0; pointer-events:none; opacity:.12; mix-blend-mode:soft-light;
       background:repeating-linear-gradient(-75deg, rgba(255,255,255,.05) 0 2px, transparent 2px 7px);}
     @media (prefers-reduced-motion: no-preference){
@@ -46,19 +38,14 @@
 
     a{color:inherit; text-decoration:none}
     :focus-visible{outline:2px solid var(--cyan); outline-offset:2px; border-radius:10px}
-
     .wrap{max-width:var(--max); margin:0 auto; padding:28px 20px}
 
     /* Nav */
-    header.nav{
-      background:linear-gradient(180deg, rgba(255,255,255,.03), transparent);
-      border-bottom:1px solid var(--line);
-      border-radius:0 0 14px 14px;
-    }
+    header.nav{background:linear-gradient(180deg, rgba(255,255,255,.03), transparent); border-bottom:1px solid var(--line); border-radius:0 0 14px 14px}
     .navbar{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:16px 20px}
-    .brand{display:flex; align-items:center; gap:12px}
-    .brand img{width:40px; height:40px; border-radius:10px; display:block}
-    .brand-name{font-weight:800; letter-spacing:.2px}
+    .brand-link{display:flex; align-items:center; gap:12px}
+    .brand-link img{width:56px; height:56px; border-radius:12px; display:block} /* bigger logo */
+    .brand-name{font-weight:800; letter-spacing:.2px; font-size:18px}
     .links{display:flex; gap:10px; flex-wrap:wrap}
     .chip{font-size:13px; padding:6px 10px; border-radius:999px; border:1px solid #243246; color:#cfd8e3; opacity:.9; background:rgba(255,255,255,.02)}
 
@@ -79,8 +66,7 @@
     @media (prefers-reduced-motion: reduce){ .hero::before,.hero::after{animation:none} }
 
     .title{
-      margin:0; font-weight:900;
-      font-size:clamp(46px, 8.6vw, 96px); line-height:1.02; letter-spacing:-.02em;
+      margin:0; font-weight:900; font-size:clamp(46px, 8.6vw, 96px); line-height:1.02; letter-spacing:-.02em;
       background:linear-gradient(180deg,#fff, #cfe3ff 60%, #b8c4d6);
       -webkit-background-clip:text; -webkit-text-fill-color:transparent;
       text-shadow:0 0 18px rgba(34,211,238,.06);
@@ -94,7 +80,6 @@
       background:linear-gradient(90deg, var(--cyan), var(--violet));
       color:#061018; font-weight:800; box-shadow:0 12px 28px -14px rgba(90,140,255,.35);
     }
-    .btn[aria-disabled="true"]{opacity:.55; cursor:not-allowed; pointer-events:none}
     .ghost{background:transparent; color:var(--ink); border:1px solid #233244}
     .pills{display:flex; gap:8px; flex-wrap:wrap; margin-top:8px}
     .pill{font-size:12px; color:#cfe8ff; opacity:.9; border:1px solid #233244; padding:4px 9px; border-radius:999px; backdrop-filter:saturate(130%) blur(4px)}
@@ -103,11 +88,7 @@
     .section-title{margin:28px 0 12px; font-size:20px; letter-spacing:.2px}
     .grid{display:grid; gap:14px}
     @media (min-width:920px){ .grid{grid-template-columns:repeat(3,1fr)} }
-    .card{
-      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
-      border:1px solid var(--line); border-radius:var(--radius); padding:18px;
-      box-shadow:inset 0 0 0 1px rgba(255,255,255,.01);
-    }
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015)); border:1px solid var(--line); border-radius:var(--radius); padding:18px; box-shadow:inset 0 0 0 1px rgba(255,255,255,.01)}
     .card h3{margin:0 0 6px; font-size:17px}
     .card p{margin:0; color:var(--muted)}
 
@@ -124,13 +105,24 @@
     section{scroll-margin-top:96px}
 
     /* Footer */
-    footer{
-      margin-top:36px; padding:36px 20px 60px; color:var(--muted);
-      border-top:1px solid var(--line);
-      background:linear-gradient(180deg, transparent, rgba(255,255,255,.02));
-    }
+    footer{margin-top:36px; padding:36px 20px 60px; color:var(--muted); border-top:1px solid var(--line); background:linear-gradient(180deg, transparent, rgba(255,255,255,.02))}
     .foot{display:grid; gap:12px}
     .small{font-size:14px}
+
+    /* Contact dialog */
+    dialog{
+      width:min(640px, 96vw); border:1px solid #223041; border-radius:16px; padding:0; background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      color:var(--ink);
+    }
+    dialog::backdrop{background:rgba(0,0,0,.6); backdrop-filter:blur(2px)}
+    .dlg-head{display:flex; align-items:center; justify-content:space-between; padding:14px 16px; border-bottom:1px solid var(--line)}
+    .dlg-body{padding:16px}
+    .field{display:grid; gap:6px; margin:10px 0}
+    input, textarea, select{
+      width:100%; background:#0c1219; color:var(--ink); border:1px solid #223041; border-radius:12px; padding:10px 12px; font:inherit;
+    }
+    textarea{min-height:120px; resize:vertical}
+    .row{display:flex; gap:10px; flex-wrap:wrap}
   </style>
 </head>
 <body>
@@ -139,16 +131,17 @@
 
   <header class="nav">
     <div class="wrap navbar">
-      <div class="brand">
+      <a class="brand-link" href="index.html" aria-label="EMS ProtoQuiz — Home">
         <img src="logo.png" alt="EMS ProtoQuiz logo" />
         <span class="brand-name">EMS ProtoQuiz</span>
-      </div>
+      </a>
       <nav class="links">
+        <a class="chip" href="agency.html">For Agencies</a>
         <a class="chip" href="#why">Why</a>
         <a class="chip" href="#what">What</a>
         <a class="chip" href="#how">How</a>
         <a class="chip" href="#trust">Trust & accuracy</a>
-        <a class="chip" href="#contact">Contact</a>
+        <button class="chip" type="button" id="openContact">Contact</button>
       </nav>
     </div>
   </header>
@@ -160,8 +153,8 @@
       <p class="lead">Turns your protocol PDF into quick quizzes and realistic scenarios. Every item links to the exact page so you can check it in seconds.</p>
 
       <div class="cta">
-        <a id="cta-link" class="btn" href="#" aria-disabled="true">Coming soon</a>
-        <a class="btn ghost" href="mailto:YOUR@EMAIL">Get updates</a>
+        <a class="btn" href="#" aria-disabled="true" title="App Store link coming soon">Coming soon</a>
+        <button class="btn ghost" type="button" id="openContact2">Contact</button>
       </div>
       <div class="pills">
         <span class="pill">Local-first</span>
@@ -190,66 +183,99 @@
 
     <section id="how" class="drops">
       <h2 class="section-title">How it works</h2>
-
-      <details>
-        <summary><span class="chev"></span> 1) Import your local protocols</summary>
-        <div class="drop-body">Drop in the PDF. That file is the single source of truth.</div>
-      </details>
-
-      <details>
-        <summary><span class="chev"></span> 2) We read and map it</summary>
-        <div class="drop-body">The app organizes meds, procedures, policies, and key anchors so items can point back to the exact page.</div>
-      </details>
-
-      <details>
-        <summary><span class="chev"></span> 3) Quizzes</summary>
-        <div class="drop-body">Dose, route, repeats, indications, contraindications, steps, and policy decision points—rendered from your document.</div>
-      </details>
-
-      <details>
-        <summary><span class="chev"></span> 4) Scenarios (premium)</summary>
-        <div class="drop-body">Short, realistic cases. Choices only include meds and steps your protocols allow.</div>
-      </details>
+      <details><summary><span class="chev"></span> 1) Import your local protocols</summary><div class="drop-body">Drop in the PDF. That file is the single source of truth.</div></details>
+      <details><summary><span class="chev"></span> 2) We read and map it</summary><div class="drop-body">The app organizes meds, procedures, policies, and anchors so items point to the exact page.</div></details>
+      <details><summary><span class="chev"></span> 3) Quizzes</summary><div class="drop-body">Dose, route, repeats, indications, contraindications, steps, and policy decision points—rendered from your document.</div></details>
+      <details><summary><span class="chev"></span> 4) Scenarios (premium)</summary><div class="drop-body">Short, realistic cases. Choices only include meds and steps your protocols allow.</div></details>
     </section>
 
     <section id="trust" class="drops">
       <h2 class="section-title">Trust & accuracy</h2>
-
-      <details>
-        <summary><span class="chev"></span> How do I know it’s right?</summary>
-        <div class="drop-body">Every item shows the page it came from. Doses and routes are pulled from medication pages, adult/peds splits are enforced, and base-contact rules are respected.</div>
-      </details>
-
-      <details>
-        <summary><span class="chev"></span> What if AI makes a mistake?</summary>
-        <div class="drop-body">You can edit any item. Your corrections are saved for that protocol going forward. There’s also a validator that blocks dose or route mismatches before they ever appear.</div>
-      </details>
-
-      <details>
-        <summary><span class="chev"></span> What data do you use?</summary>
-        <div class="drop-body">1) Your protocol PDF (authoritative). 2) Optional reference lists (e.g., NREMT names) only to help with spelling—never to override local doses.</div>
-      </details>
-
-      <details>
-        <summary><span class="chev"></span> Why keep the citation?</summary>
-        <div class="drop-body">Comparing your memory to the actual page builds skill. If something looks off, tap the source, fix it, and move on.</div>
-      </details>
+      <details><summary><span class="chev"></span> How do I know it’s right?</summary><div class="drop-body">Each item shows its page. Doses and routes are pulled from medication pages; adult/peds splits and base-contact are enforced.</div></details>
+      <details><summary><span class="chev"></span> What if AI makes a mistake?</summary><div class="drop-body">You can edit any item. Your fix is saved for that protocol going forward. A validator blocks dose/route mismatches before they appear.</div></details>
+      <details><summary><span class="chev"></span> What data do you use?</summary><div class="drop-body">1) Your protocol PDF (authoritative). 2) Optional reference lists only help with names—never override local doses.</div></details>
     </section>
   </main>
 
   <footer class="wrap" id="contact">
     <div class="foot">
-      <div>Questions or want a department pilot? <a href="mailto:YOUR@EMAIL">Email us</a>.</div>
-      <div class="small">© <span id="y"></span> EMS ProtoQuiz</div>
+      <div>Questions or want a department pilot? <button class="chip" type="button" id="openContact3">Open contact form</button></div>
+      <div class="small">© 2025 Teach Me to Live LLC</div>
     </div>
   </footer>
 
+  <!-- Contact / Feedback dialog (client-side: opens your email app) -->
+  <dialog id="contactDialog" aria-labelledby="dlgTitle">
+    <div class="dlg-head">
+      <strong id="dlgTitle">Contact</strong>
+      <form method="dialog"><button class="chip" value="close">Close</button></form>
+    </div>
+    <div class="dlg-body">
+      <form id="contactForm">
+        <div class="row">
+          <div class="field" style="flex:1 1 220px">
+            <label for="name">Name</label>
+            <input id="name" name="name" autocomplete="name" />
+          </div>
+          <div class="field" style="flex:1 1 220px">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </div>
+        </div>
+        <div class="field">
+          <label for="type">Reason</label>
+          <select id="type" name="type">
+            <option>Question</option>
+            <option>Feedback</option>
+            <option>Agency pilot</option>
+            <option>Press/Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="msg">Message</label>
+          <textarea id="msg" name="message" placeholder="Tell us what you’re thinking…"></textarea>
+        </div>
+        <div class="row" style="justify-content:space-between; align-items:center">
+          <button class="btn" type="submit">Send email</button>
+          <a class="chip" href="agency.html">Get it for my agency</a>
+        </div>
+      </form>
+      <p class="small" style="margin-top:10px; color:#8fa3ba">Submitting opens your email app with a prefilled message. Replace the address in the code with yours.</p>
+    </div>
+  </dialog>
+
   <script>
-    // Set APP_URL when you release to enable the button.
-    const APP_URL = ""; // e.g., "https://apps.apple.com/app/..."
-    const cta = document.getElementById("cta-link");
-    if (APP_URL) { cta.href = APP_URL; cta.textContent = "Get the app"; cta.removeAttribute("aria-disabled"); }
-    document.getElementById('y').textContent = new Date().getFullYear();
+    // ---------- settings ----------
+    const SUPPORT_EMAIL = "YOUR@EMAIL"; // <-- replace me
+    // ------------------------------
+
+    const openers = ["openContact","openContact2","openContact3"].map(id=>document.getElementById(id));
+    const dlg = document.getElementById("contactDialog");
+    openers.forEach(b=>b && b.addEventListener("click", ()=> dlg.showModal()));
+
+    document.getElementById("contactForm").addEventListener("submit", (e)=>{
+      e.preventDefault();
+      const data = new FormData(e.target);
+      const name = data.get("name") || "";
+      const email = data.get("email") || "";
+      const type = data.get("type") || "Message";
+      const msg  = data.get("message") || "";
+
+      const subject = `ProtoQuiz ${type}: ${name || "New message"}`;
+      const body = [
+        `Name: ${name}`,
+        `Email: ${email}`,
+        `Type: ${type}`,
+        ``,
+        msg
+      ].join("\n");
+
+      const url = `mailto:${encodeURIComponent(SUPPORT_EMAIL)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = url;
+    });
+
+    // Footer year (kept if you ever change)
+    // document.querySelector(".small").append(``);
   </script>
 </body>
 </html>
