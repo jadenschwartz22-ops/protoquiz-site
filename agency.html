@@ -16,8 +16,23 @@
   <meta property="og:image" content="logo.png" />
   <meta name="theme-color" content="#05080c" />
 
-  <!-- Analytics -->
-  <script defer data-domain="protoquiz.com" src="https://plausible.io/js/script.js"></script>
+  <!-- Google tag (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LNSS9BMEP8"></script>
+  <script>
+    // GA4 setup
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-LNSS9BMEP8');
+
+    // Unified tracker -> GA4 custom events
+    function track(name, props){
+      try { gtag('event', name, props || {}); } catch(e){}
+    }
+
+    // Identify page for event context
+    const PAGE = 'agency';
+  </script>
 
   <style>
     :root{
@@ -48,13 +63,13 @@
     .cta{display:flex; gap:12px; flex-wrap:wrap; margin:18px 0}
     .btn{display:inline-flex; align-items:center; gap:8px; padding:11px 16px; border-radius:12px; background:linear-gradient(90deg, var(--cyan), var(--violet)); color:#061018; font-weight:800}
     footer{margin-top:36px; padding:36px 20px 60px; color:var(--muted); border-top:1px solid var(--line)}
-    /* Dialog (same as main) */
+    /* Dialog */
     dialog{width:min(640px, 96vw); border:1px solid #223041; border-radius:16px; padding:0; background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015)); color:var(--ink)}
     dialog::backdrop{background:rgba(0,0,0,.6); backdrop-filter:blur(2px)}
     .dlg-head{display:flex; align-items:center; justify-content:space-between; padding:14px 16px; border-bottom:1px solid var(--line)}
     .dlg-body{padding:16px}
     .field{display:grid; gap:6px; margin:10px 0}
-    input, textarea, select{width:100%; background:#0c1219; color:var(--ink); border:1px solid #223041; border-radius:12px; padding:10px 12px; font:inherit}
+    input, textarea, select{width:100%; background:#0c1219; color:#e6edf7; border:1px solid #223041; border-radius:12px; padding:10px 12px; font:inherit}
     textarea{min-height:120px; resize:vertical}
     .row{display:flex; gap:10px; flex-wrap:wrap}
   </style>
@@ -67,8 +82,8 @@
         <span class="brand-name">EMS ProtoQuiz</span>
       </a>
       <nav>
-        <a class="chip" href="index.html">Back to main</a>
-        <button class="chip" id="openContact">Contact</button>
+        <a class="chip" href="index.html" data-track="BackToMain">Back to main</a>
+        <button class="chip" id="openContact" data-track="AgencyContactOpen">Contact</button>
       </nav>
     </div>
   </header>
@@ -87,15 +102,14 @@
     </div>
 
     <div class="cta">
-      <button class="btn" id="openContact2">Request a pilot</button>
-      <a class="chip" href="mailto:YOUR@EMAIL">Email us</a>
+      <button class="btn" id="openContact2" data-track="AgencyContactOpen">Request a pilot</button>
+      <a class="chip" href="mailto:YOUR@EMAIL" data-track="AgencyEmailLink">Email us</a>
     </div>
   </main>
 
- <footer class="wrap">© 2025 <a href="https://teachmetolive.com" id="tmtlLink" target="_blank" rel="noopener">Teach Me to Live LLC</a></footer>
+  <footer class="wrap">© 2025 <a href="https://teachmetolive.com" id="tmtlLink" target="_blank" rel="noopener" data-track="TMTLLink">Teach Me to Live LLC</a></footer>
 
-
-  <!-- Contact dialog (same behavior as main, default reason = Agency pilot) -->
+  <!-- Contact dialog (default reason = Agency pilot) -->
   <dialog id="contactDialog" aria-labelledby="dlgTitle">
     <div class="dlg-head">
       <strong id="dlgTitle">Contact</strong>
@@ -127,8 +141,8 @@
           <textarea id="msg" name="message" placeholder="Tell us about your department and goals…"></textarea>
         </div>
         <div class="row" style="justify-content:space-between; align-items:center">
-          <button class="btn" type="submit">Send email</button>
-          <a class="chip" href="index.html#top">Back to main</a>
+          <button class="btn" type="submit" data-track="AgencyContactSubmitClick">Send email</button>
+          <a class="chip" href="index.html#top" data-track="BackToMain">Back to main</a>
         </div>
       </form>
       <p class="lead" style="font-size:14px; color:#8fa3ba; margin-top:10px">Submitting opens your email app with a prefilled message. Replace the address in the code with yours.</p>
@@ -140,13 +154,11 @@
     const SUPPORT_EMAIL = "Jaden@protoquiz.com"; // <-- replace me
     // --------------------------
 
-    const track = (name)=>window.plausible && window.plausible(name);
-
     const dlg = document.getElementById("contactDialog");
     const openers = [document.getElementById("openContact"), document.getElementById("openContact2")].filter(Boolean);
     let lastOpener = null;
     openers.forEach(btn=>{
-      btn.addEventListener("click", ()=>{ lastOpener = btn; dlg.showModal(); track("AgencyContactOpen"); });
+      btn.addEventListener("click", ()=>{ lastOpener = btn; dlg.showModal(); /* click tracked via data-track */ });
     });
     dlg.addEventListener("close", ()=>{ if(lastOpener) lastOpener.focus(); });
 
@@ -160,8 +172,28 @@
       const subject = `ProtoQuiz ${type}: ${name || "New message"}`;
       const body = [`Name: ${name}`, `Email: ${email}`, `Type: ${type}`, "", msg].join("\n");
       const url = `mailto:${encodeURIComponent(SUPPORT_EMAIL)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      track("AgencyContactSubmit", { page: PAGE, type });
       window.location.href = url;
-      track("AgencyContactSubmit");
+    });
+
+    // Generic click tracker for any element with [data-track]
+    document.addEventListener('click', (e)=>{
+      const el = e.target.closest('[data-track]');
+      if (!el) return;
+      const name = el.dataset.track;
+      const label = el.getAttribute('data-label') || el.id || el.getAttribute('aria-label') || el.textContent.trim().slice(0,80) || 'click';
+      track(name, { page: PAGE, label });
+    });
+
+    // (Optional) If you add <details> sections on this page in the future:
+    document.querySelectorAll('details').forEach(d=>{
+      d.addEventListener('toggle', ()=>{
+        if (d.open) {
+          const label = d.querySelector('summary')?.textContent.trim().slice(0,80) || 'details';
+          track('DropdownOpen', { page: PAGE, label });
+        }
+      });
     });
   </script>
 </body>
