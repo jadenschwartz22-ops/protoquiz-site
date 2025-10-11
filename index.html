@@ -33,8 +33,23 @@
   }
   </script>
 
-  <!-- Analytics (privacy-friendly) -->
-  <script defer data-domain="protoquiz.com" src="https://plausible.io/js/script.js"></script>
+  <!-- Google tag (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LNSS9BMEP8"></script>
+  <script>
+    // GA4 setup
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-LNSS9BMEP8');
+
+    // Unified tracker -> GA4 custom events
+    function track(name, props){
+      try { gtag('event', name, props || {}); } catch(e){}
+    }
+
+    // Identify page for event context
+    const PAGE = 'home';
+  </script>
 
   <style>
     :root{
@@ -66,7 +81,7 @@
     header.nav{background:linear-gradient(180deg, rgba(255,255,255,.03), transparent); border-bottom:1px solid var(--line); border-radius:0 0 14px 14px}
     .navbar{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:16px 20px}
     .brand-link{display:flex; align-items:center; gap:12px}
-    .brand-link img{width:64px; height:64px; border-radius:12px; display:block} /* bigger logo */
+    .brand-link img{width:64px; height:64px; border-radius:12px; display:block}
     .brand-name{font-weight:800; letter-spacing:.2px; font-size:18px}
     .links{display:flex; gap:10px; flex-wrap:wrap}
     .chip{font-size:13px; padding:6px 10px; border-radius:999px; border:1px solid #243246; color:#cfd8e3; opacity:.9; background:rgba(255,255,255,.02)}
@@ -156,14 +171,13 @@
         <span class="brand-name">EMS ProtoQuiz</span>
       </a>
       <nav class="links">
-  <a class="chip" href="#what" id="navWhat">What</a>
-  <a class="chip" href="#why"  id="navWhy">Why</a>
-  <a class="chip" href="#how"  id="navHow">How</a>
-  <a class="chip" href="#trust">Trust & accuracy</a>
-  <a class="chip" href="agency.html" id="navAgency">For Agencies</a>
-  <button class="chip" type="button" id="openContact">Contact</button>
-</nav>
-
+        <a class="chip" href="#what" id="navWhat">What</a>
+        <a class="chip" href="#why"  id="navWhy">Why</a>
+        <a class="chip" href="#how"  id="navHow">How</a>
+        <a class="chip" href="#trust">Trust & accuracy</a>
+        <a class="chip" href="agency.html" id="navAgency" data-track="AgencyPage">For Agencies</a>
+        <button class="chip" type="button" id="openContact" data-track="ContactOpen">Contact</button>
+      </nav>
     </div>
   </header>
 
@@ -174,8 +188,8 @@
       <p class="lead">Upload your protocol PDF to create custom quizzes and interactive scenarios. Every item links to the exact page in the protocol it comes from, so you can check it in seconds.</p>
 
       <div class="cta">
-        <a class="btn" href="#" aria-disabled="true" title="App Store link coming soon">Coming soon</a>
-        <button class="btn ghost" type="button" id="openContact2">Contact</button>
+        <a class="btn" href="#" aria-disabled="true" title="App Store link coming soon" data-track="ComingSoonClick">Coming soon</a>
+        <button class="btn ghost" type="button" id="openContact2" data-track="ContactOpen">Contact</button>
       </div>
       <div class="pills">
         <span class="pill">Local-first</span>
@@ -220,9 +234,8 @@
 
   <footer class="wrap" id="contact">
     <div class="foot">
-      <div>Questions or want a <a href="agency.html" id="footAgencyLink">department pilot</a>? <button class="chip" type="button" id="openContact3">Open contact form</button></div>
-     <div class="small">© 2025 <a href="https://teachmetolive.com" id="tmtlLink" target="_blank" rel="noopener">Teach Me to Live LLC</a></div>
-
+      <div>Questions or want a <a href="agency.html" id="footAgencyLink" data-track="AgencyPage">department pilot</a>? <button class="chip" type="button" id="openContact3" data-track="ContactOpen">Open contact form</button></div>
+      <div class="small">© 2025 <a href="https://teachmetolive.com" id="tmtlLink" target="_blank" rel="noopener" data-track="TMTLLink">Teach Me to Live LLC</a></div>
     </div>
   </footer>
 
@@ -258,8 +271,8 @@
           <textarea id="msg" name="message" placeholder="Tell us what you’re thinking…"></textarea>
         </div>
         <div class="row" style="justify-content:space-between; align-items:center">
-          <button class="btn" type="submit">Send email</button>
-          <a class="chip" href="agency.html" id="dlgAgencyLink">Get it for my agency</a>
+          <button class="btn" type="submit" data-track="ContactSubmitClick">Send email</button>
+          <a class="chip" href="agency.html" id="dlgAgencyLink" data-track="AgencyPage">Get it for my agency</a>
         </div>
       </form>
       <p class="small" style="margin-top:10px; color:#8fa3ba">Submitting opens your email app with a prefilled message. Replace the address in the code with yours.</p>
@@ -271,9 +284,6 @@
     const SUPPORT_EMAIL = "Jaden@protoquiz.com"; // <-- replace me
     // --------------------------
 
-    // Analytics events (safe if Plausible isn't loaded)
-    const track = (name)=>window.plausible && window.plausible(name);
-
     // Contact openers + focus return
     const openerIds = ["openContact","openContact2","openContact3"];
     const openers = openerIds.map(id=>document.getElementById(id)).filter(Boolean);
@@ -283,12 +293,12 @@
       btn.addEventListener("click", ()=>{
         lastOpener = btn;
         dlg.showModal();
-        track("ContactOpen");
+        // Click is already tracked via data-track="ContactOpen"
       });
     });
     dlg.addEventListener("close", ()=>{ if(lastOpener) lastOpener.focus(); });
 
-    // Contact form -> mailto
+    // Contact form -> mailto + track submit
     document.getElementById("contactForm").addEventListener("submit", (e)=>{
       e.preventDefault();
       const data = new FormData(e.target);
@@ -299,14 +309,29 @@
       const subject = `ProtoQuiz ${type}: ${name || "New message"}`;
       const body = [`Name: ${name}`, `Email: ${email}`, `Type: ${type}`, "", msg].join("\n");
       const url = `mailto:${encodeURIComponent(SUPPORT_EMAIL)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      track("ContactSubmit", { page: PAGE, type });
       window.location.href = url;
-      track("ContactSubmit");
     });
 
-    // Track Agency nav/footer clicks
-    document.getElementById("navAgency")?.addEventListener("click", ()=>track("AgencyPage"));
-    document.getElementById("footAgencyLink")?.addEventListener("click", ()=>track("AgencyPage"));
-    document.getElementById("dlgAgencyLink")?.addEventListener("click", ()=>track("AgencyPage"));
+    // Generic click tracker for any element with [data-track]
+    document.addEventListener('click', (e)=>{
+      const el = e.target.closest('[data-track]');
+      if (!el) return;
+      const name = el.dataset.track;
+      const label = el.getAttribute('data-label') || el.id || el.getAttribute('aria-label') || el.textContent.trim().slice(0,80) || 'click';
+      track(name, { page: PAGE, label });
+    });
+
+    // Track <details> opens as dropdown events
+    document.querySelectorAll('details').forEach(d=>{
+      d.addEventListener('toggle', ()=>{
+        if (d.open) {
+          const label = d.querySelector('summary')?.textContent.trim().slice(0,80) || 'details';
+          track('DropdownOpen', { page: PAGE, label });
+        }
+      });
+    });
   </script>
 </body>
 </html>
