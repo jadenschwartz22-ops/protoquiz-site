@@ -246,7 +246,9 @@
       <form method="dialog"><button class="chip" value="close">Close</button></form>
     </div>
     <div class="dlg-body">
-      <form id="contactForm">
+      <form id="contactForm" action="https://formspree.io/f/xwprwdpg" method="POST">
+        <!-- Honeypot (spam trap) -->
+        <input type="text" name="phone" tabindex="-1" autocomplete="off" style="position:absolute;left:-10000px" aria-hidden="true">
         <div class="row">
           <div class="field" style="flex:1 1 220px">
             <label for="name">Name</label>
@@ -271,19 +273,15 @@
           <textarea id="msg" name="message" placeholder="Tell us what you’re thinking…"></textarea>
         </div>
         <div class="row" style="justify-content:space-between; align-items:center">
-          <button class="btn" type="submit" data-track="ContactSubmitClick">Send email</button>
+          <button class="btn" type="submit" data-track="ContactSubmitClick">Send</button>
           <a class="chip" href="agency.html" id="dlgAgencyLink" data-track="AgencyPage">Get it for my agency</a>
         </div>
       </form>
-      <p class="small" style="margin-top:10px; color:#8fa3ba">Submitting opens your email app with a prefilled message. Replace the address in the code with yours.</p>
+      <p class="small" style="margin-top:10px; color:#8fa3ba">Your message is sent securely via Formspree.</p>
     </div>
   </dialog>
 
   <script>
-    // -------- settings --------
-    const SUPPORT_EMAIL = "Jaden@protoquiz.com"; // <-- replace me
-    // --------------------------
-
     // Contact openers + focus return
     const openerIds = ["openContact","openContact2","openContact3"];
     const openers = openerIds.map(id=>document.getElementById(id)).filter(Boolean);
@@ -298,20 +296,38 @@
     });
     dlg.addEventListener("close", ()=>{ if(lastOpener) lastOpener.focus(); });
 
-    // Contact form -> mailto + track submit
-    document.getElementById("contactForm").addEventListener("submit", (e)=>{
+    // Contact form -> Formspree POST + track + inline feedback
+    document.getElementById("contactForm").addEventListener("submit", async (e)=>{
       e.preventDefault();
-      const data = new FormData(e.target);
-      const name = data.get("name") || "";
-      const email = data.get("email") || "";
+      const form = e.target;
+      const data = new FormData(form);
       const type = data.get("type") || "Message";
-      const msg  = data.get("message") || "";
-      const subject = `ProtoQuiz ${type}: ${name || "New message"}`;
-      const body = [`Name: ${name}`, `Email: ${email}`, `Type: ${type}`, "", msg].join("\n");
-      const url = `mailto:${encodeURIComponent(SUPPORT_EMAIL)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
       track("ContactSubmit", { page: PAGE, type });
-      window.location.href = url;
+
+      try {
+        const res = await fetch(form.action, {
+          method: "POST",
+          headers: { "Accept": "application/json" },
+          body: data
+        });
+
+        if (res.ok) {
+          form.reset();
+          form.outerHTML = `<p class="small" style="color:#a7f3d0;margin-top:10px">
+            ✅ Thanks—your message was sent. We'll get back to you soon.
+          </p>`;
+        } else {
+          throw new Error("Formspree error");
+        }
+      } catch (err) {
+        const errBox = document.createElement("p");
+        errBox.className = "small";
+        errBox.style.color = "#fda4af";
+        errBox.style.marginTop = "10px";
+        errBox.textContent = "Sorry, something went wrong sending your message. Please try again in a moment.";
+        form.appendChild(errBox);
+      }
     });
 
     // Generic click tracker for any element with [data-track]
