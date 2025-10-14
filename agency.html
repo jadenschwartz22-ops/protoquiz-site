@@ -65,13 +65,26 @@
     footer{margin-top:36px; padding:36px 20px 60px; color:var(--muted); border-top:1px solid var(--line)}
     /* Dialog */
     dialog{width:min(640px, 96vw); border:1px solid #223041; border-radius:16px; padding:0; background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015)); color:var(--ink)}
-    dialog::backdrop{background:rgba(0,0,0,.6); backdrop-filter:blur(2px)}
+    /* Darker, blurrier backdrop */
+    dialog::backdrop{
+      background: rgba(5, 8, 12, 0.72);
+      backdrop-filter: blur(6px) saturate(110%);
+    }
     .dlg-head{display:flex; align-items:center; justify-content:space-between; padding:14px 16px; border-bottom:1px solid var(--line)}
     .dlg-body{padding:16px}
     .field{display:grid; gap:6px; margin:10px 0}
     input, textarea, select{width:100%; background:#0c1219; color:#e6edf7; border:1px solid #223041; border-radius:12px; padding:10px 12px; font:inherit}
     textarea{min-height:120px; resize:vertical}
     .row{display:flex; gap:10px; flex-wrap:wrap}
+
+    /* Dim/blur page when dialog is open */
+    body.dim header,
+    body.dim main,
+    body.dim footer {
+      filter: blur(2px) brightness(0.9);
+      transition: filter .15s ease;
+    }
+    /* No .fx here, so no extra rule needed */
   </style>
 </head>
 <body>
@@ -161,9 +174,16 @@
     ].filter(Boolean);
     let lastOpener = null;
     openers.forEach(btn=>{
-      btn.addEventListener("click", ()=>{ lastOpener = btn; dlg.showModal(); /* click tracked via data-track */ });
+      btn.addEventListener("click", ()=>{
+        lastOpener = btn;
+        document.body.classList.add("dim"); // dim page
+        dlg.showModal(); /* click tracked via data-track */
+      });
     });
-    dlg.addEventListener("close", ()=>{ if(lastOpener) lastOpener.focus(); });
+    dlg.addEventListener("close", ()=>{
+      document.body.classList.remove("dim"); // restore page
+      if(lastOpener) lastOpener.focus();
+    });
 
     // Submit -> Formspree POST + track + inline feedback
     document.getElementById("contactForm").addEventListener("submit", async (e)=>{
