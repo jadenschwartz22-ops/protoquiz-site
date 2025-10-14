@@ -116,7 +116,9 @@
       <form method="dialog"><button class="chip" value="close">Close</button></form>
     </div>
     <div class="dlg-body">
-      <form id="contactForm">
+      <form id="contactForm" action="https://formspree.io/f/xwprwdpg" method="POST">
+        <!-- Honeypot (spam trap) -->
+        <input type="text" name="phone" tabindex="-1" autocomplete="off" style="position:absolute;left:-10000px" aria-hidden="true">
         <div class="row">
           <div class="field" style="flex:1 1 220px">
             <label for="name">Name</label>
@@ -141,19 +143,15 @@
           <textarea id="msg" name="message" placeholder="Tell us about your department and goals…"></textarea>
         </div>
         <div class="row" style="justify-content:space-between; align-items:center">
-          <button class="btn" type="submit" data-track="AgencyContactSubmitClick">Send email</button>
+          <button class="btn" type="submit" data-track="AgencyContactSubmitClick">Send</button>
           <a class="chip" href="index.html#top" data-track="BackToMain">Back to main</a>
         </div>
       </form>
-      <p class="lead" style="font-size:14px; color:#8fa3ba; margin-top:10px">Submitting opens your email app with a prefilled message. Replace the address in the code with yours.</p>
+      <p class="lead" style="font-size:14px; color:#8fa3ba; margin-top:10px">Your message is sent securely via Formspree.</p>
     </div>
   </dialog>
 
   <script>
-    // -------- settings --------
-    const SUPPORT_EMAIL = "Jaden@protoquiz.com"; // <-- replace me
-    // --------------------------
-
     const dlg = document.getElementById("contactDialog");
     const openers = [document.getElementById("openContact"), document.getElementById("openContact2")].filter(Boolean);
     let lastOpener = null;
@@ -162,19 +160,39 @@
     });
     dlg.addEventListener("close", ()=>{ if(lastOpener) lastOpener.focus(); });
 
-    document.getElementById("contactForm").addEventListener("submit", (e)=>{
+    // Submit -> Formspree POST + track + inline feedback
+    document.getElementById("contactForm").addEventListener("submit", async (e)=>{
       e.preventDefault();
-      const data = new FormData(e.target);
-      const name = data.get("name") || "";
-      const email = data.get("email") || "";
+      const form = e.target;
+      const data = new FormData(form);
       const type = data.get("type") || "Agency pilot";
-      const msg  = data.get("message") || "";
-      const subject = `ProtoQuiz ${type}: ${name || "New message"}`;
-      const body = [`Name: ${name}`, `Email: ${email}`, `Type: ${type}`, "", msg].join("\n");
-      const url = `mailto:${encodeURIComponent(SUPPORT_EMAIL)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
       track("AgencyContactSubmit", { page: PAGE, type });
-      window.location.href = url;
+
+      try {
+        const res = await fetch(form.action, {
+          method: "POST",
+          headers: { "Accept": "application/json" },
+          body: data
+        });
+
+        if (res.ok) {
+          form.reset();
+          form.outerHTML = `<p class="lead" style="font-size:14px; color:#a7f3d0; margin-top:10px">
+            ✅ Thanks—your message was sent. We’ll be in touch about a pilot.
+          </p>`;
+        } else {
+          throw new Error("Formspree error");
+        }
+      } catch (err) {
+        const errBox = document.createElement("p");
+        errBox.className = "lead";
+        errBox.style.fontSize = "14px";
+        errBox.style.color = "#fda4af";
+        errBox.style.marginTop = "10px";
+        errBox.textContent = "Sorry, something went wrong sending your message. Please try again.";
+        form.appendChild(errBox);
+      }
     });
 
     // Generic click tracker for any element with [data-track]
@@ -186,7 +204,7 @@
       track(name, { page: PAGE, label });
     });
 
-    // (Optional) If you add <details> sections on this page in the future:
+    // (Optional) If you add <details> later
     document.querySelectorAll('details').forEach(d=>{
       d.addEventListener('toggle', ()=>{
         if (d.open) {
