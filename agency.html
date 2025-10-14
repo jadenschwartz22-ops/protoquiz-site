@@ -103,7 +103,8 @@
 
     <div class="cta">
       <button class="btn" id="openContact2" data-track="AgencyContactOpen">Request a pilot</button>
-      <a class="chip" href="mailto:YOUR@EMAIL" data-track="AgencyEmailLink">Email us</a>
+      <!-- Email us now opens the dialog instead of mailto -->
+      <button class="chip" id="openContact3" data-track="AgencyContactOpen">Email us</button>
     </div>
   </main>
 
@@ -153,7 +154,11 @@
 
   <script>
     const dlg = document.getElementById("contactDialog");
-    const openers = [document.getElementById("openContact"), document.getElementById("openContact2")].filter(Boolean);
+    const openers = [
+      document.getElementById("openContact"),
+      document.getElementById("openContact2"),
+      document.getElementById("openContact3")
+    ].filter(Boolean);
     let lastOpener = null;
     openers.forEach(btn=>{
       btn.addEventListener("click", ()=>{ lastOpener = btn; dlg.showModal(); /* click tracked via data-track */ });
