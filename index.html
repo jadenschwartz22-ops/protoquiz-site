@@ -19,6 +19,10 @@
   <meta property="og:image" content="logo.png" />
   <meta name="theme-color" content="#05080c" />
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
+
   <!-- Structured data -->
   <script type="application/ld+json">
   {
@@ -100,7 +104,6 @@
     }
     @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(14px)} }
     @keyframes float2{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(-16px)} }
-    @media (prefers-reduced-motion: reduce){ .hero::before,.hero::after{animation:none} }
 
     .title{
       margin:0; font-weight:900; font-size:clamp(46px, 8.6vw, 96px); line-height:1.02; letter-spacing:-.02em;
@@ -201,7 +204,8 @@
       <p class="lead">Upload your protocol PDF to create custom quizzes and interactive scenarios. Every item links to the exact page in the protocol it comes from, so you can check it in seconds.</p>
 
       <div class="cta">
-        <a class="btn" href="#" aria-disabled="true" title="App Store link coming soon" data-track="ComingSoonClick">Coming soon</a>
+        <!-- CHANGED: Download button replaces the old 'Coming soon' link -->
+        <button class="btn" type="button" id="downloadBtn" data-track="DownloadClick" title="Download (coming soon)">Download</button>
         <button class="btn ghost" type="button" id="openContact2" data-track="ContactOpen">Contact</button>
       </div>
       <div class="pills">
@@ -299,7 +303,10 @@
     const openerIds = ["openContact","openContact2","openContact3"];
     const openers = openerIds.map(id=>document.getElementById(id)).filter(Boolean);
     const dlg = document.getElementById("contactDialog");
+    const dlgTitle = document.getElementById("dlgTitle");
     let lastOpener = null;
+    let originalTitle = dlgTitle.textContent;
+
     openers.forEach(btn=>{
       btn.addEventListener("click", ()=>{
         lastOpener = btn;
@@ -308,8 +315,32 @@
         // Click is already tracked via data-track="ContactOpen"
       });
     });
+
+    // NEW: Download button opens the dialog, shows a "coming soon" note, and is tracked via data-track.
+    const downloadBtn = document.getElementById("downloadBtn");
+    downloadBtn?.addEventListener("click", ()=>{
+      lastOpener = downloadBtn;
+      document.body.classList.add("dim");
+      // Title: make it obvious it's not live yet
+      dlgTitle.textContent = "Download (coming soon)";
+      // Add or update a small note at top of the dialog body
+      const body = dlg.querySelector(".dlg-body");
+      let note = body.querySelector("#comingSoonNote");
+      if(!note){
+        note = document.createElement("div");
+        note.id = "comingSoonNote";
+        note.className = "small";
+        note.style.cssText = "margin:0 0 10px;color:#cbd5e1";
+        body.prepend(note);
+      }
+      note.textContent = "Thanks for your interest! Downloads are coming soon — drop your email and we'll notify you.";
+      dlg.showModal();
+      // Event is counted by the generic [data-track] click handler (name = 'DownloadClick')
+    });
+
     dlg.addEventListener("close", ()=>{
       document.body.classList.remove("dim"); // restore page
+      dlgTitle.textContent = originalTitle;  // restore default title
       if(lastOpener) lastOpener.focus();
     });
 
