@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>EMS ProtoQuiz — Learn your protocols</title>
-  <meta name="description" content="Upload your local agency-specific protocols and the software generates medication quizzes and realistic scenarios, citing the exact page from your protocols." />
+  <meta name="description" content="Upload your local agency-specific protocols and our software generates medication quizzes and realistic scenarios, citing the exact page from your protocols." />
 
   <!-- SEO -->
   <link rel="canonical" href="https://protoquiz.com/">
@@ -154,7 +154,6 @@
       width:min(640px, 96vw); border:1px solid #223041; border-radius:16px; padding:0; background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
       color:var(--ink);
     }
-    /* Darker, blurrier backdrop */
     dialog::backdrop{
       background: rgba(5, 8, 12, 0.72);
       backdrop-filter: blur(6px) saturate(110%);
@@ -162,11 +161,10 @@
     .dlg-head{display:flex; align-items:center; justify-content:space-between; padding:14px 16px; border-bottom:1px solid var(--line)}
     .dlg-body{padding:16px}
     .field{display:grid; gap:6px; margin:10px 0}
-    input, textarea, select{width:100%; background:#0c1219; color:var(--ink); border:1px solid #223041; border-radius:12px; padding:10px 12px; font:inherit}
+    input, textarea, select{width:100%; background:#0c1219; color:#var(--ink); border:1px solid #223041; border-radius:12px; padding:10px 12px; font:inherit}
     textarea{min-height:120px; resize:vertical}
     .row{display:flex; gap:10px; flex-wrap:wrap}
 
-    /* Dim/blur page when dialog is open */
     body.dim header,
     body.dim main,
     body.dim footer {
@@ -204,7 +202,7 @@
       <p class="lead">Upload your protocol PDF to create custom quizzes and interactive scenarios. Every item links to the exact page in the protocol it comes from, so you can check it in seconds.</p>
 
       <div class="cta">
-        <!-- CHANGED: Download button replaces the old 'Coming soon' link -->
+        <!-- DOWNLOAD triggers waitlist flow -->
         <button class="btn" type="button" id="downloadBtn" data-track="DownloadClick" title="Download (coming soon)">Download</button>
         <button class="btn ghost" type="button" id="openContact2" data-track="ContactOpen">Contact</button>
       </div>
@@ -266,6 +264,11 @@
       <form id="contactForm" action="https://formspree.io/f/xwprwdpg" method="POST">
         <!-- Honeypot (spam trap) -->
         <input type="text" name="phone" tabindex="-1" autocomplete="off" style="position:absolute;left:-10000px" aria-hidden="true">
+
+        <!-- Hidden fields we set during the waitlist flow -->
+        <input type="hidden" name="intent" id="intentField" value="">
+        <input type="hidden" name="source" id="sourceField" value="">
+
         <div class="row">
           <div class="field" style="flex:1 1 220px">
             <label for="name">Name</label>
@@ -279,6 +282,8 @@
         <div class="field">
           <label for="type">Reason</label>
           <select id="type" name="type">
+            <!-- NEW: Waitlist option -->
+            <option>Waitlist</option>
             <option>Question</option>
             <option>Feedback</option>
             <option>Agency pilot</option>
@@ -304,6 +309,11 @@
     const openers = openerIds.map(id=>document.getElementById(id)).filter(Boolean);
     const dlg = document.getElementById("contactDialog");
     const dlgTitle = document.getElementById("dlgTitle");
+    const typeSelect = document.getElementById("type");
+    const msgBox = document.getElementById("msg");
+    const intentField = document.getElementById("intentField");
+    const sourceField = document.getElementById("sourceField");
+
     let lastOpener = null;
     let originalTitle = dlgTitle.textContent;
 
@@ -312,18 +322,17 @@
         lastOpener = btn;
         document.body.classList.add("dim");  // dim page
         dlg.showModal();
-        // Click is already tracked via data-track="ContactOpen"
       });
     });
 
-    // NEW: Download button opens the dialog, shows a "coming soon" note, and is tracked via data-track.
+    // DOWNLOAD -> Waitlist flow
     const downloadBtn = document.getElementById("downloadBtn");
     downloadBtn?.addEventListener("click", ()=>{
       lastOpener = downloadBtn;
       document.body.classList.add("dim");
-      // Title: make it obvious it's not live yet
+
+      // Dialog title + note
       dlgTitle.textContent = "Download (coming soon)";
-      // Add or update a small note at top of the dialog body
       const body = dlg.querySelector(".dlg-body");
       let note = body.querySelector("#comingSoonNote");
       if(!note){
@@ -333,14 +342,24 @@
         note.style.cssText = "margin:0 0 10px;color:#cbd5e1";
         body.prepend(note);
       }
-      note.textContent = "Thanks for your interest! Downloads are coming soon — drop your email and we'll notify you.";
+      note.textContent = "Thanks for your interest! Downloads are coming soon — drop your email and we'll notify you the moment it’s live.";
+
+      // Select "Waitlist", tweak placeholder, set hidden fields for Formspree
+      typeSelect.value = "Waitlist";
+      msgBox.placeholder = "We’ll email you when it releases. Anything else to add? (optional)";
+      intentField.value = "waitlist";
+      sourceField.value = "download-button";
+
       dlg.showModal();
-      // Event is counted by the generic [data-track] click handler (name = 'DownloadClick')
+      // Click is counted by the generic data-track handler (DownloadClick)
     });
 
     dlg.addEventListener("close", ()=>{
-      document.body.classList.remove("dim"); // restore page
-      dlgTitle.textContent = originalTitle;  // restore default title
+      document.body.classList.remove("dim");
+      dlgTitle.textContent = originalTitle;
+      // optional: clear hidden intent so normal contacts aren’t tagged
+      intentField.value = "";
+      sourceField.value = "";
       if(lastOpener) lastOpener.focus();
     });
 
@@ -351,7 +370,13 @@
       const data = new FormData(form);
       const type = data.get("type") || "Message";
 
+      // Base event
       track("ContactSubmit", { page: PAGE, type });
+
+      // If it's a waitlist signup, also emit a specific event (no PII)
+      if (type === "Waitlist") {
+        track("WaitlistSignup", { page: PAGE });
+      }
 
       try {
         const res = await fetch(form.action, {
@@ -363,7 +388,7 @@
         if (res.ok) {
           form.reset();
           form.outerHTML = `<p class="small" style="color:#a7f3d0;margin-top:10px">
-            ✅ Thanks—your message was sent. We'll get back to you soon.
+            ✅ Thanks—you're on the waitlist. We'll email you at launch.
           </p>`;
         } else {
           throw new Error("Formspree error");
