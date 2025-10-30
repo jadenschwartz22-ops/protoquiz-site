@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- build: v6 -->
+<!-- build: v7 -->
 <html lang="en" id="top">
 <head>
   <meta charset="utf-8" />
@@ -202,8 +202,17 @@
       <p class="lead">Upload your protocol PDF to create custom quizzes and interactive scenarios. Every item links to the exact page in the protocol it comes from, so you can check it in seconds.</p>
 
       <div class="cta">
-        <!-- DOWNLOAD triggers waitlist flow -->
-        <button class="btn" type="button" id="downloadBtn" data-track="DownloadClick" title="Download (coming soon)">Download</button>
+        <!-- App Store Download -->
+        <a href="https://apps.apple.com/us/app/ems-protocol-quiz-scenarios/id6753611139"
+           target="_blank"
+           rel="noopener"
+           id="appStoreLink"
+           data-track="AppStoreClick"
+           style="display:inline-block; height:48px;">
+          <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1735862400"
+               alt="Download on the App Store"
+               style="height:48px; width:auto; display:block;">
+        </a>
         <button class="btn ghost" type="button" id="openContact2" data-track="ContactOpen">Contact</button>
       </div>
       <div class="pills">
@@ -329,35 +338,6 @@
         document.body.classList.add("dim");  // dim page
         dlg.showModal();
       });
-    });
-
-    // DOWNLOAD -> Waitlist flow
-    const downloadBtn = document.getElementById("downloadBtn");
-    downloadBtn?.addEventListener("click", ()=>{
-      lastOpener = downloadBtn;
-      document.body.classList.add("dim");
-
-      // Dialog title + note
-      dlgTitle.textContent = "Download (coming soon)";
-      const body = dlg.querySelector(".dlg-body");
-      let note = body.querySelector("#comingSoonNote");
-      if(!note){
-        note = document.createElement("div");
-        note.id = "comingSoonNote";
-        note.className = "small";
-        note.style.cssText = "margin:0 0 10px;color:#cbd5e1";
-        body.prepend(note);
-      }
-      note.textContent = "Thanks for your interest! Downloads are coming soon — drop your email and we'll notify you the moment it’s live.";
-
-      // Select "Waitlist", tweak placeholder, set hidden fields for Formspree
-      typeSelect.value = "Waitlist";
-      msgBox.placeholder = "We’ll email you when it releases. Anything else to add? (optional)";
-      intentField.value = "waitlist";
-      sourceField.value = "download-button";
-
-      dlg.showModal();
-      // Click is counted by the generic data-track handler (DownloadClick)
     });
 
     dlg.addEventListener("close", ()=>{
