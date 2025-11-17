@@ -1,0 +1,412 @@
+<!doctype html>
+<!-- build: v7 -->
+<html lang="en" id="top">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EMS ProtoQuiz — Learn your protocols</title>
+  <meta name="description" content="Upload your local agency-specific protocols and our software generates medication quizzes and realistic scenarios, citing the exact page from your protocols." />
+
+  <!-- SEO -->
+  <link rel="canonical" href="https://protoquiz.com/">
+  <meta name="robots" content="index,follow" />
+
+  <!-- Social -->
+  <meta property="og:title" content="EMS ProtoQuiz — Learn your protocols" />
+  <meta property="og:description" content="PDF-faithful training: quizzes and scenarios that follow your local rules and doses." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://protoquiz.com/" />
+  <meta property="og:image" content="logo2.png" />
+  <meta name="theme-color" content="#05080c" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon2.png" />
+  <link rel="apple-touch-icon" href="favicon2.png" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"SoftwareApplication",
+    "name":"EMS ProtoQuiz",
+    "operatingSystem":"iOS",
+    "applicationCategory":"EducationalApplication",
+    "url":"https://protoquiz.com/",
+    "publisher":{"@type":"Organization","name":"Teach Me to Live LLC"},
+    "description":"Turns your protocol PDF into quick quizzes and interactive scenarios with page-cited answers."
+  }
+  </script>
+
+  <!-- Google tag (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LNSS9BMEP8"></script>
+  <script>
+    // GA4 setup
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-LNSS9BMEP8');
+
+    // Unified tracker -> GA4 custom events
+    function track(name, props){
+      try { gtag('event', name, props || {}); } catch(e){}
+    }
+
+    // Identify page for event context
+    const PAGE = 'home';
+  </script>
+
+  <style>
+    :root{
+      --bg:#05080c; --panel:#0a0f15; --ink:#e6edf7; --muted:#9aa4b2; --line:#16202b;
+      --cyan:#22d3ee; --violet:#a855f7; --radius:18px; --max:1080px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; color:var(--ink);
+      font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+      background:
+        radial-gradient(1200px 600px at 85% -10%, rgba(168,85,247,.18), transparent 60%),
+        radial-gradient(900px 420px at -10% 0%, rgba(34,211,238,.15), transparent 55%),
+        var(--bg);
+      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    }
+    .fx{position:fixed; inset:0; pointer-events:none; opacity:.12; mix-blend-mode:soft-light;
+      background:repeating-linear-gradient(-75deg, rgba(255,255,255,.05) 0 2px, transparent 2px 7px);}
+    @media (prefers-reduced-motion: no-preference){
+      .fx{animation:rain 18s linear infinite}
+      @keyframes rain{to{background-position:600px 1200px}}
+    }
+    a{color:inherit; text-decoration:none}
+    :focus-visible{outline:2px solid var(--cyan); outline-offset:2px; border-radius:10px}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 20px}
+
+    /* Nav */
+    header.nav{background:linear-gradient(180deg, rgba(255,255,255,.03), transparent); border-bottom:1px solid var(--line); border-radius:0 0 14px 14px}
+    .navbar{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:16px 20px}
+    .brand-link{display:flex; align-items:center; gap:12px}
+    .brand-link img{width:64px; height:64px; border-radius:12px; display:block}
+    .brand-name{font-weight:800; letter-spacing:.2px; font-size:18px}
+    .links{display:flex; gap:10px; flex-wrap:wrap}
+    .chip{font-size:13px; padding:6px 10px; border-radius:999px; border:1px solid #243246; color:#cfd8e3; opacity:.9; background:rgba(255,255,255,.02)}
+
+    /* Hero */
+    .hero{position:relative; padding:92px 20px 28px}
+    .hero::before{
+      content:""; position:absolute; inset:-20% -20% auto -20%; height:60%;
+      background:radial-gradient(640px 260px at 25% 20%, rgba(34,211,238,.18), transparent 60%);
+      filter:blur(10px); pointer-events:none; animation:float 18s ease-in-out infinite;
+    }
+    .hero::after{
+      content:""; position:absolute; inset:auto -20% -30% 30%; height:60%;
+      background:radial-gradient(560px 220px at 80% 80%, rgba(168,85,247,.18), transparent 60%);
+      filter:blur(12px); pointer-events:none; animation:float2 22s ease-in-out infinite;
+    }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(14px)} }
+    @keyframes float2{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(-16px)} }
+
+    .title{
+      margin:0; font-weight:900; font-size:clamp(46px, 8.6vw, 96px); line-height:1.02; letter-spacing:-.02em;
+      background:linear-gradient(180deg,#fff, #cfe3ff 60%, #b8c4d6);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+      text-shadow:0 0 18px rgba(34,211,238,.06);
+    }
+    .tagline{margin:6px 0 16px; font-size:clamp(18px, 2.6vw, 28px); color:#e9f2ff}
+    .tagline em{font-style:italic}
+    .lead{max-width:820px; color:var(--muted); margin:0 0 18px; font-size:clamp(15px,1.9vw,18px)}
+    .cta{display:flex; gap:12px; flex-wrap:wrap; margin:20px 0 8px}
+    .btn{
+      display:inline-flex; align-items:center; gap:8px; padding:11px 16px; border-radius:12px;
+      background:linear-gradient(90deg, var(--cyan), var(--violet));
+      color:#061018; font-weight:800; box-shadow:0 12px 28px -14px rgba(90,140,255,.35);
+    }
+    .ghost{background:transparent; color:var(--ink); border:1px solid #233244}
+    .pills{display:flex; gap:8px; flex-wrap:wrap; margin-top:8px}
+    .pill{font-size:12px; color:#cfe8ff; opacity:.9; border:1px solid #233244; padding:4px 9px; border-radius:999px; backdrop-filter:saturate(130%) blur(4px)}
+
+    /* Sections */
+    .section-title{margin:28px 0 12px; font-size:20px; letter-spacing:.2px}
+    .grid{display:grid; gap:14px}
+    @media (min-width:920px){ .grid{grid-template-columns:repeat(3,1fr)} }
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015)); border:1px solid var(--line); border-radius:var(--radius); padding:18px; box-shadow:inset 0 0 0 1px rgba(255,255,255,.01)}
+    .card h3{margin:0 0 6px; font-size:17px}
+    .card p{margin:0; color:var(--muted)}
+
+    /* Dropdowns */
+    .drops{margin-top:22px}
+    details{background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:14px 16px}
+    details+details{margin-top:10px}
+    summary{cursor:pointer; display:flex; align-items:center; gap:10px; list-style:none; font-weight:700}
+    summary::-webkit-details-marker{display:none}
+    .chev{width:10px; height:10px; border-right:2px solid #cbd5e1; border-bottom:2px solid #cbd5e1; transform:rotate(-45deg); transition:transform .15s ease}
+    details[open] .chev{transform:rotate(45deg)}
+    .drop-body{color:var(--muted); margin-top:8px; font-size:15px}
+
+    section{scroll-margin-top:96px}
+
+    /* Footer */
+    footer{margin-top:36px; padding:36px 20px 60px; color:var(--muted); border-top:1px solid var(--line); background:linear-gradient(180deg, transparent, rgba(255,255,255,.02))}
+    .foot{display:grid; gap:12px}
+    .small{font-size:14px}
+
+    /* Contact dialog */
+    dialog{
+      width:min(640px, 96vw); border:1px solid #223041; border-radius:16px; padding:0; background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      color:var(--ink);
+    }
+    dialog::backdrop{
+      background: rgba(5, 8, 12, 0.72);
+      backdrop-filter: blur(6px) saturate(110%);
+    }
+    .dlg-head{display:flex; align-items:center; justify-content:space-between; padding:14px 16px; border-bottom:1px solid var(--line)}
+    .dlg-body{padding:16px}
+    .field{display:grid; gap:6px; margin:10px 0}
+    input, textarea, select{width:100%; background:#0c1219; color:var(--ink); border:1px solid #223041; border-radius:12px; padding:10px 12px; font:inherit}
+    textarea{min-height:120px; resize:vertical}
+    .row{display:flex; gap:10px; flex-wrap:wrap}
+
+    body.dim header,
+    body.dim main,
+    body.dim footer {
+      filter: blur(2px) brightness(0.9);
+      transition: filter .15s ease;
+    }
+    body.dim .fx { opacity: .04; }
+  </style>
+</head>
+<body>
+  <div class="fx" aria-hidden="true"></div>
+  <a href="#main" class="chip wrap" style="position:absolute;left:-999px;top:auto">Skip to content</a>
+
+  <header class="nav">
+    <div class="wrap navbar">
+      <a class="brand-link" href="#top" aria-label="EMS ProtoQuiz — Home">
+        <img src="logo2.png" alt="EMS ProtoQuiz logo" width="64" height="64" decoding="async" />
+        <span class="brand-name">EMS ProtoQuiz</span>
+      </a>
+      <nav class="links">
+        <a class="chip" href="#what" id="navWhat">What</a>
+        <a class="chip" href="#why"  id="navWhy">Why</a>
+        <a class="chip" href="#how"  id="navHow">How</a>
+        <a class="chip" href="#trust">Trust & accuracy</a>
+        <a class="chip" href="agency" id="navAgency" data-track="AgencyPage">For Agencies</a>
+        <button class="chip" type="button" id="openContact" data-track="ContactOpen">Contact</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <section class="hero">
+      <h1 class="title">EMS ProtoQuiz</h1>
+      <div class="tagline">Learn <em>your</em> protocols.</div>
+      <p class="lead">Upload your protocol PDF to create custom quizzes and interactive scenarios. Every item links to the exact page in the protocol it comes from, so you can check it in seconds.</p>
+
+      <div class="cta">
+        <!-- App Store Download -->
+        <a href="https://apps.apple.com/us/app/ems-protocol-quiz-scenarios/id6753611139"
+           target="_blank"
+           rel="noopener"
+           id="appStoreLink"
+           data-track="AppStoreClick"
+           style="display:inline-block; height:48px;">
+          <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1735862400"
+               alt="Download on the App Store"
+               style="height:48px; width:auto; display:block;">
+        </a>
+        <button class="btn ghost" type="button" id="openContact2" data-track="ContactOpen">Contact</button>
+      </div>
+      <div class="pills">
+        <span class="pill">Local-first</span>
+        <span class="pill">Page-cited</span>
+        <span class="pill">Dose-safe</span>
+      </div>
+    </section>
+
+    <section id="what">
+      <h2 class="section-title">What it is</h2>
+      <div class="grid">
+        <article class="card"><h3>Quizzes from your PDF</h3><p>Doses, indications, contraindications, routes, repeats, base contact?, mechanism of action, side affects, adverse affects....</p></article>
+        <article class="card"><h3>Scenarios that follow your algorithms</h3><p>Realistic calls with choices limited to what your protocols allow.</p></article>
+        <article class="card"><h3>One-tap citation</h3><p>Open the exact page from the protocol for instant verification.</p></article>
+      </div>
+    </section>
+
+    <section id="why">
+      <h2 class="section-title">Why it matters</h2>
+      <div class="grid">
+        <article class="card"><h3>Local ≠ NREMT</h3><p>Your protocols are unique. Yet so many resources prepare you for the NREMT, instead of where you will actually work.</p></article>
+        <article class="card"><h3>Train how you fight</h3><p>This helps you study / learn <em>your</em> protocols. Study up.</p></article>
+        <article class="card"><h3>Traceable training</h3><p>Everything ties back to the source. Leaders can trust it; you can check it.</p></article>
+      </div>
+    </section>
+
+    <section id="how" class="drops">
+      <h2 class="section-title">How it works</h2>
+      <details><summary><span class="chev"></span> 1) Import your local protocols</summary><div class="drop-body">Drop in the PDF. A complex algorithm, assisted by AI, reads and extracts the information. No hallucinations: the uploaded file is the single source of truth.</div></details>
+      <details><summary><span class="chev"></span> 2) Software reads and maps it</summary><div class="drop-body">The app organizes meds, procedures, policies, and references so items point to the exact page they come from.</div></details>
+      <details><summary><span class="chev"></span> 3) Quizzes</summary><div class="drop-body">Generate custom quizzes on dose, route, repeats, indications, contraindications, steps, base contact or standing order, and so on.</div></details>
+      <details><summary><span class="chev"></span> 4) Scenarios (premium)</summary><div class="drop-body">Generate realistic calls that adapt to your treatments based on your algorithms.</div></details>
+    </section>
+
+    <section id="trust" class="drops">
+      <h2 class="section-title">Trust & accuracy</h2>
+      <details><summary><span class="chev"></span> How do I know it’s right?</summary><div class="drop-body">Each 'fact' shows the page it comes from. The AI and algorithm have to agree on the 'facts' coming from the protocol, and are only able to determine truth if it can find the exact wording in the protocol. Hallucinations are not accepted.</div></details>
+      <details><summary><span class="chev"></span> What if there is a mistake?</summary><div class="drop-body">You can edit any item. Your fix is saved for that protocol going forward. A validator blocks dose/route mismatches before they appear.</div></details>
+      <details><summary><span class="chev"></span> What data do you use?</summary><div class="drop-body">1) Your protocol PDF (authoritative). 2) Optional reference lists only help with names—never override local doses.</div></details>
+    </section>
+  </main>
+
+  <footer class="wrap" id="contact">
+    <div class="foot">
+      <div>Questions or want a <a href="agency" id="footAgencyLink" data-track="AgencyPage">department pilot</a>? <button class="chip" type="button" id="openContact3" data-track="ContactOpen">Open contact form</button></div>
+      <div class="small" style="display:flex; gap:12px; flex-wrap:wrap; align-items:center">
+        <span>© 2025 <a href="https://teachmetolive.com" id="tmtlLink" target="_blank" rel="noopener" data-track="TMTLLink">Teach Me to Live LLC</a></span>
+        <span style="opacity:0.5">•</span>
+        <a href="privacy" data-track="PrivacyLink">Privacy Policy</a>
+        <span style="opacity:0.5">•</span>
+        <a href="terms" data-track="TermsLink">Terms of Use</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Contact / Feedback dialog -->
+  <dialog id="contactDialog" aria-labelledby="dlgTitle">
+    <div class="dlg-head">
+      <strong id="dlgTitle">Contact</strong>
+      <form method="dialog"><button class="chip" value="close">Close</button></form>
+    </div>
+    <div class="dlg-body">
+      <form id="contactForm" action="https://formspree.io/f/xwprwdpg" method="POST">
+        <!-- Honeypot (spam trap) -->
+        <input type="text" name="phone" tabindex="-1" autocomplete="off" style="position:absolute;left:-10000px" aria-hidden="true">
+
+        <!-- Hidden fields we set during the waitlist flow -->
+        <input type="hidden" name="intent" id="intentField" value="">
+        <input type="hidden" name="source" id="sourceField" value="">
+
+        <div class="row">
+          <div class="field" style="flex:1 1 220px">
+            <label for="name">Name</label>
+            <input id="name" name="name" autocomplete="name" />
+          </div>
+          <div class="field" style="flex:1 1 220px">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </div>
+        </div>
+        <div class="field">
+          <label for="type">Reason</label>
+          <select id="type" name="type">
+            <!-- NEW: Waitlist option -->
+            <option>Waitlist</option>
+            <option>Question</option>
+            <option>Feedback</option>
+            <option>Agency pilot</option>
+            <option>Press/Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="msg">Message</label>
+          <textarea id="msg" name="message" placeholder="Tell us what you’re thinking…"></textarea>
+        </div>
+        <div class="row" style="justify-content:space-between; align-items:center">
+          <button class="btn" type="submit" data-track="ContactSubmitClick">Send</button>
+          <a class="chip" href="agency" id="dlgAgencyLink" data-track="AgencyPage">Get it for my agency</a>
+        </div>
+      </form>
+      <p class="small" style="margin-top:10px; color:#8fa3ba">Your message is sent securely via Formspree.</p>
+    </div>
+  </dialog>
+
+  <script>
+    // Contact openers + focus return
+    const openerIds = ["openContact","openContact2","openContact3"];
+    const openers = openerIds.map(id=>document.getElementById(id)).filter(Boolean);
+    const dlg = document.getElementById("contactDialog");
+    const dlgTitle = document.getElementById("dlgTitle");
+    const typeSelect = document.getElementById("type");
+    const msgBox = document.getElementById("msg");
+    const intentField = document.getElementById("intentField");
+    const sourceField = document.getElementById("sourceField");
+
+    let lastOpener = null;
+    let originalTitle = dlgTitle.textContent;
+
+    openers.forEach(btn=>{
+      btn.addEventListener("click", ()=>{
+        lastOpener = btn;
+        document.body.classList.add("dim");  // dim page
+        dlg.showModal();
+      });
+    });
+
+    dlg.addEventListener("close", ()=>{
+      document.body.classList.remove("dim");
+      dlgTitle.textContent = originalTitle;
+      // optional: clear hidden intent so normal contacts aren’t tagged
+      intentField.value = "";
+      sourceField.value = "";
+      if(lastOpener) lastOpener.focus();
+    });
+
+    // Contact form -> Formspree POST + track + inline feedback
+    document.getElementById("contactForm").addEventListener("submit", async (e)=>{
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+      const type = data.get("type") || "Message";
+
+      // Base event
+      track("ContactSubmit", { page: PAGE, type });
+
+      // If it's a waitlist signup, also emit a specific event (no PII)
+      if (type === "Waitlist") {
+        track("WaitlistSignup", { page: PAGE });
+      }
+
+      try {
+        const res = await fetch(form.action, {
+          method: "POST",
+          headers: { "Accept": "application/json" },
+          body: data
+        });
+
+        if (res.ok) {
+          form.reset();
+          form.outerHTML = `<p class="small" style="color:#a7f3d0;margin-top:10px">
+            ✅ Thanks—you're on the waitlist. We'll email you at launch.
+          </p>`;
+        } else {
+          throw new Error("Formspree error");
+        }
+      } catch (err) {
+        const errBox = document.createElement("p");
+        errBox.className = "small";
+        errBox.style.color = "#fda4af";
+        errBox.style.marginTop = "10px";
+        errBox.textContent = "Sorry, something went wrong sending your message. Please try again in a moment.";
+        form.appendChild(errBox);
+      }
+    });
+
+    // Generic click tracker for any element with [data-track]
+    document.addEventListener('click', (e)=>{
+      const el = e.target.closest('[data-track]');
+      if (!el) return;
+      const name = el.dataset.track;
+      const label = el.getAttribute('data-label') || el.id || el.getAttribute('aria-label') || el.textContent.trim().slice(0,80) || 'click';
+      track(name, { page: PAGE, label });
+    });
+
+    // Track <details> opens as dropdown events
+    document.querySelectorAll('details').forEach(d=>{
+      d.addEventListener('toggle', ()=>{
+        if (d.open) {
+          const label = d.querySelector('summary')?.textContent.trim().slice(0,80) || 'details';
+          track('DropdownOpen', { page: PAGE, label });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
