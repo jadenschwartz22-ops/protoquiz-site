@@ -252,11 +252,11 @@
     }
 
     h1{
-      font-size:clamp(48px, 8vw, 84px);
-      font-weight:900;
-      line-height:1.05;
+      font-size:clamp(32px, 5vw, 48px);
+      font-weight:700;
+      line-height:1.1;
       letter-spacing:-.02em;
-      margin-bottom:20px;
+      margin-bottom:16px;
       background:linear-gradient(180deg, #ffffff, #e0e7ff);
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
@@ -264,19 +264,19 @@
     }
 
     .hero-subtitle{
-      font-size:clamp(20px, 3vw, 28px);
-      font-weight:600;
+      font-size:clamp(14px, 2vw, 18px);
+      font-weight:500;
       color:#a0b3d8;
-      margin-bottom:16px;
+      margin-bottom:12px;
       animation:fadeInUp .8s ease .1s backwards;
     }
 
     .hero-description{
-      font-size:clamp(16px, 2vw, 20px);
+      font-size:clamp(14px, 1.5vw, 16px);
       color:var(--muted);
       max-width:600px;
-      margin-bottom:32px;
-      line-height:1.7;
+      margin-bottom:24px;
+      line-height:1.6;
       animation:fadeInUp .8s ease .2s backwards;
     }
 
@@ -373,16 +373,16 @@
     }
 
     .section-title{
-      font-size:clamp(32px, 5vw, 48px);
-      font-weight:800;
-      margin-bottom:16px;
+      font-size:clamp(24px, 4vw, 32px);
+      font-weight:700;
+      margin-bottom:12px;
       background:linear-gradient(180deg, #ffffff, #cbd5e1);
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
     }
 
     .section-subtitle{
-      font-size:18px;
+      font-size:15px;
       color:var(--muted);
     }
 
@@ -552,20 +552,42 @@
     }
 
     .review-rating{
-      font-size:48px;
-      font-weight:900;
+      font-size:32px;
+      font-weight:700;
       color:var(--warning);
       margin-bottom:8px;
     }
 
     .review-stars{
-      font-size:32px;
+      font-size:24px;
       color:var(--warning);
-      margin-bottom:12px;
+      margin-bottom:8px;
     }
 
     .review-count{
       color:var(--muted);
+    }
+
+    .review-carousel{
+      position: relative;
+      min-height: 250px;
+    }
+
+    .review-slide{
+      position: absolute;
+      width: 100%;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      pointer-events: none;
+    }
+
+    .review-slide.active{
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .carousel-dot:hover{
+      opacity: 0.8;
     }
 
     .reviews-list{
@@ -993,26 +1015,35 @@
     <section class="hero">
       <div class="wrap">
         <div class="hero-content">
-          <span class="hero-badge">Fastest-Growing EMS Study Tool</span>
-          <h1>Master YOUR protocols.<br>Know your shit.</h1>
-          <p class="hero-subtitle">Built by a paramedic student who needed to learn protocols for field internship.</p>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 24px; margin-bottom: 16px;">
+            <img src="logo-256.png" alt="ProtoQuiz Logo" style="width: 120px; height: 120px; border-radius: 24px; box-shadow: 0 8px 32px rgba(0,200,255,0.3);">
+            <div style="text-align: center; width: 100%;">
+              <span class="hero-badge">Fastest-Growing EMS Study Tool</span>
+              <h1>Master your local protocols.</h1>
+              <p class="hero-subtitle">Built by a paramedic student.</p>
+            </div>
+          </div>
           <p class="hero-description">
-            Upload your protocol PDF and get instant quizzes with page citations.
+            Upload your local protocols PDF and get instant quizzes with page citations.
             Every answer links to the exact source page. No AI hallucinations, just YOUR protocols.
           </p>
 
           <div class="hero-stats">
             <div class="stat-item">
-              <span class="stars">⭐⭐⭐⭐⯨</span>
-              <span>4.7 App Store rating</span>
+              <span class="stars">⭐⭐⭐⭐</span>
+              <span>4.7/5 App Store rating</span>
             </div>
             <div class="stat-item">
               <strong id="userCount">300+</strong>
-              <span>EMTs & paramedics</span>
+              <span>EMTs & Paramedics</span>
             </div>
             <div class="stat-item">
-              <strong id="protocolCount">50+</strong>
-              <span>protocols uploaded</span>
+              <strong id="quizCount">1,000+</strong>
+              <span>quizzes generated</span>
+            </div>
+            <div class="stat-item">
+              <strong id="scenarioCount">250+</strong>
+              <span>scenarios completed</span>
             </div>
           </div>
 
@@ -1027,7 +1058,7 @@
           </div>
 
           <p style="font-size:14px; color:var(--muted); margin-top:16px;">
-            Free forever tier • No credit card required • iOS only (for now)
+            Free forever • No credit card required • iOS only (for now)
           </p>
         </div>
       </div>
@@ -1038,7 +1069,7 @@
       <div class="wrap">
         <div class="section-header">
           <h2 class="section-title">Learn Your Protocols FREE Forever</h2>
-          <p class="section-subtitle">Seriously. Master your meds for free. Upgrade for realistic scenarios.</p>
+          <p class="section-subtitle">Master pharmacology and protocols at no cost. Upgrade for realistic scenarios.</p>
         </div>
 
         <div class="pricing-cards">
@@ -1047,10 +1078,10 @@
             <div class="price">$0</div>
             <p style="color:var(--muted); margin-bottom:24px;">Everything you need to learn your protocols</p>
             <ul class="pricing-features">
-              <li>Study one protocol at a time (perfect for focused learning)</li>
-              <li>Learn pharmacology basics</li>
+              <li>Study one protocol at a time</li>
+              <li>Study protocol pharmacy</li>
               <li>Spaced repetition learning</li>
-              <li>1 algorithm quiz per week</li>
+              <li>1 advanced algorithm quiz per week</li>
               <li>Page citations for all answers</li>
             </ul>
             <a href="https://apps.apple.com/us/app/ems-protocol-quiz-scenarios/id6753611139"
@@ -1070,17 +1101,18 @@
             <p class="price-annual">or $59.99/year (save $23.89)</p>
             <ul class="pricing-features">
               <li>Everything in Free</li>
+              <li>Scenarios based on your local protocols</li>
+              <li>Scenarios adapt to your treatments and decisions</li>
               <li>Unlimited protocols</li>
-              <li>Realistic scenarios that adapt to YOUR decisions</li>
               <li>Unlimited algorithm quizzes</li>
-              <li>Advanced pharmacology</li>
-              <li>Feel like you're on a real call</li>
+              <li>Advanced clinical pearls</li>
+              <li>Train how you fight</li>
             </ul>
             <a href="https://apps.apple.com/us/app/ems-protocol-quiz-scenarios/id6753611139"
                target="_blank"
                class="btn btn-primary pricing-cta"
                data-track="PricingPremium">
-              Upgrade to Premium
+              Get Premium
             </a>
           </div>
         </div>
@@ -1092,7 +1124,7 @@
       <div class="wrap">
         <div class="section-header">
           <h2 class="section-title">Why ProtoQuiz Works</h2>
-          <p class="section-subtitle">Built by medics, for medics</p>
+          <p class="section-subtitle">Study what you'll actually use on calls</p>
         </div>
 
         <div class="features-grid">
@@ -1139,16 +1171,65 @@
     <section class="reviews fade-up">
       <div class="wrap">
         <div class="section-header">
-          <h2 class="section-title">What EMS Professionals Say</h2>
+          <h2 class="section-title">App Store Rating</h2>
         </div>
 
         <div class="reviews-container">
           <div class="review-summary">
-            <div class="review-rating">4.7</div>
-            <div class="review-stars">⭐⭐⭐⭐⯨</div>
-            <div class="review-count">What early users are saying</div>
+            <div class="review-rating">4.7/5</div>
+            <div class="review-stars" style="position: relative; display: inline-block;">
+              <span style="color: #444;">☆☆☆☆☆</span>
+              <span style="position: absolute; left: 0; top: 0; overflow: hidden; width: 94%; color: #FFD700;">★★★★★</span>
+            </div>
           </div>
 
+          <!-- Cycling Reviews Carousel -->
+          <div style="margin-top: 48px; position: relative; max-width: 700px; margin-left: auto; margin-right: auto;">
+            <div class="review-carousel">
+              <!-- Review 1 - Jackeroo98 -->
+              <div class="review-slide active">
+                <div style="background: rgba(255,255,255,.03); border: 1px solid var(--line); border-radius: 16px; padding: 24px;">
+                  <div style="color: #FFD700; margin-bottom: 8px; font-size: 18px;">⭐⭐⭐⭐⭐</div>
+                  <h4 style="font-size: 16px; margin-bottom: 8px; color: var(--cyan); font-weight: 600;">Excellent</h4>
+                  <p style="font-size: 14px; line-height: 1.5; color: var(--muted); margin-bottom: 12px;">
+                    "Impressive UI, accessible and usable"
+                  </p>
+                  <p style="font-size: 13px; color: var(--muted); opacity: 0.7;">— Jackeroo98</p>
+                </div>
+              </div>
+
+              <!-- Review 2 - Anon5872 -->
+              <div class="review-slide">
+                <div style="background: rgba(255,255,255,.03); border: 1px solid var(--line); border-radius: 16px; padding: 24px;">
+                  <div style="color: #FFD700; margin-bottom: 8px; font-size: 18px;">⭐⭐⭐⭐⭐</div>
+                  <h4 style="font-size: 16px; margin-bottom: 8px; color: var(--cyan); font-weight: 600;">Seriously the best</h4>
+                  <p style="font-size: 14px; line-height: 1.5; color: var(--muted); margin-bottom: 12px;">
+                    "Superior for professionals. Perfect balance of gamification, no intrusive ads, and strong free/paid options."
+                  </p>
+                  <p style="font-size: 13px; color: var(--muted); opacity: 0.7;">— Anon5872</p>
+                </div>
+              </div>
+
+              <!-- Review 3 - AJ1A1 -->
+              <div class="review-slide">
+                <div style="background: rgba(255,255,255,.03); border: 1px solid var(--line); border-radius: 16px; padding: 24px;">
+                  <div style="color: #FFD700; margin-bottom: 8px; font-size: 18px;">⭐⭐⭐⭐⭐</div>
+                  <h4 style="font-size: 16px; margin-bottom: 8px; color: var(--cyan); font-weight: 600;">Super fun scenarios and really helpful quiz app</h4>
+                  <p style="font-size: 14px; line-height: 1.5; color: var(--muted); margin-bottom: 12px;">
+                    "Paramedic student here. Love the accurate protocol-based quizzes and exciting scenarios. Ready-made study materials that actually help."
+                  </p>
+                  <p style="font-size: 13px; color: var(--muted); opacity: 0.7;">— AJ1A1</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Carousel Dots -->
+            <div style="display: flex; justify-content: center; gap: 8px; margin-top: 24px;">
+              <button class="carousel-dot active" onclick="goToSlide(0)" style="width: 8px; height: 8px; border-radius: 50%; border: none; background: var(--cyan); cursor: pointer; transition: all 0.3s;"></button>
+              <button class="carousel-dot" onclick="goToSlide(1)" style="width: 8px; height: 8px; border-radius: 50%; border: none; background: rgba(255,255,255,0.3); cursor: pointer; transition: all 0.3s;"></button>
+              <button class="carousel-dot" onclick="goToSlide(2)" style="width: 8px; height: 8px; border-radius: 50%; border: none; background: rgba(255,255,255,0.3); cursor: pointer; transition: all 0.3s;"></button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1158,18 +1239,18 @@
       <div class="wrap">
         <div class="section-header">
           <h2 class="section-title">Built by a Paramedic Student, For Paramedics</h2>
-          <p class="section-subtitle">Started in October 2024 when I needed to learn MY protocols for field internship</p>
+          <p class="section-subtitle">Started in October 2025 when I needed to learn new protocols during clinicals</p>
         </div>
 
         <div style="max-width:700px; margin:32px auto; padding:32px; background:rgba(255,255,255,.03); border:1px solid var(--line); border-radius:24px;">
           <p style="font-size:18px; line-height:1.8; color:var(--muted);">
-            "I'm a paramedic student. During school, I needed to memorize the actual protocols
-            I'd use on my field internship - not generic NREMT stuff. The doses, the algorithms,
-            the specific procedures MY agency uses. So I built ProtoQuiz to extract questions
-            directly from the protocol PDF. Every answer has a page citation so you know it's right."
+            "I'm a paramedic student. I needed to learn the specific protocols and pharmacology I'd actually use for
+            my field internship and clinicals - not the generic NREMT stuff. All the study tools I found were either
+            expensive or too basic, so I built this to generate quiz questions directly from the actual protocol PDF.
+            Every answer has a page citation so you can check that it's right."
           </p>
           <p style="margin-top:20px; font-weight:600; color:var(--cyan);">
-            - Jaden, Paramedic Student & Creator
+            - Jaden, Paramedic Student & Founder
           </p>
         </div>
 
@@ -1248,7 +1329,7 @@
     <section class="final-cta">
       <div class="wrap">
         <h2>Ready to master your protocols?</h2>
-        <p>Join paramedics nationwide who are training with THEIR actual protocols</p>
+        <p>Join EMTs and paramedics nationwide who are training with THEIR actual protocols</p>
         <a href="https://apps.apple.com/us/app/ems-protocol-quiz-scenarios/id6753611139"
            target="_blank"
            class="btn btn-primary"
@@ -1499,33 +1580,30 @@
       });
     }
 
-    // Future: Connect to Firebase to get real-time metrics
-    // For now, these are placeholder values that can be updated
-    // Example implementation:
-    /*
-    async function fetchLiveMetrics() {
-      try {
-        // This would connect to your Firebase backend
-        const response = await fetch('https://api.protoquiz.com/metrics');
-        const data = await response.json();
+    // Review Carousel
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.review-slide');
+    const dots = document.querySelectorAll('.carousel-dot');
 
-        // Update user count
-        if (data.userCount) {
-          document.getElementById('userCount').textContent = data.userCount + '+';
-        }
+    function goToSlide(index) {
+      slides[currentSlide].classList.remove('active');
+      dots[currentSlide].classList.remove('active');
+      dots[currentSlide].style.background = 'rgba(255,255,255,0.3)';
 
-        // Update protocol count
-        if (data.protocolCount) {
-          document.getElementById('protocolCount').textContent = data.protocolCount + '+';
-        }
-      } catch (error) {
-        console.log('Could not load live metrics');
-      }
+      currentSlide = index;
+
+      slides[currentSlide].classList.add('active');
+      dots[currentSlide].classList.add('active');
+      dots[currentSlide].style.background = 'var(--cyan)';
     }
 
-    // Call on page load
-    fetchLiveMetrics();
-    */
+    function nextSlide() {
+      const next = (currentSlide + 1) % slides.length;
+      goToSlide(next);
+    }
+
+    // Auto-advance every 5 seconds
+    setInterval(nextSlide, 5000);
   </script>
 </body>
 </html>
