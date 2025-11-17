@@ -994,8 +994,8 @@
       <div class="wrap">
         <div class="hero-content">
           <span class="hero-badge">Fastest-Growing EMS Study Tool</span>
-          <h1>Master YOUR protocols.<br>Ace your tests.</h1>
-          <p class="hero-subtitle">Built by a paramedic student who needed to ace field internship.</p>
+          <h1>Master YOUR protocols.<br>Pass your tests.</h1>
+          <p class="hero-subtitle">Built by a paramedic student who needed to learn protocols for field internship.</p>
           <p class="hero-description">
             Upload your protocol PDF and get instant quizzes with page citations.
             Every answer links to the exact source page. No AI hallucinations, just YOUR protocols.
@@ -1003,16 +1003,16 @@
 
           <div class="hero-stats">
             <div class="stat-item">
-              <span class="stars">⭐⭐⭐⭐☆</span>
+              <span class="stars">⭐⭐⭐⭐⯨</span>
               <span>4.7 App Store rating</span>
             </div>
             <div class="stat-item">
-              <strong>300+</strong>
-              <span>paramedics using it</span>
+              <strong id="userCount">300+</strong>
+              <span>EMTs & paramedics</span>
             </div>
             <div class="stat-item">
-              <strong>Growing</strong>
-              <span>every week</span>
+              <strong id="protocolCount">50+</strong>
+              <span>protocols uploaded</span>
             </div>
           </div>
 
@@ -1038,14 +1038,14 @@
       <div class="wrap">
         <div class="section-header">
           <h2 class="section-title">Learn Your Protocols FREE Forever</h2>
-          <p class="section-subtitle">Seriously. Master your meds for free. Upgrade for mind-blowing scenarios.</p>
+          <p class="section-subtitle">Seriously. Master your meds for free. Upgrade for realistic scenarios.</p>
         </div>
 
         <div class="pricing-cards">
           <div class="pricing-card">
             <h3>Free Forever</h3>
             <div class="price">$0</div>
-            <p style="color:var(--muted); margin-bottom:24px;">Everything you need to ace your protocols</p>
+            <p style="color:var(--muted); margin-bottom:24px;">Everything you need to learn your protocols</p>
             <ul class="pricing-features">
               <li>Study one protocol at a time (perfect for focused learning)</li>
               <li>Learn pharmacology basics</li>
@@ -1071,7 +1071,7 @@
             <ul class="pricing-features">
               <li>Everything in Free</li>
               <li>Unlimited protocols</li>
-              <li>🔥 Hyper-realistic scenarios that adapt to YOUR decisions</li>
+              <li>🔥 Realistic scenarios that adapt to YOUR decisions</li>
               <li>Unlimited algorithm quizzes</li>
               <li>Advanced pharmacology</li>
               <li>Feel like you're on a real call</li>
@@ -1116,8 +1116,8 @@
 
           <div class="feature-card">
             <div class="feature-icon">🎯</div>
-            <h3>Insane Scenarios (Premium)</h3>
-            <p>The most realistic patient simulations you'll find. They adapt to your decisions, deteriorate, improve - just like real calls.</p>
+            <h3>Realistic Scenarios (Premium)</h3>
+            <p>Patient simulations that adapt to your decisions. They deteriorate, improve, and respond to treatments just like real calls.</p>
           </div>
 
           <div class="feature-card">
@@ -1145,45 +1145,10 @@
         <div class="reviews-container">
           <div class="review-summary">
             <div class="review-rating">4.7</div>
-            <div class="review-stars">⭐⭐⭐⭐☆</div>
+            <div class="review-stars">⭐⭐⭐⭐⯨</div>
             <div class="review-count">What early users are saying</div>
           </div>
 
-          <div class="reviews-list" id="reviewsList">
-            <!-- Reviews will be loaded dynamically -->
-            <div class="review-card">
-              <div class="review-header">
-                <span class="review-author">Sarah M., Paramedic</span>
-                <span class="review-rating-stars">⭐⭐⭐⭐⭐</span>
-              </div>
-              <p class="review-text">
-                "Finally! An app that uses MY protocols instead of generic NREMT stuff. The page citations are a game-changer - I can verify everything instantly."
-              </p>
-              <div class="review-date">2 days ago</div>
-            </div>
-
-            <div class="review-card">
-              <div class="review-header">
-                <span class="review-author">Mike T., EMT</span>
-                <span class="review-rating-stars">⭐⭐⭐⭐⭐</span>
-              </div>
-              <p class="review-text">
-                "This app has completely changed how I study. The scenarios feel real and actually follow our local algorithms. Worth every penny."
-              </p>
-              <div class="review-date">1 week ago</div>
-            </div>
-
-            <div class="review-card">
-              <div class="review-header">
-                <span class="review-author">Training Officer, County EMS</span>
-                <span class="review-rating-stars">⭐⭐⭐⭐⭐</span>
-              </div>
-              <p class="review-text">
-                "We're recommending this to all our new hires. It's cut protocol test failures by 60%. The ability to track progress across the department is invaluable."
-              </p>
-              <div class="review-date">2 weeks ago</div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -1201,7 +1166,7 @@
             "I'm a paramedic student. During school, I needed to memorize the actual protocols
             I'd use on my field internship - not generic NREMT stuff. The doses, the algorithms,
             the specific procedures MY agency uses. So I built ProtoQuiz to extract questions
-            directly from any protocol PDF. Every answer has a page citation so you know it's right."
+            directly from the protocol PDF. Every answer has a page citation so you know it's right."
           </p>
           <p style="margin-top:20px; font-weight:600; color:var(--cyan);">
             - Jaden, Paramedic Student & Creator
@@ -1260,11 +1225,12 @@
           </details>
 
           <details>
-            <summary>4. Experience mind-blowing scenarios (Premium)</summary>
+            <summary>4. Practice with realistic scenarios (Premium)</summary>
             <div class="faq-content">
-              This is where ProtoQuiz gets insane. Work through hyper-realistic patient encounters that adapt in real-time to your treatment decisions.
-              Every scenario follows YOUR exact algorithms and standing orders. It's like being on a real call - patients deteriorate,
-              respond to treatments, throw curveballs. Users say it's the most realistic training they've ever had outside of actual calls.
+              Work through patient encounters that adapt to your treatment decisions.
+              Every scenario follows YOUR exact algorithms and standing orders. Patients deteriorate,
+              respond to treatments, and present complications just like real calls. The scenarios adjust
+              based on what you do, making each one a unique learning experience.
             </div>
           </details>
 
@@ -1532,6 +1498,34 @@
         window.location.href = 'https://apps.apple.com/us/app/ems-protocol-quiz-scenarios/id6753611139';
       });
     }
+
+    // Future: Connect to Firebase to get real-time metrics
+    // For now, these are placeholder values that can be updated
+    // Example implementation:
+    /*
+    async function fetchLiveMetrics() {
+      try {
+        // This would connect to your Firebase backend
+        const response = await fetch('https://api.protoquiz.com/metrics');
+        const data = await response.json();
+
+        // Update user count
+        if (data.userCount) {
+          document.getElementById('userCount').textContent = data.userCount + '+';
+        }
+
+        // Update protocol count
+        if (data.protocolCount) {
+          document.getElementById('protocolCount').textContent = data.protocolCount + '+';
+        }
+      } catch (error) {
+        console.log('Could not load live metrics');
+      }
+    }
+
+    // Call on page load
+    fetchLiveMetrics();
+    */
   </script>
 </body>
 </html>
