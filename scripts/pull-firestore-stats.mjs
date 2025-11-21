@@ -109,7 +109,7 @@ async function getMonthlyEvents() {
 
       if (category === 'protocol' && (action === 'upload_completed' || action === 'extraction_completed')) {
         protocolsUploaded++;
-      } else if (category === 'quiz' && (action === 'generated' || action === 'completed')) {
+      } else if (category === 'quiz' && (action === 'quiz_completed' || action === 'quiz_started')) {
         quizzesGenerated++;
       } else if (category === 'scenario' && (action === 'generation_completed' || action === 'completed')) {
         scenariosCompleted++;
