@@ -131,7 +131,6 @@ jobs:
           base: main
           labels: blog, auto-generated
           assignees: jadenschwartz22-ops
-          team-reviewers: jadenschwartz22-ops
           delete-branch: true
 
       - name: Cleanup
