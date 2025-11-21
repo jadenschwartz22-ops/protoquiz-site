@@ -67,6 +67,14 @@ jobs:
           echo "filename=$FILENAME" >> $GITHUB_OUTPUT
           echo "topic=$TOPIC" >> $GITHUB_OUTPUT
 
+          # Read stats for PR body
+          if [ -f tmp/firestore-stats.json ]; then
+            STATS=$(cat tmp/firestore-stats.json | jq -c '.')
+            echo "stats=$STATS" >> $GITHUB_OUTPUT
+          else
+            echo "stats={}" >> $GITHUB_OUTPUT
+          fi
+
           echo "✅ Post generated: $TITLE"
 
       - name: Generate RSS feed
@@ -109,7 +117,7 @@ jobs:
             Stats pulled at: ${{ github.event.repository.updated_at }}
 
             ```json
-            $(cat tmp/firestore-stats.json | jq '.' || echo "Stats not available")
+            ${{ steps.generate.outputs.stats }}
             ```
 
             ---
