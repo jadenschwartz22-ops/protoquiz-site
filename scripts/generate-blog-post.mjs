@@ -123,17 +123,17 @@ Output must be valid JSON:
   let statsContext = '';
   if (stats) {
     statsContext = `
-Current ProtoQuiz Stats (${stats.monthKey}):
+Current ProtoQuiz Stats (All-Time):
+- Total Downloads: ${stats.appStoreDownloads || 'N/A'}
 - Active Users (30d): ${stats.activeUsers || 'N/A'}
-- Total Users: ${stats.totalUsers || 'N/A'}
-- Protocols Uploaded: ${stats.monthly.protocolsUploaded}
-- Quizzes Generated: ${stats.monthly.quizzesGenerated}
-- Scenarios Completed: ${stats.monthly.scenariosCompleted}
-- Algorithm Quizzes: ${stats.monthly.algorithmQuizzes}
+- Protocols Uploaded: ${stats.allTime.protocolsUploaded}
+- Quizzes Generated: ${stats.allTime.quizzesGenerated}+
+- Scenarios Completed: ${stats.allTime.scenariosCompleted}+
+- Algorithm Quizzes: ${stats.allTime.algorithmQuizzes}
 - Upload Success Rate: ${stats.uploadSuccessRate || 'N/A'}%
 ${stats.topProtocols.length > 0 ? `- Top Protocols: ${stats.topProtocols.join(', ')}` : ''}
 
-You may reference these stats if relevant to the topic.`;
+You may reference these stats if relevant to the topic. The "+" indicates estimated numbers.`;
   }
 
   const userPrompt = `Write a blog post about: "${topicInfo.topic}"
@@ -200,14 +200,14 @@ function createStatsCallout(stats) {
 
   return `
 <div class="stats-callout">
-  <h3>📊 By the Numbers (${stats.monthKey})</h3>
-  <p>This month on ProtoQuiz:</p>
+  <h3>📊 By the Numbers</h3>
+  <p>ProtoQuiz community stats:</p>
   <ul>
-    <li><strong>${stats.monthly.protocolsUploaded}</strong> protocols uploaded</li>
-    <li><strong>${stats.monthly.quizzesGenerated}</strong> quizzes generated</li>
-    <li><strong>${stats.monthly.scenariosCompleted}</strong> scenarios completed</li>
-    <li><strong>${stats.monthly.algorithmQuizzes}</strong> algorithm quizzes taken</li>
-    ${stats.uploadSuccessRate ? `<li><strong>${stats.uploadSuccessRate}%</strong> upload success rate</li>` : ''}
+    <li><strong>${stats.appStoreDownloads || 'N/A'}</strong> total downloads</li>
+    <li><strong>${stats.allTime.protocolsUploaded}</strong> protocols uploaded</li>
+    <li><strong>${stats.allTime.quizzesGenerated}+</strong> quizzes generated</li>
+    <li><strong>${stats.allTime.scenariosCompleted}+</strong> scenarios completed</li>
+    <li><strong>${stats.allTime.algorithmQuizzes}</strong> algorithm quizzes taken</li>
   </ul>
   ${stats.topProtocols.length > 0 ? `<p><small>Top uploaded protocols: ${stats.topProtocols.join(', ')}</small></p>` : ''}
 </div>`;

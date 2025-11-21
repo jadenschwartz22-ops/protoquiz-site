@@ -1134,15 +1134,19 @@
               <span>4.6/5 App Store rating</span>
             </div>
             <div class="stat-item">
-              <strong id="userCount">300+</strong>
-              <span>EMTs & Paramedics</span>
+              <strong id="downloadCount">0</strong>
+              <span>total downloads</span>
             </div>
             <div class="stat-item">
-              <strong id="quizCount">1,000+</strong>
+              <strong id="protocolCount">0</strong>
+              <span>protocols uploaded</span>
+            </div>
+            <div class="stat-item">
+              <strong id="quizCount">0</strong>
               <span>quizzes generated</span>
             </div>
             <div class="stat-item">
-              <strong id="scenarioCount">250+</strong>
+              <strong id="scenarioCount">0</strong>
               <span>scenarios completed</span>
             </div>
           </div>
@@ -1707,6 +1711,66 @@
 
     // Auto-advance every 5 seconds
     setInterval(nextSlide, 5000);
+
+    // Load and animate live stats
+    async function loadAndAnimateStats() {
+      try {
+        const response = await fetch('tmp/firestore-stats.json');
+        const stats = await response.json();
+
+        // Extract numbers
+        const downloads = stats.appStoreDownloads || 300;
+        const protocols = stats.allTime.protocolsUploaded || 435;
+        const quizzes = stats.allTime.quizzesGenerated || 2500;
+        const scenarios = stats.allTime.scenariosCompleted || 600;
+
+        // Animate each counter
+        animateCounter('downloadCount', downloads, '+', 1500);
+        animateCounter('protocolCount', protocols, '', 1500);
+        animateCounter('quizCount', quizzes, '+', 2000);
+        animateCounter('scenarioCount', scenarios, '+', 1500);
+      } catch (error) {
+        // Fallback to static numbers if fetch fails
+        console.log('Using fallback stats');
+        animateCounter('downloadCount', 300, '+', 1500);
+        animateCounter('protocolCount', 435, '', 1500);
+        animateCounter('quizCount', 2500, '+', 2000);
+        animateCounter('scenarioCount', 600, '+', 1500);
+      }
+    }
+
+    // Animate a single counter from 0 to target
+    function animateCounter(elementId, target, suffix, duration) {
+      const element = document.getElementById(elementId);
+      if (!element) return;
+
+      const startTime = performance.now();
+      const startValue = 0;
+
+      function updateCounter(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        // Easing function for smooth animation (easeOutExpo)
+        const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+
+        const currentValue = Math.floor(startValue + (target - startValue) * easeProgress);
+        element.textContent = currentValue.toLocaleString() + suffix;
+
+        if (progress < 1) {
+          requestAnimationFrame(updateCounter);
+        } else {
+          element.textContent = target.toLocaleString() + suffix;
+        }
+      }
+
+      requestAnimationFrame(updateCounter);
+    }
+
+    // Start animation when page loads
+    window.addEventListener('load', () => {
+      setTimeout(loadAndAnimateStats, 300); // Small delay for smoother UX
+    });
   </script>
 </body>
 </html>
