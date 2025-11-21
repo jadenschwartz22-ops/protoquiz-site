@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog - EMS ProtoQuiz | EMS Education & Study Tips</title>
+  <meta name="description" content="Study strategies, app updates, and success stories from EMS providers using ProtoQuiz. Learn better, study smarter." />
+
+  <!-- SEO -->
+  <link rel="canonical" href="https://protoquiz.com/blog/">
+  <meta name="robots" content="index,follow" />
+
+  <!-- Keywords -->
+  <meta name="keywords" content="EMS study tips, paramedic study strategies, NREMT prep, EMS education, protocol training, ProtoQuiz blog" />
+
+  <!-- Social -->
+  <meta property="og:title" content="ProtoQuiz Blog — EMS Education & Study Tips" />
+  <meta property="og:description" content="Study strategies, app updates, and success stories from EMS providers." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://protoquiz.com/blog/" />
+  <meta property="og:image" content="https://protoquiz.com/logo-256.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ProtoQuiz Blog — EMS Education & Study Tips" />
+  <meta name="twitter:description" content="Study strategies, app updates, and success stories from EMS providers." />
+  <meta name="twitter:image" content="https://protoquiz.com/logo-256.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+
+  <!-- Google tag (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LNSS9BMEP8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-LNSS9BMEP8');
+
+    function track(name, props){
+      try { gtag('event', name, props || {}); } catch(e){}
+    }
+    const PAGE = 'blog';
+  </script>
+
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="_shared-styles.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <header>
+    <div class="wrap">
+      <nav class="navbar">
+        <a href="../" class="brand-link">
+          <img src="../logo-48.png" alt="ProtoQuiz Logo" width="48" height="48">
+          <span>ProtoQuiz</span>
+        </a>
+        <div class="nav-links">
+          <a href="../" class="nav-btn">Home</a>
+          <a href="./" class="nav-btn">Blog</a>
+          <a href="https://apps.apple.com/app/id6753611139" class="nav-btn primary" onclick="track('download_app', {source: 'blog_nav'})">
+            Download App
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="wrap">
+      <!-- Blog Header -->
+      <div class="blog-header">
+        <h1>ProtoQuiz Blog</h1>
+        <p>Study strategies, app updates, and success stories from EMS providers</p>
+      </div>
+
+      <!-- Filters -->
+      <div class="filters">
+        <button class="filter-btn active" data-category="all">All Posts</button>
+        <button class="filter-btn" data-category="study">Study Tips</button>
+        <button class="filter-btn" data-category="updates">App Updates</button>
+        <button class="filter-btn" data-category="stories">User Stories</button>
+      </div>
+
+      <!-- Posts Grid -->
+      <div class="posts-grid" id="postsGrid">
+        <!-- Posts will be dynamically inserted here -->
+        <div class="post-card" data-category="updates">
+          <div class="post-meta">
+            <span class="post-category updates">App Updates</span>
+            <time datetime="2025-01-15">January 15, 2025</time>
+          </div>
+          <h2>Coming Soon: Your First Post!</h2>
+          <p class="post-excerpt">
+            We're building something special here. Bi-weekly posts about EMS study strategies,
+            app features, and real success stories from providers like you.
+          </p>
+          <span class="read-more">Read more</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="../">Home</a>
+          <a href="../privacy/">Privacy</a>
+          <a href="../terms/">Terms</a>
+          <a href="https://apps.apple.com/app/id6753611139">Download</a>
+        </div>
+        <p class="footer-copy">© 2025 Teach Me to Live LLC. Built by a Paramedic, for EMS.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Filter functionality
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const posts = document.querySelectorAll('.post-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Update active state
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const category = btn.dataset.category;
+
+        // Filter posts
+        posts.forEach(post => {
+          if (category === 'all' || post.dataset.category === category) {
+            post.style.display = 'block';
+          } else {
+            post.style.display = 'none';
+          }
+        });
+
+        // Track filter usage
+        track('blog_filter', { category });
+      });
+    });
+
+    // Track post clicks
+    posts.forEach(post => {
+      post.addEventListener('click', () => {
+        const title = post.querySelector('h2').textContent;
+        track('blog_post_click', { title });
+      });
+    });
+  </script>
+</body>
+</html>

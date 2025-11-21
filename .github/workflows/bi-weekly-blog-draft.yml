@@ -1,0 +1,142 @@
+name: Bi-Weekly Blog Post Draft
+
+on:
+  schedule:
+    # Every other Monday at 9:00 AM Mountain Time (16:00 UTC)
+    # Runs on odd week numbers (1, 3, 5, etc.)
+    - cron: "0 16 * * 1"
+  workflow_dispatch:
+    inputs:
+      force_generate:
+        description: 'Force generation (ignore bi-weekly schedule)'
+        required: false
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  generate-blog-post:
+    runs-on: ubuntu-latest
+    env:
+      TZ: America/Denver
+      GOOGLE_AI_API_KEY: ${{ secrets.GOOGLE_AI_API_KEY }}
+      GOOGLE_APPLICATION_CREDENTIALS: /tmp/firebase-key.json
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Decode Firebase credentials
+        run: |
+          echo "${{ secrets.FIREBASE_SERVICE_ACCOUNT_KEY }}" | base64 -d > /tmp/firebase-key.json
+          echo "✅ Firebase credentials decoded"
+
+      - name: Pull Firestore stats
+        id: stats
+        run: |
+          echo "📊 Fetching Firestore stats..."
+          node scripts/pull-firestore-stats.mjs
+          echo "✅ Stats pulled successfully"
+        continue-on-error: true
+
+      - name: Generate blog post
+        id: generate
+        run: |
+          echo "🚀 Generating blog post..."
+          node scripts/generate-blog-post.mjs
+
+          # Read metadata
+          TITLE=$(jq -r '.title' tmp/post-metadata.json)
+          FILENAME=$(jq -r '.filename' tmp/post-metadata.json)
+          TOPIC=$(jq -r '.topic' tmp/post-metadata.json)
+
+          echo "title=$TITLE" >> $GITHUB_OUTPUT
+          echo "filename=$FILENAME" >> $GITHUB_OUTPUT
+          echo "topic=$TOPIC" >> $GITHUB_OUTPUT
+
+          echo "✅ Post generated: $TITLE"
+
+      - name: Generate RSS feed
+        run: |
+          echo "📡 Generating RSS feed..."
+          node scripts/generate-rss-feed.mjs
+          echo "✅ RSS feed updated"
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "blog: Add ${{ steps.generate.outputs.filename }}"
+          title: "📝 Blog Draft: ${{ steps.generate.outputs.title }}"
+          body: |
+            ## 🤖 Auto-Generated Blog Post
+
+            **Topic:** ${{ steps.generate.outputs.topic }}
+            **Title:** ${{ steps.generate.outputs.title }}
+            **File:** `blog/posts/${{ steps.generate.outputs.filename }}`
+
+            ---
+
+            ### ✅ Review Checklist
+
+            Please review the following before merging:
+
+            - [ ] **Factual Accuracy** - Verify all medical/EMS information is correct
+            - [ ] **Firestore Stats** - Confirm stats are accurate and anonymized
+            - [ ] **Tone & Voice** - Matches ProtoQuiz style (direct, practical, encouraging)
+            - [ ] **Links** - All links work correctly (App Store, internal links)
+            - [ ] **SEO** - Title and excerpt are optimized
+            - [ ] **Mobile** - Test responsiveness on mobile device
+            - [ ] **Giscus Comments** - Will be enabled after first setup
+
+            ---
+
+            ### 📊 Firestore Stats Snapshot
+
+            Stats pulled at: ${{ github.event.repository.updated_at }}
+
+            ```json
+            $(cat tmp/firestore-stats.json | jq '.' || echo "Stats not available")
+            ```
+
+            ---
+
+            ### 📝 Notes
+
+            - **Merge within 7 days** for stats accuracy
+            - **Edit directly in PR** if changes needed
+            - **Auto-deploys** to protoquiz.com/blog on merge
+
+            ---
+
+            ### 🔗 Preview
+
+            After merging, post will be live at:
+            `https://protoquiz.com/blog/posts/${{ steps.generate.outputs.filename }}`
+
+          branch: blog-draft-${{ github.run_number }}
+          base: main
+          labels: blog, auto-generated
+          assignees: jadenschwartz22-ops
+          team-reviewers: jadenschwartz22-ops
+          delete-branch: true
+
+      - name: Cleanup
+        if: always()
+        run: |
+          rm -f /tmp/firebase-key.json
+          echo "✅ Cleanup complete"

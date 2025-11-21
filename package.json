@@ -1,0 +1,26 @@
+{
+  "name": "protoquiz-site",
+  "version": "1.0.0",
+  "description": "ProtoQuiz website and blog",
+  "type": "module",
+  "scripts": {
+    "blog:generate": "node scripts/generate-blog-post.mjs",
+    "blog:stats": "node scripts/pull-firestore-stats.mjs",
+    "blog:rss": "node scripts/generate-rss-feed.mjs",
+    "blog:full": "npm run blog:stats && npm run blog:generate && npm run blog:rss"
+  },
+  "keywords": [
+    "EMS",
+    "paramedic",
+    "protocols",
+    "education"
+  ],
+  "author": "Jaden Schwartz",
+  "license": "ISC",
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "firebase-admin": "^13.6.0",
+    "glob": "^10.3.10",
+    "yaml": "^2.4.5"
+  }
+}
