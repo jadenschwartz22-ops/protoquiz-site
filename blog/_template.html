@@ -73,6 +73,20 @@
     }
     const PAGE = 'blog_post';
     track('blog_post_view', { title: '{{TITLE}}' });
+
+    // Track view in Firestore
+    (async () => {
+      try {
+        const slug = window.location.pathname.split('/').pop().replace('.html', '');
+        await fetch('https://ems-router.vercel.app/api/blog-views', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ slug })
+        });
+      } catch (e) {
+        console.log('View tracking failed:', e);
+      }
+    })();
   </script>
 
   <!-- Inter Font -->
