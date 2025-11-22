@@ -1,38 +1,34 @@
-# Email Newsletter Setup (Buttondown.email)
+# Email Newsletter Setup (Follow.it)
 
 ## Quick Setup (5 minutes)
 
-### Step 1: Create Buttondown Account
-1. Go to: https://buttondown.email
-2. Sign up (free for 100 subscribers)
-3. Choose newsletter name: **protoquiz**
+### Step 1: Create Follow.it Account
+1. Go to: https://follow.it
+2. Sign up (100% free, unlimited subscribers)
+3. Click "Set up your feed" under Publishers
 
-### Step 2: Configure RSS-to-Email
-1. In Buttondown dashboard → Settings
-2. Click "RSS Feed"
-3. Enter: `https://protoquiz.com/blog/feed.xml`
-4. Enable "Automatically send emails when RSS updates"
-5. Set schedule: "Immediately" or "Daily digest at 9am"
+### Step 2: Add RSS Feed
+1. Enter RSS feed URL: `https://protoquiz.com/blog/feed.xml`
+2. Click "Go" to add the feed
+3. Follow.it will automatically detect new posts and email subscribers
 
-### Step 3: Customize Email Template (Optional)
-1. Go to Settings → Email Design
-2. Add header image: `https://protoquiz.com/logo-256.png`
-3. Customize footer text
-4. Preview and save
+### Step 3: Customize Form (Optional)
+1. Go to "Define the follow form's design"
+2. Customize colors, fonts, and button style
+3. Preview changes
+4. Copy the embed code when done
 
-### Step 4: Test
-1. In Buttondown, add your own email as a test subscriber
-2. Manually trigger "Send draft" to test
-3. Check that email looks good
-
-### Step 5: Verify Form is Working
-The signup form is already added to:
+### Step 4: The Form is Already Integrated
+The Follow.it subscription form has been added to:
 - `blog/index.html` (footer)
-- `blog/_template.html` (post footer)
+- `blog/_template.html` (post footer - used for new posts)
+- All existing blog posts
 
-Form URL: `https://buttondown.email/api/emails/embed-subscribe/protoquiz`
-
-Test by entering your email and clicking Subscribe.
+### Step 5: Test
+1. Visit https://protoquiz.com/blog
+2. Scroll to the newsletter section
+3. Enter your email and click Subscribe
+4. Check your inbox for confirmation email
 
 ---
 
@@ -45,7 +41,7 @@ Post goes live at protoquiz.com/blog
    ↓
 RSS feed updates (blog/feed.xml)
    ↓
-Buttondown detects RSS update
+Follow.it detects RSS update
    ↓
 Email sent to all subscribers
 ```
@@ -54,7 +50,7 @@ Email sent to all subscribers
 
 ## Email Content
 
-Buttondown will automatically:
+Follow.it will automatically:
 - Use your post title as email subject
 - Include post excerpt
 - Add "Read more" link to full post
@@ -62,16 +58,13 @@ Buttondown will automatically:
 
 ---
 
-## Free Tier Limits
+## Free Tier - 100% Free Forever
 
-- **100 subscribers** (free)
+- **Unlimited subscribers** (completely free!)
 - Unlimited emails
 - RSS-to-email automation included
-- No branding (clean emails)
-
-**Upgrade if needed:**
-- $9/month for 1,000 subscribers
-- $29/month for 5,000 subscribers
+- No hidden costs
+- No credit card required
 
 ---
 
@@ -86,35 +79,35 @@ If you don't want to manage email:
 
 ## Privacy Note
 
-Buttondown is privacy-focused:
-- No tracking pixels
-- No third-party analytics
+Follow.it is privacy-focused:
 - GDPR compliant
-- Clean, simple emails
+- Simple, clean emails
+- Easy unsubscribe process
+- Subscriber data protected
 
 Add to your Privacy Policy:
-> Email newsletter subscribers' addresses are stored with Buttondown.email, our newsletter provider. We do not share subscriber emails with third parties. You can unsubscribe at any time.
+> Email newsletter subscribers' addresses are stored with Follow.it, our newsletter provider. We do not share subscriber emails with third parties. You can unsubscribe at any time.
 
 ---
 
 ## Stats & Analytics
 
-Buttondown provides:
-- Open rates
-- Click rates  
-- Subscriber growth
-- Most popular posts
+Follow.it provides:
+- Subscriber count
+- Email performance metrics
+- RSS feed monitoring
+- Subscription trends
 
-View in Buttondown dashboard.
+View in Follow.it dashboard.
 
 ---
 
 ## Manual Email (Optional)
 
 Want to send a one-off email?
-1. Go to Buttondown dashboard
-2. Click "New Email"
-3. Write content (Markdown supported)
+1. Go to Follow.it dashboard
+2. Look for "Compose" or "New Email" option
+3. Write content
 4. Send to all subscribers
 
 Use for:
@@ -127,19 +120,20 @@ Use for:
 ## Troubleshooting
 
 **Form not working:**
-- Check that Buttondown account is active
-- Verify newsletter name is "protoquiz"
+- Check that Follow.it account is active
+- Verify RSS feed is properly connected
 - Check browser console for errors
 
 **Emails not sending:**
-- Verify RSS feed URL is correct in Buttondown
-- Check that RSS-to-email automation is enabled
-- Manually trigger a test send
+- Verify RSS feed URL is correct in Follow.it: `https://protoquiz.com/blog/feed.xml`
+- Check that RSS feed is being monitored
+- Wait for Follow.it to detect new posts (may take a few hours)
 
 **Subscribers not receiving:**
 - Check spam folders
-- Verify Buttondown account is not paused
+- Verify Follow.it account is active
 - Check subscriber status in dashboard
+- Ensure RSS feed has updated content
 
 ---
 
