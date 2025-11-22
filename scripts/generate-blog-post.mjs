@@ -6,6 +6,7 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import fs from 'fs/promises';
 import yaml from 'yaml';
+import chalk from 'chalk';
 
 // Initialize Gemini
 const GOOGLE_AI_API_KEY = process.env.GOOGLE_AI_API_KEY;
@@ -40,22 +41,98 @@ function getWeekNumber() {
 }
 
 /**
- * Select topic from rotation
+ * Load recent topic history
+ */
+async function loadRecentTopics() {
+  try {
+    const historyPath = 'tmp/recent-topics.json';
+    const historyData = await fs.readFile(historyPath, 'utf8');
+    return JSON.parse(historyData);
+  } catch (error) {
+    // File doesn't exist yet, return empty array
+    return [];
+  }
+}
+
+/**
+ * Save topic to history
+ */
+async function saveTopicToHistory(topic) {
+  try {
+    await fs.mkdir('tmp', { recursive: true });
+    const historyPath = 'tmp/recent-topics.json';
+
+    // Load existing history
+    let recentTopics = await loadRecentTopics();
+
+    // Add new topic with timestamp
+    recentTopics.push({
+      topic,
+      generatedAt: new Date().toISOString()
+    });
+
+    // Keep only last 10 topics
+    recentTopics = recentTopics.slice(-10);
+
+    await fs.writeFile(historyPath, JSON.stringify(recentTopics, null, 2));
+  } catch (error) {
+    console.warn('⚠️  Could not save topic history:', error.message);
+  }
+}
+
+/**
+ * Select topic from rotation (with anti-repetition logic)
  */
 async function selectTopic() {
   const topicsYaml = await fs.readFile('scripts/editorial/topics.yaml', 'utf8');
   const { buckets } = yaml.parse(topicsYaml);
 
+  // Load recent topic history
+  const recentTopics = await loadRecentTopics();
+  const recentTopicNames = recentTopics.map(t => t.topic);
+
   // Bi-weekly rotation (divide by 2)
   const biWeeklyIndex = Math.floor(getWeekNumber() / 2);
 
-  const bucket = buckets[biWeeklyIndex % buckets.length];
-  const topicIndex = Math.floor(biWeeklyIndex / buckets.length) % bucket.topics.length;
-  const topic = bucket.topics[topicIndex];
+  let bucket = buckets[biWeeklyIndex % buckets.length];
+  let topicIndex = Math.floor(biWeeklyIndex / buckets.length) % bucket.topics.length;
+  let topic = bucket.topics[topicIndex];
+
+  // If this topic was used recently, try next available topic
+  let attempts = 0;
+  const maxAttempts = 20; // Try up to 20 different topics
+
+  while (recentTopicNames.includes(topic) && attempts < maxAttempts) {
+    attempts++;
+    topicIndex = (topicIndex + 1) % bucket.topics.length;
+
+    // If we've exhausted this bucket, try next bucket
+    if (topicIndex === 0) {
+      const nextBucketIndex = (buckets.indexOf(bucket) + 1) % buckets.length;
+      bucket = buckets[nextBucketIndex];
+    }
+
+    topic = bucket.topics[topicIndex];
+  }
+
+  if (recentTopicNames.includes(topic)) {
+    console.log(chalk.yellow(`⚠️  Warning: Topic "${topic}" was used recently, but no unused topics available`));
+  } else if (attempts > 0) {
+    console.log(chalk.cyan(`✨ Skipped ${attempts} recently-used topic(s), selected fresh topic\n`));
+  }
 
   console.log(`📝 Selected topic: "${topic}"`);
   console.log(`   Category: ${bucket.category}`);
-  console.log(`   Bucket: ${bucket.name}\n`);
+  console.log(`   Bucket: ${bucket.name}`);
+
+  if (recentTopics.length > 0) {
+    console.log(`   Recent topics: ${recentTopicNames.slice(-3).join(', ')}\n`);
+  } else {
+    console.log();
+  }
+
+  // Save this topic to history
+  await saveTopicToHistory(topic);
 
   return {
     topic,
@@ -94,23 +171,29 @@ async function loadGuidelines() {
 async function generateContent(topicInfo, stats, guidelines) {
   const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash-exp' });
 
-  const systemPrompt = `You are a blog writer for EMS ProtoQuiz. Your audience is EMTs, Paramedics, and EMS students.
+  const systemPrompt = `You are a blog writer for EMS ProtoQuiz. Your audience is working EMTs, Paramedics, and EMS students.
 
 Voice: Direct, practical, encouraging. Built by a Paramedic student, for EMS providers.
+
+Focus: Life as an EMS provider - staying sharp on protocols, managing shift work, continuous learning, professional development, using technology to maintain skills, balancing the demands of the job.
 
 Editorial Guidelines:
 ${guidelines}
 
-IMPORTANT RULES:
-- Write 600-900 words for study posts, 400-600 for updates, 500-700 for stories
+Write about being a good EMT/Paramedic and navigating EMS life. Focus on staying sharp, professional growth, protocol mastery, shift work challenges, app features that help providers.
+
+Word Count:
+- Study/Professional Development: 600-900 words
+- App Features: 400-600 words
+- Provider Stories: 500-700 words
+
+Requirements:
 - Use active voice and second person ("you")
-- Start with a strong hook (1-2 sentences)
-- Include 3-5 H2 sections with clear subheadings
-- Provide actionable takeaways (3-5 specific steps)
-- Include real-world EMS examples
-- NO medical advice - educational only
-- Cite sources for medical/educational claims
-- Use stats from ProtoQuiz when relevant and available
+- Start with a hook about EMS life/work
+- Include 3-5 H2 sections
+- Provide actionable takeaways for working providers
+- NO medical advice - educational/professional development only
+- Use stats from ProtoQuiz when relevant
 
 Output must be valid JSON:
 {
@@ -140,21 +223,22 @@ You may reference these stats if relevant to the topic. The "+" indicates estima
 
 Category: ${topicInfo.category}
 Bucket: ${topicInfo.bucketName}
-SEO Keywords to include naturally: ${topicInfo.keywords}
+SEO Keywords: ${topicInfo.keywords}
 ${statsContext}
 
-Structure:
-1. Hook (1-2 sentences that grab attention)
-2. Context (why this matters for EMS providers)
-3. Main content (3-5 H2 sections with practical advice)
-4. Action steps (3-5 specific things readers can do)
+Focus on life as an EMS provider - how to stay sharp on protocols, manage shift work, keep learning, use technology to maintain skills, professional growth. Make it relevant to working EMTs/Paramedics, not generic school study tips.
 
-Remember:
-- Write for busy EMS providers (be concise)
-- Use real examples from the field
-- Make it actionable and practical
-- Include stats in a callout box if relevant
-- NO medical advice, educational only
+Structure:
+1. Hook about EMS life/work
+2. Why this matters for providers
+3. Main content (3-5 H2 sections)
+4. Action steps
+
+Make it:
+- Practical for working providers and students
+- Include real examples from the field/shifts
+- Use stats if relevant
+- Educational/professional development only
 
 Return ONLY the JSON object, no other text.`;
 

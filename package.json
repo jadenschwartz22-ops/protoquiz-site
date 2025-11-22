@@ -19,6 +19,7 @@
   "license": "ISC",
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
+    "chalk": "^5.6.2",
     "firebase-admin": "^13.6.0",
     "glob": "^10.3.10",
     "jsonwebtoken": "^9.0.2",

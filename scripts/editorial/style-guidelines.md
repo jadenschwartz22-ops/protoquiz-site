@@ -28,7 +28,7 @@
 ### Standard Format
 1. **Hook** (1-2 sentences)
    - Grab attention with a scenario, stat, or question
-   - Example: "You're on minute 8 of a code blue. What's your next dose of epi? If you hesitated, you're not alone."
+   - Example: "Between back-to-back calls and station duties, when's the last time you actually reviewed your protocols? If you're relying on muscle memory from six months ago, it's time to sharpen up."
 
 2. **Context** (1 paragraph)
    - Why this topic matters for EMS providers
