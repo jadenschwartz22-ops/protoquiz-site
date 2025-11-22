@@ -15,9 +15,9 @@
 
 window.giscusConfig = {
   repo: 'jadenschwartz22-ops/protoquiz-site',
-  repoId: 'REPLACE_WITH_REPO_ID', // Get from https://giscus.app
+  repoId: 'R_kgDOP_OVLw',
   category: 'Blog Comments',
-  categoryId: 'REPLACE_WITH_CATEGORY_ID', // Get from https://giscus.app
+  categoryId: 'DIC_kwDOP_OVL84CyFhj',
   mapping: 'pathname',
   strict: '0',
   reactionsEnabled: '1',
