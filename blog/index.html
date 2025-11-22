@@ -43,6 +43,19 @@
       try { gtag('event', name, props || {}); } catch(e){}
     }
     const PAGE = 'blog';
+
+    // Track blog index view
+    (async () => {
+      try {
+        await fetch('https://ems-router.vercel.app/api/blog-views', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ slug: 'blog-index' })
+        });
+      } catch (e) {
+        console.log('View tracking failed:', e);
+      }
+    })();
   </script>
 
   <!-- Inter Font -->
