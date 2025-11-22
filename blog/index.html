@@ -103,6 +103,13 @@
           <span class="read-more">Read more</span>
         </div>
       </div>
+
+      <!-- Empty State -->
+      <div id="emptyState" style="display: none; text-align: center; padding: 60px 20px; color: var(--muted);">
+        <div style="font-size: 48px; margin-bottom: 16px;">📝</div>
+        <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; color: var(--ink);">Coming Soon</h3>
+        <p>We're working on new posts for this category. Check back soon!</p>
+      </div>
     </div>
   </main>
 
@@ -168,6 +175,8 @@
     // Filter functionality
     const filterBtns = document.querySelectorAll('.filter-btn');
     const posts = document.querySelectorAll('.post-card');
+    const emptyState = document.getElementById('emptyState');
+    const postsGrid = document.getElementById('postsGrid');
 
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
@@ -176,15 +185,26 @@
         btn.classList.add('active');
 
         const category = btn.dataset.category;
+        let visibleCount = 0;
 
         // Filter posts
         posts.forEach(post => {
           if (category === 'all' || post.dataset.category === category) {
             post.style.display = 'block';
+            visibleCount++;
           } else {
             post.style.display = 'none';
           }
         });
+
+        // Show/hide empty state
+        if (visibleCount === 0) {
+          postsGrid.style.display = 'none';
+          emptyState.style.display = 'block';
+        } else {
+          postsGrid.style.display = 'grid';
+          emptyState.style.display = 'none';
+        }
 
         // Track filter usage
         track('blog_filter', { category });
