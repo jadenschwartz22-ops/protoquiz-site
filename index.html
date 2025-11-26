@@ -1724,12 +1724,69 @@
       observer.observe(el);
     });
 
+    // Capture and preserve UTM parameters from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const utmParams = {};
+    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(param => {
+      if (urlParams.has(param)) {
+        utmParams[param] = urlParams.get(param);
+      }
+    });
+
+    // Store UTM params for the session
+    if (Object.keys(utmParams).length > 0) {
+      sessionStorage.setItem('utmParams', JSON.stringify(utmParams));
+    }
+
+    // Get stored UTM params (either from this page load or previous in session)
+    const storedUtmParams = sessionStorage.getItem('utmParams');
+    const activeUtmParams = storedUtmParams ? JSON.parse(storedUtmParams) : {};
+
+    // Update all App Store links with UTM parameters
+    function updateAppStoreLinks() {
+      const appStoreLinks = document.querySelectorAll('a[href*="apps.apple.com"]');
+      appStoreLinks.forEach(link => {
+        const url = new URL(link.href);
+
+        // Add/override UTM params from traffic source
+        Object.keys(activeUtmParams).forEach(key => {
+          url.searchParams.set(key, activeUtmParams[key]);
+        });
+
+        // Keep the original location param if it exists (hero, pricing, etc)
+        if (!url.searchParams.has('utm_content')) {
+          const originalUrl = new URL(link.getAttribute('href'));
+          const location = originalUrl.searchParams.get('utm_medium');
+          if (location) {
+            url.searchParams.set('utm_content', location);
+          }
+        }
+
+        link.href = url.toString();
+      });
+    }
+
+    // Update links on page load
+    updateAppStoreLinks();
+
     // Track events
     document.addEventListener('click', (e) => {
       const trackEl = e.target.closest('[data-track]');
       if (trackEl) {
         const eventName = trackEl.dataset.track;
-        track(eventName, {page: PAGE, element: trackEl.textContent?.substring(0, 50)});
+        const props = {
+          page: PAGE,
+          element: trackEl.textContent?.substring(0, 50)
+        };
+
+        // Add UTM source to event properties
+        if (activeUtmParams.utm_source) {
+          props.utm_source = activeUtmParams.utm_source;
+          props.utm_medium = activeUtmParams.utm_medium;
+          props.utm_campaign = activeUtmParams.utm_campaign;
+        }
+
+        track(eventName, props);
       }
     });
 
