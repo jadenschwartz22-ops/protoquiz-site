@@ -156,6 +156,97 @@
     const PAGE = 'home';
   </script>
 
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+
+  // TODO: Replace YOUR_PIXEL_ID with your actual Meta Pixel ID
+  // Get it from: https://business.facebook.com/events_manager
+  const META_PIXEL_ID = 'YOUR_PIXEL_ID'; // ← REPLACE THIS
+
+  if (META_PIXEL_ID !== 'YOUR_PIXEL_ID') {
+    fbq('init', META_PIXEL_ID);
+    fbq('track', 'PageView');
+
+    // Enhanced tracking function that reports to both GA4 and Meta
+    const originalTrack = window.track;
+    window.track = function(name, props) {
+      // Track in GA4 (original behavior)
+      originalTrack(name, props);
+
+      // Track in Meta Pixel
+      if (name === 'AppStoreHero' || name === 'AppStoreClick') {
+        fbq('track', 'Lead', {
+          content_name: 'App Store Button',
+          content_category: props?.location || 'unknown'
+        });
+      } else if (name === 'form_submit' || name === 'ContactSubmit') {
+        fbq('track', 'Contact');
+      } else {
+        fbq('trackCustom', name, props);
+      }
+    };
+  }
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
+
+  <!-- TikTok Pixel Code -->
+  <script>
+  !function (w, d, t) {
+    w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=i+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+
+  // TikTok Pixel ID for ProtoQuiz: EMS
+  const TIKTOK_PIXEL_ID = 'C9S6KRF1139';
+
+  if (TIKTOK_PIXEL_ID !== 'YOUR_TIKTOK_PIXEL_ID') {
+    ttq.load(TIKTOK_PIXEL_ID);
+    ttq.page();
+
+    // Enhanced tracking function that reports to GA4, Meta, and TikTok
+    const originalTrack = window.track;
+    window.track = function(name, props) {
+      // Track in GA4 and Meta (original behavior)
+      if (typeof originalTrack === 'function') {
+        originalTrack(name, props);
+      }
+
+      // Track in TikTok Pixel
+      if (name === 'AppStoreHero' || name === 'AppStoreClick') {
+        ttq.track('ClickButton', {
+          content_type: 'App Store Button',
+          content_name: props?.location || 'unknown'
+        });
+      } else if (name === 'form_submit' || name === 'ContactSubmit') {
+        ttq.track('Contact');
+      } else if (name === 'PricingFree' || name === 'PricingPremium' || name === 'FinalCTA') {
+        ttq.track('ClickButton', {
+          content_type: 'Download Button',
+          content_name: name
+        });
+      } else {
+        // Track custom event
+        ttq.track(name, props);
+      }
+    };
+  }
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://analytics.tiktok.com/i18n/pixel/static.html?sdkid=C9S6KRF1139&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End TikTok Pixel Code -->
+
   <!-- Preload Critical Resources -->
   <link rel="preload" href="logo-256.png" as="image" type="image/png">
   <link rel="preload" href="logo-48.png" as="image" type="image/png">
