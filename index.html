@@ -1897,7 +1897,7 @@
         animateStarBar('reviewStarsBar', starPercentage, 1500);
 
         // Animate each counter (+ for estimates, no + for real tracked data)
-        animateCounter('downloadCount', downloads, '+', 1500);
+        animateCounter('downloadCount', downloads, '', 1500); // Real count (Firebase users + offset)
         animateCounter('protocolCount', protocols, '', 1500); // Real count from protocol_uploads
         animateCounter('quizCount', quizzes, '+', 2000); // Estimate (Math.max)
         animateCounter('scenarioCount', scenarios, '+', 1500); // Estimate (Math.max)
@@ -1907,7 +1907,7 @@
         animateDecimalCounter('appRating', 4.6, 1500);
         animateDecimalCounter('reviewRating', 4.6, 1500);
         animateStarBar('reviewStarsBar', 92, 1500);
-        animateCounter('downloadCount', 300, '+', 1500); // Manual from config
+        animateCounter('downloadCount', 398, '', 1500); // Firebase users + offset
         animateCounter('protocolCount', 548, '', 1500); // Real tracked
         animateCounter('quizCount', 2500, '+', 2000); // Estimate
         animateCounter('scenarioCount', 600, '+', 1500); // Estimate

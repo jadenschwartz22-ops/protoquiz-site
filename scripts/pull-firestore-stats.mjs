@@ -239,15 +239,27 @@ async function getTopProtocols() {
 }
 
 /**
- * Get App Store download count from config
+ * Get App Store download count (Firebase users + offset)
+ * Offset accounts for users who downloaded but haven't opened the app yet
+ * Gap as of Nov 29, 2024: 398 (App Store) - 275 (Firebase) = 123
  */
 async function getAppStoreDownloads() {
   try {
-    const configPath = 'scripts/appstore-config.json';
-    const config = JSON.parse(await fs.readFile(configPath, 'utf8'));
-    return config.appStoreDownloads || null;
+    // Get real Firebase user count
+    const firebaseUsers = await getTotalUsersCount();
+
+    if (!firebaseUsers) {
+      console.warn('⚠️  Could not fetch Firebase users for download count');
+      return null;
+    }
+
+    // Add offset for users who downloaded but haven't opened app
+    // This keeps the number aligned with App Store Connect analytics
+    const DOWNLOAD_OFFSET = 123;
+
+    return firebaseUsers + DOWNLOAD_OFFSET;
   } catch (error) {
-    console.warn('⚠️  Could not read App Store config:', error.message);
+    console.warn('⚠️  Could not calculate App Store downloads:', error.message);
     return null;
   }
 }
