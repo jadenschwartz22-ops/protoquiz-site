@@ -241,7 +241,7 @@ async function getTopProtocols() {
 /**
  * Get App Store download count (Firebase users + offset)
  * Offset accounts for users who downloaded but haven't opened the app yet
- * Gap as of Nov 29, 2024: 398 (App Store) - 275 (Firebase) = 123
+ * Gap as of Nov 29, 2024: 398 (App Store) - 276 (Firebase) = 122
  */
 async function getAppStoreDownloads() {
   try {
@@ -255,7 +255,7 @@ async function getAppStoreDownloads() {
 
     // Add offset for users who downloaded but haven't opened app
     // This keeps the number aligned with App Store Connect analytics
-    const DOWNLOAD_OFFSET = 123;
+    const DOWNLOAD_OFFSET = 122;
 
     return firebaseUsers + DOWNLOAD_OFFSET;
   } catch (error) {
