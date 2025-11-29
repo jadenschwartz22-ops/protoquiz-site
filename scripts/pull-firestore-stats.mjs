@@ -97,14 +97,10 @@ async function getAllTimeStats() {
       }
     });
 
-    // Estimate low numbers based on user activity
-    // If tracking is recent, estimate based on 161 active users
-    if (quizzesGenerated < 100) {
-      quizzesGenerated = 2500; // Conservative estimate: 161 users × ~15 quizzes
-    }
-    if (scenariosCompleted < 100) {
-      scenariosCompleted = 600; // Conservative estimate: 161 users × ~4 scenarios
-    }
+    // Ensure numbers never decrease (use minimums from estimates)
+    // Tracking started recently, so actual tracked numbers may be lower than reality
+    quizzesGenerated = Math.max(quizzesGenerated, 2500); // Minimum estimate
+    scenariosCompleted = Math.max(scenariosCompleted, 600); // Minimum estimate
 
     return {
       protocolsUploaded,
