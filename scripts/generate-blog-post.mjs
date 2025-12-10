@@ -84,6 +84,17 @@ async function saveTopicToHistory(topic) {
  * Select topic from rotation (with anti-repetition logic)
  */
 async function selectTopic() {
+  // Check if force-topic.json exists for manual topic selection
+  try {
+    const forcedTopic = await fs.readFile('tmp/force-topic.json', 'utf8');
+    const topicData = JSON.parse(forcedTopic);
+    console.log(chalk.cyan('📌 Using forced topic from tmp/force-topic.json\n'));
+    await fs.unlink('tmp/force-topic.json'); // Delete after use
+    return topicData;
+  } catch (e) {
+    // No forced topic, continue with normal selection
+  }
+
   const topicsYaml = await fs.readFile('scripts/editorial/topics.yaml', 'utf8');
   const { buckets } = yaml.parse(topicsYaml);
 
