@@ -190,8 +190,22 @@ Core functionality:
 - Users upload their local protocol PDF
 - Extracts medications, algorithms, and procedures
 - Generates quizzes with page citations back to the source PDF
-- Creates AI scenarios based on the specific protocol
+- Creates AI scenarios (realistic patient cases) where you treat according to YOUR protocols
 - Everything references the user's actual protocol, not generic content
+
+The Problem ProtoQuiz Solves:
+- There are tons of NREMT study tools (generic EMS content)
+- But for studying YOUR LOCAL PROTOCOLS, the only options before ProtoQuiz were:
+  1. Making flashcards yourself manually
+  2. Reading through the PDF over and over
+- ProtoQuiz is the FIRST tool that lets you study your specific local protocols with quizzes/scenarios
+
+Current state:
+- Core extraction and quiz features working but not perfect (still improving)
+- Scenarios create realistic patients to test protocol knowledge
+- Working on B2B system for agencies (what's next)
+
+Important: Do NOT mention "AI feedback on protocol compliance" - scenarios don't provide feedback, they test your knowledge
 
 Voice: Technical, data-driven, transparent. Focus on the product and its technical achievements.
 

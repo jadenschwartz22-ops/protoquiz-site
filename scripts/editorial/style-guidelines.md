@@ -23,8 +23,30 @@
 - Competitor comparisons
 
 **ProtoQuiz Baseline:**
-iOS app converting EMS protocol PDFs into quizzes/scenarios.
+iOS app converting EMS protocol PDFs into quizzes/scenarios/algorithm tests.
 Users upload their local protocol PDF and study from that specific document.
+
+**The Problem We Solve:**
+- Tons of NREMT study tools exist (generic EMS content)
+- But for YOUR LOCAL PROTOCOLS, the only options before ProtoQuiz were:
+  1. Making flashcards yourself manually
+  2. Reading through the PDF over and over
+- ProtoQuiz is the FIRST tool that lets you study your specific local protocols with quizzes/scenarios
+
+**Key Features:**
+- Quizzes with page citations to source PDF
+- Scenarios = realistic patient cases where you treat according to YOUR protocols
+- Algorithm quizzes testing protocol knowledge
+- Everything extracted from user's own protocol
+
+**Current State & Future:**
+- Extraction/quiz features work but still improving (not perfect)
+- Scenarios test knowledge by creating realistic patients
+- B2B system for agencies is next major focus
+
+**Do NOT mention:**
+- "AI feedback on protocol compliance" (scenarios don't give feedback)
+- Any feature that doesn't exist yet unless clearly marked as future
 
 ---
 

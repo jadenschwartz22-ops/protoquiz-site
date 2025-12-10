@@ -3,27 +3,27 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Inside ProtoQuiz's Algorithm Quizzes: Powered by YOUR Protocols - EMS ProtoQuiz Blog</title>
-  <meta name="description" content="Learn how ProtoQuiz's algorithm quiz generates questions directly from YOUR uploaded protocols, ensuring relevant and up-to-date learning." />
+  <title>ProtoQuiz's First Month: From Uploads to Algorithm Quizzes - EMS ProtoQuiz Blog</title>
+  <meta name="description" content="A look at ProtoQuiz's first month, the challenges faced, the progress made, and the valuable community feedback that's shaping its future." />
 
   <!-- SEO -->
-  <link rel="canonical" href="https://protoquiz.com/blog/posts/2025-12-10-inside-the-algorithm-quiz-how-we-ground-every-answer-in-your-protocol.html">
+  <link rel="canonical" href="https://protoquiz.com/blog/posts/2025-12-10-protoquizs-first-month-rocky-start-real-progress-and-community-feedback.html">
   <meta name="robots" content="index,follow" />
-  <meta name="keywords" content="ProtoQuiz users, EMS community, user feedback, feature requests" />
+  <meta name="keywords" content="EMS protocols, Paramedic, EMT, study app, quizzes, scenarios, algorithms, protocol mastery, medical education" />
 
   <!-- Social / Open Graph -->
-  <meta property="og:title" content="Inside ProtoQuiz's Algorithm Quizzes: Powered by YOUR Protocols" />
-  <meta property="og:description" content="Learn how ProtoQuiz's algorithm quiz generates questions directly from YOUR uploaded protocols, ensuring relevant and up-to-date learning." />
+  <meta property="og:title" content="ProtoQuiz's First Month: From Uploads to Algorithm Quizzes" />
+  <meta property="og:description" content="A look at ProtoQuiz's first month, the challenges faced, the progress made, and the valuable community feedback that's shaping its future." />
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://protoquiz.com/blog/posts/2025-12-10-inside-the-algorithm-quiz-how-we-ground-every-answer-in-your-protocol.html" />
+  <meta property="og:url" content="https://protoquiz.com/blog/posts/2025-12-10-protoquizs-first-month-rocky-start-real-progress-and-community-feedback.html" />
   <meta property="og:image" content="https://protoquiz.com/logo-256.png" />
   <meta property="article:published_time" content="2025-12-10" />
   <meta property="article:author" content="Jaden" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Inside ProtoQuiz's Algorithm Quizzes: Powered by YOUR Protocols" />
-  <meta name="twitter:description" content="Learn how ProtoQuiz's algorithm quiz generates questions directly from YOUR uploaded protocols, ensuring relevant and up-to-date learning." />
+  <meta name="twitter:title" content="ProtoQuiz's First Month: From Uploads to Algorithm Quizzes" />
+  <meta name="twitter:description" content="A look at ProtoQuiz's first month, the challenges faced, the progress made, and the valuable community feedback that's shaping its future." />
   <meta name="twitter:image" content="https://protoquiz.com/logo-256.png" />
 
   <!-- Favicon -->
@@ -36,8 +36,8 @@
   {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": "Inside ProtoQuiz's Algorithm Quizzes: Powered by YOUR Protocols",
-    "description": "Learn how ProtoQuiz's algorithm quiz generates questions directly from YOUR uploaded protocols, ensuring relevant and up-to-date learning.",
+    "headline": "ProtoQuiz's First Month: From Uploads to Algorithm Quizzes",
+    "description": "A look at ProtoQuiz's first month, the challenges faced, the progress made, and the valuable community feedback that's shaping its future.",
     "author": {
       "@type": "Person",
       "name": "Jaden",
@@ -55,7 +55,7 @@
     "dateModified": "2025-12-10",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://protoquiz.com/blog/posts/2025-12-10-inside-the-algorithm-quiz-how-we-ground-every-answer-in-your-protocol.html"
+      "@id": "https://protoquiz.com/blog/posts/2025-12-10-protoquizs-first-month-rocky-start-real-progress-and-community-feedback.html"
     }
   }
   </script>
@@ -72,7 +72,7 @@
       try { gtag('event', name, props || {}); } catch(e){}
     }
     const PAGE = 'blog_post';
-    track('blog_post_view', { title: 'Inside ProtoQuiz's Algorithm Quizzes: Powered by YOUR Protocols' });
+    track('blog_post_view', { title: 'ProtoQuiz's First Month: From Uploads to Algorithm Quizzes' });
 
     // Track view in Firestore
     (async () => {
@@ -351,8 +351,8 @@
 
         <!-- Post Header -->
         <article class="post-header">
-          <span class="post-category-badge insights">Blog</span>
-          <h1>Inside ProtoQuiz's Algorithm Quizzes: Powered by YOUR Protocols</h1>
+          <span class="post-category-badge development">Blog</span>
+          <h1>ProtoQuiz's First Month: From Uploads to Algorithm Quizzes</h1>
           <div class="post-meta-info">
             <span class="author">By Jaden</span>
             <span>•</span>
@@ -362,57 +362,46 @@
 
         <!-- Post Content -->
         <div class="post-content">
-          <p>Ever wonder how ProtoQuiz crafts those algorithm quiz questions? It's not magic. It's a carefully designed system that pulls directly from <strong>YOUR</strong> uploaded protocols. Think of it as personalized education at your fingertips.</p>
+          <h2>First Month Down: More Than Just an App</h2>
+<p>It's been a wild ride since ProtoQuiz officially launched. Launching an app that aims to revolutionize protocol study is no easy feat, especially when dealing with the complexities of PDF parsing and algorithm extraction. From day one, we've been laser-focused on solving a problem many of you face: effectively learning and retaining <em>your</em> local EMS protocols, not just generic NREMT material.</p>
 
-<p>This isn't just another generic EMS quiz app. ProtoQuiz is the ONLY tool that helps you study YOUR specific local protocols - not NREMT content, not someone else's protocols, but the exact protocols you'll use on shift. Let's dive into how we make that happen.</p>
+<h2>The Technical Hurdles: PDF Parsing and Protocol Interpretation</h2>
+<p>The core of ProtoQuiz is its ability to ingest a PDF protocol and extract meaningful data. This is where things get complex. PDFs are notorious for their inconsistent formatting. One county might use tables, another uses bullet points, and yet another relies on free-flowing text. Our algorithms have to be flexible enough to handle these variations and accurately identify medications, dosages, algorithms, and other key elements.</p>
+<p><strong>Challenge:</strong> Initial uploads had an upload success rate around 50%. Meaning, half the PDFs either failed or didn't have all the information correctly parsed.</p>
+<p><strong>Solution:</strong> We've been iterating rapidly, improving our parsing engine with each new upload. We analyze failed uploads, identify patterns, and refine our algorithms to handle increasingly complex documents. While we are still working to improve, we're confident in saying that our upload success rate is trending up. </p>
+<h2>Quizzes, Scenarios, and Algorithm Mastery</h2>
+<p>Extracting data is only half the battle. ProtoQuiz then uses this information to generate quizzes, create realistic patient scenarios, and build algorithm tests. This goes beyond rote memorization; it forces you to apply your knowledge in dynamic, simulated situations.</p>
+<p>So far, ProtoQuiz users have generated over 2500 quizzes and completed 600+ scenarios. Even more impressive is the completion of 100+ algorithm quizzes. This highlights the demand for a tool that directly tests protocol knowledge.</p>
 
-<h2>The Challenge: Relevant, Up-to-Date Knowledge</h2>
-<p>One of the biggest problems in EMS education is ensuring that study materials are actually relevant to your specific practice. Protocols vary wildly from region to region, and what's standard in one area might be completely wrong in another. Relying on outdated textbooks or generic online quizzes can leave you unprepared and potentially put patients at risk.</p>
+<h2>Community Feedback: Shaping the Future of ProtoQuiz</h2>
+<p>Your feedback has been invaluable. We've been actively listening to your suggestions, bug reports, and feature requests. This input is directly influencing our development roadmap. We are working to address any extraction issues and build out the features you need most.</p>
 
-<p>Our goal was to create a system where every quiz question is grounded in the protocols you use every day. To do this, we knew we needed to build a system that was both smart and flexible.</p>
+<h2>What's Next: B2B and Beyond</h2>
+<p>While individual users are our priority, we are also exploring a B2B system for agencies. Imagine your entire department using ProtoQuiz to maintain protocol proficiency, ensuring consistent patient care across the board. This is a longer-term goal, but it's a vision that's driving us forward.</p>
 
-<h2>How ProtoQuiz Generates Algorithm Quizzes</h2>
-<p>Here's a peek under the hood:</p>
-
-<ul>
-  <li><strong>Protocol Upload and Parsing:</strong> When you upload a protocol, our system doesn't just store the file. It analyzes the text, identifying key concepts like medications, dosages, contraindications, and decision points.</li>
-  <li><strong>Question Generation Logic:</strong> Using natural language processing, ProtoQuiz transforms these concepts into multiple-choice questions. We focus on creating questions that test not just recall, but also critical thinking and application.</li>
-  <li><strong>Answer Validation:</strong> The most important part! Each answer is directly tied back to the original protocol text. This ensures that the correct answer is always aligned with your local guidelines.</li>
-</ul>
-
-<h2>Why This Matters for You</h2>
-<p>So, what does this mean for your study sessions?</p>
-
-<ul>
-  <li><strong>Maximum Relevance:</strong> You're studying questions derived directly from the protocols you'll be using in the field.</li>
-  <li><strong>Up-to-Date Information:</strong> As protocols change, simply upload the updated version, and ProtoQuiz will generate new quizzes reflecting those changes.</li>
-  <li><strong>Targeted Learning:</strong> Focus on the areas where you need the most improvement. ProtoQuiz tracks your performance and adjusts the difficulty of questions accordingly.</li>
-</ul>
+<p>In the immediate future, we're focused on refining our extraction algorithms, expanding our scenario library, and adding even more features based on your feedback. We are also looking to incorporate more real-world feedback into our current extraction tools.</p>
 
 <h2>By the Numbers</h2>
-<p>All-Time on ProtoQuiz:</p>
+
+<p>Here's a look at ProtoQuiz's activity so far:</p>
 <ul>
-  <li><strong>400+</strong> Total Downloads</li>
-  <li><strong>500+</strong> Protocols Uploaded</li>
-  <li><strong>2500+</strong> Quizzes Generated</li>
-  <li><strong>600+</strong> Scenarios Completed</li>
-  <li><strong>100+</strong> Algorithm Quizzes</li>
+  <li><strong>Total Downloads:</strong> 400+</li>
+  <li><strong>Protocols Uploaded:</strong> 500+</li>
+  <li><strong>Quizzes Generated:</strong> 2500+</li>
+  <li><strong>Scenarios Completed:</strong> 600+</li>
+  <li><strong>Algorithm Quizzes:</strong> 100+</li>
 </ul>
 
-<h2>What's Next?</h2>
-<p>We're constantly working to improve the algorithm quiz feature. Future updates will include:</p>
+<p><strong>Note:</strong> We are still working on correctly calculating the upload success rate. We are actively tracking our other metrics, and will be sure to include upload success rate in the next blog post.</p>
 
-<ul>
-  <li><strong>More Question Types:</strong> Expanding beyond multiple-choice to include fill-in-the-blank, true/false, and scenario-based questions.</li>
-  <li><strong>Deeper Protocol Integration:</strong> Improving our system's ability to identify and extract key information from complex protocols.</li>
-</ul>
-
-<h2>Take Action Today</h2>
+<h2>Action Steps</h2>
 <ol>
-  <li><strong>Upload your local protocols to ProtoQuiz.</strong></li>
-  <li><strong>Generate an algorithm quiz and test your knowledge.</strong></li>
-  <li><strong>Tell your colleagues about ProtoQuiz so they can study THEIR local protocols too.</strong></li>
+  <li><strong>Upload your local protocols:</strong> See how ProtoQuiz can transform your study habits.</li>
+  <li><strong>Generate quizzes and scenarios:</strong> Test your knowledge and identify areas for improvement.</li>
+  <li><strong>Join the ProtoQuiz community:</strong> Share your feedback and help shape the future of the app.</li>
 </ol>
+
+<p><a href="https://apps.apple.com/us/app/protoquiz-ems-protocols/id6464193323">Download ProtoQuiz and start mastering your protocols today!</a></p>
         </div>
 
         <!-- Firestore Stats (if applicable) -->
