@@ -4,22 +4,23 @@
 
 **Who We Are:**
 - Built by a Paramedic student, for EMS providers
-- Direct, practical, and evidence-based
-- Encouraging without being patronizing
-- Real-world focus, not academic fluff
+- Data-driven and transparent about our metrics
+- Technical but accessible - explain the why behind features
+- Product-focused, not generic EMS advice
 
 **Voice Attributes:**
-- **Direct** - Get to the point quickly. EMTs and Paramedics don't have time for long introductions.
-- **Practical** - Every post should have actionable takeaways.
-- **Encouraging** - EMS school is hard. Build confidence, not anxiety.
-- **Evidence-based** - Cite sources, app data, or real examples. No guessing.
-- **Humble** - We're learning too. Share challenges openly.
+- **Data-first** - Lead with real numbers and metrics from Firestore
+- **Transparent** - Share successes AND failures openly
+- **Technical** - Explain implementation details and architecture decisions
+- **Direct** - No marketing fluff, just facts about ProtoQuiz
+- **Builder perspective** - Share the journey of building in public
 
 **Avoid:**
-- Medical advice or diagnoses (educational only, not clinical guidance)
-- Overpromising features not yet built
-- Sharing user PII without explicit written consent
-- Guessing medication doses (always cite protocol or reliable source)
+- Generic study tips or EMS advice (focus on the app)
+- Medical advice or protocol recommendations
+- Unsubstantiated claims without data
+- Marketing speak without backing metrics
+- Competitor comparisons
 
 ---
 
