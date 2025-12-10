@@ -63,44 +63,77 @@ async function getActiveUsersCount() {
 }
 
 /**
- * Get all-time stats (with estimates for low tracking numbers)
+ * Get all-time stats from Firestore tracking
  */
 async function getAllTimeStats() {
   try {
-    // Get protocols from protocol_uploads collection (not events - avoids double counting)
-    const uploadsSnapshot = await db.collection('protocol_uploads').get();
-    const realUploads = uploadsSnapshot.docs.filter(doc => {
+    // Get successful protocol uploads from protocol_uploads_success collection
+    const successfulUploadsSnapshot = await db.collection('protocol_uploads_success').get();
+    const realSuccessfulUploads = successfulUploadsSnapshot.docs.filter(doc => {
       const userId = doc.data().userId;
       return !userId || !userId.startsWith(DEV_USER_ID);
     });
-    const protocolsUploaded = realUploads.length;
+    const protocolsUploaded = realSuccessfulUploads.length;
 
-    // Get quizzes from events (recently started tracking)
-    const eventsSnapshot = await db.collection('events').get();
+    // Get all events for counting
+    const currentMonth = getMonthKey();
+    const allEventCollections = [];
+
+    // Get current and recent month events (adjust as needed)
+    for (let monthsAgo = 0; monthsAgo < 12; monthsAgo++) {
+      const date = new Date();
+      date.setMonth(date.getMonth() - monthsAgo);
+      const monthKey = getMonthKey(date);
+      try {
+        const monthEvents = await db.collection('events').doc(monthKey).collection('events').get();
+        allEventCollections.push(monthEvents);
+      } catch (e) {
+        // Month might not exist yet
+      }
+    }
+
     let quizzesGenerated = 0;
     let scenariosCompleted = 0;
     let algorithmQuizzes = 0;
 
-    eventsSnapshot.docs.forEach(doc => {
-      const data = doc.data();
-      const { category, action, userId } = data;
+    // Count events from all months
+    allEventCollections.forEach(snapshot => {
+      snapshot.docs.forEach(doc => {
+        const data = doc.data();
+        const { category, action, userId } = data;
 
-      // Skip dev user events
-      if (userId && userId.startsWith(DEV_USER_ID)) return;
+        // Skip dev user events
+        if (userId && userId.startsWith(DEV_USER_ID)) return;
 
-      if (category === 'quiz' && (action === 'quiz_completed' || action === 'quiz_started')) {
-        quizzesGenerated++;
-      } else if (category === 'scenario' && (action === 'generation_completed' || action === 'completed')) {
-        scenariosCompleted++;
-      } else if (category === 'quiz' && action === 'algorithm_completed') {
-        algorithmQuizzes++;
-      }
+        if (category === 'quiz' && (action === 'quiz_completed' || action === 'quiz_started')) {
+          quizzesGenerated++;
+        } else if (category === 'scenario' && (action === 'scenario_completed' || action === 'generation_completed')) {
+          scenariosCompleted++;
+        } else if (category === 'algorithm_quiz' && (action === 'completed' || action === 'algorithm_completed')) {
+          algorithmQuizzes++;
+        }
+      });
     });
 
-    // Ensure numbers never decrease (use minimums from estimates)
-    // Tracking started recently, so actual tracked numbers may be lower than reality
-    quizzesGenerated = Math.max(quizzesGenerated, 2500); // Minimum estimate
-    scenariosCompleted = Math.max(scenariosCompleted, 600); // Minimum estimate
+    // Also check scenario_generations collection for scenarios
+    const scenarioGensSnapshot = await db.collection('scenario_generations').get();
+    const realScenarioGens = scenarioGensSnapshot.docs.filter(doc => {
+      const userId = doc.data().userId;
+      return !userId || !userId.startsWith(DEV_USER_ID);
+    });
+
+    // Use the higher count between events and scenario_generations
+    scenariosCompleted = Math.max(scenariosCompleted, realScenarioGens.length);
+
+    // Check algorithm_quiz_generations collection
+    const algoQuizSnapshot = await db.collection('algorithm_quiz_generations').get();
+    const realAlgoQuizzes = algoQuizSnapshot.docs.filter(doc => {
+      const userId = doc.data().userId;
+      return !userId || !userId.startsWith(DEV_USER_ID);
+    });
+
+    // Use the higher count
+    algorithmQuizzes = Math.max(algorithmQuizzes, realAlgoQuizzes.length);
 
     return {
       protocolsUploaded,
@@ -265,13 +298,47 @@ async function getAppStoreDownloads() {
 }
 
 /**
+ * Round numbers to generic ranges for public display
+ */
+function roundToGenericRange(num) {
+  if (num === null || num === undefined || num === 0) return 0;
+
+  // For smaller numbers, round to nearest 50
+  if (num < 200) {
+    return Math.floor(num / 50) * 50;
+  }
+
+  // For medium numbers, round to nearest 100
+  if (num < 1000) {
+    return Math.floor(num / 100) * 100;
+  }
+
+  // For large numbers, round to nearest 500
+  return Math.floor(num / 500) * 500;
+}
+
+/**
+ * Format number for display (adds + for rounded numbers)
+ */
+function formatStatDisplay(num, exact = false) {
+  if (num === null || num === undefined) return 'N/A';
+  if (num === 0) return '0';
+
+  if (exact) {
+    return num.toString();
+  }
+
+  const rounded = roundToGenericRange(num);
+  return rounded > 0 ? `${rounded}+` : '0';
+}
+
+/**
  * Main function - pull all stats
  */
 async function pullStats() {
   console.log('📊 Pulling Firestore stats...\n');
 
-  const stats = {
-    generatedAt: new Date().toISOString(),
+  const rawStats = {
     appStoreDownloads: await getAppStoreDownloads(),
     activeUsers: await getActiveUsersCount(),
     allTime: await getAllTimeStats(),
@@ -279,18 +346,42 @@ async function pullStats() {
     topProtocols: await getTopProtocols()
   };
 
+  // Create both raw and display versions
+  const stats = {
+    generatedAt: new Date().toISOString(),
+    raw: {
+      appStoreDownloads: rawStats.appStoreDownloads,
+      activeUsers: rawStats.activeUsers,
+      protocolsUploaded: rawStats.allTime.protocolsUploaded,
+      quizzesGenerated: rawStats.allTime.quizzesGenerated,
+      scenariosCompleted: rawStats.allTime.scenariosCompleted,
+      algorithmQuizzes: rawStats.allTime.algorithmQuizzes,
+      uploadSuccessRate: rawStats.uploadSuccessRate
+    },
+    display: {
+      appStoreDownloads: formatStatDisplay(rawStats.appStoreDownloads),
+      activeUsers: formatStatDisplay(rawStats.activeUsers),
+      protocolsUploaded: formatStatDisplay(rawStats.allTime.protocolsUploaded),
+      quizzesGenerated: formatStatDisplay(rawStats.allTime.quizzesGenerated),
+      scenariosCompleted: formatStatDisplay(rawStats.allTime.scenariosCompleted),
+      algorithmQuizzes: formatStatDisplay(rawStats.allTime.algorithmQuizzes),
+      uploadSuccessRate: rawStats.uploadSuccessRate
+    },
+    topProtocols: rawStats.topProtocols
+  };
+
   // Save to tmp directory
   await fs.mkdir('tmp', { recursive: true });
   await fs.writeFile('tmp/firestore-stats.json', JSON.stringify(stats, null, 2));
 
   console.log('✅ Stats pulled successfully:\n');
-  console.log(`   📱 Total Downloads: ${stats.appStoreDownloads || 'N/A'}`);
-  console.log(`   👥 Active Users (30d): ${stats.activeUsers || 'N/A'}`);
-  console.log(`   📄 Protocols Uploaded: ${stats.allTime.protocolsUploaded}`);
-  console.log(`   📝 Quizzes Generated: ${stats.allTime.quizzesGenerated}+`);
-  console.log(`   🎬 Scenarios Completed: ${stats.allTime.scenariosCompleted}+`);
-  console.log(`   🧠 Algorithm Quizzes: ${stats.allTime.algorithmQuizzes}`);
-  console.log(`   ✅ Upload Success Rate: ${stats.uploadSuccessRate || 'N/A'}%`);
+  console.log(`   📱 Total Downloads: ${stats.display.appStoreDownloads}`);
+  console.log(`   👥 Active Users (30d): ${stats.display.activeUsers}`);
+  console.log(`   📄 Protocols Uploaded: ${stats.display.protocolsUploaded}`);
+  console.log(`   📝 Quizzes Generated: ${stats.display.quizzesGenerated}`);
+  console.log(`   🎬 Scenarios Completed: ${stats.display.scenariosCompleted}`);
+  console.log(`   🧠 Algorithm Quizzes: ${stats.display.algorithmQuizzes}`);
+  console.log(`   ✅ Upload Success Rate: ${stats.display.uploadSuccessRate}%`);
   console.log(`   🔝 Top Protocols: ${stats.topProtocols.join(', ') || 'N/A'}`);
   console.log('\n📁 Saved to: tmp/firestore-stats.json\n');
 
