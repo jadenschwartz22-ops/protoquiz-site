@@ -205,18 +205,29 @@ Output must be valid JSON:
 
   let statsContext = '';
   if (stats) {
+    // Handle both old and new stats format
+    const displayStats = stats.display || stats;
+    const protocolsUploaded = displayStats.protocolsUploaded || (stats.allTime && stats.allTime.protocolsUploaded) || 'N/A';
+    const quizzesGenerated = displayStats.quizzesGenerated || (stats.allTime && stats.allTime.quizzesGenerated) || 'N/A';
+    const scenariosCompleted = displayStats.scenariosCompleted || (stats.allTime && stats.allTime.scenariosCompleted) || 'N/A';
+    const algorithmQuizzes = displayStats.algorithmQuizzes || (stats.allTime && stats.allTime.algorithmQuizzes) || 'N/A';
+    const appStoreDownloads = displayStats.appStoreDownloads || stats.appStoreDownloads || 'N/A';
+    const activeUsers = displayStats.activeUsers || stats.activeUsers || 'N/A';
+    const uploadSuccessRate = displayStats.uploadSuccessRate || stats.uploadSuccessRate || 'N/A';
+    const topProtocols = stats.topProtocols || [];
+
     statsContext = `
 Current ProtoQuiz Stats (All-Time):
-- Total Downloads: ${stats.appStoreDownloads || 'N/A'}
-- Active Users (30d): ${stats.activeUsers || 'N/A'}
-- Protocols Uploaded: ${stats.allTime.protocolsUploaded}
-- Quizzes Generated: ${stats.allTime.quizzesGenerated}+
-- Scenarios Completed: ${stats.allTime.scenariosCompleted}+
-- Algorithm Quizzes: ${stats.allTime.algorithmQuizzes}
-- Upload Success Rate: ${stats.uploadSuccessRate || 'N/A'}%
-${stats.topProtocols.length > 0 ? `- Top Protocols: ${stats.topProtocols.join(', ')}` : ''}
+- Total Downloads: ${appStoreDownloads}
+- Active Users (30d): ${activeUsers}
+- Protocols Uploaded: ${protocolsUploaded}
+- Quizzes Generated: ${quizzesGenerated}
+- Scenarios Completed: ${scenariosCompleted}
+- Algorithm Quizzes: ${algorithmQuizzes}
+- Upload Success Rate: ${uploadSuccessRate}%
+${topProtocols.length > 0 ? `- Top Protocols: ${topProtocols.join(', ')}` : ''}
 
-You may reference these stats if relevant to the topic. The "+" indicates estimated numbers.`;
+These are real numbers from our Firestore tracking. Numbers with "+" are rounded for display.`;
   }
 
   const userPrompt = `Write a blog post about: "${topicInfo.topic}"
@@ -226,19 +237,27 @@ Bucket: ${topicInfo.bucketName}
 SEO Keywords: ${topicInfo.keywords}
 ${statsContext}
 
-Focus on life as an EMS provider - how to stay sharp on protocols, manage shift work, keep learning, use technology to maintain skills, professional growth. Make it relevant to working EMTs/Paramedics, not generic school study tips.
+This is a product-focused blog about ProtoQuiz. Focus on:
+- Technical achievements and challenges we solve
+- Philosophy and vision behind the app
+- Real usage data and what it tells us
+- Development decisions and trade-offs
+- How ProtoQuiz handles complex technical problems
+
+DO NOT write generic study tips or EMS advice. This is about the ProtoQuiz product itself.
 
 Structure:
-1. Hook about EMS life/work
-2. Why this matters for providers
-3. Main content (3-5 H2 sections)
-4. Action steps
+1. Lead with interesting data or technical insight
+2. Explain the technical challenge or philosophy
+3. Deep dive into how ProtoQuiz solves it (3-5 H2 sections)
+4. What this means for users
+5. What's coming next
 
 Make it:
-- Practical for working providers and students
-- Include real examples from the field/shifts
-- Use stats if relevant
-- Educational/professional development only
+- Data-driven (use the stats provided)
+- Transparent about technical implementation
+- Honest about challenges and solutions
+- Show the sophistication of what ProtoQuiz accomplishes
 
 Return ONLY the JSON object, no other text.`;
 
