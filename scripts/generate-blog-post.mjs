@@ -301,18 +301,27 @@ Return ONLY the JSON object, no other text.`;
 function createStatsCallout(stats) {
   if (!stats) return '';
 
+  // Handle both old and new stats format
+  const displayStats = stats.display || stats;
+  const protocolsUploaded = displayStats.protocolsUploaded || (stats.allTime && stats.allTime.protocolsUploaded) || 'N/A';
+  const quizzesGenerated = displayStats.quizzesGenerated || (stats.allTime && stats.allTime.quizzesGenerated) || 'N/A';
+  const scenariosCompleted = displayStats.scenariosCompleted || (stats.allTime && stats.allTime.scenariosCompleted) || 'N/A';
+  const algorithmQuizzes = displayStats.algorithmQuizzes || (stats.allTime && stats.allTime.algorithmQuizzes) || 'N/A';
+  const appStoreDownloads = displayStats.appStoreDownloads || stats.appStoreDownloads || 'N/A';
+  const topProtocols = stats.topProtocols || [];
+
   return `
 <div class="stats-callout">
-  <h3>📊 By the Numbers</h3>
+  <h3>📊 BY THE NUMBERS</h3>
   <p>ProtoQuiz community stats:</p>
   <ul>
-    <li><strong>${stats.appStoreDownloads || 'N/A'}</strong> total downloads</li>
-    <li><strong>${stats.allTime.protocolsUploaded}</strong> protocols uploaded</li>
-    <li><strong>${stats.allTime.quizzesGenerated}+</strong> quizzes generated</li>
-    <li><strong>${stats.allTime.scenariosCompleted}+</strong> scenarios completed</li>
-    <li><strong>${stats.allTime.algorithmQuizzes}</strong> algorithm quizzes taken</li>
+    <li><strong>${appStoreDownloads}</strong> total downloads</li>
+    <li><strong>${protocolsUploaded}</strong> protocols uploaded</li>
+    <li><strong>${quizzesGenerated}</strong> quizzes generated</li>
+    <li><strong>${scenariosCompleted}</strong> scenarios completed</li>
+    <li><strong>${algorithmQuizzes}</strong> algorithm quizzes taken</li>
   </ul>
-  ${stats.topProtocols.length > 0 ? `<p><small>Top uploaded protocols: ${stats.topProtocols.join(', ')}</small></p>` : ''}
+  ${topProtocols.length > 0 ? `<p><small>Top uploaded protocols: ${topProtocols.join(', ')}</small></p>` : ''}
 </div>`;
 }
 
