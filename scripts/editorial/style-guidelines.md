@@ -21,14 +21,10 @@
 - Unsubstantiated claims without data
 - Marketing speak without backing metrics
 - Competitor comparisons
-- ANY suggestion that protocols are shared between users
-- ANY implication that ProtoQuiz is a community knowledge-sharing platform
 
-**CRITICAL: ProtoQuiz Core Value Proposition:**
-- Users study THEIR OWN local protocols, not anyone else's
-- Each user's protocols are completely private
-- The moat is being the ONLY tool for local protocol study
-- NOT a community platform - it's a personal study tool
+**ProtoQuiz Baseline:**
+iOS app converting EMS protocol PDFs into quizzes/scenarios.
+Users upload their local protocol PDF and study from that specific document.
 
 ---
 

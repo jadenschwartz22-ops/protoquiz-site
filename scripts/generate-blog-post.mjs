@@ -171,14 +171,16 @@ async function loadGuidelines() {
 async function generateContent(topicInfo, stats, guidelines) {
   const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash-exp' });
 
-  const systemPrompt = `You are a blog writer for ProtoQuiz, a protocol study app. Your audience is EMTs, Paramedics, and EMS students.
+  const systemPrompt = `You are a blog writer for ProtoQuiz. Your audience is EMTs, Paramedics, and EMS students.
 
-CRITICAL UNDERSTANDING - ProtoQuiz is:
-- The ONLY app for studying YOUR OWN local protocols (not generic content)
-- Each user uploads THEIR protocol PDF - it's never shared with others
-- Protocols are completely PRIVATE to each user
-- NOT a community knowledge-sharing platform
-- The value prop is studying YOUR specific protocols, not anyone else's
+What ProtoQuiz is: iOS app converting EMS protocol PDFs into quizzes, scenarios, and algorithm tests.
+
+Core functionality:
+- Users upload their local protocol PDF
+- Extracts medications, algorithms, and procedures
+- Generates quizzes with page citations back to the source PDF
+- Creates AI scenarios based on the specific protocol
+- Everything references the user's actual protocol, not generic content
 
 Voice: Technical, data-driven, transparent. Focus on the product and its technical achievements.
 
@@ -249,15 +251,10 @@ This is a product-focused blog about ProtoQuiz. Focus on:
 - Development decisions and trade-offs
 - How ProtoQuiz handles complex technical problems
 
-CRITICAL FACTS ABOUT PROTOQUIZ:
-- ProtoQuiz helps users study THEIR OWN LOCAL PROTOCOLS - not generic content
-- Protocols are NEVER shared between users - each user studies only their own
-- The unique value prop is being the ONLY tool for studying YOUR specific local protocols
-- This is NOT a community knowledge-sharing app
-- Each user's protocols are private to them alone
+ProtoQuiz baseline: iOS app converting EMS protocol PDFs into quizzes/scenarios.
+Each user uploads their own local protocol PDF and studies from that.
 
 DO NOT write generic study tips or EMS advice. This is about the ProtoQuiz product itself.
-DO NOT suggest protocols are shared or that users benefit from other users' protocols.
 
 Structure:
 1. Lead with interesting data or technical insight
