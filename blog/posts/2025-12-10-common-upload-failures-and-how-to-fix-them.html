@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Troubleshooting ProtoQuiz: Fix Common Upload Issues - EMS ProtoQuiz Blog</title>
-  <meta name="description" content="Hit a snag uploading protocols to ProtoQuiz? We're here to help! Learn how to avoid common errors and keep your study sessions running smoothly." />
+  <title>Troubleshooting ProtoQuiz: Common Upload Issues Solved - EMS ProtoQuiz Blog</title>
+  <meta name="description" content="Having trouble uploading your protocols to ProtoQuiz? Let's diagnose common failures and get you back to studying efficiently." />
 
   <!-- SEO -->
   <link rel="canonical" href="https://protoquiz.com/blog/posts/2025-12-10-common-upload-failures-and-how-to-fix-them.html">
   <meta name="robots" content="index,follow" />
-  <meta name="keywords" content="ProtoQuiz, EMS protocols, PDF upload, troubleshooting, EMS education" />
+  <meta name="keywords" content="ProtoQuiz users, EMS community, user feedback, feature requests" />
 
   <!-- Social / Open Graph -->
-  <meta property="og:title" content="Troubleshooting ProtoQuiz: Fix Common Upload Issues" />
-  <meta property="og:description" content="Hit a snag uploading protocols to ProtoQuiz? We're here to help! Learn how to avoid common errors and keep your study sessions running smoothly." />
+  <meta property="og:title" content="Troubleshooting ProtoQuiz: Common Upload Issues Solved" />
+  <meta property="og:description" content="Having trouble uploading your protocols to ProtoQuiz? Let's diagnose common failures and get you back to studying efficiently." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://protoquiz.com/blog/posts/2025-12-10-common-upload-failures-and-how-to-fix-them.html" />
   <meta property="og:image" content="https://protoquiz.com/logo-256.png" />
@@ -22,8 +22,8 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Troubleshooting ProtoQuiz: Fix Common Upload Issues" />
-  <meta name="twitter:description" content="Hit a snag uploading protocols to ProtoQuiz? We're here to help! Learn how to avoid common errors and keep your study sessions running smoothly." />
+  <meta name="twitter:title" content="Troubleshooting ProtoQuiz: Common Upload Issues Solved" />
+  <meta name="twitter:description" content="Having trouble uploading your protocols to ProtoQuiz? Let's diagnose common failures and get you back to studying efficiently." />
   <meta name="twitter:image" content="https://protoquiz.com/logo-256.png" />
 
   <!-- Favicon -->
@@ -36,8 +36,8 @@
   {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": "Troubleshooting ProtoQuiz: Fix Common Upload Issues",
-    "description": "Hit a snag uploading protocols to ProtoQuiz? We're here to help! Learn how to avoid common errors and keep your study sessions running smoothly.",
+    "headline": "Troubleshooting ProtoQuiz: Common Upload Issues Solved",
+    "description": "Having trouble uploading your protocols to ProtoQuiz? Let's diagnose common failures and get you back to studying efficiently.",
     "author": {
       "@type": "Person",
       "name": "Jaden",
@@ -72,7 +72,7 @@
       try { gtag('event', name, props || {}); } catch(e){}
     }
     const PAGE = 'blog_post';
-    track('blog_post_view', { title: 'Troubleshooting ProtoQuiz: Fix Common Upload Issues' });
+    track('blog_post_view', { title: 'Troubleshooting ProtoQuiz: Common Upload Issues Solved' });
 
     // Track view in Firestore
     (async () => {
@@ -352,7 +352,7 @@
         <!-- Post Header -->
         <article class="post-header">
           <span class="post-category-badge insights">Blog</span>
-          <h1>Troubleshooting ProtoQuiz: Fix Common Upload Issues</h1>
+          <h1>Troubleshooting ProtoQuiz: Common Upload Issues Solved</h1>
           <div class="post-meta-info">
             <span class="author">By Jaden</span>
             <span>•</span>
@@ -362,63 +362,66 @@
 
         <!-- Post Content -->
         <div class="post-content">
-          <p>Ever been ready to dive into a study session only to be stopped by an upload error? We get it. As EMS providers, your time is precious. That’s why we’re breaking down the common upload pitfalls in ProtoQuiz and how to dodge them.</p>
+          <p>Frustrated by upload failures? You're not alone. We've seen a recent uptick in users experiencing difficulties uploading their protocols, and we want to help you troubleshoot. ProtoQuiz exists to make your life easier, not harder, so let's dive into the most common causes and how to fix them.</p>
 
-<p>Smooth uploads mean more time hitting those protocols. Let's keep you sharp and ready for anything.</p>
+<p>The goal of ProtoQuiz is to centralize all your protocols and make them easily accessible. We want you to spend less time wrestling with PDFs and more time mastering the material. Understanding the common upload issues empowers you to get the most out of ProtoQuiz.</p>
 
-<h2>Why Uploads Matter</h2>
+<h2>Understanding ProtoQuiz's Protocol Processing</h2>
 
-<p>Think about it: ProtoQuiz is only as good as the protocols you feed it. Consistent, accurate uploads mean you're drilling down on *your* agency's specific guidelines. That's how you avoid those head-scratching moments on scene when you're second-guessing dosages or treatment algorithms.</p>
+<p>Before diving into troubleshooting, let's quickly explain how ProtoQuiz handles your uploads. When you upload a protocol, our system analyzes the PDF, extracts text, and prepares it for quiz generation. This process is complex, involving optical character recognition (OCR), layout analysis, and data structuring. The complexity is why occasional issues arise.</p>
 
-<p>Using ProtoQuiz, EMS providers have uploaded 553 protocols, highlighting the need for a smooth upload process. Ensuring protocols are uploaded without issues means you and your fellow providers can focus on patient care, confident in your knowledge.</p>
+<h2>Common Upload Failures and Their Fixes</h2>
 
-<h2>Common Upload Roadblocks</h2>
+<h3>1. Corrupted or Incomplete PDFs</h3>
+<p><strong>The Problem:</strong> PDFs that are partially downloaded, damaged, or incomplete often fail to upload. This can happen if the PDF was not fully saved or if the download was interrupted.</p>
+<p><strong>The Solution:</strong> Download the PDF again from the original source. Ensure the download completes fully before attempting to upload to ProtoQuiz. If you created the PDF, try recreating it from the original document.</p>
 
-<p>Let’s look at the typical hiccups we see and how to avoid them:</p>
+<h3>2. PDF Format Incompatibilities</h3>
+<p><strong>The Problem:</strong> While ProtoQuiz supports most standard PDF formats, some unusual or proprietary formats can cause issues. Scanned documents saved directly as images within a PDF can also be problematic, as the text is not machine-readable.</p>
+<p><strong>The Solution:</strong> Try printing the PDF to a new PDF using your operating system's built-in PDF printer. This often re-encodes the document into a more standard format. For scanned documents, use OCR software to convert the image-based PDF into a text-based PDF before uploading.</p>
+
+<h3>3. Large File Sizes</h3>
+<p><strong>The Problem:</strong> Very large PDF files can exceed the upload limit and cause failures. High-resolution images and embedded multimedia contribute to large file sizes.</p>
+<p><strong>The Solution:</strong> Compress the PDF file before uploading. Many online PDF compression tools can significantly reduce file size without sacrificing too much quality. Consider removing unnecessary images or reducing their resolution.</p>
+
+<h3>4. Server-Side Errors</h3>
+<p><strong>The Problem:</strong> Occasionally, the issue might be on our end. Server-side errors, although rare, can temporarily prevent uploads.</p>
+<p><strong>The Solution:</strong> Wait a few minutes and try uploading again. If the problem persists, contact our support team with details about the PDF you're trying to upload. This helps us diagnose and fix any server-side issues promptly.</p>
+
+<h2>By the Numbers</h2>
+
+<p>ProtoQuiz is constantly evolving, and your feedback is critical. Here's what we're seeing from our community:</p>
 
 <ul>
- <li><strong>PDF Format Problems:</strong> Not all PDFs are created equal. Scanned documents or PDFs with complex formatting can sometimes cause issues.</li>
- <li><strong>File Size Overload:</strong> Massive PDFs can bog down the upload process.</li>
- <li><strong>Naming Conventions:</strong> Using special characters (&, %, #) in your file name can confuse the system.</li>
+<li><strong>50+</strong> protocols uploaded to the platform!</li>
+<li><strong>300+</strong> scenarios completed</li>
+<li><strong>100+</strong> Algorithm Quizzes completed.</li>
 </ul>
 
-<h2>Simple Fixes for Smooth Uploads</h2>
+<p>This data shows we have plenty of providers who have been able to successfully upload protocols, so there's no reason you can't join their ranks!</p>
 
-<p>Here's your quick-reference guide to getting those protocols into ProtoQuiz:</p>
-
-<ul>
- <li><strong>Optimize Your PDFs:</strong> If possible, convert scanned documents into text-searchable PDFs. Tools like Adobe Acrobat or online PDF converters can help.</li>
- <li><strong>Compress Large Files:</strong> Use online PDF compression tools to reduce the file size without sacrificing readability.</li>
- <li><strong>Rename Wisely:</strong> Stick to letters, numbers, and underscores in your file names. For example, use 'ALS_Cardiac_Protocol_2024.pdf' instead of 'ALS Cardiac Protocol #2.pdf'.</li>
- <li><strong>Test Uploads:</strong> Try uploading a smaller, less complex PDF first to ensure your system is working correctly.</li>
-</ul>
-
-<h2>ProtoQuiz Numbers</h2>
-
-<p>With over 2500 quizzes generated and 600+ scenarios completed, we know you are eager to get in there and study! Getting those protocols uploaded successfully is the first step to mastering the material. </p>
-
-<h2>Action Steps for Success</h2>
+<h2>Next Steps to Take</h2>
 
 <ol>
- <li><strong>Review Your PDFs:</strong> Before uploading, check for readability and ensure the file isn’t corrupted.</li>
- <li><strong>Optimize File Size:</strong> Use PDF compression tools to reduce large files.</li>
- <li><strong>Rename Your Files:</strong> Ensure your file names follow the recommended conventions.</li>
+  <li><strong>Re-download your protocol:</strong> Ensure your PDF is complete and not corrupted.</li>
+  <li><strong>Compress the file:</strong> Reduce the PDF's size if it's large.</li>
+  <li><strong>Try again later:</strong> It might be a temporary server issue.</li>
 </ol>
 
-<p>We're constantly working to improve the app experience. Thanks for helping us help you stay sharp!</p>
+<p>We're committed to making ProtoQuiz the best protocol study tool for EMS providers. By understanding these common upload issues, you can minimize frustrations and maximize your study time. Happy quizzing!</p>
         </div>
 
         <!-- Firestore Stats (if applicable) -->
         
 <div class="stats-callout">
-  <h3>📊 By the Numbers</h3>
+  <h3>📊 BY THE NUMBERS</h3>
   <p>ProtoQuiz community stats:</p>
   <ul>
-    <li><strong>442</strong> total downloads</li>
-    <li><strong>553</strong> protocols uploaded</li>
-    <li><strong>2500+</strong> quizzes generated</li>
-    <li><strong>600+</strong> scenarios completed</li>
-    <li><strong>77</strong> algorithm quizzes taken</li>
+    <li><strong>400+</strong> total downloads</li>
+    <li><strong>50+</strong> protocols uploaded</li>
+    <li><strong>0</strong> quizzes generated</li>
+    <li><strong>300+</strong> scenarios completed</li>
+    <li><strong>100+</strong> algorithm quizzes taken</li>
   </ul>
   
 </div>
