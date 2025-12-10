@@ -226,6 +226,7 @@ Requirements:
 - Provide actionable takeaways for working providers
 - NO medical advice - educational/professional development only
 - Use stats from ProtoQuiz when relevant
+- NO EMOJIS - Do not use any emojis in the content, headings, or text
 
 Output must be valid JSON:
 {
