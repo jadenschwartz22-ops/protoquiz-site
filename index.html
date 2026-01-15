@@ -357,6 +357,7 @@
       align-items:center;
       justify-content:space-between;
       padding:16px 0;
+      gap:16px;
     }
 
     .brand-link{
@@ -366,6 +367,8 @@
       font-weight:800;
       font-size:18px;
       letter-spacing:-.02em;
+      white-space:nowrap;
+      flex-shrink:0;
     }
 
     .brand-link img{
@@ -373,6 +376,7 @@
       height:48px;
       border-radius:12px;
       box-shadow:0 4px 12px rgba(34,211,238,.2);
+      flex-shrink:0;
     }
 
     .nav-links{
@@ -1121,8 +1125,28 @@
     /* Responsive */
     @media (max-width:768px){
       .hero{
-        padding:120px 0 60px;
+        padding:140px 0 60px;
         min-height:auto;
+      }
+
+      .hero-content > div:first-child img{
+        width:100px !important;
+        height:100px !important;
+      }
+
+      .brand-link{
+        font-size:16px;
+        gap:8px;
+      }
+
+      .brand-link img{
+        width:36px;
+        height:36px;
+      }
+
+      .nav-btn{
+        font-size:13px;
+        padding:6px 12px;
       }
 
       h1{
@@ -1182,7 +1206,7 @@
 
   <!-- Mobile App Banner -->
   <div class="app-banner" id="appBanner">
-    📱 Get the ProtoQuiz iOS app for the full experience
+    Get the ProtoQuiz iOS app for the full experience
   </div>
 
   <!-- Navigation -->
@@ -1332,31 +1356,31 @@
           </div>
 
           <div class="feature-card">
-            <div class="feature-icon">▪</div>
+            <div class="feature-icon">◆</div>
             <h3>Page-Cited</h3>
             <p>Every question links to the exact page in your PDF. Verify answers instantly.</p>
           </div>
 
           <div class="feature-card">
-            <div class="feature-icon">●</div>
+            <div class="feature-icon">◆</div>
             <h3>Dose-Safe</h3>
             <p>Medication doses come directly from your protocols. No guessing, no hallucinations.</p>
           </div>
 
           <div class="feature-card">
-            <div class="feature-icon">◉</div>
+            <div class="feature-icon">◆</div>
             <h3>Realistic Scenarios (Premium)</h3>
             <p>Patient simulations that adapt to your decisions. They deteriorate, improve, and respond to treatments just like real calls.</p>
           </div>
 
           <div class="feature-card">
-            <div class="feature-icon">▲</div>
+            <div class="feature-icon">◆</div>
             <h3>Track Progress</h3>
             <p>See your improvement over time. Focus on weak areas with targeted practice.</p>
           </div>
 
           <div class="feature-card">
-            <div class="feature-icon">⬢</div>
+            <div class="feature-icon">◆</div>
             <h3>Always Updated</h3>
             <p>When your protocols change, just upload the new PDF. Your quizzes update automatically.</p>
           </div>
@@ -1876,17 +1900,8 @@
         const quizzes = stats.allTime.quizzesGenerated || 2500;
         const scenarios = stats.allTime.scenariosCompleted || 600;
 
-        // Fetch live App Store rating
-        let appRating = 4.6;
-        try {
-          const appResponse = await fetch('https://itunes.apple.com/lookup?id=6753611139');
-          const appData = await appResponse.json();
-          if (appData.results && appData.results.length > 0) {
-            appRating = appData.results[0].averageUserRating || 4.6;
-          }
-        } catch (e) {
-          console.log('Using fallback rating');
-        }
+        // Hardcoded App Store rating (4.7 stars as of current)
+        let appRating = 4.7;
 
         // Animate rating (decimal counter)
         animateDecimalCounter('appRating', appRating, 1500);
@@ -1904,9 +1919,9 @@
       } catch (error) {
         // Fallback to static numbers if fetch fails
         console.log('Using fallback stats');
-        animateDecimalCounter('appRating', 4.6, 1500);
-        animateDecimalCounter('reviewRating', 4.6, 1500);
-        animateStarBar('reviewStarsBar', 92, 1500);
+        animateDecimalCounter('appRating', 4.7, 1500);
+        animateDecimalCounter('reviewRating', 4.7, 1500);
+        animateStarBar('reviewStarsBar', 94, 1500);
         animateCounter('downloadCount', 400, '+', 1500); // Firebase users + offset
         animateCounter('protocolCount', 548, '', 1500); // Real tracked
         animateCounter('quizCount', 2500, '+', 2000); // Estimate
