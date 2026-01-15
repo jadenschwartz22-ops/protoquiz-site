@@ -383,6 +383,7 @@
       display:flex;
       gap:16px;
       align-items:center;
+      flex-wrap:wrap;
     }
 
     .nav-btn{
@@ -600,9 +601,9 @@
     }
 
     .pricing-card:hover{
-      transform:translateY(-4px);
-      border-color:rgba(34,211,238,.3);
-      box-shadow:0 20px 40px rgba(0,0,0,.3);
+      transform:translateY(-6px);
+      border-color:rgba(34,211,238,.5);
+      box-shadow:0 20px 40px rgba(34,211,238,.2);
     }
 
     .pricing-card.featured{
@@ -698,9 +699,10 @@
     }
 
     .feature-card:hover{
-      border-color:rgba(34,211,238,.2);
+      border-color:rgba(34,211,238,.4);
       background:rgba(255,255,255,.04);
-      transform:translateY(-2px);
+      transform:translateY(-4px);
+      box-shadow:0 8px 24px rgba(34,211,238,.15);
     }
 
     .feature-icon{
@@ -1110,16 +1112,22 @@
       font-size:14px;
     }
 
-    /* Scroll animations */
+    /* Scroll animations - Intersection Observer powered */
     .fade-up{
       opacity:0;
-      transform:translateY(30px);
-      transition:all .8s ease;
+      transform:translateY(40px);
+      transition:all 0.6s ease-out;
     }
 
     .fade-up.visible{
       opacity:1;
       transform:translateY(0);
+    }
+
+    /* Re-enable animations when scrolling back up */
+    .fade-up.visible.reset{
+      opacity:0;
+      transform:translateY(40px);
     }
 
     /* Responsive */
@@ -1144,9 +1152,13 @@
         height:36px;
       }
 
+      .nav-links{
+        gap:8px;
+      }
+
       .nav-btn{
-        font-size:13px;
-        padding:6px 12px;
+        font-size:12px;
+        padding:6px 10px;
       }
 
       h1{
@@ -1730,16 +1742,24 @@
     // Load reviews on page load
     loadReviews();
 
-    // Intersection Observer for scroll animations
+    // Intersection Observer for scroll animations - 15% visibility threshold with re-animation
     const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
+      threshold: 0.15,
+      rootMargin: '0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
+          // Element is visible - animate in
           entry.target.classList.add('visible');
+          entry.target.classList.remove('reset');
+        } else {
+          // Element scrolled out of view - reset for re-animation
+          entry.target.classList.remove('visible');
+          setTimeout(() => {
+            entry.target.classList.add('reset');
+          }, 50);
         }
       });
     }, observerOptions);
