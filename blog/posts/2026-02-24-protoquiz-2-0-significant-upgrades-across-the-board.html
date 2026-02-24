@@ -224,31 +224,205 @@
       font-style: italic;
     }
 
-    .stats-callout {
-      background: linear-gradient(135deg, rgba(34,211,238,.05), rgba(168,85,247,.05));
-      border: 1px solid rgba(34,211,238,.2);
-      border-radius: var(--radius);
-      padding: 24px;
+    /* Enhanced visual elements */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
       margin: 40px 0;
     }
 
-    .stats-callout h3 {
-      font-size: 16px;
-      font-weight: 700;
-      margin-bottom: 12px;
-      color: var(--cyan);
+    .stat-box {
+      background: linear-gradient(135deg, rgba(34,211,238,.08), rgba(168,85,247,.08));
+      border: 1px solid rgba(34,211,238,.2);
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+      transition: all .3s;
+    }
+
+    .stat-box:hover {
+      transform: translateY(-4px);
+      border-color: var(--cyan);
+      box-shadow: 0 8px 24px rgba(34,211,238,.15);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--cyan), var(--violet));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
+      line-height: 1;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
       text-transform: uppercase;
       letter-spacing: .05em;
     }
 
-    .stats-callout p {
+    .screenshot-section {
+      margin: 48px 0;
+      background: rgba(255,255,255,.02);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 32px;
+      overflow: hidden;
+    }
+
+    .screenshot-section h3 {
+      margin-top: 0 !important;
+      margin-bottom: 16px;
+      font-size: 1.25rem;
+    }
+
+    .screenshot-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .screenshot-item {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #000;
+      border: 1px solid var(--line);
+      transition: all .3s;
+    }
+
+    .screenshot-item:hover {
+      transform: scale(1.02);
+      border-color: var(--cyan);
+      box-shadow: 0 12px 32px rgba(34,211,238,.2);
+    }
+
+    .screenshot-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .screenshot-caption {
+      padding: 12px 16px;
+      background: rgba(5,8,12,.8);
+      font-size: 13px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .comparison-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 40px 0;
+    }
+
+    .comparison-side {
+      background: rgba(255,255,255,.02);
+      padding: 24px;
+    }
+
+    .comparison-side.before {
+      border-right: 2px solid var(--line);
+    }
+
+    .comparison-side h4 {
+      margin-top: 0;
+      margin-bottom: 16px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .comparison-side.before h4 {
+      color: #ef4444;
+    }
+
+    .comparison-side.after h4 {
+      color: var(--cyan);
+    }
+
+    .comparison-side ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    .comparison-side li {
       margin-bottom: 8px;
       font-size: 15px;
     }
 
-    .stats-callout strong {
-      color: var(--cyan);
-      font-weight: 800;
+    .premium-easter-egg {
+      background: linear-gradient(135deg, rgba(245,158,11,.1), rgba(234,179,8,.08));
+      border: 2px solid rgba(245,158,11,.3);
+      border-radius: 16px;
+      padding: 32px;
+      margin: 48px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .premium-easter-egg::before {
+      content: "";
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      font-size: 24px;
+      opacity: .5;
+    }
+
+    .premium-easter-egg h3 {
+      margin-top: 0 !important;
+      color: #f59e0b;
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+    }
+
+    .premium-logo-showcase {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      margin: 24px 0;
+      flex-wrap: wrap;
+    }
+
+    .logo-item {
+      text-align: center;
+    }
+
+    .logo-item img {
+      width: 200px;
+      height: 200px;
+      border-radius: 16px;
+      border: 2px solid var(--line);
+      padding: 16px;
+      background: rgba(5,8,12,.6);
+      transition: all .3s;
+    }
+
+    .logo-item:hover img {
+      transform: scale(1.05);
+      border-color: #f59e0b;
+    }
+
+    .logo-item p {
+      margin-top: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
     }
 
     .cta-box {
@@ -321,6 +495,21 @@
     .back-link::before {
       content: "←";
     }
+
+    @media (max-width: 768px) {
+      .comparison-box {
+        grid-template-columns: 1fr;
+      }
+
+      .comparison-side.before {
+        border-right: none;
+        border-bottom: 2px solid var(--line);
+      }
+
+      .screenshot-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -366,11 +555,58 @@
 
           <p>We're not just building a study app. We're trying to change the way EMS education works—making protocol mastery accessible, affordable, and actually effective for everyone from students to seasoned providers.</p>
 
+          <!-- Premium Easter Egg -->
+          <div class="premium-easter-egg">
+            <h3>What's New in 2.0</h3>
+            <p>Premium users get an exclusive logo and loading screen. Thanks to Premium subs for keeping the lights on.</p>
+
+            <div class="premium-logo-showcase">
+              <div class="logo-item">
+                <img src="../images/premium-logo.png" alt="Premium ProtoQuiz Logo" style="width: 280px; height: 280px;" />
+                <p>Premium Logo</p>
+              </div>
+            </div>
+          </div>
+
           <h2>The Extraction Problem (And How We Fixed It)</h2>
 
           <p>Let's be honest about v1.x: extraction was inconsistent. Some protocols worked perfectly. Others failed spectacularly. Users uploaded their PDFs hoping for quizzes, and too often got errors or incomplete medication lists. That wasn't acceptable.</p>
 
-          <p>Version 2.0 changes this significantly. We rebuilt the extraction pipeline from scratch. Processing time dropped from 2-3 minutes to around 80 seconds. Quality improved across the board. And most importantly—it works for the vast majority of protocols.</p>
+          <p>Version 2.0 changes this significantly. We rebuilt the extraction pipeline from scratch. Upload time dropped from 2-3 minutes to around 80 seconds. Quality improved across the board. And most importantly—it works for the vast majority of protocols.</p>
+
+          <!-- Stats Grid -->
+          <div class="stats-grid">
+            <div class="stat-box">
+              <div class="stat-number">~80s</div>
+              <div class="stat-label">Upload Time</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-number">500+</div>
+              <div class="stat-label">Active Users</div>
+            </div>
+          </div>
+
+          <!-- Comparison Box -->
+          <div class="comparison-box">
+            <div class="comparison-side before">
+              <h4>v1.x Issues</h4>
+              <ul>
+                <li>2-3 minute upload time</li>
+                <li>Inconsistent results</li>
+                <li>Frequent failures</li>
+                <li>Incomplete data</li>
+              </ul>
+            </div>
+            <div class="comparison-side after">
+              <h4>v2.0 Improvements</h4>
+              <ul>
+                <li>~80 second upload time</li>
+                <li>Reliable results</li>
+                <li>Works for most protocols</li>
+                <li>Complete medication data</li>
+              </ul>
+            </div>
+          </div>
 
           <h3>What Still Doesn't Work (And Why)</h3>
 
@@ -409,7 +645,17 @@
 
           <h2>Better Scenarios</h2>
 
-          <p>Scenario quality improved significantly in v2.0. Users report scenarios that are more accurate, more realistic, and actually feel like protocol-based calls.</p>
+          <p>Scenario quality improved significantly in v2.0. Users report scenarios that are more accurate, more realistic, and actually feel like protocol-based calls. Scenarios now also include a dispatch screen with initial call information—see below.</p>
+
+          <!-- Screenshot Section -->
+          <div class="screenshot-section">
+            <div style="max-width: 500px; margin: 0 auto;">
+              <div class="screenshot-item">
+                <img src="../images/scenario-1.png" alt="Protocol-based scenario example" />
+                <div class="screenshot-caption">Protocol-based scenario with dispatch info and patient presentation</div>
+              </div>
+            </div>
+          </div>
 
           <h2>The Mission</h2>
 

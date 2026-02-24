@@ -9,12 +9,10 @@
   <!-- SEO -->
   <link rel="canonical" href="https://protoquiz.com/blog/">
   <meta name="robots" content="index,follow" />
-
-  <!-- Keywords -->
   <meta name="keywords" content="EMS study tips, paramedic study strategies, NREMT prep, EMS education, protocol training, ProtoQuiz blog" />
 
   <!-- Social -->
-  <meta property="og:title" content="ProtoQuiz Blog — EMS Education & Study Tips" />
+  <meta property="og:title" content="ProtoQuiz Blog -- EMS Education & Study Tips" />
   <meta property="og:description" content="Study strategies, app updates, and success stories from EMS providers." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://protoquiz.com/blog/" />
@@ -22,7 +20,7 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="ProtoQuiz Blog — EMS Education & Study Tips" />
+  <meta name="twitter:title" content="ProtoQuiz Blog -- EMS Education & Study Tips" />
   <meta name="twitter:description" content="Study strategies, app updates, and success stories from EMS providers." />
   <meta name="twitter:image" content="https://protoquiz.com/logo-256.png" />
 
@@ -31,52 +29,50 @@
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
 
-  <!-- Google tag (GA4) -->
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "ProtoQuiz Blog",
+    "description": "Study strategies, app updates, and success stories from EMS providers using ProtoQuiz.",
+    "url": "https://protoquiz.com/blog/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Teach Me to Live LLC",
+      "logo": { "@type": "ImageObject", "url": "https://protoquiz.com/logo-256.png" }
+    }
+  }
+  </script>
+
+  <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-LNSS9BMEP8"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){ dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-LNSS9BMEP8');
-
-    function track(name, props){
-      try { gtag('event', name, props || {}); } catch(e){}
-    }
+    function track(name, props){ try { gtag('event', name, props || {}); } catch(e){} }
     const PAGE = 'blog';
-
-    // Track blog index view
-    (async () => {
-      try {
-        await fetch('https://ems-router.vercel.app/api/blog-views', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ slug: 'blog-index' })
-        });
-      } catch (e) {
-        console.log('View tracking failed:', e);
-      }
-    })();
   </script>
 
-  <!-- Inter Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="_shared-styles.css">
+  <style>main { padding-top: 0; padding-bottom: 0; min-height: auto; }</style>
 </head>
 <body>
+
   <!-- Navigation -->
-  <header>
+  <header id="header">
     <div class="wrap">
       <nav class="navbar">
         <a href="../" class="brand-link">
-          <img src="../logo-48.png" alt="ProtoQuiz Logo" width="48" height="48">
-          <span>ProtoQuiz</span>
+          <img src="../logo-48.png" alt="ProtoQuiz Logo" width="40" height="40">
+          <span>EMS ProtoQuiz</span>
         </a>
         <div class="nav-links">
           <a href="../" class="nav-btn">Home</a>
-          <a href="./" class="nav-btn">Blog</a>
+          <a href="./" class="nav-btn active-page">Blog</a>
+          <a href="../agency/" class="nav-btn">For Agencies</a>
           <a href="https://apps.apple.com/app/id6753611139" class="nav-btn primary" onclick="track('download_app', {source: 'blog_nav'})">
             Download App
           </a>
@@ -85,186 +81,214 @@
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main>
+  <!-- Blog Hero -->
+  <section class="blog-hero">
     <div class="wrap">
-      <!-- Blog Header -->
-      <div class="blog-header">
-        <h1>ProtoQuiz Blog</h1>
-        <p>Study strategies, app updates, and success stories from EMS providers</p>
+      <div class="blog-hero-inner">
+        <h1>ProtoQuiz <span>Blog</span></h1>
+        <p>Study strategies, app updates, and tips from EMS providers</p>
+        <div class="search-wrap">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="searchInput" placeholder="Search articles..." autocomplete="off">
+        </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Filters -->
-      <div class="filters">
-        <button class="filter-btn active" data-category="all">All Posts</button>
+  <!-- Sticky Filters -->
+  <div class="filters-bar">
+    <div class="wrap">
+      <div class="filters-inner">
+        <button class="filter-btn active" data-category="all">All</button>
         <button class="filter-btn" data-category="updates">App Updates</button>
         <button class="filter-btn" data-category="blog">Blog</button>
         <button class="filter-btn" data-category="study">Study Tips</button>
         <button class="filter-btn" data-category="stories">User Stories</button>
       </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main>
+    <div class="wrap" style="padding-top:32px; padding-bottom:48px;">
 
       <!-- Posts Grid -->
-      <div class="posts-grid" id="postsGrid">
-        <div class="post-card" data-category="updates" onclick="window.location.href='posts/2026-02-24-protoquiz-2-0-significant-upgrades-across-the-board.html'">
-          <div class="post-meta">
-            <span class="post-category updates">App Updates</span>
-            <time datetime="2026-02-24">February 24, 2026</time>
+      <div class="posts-grid stagger" id="postsGrid">
+
+        <div class="post-card fade-up" data-category="updates" onclick="window.location.href='posts/2026-02-24-protoquiz-2-0-significant-upgrades-across-the-board.html'; track('blog_post_click', {title: 'ProtoQuiz 2.0'})">
+          <div class="post-card-img">
+            <img src="../crown-logo.png" alt="ProtoQuiz 2.0" style="width:100%; height:100%; object-fit:contain; padding:24px; background:#05080c;">
+            <span class="category-badge updates">App Updates</span>
           </div>
-          <h2>ProtoQuiz 2.0: Significant Upgrades Across the Board</h2>
-          <p class="post-excerpt">
-            The biggest update since launch, with meaningful improvements to extraction quality, scenario generation, and overall reliability.
-          </p>
-          <span class="read-more">Read more</span>
-        </div>
-        <div class="post-card" data-category="blog" onclick="window.location.href='posts/2025-12-10-protoquizs-first-month-rocky-start-real-progress-and-community-feedback.html'">
-          <div class="post-meta">
-            <span class="post-category blog">Blog</span>
-            <time datetime="2025-12-10">December 9, 2025</time>
+          <div class="post-card-body">
+            <h3>ProtoQuiz 2.0: Significant Upgrades Across the Board</h3>
+            <p class="excerpt">The biggest update since launch, with meaningful improvements to extraction quality, scenario generation, and overall reliability.</p>
+            <div class="post-card-footer">
+              <div class="author-sm">
+                <div class="avatar-sm">J</div>
+                <span>Jaden</span>
+              </div>
+              <div class="meta-right">
+                <span>Feb 24, 2026</span>
+                <span class="dot"></span>
+                <span>8 min</span>
+              </div>
+            </div>
           </div>
-          <h2>ProtoQuiz's First Month: From Uploads to Algorithm Quizzes</h2>
-          <p class="post-excerpt">
-            A look at ProtoQuiz's first month, the challenges faced, the progress made, and the valuable community feedback that's shaping its future.
-          </p>
-          <span class="read-more">Read more</span>
         </div>
-        <div class="post-card" data-category="updates" onclick="window.location.href='posts/2025-11-22-introducing-protoquiz.html'">
-          <div class="post-meta">
-            <span class="post-category updates">App Updates</span>
-            <time datetime="2025-11-22">November 22, 2025</time>
+
+        <div class="post-card fade-up" data-category="blog" onclick="window.location.href='posts/2025-12-10-protoquizs-first-month-rocky-start-real-progress-and-community-feedback.html'; track('blog_post_click', {title: 'First Month'})">
+          <div class="post-card-img">
+            <div style="display:flex; align-items:center; justify-content:center; height:100%; background:linear-gradient(135deg, rgba(6,214,224,.08), rgba(180,92,246,.08));">
+              <span style="font-size:32px; font-weight:900; color:rgba(6,214,224,.4); letter-spacing:-.02em;">Month 1</span>
+            </div>
+            <span class="category-badge blog">Blog</span>
           </div>
-          <h2>Master Your EMS Protocols with ProtoQuiz</h2>
-          <p class="post-excerpt">
-            Juggling multiple EMS agencies? ProtoQuiz makes learning and retaining different protocols easy. Upload your PDF and start quizzing!
-          </p>
-          <span class="read-more">Read more</span>
+          <div class="post-card-body">
+            <h3>ProtoQuiz's First Month: From Uploads to Algorithm Quizzes</h3>
+            <p class="excerpt">A look at ProtoQuiz's first month, the challenges faced, the progress made, and the valuable community feedback that's shaping its future.</p>
+            <div class="post-card-footer">
+              <div class="author-sm">
+                <div class="avatar-sm">J</div>
+                <span>Jaden</span>
+              </div>
+              <div class="meta-right">
+                <span>Dec 9, 2025</span>
+                <span class="dot"></span>
+                <span>6 min</span>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <div class="post-card fade-up" data-category="updates" onclick="window.location.href='posts/2025-11-22-introducing-protoquiz.html'; track('blog_post_click', {title: 'Introducing ProtoQuiz'})">
+          <div class="post-card-img">
+            <img src="../blog-protocols.png" alt="Introducing ProtoQuiz" style="width:100%; height:100%; object-fit:cover;">
+            <span class="category-badge updates">App Updates</span>
+          </div>
+          <div class="post-card-body">
+            <h3>Master Your EMS Protocols with ProtoQuiz</h3>
+            <p class="excerpt">Juggling multiple EMS agencies? ProtoQuiz makes learning and retaining different protocols easy. Upload your PDF and start quizzing!</p>
+            <div class="post-card-footer">
+              <div class="author-sm">
+                <div class="avatar-sm">J</div>
+                <span>Jaden</span>
+              </div>
+              <div class="meta-right">
+                <span>Nov 22, 2025</span>
+                <span class="dot"></span>
+                <span>5 min</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <!-- Empty State -->
-      <div id="emptyState" style="display: none; text-align: center; padding: 60px 20px; color: var(--muted);">
-        <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; color: var(--ink);">Coming Soon</h3>
+      <div class="empty-state" id="emptyState" style="display:none;">
+        <h3>Coming Soon</h3>
         <p>We're working on new posts for this category. Check back soon!</p>
       </div>
     </div>
   </main>
 
-  <!-- Newsletter Signup -->
-  <section style="background: var(--panel); border-top: 1px solid var(--line); padding: 60px 0;">
-    <div class="wrap" style="max-width: 600px; text-align: center;">
-      <h2 style="font-size: 1.75rem; margin-bottom: 12px;">Never Miss a Post</h2>
-      <p style="color: var(--muted); margin-bottom: 24px;">
-        Get new EMS study tips and app updates delivered straight to your inbox. Bi-weekly.
-      </p>
+  <!-- App Promo -->
+  <section class="app-promo fade-up">
+    <div class="wrap">
+      <div class="promo-grid">
+        <div class="promo-content">
+          <span class="promo-label">Free iOS App</span>
+          <h2>Study Your Actual Protocols</h2>
+          <p>Upload your agency's protocol PDF and get instant quizzes with page citations. No generic content -- just YOUR protocols.</p>
+          <ul class="promo-features">
+            <li><span class="check">&#x2713;</span> Page-cited answers from your PDF</li>
+            <li><span class="check">&#x2713;</span> Realistic patient scenarios (Premium)</li>
+            <li><span class="check">&#x2713;</span> Built by a Paramedic student</li>
+          </ul>
+          <a href="https://apps.apple.com/app/id6753611139?utm_source=website&utm_medium=blog&utm_campaign=promo" class="read-btn" style="display:inline-flex; align-items:center; gap:8px; padding:12px 28px; font-size:15px;" onclick="track('download_app', {source: 'blog_promo'})">
+            Download Free
+          </a>
+        </div>
+        <div style="display:flex; justify-content:center;">
+          <img src="../logo-256.png" alt="ProtoQuiz" style="width:120px; height:120px; border-radius:28px; box-shadow:0 12px 48px rgba(6,214,224,.25), 0 0 80px rgba(6,214,224,.1);">
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <!-- Email Signup Form (Follow.it) -->
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <div class="wrap" style="max-width:560px;">
+      <h2>Never Miss a Post</h2>
+      <p>Get new EMS study tips and app updates delivered to your inbox.</p>
+
       <style>
         .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview {
-          display: flex !important;
-          flex-direction: column !important;
-          justify-content: center !important;
-          margin-top: 30px !important;
-          padding: clamp(17px, 5%, 40px) clamp(17px, 7%, 50px) !important;
-          max-width: none !important;
-          border-radius: 6px !important;
-          box-shadow: 0 5px 25px rgba(34, 60, 47, 0.25) !important;
+          display:flex !important; flex-direction:column !important; justify-content:center !important;
+          margin-top:20px !important; padding:clamp(17px,5%,40px) clamp(17px,7%,50px) !important;
+          max-width:none !important; border-radius:12px !important;
+          box-shadow:0 5px 25px rgba(0,0,0,.3) !important;
+          background-color:#0d1219 !important; border:1px solid #16202b !important;
         }
         .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview,
         .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview * {
-          box-sizing: border-box !important;
-        }
-        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-heading {
-          width: 100% !important;
+          box-sizing:border-box !important;
         }
         .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-heading h5 {
-          margin-top: 0 !important;
-          margin-bottom: 0 !important;
+          margin:0 !important; font-family:'Inter',sans-serif !important; font-weight:700 !important;
+          color:#e6edf7 !important; font-size:15px !important; text-align:center !important;
         }
         .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field {
-          margin-top: 20px !important;
-          width: 100% !important;
+          margin-top:16px !important; width:100% !important;
         }
         .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input {
-          width: 100% !important;
-          height: 40px !important;
-          border-radius: 6px !important;
-          border: 2px solid #e9e8e8 !important;
-          background-color: #fff;
-          outline: none !important;
-        }
-        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input {
-          color: #000000 !important;
-          font-family: "Montserrat" !important;
-          font-size: 14px;
-          font-weight: 400;
-          line-height: 20px;
-          text-align: center;
+          width:100% !important; height:42px !important; border-radius:999px !important;
+          border:1px solid #16202b !important; background-color:rgba(255,255,255,.05) !important;
+          outline:none !important; color:#e6edf7 !important; font-family:'Inter',sans-serif !important;
+          font-size:14px; text-align:center; padding:0 16px !important;
         }
         .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input::placeholder {
-          color: #000000 !important;
-          opacity: 1 !important;
-        }
-        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input:-ms-input-placeholder {
-          color: #000000 !important;
-        }
-        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input::-ms-input-placeholder {
-          color: #000000 !important;
+          color:#9aa4b2 !important; opacity:1 !important;
         }
         .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-submit-button {
-          margin-top: 10px !important;
-          width: 100% !important;
+          margin-top:10px !important; width:100% !important;
         }
         .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-submit-button button {
-          width: 100% !important;
-          height: 40px !important;
-          border: 0 !important;
-          border-radius: 6px !important;
-          line-height: 0px !important;
-        }
-        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-submit-button button:hover {
-          cursor: pointer !important;
+          width:100% !important; height:42px !important; border:0 !important;
+          border-radius:999px !important; line-height:0 !important; cursor:pointer !important;
+          background:linear-gradient(135deg,#06d6e0,#b45cf6) !important; color:#05080c !important;
+          font-family:'Inter',sans-serif !important; font-weight:700 !important; font-size:14px !important;
         }
         .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .powered-by-line {
-          color: #231f20 !important;
-          font-family: "Montserrat" !important;
-          font-size: 13px !important;
-          font-weight: 400 !important;
-          line-height: 25px !important;
-          text-align: center !important;
-          text-decoration: none !important;
-          display: flex !important;
-          width: 100% !important;
-          justify-content: center !important;
-          align-items: center !important;
-          margin-top: 10px !important;
+          color:#9aa4b2 !important; font-family:'Inter',sans-serif !important; font-size:11px !important;
+          text-align:center !important; display:flex !important; width:100% !important;
+          justify-content:center !important; align-items:center !important; margin-top:10px !important;
         }
         .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .powered-by-line img {
-          margin-left: 10px !important;
-          height: 1.13em !important;
-          max-height: 1.13em !important;
+          margin-left:8px !important; height:1em !important;
         }
       </style>
       <div class="followit--follow-form-container" attr-a attr-b attr-c attr-d attr-e attr-f>
         <form data-v-e7d63655="" action="https://api.follow.it/subscription-form/NWJTVitFcEpGcGU0ajJvTmNST01hckl3ZFI0cTFHMmZkTmVBRlIwSUpnV0NOckQxVWdoNnljMnA2VCtEQU1Eb3VwdStGclRRZzRPZ05qbnpndU43NE90UlIyeC9RcDYxQ3pHYmFqeDl1aXBjcE5zc1F4dXhuR0dKN3ppVFdqdHl8cUl5dytUOE54R2h0TmFUUlppeEhIZXVkQ1k1blBuczY4Z3NQMmFlMGQ3QT0=/8" method="post">
-          <div data-v-e7d63655="" class="form-preview" style="background-color: rgb(255, 255, 255); border-style: solid; border-width: 1px; border-color: rgb(204, 204, 204); position: relative;">
+          <div data-v-e7d63655="" class="form-preview" style="background-color:#0d1219; border:1px solid #16202b; position:relative;">
             <div data-v-e7d63655="" class="preview-heading">
-              <h5 data-v-e7d63655="" style="font-family: Arial; font-weight: bold; color: rgb(0, 0, 0); font-size: 16px; text-align: center; text-transform: none !important;">Get new posts by email:</h5>
+              <h5 data-v-e7d63655="" style="font-family:'Inter',sans-serif; font-weight:700; color:#e6edf7; font-size:15px; text-align:center;">Get new posts by email:</h5>
             </div>
             <div data-v-e7d63655="" class="preview-input-field">
-              <input data-v-e7d63655="" type="email" name="email" required="" placeholder="Enter your email" spellcheck="false" style="font-family: Arial; font-weight: normal; color: rgb(0, 0, 0); font-size: 14px; text-align: center; background-color: rgb(255, 255, 255); text-transform: none !important;">
+              <input data-v-e7d63655="" type="email" name="email" required="" placeholder="Enter your email" spellcheck="false" style="font-family:'Inter',sans-serif; color:#e6edf7; font-size:14px; text-align:center; background-color:rgba(255,255,255,.05); border:1px solid #16202b; border-radius:999px;">
             </div>
             <div data-v-e7d63655="" class="preview-submit-button">
-              <button data-v-e7d63655="" type="submit" style="font-family: Arial; font-weight: bold; color: rgb(255, 255, 255); font-size: 16px; text-align: center; background-color: rgb(0, 0, 0); text-transform: none !important;">Subscribe</button>
+              <button data-v-e7d63655="" type="submit" style="font-family:'Inter',sans-serif; font-weight:700; color:#05080c; font-size:14px; text-align:center; background:linear-gradient(135deg,#06d6e0,#b45cf6); border-radius:999px;">Subscribe</button>
             </div>
           </div>
         </form>
-        <a href="https://follow.it" class="powered-by-line">Powered by <img src="https://follow.it/images/colored-logo.svg" alt="follow.it" height="17px"/></a>
+        <a href="https://follow.it" class="powered-by-line">Powered by <img src="https://follow.it/images/colored-logo.svg" alt="follow.it" height="14px"/></a>
       </div>
 
-      <p style="font-size: 13px; color: var(--muted); margin-top: 16px;">
-        Or subscribe via <a href="feed.xml" style="color: var(--cyan); text-decoration: underline;">RSS feed</a>
-      </p>
-      <p style="font-size: 12px; color: var(--muted); margin-top: 8px;">
-        No spam. Unsubscribe anytime. View our <a href="../privacy/" style="color: var(--cyan);">Privacy Policy</a>.
+      <p style="font-size:12px; color:var(--muted); margin-top:14px;">
+        Or subscribe via <a href="feed.xml" style="color:var(--cyan);">RSS feed</a>
+        &middot; <a href="../privacy/" style="color:var(--cyan);">Privacy Policy</a>
       </p>
     </div>
   </section>
@@ -275,16 +299,23 @@
       <div class="footer-content">
         <div class="footer-links">
           <a href="../">Home</a>
+          <a href="./">Blog</a>
+          <a href="../agency/">For Agencies</a>
           <a href="../privacy/">Privacy</a>
           <a href="../terms/">Terms</a>
           <a href="https://apps.apple.com/app/id6753611139">Download</a>
         </div>
-        <p class="footer-copy">© 2025 Teach Me to Live LLC. Built by a Paramedic student, for EMS.</p>
+        <p class="footer-copy">&copy; 2025 Teach Me to Live LLC. Built by a Paramedic student, for EMS.</p>
       </div>
     </div>
   </footer>
 
   <script>
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+      document.getElementById('header').classList.toggle('scrolled', window.scrollY > 40);
+    });
+
     // Filter functionality
     const filterBtns = document.querySelectorAll('.filter-btn');
     const posts = document.querySelectorAll('.post-card');
@@ -293,41 +324,50 @@
 
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        // Update active state
         filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-
         const category = btn.dataset.category;
         let visibleCount = 0;
-
-        // Filter posts
         posts.forEach(post => {
-          if (category === 'all' || post.dataset.category === category) {
-            post.style.display = 'block';
-            visibleCount++;
-          } else {
-            post.style.display = 'none';
-          }
+          const show = category === 'all' || post.dataset.category === category;
+          post.style.display = show ? 'block' : 'none';
+          if (show) visibleCount++;
         });
-
-        // Show/hide empty state
-        if (visibleCount === 0) {
-          postsGrid.style.display = 'none';
-          emptyState.style.display = 'block';
-        } else {
-          postsGrid.style.display = 'grid';
-          emptyState.style.display = 'none';
-        }
-
-        // Track filter usage
+        postsGrid.style.display = visibleCount ? 'grid' : 'none';
+        emptyState.style.display = visibleCount ? 'none' : 'block';
         track('blog_filter', { category });
       });
     });
 
+    // Search
+    const searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('input', () => {
+      const q = searchInput.value.toLowerCase().trim();
+      let visibleCount = 0;
+      posts.forEach(post => {
+        const show = !q || post.textContent.toLowerCase().includes(q);
+        post.style.display = show ? 'block' : 'none';
+        if (show) visibleCount++;
+      });
+      postsGrid.style.display = visibleCount ? 'grid' : 'none';
+      emptyState.style.display = visibleCount ? 'none' : 'block';
+    });
+
+    // Intersection Observer for fade-up
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
     // Track post clicks
     posts.forEach(post => {
       post.addEventListener('click', () => {
-        const title = post.querySelector('h2').textContent;
+        const title = post.querySelector('h3')?.textContent;
         track('blog_post_click', { title });
       });
     });

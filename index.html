@@ -263,8 +263,8 @@
       --ink:#e6edf7;
       --muted:#9aa4b2;
       --line:#16202b;
-      --cyan:#22d3ee;
-      --violet:#a855f7;
+      --cyan:#06d6e0;
+      --violet:#b45cf6;
       --success:#10b981;
       --warning:#f59e0b;
       --radius:18px;
@@ -291,10 +291,10 @@
       position:fixed;
       inset:0;
       background:
-        radial-gradient(ellipse 900px 500px at 25% 10%, rgba(34,211,238,.14), transparent),
-        radial-gradient(ellipse 700px 400px at 75% 30%, rgba(168,85,247,.12), transparent),
-        radial-gradient(ellipse 600px 600px at 50% 85%, rgba(34,211,238,.08), transparent),
-        radial-gradient(ellipse 400px 300px at 10% 60%, rgba(168,85,247,.06), transparent);
+        radial-gradient(ellipse 900px 500px at 25% 10%, rgba(6,214,224,.16), transparent),
+        radial-gradient(ellipse 700px 400px at 75% 30%, rgba(180,92,246,.14), transparent),
+        radial-gradient(ellipse 600px 600px at 50% 85%, rgba(6,214,224,.10), transparent),
+        radial-gradient(ellipse 400px 300px at 10% 60%, rgba(180,92,246,.08), transparent);
       pointer-events:none;
     }
 
@@ -389,12 +389,12 @@
       background:linear-gradient(135deg, var(--cyan), var(--violet));
       color:#05080c;
       border:none;
-      box-shadow:0 4px 16px rgba(34,211,238,.25);
+      box-shadow:0 4px 16px rgba(6,214,224,.25);
     }
 
     .nav-btn.contact:hover{
       transform:translateY(-1px);
-      box-shadow:0 6px 20px rgba(34,211,238,.35);
+      box-shadow:0 6px 20px rgba(6,214,224,.4);
     }
 
     /* Hero Section */
@@ -430,8 +430,8 @@
       display:inline-block;
       padding:6px 14px;
       border-radius:999px;
-      background:linear-gradient(135deg, rgba(34,211,238,.1), rgba(168,85,247,.1));
-      border:1px solid rgba(34,211,238,.3);
+      background:linear-gradient(135deg, rgba(6,214,224,.12), rgba(180,92,246,.12));
+      border:1px solid rgba(6,214,224,.3);
       font-size:12px;
       font-weight:600;
       text-transform:uppercase;
@@ -523,12 +523,12 @@
     .btn-primary{
       background:linear-gradient(135deg, var(--cyan), var(--violet));
       color:#05080c;
-      box-shadow:0 8px 24px rgba(34,211,238,.3);
+      box-shadow:0 8px 24px rgba(6,214,224,.3);
     }
 
     .btn-primary:hover{
       transform:translateY(-2px);
-      box-shadow:0 12px 32px rgba(34,211,238,.4);
+      box-shadow:0 12px 32px rgba(6,214,224,.45);
     }
 
     .btn-secondary{
@@ -556,7 +556,7 @@
 
     /* Pricing Section */
     .pricing{
-      padding:80px 0;
+      padding:60px 0;
       background:linear-gradient(180deg, transparent, rgba(255,255,255,.02));
       position:relative;
     }
@@ -568,7 +568,7 @@
 
     .section-header{
       text-align:center;
-      margin-bottom:60px;
+      margin-bottom:40px;
     }
 
     .section-title{
@@ -596,23 +596,23 @@
     .pricing-card{
       background:rgba(255,255,255,.03);
       border:1px solid var(--line);
-      border-radius:24px;
-      padding:32px;
+      border-radius:20px;
+      padding:28px;
       position:relative;
       transition:all .3s;
       backdrop-filter:blur(10px);
     }
 
     .pricing-card:hover{
-      transform:translateY(-6px);
-      border-color:rgba(34,211,238,.5);
-      box-shadow:0 20px 40px rgba(34,211,238,.2);
+      transform:translateY(-4px);
+      border-color:rgba(6,214,224,.5);
+      box-shadow:0 16px 36px rgba(6,214,224,.2);
     }
 
     .pricing-card.featured{
       border:2px solid var(--cyan);
-      background:linear-gradient(180deg, rgba(34,211,238,.05), rgba(168,85,247,.05));
-      box-shadow:0 20px 40px rgba(34,211,238,.2);
+      background:linear-gradient(180deg, rgba(6,214,224,.05), rgba(180,92,246,.05));
+      box-shadow:0 16px 36px rgba(6,214,224,.2);
     }
 
     .pricing-badge{
@@ -683,22 +683,22 @@
 
     /* Features Grid */
     .features{
-      padding:80px 0;
+      padding:60px 0;
     }
 
     .features-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
-      gap:24px;
-      margin-top:48px;
+      grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+      gap:16px;
+      margin-top:32px;
     }
 
     .feature-card{
       background:rgba(255,255,255,.025);
       border:1px solid var(--line);
-      border-left:2px solid rgba(34,211,238,.4);
-      border-radius:16px;
-      padding:24px;
+      border-left:2px solid rgba(6,214,224,.4);
+      border-radius:14px;
+      padding:20px;
       transition:all .3s;
       position:relative;
       overflow:hidden;
@@ -720,25 +720,32 @@
       box-shadow:0 12px 32px rgba(34,211,238,.12);
     }
 
+    .feature-card:nth-child(1){transition-delay:0ms;}
+    .feature-card:nth-child(2){transition-delay:60ms;}
+    .feature-card:nth-child(3){transition-delay:120ms;}
+    .feature-card:nth-child(4){transition-delay:180ms;}
+    .feature-card:nth-child(5){transition-delay:240ms;}
+    .feature-card:nth-child(6){transition-delay:300ms;}
+
     .feature-icon{
-      width:48px;
-      height:48px;
-      background:linear-gradient(135deg, rgba(34,211,238,.15), rgba(168,85,247,.15));
-      border:1px solid rgba(34,211,238,.2);
-      border-radius:12px;
+      width:40px;
+      height:40px;
+      background:linear-gradient(135deg, rgba(6,214,224,.15), rgba(180,92,246,.15));
+      border:1px solid rgba(6,214,224,.2);
+      border-radius:10px;
       display:flex;
       align-items:center;
       justify-content:center;
-      font-size:20px;
+      font-size:16px;
       font-weight:800;
-      margin-bottom:16px;
+      margin-bottom:12px;
       color:var(--cyan);
     }
 
     .feature-card h3{
-      font-size:20px;
+      font-size:17px;
       font-weight:700;
-      margin-bottom:8px;
+      margin-bottom:6px;
     }
 
     .feature-card p{
@@ -748,43 +755,13 @@
 
     /* Reviews Section */
     .reviews{
-      padding:80px 0;
+      padding:60px 0;
       background:linear-gradient(180deg, transparent, rgba(255,255,255,.02));
     }
 
     .reviews-container{
       max-width:900px;
       margin:0 auto;
-    }
-
-    .review-summary{
-      text-align:center;
-      margin-bottom:48px;
-      padding:32px;
-      background:rgba(255,255,255,.03);
-      border-radius:24px;
-      border:1px solid var(--line);
-      position:relative;
-      overflow:hidden;
-    }
-
-    .review-summary::before{
-      content:""; position:absolute; inset:0; opacity:.5;
-      background:radial-gradient(circle at 50% 0%, rgba(245,158,11,.08), transparent 60%);
-      pointer-events:none;
-    }
-
-    .review-rating{
-      font-size:32px;
-      font-weight:700;
-      color:var(--warning);
-      margin-bottom:8px;
-    }
-
-    .review-stars{
-      font-size:24px;
-      color:var(--warning);
-      margin-bottom:8px;
     }
 
     .review-count{
@@ -874,14 +851,14 @@
 
     /* Trust Section */
     .trust{
-      padding:80px 0;
+      padding:60px 0;
     }
 
     .trust-grid{
       display:grid;
       grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
-      gap:32px;
-      margin-top:48px;
+      gap:24px;
+      margin-top:32px;
       text-align:center;
     }
 
@@ -899,49 +876,17 @@
       to{opacity:1;}
     }
 
-    .trust-number{
-      font-size:42px;
-      font-weight:900;
-      letter-spacing:-.02em;
-      background:linear-gradient(135deg, var(--cyan), var(--violet));
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-      margin-bottom:8px;
-      line-height:1;
-    }
-
-    .trust-label{
-      color:var(--muted);
-      font-size:13px;
-      text-transform:uppercase;
-      letter-spacing:.06em;
-      font-weight:600;
-    }
-
-    .trust-item{
-      padding:24px 16px;
-      background:rgba(255,255,255,.02);
-      border:1px solid var(--line);
-      border-radius:16px;
-      transition:all .3s;
-    }
-
-    .trust-item:hover{
-      border-color:rgba(34,211,238,.25);
-      background:rgba(255,255,255,.04);
-      transform:translateY(-2px);
-    }
 
     /* FAQ/How it Works */
     .how{
-      padding:80px 0;
+      padding:60px 0;
       background:linear-gradient(180deg, transparent, rgba(255,255,255,.02));
     }
 
     .faq-list{
       max-width:700px;
       margin:0 auto;
-      margin-top:48px;
+      margin-top:32px;
     }
 
     details{
@@ -991,7 +936,7 @@
 
     /* Final CTA */
     .final-cta{
-      padding:100px 0;
+      padding:80px 0;
       text-align:center;
       position:relative;
     }
@@ -1187,6 +1132,52 @@
       transform:translateY(40px);
     }
 
+    /* Floating orbs */
+    .orb{position:fixed; border-radius:50%; filter:blur(80px); pointer-events:none; z-index:0;}
+    .orb-1{width:500px; height:500px; background:rgba(34,211,238,.08); top:5%; left:-10%; animation:orbFloat1 25s ease-in-out infinite;}
+    .orb-2{width:350px; height:350px; background:rgba(168,85,247,.07); top:40%; right:-8%; animation:orbFloat2 20s ease-in-out infinite;}
+    .orb-3{width:250px; height:250px; background:rgba(34,211,238,.05); bottom:10%; left:15%; animation:orbFloat3 22s ease-in-out infinite;}
+    @keyframes orbFloat1{0%,100%{transform:translate(0,0);}33%{transform:translate(40px,-30px);}66%{transform:translate(-20px,40px);}}
+    @keyframes orbFloat2{0%,100%{transform:translate(0,0);}33%{transform:translate(-30px,20px);}66%{transform:translate(20px,-30px);}}
+    @keyframes orbFloat3{0%,100%{transform:translate(0,0);}33%{transform:translate(20px,30px);}66%{transform:translate(-30px,-15px);}}
+
+    /* Logo pulse */
+    @keyframes logoPulse{
+      0%,100%{box-shadow:0 12px 48px rgba(0,200,255,0.35), 0 0 80px rgba(34,211,238,0.15);}
+      50%{box-shadow:0 16px 56px rgba(0,200,255,0.5), 0 0 120px rgba(34,211,238,0.25), 0 0 180px rgba(168,85,247,0.08);}
+    }
+
+    /* Product showcase */
+    .showcase{padding:60px 0; position:relative;}
+    .showcase::before{content:""; position:absolute; inset:0; pointer-events:none; background:radial-gradient(ellipse 600px 300px at 50% 50%, rgba(34,211,238,.05), transparent);}
+    .sc-grid{display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-top:48px;}
+    .sc-card{
+      background:rgba(255,255,255,.025); border:1px solid var(--line); border-radius:16px; overflow:hidden;
+      box-shadow:0 16px 60px rgba(0,0,0,.25), 0 0 40px rgba(34,211,238,.04);
+      transition:all .3s;
+    }
+    .sc-card:hover{transform:translateY(-4px); box-shadow:0 24px 80px rgba(0,0,0,.3), 0 0 60px rgba(34,211,238,.08);}
+    .sc-head{padding:14px 20px; border-bottom:1px solid var(--line); display:flex; justify-content:space-between; align-items:center;}
+    .sc-head span{font-size:13px; font-weight:700;}
+    .sc-ring{width:36px; height:36px; border-radius:50%; border:3px solid var(--line); border-top-color:var(--cyan); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:var(--cyan);}
+    .sc-badge{display:inline-block; padding:3px 10px; border-radius:6px; font-size:11px; font-weight:700; background:rgba(245,158,11,.12); color:var(--warning);}
+    .sc-body{padding:20px;}
+    .sc-q{font-size:15px; font-weight:600; line-height:1.5; margin-bottom:16px;}
+    .sc-opts{display:flex; flex-direction:column; gap:8px;}
+    .sc-opt{padding:12px 16px; border-radius:10px; font-size:13px; border:1px solid var(--line); background:rgba(255,255,255,.02);}
+    .sc-opt.ok{border-color:var(--success); background:rgba(16,185,129,.08); color:var(--success);}
+    .sc-opt.no{border-color:#ef4444; background:rgba(239,68,68,.06); color:#ef4444; opacity:.5;}
+    .sc-cite{padding:12px 20px; border-top:1px solid var(--line); font-size:12px; color:var(--muted);}
+    .sc-cite strong{color:var(--cyan);}
+    .sc-vitals{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-bottom:16px;}
+    .sc-vital{background:rgba(255,255,255,.03); border:1px solid var(--line); border-radius:8px; padding:8px; text-align:center;}
+    .sc-vval{font-size:16px; font-weight:800; color:var(--cyan);}
+    .sc-vlbl{font-size:10px; color:var(--muted); text-transform:uppercase; letter-spacing:.03em;}
+    .sc-text{font-size:14px; line-height:1.6; color:var(--muted); margin-bottom:16px;}
+    .sc-prompt{font-size:14px; font-weight:600; margin-bottom:12px;}
+    .sc-sopt{padding:10px 14px; border-radius:8px; font-size:12px; font-weight:500; border:1px solid var(--line); background:rgba(255,255,255,.02); margin-bottom:6px;}
+    .sc-sopt.picked{border-color:var(--cyan); background:rgba(34,211,238,.08); color:var(--cyan);}
+
     /* Responsive */
     @media (max-width:768px){
       .hero{
@@ -1252,6 +1243,9 @@
       .app-banner{
         display:block;
       }
+
+      .sc-grid{grid-template-columns:1fr;}
+      .orb{display:none;}
     }
 
     /* Loading animation for reviews */
@@ -1271,6 +1265,11 @@
   </style>
 </head>
 <body>
+  <!-- Floating orbs -->
+  <div class="orb orb-1" aria-hidden="true"></div>
+  <div class="orb orb-2" aria-hidden="true"></div>
+  <div class="orb orb-3" aria-hidden="true"></div>
+
   <!-- Mobile App Banner -->
   <div class="app-banner" id="appBanner">
     Get the ProtoQuiz iOS app for the full experience
@@ -1299,7 +1298,7 @@
       <div class="wrap">
         <div class="hero-content">
           <div style="display: flex; flex-direction: column; align-items: center; gap: 24px; margin-bottom: 16px;">
-            <img src="logo-256.png" alt="EMS ProtoQuiz App Icon - Page-Cited Protocol Quiz and Training for Emergency Medical Services" style="width: 180px; height: 180px; border-radius: 32px; box-shadow: 0 12px 48px rgba(0,200,255,0.35), 0 0 80px rgba(34,211,238,0.15);">
+            <img src="logo-256.png" alt="EMS ProtoQuiz App Icon - Page-Cited Protocol Quiz and Training for Emergency Medical Services" style="width: 180px; height: 180px; border-radius: 32px; animation: logoPulse 4s ease-in-out infinite;">
             <div style="text-align: center; width: 100%;">
               <span class="hero-badge">Fastest-Growing EMS Study Tool</span>
               <h1>Master your local protocols.</h1>
@@ -1313,7 +1312,7 @@
 
           <div class="hero-stats">
             <div class="stat-item">
-              <span class="stars">⭐⭐⭐⭐</span>
+              <span class="stars">&#9733;&#9733;&#9733;&#9733;</span>
               <span><strong id="appRating">0.0</strong>/5 App Store rating</span>
             </div>
             <div class="stat-item">
@@ -1355,6 +1354,7 @@
     <section class="pricing fade-up">
       <div class="wrap">
         <div class="section-header">
+          <span style="display:inline-flex;align-items:center;gap:6px;padding:5px 14px;background:rgba(6,214,224,.08);border:1px solid rgba(6,214,224,.2);border-radius:999px;font-size:11px;font-weight:700;color:var(--cyan);text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px;">Pricing</span>
           <h2 class="section-title">Study Your Protocols For Free </h2>
           <p class="section-subtitle">Master pharmacology and protocols at no cost. Upgrade to generate realistic scenarios.</p>
         </div>
@@ -1411,6 +1411,7 @@
     <section class="features fade-up">
       <div class="wrap">
         <div class="section-header">
+          <span style="display:inline-flex;align-items:center;gap:6px;padding:5px 14px;background:rgba(180,92,246,.08);border:1px solid rgba(180,92,246,.2);border-radius:999px;font-size:11px;font-weight:700;color:var(--violet);text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px;">Features</span>
           <h2 class="section-title">Why ProtoQuiz Works</h2>
           <p class="section-subtitle">Study what you'll actually use on calls</p>
         </div>
@@ -1455,29 +1456,23 @@
       </div>
     </section>
 
+
     <!-- Reviews Section -->
     <section class="reviews fade-up">
       <div class="wrap">
         <div class="section-header">
-          <h2 class="section-title">App Store Rating</h2>
+          <span style="display:inline-flex;align-items:center;gap:6px;padding:5px 14px;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);border-radius:999px;font-size:11px;font-weight:700;color:var(--warning);text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px;">Reviews</span>
+          <h2 class="section-title">What Users Are Saying</h2>
         </div>
 
         <div class="reviews-container">
-          <div class="review-summary">
-            <div class="review-rating"><span id="reviewRating">0.0</span>/5</div>
-            <div class="review-stars" id="reviewStars" style="position: relative; display: inline-block;">
-              <span style="color: #444;">☆☆☆☆☆</span>
-              <span id="reviewStarsBar" style="position: absolute; left: 0; top: 0; overflow: hidden; width: 92%; color: #FFD700;">★★★★★</span>
-            </div>
-          </div>
-
           <!-- Cycling Reviews Carousel -->
-          <div style="margin-top: 48px; position: relative; max-width: 700px; margin-left: auto; margin-right: auto;">
+          <div style="position: relative; max-width: 700px; margin-left: auto; margin-right: auto;">
             <div class="review-carousel">
               <!-- Review 1 - Jackeroo98 -->
               <div class="review-slide active">
                 <div style="background: rgba(255,255,255,.03); border: 1px solid var(--line); border-radius: 16px; padding: 24px;">
-                  <div style="color: #FFD700; margin-bottom: 8px; font-size: 18px;">⭐⭐⭐⭐⭐</div>
+                  <div style="color: #FFD700; margin-bottom: 8px; font-size: 18px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
                   <h4 style="font-size: 16px; margin-bottom: 8px; color: var(--cyan); font-weight: 600;">Excellent</h4>
                   <p style="font-size: 14px; line-height: 1.5; color: var(--muted); margin-bottom: 12px;">
                     "Impressive UI, accessible and usable"
@@ -1489,7 +1484,7 @@
               <!-- Review 2 - Anon5872 -->
               <div class="review-slide">
                 <div style="background: rgba(255,255,255,.03); border: 1px solid var(--line); border-radius: 16px; padding: 24px;">
-                  <div style="color: #FFD700; margin-bottom: 8px; font-size: 18px;">⭐⭐⭐⭐⭐</div>
+                  <div style="color: #FFD700; margin-bottom: 8px; font-size: 18px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
                   <h4 style="font-size: 16px; margin-bottom: 8px; color: var(--cyan); font-weight: 600;">Seriously the best</h4>
                   <p style="font-size: 14px; line-height: 1.5; color: var(--muted); margin-bottom: 12px;">
                     "Superior for professionals. Perfect balance of gamification, no intrusive ads, and strong free/paid options."
@@ -1501,7 +1496,7 @@
               <!-- Review 3 - AJ1A1 -->
               <div class="review-slide">
                 <div style="background: rgba(255,255,255,.03); border: 1px solid var(--line); border-radius: 16px; padding: 24px;">
-                  <div style="color: #FFD700; margin-bottom: 8px; font-size: 18px;">⭐⭐⭐⭐⭐</div>
+                  <div style="color: #FFD700; margin-bottom: 8px; font-size: 18px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
                   <h4 style="font-size: 16px; margin-bottom: 8px; color: var(--cyan); font-weight: 600;">Super fun scenarios and really helpful quiz app</h4>
                   <p style="font-size: 14px; line-height: 1.5; color: var(--muted); margin-bottom: 12px;">
                     "I am in paramedic school right now and have to learn a set of protocols front to back and this is a great way to do it...I also really like the scenarios they are exciting."
@@ -1542,24 +1537,6 @@
           </p>
         </div>
 
-        <div class="trust-grid">
-          <div class="trust-item">
-            <div class="trust-number" id="trustDownloads">400+</div>
-            <div class="trust-label">Downloads</div>
-          </div>
-          <div class="trust-item">
-            <div class="trust-number">4.7</div>
-            <div class="trust-label">App Store Rating</div>
-          </div>
-          <div class="trust-item">
-            <div class="trust-number">Weekly</div>
-            <div class="trust-label">Updates Shipped</div>
-          </div>
-          <div class="trust-item">
-            <div class="trust-number">1:1</div>
-            <div class="trust-label">Direct Support</div>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -1567,6 +1544,7 @@
     <section class="how fade-up">
       <div class="wrap">
         <div class="section-header">
+          <span style="display:inline-flex;align-items:center;gap:6px;padding:5px 14px;background:rgba(6,214,224,.08);border:1px solid rgba(6,214,224,.2);border-radius:999px;font-size:11px;font-weight:700;color:var(--cyan);text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px;">Getting Started</span>
           <h2 class="section-title">How It Works</h2>
           <p class="section-subtitle">Get started in 60 seconds</p>
         </div>
@@ -1771,7 +1749,7 @@
           if (reviews.length > 0) {
             reviewsList.innerHTML = reviews.map(review => {
               const rating = parseInt(review['im:rating'].label);
-              const stars = '⭐'.repeat(rating);
+              const stars = '\u2605'.repeat(rating);
               const author = review.author.name.label;
               const content = review.content.label;
               const title = review.title.label;
