@@ -285,42 +285,24 @@
       overflow-x:hidden;
     }
 
-    /* Animated gradient background */
+    /* Ambient glow */
     body::before{
       content:"";
       position:fixed;
       inset:0;
       background:
-        radial-gradient(circle 800px at 20% 20%, rgba(34,211,238,.12), transparent),
-        radial-gradient(circle 600px at 80% 50%, rgba(168,85,247,.1), transparent),
-        radial-gradient(circle 700px at 50% 90%, rgba(34,211,238,.08), transparent);
+        radial-gradient(ellipse 900px 500px at 25% 10%, rgba(34,211,238,.14), transparent),
+        radial-gradient(ellipse 700px 400px at 75% 30%, rgba(168,85,247,.12), transparent),
+        radial-gradient(ellipse 600px 600px at 50% 85%, rgba(34,211,238,.08), transparent),
+        radial-gradient(ellipse 400px 300px at 10% 60%, rgba(168,85,247,.06), transparent);
       pointer-events:none;
-      animation:gradientFloat 20s ease-in-out infinite;
     }
 
-    @keyframes gradientFloat{
-      0%,100%{transform:scale(1) rotate(0deg);}
-      33%{transform:scale(1.1) rotate(1deg);}
-      66%{transform:scale(0.95) rotate(-1deg);}
-    }
-
-    /* Glass effect overlay */
-    .glass-overlay{
-      position:fixed;
-      inset:0;
-      pointer-events:none;
-      background:repeating-linear-gradient(
-        -75deg,
-        rgba(255,255,255,.02) 0px 2px,
-        transparent 2px 8px
-      );
-      opacity:.5;
-      mix-blend-mode:soft-light;
-      animation:drift 25s linear infinite;
-    }
-
-    @keyframes drift{
-      to{background-position:800px 1600px;}
+    /* Grain texture */
+    body::after{
+      content:""; position:fixed; inset:0; pointer-events:none; opacity:.03; z-index:0;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size:128px;
     }
 
     a{color:inherit; text-decoration:none; transition:opacity .2s;}
@@ -422,6 +404,22 @@
       display:flex;
       align-items:center;
       position:relative;
+    }
+
+    .hero::before{
+      content:""; position:absolute; inset:0; pointer-events:none; opacity:.04; z-index:0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
+      background-size:60px 60px;
+      mask-image:radial-gradient(ellipse 70% 50% at 50% 40%, black, transparent);
+      -webkit-mask-image:radial-gradient(ellipse 70% 50% at 50% 40%, black, transparent);
+    }
+
+    .hero::after{
+      content:""; position:absolute; bottom:-1px; left:0; right:0; height:200px;
+      background:linear-gradient(180deg, transparent, var(--bg));
+      pointer-events:none; z-index:0;
     }
 
     .hero-content{
@@ -563,6 +561,11 @@
       position:relative;
     }
 
+    .pricing::before{
+      content:""; position:absolute; inset:0; pointer-events:none;
+      background:radial-gradient(ellipse 500px 300px at 50% 50%, rgba(34,211,238,.06), transparent);
+    }
+
     .section-header{
       text-align:center;
       margin-bottom:60px;
@@ -691,30 +694,45 @@
     }
 
     .feature-card{
-      background:rgba(255,255,255,.02);
+      background:rgba(255,255,255,.025);
       border:1px solid var(--line);
+      border-left:2px solid rgba(34,211,238,.4);
       border-radius:16px;
       padding:24px;
       transition:all .3s;
+      position:relative;
+      overflow:hidden;
     }
+
+    .feature-card::before{
+      content:""; position:absolute; inset:0; opacity:0;
+      background:radial-gradient(circle at 0% 50%, rgba(34,211,238,.06), transparent 70%);
+      transition:opacity .4s;
+    }
+
+    .feature-card:hover::before{opacity:1;}
 
     .feature-card:hover{
       border-color:rgba(34,211,238,.4);
+      border-left-color:var(--cyan);
       background:rgba(255,255,255,.04);
       transform:translateY(-4px);
-      box-shadow:0 8px 24px rgba(34,211,238,.15);
+      box-shadow:0 12px 32px rgba(34,211,238,.12);
     }
 
     .feature-icon{
       width:48px;
       height:48px;
-      background:linear-gradient(135deg, rgba(34,211,238,.2), rgba(168,85,247,.2));
+      background:linear-gradient(135deg, rgba(34,211,238,.15), rgba(168,85,247,.15));
+      border:1px solid rgba(34,211,238,.2);
       border-radius:12px;
       display:flex;
       align-items:center;
       justify-content:center;
-      font-size:24px;
+      font-size:20px;
+      font-weight:800;
       margin-bottom:16px;
+      color:var(--cyan);
     }
 
     .feature-card h3{
@@ -746,6 +764,14 @@
       background:rgba(255,255,255,.03);
       border-radius:24px;
       border:1px solid var(--line);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .review-summary::before{
+      content:""; position:absolute; inset:0; opacity:.5;
+      background:radial-gradient(circle at 50% 0%, rgba(245,158,11,.08), transparent 60%);
+      pointer-events:none;
     }
 
     .review-rating{
@@ -874,19 +900,36 @@
     }
 
     .trust-number{
-      font-size:48px;
+      font-size:42px;
       font-weight:900;
+      letter-spacing:-.02em;
       background:linear-gradient(135deg, var(--cyan), var(--violet));
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
       margin-bottom:8px;
+      line-height:1;
     }
 
     .trust-label{
       color:var(--muted);
-      font-size:14px;
+      font-size:13px;
       text-transform:uppercase;
-      letter-spacing:.05em;
+      letter-spacing:.06em;
+      font-weight:600;
+    }
+
+    .trust-item{
+      padding:24px 16px;
+      background:rgba(255,255,255,.02);
+      border:1px solid var(--line);
+      border-radius:16px;
+      transition:all .3s;
+    }
+
+    .trust-item:hover{
+      border-color:rgba(34,211,238,.25);
+      background:rgba(255,255,255,.04);
+      transform:translateY(-2px);
     }
 
     /* FAQ/How it Works */
@@ -904,6 +947,7 @@
     details{
       background:rgba(255,255,255,.02);
       border:1px solid var(--line);
+      border-left:2px solid rgba(34,211,238,.3);
       border-radius:16px;
       padding:20px;
       margin-bottom:16px;
@@ -913,6 +957,7 @@
     details[open]{
       background:rgba(255,255,255,.04);
       border-color:rgba(34,211,238,.2);
+      border-left-color:var(--cyan);
     }
 
     summary{
@@ -955,8 +1000,20 @@
       content:"";
       position:absolute;
       inset:0;
-      background:radial-gradient(circle at center, rgba(34,211,238,.1), transparent 60%);
+      background:
+        radial-gradient(ellipse 500px 250px at 50% 50%, rgba(34,211,238,.1), transparent),
+        radial-gradient(ellipse 300px 200px at 40% 40%, rgba(168,85,247,.06), transparent);
       pointer-events:none;
+    }
+
+    .final-cta::after{
+      content:""; position:absolute; inset:0; pointer-events:none; opacity:.03;
+      background-image:
+        linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
+      background-size:60px 60px;
+      mask-image:radial-gradient(ellipse 50% 50% at 50% 50%, black, transparent);
+      -webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%, black, transparent);
     }
 
     .final-cta h2{
@@ -1138,8 +1195,8 @@
       }
 
       .hero-content > div:first-child img{
-        width:100px !important;
-        height:100px !important;
+        width:140px !important;
+        height:140px !important;
       }
 
       .brand-link{
@@ -1214,8 +1271,6 @@
   </style>
 </head>
 <body>
-  <div class="glass-overlay" aria-hidden="true"></div>
-
   <!-- Mobile App Banner -->
   <div class="app-banner" id="appBanner">
     Get the ProtoQuiz iOS app for the full experience
@@ -1244,7 +1299,7 @@
       <div class="wrap">
         <div class="hero-content">
           <div style="display: flex; flex-direction: column; align-items: center; gap: 24px; margin-bottom: 16px;">
-            <img src="logo-256.png" alt="EMS ProtoQuiz App Icon - Page-Cited Protocol Quiz and Training for Emergency Medical Services" style="width: 120px; height: 120px; border-radius: 24px; box-shadow: 0 8px 32px rgba(0,200,255,0.3);">
+            <img src="logo-256.png" alt="EMS ProtoQuiz App Icon - Page-Cited Protocol Quiz and Training for Emergency Medical Services" style="width: 180px; height: 180px; border-radius: 32px; box-shadow: 0 12px 48px rgba(0,200,255,0.35), 0 0 80px rgba(34,211,238,0.15);">
             <div style="text-align: center; width: 100%;">
               <span class="hero-badge">Fastest-Growing EMS Study Tool</span>
               <h1>Master your local protocols.</h1>
@@ -1362,37 +1417,37 @@
 
         <div class="features-grid">
           <div class="feature-card">
-            <div class="feature-icon">◆</div>
+            <div class="feature-icon">01</div>
             <h3>Local-First</h3>
             <p>Your protocols, not generic NREMT content. Train on what you'll actually use on shift.</p>
           </div>
 
           <div class="feature-card">
-            <div class="feature-icon">◆</div>
+            <div class="feature-icon">02</div>
             <h3>Page-Cited</h3>
             <p>Every question links to the exact page in your PDF. Verify answers instantly.</p>
           </div>
 
           <div class="feature-card">
-            <div class="feature-icon">◆</div>
+            <div class="feature-icon">03</div>
             <h3>Dose-Safe</h3>
             <p>Medication doses come directly from your protocols. No guessing, no hallucinations.</p>
           </div>
 
           <div class="feature-card">
-            <div class="feature-icon">◆</div>
+            <div class="feature-icon">04</div>
             <h3>Realistic Scenarios (Premium)</h3>
             <p>Patient simulations that adapt to your decisions. They deteriorate, improve, and respond to treatments just like real calls.</p>
           </div>
 
           <div class="feature-card">
-            <div class="feature-icon">◆</div>
+            <div class="feature-icon">05</div>
             <h3>Track Progress</h3>
             <p>See your improvement over time. Focus on weak areas with targeted practice.</p>
           </div>
 
           <div class="feature-card">
-            <div class="feature-icon">◆</div>
+            <div class="feature-icon">06</div>
             <h3>Always Updated</h3>
             <p>When your protocols change, just upload the new PDF. Your quizzes update automatically.</p>
           </div>
@@ -1475,7 +1530,7 @@
           <p class="section-subtitle">Released in October 2025</p>
         </div>
 
-        <div style="max-width:700px; margin:32px auto; padding:32px; background:rgba(255,255,255,.03); border:1px solid var(--line); border-radius:24px;">
+        <div style="max-width:700px; margin:32px auto; padding:32px; background:rgba(255,255,255,.03); border:1px solid var(--line); border-left:2px solid rgba(34,211,238,.4); border-radius:24px; position:relative; overflow:hidden;">
           <p style="font-size:18px; line-height:1.8; color:var(--muted);">
             "When I was a Paramedic student I had to learn the specific protocols and pharmacology I'd actually use for
             my field internship and clinicals - not the generic NREMT stuff or protocols from when I was an EMT. All the study tools I found were either
@@ -1489,20 +1544,20 @@
 
         <div class="trust-grid">
           <div class="trust-item">
-            <div class="trust-number">✓</div>
-            <div class="trust-label">Paramedic Student</div>
+            <div class="trust-number" id="trustDownloads">400+</div>
+            <div class="trust-label">Downloads</div>
           </div>
           <div class="trust-item">
-            <div class="trust-number">✓</div>
-            <div class="trust-label">Active Development</div>
+            <div class="trust-number">4.7</div>
+            <div class="trust-label">App Store Rating</div>
           </div>
           <div class="trust-item">
-            <div class="trust-number">✓</div>
+            <div class="trust-number">Weekly</div>
+            <div class="trust-label">Updates Shipped</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-number">1:1</div>
             <div class="trust-label">Direct Support</div>
-          </div>
-          <div class="trust-item">
-            <div class="trust-number">✓</div>
-            <div class="trust-label">Your Feedback Matters</div>
           </div>
         </div>
       </div>
@@ -1942,7 +1997,7 @@
         animateDecimalCounter('appRating', 4.7, 1500);
         animateDecimalCounter('reviewRating', 4.7, 1500);
         animateStarBar('reviewStarsBar', 94, 1500);
-        animateCounter('downloadCount', 400, '+', 1500); // Firebase users + offset
+        animateCounter('downloadCount', 500, '+', 1500); // Firebase users + offset
         animateCounter('protocolCount', 548, '', 1500); // Real tracked
         animateCounter('quizCount', 2500, '+', 2000); // Estimate
         animateCounter('scenarioCount', 600, '+', 1500); // Estimate
