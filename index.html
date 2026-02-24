@@ -285,17 +285,27 @@
       overflow-x:hidden;
     }
 
-    /* Ambient glow */
+    /* Ambient glow - animated shift */
     body::before{
       content:"";
       position:fixed;
-      inset:0;
+      inset:-20%;
+      width:140%;
+      height:140%;
       background:
-        radial-gradient(ellipse 900px 500px at 25% 10%, rgba(6,214,224,.16), transparent),
-        radial-gradient(ellipse 700px 400px at 75% 30%, rgba(180,92,246,.14), transparent),
-        radial-gradient(ellipse 600px 600px at 50% 85%, rgba(6,214,224,.10), transparent),
-        radial-gradient(ellipse 400px 300px at 10% 60%, rgba(180,92,246,.08), transparent);
+        radial-gradient(ellipse 900px 500px at 25% 10%, rgba(6,214,224,.14), transparent),
+        radial-gradient(ellipse 700px 400px at 75% 30%, rgba(180,92,246,.12), transparent),
+        radial-gradient(ellipse 600px 600px at 50% 85%, rgba(6,214,224,.08), transparent),
+        radial-gradient(ellipse 400px 300px at 10% 60%, rgba(180,92,246,.07), transparent);
       pointer-events:none;
+      animation:ambientShift 20s ease-in-out infinite;
+    }
+
+    @keyframes ambientShift{
+      0%,100%{transform:translate(0,0) rotate(0deg);}
+      25%{transform:translate(3%,-2%) rotate(.5deg);}
+      50%{transform:translate(-2%,3%) rotate(-.3deg);}
+      75%{transform:translate(2%,1%) rotate(.2deg);}
     }
 
     /* Grain texture */
@@ -385,6 +395,10 @@
       background:rgba(255,255,255,.03);
     }
 
+    .nav-btn.active-page{
+      color:var(--cyan);
+    }
+
     .nav-btn.contact{
       background:linear-gradient(135deg, var(--cyan), var(--violet));
       color:#05080c;
@@ -437,12 +451,6 @@
       text-transform:uppercase;
       letter-spacing:.05em;
       margin-bottom:20px;
-      animation:pulse 3s ease-in-out infinite;
-    }
-
-    @keyframes pulse{
-      0%,100%{opacity:1;}
-      50%{opacity:0.8;}
     }
 
     h1{
@@ -454,7 +462,6 @@
       background:linear-gradient(180deg, #ffffff, #e0e7ff);
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
-      animation:fadeInUp .8s ease;
     }
 
     .hero-subtitle{
@@ -462,7 +469,6 @@
       font-weight:500;
       color:#a0b3d8;
       margin-bottom:12px;
-      animation:fadeInUp .8s ease .1s backwards;
     }
 
     .hero-description{
@@ -471,7 +477,6 @@
       max-width:600px;
       margin-bottom:24px;
       line-height:1.6;
-      animation:fadeInUp .8s ease .2s backwards;
     }
 
     .hero-stats{
@@ -479,7 +484,6 @@
       gap:24px;
       margin-bottom:32px;
       flex-wrap:wrap;
-      animation:fadeInUp .8s ease .3s backwards;
     }
 
     .stat-item{
@@ -504,7 +508,6 @@
       gap:16px;
       flex-wrap:wrap;
       margin-bottom:24px;
-      animation:fadeInUp .8s ease .4s backwards;
     }
 
     .btn{
@@ -541,17 +544,6 @@
     .btn-secondary:hover{
       background:rgba(255,255,255,.08);
       border-color:rgba(255,255,255,.2);
-    }
-
-    @keyframes fadeInUp{
-      from{
-        opacity:0;
-        transform:translateY(20px);
-      }
-      to{
-        opacity:1;
-        transform:translateY(0);
-      }
     }
 
     /* Pricing Section */
@@ -1114,11 +1106,11 @@
       font-size:14px;
     }
 
-    /* Scroll animations - Intersection Observer powered */
+    /* Scroll animations - one-shot, no re-trigger */
     .fade-up{
       opacity:0;
-      transform:translateY(40px);
-      transition:all 0.6s ease-out;
+      transform:translateY(30px);
+      transition:opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1);
     }
 
     .fade-up.visible{
@@ -1126,20 +1118,16 @@
       transform:translateY(0);
     }
 
-    /* Re-enable animations when scrolling back up */
-    .fade-up.visible.reset{
-      opacity:0;
-      transform:translateY(40px);
-    }
-
-    /* Floating orbs */
-    .orb{position:fixed; border-radius:50%; filter:blur(80px); pointer-events:none; z-index:0;}
-    .orb-1{width:500px; height:500px; background:rgba(34,211,238,.08); top:5%; left:-10%; animation:orbFloat1 25s ease-in-out infinite;}
-    .orb-2{width:350px; height:350px; background:rgba(168,85,247,.07); top:40%; right:-8%; animation:orbFloat2 20s ease-in-out infinite;}
-    .orb-3{width:250px; height:250px; background:rgba(34,211,238,.05); bottom:10%; left:15%; animation:orbFloat3 22s ease-in-out infinite;}
-    @keyframes orbFloat1{0%,100%{transform:translate(0,0);}33%{transform:translate(40px,-30px);}66%{transform:translate(-20px,40px);}}
-    @keyframes orbFloat2{0%,100%{transform:translate(0,0);}33%{transform:translate(-30px,20px);}66%{transform:translate(20px,-30px);}}
-    @keyframes orbFloat3{0%,100%{transform:translate(0,0);}33%{transform:translate(20px,30px);}66%{transform:translate(-30px,-15px);}}
+    /* Floating orbs - larger, more visible, slower drift */
+    .orb{position:fixed; border-radius:50%; filter:blur(100px); pointer-events:none; z-index:0;}
+    .orb-1{width:600px; height:600px; background:rgba(6,214,224,.10); top:0%; left:-15%; animation:orbFloat1 30s ease-in-out infinite;}
+    .orb-2{width:450px; height:450px; background:rgba(180,92,246,.09); top:35%; right:-12%; animation:orbFloat2 24s ease-in-out infinite;}
+    .orb-3{width:350px; height:350px; background:rgba(6,214,224,.07); bottom:5%; left:20%; animation:orbFloat3 28s ease-in-out infinite;}
+    .orb-4{width:300px; height:300px; background:rgba(180,92,246,.06); top:60%; left:40%; animation:orbFloat4 32s ease-in-out infinite;}
+    @keyframes orbFloat1{0%,100%{transform:translate(0,0) scale(1);}25%{transform:translate(60px,-40px) scale(1.05);}50%{transform:translate(20px,50px) scale(.95);}75%{transform:translate(-40px,10px) scale(1.02);}}
+    @keyframes orbFloat2{0%,100%{transform:translate(0,0) scale(1);}25%{transform:translate(-50px,30px) scale(1.03);}50%{transform:translate(30px,-40px) scale(.97);}75%{transform:translate(-20px,-20px) scale(1.05);}}
+    @keyframes orbFloat3{0%,100%{transform:translate(0,0) scale(1);}33%{transform:translate(30px,40px) scale(1.04);}66%{transform:translate(-40px,-20px) scale(.96);}}
+    @keyframes orbFloat4{0%,100%{transform:translate(0,0) scale(1);}33%{transform:translate(-35px,-30px) scale(1.06);}66%{transform:translate(25px,35px) scale(.94);}}
 
     /* Logo pulse */
     @keyframes logoPulse{
@@ -1269,6 +1257,7 @@
   <div class="orb orb-1" aria-hidden="true"></div>
   <div class="orb orb-2" aria-hidden="true"></div>
   <div class="orb orb-3" aria-hidden="true"></div>
+  <div class="orb orb-4" aria-hidden="true"></div>
 
   <!-- Mobile App Banner -->
   <div class="app-banner" id="appBanner">
@@ -1284,8 +1273,9 @@
           <span>EMS ProtoQuiz</span>
         </a>
         <div class="nav-links">
-          <a href="blog" class="nav-btn" data-track="BlogPage">Blog</a>
-          <a href="agency" class="nav-btn" data-track="AgencyPage">For Agencies</a>
+          <a href="./" class="nav-btn active-page">Home</a>
+          <a href="blog/" class="nav-btn" data-track="BlogPage">Blog</a>
+          <a href="agency/" class="nav-btn" data-track="AgencyPage">For Agencies</a>
           <button type="button" class="nav-btn contact" id="openContact" data-track="ContactOpen">Contact</button>
         </div>
       </nav>
@@ -1313,22 +1303,22 @@
           <div class="hero-stats">
             <div class="stat-item">
               <span class="stars">&#9733;&#9733;&#9733;&#9733;</span>
-              <span><strong id="appRating">0.0</strong>/5 App Store rating</span>
+              <span><strong id="appRating">4.7</strong>/5 App Store rating</span>
             </div>
             <div class="stat-item">
-              <strong id="downloadCount">0</strong>
+              <strong id="downloadCount">500+</strong>
               <span>total downloads</span>
             </div>
             <div class="stat-item">
-              <strong id="protocolCount">0</strong>
+              <strong id="protocolCount">548</strong>
               <span>protocols uploaded</span>
             </div>
             <div class="stat-item">
-              <strong id="quizCount">0</strong>
+              <strong id="quizCount">2,500+</strong>
               <span>quizzes generated</span>
             </div>
             <div class="stat-item">
-              <strong id="scenarioCount">0</strong>
+              <strong id="scenarioCount">600+</strong>
               <span>scenarios completed</span>
             </div>
           </div>
@@ -1614,10 +1604,10 @@
           © <a href="https://teachmetolive.com" target="_blank">2025 Teach Me to Live LLC</a>. All rights reserved.
         </div>
         <div class="footer-links">
-          <a href="blog">Blog</a>
-          <a href="agency">For Agencies</a>
-          <a href="privacy">Privacy</a>
-          <a href="terms">Terms</a>
+          <a href="blog/">Blog</a>
+          <a href="agency/">For Agencies</a>
+          <a href="privacy/">Privacy</a>
+          <a href="terms/">Terms</a>
           <a href="#" id="openContactFooter">Contact</a>
         </div>
       </div>
@@ -1775,31 +1765,17 @@
     // Load reviews on page load
     loadReviews();
 
-    // Intersection Observer for scroll animations - 15% visibility threshold with re-animation
-    const observerOptions = {
-      threshold: 0.15,
-      rootMargin: '0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
+    // Intersection Observer - animate once, no re-trigger
+    const observer = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // Element is visible - animate in
           entry.target.classList.add('visible');
-          entry.target.classList.remove('reset');
-        } else {
-          // Element scrolled out of view - reset for re-animation
-          entry.target.classList.remove('visible');
-          setTimeout(() => {
-            entry.target.classList.add('reset');
-          }, 50);
+          obs.unobserve(entry.target);
         }
       });
-    }, observerOptions);
+    }, { threshold: 0.1 });
 
-    document.querySelectorAll('.fade-up').forEach(el => {
-      observer.observe(el);
-    });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
     // Capture and preserve UTM parameters from URL
     const urlParams = new URLSearchParams(window.location.search);
@@ -1940,136 +1916,27 @@
     // Auto-advance every 5 seconds
     setInterval(nextSlide, 5000);
 
-    // Load and animate live stats
-    async function loadAndAnimateStats() {
+    // Load live stats (no animation - instant set to avoid layout shift)
+    async function loadStats() {
       try {
-        // Fetch Firestore stats
         const response = await fetch('tmp/firestore-stats.json');
         const stats = await response.json();
-
-        // Extract numbers
-        const downloads = stats.appStoreDownloads || 300;
-        const protocols = stats.allTime.protocolsUploaded || 435;
-        const quizzes = stats.allTime.quizzesGenerated || 2500;
-        const scenarios = stats.allTime.scenariosCompleted || 600;
-
-        // Hardcoded App Store rating (4.7 stars as of current)
-        let appRating = 4.7;
-
-        // Animate rating (decimal counter)
-        animateDecimalCounter('appRating', appRating, 1500);
-        animateDecimalCounter('reviewRating', appRating, 1500);
-
-        // Animate star bar width
-        const starPercentage = (appRating / 5) * 100;
-        animateStarBar('reviewStarsBar', starPercentage, 1500);
-
-        // Animate each counter (+ for estimates, no + for real tracked data)
-        animateCounter('downloadCount', downloads, '+', 1500); // Real count (Firebase users + offset)
-        animateCounter('protocolCount', protocols, '', 1500); // Real count from protocol_uploads
-        animateCounter('quizCount', quizzes, '+', 2000); // Estimate (Math.max)
-        animateCounter('scenarioCount', scenarios, '+', 1500); // Estimate (Math.max)
-      } catch (error) {
-        // Fallback to static numbers if fetch fails
-        console.log('Using fallback stats');
-        animateDecimalCounter('appRating', 4.7, 1500);
-        animateDecimalCounter('reviewRating', 4.7, 1500);
-        animateStarBar('reviewStarsBar', 94, 1500);
-        animateCounter('downloadCount', 500, '+', 1500); // Firebase users + offset
-        animateCounter('protocolCount', 548, '', 1500); // Real tracked
-        animateCounter('quizCount', 2500, '+', 2000); // Estimate
-        animateCounter('scenarioCount', 600, '+', 1500); // Estimate
+        const d = stats.display || {};
+        if (d.appStoreDownloads) setText('downloadCount', d.appStoreDownloads);
+        if (d.protocolsUploaded) setText('protocolCount', d.protocolsUploaded);
+        if (d.quizzesGenerated) setText('quizCount', d.quizzesGenerated);
+        if (d.scenariosCompleted) setText('scenarioCount', d.scenariosCompleted);
+      } catch (e) {
+        // HTML already has fallback values, nothing to do
       }
     }
 
-    // Animate a single counter from 0 to target
-    function animateCounter(elementId, target, suffix, duration) {
-      const element = document.getElementById(elementId);
-      if (!element) return;
-
-      const startTime = performance.now();
-      const startValue = 0;
-
-      function updateCounter(currentTime) {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-
-        // Easing function for smooth animation (easeOutExpo)
-        const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
-
-        const currentValue = Math.floor(startValue + (target - startValue) * easeProgress);
-        element.textContent = currentValue.toLocaleString() + suffix;
-
-        if (progress < 1) {
-          requestAnimationFrame(updateCounter);
-        } else {
-          element.textContent = target.toLocaleString() + suffix;
-        }
-      }
-
-      requestAnimationFrame(updateCounter);
+    function setText(id, val) {
+      const el = document.getElementById(id);
+      if (el) el.textContent = val;
     }
 
-    // Animate a decimal counter (for ratings)
-    function animateDecimalCounter(elementId, target, duration) {
-      const element = document.getElementById(elementId);
-      if (!element) return;
-
-      const startTime = performance.now();
-      const startValue = 0;
-
-      function updateCounter(currentTime) {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-
-        // Easing function for smooth animation (easeOutExpo)
-        const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
-
-        const currentValue = startValue + (target - startValue) * easeProgress;
-        element.textContent = currentValue.toFixed(1);
-
-        if (progress < 1) {
-          requestAnimationFrame(updateCounter);
-        } else {
-          element.textContent = target.toFixed(1);
-        }
-      }
-
-      requestAnimationFrame(updateCounter);
-    }
-
-    // Animate star bar width (for review stars)
-    function animateStarBar(elementId, targetPercentage, duration) {
-      const element = document.getElementById(elementId);
-      if (!element) return;
-
-      const startTime = performance.now();
-      const startValue = 0;
-
-      function updateWidth(currentTime) {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-
-        // Easing function for smooth animation (easeOutExpo)
-        const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
-
-        const currentValue = startValue + (targetPercentage - startValue) * easeProgress;
-        element.style.width = currentValue + '%';
-
-        if (progress < 1) {
-          requestAnimationFrame(updateWidth);
-        } else {
-          element.style.width = targetPercentage + '%';
-        }
-      }
-
-      requestAnimationFrame(updateWidth);
-    }
-
-    // Start animation when page loads
-    window.addEventListener('load', () => {
-      setTimeout(loadAndAnimateStats, 300); // Small delay for smoother UX
-    });
+    loadStats();
   </script>
 </body>
 </html>

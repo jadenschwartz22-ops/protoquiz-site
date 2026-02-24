@@ -1,252 +1,763 @@
 <!doctype html>
-<!-- build: v6 -->
+<!-- build: v8 - B2B Concise + Visual -->
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>EMS ProtoQuiz for Agencies</title>
-  <meta name="description" content="Region-accurate, page-cited EMS quizzes and scenarios for departments and training officers." />
+  <title>EMS ProtoQuiz for Agencies - Protocol Training Platform</title>
+  <meta name="description" content="We turn your protocol PDF into a complete training system. Quizzes, scenarios, analytics, and spaced repetition for your entire department." />
 
-  <!-- SEO -->
   <link rel="canonical" href="https://protoquiz.com/agency">
   <meta name="robots" content="index,follow" />
-
-  <!-- Social -->
-  <meta property="og:title" content="EMS ProtoQuiz — For Agencies" />
-  <meta property="og:image" content="logo2.png" />
+  <meta property="og:title" content="EMS ProtoQuiz for Agencies" />
+  <meta property="og:description" content="We turn your protocol PDF into a complete training system for your department." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://protoquiz.com/agency" />
+  <meta property="og:image" content="https://protoquiz.com/logo-256.png" />
   <meta name="theme-color" content="#05080c" />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="../favicon2.png" />
-  <link rel="apple-touch-icon" href="../favicon2.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
 
-  <!-- Google tag (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-LNSS9BMEP8"></script>
   <script>
-    // GA4 setup
     window.dataLayer = window.dataLayer || [];
     function gtag(){ dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-LNSS9BMEP8');
-
-    // Unified tracker -> GA4 custom events
-    function track(name, props){
-      try { gtag('event', name, props || {}); } catch(e){}
-    }
-
-    // Identify page for event context
+    function track(name, props){ try { gtag('event', name, props || {}); } catch(e){} }
     const PAGE = 'agency';
   </script>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
   <style>
     :root{
-      --bg:#05080c; --panel:#0a0f15; --ink:#e6edf7; --muted:#9aa4b2; --line:#16202b;
-      --cyan:#22d3ee; --violet:#a855f7; --radius:18px; --max:980px;
+      --bg:#04070a;
+      --panel:#0a0f16;
+      --ink:#edf2f8;
+      --muted:#8694a7;
+      --line:#151d28;
+      --accent:#6366f1;
+      --accent2:#06b6d4;
+      --glow:rgba(99,102,241,.25);
+      --success:#10b981;
+      --warning:#f59e0b;
+      --max:1100px;
     }
-    *{box-sizing:border-box}
-    body{margin:0; color:var(--ink); font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
-      background:
-        radial-gradient(1000px 480px at 85% -10%, rgba(168,85,247,.18), transparent 60%),
-        radial-gradient(780px 360px at -10% 0%, rgba(34,211,238,.15), transparent 55%),
-        var(--bg);}
-    a{color:inherit; text-decoration:none}
-    :focus-visible{outline:2px solid var(--cyan); outline-offset:2px; border-radius:10px}
-    .wrap{max-width:var(--max); margin:0 auto; padding:28px 20px}
-    header{border-bottom:1px solid var(--line); background:linear-gradient(180deg, rgba(255,255,255,.03), transparent)}
-    .nav{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:16px 20px}
-    .brand-link{display:flex; align-items:center; gap:12px}
-    .brand-link img{width:64px; height:64px; border-radius:12px}
-    .brand-name{font-weight:800}
-    .chip{font-size:13px; padding:6px 10px; border-radius:999px; border:1px solid #243246; color:#cfd8e3; opacity:.9; background:rgba(255,255,255,.02)}
-    h1{margin:18px 0 6px; font-size:clamp(30px,6.2vw,48px); letter-spacing:-.01em}
-    .lead{color:var(--muted); max-width:760px}
-    .grid{display:grid; gap:14px; margin-top:18px}
-    @media (min-width:840px){ .grid{grid-template-columns:repeat(3,1fr)} }
-    .card{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015)); border:1px solid var(--line); border-radius:var(--radius); padding:18px}
-    .card h3{margin:0 0 6px; font-size:17px}
-    .cta{display:flex; gap:12px; flex-wrap:wrap; margin:18px 0}
-    .btn{display:inline-flex; align-items:center; gap:8px; padding:11px 16px; border-radius:12px; background:linear-gradient(90deg, var(--cyan), var(--violet)); color:#061018; font-weight:800}
-    footer{margin-top:36px; padding:36px 20px 60px; color:var(--muted); border-top:1px solid var(--line)}
-    /* Dialog */
-    dialog{width:min(640px, 96vw); border:1px solid #223041; border-radius:16px; padding:0; background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015)); color:var(--ink)}
-    /* Darker, blurrier backdrop */
-    dialog::backdrop{
-      background: rgba(5, 8, 12, 0.72);
-      backdrop-filter: blur(6px) saturate(110%);
-    }
-    .dlg-head{display:flex; align-items:center; justify-content:space-between; padding:14px 16px; border-bottom:1px solid var(--line)}
-    .dlg-body{padding:16px}
-    .field{display:grid; gap:6px; margin:10px 0}
-    input, textarea, select{width:100%; background:#0c1219; color:#e6edf7; border:1px solid #223041; border-radius:12px; padding:10px 12px; font:inherit}
-    textarea{min-height:120px; resize:vertical}
-    .row{display:flex; gap:10px; flex-wrap:wrap}
 
-    /* Dim/blur page when dialog is open */
-    body.dim header,
-    body.dim main,
-    body.dim footer {
-      filter: blur(2px) brightness(0.9);
-      transition: filter .15s ease;
+    *{box-sizing:border-box; margin:0; padding:0;}
+    html{scroll-behavior:smooth;}
+    body{
+      color:var(--ink); font-family:'Inter',system-ui,sans-serif;
+      font-size:16px; line-height:1.6; background:var(--bg);
+      -webkit-font-smoothing:antialiased; overflow-x:hidden;
     }
-    /* No .fx here, so no extra rule needed */
+
+    /* Ambient glow */
+    body::before{
+      content:""; position:fixed; inset:0; pointer-events:none;
+      background:
+        radial-gradient(ellipse 900px 500px at 30% 0%, rgba(99,102,241,.12), transparent),
+        radial-gradient(ellipse 700px 400px at 70% 20%, rgba(6,182,212,.08), transparent),
+        radial-gradient(ellipse 600px 600px at 50% 80%, rgba(99,102,241,.06), transparent);
+    }
+
+    /* Grain texture */
+    body::after{
+      content:""; position:fixed; inset:0; pointer-events:none; opacity:.03;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size:128px;
+    }
+
+    a{color:inherit; text-decoration:none;}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 24px; position:relative; z-index:1;}
+
+    /* Nav */
+    header{
+      position:fixed; top:0; left:0; right:0; z-index:100;
+      background:rgba(4,7,10,.8); backdrop-filter:blur(24px) saturate(180%);
+      border-bottom:1px solid var(--line);
+    }
+    .navbar{display:flex; align-items:center; justify-content:space-between; padding:14px 0;}
+    .brand-link{display:flex; align-items:center; gap:10px; font-weight:800; font-size:17px; letter-spacing:-.02em;}
+    .brand-link img{width:40px; height:40px; border-radius:10px;}
+    .nav-links{display:flex; gap:10px; align-items:center;}
+    .nav-btn{
+      padding:8px 16px; border-radius:999px; font-size:13px; font-weight:600;
+      cursor:pointer; border:1px solid transparent; background:transparent; color:var(--ink);
+      transition:all .2s;
+    }
+    .nav-btn:hover{border-color:var(--line); background:rgba(255,255,255,.04);}
+    .nav-btn.active-page{color:var(--accent2);}
+    .nav-btn.primary{background:var(--accent); color:#fff; border:none; box-shadow:0 4px 16px var(--glow);}
+    .nav-btn.primary:hover{transform:translateY(-1px); box-shadow:0 8px 24px var(--glow);}
+
+    /* Hero */
+    .hero{padding:160px 0 100px; text-align:center; position:relative;}
+    .hero::before{
+      content:""; position:absolute; inset:0; pointer-events:none; opacity:.04;
+      background-image:
+        linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
+      background-size:60px 60px;
+      mask-image:radial-gradient(ellipse 70% 50% at 50% 40%, black, transparent);
+    }
+    .hero::after{
+      content:""; position:absolute; bottom:-1px; left:0; right:0; height:200px;
+      background:linear-gradient(180deg, transparent, var(--bg));
+      pointer-events:none;
+    }
+    .hero-label{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:6px 16px; border-radius:999px;
+      background:rgba(99,102,241,.08); border:1px solid rgba(99,102,241,.2);
+      font-size:13px; font-weight:600; color:var(--accent2); letter-spacing:.02em;
+      margin-bottom:24px;
+    }
+    .hero-label .dot{width:6px; height:6px; border-radius:50%; background:var(--success); animation:blink 2s ease infinite;}
+    @keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
+
+    h1{
+      font-size:clamp(36px, 5.5vw, 60px); font-weight:900; line-height:1.05;
+      letter-spacing:-.035em; margin-bottom:20px;
+    }
+    h1 .gradient{
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    }
+    .hero-sub{
+      font-size:clamp(16px, 2vw, 19px); color:var(--muted); max-width:620px;
+      margin:0 auto 36px; line-height:1.7;
+    }
+    .hero-actions{display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
+
+    .btn{
+      padding:14px 28px; border-radius:12px; font-weight:700; font-size:15px;
+      cursor:pointer; transition:all .25s; border:none;
+      display:inline-flex; align-items:center; gap:8px; letter-spacing:-.01em;
+    }
+    .btn-primary{background:var(--accent); color:#fff; box-shadow:0 8px 32px var(--glow);}
+    .btn-primary:hover{transform:translateY(-2px); box-shadow:0 14px 40px var(--glow);}
+    .btn-ghost{
+      background:rgba(255,255,255,.04); color:var(--ink);
+      border:1px solid rgba(255,255,255,.08);
+    }
+    .btn-ghost:hover{background:rgba(255,255,255,.07); border-color:rgba(255,255,255,.15);}
+
+    /* Section */
+    .section{padding:100px 0; position:relative;}
+    .section-label{
+      font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.08em;
+      color:var(--accent); margin-bottom:12px;
+    }
+    .section-title{
+      font-size:clamp(26px, 4vw, 40px); font-weight:800; letter-spacing:-.02em;
+      margin-bottom:14px; line-height:1.15;
+    }
+    .section-desc{font-size:16px; color:var(--muted); max-width:540px; line-height:1.7;}
+
+    /* Bento grid */
+    .bento{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:48px;}
+    .bento-card{
+      background:rgba(255,255,255,.025); border:1px solid var(--line);
+      border-radius:16px; padding:28px; position:relative; overflow:hidden;
+      transition:border-color .3s, box-shadow .3s;
+    }
+    .bento-card:hover{border-color:rgba(99,102,241,.3); box-shadow:0 0 40px rgba(99,102,241,.06);}
+    .bento-card.span-2{grid-column:span 2;}
+    .bento-card h3{font-size:18px; font-weight:700; margin-bottom:6px;}
+    .bento-card p{color:var(--muted); font-size:14px; line-height:1.6;}
+    .bento-num{
+      font-size:48px; font-weight:900; letter-spacing:-.03em;
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+      margin-bottom:4px; line-height:1;
+    }
+
+    /* Dashboard mockup */
+    .mockup{
+      max-width:960px; margin:0 auto;
+      background:rgba(255,255,255,.02); border:1px solid var(--line);
+      border-radius:16px; overflow:hidden;
+      box-shadow:0 24px 80px rgba(0,0,0,.3), 0 0 1px rgba(255,255,255,.05) inset,
+        0 0 60px rgba(99,102,241,.06);
+    }
+    .mockup-chrome{
+      display:flex; align-items:center; gap:7px; padding:12px 16px;
+      background:rgba(255,255,255,.03); border-bottom:1px solid var(--line);
+    }
+    .mockup-dot{width:9px; height:9px; border-radius:50%;}
+    .mockup-dot:nth-child(1){background:#ff5f57;}
+    .mockup-dot:nth-child(2){background:#ffbd2e;}
+    .mockup-dot:nth-child(3){background:#28ca42;}
+    .mockup-url{
+      margin-left:12px; padding:5px 14px; border-radius:6px;
+      background:rgba(255,255,255,.04); font-size:12px; color:var(--muted); font-family:monospace;
+    }
+
+    .mockup-body{padding:28px;}
+    .mockup-row{display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:10px;}
+    .mockup-h{font-size:18px; font-weight:700;}
+    .mockup-pills{display:flex; gap:6px;}
+    .mockup-pill{
+      padding:5px 12px; border-radius:6px; font-size:12px; font-weight:600;
+      background:rgba(255,255,255,.04); color:var(--muted); border:1px solid var(--line);
+    }
+    .mockup-pill.on{background:rgba(99,102,241,.12); color:var(--accent); border-color:rgba(99,102,241,.25);}
+
+    .kpi-row{display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:24px;}
+    .kpi{background:rgba(255,255,255,.025); border:1px solid var(--line); border-radius:10px; padding:14px; text-align:center;}
+    .kpi-val{font-size:26px; font-weight:800; color:var(--accent);}
+    .kpi-label{font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em; margin-top:2px;}
+
+    .chart{display:flex; align-items:flex-end; gap:6px; height:110px; margin-bottom:8px;}
+    .bar{flex:1; border-radius:4px 4px 0 0; position:relative; min-width:0;}
+    .bar::after{
+      content:attr(data-pct); position:absolute; top:-18px; left:50%; transform:translateX(-50%);
+      font-size:10px; font-weight:700; color:var(--muted); opacity:0; transition:opacity .2s;
+    }
+    .bar:hover::after{opacity:1;}
+    .chart-labels{display:flex; justify-content:space-between; font-size:10px; color:var(--muted); padding:0 2px;}
+
+    .tbl{width:100%; border-collapse:collapse; margin-top:20px;}
+    .tbl th{
+      text-align:left; font-size:11px; text-transform:uppercase; letter-spacing:.05em;
+      color:var(--muted); padding:8px 10px; border-bottom:1px solid var(--line);
+    }
+    .tbl td{padding:10px; border-bottom:1px solid rgba(255,255,255,.025); font-size:13px;}
+    .tag{display:inline-block; padding:2px 8px; border-radius:5px; font-size:10px; font-weight:700;}
+    .tag-g{background:rgba(16,185,129,.12); color:var(--success);}
+    .tag-y{background:rgba(245,158,11,.12); color:var(--warning);}
+    .tag-b{background:rgba(99,102,241,.12); color:var(--accent);}
+
+    /* Quiz mockup */
+    .quiz-mockup{
+      max-width:480px; margin:0 auto;
+      background:rgba(255,255,255,.025); border:1px solid var(--line);
+      border-radius:16px; overflow:hidden;
+      box-shadow:0 16px 60px rgba(0,0,0,.25), 0 0 40px rgba(99,102,241,.05);
+    }
+    .quiz-mockup-head{
+      padding:16px 20px; border-bottom:1px solid var(--line);
+      display:flex; justify-content:space-between; align-items:center;
+    }
+    .quiz-mockup-head span{font-size:13px; font-weight:700;}
+    .quiz-mockup-head .progress-ring{
+      width:36px; height:36px; border-radius:50%;
+      border:3px solid var(--line); border-top-color:var(--accent);
+      display:flex; align-items:center; justify-content:center;
+      font-size:11px; font-weight:800; color:var(--accent);
+    }
+    .quiz-q{padding:20px; font-size:15px; font-weight:600; line-height:1.5;}
+    .quiz-opts{padding:0 20px 20px; display:flex; flex-direction:column; gap:8px;}
+    .quiz-opt{
+      padding:12px 16px; border-radius:10px; font-size:13px;
+      border:1px solid var(--line); background:rgba(255,255,255,.02);
+      transition:all .2s; cursor:default;
+    }
+    .quiz-opt.correct{border-color:var(--success); background:rgba(16,185,129,.08); color:var(--success);}
+    .quiz-opt.wrong{border-color:#ef4444; background:rgba(239,68,68,.06); color:#ef4444; opacity:.5;}
+    .quiz-cite{
+      padding:12px 20px; border-top:1px solid var(--line);
+      font-size:12px; color:var(--muted);
+    }
+    .quiz-cite strong{color:var(--accent2);}
+
+    /* Split layout */
+    .split{display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;}
+    .split-text{max-width:460px;}
+
+    /* Pilot steps */
+    .timeline{position:relative; padding-left:32px; margin-top:40px;}
+    .timeline::before{
+      content:""; position:absolute; left:11px; top:8px; bottom:8px; width:2px;
+      background:linear-gradient(180deg, var(--accent), var(--accent2));
+      border-radius:2px;
+    }
+    .tl-item{position:relative; margin-bottom:36px;}
+    .tl-item:last-child{margin-bottom:0;}
+    .tl-dot{
+      position:absolute; left:-32px; top:4px; width:24px; height:24px;
+      border-radius:50%; background:var(--accent); display:flex;
+      align-items:center; justify-content:center;
+      box-shadow:0 0 16px var(--glow);
+    }
+    .tl-dot::after{content:""; width:8px; height:8px; border-radius:50%; background:#fff;}
+    .tl-item h3{font-size:17px; font-weight:700; margin-bottom:4px;}
+    .tl-item p{color:var(--muted); font-size:14px; line-height:1.6;}
+
+    /* CTA */
+    .cta-section{padding:120px 0; text-align:center; position:relative;}
+    .cta-section::before{
+      content:""; position:absolute; inset:0; pointer-events:none;
+      background:radial-gradient(ellipse 600px 300px at center, rgba(99,102,241,.1), transparent);
+    }
+    .cta-section h2{
+      font-size:clamp(32px, 5vw, 48px); font-weight:900; letter-spacing:-.03em;
+      margin-bottom:14px;
+    }
+    .cta-section p{font-size:17px; color:var(--muted); margin-bottom:32px;}
+
+    /* Footer */
+    footer{padding:40px 0; border-top:1px solid var(--line);}
+    .footer-row{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
+    .footer-row a, .footer-row span{color:var(--muted); font-size:13px;}
+    .footer-links{display:flex; gap:20px;}
+    .footer-links a:hover{color:var(--ink);}
+
+    /* Dialog */
+    dialog{
+      width:min(520px, 96vw); border:1px solid var(--line); border-radius:20px;
+      padding:0; background:var(--panel); color:var(--ink); backdrop-filter:blur(20px);
+    }
+    dialog::backdrop{background:rgba(4,7,10,.85); backdrop-filter:blur(12px);}
+    .dlg-head{display:flex; justify-content:space-between; align-items:center; padding:18px 22px; border-bottom:1px solid var(--line);}
+    .dlg-head h3{font-size:18px; font-weight:700;}
+    .dlg-close{
+      background:transparent; border:1px solid var(--line); color:var(--ink);
+      padding:5px 12px; border-radius:8px; cursor:pointer; font-size:13px;
+    }
+    .dlg-body{padding:22px;}
+    .field{margin-bottom:16px;}
+    .field label{display:block; margin-bottom:6px; font-weight:500; font-size:13px; color:var(--muted);}
+    .field input, .field textarea, .field select{
+      width:100%; padding:11px 14px; background:rgba(255,255,255,.04);
+      border:1px solid var(--line); border-radius:10px; color:var(--ink);
+      font-family:inherit; font-size:14px; transition:border-color .2s;
+    }
+    .field input:focus, .field textarea:focus, .field select:focus{outline:none; border-color:var(--accent);}
+    .field textarea{min-height:100px; resize:vertical;}
+
+    /* Impact strip */
+    .impact{
+      display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
+      background:var(--line); border-radius:16px; overflow:hidden;
+      max-width:800px; margin:0 auto;
+    }
+    .impact-item{
+      background:var(--bg); padding:32px 24px; text-align:center;
+      position:relative;
+    }
+    .impact-item::before{
+      content:""; position:absolute; inset:0; opacity:0;
+      background:radial-gradient(circle at center, rgba(99,102,241,.08), transparent 70%);
+      transition:opacity .4s;
+    }
+    .impact-item:hover::before{opacity:1;}
+    .impact-val{
+      font-size:36px; font-weight:900; letter-spacing:-.02em;
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+      line-height:1; margin-bottom:6px;
+    }
+    .impact-label{font-size:13px; color:var(--muted); font-weight:500; line-height:1.4;}
+
+    /* Scenario mockup */
+    .scenario-mockup{
+      max-width:480px; margin:0 auto;
+      background:rgba(255,255,255,.025); border:1px solid var(--line);
+      border-radius:16px; overflow:hidden;
+      box-shadow:0 16px 60px rgba(0,0,0,.25), 0 0 40px rgba(6,182,212,.05);
+    }
+    .scenario-head{
+      padding:14px 20px; border-bottom:1px solid var(--line);
+      display:flex; justify-content:space-between; align-items:center;
+    }
+    .scenario-head span{font-size:13px; font-weight:700;}
+    .scenario-stage{
+      display:inline-block; padding:3px 10px; border-radius:6px;
+      font-size:11px; font-weight:700;
+      background:rgba(245,158,11,.12); color:var(--warning);
+    }
+    .scenario-body{padding:20px;}
+    .scenario-vitals{
+      display:grid; grid-template-columns:repeat(3,1fr); gap:8px;
+      margin-bottom:16px;
+    }
+    .vital{
+      background:rgba(255,255,255,.03); border:1px solid var(--line);
+      border-radius:8px; padding:8px; text-align:center;
+    }
+    .vital-val{font-size:16px; font-weight:800; color:var(--accent2);}
+    .vital-label{font-size:10px; color:var(--muted); text-transform:uppercase; letter-spacing:.03em;}
+    .scenario-text{font-size:14px; line-height:1.6; color:var(--muted); margin-bottom:16px;}
+    .scenario-prompt{font-size:14px; font-weight:600; margin-bottom:12px;}
+    .scenario-opts{display:flex; flex-direction:column; gap:6px;}
+    .scenario-opt{
+      padding:10px 14px; border-radius:8px; font-size:12px; font-weight:500;
+      border:1px solid var(--line); background:rgba(255,255,255,.02);
+      cursor:default; transition:all .2s;
+    }
+    .scenario-opt:hover{border-color:rgba(99,102,241,.3); background:rgba(99,102,241,.04);}
+    .scenario-opt.picked{border-color:var(--accent); background:rgba(99,102,241,.08); color:var(--accent);}
+
+    /* Animations */
+    .fade-up{opacity:0; transform:translateY(30px); transition:all .7s cubic-bezier(.16,1,.3,1);}
+    .fade-up.visible{opacity:1; transform:translateY(0);}
+
+    @media (max-width:768px){
+      .hero{padding:130px 0 80px;}
+      .impact{grid-template-columns:1fr; border-radius:12px;}
+      .bento{grid-template-columns:1fr;}
+      .bento-card.span-2{grid-column:span 1;}
+      .split{grid-template-columns:1fr; gap:40px;}
+      .split-text{max-width:100%;}
+      .kpi-row{grid-template-columns:repeat(2,1fr);}
+      .chart{height:70px;}
+      .scenario-vitals{grid-template-columns:repeat(3,1fr);}
+      .nav-btn{font-size:11px; padding:6px 10px;}
+      .brand-link{font-size:15px;}
+      .brand-link img{width:32px; height:32px;}
+      .footer-row{flex-direction:column; text-align:center;}
+      .footer-links{justify-content:center;}
+    }
   </style>
 </head>
 <body>
   <header>
-    <div class="wrap nav">
-      <a class="brand-link" href="/" aria-label="EMS ProtoQuiz — Home">
-        <img src="../logo2.png" alt="EMS ProtoQuiz logo" width="64" height="64" decoding="async" />
-        <span class="brand-name">EMS ProtoQuiz</span>
-      </a>
-      <nav>
-        <a class="chip" href="/" data-track="BackToMain">Back to main</a>
-        <button class="chip" id="openContact" data-track="AgencyContactOpen">Contact</button>
+    <div class="wrap">
+      <nav class="navbar">
+        <a href="../" class="brand-link">
+          <img src="../logo-48.png" alt="EMS ProtoQuiz" width="40" height="40">
+          <span>EMS ProtoQuiz</span>
+        </a>
+        <div class="nav-links">
+          <a href="../" class="nav-btn">Home</a>
+          <a href="../blog/" class="nav-btn">Blog</a>
+          <a href="./" class="nav-btn active-page">For Agencies</a>
+          <button type="button" class="nav-btn primary" id="openContact" data-track="AgencyContactOpen">Request Pilot</button>
+        </div>
       </nav>
     </div>
   </header>
 
-  <main class="wrap">
-    <h1>Bring ProtoQuiz to your agency</h1>
-    <p class="lead">Fast, page-cited training built from your protocol PDF. Standardize judgment across crews without adding work to your TOs.</p>
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-label"><span class="dot"></span> Accepting pilot departments</div>
+        <h1>Your protocols.<br><span class="gradient">One training platform.</span></h1>
+        <p class="hero-sub">
+          Your team studies from your actual protocols -- quizzes, scenarios, algorithm drills. Compare performance, identify weak areas, train smarter.
+        </p>
+        <div class="hero-actions">
+          <button type="button" class="btn btn-primary" id="openContact2" data-track="AgencyContactOpen">Start a Free Pilot</button>
+          <a href="mailto:jaden@protoquiz.com" class="btn btn-ghost" data-track="AgencyEmail">jaden@protoquiz.com</a>
+        </div>
+      </div>
+    </section>
 
-    <div class="grid">
-      <article class="card"><h3>Local-accurate</h3><p>Quizzes and scenarios are generated from your document. Adult/peds splits, routes, repeats, and base-contact are enforced.</p></article>
-      <article class="card"><h3>Traceable</h3><p>Every item links to the exact page. Zero dose errors and clear auditability for QA.</p></article>
-      <article class="card"><h3>Low lift</h3><p>Upload a PDF and go. Pilot quickly; add seats only if it works for your crews.</p></article>
-      <article class="card"><h3>Onboarding & refreshers</h3><p>Give new hires and seasoned medics short daily reps that match your region.</p></article>
-      <article class="card"><h3>Analytics </h3><p>See coverage and weak areas by topic. Compare protocol versions when you update.</p></article>
-      <article class="card"><h3>Budget-friendly</h3><p>Start small. Scale if outcomes improve.</p></article>
-    </div>
+    <!-- What You Get - Bento -->
+    <section class="section fade-up" style="padding-top:40px;">
+      <div class="wrap">
+        <div class="section-label">Measurable Impact</div>
+        <div class="section-title">What this means for your department</div>
 
-    <div class="cta">
-      <button class="btn" id="openContact2" data-track="AgencyContactOpen">Request a pilot</button>
-      <!-- Email us now opens the dialog instead of mailto -->
-      <button class="chip" id="openContact3" data-track="AgencyContactOpen">Email us</button>
-    </div>
+        <div class="bento">
+          <div class="bento-card">
+            <div class="bento-num">&uarr;</div>
+            <h3>Standardized Competency</h3>
+            <p>Every provider tested on the same material, the same way. No more inconsistent ride-along quizzing.</p>
+          </div>
+          <div class="bento-card">
+            <div class="bento-num">&darr;</div>
+            <h3>Fewer Protocol Deviations</h3>
+            <p>Crews drill your standing orders and algorithms until second nature. Knowledge gaps found before they become incidents.</p>
+          </div>
+          <div class="bento-card">
+            <div class="bento-num">&rarr;</div>
+            <h3>Faster Field Readiness</h3>
+            <p>New hires arrive knowing your protocols, not generic material. Less orientation time wasted on basics.</p>
+          </div>
+          <div class="bento-card">
+            <div class="bento-num">QA</div>
+            <h3>Defensible Training Records</h3>
+            <p>Every quiz, score, and session logged. Documentation you can hand to the state or use for internal QA review.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dashboard Mockup -->
+    <section class="section fade-up">
+      <div class="wrap">
+        <div style="text-align:center; margin-bottom:48px;">
+          <div class="section-label">Command Staff Visibility</div>
+          <div class="section-title">Know who needs help before it matters on a call</div>
+        </div>
+
+        <div class="mockup">
+          <div class="mockup-chrome">
+            <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+            <span class="mockup-url">yourorg.protoquiz.com</span>
+          </div>
+          <div class="mockup-body">
+            <div class="mockup-row">
+              <span class="mockup-h">Organization Performance</span>
+              <div class="mockup-pills">
+                <span class="mockup-pill">My Scores</span>
+                <span class="mockup-pill on">Organization</span>
+                <span class="mockup-pill">Best Scores</span>
+                <span class="mockup-pill on">All Attempts</span>
+              </div>
+            </div>
+
+            <div class="kpi-row">
+              <div class="kpi"><div class="kpi-val">87%</div><div class="kpi-label">Avg Score</div></div>
+              <div class="kpi"><div class="kpi-val">24</div><div class="kpi-label">Active Providers</div></div>
+              <div class="kpi"><div class="kpi-val">342</div><div class="kpi-label">Quizzes Taken</div></div>
+              <div class="kpi"><div class="kpi-val">91%</div><div class="kpi-label">Pharmacology</div></div>
+            </div>
+
+            <div class="chart" id="chart">
+              <div class="bar" data-pct="65%" style="height:65%;background:linear-gradient(180deg,var(--accent),rgba(99,102,241,.3));"></div>
+              <div class="bar" data-pct="82%" style="height:82%;background:linear-gradient(180deg,var(--accent),rgba(99,102,241,.3));"></div>
+              <div class="bar" data-pct="90%" style="height:90%;background:linear-gradient(180deg,var(--success),rgba(16,185,129,.3));"></div>
+              <div class="bar" data-pct="75%" style="height:75%;background:linear-gradient(180deg,var(--accent),rgba(99,102,241,.3));"></div>
+              <div class="bar" data-pct="95%" style="height:95%;background:linear-gradient(180deg,var(--success),rgba(16,185,129,.3));"></div>
+              <div class="bar" data-pct="58%" style="height:58%;background:linear-gradient(180deg,var(--warning),rgba(245,158,11,.3));"></div>
+              <div class="bar" data-pct="88%" style="height:88%;background:linear-gradient(180deg,var(--success),rgba(16,185,129,.3));"></div>
+              <div class="bar" data-pct="72%" style="height:72%;background:linear-gradient(180deg,var(--accent),rgba(99,102,241,.3));"></div>
+            </div>
+            <div class="chart-labels">
+              <span>Cardiac</span><span>Respiratory</span><span>Trauma</span><span>Pharm</span><span>OB/Peds</span><span>Medical</span><span>Behavioral</span><span>Enviro</span>
+            </div>
+
+            <table class="tbl">
+              <thead><tr><th>Provider</th><th>Quizzes</th><th>Avg</th><th>Weakest</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td>M. Johnson, NRP</td><td>28</td><td>94%</td><td>Environmental</td><td><span class="tag tag-g">On Track</span></td></tr>
+                <tr><td>K. Williams, AEMT</td><td>15</td><td>82%</td><td>Cardiac</td><td><span class="tag tag-b">Active</span></td></tr>
+                <tr><td>R. Chen, NRP</td><td>22</td><td>89%</td><td>Pharm</td><td><span class="tag tag-g">On Track</span></td></tr>
+                <tr><td>S. Davis, EMT</td><td>6</td><td>71%</td><td>Trauma</td><td><span class="tag tag-y">Needs Focus</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quiz Mockup + Text Split -->
+    <section class="section fade-up">
+      <div class="wrap">
+        <div class="split">
+          <div class="split-text">
+            <div class="section-label">Auditable Training</div>
+            <div class="section-title">Every answer has a paper trail</div>
+            <div class="section-desc" style="margin-top:16px;">
+              Doses, contraindications, and standing orders link to the exact page in your protocol PDF. Defensible documentation for QA review and state compliance.
+            </div>
+          </div>
+          <div class="quiz-mockup">
+            <div class="quiz-mockup-head">
+              <span>Pharmacology Quiz</span>
+              <div class="progress-ring">9/15</div>
+            </div>
+            <div class="quiz-q">Amiodarone is contraindicated in which cardiac conditions?</div>
+            <div class="quiz-opts">
+              <div class="quiz-opt wrong">Ventricular fibrillation</div>
+              <div class="quiz-opt correct">2nd or 3rd degree AV block and cardiogenic shock</div>
+              <div class="quiz-opt wrong">Atrial fibrillation with RVR</div>
+              <div class="quiz-opt wrong">Wide complex tachycardia</div>
+            </div>
+            <div class="quiz-cite">Source: <strong>Page 127</strong> -- Cardiac, 9030 Amiodarone</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scenario Mockup Split -->
+    <section class="section fade-up">
+      <div class="wrap">
+        <div class="split">
+          <div class="scenario-mockup">
+            <div class="scenario-head">
+              <span>Clinical Scenario</span>
+              <span class="scenario-stage">Stage 1 of 4</span>
+            </div>
+            <div class="scenario-body">
+              <div class="scenario-vitals">
+                <div class="vital"><div class="vital-val">88/54</div><div class="vital-label">BP</div></div>
+                <div class="vital"><div class="vital-val">52</div><div class="vital-label">HR</div></div>
+                <div class="vital"><div class="vital-val">78%</div><div class="vital-label">SpO2</div></div>
+              </div>
+              <div class="scenario-text">
+                28yo female found unresponsive by roommate. Drug paraphernalia on scene. RR 6, pinpoint pupils, cyanotic.
+              </div>
+              <div class="scenario-prompt">What is the immediate priority?</div>
+              <div class="scenario-opts">
+                <div class="scenario-opt picked">Open airway, begin BVM with high-flow O2</div>
+                <div class="scenario-opt">Administer Naloxone 2mg IN immediately</div>
+                <div class="scenario-opt">Start CPR immediately</div>
+                <div class="scenario-opt">Establish IV access first</div>
+              </div>
+            </div>
+          </div>
+          <div class="split-text">
+            <div class="section-label">Reps Before It Counts</div>
+            <div class="section-title">Practice your algorithms, not textbook cases</div>
+            <div class="section-desc" style="margin-top:16px;">
+              Realistic patient encounters built from your protocols. Patients respond to treatment decisions. More reps on your standing orders means fewer mistakes on real calls.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pilot Timeline -->
+    <section class="section fade-up">
+      <div class="wrap" style="max-width:640px;">
+        <div style="text-align:center; margin-bottom:16px;">
+          <div class="section-label">Getting Started</div>
+          <div class="section-title">Pilot runs in under a week</div>
+        </div>
+
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <h3>Send us your protocol PDF</h3>
+            <p>That's it. That's your entire contribution. We take it from here.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <h3>We build everything</h3>
+            <p>Quizzes, pharmacology drills, clinical scenarios, comprehensive tests, leaderboards, and your supervisor analytics dashboard. All page-cited. Ready in days.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <h3>Crews log in and train</h3>
+            <p>Works on any device, any browser. Study on shift, at home, between calls. Use for new hire onboarding or annual competency refreshers.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <h3>Scale if it works</h3>
+            <p>30-day free pilot, no commitment. If scores improve and your TOs like it, add seats. If not, walk away.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="wrap">
+        <h2>See the results yourself.</h2>
+        <p>Free 30-day pilot. Zero setup on your end. If scores don't improve, walk away.</p>
+        <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+          <button type="button" class="btn btn-primary" id="openContact3" data-track="AgencyContactOpen">Request a Pilot</button>
+          <a href="mailto:jaden@protoquiz.com" class="btn btn-ghost" data-track="AgencyEmailDirect">jaden@protoquiz.com</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="wrap" style="display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:center">
-    <span>© 2025 <a href="https://teachmetolive.com" id="tmtlLink" target="_blank" rel="noopener" data-track="TMTLLink">Teach Me to Live LLC</a></span>
-    <span style="opacity:0.5">•</span>
-    <a href="/privacy" data-track="PrivacyLink">Privacy Policy</a>
-    <span style="opacity:0.5">•</span>
-    <a href="/terms" data-track="TermsLink">Terms of Use</a>
+  <footer>
+    <div class="wrap">
+      <div class="footer-row">
+        <span>&copy; 2025 <a href="https://teachmetolive.com" target="_blank" rel="noopener">Teach Me to Live LLC</a></span>
+        <div class="footer-links">
+          <a href="../">Home</a>
+          <a href="../blog/">Blog</a>
+          <a href="../privacy/">Privacy</a>
+          <a href="../terms/">Terms</a>
+          <a href="#" id="openContactFooter" data-track="AgencyContactOpen">Contact</a>
+        </div>
+      </div>
+    </div>
   </footer>
 
-  <!-- Contact dialog (default reason = Agency pilot) -->
-  <dialog id="contactDialog" aria-labelledby="dlgTitle">
+  <!-- Contact Dialog -->
+  <dialog id="contactDialog">
     <div class="dlg-head">
-      <strong id="dlgTitle">Contact</strong>
-      <form method="dialog"><button class="chip" value="close">Close</button></form>
+      <h3>Start a Pilot</h3>
+      <form method="dialog" style="margin:0;"><button class="dlg-close">Close</button></form>
     </div>
     <div class="dlg-body">
       <form id="contactForm" action="https://formspree.io/f/xwprwdpg" method="POST">
-        <!-- Honeypot (spam trap) -->
         <input type="text" name="phone" tabindex="-1" autocomplete="off" style="position:absolute;left:-10000px" aria-hidden="true">
-        <div class="row">
-          <div class="field" style="flex:1 1 220px">
-            <label for="name">Name</label>
-            <input id="name" name="name" autocomplete="name" />
-          </div>
-          <div class="field" style="flex:1 1 220px">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" autocomplete="email" required />
-          </div>
+        <input type="hidden" name="source" value="agency-page-v8">
+        <div class="field">
+          <label>Name</label>
+          <input type="text" name="name" autocomplete="name" placeholder="Your name">
         </div>
         <div class="field">
-          <label for="type">Reason</label>
-          <select id="type" name="type">
-            <option>Agency pilot</option>
-            <option>Question</option>
-            <option>Feedback</option>
-            <option>Press/Other</option>
+          <label>Email *</label>
+          <input type="email" name="email" autocomplete="email" required placeholder="you@agency.gov">
+        </div>
+        <div class="field">
+          <label>Agency / Department</label>
+          <input type="text" name="agency" placeholder="e.g. Denver Health Paramedics">
+        </div>
+        <div class="field">
+          <label>Department Size</label>
+          <select name="size">
+            <option>Under 25 providers</option>
+            <option>25-50 providers</option>
+            <option>50-100 providers</option>
+            <option>100+ providers</option>
           </select>
         </div>
         <div class="field">
-          <label for="msg">Message</label>
-          <textarea id="msg" name="message" placeholder="Tell us about your department and goals…"></textarea>
+          <label>Anything else?</label>
+          <textarea name="message" placeholder="Tell us about your department..."></textarea>
         </div>
-        <div class="row" style="justify-content:space-between; align-items:center">
-          <button class="btn" type="submit" data-track="AgencyContactSubmitClick">Send</button>
-          <a class="chip" href="/" data-track="BackToMain">Back to main</a>
+        <div style="display:flex; justify-content:flex-end; margin-top:20px;">
+          <button type="submit" class="btn btn-primary" data-track="AgencyContactSubmit">Send Request</button>
         </div>
       </form>
-      <p class="lead" style="font-size:14px; color:#8fa3ba; margin-top:10px">Your message is sent securely via Formspree.</p>
     </div>
   </dialog>
 
   <script>
-    const dlg = document.getElementById("contactDialog");
-    const openers = [
-      document.getElementById("openContact"),
-      document.getElementById("openContact2"),
-      document.getElementById("openContact3")
-    ].filter(Boolean);
-    let lastOpener = null;
-    openers.forEach(btn=>{
-      btn.addEventListener("click", ()=>{
-        lastOpener = btn;
-        document.body.classList.add("dim"); // dim page
-        dlg.showModal(); /* click tracked via data-track */
-      });
-    });
-    dlg.addEventListener("close", ()=>{
-      document.body.classList.remove("dim"); // restore page
-      if(lastOpener) lastOpener.focus();
-    });
+    const dialog = document.getElementById('contactDialog');
+    ['openContact','openContact2','openContact3','openContactFooter']
+      .map(id => document.getElementById(id)).filter(Boolean)
+      .forEach(btn => btn.addEventListener('click', () => dialog.showModal()));
 
-    // Submit -> Formspree POST + track + inline feedback
-    document.getElementById("contactForm").addEventListener("submit", async (e)=>{
+    document.getElementById('contactForm').addEventListener('submit', async (e) => {
       e.preventDefault();
-      const form = e.target;
-      const data = new FormData(form);
-      const type = data.get("type") || "Agency pilot";
-
-      track("AgencyContactSubmit", { page: PAGE, type });
-
+      const form = e.target, btn = form.querySelector('[type="submit"]'), orig = btn.textContent;
+      btn.disabled = true; btn.textContent = 'Sending...';
       try {
-        const res = await fetch(form.action, {
-          method: "POST",
-          headers: { "Accept": "application/json" },
-          body: data
-        });
-
-        if (res.ok) {
-          form.reset();
-          form.outerHTML = `<p class="lead" style="font-size:14px; color:#a7f3d0; margin-top:10px">
-            ✅ Thanks—your message was sent. We’ll be in touch about a pilot.
-          </p>`;
-        } else {
-          throw new Error("Formspree error");
-        }
-      } catch (err) {
-        const errBox = document.createElement("p");
-        errBox.className = "lead";
-        errBox.style.fontSize = "14px";
-        errBox.style.color = "#fda4af";
-        errBox.style.marginTop = "10px";
-        errBox.textContent = "Sorry, something went wrong sending your message. Please try again.";
-        form.appendChild(errBox);
+        const r = await fetch(form.action, {method:'POST', body:new FormData(form), headers:{'Accept':'application/json'}});
+        if (!r.ok) throw 0;
+        form.reset(); btn.textContent = 'Sent!';
+        track('AgencyContactSubmit', {page:PAGE});
+        setTimeout(() => { dialog.close(); btn.textContent = orig; btn.disabled = false; }, 2000);
+      } catch {
+        btn.textContent = 'Error - Try Again'; btn.disabled = false;
+        setTimeout(() => { btn.textContent = orig; }, 3000);
       }
     });
 
-    // Generic click tracker for any element with [data-track]
-    document.addEventListener('click', (e)=>{
-      const el = e.target.closest('[data-track]');
-      if (!el) return;
-      const name = el.dataset.track;
-      const label = el.getAttribute('data-label') || el.id || el.getAttribute('aria-label') || el.textContent.trim().slice(0,80) || 'click';
-      track(name, { page: PAGE, label });
-    });
+    // Scroll reveal
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, {threshold:0.08});
+    document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 
-    // (Optional) If you add <details> later
-    document.querySelectorAll('details').forEach(d=>{
-      d.addEventListener('toggle', ()=>{
-        if (d.open) {
-          const label = d.querySelector('summary')?.textContent.trim().slice(0,80) || 'details';
-          track('DropdownOpen', { page: PAGE, label });
-        }
-      });
+    // Animate chart bars on scroll
+    const chartObs = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) {
+        document.querySelectorAll('.bar').forEach((b, i) => {
+          const h = b.style.height;
+          b.style.height = '0%';
+          b.style.transition = `height .8s cubic-bezier(.16,1,.3,1) ${i * 80}ms`;
+          requestAnimationFrame(() => requestAnimationFrame(() => b.style.height = h));
+        });
+        chartObs.disconnect();
+      }
+    }, {threshold:0.3});
+    const chart = document.getElementById('chart');
+    if (chart) chartObs.observe(chart);
+
+    // Click tracking
+    document.addEventListener('click', e => {
+      const el = e.target.closest('[data-track]');
+      if (el) track(el.dataset.track, {page:PAGE, label:el.textContent?.trim().slice(0,80)||'click'});
     });
   </script>
 </body>
