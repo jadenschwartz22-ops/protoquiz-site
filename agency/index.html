@@ -97,7 +97,7 @@
     .nav-btn.primary:hover{transform:translateY(-1px); box-shadow:0 8px 24px var(--glow);}
 
     /* Hero */
-    .hero{padding:160px 0 100px; text-align:center; position:relative;}
+    .hero{padding:140px 0 80px; text-align:center; position:relative;}
     .hero::before{
       content:""; position:absolute; inset:0; pointer-events:none; opacity:.04;
       background-image:
@@ -122,7 +122,7 @@
     @keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
 
     h1{
-      font-size:clamp(36px, 5.5vw, 60px); font-weight:900; line-height:1.05;
+      font-size:clamp(32px, 5vw, 52px); font-weight:900; line-height:1.05;
       letter-spacing:-.035em; margin-bottom:20px;
     }
     h1 .gradient{
@@ -130,13 +130,13 @@
       -webkit-background-clip:text; -webkit-text-fill-color:transparent;
     }
     .hero-sub{
-      font-size:clamp(16px, 2vw, 19px); color:var(--muted); max-width:620px;
-      margin:0 auto 36px; line-height:1.7;
+      font-size:clamp(15px, 1.8vw, 17px); color:var(--muted); max-width:580px;
+      margin:0 auto 32px; line-height:1.7;
     }
-    .hero-actions{display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
+    .hero-actions{display:flex; gap:12px; justify-content:center; flex-wrap:wrap;}
 
     .btn{
-      padding:14px 28px; border-radius:12px; font-weight:700; font-size:15px;
+      padding:12px 24px; border-radius:10px; font-weight:700; font-size:14px;
       cursor:pointer; transition:all .25s; border:none;
       display:inline-flex; align-items:center; gap:8px; letter-spacing:-.01em;
     }
@@ -149,30 +149,30 @@
     .btn-ghost:hover{background:rgba(255,255,255,.07); border-color:rgba(255,255,255,.15);}
 
     /* Section */
-    .section{padding:100px 0; position:relative;}
+    .section{padding:72px 0; position:relative;}
     .section-label{
-      font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.08em;
-      color:var(--accent); margin-bottom:12px;
+      font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.08em;
+      color:var(--accent); margin-bottom:10px;
     }
     .section-title{
-      font-size:clamp(26px, 4vw, 40px); font-weight:800; letter-spacing:-.02em;
-      margin-bottom:14px; line-height:1.15;
+      font-size:clamp(24px, 3.5vw, 34px); font-weight:800; letter-spacing:-.02em;
+      margin-bottom:12px; line-height:1.15;
     }
-    .section-desc{font-size:16px; color:var(--muted); max-width:540px; line-height:1.7;}
+    .section-desc{font-size:15px; color:var(--muted); max-width:540px; line-height:1.7;}
 
     /* Bento grid */
-    .bento{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:48px;}
+    .bento{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:36px;}
     .bento-card{
       background:rgba(255,255,255,.025); border:1px solid var(--line);
-      border-radius:16px; padding:28px; position:relative; overflow:hidden;
+      border-radius:14px; padding:24px; position:relative; overflow:hidden;
       transition:border-color .3s, box-shadow .3s;
     }
     .bento-card:hover{border-color:rgba(99,102,241,.3); box-shadow:0 0 40px rgba(99,102,241,.06);}
     .bento-card.span-2{grid-column:span 2;}
-    .bento-card h3{font-size:18px; font-weight:700; margin-bottom:6px;}
-    .bento-card p{color:var(--muted); font-size:14px; line-height:1.6;}
+    .bento-card h3{font-size:16px; font-weight:700; margin-bottom:5px;}
+    .bento-card p{color:var(--muted); font-size:14px; line-height:1.65;}
     .bento-num{
-      font-size:48px; font-weight:900; letter-spacing:-.03em;
+      font-size:28px; font-weight:900; letter-spacing:-.03em;
       background:linear-gradient(135deg, var(--accent), var(--accent2));
       -webkit-background-clip:text; -webkit-text-fill-color:transparent;
       margin-bottom:4px; line-height:1;
@@ -199,9 +199,9 @@
       background:rgba(255,255,255,.04); font-size:12px; color:var(--muted); font-family:monospace;
     }
 
-    .mockup-body{padding:28px;}
-    .mockup-row{display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:10px;}
-    .mockup-h{font-size:18px; font-weight:700;}
+    .mockup-body{padding:24px;}
+    .mockup-row{display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; flex-wrap:wrap; gap:10px;}
+    .mockup-h{font-size:16px; font-weight:700;}
     .mockup-pills{display:flex; gap:6px;}
     .mockup-pill{
       padding:5px 12px; border-radius:6px; font-size:12px; font-weight:600;
@@ -211,17 +211,17 @@
 
     .kpi-row{display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:24px;}
     .kpi{background:rgba(255,255,255,.025); border:1px solid var(--line); border-radius:10px; padding:14px; text-align:center;}
-    .kpi-val{font-size:26px; font-weight:800; color:var(--accent);}
-    .kpi-label{font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em; margin-top:2px;}
+    .kpi-val{font-size:22px; font-weight:800; color:var(--accent);}
+    .kpi-label{font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em; margin-top:3px;}
 
-    .chart{display:flex; align-items:flex-end; gap:6px; height:110px; margin-bottom:8px;}
+    .chart{display:flex; align-items:flex-end; gap:6px; height:100px; margin-bottom:8px;}
     .bar{flex:1; border-radius:4px 4px 0 0; position:relative; min-width:0;}
     .bar::after{
       content:attr(data-pct); position:absolute; top:-18px; left:50%; transform:translateX(-50%);
       font-size:10px; font-weight:700; color:var(--muted); opacity:0; transition:opacity .2s;
     }
     .bar:hover::after{opacity:1;}
-    .chart-labels{display:flex; justify-content:space-between; font-size:10px; color:var(--muted); padding:0 2px;}
+    .chart-labels{display:flex; justify-content:space-between; font-size:11px; color:var(--muted); padding:0 2px;}
 
     .tbl{width:100%; border-collapse:collapse; margin-top:20px;}
     .tbl th{
@@ -236,7 +236,7 @@
 
     /* Quiz mockup */
     .quiz-mockup{
-      max-width:480px; margin:0 auto;
+      max-width:440px; margin:0 auto;
       background:rgba(255,255,255,.025); border:1px solid var(--line);
       border-radius:16px; overflow:hidden;
       box-shadow:0 16px 60px rgba(0,0,0,.25), 0 0 40px rgba(99,102,241,.05);
@@ -252,7 +252,7 @@
       display:flex; align-items:center; justify-content:center;
       font-size:11px; font-weight:800; color:var(--accent);
     }
-    .quiz-q{padding:20px; font-size:15px; font-weight:600; line-height:1.5;}
+    .quiz-q{padding:18px 20px; font-size:14px; font-weight:600; line-height:1.5;}
     .quiz-opts{padding:0 20px 20px; display:flex; flex-direction:column; gap:8px;}
     .quiz-opt{
       padding:12px 16px; border-radius:10px; font-size:13px;
@@ -268,39 +268,39 @@
     .quiz-cite strong{color:var(--accent2);}
 
     /* Split layout */
-    .split{display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;}
+    .split{display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;}
     .split-text{max-width:460px;}
 
     /* Pilot steps */
-    .timeline{position:relative; padding-left:32px; margin-top:40px;}
+    .timeline{position:relative; padding-left:32px; margin-top:32px;}
     .timeline::before{
       content:""; position:absolute; left:11px; top:8px; bottom:8px; width:2px;
       background:linear-gradient(180deg, var(--accent), var(--accent2));
       border-radius:2px;
     }
-    .tl-item{position:relative; margin-bottom:36px;}
+    .tl-item{position:relative; margin-bottom:28px;}
     .tl-item:last-child{margin-bottom:0;}
     .tl-dot{
-      position:absolute; left:-32px; top:4px; width:24px; height:24px;
+      position:absolute; left:-32px; top:4px; width:22px; height:22px;
       border-radius:50%; background:var(--accent); display:flex;
       align-items:center; justify-content:center;
       box-shadow:0 0 16px var(--glow);
     }
     .tl-dot::after{content:""; width:8px; height:8px; border-radius:50%; background:#fff;}
-    .tl-item h3{font-size:17px; font-weight:700; margin-bottom:4px;}
-    .tl-item p{color:var(--muted); font-size:14px; line-height:1.6;}
+    .tl-item h3{font-size:15px; font-weight:700; margin-bottom:4px;}
+    .tl-item p{color:var(--muted); font-size:13px; line-height:1.6;}
 
     /* CTA */
-    .cta-section{padding:120px 0; text-align:center; position:relative;}
+    .cta-section{padding:80px 0; text-align:center; position:relative;}
     .cta-section::before{
       content:""; position:absolute; inset:0; pointer-events:none;
       background:radial-gradient(ellipse 600px 300px at center, rgba(99,102,241,.1), transparent);
     }
     .cta-section h2{
-      font-size:clamp(32px, 5vw, 48px); font-weight:900; letter-spacing:-.03em;
-      margin-bottom:14px;
+      font-size:clamp(28px, 4vw, 40px); font-weight:900; letter-spacing:-.03em;
+      margin-bottom:12px;
     }
-    .cta-section p{font-size:17px; color:var(--muted); margin-bottom:32px;}
+    .cta-section p{font-size:15px; color:var(--muted); margin-bottom:28px;}
 
     /* Footer */
     footer{padding:40px 0; border-top:1px solid var(--line);}
@@ -349,7 +349,7 @@
     }
     .impact-item:hover::before{opacity:1;}
     .impact-val{
-      font-size:36px; font-weight:900; letter-spacing:-.02em;
+      font-size:28px; font-weight:900; letter-spacing:-.02em;
       background:linear-gradient(135deg, var(--accent), var(--accent2));
       -webkit-background-clip:text; -webkit-text-fill-color:transparent;
       line-height:1; margin-bottom:6px;
@@ -358,7 +358,7 @@
 
     /* Scenario mockup */
     .scenario-mockup{
-      max-width:480px; margin:0 auto;
+      max-width:440px; margin:0 auto;
       background:rgba(255,255,255,.025); border:1px solid var(--line);
       border-radius:16px; overflow:hidden;
       box-shadow:0 16px 60px rgba(0,0,0,.25), 0 0 40px rgba(6,182,212,.05);
@@ -445,7 +445,7 @@
           Your team studies from your actual protocols -- quizzes, scenarios, algorithm drills. Compare performance, identify weak areas, train smarter.
         </p>
         <div class="hero-actions">
-          <button type="button" class="btn btn-primary" id="openContact2" data-track="AgencyContactOpen">Start a Free Pilot</button>
+          <button type="button" class="btn btn-primary" id="openContact2" data-track="AgencyContactOpen">Request a Pilot</button>
           <a href="mailto:jaden@protoquiz.com" class="btn btn-ghost" data-track="AgencyEmail">jaden@protoquiz.com</a>
         </div>
       </div>
@@ -478,6 +478,11 @@
             <h3>Defensible Training Records</h3>
             <p>Every quiz, score, and session logged. Documentation you can hand to the state or use for internal QA review.</p>
           </div>
+          <div class="bento-card span-2">
+            <div class="bento-num">=/=</div>
+            <h3>Not Cookbook Medicine</h3>
+            <p>Protocols aren't recipes to follow blindly. When your providers truly know the protocols, they have a stronger foundation for the calls that don't fit the textbook. Deep protocol knowledge doesn't limit clinical judgment -- it sharpens it. The better you know the rules, the smarter your deviations.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -498,42 +503,63 @@
           <div class="mockup-body">
             <div class="mockup-row">
               <span class="mockup-h">Organization Performance</span>
-              <div class="mockup-pills">
-                <span class="mockup-pill">My Scores</span>
-                <span class="mockup-pill on">Organization</span>
-                <span class="mockup-pill">Best Scores</span>
-                <span class="mockup-pill on">All Attempts</span>
+              <div style="display:flex; align-items:center; gap:12px;">
+                <div class="mockup-pills">
+                  <span class="mockup-pill">Week</span>
+                  <span class="mockup-pill on">Month</span>
+                  <span class="mockup-pill">All</span>
+                </div>
+                <span style="font-size:10px; color:var(--muted);">Updated 2 min ago</span>
               </div>
             </div>
 
             <div class="kpi-row">
-              <div class="kpi"><div class="kpi-val">87%</div><div class="kpi-label">Avg Score</div></div>
-              <div class="kpi"><div class="kpi-val">24</div><div class="kpi-label">Active Providers</div></div>
-              <div class="kpi"><div class="kpi-val">342</div><div class="kpi-label">Quizzes Taken</div></div>
-              <div class="kpi"><div class="kpi-val">91%</div><div class="kpi-label">Pharmacology</div></div>
+              <div class="kpi">
+                <div class="kpi-val">24</div>
+                <div class="kpi-label">Active Providers</div>
+                <div style="font-size:10px; color:var(--success); margin-top:2px;">+3 this month</div>
+              </div>
+              <div class="kpi">
+                <div class="kpi-val">87%</div>
+                <div class="kpi-label">Avg Quiz Score</div>
+                <div style="font-size:10px; color:var(--success); margin-top:2px;">+4% vs last month</div>
+              </div>
+              <div class="kpi">
+                <div class="kpi-val">342</div>
+                <div class="kpi-label">Quizzes Taken</div>
+                <div style="font-size:10px; color:var(--success); margin-top:2px;">+28% vs last month</div>
+              </div>
+              <div class="kpi">
+                <div class="kpi-val">91%</div>
+                <div class="kpi-label">Protocol Compliance</div>
+                <div style="font-size:10px; color:var(--success); margin-top:2px;">Above 80% target</div>
+              </div>
             </div>
 
-            <div class="chart" id="chart">
-              <div class="bar" data-pct="65%" style="height:65%;background:linear-gradient(180deg,var(--accent),rgba(99,102,241,.3));"></div>
-              <div class="bar" data-pct="82%" style="height:82%;background:linear-gradient(180deg,var(--accent),rgba(99,102,241,.3));"></div>
-              <div class="bar" data-pct="90%" style="height:90%;background:linear-gradient(180deg,var(--success),rgba(16,185,129,.3));"></div>
-              <div class="bar" data-pct="75%" style="height:75%;background:linear-gradient(180deg,var(--accent),rgba(99,102,241,.3));"></div>
-              <div class="bar" data-pct="95%" style="height:95%;background:linear-gradient(180deg,var(--success),rgba(16,185,129,.3));"></div>
-              <div class="bar" data-pct="58%" style="height:58%;background:linear-gradient(180deg,var(--warning),rgba(245,158,11,.3));"></div>
-              <div class="bar" data-pct="88%" style="height:88%;background:linear-gradient(180deg,var(--success),rgba(16,185,129,.3));"></div>
-              <div class="bar" data-pct="72%" style="height:72%;background:linear-gradient(180deg,var(--accent),rgba(99,102,241,.3));"></div>
+            <div style="position:relative;">
+              <div style="position:absolute; top:20%; left:0; right:0; border-top:1.5px dashed rgba(99,102,241,.25); z-index:1;"><span style="position:absolute; right:0; top:-14px; font-size:9px; color:rgba(99,102,241,.5);">80% target</span></div>
+              <div class="chart" id="chart">
+                <div class="bar" data-pct="65%" style="height:65%;background:linear-gradient(180deg,var(--accent),rgba(99,102,241,.3));"></div>
+                <div class="bar" data-pct="82%" style="height:82%;background:linear-gradient(180deg,var(--accent),rgba(99,102,241,.3));"></div>
+                <div class="bar" data-pct="90%" style="height:90%;background:linear-gradient(180deg,var(--success),rgba(16,185,129,.3));"></div>
+                <div class="bar" data-pct="75%" style="height:75%;background:linear-gradient(180deg,var(--accent),rgba(99,102,241,.3));"></div>
+                <div class="bar" data-pct="95%" style="height:95%;background:linear-gradient(180deg,var(--success),rgba(16,185,129,.3));"></div>
+                <div class="bar" data-pct="58%" style="height:58%;background:linear-gradient(180deg,var(--warning),rgba(245,158,11,.3));"></div>
+                <div class="bar" data-pct="88%" style="height:88%;background:linear-gradient(180deg,var(--success),rgba(16,185,129,.3));"></div>
+                <div class="bar" data-pct="72%" style="height:72%;background:linear-gradient(180deg,var(--accent),rgba(99,102,241,.3));"></div>
+              </div>
             </div>
             <div class="chart-labels">
               <span>Cardiac</span><span>Respiratory</span><span>Trauma</span><span>Pharm</span><span>OB/Peds</span><span>Medical</span><span>Behavioral</span><span>Enviro</span>
             </div>
 
             <table class="tbl">
-              <thead><tr><th>Provider</th><th>Quizzes</th><th>Avg</th><th>Weakest</th><th>Status</th></tr></thead>
+              <thead><tr><th>Provider</th><th>Role</th><th>Quizzes</th><th>Avg</th><th>Weakest</th><th>Status</th></tr></thead>
               <tbody>
-                <tr><td>M. Johnson, NRP</td><td>28</td><td>94%</td><td>Environmental</td><td><span class="tag tag-g">On Track</span></td></tr>
-                <tr><td>K. Williams, AEMT</td><td>15</td><td>82%</td><td>Cardiac</td><td><span class="tag tag-b">Active</span></td></tr>
-                <tr><td>R. Chen, NRP</td><td>22</td><td>89%</td><td>Pharm</td><td><span class="tag tag-g">On Track</span></td></tr>
-                <tr><td>S. Davis, EMT</td><td>6</td><td>71%</td><td>Trauma</td><td><span class="tag tag-y">Needs Focus</span></td></tr>
+                <tr><td>M. Johnson</td><td style="color:var(--muted)">NRP</td><td>28</td><td>94%</td><td>Environmental</td><td><span class="tag tag-g">On Track</span></td></tr>
+                <tr><td>K. Williams</td><td style="color:var(--muted)">AEMT</td><td>15</td><td>82%</td><td>Cardiac</td><td><span class="tag tag-b">Active</span></td></tr>
+                <tr><td>R. Chen</td><td style="color:var(--muted)">NRP</td><td>22</td><td>89%</td><td>Pharm</td><td><span class="tag tag-g">On Track</span></td></tr>
+                <tr><td>S. Davis</td><td style="color:var(--muted)">EMT</td><td>6</td><td>71%</td><td>Trauma</td><td><span class="tag tag-y">Needs Focus</span></td></tr>
               </tbody>
             </table>
           </div>
@@ -635,7 +661,7 @@
           <div class="tl-item">
             <div class="tl-dot"></div>
             <h3>Scale if it works</h3>
-            <p>30-day free pilot, no commitment. If scores improve and your TOs like it, add seats. If not, walk away.</p>
+            <p>Start with a pilot, no commitment. If scores improve and your TOs like it, add seats. If not, walk away.</p>
           </div>
         </div>
       </div>
@@ -645,7 +671,7 @@
     <section class="cta-section">
       <div class="wrap">
         <h2>See the results yourself.</h2>
-        <p>Free 30-day pilot. Zero setup on your end. If scores don't improve, walk away.</p>
+        <p>Zero setup on your end. If scores don't improve, walk away.</p>
         <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
           <button type="button" class="btn btn-primary" id="openContact3" data-track="AgencyContactOpen">Request a Pilot</button>
           <a href="mailto:jaden@protoquiz.com" class="btn btn-ghost" data-track="AgencyEmailDirect">jaden@protoquiz.com</a>
@@ -676,7 +702,7 @@
       <form method="dialog" style="margin:0;"><button class="dlg-close">Close</button></form>
     </div>
     <div class="dlg-body">
-      <form id="contactForm" action="https://formspree.io/f/xwprwdpg" method="POST">
+      <form id="contactForm" action="https://api.protoquiz.com/api/monitor?type=contactForm" method="POST">
         <input type="text" name="phone" tabindex="-1" autocomplete="off" style="position:absolute;left:-10000px" aria-hidden="true">
         <input type="hidden" name="source" value="agency-page-v8">
         <div class="field">
@@ -722,7 +748,8 @@
       const form = e.target, btn = form.querySelector('[type="submit"]'), orig = btn.textContent;
       btn.disabled = true; btn.textContent = 'Sending...';
       try {
-        const r = await fetch(form.action, {method:'POST', body:new FormData(form), headers:{'Accept':'application/json'}});
+        const fd = new FormData(form); const body = {}; fd.forEach((v,k) => { if(v) body[k]=v; });
+        const r = await fetch(form.action, {method:'POST', body:JSON.stringify(body), headers:{'Content-Type':'application/json','Accept':'application/json'}});
         if (!r.ok) throw 0;
         form.reset(); btn.textContent = 'Sent!';
         track('AgencyContactSubmit', {page:PAGE});

@@ -124,9 +124,17 @@ jobs:
 
             ### 📝 Notes
 
+            - **⏰ AUTO-MERGE IN 24 HOURS** - This PR will automatically merge if not reviewed
             - **Merge within 7 days** for stats accuracy
             - **Edit directly in PR** if changes needed
             - **Auto-deploys** to protoquiz.com/blog on merge
+
+            ### 🤖 Auto-Merge Behavior
+
+            This PR has the `auto-merge-24h` label and will be **automatically merged after 24 hours** if you don't review it.
+            - To prevent auto-merge: Remove the `auto-merge-24h` label
+            - To merge immediately: Click "Merge pull request" below
+            - To edit: Make changes directly in this PR
 
             ---
 
@@ -137,7 +145,7 @@ jobs:
 
           branch: blog-draft-${{ github.run_number }}
           base: main
-          labels: blog, auto-generated
+          labels: blog, auto-generated, auto-merge-24h
           assignees: jadenschwartz22-ops
           delete-branch: true
 
