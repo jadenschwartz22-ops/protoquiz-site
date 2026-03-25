@@ -229,9 +229,10 @@
       position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
       font-size:22px; font-weight:900; color:var(--success);
     }
-    .bar-chart{display:flex; align-items:flex-end; gap:8px; height:80px;}
+    .bar-chart{display:flex; align-items:flex-end; gap:8px; height:100px;}
     .bar-col{flex:1; display:flex; flex-direction:column; align-items:center; gap:4px;}
-    .bar-fill{width:100%; border-radius:4px 4px 0 0; min-height:4px; transition:height .6s;}
+    .bar-fill{width:100%; border-radius:4px 4px 0 0; min-height:6px; transition:height .6s;}
+    .bar-pct{font-size:9px; font-weight:700; color:var(--ink); margin-bottom:2px;}
     .bar-lbl{font-size:9px; color:var(--muted); white-space:nowrap;}
 
     /* Provider table */
@@ -509,6 +510,7 @@
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
               <span style="font-size:15px; font-weight:700;">Organization Performance</span>
               <div style="display:flex; gap:4px; align-items:center;">
+                <span style="padding:5px 12px; border-radius:6px; font-size:11px; font-weight:600; background:rgba(239,68,68,.12); color:#ef4444; border:1px solid rgba(239,68,68,.25);">PDF Report</span>
                 <span style="padding:5px 12px; border-radius:6px; font-size:11px; font-weight:600; background:rgba(255,255,255,.04); color:var(--muted); border:1px solid var(--line);">7D</span>
                 <span style="padding:5px 12px; border-radius:6px; font-size:11px; font-weight:600; background:rgba(99,102,241,.12); color:var(--accent); border:1px solid rgba(99,102,241,.25);">30D</span>
                 <span style="padding:5px 12px; border-radius:6px; font-size:11px; font-weight:600; background:rgba(255,255,255,.04); color:var(--muted); border:1px solid var(--line);">All</span>
@@ -538,13 +540,13 @@
                 <h4>Scores by Category</h4>
                 <div class="sub">Average score per topic area</div>
                 <div class="bar-chart" id="barChart">
-                  <div class="bar-col"><div class="bar-fill" style="height:72%;background:linear-gradient(180deg,var(--accent),rgba(99,102,241,.3));"></div><div class="bar-lbl">Cardiac</div></div>
-                  <div class="bar-col"><div class="bar-fill" style="height:88%;background:linear-gradient(180deg,var(--success),rgba(16,185,129,.3));"></div><div class="bar-lbl">Airway</div></div>
-                  <div class="bar-col"><div class="bar-fill" style="height:65%;background:linear-gradient(180deg,var(--warning),rgba(245,158,11,.3));"></div><div class="bar-lbl">Trauma</div></div>
-                  <div class="bar-col"><div class="bar-fill" style="height:91%;background:linear-gradient(180deg,var(--success),rgba(16,185,129,.3));"></div><div class="bar-lbl">Pharm</div></div>
-                  <div class="bar-col"><div class="bar-fill" style="height:78%;background:linear-gradient(180deg,var(--accent),rgba(99,102,241,.3));"></div><div class="bar-lbl">OB</div></div>
-                  <div class="bar-col"><div class="bar-fill" style="height:85%;background:linear-gradient(180deg,var(--success),rgba(16,185,129,.3));"></div><div class="bar-lbl">Medical</div></div>
-                  <div class="bar-col"><div class="bar-fill" style="height:60%;background:linear-gradient(180deg,var(--warning),rgba(245,158,11,.3));"></div><div class="bar-lbl">Enviro</div></div>
+                  <div class="bar-col"><div class="bar-pct">86%</div><div class="bar-fill" style="height:86%;background:linear-gradient(180deg,var(--success),rgba(16,185,129,.3));"></div><div class="bar-lbl">Cardiac</div></div>
+                  <div class="bar-col"><div class="bar-pct">92%</div><div class="bar-fill" style="height:92%;background:linear-gradient(180deg,var(--success),rgba(16,185,129,.3));"></div><div class="bar-lbl">Airway</div></div>
+                  <div class="bar-col"><div class="bar-pct">71%</div><div class="bar-fill" style="height:71%;background:linear-gradient(180deg,var(--warning),rgba(245,158,11,.3));"></div><div class="bar-lbl">Trauma</div></div>
+                  <div class="bar-col"><div class="bar-pct">88%</div><div class="bar-fill" style="height:88%;background:linear-gradient(180deg,var(--success),rgba(16,185,129,.3));"></div><div class="bar-lbl">Pharm</div></div>
+                  <div class="bar-col"><div class="bar-pct">79%</div><div class="bar-fill" style="height:79%;background:linear-gradient(180deg,var(--accent),rgba(99,102,241,.3));"></div><div class="bar-lbl">OB</div></div>
+                  <div class="bar-col"><div class="bar-pct">83%</div><div class="bar-fill" style="height:83%;background:linear-gradient(180deg,var(--success),rgba(16,185,129,.3));"></div><div class="bar-lbl">Medical</div></div>
+                  <div class="bar-col"><div class="bar-pct">64%</div><div class="bar-fill" style="height:64%;background:linear-gradient(180deg,var(--warning),rgba(245,158,11,.3));"></div><div class="bar-lbl">Enviro</div></div>
                 </div>
               </div>
             </div>
@@ -609,23 +611,23 @@
           <div class="scenario-card">
             <div class="scenario-head">
               <span>Clinical Scenario</span>
-              <span class="scenario-stage">Stage 2 of 4</span>
+              <span class="scenario-stage">Stage 3 of 4</span>
             </div>
             <div class="scenario-body">
               <div class="vitals">
-                <div class="vital"><div class="vital-val">88/54</div><div class="vital-lbl">BP</div></div>
-                <div class="vital"><div class="vital-val">52</div><div class="vital-lbl">HR</div></div>
-                <div class="vital"><div class="vital-val">78%</div><div class="vital-lbl">SpO2</div></div>
+                <div class="vital"><div class="vital-val" style="color:#f59e0b;">92/58</div><div class="vital-lbl">BP</div></div>
+                <div class="vital"><div class="vital-val">104</div><div class="vital-lbl">HR</div></div>
+                <div class="vital"><div class="vital-val">94%</div><div class="vital-lbl">SpO2</div></div>
               </div>
               <div class="scenario-text">
-                28yo female found unresponsive by roommate. Drug paraphernalia on scene. RR 6, pinpoint pupils, cyanotic. You have established airway management.
+                58yo male, substernal chest pressure radiating to left arm x 20 min. Diaphoretic, nauseous. 12-lead shows ST elevation in II, III, aVF. You administered ASA 324mg. IV established.
               </div>
               <div class="scenario-prompt">What is your next intervention?</div>
               <div class="scenario-opts">
-                <div class="scenario-opt picked">Administer Naloxone 2mg IN</div>
-                <div class="scenario-opt">Continue BVM ventilation only</div>
-                <div class="scenario-opt">Establish IV access first</div>
-                <div class="scenario-opt">Begin CPR</div>
+                <div class="scenario-opt">Administer Nitroglycerin 0.4mg SL</div>
+                <div class="scenario-opt">Notify receiving facility of STEMI alert</div>
+                <div class="scenario-opt">Administer Morphine 4mg IV</div>
+                <div class="scenario-opt picked">Obtain a right-sided 12-lead</div>
               </div>
             </div>
           </div>
