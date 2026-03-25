@@ -229,10 +229,11 @@
       position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
       font-size:22px; font-weight:900; color:var(--success);
     }
-    .bar-chart{display:flex; align-items:flex-end; gap:8px; height:100px;}
-    .bar-col{flex:1; display:flex; flex-direction:column; align-items:center; gap:4px;}
+    .bar-chart{display:flex; gap:8px;}
+    .bar-col{flex:1; display:flex; flex-direction:column; align-items:center; gap:2px;}
+    .bar-pct{font-size:9px; font-weight:700; color:var(--ink);}
+    .bar-track{width:100%; height:80px; display:flex; align-items:flex-end;}
     .bar-fill{width:100%; border-radius:4px 4px 0 0; min-height:6px; transition:height .6s;}
-    .bar-pct{font-size:9px; font-weight:700; color:var(--ink); margin-bottom:2px;}
     .bar-lbl{font-size:9px; color:var(--muted); white-space:nowrap;}
 
     /* Provider table */
@@ -540,13 +541,13 @@
                 <h4>Scores by Category</h4>
                 <div class="sub">Average score per topic area</div>
                 <div class="bar-chart" id="barChart">
-                  <div class="bar-col"><div class="bar-pct">86%</div><div class="bar-fill" style="height:86%;background:linear-gradient(180deg,var(--success),rgba(16,185,129,.3));"></div><div class="bar-lbl">Cardiac</div></div>
-                  <div class="bar-col"><div class="bar-pct">92%</div><div class="bar-fill" style="height:92%;background:linear-gradient(180deg,var(--success),rgba(16,185,129,.3));"></div><div class="bar-lbl">Airway</div></div>
-                  <div class="bar-col"><div class="bar-pct">71%</div><div class="bar-fill" style="height:71%;background:linear-gradient(180deg,var(--warning),rgba(245,158,11,.3));"></div><div class="bar-lbl">Trauma</div></div>
-                  <div class="bar-col"><div class="bar-pct">88%</div><div class="bar-fill" style="height:88%;background:linear-gradient(180deg,var(--success),rgba(16,185,129,.3));"></div><div class="bar-lbl">Pharm</div></div>
-                  <div class="bar-col"><div class="bar-pct">79%</div><div class="bar-fill" style="height:79%;background:linear-gradient(180deg,var(--accent),rgba(99,102,241,.3));"></div><div class="bar-lbl">OB</div></div>
-                  <div class="bar-col"><div class="bar-pct">83%</div><div class="bar-fill" style="height:83%;background:linear-gradient(180deg,var(--success),rgba(16,185,129,.3));"></div><div class="bar-lbl">Medical</div></div>
-                  <div class="bar-col"><div class="bar-pct">64%</div><div class="bar-fill" style="height:64%;background:linear-gradient(180deg,var(--warning),rgba(245,158,11,.3));"></div><div class="bar-lbl">Enviro</div></div>
+                  <div class="bar-col"><div class="bar-pct">86%</div><div class="bar-track"><div class="bar-fill" style="height:86%;background:linear-gradient(180deg,var(--success),rgba(16,185,129,.3));"></div></div><div class="bar-lbl">Cardiac</div></div>
+                  <div class="bar-col"><div class="bar-pct">92%</div><div class="bar-track"><div class="bar-fill" style="height:92%;background:linear-gradient(180deg,var(--success),rgba(16,185,129,.3));"></div></div><div class="bar-lbl">Airway</div></div>
+                  <div class="bar-col"><div class="bar-pct">71%</div><div class="bar-track"><div class="bar-fill" style="height:71%;background:linear-gradient(180deg,var(--warning),rgba(245,158,11,.3));"></div></div><div class="bar-lbl">Trauma</div></div>
+                  <div class="bar-col"><div class="bar-pct">88%</div><div class="bar-track"><div class="bar-fill" style="height:88%;background:linear-gradient(180deg,var(--success),rgba(16,185,129,.3));"></div></div><div class="bar-lbl">Pharm</div></div>
+                  <div class="bar-col"><div class="bar-pct">79%</div><div class="bar-track"><div class="bar-fill" style="height:79%;background:linear-gradient(180deg,var(--accent),rgba(99,102,241,.3));"></div></div><div class="bar-lbl">OB</div></div>
+                  <div class="bar-col"><div class="bar-pct">83%</div><div class="bar-track"><div class="bar-fill" style="height:83%;background:linear-gradient(180deg,var(--success),rgba(16,185,129,.3));"></div></div><div class="bar-lbl">Medical</div></div>
+                  <div class="bar-col"><div class="bar-pct">64%</div><div class="bar-track"><div class="bar-fill" style="height:64%;background:linear-gradient(180deg,var(--warning),rgba(245,158,11,.3));"></div></div><div class="bar-lbl">Enviro</div></div>
                 </div>
               </div>
             </div>
