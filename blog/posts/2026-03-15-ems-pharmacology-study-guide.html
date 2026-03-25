@@ -1,0 +1,667 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EMS Pharmacology Study Guide: How to Actually Remember 44 Drugs - EMS ProtoQuiz Blog</title>
+  <meta name="description" content="A practical EMS pharmacology study guide covering how to organize, memorize, and quiz yourself on dozens of EMS medications. Includes the 9 things you need to know about every drug and real examples like Adenosine and Ketamine." />
+
+  <!-- SEO -->
+  <link rel="canonical" href="https://protoquiz.com/blog/posts/2026-03-15-ems-pharmacology-study-guide.html">
+  <meta name="robots" content="index,follow" />
+  <meta name="keywords" content="EMS pharmacology study guide, paramedic drug quiz, EMS medication study, paramedic pharmacology, drug dosing EMS" />
+
+  <!-- Social / Open Graph -->
+  <meta property="og:title" content="EMS Pharmacology Study Guide: How to Actually Remember 44 Drugs" />
+  <meta property="og:description" content="A practical EMS pharmacology study guide covering how to organize, memorize, and quiz yourself on dozens of EMS medications. Includes the 9 things you need to know about every drug and real examples like Adenosine and Ketamine." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://protoquiz.com/blog/posts/2026-03-15-ems-pharmacology-study-guide.html" />
+  <meta property="og:image" content="https://protoquiz.com/logo-256.png" />
+  <meta property="article:published_time" content="2026-03-15" />
+  <meta property="article:author" content="Jaden" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="EMS Pharmacology Study Guide: How to Actually Remember 44 Drugs" />
+  <meta name="twitter:description" content="A practical EMS pharmacology study guide covering how to organize, memorize, and quiz yourself on dozens of EMS medications. Includes the 9 things you need to know about every drug and real examples like Adenosine and Ketamine." />
+  <meta name="twitter:image" content="https://protoquiz.com/logo-256.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png" />
+
+  <!-- Structured Data - BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "EMS Pharmacology Study Guide: How to Actually Remember 44 Drugs",
+    "description": "A practical EMS pharmacology study guide covering how to organize, memorize, and quiz yourself on dozens of EMS medications. Includes the 9 things you need to know about every drug and real examples like Adenosine and Ketamine.",
+    "author": {
+      "@type": "Person",
+      "name": "Jaden",
+      "jobTitle": "Paramedic Student & Developer"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Teach Me to Live LLC",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://protoquiz.com/logo-256.png"
+      }
+    },
+    "datePublished": "2026-03-15",
+    "dateModified": "2026-03-15",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://protoquiz.com/blog/posts/2026-03-15-ems-pharmacology-study-guide.html"
+    }
+  }
+  </script>
+
+  <!-- Google tag (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LNSS9BMEP8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-LNSS9BMEP8');
+
+    function track(name, props){
+      try { gtag('event', name, props || {}); } catch(e){}
+    }
+    const PAGE = 'blog_post';
+    track('blog_post_view', { title: 'EMS Pharmacology Study Guide: How to Actually Remember 44 Drugs' });
+
+    // Track view in Firestore
+    (async () => {
+      try {
+        const slug = window.location.pathname.split('/').pop().replace('.html', '');
+        await fetch('https://ems-router.vercel.app/api/blog-views', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ slug })
+        });
+      } catch (e) {
+        console.log('View tracking failed:', e);
+      }
+    })();
+  </script>
+
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../_shared-styles.css">
+
+  <style>
+    /* Post-specific styles */
+    .post-container {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .post-header {
+      margin-bottom: 40px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .post-category-badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 8px;
+      background: rgba(34,211,238,.1);
+      color: var(--cyan);
+      font-weight: 700;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      margin-bottom: 20px;
+    }
+
+    .post-category-badge.updates {
+      background: rgba(168,85,247,.1);
+      color: var(--violet);
+    }
+
+    .post-category-badge.stories {
+      background: rgba(16,185,129,.1);
+      color: var(--success);
+    }
+
+    .post-category-badge.study {
+      background: rgba(245,158,11,.1);
+      color: var(--warning);
+    }
+
+    .post-header h1 {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 900;
+      line-height: 1.2;
+      letter-spacing: -.02em;
+      margin-bottom: 20px;
+    }
+
+    .post-meta-info {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .post-meta-info .author {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .post-content {
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--ink);
+    }
+
+    .post-content h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin-top: 48px;
+      margin-bottom: 20px;
+      letter-spacing: -.02em;
+    }
+
+    .post-content h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-top: 36px;
+      margin-bottom: 16px;
+    }
+
+    .post-content p {
+      margin-bottom: 24px;
+    }
+
+    .post-content ul,
+    .post-content ol {
+      margin-bottom: 24px;
+      padding-left: 28px;
+    }
+
+    .post-content li {
+      margin-bottom: 12px;
+    }
+
+    .post-content a {
+      color: var(--cyan);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    .post-content a:hover {
+      color: var(--violet);
+    }
+
+    .post-content strong {
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .post-content code {
+      background: var(--panel);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.9em;
+      font-family: 'SF Mono', Monaco, monospace;
+      border: 1px solid var(--line);
+    }
+
+    .post-content blockquote {
+      border-left: 3px solid var(--cyan);
+      padding-left: 20px;
+      margin: 32px 0;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .stats-callout {
+      background: linear-gradient(135deg, rgba(34,211,238,.05), rgba(168,85,247,.05));
+      border: 1px solid rgba(34,211,238,.2);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin: 40px 0;
+    }
+
+    .stats-callout h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+
+    .stats-callout p {
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+
+    .stats-callout strong {
+      color: var(--cyan);
+      font-weight: 800;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--cyan), var(--violet));
+      border-radius: var(--radius);
+      padding: 32px;
+      text-align: center;
+      margin: 48px 0;
+    }
+
+    .cta-box h3 {
+      color: #05080c;
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .cta-box p {
+      color: rgba(5,8,12,.8);
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 14px 32px;
+      background: #05080c;
+      color: var(--cyan);
+      font-weight: 700;
+      border-radius: 999px;
+      font-size: 16px;
+      transition: all .2s;
+      border: 2px solid #05080c;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,.4);
+      opacity: 1;
+    }
+
+    /* Comments Section */
+    .comments-section {
+      margin-top: 80px;
+      padding-top: 40px;
+      border-top: 2px solid var(--line);
+    }
+
+    .comments-section h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin-bottom: 24px;
+    }
+
+    /* Back Link */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 32px;
+      transition: color .2s;
+    }
+
+    .back-link:hover {
+      color: var(--cyan);
+    }
+
+    .back-link::before {
+      content: "\2190";
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <header>
+    <div class="wrap">
+      <nav class="navbar">
+        <a href="../../" class="brand-link">
+          <img src="../../logo-48.png" alt="ProtoQuiz Logo" width="48" height="48">
+          <span>ProtoQuiz</span>
+        </a>
+        <div class="nav-links">
+          <a href="../../" class="nav-btn">Home</a>
+          <a href="../" class="nav-btn">Blog</a>
+          <a href="https://apps.apple.com/app/id6753611139" class="nav-btn primary" onclick="track('download_app', {source: 'blog_post'})">
+            Download App
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="wrap">
+      <div class="post-container">
+        <a href="../" class="back-link">Back to Blog</a>
+
+        <!-- Post Header -->
+        <article class="post-header">
+          <span class="post-category-badge study">Study Tips</span>
+          <h1>EMS Pharmacology Study Guide: How to Actually Remember 44 Drugs</h1>
+          <div class="post-meta-info">
+            <span class="author">By Jaden</span>
+            <span>&bull;</span>
+            <time datetime="2026-03-15">March 15, 2026</time>
+            <span>&bull;</span>
+            <span>8 min read</span>
+          </div>
+        </article>
+
+        <!-- Post Content -->
+        <div class="post-content">
+          <p>EMS pharmacology is one of the hardest parts of paramedic school and one of the most important things to keep sharp after you graduate. A typical protocol book contains 40 to 50 medications, each with adult dosing, pediatric dosing, multiple routes, contraindications that overlap with other drugs, and special considerations that only matter in specific clinical situations. That is hundreds of discrete facts you are expected to recall under pressure, on scene, often in the middle of the night.</p>
+
+          <p>Most people approach this by reading through their drug cards or protocol PDF over and over. That does not work. This guide covers a practical system for organizing, learning, and retaining EMS pharmacology -- based on how memory actually works and what matters most in the field.</p>
+
+          <h2>Why EMS Pharmacology Is Uniquely Difficult</h2>
+
+          <p>Pharmacology in EMS is harder than pharmacology in most other medical disciplines for a specific reason: you are expected to work from memory. A nurse on a hospital floor can look up a medication in the Pyxis system. An ED physician has references at the workstation. In the field, you have your protocol book on a phone or tablet -- but pulling it up while managing a crashing patient, coordinating with your partner, and talking to dispatch is a different situation entirely.</p>
+
+          <p>The drugs themselves are not conceptually difficult. The challenge is volume and overlap. Epinephrine shows up in cardiac arrest, anaphylaxis, and asthma -- at different doses, different concentrations, and different routes. Amiodarone and Lidocaine are both antiarrhythmics, but their indications and contraindications differ in ways that matter when you are standing over a patient in refractory V-fib. Fentanyl, Morphine, and Ketamine all manage pain, but picking the right one depends on hemodynamics, patient history, and your specific protocol's guidance.</p>
+
+          <p>On top of the volume, protocols vary by agency. The doses you learned in class may not match the doses your agency uses. A medication that is first-line in one protocol set might be second-line or absent in another. This means generic NREMT study material only gets you so far. You need to study your actual protocols.</p>
+
+          <h2>Stop Organizing Alphabetically. Group by System.</h2>
+
+          <p>Most drug reference cards and protocol books list medications alphabetically. This is great for looking something up. It is terrible for learning. Adenosine has nothing to do with Albuterol, but they sit next to each other on an A-Z list. Your brain has no meaningful connection to build between them.</p>
+
+          <p>Instead, organize your study by physiological system or drug class:</p>
+
+          <ul>
+            <li><strong>Cardiac</strong>: Amiodarone, Lidocaine, Adenosine, Atropine, Epinephrine (cardiac doses), Dopamine, Aspirin, Nitroglycerin</li>
+            <li><strong>Respiratory</strong>: Albuterol, Ipratropium, Epinephrine (anaphylaxis/asthma doses), CPAP adjuncts, Magnesium Sulfate (for severe asthma)</li>
+            <li><strong>Pain management</strong>: Fentanyl, Morphine, Ketamine (analgesic doses), Ketorolac, Acetaminophen</li>
+            <li><strong>Sedation/RSI</strong>: Ketamine (RSI doses), Midazolam, Etomidate, Succinylcholine, Rocuronium</li>
+            <li><strong>Neurological</strong>: Midazolam (seizures), Dextrose, Glucagon, Naloxone, Thiamine</li>
+            <li><strong>OB/GYN</strong>: Oxytocin, Magnesium Sulfate (eclampsia)</li>
+          </ul>
+
+          <p>When you study cardiac drugs together, you naturally start comparing them. When is Amiodarone indicated versus Lidocaine? What makes Adenosine unique in its mechanism? These comparisons build understanding, not just memorization. And understanding is what keeps you from freezing on a call.</p>
+
+          <h2>The 9 Things You Need to Know About Every Drug</h2>
+
+          <p>Not all drug knowledge is equally important. For each medication in your protocol, there are nine distinct categories of information that you should be able to recall:</p>
+
+          <ol>
+            <li><strong>Adult dosing</strong> -- The dose, route, and any repeat dosing parameters. This is the most frequently tested and most critical piece of knowledge.</li>
+            <li><strong>Pediatric dosing</strong> -- Usually weight-based (mg/kg). Different enough from adult dosing that it needs separate study. Missing a decimal point here has real consequences.</li>
+            <li><strong>Drug classification</strong> -- What category the drug belongs to (antiarrhythmic, sympathomimetic, analgesic, etc.). This helps you understand why it works and predict its behavior.</li>
+            <li><strong>Indications</strong> -- When to give it. The clinical presentations and conditions that call for this medication.</li>
+            <li><strong>Adverse effects</strong> -- What can go wrong. Knowing the side effect profile helps you monitor the patient after administration and anticipate complications.</li>
+            <li><strong>Contraindications</strong> -- When NOT to give it. This is arguably the highest-stakes knowledge. Giving a drug when it is contraindicated can kill a patient faster than withholding it.</li>
+            <li><strong>Mechanism of action</strong> -- How the drug works at a physiological level. Understanding mechanism makes everything else easier to remember because the facts become connected rather than isolated.</li>
+            <li><strong>Special notes</strong> -- Protocol-specific guidance: maximum doses, infusion rates, storage requirements, compatibility notes, or anything unique to how your agency uses the drug.</li>
+            <li><strong>Base contact rules</strong> -- Whether you need medical control authorization before administering, or whether it is a standing order. This varies significantly between agencies and is often the difference between acting quickly and waiting for a callback.</li>
+          </ol>
+
+          <p>If you can answer questions across all nine categories for a given medication, you genuinely know that drug. If you can only recall the adult dose, you have a gap that will show up at the worst possible time.</p>
+
+          <h2>Active Recall Beats Re-Reading Drug Cards</h2>
+
+          <p>The single most important change you can make to your pharmacology study is to stop re-reading and start testing yourself. Cognitive science research has demonstrated this consistently: active recall -- forcing your brain to retrieve information without looking at the answer -- produces dramatically better long-term retention than passive review.</p>
+
+          <p>Re-reading your drug cards feels productive. You see Adenosine 6mg and think, yes, I know that. But recognition is not recall. On a call, no one is going to show you four options and ask you to pick the right dose. You need to produce the answer from memory, under stress, with no cues. That is a fundamentally different cognitive task, and the only way to get good at it is to practice it.</p>
+
+          <p>Quiz yourself. Cover the answer and try to recall it. Get it wrong, check the source, and try again later. The discomfort of getting it wrong is not a sign that the method is failing -- it is the mechanism by which learning actually happens.</p>
+
+          <h2>Example: Adenosine</h2>
+
+          <p>Here is what thorough knowledge of a single drug looks like. Adenosine is a good example because it is commonly tested, frequently administered, and has contraindications that trip people up.</p>
+
+          <ul>
+            <li><strong>Adult dosing</strong>: 6mg rapid IVP followed by 20mL NS flush. If ineffective, 12mg rapid IVP with flush. Some protocols allow a second 12mg dose.</li>
+            <li><strong>Pediatric dosing</strong>: 0.1 mg/kg (max 6mg) first dose, 0.2 mg/kg (max 12mg) second dose. Same rapid push with flush.</li>
+            <li><strong>Classification</strong>: Antiarrhythmic (endogenous nucleoside).</li>
+            <li><strong>Indications</strong>: Stable narrow-complex SVT that has not responded to vagal maneuvers.</li>
+            <li><strong>Adverse effects</strong>: Transient asystole (expected and brief), chest tightness, flushing, dyspnea. Warn the patient -- the brief pause can feel alarming.</li>
+            <li><strong>Contraindications</strong>: Second or third-degree heart block, sick sinus syndrome, known hypersensitivity. Critically: use with extreme caution (or avoid, depending on your protocol) in WPW with atrial fibrillation -- Adenosine can accelerate conduction down the accessory pathway and trigger V-fib.</li>
+            <li><strong>Mechanism</strong>: Slows conduction through the AV node by briefly blocking it. The half-life is less than 10 seconds, which is why the push must be rapid and proximal.</li>
+            <li><strong>Special notes</strong>: Must be given as close to the heart as possible (antecubital or higher). Followed immediately by a rapid saline flush. Have transcutaneous pacing pads on the patient before administration. Record a continuous rhythm strip.</li>
+            <li><strong>Base contact</strong>: Standing order in most systems. Check your protocol.</li>
+          </ul>
+
+          <p>That is one drug. If you can produce that level of detail for each of the 40-plus medications in your protocol book, you are in excellent shape. If you cannot, you know exactly where to focus your study.</p>
+
+          <h2>Example: Ketamine</h2>
+
+          <p>Ketamine is worth examining separately because it appears in multiple contexts at very different doses, and confusing them matters.</p>
+
+          <ul>
+            <li><strong>Analgesic dosing</strong>: Typically 0.1-0.3 mg/kg IV (or 0.5-1 mg/kg IN/IM). This is sub-dissociative. The patient remains conscious and responsive.</li>
+            <li><strong>RSI/sedation dosing</strong>: 1-2 mg/kg IV (or 3-4 mg/kg IM). This is a dissociative dose. The patient will lose consciousness and protective reflexes may be altered.</li>
+          </ul>
+
+          <p>The difference between 0.2 mg/kg and 2 mg/kg is a factor of ten. One provides pain relief to a patient with a femur fracture. The other renders them dissociated for intubation. Knowing the context for each dose -- not just the numbers -- is what prevents a critical error. When you study Ketamine, study it twice: once in the pain management group and once in the RSI group. Different dose, different indication, different monitoring requirements.</p>
+
+          <h2>A Study Strategy That Works</h2>
+
+          <p>Here is a practical approach to working through your protocol's medication list without burning out:</p>
+
+          <h3>Start with contraindications</h3>
+          <p>Contraindications are the highest-stakes knowledge. Giving a drug to a patient who should not receive it is worse than not giving it at all. When you sit down to study a drug, quiz yourself on contraindications first. If you can only spend five minutes on a medication, spend those five minutes on when not to give it.</p>
+
+          <h3>Group by class, compare within class</h3>
+          <p>Study all your antiarrhythmics in one session. Study all your analgesics in another. Within each class, actively compare: What makes Amiodarone different from Lidocaine? When would you choose Fentanyl over Morphine? These comparisons force deeper processing than studying each drug in isolation.</p>
+
+          <h3>Use scenarios to connect drugs to clinical decisions</h3>
+          <p>Isolated drug knowledge is necessary but not sufficient. You also need to practice applying it in context. A patient presents with chest pain, diaphoresis, and a history of Viagra use in the last 24 hours. You know Nitroglycerin -- but do you remember the contraindication? Scenarios like this test whether your pharmacology knowledge is functional or just theoretical. Practice them regularly.</p>
+
+          <h3>Quiz across all nine categories</h3>
+          <p>Do not just quiz yourself on dosing. Test yourself on mechanism, on adverse effects, on pediatric doses, on base contact rules. The goal is complete coverage, not comfort with the easy questions. The category you avoid studying is the one that will bite you.</p>
+
+          <!-- Stats Callout -->
+          <div class="stats-callout">
+            <h3>ProtoQuiz Pharmacology by the Numbers</h3>
+            <p><strong>44</strong> medications extracted and indexed from protocol PDFs</p>
+            <p><strong>9</strong> quiz categories per drug: adult dosing, pediatric dosing, classification, indications, adverse effects, contraindications, mechanism of action, special notes, base contact rules</p>
+            <p><strong>396</strong> possible pharmacology questions per protocol set (44 drugs x 9 categories)</p>
+            <p>Every answer is page-cited back to the source protocol PDF.</p>
+          </div>
+
+          <h2>Tools and Resources</h2>
+
+          <p><a href="https://apps.apple.com/app/id6753611139">ProtoQuiz</a> was built specifically to solve this problem. Upload your agency's protocol PDF, and it extracts all medications and generates quizzes across all nine pharmacology categories. Every answer includes a page citation so you can verify it against your actual protocol -- not a generic textbook. It is protocol-agnostic, meaning it works with whatever PDF your agency uses, whether that is Denver Metro, NASEMSO, or a custom regional set.</p>
+
+          <p>Beyond medication quizzes, <a href="2026-03-20-spaced-repetition-for-ems-providers.html">spaced repetition</a> helps you schedule reviews at the optimal intervals so you spend time on drugs you are weakest on rather than re-studying material you already know. And <a href="2026-03-24-how-to-study-ems-protocols-effectively.html">scenario-based practice</a> connects your drug knowledge to clinical decision-making, which is ultimately what matters on a call.</p>
+
+          <p>If your <a href="https://protoquiz.com/agency/">agency or training program</a> wants to standardize pharmacology competency across a team, we are building tools for that as well.</p>
+
+          <h2>The Bottom Line</h2>
+
+          <p>EMS pharmacology is hard because of volume, overlap, and the expectation that you will recall it all from memory under pressure. But it is not impossible to learn well. Organize by system. Know all nine categories for each drug, not just the dose. Quiz yourself actively instead of re-reading passively. Prioritize contraindications. Use scenarios to make your knowledge functional.</p>
+
+          <p>Your protocols already contain everything you need to know. The challenge is getting it out of the PDF and into long-term memory in a way that holds up at 3 AM on a critical call. Study smart, test yourself often, and do not settle for recognition when what you need is recall.</p>
+
+          <p><a href="../">Back to the blog</a> for more EMS study tips and app updates.</p>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-box">
+          <h3>Ready to Master Your Protocols?</h3>
+          <p>Upload your PDF, get instant quizzes with page citations. Free to start.</p>
+          <a href="https://apps.apple.com/app/id6753611139" class="cta-btn" onclick="track('download_app', {source: 'blog_post_cta'})">
+            Download ProtoQuiz
+          </a>
+        </div>
+
+        <!-- Comments Section -->
+        <div class="comments-section">
+          <h2>Comments</h2>
+          <script src="https://giscus.app/client.js"
+                  data-repo="jadenschwartz22-ops/protoquiz-site"
+                  data-repo-id="R_kgDOP_OVLw"
+                  data-category="Blog Comments"
+                  data-category-id="DIC_kwDOP_OVL84CyFhj"
+                  data-mapping="pathname"
+                  data-strict="0"
+                  data-reactions-enabled="1"
+                  data-emit-metadata="0"
+                  data-input-position="top"
+                  data-theme="dark"
+                  data-lang="en"
+                  crossorigin="anonymous"
+                  async>
+          </script>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Newsletter Signup -->
+  <section style="background: var(--panel); border-top: 1px solid var(--line); padding: 60px 0; margin-top: 80px;">
+    <div class="wrap" style="max-width: 600px; text-align: center;">
+      <h2 style="font-size: 1.75rem; margin-bottom: 12px;">Never Miss a Post</h2>
+      <p style="color: var(--muted); margin-bottom: 24px;">
+        Get new EMS study tips and app updates delivered straight to your inbox. Bi-weekly.
+      </p>
+
+      <!-- Email Signup Form (Follow.it) -->
+      <style>
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview {
+          display: flex !important;
+          flex-direction: column !important;
+          justify-content: center !important;
+          margin-top: 30px !important;
+          padding: clamp(17px, 5%, 40px) clamp(17px, 7%, 50px) !important;
+          max-width: none !important;
+          border-radius: 6px !important;
+          box-shadow: 0 5px 25px rgba(34, 60, 47, 0.25) !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview,
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview * {
+          box-sizing: border-box !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-heading {
+          width: 100% !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-heading h5 {
+          margin-top: 0 !important;
+          margin-bottom: 0 !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field {
+          margin-top: 20px !important;
+          width: 100% !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input {
+          width: 100% !important;
+          height: 40px !important;
+          border-radius: 6px !important;
+          border: 2px solid #e9e8e8 !important;
+          background-color: #fff;
+          outline: none !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input {
+          color: #000000 !important;
+          font-family: "Montserrat" !important;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 20px;
+          text-align: center;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input::placeholder {
+          color: #000000 !important;
+          opacity: 1 !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input:-ms-input-placeholder {
+          color: #000000 !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input::-ms-input-placeholder {
+          color: #000000 !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-submit-button {
+          margin-top: 10px !important;
+          width: 100% !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-submit-button button {
+          width: 100% !important;
+          height: 40px !important;
+          border: 0 !important;
+          border-radius: 6px !important;
+          line-height: 0px !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-submit-button button:hover {
+          cursor: pointer !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .powered-by-line {
+          color: #231f20 !important;
+          font-family: "Montserrat" !important;
+          font-size: 13px !important;
+          font-weight: 400 !important;
+          line-height: 25px !important;
+          text-align: center !important;
+          text-decoration: none !important;
+          display: flex !important;
+          width: 100% !important;
+          justify-content: center !important;
+          align-items: center !important;
+          margin-top: 10px !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .powered-by-line img {
+          margin-left: 10px !important;
+          height: 1.13em !important;
+          max-height: 1.13em !important;
+        }
+      </style>
+      <div class="followit--follow-form-container" attr-a attr-b attr-c attr-d attr-e attr-f>
+        <form data-v-e7d63655="" action="https://api.follow.it/subscription-form/NWJTVitFcEpGcGU0ajJvTmNST01hckl3ZFI0cTFHMmZkTmVBRlIwSUpnV0NOckQxVWdoNnljMnA2VCtEQU1Eb3VwdStGclRRZzRPZ05qbnpndU43NE90UlIyeC9RcDYxQ3pHYmFqeDl1aXBjcE5zc1F4dXhuR0dKN3ppVFdqdHl8cUl5dytUOE54R2h0TmFUUlppeEhIZXVkQ1k1blBuczY4Z3NQMmFlMGQ3QT0=/8" method="post">
+          <div data-v-e7d63655="" class="form-preview" style="background-color: rgb(255, 255, 255); border-style: solid; border-width: 1px; border-color: rgb(204, 204, 204); position: relative;">
+            <div data-v-e7d63655="" class="preview-heading">
+              <h5 data-v-e7d63655="" style="font-family: Arial; font-weight: bold; color: rgb(0, 0, 0); font-size: 16px; text-align: center; text-transform: none !important;">Get new posts by email:</h5>
+            </div>
+            <div data-v-e7d63655="" class="preview-input-field">
+              <input data-v-e7d63655="" type="email" name="email" required="" placeholder="Enter your email" spellcheck="false" style="font-family: Arial; font-weight: normal; color: rgb(0, 0, 0); font-size: 14px; text-align: center; background-color: rgb(255, 255, 255); text-transform: none !important;">
+            </div>
+            <div data-v-e7d63655="" class="preview-submit-button">
+              <button data-v-e7d63655="" type="submit" style="font-family: Arial; font-weight: bold; color: rgb(255, 255, 255); font-size: 16px; text-align: center; background-color: rgb(0, 0, 0); text-transform: none !important;">Subscribe</button>
+            </div>
+          </div>
+        </form>
+        <a href="https://follow.it" class="powered-by-line">Powered by <img src="https://follow.it/images/colored-logo.svg" alt="follow.it" height="17px"/></a>
+      </div>
+
+      <p style="font-size: 13px; color: var(--muted); margin-top: 16px;">
+        Or subscribe via <a href="../feed.xml" style="color: var(--cyan); text-decoration: underline;">RSS feed</a>
+      </p>
+      <p style="font-size: 12px; color: var(--muted); margin-top: 8px;">
+        No spam. Unsubscribe anytime. View our <a href="../../privacy/" style="color: var(--cyan);">Privacy Policy</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="../../">Home</a>
+          <a href="../">Blog</a>
+          <a href="../../privacy/">Privacy</a>
+          <a href="../../terms/">Terms</a>
+          <a href="https://apps.apple.com/app/id6753611139">Download</a>
+        </div>
+        <p class="footer-copy">&copy; 2026 Teach Me to Live LLC. Built by a Paramedic student, for EMS.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

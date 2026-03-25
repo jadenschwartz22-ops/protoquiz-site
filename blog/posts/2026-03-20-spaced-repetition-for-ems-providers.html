@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spaced Repetition for EMS: How to Remember Protocols Long-Term - EMS ProtoQuiz Blog</title>
+  <meta name="description" content="Learn how spaced repetition and the SM-2 algorithm help EMS providers retain medication dosing, contraindications, and treatment algorithms between shifts." />
+
+  <!-- SEO -->
+  <link rel="canonical" href="https://protoquiz.com/blog/posts/2026-03-20-spaced-repetition-for-ems-providers.html">
+  <meta name="robots" content="index,follow" />
+  <meta name="keywords" content="spaced repetition EMS, EMS study techniques, paramedic continuing education, SM-2 algorithm, EMS flashcards, protocol retention" />
+
+  <!-- Social / Open Graph -->
+  <meta property="og:title" content="Spaced Repetition for EMS: How to Remember Protocols Long-Term" />
+  <meta property="og:description" content="Learn how spaced repetition and the SM-2 algorithm help EMS providers retain medication dosing, contraindications, and treatment algorithms between shifts." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://protoquiz.com/blog/posts/2026-03-20-spaced-repetition-for-ems-providers.html" />
+  <meta property="og:image" content="https://protoquiz.com/logo-256.png" />
+  <meta property="article:published_time" content="2026-03-20" />
+  <meta property="article:author" content="Jaden" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Spaced Repetition for EMS: How to Remember Protocols Long-Term" />
+  <meta name="twitter:description" content="Learn how spaced repetition and the SM-2 algorithm help EMS providers retain medication dosing, contraindications, and treatment algorithms between shifts." />
+  <meta name="twitter:image" content="https://protoquiz.com/logo-256.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png" />
+
+  <!-- Structured Data - BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Spaced Repetition for EMS: How to Remember Protocols Long-Term",
+    "description": "Learn how spaced repetition and the SM-2 algorithm help EMS providers retain medication dosing, contraindications, and treatment algorithms between shifts.",
+    "author": {
+      "@type": "Person",
+      "name": "Jaden",
+      "jobTitle": "Paramedic Student & Developer"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Teach Me to Live LLC",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://protoquiz.com/logo-256.png"
+      }
+    },
+    "datePublished": "2026-03-20",
+    "dateModified": "2026-03-20",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://protoquiz.com/blog/posts/2026-03-20-spaced-repetition-for-ems-providers.html"
+    }
+  }
+  </script>
+
+  <!-- Google tag (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LNSS9BMEP8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-LNSS9BMEP8');
+
+    function track(name, props){
+      try { gtag('event', name, props || {}); } catch(e){}
+    }
+    const PAGE = 'blog_post';
+    track('blog_post_view', { title: 'Spaced Repetition for EMS: How to Remember Protocols Long-Term' });
+
+    // Track view in Firestore
+    (async () => {
+      try {
+        const slug = window.location.pathname.split('/').pop().replace('.html', '');
+        await fetch('https://ems-router.vercel.app/api/blog-views', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ slug })
+        });
+      } catch (e) {
+        console.log('View tracking failed:', e);
+      }
+    })();
+  </script>
+
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../_shared-styles.css">
+
+  <style>
+    /* Post-specific styles */
+    .post-container {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .post-header {
+      margin-bottom: 40px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .post-category-badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 8px;
+      background: rgba(34,211,238,.1);
+      color: var(--cyan);
+      font-weight: 700;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      margin-bottom: 20px;
+    }
+
+    .post-category-badge.updates {
+      background: rgba(168,85,247,.1);
+      color: var(--violet);
+    }
+
+    .post-category-badge.stories {
+      background: rgba(16,185,129,.1);
+      color: var(--success);
+    }
+
+    .post-category-badge.study {
+      background: rgba(245,158,11,.1);
+      color: var(--warning);
+    }
+
+    .post-header h1 {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 900;
+      line-height: 1.2;
+      letter-spacing: -.02em;
+      margin-bottom: 20px;
+    }
+
+    .post-meta-info {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .post-meta-info .author {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .post-content {
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--ink);
+    }
+
+    .post-content h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin-top: 48px;
+      margin-bottom: 20px;
+      letter-spacing: -.02em;
+    }
+
+    .post-content h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-top: 36px;
+      margin-bottom: 16px;
+    }
+
+    .post-content p {
+      margin-bottom: 24px;
+    }
+
+    .post-content ul,
+    .post-content ol {
+      margin-bottom: 24px;
+      padding-left: 28px;
+    }
+
+    .post-content li {
+      margin-bottom: 12px;
+    }
+
+    .post-content a {
+      color: var(--cyan);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    .post-content a:hover {
+      color: var(--violet);
+    }
+
+    .post-content strong {
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .post-content code {
+      background: var(--panel);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.9em;
+      font-family: 'SF Mono', Monaco, monospace;
+      border: 1px solid var(--line);
+    }
+
+    .post-content blockquote {
+      border-left: 3px solid var(--cyan);
+      padding-left: 20px;
+      margin: 32px 0;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .stats-callout {
+      background: linear-gradient(135deg, rgba(34,211,238,.05), rgba(168,85,247,.05));
+      border: 1px solid rgba(34,211,238,.2);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin: 40px 0;
+    }
+
+    .stats-callout h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+
+    .stats-callout p {
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+
+    .stats-callout strong {
+      color: var(--cyan);
+      font-weight: 800;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--cyan), var(--violet));
+      border-radius: var(--radius);
+      padding: 32px;
+      text-align: center;
+      margin: 48px 0;
+    }
+
+    .cta-box h3 {
+      color: #05080c;
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .cta-box p {
+      color: rgba(5,8,12,.8);
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 14px 32px;
+      background: #05080c;
+      color: var(--cyan);
+      font-weight: 700;
+      border-radius: 999px;
+      font-size: 16px;
+      transition: all .2s;
+      border: 2px solid #05080c;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,.4);
+      opacity: 1;
+    }
+
+    /* Comments Section */
+    .comments-section {
+      margin-top: 80px;
+      padding-top: 40px;
+      border-top: 2px solid var(--line);
+    }
+
+    .comments-section h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin-bottom: 24px;
+    }
+
+    /* Back Link */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 32px;
+      transition: color .2s;
+    }
+
+    .back-link:hover {
+      color: var(--cyan);
+    }
+
+    .back-link::before {
+      content: "\2190";
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <header>
+    <div class="wrap">
+      <nav class="navbar">
+        <a href="../../" class="brand-link">
+          <img src="../../logo-48.png" alt="ProtoQuiz Logo" width="48" height="48">
+          <span>ProtoQuiz</span>
+        </a>
+        <div class="nav-links">
+          <a href="../../" class="nav-btn">Home</a>
+          <a href="../" class="nav-btn">Blog</a>
+          <a href="https://apps.apple.com/app/id6753611139" class="nav-btn primary" onclick="track('download_app', {source: 'blog_post'})">
+            Download App
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="wrap">
+      <div class="post-container">
+        <a href="../" class="back-link">Back to Blog</a>
+
+        <!-- Post Header -->
+        <article class="post-header">
+          <span class="post-category-badge study">Study Tips</span>
+          <h1>Spaced Repetition for EMS: How to Remember Protocols Long-Term</h1>
+          <div class="post-meta-info">
+            <span class="author">By Jaden</span>
+            <span>&bull;</span>
+            <time datetime="2026-03-20">March 20, 2026</time>
+            <span>&bull;</span>
+            <span>6 min read</span>
+          </div>
+        </article>
+
+        <!-- Post Content -->
+        <div class="post-content">
+          <p>You learn the Amiodarone dose in class on Monday. By your next shift on Thursday, you hesitate. Was it 150mg or 300mg? Rapid IVP or slow drip? You know you covered this. You highlighted it in the protocol PDF. But the information is gone, or at least too fuzzy to trust when a patient is in front of you.</p>
+
+          <p>This is not a failure of intelligence or effort. It is a predictable consequence of how human memory works. And there is a well-studied, proven technique to fix it.</p>
+
+          <h2>The Forgetting Curve: Why You Lose What You Learn</h2>
+
+          <p>In the 1880s, German psychologist Hermann Ebbinghaus conducted the first rigorous experiments on memory decay. His findings, replicated hundreds of times since, reveal an uncomfortable truth: without deliberate review, we forget roughly 70% of new information within 48 hours. The rate of loss is steepest in the first few hours after learning, then gradually levels off.</p>
+
+          <p>For EMS providers, this has real consequences. You attend a protocol update class and leave feeling confident. Two days later, the specific doses and contraindications are already degrading. A week later, you are back to guessing. A month later, it is as if the class never happened.</p>
+
+          <p>Traditional continuing education ignores this entirely. Most agencies run annual or semi-annual refresher classes, which means the gap between learning and review is measured in months -- well past the point where retention has dropped to near zero. You are essentially relearning from scratch every time.</p>
+
+          <h2>What Spaced Repetition Actually Is</h2>
+
+          <p>Spaced repetition is a study technique that fights the forgetting curve by scheduling reviews at strategically increasing intervals. Instead of cramming everything in one session and hoping it sticks, you review material just before you are about to forget it.</p>
+
+          <p>The pattern works like this: you learn something new and review it the next day. If you recall it correctly, the next review is pushed out further -- maybe three days. Get it right again, and the interval extends to a week. Then two weeks. Then a month. Each successful recall strengthens the memory trace and pushes the next review further into the future.</p>
+
+          <p>If you get something wrong, the interval resets to a shorter period and you see it again soon. The system automatically concentrates your study time on the material you are weakest on, while spending minimal time on what you already know well.</p>
+
+          <p>Research in medical education has consistently shown that spaced repetition outperforms massed study (cramming) by significant margins. Studies on medical students learning pharmacology found retention rates two to three times higher when material was reviewed on a spaced schedule versus concentrated review sessions of equal total study time.</p>
+
+          <h2>The SM-2 Algorithm, Explained Simply</h2>
+
+          <p>SM-2 is the most widely used algorithm for automating spaced repetition. Originally developed by Piotr Wozniak in the late 1980s for language learning, it has since been adopted across medical education, pilot training, and dozens of other fields where long-term retention matters.</p>
+
+          <p>Here is how it works in plain terms:</p>
+
+          <ul>
+            <li><strong>Every item gets a difficulty rating.</strong> When you review a flashcard or quiz question, you rate how easily you recalled the answer -- from complete blackout to effortless recall.</li>
+            <li><strong>Easy items get longer intervals.</strong> If you nail a question without hesitation, the algorithm pushes your next review further out. You do not waste time drilling what you already know.</li>
+            <li><strong>Hard items come back quickly.</strong> If you struggle or get something wrong, the interval shortens. The system brings difficult material back sooner until you consistently demonstrate recall.</li>
+            <li><strong>The schedule adapts over time.</strong> As you accumulate reviews, the algorithm builds a personalized model of your retention for each individual item. Two providers studying the same protocol will get different review schedules based on their individual performance.</li>
+          </ul>
+
+          <p>The result is remarkably efficient. Instead of spending 30 minutes reviewing 50 medications you mostly already know, you spend 10 minutes drilling the 12 you are weakest on. Over weeks and months, this compounds into dramatically better retention with less total study time.</p>
+
+          <h2>Applying Spaced Repetition to EMS Protocols</h2>
+
+          <p>EMS protocol knowledge is an ideal fit for spaced repetition. The material is factual and discrete -- doses, routes, indications, contraindications, algorithm decision points -- which maps perfectly to the question-and-answer format that SRS systems use.</p>
+
+          <p>The categories where spaced repetition has the most impact for EMS providers:</p>
+
+          <ul>
+            <li><strong>Medication dosing</strong>: Adult and pediatric doses, concentration conversions, max doses, drip rates. These are precise numbers that degrade quickly without review.</li>
+            <li><strong>Contraindications</strong>: Knowing when not to give a medication is often harder to retain than the dose itself, because contraindications are contextual and sometimes counterintuitive.</li>
+            <li><strong>Treatment algorithms</strong>: The branching decision trees in cardiac, respiratory, and trauma protocols. Spaced repetition helps you internalize the sequence so you do not have to think through each branch on scene.</li>
+            <li><strong>Protocol-specific details</strong>: Your agency's protocols differ from national standards and from neighboring agencies. Spaced repetition ensures you retain your specific protocol's requirements, not a generic version.</li>
+          </ul>
+
+          <h3>Amiodarone: Cramming vs. Spaced Repetition</h3>
+
+          <p>Consider a practical example. You need to know Amiodarone for refractory V-fib/pulseless V-tach.</p>
+
+          <p><strong>The cramming approach:</strong> You read the protocol section three times the night before a skills check. You remember the dose the next morning. Two weeks later, you are back on shift and cannot recall whether the maintenance infusion is 1mg/min or 150mg over 10 minutes. You pull up the PDF on your phone.</p>
+
+          <p><strong>The spaced repetition approach:</strong> Day one, you answer a question about Amiodarone's initial dose and get it right. The system schedules your next review for day three. You get it right again -- next review on day eight. By the fourth review on day twenty, the recall is effortless. The system pushes the next review out to six weeks. Meanwhile, it is drilling you daily on Adenosine's rapid push technique, which you keep mixing up with Amiodarone's slow infusion.</p>
+
+          <p>Same total study time. Radically different retention at the 30-day and 90-day marks.</p>
+
+          <h2>Why Traditional CE Falls Short</h2>
+
+          <p>Most paramedic continuing education follows a pattern that cognitive science would describe as almost perfectly designed to fail at building retention:</p>
+
+          <ul>
+            <li><strong>Infrequent, long sessions.</strong> Annual refreshers or quarterly PowerPoints violate every principle of spaced review. By the time the next session arrives, you have forgotten the previous one.</li>
+            <li><strong>Passive delivery.</strong> Sitting through a lecture is a passive activity. Without active recall -- being forced to retrieve information from memory -- the material does not encode into long-term storage.</li>
+            <li><strong>No personalization.</strong> Everyone gets the same content regardless of what they already know or where their gaps are. A 20-year veteran sits through the same cardiac review as a new medic, wasting the veteran's time on material they know and potentially missing gaps in less familiar areas.</li>
+            <li><strong>No follow-up.</strong> The class ends and there is no systematic review until the next scheduled session. The forgetting curve takes over immediately.</li>
+          </ul>
+
+          <p>This is not a criticism of the instructors or the content. It is a structural problem with how the material is delivered and reinforced. Spaced repetition does not replace CE classes. It fills the critical gap between them.</p>
+
+          <!-- Stats Callout -->
+          <div class="stats-callout">
+            <h3>ProtoQuiz by the Numbers</h3>
+            <p><strong>959</strong> protocol quiz questions generated from user uploads</p>
+            <p><strong>81</strong> AI-generated clinical scenarios completed</p>
+            <p><strong>Adaptive SM-2</strong> spaced repetition built into Learn Mode</p>
+            <p>All questions cite the exact page in your protocol PDF -- verify any answer in seconds.</p>
+          </div>
+
+          <h2>Getting Started with Spaced Repetition</h2>
+
+          <p>You do not need special software to start using spaced repetition, though it helps. At its simplest, you can use physical flashcards sorted into boxes by difficulty -- the Leitner system. Cards you get right move to a box reviewed less frequently. Cards you miss go back to the daily box.</p>
+
+          <p>For EMS-specific material, tools that generate questions directly from your protocols save the significant upfront cost of creating hundreds of flashcards by hand. <a href="https://apps.apple.com/app/id6753611139">ProtoQuiz's Learn Mode</a> implements SM-2 against your actual agency medications -- upload your protocol PDF and it builds the spaced repetition deck automatically, with page citations back to the source document.</p>
+
+          <p>Regardless of the tool, the key principles are the same:</p>
+
+          <ul>
+            <li><strong>Short, frequent sessions beat long, rare ones.</strong> Ten minutes daily is worth more than an hour once a week.</li>
+            <li><strong>Trust the schedule.</strong> If the system says you do not need to review something for two weeks, trust it. Review what it tells you to review.</li>
+            <li><strong>Be honest with your ratings.</strong> If you hesitated or guessed correctly, mark it as difficult. The system only works if you give it accurate feedback on your recall quality.</li>
+            <li><strong>Stick with it for at least two weeks.</strong> The benefits of spaced repetition compound over time. The first few sessions feel like any other study method. The difference becomes clear after the second or third week, when you notice you are retaining material you would normally have forgotten.</li>
+          </ul>
+
+          <p>If your <a href="https://protoquiz.com/agency/">agency or training program</a> is looking for a structured way to maintain protocol competency across a team, spaced repetition provides a measurable, evidence-based framework. Every provider's retention gaps are identified and addressed individually, without wasting time on material they already know.</p>
+
+          <p>Your protocols do not change between shifts. Your memory of them does. Spaced repetition is how you close that gap.</p>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-box">
+          <h3>Ready to Master Your Protocols?</h3>
+          <p>Upload your PDF, get instant quizzes with page citations. Free to start.</p>
+          <a href="https://apps.apple.com/app/id6753611139" class="cta-btn" onclick="track('download_app', {source: 'blog_post_cta'})">
+            Download ProtoQuiz
+          </a>
+        </div>
+
+        <!-- Comments Section -->
+        <div class="comments-section">
+          <h2>Comments</h2>
+          <script src="https://giscus.app/client.js"
+                  data-repo="jadenschwartz22-ops/protoquiz-site"
+                  data-repo-id="R_kgDOP_OVLw"
+                  data-category="Blog Comments"
+                  data-category-id="DIC_kwDOP_OVL84CyFhj"
+                  data-mapping="pathname"
+                  data-strict="0"
+                  data-reactions-enabled="1"
+                  data-emit-metadata="0"
+                  data-input-position="top"
+                  data-theme="dark"
+                  data-lang="en"
+                  crossorigin="anonymous"
+                  async>
+          </script>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Newsletter Signup -->
+  <section style="background: var(--panel); border-top: 1px solid var(--line); padding: 60px 0; margin-top: 80px;">
+    <div class="wrap" style="max-width: 600px; text-align: center;">
+      <h2 style="font-size: 1.75rem; margin-bottom: 12px;">Never Miss a Post</h2>
+      <p style="color: var(--muted); margin-bottom: 24px;">
+        Get new EMS study tips and app updates delivered straight to your inbox. Bi-weekly.
+      </p>
+
+      <!-- Email Signup Form (Follow.it) -->
+      <style>
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview {
+          display: flex !important;
+          flex-direction: column !important;
+          justify-content: center !important;
+          margin-top: 30px !important;
+          padding: clamp(17px, 5%, 40px) clamp(17px, 7%, 50px) !important;
+          max-width: none !important;
+          border-radius: 6px !important;
+          box-shadow: 0 5px 25px rgba(34, 60, 47, 0.25) !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview,
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview * {
+          box-sizing: border-box !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-heading {
+          width: 100% !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-heading h5 {
+          margin-top: 0 !important;
+          margin-bottom: 0 !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field {
+          margin-top: 20px !important;
+          width: 100% !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input {
+          width: 100% !important;
+          height: 40px !important;
+          border-radius: 6px !important;
+          border: 2px solid #e9e8e8 !important;
+          background-color: #fff;
+          outline: none !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input {
+          color: #000000 !important;
+          font-family: "Montserrat" !important;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 20px;
+          text-align: center;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input::placeholder {
+          color: #000000 !important;
+          opacity: 1 !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input:-ms-input-placeholder {
+          color: #000000 !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input::-ms-input-placeholder {
+          color: #000000 !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-submit-button {
+          margin-top: 10px !important;
+          width: 100% !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-submit-button button {
+          width: 100% !important;
+          height: 40px !important;
+          border: 0 !important;
+          border-radius: 6px !important;
+          line-height: 0px !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-submit-button button:hover {
+          cursor: pointer !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .powered-by-line {
+          color: #231f20 !important;
+          font-family: "Montserrat" !important;
+          font-size: 13px !important;
+          font-weight: 400 !important;
+          line-height: 25px !important;
+          text-align: center !important;
+          text-decoration: none !important;
+          display: flex !important;
+          width: 100% !important;
+          justify-content: center !important;
+          align-items: center !important;
+          margin-top: 10px !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .powered-by-line img {
+          margin-left: 10px !important;
+          height: 1.13em !important;
+          max-height: 1.13em !important;
+        }
+      </style>
+      <div class="followit--follow-form-container" attr-a attr-b attr-c attr-d attr-e attr-f>
+        <form data-v-e7d63655="" action="https://api.follow.it/subscription-form/NWJTVitFcEpGcGU0ajJvTmNST01hckl3ZFI0cTFHMmZkTmVBRlIwSUpnV0NOckQxVWdoNnljMnA2VCtEQU1Eb3VwdStGclRRZzRPZ05qbnpndU43NE90UlIyeC9RcDYxQ3pHYmFqeDl1aXBjcE5zc1F4dXhuR0dKN3ppVFdqdHl8cUl5dytUOE54R2h0TmFUUlppeEhIZXVkQ1k1blBuczY4Z3NQMmFlMGQ3QT0=/8" method="post">
+          <div data-v-e7d63655="" class="form-preview" style="background-color: rgb(255, 255, 255); border-style: solid; border-width: 1px; border-color: rgb(204, 204, 204); position: relative;">
+            <div data-v-e7d63655="" class="preview-heading">
+              <h5 data-v-e7d63655="" style="font-family: Arial; font-weight: bold; color: rgb(0, 0, 0); font-size: 16px; text-align: center; text-transform: none !important;">Get new posts by email:</h5>
+            </div>
+            <div data-v-e7d63655="" class="preview-input-field">
+              <input data-v-e7d63655="" type="email" name="email" required="" placeholder="Enter your email" spellcheck="false" style="font-family: Arial; font-weight: normal; color: rgb(0, 0, 0); font-size: 14px; text-align: center; background-color: rgb(255, 255, 255); text-transform: none !important;">
+            </div>
+            <div data-v-e7d63655="" class="preview-submit-button">
+              <button data-v-e7d63655="" type="submit" style="font-family: Arial; font-weight: bold; color: rgb(255, 255, 255); font-size: 16px; text-align: center; background-color: rgb(0, 0, 0); text-transform: none !important;">Subscribe</button>
+            </div>
+          </div>
+        </form>
+        <a href="https://follow.it" class="powered-by-line">Powered by <img src="https://follow.it/images/colored-logo.svg" alt="follow.it" height="17px"/></a>
+      </div>
+
+      <p style="font-size: 13px; color: var(--muted); margin-top: 16px;">
+        Or subscribe via <a href="../feed.xml" style="color: var(--cyan); text-decoration: underline;">RSS feed</a>
+      </p>
+      <p style="font-size: 12px; color: var(--muted); margin-top: 8px;">
+        No spam. Unsubscribe anytime. View our <a href="../../privacy/" style="color: var(--cyan);">Privacy Policy</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="../../">Home</a>
+          <a href="../">Blog</a>
+          <a href="../../privacy/">Privacy</a>
+          <a href="../../terms/">Terms</a>
+          <a href="https://apps.apple.com/app/id6753611139">Download</a>
+        </div>
+        <p class="footer-copy">&copy; 2026 Teach Me to Live LLC. Built by a Paramedic student, for EMS.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
