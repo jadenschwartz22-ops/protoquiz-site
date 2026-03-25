@@ -1,0 +1,303 @@
+name: Bi-Weekly Blog Auto-Publish (DISABLED)
+
+# DISABLED BY DEFAULT - To enable:
+# 1. Remove "(DISABLED)" from the name
+# 2. Uncomment the schedule trigger below
+# 3. Disable the bi-weekly-blog-draft.yml workflow
+
+on:
+  # schedule:
+  #   # Every other Monday at 9:00 AM Mountain Time (16:00 UTC)
+  #   # Runs on odd week numbers (1, 3, 5, etc.)
+  #   - cron: "0 16 * * 1"
+  workflow_dispatch:
+    inputs:
+      force_generate:
+        description: 'Force generation (ignore bi-weekly schedule)'
+        required: false
+        type: boolean
+        default: true
+      dry_run:
+        description: 'Dry run (generate but do not publish)'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  auto-publish-blog-post:
+    runs-on: ubuntu-latest
+    env:
+      TZ: America/Denver
+      GOOGLE_AI_API_KEY: ${{ secrets.GOOGLE_AI_API_KEY }}
+      GOOGLE_APPLICATION_CREDENTIALS: /tmp/firebase-key.json
+      DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Decode Firebase credentials
+        run: |
+          echo "${{ secrets.FIREBASE_SERVICE_ACCOUNT_KEY }}" | base64 -d > /tmp/firebase-key.json
+          echo "✅ Firebase credentials decoded"
+
+      - name: Pull Firestore stats
+        id: stats
+        run: |
+          echo "📊 Fetching Firestore stats..."
+          node scripts/pull-firestore-stats.mjs
+          echo "✅ Stats pulled successfully"
+        continue-on-error: true
+
+      - name: Generate blog post
+        id: generate
+        run: |
+          echo "🚀 Generating blog post..."
+
+          # Run generation
+          node scripts/generate-blog-post.mjs
+
+          # Read metadata
+          TITLE=$(jq -r '.title' tmp/post-metadata.json)
+          FILENAME=$(jq -r '.filename' tmp/post-metadata.json)
+          TOPIC=$(jq -r '.topic' tmp/post-metadata.json)
+          EXCERPT=$(jq -r '.excerpt' tmp/post-metadata.json)
+          KEYWORDS=$(jq -r '.keywords' tmp/post-metadata.json)
+
+          # Validate content (basic safety checks)
+          if [ ! -f "blog/posts/$FILENAME" ]; then
+            echo "❌ Blog post file not created!"
+            exit 1
+          fi
+
+          # Check file size (should be between 5KB and 50KB)
+          FILE_SIZE=$(wc -c < "blog/posts/$FILENAME")
+          if [ "$FILE_SIZE" -lt 5000 ] || [ "$FILE_SIZE" -gt 50000 ]; then
+            echo "⚠️ Warning: Unusual file size: $FILE_SIZE bytes"
+          fi
+
+          # Check for critical content markers
+          if ! grep -q "<article" "blog/posts/$FILENAME"; then
+            echo "❌ Missing article tag in generated content!"
+            exit 1
+          fi
+
+          if ! grep -q "post-content" "blog/posts/$FILENAME"; then
+            echo "❌ Missing post-content div in generated content!"
+            exit 1
+          fi
+
+          # Store outputs
+          echo "title=$TITLE" >> $GITHUB_OUTPUT
+          echo "filename=$FILENAME" >> $GITHUB_OUTPUT
+          echo "topic=$TOPIC" >> $GITHUB_OUTPUT
+          echo "excerpt=$EXCERPT" >> $GITHUB_OUTPUT
+          echo "keywords=$KEYWORDS" >> $GITHUB_OUTPUT
+
+          # Read stats for notification
+          if [ -f tmp/firestore-stats.json ]; then
+            STATS=$(cat tmp/firestore-stats.json | jq -c '.')
+            echo "stats=$STATS" >> $GITHUB_OUTPUT
+          else
+            echo "stats={}" >> $GITHUB_OUTPUT
+          fi
+
+          echo "✅ Post generated: $TITLE"
+
+      - name: Validate blog post
+        id: validate
+        run: |
+          echo "🔍 Validating generated content..."
+          node scripts/validate-blog-post.mjs
+          echo "✅ Validation passed - safe to publish"
+
+      - name: Generate RSS feed
+        run: |
+          echo "📡 Generating RSS feed..."
+          node scripts/generate-rss-feed.mjs
+          echo "✅ RSS feed updated"
+
+      - name: Dry Run Check
+        if: ${{ github.event.inputs.dry_run == 'true' }}
+        run: |
+          echo "🔄 DRY RUN MODE - Not publishing"
+          echo "Generated post: ${{ steps.generate.outputs.title }}"
+          echo "File: blog/posts/${{ steps.generate.outputs.filename }}"
+          exit 0
+
+      - name: Commit and Push
+        id: publish
+        if: ${{ github.event.inputs.dry_run != 'true' }}
+        run: |
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+
+          # Add all changed files
+          git add blog/posts/
+          git add blog/index.html
+          git add blog/feed.xml
+          git add tmp/recent-topics.json
+
+          # Commit with detailed message
+          git commit -m "blog: Auto-publish '${{ steps.generate.outputs.title }}'" \
+                     -m "" \
+                     -m "Topic: ${{ steps.generate.outputs.topic }}" \
+                     -m "File: blog/posts/${{ steps.generate.outputs.filename }}" \
+                     -m "Keywords: ${{ steps.generate.outputs.keywords }}" \
+                     -m "" \
+                     -m "🤖 Automatically published by GitHub Actions" \
+                     -m "Stats snapshot: ${{ steps.generate.outputs.stats }}"
+
+          # Push to main
+          git push origin main
+
+          # Get commit SHA for rollback
+          COMMIT_SHA=$(git rev-parse HEAD)
+          echo "commit_sha=$COMMIT_SHA" >> $GITHUB_OUTPUT
+          echo "✅ Published with commit: $COMMIT_SHA"
+
+      - name: Create GitHub Issue for Review
+        if: ${{ github.event.inputs.dry_run != 'true' }}
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issueBody = `
+            ## 📝 Auto-Published Blog Post
+
+            A new blog post has been automatically published to the site.
+
+            **Title:** ${{ steps.generate.outputs.title }}
+            **Topic:** ${{ steps.generate.outputs.topic }}
+            **File:** \`blog/posts/${{ steps.generate.outputs.filename }}\`
+            **Live URL:** https://protoquiz.com/blog/posts/${{ steps.generate.outputs.filename }}
+
+            ---
+
+            ### 📊 Stats Used
+
+            \`\`\`json
+            ${{ steps.generate.outputs.stats }}
+            \`\`\`
+
+            ---
+
+            ### 🔄 Rollback Instructions
+
+            If there are issues with this post, you can rollback using:
+
+            \`\`\`bash
+            git revert ${{ steps.publish.outputs.commit_sha }}
+            git push origin main
+            \`\`\`
+
+            Or manually edit the post:
+            1. Go to [the file](https://github.com/${{ github.repository }}/blob/main/blog/posts/${{ steps.generate.outputs.filename }})
+            2. Click "Edit" (pencil icon)
+            3. Make changes
+            4. Commit directly to main
+
+            ---
+
+            ### ✅ Review Checklist
+
+            Please review the published post for:
+
+            - [ ] **Factual Accuracy** - All medical/EMS information is correct
+            - [ ] **Stats Accuracy** - Firestore stats are accurate and anonymized
+            - [ ] **No Sensitive Info** - No user data or private information exposed
+            - [ ] **Links Working** - All links function correctly
+            - [ ] **Mobile Display** - Looks good on mobile devices
+
+            If everything looks good, you can close this issue. If changes are needed, edit or rollback as described above.
+
+            ---
+
+            _This issue was automatically created by the blog auto-publish workflow._
+            `;
+
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `📝 Review: Auto-Published Blog Post - ${{ steps.generate.outputs.title }}`,
+              body: issueBody,
+              labels: ['blog', 'auto-published', 'review-needed'],
+              assignees: ['jadenschwartz22-ops']
+            });
+
+      - name: Send Discord Notification
+        if: ${{ github.event.inputs.dry_run != 'true' && env.DISCORD_WEBHOOK_URL != '' }}
+        run: |
+          curl -H "Content-Type: application/json" \
+               -X POST \
+               -d "{
+                 \"embeds\": [{
+                   \"title\": \"📝 New Blog Post Auto-Published\",
+                   \"description\": \"**${{ steps.generate.outputs.title }}**\",
+                   \"color\": 5814783,
+                   \"fields\": [
+                     {
+                       \"name\": \"Topic\",
+                       \"value\": \"${{ steps.generate.outputs.topic }}\",
+                       \"inline\": true
+                     },
+                     {
+                       \"name\": \"Status\",
+                       \"value\": \"✅ Live\",
+                       \"inline\": true
+                     },
+                     {
+                       \"name\": \"URL\",
+                       \"value\": \"[View Post](https://protoquiz.com/blog/posts/${{ steps.generate.outputs.filename }})\"
+                     },
+                     {
+                       \"name\": \"Review Issue\",
+                       \"value\": \"[GitHub Issue](https://github.com/${{ github.repository }}/issues)\"
+                     }
+                   ],
+                   \"footer\": {
+                     \"text\": \"ProtoQuiz Blog Automation\"
+                   },
+                   \"timestamp\": \"$(date -u +%Y-%m-%dT%H:%M:%S.000Z)\"
+                 }]
+               }" \
+               $DISCORD_WEBHOOK_URL || echo "Discord notification failed (non-critical)"
+
+      - name: Cleanup
+        if: always()
+        run: |
+          rm -f /tmp/firebase-key.json
+          echo "✅ Cleanup complete"
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## 📊 Workflow Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ github.event.inputs.dry_run }}" == "true" ]; then
+            echo "**Mode:** Dry Run (not published)" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "**Mode:** Auto-Published" >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Title:** ${{ steps.generate.outputs.title }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Topic:** ${{ steps.generate.outputs.topic }}" >> $GITHUB_STEP_SUMMARY
+          echo "**File:** blog/posts/${{ steps.generate.outputs.filename }}" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ github.event.inputs.dry_run }}" != "true" ]; then
+            echo "**Live URL:** https://protoquiz.com/blog/posts/${{ steps.generate.outputs.filename }}" >> $GITHUB_STEP_SUMMARY
+            echo "**Commit:** ${{ steps.publish.outputs.commit_sha }}" >> $GITHUB_STEP_SUMMARY
+          fi

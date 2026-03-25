@@ -1,0 +1,150 @@
+name: Auto-Merge Blog Posts After 24 Hours
+
+on:
+  # schedule:
+  #   # Run every hour to check for PRs that need auto-merging
+  #   - cron: "0 * * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (check but do not merge)'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  auto-merge-blog-prs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check and merge old blog PRs
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const DRY_RUN = ${{ github.event.inputs.dry_run || false }};
+            const HOURS_BEFORE_MERGE = 24; // Wait 24 hours before auto-merging
+            const MERGE_LABEL = 'auto-merge-24h';
+            const BLOG_LABEL = 'blog';
+
+            // Get all open PRs with blog and auto-merge labels
+            const { data: prs } = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              sort: 'created',
+              direction: 'asc'
+            });
+
+            console.log(`Found ${prs.length} open PRs`);
+
+            for (const pr of prs) {
+              // Check if PR has both required labels
+              const labels = pr.labels.map(l => l.name);
+              if (!labels.includes(BLOG_LABEL) || !labels.includes(MERGE_LABEL)) {
+                console.log(`PR #${pr.number} - Skipping (missing required labels)`);
+                continue;
+              }
+
+              // Calculate age of PR
+              const createdAt = new Date(pr.created_at);
+              const now = new Date();
+              const ageInHours = (now - createdAt) / (1000 * 60 * 60);
+
+              console.log(`PR #${pr.number} - "${pr.title}"`);
+              console.log(`  Created: ${createdAt.toISOString()}`);
+              console.log(`  Age: ${ageInHours.toFixed(1)} hours`);
+
+              if (ageInHours >= HOURS_BEFORE_MERGE) {
+                console.log(`  ✅ Ready for auto-merge (older than ${HOURS_BEFORE_MERGE} hours)`);
+
+                if (DRY_RUN) {
+                  console.log(`  🔄 DRY RUN - Would merge PR #${pr.number}`);
+                  continue;
+                }
+
+                try {
+                  // Check if PR is mergeable
+                  const { data: prDetails } = await github.rest.pulls.get({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    pull_number: pr.number
+                  });
+
+                  if (prDetails.mergeable === false) {
+                    console.log(`  ❌ PR has conflicts - cannot auto-merge`);
+
+                    // Add comment about conflicts
+                    await github.rest.issues.createComment({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: pr.number,
+                      body: `⚠️ **Auto-merge failed** - This PR has conflicts and cannot be automatically merged.\n\nPlease resolve conflicts manually or close this PR.`
+                    });
+                    continue;
+                  }
+
+                  // Add a comment before merging
+                  await github.rest.issues.createComment({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: pr.number,
+                    body: `🤖 **Auto-merging** - This blog post PR has been open for ${Math.floor(ageInHours)} hours.\n\nMerging automatically to ensure content is published on schedule.`
+                  });
+
+                  // Merge the PR
+                  await github.rest.pulls.merge({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    pull_number: pr.number,
+                    merge_method: 'squash',
+                    commit_title: `Auto-merge: ${pr.title}`,
+                    commit_message: `Automatically merged after ${HOURS_BEFORE_MERGE} hours without review.\n\nOriginal PR: #${pr.number}`
+                  });
+
+                  console.log(`  ✅ Successfully merged PR #${pr.number}`);
+
+                  // Create an issue for post-publish review
+                  await github.rest.issues.create({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    title: `📝 Review Auto-Published Post: ${pr.title}`,
+                    body: `A blog post was automatically published after 24 hours without review.\n\n**Original PR:** #${pr.number}\n**Title:** ${pr.title}\n\n### Action Items\n\n- [ ] Review the published post for accuracy\n- [ ] Make any necessary edits directly to main branch\n- [ ] Check live site: https://protoquiz.com/blog/\n\n### To Edit\n\nIf edits are needed, you can modify the live post:\n1. Go to the [blog/posts folder](https://github.com/${context.repo.owner}/${context.repo.repo}/tree/main/blog/posts)\n2. Click on the most recent post\n3. Click the pencil icon to edit\n4. Commit changes to main branch\n\n_This issue was created because the blog post was auto-merged without manual review._`,
+                    labels: ['blog', 'review-needed', 'auto-merged'],
+                    assignees: ['jadenschwartz22-ops']
+                  });
+
+                } catch (error) {
+                  console.error(`  ❌ Failed to merge PR #${pr.number}: ${error.message}`);
+
+                  // Add comment about failure
+                  await github.rest.issues.createComment({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: pr.number,
+                    body: `❌ **Auto-merge failed** - Error: ${error.message}\n\nPlease merge manually or investigate the issue.`
+                  });
+                }
+              } else {
+                const hoursRemaining = HOURS_BEFORE_MERGE - ageInHours;
+                console.log(`  ⏳ Not ready yet (${hoursRemaining.toFixed(1)} hours remaining)`);
+              }
+            }
+
+            if (DRY_RUN) {
+              console.log('\n📊 DRY RUN COMPLETE - No PRs were actually merged');
+            }
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## 🤖 Auto-Merge Check Complete" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Checked for blog PRs older than 24 hours." >> $GITHUB_STEP_SUMMARY
+          echo "PRs with 'blog' and 'auto-merge-24h' labels are automatically merged." >> $GITHUB_STEP_SUMMARY
