@@ -95,7 +95,7 @@
     .nav-btn.primary:hover{transform:translateY(-1px); box-shadow:0 8px 24px var(--glow);}
 
     /* Hero */
-    .hero{padding:120px 0 60px; text-align:center; position:relative;}
+    .hero{padding:130px 0 60px; position:relative;}
     .hero::before{
       content:""; position:absolute; inset:0; pointer-events:none; opacity:.04;
       background-image:
@@ -109,18 +109,10 @@
       background:linear-gradient(180deg, transparent, var(--bg));
       pointer-events:none;
     }
-    .hero-label{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:6px 16px; border-radius:999px;
-      background:rgba(99,102,241,.08); border:1px solid rgba(99,102,241,.2);
-      font-size:13px; font-weight:600; color:var(--accent2); letter-spacing:.02em;
-      margin-bottom:24px;
-    }
-    .hero-label .dot{width:6px; height:6px; border-radius:50%; background:var(--success); animation:blink 2s ease infinite;}
-    @keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
+    .hero-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;}
 
     h1{
-      font-size:clamp(34px, 5.5vw, 56px); font-weight:900; line-height:1.05;
+      font-size:clamp(34px, 5vw, 52px); font-weight:900; line-height:1.08;
       letter-spacing:-.035em; margin-bottom:20px;
     }
     h1 .gradient{
@@ -128,10 +120,63 @@
       -webkit-background-clip:text; -webkit-text-fill-color:transparent;
     }
     .hero-sub{
-      font-size:clamp(15px, 1.8vw, 18px); color:var(--muted); max-width:600px;
-      margin:0 auto 36px; line-height:1.7;
+      font-size:clamp(15px, 1.6vw, 17px); color:var(--muted); max-width:480px;
+      margin:0 0 32px; line-height:1.7;
     }
-    .hero-actions{display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
+    .hero-actions{display:flex; gap:14px; flex-wrap:wrap;}
+    .hero-proof{margin-top:32px; display:flex; gap:24px;}
+    .hero-stat{display:flex; flex-direction:column;}
+    .hero-stat-val{font-size:22px; font-weight:800; color:var(--accent2);}
+    .hero-stat-lbl{font-size:11px; color:var(--muted); letter-spacing:.02em;}
+
+    /* Hero mini-dashboard */
+    .hero-preview{
+      position:relative;
+      background:rgba(10,10,14,.9); border:1px solid var(--line);
+      border-radius:14px; overflow:hidden;
+      box-shadow:0 24px 80px rgba(0,0,0,.5), 0 0 60px rgba(99,102,241,.08);
+      transform:perspective(1200px) rotateY(-3deg) rotateX(2deg);
+      transition:transform .4s ease;
+    }
+    .hero-preview:hover{transform:perspective(1200px) rotateY(0deg) rotateX(0deg);}
+    .hero-preview-chrome{
+      display:flex; align-items:center; gap:6px; padding:10px 14px;
+      background:rgba(255,255,255,.03); border-bottom:1px solid var(--line);
+    }
+    .hero-preview-chrome .pdot{width:7px; height:7px; border-radius:50%;}
+    .hero-preview-chrome .pdot:nth-child(1){background:#ff5f57;}
+    .hero-preview-chrome .pdot:nth-child(2){background:#ffbd2e;}
+    .hero-preview-chrome .pdot:nth-child(3){background:#28ca42;}
+    .hero-preview-chrome .purl{
+      margin-left:10px; padding:4px 12px; border-radius:5px;
+      background:rgba(255,255,255,.04); font-size:11px; color:var(--muted); font-family:monospace;
+    }
+    .hero-preview-body{padding:18px;}
+    .hero-preview-nav{
+      display:flex; gap:4px; margin-bottom:16px; padding-bottom:12px; border-bottom:1px solid var(--line);
+    }
+    .hero-preview-nav span{
+      padding:6px 12px; border-radius:6px; font-size:11px; font-weight:600; color:var(--muted);
+    }
+    .hero-preview-nav span.on{background:var(--accent); color:#fff;}
+    .hp-kpis{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-bottom:14px;}
+    .hp-kpi{
+      background:rgba(255,255,255,.025); border:1px solid var(--line);
+      border-radius:8px; padding:10px; text-align:center;
+    }
+    .hp-kpi-val{font-size:18px; font-weight:800; color:var(--accent);}
+    .hp-kpi-lbl{font-size:9px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em; margin-top:2px;}
+    .hp-rows{display:flex; flex-direction:column; gap:6px;}
+    .hp-row{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:8px 12px; background:rgba(255,255,255,.02); border:1px solid var(--line);
+      border-radius:8px; font-size:12px;
+    }
+    .hp-row-name{font-weight:600;}
+    .hp-row-bar{flex:1; margin:0 12px; height:4px; border-radius:2px; background:rgba(255,255,255,.06); overflow:hidden;}
+    .hp-row-bar-fill{height:100%; border-radius:2px;}
+
+    @keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
 
     .btn{
       padding:14px 28px; border-radius:12px; font-weight:700; font-size:15px;
@@ -393,6 +438,12 @@
 
     @media (max-width:768px){
       .hero{padding:100px 0 48px;}
+      .hero-grid{grid-template-columns:1fr; gap:32px; text-align:center;}
+      .hero-sub{margin:0 auto 32px;}
+      .hero-actions{justify-content:center;}
+      .hero-proof{justify-content:center;}
+      .hero-preview{transform:none; max-width:440px; margin:0 auto;}
+      .hero-preview:hover{transform:none;}
       .features{grid-template-columns:1fr;}
       .split{grid-template-columns:1fr; gap:40px;}
       .split-text{max-width:100%;}
@@ -430,14 +481,63 @@
     <!-- Hero -->
     <section class="hero">
       <div class="wrap">
-        <div class="hero-label"><span class="dot"></span> Now onboarding early partners</div>
-        <h1>Your protocols.<br><span class="gradient">Your training platform.</span></h1>
-        <p class="hero-sub">
-          We turn your protocol PDF into a branded training system -- quizzes, clinical scenarios, pharmacology drills, spaced repetition, and a supervisor dashboard. Works on any device, any browser.
-        </p>
-        <div class="hero-actions">
-          <button type="button" class="btn btn-primary" id="openContact2" data-track="AgencyContactOpen">Talk to Us</button>
-          <a href="https://highland.protoquiz.com" target="_blank" class="btn btn-ghost" data-track="AgencyLiveDemo">Explore the Live Platform</a>
+        <div class="hero-grid">
+          <div>
+            <h1>One PDF.<br><span class="gradient">A complete training system.</span></h1>
+            <p class="hero-sub">
+              Upload your protocol PDF. Get quizzes, clinical scenarios, pharmacology drills, and a supervisor dashboard -- all branded to your department, running on your subdomain.
+            </p>
+            <div class="hero-actions">
+              <button type="button" class="btn btn-primary" id="openContact2" data-track="AgencyContactOpen">Talk to Us</button>
+              <a href="https://highland.protoquiz.com" target="_blank" class="btn btn-ghost" data-track="AgencyLiveDemo">Explore the Live Platform</a>
+            </div>
+            <div class="hero-proof">
+              <div class="hero-stat"><span class="hero-stat-val">500+</span><span class="hero-stat-lbl">B2C users</span></div>
+              <div class="hero-stat"><span class="hero-stat-val">40k+</span><span class="hero-stat-lbl">Quizzes taken</span></div>
+              <div class="hero-stat"><span class="hero-stat-val">Any PDF</span><span class="hero-stat-lbl">Protocol-agnostic</span></div>
+            </div>
+          </div>
+          <div class="hero-preview">
+            <div class="hero-preview-chrome">
+              <span class="pdot"></span><span class="pdot"></span><span class="pdot"></span>
+              <span class="purl">yourorg.protoquiz.com</span>
+            </div>
+            <div class="hero-preview-body">
+              <div class="hero-preview-nav">
+                <span class="on">Dashboard</span>
+                <span>Quizzes</span>
+                <span>Scenarios</span>
+                <span>Team</span>
+              </div>
+              <div class="hp-kpis">
+                <div class="hp-kpi"><div class="hp-kpi-val">31</div><div class="hp-kpi-lbl">Providers</div></div>
+                <div class="hp-kpi"><div class="hp-kpi-val" style="color:var(--success);">84%</div><div class="hp-kpi-lbl">Avg Score</div></div>
+                <div class="hp-kpi"><div class="hp-kpi-val" style="color:var(--accent2);">412</div><div class="hp-kpi-lbl">Quizzes</div></div>
+              </div>
+              <div class="hp-rows">
+                <div class="hp-row">
+                  <span class="hp-row-name">M. Johnson</span>
+                  <div class="hp-row-bar"><div class="hp-row-bar-fill" style="width:94%;background:var(--success);"></div></div>
+                  <span style="color:var(--success);font-weight:700;">94%</span>
+                </div>
+                <div class="hp-row">
+                  <span class="hp-row-name">R. Chen</span>
+                  <div class="hp-row-bar"><div class="hp-row-bar-fill" style="width:89%;background:var(--success);"></div></div>
+                  <span style="color:var(--success);font-weight:700;">89%</span>
+                </div>
+                <div class="hp-row">
+                  <span class="hp-row-name">K. Williams</span>
+                  <div class="hp-row-bar"><div class="hp-row-bar-fill" style="width:82%;background:var(--accent);"></div></div>
+                  <span style="color:var(--accent);font-weight:700;">82%</span>
+                </div>
+                <div class="hp-row">
+                  <span class="hp-row-name">S. Davis</span>
+                  <div class="hp-row-bar"><div class="hp-row-bar-fill" style="width:71%;background:var(--warning);"></div></div>
+                  <span style="color:var(--warning);font-weight:700;">71%</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
