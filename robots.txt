@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /tmp/
+Disallow: /node_modules/
+
+# Block search params on internal pages from being indexed
+Disallow: /*?utm_*
+
+Sitemap: https://protoquiz.com/sitemap.xml

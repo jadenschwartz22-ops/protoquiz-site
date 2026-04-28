@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>EMS ProtoQuiz - Master Your Protocols | Page-Cited EMS Training</title>
-  <meta name="description" content="Learn your EMS protocols for FREE. Upload your PDF, get instant quizzes with page citations. Built by a Paramedic student. 4.6★ iOS app." />
+  <title>EMS ProtoQuiz - Quiz Your Local Protocols | Free iOS App for EMTs and Paramedics</title>
+  <meta name="description" content="Upload your agency's protocol PDF and quiz yourself on pharmacology, algorithms, and scenarios you'll actually use on shift. Page-cited answers, no AI hallucinations. Free iOS app, 4.7 stars." />
 
   <!-- SEO -->
   <link rel="canonical" href="https://protoquiz.com/">
@@ -15,21 +15,27 @@
   <meta name="robots" content="index,follow" />
 
   <!-- Keywords -->
-  <meta name="keywords" content="EMS quiz, paramedic study, protocol training, EMS protocols, NREMT, paramedic app, EMT training, emergency medical services, protocol quiz, EMS education" />
+  <meta name="keywords" content="EMS quiz app, paramedic study app, EMT protocol quiz, EMS protocol training, paramedic pharmacology, EMS scenario simulator, NREMT prep, agency protocol study, EMS continuing education, protocol PDF quiz" />
 
   <!-- Social -->
-  <meta property="og:title" content="EMS ProtoQuiz — Master Your Protocols" />
-  <meta property="og:description" content="Upload your protocol PDF, get instant quizzes with page citations. Built by a Paramedic, for Paramedics. Free iOS app." />
+  <meta property="og:title" content="EMS ProtoQuiz - Quiz Your Local Protocols" />
+  <meta property="og:description" content="Upload your agency's protocol PDF. Quiz yourself on pharmacology, algorithms, and scenarios you'll actually use on shift. Page-cited answers. Free iOS app." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://protoquiz.com/" />
-  <meta property="og:image" content="https://protoquiz.com/logo-256.png" />
+  <meta property="og:image" content="https://protoquiz.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="EMS ProtoQuiz - turn your protocol PDF into quizzes and scenarios. Free iOS app." />
+  <meta property="og:site_name" content="EMS ProtoQuiz" />
+  <meta property="og:locale" content="en_US" />
   <meta name="theme-color" content="#05080c" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="EMS ProtoQuiz — Master Your Protocols" />
-  <meta name="twitter:description" content="Upload your protocol PDF, get instant quizzes with page citations. Built by a paramedic, for paramedics. Free iOS app." />
-  <meta name="twitter:image" content="https://protoquiz.com/logo-256.png" />
+  <meta name="twitter:title" content="EMS ProtoQuiz - Quiz Your Local Protocols" />
+  <meta name="twitter:description" content="Upload your protocol PDF. Quiz yourself on pharmacology, algorithms, and scenarios. Page-cited answers. Free iOS app." />
+  <meta name="twitter:image" content="https://protoquiz.com/og-image.png" />
+  <meta name="twitter:image:alt" content="EMS ProtoQuiz - turn your protocol PDF into quizzes and scenarios." />
 
   <!-- App Store Smart Banner -->
   <meta name="apple-itunes-app" content="app-id=6753611139">
@@ -49,7 +55,7 @@
     "applicationCategory":"EducationalApplication",
     "url":"https://protoquiz.com/",
     "publisher":{"@type":"Organization","name":"Teach Me to Live LLC"},
-    "description":"Turns your protocol PDF into quick quizzes and interactive scenarios with page-cited answers.",
+    "description":"Turns your agency's protocol PDF into pharmacology quizzes, algorithm tests, and adaptive patient scenarios. Every answer is page-cited back to the source PDF.",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.7",
@@ -1941,107 +1947,92 @@
       letter-spacing:.01em;
     }
 
-    /* Scenario screen variant ---------------------------- */
-    .phone-screen.scenario{
-      padding:46px 14px 14px;
-      gap:0;
-    }
-
-    .scn-header{
-      display:flex;
+    /* Dispatched-to loading screen ----------------------- */
+    .phone-screen.dispatched{
+      padding:0;
+      background:#000;
       align-items:center;
       justify-content:center;
-      gap:8px;
-      padding:6px 0 12px;
+    }
+
+    .dsp-glow{
+      position:absolute;
+      top:34%;
+      left:50%;
+      width:240px; height:240px;
+      transform:translate(-50%, -50%);
+      background:radial-gradient(circle, rgba(239,68,68,.55), rgba(239,68,68,.18) 35%, transparent 65%);
+      filter:blur(2px);
+      pointer-events:none;
+      animation:dspGlowPulse 2.4s ease-in-out infinite;
+    }
+
+    @keyframes dspGlowPulse{
+      0%,100%{opacity:.78; transform:translate(-50%,-50%) scale(.96);}
+      50%{opacity:1; transform:translate(-50%,-50%) scale(1.05);}
+    }
+
+    .dsp-center{
       position:relative;
+      z-index:1;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
+      padding:0 26px;
+      width:100%;
     }
 
-    .scn-siren{
-      width:18px; height:18px;
+    .dsp-siren{
+      width:54px; height:54px;
       display:flex;
       align-items:center;
       justify-content:center;
-      filter:drop-shadow(0 0 8px rgba(239,68,68,.7));
+      margin-bottom:36px;
+      filter:drop-shadow(0 0 18px rgba(239,68,68,.85));
       animation:sirenPulse 1.4s ease-in-out infinite;
     }
 
-    .scn-siren svg{width:100%; height:100%;}
+    .dsp-siren svg{width:100%; height:100%;}
 
-    .scn-title{
-      font-size:13px;
+    .dsp-called{
+      font-size:14px;
       font-weight:800;
-      letter-spacing:.18em;
       color:#ef4444;
-      text-shadow:0 0 12px rgba(239,68,68,.45);
-    }
-
-    .scn-card{
-      background:#0e1218;
-      border:1px solid rgba(255,255,255,.06);
-      border-radius:14px;
-      padding:11px 12px;
-      margin-bottom:8px;
-    }
-
-    .scn-card-dispatch{
-      background:linear-gradient(135deg, rgba(239,68,68,.10), #0e1218);
-      border-color:rgba(239,68,68,.25);
-      box-shadow:0 0 0 1px rgba(239,68,68,.06) inset;
-    }
-
-    .scn-row{
-      display:flex;
-      align-items:center;
-      gap:6px;
-      margin-bottom:5px;
-    }
-
-    .scn-icon{
-      width:13px; height:13px;
-      flex:0 0 13px;
-    }
-
-    .scn-label{
-      font-size:11px;
-      font-weight:700;
       letter-spacing:.005em;
+      margin:0 0 14px 0;
+      text-shadow:0 0 12px rgba(239,68,68,.4);
     }
 
-    .scn-label-red{color:#ef4444;}
-    .scn-label-blue{color:#3b82f6;}
-    .scn-label-amber{color:#f59e0b;}
+    .dsp-patient{
+      font-size:17px;
+      font-weight:800;
+      color:#ffffff;
+      line-height:1.25;
+      letter-spacing:-.005em;
+      margin:0 0 36px 0;
+    }
 
-    .scn-text{
-      font-size:10.5px;
+    .dsp-loading{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:11.5px;
       font-weight:500;
-      line-height:1.35;
-      color:#cfd5dd;
+      color:#9aa3af;
       margin:0;
     }
 
-    .scn-cta{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:6px;
-      width:100%;
-      padding:11px 14px;
-      border-radius:14px;
-      background:#ef4444;
-      color:#fff;
-      font-size:13px;
-      font-weight:700;
-      text-align:center;
-      letter-spacing:.01em;
-      margin-top:auto;
-      box-shadow:
-        0 8px 22px -8px rgba(239,68,68,.7),
-        0 0 0 1px rgba(255,255,255,.06) inset;
+    .dsp-spinner{
+      width:11px; height:11px;
+      border-radius:50%;
+      border:1.5px solid rgba(154,163,175,.25);
+      border-top-color:#9aa3af;
+      animation:dspSpin .9s linear infinite;
     }
 
-    .scn-cta svg{
-      width:13px; height:13px;
-      flex:0 0 13px;
+    @keyframes dspSpin{
+      to{transform:rotate(360deg);}
     }
 
     /* Floating chips outside the phone */
@@ -2393,45 +2384,22 @@
           <div class="hero-mock" aria-hidden="true">
             <div class="phone">
               <div class="phone-notch"></div>
-              <div class="phone-screen scenario">
-                <div class="scn-header">
-                  <span class="scn-siren" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none">
-                      <path d="M5 19h14v-3a7 7 0 0 0-14 0v3z" fill="#ef4444"/>
-                      <rect x="11.25" y="11" width="1.5" height="6" rx=".75" fill="#0a0a0a"/>
-                      <path d="M12 4v3M5.5 6l2 2M18.5 6l-2 2M3 11h2M19 11h2" stroke="#ef4444" stroke-width="1.6" stroke-linecap="round"/>
+              <div class="phone-screen dispatched">
+                <div class="dsp-glow" aria-hidden="true"></div>
+                <div class="dsp-center">
+                  <span class="dsp-siren" aria-hidden="true">
+                    <svg viewBox="0 0 32 32" fill="none">
+                      <path d="M6 26h20v-4a10 10 0 0 0-20 0v4z" fill="#ef4444"/>
+                      <rect x="14.75" y="15" width="2.5" height="9" rx="1" fill="#000"/>
+                      <path d="M16 4v4M7.5 7.5l3 3M24.5 7.5l-3 3M3 14h3M26 14h3" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round"/>
                     </svg>
                   </span>
-                  <span class="scn-title">DISPATCH</span>
-                </div>
-
-                <div class="scn-card scn-card-dispatch">
-                  <div class="scn-row">
-                    <svg class="scn-icon" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                    <span class="scn-label scn-label-red">Dispatch</span>
-                  </div>
-                  <p class="scn-text">68-year-old male, general weakness and palpitations. Caller reports patient missed dialysis two days ago.</p>
-                </div>
-
-                <div class="scn-card">
-                  <div class="scn-row">
-                    <svg class="scn-icon" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
-                    <span class="scn-label scn-label-blue">Arrival on Scene</span>
-                  </div>
-                  <p class="scn-text">Wife meets you at the door. States her husband has been "acting slow" since yesterday.</p>
-                </div>
-
-                <div class="scn-card">
-                  <div class="scn-row">
-                    <svg class="scn-icon" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                    <span class="scn-label scn-label-amber">First Impression</span>
-                  </div>
-                  <p class="scn-text">Patient supine, pale and diaphoretic. Responds to loud verbal stimuli with groans.</p>
-                </div>
-
-                <div class="scn-cta">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4v.5l1 .8c0 6.5 2 14 7 16.7v.5a.3.3 0 0 0 .3.3h7.5"/><circle cx="20" cy="10" r="2"/><path d="M11 12a4 4 0 0 0 4 4"/></svg>
-                  Begin Assessment
+                  <p class="dsp-called">You are called to...</p>
+                  <p class="dsp-patient">68-year-old male,<br>general weakness<br>and palpitations</p>
+                  <p class="dsp-loading">
+                    <span class="dsp-spinner" aria-hidden="true"></span>
+                    Preparing scenario...
+                  </p>
                 </div>
               </div>
             </div>
