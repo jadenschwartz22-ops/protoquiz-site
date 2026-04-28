@@ -1174,7 +1174,7 @@
     }
 
     .reviews-container{
-      max-width:900px;
+      max-width:1100px;
       margin:0 auto;
     }
 
@@ -1182,27 +1182,344 @@
       color:var(--muted);
     }
 
-    .review-carousel{
-      position: relative;
-      min-height: 250px;
+    .reviews-trust{
+      text-align:center;
+      margin:-18px auto 28px;
+      font-size:14px;
+      color:var(--muted);
+      letter-spacing:.01em;
+    }
+    .reviews-trust .stars{color:#FFD700; margin-right:6px;}
+    .reviews-trust strong{color:var(--cyan); font-weight:700;}
+
+    .reviews-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:20px;
+      max-width:1100px;
+      margin:0 auto;
     }
 
-    .review-slide{
-      position: absolute;
-      width: 100%;
-      opacity: 0;
-      transition: opacity 0.5s ease-in-out;
-      pointer-events: none;
+    .review-tile{
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:24px;
+      transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+      display:flex;
+      flex-direction:column;
+    }
+    .review-tile:hover{
+      transform:translateY(-4px);
+      border-color:rgba(6,214,224,.35);
+      box-shadow:0 12px 30px rgba(6,214,224,.08);
+    }
+    .review-tile .stars{color:#FFD700; font-size:18px; letter-spacing:1px; margin-bottom:10px;}
+    .review-tile h4{font-size:16px; font-weight:700; color:var(--ink); margin-bottom:10px;}
+    .review-tile .quote{font-size:14px; line-height:1.6; color:#cbd5e1; font-style:italic; margin-bottom:14px;}
+    .review-tile .who{font-size:13px; color:var(--muted); opacity:.8; margin-top:auto;}
+
+    @media (max-width: 980px){
+      .reviews-grid{grid-template-columns:1fr; max-width:520px;}
     }
 
-    .review-slide.active{
-      opacity: 1;
-      pointer-events: auto;
+    /* Reusable App Store proof microcopy under CTA buttons */
+    .cta-proof{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      margin-top:12px;
+      font-size:13px;
+      color:var(--muted);
+      letter-spacing:.01em;
+    }
+    .cta-proof .stars{color:#FFD700; letter-spacing:1px; font-size:13px;}
+    .cta-proof strong{color:var(--cyan); font-weight:700;}
+    .cta-proof .sep{opacity:.5;}
+    .cta-proof-block{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:6px;
+      margin-top:14px;
+    }
+    .cta-proof-secondary{
+      font-size:12px;
+      color:var(--muted);
+      opacity:.75;
     }
 
-    .carousel-dot:hover{
-      opacity: 0.8;
+    /* Compete Mode spotlight section */
+    .compete-spotlight{
+      padding:80px 0;
+      position:relative;
+      overflow:hidden;
     }
+    .compete-spotlight::before{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        radial-gradient(ellipse 600px 320px at 80% 20%, rgba(180,92,246,.18), transparent 70%),
+        radial-gradient(ellipse 500px 280px at 10% 90%, rgba(180,92,246,.10), transparent 70%);
+      pointer-events:none;
+    }
+    .compete-grid{
+      position:relative;
+      display:grid;
+      grid-template-columns:1.05fr 1fr;
+      gap:48px;
+      align-items:center;
+      max-width:1100px;
+      margin:0 auto;
+    }
+    .compete-eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:5px 14px;
+      background:linear-gradient(90deg, rgba(180,92,246,.12), rgba(6,214,224,.08));
+      border:1px solid rgba(180,92,246,.28);
+      border-radius:999px;
+      font-size:11px;
+      font-weight:700;
+      color:var(--violet);
+      text-transform:uppercase;
+      letter-spacing:.06em;
+      margin-bottom:14px;
+    }
+    .compete-eyebrow .new-pill{
+      font-size:9px;
+      font-weight:800;
+      letter-spacing:.08em;
+      padding:2px 6px;
+      border-radius:4px;
+      background:linear-gradient(135deg, var(--violet), var(--cyan));
+      color:#05080c;
+    }
+    .compete-spotlight h2{
+      font-size:clamp(28px, 4vw, 40px);
+      font-weight:800;
+      margin-bottom:16px;
+      background:linear-gradient(120deg, #ffffff 30%, #d6b8ff);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      letter-spacing:-.02em;
+    }
+    .compete-spotlight p.compete-lede{
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.7;
+      margin-bottom:20px;
+    }
+    .compete-badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-bottom:24px;
+    }
+    .compete-badges span{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:6px 12px;
+      background:rgba(180,92,246,.08);
+      border:1px solid rgba(180,92,246,.25);
+      border-radius:999px;
+      font-size:12px;
+      color:#e2d3ff;
+      font-weight:600;
+    }
+    .compete-badges span::before{
+      content:"";
+      width:6px; height:6px; border-radius:50%;
+      background:var(--violet);
+      box-shadow:0 0 8px var(--violet);
+    }
+    .compete-spotlight .btn-primary{
+      background:linear-gradient(135deg, var(--violet), #8b3fe0);
+    }
+    .compete-spotlight .btn-primary:hover{
+      box-shadow:0 12px 30px rgba(180,92,246,.35);
+    }
+    /* Compete visual mockup */
+    .compete-visual{
+      position:relative;
+      aspect-ratio: 4 / 4.4;
+      border-radius:24px;
+      background:
+        linear-gradient(160deg, rgba(180,92,246,.10), rgba(6,214,224,.06));
+      border:1px solid rgba(180,92,246,.25);
+      padding:22px;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      box-shadow:0 30px 80px rgba(180,92,246,.18), inset 0 1px 0 rgba(255,255,255,.05);
+    }
+    .compete-visual::before{
+      content:"";
+      position:absolute; inset:0; border-radius:inherit; pointer-events:none; opacity:.05;
+      background-image:
+        linear-gradient(rgba(255,255,255,.4) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.4) 1px, transparent 1px);
+      background-size:24px 24px;
+      mask-image:radial-gradient(ellipse 70% 60% at 50% 50%, black, transparent);
+      -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 50%, black, transparent);
+    }
+    .room-code{
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:12px 16px;
+      background:rgba(5,8,12,.65);
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:12px;
+    }
+    .room-code .lbl{
+      font-size:10px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+    .room-code .code{
+      font-family:'SF Mono', ui-monospace, Menlo, monospace;
+      font-size:20px;
+      font-weight:800;
+      letter-spacing:.18em;
+      color:var(--cyan);
+    }
+    .vs-row{
+      position:relative;
+      display:grid;
+      grid-template-columns:1fr auto 1fr;
+      gap:10px;
+      align-items:center;
+    }
+    .vs-player{
+      background:rgba(5,8,12,.6);
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:14px;
+      padding:14px;
+      text-align:center;
+    }
+    .vs-player.you{border-color:rgba(6,214,224,.35);}
+    .vs-player.foe{border-color:rgba(180,92,246,.35);}
+    .vs-avatar{
+      width:44px; height:44px; border-radius:50%;
+      margin:0 auto 8px;
+      display:flex; align-items:center; justify-content:center;
+      font-weight:800; font-size:16px; color:#05080c;
+    }
+    .vs-player.you .vs-avatar{background:linear-gradient(135deg, var(--cyan), #4be9ef);}
+    .vs-player.foe .vs-avatar{background:linear-gradient(135deg, var(--violet), #d68dff);}
+    .vs-player .name{font-size:12px; font-weight:700; color:var(--ink);}
+    .vs-player .score{font-size:22px; font-weight:800; margin-top:4px; font-variant-numeric:tabular-nums;}
+    .vs-player.you .score{color:var(--cyan);}
+    .vs-player.foe .score{color:var(--violet);}
+    .vs-divider{
+      font-size:13px;
+      font-weight:800;
+      letter-spacing:.06em;
+      color:var(--muted);
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.07);
+    }
+    .leaderboard{
+      position:relative;
+      background:rgba(5,8,12,.6);
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:14px;
+      padding:14px 16px;
+      flex:1;
+      display:flex; flex-direction:column;
+      gap:8px;
+    }
+    .leaderboard .lb-title{
+      font-size:10px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin-bottom:4px;
+    }
+    .leaderboard .lb-row{
+      display:grid;
+      grid-template-columns:24px 1fr auto;
+      align-items:center;
+      gap:10px;
+      font-size:13px;
+    }
+    .leaderboard .rank{
+      font-weight:800;
+      color:var(--muted);
+      font-variant-numeric:tabular-nums;
+    }
+    .leaderboard .lb-row.me{
+      background:linear-gradient(90deg, rgba(6,214,224,.10), transparent);
+      margin:0 -10px; padding:6px 10px; border-radius:8px;
+    }
+    .leaderboard .lb-row.me .rank{color:var(--cyan);}
+    .leaderboard .lb-row.me .name{color:var(--cyan); font-weight:700;}
+    .leaderboard .pts{
+      font-variant-numeric:tabular-nums;
+      color:var(--ink);
+      font-weight:700;
+    }
+    @media (max-width: 980px){
+      .compete-grid{grid-template-columns:1fr; gap:32px;}
+      .compete-visual{max-width:420px; margin:0 auto;}
+    }
+
+    /* Founder pill + avatar */
+    .founder-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:5px 14px;
+      background:rgba(245,158,11,.10);
+      border:1px solid rgba(245,158,11,.28);
+      border-radius:999px;
+      font-size:11px;
+      font-weight:700;
+      color:var(--warning);
+      text-transform:uppercase;
+      letter-spacing:.06em;
+      margin-bottom:14px;
+    }
+    .founder-attr{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-top:20px;
+    }
+    .founder-avatar{
+      width:40px; height:40px; border-radius:50%;
+      background:linear-gradient(135deg, var(--cyan), #4be9ef);
+      color:#05080c;
+      display:flex; align-items:center; justify-content:center;
+      font-weight:800; font-size:18px;
+      flex-shrink:0;
+    }
+    .founder-attr .meta{display:flex; flex-direction:column; line-height:1.3;}
+    .founder-attr .meta .name{color:var(--cyan); font-weight:700; font-size:15px;}
+    .founder-attr .meta .role{color:var(--muted); font-size:12px;}
+
+    /* Accessible focus ring */
+    :focus-visible{
+      outline:2px solid var(--cyan);
+      outline-offset:3px;
+      border-radius:8px;
+    }
+    .btn-primary:focus-visible{
+      outline-color:#fff;
+      outline-offset:4px;
+    }
+    .compete-spotlight .btn-primary:focus-visible{
+      outline-color:var(--violet);
+    }
+    /* Suppress focus ring for mouse users */
+    :focus:not(:focus-visible){outline:none;}
 
     .reviews-list{
       display:grid;
@@ -2303,9 +2620,17 @@
               </a>
             </div>
 
-            <p class="hero-microcopy">
-              Free to download<span class="dot"></span>iOS only
-            </p>
+            <div class="cta-proof-block" style="align-items:flex-start; margin-top:10px;">
+              <span class="cta-proof">
+                <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <strong>4.7</strong>
+                <span class="sep">&middot;</span>
+                Loved by 700+ EMS workers
+              </span>
+              <p class="hero-microcopy" style="margin:0;">
+                Free to download<span class="dot"></span>iOS only
+              </p>
+            </div>
 
             <div class="hero-statstrip">
               <div class="stat">
@@ -2445,7 +2770,7 @@
         <div class="section-header">
           <span style="display:inline-flex;align-items:center;gap:6px;padding:5px 14px;background:rgba(180,92,246,.08);border:1px solid rgba(180,92,246,.2);border-radius:999px;font-size:11px;font-weight:700;color:var(--violet);text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px;">What's Inside</span>
           <h2 class="section-title">Built around your real protocols.</h2>
-          <p class="section-subtitle">Seven things that make ProtoQuiz different.</p>
+          <p class="section-subtitle">Six things that make ProtoQuiz different.</p>
         </div>
 
         <div class="features-grid">
@@ -2497,26 +2822,92 @@
             <p>Re-upload when protocols change. Quizzes refresh automatically.</p>
           </div>
 
-          <div class="feature-card">
-            <div class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 6H4v2a3 3 0 0 0 3 3"/><path d="M17 6h3v2a3 3 0 0 1-3 3"/></svg>
-            </div>
-            <h3>Compete Mode <span class="new-tag">New</span></h3>
-            <p>Head-to-head rooms with a worldwide leaderboard.</p>
-          </div>
         </div>
 
         <div class="features-cta">
-          <a href="https://apps.apple.com/app/id6753611139?utm_source=website&utm_medium=features&utm_campaign=download"
-             target="_blank"
-             rel="noopener"
-             class="btn btn-primary"
-             data-track="FeaturesCTA">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="margin-right:8px;vertical-align:-3px;">
-              <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
-            </svg>
-            Download on the App Store
-          </a>
+          <div class="cta-proof-block">
+            <a href="https://apps.apple.com/app/id6753611139?utm_source=website&utm_medium=features&utm_campaign=download"
+               target="_blank"
+               rel="noopener"
+               class="btn btn-primary"
+               data-track="FeaturesCTA">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="margin-right:8px;vertical-align:-3px;">
+                <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+              </svg>
+              Download on the App Store
+            </a>
+            <span class="cta-proof">
+              <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              <strong>4.7</strong>
+              <span class="sep">&middot;</span>
+              Loved by 700+ EMS workers
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compete Mode Spotlight -->
+    <section class="compete-spotlight fade-up">
+      <div class="wrap">
+        <div class="compete-grid">
+          <div class="compete-copy">
+            <span class="compete-eyebrow">Compete Mode <span class="new-pill">New</span></span>
+            <h2>Race a partner through your protocols.</h2>
+            <p class="compete-lede">
+              Spin up a private room, share a code, and go head-to-head on pharmacology, algorithms, or scenarios pulled from your own PDFs. Winners climb a worldwide leaderboard.
+            </p>
+            <div class="compete-badges">
+              <span>Private rooms</span>
+              <span>Live scoring</span>
+              <span>Global leaderboard</span>
+            </div>
+            <div class="cta-proof-block" style="align-items:flex-start;">
+              <a href="https://apps.apple.com/app/id6753611139?utm_source=website&utm_medium=compete&utm_campaign=download"
+                 target="_blank"
+                 rel="noopener"
+                 class="btn btn-primary"
+                 data-track="CompeteCTA">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="margin-right:8px;vertical-align:-3px;">
+                  <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+                </svg>
+                Download to play
+              </a>
+              <span class="cta-proof">
+                <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <strong>4.7</strong>
+                <span class="sep">&middot;</span>
+                700+ downloads
+              </span>
+            </div>
+          </div>
+
+          <div class="compete-visual" aria-hidden="true">
+            <div class="room-code">
+              <span class="lbl">Room code</span>
+              <span class="code">7K2-9F</span>
+            </div>
+            <div class="vs-row">
+              <div class="vs-player you">
+                <div class="vs-avatar">JS</div>
+                <div class="name">You</div>
+                <div class="score">8</div>
+              </div>
+              <div class="vs-divider">VS</div>
+              <div class="vs-player foe">
+                <div class="vs-avatar">MR</div>
+                <div class="name">Maya</div>
+                <div class="score">7</div>
+              </div>
+            </div>
+            <div class="leaderboard">
+              <div class="lb-title">Worldwide</div>
+              <div class="lb-row"><span class="rank">1</span><span class="name">medic_dani</span><span class="pts">12,480</span></div>
+              <div class="lb-row"><span class="rank">2</span><span class="name">codeblue99</span><span class="pts">11,902</span></div>
+              <div class="lb-row me"><span class="rank">3</span><span class="name">You</span><span class="pts">11,317</span></div>
+              <div class="lb-row"><span class="rank">4</span><span class="name">parastudent</span><span class="pts">10,890</span></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -2527,56 +2918,34 @@
       <div class="wrap">
         <div class="section-header">
           <span style="display:inline-flex;align-items:center;gap:6px;padding:5px 14px;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);border-radius:999px;font-size:11px;font-weight:700;color:var(--warning);text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px;">Reviews</span>
-          <h2 class="section-title">What Users Are Saying</h2>
+          <h2 class="section-title">Reviews from real users</h2>
         </div>
 
+        <p class="reviews-trust">
+          <span class="stars">&#9733;</span>
+          <strong id="reviewsRating">4.7</strong> average rating on the App Store
+        </p>
+
         <div class="reviews-container">
-          <!-- Cycling Reviews Carousel -->
-          <div style="position: relative; max-width: 700px; margin-left: auto; margin-right: auto;">
-            <div class="review-carousel">
-              <!-- Review 1 - Jackeroo98 -->
-              <div class="review-slide active">
-                <div style="background: rgba(255,255,255,.03); border: 1px solid var(--line); border-radius: 16px; padding: 24px;">
-                  <div style="color: #FFD700; margin-bottom: 8px; font-size: 18px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                  <h4 style="font-size: 16px; margin-bottom: 8px; color: var(--cyan); font-weight: 600;">Excellent</h4>
-                  <p style="font-size: 14px; line-height: 1.5; color: var(--muted); margin-bottom: 12px;">
-                    "Impressive UI, accessible and usable"
-                  </p>
-                  <p style="font-size: 13px; color: var(--muted); opacity: 0.7;">— Jackeroo98</p>
-                </div>
-              </div>
-
-              <!-- Review 2 - Anon5872 -->
-              <div class="review-slide">
-                <div style="background: rgba(255,255,255,.03); border: 1px solid var(--line); border-radius: 16px; padding: 24px;">
-                  <div style="color: #FFD700; margin-bottom: 8px; font-size: 18px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                  <h4 style="font-size: 16px; margin-bottom: 8px; color: var(--cyan); font-weight: 600;">Seriously the best</h4>
-                  <p style="font-size: 14px; line-height: 1.5; color: var(--muted); margin-bottom: 12px;">
-                    "Superior for professionals. Perfect balance of gamification, no intrusive ads, and strong free/paid options."
-                  </p>
-                  <p style="font-size: 13px; color: var(--muted); opacity: 0.7;">— Anon5872</p>
-                </div>
-              </div>
-
-              <!-- Review 3 - AJ1A1 -->
-              <div class="review-slide">
-                <div style="background: rgba(255,255,255,.03); border: 1px solid var(--line); border-radius: 16px; padding: 24px;">
-                  <div style="color: #FFD700; margin-bottom: 8px; font-size: 18px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                  <h4 style="font-size: 16px; margin-bottom: 8px; color: var(--cyan); font-weight: 600;">Super fun scenarios and really helpful quiz app</h4>
-                  <p style="font-size: 14px; line-height: 1.5; color: var(--muted); margin-bottom: 12px;">
-                    "I am in paramedic school right now and have to learn a set of protocols front to back and this is a great way to do it...I also really like the scenarios they are exciting."
-                  </p>
-                  <p style="font-size: 13px; color: var(--muted); opacity: 0.7;">— AJ1A1</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Carousel Dots -->
-            <div style="display: flex; justify-content: center; gap: 8px; margin-top: 24px;">
-              <button class="carousel-dot active" onclick="goToSlide(0)" style="width: 8px; height: 8px; border-radius: 50%; border: none; background: var(--cyan); cursor: pointer; transition: all 0.3s;"></button>
-              <button class="carousel-dot" onclick="goToSlide(1)" style="width: 8px; height: 8px; border-radius: 50%; border: none; background: rgba(255,255,255,0.3); cursor: pointer; transition: all 0.3s;"></button>
-              <button class="carousel-dot" onclick="goToSlide(2)" style="width: 8px; height: 8px; border-radius: 50%; border: none; background: rgba(255,255,255,0.3); cursor: pointer; transition: all 0.3s;"></button>
-            </div>
+          <div class="reviews-grid">
+            <article class="review-tile">
+              <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <h4>Excellent</h4>
+              <p class="quote">&ldquo;Impressive UI, accessible and usable.&rdquo;</p>
+              <p class="who">&mdash; Jackeroo98</p>
+            </article>
+            <article class="review-tile">
+              <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <h4>Seriously the best</h4>
+              <p class="quote">&ldquo;Superior for professionals. Perfect balance of gamification, no intrusive ads, and strong free/paid options.&rdquo;</p>
+              <p class="who">&mdash; Anon5872</p>
+            </article>
+            <article class="review-tile">
+              <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <h4>Super fun scenarios</h4>
+              <p class="quote">&ldquo;I&rsquo;m in paramedic school and have to learn a set of protocols front to back. This is a great way to do it &mdash; the scenarios are exciting.&rdquo;</p>
+              <p class="who">&mdash; AJ1A1</p>
+            </article>
           </div>
         </div>
       </div>
@@ -2586,21 +2955,22 @@
     <section class="trust fade-up">
       <div class="wrap">
         <div class="section-header">
+          <span class="founder-pill">From the Founder</span>
           <h2 class="section-title">Built for EMS workers by a paramedic student.</h2>
           <p class="section-subtitle">Released in October 2025</p>
         </div>
 
         <div style="max-width:700px; margin:32px auto; padding:32px; background:rgba(255,255,255,.03); border:1px solid var(--line); border-left:2px solid rgba(34,211,238,.4); border-radius:24px; position:relative; overflow:hidden;">
-          <p style="font-size:18px; line-height:1.8; color:var(--muted);">
-            "I built this in the field. As an EMT and now finishing paramedic school, I needed to drill the
-            exact protocols I'd run on my next call - not generic NREMT content. Every study tool I found was
-            either too expensive or too basic, so I made one that pulls quizzes straight from your own
-            protocol PDF and cites the page on every answer. Whether you're a brand-new EMT or a veteran
-            medic, ProtoQuiz trains you on what your agency actually expects."
+          <p style="font-size:18px; line-height:1.7; color:#cbd5e1; font-style:italic;">
+            &ldquo;I built this in the field. Drilling the exact protocols I&rsquo;d run on my next call &mdash; not generic NREMT content. ProtoQuiz pulls quizzes straight from your own PDF and cites the page on every answer.&rdquo;
           </p>
-          <p style="margin-top:20px; font-weight:600; color:var(--cyan);">
-            - Jaden, Founder
-          </p>
+          <div class="founder-attr">
+            <div class="founder-avatar" aria-hidden="true">J</div>
+            <div class="meta">
+              <span class="name">Jaden</span>
+              <span class="role">Founder &amp; Paramedic Student</span>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -2678,15 +3048,28 @@
 
     <!-- Final CTA -->
     <section class="final-cta">
-      <div class="wrap">
+      <div class="wrap" style="position:relative; z-index:1;">
+        <span style="display:inline-flex;align-items:center;gap:6px;padding:5px 14px;background:rgba(6,214,224,.08);border:1px solid rgba(6,214,224,.2);border-radius:999px;font-size:11px;font-weight:700;color:var(--cyan);text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px;">Join the Field</span>
         <h2>Ready to master your protocols?</h2>
         <p>Join EMTs and Paramedics nationwide who are training with THEIR actual protocols</p>
-        <a href="https://apps.apple.com/app/id6753611139?utm_source=website&utm_medium=cta&utm_campaign=bottom"
-           target="_blank"
-           class="btn btn-primary"
-           data-track="FinalCTA">
-          Download on the App Store →
-        </a>
+        <div class="cta-proof-block">
+          <a href="https://apps.apple.com/app/id6753611139?utm_source=website&utm_medium=cta&utm_campaign=bottom"
+             target="_blank"
+             rel="noopener"
+             class="btn btn-primary"
+             data-track="FinalCTA">
+            Download on the App Store &rarr;
+          </a>
+          <span class="cta-proof">
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <strong>4.7</strong>
+            <span class="sep">&middot;</span>
+            700+ downloads
+            <span class="sep">&middot;</span>
+            iOS
+          </span>
+          <span class="cta-proof-secondary">Free to download. Optional ad-free upgrade. Cancel anytime.</span>
+        </div>
       </div>
     </section>
   </main>
@@ -2989,31 +3372,6 @@
       });
     }
 
-    // Review Carousel
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.review-slide');
-    const dots = document.querySelectorAll('.carousel-dot');
-
-    function goToSlide(index) {
-      slides[currentSlide].classList.remove('active');
-      dots[currentSlide].classList.remove('active');
-      dots[currentSlide].style.background = 'rgba(255,255,255,0.3)';
-
-      currentSlide = index;
-
-      slides[currentSlide].classList.add('active');
-      dots[currentSlide].classList.add('active');
-      dots[currentSlide].style.background = 'var(--cyan)';
-    }
-
-    function nextSlide() {
-      const next = (currentSlide + 1) % slides.length;
-      goToSlide(next);
-    }
-
-    // Auto-advance every 5 seconds
-    setInterval(nextSlide, 5000);
-
     // Load live stats (no animation - instant set to avoid layout shift)
     async function loadStats() {
       try {
@@ -3035,6 +3393,13 @@
     }
 
     loadStats();
+
+    // Mirror App Store rating into the reviews trust line
+    (function syncRating(){
+      const src = document.getElementById('appRating');
+      const dst = document.getElementById('reviewsRating');
+      if (src && dst && src.textContent.trim()) dst.textContent = src.textContent.trim();
+    })();
   </script>
 </body>
 </html>
