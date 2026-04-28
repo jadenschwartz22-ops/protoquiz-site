@@ -1758,13 +1758,36 @@
     .hero-mock::before{
       content:"";
       position:absolute;
-      inset:-40px -30px -20px -30px;
+      inset:-220px -260px -160px -260px;
       background:
-        radial-gradient(ellipse 60% 40% at 50% 30%, rgba(6,214,224,.22), transparent 70%),
-        radial-gradient(ellipse 60% 50% at 50% 80%, rgba(180,92,246,.18), transparent 70%);
+        radial-gradient(ellipse 50% 35% at 50% 28%, rgba(239,68,68,.55), rgba(239,68,68,.18) 35%, transparent 70%),
+        radial-gradient(ellipse 65% 55% at 50% 78%, rgba(180,92,246,.14), transparent 70%);
+      filter:blur(40px);
+      pointer-events:none;
+      z-index:0;
+      animation:heroSirenBleed 1.4s ease-in-out infinite;
+    }
+
+    @keyframes heroSirenBleed{
+      0%,100%{opacity:.78; transform:scale(.97);}
+      50%{opacity:1; transform:scale(1.04);}
+    }
+
+    .hero-mock::after{
+      content:"";
+      position:absolute;
+      inset:-100px -120px -80px -120px;
+      background:radial-gradient(ellipse 38% 28% at 50% 26%, rgba(239,68,68,.85), rgba(239,68,68,.25) 35%, transparent 70%);
       filter:blur(20px);
       pointer-events:none;
       z-index:0;
+      mix-blend-mode:screen;
+      animation:heroSirenCore 1.4s ease-in-out infinite;
+    }
+
+    @keyframes heroSirenCore{
+      0%,100%{opacity:.45;}
+      50%{opacity:.85;}
     }
 
     .phone{
@@ -2035,132 +2058,9 @@
       to{transform:rotate(360deg);}
     }
 
-    /* Floating chips outside the phone */
-    .phone-chip{
-      position:absolute;
-      z-index:2;
-      background:rgba(12,16,22,.85);
-      backdrop-filter:blur(14px);
-      -webkit-backdrop-filter:blur(14px);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:14px;
-      padding:10px 12px;
-      box-shadow:0 18px 40px -16px rgba(0,0,0,.6);
-      display:flex;
-      align-items:center;
-      gap:10px;
-      pointer-events:none;
-    }
-
-    .phone-chip-pharm{
-      left:-200px;
-      top:14%;
-      max-width:200px;
-      padding:12px 14px;
-      background:linear-gradient(135deg, rgba(6,214,224,.10), rgba(12,16,22,.94));
-      border:1px solid rgba(6,214,224,.32);
-      box-shadow:
-        0 22px 50px -18px rgba(6,214,224,.32),
-        0 0 0 1px rgba(255,255,255,.02) inset;
-      align-items:flex-start;
-    }
-
-    .phone-chip-pharm .pill{
-      width:28px; height:28px;
-      flex:0 0 28px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:var(--cyan);
-      filter:drop-shadow(0 0 8px rgba(6,214,224,.5));
-      transform:rotate(-30deg);
-    }
-
-    .phone-chip-pharm .pill svg{width:100%; height:100%;}
-
     @keyframes sirenPulse{
       0%,100%{filter:drop-shadow(0 0 6px rgba(239,68,68,.5)); transform:scale(.96);}
       50%{filter:drop-shadow(0 0 16px rgba(239,68,68,.95)); transform:scale(1.04);}
-    }
-
-    .phone-chip-pharm .body{
-      min-width:0;
-    }
-
-    .phone-chip-pharm .label{
-      font-size:9px;
-      font-weight:800;
-      letter-spacing:.14em;
-      color:var(--cyan);
-      text-transform:uppercase;
-      margin-bottom:3px;
-    }
-
-    .phone-chip-pharm .text{
-      font-size:11.5px;
-      color:#f3f4f6;
-      font-weight:500;
-      line-height:1.3;
-    }
-
-    .phone-chip-mastery{
-      right:-180px;
-      bottom:14%;
-      max-width:170px;
-    }
-
-    .phone-chip-mastery .ring{
-      width:30px; height:30px;
-      border-radius:50%;
-      background:conic-gradient(var(--cyan) 0 22%, rgba(255,255,255,.08) 22% 100%);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      flex:0 0 30px;
-    }
-
-    .phone-chip-mastery .ring::before{
-      content:"";
-      position:absolute;
-      width:22px; height:22px;
-      border-radius:50%;
-      background:#0c1016;
-    }
-
-    .phone-chip-mastery .ring span{
-      position:relative;
-      font-size:8.5px;
-      font-weight:800;
-      color:var(--cyan);
-    }
-
-    .phone-chip-mastery .label{
-      font-size:9px;
-      font-weight:800;
-      letter-spacing:.12em;
-      color:var(--cyan);
-      text-transform:uppercase;
-      margin-bottom:2px;
-    }
-
-    .phone-chip-mastery .text{
-      font-size:10.5px;
-      color:#cfd5dd;
-      font-weight:500;
-      line-height:1.2;
-    }
-
-    @media (max-width: 1180px){
-      .phone-chip-pharm{left:-180px; max-width:170px;}
-      .phone-chip-mastery{right:-150px; max-width:150px;}
-    }
-    @media (max-width: 1060px){
-      .phone-chip-pharm{left:-150px; max-width:140px; padding:10px 12px;}
-      .phone-chip-mastery{right:-130px; max-width:130px;}
-    }
-
-    @media (max-width: 980px){
-      .phone-chip{display:none;}
     }
 
     /* ---------- Hero stats v2: typographic strip ---------- */
@@ -2404,23 +2304,6 @@
               </div>
             </div>
 
-            <div class="phone-chip phone-chip-pharm">
-              <div class="pill" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 20.5a7.07 7.07 0 0 1-10-10l10-10a7.07 7.07 0 0 1 10 10l-10 10z"/><path d="M8.5 8.5l7 7"/></svg>
-              </div>
-              <div class="body">
-                <div class="label">Pharmacology</div>
-                <div class="text">Adult dose, route, indications. Page-cited.</div>
-              </div>
-            </div>
-
-            <div class="phone-chip phone-chip-mastery">
-              <div class="ring"><span>6%</span></div>
-              <div>
-                <div class="label">Mastery</div>
-                <div class="text">Cardiac arrest</div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
