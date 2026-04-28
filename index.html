@@ -1223,32 +1223,6 @@
       .reviews-grid{grid-template-columns:1fr; max-width:520px;}
     }
 
-    /* Reusable App Store proof microcopy under CTA buttons */
-    .cta-proof{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      margin-top:12px;
-      font-size:13px;
-      color:var(--muted);
-      letter-spacing:.01em;
-    }
-    .cta-proof .stars{color:#FFD700; letter-spacing:1px; font-size:13px;}
-    .cta-proof strong{color:var(--cyan); font-weight:700;}
-    .cta-proof .sep{opacity:.5;}
-    .cta-proof-block{
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      gap:6px;
-      margin-top:14px;
-    }
-    .cta-proof-secondary{
-      font-size:12px;
-      color:var(--muted);
-      opacity:.75;
-    }
-
     /* Compete Mode spotlight section */
     .compete-spotlight{
       padding:80px 0;
@@ -2556,17 +2530,9 @@
               </a>
             </div>
 
-            <div class="cta-proof-block" style="align-items:flex-start; margin-top:10px;">
-              <span class="cta-proof">
-                <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                <strong>4.7</strong>
-                <span class="sep">&middot;</span>
-                Loved by 700+ EMS workers
-              </span>
-              <p class="hero-microcopy" style="margin:0;">
-                Free to download<span class="dot"></span>iOS only
-              </p>
-            </div>
+            <p class="hero-microcopy">
+              Free to download<span class="dot"></span>iOS only
+            </p>
 
             <div class="hero-statstrip">
               <div class="stat">
@@ -2761,24 +2727,16 @@
         </div>
 
         <div class="features-cta">
-          <div class="cta-proof-block">
-            <a href="https://apps.apple.com/app/id6753611139?utm_source=website&utm_medium=features&utm_campaign=download"
-               target="_blank"
-               rel="noopener"
-               class="btn btn-primary"
-               data-track="FeaturesCTA">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="margin-right:8px;vertical-align:-3px;">
-                <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
-              </svg>
-              Download on the App Store
-            </a>
-            <span class="cta-proof">
-              <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-              <strong>4.7</strong>
-              <span class="sep">&middot;</span>
-              Loved by 700+ EMS workers
-            </span>
-          </div>
+          <a href="https://apps.apple.com/app/id6753611139?utm_source=website&utm_medium=features&utm_campaign=download"
+             target="_blank"
+             rel="noopener"
+             class="btn btn-primary"
+             data-track="FeaturesCTA">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="margin-right:8px;vertical-align:-3px;">
+              <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+            </svg>
+            Download on the App Store
+          </a>
         </div>
       </div>
     </section>
@@ -2798,24 +2756,16 @@
               <span>Live scoring</span>
               <span>Global leaderboard</span>
             </div>
-            <div class="cta-proof-block" style="align-items:flex-start;">
-              <a href="https://apps.apple.com/app/id6753611139?utm_source=website&utm_medium=compete&utm_campaign=download"
-                 target="_blank"
-                 rel="noopener"
-                 class="btn btn-primary"
-                 data-track="CompeteCTA">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="margin-right:8px;vertical-align:-3px;">
-                  <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
-                </svg>
-                Download to play
-              </a>
-              <span class="cta-proof">
-                <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                <strong>4.7</strong>
-                <span class="sep">&middot;</span>
-                700+ downloads
-              </span>
-            </div>
+            <a href="https://apps.apple.com/app/id6753611139?utm_source=website&utm_medium=compete&utm_campaign=download"
+               target="_blank"
+               rel="noopener"
+               class="btn btn-primary"
+               data-track="CompeteCTA">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="margin-right:8px;vertical-align:-3px;">
+                <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+              </svg>
+              Download to play
+            </a>
           </div>
 
           <figure class="compete-visual">
@@ -2969,24 +2919,13 @@
         <span style="display:inline-flex;align-items:center;gap:6px;padding:5px 14px;background:rgba(6,214,224,.08);border:1px solid rgba(6,214,224,.2);border-radius:999px;font-size:11px;font-weight:700;color:var(--cyan);text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px;">Join the Field</span>
         <h2>Ready to master your protocols?</h2>
         <p>Join EMTs and Paramedics nationwide who are training with THEIR actual protocols</p>
-        <div class="cta-proof-block">
-          <a href="https://apps.apple.com/app/id6753611139?utm_source=website&utm_medium=cta&utm_campaign=bottom"
-             target="_blank"
-             rel="noopener"
-             class="btn btn-primary"
-             data-track="FinalCTA">
-            Download on the App Store &rarr;
-          </a>
-          <span class="cta-proof">
-            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-            <strong>4.7</strong>
-            <span class="sep">&middot;</span>
-            700+ downloads
-            <span class="sep">&middot;</span>
-            iOS
-          </span>
-          <span class="cta-proof-secondary">Free to download. Optional ad-free upgrade. Cancel anytime.</span>
-        </div>
+        <a href="https://apps.apple.com/app/id6753611139?utm_source=website&utm_medium=cta&utm_campaign=bottom"
+           target="_blank"
+           rel="noopener"
+           class="btn btn-primary"
+           data-track="FinalCTA">
+          Download on the App Store &rarr;
+        </a>
       </div>
     </section>
   </main>
