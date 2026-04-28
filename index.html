@@ -1342,14 +1342,6 @@
       object-fit:cover;
       object-position:center 38%;
     }
-    .compete-visual::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      pointer-events:none;
-      background:linear-gradient(180deg, transparent 50%, rgba(5,8,12,.55) 88%, rgba(5,8,12,.85) 100%);
-      z-index:1;
-    }
     .compete-visual::after{
       content:"";
       position:absolute;
@@ -1361,24 +1353,9 @@
       mix-blend-mode:screen;
       z-index:2;
     }
-    .compete-visual figcaption{
-      position:absolute;
-      bottom:18px;
-      left:24px;
-      right:24px;
-      z-index:3;
-      color:#e6edf7;
-      font-size:14px;
-      font-weight:600;
-      letter-spacing:-.005em;
-      text-shadow:0 2px 10px rgba(0,0,0,.6);
-    }
     @media (max-width: 980px){
       .compete-grid{grid-template-columns:1fr; gap:32px;}
       .compete-visual{aspect-ratio: 16 / 10; max-width:560px; margin:0 auto;}
-    }
-    @media (max-width: 520px){
-      .compete-visual figcaption{font-size:12px; bottom:14px; left:16px; right:16px;}
     }
 
     /* Founder pill + avatar */
@@ -2773,7 +2750,6 @@
               <source srcset="compete-mode.webp" type="image/webp">
               <img src="compete-mode.png" alt="Two EMS partners in the front of an ambulance, both holding their phones running ProtoQuiz Compete Mode, smiling and pointing at each other's screens." loading="lazy" width="1400" height="934">
             </picture>
-            <figcaption>Same shift. Same protocols. Head-to-head.</figcaption>
           </figure>
         </div>
       </div>
