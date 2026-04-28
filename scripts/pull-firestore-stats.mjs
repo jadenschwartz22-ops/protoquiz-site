@@ -6,20 +6,17 @@
 import admin from 'firebase-admin';
 import fs from 'fs/promises';
 
-// Initialize Firebase Admin
+// Initialize Firebase Admin (ADC if no service-account JSON, falls back to JSON if path provided)
 if (!admin.apps.length) {
-  const serviceAccountPath = process.env.GOOGLE_APPLICATION_CREDENTIALS || '/tmp/firebase-key.json';
-
-  try {
-    const serviceAccount = JSON.parse(await fs.readFile(serviceAccountPath, 'utf8'));
+  const saPath = process.env.SERVICE_ACCOUNT_JSON;
+  if (saPath) {
+    const serviceAccount = JSON.parse(await fs.readFile(saPath, 'utf8'));
     admin.initializeApp({
       credential: admin.credential.cert(serviceAccount),
       projectId: 'ems-protoquiz-tracking'
     });
-  } catch (error) {
-    console.error('❌ Failed to initialize Firebase:', error.message);
-    console.error('Make sure GOOGLE_APPLICATION_CREDENTIALS is set correctly');
-    process.exit(1);
+  } else {
+    admin.initializeApp({ projectId: 'ems-protoquiz-tracking' });
   }
 }
 

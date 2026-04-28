@@ -52,7 +52,7 @@
     "description":"Turns your protocol PDF into quick quizzes and interactive scenarios with page-cited answers.",
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.6",
+      "ratingValue": "4.7",
       "reviewCount": "6"
     },
     "offers": {
@@ -2375,18 +2375,18 @@
                 <span class="stat-label">App Store rating</span>
               </div>
               <div class="stat">
-                <span class="stat-value" id="downloadCount">800+</span>
+                <span class="stat-value" id="downloadCount">700+</span>
                 <span class="stat-label">Downloads</span>
               </div>
               <div class="stat">
-                <span class="stat-value" id="protocolCount">750+</span>
+                <span class="stat-value" id="protocolCount">500+</span>
                 <span class="stat-label">Protocols uploaded</span>
               </div>
               <div class="stat">
-                <span class="stat-value" id="quizCount">5,000+</span>
+                <span class="stat-value" id="quizCount">2500+</span>
                 <span class="stat-label">Quizzes generated</span>
               </div>
-              <span id="scenarioCount" hidden aria-hidden="true">1,200+</span>
+              <span id="scenarioCount" hidden aria-hidden="true">700+</span>
             </div>
           </div>
 
@@ -3100,7 +3100,7 @@
     // Load live stats (no animation - instant set to avoid layout shift)
     async function loadStats() {
       try {
-        const response = await fetch('tmp/firestore-stats.json');
+        const response = await fetch('data/firestore-stats.json');
         const stats = await response.json();
         const d = stats.display || {};
         if (d.appStoreDownloads) setText('downloadCount', d.appStoreDownloads);
