@@ -673,6 +673,118 @@
       width:100%;
     }
 
+    /* Pricing Split Layout */
+    .pricing-split{
+      display:grid;
+      grid-template-columns:1fr 1.1fr;
+      gap:48px;
+      align-items:center;
+      max-width:1100px;
+      margin:0 auto;
+      padding:40px;
+      background:linear-gradient(180deg, rgba(6,214,224,.04), rgba(180,92,246,.04));
+      border:1px solid var(--line);
+      border-radius:24px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .pricing-split::before{
+      content:""; position:absolute; inset:0; pointer-events:none;
+      background:radial-gradient(ellipse 400px 300px at 0% 0%, rgba(6,214,224,.10), transparent 60%),
+                 radial-gradient(ellipse 400px 300px at 100% 100%, rgba(180,92,246,.10), transparent 60%);
+    }
+
+    .pricing-pitch{position:relative; z-index:1;}
+
+    .pricing-pitch .price-headline{
+      font-size:clamp(36px, 5vw, 52px);
+      font-weight:900;
+      line-height:1.05;
+      margin-bottom:12px;
+      background:linear-gradient(135deg, var(--cyan), var(--violet));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .pricing-pitch .price-sub{
+      color:#cbd5e1;
+      font-size:16px;
+      line-height:1.6;
+      margin-bottom:20px;
+    }
+
+    .pricing-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-bottom:24px;
+    }
+
+    .pricing-meta span{
+      font-size:12px;
+      font-weight:600;
+      color:#cbd5e1;
+      padding:5px 12px;
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--line);
+      border-radius:999px;
+    }
+
+    .pricing-cta-row{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .pricing-cta-row .btn-primary{
+      padding:16px 32px;
+      font-size:17px;
+    }
+
+    .pricing-cta-note{
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    .pricing-checklist{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px 24px;
+      list-style:none;
+      padding:0;
+      margin:0;
+    }
+
+    .pricing-checklist li{
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+      color:#e2e8f0;
+      font-size:15px;
+      line-height:1.4;
+    }
+
+    .pricing-checklist li::before{
+      content:"";
+      flex:0 0 20px;
+      width:20px;
+      height:20px;
+      margin-top:1px;
+      border-radius:6px;
+      background:linear-gradient(135deg, rgba(6,214,224,.2), rgba(180,92,246,.2));
+      border:1px solid rgba(6,214,224,.4);
+      background-image:
+        linear-gradient(135deg, rgba(6,214,224,.2), rgba(180,92,246,.2)),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%2306d6e0' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' d='M3.5 8.5l3 3 6-6'/></svg>");
+      background-repeat:no-repeat;
+      background-position:center;
+      background-size:cover, 14px 14px;
+    }
+
     /* Features Grid */
     .features{
       padding:60px 0;
@@ -1210,6 +1322,30 @@
         grid-template-columns:1fr;
       }
 
+      .pricing-split{
+        grid-template-columns:1fr;
+        gap:28px;
+        padding:28px 22px;
+      }
+
+      .pricing-checklist{
+        grid-template-columns:1fr;
+        gap:12px;
+      }
+
+      .pricing-cta-row{
+        flex-direction:column;
+        align-items:stretch;
+        gap:12px;
+      }
+
+      .pricing-cta-row .btn-primary{
+        justify-content:center;
+        width:100%;
+      }
+
+      .pricing-cta-note{text-align:center;}
+
       .features-grid{
         grid-template-columns:1fr;
       }
@@ -1349,27 +1485,35 @@
           <p class="section-subtitle">Here's what you get.</p>
         </div>
 
-        <div class="pricing-cards" style="justify-content:center;">
-          <div class="pricing-card featured" style="max-width:480px;">
-            <h3>Free</h3>
-            <div class="price">$0</div>
-            <p style="color:var(--muted); margin-bottom:24px;">Ad-supported.</p>
-            <ul class="pricing-features">
-              <li>Pharmacology quizzes</li>
-              <li>Algorithm quizzes</li>
-              <li>Scenarios</li>
-              <li>Compete Mode with worldwide leaderboard</li>
-              <li>Learn Mode with spaced repetition</li>
-              <li>Page citations for every answer</li>
-              <li>Upload your protocol PDFs</li>
-            </ul>
-            <a href="https://apps.apple.com/app/id6753611139?utm_source=website&utm_medium=pricing&utm_campaign=free"
-               target="_blank"
-               class="btn btn-primary pricing-cta"
-               data-track="PricingFree">
-              Download Free
-            </a>
+        <div class="pricing-split">
+          <div class="pricing-pitch">
+            <div class="price-headline">$0<br>Free. Forever.</div>
+            <p class="price-sub">Ad-supported and built for paramedics. Download from the App Store and start drilling your real protocols in under a minute.</p>
+            <div class="pricing-meta">
+              <span>No subscription</span>
+              <span>No credit card</span>
+              <span>No trial expiry</span>
+            </div>
+            <div class="pricing-cta-row">
+              <a href="https://apps.apple.com/app/id6753611139?utm_source=website&utm_medium=pricing&utm_campaign=free"
+                 target="_blank"
+                 class="btn btn-primary"
+                 data-track="PricingFree">
+                Download on the App Store
+              </a>
+              <span class="pricing-cta-note">iPhone and iPad</span>
+            </div>
           </div>
+
+          <ul class="pricing-checklist">
+            <li>Pharmacology quizzes</li>
+            <li>Algorithm quizzes</li>
+            <li>Scenarios</li>
+            <li>Compete Mode with worldwide leaderboard</li>
+            <li>Learn Mode with spaced repetition</li>
+            <li>Page citations for every answer</li>
+            <li>Upload your protocol PDFs</li>
+          </ul>
         </div>
       </div>
     </section>
