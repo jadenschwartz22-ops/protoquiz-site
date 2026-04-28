@@ -1941,6 +1941,109 @@
       letter-spacing:.01em;
     }
 
+    /* Scenario screen variant ---------------------------- */
+    .phone-screen.scenario{
+      padding:46px 14px 14px;
+      gap:0;
+    }
+
+    .scn-header{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:6px 0 12px;
+      position:relative;
+    }
+
+    .scn-siren{
+      width:18px; height:18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      filter:drop-shadow(0 0 8px rgba(239,68,68,.7));
+      animation:sirenPulse 1.4s ease-in-out infinite;
+    }
+
+    .scn-siren svg{width:100%; height:100%;}
+
+    .scn-title{
+      font-size:13px;
+      font-weight:800;
+      letter-spacing:.18em;
+      color:#ef4444;
+      text-shadow:0 0 12px rgba(239,68,68,.45);
+    }
+
+    .scn-card{
+      background:#0e1218;
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:14px;
+      padding:11px 12px;
+      margin-bottom:8px;
+    }
+
+    .scn-card-dispatch{
+      background:linear-gradient(135deg, rgba(239,68,68,.10), #0e1218);
+      border-color:rgba(239,68,68,.25);
+      box-shadow:0 0 0 1px rgba(239,68,68,.06) inset;
+    }
+
+    .scn-row{
+      display:flex;
+      align-items:center;
+      gap:6px;
+      margin-bottom:5px;
+    }
+
+    .scn-icon{
+      width:13px; height:13px;
+      flex:0 0 13px;
+    }
+
+    .scn-label{
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.005em;
+    }
+
+    .scn-label-red{color:#ef4444;}
+    .scn-label-blue{color:#3b82f6;}
+    .scn-label-amber{color:#f59e0b;}
+
+    .scn-text{
+      font-size:10.5px;
+      font-weight:500;
+      line-height:1.35;
+      color:#cfd5dd;
+      margin:0;
+    }
+
+    .scn-cta{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:6px;
+      width:100%;
+      padding:11px 14px;
+      border-radius:14px;
+      background:#ef4444;
+      color:#fff;
+      font-size:13px;
+      font-weight:700;
+      text-align:center;
+      letter-spacing:.01em;
+      margin-top:auto;
+      box-shadow:
+        0 8px 22px -8px rgba(239,68,68,.7),
+        0 0 0 1px rgba(255,255,255,.06) inset;
+    }
+
+    .scn-cta svg{
+      width:13px; height:13px;
+      flex:0 0 13px;
+    }
+
     /* Floating chips outside the phone */
     .phone-chip{
       position:absolute;
@@ -1958,56 +2061,54 @@
       pointer-events:none;
     }
 
-    .phone-chip-dispatch{
-      left:-220px;
-      top:10%;
-      max-width:210px;
+    .phone-chip-pharm{
+      left:-200px;
+      top:14%;
+      max-width:200px;
       padding:12px 14px;
-      background:linear-gradient(135deg, rgba(239,68,68,.14), rgba(12,16,22,.94));
-      border:1px solid rgba(239,68,68,.4);
+      background:linear-gradient(135deg, rgba(6,214,224,.10), rgba(12,16,22,.94));
+      border:1px solid rgba(6,214,224,.32);
       box-shadow:
-        0 22px 50px -18px rgba(239,68,68,.5),
-        0 0 0 1px rgba(255,255,255,.02) inset,
-        0 0 32px -8px rgba(239,68,68,.25);
+        0 22px 50px -18px rgba(6,214,224,.32),
+        0 0 0 1px rgba(255,255,255,.02) inset;
       align-items:flex-start;
     }
 
-    .phone-chip-dispatch .siren{
-      width:32px; height:32px;
-      flex:0 0 32px;
+    .phone-chip-pharm .pill{
+      width:28px; height:28px;
+      flex:0 0 28px;
       display:flex;
       align-items:center;
       justify-content:center;
-      filter:drop-shadow(0 0 8px rgba(239,68,68,.7));
-      animation:sirenPulse 1.4s ease-in-out infinite;
+      color:var(--cyan);
+      filter:drop-shadow(0 0 8px rgba(6,214,224,.5));
+      transform:rotate(-30deg);
     }
 
-    .phone-chip-dispatch .siren svg{
-      width:100%; height:100%;
-    }
+    .phone-chip-pharm .pill svg{width:100%; height:100%;}
 
     @keyframes sirenPulse{
       0%,100%{filter:drop-shadow(0 0 6px rgba(239,68,68,.5)); transform:scale(.96);}
       50%{filter:drop-shadow(0 0 16px rgba(239,68,68,.95)); transform:scale(1.04);}
     }
 
-    .phone-chip-dispatch .body{
+    .phone-chip-pharm .body{
       min-width:0;
     }
 
-    .phone-chip-dispatch .label{
+    .phone-chip-pharm .label{
       font-size:9px;
       font-weight:800;
       letter-spacing:.14em;
-      color:#ef4444;
+      color:var(--cyan);
       text-transform:uppercase;
       margin-bottom:3px;
     }
 
-    .phone-chip-dispatch .text{
-      font-size:12px;
+    .phone-chip-pharm .text{
+      font-size:11.5px;
       color:#f3f4f6;
-      font-weight:600;
+      font-weight:500;
       line-height:1.3;
     }
 
@@ -2059,11 +2160,11 @@
     }
 
     @media (max-width: 1180px){
-      .phone-chip-dispatch{left:-180px; max-width:170px;}
+      .phone-chip-pharm{left:-180px; max-width:170px;}
       .phone-chip-mastery{right:-150px; max-width:150px;}
     }
     @media (max-width: 1060px){
-      .phone-chip-dispatch{left:-150px; max-width:140px; padding:10px 12px;}
+      .phone-chip-pharm{left:-150px; max-width:140px; padding:10px 12px;}
       .phone-chip-mastery{right:-130px; max-width:130px;}
     }
 
@@ -2292,49 +2393,56 @@
           <div class="hero-mock" aria-hidden="true">
             <div class="phone">
               <div class="phone-notch"></div>
-              <div class="phone-screen">
-                <div class="phone-quiz-top">
-                  <span class="phone-quiz-counter">1/5</span>
-                  <span class="phone-quiz-score">
-                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    0/0
+              <div class="phone-screen scenario">
+                <div class="scn-header">
+                  <span class="scn-siren" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none">
+                      <path d="M5 19h14v-3a7 7 0 0 0-14 0v3z" fill="#ef4444"/>
+                      <rect x="11.25" y="11" width="1.5" height="6" rx=".75" fill="#0a0a0a"/>
+                      <path d="M12 4v3M5.5 6l2 2M18.5 6l-2 2M3 11h2M19 11h2" stroke="#ef4444" stroke-width="1.6" stroke-linecap="round"/>
+                    </svg>
                   </span>
+                  <span class="scn-title">DISPATCH</span>
                 </div>
-                <div class="phone-progress-dots">
-                  <span class="active"></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
+
+                <div class="scn-card scn-card-dispatch">
+                  <div class="scn-row">
+                    <svg class="scn-icon" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <span class="scn-label scn-label-red">Dispatch</span>
+                  </div>
+                  <p class="scn-text">68-year-old male, general weakness and palpitations. Caller reports patient missed dialysis two days ago.</p>
                 </div>
-                <div class="phone-card">
-                  <p class="question">Adult dose for <strong>METOCLOPRAMIDE</strong> in Nausea?</p>
+
+                <div class="scn-card">
+                  <div class="scn-row">
+                    <svg class="scn-icon" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+                    <span class="scn-label scn-label-blue">Arrival on Scene</span>
+                  </div>
+                  <p class="scn-text">Wife meets you at the door. States her husband has been "acting slow" since yesterday.</p>
                 </div>
-                <div class="phone-opts">
-                  <div class="phone-opt">15 mg</div>
-                  <div class="phone-opt">1000 mg PO</div>
-                  <div class="phone-opt">125 mg IV/IO</div>
-                  <div class="phone-opt selected">10 mg</div>
+
+                <div class="scn-card">
+                  <div class="scn-row">
+                    <svg class="scn-icon" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                    <span class="scn-label scn-label-amber">First Impression</span>
+                  </div>
+                  <p class="scn-text">Patient supine, pale and diaphoretic. Responds to loud verbal stimuli with groans.</p>
                 </div>
-                <div class="phone-submit">Submit Answer</div>
-                <div class="phone-nav">
-                  <span>Previous</span>
-                  <span>Next</span>
+
+                <div class="scn-cta">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4v.5l1 .8c0 6.5 2 14 7 16.7v.5a.3.3 0 0 0 .3.3h7.5"/><circle cx="20" cy="10" r="2"/><path d="M11 12a4 4 0 0 0 4 4"/></svg>
+                  Begin Assessment
                 </div>
               </div>
             </div>
 
-            <div class="phone-chip phone-chip-dispatch">
-              <div class="siren" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 19h14v-3a7 7 0 0 0-14 0v3z" fill="#ef4444"/>
-                  <rect x="11.25" y="11" width="1.5" height="6" rx=".75" fill="#0a0a0a"/>
-                  <path d="M12 4v3M5.5 6l2 2M18.5 6l-2 2M3 11h2M19 11h2" stroke="#ef4444" stroke-width="1.6" stroke-linecap="round"/>
-                </svg>
+            <div class="phone-chip phone-chip-pharm">
+              <div class="pill" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 20.5a7.07 7.07 0 0 1-10-10l10-10a7.07 7.07 0 0 1 10 10l-10 10z"/><path d="M8.5 8.5l7 7"/></svg>
               </div>
               <div class="body">
-                <div class="label">You are dispatched to</div>
-                <div class="text">68 y/o male, weakness and palpitations</div>
+                <div class="label">Pharmacology</div>
+                <div class="text">Adult dose, route, indications. Page-cited.</div>
               </div>
             </div>
 
