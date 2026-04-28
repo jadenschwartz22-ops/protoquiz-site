@@ -1348,6 +1348,45 @@
       line-height:1.8;
     }
 
+    .android-cta{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      margin-top:18px;
+      padding:11px 18px;
+      border-radius:12px;
+      background:linear-gradient(135deg, rgba(61,220,132,.10), rgba(6,214,224,.06));
+      border:1px solid rgba(61,220,132,.32);
+      color:#a7f0c2;
+      font-size:14px;
+      font-weight:600;
+      font-family:inherit;
+      letter-spacing:-.005em;
+      cursor:pointer;
+      transition:transform .15s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease;
+      text-align:left;
+    }
+
+    .android-cta:hover{
+      transform:translateY(-1px);
+      border-color:rgba(61,220,132,.55);
+      box-shadow:0 10px 24px -10px rgba(61,220,132,.4);
+      background:linear-gradient(135deg, rgba(61,220,132,.16), rgba(6,214,224,.08));
+    }
+
+    .android-cta svg{
+      width:20px; height:20px;
+      flex:0 0 20px;
+      color:#3ddc84;
+    }
+
+    .android-cta.tapped{
+      background:rgba(61,220,132,.12);
+      border-color:rgba(61,220,132,.45);
+      color:#c8f7d8;
+      pointer-events:none;
+    }
+
     /* Final CTA */
     .final-cta{
       padding:80px 0;
@@ -2615,7 +2654,22 @@
           <details>
             <summary>Is there an Android version?</summary>
             <div class="faq-content">
-              Not yet. ProtoQuiz is iOS only for now. If demand for Android is strong enough we'll get there — drop a note via the contact form below if you'd use it.
+              Not yet. ProtoQuiz is iOS only for now. The more people who tap the button below, the faster Android happens.
+              <button type="button" class="android-cta" data-track="AndroidInterest" onclick="this.classList.add('tapped'); this.querySelector('.android-cta-label').textContent = 'Got it. We’ll let you know.';">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 16V9a7 7 0 0 1 14 0v7"/>
+                  <line x1="8" y1="3" x2="6.5" y2="1"/>
+                  <line x1="16" y1="3" x2="17.5" y2="1"/>
+                  <circle cx="9" cy="11" r=".6" fill="currentColor"/>
+                  <circle cx="15" cy="11" r=".6" fill="currentColor"/>
+                  <rect x="3" y="11" width="2" height="7" rx="1"/>
+                  <rect x="19" y="11" width="2" height="7" rx="1"/>
+                  <rect x="5" y="16" width="14" height="5" rx="2"/>
+                  <rect x="9" y="20" width="2" height="3" rx="1"/>
+                  <rect x="13" y="20" width="2" height="3" rx="1"/>
+                </svg>
+                <span class="android-cta-label">I want the Android version (coming soon)</span>
+              </button>
             </div>
           </details>
         </div>
