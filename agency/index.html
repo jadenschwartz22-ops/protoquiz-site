@@ -919,13 +919,16 @@
               <span class="app-nav-item">Team</span>
             </div>
 
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-              <span style="font-size:15px; font-weight:700;">Organization Performance</span>
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:16px; gap:8px; flex-wrap:wrap;">
+              <div>
+                <div style="font-size:15px; font-weight:700;">Organization Performance</div>
+                <div style="font-size:11px; color:var(--muted); margin-top:2px;">Apr 1, 2026 - May 1, 2026 &middot; Updated just now</div>
+              </div>
               <div style="display:flex; gap:4px; align-items:center;">
                 <span style="padding:5px 12px; border-radius:6px; font-size:11px; font-weight:600; background:rgba(255,255,255,.04); color:var(--muted); border:1px solid var(--line);">7D</span>
                 <span style="padding:5px 12px; border-radius:6px; font-size:11px; font-weight:600; background:rgba(99,102,241,.12); color:var(--accent); border:1px solid rgba(99,102,241,.25);">30D</span>
                 <span style="padding:5px 12px; border-radius:6px; font-size:11px; font-weight:600; background:rgba(255,255,255,.04); color:var(--muted); border:1px solid var(--line);">All</span>
-                <span style="padding:5px 12px; border-radius:6px; font-size:11px; font-weight:600; background:rgba(239,68,68,.1); color:var(--danger); border:1px solid rgba(239,68,68,.2); margin-left:6px;">Export PDF</span>
+                <span style="padding:5px 12px; border-radius:6px; font-size:11px; font-weight:600; background:rgba(99,102,241,.12); color:var(--accent); border:1px solid rgba(99,102,241,.25); margin-left:6px;">PDF Report</span>
               </div>
             </div>
 
@@ -975,6 +978,93 @@
               </tbody>
             </table>
             <div style="margin-top:16px;"><span style="display:inline-block; padding:6px 14px; border-radius:8px; font-size:12px; font-weight:600; background:rgba(99,102,241,.1); color:var(--accent); border:1px solid rgba(99,102,241,.2);">Export CSV</span></div>
+
+            <div style="margin-top:24px;">
+              <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:8px; margin-bottom:12px;">
+                <div>
+                  <div style="font-size:14px; font-weight:700;">Score Trends</div>
+                  <div style="font-size:11px; color:var(--muted);">Avg score by topic, by month</div>
+                </div>
+                <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+                  <span style="display:inline-flex; align-items:center; gap:4px; font-size:10px; color:var(--muted);"><span style="width:8px;height:8px;border-radius:2px;background:#10b981;display:inline-block;"></span>80+</span>
+                  <span style="display:inline-flex; align-items:center; gap:4px; font-size:10px; color:var(--muted);"><span style="width:8px;height:8px;border-radius:2px;background:#f59e0b;display:inline-block;"></span>60-79</span>
+                  <span style="display:inline-flex; align-items:center; gap:4px; font-size:10px; color:var(--muted);"><span style="width:8px;height:8px;border-radius:2px;background:#ef4444;display:inline-block;"></span>&lt;60</span>
+                </div>
+              </div>
+              <div style="overflow-x:auto;">
+                <div style="display:inline-block; min-width:100%;">
+                  <div style="display:flex; align-items:flex-end; padding-left:120px; margin-bottom:6px;">
+                    <span style="width:40px; font-size:10px; color:var(--muted); text-align:center; font-weight:600;">Dec</span>
+                    <span style="width:40px; font-size:10px; color:var(--muted); text-align:center; font-weight:600;">Jan</span>
+                    <span style="width:40px; font-size:10px; color:var(--muted); text-align:center; font-weight:600;">Feb</span>
+                    <span style="width:40px; font-size:10px; color:var(--muted); text-align:center; font-weight:600;">Mar</span>
+                    <span style="width:40px; font-size:10px; color:var(--muted); text-align:center; font-weight:600;">Apr</span>
+                    <span style="width:40px; font-size:10px; color:var(--muted); text-align:center; font-weight:600;">May</span>
+                  </div>
+                  <!-- Heatmap rows: each cell is 40x40 with 4px padding -->
+                  <!-- Cardiac -->
+                  <div style="display:flex; align-items:center; margin-bottom:4px;">
+                    <span style="width:120px; font-size:12px; color:#cbd5e1; font-weight:500; padding-right:8px;">Cardiac</span>
+                    <div style="width:40px;height:40px;padding:2px;"><div style="height:100%;background:#f59e0b;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;">72</div></div>
+                    <div style="width:40px;height:40px;padding:2px;"><div style="height:100%;background:#10b981;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;">81</div></div>
+                    <div style="width:40px;height:40px;padding:2px;"><div style="height:100%;background:#10b981;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;">85</div></div>
+                    <div style="width:40px;height:40px;padding:2px;"><div style="height:100%;background:#10b981;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;">88</div></div>
+                    <div style="width:40px;height:40px;padding:2px;"><div style="height:100%;background:#10b981;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;">86</div></div>
+                    <div style="width:40px;height:40px;padding:2px;"><div style="height:100%;background:#10b981;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;">90</div></div>
+                  </div>
+                  <!-- Airway -->
+                  <div style="display:flex; align-items:center; margin-bottom:4px;">
+                    <span style="width:120px; font-size:12px; color:#cbd5e1; font-weight:500; padding-right:8px;">Airway</span>
+                    <div style="width:40px;height:40px;padding:2px;"><div style="height:100%;background:#10b981;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;">88</div></div>
+                    <div style="width:40px;height:40px;padding:2px;"><div style="height:100%;background:#10b981;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;">91</div></div>
+                    <div style="width:40px;height:40px;padding:2px;"><div style="height:100%;background:#10b981;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;">93</div></div>
+                    <div style="width:40px;height:40px;padding:2px;"><div style="height:100%;background:#10b981;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;">90</div></div>
+                    <div style="width:40px;height:40px;padding:2px;"><div style="height:100%;background:#10b981;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;">92</div></div>
+                    <div style="width:40px;height:40px;padding:2px;"><div style="height:100%;background:#10b981;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;">94</div></div>
+                  </div>
+                  <!-- Trauma -->
+                  <div style="display:flex; align-items:center; margin-bottom:4px;">
+                    <span style="width:120px; font-size:12px; color:#cbd5e1; font-weight:500; padding-right:8px;">Trauma</span>
+                    <div style="width:40px;height:40px;padding:2px;"><div style="height:100%;background:#ef4444;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;">58</div></div>
+                    <div style="width:40px;height:40px;padding:2px;"><div style="height:100%;background:#f59e0b;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;">64</div></div>
+                    <div style="width:40px;height:40px;padding:2px;"><div style="height:100%;background:#f59e0b;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;">69</div></div>
+                    <div style="width:40px;height:40px;padding:2px;"><div style="height:100%;background:#f59e0b;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;">71</div></div>
+                    <div style="width:40px;height:40px;padding:2px;"><div style="height:100%;background:#f59e0b;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;">74</div></div>
+                    <div style="width:40px;height:40px;padding:2px;"><div style="height:100%;background:#10b981;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;">81</div></div>
+                  </div>
+                  <!-- Pharm -->
+                  <div style="display:flex; align-items:center; margin-bottom:4px;">
+                    <span style="width:120px; font-size:12px; color:#cbd5e1; font-weight:500; padding-right:8px;">Pharmacology</span>
+                    <div style="width:40px;height:40px;padding:2px;"><div style="height:100%;background:#10b981;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;">82</div></div>
+                    <div style="width:40px;height:40px;padding:2px;"><div style="height:100%;background:#10b981;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;">85</div></div>
+                    <div style="width:40px;height:40px;padding:2px;"><div style="height:100%;background:#10b981;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;">87</div></div>
+                    <div style="width:40px;height:40px;padding:2px;"><div style="height:100%;background:#10b981;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;">86</div></div>
+                    <div style="width:40px;height:40px;padding:2px;"><div style="height:100%;background:#10b981;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;">88</div></div>
+                    <div style="width:40px;height:40px;padding:2px;"><div style="height:100%;background:#10b981;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;">89</div></div>
+                  </div>
+                  <!-- OB -->
+                  <div style="display:flex; align-items:center; margin-bottom:4px;">
+                    <span style="width:120px; font-size:12px; color:#cbd5e1; font-weight:500; padding-right:8px;">OB / Pediatrics</span>
+                    <div style="width:40px;height:40px;padding:2px;"><div style="height:100%;background:#f59e0b;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;">68</div></div>
+                    <div style="width:40px;height:40px;padding:2px;"><div style="height:100%;background:#f59e0b;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;">72</div></div>
+                    <div style="width:40px;height:40px;padding:2px;"><div style="height:100%;background:#f59e0b;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;">74</div></div>
+                    <div style="width:40px;height:40px;padding:2px;"><div style="height:100%;background:#f59e0b;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;">76</div></div>
+                    <div style="width:40px;height:40px;padding:2px;"><div style="height:100%;background:#10b981;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;">79</div></div>
+                    <div style="width:40px;height:40px;padding:2px;"><div style="height:100%;background:#10b981;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;">82</div></div>
+                  </div>
+                  <!-- Medical -->
+                  <div style="display:flex; align-items:center; margin-bottom:4px;">
+                    <span style="width:120px; font-size:12px; color:#cbd5e1; font-weight:500; padding-right:8px;">Medical</span>
+                    <div style="width:40px;height:40px;padding:2px;"><div style="height:100%;background:#10b981;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;">80</div></div>
+                    <div style="width:40px;height:40px;padding:2px;"><div style="height:100%;background:#10b981;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;">82</div></div>
+                    <div style="width:40px;height:40px;padding:2px;"><div style="height:100%;background:#10b981;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;">84</div></div>
+                    <div style="width:40px;height:40px;padding:2px;"><div style="height:100%;background:#10b981;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;">83</div></div>
+                    <div style="width:40px;height:40px;padding:2px;"><div style="height:100%;background:#10b981;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;">85</div></div>
+                    <div style="width:40px;height:40px;padding:2px;"><div style="height:100%;background:#10b981;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;">86</div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
