@@ -1,22 +1,48 @@
 {
-  "generatedAt": "2026-04-28T03:11:24.098Z",
+  "generatedAt": "2026-05-01T15:16:55.226Z",
   "raw": {
-    "appStoreDownloads": 788,
-    "activeUsers": 0,
-    "protocolsUploaded": 550,
-    "quizzesGenerated": 2500,
-    "scenariosCompleted": 794,
-    "algorithmQuizzes": 508,
-    "uploadSuccessRate": null
+    "appStoreRating": 4.7,
+    "appStoreRatingCount": 6,
+    "appStoreDownloads": 743,
+    "uniqueUsers": 743,
+    "activeUsers30d": 54,
+    "activeUsers7d": 14,
+    "activeUsers1d": 3,
+    "protocolsUploaded": 3231,
+    "quizzesCompleted": 484,
+    "scenariosGenerated": 798,
+    "cardsReviewed": 944,
+    "totalSessions": 4221,
+    "premiumUsers": 12,
+    "usersWithDoc": 384,
+    "totalEventsTracked": 28200,
+    "uploadSuccessRate": null,
+    "collectionCounts": {
+      "protocol_uploads": 553,
+      "protocol_uploads_success": 169,
+      "scenario_generations": 798,
+      "algorithm_quiz_generations": 511
+    }
   },
   "display": {
+    "appStoreRating": "4.7",
     "appStoreDownloads": "700+",
-    "activeUsers": "0",
-    "protocolsUploaded": "500+",
-    "quizzesGenerated": "2500+",
-    "scenariosCompleted": "700+",
-    "algorithmQuizzes": "500+",
+    "activeUsers30d": "50+",
+    "protocolsUploaded": "3000+",
+    "scenariosGenerated": "700+",
+    "quizzesCompleted": "400+",
     "uploadSuccessRate": null
   },
-  "topProtocols": []
+  "topCategories": {
+    "protocol": 13726,
+    "system": 6074,
+    "learning": 2329,
+    "quiz": 1706,
+    "onboarding": 1424,
+    "navigation": 985,
+    "scenario": 664,
+    "conversion": 476,
+    "learn_mode": 372,
+    "referral": 142
+  }
 }

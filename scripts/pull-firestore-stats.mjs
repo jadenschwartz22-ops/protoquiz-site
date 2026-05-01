@@ -1,412 +1,226 @@
 /**
- * Pull Firestore Stats for Blog Posts
- * Fetches anonymous aggregate statistics from ProtoQuiz Firebase
+ * Pull Firestore Stats — accurate, no floors, no fake offsets.
+ *
+ * Sources (in priority order):
+ *   1. users/{uid} per-user counters maintained by iOS UserDocumentService
+ *      (totalProtocolsUploaded, totalQuizzesCompleted, totalScenariosGenerated, ...).
+ *      These are authoritative — they survive event-tracker bugs.
+ *   2. Top-level collection counts (protocol_uploads, scenario_generations, ...) as
+ *      cross-checks.
+ *   3. Flat `events` collection (each doc is `${YYYY-MM}_evt_${id}`) for category
+ *      breakdowns and active-user windows.
+ *
+ * Active users come from users.lastActiveAt (note: NOT lastActive — old script bug).
  */
 
 import admin from 'firebase-admin';
 import fs from 'fs/promises';
+import path from 'path';
 
-// Initialize Firebase Admin (ADC if no service-account JSON, falls back to JSON if path provided)
+const KEY_PATH = process.env.SERVICE_ACCOUNT_JSON
+  || '/Users/jadenschwartz/.secrets/protoquiz/ems-protoquiz-tracking-firebase-adminsdk-fbsvc-658d1741a4.json';
+
 if (!admin.apps.length) {
-  const saPath = process.env.SERVICE_ACCOUNT_JSON;
-  if (saPath) {
-    const serviceAccount = JSON.parse(await fs.readFile(saPath, 'utf8'));
-    admin.initializeApp({
-      credential: admin.credential.cert(serviceAccount),
-      projectId: 'ems-protoquiz-tracking'
-    });
-  } else {
-    admin.initializeApp({ projectId: 'ems-protoquiz-tracking' });
-  }
+  const sa = JSON.parse(await fs.readFile(KEY_PATH, 'utf8'));
+  admin.initializeApp({ credential: admin.credential.cert(sa), projectId: 'ems-protoquiz-tracking' });
 }
-
 const db = admin.firestore();
+const DEV_USER_ID = 'UQLMSLQZ';
+const isDev = (u) => typeof u === 'string' && u.startsWith(DEV_USER_ID);
 
-/**
- * Get current month key (YYYY-MM format)
- */
-function getMonthKey(date = new Date()) {
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, '0');
-  return `${year}-${month}`;
-}
-
-/**
- * Dev user ID to exclude from stats
- */
-const DEV_USER_ID = 'UQLMSLQZ'; // Prefix match
-
-/**
- * Get active users count (last 30 days) - excluding dev user
- */
-async function getActiveUsersCount() {
-  try {
-    const thirtyDaysAgo = admin.firestore.Timestamp.fromDate(
-      new Date(Date.now() - 30 * 24 * 60 * 60 * 1000)
-    );
-
-    const snapshot = await db.collection('users')
-      .where('lastActive', '>=', thirtyDaysAgo)
-      .get();
-
-    // Filter out dev user manually
-    const realUsers = snapshot.docs.filter(doc => !doc.id.startsWith(DEV_USER_ID));
-
-    return realUsers.length;
-  } catch (error) {
-    console.warn('⚠️  Could not fetch active users:', error.message);
-    return null;
-  }
-}
-
-/**
- * Get all-time stats from Firestore tracking
- */
-async function getAllTimeStats() {
-  try {
-    // Get successful protocol uploads from protocol_uploads_success collection
-    const successfulUploadsSnapshot = await db.collection('protocol_uploads_success').get();
-    const realSuccessfulUploads = successfulUploadsSnapshot.docs.filter(doc => {
-      const userId = doc.data().userId;
-      return !userId || !userId.startsWith(DEV_USER_ID);
-    });
-
-    // We didn't track from the beginning, so use minimum estimates
-    // Based on what the website shows (548) and our knowledge
-    const MIN_PROTOCOLS = 550; // We know we have at least this many
-    const protocolsUploaded = Math.max(realSuccessfulUploads.length, MIN_PROTOCOLS);
-
-    // Get all events for counting
-    const currentMonth = getMonthKey();
-    const allEventCollections = [];
-
-    // Get current and recent month events (adjust as needed)
-    for (let monthsAgo = 0; monthsAgo < 12; monthsAgo++) {
-      const date = new Date();
-      date.setMonth(date.getMonth() - monthsAgo);
-      const monthKey = getMonthKey(date);
-      try {
-        const monthEvents = await db.collection('events').doc(monthKey).collection('events').get();
-        allEventCollections.push(monthEvents);
-      } catch (e) {
-        // Month might not exist yet
-      }
-    }
-
-    let quizzesGenerated = 0;
-    let scenariosCompleted = 0;
-    let algorithmQuizzes = 0;
-
-    // Count events from all months
-    allEventCollections.forEach(snapshot => {
-      snapshot.docs.forEach(doc => {
-        const data = doc.data();
-        const { category, action, userId } = data;
-
-        // Skip dev user events
-        if (userId && userId.startsWith(DEV_USER_ID)) return;
-
-        if (category === 'quiz' && (action === 'quiz_completed' || action === 'quiz_started')) {
-          quizzesGenerated++;
-        } else if (category === 'scenario' && (action === 'scenario_completed' || action === 'generation_completed')) {
-          scenariosCompleted++;
-        } else if (category === 'algorithm_quiz' && (action === 'completed' || action === 'algorithm_completed')) {
-          algorithmQuizzes++;
-        }
-      });
-    });
-
-    // Also check scenario_generations collection for scenarios
-    const scenarioGensSnapshot = await db.collection('scenario_generations').get();
-    const realScenarioGens = scenarioGensSnapshot.docs.filter(doc => {
-      const userId = doc.data().userId;
-      return !userId || !userId.startsWith(DEV_USER_ID);
-    });
-
-    // Use the higher count between events and scenario_generations
-    scenariosCompleted = Math.max(scenariosCompleted, realScenarioGens.length);
-
-    // Check algorithm_quiz_generations collection
-    const algoQuizSnapshot = await db.collection('algorithm_quiz_generations').get();
-    const realAlgoQuizzes = algoQuizSnapshot.docs.filter(doc => {
-      const userId = doc.data().userId;
-      return !userId || !userId.startsWith(DEV_USER_ID);
-    });
-
-    // Use the higher count
-    algorithmQuizzes = Math.max(algorithmQuizzes, realAlgoQuizzes.length);
-
-    // Apply minimum estimates since we didn't track from the beginning
-    const MIN_QUIZZES = 2500; // Conservative estimate based on usage
-    const MIN_SCENARIOS = 600; // Conservative estimate based on usage
-    const MIN_ALGORITHM_QUIZZES = 100; // We know we have at least this many
-
-    quizzesGenerated = Math.max(quizzesGenerated, MIN_QUIZZES);
-    scenariosCompleted = Math.max(scenariosCompleted, MIN_SCENARIOS);
-    algorithmQuizzes = Math.max(algorithmQuizzes, MIN_ALGORITHM_QUIZZES);
-
-    return {
-      protocolsUploaded,
-      quizzesGenerated,
-      scenariosCompleted,
-      algorithmQuizzes
-    };
-  } catch (error) {
-    console.warn('⚠️  Could not fetch stats:', error.message);
-    return {
-      protocolsUploaded: 0,
-      quizzesGenerated: 0,
-      scenariosCompleted: 0,
-      algorithmQuizzes: 0
-    };
-  }
-}
-
-/**
- * Get total users count (all time) - excluding dev user
- * Counts unique userIds from events and protocol_uploads (not just users collection)
- */
-async function getTotalUsersCount() {
-  try {
-    // Get unique users from events
-    const eventsSnapshot = await db.collection('events').get();
-    const eventUsers = new Set();
-    eventsSnapshot.docs.forEach(doc => {
-      const userId = doc.data().userId;
-      if (userId && !userId.startsWith(DEV_USER_ID)) {
-        eventUsers.add(userId);
-      }
-    });
-
-    // Get unique users from protocol uploads
-    const uploadsSnapshot = await db.collection('protocol_uploads').get();
-    const uploadUsers = new Set();
-    uploadsSnapshot.docs.forEach(doc => {
-      const userId = doc.data().userId;
-      if (userId && !userId.startsWith(DEV_USER_ID)) {
-        uploadUsers.add(userId);
-      }
-    });
-
-    // Combine both sets
-    const allUsers = new Set([...eventUsers, ...uploadUsers]);
-
-    return allUsers.size;
-  } catch (error) {
-    console.warn('⚠️  Could not fetch total users:', error.message);
-    return null;
-  }
-}
-
-/**
- * Get upload success rate (last 30 days) - excluding dev user
- */
-async function getUploadSuccessRate() {
-  try {
-    const thirtyDaysAgo = admin.firestore.Timestamp.fromDate(
-      new Date(Date.now() - 30 * 24 * 60 * 60 * 1000)
-    );
-
-    const allUploads = await db.collection('protocol_uploads')
-      .where('timestamp', '>=', thirtyDaysAgo)
-      .get();
-
-    if (allUploads.empty) {
-      return null;
-    }
-
-    // Filter out dev user uploads
-    const realUploads = allUploads.docs.filter(doc => {
-      const userId = doc.data().userId;
-      return !userId || !userId.startsWith(DEV_USER_ID);
-    });
-
-    if (realUploads.length === 0) {
-      return null;
-    }
-
-    const total = realUploads.length;
-    const successful = realUploads.filter(doc => doc.data().status === 'success').length;
-
-    return Math.round((successful / total) * 100);
-  } catch (error) {
-    console.warn('⚠️  Could not fetch upload success rate:', error.message);
-    return null;
-  }
-}
-
-/**
- * Get top 3 protocol names (anonymized - no user data) - excluding dev user
- */
-async function getTopProtocols() {
-  try {
-    const thirtyDaysAgo = admin.firestore.Timestamp.fromDate(
-      new Date(Date.now() - 30 * 24 * 60 * 60 * 1000)
-    );
-
-    const uploads = await db.collection('protocol_uploads')
-      .where('status', '==', 'success')
-      .where('timestamp', '>=', thirtyDaysAgo)
-      .get();
-
-    if (uploads.empty) {
-      return [];
-    }
-
-    // Filter out dev user and count protocol names
-    const protocolCounts = {};
-    uploads.docs.forEach(doc => {
-      const data = doc.data();
-      const userId = data.userId;
-
-      // Skip dev user uploads
-      if (userId && userId.startsWith(DEV_USER_ID)) {
-        return;
-      }
-
-      const name = data.protocolName || 'Unknown';
-      protocolCounts[name] = (protocolCounts[name] || 0) + 1;
-    });
-
-    // Sort by count and get top 3
-    const sorted = Object.entries(protocolCounts)
-      .sort((a, b) => b[1] - a[1])
-      .slice(0, 3)
-      .map(([name]) => name);
-
-    return sorted;
-  } catch (error) {
-    console.warn('⚠️  Could not fetch top protocols:', error.message);
-    return [];
-  }
-}
-
-/**
- * Get App Store download count (Firebase users + offset)
- * Offset accounts for users who downloaded but haven't opened the app yet
- * Gap as of Nov 29, 2024: 398 (App Store) - 276 (Firebase) = 122
- */
-async function getAppStoreDownloads() {
-  try {
-    // Get real Firebase user count
-    const firebaseUsers = await getTotalUsersCount();
-
-    if (!firebaseUsers) {
-      console.warn('⚠️  Could not fetch Firebase users for download count');
-      return null;
-    }
-
-    // Add offset for users who downloaded but haven't opened app
-    // This keeps the number aligned with App Store Connect analytics
-    const DOWNLOAD_OFFSET = 122;
-
-    return firebaseUsers + DOWNLOAD_OFFSET;
-  } catch (error) {
-    console.warn('⚠️  Could not calculate App Store downloads:', error.message);
-    return null;
-  }
-}
-
-/**
- * Round numbers to generic ranges for public display
- */
-function roundToGenericRange(num) {
-  if (num === null || num === undefined || num === 0) return 0;
-
-  // For smaller numbers, round to nearest 50
-  if (num < 200) {
-    return Math.floor(num / 50) * 50;
-  }
-
-  // For medium numbers, round to nearest 100
-  if (num < 1000) {
-    return Math.floor(num / 100) * 100;
-  }
-
-  // For large numbers, round to nearest 500
-  return Math.floor(num / 500) * 500;
-}
-
-/**
- * Format number for display (adds + for rounded numbers)
- */
-function formatStatDisplay(num, exact = false) {
-  if (num === null || num === undefined) return 'N/A';
-  if (num === 0) return '0';
-
-  if (exact) {
-    return num.toString();
-  }
-
-  const rounded = roundToGenericRange(num);
-  return rounded > 0 ? `${rounded}+` : '0';
-}
-
-/**
- * Main function - pull all stats
- */
-async function pullStats() {
-  console.log('📊 Pulling Firestore stats...\n');
-
-  const rawStats = {
-    appStoreDownloads: await getAppStoreDownloads(),
-    activeUsers: await getActiveUsersCount(),
-    allTime: await getAllTimeStats(),
-    uploadSuccessRate: await getUploadSuccessRate(),
-    topProtocols: await getTopProtocols()
+async function getUserDocAggregates() {
+  const snap = await db.collection('users').get();
+  const totals = {
+    protocolsUploaded: 0,
+    quizzesCompleted: 0,
+    scenariosGenerated: 0,
+    cardsReviewed: 0,
+    learnSessions: 0,
+    sessions: 0,
+    usersWithDoc: 0,
+    premiumUsers: 0
   };
+  snap.docs.forEach(d => {
+    if (isDev(d.id)) return;
+    const x = d.data();
+    totals.usersWithDoc++;
+    totals.protocolsUploaded += x.totalProtocolsUploaded || 0;
+    totals.quizzesCompleted += x.totalQuizzesCompleted || 0;
+    totals.scenariosGenerated += x.totalScenariosGenerated || 0;
+    totals.cardsReviewed += x.totalCardsReviewed || 0;
+    totals.learnSessions += x.totalLearnModeSessions || 0;
+    totals.sessions += x.totalSessions || 0;
+    if (x.isPremium) totals.premiumUsers++;
+  });
+  return totals;
+}
 
-  // Create both raw and display versions
+async function getActiveUserCounts() {
+  const now = Date.now();
+  const win = (days) => admin.firestore.Timestamp.fromDate(new Date(now - days * 86400000));
+  const [d30, d7, d1] = await Promise.all([
+    db.collection('users').where('lastActiveAt', '>=', win(30)).get(),
+    db.collection('users').where('lastActiveAt', '>=', win(7)).get(),
+    db.collection('users').where('lastActiveAt', '>=', win(1)).get()
+  ]);
+  return {
+    active30d: d30.docs.filter(d => !isDev(d.id)).length,
+    active7d: d7.docs.filter(d => !isDev(d.id)).length,
+    active1d: d1.docs.filter(d => !isDev(d.id)).length
+  };
+}
+
+async function getCollectionCounts() {
+  const cols = ['protocol_uploads', 'protocol_uploads_success', 'scenario_generations', 'algorithm_quiz_generations'];
+  const out = {};
+  for (const c of cols) {
+    const snap = await db.collection(c).get();
+    out[c] = snap.docs.filter(d => !isDev(d.data().userId)).length;
+  }
+  return out;
+}
+
+async function getEventStats() {
+  const snap = await db.collection('events').get();
+  const cat = {}, catAct = {}, users = new Set();
+  let dev = 0;
+  for (const d of snap.docs) {
+    const x = d.data();
+    if (isDev(x.userId)) { dev++; continue; }
+    if (x.userId) users.add(x.userId);
+    cat[x.category || 'unknown'] = (cat[x.category || 'unknown'] || 0) + 1;
+    const k = `${x.category || 'unknown'}/${x.action || 'unknown'}`;
+    catAct[k] = (catAct[k] || 0) + 1;
+  }
+  return { totalEvents: snap.size, devEvents: dev, eventUsers: users, byCategory: cat, byCatAction: catAct };
+}
+
+async function getAppStoreRating(appId = '6753611139') {
+  try {
+    const res = await fetch(`https://itunes.apple.com/lookup?id=${appId}&country=us`);
+    const json = await res.json();
+    const r = json?.results?.[0];
+    if (!r) return null;
+    return {
+      rating: r.averageUserRating != null ? Math.round(r.averageUserRating * 10) / 10 : null,
+      count: r.userRatingCount ?? null
+    };
+  } catch (e) {
+    console.warn('App Store rating fetch failed:', e.message);
+    return null;
+  }
+}
+
+async function getUploadSuccessRate30d() {
+  const since = admin.firestore.Timestamp.fromDate(new Date(Date.now() - 30 * 86400000));
+  const snap = await db.collection('protocol_uploads').where('timestamp', '>=', since).get();
+  const real = snap.docs.filter(d => !isDev(d.data().userId));
+  if (real.length === 0) return null;
+  const ok = real.filter(d => d.data().status === 'success').length;
+  return Math.round((ok / real.length) * 100);
+}
+
+function displayBucket(n) {
+  if (n == null) return null;
+  if (n === 0) return '0';
+  if (n < 100) return `${Math.floor(n / 10) * 10}+`;
+  if (n < 1000) return `${Math.floor(n / 100) * 100}+`;
+  if (n < 10000) return `${Math.floor(n / 1000)}000+`;
+  return `${Math.floor(n / 10000)}0000+`;
+}
+
+async function main() {
+  console.log('Pulling Firestore stats...\n');
+
+  const [userTotals, active, colCounts, events, successRate, appStore] = await Promise.all([
+    getUserDocAggregates(),
+    getActiveUserCounts(),
+    getCollectionCounts(),
+    getEventStats(),
+    getUploadSuccessRate30d(),
+    getAppStoreRating()
+  ]);
+
+  // Combined unique users: users with a doc + anyone seen in events
+  const allUsers = new Set([...events.eventUsers]);
+  // Add user-doc IDs (need to re-query just IDs, cheap):
+  const userDocsSnap = await db.collection('users').select().get();
+  userDocsSnap.docs.forEach(d => { if (!isDev(d.id)) allUsers.add(d.id); });
+  const ups = await db.collection('protocol_uploads').select('userId').get();
+  ups.docs.forEach(d => { const u = d.data().userId; if (u && !isDev(u)) allUsers.add(u); });
+
+  const uniqueUsers = allUsers.size;
+
+  // Final canonical numbers — prefer user-doc aggregates, fall back to event counts
+  const protocolsUploaded = Math.max(
+    userTotals.protocolsUploaded,
+    events.byCatAction['protocol/upload_completed'] || 0,
+    colCounts.protocol_uploads || 0
+  );
+  const quizzesCompleted = Math.max(
+    userTotals.quizzesCompleted,
+    events.byCatAction['quiz/quiz_completed'] || 0
+  );
+  const scenariosGenerated = Math.max(
+    userTotals.scenariosGenerated,
+    events.byCatAction['scenario/generation_completed'] || 0,
+    colCounts.scenario_generations || 0
+  );
+
   const stats = {
     generatedAt: new Date().toISOString(),
     raw: {
-      appStoreDownloads: rawStats.appStoreDownloads,
-      activeUsers: rawStats.activeUsers,
-      protocolsUploaded: rawStats.allTime.protocolsUploaded,
-      quizzesGenerated: rawStats.allTime.quizzesGenerated,
-      scenariosCompleted: rawStats.allTime.scenariosCompleted,
-      algorithmQuizzes: rawStats.allTime.algorithmQuizzes,
-      uploadSuccessRate: rawStats.uploadSuccessRate
+      appStoreRating: appStore?.rating ?? null,
+      appStoreRatingCount: appStore?.count ?? null,
+      appStoreDownloads: uniqueUsers,
+      uniqueUsers,
+      activeUsers30d: active.active30d,
+      activeUsers7d: active.active7d,
+      activeUsers1d: active.active1d,
+      protocolsUploaded,
+      quizzesCompleted,
+      scenariosGenerated,
+      cardsReviewed: userTotals.cardsReviewed,
+      totalSessions: userTotals.sessions,
+      premiumUsers: userTotals.premiumUsers,
+      usersWithDoc: userTotals.usersWithDoc,
+      totalEventsTracked: events.totalEvents,
+      uploadSuccessRate: successRate,
+      collectionCounts: colCounts
     },
     display: {
-      appStoreDownloads: formatStatDisplay(rawStats.appStoreDownloads),
-      activeUsers: formatStatDisplay(rawStats.activeUsers),
-      protocolsUploaded: formatStatDisplay(rawStats.allTime.protocolsUploaded),
-      quizzesGenerated: formatStatDisplay(rawStats.allTime.quizzesGenerated),
-      scenariosCompleted: formatStatDisplay(rawStats.allTime.scenariosCompleted),
-      algorithmQuizzes: formatStatDisplay(rawStats.allTime.algorithmQuizzes),
-      uploadSuccessRate: rawStats.uploadSuccessRate
+      appStoreRating: appStore?.rating != null ? appStore.rating.toFixed(1) : null,
+      appStoreDownloads: displayBucket(uniqueUsers),
+      activeUsers30d: displayBucket(active.active30d),
+      protocolsUploaded: displayBucket(protocolsUploaded),
+      scenariosGenerated: displayBucket(scenariosGenerated),
+      quizzesCompleted: displayBucket(quizzesCompleted),
+      uploadSuccessRate: successRate
     },
-    topProtocols: rawStats.topProtocols
+    topCategories: Object.fromEntries(
+      Object.entries(events.byCategory).sort((a, b) => b[1] - a[1]).slice(0, 10)
+    )
   };
 
-  // Save to tmp directory
-  await fs.mkdir('tmp', { recursive: true });
-  await fs.writeFile('tmp/firestore-stats.json', JSON.stringify(stats, null, 2));
+  // Write to canonical location served by the site
+  const outDir = path.resolve(process.cwd(), 'data');
+  await fs.mkdir(outDir, { recursive: true });
+  await fs.writeFile(path.join(outDir, 'firestore-stats.json'), JSON.stringify(stats, null, 2));
 
-  console.log('✅ Stats pulled successfully:\n');
-  console.log(`   📱 Total Downloads: ${stats.display.appStoreDownloads}`);
-  console.log(`   👥 Active Users (30d): ${stats.display.activeUsers}`);
-  console.log(`   📄 Protocols Uploaded: ${stats.display.protocolsUploaded}`);
-  console.log(`   📝 Quizzes Generated: ${stats.display.quizzesGenerated}`);
-  console.log(`   🎬 Scenarios Completed: ${stats.display.scenariosCompleted}`);
-  console.log(`   🧠 Algorithm Quizzes: ${stats.display.algorithmQuizzes}`);
-  console.log(`   ✅ Upload Success Rate: ${stats.display.uploadSuccessRate}%`);
-  console.log(`   🔝 Top Protocols: ${stats.topProtocols.join(', ') || 'N/A'}`);
-  console.log('\n📁 Saved to: tmp/firestore-stats.json\n');
-
+  console.log('Stats:');
+  console.log(`  App Store rating:    ${appStore?.rating ?? 'n/a'} (${appStore?.count ?? 0} ratings)`);
+  console.log(`  Unique users:        ${uniqueUsers}`);
+  console.log(`  Active 30d / 7d / 1d: ${active.active30d} / ${active.active7d} / ${active.active1d}`);
+  console.log(`  Protocols uploaded:  ${protocolsUploaded}`);
+  console.log(`  Quizzes completed:   ${quizzesCompleted}`);
+  console.log(`  Scenarios generated: ${scenariosGenerated}`);
+  console.log(`  Sessions:            ${userTotals.sessions}`);
+  console.log(`  Total events:        ${events.totalEvents}`);
+  console.log(`\nWrote ${path.join(outDir, 'firestore-stats.json')}`);
   return stats;
 }
 
-// Run if called directly
-if (import.meta.url === `file://${process.argv[1]}`) {
-  try {
-    await pullStats();
-    process.exit(0);
-  } catch (error) {
-    console.error('❌ Fatal error:', error);
-    process.exit(1);
-  }
-}
+try { await main(); process.exit(0); }
+catch (e) { console.error('Fatal:', e); process.exit(1); }
 
-export { pullStats };
+export { main as pullStats };

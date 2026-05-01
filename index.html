@@ -2521,12 +2521,12 @@
                 <span class="stat-label">Downloads</span>
               </div>
               <div class="stat">
-                <span class="stat-value" id="protocolCount">500+</span>
+                <span class="stat-value" id="protocolCount">3000+</span>
                 <span class="stat-label">Protocols uploaded</span>
               </div>
               <div class="stat">
-                <span class="stat-value" id="quizCount">2500+</span>
-                <span class="stat-label">Quizzes generated</span>
+                <span class="stat-value" id="quizCount">700+</span>
+                <span class="stat-label">Scenarios generated</span>
               </div>
               <span id="scenarioCount" hidden aria-hidden="true">700+</span>
             </div>
@@ -3210,10 +3210,11 @@
         const response = await fetch('data/firestore-stats.json');
         const stats = await response.json();
         const d = stats.display || {};
+        if (d.appStoreRating) { setText('appRating', d.appStoreRating); setText('reviewsRating', d.appStoreRating); }
         if (d.appStoreDownloads) setText('downloadCount', d.appStoreDownloads);
         if (d.protocolsUploaded) setText('protocolCount', d.protocolsUploaded);
-        if (d.quizzesGenerated) setText('quizCount', d.quizzesGenerated);
-        if (d.scenariosCompleted) setText('scenarioCount', d.scenariosCompleted);
+        if (d.scenariosGenerated) setText('quizCount', d.scenariosGenerated);
+        if (d.scenariosGenerated) setText('scenarioCount', d.scenariosGenerated);
       } catch (e) {
         // HTML already has fallback values, nothing to do
       }
