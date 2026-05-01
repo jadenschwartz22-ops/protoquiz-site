@@ -1,19 +1,23 @@
 <!doctype html>
-<!-- build: v9 - Multi-tenant platform, real app design, early-stage -->
+<!-- build: v11 - Benefits-led, founder voice, command-staff outcomes -->
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>EMS ProtoQuiz for Agencies - Protocol Training Platform</title>
-  <meta name="description" content="Turn your protocol PDF into a complete training system. Protocol quizzes, clinical scenarios, pharmacology drills, admin analytics -- branded for your department." />
+  <title>ProtoQuiz for Agencies - A training platform for your organization, based on your actual protocols</title>
+  <meta name="description" content="Stronger protocol fluency, faster onboarding, lower legal liability, and visibility into where your team is weakest. Built from your protocols." />
 
-  <link rel="canonical" href="https://protoquiz.com/agency">
+  <link rel="canonical" href="https://protoquiz.com/agency/">
   <meta name="robots" content="index,follow" />
-  <meta property="og:title" content="EMS ProtoQuiz for Agencies" />
-  <meta property="og:description" content="Turn your protocol PDF into a complete training system for your department." />
+  <meta property="og:title" content="ProtoQuiz for Agencies" />
+  <meta property="og:description" content="Make your protocols stick. A training platform built from your PDF, branded for your department." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://protoquiz.com/agency" />
+  <meta property="og:url" content="https://protoquiz.com/agency/" />
   <meta property="og:image" content="https://protoquiz.com/logo-256.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ProtoQuiz for Agencies" />
+  <meta name="twitter:description" content="Make your protocols stick. Built from your PDF, branded for your department." />
+  <meta name="twitter:image" content="https://protoquiz.com/logo-256.png" />
   <meta name="theme-color" content="#05080c" />
 
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png" />
@@ -32,7 +36,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
     :root{
@@ -46,7 +50,8 @@
       --glow:rgba(99,102,241,.25);
       --success:#10b981;
       --warning:#f59e0b;
-      --max:1100px;
+      --danger:#ef4444;
+      --max:1200px;
     }
 
     *{box-sizing:border-box; margin:0; padding:0;}
@@ -95,7 +100,7 @@
     .nav-btn.primary:hover{transform:translateY(-1px); box-shadow:0 8px 24px var(--glow);}
 
     /* Hero */
-    .hero{padding:130px 0 60px; position:relative;}
+    .hero{padding:130px 0 72px; position:relative;}
     .hero::before{
       content:""; position:absolute; inset:0; pointer-events:none; opacity:.04;
       background-image:
@@ -109,25 +114,43 @@
       background:linear-gradient(180deg, transparent, var(--bg));
       pointer-events:none;
     }
-    .hero-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;}
+    .hero-grid{display:grid; grid-template-columns:1.05fr 1fr; gap:56px; align-items:center;}
+
+    .hero-eyebrow{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:6px 14px; border-radius:999px; margin-bottom:22px;
+      background:rgba(6,182,212,.08); border:1px solid rgba(6,182,212,.2);
+      font-size:12px; font-weight:700; color:var(--accent2);
+      letter-spacing:.04em;
+    }
+    .hero-eyebrow .pulse{
+      width:6px; height:6px; border-radius:50%; background:var(--accent2);
+      box-shadow:0 0 0 0 rgba(6,182,212,.6); animation:pulse 2s infinite;
+    }
+    @keyframes pulse{
+      0%,100%{box-shadow:0 0 0 0 rgba(6,182,212,.6);}
+      50%{box-shadow:0 0 0 8px rgba(6,182,212,0);}
+    }
 
     h1{
-      font-size:clamp(34px, 5vw, 52px); font-weight:900; line-height:1.08;
-      letter-spacing:-.035em; margin-bottom:20px;
+      font-size:clamp(36px, 5.5vw, 60px); font-weight:900; line-height:1.04;
+      letter-spacing:-.04em; margin-bottom:22px;
     }
     h1 .gradient{
       background:linear-gradient(135deg, var(--accent), var(--accent2));
       -webkit-background-clip:text; -webkit-text-fill-color:transparent;
     }
     .hero-sub{
-      font-size:clamp(15px, 1.6vw, 17px); color:var(--muted); max-width:480px;
-      margin:0 0 32px; line-height:1.7;
+      font-size:clamp(16px, 1.5vw, 18px); color:var(--muted); max-width:520px;
+      margin:0 0 32px; line-height:1.65;
     }
     .hero-actions{display:flex; gap:14px; flex-wrap:wrap;}
-    .hero-proof{margin-top:32px; display:flex; gap:24px;}
-    .hero-stat{display:flex; flex-direction:column;}
-    .hero-stat-val{font-size:22px; font-weight:800; color:var(--accent2);}
-    .hero-stat-lbl{font-size:11px; color:var(--muted); letter-spacing:.02em;}
+    .hero-trust{
+      margin-top:28px; padding-top:24px; border-top:1px solid var(--line);
+      font-size:13px; color:var(--muted); display:flex; align-items:center; gap:10px;
+      flex-wrap:wrap;
+    }
+    .hero-trust strong{color:var(--ink); font-weight:700;}
 
     /* Hero mini-dashboard */
     .hero-preview{
@@ -176,8 +199,6 @@
     .hp-row-bar{flex:1; margin:0 12px; height:4px; border-radius:2px; background:rgba(255,255,255,.06); overflow:hidden;}
     .hp-row-bar-fill{height:100%; border-radius:2px;}
 
-    @keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
-
     .btn{
       padding:14px 28px; border-radius:12px; font-weight:700; font-size:15px;
       cursor:pointer; transition:all .25s; border:none;
@@ -185,6 +206,11 @@
     }
     .btn-primary{background:var(--accent); color:#fff; box-shadow:0 8px 32px var(--glow);}
     .btn-primary:hover{transform:translateY(-2px); box-shadow:0 14px 40px var(--glow);}
+    .btn-primary.btn-demo{
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow:0 8px 32px rgba(99,102,241,.4);
+    }
+    .btn-primary.btn-demo:hover{box-shadow:0 14px 44px rgba(6,182,212,.45);}
     .btn-ghost{
       background:rgba(255,255,255,.04); color:var(--ink);
       border:1px solid rgba(255,255,255,.1);
@@ -192,38 +218,81 @@
     .btn-ghost:hover{background:rgba(255,255,255,.07); border-color:rgba(255,255,255,.18);}
 
     /* Sections */
-    .section{padding:56px 0; position:relative;}
+    .section{padding:64px 0; position:relative;}
     .section-label{
       font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.1em;
       color:var(--accent); margin-bottom:10px;
     }
     .section-title{
-      font-size:clamp(26px, 3.5vw, 38px); font-weight:900; letter-spacing:-.025em;
-      margin-bottom:14px; line-height:1.12;
+      font-size:clamp(28px, 3.5vw, 40px); font-weight:900; letter-spacing:-.03em;
+      margin-bottom:14px; line-height:1.1;
     }
-    .section-desc{font-size:15px; color:var(--muted); max-width:540px; line-height:1.7;}
+    .section-desc{font-size:16px; color:var(--muted); max-width:580px; line-height:1.65;}
+    .section-center{text-align:center;}
+    .section-center .section-desc{margin:14px auto 0;}
 
-    /* Feature cards */
-    .features{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:40px;}
-    .feat{
+    /* Outcome cards (benefits, hero-side) */
+    .outcomes{display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:48px;}
+    .outcome{
       background:rgba(255,255,255,.02); border:1px solid var(--line);
-      border-radius:16px; padding:28px; transition:border-color .3s, box-shadow .3s;
+      border-radius:16px; padding:26px 22px; transition:all .3s;
+      position:relative; overflow:hidden;
     }
-    .feat:hover{border-color:rgba(99,102,241,.3); box-shadow:0 0 40px rgba(99,102,241,.06);}
-    .feat-icon{
-      width:44px; height:44px; border-radius:12px; display:flex; align-items:center; justify-content:center;
-      font-size:20px; font-weight:900; margin-bottom:16px;
-      background:rgba(99,102,241,.1); color:var(--accent);
+    .outcome::after{
+      content:""; position:absolute; top:0; left:0; right:0; height:2px;
+      background:linear-gradient(90deg, var(--accent), var(--accent2));
+      opacity:0; transition:opacity .3s;
     }
-    .feat-icon.cyan{background:rgba(6,182,212,.1); color:var(--accent2);}
-    .feat-icon.green{background:rgba(16,185,129,.1); color:var(--success);}
-    .feat-icon.amber{background:rgba(245,158,11,.1); color:var(--warning);}
-    .feat h3{font-size:16px; font-weight:700; margin-bottom:6px;}
-    .feat p{color:var(--muted); font-size:14px; line-height:1.65;}
+    .outcome:hover{border-color:rgba(99,102,241,.3); transform:translateY(-3px);}
+    .outcome:hover::after{opacity:1;}
+    .outcome-num{
+      font-family:'JetBrains Mono', ui-monospace, monospace;
+      font-size:11px; font-weight:700; color:var(--accent2);
+      letter-spacing:.1em; margin-bottom:14px;
+    }
+    .outcome h3{font-size:17px; font-weight:800; margin-bottom:8px; letter-spacing:-.01em;}
+    .outcome p{font-size:13.5px; color:var(--muted); line-height:1.6;}
+
+    /* Problem section */
+    .problem-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:40px;}
+    .problem-card{
+      background:rgba(239,68,68,.03); border:1px solid rgba(239,68,68,.12);
+      border-radius:14px; padding:26px; position:relative;
+    }
+    .problem-card::before{
+      content:""; position:absolute; top:24px; left:0; width:3px; height:24px;
+      background:var(--danger); border-radius:0 2px 2px 0;
+    }
+    .problem-card h3{font-size:15px; font-weight:700; margin-bottom:10px; color:#fca5a5;}
+    .problem-card p{font-size:14px; color:var(--muted); line-height:1.65;}
+
+    /* Founder note */
+    .founder{
+      max-width:760px; margin:48px auto 0;
+      background:linear-gradient(180deg, rgba(99,102,241,.04), rgba(10,15,22,.6));
+      border:1px solid var(--line); border-radius:18px; padding:32px 36px;
+    }
+    .founder-quote{
+      font-size:17px; line-height:1.65; color:var(--ink); font-weight:500;
+      letter-spacing:-.005em; margin-bottom:18px;
+    }
+    .founder-quote::before{
+      content:"\201C"; font-size:48px; color:var(--accent); line-height:0;
+      vertical-align:-12px; margin-right:6px; font-family:Georgia, serif;
+    }
+    .founder-meta{display:flex; align-items:center; gap:14px;}
+    .founder-avatar{
+      width:44px; height:44px; border-radius:50%; flex-shrink:0;
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      display:flex; align-items:center; justify-content:center;
+      font-weight:800; color:#fff; font-size:16px;
+    }
+    .founder-name{font-weight:700; font-size:14px;}
+    .founder-title{font-size:12.5px; color:var(--muted);}
 
     /* App mockup - mirrors real B2B app */
     .app-frame{
-      max-width:960px; margin:0 auto;
+      max-width:980px; margin:0 auto;
       background:rgba(10,10,14,.95); border:1px solid var(--line);
       border-radius:16px; overflow:hidden;
       box-shadow:0 24px 80px rgba(0,0,0,.4), 0 0 1px rgba(255,255,255,.05) inset,
@@ -293,9 +362,24 @@
     .tag-y{background:rgba(245,158,11,.12); color:var(--warning);}
     .tag-b{background:rgba(99,102,241,.12); color:var(--accent);}
 
+    /* Split layout */
+    .split{display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;}
+    .split.reverse .split-text{order:2;}
+    .split-text{max-width:480px;}
+    .split-text .section-label{margin-bottom:12px;}
+    .split-text ul{list-style:none; padding:0; margin:20px 0 0; display:flex; flex-direction:column; gap:10px;}
+    .split-text li{
+      font-size:14.5px; color:var(--ink); display:flex; align-items:flex-start; gap:12px;
+    }
+    .split-text li::before{
+      content:""; width:18px; height:18px; border-radius:50%; flex-shrink:0; margin-top:2px;
+      background:rgba(16,185,129,.15);
+      background-image:radial-gradient(circle, var(--success) 30%, transparent 31%);
+    }
+
     /* Quiz browser mockup */
     .quiz-browser{
-      max-width:700px; margin:0 auto;
+      max-width:540px; margin:0 auto;
       background:rgba(10,10,14,.95); border:1px solid var(--line);
       border-radius:16px; overflow:hidden;
       box-shadow:0 16px 60px rgba(0,0,0,.3), 0 0 40px rgba(99,102,241,.05);
@@ -311,7 +395,7 @@
       color:var(--muted); border-bottom:2px solid transparent; transition:all .2s;
     }
     .cert-tab.on{color:var(--ink); border-bottom-color:var(--accent); background:rgba(99,102,241,.05);}
-    .quiz-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; padding:20px 24px;}
+    .quiz-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:10px; padding:20px 24px;}
     .quiz-tile{
       background:rgba(255,255,255,.025); border:1px solid var(--line);
       border-radius:10px; padding:14px; transition:border-color .2s;
@@ -323,13 +407,9 @@
     .quiz-tile .dots span{width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,.1);}
     .quiz-tile .dots span.done{background:var(--success);}
 
-    /* Split layout */
-    .split{display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;}
-    .split-text{max-width:480px;}
-
     /* Scenario card */
     .scenario-card{
-      max-width:420px; margin:0 auto;
+      max-width:440px; margin:0 auto;
       background:rgba(10,10,14,.95); border:1px solid var(--line);
       border-radius:16px; overflow:hidden;
       box-shadow:0 16px 60px rgba(0,0,0,.25), 0 0 40px rgba(6,182,212,.05);
@@ -364,42 +444,141 @@
     .scenario-opt.picked{border-color:var(--accent); background:rgba(99,102,241,.08); color:var(--accent);}
 
     /* Timeline */
-    .timeline{position:relative; padding-left:32px; margin-top:32px;}
+    .timeline{position:relative; padding-left:32px; margin-top:36px;}
     .timeline::before{
       content:""; position:absolute; left:11px; top:8px; bottom:8px; width:2px;
       background:linear-gradient(180deg, var(--accent), var(--accent2));
       border-radius:2px;
     }
-    .tl-item{position:relative; margin-bottom:28px;}
+    .tl-item{position:relative; margin-bottom:30px;}
     .tl-item:last-child{margin-bottom:0;}
     .tl-dot{
       position:absolute; left:-32px; top:4px; width:22px; height:22px;
       border-radius:50%; background:var(--accent); display:flex;
       align-items:center; justify-content:center;
       box-shadow:0 0 16px var(--glow);
+      font-size:11px; font-weight:800; color:#fff;
     }
-    .tl-dot::after{content:""; width:8px; height:8px; border-radius:50%; background:#fff;}
-    .tl-item h3{font-size:15px; font-weight:700; margin-bottom:4px;}
-    .tl-item p{color:var(--muted); font-size:13px; line-height:1.6;}
+    .tl-item h3{font-size:16px; font-weight:700; margin-bottom:5px; letter-spacing:-.01em;}
+    .tl-item p{color:var(--muted); font-size:14px; line-height:1.6;}
+
+    /* Comparison */
+    .compare{
+      margin-top:40px; border:1px solid var(--line); border-radius:16px; overflow:hidden;
+      background:rgba(10,15,22,.5);
+    }
+    .compare-row{
+      display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr;
+      border-bottom:1px solid var(--line);
+    }
+    .compare-row:last-child{border-bottom:none;}
+    .compare-row.head{
+      background:rgba(255,255,255,.025);
+      font-size:11px; text-transform:uppercase; letter-spacing:.08em; font-weight:700; color:var(--muted);
+    }
+    .compare-row.head > div{padding:14px 16px;}
+    .compare-row.head .us{color:var(--accent2);}
+    .compare-cell{padding:16px; font-size:14px; border-left:1px solid var(--line); display:flex; align-items:center; gap:8px;}
+    .compare-cell:first-child{border-left:none; font-weight:600; color:var(--ink);}
+    .compare-cell.us{background:rgba(99,102,241,.04);}
+    .compare-mark{
+      width:18px; height:18px; border-radius:50%;
+      display:inline-flex; align-items:center; justify-content:center;
+      font-size:11px; font-weight:800; flex-shrink:0;
+    }
+    .compare-mark.yes{background:rgba(16,185,129,.15); color:var(--success);}
+    .compare-mark.no{background:rgba(239,68,68,.12); color:var(--danger);}
+    .compare-mark.partial{background:rgba(245,158,11,.15); color:var(--warning);}
+
+    /* Pricing */
+    .price-card{
+      max-width:580px; margin:40px auto 0;
+      background:linear-gradient(180deg, rgba(99,102,241,.06), rgba(10,15,22,.6));
+      border:1px solid rgba(99,102,241,.25); border-radius:20px;
+      padding:40px; text-align:center; position:relative; overflow:hidden;
+    }
+    .price-card::before{
+      content:""; position:absolute; inset:0; pointer-events:none;
+      background:radial-gradient(ellipse 400px 200px at 50% 0%, rgba(99,102,241,.12), transparent);
+    }
+    .price-card > *{position:relative;}
+    .price-pilot{
+      display:inline-block; padding:6px 14px; border-radius:999px;
+      background:rgba(16,185,129,.1); border:1px solid rgba(16,185,129,.25);
+      font-size:11px; font-weight:700; color:var(--success);
+      letter-spacing:.06em; text-transform:uppercase; margin-bottom:18px;
+    }
+    .price-num{
+      font-size:68px; font-weight:900; letter-spacing:-.04em; line-height:1;
+      background:linear-gradient(135deg, var(--ink), var(--accent2));
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    }
+    .price-num .dollar{font-size:38px; vertical-align:top; margin-right:2px; opacity:.8;}
+    .price-num .strike{
+      font-size:24px; color:var(--muted); text-decoration:line-through;
+      margin-right:14px; font-weight:600; vertical-align:middle;
+    }
+    .price-unit{font-size:14px; color:var(--muted); margin-top:10px;}
+    .price-includes{
+      display:grid; grid-template-columns:1fr 1fr; gap:10px 28px;
+      margin:28px auto 0; max-width:460px; text-align:left;
+    }
+    .price-includes li{
+      list-style:none; font-size:13.5px; color:var(--ink);
+      display:flex; align-items:center; gap:10px;
+    }
+    .price-includes li::before{
+      content:""; width:14px; height:14px; border-radius:50%;
+      background:rgba(16,185,129,.18); flex-shrink:0;
+      background-image:radial-gradient(circle, var(--success) 35%, transparent 36%);
+    }
+    .price-foot{
+      margin-top:28px; padding-top:20px; border-top:1px solid rgba(255,255,255,.06);
+      font-size:13px; color:var(--muted); line-height:1.6;
+    }
+
+    /* FAQ */
+    .faq{max-width:780px; margin:40px auto 0;}
+    .faq details{
+      border:1px solid var(--line); border-radius:12px;
+      background:rgba(255,255,255,.02); margin-bottom:10px;
+      transition:border-color .2s, background .2s;
+    }
+    .faq details[open]{border-color:rgba(99,102,241,.3); background:rgba(99,102,241,.03);}
+    .faq summary{
+      list-style:none; cursor:pointer; padding:18px 22px;
+      font-size:15px; font-weight:600; display:flex; justify-content:space-between; align-items:center;
+      gap:16px;
+    }
+    .faq summary::-webkit-details-marker{display:none;}
+    .faq summary::after{
+      content:"+"; font-size:22px; font-weight:300; color:var(--muted);
+      transition:transform .25s; line-height:1;
+    }
+    .faq details[open] summary::after{transform:rotate(45deg); color:var(--accent);}
+    .faq .faq-body{padding:0 22px 20px; color:var(--muted); font-size:14.5px; line-height:1.7;}
 
     /* CTA */
-    .cta-section{padding:72px 0 60px; text-align:center; position:relative;}
+    .cta-section{padding:80px 0 64px; text-align:center; position:relative;}
     .cta-section::before{
       content:""; position:absolute; inset:0; pointer-events:none;
       background:radial-gradient(ellipse 600px 300px at center, rgba(99,102,241,.1), transparent);
     }
     .cta-section h2{
-      font-size:clamp(30px, 4.5vw, 44px); font-weight:900; letter-spacing:-.03em;
-      margin-bottom:14px;
+      font-size:clamp(32px, 4.5vw, 46px); font-weight:900; letter-spacing:-.035em;
+      margin-bottom:16px; line-height:1.05;
     }
-    .cta-section p{font-size:16px; color:var(--muted); margin-bottom:32px; max-width:500px; margin-left:auto; margin-right:auto;}
+    .cta-section .gradient{
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    }
+    .cta-section p{font-size:17px; color:var(--muted); margin-bottom:32px; max-width:560px; margin-left:auto; margin-right:auto;}
 
-    /* Early stage badge */
     .early-badge{
       display:inline-flex; align-items:center; gap:8px;
       padding:10px 20px; border-radius:12px; margin-top:48px;
       background:rgba(6,182,212,.06); border:1px solid rgba(6,182,212,.15);
-      font-size:14px; color:var(--accent2); font-weight:600;
+      font-size:13.5px; color:var(--accent2); font-weight:600;
     }
 
     /* Footer */
@@ -411,7 +590,7 @@
 
     /* Dialog */
     dialog{
-      width:min(520px, 96vw); border:1px solid var(--line); border-radius:20px;
+      width:min(540px, 96vw); border:1px solid var(--line); border-radius:20px;
       padding:0; background:var(--panel); color:var(--ink); backdrop-filter:blur(20px);
     }
     dialog::backdrop{background:rgba(4,7,10,.85); backdrop-filter:blur(12px);}
@@ -436,26 +615,40 @@
     .fade-up{opacity:0; transform:translateY(30px); transition:all .7s cubic-bezier(.16,1,.3,1);}
     .fade-up.visible{opacity:1; transform:translateY(0);}
 
+    @media (max-width:980px){
+      .outcomes{grid-template-columns:repeat(2,1fr);}
+    }
     @media (max-width:768px){
       .hero{padding:100px 0 48px;}
       .hero-grid{grid-template-columns:1fr; gap:32px; text-align:center;}
+      .hero-eyebrow{margin-left:auto; margin-right:auto;}
       .hero-sub{margin:0 auto 32px;}
       .hero-actions{justify-content:center;}
-      .hero-proof{justify-content:center;}
+      .hero-trust{justify-content:center;}
       .hero-preview{transform:none; max-width:440px; margin:0 auto;}
       .hero-preview:hover{transform:none;}
-      .features{grid-template-columns:1fr;}
+      .outcomes{grid-template-columns:1fr;}
+      .problem-grid{grid-template-columns:1fr;}
       .split{grid-template-columns:1fr; gap:40px;}
+      .split.reverse .split-text{order:0;}
       .split-text{max-width:100%;}
       .kpi-row{grid-template-columns:repeat(2,1fr);}
       .chart-row{flex-direction:column;}
-      .cert-tabs{overflow-x:auto;}
-      .quiz-grid{grid-template-columns:1fr 1fr;}
+      .compare-row{grid-template-columns:1fr;}
+      .compare-row.head{display:none;}
+      .compare-cell{border-left:none; border-top:1px solid var(--line);}
+      .compare-cell:first-child{border-top:none; background:rgba(255,255,255,.025); font-size:13px; text-transform:uppercase; letter-spacing:.04em;}
+      .compare-cell::before{content:attr(data-col) " "; color:var(--muted); font-size:11px; margin-right:6px; text-transform:uppercase; letter-spacing:.04em;}
+      .compare-cell:first-child::before{content:none;}
+      .price-includes{grid-template-columns:1fr;}
+      .price-card{padding:32px 24px;}
+      .price-num{font-size:54px;}
       .nav-btn{font-size:11px; padding:6px 10px;}
       .brand-link{font-size:15px;}
       .brand-link img{width:32px; height:32px;}
       .footer-row{flex-direction:column; text-align:center;}
       .footer-links{justify-content:center;}
+      .founder{padding:26px 22px;}
     }
   </style>
 </head>
@@ -464,13 +657,13 @@
     <div class="wrap">
       <nav class="navbar">
         <a href="../" class="brand-link">
-          <img src="../logo-48.png" alt="EMS ProtoQuiz" width="40" height="40">
+          <img src="../logo-48.png" alt="" width="40" height="40">
           <span>EMS ProtoQuiz</span>
         </a>
         <div class="nav-links">
           <a href="../" class="nav-btn">Home</a>
           <a href="../blog/" class="nav-btn">Blog</a>
-          <a href="./" class="nav-btn active-page">For Agencies</a>
+          <a href="./" class="nav-btn active-page" aria-current="page">For Agencies</a>
           <button type="button" class="nav-btn primary" id="openContact" data-track="AgencyContactOpen">Get in Touch</button>
         </div>
       </nav>
@@ -483,18 +676,17 @@
       <div class="wrap">
         <div class="hero-grid">
           <div>
-            <h1>One PDF.<br><span class="gradient">A complete training system.</span></h1>
+            <div class="hero-eyebrow"><span class="pulse"></span>Free 6-month pilot &middot; only 2 more agencies before Aug 1, 2026</div>
+            <h1>A training platform<br>for your organization,<br><span class="gradient">based on your actual protocols.</span></h1>
             <p class="hero-sub">
-              Send us your protocol PDF. We build quizzes, clinical scenarios, pharmacology drills, compliance tracking, and an admin dashboard -- branded to your department, on your subdomain.
+              Stronger protocol fluency for your providers. Faster onboarding for new hires. Lower legal liability for the agency. Visibility into where your team is weakest, so you spend training time where it actually matters.
             </p>
             <div class="hero-actions">
-              <button type="button" class="btn btn-primary" id="openContact2" data-track="AgencyContactOpen">Talk to Us</button>
-              <a href="https://demo.protoquiz.com" target="_blank" class="btn btn-ghost" data-track="AgencyLiveDemo">Explore the Live Platform</a>
+              <a href="https://demo.protoquiz.com" target="_blank" rel="noopener" class="btn btn-primary btn-demo" data-track="AgencyLiveDemo">See the Live Demo &rarr;</a>
+              <button type="button" class="btn btn-ghost" id="openContact2" data-track="AgencyContactOpen">Start a Conversation</button>
             </div>
-            <div class="hero-proof">
-              <div class="hero-stat"><span class="hero-stat-val">500+</span><span class="hero-stat-lbl">Active users</span></div>
-              <div class="hero-stat"><span class="hero-stat-val">40k+</span><span class="hero-stat-lbl">Quizzes taken</span></div>
-              <div class="hero-stat"><span class="hero-stat-val">Any PDF</span><span class="hero-stat-lbl">Protocol-agnostic</span></div>
+            <div class="hero-trust">
+              <span>Try it free for 6 months. If it's not for you, you stop &mdash; and never pay a thing.</span>
             </div>
           </div>
           <div class="hero-preview">
@@ -542,43 +734,153 @@
       </div>
     </section>
 
-    <!-- Features -->
+    <!-- Outcomes (benefits-first) -->
+    <section class="section fade-up" style="padding-top:24px;">
+      <div class="wrap">
+        <div class="section-center">
+          <div class="section-label">Why it matters</div>
+          <div class="section-title">What it changes for your agency</div>
+        </div>
+
+        <div class="outcomes">
+          <div class="outcome">
+            <div class="outcome-num">01</div>
+            <h3>Better calls, fewer mistakes</h3>
+            <p>Your providers know your protocols cold, so they make the right call faster on real patients.</p>
+          </div>
+          <div class="outcome">
+            <div class="outcome-num">02</div>
+            <h3>New hires get up to speed faster</h3>
+            <p>New providers can study your protocols from day one. FTOs spend their time on judgment instead of teaching the basics.</p>
+          </div>
+          <div class="outcome">
+            <div class="outcome-num">03</div>
+            <h3>Documentation that holds up</h3>
+            <p>If a chart gets reviewed, you have a record of exactly what was trained and when, for every provider.</p>
+          </div>
+          <div class="outcome">
+            <div class="outcome-num">04</div>
+            <h3>You see where the team is weak</h3>
+            <p>The dashboard shows which protocols and which providers need more reps, so you can fix problems before they show up on a call.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem -->
     <section class="section fade-up">
       <div class="wrap">
-        <div class="section-label">Platform</div>
-        <div class="section-title">Everything your department needs to train on protocols</div>
-        <div class="section-desc">One platform. Your branding. Your subdomain. Your protocols.</div>
+        <div class="section-label">Why this exists</div>
+        <div class="section-title">A PDF is not a curriculum.</div>
 
-        <div class="features">
-          <div class="feat">
-            <div class="feat-icon">Q</div>
-            <h3>Protocol Quizzes</h3>
-            <p>Topic quizzes and comprehensive exams built from your protocols. Filterable by cert level. Multiple question types: multiple choice, select-all, and sequencing.</p>
+        <div class="problem-grid">
+          <div class="problem-card">
+            <h3>Reading isn't retention</h3>
+            <p>You hand a new medic the protocol document on day one. Six months later, do they actually have it memorized? Most departments have no way to know.</p>
           </div>
-          <div class="feat">
-            <div class="feat-icon cyan">S</div>
-            <h3>Clinical Scenarios</h3>
-            <p>Multi-stage patient encounters with evolving vitals and treatment decisions. Built from your standing orders, not generic textbook cases.</p>
+          <div class="problem-card">
+            <h3>Generic CE isn't your protocols</h3>
+            <p>National CE and NREMT prep aren't specific to the meds you carry, the doses you give, or the procedures in your scope.</p>
           </div>
-          <div class="feat">
-            <div class="feat-icon green">Rx</div>
-            <h3>Pharmacology Drills</h3>
-            <p>Quiz every medication in your formulary -- dosing, indications, contraindications, mechanisms, adverse effects. Adaptive learn mode with spaced repetition.</p>
+          <div class="problem-card">
+            <h3>You find out at QA</h3>
+            <p>By the time a protocol gap shows up in a chart review, the call is over.</p>
           </div>
-          <div class="feat">
-            <div class="feat-icon amber">A</div>
-            <h3>Assignments & Compliance</h3>
-            <p>Create mandatory quizzes with deadlines and minimum scores. Recurring schedules. Auto-identify weak areas and assign targeted remediation.</p>
+        </div>
+
+        <div class="founder fade-up">
+          <p class="founder-quote">
+            No matter where you go in EMS, every agency has its own unique protocols &mdash; but there's no way to actually train on them. Same story everywhere: tons of NREMT apps, plenty of generic CE, zero tools built around the protocols we use to do our jobs. So I built one.
+          </p>
+          <div class="founder-meta">
+            <div class="founder-avatar">JS</div>
+            <div>
+              <div class="founder-name">Jaden Schwartz</div>
+              <div class="founder-title">Founder, ProtoQuiz &middot; Working EMS provider</div>
+            </div>
           </div>
-          <div class="feat">
-            <div class="feat-icon">D</div>
-            <h3>Admin Dashboard</h3>
-            <p>Per-provider scores, category breakdowns, compliance rates, team trends. Filter by date range and cert level. CSV export for audits.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Provider experience: split -->
+    <section class="section fade-up">
+      <div class="wrap">
+        <div class="split">
+          <div class="split-text">
+            <div class="section-label">For providers</div>
+            <div class="section-title">Everything they need to study, in one place</div>
+            <div class="section-desc" style="margin-top:14px;">
+              Every question cites the page it came from. Each provider only sees what's in their scope.
+            </div>
+            <ul>
+              <li>Topic quizzes and full comprehensive exams</li>
+              <li>Pharmacology drills on every medication you carry</li>
+              <li>Procedure walkthroughs and clinical scenarios</li>
+              <li>Works on a phone, tablet, or station computer</li>
+            </ul>
           </div>
-          <div class="feat">
-            <div class="feat-icon cyan">T</div>
-            <h3>Team Management</h3>
-            <p>Role-based access for admins, training officers, and supervisors. User approval flow. Seat management. Leaderboards to drive engagement.</p>
+          <div class="quiz-browser">
+            <div class="quiz-browser-head">
+              <h3>Protocol Quizzes</h3>
+              <div class="sub">By category, by cert level</div>
+            </div>
+            <div class="cert-tabs">
+              <div class="cert-tab">EMT</div>
+              <div class="cert-tab">AEMT</div>
+              <div class="cert-tab on">Paramedic</div>
+            </div>
+            <div class="quiz-grid">
+              <div class="quiz-tile"><h4>Cardiac</h4><div class="meta">44Q &middot; 3 tests</div><div class="dots"><span class="done"></span><span></span><span></span></div></div>
+              <div class="quiz-tile"><h4>Respiratory</h4><div class="meta">33Q &middot; 2 tests</div><div class="dots"><span class="done"></span><span></span></div></div>
+              <div class="quiz-tile"><h4>Trauma</h4><div class="meta">33Q &middot; 2 tests</div><div class="dots"><span></span><span></span></div></div>
+              <div class="quiz-tile"><h4>Behavioral</h4><div class="meta">32Q &middot; 2 tests</div><div class="dots"><span></span><span></span></div></div>
+              <div class="quiz-tile"><h4>General Medical</h4><div class="meta">56Q &middot; 4 tests</div><div class="dots"><span></span><span></span><span></span><span></span></div></div>
+              <div class="quiz-tile"><h4>Obstetric</h4><div class="meta">31Q &middot; 2 tests</div><div class="dots"><span></span><span></span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scenario -->
+    <section class="section fade-up">
+      <div class="wrap">
+        <div class="split reverse">
+          <div class="split-text">
+            <div class="section-label">Clinical scenarios</div>
+            <div class="section-title">Train how you fight</div>
+            <div class="section-desc" style="margin-top:14px;">
+              Multi-stage patient cases with vitals that change as your crew makes decisions.
+            </div>
+            <ul>
+              <li>Vitals shift based on the choices your crew makes</li>
+              <li>Every debrief cites the page in your protocols</li>
+              <li>EMT through Paramedic, same case scaled to scope</li>
+            </ul>
+          </div>
+          <div class="scenario-card">
+            <div class="scenario-head">
+              <span>Clinical Scenario</span>
+              <span class="scenario-stage">Stage 2 of 4</span>
+            </div>
+            <div class="scenario-body">
+              <div class="vitals">
+                <div class="vital"><div class="vital-val" style="color:var(--warning);">88/62</div><div class="vital-lbl">BP</div></div>
+                <div class="vital"><div class="vital-val" style="color:var(--danger);">186</div><div class="vital-lbl">HR</div></div>
+                <div class="vital"><div class="vital-val">96%</div><div class="vital-lbl">SpO2</div></div>
+              </div>
+              <div class="scenario-text">
+                44yo male, palpitations and dizziness x 30 min. Alert and oriented. Monitor shows wide-complex tachycardia at 186 bpm, regular rhythm. IV access established. No known cardiac history.
+              </div>
+              <div class="scenario-prompt">What is your next intervention?</div>
+              <div class="scenario-opts">
+                <div class="scenario-opt picked">Amiodarone 150mg IV over 10 min</div>
+                <div class="scenario-opt">Adenosine 6mg rapid IV push</div>
+                <div class="scenario-opt">Synchronized cardioversion at 100J</div>
+                <div class="scenario-opt">Vagal maneuvers</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -587,9 +889,10 @@
     <!-- Admin Dashboard Mockup -->
     <section class="section fade-up">
       <div class="wrap">
-        <div style="text-align:center; margin-bottom:48px;">
-          <div class="section-label">Command Staff Visibility</div>
-          <div class="section-title">Know who needs help before it matters on a call</div>
+        <div class="section-center" style="margin-bottom:36px;">
+          <div class="section-label">For command staff</div>
+          <div class="section-title">The picture you've been guessing at</div>
+          <div class="section-desc">Who's strong, who's weak, by topic and by provider. One screen.</div>
         </div>
 
         <div class="app-frame">
@@ -599,11 +902,11 @@
           </div>
           <div class="app-body">
             <div style="font-size:20px; font-weight:800; margin-bottom:4px;">Admin Dashboard</div>
-            <div style="font-size:13px; color:var(--muted); margin-bottom:16px;">Your Department Name</div>
+            <div style="font-size:13px; color:var(--muted); margin-bottom:16px;">Highland Rescue Team</div>
 
             <div class="app-nav">
               <span class="app-nav-item on">Dashboard</span>
-              <span class="app-nav-item">Assignments</span>
+              <span class="app-nav-item">Training</span>
               <span class="app-nav-item">Reports</span>
               <span class="app-nav-item">Team</span>
             </div>
@@ -611,10 +914,10 @@
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
               <span style="font-size:15px; font-weight:700;">Organization Performance</span>
               <div style="display:flex; gap:4px; align-items:center;">
-                <span style="padding:5px 12px; border-radius:6px; font-size:11px; font-weight:600; background:rgba(239,68,68,.12); color:#ef4444; border:1px solid rgba(239,68,68,.25);">PDF Report</span>
                 <span style="padding:5px 12px; border-radius:6px; font-size:11px; font-weight:600; background:rgba(255,255,255,.04); color:var(--muted); border:1px solid var(--line);">7D</span>
                 <span style="padding:5px 12px; border-radius:6px; font-size:11px; font-weight:600; background:rgba(99,102,241,.12); color:var(--accent); border:1px solid rgba(99,102,241,.25);">30D</span>
                 <span style="padding:5px 12px; border-radius:6px; font-size:11px; font-weight:600; background:rgba(255,255,255,.04); color:var(--muted); border:1px solid var(--line);">All</span>
+                <span style="padding:5px 12px; border-radius:6px; font-size:11px; font-weight:600; background:rgba(239,68,68,.1); color:var(--danger); border:1px solid rgba(239,68,68,.2); margin-left:6px;">Export PDF</span>
               </div>
             </div>
 
@@ -630,7 +933,7 @@
                 <h4>Compliance Overview</h4>
                 <div class="sub">Providers meeting 80% target</div>
                 <div class="donut-wrap">
-                  <svg viewBox="0 0 36 36">
+                  <svg viewBox="0 0 36 36" aria-hidden="true">
                     <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="2.5"/>
                     <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#10b981" stroke-width="2.5" stroke-dasharray="89, 100" stroke-linecap="round"/>
                   </svg>
@@ -657,87 +960,72 @@
             <table class="tbl">
               <thead><tr><th>Provider</th><th>Cert Level</th><th>Quizzes</th><th>Avg</th><th>Weakest</th><th>Status</th></tr></thead>
               <tbody>
-                <tr><td>M. Johnson</td><td style="color:var(--muted)">Paramedic</td><td>28</td><td>94%</td><td>Tox/Enviro</td><td><span class="tag tag-g">On Track</span></td></tr>
+                <tr><td>M. Johnson</td><td style="color:var(--muted)">Paramedic</td><td>28</td><td>94%</td><td>Enviro</td><td><span class="tag tag-g">On Track</span></td></tr>
+                <tr><td>R. Chen</td><td style="color:var(--muted)">Paramedic</td><td>22</td><td>89%</td><td>Pharm</td><td><span class="tag tag-g">On Track</span></td></tr>
                 <tr><td>K. Williams</td><td style="color:var(--muted)">AEMT</td><td>15</td><td>82%</td><td>Cardiac</td><td><span class="tag tag-b">Active</span></td></tr>
-                <tr><td>R. Chen</td><td style="color:var(--muted)">EMT-I</td><td>22</td><td>89%</td><td>Pharm</td><td><span class="tag tag-g">On Track</span></td></tr>
                 <tr><td>S. Davis</td><td style="color:var(--muted)">EMT</td><td>6</td><td>71%</td><td>Trauma</td><td><span class="tag tag-y">Needs Focus</span></td></tr>
               </tbody>
             </table>
             <div style="margin-top:16px;"><span style="display:inline-block; padding:6px 14px; border-radius:8px; font-size:12px; font-weight:600; background:rgba(99,102,241,.1); color:var(--accent); border:1px solid rgba(99,102,241,.2);">Export CSV</span></div>
           </div>
         </div>
-        <div style="text-align:center; margin-top:24px;"><a href="https://demo.protoquiz.com" target="_blank" class="btn btn-ghost" data-track="AgencyDashboardDemo" style="font-size:13px;">See the live platform</a></div>
-      </div>
-    </section>
 
-    <!-- Quiz Browser Mockup -->
-    <section class="section fade-up">
-      <div class="wrap">
-        <div class="split">
-          <div class="split-text">
-            <div class="section-label">Protocol Training</div>
-            <div class="section-title">Quizzes built from your actual protocols</div>
-            <div class="section-desc" style="margin-top:16px;">
-              Every question is generated from your protocol PDF and cites the exact page. Filter by cert level so EMTs and Paramedics each see content appropriate for their scope. Topic quizzes, comprehensive exams, and timed challenges.
-            </div>
-          </div>
-          <div class="quiz-browser">
-            <div class="quiz-browser-head">
-              <h3>Protocol Quizzes</h3>
-              <div class="sub">Master your protocols by category</div>
-            </div>
-            <div class="cert-tabs">
-              <div class="cert-tab">EMT</div>
-              <div class="cert-tab">AEMT</div>
-              <div class="cert-tab">EMT-I</div>
-              <div class="cert-tab on">Paramedic</div>
-            </div>
-            <div class="quiz-grid">
-              <div class="quiz-tile"><h4>Cardiac</h4><div class="meta">44Q -- 3 tests</div><div class="dots"><span class="done"></span><span></span><span></span></div></div>
-              <div class="quiz-tile"><h4>Respiratory</h4><div class="meta">33Q -- 2 tests</div><div class="dots"><span class="done"></span><span></span></div></div>
-              <div class="quiz-tile"><h4>Trauma</h4><div class="meta">33Q -- 2 tests</div><div class="dots"><span></span><span></span></div></div>
-              <div class="quiz-tile"><h4>Behavioral</h4><div class="meta">32Q -- 2 tests</div><div class="dots"><span></span><span></span></div></div>
-              <div class="quiz-tile"><h4>General Medical</h4><div class="meta">56Q -- 4 tests</div><div class="dots"><span></span><span></span><span></span><span></span></div></div>
-              <div class="quiz-tile"><h4>Obstetric</h4><div class="meta">31Q -- 2 tests</div><div class="dots"><span></span><span></span></div></div>
-            </div>
-          </div>
+        <div style="text-align:center; margin-top:28px;">
+          <a href="https://demo.protoquiz.com" target="_blank" rel="noopener" class="btn btn-ghost" data-track="AgencyDashboardDemo">Walk through the live dashboard</a>
         </div>
       </div>
     </section>
 
-    <!-- Scenario Mockup Split -->
+    <!-- Comparison -->
     <section class="section fade-up">
       <div class="wrap">
-        <div class="split">
-          <div class="scenario-card">
-            <div class="scenario-head">
-              <span>Clinical Scenario</span>
-              <span class="scenario-stage">Stage 2 of 4</span>
-            </div>
-            <div class="scenario-body">
-              <div class="vitals">
-                <div class="vital"><div class="vital-val" style="color:#f59e0b;">88/62</div><div class="vital-lbl">BP</div></div>
-                <div class="vital"><div class="vital-val" style="color:#ef4444;">186</div><div class="vital-lbl">HR</div></div>
-                <div class="vital"><div class="vital-val">96%</div><div class="vital-lbl">SpO2</div></div>
-              </div>
-              <div class="scenario-text">
-                44yo male, palpitations and dizziness x 30 min. Alert and oriented. Monitor shows wide-complex tachycardia at 186 bpm, regular rhythm. IV access established. No known cardiac history.
-              </div>
-              <div class="scenario-prompt">What is your next intervention?</div>
-              <div class="scenario-opts">
-                <div class="scenario-opt picked">Amiodarone 150mg IV over 10 min</div>
-                <div class="scenario-opt">Adenosine 6mg rapid IV push</div>
-                <div class="scenario-opt">Synchronized cardioversion at 100J</div>
-                <div class="scenario-opt">Vagal maneuvers</div>
-              </div>
-            </div>
+        <div class="section-center">
+          <div class="section-label">Side by side</div>
+          <div class="section-title">How this stacks up</div>
+        </div>
+
+        <div class="compare">
+          <div class="compare-row head">
+            <div></div>
+            <div>Binder / PDF</div>
+            <div>National CE</div>
+            <div class="us">ProtoQuiz</div>
           </div>
-          <div class="split-text">
-            <div class="section-label">Clinical Decision Making</div>
-            <div class="section-title">Reps on your protocols before it counts</div>
-            <div class="section-desc" style="margin-top:16px;">
-              Multi-stage patient encounters built from your standing orders. Vitals change. Patients respond to treatment decisions. Your crews get reps on your algorithms -- not generic textbook cases.
-            </div>
+          <div class="compare-row">
+            <div class="compare-cell">Built from your actual protocols</div>
+            <div class="compare-cell" data-col="Binder/PDF"><span class="compare-mark partial" aria-label="Partial">~</span> It is the PDF</div>
+            <div class="compare-cell" data-col="National CE"><span class="compare-mark no" aria-label="No">x</span> Generic NREMT content</div>
+            <div class="compare-cell us" data-col="ProtoQuiz"><span class="compare-mark yes" aria-label="Yes">+</span> Page-cited to your PDF</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-cell">Tests every cert level on its scope</div>
+            <div class="compare-cell" data-col="Binder/PDF"><span class="compare-mark no" aria-label="No">x</span> Read-only</div>
+            <div class="compare-cell" data-col="National CE"><span class="compare-mark partial" aria-label="Partial">~</span> Generic</div>
+            <div class="compare-cell us" data-col="ProtoQuiz"><span class="compare-mark yes" aria-label="Yes">+</span> EMT through Paramedic</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-cell">Command staff visibility into gaps</div>
+            <div class="compare-cell" data-col="Binder/PDF"><span class="compare-mark no" aria-label="No">x</span> None</div>
+            <div class="compare-cell" data-col="National CE"><span class="compare-mark partial" aria-label="Partial">~</span> Completion only</div>
+            <div class="compare-cell us" data-col="ProtoQuiz"><span class="compare-mark yes" aria-label="Yes">+</span> Per-provider, per-topic</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-cell">Updates when protocols change</div>
+            <div class="compare-cell" data-col="Binder/PDF"><span class="compare-mark no" aria-label="No">x</span> Reprint everything</div>
+            <div class="compare-cell" data-col="National CE"><span class="compare-mark no" aria-label="No">x</span> Not your content</div>
+            <div class="compare-cell us" data-col="ProtoQuiz"><span class="compare-mark yes" aria-label="Yes">+</span> Send the new PDF</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-cell">Branded as your department</div>
+            <div class="compare-cell" data-col="Binder/PDF"><span class="compare-mark yes" aria-label="Yes">+</span> Yes</div>
+            <div class="compare-cell" data-col="National CE"><span class="compare-mark no" aria-label="No">x</span> Their brand</div>
+            <div class="compare-cell us" data-col="ProtoQuiz"><span class="compare-mark yes" aria-label="Yes">+</span> Subdomain &amp; logo</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-cell">Audit-ready training records</div>
+            <div class="compare-cell" data-col="Binder/PDF"><span class="compare-mark no" aria-label="No">x</span> Sign-in sheets</div>
+            <div class="compare-cell" data-col="National CE"><span class="compare-mark partial" aria-label="Partial">~</span> Hours, not mastery</div>
+            <div class="compare-cell us" data-col="ProtoQuiz"><span class="compare-mark yes" aria-label="Yes">+</span> Per-protocol, per-provider</div>
           </div>
         </div>
       </div>
@@ -745,33 +1033,116 @@
 
     <!-- How it Works -->
     <section class="section fade-up">
-      <div class="wrap" style="max-width:640px;">
-        <div style="text-align:center; margin-bottom:16px;">
-          <div class="section-label">Getting Started</div>
-          <div class="section-title">Up and running in days, not months</div>
+      <div class="wrap" style="max-width:680px;">
+        <div class="section-center">
+          <div class="section-label">Rollout</div>
+          <div class="section-title">From email to first quiz: about a week</div>
         </div>
 
         <div class="timeline">
           <div class="tl-item">
-            <div class="tl-dot"></div>
-            <h3>Send us your protocol PDF</h3>
-            <p>That's it. That's your entire contribution. We take it from here.</p>
+            <div class="tl-dot">1</div>
+            <h3>Send us your PDF</h3>
+            <p>One email. That's the whole lift on your end.</p>
           </div>
           <div class="tl-item">
-            <div class="tl-dot"></div>
-            <h3>We build everything</h3>
-            <p>Protocol quizzes, pharmacology drills, clinical scenarios, comprehensive exams, leaderboards, and your supervisor dashboard. All page-cited to your protocols. Your branding, your subdomain.</p>
+            <div class="tl-dot">2</div>
+            <h3>We stand up your platform</h3>
+            <p>Custom subdomain and branding. Your medical director signs off on the question bank before crews see it.</p>
           </div>
           <div class="tl-item">
-            <div class="tl-dot"></div>
-            <h3>Crews log in and train</h3>
-            <p>Works on any device, any browser. Study on shift, at home, between calls. Use for new hire onboarding or annual competency refreshers.</p>
+            <div class="tl-dot">3</div>
+            <h3>Roll out to your crews</h3>
+            <p>One link. No install, no IT ticket.</p>
           </div>
           <div class="tl-item">
-            <div class="tl-dot"></div>
-            <h3>You see the results</h3>
-            <p>Admin dashboard shows who's training, who's struggling, and where your department's knowledge gaps are. Export reports for QA review.</p>
+            <div class="tl-dot">4</div>
+            <h3>New revision? Send it.</h3>
+            <p>Content updates with it.</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section fade-up">
+      <div class="wrap">
+        <div class="section-center">
+          <div class="section-label">Pricing</div>
+          <div class="section-title">$70 per provider per year</div>
+          <div class="section-desc">Free for the first six months for early pilot partners. No setup fees, no add-ons, no multi-year commit.</div>
+        </div>
+
+        <div class="price-card">
+          <div class="price-pilot">Free 6-month pilot &middot; 2 spots open</div>
+          <div class="price-num"><span class="strike">$70</span><span class="dollar">$</span>0</div>
+          <div class="price-unit">For the first six months. Then $70 / provider / year.</div>
+
+          <ul class="price-includes">
+            <li>Protocol quizzes &amp; exams</li>
+            <li>Pharmacology drills</li>
+            <li>Procedure quizzes</li>
+            <li>Clinical scenarios</li>
+            <li>Admin dashboard &amp; reports</li>
+            <li>Training assignments</li>
+            <li>Custom subdomain &amp; branding</li>
+            <li>Protocol revision updates</li>
+            <li>Unlimited admins</li>
+            <li>CSV &amp; PDF exports</li>
+          </ul>
+
+          <div class="price-foot">
+            <strong style="color:var(--ink);">No risk:</strong> if it's not for you after the 6-month pilot, you walk away &mdash; never pay a thing. Pilot deadline: <strong style="color:var(--ink);">August 1, 2026</strong>. Only 2 more agencies. Volume pricing for departments over 100 providers.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section fade-up">
+      <div class="wrap">
+        <div class="section-center">
+          <div class="section-label">FAQ</div>
+          <div class="section-title">Common questions</div>
+        </div>
+
+        <div class="faq">
+          <details>
+            <summary>How do you build a training platform from our PDF?</summary>
+            <div class="faq-body">We parse your full protocol document and extract every clinically relevant element: protocols, indications, contraindications, every medication in your formulary with its doses and routes, every procedure with its steps, and every treatment algorithm with its decision points. From there we generate the training surfaces &mdash; protocol quizzes, pharmacology drills, procedure quizzes, and clinical scenarios &mdash; with every question page-cited back to the exact location in your PDF. You and your medical director review the question bank before launch. Nothing goes live without your sign-off, and the content stays under your control.</div>
+          </details>
+          <details>
+            <summary>What's included in the free pilot?</summary>
+            <div class="faq-body">Everything. All training surfaces, full admin dashboard, unlimited providers, custom subdomain, branding, protocol updates &mdash; for six months, no charge. If it's not for you at the end of the pilot, you stop and never pay a thing. We're offering it to early partners willing to give feedback and help shape the product. Only 2 more spots before the August 1, 2026 deadline.</div>
+          </details>
+          <details>
+            <summary>Does this count for CE credit?</summary>
+            <div class="faq-body">Not yet. ProtoQuiz is a competency and protocol-mastery platform. Most departments use it alongside their existing CE &mdash; it covers the protocol-specific training that generic CE doesn't. As we grow, we plan to make ProtoQuiz count for CE credit.</div>
+          </details>
+          <details>
+            <summary>What if our protocols change?</summary>
+            <div class="faq-body">Send us the new revision. We regenerate the affected content and flag what changed. Updates are included &mdash; no re-procurement, no extra invoice.</div>
+          </details>
+          <details>
+            <summary>Do we have to replace our LMS?</summary>
+            <div class="faq-body">No. Most departments keep their LMS for HR and policy training and use ProtoQuiz specifically for protocol competency. We export performance reports as CSV or PDF if you need to roll the data into another system.</div>
+          </details>
+          <details>
+            <summary>Where does our data live?</summary>
+            <div class="faq-body">Your data lives in an isolated tenant on US infrastructure. The platform stores quiz scores and provider names only &mdash; no patient information, so HIPAA does not apply. Tenants are isolated by department; admins control who has access.</div>
+          </details>
+          <details>
+            <summary>How long does rollout actually take?</summary>
+            <div class="faq-body">Send your PDF, we stand up your tenant in days, you and your medical director review and approve the content, and we hand off a single link your crews use to log in. No app store, no installs, no IT ticket. Most departments are training within two weeks of sending us their protocols.</div>
+          </details>
+          <details>
+            <summary>Who owns and controls the medical content?</summary>
+            <div class="faq-body">You do. Your medical director reviews and approves the question bank. You can edit, remove, or add content at any time. We're a software vendor, not a medical authority.</div>
+          </details>
+          <details>
+            <summary>Can we try it before the pilot?</summary>
+            <div class="faq-body">Yes. Walk through the live demo at <a href="https://demo.protoquiz.com" style="color:var(--accent2);">demo.protoquiz.com</a>, or we'll build a working preview using a slice of your actual protocols at no cost so you can see exactly what your platform would look like.</div>
+          </details>
         </div>
       </div>
     </section>
@@ -779,13 +1150,13 @@
     <!-- CTA -->
     <section class="cta-section">
       <div class="wrap">
-        <h2>Let's build yours.</h2>
-        <p>We're onboarding early partners now. Pricing is flexible and negotiated per department -- we want the right fit, not the most seats.</p>
+        <h2>See what it looks like for <span class="gradient">your organization.</span></h2>
+        <p>Send us your protocols and we'll stand up a working preview &mdash; branded for your department, populated with your content.</p>
         <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
-          <button type="button" class="btn btn-primary" id="openContact3" data-track="AgencyContactOpen">Start a Conversation</button>
-          <a href="https://demo.protoquiz.com" target="_blank" class="btn btn-ghost" data-track="AgencyLiveDemo">See the Live Platform</a>
+          <a href="https://demo.protoquiz.com" target="_blank" rel="noopener" class="btn btn-primary btn-demo" data-track="AgencyLiveDemo">See the Live Demo &rarr;</a>
+          <button type="button" class="btn btn-ghost" id="openContact3" data-track="AgencyContactOpen">Start a Conversation</button>
         </div>
-        <div class="early-badge">Early-stage product -- we work closely with every partner department</div>
+        <div class="early-badge">Free for 6 months &middot; if it's not for you, you stop and never pay a thing</div>
       </div>
     </section>
   </main>
@@ -806,30 +1177,30 @@
   </footer>
 
   <!-- Contact Dialog -->
-  <dialog id="contactDialog">
+  <dialog id="contactDialog" aria-labelledby="contactDialogTitle">
     <div class="dlg-head">
-      <h3>Get in Touch</h3>
-      <form method="dialog" style="margin:0;"><button class="dlg-close">Close</button></form>
+      <h3 id="contactDialogTitle">Start your free pilot</h3>
+      <form method="dialog" style="margin:0;"><button class="dlg-close" aria-label="Close dialog">Close</button></form>
     </div>
     <div class="dlg-body">
       <form id="contactForm" action="https://api.protoquiz.com/api/monitor?type=contactForm" method="POST">
         <input type="text" name="phone" tabindex="-1" autocomplete="off" style="position:absolute;left:-10000px" aria-hidden="true">
-        <input type="hidden" name="source" value="agency-page-v9">
+        <input type="hidden" name="source" value="agency-page-v11">
         <div class="field">
-          <label>Name</label>
-          <input type="text" name="name" autocomplete="name" placeholder="Your name">
+          <label for="cf-name">Name</label>
+          <input type="text" id="cf-name" name="name" autocomplete="name" placeholder="Your name">
         </div>
         <div class="field">
-          <label>Email *</label>
-          <input type="email" name="email" autocomplete="email" required placeholder="you@agency.gov">
+          <label for="cf-email">Email *</label>
+          <input type="email" id="cf-email" name="email" autocomplete="email" required placeholder="you@agency.gov">
         </div>
         <div class="field">
-          <label>Agency / Department</label>
-          <input type="text" name="agency" placeholder="e.g. Denver Health Paramedics">
+          <label for="cf-agency">Agency / Department</label>
+          <input type="text" id="cf-agency" name="agency" placeholder="e.g. Denver Health Paramedics">
         </div>
         <div class="field">
-          <label>Department Size</label>
-          <select name="size">
+          <label for="cf-size">Department Size</label>
+          <select id="cf-size" name="size">
             <option>Under 25 providers</option>
             <option>25-50 providers</option>
             <option>50-100 providers</option>
@@ -837,8 +1208,8 @@
           </select>
         </div>
         <div class="field">
-          <label>Anything else?</label>
-          <textarea name="message" placeholder="What are you looking for? What problems are you trying to solve?"></textarea>
+          <label for="cf-message">What are you looking to fix? *</label>
+          <textarea id="cf-message" name="message" required minlength="2" placeholder="What does training look like today? What would you change?"></textarea>
         </div>
         <div style="display:flex; justify-content:flex-end; margin-top:20px;">
           <button type="submit" class="btn btn-primary" data-track="AgencyContactSubmit">Send</button>
