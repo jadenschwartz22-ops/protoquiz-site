@@ -662,8 +662,8 @@
         </a>
         <div class="nav-links">
           <a href="../" class="nav-btn">Home</a>
-          <a href="../blog/" class="nav-btn">Blog</a>
           <a href="./" class="nav-btn active-page" aria-current="page">For Agencies</a>
+          <a href="../blog/" class="nav-btn">Blog</a>
           <button type="button" class="nav-btn primary" id="openContact" data-track="AgencyContactOpen">Get in Touch</button>
         </div>
       </nav>
@@ -678,6 +678,10 @@
           <div>
             <div class="hero-eyebrow"><span class="pulse"></span>Free 6-month pilot &middot; only 2 more agencies before Aug 1, 2026</div>
             <h1>A training platform<br>for your organization,<br><span class="gradient">based on your actual protocols.</span></h1>
+            <div style="background:rgba(99,102,241,.08); border-left:3px solid var(--accent); padding:14px 18px; border-radius:8px; margin:20px 0 18px; max-width:560px;">
+              <div style="font-size:13px; font-weight:700; color:var(--ink); margin-bottom:4px;">Are you the person at your agency who cares the most about training quality?</div>
+              <div style="font-size:13px; color:var(--muted); line-height:1.5;">If yes, this is built for you. If no &mdash; forward this to the medical director, training officer, or QA chief who is. They'll thank you.</div>
+            </div>
             <p class="hero-sub">
               Stronger protocol fluency for your providers. Faster onboarding for new hires. Lower legal liability for the agency. Visibility into where your team is weakest, so you spend training time where it actually matters.
             </p>
@@ -774,27 +778,9 @@
       </div>
     </section>
 
-    <!-- Problem -->
-    <section class="section fade-up">
+    <!-- Founder voice -->
+    <section class="section fade-up" style="padding-top:28px;">
       <div class="wrap">
-        <div class="section-label">Why this exists</div>
-        <div class="section-title">A PDF is not a curriculum.</div>
-
-        <div class="problem-grid">
-          <div class="problem-card">
-            <h3>Reading isn't retention</h3>
-            <p>You hand a new medic the protocol document on day one. Six months later, do they actually have it memorized? Most departments have no way to know.</p>
-          </div>
-          <div class="problem-card">
-            <h3>Generic CE isn't your protocols</h3>
-            <p>National CE and NREMT prep aren't specific to the meds you carry, the doses you give, or the procedures in your scope.</p>
-          </div>
-          <div class="problem-card">
-            <h3>You find out at QA</h3>
-            <p>By the time a protocol gap shows up in a chart review, the call is over.</p>
-          </div>
-        </div>
-
         <div class="founder fade-up">
           <p class="founder-quote">
             No matter where you go in EMS, every agency has its own unique protocols &mdash; but there's no way to actually train on them. Same story everywhere: tons of NREMT apps, plenty of generic CE, zero tools built around the protocols we use to do our jobs. So I built one.
@@ -804,90 +790,6 @@
             <div>
               <div class="founder-name">Jaden Schwartz</div>
               <div class="founder-title">Founder, ProtoQuiz &middot; Working EMS provider</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Provider experience: split -->
-    <section class="section fade-up">
-      <div class="wrap">
-        <div class="split">
-          <div class="split-text">
-            <div class="section-label">For providers</div>
-            <div class="section-title">A study tool your crews will actually open</div>
-            <div class="section-desc" style="margin-top:14px;">
-              Built to fit how providers actually work, not how training departments wish they did.
-            </div>
-            <ul>
-              <li>Short enough to fit between calls, so providers actually study</li>
-              <li>Filtered to each provider's scope, so EMTs aren't drowning in paramedic content</li>
-              <li>Cites the protocol page on every wrong answer, so a missed question becomes a teaching moment</li>
-              <li>Runs on whatever's in their hand, so there's no "I forgot my login" excuse</li>
-            </ul>
-          </div>
-          <div class="quiz-browser">
-            <div class="quiz-browser-head">
-              <h3>Protocol Quizzes</h3>
-              <div class="sub">By category, by cert level</div>
-            </div>
-            <div class="cert-tabs">
-              <div class="cert-tab">EMT</div>
-              <div class="cert-tab">AEMT</div>
-              <div class="cert-tab on">Paramedic</div>
-            </div>
-            <div class="quiz-grid">
-              <div class="quiz-tile"><h4>Cardiac</h4><div class="meta">44Q &middot; 3 tests</div><div class="dots"><span class="done"></span><span></span><span></span></div></div>
-              <div class="quiz-tile"><h4>Respiratory</h4><div class="meta">33Q &middot; 2 tests</div><div class="dots"><span class="done"></span><span></span></div></div>
-              <div class="quiz-tile"><h4>Trauma</h4><div class="meta">33Q &middot; 2 tests</div><div class="dots"><span></span><span></span></div></div>
-              <div class="quiz-tile"><h4>Behavioral</h4><div class="meta">32Q &middot; 2 tests</div><div class="dots"><span></span><span></span></div></div>
-              <div class="quiz-tile"><h4>General Medical</h4><div class="meta">56Q &middot; 4 tests</div><div class="dots"><span></span><span></span><span></span><span></span></div></div>
-              <div class="quiz-tile"><h4>Obstetric</h4><div class="meta">31Q &middot; 2 tests</div><div class="dots"><span></span><span></span></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Scenario -->
-    <section class="section fade-up">
-      <div class="wrap">
-        <div class="split reverse">
-          <div class="split-text">
-            <div class="section-label">Clinical scenarios</div>
-            <div class="section-title">Train how you fight</div>
-            <div class="section-desc" style="margin-top:14px;">
-              Realistic training, because it's built on the protocols your crews actually use.
-            </div>
-            <ul>
-              <li>Crews work through the bad call before it happens, so they don't freeze when it does</li>
-              <li>Patient responds to the decisions your crew makes, so wrong answers feel like wrong answers</li>
-              <li>Every debrief points back to the protocol page, so the lesson sticks</li>
-              <li>Same case scales from EMT to Paramedic, so every cert level trains on the same patient</li>
-            </ul>
-          </div>
-          <div class="scenario-card">
-            <div class="scenario-head">
-              <span>Clinical Scenario</span>
-              <span class="scenario-stage">Stage 2 of 4</span>
-            </div>
-            <div class="scenario-body">
-              <div class="vitals">
-                <div class="vital"><div class="vital-val" style="color:var(--warning);">88/62</div><div class="vital-lbl">BP</div></div>
-                <div class="vital"><div class="vital-val" style="color:var(--danger);">186</div><div class="vital-lbl">HR</div></div>
-                <div class="vital"><div class="vital-val">96%</div><div class="vital-lbl">SpO2</div></div>
-              </div>
-              <div class="scenario-text">
-                44yo male, palpitations and dizziness x 30 min. Alert and oriented. Monitor shows wide-complex tachycardia at 186 bpm, regular rhythm. IV access established. No known cardiac history.
-              </div>
-              <div class="scenario-prompt">What is your next intervention?</div>
-              <div class="scenario-opts">
-                <div class="scenario-opt picked">Amiodarone 150mg IV over 10 min</div>
-                <div class="scenario-opt">Adenosine 6mg rapid IV push</div>
-                <div class="scenario-opt">Synchronized cardioversion at 100J</div>
-                <div class="scenario-opt">Vagal maneuvers</div>
-              </div>
             </div>
           </div>
         </div>
@@ -1169,13 +1071,121 @@
       </div>
     </section>
 
+    <!-- Value Stack (Hormozi-style) -->
+    <section class="section fade-up">
+      <div class="wrap">
+        <div class="section-center">
+          <div class="section-label">What you get</div>
+          <div class="section-title">Here's everything inside, and what each piece is worth on its own.</div>
+          <div class="section-desc">Built so a 100-provider agency can replace four different vendors and an internal training-platform build. Priced so it's an obvious yes.</div>
+        </div>
+
+        <div style="max-width:760px; margin:32px auto 0; background:rgba(255,255,255,.02); border:1px solid var(--line); border-radius:16px; overflow:hidden;">
+          <div style="display:grid; grid-template-columns:1fr auto; gap:20px; padding:18px 24px; border-bottom:1px solid var(--line); align-items:center;">
+            <div>
+              <div style="font-weight:700; color:var(--ink); font-size:15px;">Custom protocol quiz platform built on YOUR PDF</div>
+              <div style="font-size:12px; color:var(--muted); margin-top:2px;">600+ MCQ, SATA, ordered-step questions, generated from your protocol document.</div>
+            </div>
+            <div style="text-align:right;"><div style="font-size:11px; color:var(--muted);">Custom build</div><div style="font-weight:800; color:var(--ink); font-size:18px;">$25,000+</div></div>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr auto; gap:20px; padding:18px 24px; border-bottom:1px solid var(--line); align-items:center;">
+            <div>
+              <div style="font-weight:700; color:var(--ink); font-size:15px;">Pharmacology drills, every med you carry</div>
+              <div style="font-size:12px; color:var(--muted); margin-top:2px;">Dose, route, indication, contraindication. SM-2 spaced repetition keeps it sticky.</div>
+            </div>
+            <div style="text-align:right;"><div style="font-size:11px; color:var(--muted);">Comparable LMS module</div><div style="font-weight:800; color:var(--ink); font-size:18px;">$6,000/yr</div></div>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr auto; gap:20px; padding:18px 24px; border-bottom:1px solid var(--line); align-items:center;">
+            <div>
+              <div style="font-weight:700; color:var(--ink); font-size:15px;">Procedure drills (16 procedures, 128 authored questions)</div>
+              <div style="font-size:12px; color:var(--muted); margin-top:2px;">Indications, contraindications, technique, precautions. Cert-level scoped.</div>
+            </div>
+            <div style="text-align:right;"><div style="font-size:11px; color:var(--muted);">Per-procedure CE</div><div style="font-weight:800; color:var(--ink); font-size:18px;">$4,000/yr</div></div>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr auto; gap:20px; padding:18px 24px; border-bottom:1px solid var(--line); align-items:center;">
+            <div>
+              <div style="font-weight:700; color:var(--ink); font-size:15px;">40 multi-stage clinical scenarios</div>
+              <div style="font-size:12px; color:var(--muted); margin-top:2px;">Cases that respond to your providers' decisions, scaled across cert levels.</div>
+            </div>
+            <div style="text-align:right;"><div style="font-size:11px; color:var(--muted);">Sim contract equivalent</div><div style="font-weight:800; color:var(--ink); font-size:18px;">$8,000/yr</div></div>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr auto; gap:20px; padding:18px 24px; border-bottom:1px solid var(--line); align-items:center;">
+            <div>
+              <div style="font-weight:700; color:var(--ink); font-size:15px;">Admin dashboard with provider-level visibility</div>
+              <div style="font-size:12px; color:var(--muted); margin-top:2px;">Score by topic, weakest providers, score-trend heatmap, audit-ready exports.</div>
+            </div>
+            <div style="text-align:right;"><div style="font-size:11px; color:var(--muted);">Analytics tool</div><div style="font-weight:800; color:var(--ink); font-size:18px;">$5,000/yr</div></div>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr auto; gap:20px; padding:18px 24px; border-bottom:1px solid var(--line); align-items:center;">
+            <div>
+              <div style="font-weight:700; color:var(--ink); font-size:15px;">Recurring training assignments &amp; compliance tracking</div>
+              <div style="font-size:12px; color:var(--muted); margin-top:2px;">Weekly/monthly/quarterly cadences. Pass thresholds, due dates, automatic reminders.</div>
+            </div>
+            <div style="text-align:right;"><div style="font-size:11px; color:var(--muted);">Compliance LMS</div><div style="font-weight:800; color:var(--ink); font-size:18px;">$4,000/yr</div></div>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr auto; gap:20px; padding:18px 24px; border-bottom:1px solid var(--line); align-items:center;">
+            <div>
+              <div style="font-weight:700; color:var(--ink); font-size:15px;">Custom subdomain + your branding (yourorg.protoquiz.com)</div>
+              <div style="font-size:12px; color:var(--muted); margin-top:2px;">Your logo, colors, agency name. Looks like your platform, not ours.</div>
+            </div>
+            <div style="text-align:right;"><div style="font-size:11px; color:var(--muted);">White-label setup</div><div style="font-weight:800; color:var(--ink); font-size:18px;">$3,000</div></div>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr auto; gap:20px; padding:18px 24px; border-bottom:1px solid var(--line); align-items:center;">
+            <div>
+              <div style="font-weight:700; color:var(--ink); font-size:15px;">Protocol revision updates as your med dir changes them</div>
+              <div style="font-size:12px; color:var(--muted); margin-top:2px;">Send the new PDF; we sync content automatically. No version chasing.</div>
+            </div>
+            <div style="text-align:right;"><div style="font-size:11px; color:var(--muted);">Content maintenance</div><div style="font-weight:800; color:var(--ink); font-size:18px;">$3,000/yr</div></div>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr auto; gap:20px; padding:18px 24px; border-bottom:1px solid var(--line); align-items:center;">
+            <div>
+              <div style="font-weight:700; color:var(--ink); font-size:15px;">Unlimited admin / training-officer seats</div>
+              <div style="font-size:12px; color:var(--muted); margin-top:2px;">Every chief, training officer, FTO supervisor gets full access. No per-admin fees.</div>
+            </div>
+            <div style="text-align:right;"><div style="font-size:11px; color:var(--muted);">Per-seat admin</div><div style="font-weight:800; color:var(--ink); font-size:18px;">$2,000/yr</div></div>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr auto; gap:20px; padding:18px 24px; align-items:center;">
+            <div>
+              <div style="font-weight:700; color:var(--ink); font-size:15px;">Audit-ready CSV / PDF exports for state inspections</div>
+              <div style="font-size:12px; color:var(--muted); margin-top:2px;">"Show me your CE records" goes from days to minutes.</div>
+            </div>
+            <div style="text-align:right;"><div style="font-size:11px; color:var(--muted);">Compliance reporting</div><div style="font-weight:800; color:var(--ink); font-size:18px;">$2,000/yr</div></div>
+          </div>
+
+          <div style="background:rgba(99,102,241,.1); border-top:1px solid rgba(99,102,241,.3); padding:22px 24px; display:grid; grid-template-columns:1fr auto; gap:20px; align-items:center;">
+            <div>
+              <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:var(--accent); text-transform:uppercase;">Total comparable value</div>
+              <div style="font-size:13px; color:var(--muted); margin-top:4px;">Sum of all the line items above</div>
+            </div>
+            <div style="text-align:right;">
+              <div style="font-size:32px; font-weight:900; color:var(--ink);">$62,000+</div>
+              <div style="font-size:11px; color:var(--muted);">per year, retail</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- The price reveal -->
+        <div style="max-width:760px; margin:24px auto 0; text-align:center; padding:32px 24px; background:linear-gradient(135deg, rgba(99,102,241,.18), rgba(6,182,212,.1)); border:2px solid rgba(99,102,241,.4); border-radius:18px;">
+          <div style="font-size:13px; color:var(--accent2); font-weight:700; letter-spacing:1px; text-transform:uppercase; margin-bottom:6px;">Your price</div>
+          <div style="font-size:18px; color:var(--muted); margin-bottom:6px;">For a 100-provider agency, that's not $62,000.</div>
+          <div style="font-size:18px; color:var(--muted);">It's not $30,000. It's not even $20,000.</div>
+          <div style="margin:18px 0 12px;">
+            <span style="font-size:18px; color:var(--muted); text-decoration:line-through; margin-right:10px;">$62,000/yr</span>
+            <span style="font-size:60px; font-weight:900; color:var(--ink); line-height:1;">$10,000<span style="font-size:18px; color:var(--muted); font-weight:600;">/yr</span></span>
+          </div>
+          <div style="font-size:14px; color:var(--ink); font-weight:600;">$100 per provider per year. Flat. ($8.33/medic/month.)</div>
+          <div style="font-size:13px; color:var(--muted); margin-top:6px;">Free for the first six months for early pilot partners.</div>
+        </div>
+      </div>
+    </section>
+
     <!-- Pricing -->
     <section class="section fade-up">
       <div class="wrap">
         <div class="section-center">
           <div class="section-label">Pricing</div>
           <div class="section-title">$100 per provider per year</div>
-          <div class="section-desc">That's $8.33/month per provider. Free for the first six months for early pilot partners. No setup fees, no add-ons, no multi-year commit.</div>
+          <div class="section-desc">Flat. No tiers, no setup fees, no add-ons, no multi-year commit. Free for 6 months for early pilot partners.</div>
         </div>
 
         <div class="price-card">
@@ -1201,46 +1211,103 @@
           </div>
         </div>
 
-        <!-- Cost in context -->
+        <!-- Cost by agency size -->
         <div style="margin-top:48px;">
           <div class="section-center" style="margin-bottom:24px;">
-            <div class="section-label">Cost in context</div>
-            <div class="section-title" style="font-size:32px;">What $100 a year actually buys</div>
-            <div class="section-desc">A 30-medic department running ProtoQuiz for a year costs less than one shift of overtime.</div>
+            <div class="section-label">Cost by agency size</div>
+            <div class="section-title" style="font-size:32px;">$100 / provider / year. Always.</div>
+            <div class="section-desc">No tiers, no setup fees, no enterprise upcharge. Whatever you pay, the line item is the same.</div>
           </div>
-          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:16px; margin-top:24px;">
-            <div style="background:rgba(99,102,241,.08); border:1px solid rgba(99,102,241,.25); border-radius:14px; padding:20px;">
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:16px; margin-top:24px;">
+            <div style="background:rgba(255,255,255,.03); border:1px solid var(--line); border-radius:14px; padding:24px;">
+              <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:var(--muted); text-transform:uppercase; margin-bottom:8px;">Small &middot; up to 50 providers</div>
+              <div style="font-size:36px; font-weight:800; color:var(--ink); line-height:1;">$5,000<span style="font-size:14px; color:var(--muted); font-weight:600;">/yr</span></div>
+              <div style="font-size:13px; color:var(--muted); margin-top:6px;">$417/month for the whole department</div>
+              <div style="height:1px; background:var(--line); margin:14px 0;"></div>
+              <div style="font-size:12px; color:var(--muted); line-height:1.5;">Volunteer/combination departments. Single-station agencies. New transport services.</div>
+            </div>
+            <div style="background:rgba(99,102,241,.08); border:1px solid rgba(99,102,241,.3); border-radius:14px; padding:24px; position:relative;">
+              <div style="position:absolute; top:-10px; right:14px; background:var(--accent); color:#fff; font-size:10px; font-weight:700; padding:3px 10px; border-radius:20px; letter-spacing:.5px;">MOST AGENCIES</div>
+              <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:var(--accent); text-transform:uppercase; margin-bottom:8px;">Mid &middot; 50-200 providers</div>
+              <div style="font-size:36px; font-weight:800; color:var(--ink); line-height:1;">$10k&ndash;$20k<span style="font-size:14px; color:var(--muted); font-weight:600;">/yr</span></div>
+              <div style="font-size:13px; color:var(--muted); margin-top:6px;">$833&ndash;$1,667/month</div>
+              <div style="height:1px; background:var(--line); margin:14px 0;"></div>
+              <div style="font-size:12px; color:var(--muted); line-height:1.5;">Most municipal departments and regional providers. Average DMEMSMD agency lands here.</div>
+            </div>
+            <div style="background:rgba(255,255,255,.03); border:1px solid var(--line); border-radius:14px; padding:24px;">
+              <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:var(--muted); text-transform:uppercase; margin-bottom:8px;">Large &middot; 200-500 providers</div>
+              <div style="font-size:36px; font-weight:800; color:var(--ink); line-height:1;">$20k&ndash;$50k<span style="font-size:14px; color:var(--muted); font-weight:600;">/yr</span></div>
+              <div style="font-size:13px; color:var(--muted); margin-top:6px;">$1,667&ndash;$4,167/month</div>
+              <div style="height:1px; background:var(--line); margin:14px 0;"></div>
+              <div style="font-size:12px; color:var(--muted); line-height:1.5;">County-wide systems, large municipal. Volume pricing kicks in over 100 providers &mdash; ask.</div>
+            </div>
+            <div style="background:rgba(255,255,255,.03); border:1px solid var(--line); border-radius:14px; padding:24px;">
+              <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:var(--muted); text-transform:uppercase; margin-bottom:8px;">Regional &middot; 500+ providers</div>
+              <div style="font-size:36px; font-weight:800; color:var(--ink); line-height:1;">$50k+<span style="font-size:14px; color:var(--muted); font-weight:600;">/yr</span></div>
+              <div style="font-size:13px; color:var(--muted); margin-top:6px;">Multi-agency / state systems</div>
+              <div style="height:1px; background:var(--line); margin:14px 0;"></div>
+              <div style="font-size:12px; color:var(--muted); line-height:1.5;">Air-medical, statewide consortia, large IFT operators. Custom contract &mdash; we'll talk.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- What the cost actually replaces -->
+        <div style="margin-top:64px;">
+          <div class="section-center" style="margin-bottom:24px;">
+            <div class="section-label">Cost in real EMS terms</div>
+            <div class="section-title" style="font-size:32px;">Compare it to what you already spend</div>
+            <div class="section-desc">Numbers below are for a 100-provider mid-size agency at $10k/year. All sources cited.</div>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:16px; margin-top:24px;">
+            <div style="background:rgba(99,102,241,.08); border:1px solid rgba(99,102,241,.3); border-radius:14px; padding:22px;">
               <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:var(--accent); text-transform:uppercase; margin-bottom:6px;">ProtoQuiz</div>
-              <div style="font-size:30px; font-weight:800; color:var(--ink); margin-bottom:4px;">$3,000<span style="font-size:14px; color:var(--muted); font-weight:600;">/yr</span></div>
-              <div style="font-size:13px; color:var(--muted); line-height:1.4;">30-medic department, full year of training</div>
+              <div style="font-size:34px; font-weight:800; color:var(--ink); margin-bottom:4px; line-height:1;">$10,000<span style="font-size:14px; color:var(--muted); font-weight:600;">/yr</span></div>
+              <div style="font-size:13px; color:var(--muted); line-height:1.4;">100 providers, full year. Includes admin dashboard, content updates, branded subdomain, unlimited admins.</div>
             </div>
-            <div style="background:rgba(255,255,255,.03); border:1px solid var(--line); border-radius:14px; padding:20px;">
-              <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:var(--muted); text-transform:uppercase; margin-bottom:6px;">One new paramedic hire</div>
-              <div style="font-size:30px; font-weight:800; color:var(--ink); margin-bottom:4px;">$30k+</div>
-              <div style="font-size:13px; color:var(--muted); line-height:1.4;">Recruiting, academy, FTO time, equipment, benefits</div>
+            <div style="background:rgba(255,255,255,.03); border:1px solid var(--line); border-radius:14px; padding:22px;">
+              <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:var(--muted); text-transform:uppercase; margin-bottom:6px;">Replacing one paramedic</div>
+              <div style="font-size:34px; font-weight:800; color:var(--ink); margin-bottom:4px; line-height:1;">~$9,100</div>
+              <div style="font-size:13px; color:var(--muted); line-height:1.4;">Peer-reviewed AAA workforce study: full-time paramedic replacement runs $9,113. Doesn't include OT to cover the gap. <strong style="color:var(--ink);">Stronger protocol fluency = fewer washouts in FTO = fewer replacements per year.</strong></div>
             </div>
-            <div style="background:rgba(255,255,255,.03); border:1px solid var(--line); border-radius:14px; padding:20px;">
-              <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:var(--muted); text-transform:uppercase; margin-bottom:6px;">One protocol-deviation lawsuit</div>
-              <div style="font-size:30px; font-weight:800; color:var(--danger); margin-bottom:4px;">$250k+</div>
-              <div style="font-size:13px; color:var(--muted); line-height:1.4;">Median EMS malpractice settlement when documentation is weak</div>
+            <div style="background:rgba(255,255,255,.03); border:1px solid var(--line); border-radius:14px; padding:22px;">
+              <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:var(--muted); text-transform:uppercase; margin-bottom:6px;">EMS turnover reality</div>
+              <div style="font-size:34px; font-weight:800; color:var(--ink); margin-bottom:4px; line-height:1;">20&ndash;36%/yr</div>
+              <div style="font-size:13px; color:var(--muted); line-height:1.4;">2022 AAA industry study: full org turnover every 3-4 years. <strong style="color:var(--ink);">>1/3 of new hires turn over in their first year.</strong> A 100-medic agency replaces 20-36 medics annually &mdash; $180k-$330k in pure replacement cost.</div>
             </div>
-            <div style="background:rgba(255,255,255,.03); border:1px solid var(--line); border-radius:14px; padding:20px;">
-              <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:var(--muted); text-transform:uppercase; margin-bottom:6px;">8 hours of overtime</div>
-              <div style="font-size:30px; font-weight:800; color:var(--ink); margin-bottom:4px;">$600+</div>
-              <div style="font-size:13px; color:var(--muted); line-height:1.4;">One paramedic, one shift &mdash; 1/5 of a year of ProtoQuiz</div>
+            <div style="background:rgba(255,255,255,.03); border:1px solid var(--line); border-radius:14px; padding:22px;">
+              <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:var(--muted); text-transform:uppercase; margin-bottom:6px;">One EMS malpractice case</div>
+              <div style="font-size:34px; font-weight:800; color:var(--danger); margin-bottom:4px; line-height:1;">$750k+</div>
+              <div style="font-size:13px; color:var(--muted); line-height:1.4;">Median U.S. medical malpractice settlement. Recent EMS-specific cases: $825k (failure to administer epi), $975k (wrongful death), $1M (improper triage). Documented training is the first thing your defense counsel asks for.</div>
             </div>
-            <div style="background:rgba(16,185,129,.08); border:1px solid rgba(16,185,129,.25); border-radius:14px; padding:20px;">
-              <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:var(--success); text-transform:uppercase; margin-bottom:6px;">Per medic per shift</div>
-              <div style="font-size:30px; font-weight:800; color:var(--ink); margin-bottom:4px;">$0.27</div>
-              <div style="font-size:13px; color:var(--muted); line-height:1.4;">Less than a cup of coffee per shift, per provider</div>
+            <div style="background:rgba(255,255,255,.03); border:1px solid var(--line); border-radius:14px; padding:22px;">
+              <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:var(--muted); text-transform:uppercase; margin-bottom:6px;">Training officer hours / year</div>
+              <div style="font-size:34px; font-weight:800; color:var(--ink); margin-bottom:4px; line-height:1;">200&ndash;400 hrs</div>
+              <div style="font-size:13px; color:var(--muted); line-height:1.4;">Time your TO spends building, delivering, documenting CME each year. ProtoQuiz handles delivery + documentation automatically &mdash; TO focuses on judgment, not paperwork.</div>
             </div>
-            <div style="background:rgba(245,158,11,.08); border:1px solid rgba(245,158,11,.25); border-radius:14px; padding:20px;">
-              <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:var(--warning); text-transform:uppercase; margin-bottom:6px;">Document defensibility</div>
-              <div style="font-size:30px; font-weight:800; color:var(--ink); margin-bottom:4px;">Priceless</div>
-              <div style="font-size:13px; color:var(--muted); line-height:1.4;">Audit-ready training records, exportable on demand</div>
+            <div style="background:rgba(255,255,255,.03); border:1px solid var(--line); border-radius:14px; padding:22px;">
+              <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:var(--muted); text-transform:uppercase; margin-bottom:6px;">FTO &amp; onboarding hours</div>
+              <div style="font-size:34px; font-weight:800; color:var(--ink); margin-bottom:4px; line-height:1;">80&ndash;160 hrs / hire</div>
+              <div style="font-size:13px; color:var(--muted); line-height:1.4;">Per new hire. New medics arrive already drilled on YOUR protocols, not the textbook ones &mdash; FTO sign-off comes faster, washout rate drops.</div>
+            </div>
+            <div style="background:rgba(255,255,255,.03); border:1px solid var(--line); border-radius:14px; padding:22px;">
+              <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:var(--muted); text-transform:uppercase; margin-bottom:6px;">NREMT recert audits</div>
+              <div style="font-size:34px; font-weight:800; color:var(--ink); margin-bottom:4px; line-height:1;">5-year docs</div>
+              <div style="font-size:13px; color:var(--muted); line-height:1.4;">NREMT requires every provider to retain 5 years of CE documentation. Random audits demand "show me proof" right now. Folder hunt &rarr; CSV export.</div>
+            </div>
+            <div style="background:rgba(245,158,11,.08); border:1px solid rgba(245,158,11,.3); border-radius:14px; padding:22px;">
+              <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:var(--warning); text-transform:uppercase; margin-bottom:6px;">Audit / state inspection prep</div>
+              <div style="font-size:34px; font-weight:800; color:var(--ink); margin-bottom:4px; line-height:1;">Days &rarr; minutes</div>
+              <div style="font-size:13px; color:var(--muted); line-height:1.4;">"Show me your CE training records for the last 12 months." Right now that's a folder hunt. With ProtoQuiz it's a CSV export.</div>
+            </div>
+            <div style="background:rgba(16,185,129,.08); border:1px solid rgba(16,185,129,.3); border-radius:14px; padding:22px;">
+              <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:var(--success); text-transform:uppercase; margin-bottom:6px;">Bottom line</div>
+              <div style="font-size:34px; font-weight:800; color:var(--ink); margin-bottom:4px; line-height:1;">Pays for itself</div>
+              <div style="font-size:13px; color:var(--muted); line-height:1.4;">$10k/year prevents <strong style="color:var(--ink);">one</strong> turnover replacement and you've broken even. Two and you're 80% net positive. Realistically, you'd cover the cost in week one.</div>
             </div>
           </div>
-          <p style="font-size:11px; color:var(--muted); margin-top:14px; text-align:center; line-height:1.5;">Hire estimate: NHTSA &amp; agency HR data. Lawsuit estimate: published EMS malpractice case medians (Boyle, McEvoy, JEMS analyses). Overtime: typical Front Range FT/PT paramedic OT rate.</p>
+          <p style="font-size:11px; color:var(--muted); margin-top:14px; text-align:center; line-height:1.6; max-width:760px; margin-left:auto; margin-right:auto;">
+            Sources: Replacement cost &amp; turnover from <a href="https://pubmed.ncbi.nlm.nih.gov/20199235/" target="_blank" rel="noopener" style="color:var(--accent);">Patterson et al., Prehospital Emergency Care</a> ($9,113 per FT paramedic) and <a href="https://ambulance.org/wp-content/uploads/2021/07/2021-AAA-EMS-Turnover-Study.pdf" target="_blank" rel="noopener" style="color:var(--accent);">2021 AAA Industry Turnover Study</a>. Malpractice median: U.S. medical malpractice settlement medians; EMS-specific case examples: <a href="https://www.lubinandmeyer.com/cases/emt-malpractice.html" target="_blank" rel="noopener" style="color:var(--accent);">Lubin &amp; Meyer</a>, <a href="https://www.sommerspc.com/verdicts/975000-settlement-for-wrongful-death-due-to-emt-paramedics-gross-negligence-medical-malpractice/" target="_blank" rel="noopener" style="color:var(--accent);">Sommers Schwartz</a>. Training officer hour estimates: state EMS training officer manuals (e.g., <a href="https://ems.utah.gov/wp-content/uploads/sites/34/2024/10/Training-Officer-Manual-2024-Final.pdf" target="_blank" rel="noopener" style="color:var(--accent);">Utah BEMS</a>). NREMT recert audit requirement: <a href="https://www.nremt.org/Handbooks/Recertification/Audits" target="_blank" rel="noopener" style="color:var(--accent);">NREMT Recertification Audits</a>.
+          </p>
         </div>
       </div>
     </section>
