@@ -1926,15 +1926,15 @@
         small: {
           label: 'small',
           providers: 100,
-          // Recomputed at $30/hr loaded labor (realistic medic wage)
-          'save-fto': '~$6,000',         // 10 hires * 20 hrs cut * $30
-          'save-remediation': '~$5,000', // 3 cases at $1,500
-          'save-legal': '~$8,000',       // 1 license-defense case avoided
-          'save-to': '~$4,500',          // ~150 TO hrs * $30
+          // ProtoQuiz: flat $100/provider/year at every size
+          'save-fto': '~$6,000',          // 10 hires × 20 hrs × $30/hr loaded
+          'save-remediation': '~$5,000',  // 3 cases × $1,500
+          'save-legal': '~$8,000',        // 1 license-defense case avoided
+          'save-to': '~$4,500',           // 150 TO hrs × $30/hr
           'save-total': '$23,500',
-          'save-net': '~$13,500',
-          'save-multiple': '2.4x',
-          'diy-savings': '~$26,000',  // DIY $36k - ProtoQuiz $10k
+          'save-net': '~$13,500',         // total - $10k cost
+          'pq': '$10,000',
+          'diy-savings': '~$26,000',      // DIY $36k - PQ $10k
           'hires-est': '~10',
           // LMS comparison (the secondary pitch)
           lms: '$8,000/yr',
@@ -1952,14 +1952,14 @@
         medium: {
           label: 'medium',
           providers: 300,
-          'save-fto': '~$18,000',         // 30 hires * 20 hrs * $30
-          'save-remediation': '~$12,000', // 6-8 cases at $1,500-2,000
+          'save-fto': '~$18,000',         // 30 hires × 20 hrs × $30
+          'save-remediation': '~$12,000', // 6-8 cases × $1,500-2,000
           'save-legal': '~$15,000',       // 1-2 license-defense cases avoided
-          'save-to': '~$9,000',           // ~300 TO hrs * $30
+          'save-to': '~$9,000',           // 300 TO hrs × $30
           'save-total': '$54,000',
-          'save-net': '~$24,000',
-          'save-multiple': '1.8x',
-          'diy-savings': '~$46,000',  // DIY $76k - ProtoQuiz $30k
+          'save-net': '~$24,000',         // total - $30k cost
+          'pq': '$30,000',
+          'diy-savings': '~$46,000',      // DIY $76k - PQ $30k
           'hires-est': '~30',
           lms: '$22,000/yr',
           ce: '$24,000/yr',
@@ -1976,14 +1976,14 @@
         large: {
           label: 'large',
           providers: 500,
-          'save-fto': '~$30,000',         // 50 hires * 20 hrs * $30
-          'save-remediation': '~$20,000', // 10-12 cases at $1,500-2,000
+          'save-fto': '~$30,000',         // 50 hires × 20 hrs × $30
+          'save-remediation': '~$20,000', // 10-12 cases × $1,500-2,000
           'save-legal': '~$25,000',       // 2-3 license-defense cases avoided
-          'save-to': '~$12,000',          // ~400 TO hrs * $30
+          'save-to': '~$12,000',          // 400 TO hrs × $30
           'save-total': '$87,000',
-          'save-net': '~$37,000',
-          'save-multiple': '1.7x',
-          'diy-savings': '~$68,000',  // DIY $118k - ProtoQuiz $50k
+          'save-net': '~$37,000',         // total - $50k cost
+          'pq': '$50,000',
+          'diy-savings': '~$68,000',      // DIY $118k - PQ $50k
           'hires-est': '~50',
           lms: '$36,000/yr',
           ce: '$40,000/yr',
