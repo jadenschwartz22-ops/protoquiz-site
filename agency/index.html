@@ -830,13 +830,181 @@
     .m-row-total .m-row-label{font-weight:700; color:var(--ink);}
     .m-row-num-total{font-size:18px; padding-top:14px;}
     .math-details-foot{
-      font-size:12.5px;
+      font-size:13px;
       color:var(--muted);
-      margin:16px 0 0;
+      margin:24px 0 0;
       text-align:center;
       line-height:1.6;
     }
     .math-details-foot strong{color:var(--ink); font-weight:700;}
+    .math-details-cta{color:var(--accent); font-weight:600;}
+
+    /* === Animated cost-stack visual === */
+    .costviz{
+      display:grid;
+      grid-template-columns:1fr auto 1fr;
+      gap:32px;
+      align-items:start;
+      max-width:920px;
+      margin:14px auto 0;
+    }
+    .costviz-side{display:flex; flex-direction:column;}
+    .costviz-side-label{
+      font-size:11px;
+      letter-spacing:1.2px;
+      text-transform:uppercase;
+      font-weight:700;
+      color:var(--muted);
+      margin-bottom:12px;
+    }
+    .costviz-pq .costviz-side-label{color:var(--accent);}
+
+    .costviz-bars{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+    .costviz-bar{
+      width:100%;
+      opacity:0;
+      transform:translateX(-12px);
+    }
+    .costviz-bar-fill{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      width:0;
+      min-width:160px;
+      max-width:100%;
+      padding:9px 14px;
+      background:linear-gradient(90deg, rgba(99,102,241,0.18), rgba(99,102,241,0.08));
+      border:1px solid rgba(99,102,241,0.25);
+      border-radius:8px;
+      color:inherit;
+      text-decoration:none;
+      transition:transform .15s ease, border-color .15s ease;
+      white-space:nowrap;
+      overflow:hidden;
+      box-sizing:border-box;
+    }
+    a.costviz-bar-fill:hover{
+      transform:translateX(2px);
+      border-color:rgba(99,102,241,0.55);
+    }
+    .costviz-bar-fill-static{cursor:default;}
+    .costviz-bar-label{
+      font-size:13px;
+      font-weight:600;
+      color:var(--ink);
+    }
+    .costviz-bar-num{
+      font-size:13px;
+      font-weight:700;
+      color:var(--ink);
+      flex-shrink:0;
+    }
+
+    .costviz-bar-pq .costviz-bar-fill{
+      background:linear-gradient(90deg, rgba(16,185,129,0.22), rgba(16,185,129,0.10));
+      border-color:rgba(16,185,129,0.45);
+    }
+    .costviz-bar-pq .costviz-bar-label,
+    .costviz-bar-pq .costviz-bar-num{color:var(--ink);}
+
+    .costviz-total{
+      margin-top:16px;
+      padding:14px 16px;
+      border-top:1px solid var(--line);
+      display:flex;
+      justify-content:space-between;
+      align-items:baseline;
+      opacity:0;
+      transform:translateY(6px);
+    }
+    .costviz-total-label{
+      font-size:11px;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      color:var(--muted);
+      font-weight:700;
+    }
+    .costviz-total-num{
+      font-size:26px;
+      font-weight:800;
+      color:var(--ink);
+      letter-spacing:-0.5px;
+    }
+    .costviz-total-pq{
+      background:linear-gradient(135deg, rgba(16,185,129,0.16), rgba(99,102,241,0.08));
+      border:1px solid rgba(16,185,129,0.4);
+      border-radius:10px;
+      margin-top:14px;
+    }
+    .costviz-total-pq .costviz-total-label{color:var(--success);}
+    .costviz-total-pq .costviz-total-num{color:var(--ink); font-size:30px;}
+
+    .costviz-vs{
+      align-self:center;
+      font-size:14px;
+      font-weight:700;
+      color:var(--muted);
+      letter-spacing:1px;
+      text-transform:uppercase;
+      padding:0 4px;
+      opacity:0;
+      transform:scale(0.7);
+    }
+
+    /* play animations when details is open */
+    .math-details[open] .costviz-bar{
+      animation: costviz-bar-in .5s cubic-bezier(.2,.7,.2,1) var(--d) forwards;
+    }
+    .math-details[open] .costviz-bar .costviz-bar-fill{
+      animation: costviz-fill-in .55s cubic-bezier(.2,.7,.2,1) var(--d) forwards;
+    }
+    .math-details[open] .costviz-total{
+      animation: costviz-total-in .5s cubic-bezier(.2,.7,.2,1) var(--d) forwards;
+    }
+    .math-details[open] .costviz-vs{
+      animation: costviz-vs-in .35s cubic-bezier(.2,.7,.2,1) var(--d) forwards;
+    }
+
+    @keyframes costviz-bar-in{
+      to{opacity:1; transform:translateX(0);}
+    }
+    @keyframes costviz-fill-in{
+      to{width:var(--w);}
+    }
+    @keyframes costviz-total-in{
+      to{opacity:1; transform:translateY(0);}
+    }
+    @keyframes costviz-vs-in{
+      to{opacity:1; transform:scale(1);}
+    }
+
+    /* respect reduced-motion users */
+    @media (prefers-reduced-motion: reduce){
+      .math-details[open] .costviz-bar,
+      .math-details[open] .costviz-bar .costviz-bar-fill,
+      .math-details[open] .costviz-total,
+      .math-details[open] .costviz-vs{
+        animation:none;
+      }
+      .math-details[open] .costviz-bar{opacity:1; transform:none;}
+      .math-details[open] .costviz-bar .costviz-bar-fill{width:var(--w);}
+      .math-details[open] .costviz-total{opacity:1; transform:none;}
+      .math-details[open] .costviz-vs{opacity:1; transform:none;}
+    }
+
+    /* mobile */
+    @media (max-width: 760px){
+      .costviz{grid-template-columns:1fr; gap:18px;}
+      .costviz-vs{justify-self:start; margin:4px 0;}
+      .costviz-bar-num, .costviz-bar-label{font-size:12px;}
+      .costviz-total-num{font-size:22px;}
+      .costviz-total-pq .costviz-total-num{font-size:26px;}
+    }
 
     /* Old save-card styles (kept for compat with any orphans, but unused now) */
     .save-card{
@@ -1457,20 +1625,82 @@
           </a>
         </div>
 
-        <!-- Collapsible: tools comparison (secondary, hidden by default) -->
-        <details class="math-details">
-          <summary>Also &mdash; if you tried to build this from off-the-shelf tools, it would cost <strong data-size-val="diy-y1">$76,000</strong>/yr. Click to see the math.</summary>
+        <!-- Collapsible: animated cost-stack visual -->
+        <details class="math-details" id="math-details">
+          <summary>Or build it yourself from off-the-shelf tools: <strong data-size-val="diy-y1">$76,000</strong>/yr. <span class="math-details-cta">See the breakdown &rarr;</span></summary>
+
           <div class="math-details-body">
-            <div class="math-details-grid">
-              <div><div class="m-row-label">General-purpose LMS</div><div class="m-row-detail">~$73/user/yr at <a href="https://www.vectorsolutions.com/request-a-demo/fire-training-management-system/" target="_blank" rel="noopener">Vector / TargetSolutions</a>, <a href="https://www.talentlms.com/blog/lms-pricing/" target="_blank" rel="noopener">TalentLMS</a>, <a href="https://www.docebo.com/learning-management-system/lms-pricing/" target="_blank" rel="noopener">Docebo</a> enterprise tier</div></div><div class="m-row-num" data-size-val="lms">$22,000/yr</div>
-              <div><div class="m-row-label">EMS-specific CE library</div><div class="m-row-detail"><a href="https://www.distancecme.com/" target="_blank" rel="noopener">Distance CME</a>, <a href="https://www.ems1academy.com/lp/individual-subscription/" target="_blank" rel="noopener">EMS1 Academy</a>, <a href="https://www.limmereducation.com/" target="_blank" rel="noopener">Limmer</a> at ~$80/medic/yr &mdash; still NREMT prep, not your protocols</div></div><div class="m-row-num" data-size-val="ce">$24,000/yr</div>
-              <div><div class="m-row-label">Custom content from your PDF</div><div class="m-row-detail">Instructional design contractor, $50&ndash;$100/hr, 80&ndash;120 hrs to author scoped questions, scenarios, drill chains</div></div><div class="m-row-num">$7,500</div>
-              <div><div class="m-row-label">Protocol revision updates</div><div class="m-row-detail">Quarterly content updates when your medical director changes things. Contractor on retainer.</div></div><div class="m-row-num">$3,000/yr</div>
-              <div><div class="m-row-label">Compliance / assignments add-on</div><div class="m-row-detail">Due-date tracking, reminders, audit reports. Vector / Cornerstone / Absorb compliance module.</div></div><div class="m-row-num" data-size-val="compliance">$18,000/yr</div>
-              <div><div class="m-row-label">Branded subdomain &amp; setup</div><div class="m-row-detail">One-time. yourorg.protoquiz.com with your logo and colors.</div></div><div class="m-row-num">$1,500</div>
-              <div class="m-row-total"><div class="m-row-label">Year-1 total to assemble it</div></div><div class="m-row-num m-row-num-total" data-size-val="diy-y1">$76,000</div>
+            <div class="costviz">
+
+              <!-- Build-it-yourself stack -->
+              <div class="costviz-side costviz-diy">
+                <div class="costviz-side-label">Building it yourself</div>
+                <div class="costviz-bars">
+                  <div class="costviz-bar" style="--w:38%; --d:0ms;">
+                    <a class="costviz-bar-fill" href="https://www.vectorsolutions.com/request-a-demo/fire-training-management-system/" target="_blank" rel="noopener" title="Vector / TargetSolutions, TalentLMS, Docebo">
+                      <span class="costviz-bar-label">General LMS</span>
+                      <span class="costviz-bar-num" data-size-val="lms">$22,000/yr</span>
+                    </a>
+                  </div>
+                  <div class="costviz-bar" style="--w:42%; --d:120ms;">
+                    <a class="costviz-bar-fill" href="https://www.distancecme.com/" target="_blank" rel="noopener" title="Distance CME, EMS1 Academy, Limmer">
+                      <span class="costviz-bar-label">EMS CE library</span>
+                      <span class="costviz-bar-num" data-size-val="ce">$24,000/yr</span>
+                    </a>
+                  </div>
+                  <div class="costviz-bar" style="--w:13%; --d:240ms;">
+                    <a class="costviz-bar-fill" href="https://elearningindustry.com" target="_blank" rel="noopener" title="Instructional design contractor rates">
+                      <span class="costviz-bar-label">Custom content</span>
+                      <span class="costviz-bar-num">$7,500</span>
+                    </a>
+                  </div>
+                  <div class="costviz-bar" style="--w:6%; --d:360ms;">
+                    <span class="costviz-bar-fill costviz-bar-fill-static">
+                      <span class="costviz-bar-label">Revision updates</span>
+                      <span class="costviz-bar-num">$3,000/yr</span>
+                    </span>
+                  </div>
+                  <div class="costviz-bar" style="--w:32%; --d:480ms;">
+                    <a class="costviz-bar-fill" href="https://www.cornerstoneondemand.com/learning-management/" target="_blank" rel="noopener" title="Vector / Cornerstone / Absorb compliance modules">
+                      <span class="costviz-bar-label">Compliance add-on</span>
+                      <span class="costviz-bar-num" data-size-val="compliance">$18,000/yr</span>
+                    </a>
+                  </div>
+                  <div class="costviz-bar" style="--w:3%; --d:600ms;">
+                    <span class="costviz-bar-fill costviz-bar-fill-static">
+                      <span class="costviz-bar-label">Subdomain &amp; setup</span>
+                      <span class="costviz-bar-num">$1,500</span>
+                    </span>
+                  </div>
+                </div>
+                <div class="costviz-total" style="--d:780ms;">
+                  <span class="costviz-total-label">Year 1 total</span>
+                  <span class="costviz-total-num" data-size-val="diy-y1">$76,000</span>
+                </div>
+              </div>
+
+              <!-- Divider -->
+              <div class="costviz-vs" style="--d:900ms;">vs.</div>
+
+              <!-- ProtoQuiz comparison -->
+              <div class="costviz-side costviz-pq">
+                <div class="costviz-side-label">With ProtoQuiz</div>
+                <div class="costviz-bars">
+                  <div class="costviz-bar costviz-bar-pq" style="--w:55%; --d:1050ms;">
+                    <span class="costviz-bar-fill">
+                      <span class="costviz-bar-label">All of the above</span>
+                      <span class="costviz-bar-num" data-size-val="pq">$30,000/yr</span>
+                    </span>
+                  </div>
+                </div>
+                <div class="costviz-total costviz-total-pq" style="--d:1200ms;">
+                  <span class="costviz-total-label">You save</span>
+                  <span class="costviz-total-num"><span data-size-val="diy-savings">~$46,000</span>/yr</span>
+                </div>
+              </div>
+
             </div>
-            <p class="math-details-foot">And none of those platforms have YOUR protocols. ProtoQuiz is <strong data-size-val="pq">$30,000</strong>/yr, all in.</p>
+            <p class="math-details-foot">And none of those off-the-shelf platforms have <strong>your protocols</strong>. ProtoQuiz is built around the protocol PDF you send us &mdash; on day one.</p>
           </div>
         </details>
       </div>
@@ -1704,6 +1934,7 @@
           'save-total': '$23,500',
           'save-net': '~$13,500',
           'save-multiple': '2.4x',
+          'diy-savings': '~$26,000',  // DIY $36k - ProtoQuiz $10k
           'hires-est': '~10',
           // LMS comparison (the secondary pitch)
           lms: '$8,000/yr',
@@ -1728,6 +1959,7 @@
           'save-total': '$54,000',
           'save-net': '~$24,000',
           'save-multiple': '1.8x',
+          'diy-savings': '~$46,000',  // DIY $76k - ProtoQuiz $30k
           'hires-est': '~30',
           lms: '$22,000/yr',
           ce: '$24,000/yr',
@@ -1751,6 +1983,7 @@
           'save-total': '$87,000',
           'save-net': '~$37,000',
           'save-multiple': '1.7x',
+          'diy-savings': '~$68,000',  // DIY $118k - ProtoQuiz $50k
           'hires-est': '~50',
           lms: '$36,000/yr',
           ce: '$40,000/yr',
