@@ -701,6 +701,144 @@
     .swapping [data-size-val], .swapping [data-size-text]{
       opacity:.35;
     }
+
+    /* Savings cards (the REAL pitch) */
+    .save-card{
+      display:block;
+      text-decoration:none;
+      color:inherit;
+      background:rgba(99,102,241,.05);
+      border:1px solid rgba(99,102,241,.25);
+      border-radius:14px;
+      padding:22px;
+      transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+    }
+    .save-card:hover{
+      transform:translateY(-3px);
+      border-color:rgba(99,102,241,.6);
+      box-shadow:0 12px 32px rgba(99,102,241,.18);
+    }
+    .save-card.save-total{
+      background:linear-gradient(135deg, rgba(16,185,129,.12), rgba(99,102,241,.08));
+      border:2px solid rgba(16,185,129,.4);
+      cursor:default;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+    .save-card.save-total:hover{
+      transform:none;
+      box-shadow:none;
+      border-color:rgba(16,185,129,.4);
+    }
+    .save-eyebrow{
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:1px;
+      color:var(--accent);
+      text-transform:uppercase;
+      margin-bottom:8px;
+    }
+    .save-num{
+      font-size:34px;
+      font-weight:800;
+      color:var(--ink);
+      line-height:1;
+      margin-bottom:8px;
+    }
+    .save-num .save-unit{
+      font-size:14px;
+      color:var(--muted);
+      font-weight:600;
+    }
+    .save-card.save-total .save-num{font-size:38px;}
+    .save-body{
+      font-size:13px;
+      color:var(--muted);
+      line-height:1.5;
+    }
+    .save-body strong{color:var(--ink);}
+    .save-source{
+      font-size:11px;
+      color:var(--accent);
+      margin-top:10px;
+      font-weight:600;
+    }
+
+    /* Kinetic typography hero panel */
+    .kinetic{
+      position:relative; min-height:420px;
+      display:flex; align-items:center; justify-content:center;
+      padding:32px 28px;
+      background:
+        radial-gradient(ellipse 600px 300px at 30% 20%, rgba(99,102,241,.18), transparent),
+        radial-gradient(ellipse 500px 300px at 80% 80%, rgba(6,182,212,.12), transparent),
+        rgba(10,10,14,.9);
+    }
+    .kinetic-stage{
+      position:relative; width:100%; max-width:520px;
+      font-size:clamp(20px, 2.4vw, 28px);
+      font-weight:800; line-height:1.25; color:var(--ink);
+      letter-spacing:-.01em;
+      text-align:left;
+    }
+    .kinetic-line{
+      position:absolute; inset:0;
+      opacity:0; transform:translateY(8px);
+      animation:kineticCycle 12s infinite;
+    }
+    .kinetic-line:nth-child(1){animation-delay:0s;}
+    .kinetic-line:nth-child(2){animation-delay:3s;}
+    .kinetic-line:nth-child(3){animation-delay:6s;}
+    .kinetic-line:nth-child(4){animation-delay:9s;}
+    .kinetic-line .accent{
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+    .kinetic-line .strike{
+      color:var(--muted); text-decoration:line-through; text-decoration-color:rgba(255,99,99,.6);
+    }
+    .kinetic-line .built{
+      display:inline-block; padding:6px 14px; margin-top:8px;
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      color:#fff; border-radius:8px; font-size:.95em;
+      box-shadow:0 8px 24px rgba(99,102,241,.4);
+    }
+    @keyframes kineticCycle{
+      0%   {opacity:0; transform:translateY(8px);}
+      4%   {opacity:1; transform:translateY(0);}
+      14%  {opacity:1; transform:translateY(0);}
+      18%  {opacity:0; transform:translateY(-8px);}
+      100% {opacity:0; transform:translateY(-8px);}
+    }
+    .kinetic-cursor{
+      display:inline-block; width:3px; height:1em;
+      background:var(--accent2); margin-left:4px; vertical-align:middle;
+      animation:kineticBlink 1s steps(2) infinite;
+    }
+    @keyframes kineticBlink{
+      0%, 50% {opacity:1;}
+      51%, 100% {opacity:0;}
+    }
+    .kinetic-tag{
+      position:absolute; top:14px; left:18px;
+      font-size:10px; font-weight:700; letter-spacing:.14em;
+      text-transform:uppercase; color:var(--accent2);
+      display:flex; align-items:center; gap:8px;
+    }
+    .kinetic-tag::before{
+      content:""; width:8px; height:8px; border-radius:50%;
+      background:#ef4444; box-shadow:0 0 0 4px rgba(239,68,68,.18);
+      animation:kineticPulse 1.6s ease-in-out infinite;
+    }
+    @keyframes kineticPulse{
+      0%,100%{transform:scale(1); opacity:1;}
+      50%{transform:scale(1.3); opacity:.6;}
+    }
+    @media (prefers-reduced-motion: reduce){
+      .kinetic-line, .kinetic-cursor, .kinetic-tag::before{animation:none;}
+      .kinetic-line:first-child{opacity:1; transform:none;}
+    }
   </style>
 </head>
 <body>
@@ -729,12 +867,8 @@
           <div>
             <div class="hero-eyebrow"><span class="pulse"></span>Free 6-month pilot &middot; only 2 more agencies before Aug 1, 2026</div>
             <h1>A training platform<br>for your organization,<br><span class="gradient">based on your actual protocols.</span></h1>
-            <div style="background:rgba(99,102,241,.08); border-left:3px solid var(--accent); padding:14px 18px; border-radius:8px; margin:20px 0 18px; max-width:560px;">
-              <div style="font-size:13px; font-weight:700; color:var(--ink); margin-bottom:4px;">How much do you care about EMS quality?</div>
-              <div style="font-size:13px; color:var(--muted); line-height:1.5;">If the answer is "a lot" &mdash; this is for you.</div>
-            </div>
-            <p class="hero-sub">
-              Train your providers on your protocols, in your scope &mdash; BLS trains BLS, ALS trains ALS, no wasted reps on stuff they'll never do. Stronger protocol fluency. Faster onboarding. Lower legal liability. Visibility into where your team is weakest, so you spend training time where it actually matters.
+            <p class="hero-sub" style="margin-top:18px;">
+              Train your crews on <strong style="color:var(--ink);">your protocols</strong>, based on <strong style="color:var(--ink);">their scope</strong>.
             </p>
             <div class="hero-actions">
               <a href="https://demo.protoquiz.com" target="_blank" rel="noopener" class="btn btn-primary btn-demo" data-track="AgencyLiveDemo">See the Live Demo &rarr;</a>
@@ -745,43 +879,13 @@
             </div>
           </div>
           <div class="hero-preview">
-            <div class="hero-preview-chrome">
-              <span class="pdot"></span><span class="pdot"></span><span class="pdot"></span>
-              <span class="purl">yourorg.protoquiz.com</span>
-            </div>
-            <div class="hero-preview-body">
-              <div class="hero-preview-nav">
-                <span class="on">Dashboard</span>
-                <span>Quizzes</span>
-                <span>Scenarios</span>
-                <span>Team</span>
-              </div>
-              <div class="hp-kpis">
-                <div class="hp-kpi"><div class="hp-kpi-val">31</div><div class="hp-kpi-lbl">Providers</div></div>
-                <div class="hp-kpi"><div class="hp-kpi-val" style="color:var(--success);">84%</div><div class="hp-kpi-lbl">Avg Score</div></div>
-                <div class="hp-kpi"><div class="hp-kpi-val" style="color:var(--accent2);">412</div><div class="hp-kpi-lbl">Quizzes</div></div>
-              </div>
-              <div class="hp-rows">
-                <div class="hp-row">
-                  <span class="hp-row-name">Paramedic 1</span>
-                  <div class="hp-row-bar"><div class="hp-row-bar-fill" style="width:94%;background:var(--success);"></div></div>
-                  <span style="color:var(--success);font-weight:700;">94%</span>
-                </div>
-                <div class="hp-row">
-                  <span class="hp-row-name">Paramedic 2</span>
-                  <div class="hp-row-bar"><div class="hp-row-bar-fill" style="width:89%;background:var(--success);"></div></div>
-                  <span style="color:var(--success);font-weight:700;">89%</span>
-                </div>
-                <div class="hp-row">
-                  <span class="hp-row-name">AEMT 1</span>
-                  <div class="hp-row-bar"><div class="hp-row-bar-fill" style="width:82%;background:var(--accent);"></div></div>
-                  <span style="color:var(--accent);font-weight:700;">82%</span>
-                </div>
-                <div class="hp-row">
-                  <span class="hp-row-name">EMT 1</span>
-                  <div class="hp-row-bar"><div class="hp-row-bar-fill" style="width:71%;background:var(--warning);"></div></div>
-                  <span style="color:var(--warning);font-weight:700;">71%</span>
-                </div>
+            <div class="kinetic">
+              <div class="kinetic-tag">The Problem</div>
+              <div class="kinetic-stage">
+                <div class="kinetic-line">Your providers run <span class="accent">your protocols</span>.<br>Every shift. Every call.<span class="kinetic-cursor"></span></div>
+                <div class="kinetic-line">It's the <span class="accent">single highest-frequency</span> thing they do on the job.</div>
+                <div class="kinetic-line">So why is there <span class="accent">no tool</span> built to train on it?</div>
+                <div class="kinetic-line">There is now. <span class="built">ProtoQuiz &rarr;</span></div>
               </div>
             </div>
           </div>
@@ -1147,9 +1251,9 @@
     <section class="section fade-up" id="value-section">
       <div class="wrap">
         <div class="section-center">
-          <div class="section-label">What you get</div>
-          <div class="section-title">If you bought every piece separately</div>
-          <div class="section-desc">Real prices from real LMS vendors. Pick your agency size below to see the math for your department.</div>
+          <div class="section-label">The math</div>
+          <div class="section-title">How ProtoQuiz pays for itself</div>
+          <div class="section-desc">Real numbers for the real EMS pain points it actually addresses. Pick your agency size below.</div>
         </div>
 
         <!-- Size toggle -->
@@ -1173,16 +1277,80 @@
           Showing numbers for a <strong style="color:var(--ink);" data-size-text="label">medium</strong> agency &middot; <strong style="color:var(--ink);" data-size-text="providers">300</strong> providers
         </p>
 
+        <!-- ProtoQuiz savings — the REAL pitch -->
+        <div style="margin-bottom:48px;">
+          <div style="text-align:center; margin-bottom:18px;">
+            <div style="font-size:18px; font-weight:700; color:var(--ink); margin-bottom:4px;">What ProtoQuiz saves you per year</div>
+            <div style="font-size:13px; color:var(--muted);">The real EMS pain points it actually fixes. Click any number for the source.</div>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:16px;">
+
+            <a href="https://ambulance.org/wp-content/uploads/2021/07/2021-AAA-EMS-Turnover-Study.pdf" target="_blank" rel="noopener" class="save-card">
+              <div class="save-eyebrow">Cuts turnover replacement cost</div>
+              <div class="save-num"><span data-size-val="save-turnover">~$36,000</span><span class="save-unit">/yr</span></div>
+              <div class="save-body">A <span data-size-text="providers">300</span>-medic agency burns <strong data-size-val="turnover-count">60-108</strong> medics/yr in turnover. Each replacement runs $9,113 (peer-reviewed). Prevent <strong>just 4 turnovers/yr</strong> through better protocol fluency &amp; FTO sign-off &mdash; ProtoQuiz pays for itself.</div>
+              <div class="save-source">Source: AAA 2021 Turnover Study &rarr;</div>
+            </a>
+
+            <a href="https://pubmed.ncbi.nlm.nih.gov/20199235/" target="_blank" rel="noopener" class="save-card">
+              <div class="save-eyebrow">Faster FTO sign-off</div>
+              <div class="save-num"><span data-size-val="save-fto">~$18,000</span><span class="save-unit">/yr</span></div>
+              <div class="save-body">FTO time runs 80-160 hrs per new hire at $40-60/hr fully loaded. New medics arrive already drilled on YOUR protocols (not the textbook ones). <strong>Cut FTO time 20%</strong> across <span data-size-val="hires-est">~30</span> hires/yr.</div>
+              <div class="save-source">Source: Patterson et al., Prehospital Emergency Care &rarr;</div>
+            </a>
+
+            <a href="https://www.dshs.texas.gov/dshs-ems-trauma-systems/enforcement-actions" target="_blank" rel="noopener" class="save-card">
+              <div class="save-eyebrow">Catches gaps before QI does</div>
+              <div class="save-num"><span data-size-val="save-remediation">~$8,000</span><span class="save-unit">/yr</span></div>
+              <div class="save-body">Each formal remediation case (medic off shift, retraining, paperwork, retest) runs ~$1,000+. ProtoQuiz surfaces weak topics in 5-min quizzes &mdash; you fix it before it's a chart, not after. <strong>Avoid 8+ formal cases/yr</strong>.</div>
+              <div class="save-source">Source: Texas DSHS complaint categories &rarr;</div>
+            </a>
+
+            <a href="https://www.professionallicensedefensellc.com/emt-and-paramedic-license-defense" target="_blank" rel="noopener" class="save-card">
+              <div class="save-eyebrow">Audit-ready training records</div>
+              <div class="save-num">$5k&ndash;$25k<span class="save-unit"> / case</span></div>
+              <div class="save-body">License defense averages $5k-$25k per case &mdash; "failure to document training" is one of the most common complaint categories. <strong>Documented training is what your defense counsel asks for first.</strong> NREMT recert audits demand 5 years of records.</div>
+              <div class="save-source">Source: License-defense firms &rarr;</div>
+            </a>
+
+            <a href="https://ems.utah.gov/wp-content/uploads/sites/34/2024/10/Training-Officer-Manual-2024-Final.pdf" target="_blank" rel="noopener" class="save-card">
+              <div class="save-eyebrow">Frees your training officer</div>
+              <div class="save-num">200&ndash;400<span class="save-unit"> hrs/yr</span></div>
+              <div class="save-body">TO time spent building, delivering, and documenting CME annually. ProtoQuiz handles delivery + documentation automatically. Your TO focuses on judgment calls, not paperwork.</div>
+              <div class="save-source">Source: Utah BEMS Training Officer Manual &rarr;</div>
+            </a>
+
+            <div class="save-card save-total">
+              <div class="save-eyebrow" style="color:var(--success);">Bottom line</div>
+              <div class="save-num"><span data-size-val="save-total">~$62,000</span><span class="save-unit">+/yr saved</span></div>
+              <div class="save-body" style="margin-top:8px;">For your <span data-size-text="providers">300</span>-medic agency. Covers the <span data-size-val="pq">$30,000</span>/yr ProtoQuiz cost <strong>2x over</strong> in year one alone.</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- divider intro to LMS comparison -->
+        <div style="text-align:center; margin:48px 0 18px;">
+          <div style="display:inline-flex; align-items:center; gap:10px; background:rgba(255,255,255,.03); border:1px solid var(--line); border-radius:999px; padding:7px 16px;">
+            <span style="width:6px; height:6px; background:var(--accent); border-radius:50%;"></span>
+            <span style="font-size:12px; color:var(--muted); font-weight:600;">And it's still cheaper than the off-the-shelf alternatives</span>
+          </div>
+        </div>
+        <div style="text-align:center; margin-bottom:24px;">
+          <div style="font-size:22px; font-weight:700; color:var(--ink); margin-bottom:4px;">If you bought every comparable piece separately</div>
+          <div style="font-size:13px; color:var(--muted);">Real prices from real LMS vendors. Click any vendor name to see their pricing.</div>
+        </div>
+
         <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:16px;">
           <div style="background:rgba(255,255,255,.03); border:1px solid var(--line); border-radius:14px; padding:22px;">
             <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:var(--muted); text-transform:uppercase; margin-bottom:6px;">General-purpose LMS</div>
             <div style="font-size:34px; font-weight:800; color:var(--ink); margin-bottom:4px; line-height:1;" data-size-val="lms">$22,000<span style="font-size:14px; color:var(--muted); font-weight:600;">/yr</span></div>
-            <div style="font-size:13px; color:var(--muted); line-height:1.4;">Per-user LMS pricing for <span data-size-text="providers">300</span> users at ~$73/user/yr. Vector Solutions / TargetSolutions, TalentLMS, Docebo enterprise tier.</div>
+            <div style="font-size:13px; color:var(--muted); line-height:1.4;">Per-user LMS pricing for <span data-size-text="providers">300</span> users at ~$73/user/yr. <a href="https://www.vectorsolutions.com/request-a-demo/fire-training-management-system/" target="_blank" rel="noopener" style="color:var(--accent);">Vector / TargetSolutions</a>, <a href="https://www.talentlms.com/blog/lms-pricing/" target="_blank" rel="noopener" style="color:var(--accent);">TalentLMS</a>, <a href="https://www.docebo.com/learning-management-system/lms-pricing/" target="_blank" rel="noopener" style="color:var(--accent);">Docebo</a> enterprise tier.</div>
           </div>
           <div style="background:rgba(255,255,255,.03); border:1px solid var(--line); border-radius:14px; padding:22px;">
             <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:var(--muted); text-transform:uppercase; margin-bottom:6px;">EMS CE content library</div>
             <div style="font-size:34px; font-weight:800; color:var(--ink); margin-bottom:4px; line-height:1;" data-size-val="ce">$24,000<span style="font-size:14px; color:var(--muted); font-weight:600;">/yr</span></div>
-            <div style="font-size:13px; color:var(--muted); line-height:1.4;">Distance CME, EMS1 Academy, Limmer at ~$80/medic/yr &times; <span data-size-text="providers">300</span>. <strong style="color:var(--ink);">Still generic NREMT prep, not YOUR protocols.</strong></div>
+            <div style="font-size:13px; color:var(--muted); line-height:1.4;"><a href="https://www.distancecme.com/" target="_blank" rel="noopener" style="color:var(--accent);">Distance CME</a>, <a href="https://www.ems1academy.com/lp/individual-subscription/" target="_blank" rel="noopener" style="color:var(--accent);">EMS1 Academy</a>, <a href="https://www.limmereducation.com/" target="_blank" rel="noopener" style="color:var(--accent);">Limmer</a> at ~$80/medic/yr &times; <span data-size-text="providers">300</span>. <strong style="color:var(--ink);">Still generic NREMT prep, not YOUR protocols.</strong></div>
           </div>
           <div style="background:rgba(255,255,255,.03); border:1px solid var(--line); border-radius:14px; padding:22px;">
             <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:var(--muted); text-transform:uppercase; margin-bottom:6px;">Custom content from your PDF</div>
@@ -1197,7 +1365,7 @@
           <div style="background:rgba(255,255,255,.03); border:1px solid var(--line); border-radius:14px; padding:22px;">
             <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:var(--muted); text-transform:uppercase; margin-bottom:6px;">Compliance &amp; assignments add-on</div>
             <div style="font-size:34px; font-weight:800; color:var(--ink); margin-bottom:4px; line-height:1;" data-size-val="compliance">$18,000<span style="font-size:14px; color:var(--muted); font-weight:600;">/yr</span></div>
-            <div style="font-size:13px; color:var(--muted); line-height:1.4;">Due-date tracking, automatic reminders, audit-ready reports. Vector Solutions / Cornerstone / Absorb compliance module, scaled by org size.</div>
+            <div style="font-size:13px; color:var(--muted); line-height:1.4;">Due-date tracking, automatic reminders, audit-ready reports. <a href="https://www.vectorsolutions.com/solutions/vector-lms/fire/" target="_blank" rel="noopener" style="color:var(--accent);">Vector Solutions</a>, <a href="https://www.cornerstoneondemand.com/learning-management/" target="_blank" rel="noopener" style="color:var(--accent);">Cornerstone</a>, <a href="https://www.absorblms.com/" target="_blank" rel="noopener" style="color:var(--accent);">Absorb</a> compliance module, scaled by org size.</div>
           </div>
           <div style="background:rgba(255,255,255,.03); border:1px solid var(--line); border-radius:14px; padding:22px;">
             <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:var(--muted); text-transform:uppercase; margin-bottom:6px;">Branded subdomain &amp; white-label</div>
@@ -1521,6 +1689,13 @@
         small: {
           label: 'small',
           providers: 100,
+          // What ProtoQuiz saves (the REAL pitch)
+          'save-turnover': '~$18,000',  // ~2 prevented replacements * $9,113
+          'save-fto': '~$12,500',       // 10 hires * 25 hrs cut * $50/hr
+          'save-remediation': '~$3,000', // 3 fewer formal remediation cases
+          'save-total': '~$33,000',     // sum
+          'hires-est': '~10',
+          // LMS comparison (the secondary pitch)
           lms: '$8,000/yr',
           ce: '$8,000/yr',
           compliance: '$8,000/yr',
@@ -1536,6 +1711,11 @@
         medium: {
           label: 'medium',
           providers: 300,
+          'save-turnover': '~$36,000',
+          'save-fto': '~$18,000',
+          'save-remediation': '~$8,000',
+          'save-total': '~$62,000',
+          'hires-est': '~30',
           lms: '$22,000/yr',
           ce: '$24,000/yr',
           compliance: '$18,000/yr',
@@ -1551,6 +1731,11 @@
         large: {
           label: 'large',
           providers: 500,
+          'save-turnover': '~$60,000',
+          'save-fto': '~$31,000',
+          'save-remediation': '~$15,000',
+          'save-total': '~$106,000',
+          'hires-est': '~50',
           lms: '$36,000/yr',
           ce: '$40,000/yr',
           compliance: '$30,000/yr',
