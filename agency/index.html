@@ -1414,11 +1414,11 @@
         <!-- Hero savings number -->
         <div class="math-hero">
           <div class="math-hero-eyebrow">A <span data-size-text="label">medium</span> agency saves about</div>
-          <div class="math-hero-num"><span data-size-val="save-total">$60,000</span><span class="math-hero-unit">/yr</span></div>
+          <div class="math-hero-num"><span data-size-val="save-total">$54,000</span><span class="math-hero-unit">/yr</span></div>
           <div class="math-hero-sub">
             ProtoQuiz costs <strong data-size-val="pq">$30,000</strong>/yr.
-            Net positive: <strong data-size-val="save-net">~$30,000</strong>/yr,
-            <strong data-size-val="save-multiple">2x</strong> payback &mdash; before counting better training.
+            Net positive: <strong data-size-val="save-net">~$24,000</strong>/yr,
+            <strong data-size-val="save-multiple">1.8x</strong> payback &mdash; before counting better training.
           </div>
         </div>
 
@@ -1427,7 +1427,7 @@
           <a href="https://pubmed.ncbi.nlm.nih.gov/20199235/" target="_blank" rel="noopener" class="math-row">
             <div class="math-row-label">
               <div class="math-row-title">Faster onboarding</div>
-              <div class="math-row-detail">New hires arrive already drilled on your protocols. A 20% cut in onboarding time across <span data-size-val="hires-est">~30</span> hires/yr, at ~$50/hr loaded labor.</div>
+              <div class="math-row-detail">New hires arrive already drilled on your protocols. A 20% cut in onboarding time across <span data-size-val="hires-est">~30</span> hires/yr, at ~$30/hr loaded labor.</div>
             </div>
             <div class="math-row-num"><span data-size-val="save-fto">~$18,000</span></div>
           </a>
@@ -1453,7 +1453,7 @@
               <div class="math-row-title">Training officer hours back</div>
               <div class="math-row-detail">200&ndash;400 hrs/yr building Quizlet decks, writing Word-doc tests, chasing CE records. ProtoQuiz handles delivery + documentation.</div>
             </div>
-            <div class="math-row-num"><span data-size-val="save-to">~$15,000</span></div>
+            <div class="math-row-num"><span data-size-val="save-to">~$9,000</span></div>
           </a>
         </div>
 
@@ -1696,13 +1696,14 @@
         small: {
           label: 'small',
           providers: 100,
-          'save-fto': '~$12,500',
-          'save-remediation': '~$5,000',
-          'save-legal': '~$8,000',
-          'save-to': '~$8,000',
-          'save-total': '$33,000',
-          'save-net': '~$23,000',
-          'save-multiple': '3.3x',
+          // Recomputed at $30/hr loaded labor (realistic medic wage)
+          'save-fto': '~$6,000',         // 10 hires * 20 hrs cut * $30
+          'save-remediation': '~$5,000', // 3 cases at $1,500
+          'save-legal': '~$8,000',       // 1 license-defense case avoided
+          'save-to': '~$4,500',          // ~150 TO hrs * $30
+          'save-total': '$23,500',
+          'save-net': '~$13,500',
+          'save-multiple': '2.4x',
           'hires-est': '~10',
           // LMS comparison (the secondary pitch)
           lms: '$8,000/yr',
@@ -1720,13 +1721,13 @@
         medium: {
           label: 'medium',
           providers: 300,
-          'save-fto': '~$18,000',
-          'save-remediation': '~$12,000',
-          'save-legal': '~$15,000',
-          'save-to': '~$15,000',
-          'save-total': '$60,000',
-          'save-net': '~$30,000',
-          'save-multiple': '2x',
+          'save-fto': '~$18,000',         // 30 hires * 20 hrs * $30
+          'save-remediation': '~$12,000', // 6-8 cases at $1,500-2,000
+          'save-legal': '~$15,000',       // 1-2 license-defense cases avoided
+          'save-to': '~$9,000',           // ~300 TO hrs * $30
+          'save-total': '$54,000',
+          'save-net': '~$24,000',
+          'save-multiple': '1.8x',
           'hires-est': '~30',
           lms: '$22,000/yr',
           ce: '$24,000/yr',
@@ -1743,13 +1744,13 @@
         large: {
           label: 'large',
           providers: 500,
-          'save-fto': '~$31,000',
-          'save-remediation': '~$20,000',
-          'save-legal': '~$25,000',
-          'save-to': '~$20,000',
-          'save-total': '$96,000',
-          'save-net': '~$46,000',
-          'save-multiple': '~2x',
+          'save-fto': '~$30,000',         // 50 hires * 20 hrs * $30
+          'save-remediation': '~$20,000', // 10-12 cases at $1,500-2,000
+          'save-legal': '~$25,000',       // 2-3 license-defense cases avoided
+          'save-to': '~$12,000',          // ~400 TO hrs * $30
+          'save-total': '$87,000',
+          'save-net': '~$37,000',
+          'save-multiple': '1.7x',
           'hires-est': '~50',
           lms: '$36,000/yr',
           ce: '$40,000/yr',
