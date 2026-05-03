@@ -702,7 +702,143 @@
       opacity:.35;
     }
 
-    /* Savings cards (the REAL pitch) */
+    /* The math section (single sleek section) */
+    .math-hero{
+      max-width:680px;
+      margin:32px auto 28px;
+      text-align:center;
+      padding:36px 28px;
+      background:linear-gradient(135deg, rgba(99,102,241,.10), rgba(6,182,212,.06));
+      border:1px solid rgba(99,102,241,.25);
+      border-radius:18px;
+    }
+    .math-hero-eyebrow{
+      font-size:13px;
+      color:var(--muted);
+      margin-bottom:10px;
+      letter-spacing:.2px;
+    }
+    .math-hero-eyebrow span{color:var(--ink); font-weight:700;}
+    .math-hero-num{
+      font-size:72px;
+      font-weight:900;
+      color:var(--ink);
+      line-height:1;
+      letter-spacing:-2px;
+      margin-bottom:10px;
+    }
+    .math-hero-num .math-hero-unit{
+      font-size:24px;
+      color:var(--muted);
+      font-weight:600;
+      letter-spacing:0;
+      margin-left:4px;
+    }
+    .math-hero-sub{
+      font-size:13px;
+      color:var(--muted);
+      line-height:1.6;
+    }
+    .math-hero-sub strong{color:var(--ink); font-weight:700;}
+
+    .math-rows{
+      max-width:680px;
+      margin:0 auto;
+      border-top:1px solid var(--line);
+    }
+    .math-row{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:24px;
+      align-items:start;
+      padding:18px 4px;
+      border-bottom:1px solid var(--line);
+      text-decoration:none;
+      color:inherit;
+      transition:background .15s ease, padding .15s ease;
+    }
+    .math-row:hover{
+      background:rgba(255,255,255,.015);
+      padding-left:14px;
+      padding-right:14px;
+      border-radius:10px;
+    }
+    .math-row-title{
+      font-size:15px;
+      font-weight:700;
+      color:var(--ink);
+      margin-bottom:4px;
+      letter-spacing:-0.1px;
+    }
+    .math-row-detail{
+      font-size:12.5px;
+      color:var(--muted);
+      line-height:1.5;
+    }
+    .math-row-num{
+      font-size:22px;
+      font-weight:800;
+      color:var(--ink);
+      letter-spacing:-0.4px;
+      white-space:nowrap;
+      align-self:center;
+    }
+
+    .math-details{
+      max-width:680px;
+      margin:36px auto 0;
+      border-top:1px dashed var(--line);
+      padding-top:18px;
+    }
+    .math-details summary{
+      font-size:13px;
+      color:var(--muted);
+      cursor:pointer;
+      list-style:none;
+      padding:6px 0;
+      transition:color .15s ease;
+    }
+    .math-details summary::-webkit-details-marker{display:none;}
+    .math-details summary:hover{color:var(--ink);}
+    .math-details summary strong{color:var(--ink); font-weight:700;}
+    .math-details summary::before{
+      content:'+';
+      display:inline-block;
+      width:18px;
+      color:var(--accent);
+      font-weight:700;
+    }
+    .math-details[open] summary::before{content:'\2212';}
+    .math-details-body{
+      margin-top:14px;
+      padding:18px 0;
+      border-top:1px solid var(--line);
+    }
+    .math-details-grid{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:14px 24px;
+      align-items:start;
+    }
+    .math-details-grid > div{padding:8px 0; border-bottom:1px solid var(--line);}
+    .math-details-grid > div:nth-last-child(-n+3){border-bottom:none;}
+    .m-row-label{font-size:14px; font-weight:600; color:var(--ink);}
+    .m-row-detail{font-size:12px; color:var(--muted); margin-top:2px; line-height:1.5;}
+    .m-row-detail a{color:var(--accent);}
+    .m-row-num{font-size:15px; font-weight:700; color:var(--ink); white-space:nowrap; align-self:center;}
+    .m-row-total{padding-top:14px !important;}
+    .m-row-total .m-row-label{font-weight:700; color:var(--ink);}
+    .m-row-num-total{font-size:18px; padding-top:14px;}
+    .math-details-foot{
+      font-size:12.5px;
+      color:var(--muted);
+      margin:16px 0 0;
+      text-align:center;
+      line-height:1.6;
+    }
+    .math-details-foot strong{color:var(--ink); font-weight:700;}
+
+    /* Old save-card styles (kept for compat with any orphans, but unused now) */
     .save-card{
       display:block;
       text-decoration:none;
@@ -1247,17 +1383,18 @@
       </div>
     </section>
 
-    <!-- Value side-by-side cards (sized) -->
+
+    <!-- The math (single minimal section) -->
     <section class="section fade-up" id="value-section">
       <div class="wrap">
         <div class="section-center">
           <div class="section-label">The math</div>
-          <div class="section-title">How ProtoQuiz pays for itself</div>
-          <div class="section-desc">Real numbers for the real EMS pain points it actually addresses. Pick your agency size below.</div>
+          <div class="section-title">Pays for itself, on conservative numbers.</div>
+          <div class="section-desc">Pick your agency size. The numbers below are what ProtoQuiz already saves you, before you count the value of better-trained crews.</div>
         </div>
 
         <!-- Size toggle -->
-        <div class="size-toggle-wrap" style="display:flex; justify-content:center; margin:28px 0 8px;">
+        <div style="display:flex; justify-content:center; margin:24px 0 4px;">
           <div class="size-toggle" role="tablist" aria-label="Choose agency size">
             <button class="size-btn" data-size="small" type="button" role="tab" aria-selected="false">
               <div class="size-btn-label">Small</div>
@@ -1273,123 +1410,69 @@
             </button>
           </div>
         </div>
-        <p class="size-summary" style="text-align:center; color:var(--muted); font-size:13px; margin:0 0 24px;">
-          Showing numbers for a <strong style="color:var(--ink);" data-size-text="label">medium</strong> agency &middot; <strong style="color:var(--ink);" data-size-text="providers">300</strong> providers
-        </p>
 
-        <!-- What ProtoQuiz actually saves you -->
-        <div style="margin-bottom:48px;">
-          <div style="text-align:center; margin-bottom:18px;">
-            <div style="font-size:18px; font-weight:700; color:var(--ink); margin-bottom:4px;">What ProtoQuiz actually saves your agency</div>
-            <div style="font-size:13px; color:var(--muted);">Four real dollar lines. Each one anchored to a real cost your agency already pays. Click any source to verify.</div>
-          </div>
-          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px;">
-
-            <a href="https://pubmed.ncbi.nlm.nih.gov/20199235/" target="_blank" rel="noopener" class="save-card">
-              <div class="save-eyebrow">Faster FTO sign-off</div>
-              <div class="save-num"><span data-size-val="save-fto">~$18,000</span><span class="save-unit">/yr saved</span></div>
-              <div class="save-body">FTO runs 80&ndash;160 hrs per new hire at ~$50/hr fully loaded. New medics arrive already drilled on YOUR protocols, not the textbook ones. A <strong>20% cut in FTO time</strong> across <span data-size-val="hires-est">~30</span> hires/yr.</div>
-              <div class="save-source">Source: Patterson et al., Prehospital Emergency Care &rarr;</div>
-            </a>
-
-            <a href="https://www.dshs.texas.gov/dshs-ems-trauma-systems/enforcement-actions" target="_blank" rel="noopener" class="save-card">
-              <div class="save-eyebrow">Catches gaps before QI does</div>
-              <div class="save-num"><span data-size-val="save-remediation">~$12,000</span><span class="save-unit">/yr saved</span></div>
-              <div class="save-body">Each formal remediation case (medic off shift, retraining, retest paperwork) runs $1,500&ndash;$2,000 loaded. ProtoQuiz surfaces weak topics in 5-min drills &mdash; you fix it before it's a chart. <strong>Avoid 6&ndash;8 cases/yr</strong>.</div>
-              <div class="save-source">Source: Texas DSHS most-common complaint categories &rarr;</div>
-            </a>
-
-            <a href="https://www.professionallicensedefensellc.com/emt-and-paramedic-license-defense" target="_blank" rel="noopener" class="save-card">
-              <div class="save-eyebrow">Legal &amp; license defense</div>
-              <div class="save-num"><span data-size-val="save-legal">~$15,000</span><span class="save-unit">/yr saved</span></div>
-              <div class="save-body">License defense runs $5k&ndash;$25k per case. "Failure to document training" is one of the most common complaint categories. With dated, signed-off training records, you avoid the case &mdash; or win it fast. <strong>Avoid 1&ndash;2 cases/yr.</strong></div>
-              <div class="save-source">Source: National EMT/Paramedic License Defense firms &rarr;</div>
-            </a>
-
-            <a href="https://ems.utah.gov/wp-content/uploads/sites/34/2024/10/Training-Officer-Manual-2024-Final.pdf" target="_blank" rel="noopener" class="save-card">
-              <div class="save-eyebrow">Training officer hours back</div>
-              <div class="save-num"><span data-size-val="save-to">~$15,000</span><span class="save-unit">/yr saved</span></div>
-              <div class="save-body">TOs spend 200&ndash;400 hrs/yr building Quizlet decks, writing Word-doc tests, chasing CE records. At ~$50/hr loaded, that's real money. ProtoQuiz handles delivery + documentation. <strong>TO does judgment work, not paperwork.</strong></div>
-              <div class="save-source">Source: Utah BEMS Training Officer Manual &rarr;</div>
-            </a>
-
-          </div>
-          <div class="save-card save-total" style="margin-top:16px; max-width:760px; margin-left:auto; margin-right:auto;">
-            <div class="save-eyebrow" style="color:var(--success);">Bottom line</div>
-            <div class="save-num"><span data-size-val="save-total">~$60,000</span><span class="save-unit">+/yr in measurable savings</span></div>
-            <div class="save-body" style="margin-top:8px;">For your <span data-size-text="providers">300</span>-medic agency. ProtoQuiz costs <span data-size-val="pq">$30,000</span>/yr. <strong>Pays for itself 2x over &mdash; on conservative numbers.</strong></div>
+        <!-- Hero savings number -->
+        <div class="math-hero">
+          <div class="math-hero-eyebrow">A <span data-size-text="label">medium</span> agency saves about</div>
+          <div class="math-hero-num"><span data-size-val="save-total">$60,000</span><span class="math-hero-unit">/yr</span></div>
+          <div class="math-hero-sub">
+            ProtoQuiz costs <strong data-size-val="pq">$30,000</strong>/yr.
+            Net positive: <strong data-size-val="save-net">~$30,000</strong>/yr,
+            <strong data-size-val="save-multiple">2x</strong> payback &mdash; before counting better training.
           </div>
         </div>
 
-        <!-- divider intro to LMS comparison -->
-        <div style="text-align:center; margin:48px 0 18px;">
-          <div style="display:inline-flex; align-items:center; gap:10px; background:rgba(255,255,255,.03); border:1px solid var(--line); border-radius:999px; padding:7px 16px;">
-            <span style="width:6px; height:6px; background:var(--accent); border-radius:50%;"></span>
-            <span style="font-size:12px; color:var(--muted); font-weight:600;">And it's still cheaper than the off-the-shelf alternatives</span>
-          </div>
-        </div>
-        <div style="text-align:center; margin-bottom:24px;">
-          <div style="font-size:22px; font-weight:700; color:var(--ink); margin-bottom:4px;">If you bought every comparable piece separately</div>
-          <div style="font-size:13px; color:var(--muted);">Real prices from real LMS vendors. Click any vendor name to see their pricing.</div>
-        </div>
-
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:16px;">
-          <div style="background:rgba(255,255,255,.03); border:1px solid var(--line); border-radius:14px; padding:22px;">
-            <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:var(--muted); text-transform:uppercase; margin-bottom:6px;">General-purpose LMS</div>
-            <div style="font-size:34px; font-weight:800; color:var(--ink); margin-bottom:4px; line-height:1;" data-size-val="lms">$22,000<span style="font-size:14px; color:var(--muted); font-weight:600;">/yr</span></div>
-            <div style="font-size:13px; color:var(--muted); line-height:1.4;">Per-user LMS pricing for <span data-size-text="providers">300</span> users at ~$73/user/yr. <a href="https://www.vectorsolutions.com/request-a-demo/fire-training-management-system/" target="_blank" rel="noopener" style="color:var(--accent);">Vector / TargetSolutions</a>, <a href="https://www.talentlms.com/blog/lms-pricing/" target="_blank" rel="noopener" style="color:var(--accent);">TalentLMS</a>, <a href="https://www.docebo.com/learning-management-system/lms-pricing/" target="_blank" rel="noopener" style="color:var(--accent);">Docebo</a> enterprise tier.</div>
-          </div>
-          <div style="background:rgba(255,255,255,.03); border:1px solid var(--line); border-radius:14px; padding:22px;">
-            <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:var(--muted); text-transform:uppercase; margin-bottom:6px;">EMS CE content library</div>
-            <div style="font-size:34px; font-weight:800; color:var(--ink); margin-bottom:4px; line-height:1;" data-size-val="ce">$24,000<span style="font-size:14px; color:var(--muted); font-weight:600;">/yr</span></div>
-            <div style="font-size:13px; color:var(--muted); line-height:1.4;"><a href="https://www.distancecme.com/" target="_blank" rel="noopener" style="color:var(--accent);">Distance CME</a>, <a href="https://www.ems1academy.com/lp/individual-subscription/" target="_blank" rel="noopener" style="color:var(--accent);">EMS1 Academy</a>, <a href="https://www.limmereducation.com/" target="_blank" rel="noopener" style="color:var(--accent);">Limmer</a> at ~$80/medic/yr &times; <span data-size-text="providers">300</span>. <strong style="color:var(--ink);">Still generic NREMT prep, not YOUR protocols.</strong></div>
-          </div>
-          <div style="background:rgba(255,255,255,.03); border:1px solid var(--line); border-radius:14px; padding:22px;">
-            <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:var(--muted); text-transform:uppercase; margin-bottom:6px;">Custom content from your PDF</div>
-            <div style="font-size:34px; font-weight:800; color:var(--ink); margin-bottom:4px; line-height:1;">$7,500</div>
-            <div style="font-size:13px; color:var(--muted); line-height:1.4;">One-time. Instructional design contractor at $50&ndash;$100/hr authoring scoped questions, scenarios, drill chains. ~80&ndash;120 hours. Same scope regardless of agency size.</div>
-          </div>
-          <div style="background:rgba(255,255,255,.03); border:1px solid var(--line); border-radius:14px; padding:22px;">
-            <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:var(--muted); text-transform:uppercase; margin-bottom:6px;">Protocol revision updates</div>
-            <div style="font-size:34px; font-weight:800; color:var(--ink); margin-bottom:4px; line-height:1;">$3,000<span style="font-size:14px; color:var(--muted); font-weight:600;">/yr</span></div>
-            <div style="font-size:13px; color:var(--muted); line-height:1.4;">When your med director updates protocols, the training has to change too. ID contractor on retainer for quarterly updates.</div>
-          </div>
-          <div style="background:rgba(255,255,255,.03); border:1px solid var(--line); border-radius:14px; padding:22px;">
-            <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:var(--muted); text-transform:uppercase; margin-bottom:6px;">Compliance &amp; assignments add-on</div>
-            <div style="font-size:34px; font-weight:800; color:var(--ink); margin-bottom:4px; line-height:1;" data-size-val="compliance">$18,000<span style="font-size:14px; color:var(--muted); font-weight:600;">/yr</span></div>
-            <div style="font-size:13px; color:var(--muted); line-height:1.4;">Due-date tracking, automatic reminders, audit-ready reports. <a href="https://www.vectorsolutions.com/solutions/vector-lms/fire/" target="_blank" rel="noopener" style="color:var(--accent);">Vector Solutions</a>, <a href="https://www.cornerstoneondemand.com/learning-management/" target="_blank" rel="noopener" style="color:var(--accent);">Cornerstone</a>, <a href="https://www.absorblms.com/" target="_blank" rel="noopener" style="color:var(--accent);">Absorb</a> compliance module, scaled by org size.</div>
-          </div>
-          <div style="background:rgba(255,255,255,.03); border:1px solid var(--line); border-radius:14px; padding:22px;">
-            <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:var(--muted); text-transform:uppercase; margin-bottom:6px;">Branded subdomain &amp; white-label</div>
-            <div style="font-size:34px; font-weight:800; color:var(--ink); margin-bottom:4px; line-height:1;">$1,500</div>
-            <div style="font-size:13px; color:var(--muted); line-height:1.4;">One-time setup. yourorg.protoquiz.com with your logo and colors. Most LMSs charge a setup fee for custom domain + branding.</div>
-          </div>
-          <div style="background:rgba(99,102,241,.08); border:1px solid rgba(99,102,241,.3); border-radius:14px; padding:22px; grid-column: span 2;">
-            <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:var(--accent); text-transform:uppercase; margin-bottom:6px;">Total to build it yourself</div>
-            <div style="font-size:34px; font-weight:800; color:var(--ink); margin-bottom:4px; line-height:1;">~<span data-size-val="diy-y1">$76,000</span> year 1</div>
-            <div style="font-size:13px; color:var(--muted); line-height:1.4;">Sum of the above. Year 2+ recurring is <strong data-size-val="diy-y2">~$67,000/yr</strong>. <strong style="color:var(--ink);">And none of those platforms have YOUR protocols.</strong></div>
-          </div>
-          <div style="background:linear-gradient(135deg, rgba(99,102,241,.18), rgba(6,182,212,.1)); border:2px solid rgba(99,102,241,.4); border-radius:14px; padding:22px; grid-column: span 2;">
-            <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:var(--accent2); text-transform:uppercase; margin-bottom:6px;">ProtoQuiz, all-in</div>
-            <div style="font-size:40px; font-weight:900; color:var(--ink); margin-bottom:4px; line-height:1;">
-              <span style="font-size:18px; color:var(--muted); text-decoration:line-through; margin-right:10px; font-weight:600;" data-size-val="diy-y1-strike">$76,000</span>
-              <span data-size-val="pq">$30,000</span><span style="font-size:18px; color:var(--muted); font-weight:600;">/yr</span>
+        <!-- 4 line items - tight rows -->
+        <div class="math-rows">
+          <a href="https://pubmed.ncbi.nlm.nih.gov/20199235/" target="_blank" rel="noopener" class="math-row">
+            <div class="math-row-label">
+              <div class="math-row-title">Faster FTO sign-off</div>
+              <div class="math-row-detail">New medics arrive drilled on YOUR protocols. 20% cut in FTO time across <span data-size-val="hires-est">~30</span> hires/yr at $50/hr loaded.</div>
             </div>
-            <div style="font-size:13px; color:var(--ink); line-height:1.4; font-weight:600;">$100 per provider per year. Flat. ($8.33/medic/month.) Free for the first six months for early pilot partners.</div>
+            <div class="math-row-num"><span data-size-val="save-fto">~$18,000</span></div>
+          </a>
+
+          <a href="https://www.dshs.texas.gov/dshs-ems-trauma-systems/enforcement-actions" target="_blank" rel="noopener" class="math-row">
+            <div class="math-row-label">
+              <div class="math-row-title">Catches gaps before QI does</div>
+              <div class="math-row-detail">Each formal remediation case runs $1,500&ndash;$2,000 loaded. Avoid 6&ndash;8 a year by surfacing weak topics in 5-min drills.</div>
+            </div>
+            <div class="math-row-num"><span data-size-val="save-remediation">~$12,000</span></div>
+          </a>
+
+          <a href="https://www.professionallicensedefensellc.com/emt-and-paramedic-license-defense" target="_blank" rel="noopener" class="math-row">
+            <div class="math-row-label">
+              <div class="math-row-title">Legal &amp; license defense</div>
+              <div class="math-row-detail">License defense averages $5k&ndash;$25k per case. "Failure to document training" is a top complaint category. Dated, signed-off records avoid the case &mdash; or end it fast.</div>
+            </div>
+            <div class="math-row-num"><span data-size-val="save-legal">~$15,000</span></div>
+          </a>
+
+          <a href="https://ems.utah.gov/wp-content/uploads/sites/34/2024/10/Training-Officer-Manual-2024-Final.pdf" target="_blank" rel="noopener" class="math-row">
+            <div class="math-row-label">
+              <div class="math-row-title">Training officer hours back</div>
+              <div class="math-row-detail">200&ndash;400 hrs/yr building Quizlet decks, writing Word-doc tests, chasing CE records. ProtoQuiz handles delivery + documentation.</div>
+            </div>
+            <div class="math-row-num"><span data-size-val="save-to">~$15,000</span></div>
+          </a>
+        </div>
+
+        <!-- Collapsible: tools comparison (secondary, hidden by default) -->
+        <details class="math-details">
+          <summary>Also &mdash; if you tried to build this from off-the-shelf tools, it would cost <strong data-size-val="diy-y1">$76,000</strong>/yr. Click to see the math.</summary>
+          <div class="math-details-body">
+            <div class="math-details-grid">
+              <div><div class="m-row-label">General-purpose LMS</div><div class="m-row-detail">~$73/user/yr at <a href="https://www.vectorsolutions.com/request-a-demo/fire-training-management-system/" target="_blank" rel="noopener">Vector / TargetSolutions</a>, <a href="https://www.talentlms.com/blog/lms-pricing/" target="_blank" rel="noopener">TalentLMS</a>, <a href="https://www.docebo.com/learning-management-system/lms-pricing/" target="_blank" rel="noopener">Docebo</a> enterprise tier</div></div><div class="m-row-num" data-size-val="lms">$22,000/yr</div>
+              <div><div class="m-row-label">EMS-specific CE library</div><div class="m-row-detail"><a href="https://www.distancecme.com/" target="_blank" rel="noopener">Distance CME</a>, <a href="https://www.ems1academy.com/lp/individual-subscription/" target="_blank" rel="noopener">EMS1 Academy</a>, <a href="https://www.limmereducation.com/" target="_blank" rel="noopener">Limmer</a> at ~$80/medic/yr &mdash; still NREMT prep, not your protocols</div></div><div class="m-row-num" data-size-val="ce">$24,000/yr</div>
+              <div><div class="m-row-label">Custom content from your PDF</div><div class="m-row-detail">Instructional design contractor, $50&ndash;$100/hr, 80&ndash;120 hrs to author scoped questions, scenarios, drill chains</div></div><div class="m-row-num">$7,500</div>
+              <div><div class="m-row-label">Protocol revision updates</div><div class="m-row-detail">Quarterly content updates when your medical director changes things. Contractor on retainer.</div></div><div class="m-row-num">$3,000/yr</div>
+              <div><div class="m-row-label">Compliance / assignments add-on</div><div class="m-row-detail">Due-date tracking, reminders, audit reports. Vector / Cornerstone / Absorb compliance module.</div></div><div class="m-row-num" data-size-val="compliance">$18,000/yr</div>
+              <div><div class="m-row-label">Branded subdomain &amp; setup</div><div class="m-row-detail">One-time. yourorg.protoquiz.com with your logo and colors.</div></div><div class="m-row-num">$1,500</div>
+              <div class="m-row-total"><div class="m-row-label">Year-1 total to assemble it</div></div><div class="m-row-num m-row-num-total" data-size-val="diy-y1">$76,000</div>
+            </div>
+            <p class="math-details-foot">And none of those platforms have YOUR protocols. ProtoQuiz is <strong data-size-val="pq">$30,000</strong>/yr, all in.</p>
           </div>
-        </div>
-
-        <!-- Savings hero -->
-        <div style="margin-top:24px; max-width:760px; margin-left:auto; margin-right:auto; text-align:center; padding:28px 24px; background:linear-gradient(135deg, rgba(16,185,129,.12), rgba(99,102,241,.08)); border:2px solid rgba(16,185,129,.3); border-radius:18px;">
-          <div style="font-size:11px; font-weight:700; letter-spacing:1.5px; color:var(--success); text-transform:uppercase; margin-bottom:8px;">You save</div>
-          <div style="font-size:60px; font-weight:900; color:var(--ink); line-height:1; margin-bottom:8px;"><span data-size-val="savings">$46,000</span><span style="font-size:18px; color:var(--muted); font-weight:600;">/yr</span></div>
-          <div style="font-size:14px; color:var(--ink); font-weight:600;">vs. building it yourself with off-the-shelf tools</div>
-          <div style="font-size:12px; color:var(--muted); margin-top:6px;">Plus you get YOUR protocols (which the off-the-shelf path doesn't include at all).</div>
-        </div>
-
-        <p style="font-size:11px; color:var(--muted); margin:18px auto 0; text-align:center; line-height:1.6; max-width:760px;">
-          Sources: General LMS pricing from <a href="https://www.talentlms.com/blog/lms-pricing/" target="_blank" rel="noopener" style="color:var(--accent);">TalentLMS LMS pricing guide</a>, <a href="https://360learning.com" target="_blank" rel="noopener" style="color:var(--accent);">360Learning</a>, <a href="https://www.hubkengroup.com/resources/the-complete-guide-to-lms-pricing" target="_blank" rel="noopener" style="color:var(--accent);">Hubken Totara</a>. EMS-CE rates from <a href="https://distancecme.com" target="_blank" rel="noopener" style="color:var(--accent);">Distance CME</a>, <a href="https://www.ems1.com" target="_blank" rel="noopener" style="color:var(--accent);">EMS1 Academy</a>, <a href="https://www.limmereducation.com" target="_blank" rel="noopener" style="color:var(--accent);">Limmer Education</a> public price pages. Instructional designer rates from <a href="https://elearningindustry.com" target="_blank" rel="noopener" style="color:var(--accent);">eLearning Industry</a> contractor surveys. Numbers are mid-market ranges &mdash; specific vendor quotes will vary.
-        </p>
+        </details>
       </div>
     </section>
 
@@ -1623,12 +1706,13 @@
         small: {
           label: 'small',
           providers: 100,
-          // What ProtoQuiz saves (4 defensible lines)
-          'save-fto': '~$12,500',       // 10 hires * 25 hrs cut * $50/hr
-          'save-remediation': '~$5,000', // 3 fewer formal remediation cases at $1,500
-          'save-legal': '~$8,000',      // 1 license defense case avoided/yr (mid)
-          'save-to': '~$8,000',         // ~160 TO hrs saved * $50/hr
-          'save-total': '~$33,000',     // sum of the four
+          'save-fto': '~$12,500',
+          'save-remediation': '~$5,000',
+          'save-legal': '~$8,000',
+          'save-to': '~$8,000',
+          'save-total': '$33,000',
+          'save-net': '~$23,000',
+          'save-multiple': '3.3x',
           'hires-est': '~10',
           // LMS comparison (the secondary pitch)
           lms: '$8,000/yr',
@@ -1647,10 +1731,12 @@
           label: 'medium',
           providers: 300,
           'save-fto': '~$18,000',
-          'save-remediation': '~$12,000', // 6-8 cases at $1,500-2,000
-          'save-legal': '~$15,000',       // 1-2 license defense cases avoided/yr
-          'save-to': '~$15,000',          // ~300 TO hrs saved * $50/hr
-          'save-total': '~$60,000',
+          'save-remediation': '~$12,000',
+          'save-legal': '~$15,000',
+          'save-to': '~$15,000',
+          'save-total': '$60,000',
+          'save-net': '~$30,000',
+          'save-multiple': '2x',
           'hires-est': '~30',
           lms: '$22,000/yr',
           ce: '$24,000/yr',
@@ -1668,10 +1754,12 @@
           label: 'large',
           providers: 500,
           'save-fto': '~$31,000',
-          'save-remediation': '~$20,000', // 10-12 cases at $1,500-2,000
-          'save-legal': '~$25,000',       // 2-3 license defense cases avoided/yr
-          'save-to': '~$20,000',          // ~400 TO hrs saved * $50/hr
-          'save-total': '~$96,000',
+          'save-remediation': '~$20,000',
+          'save-legal': '~$25,000',
+          'save-to': '~$20,000',
+          'save-total': '$96,000',
+          'save-net': '~$46,000',
+          'save-multiple': '~2x',
           'hires-est': '~50',
           lms: '$36,000/yr',
           ce: '$40,000/yr',
