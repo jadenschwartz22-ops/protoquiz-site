@@ -36,53 +36,62 @@
     background:linear-gradient(180deg, rgba(5,6,10,.78), rgba(5,6,10,0));
     backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
   }
-  .site-header .brand{display:flex; align-items:center; gap:10px; font-size:14px; font-weight:800; color:#fff; letter-spacing:-.01em; text-decoration:none;}
-  .site-header .brand img{width:26px; height:26px; border-radius:5px;}
+  .site-header .brand{display:flex; align-items:center; gap:14px; font-size:19px; font-weight:800; color:#fff; letter-spacing:-.01em; text-decoration:none;}
+  .site-header .brand img{
+    width:56px; height:56px; border-radius:12px;
+    background:#fff; padding:5px;
+    box-shadow:0 0 0 1px rgba(255,255,255,.14), 0 8px 22px rgba(0,0,0,.6);
+  }
+  @media (max-width:600px){
+    .site-header .brand{font-size:16px; gap:11px;}
+    .site-header .brand img{width:44px; height:44px; border-radius:10px;}
+  }
   .site-header nav{display:flex; gap:24px; font-size:12px; color:var(--ink); font-weight:500;}
   .site-header nav span{cursor:pointer;}
   .site-header .cta{background:#fff; color:#000; padding:8px 14px; border-radius:6px; font-size:12px; font-weight:700; text-decoration:none;}
 
-  /* ============ HERO TEXT LOOP ============ */
+  /* ============ HERO (founder voice, static) ============ */
   .hero{
     position:relative;
-    height:100vh; min-height:620px;
+    min-height:100vh;
     display:flex; align-items:center; justify-content:center;
     overflow:hidden;
     background:var(--bg);
+    padding:140px 8vw 120px;
   }
-  .card{
-    position:absolute; inset:0;
-    display:flex; align-items:center; justify-content:center;
-    padding:80px 8vw 110px;
-    opacity:0; visibility:hidden;
+  .hero-quote{
+    margin:0; max-width:1080px; width:100%;
+    text-align:left;
   }
-  .card.active{opacity:1; visibility:visible;}
-  .card .line{
-    font-family:Georgia, 'Times New Roman', serif;
-    color:#fff; font-weight:400;
-    line-height:1.08; letter-spacing:-.022em;
-    text-align:left; max-width:980px;
-  }
-  .card .word, .card .punct{
+  .hero-quote p{margin:0;}
+  .hero-quote .w{
     display:inline-block;
-    opacity:0; transform:translateY(16px);
-    transition:opacity .48s cubic-bezier(.16,1,.3,1), transform .58s cubic-bezier(.16,1,.3,1);
+    opacity:0; transform:translateY(14px);
+    transition:opacity .55s cubic-bezier(.16,1,.3,1), transform .65s cubic-bezier(.16,1,.3,1);
   }
-  .card.in .word, .card.in .punct{opacity:1; transform:translateY(0);}
-  .card .accent{color:var(--accent2); font-style:italic;}
-  .card.c1 .line{font-size:clamp(34px, 5.8vw, 76px);}
-  .card.c2 .line{font-style:italic; font-size:clamp(42px, 8vw, 104px); letter-spacing:-.028em;}
-  .card.c3 .line{font-size:clamp(40px, 7.5vw, 96px);}
-  .card.c4 .line{font-size:clamp(40px, 7.5vw, 96px);}
-  .card .credit{
-    display:block; margin-top:32px;
-    font-family:'JetBrains Mono', ui-monospace, monospace;
-    color:var(--muted); font-size:11px;
-    letter-spacing:.2em; text-transform:uppercase; font-style:normal;
-    opacity:0;
-    transition:opacity .6s cubic-bezier(.16,1,.3,1) 1.4s;
+  .hero-quote.in .w{opacity:1; transform:translateY(0);}
+  .hero-lede{
+    font-family:Georgia, 'Times New Roman', serif;
+    font-size:clamp(24px, 3.4vw, 40px); line-height:1.32;
+    letter-spacing:-.012em;
+    color:var(--muted); font-weight:400;
+    margin-bottom:22px !important;
   }
-  .card.in .credit{opacity:1;}
+  .hero-lede .w.em{color:#fff; font-weight:600;}
+  .hero-question{
+    font-family:Georgia, 'Times New Roman', serif;
+    font-size:clamp(38px, 6.4vw, 88px); line-height:1.06;
+    letter-spacing:-.022em;
+    color:#fff; font-weight:500;
+    margin-bottom:18px !important;
+  }
+  .hero-answer{
+    font-family:Georgia, 'Times New Roman', serif;
+    font-size:clamp(38px, 6.4vw, 88px); line-height:1.06;
+    letter-spacing:-.022em;
+    color:var(--accent2); font-weight:500;
+    margin-bottom:42px !important;
+  }
 
   .scroll-cue{
     position:absolute; left:50%; bottom:42px; transform:translateX(-50%);
@@ -98,23 +107,7 @@
   }
   @keyframes scrollPulse{0%, 100%{transform:scaleY(.4); transform-origin:top; opacity:.4;} 50%{transform:scaleY(1); opacity:1;}}
 
-  .hero-progress{
-    position:absolute; bottom:24px; left:50%; transform:translateX(-50%);
-    display:flex; gap:6px; z-index:5;
-  }
-  .hero-progress span{
-    width:36px; height:2px; border-radius:1px;
-    background:rgba(255,255,255,.14); position:relative; overflow:hidden;
-  }
-  .hero-progress span.done::after{transform:scaleX(1);}
-  .hero-progress span.active::after{
-    transform:scaleX(0); transform-origin:left;
-    animation:progFill linear forwards;
-  }
-  .hero-progress span::after{
-    content:""; position:absolute; inset:0;
-    background:#fff; transform:scaleX(0); transform-origin:left;
-  }
+  /* progress (movie internal) */
   @keyframes progFill{from{transform:scaleX(0);} to{transform:scaleX(1);}}
 
   /* ============ SECTION SHELL ============ */
@@ -132,6 +125,21 @@
     letter-spacing:-.02em; color:#fff; margin:0 0 18px;
   }
   .section-desc{font-size:17px; line-height:1.6; color:var(--muted); margin:0;}
+  .builder-credit{
+    display:inline-flex; align-items:center; gap:8px;
+    margin-top:22px; padding:6px 13px;
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:999px;
+    font-family:'JetBrains Mono', ui-monospace, monospace;
+    font-size:11px; letter-spacing:.16em; text-transform:uppercase;
+    color:#cfd4e2;
+  }
+  .builder-credit-dot{
+    width:6px; height:6px; border-radius:50%;
+    background:var(--success);
+    box-shadow:0 0 0 3px rgba(34,197,94,.16);
+  }
 
   /* ============ APP WALKTHROUGH ============ */
   /* The hero of "below the fold". Movie left, narrated text right. Scroll-synced highlight. */
@@ -402,22 +410,138 @@
   .tl-item h3{font-size:16px; font-weight:800; color:#fff; margin:0 0 6px;}
   .tl-item p{font-size:13.5px; line-height:1.55; color:var(--muted); margin:0;}
 
-  /* ============ MATH PLACEHOLDER ============ */
-  .math-card{
-    max-width:780px; margin:0 auto;
-    background:var(--surface2); border:1px solid var(--line);
-    border-radius:14px; padding:36px 32px;
+  /* ============ MATH (interactive cost-stack, ported from agency/preview.html) ============ */
+  .size-toggle{
+    display:inline-flex; background:rgba(255,255,255,.04);
+    border:1px solid var(--line); border-radius:14px; padding:5px; gap:2px;
   }
-  .math-toggle{display:flex; gap:6px; justify-content:center; margin-bottom:28px;}
-  .math-toggle button{
-    background:var(--surface); border:1px solid var(--line); color:var(--ink);
-    padding:10px 18px; border-radius:8px; font-size:12px; font-weight:700; font-family:inherit; cursor:pointer;
+  .size-btn{
+    background:transparent; border:none; color:var(--muted);
+    padding:10px 22px; border-radius:10px; cursor:pointer;
+    font-family:inherit; transition:all .18s cubic-bezier(.16,1,.3,1);
+    min-width:120px; text-align:center;
   }
-  .math-toggle button.on{background:var(--accent); border-color:var(--accent); color:#fff;}
-  .math-row{display:grid; grid-template-columns:1fr auto; gap:8px; padding:10px 0; border-bottom:1px solid var(--line-soft); font-size:14px;}
-  .math-row.sub{color:var(--muted); font-size:12px;}
-  .math-row.total{border-bottom:none; padding-top:18px; font-size:18px; font-weight:800; color:#fff;}
-  .math-row.total .v{color:var(--success);}
+  .size-btn:hover{color:var(--ink); background:rgba(255,255,255,.03);}
+  .size-btn.active{
+    background:linear-gradient(135deg, rgba(99,102,241,.22), rgba(6,182,212,.18));
+    color:var(--ink); box-shadow:0 0 0 1px rgba(99,102,241,.4);
+  }
+  .size-btn-label{font-weight:700; font-size:14px; letter-spacing:-.01em;}
+  .size-btn-sub{font-size:11px; margin-top:2px; opacity:.75;}
+  @media (max-width:560px){
+    .size-toggle{flex-wrap:wrap; justify-content:center;}
+    .size-btn{min-width:0; flex:1; padding:9px 12px;}
+    .size-btn-label{font-size:13px;} .size-btn-sub{font-size:10px;}
+  }
+  [data-size-val], [data-size-text]{transition:opacity .15s ease;}
+  .swapping [data-size-val], .swapping [data-size-text]{opacity:.35;}
+
+  .math-hero{
+    max-width:680px; margin:32px auto 28px; text-align:center;
+    padding:36px 28px;
+    background:linear-gradient(135deg, rgba(99,102,241,.10), rgba(6,182,212,.06));
+    border:1px solid rgba(99,102,241,.25); border-radius:18px;
+  }
+  .math-hero-tag{
+    display:inline-block; padding:4px 12px; border-radius:999px;
+    background:rgba(99,102,241,.08); border:1px solid rgba(99,102,241,.22);
+    font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--accent2); margin-bottom:14px;
+  }
+  .math-hero-eyebrow{font-size:13px; color:var(--muted); margin-bottom:10px;}
+  .math-hero-eyebrow span{color:var(--ink); font-weight:700;}
+  .math-hero-num{
+    font-size:clamp(44px, 11vw, 72px); font-weight:900;
+    color:#fff; line-height:1; letter-spacing:-.04em; margin-bottom:10px;
+  }
+  .math-hero-num .math-hero-unit{font-size:clamp(18px, 3.5vw, 24px); color:var(--muted); font-weight:600; letter-spacing:0; margin-left:4px;}
+  .math-hero-sub{font-size:13px; color:var(--muted); line-height:1.6;}
+  .math-hero-sub strong{color:#fff; font-weight:700;}
+
+  .math-rows{max-width:680px; margin:0 auto; border-top:1px solid var(--line);}
+  .math-row{
+    display:grid; grid-template-columns:1fr auto; gap:24px; align-items:start;
+    padding:18px 4px; border-bottom:1px solid var(--line);
+    text-decoration:none; color:inherit;
+    transition:background .15s ease, padding .15s ease;
+  }
+  .math-row:hover{background:rgba(255,255,255,.015); padding-left:14px; padding-right:14px; border-radius:10px;}
+  .math-row-title{font-size:15px; font-weight:700; color:#fff; margin-bottom:4px;}
+  .math-row-detail{font-size:12.5px; color:var(--muted); line-height:1.5;}
+  .math-row-num{font-size:22px; font-weight:800; color:#fff; letter-spacing:-.02em; white-space:nowrap; align-self:center;}
+
+  .math-details{max-width:680px; margin:36px auto 0; border-top:1px dashed var(--line); padding-top:18px;}
+  .math-details summary{font-size:13px; color:var(--muted); cursor:pointer; list-style:none; padding:6px 0; transition:color .15s ease;}
+  .math-details summary::-webkit-details-marker{display:none;}
+  .math-details summary:hover{color:var(--ink);}
+  .math-details summary strong{color:#fff; font-weight:700;}
+  .math-details summary::before{content:'+'; display:inline-block; width:18px; color:var(--accent); font-weight:700;}
+  .math-details[open] summary::before{content:'\2212';}
+  .math-details-body{margin-top:14px; padding:18px 0; border-top:1px solid var(--line);}
+  .math-details-cta{color:var(--accent); font-weight:600;}
+  .math-details-foot{font-size:13px; color:var(--muted); margin:24px 0 0; text-align:center; line-height:1.6;}
+  .math-details-foot strong{color:#fff; font-weight:700;}
+
+  .costviz{
+    display:grid; grid-template-columns:1fr auto 1fr; gap:32px;
+    align-items:start; max-width:920px; margin:14px auto 0;
+  }
+  .costviz-side{display:flex; flex-direction:column;}
+  .costviz-side-label{font-size:11px; letter-spacing:.10em; text-transform:uppercase; font-weight:700; color:var(--muted); margin-bottom:12px;}
+  .costviz-pq .costviz-side-label{color:var(--accent);}
+  .costviz-bars{display:flex; flex-direction:column; gap:8px;}
+  .costviz-bar{width:100%; opacity:0; transform:translateX(-12px);}
+  .costviz-bar-fill{
+    display:flex; justify-content:space-between; align-items:center; gap:10px;
+    width:0; min-width:160px; max-width:100%;
+    padding:9px 14px;
+    background:linear-gradient(90deg, rgba(99,102,241,.18), rgba(99,102,241,.08));
+    border:1px solid rgba(99,102,241,.25); border-radius:8px;
+    color:inherit; text-decoration:none;
+    transition:transform .15s ease, border-color .15s ease;
+    white-space:nowrap; overflow:hidden; box-sizing:border-box;
+  }
+  a.costviz-bar-fill:hover{transform:translateX(2px); border-color:rgba(99,102,241,.55);}
+  .costviz-bar-fill-static{cursor:default;}
+  .costviz-bar-label{font-size:13px; font-weight:600; color:#fff;}
+  .costviz-bar-num{font-size:13px; font-weight:700; color:#fff; flex-shrink:0;}
+  .costviz-bar-pq .costviz-bar-fill{
+    background:linear-gradient(90deg, rgba(34,197,94,.22), rgba(34,197,94,.10));
+    border-color:rgba(34,197,94,.45);
+  }
+  .costviz-total{
+    margin-top:16px; padding:14px 16px; border-top:1px solid var(--line);
+    display:flex; justify-content:space-between; align-items:baseline;
+    opacity:0; transform:translateY(6px);
+  }
+  .costviz-total-label{font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); font-weight:700;}
+  .costviz-total-num{font-size:26px; font-weight:800; color:#fff; letter-spacing:-.02em;}
+  .costviz-total-pq{
+    background:linear-gradient(135deg, rgba(34,197,94,.16), rgba(99,102,241,.08));
+    border:1px solid rgba(34,197,94,.4); border-radius:10px; margin-top:14px;
+  }
+  .costviz-total-pq .costviz-total-label{color:var(--success);}
+  .costviz-total-pq .costviz-total-num{font-size:30px;}
+  .costviz-vs{
+    align-self:center; font-size:14px; font-weight:700; color:var(--muted);
+    letter-spacing:.08em; text-transform:uppercase; padding:0 4px;
+    opacity:0; transform:scale(.7);
+  }
+  .math-details[open] .costviz-bar{animation:costviz-bar-in .5s cubic-bezier(.16,1,.3,1) var(--d) forwards;}
+  .math-details[open] .costviz-bar .costviz-bar-fill{animation:costviz-fill-in .55s cubic-bezier(.16,1,.3,1) var(--d) forwards;}
+  .math-details[open] .costviz-total{animation:costviz-total-in .5s cubic-bezier(.16,1,.3,1) var(--d) forwards;}
+  .math-details[open] .costviz-vs{animation:costviz-vs-in .35s cubic-bezier(.16,1,.3,1) var(--d) forwards;}
+  @keyframes costviz-bar-in{to{opacity:1; transform:translateX(0);}}
+  @keyframes costviz-fill-in{to{width:var(--w);}}
+  @keyframes costviz-total-in{to{opacity:1; transform:translateY(0);}}
+  @keyframes costviz-vs-in{to{opacity:1; transform:scale(1);}}
+  @media (max-width:760px){
+    .costviz{grid-template-columns:1fr; gap:18px;}
+    .costviz-vs{justify-self:start; margin:4px 0;}
+    .costviz-bar-num, .costviz-bar-label{font-size:12px;}
+    .costviz-total-num{font-size:22px;}
+    .costviz-total-pq .costviz-total-num{font-size:26px;}
+  }
 
   /* ============ PRICING ============ */
   .price-card{
@@ -479,14 +603,21 @@
   }
 
   @media (prefers-reduced-motion: reduce){
-    .card{transition:none;}
-    .card .word, .card .punct{opacity:1; transform:none; transition:none;}
+    .hero-quote .w{opacity:1 !important; transform:none !important; transition:none !important;}
     .scroll-cue .arrow{animation:none;}
-    .hero-progress, .progress{display:none;}
+    .progress{display:none;}
     .home-tile, .ad-kpi, .hm-cell, .qz-correct{opacity:1 !important; transform:none !important; animation:none !important;}
     .cursor{display:none;}
     html{scroll-behavior:auto;}
     .narration-step{opacity:1;}
+    .math-details[open] .costviz-bar,
+    .math-details[open] .costviz-bar .costviz-bar-fill,
+    .math-details[open] .costviz-total,
+    .math-details[open] .costviz-vs{animation:none;}
+    .math-details[open] .costviz-bar{opacity:1; transform:none;}
+    .math-details[open] .costviz-bar .costviz-bar-fill{width:var(--w);}
+    .math-details[open] .costviz-total{opacity:1; transform:none;}
+    .math-details[open] .costviz-vs{opacity:1; transform:none;}
   }
 </style>
 </head>
@@ -498,21 +629,13 @@
     <a href="#contact" class="cta">Talk to us</a>
   </header>
 
-  <!-- ============ HERO TEXT LOOP ============ -->
+  <!-- ============ HERO (founder voice, kinetic reveal) ============ -->
   <section class="hero" id="hero">
-    <div class="card c1" data-card="0">
-      <div class="line"><span class="word">You</span> <span class="word">need</span> <span class="word">to</span> <span class="word">know</span> <span class="word">your</span> <span class="word">EMS</span> <span class="word">protocols</span> <span class="word">to</span> <span class="word">work</span> <span class="word">as</span> <span class="word">an</span> <span class="word">EMT</span> <span class="word">or</span> <span class="word">medic</span><span class="punct">.</span></div>
-    </div>
-    <div class="card c2" data-card="1">
-      <div class="line"><span class="word">So</span> <span class="word">why</span> <span class="word">is</span> <span class="word">there</span> <span class="word">no</span> <span class="word">good</span> <span class="word">way</span> <span class="word">to</span> <span class="word">train</span> <span class="word">on</span> <span class="word">them</span><span class="punct">?</span></div>
-    </div>
-    <div class="card c3" data-card="2">
-      <div class="line"><span class="word">Target</span> <span class="word">training</span><br><span class="word">on</span> <span class="word accent">your</span> <span class="word accent">weakest</span> <span class="word accent">topics</span><span class="punct">.</span></div>
-    </div>
-    <div class="card c4" data-card="3">
-      <div class="line"><span class="word">Train</span> <span class="word">your</span> <span class="word">crews</span> <span class="word">on</span> <span class="word">your</span> <span class="word">protocols</span><span class="punct">.</span><span class="credit">Built by working medics</span></div>
-    </div>
-    <div class="hero-progress" id="hero-progress" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    <figure class="hero-quote" id="hero-quote">
+      <p class="hero-lede"><span class="w">We</span> <span class="w">use</span> <span class="w">our</span> <span class="w">protocols</span> <span class="w">every</span> <span class="w">shift.</span> <span class="w em">It's</span> <span class="w em">the</span> <span class="w em">highest-frequency</span> <span class="w em">thing</span> <span class="w em">we</span> <span class="w em">do.</span></p>
+      <p class="hero-question"><span class="w">So</span> <span class="w">why</span> <span class="w">is</span> <span class="w">there</span> <span class="w">no</span> <span class="w">good</span> <span class="w">way</span> <span class="w">to</span> <span class="w">train</span> <span class="w">on</span> <span class="w">them?</span></p>
+      <p class="hero-answer"><span class="w"><em>Now</em></span> <span class="w"><em>there</em></span> <span class="w"><em>is.</em></span></p>
+    </figure>
     <a class="scroll-cue" href="#walkthrough"><span>See how</span><span class="arrow"></span></a>
   </section>
 
@@ -520,8 +643,9 @@
   <section class="section" id="walkthrough">
     <div class="section-center">
       <div class="section-label">How it works</div>
-      <h2 class="section-title">Watch a shift on ProtoQuiz.</h2>
-      <p class="section-desc">A medic opens the app between calls. A training officer assigns the next round. Both happen here.</p>
+      <h2 class="section-title">Train on your protocols.</h2>
+      <p class="section-desc">Cited to your PDF. Scoped to their cert level. Dashboard tells you who's solid.</p>
+      <div class="builder-credit"><span class="builder-credit-dot" aria-hidden="true"></span>Built by a working paramedic</div>
     </div>
 
     <div class="walkthrough">
@@ -756,25 +880,8 @@
     </div>
   </section>
 
-  <!-- ============ FOUNDER PULLQUOTE ============ -->
-  <section class="section alt">
-    <div class="wrap">
-      <figure class="pullquote">
-        <p class="pullquote-lede">We use our protocols every shift. <strong>It's the highest-frequency thing we do.</strong></p>
-        <p class="pullquote-question">So why is there no good way to train on them?</p>
-        <p class="pullquote-answer"><em>Now there is.</em></p>
-        <figcaption class="pullquote-byline">
-          <div>
-            <div class="pullquote-byline-name">Jaden Schwartz</div>
-            <div class="pullquote-byline-role">Paramedic &amp; Founder, ProtoQuiz</div>
-          </div>
-        </figcaption>
-      </figure>
-    </div>
-  </section>
-
   <!-- ============ ROLLOUT TIMELINE ============ -->
-  <section class="section">
+  <section class="section alt">
     <div class="wrap" style="max-width:780px;">
       <div class="section-center">
         <div class="section-label">Rollout</div>
@@ -789,32 +896,6 @@
     </div>
   </section>
 
-  <!-- ============ THE MATH (sketch — full interactive lives in agency/preview.html) ============ -->
-  <section class="section alt">
-    <div class="wrap">
-      <div class="section-center">
-        <div class="section-label">The math</div>
-        <h2 class="section-title">Pays for itself, on conservative numbers.</h2>
-        <p class="section-desc">Pick your agency size. The math below is what ProtoQuiz already saves you, before counting the value of better-trained crews.</p>
-      </div>
-      <div class="math-card">
-        <div class="math-toggle">
-          <button>Small (~100)</button>
-          <button class="on">Medium (~300)</button>
-          <button>Large (500+)</button>
-        </div>
-        <div class="math-row"><span>FTO/instructor hours saved</span><span><strong style="color:#fff;">$24,000</strong>/yr</span></div>
-        <div class="math-row sub">~120 hrs at $200 burdened rate</div>
-        <div class="math-row"><span>Off-shift training reduction</span><span><strong style="color:#fff;">$18,000</strong>/yr</span></div>
-        <div class="math-row sub">~6 sessions × 50 providers × $60</div>
-        <div class="math-row"><span>QA remediation hours</span><span><strong style="color:#fff;">$8,400</strong>/yr</span></div>
-        <div class="math-row sub">~14 fewer remediation cycles</div>
-        <div class="math-row total"><span>Net savings</span><span class="v">$50,400 / yr</span></div>
-        <div style="text-align:center; margin-top:18px; font-size:11px; color:var(--muted);">ProtoQuiz at 300 providers: $30,000/yr. Net positive: <strong style="color:var(--success);">$20,400</strong>.</div>
-      </div>
-    </div>
-  </section>
-
   <!-- ============ PRICING ============ -->
   <section class="section">
     <div class="wrap">
@@ -824,28 +905,159 @@
         <p class="section-desc">Flat. No tiers, no setup fees, no add-ons. Free for 6 months for early pilot partners.</p>
       </div>
       <div class="price-card">
-        <span class="price-pilot">Free 6-month pilot · 2 spots open</span>
+        <span class="price-pilot">Free 6-month pilot &middot; 2 spots open</span>
         <div class="price-num"><span class="dollar">$</span>0</div>
-        <div class="price-unit">For the first six months. Then <strong style="color:#fff;">$100 per provider per year</strong> — about $8.33/mo.</div>
+        <div class="price-unit">For the first six months. Then <strong style="color:#fff;">$100 per provider per year</strong> &mdash; about $8.33/mo.</div>
         <ul class="price-includes">
-          <li>Protocol quizzes &amp; exams</li>
-          <li>Pharmacology drills</li>
-          <li>Procedure quizzes</li>
-          <li>Clinical scenarios</li>
-          <li>Admin dashboard &amp; reports</li>
-          <li>Training assignments</li>
-          <li>Custom subdomain</li>
-          <li>Protocol revision updates</li>
-          <li>Unlimited admins</li>
-          <li>CSV &amp; PDF exports</li>
+          <li>Crews drilled on your protocols, every shift</li>
+          <li>New hires onboarded faster</li>
+          <li>Visibility into who's actually solid</li>
+          <li>Documented, dated training records</li>
+          <li>No added training hours</li>
+          <li>Live in days, not months</li>
         </ul>
-        <div class="price-foot">No risk: if it's not for you after the pilot, you walk away — never pay a thing. Pilot deadline <strong style="color:#fff;">August 1, 2026</strong>.</div>
+        <div class="price-foot">No risk: if it's not for you after the pilot, you walk away &mdash; never pay a thing. Pilot deadline <strong style="color:#fff;">August 1, 2026</strong>.</div>
       </div>
     </div>
   </section>
 
+  <!-- ============ THE MATH (interactive cost-stack) ============ -->
+  <section class="section alt" id="value-section">
+    <div class="wrap">
+      <div class="section-center">
+        <div class="section-label">The math</div>
+        <h2 class="section-title">Pays for itself, on conservative numbers.</h2>
+        <p class="section-desc">Pick your agency size. The numbers below are what ProtoQuiz already saves you, before counting the value of better-trained crews.</p>
+      </div>
+
+      <div style="display:flex; justify-content:center; margin:24px 0 4px;">
+        <div class="size-toggle" role="tablist" aria-label="Choose agency size">
+          <button class="size-btn" data-size="small" type="button" role="tab" aria-selected="false">
+            <div class="size-btn-label">Small</div><div class="size-btn-sub">~100 providers</div>
+          </button>
+          <button class="size-btn active" data-size="medium" type="button" role="tab" aria-selected="true">
+            <div class="size-btn-label">Medium</div><div class="size-btn-sub">~300 providers</div>
+          </button>
+          <button class="size-btn" data-size="large" type="button" role="tab" aria-selected="false">
+            <div class="size-btn-label">Large</div><div class="size-btn-sub">500+ providers</div>
+          </button>
+        </div>
+      </div>
+
+      <div class="math-hero">
+        <div class="math-hero-tag"><span data-size-val="providers">300</span>-provider agency &middot; flat $100/yr each</div>
+        <div class="math-hero-eyebrow">A <span data-size-text="label">medium</span> agency saves about</div>
+        <div class="math-hero-num"><span data-size-val="save-total">$54,000</span><span class="math-hero-unit">/yr</span></div>
+        <div class="math-hero-sub">
+          ProtoQuiz costs <strong data-size-val="pq">$30,000</strong>/yr. Net positive: <strong data-size-val="save-net">~$24,000</strong>/yr &mdash; before counting better training.
+        </div>
+      </div>
+
+      <div class="math-rows">
+        <a href="https://pubmed.ncbi.nlm.nih.gov/20199235/" target="_blank" rel="noopener" class="math-row">
+          <div>
+            <div class="math-row-title">Faster onboarding</div>
+            <div class="math-row-detail">New hires arrive already drilled on your protocols. A 20% cut in onboarding time across <span data-size-val="hires-est">~30</span> hires/yr, at ~$30/hr loaded labor.</div>
+          </div>
+          <div class="math-row-num"><span data-size-val="save-fto">~$18,000</span></div>
+        </a>
+        <a href="https://www.dshs.texas.gov/dshs-ems-trauma-systems/enforcement-actions" target="_blank" rel="noopener" class="math-row">
+          <div>
+            <div class="math-row-title">Fewer mistakes to fix</div>
+            <div class="math-row-detail">Each formal remediation &mdash; pulling a provider off shift, retraining, paperwork, retest &mdash; runs $1,500&ndash;$2,000 loaded. Catch weak topics in 5-minute drills, avoid 6&ndash;8 cases a year.</div>
+          </div>
+          <div class="math-row-num"><span data-size-val="save-remediation">~$12,000</span></div>
+        </a>
+        <a href="https://www.professionallicensedefensellc.com/emt-and-paramedic-license-defense" target="_blank" rel="noopener" class="math-row">
+          <div>
+            <div class="math-row-title">Legal &amp; license defense</div>
+            <div class="math-row-detail">License defense averages $5k&ndash;$25k per case. "Failure to document training" is a top complaint category. Dated, signed-off records avoid the case &mdash; or end it fast.</div>
+          </div>
+          <div class="math-row-num"><span data-size-val="save-legal">~$15,000</span></div>
+        </a>
+        <a href="https://ems.utah.gov/wp-content/uploads/sites/34/2024/10/Training-Officer-Manual-2024-Final.pdf" target="_blank" rel="noopener" class="math-row">
+          <div>
+            <div class="math-row-title">Training officer hours back</div>
+            <div class="math-row-detail">200&ndash;400 hrs/yr building Quizlet decks, writing Word-doc tests, chasing CE records. ProtoQuiz handles delivery + documentation.</div>
+          </div>
+          <div class="math-row-num"><span data-size-val="save-to">~$9,000</span></div>
+        </a>
+      </div>
+
+      <details class="math-details" id="math-details">
+        <summary>Or build it yourself from off-the-shelf tools: <strong data-size-val="diy-y1">$76,000</strong>/yr. <span class="math-details-cta">See the breakdown &rarr;</span></summary>
+        <div class="math-details-body">
+          <div class="costviz">
+            <div class="costviz-side costviz-diy">
+              <div class="costviz-side-label">Building it yourself</div>
+              <div class="costviz-bars">
+                <div class="costviz-bar" style="--w:38%; --d:0ms;">
+                  <a class="costviz-bar-fill" href="https://www.vectorsolutions.com/request-a-demo/fire-training-management-system/" target="_blank" rel="noopener" title="Vector / TargetSolutions, TalentLMS, Docebo">
+                    <span class="costviz-bar-label">General LMS</span>
+                    <span class="costviz-bar-num" data-size-val="lms">$22,000/yr</span>
+                  </a>
+                </div>
+                <div class="costviz-bar" style="--w:42%; --d:120ms;">
+                  <a class="costviz-bar-fill" href="https://www.distancecme.com/" target="_blank" rel="noopener" title="Distance CME, EMS1 Academy, Limmer">
+                    <span class="costviz-bar-label">EMS CE library</span>
+                    <span class="costviz-bar-num" data-size-val="ce">$24,000/yr</span>
+                  </a>
+                </div>
+                <div class="costviz-bar" style="--w:13%; --d:240ms;">
+                  <a class="costviz-bar-fill" href="https://elearningindustry.com" target="_blank" rel="noopener" title="Instructional design contractor rates">
+                    <span class="costviz-bar-label">Custom content</span>
+                    <span class="costviz-bar-num">$7,500</span>
+                  </a>
+                </div>
+                <div class="costviz-bar" style="--w:6%; --d:360ms;">
+                  <span class="costviz-bar-fill costviz-bar-fill-static">
+                    <span class="costviz-bar-label">Revision updates</span>
+                    <span class="costviz-bar-num">$3,000/yr</span>
+                  </span>
+                </div>
+                <div class="costviz-bar" style="--w:32%; --d:480ms;">
+                  <a class="costviz-bar-fill" href="https://www.cornerstoneondemand.com/learning-management/" target="_blank" rel="noopener" title="Vector / Cornerstone / Absorb compliance modules">
+                    <span class="costviz-bar-label">Compliance add-on</span>
+                    <span class="costviz-bar-num" data-size-val="compliance">$18,000/yr</span>
+                  </a>
+                </div>
+                <div class="costviz-bar" style="--w:3%; --d:600ms;">
+                  <span class="costviz-bar-fill costviz-bar-fill-static">
+                    <span class="costviz-bar-label">Subdomain &amp; setup</span>
+                    <span class="costviz-bar-num">$1,500</span>
+                  </span>
+                </div>
+              </div>
+              <div class="costviz-total" style="--d:780ms;">
+                <span class="costviz-total-label">Year 1 total</span>
+                <span class="costviz-total-num" data-size-val="diy-y1">$76,000</span>
+              </div>
+            </div>
+            <div class="costviz-vs" style="--d:900ms;">vs.</div>
+            <div class="costviz-side costviz-pq">
+              <div class="costviz-side-label">With ProtoQuiz</div>
+              <div class="costviz-bars">
+                <div class="costviz-bar costviz-bar-pq" style="--w:55%; --d:1050ms;">
+                  <span class="costviz-bar-fill">
+                    <span class="costviz-bar-label">All of the above</span>
+                    <span class="costviz-bar-num" data-size-val="pq">$30,000/yr</span>
+                  </span>
+                </div>
+              </div>
+              <div class="costviz-total costviz-total-pq" style="--d:1200ms;">
+                <span class="costviz-total-label">You save</span>
+                <span class="costviz-total-num"><span data-size-val="diy-savings">~$46,000</span>/yr</span>
+              </div>
+            </div>
+          </div>
+          <p class="math-details-foot">And none of those off-the-shelf platforms have <strong>your protocols</strong>. ProtoQuiz is built around the protocol PDF you send us &mdash; on day one.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
   <!-- ============ FAQ ============ -->
-  <section class="section alt">
+  <section class="section">
     <div class="wrap">
       <div class="section-center">
         <div class="section-label">FAQ</div>
@@ -876,32 +1088,33 @@
 
   <script>
   (function(){
-    /* === HERO TEXT LOOP === */
-    const cards = document.querySelectorAll('.card');
-    const heroDots = document.querySelectorAll('#hero-progress span');
-    const heroDur = [5400, 4800, 4500, 5000];
-    let heroIdx = 0;
-
-    function showHero(i){
-      cards.forEach(c => c.classList.remove('active', 'in'));
-      const card = cards[i];
-      card.classList.add('active');
-      const words = card.querySelectorAll('.word, .punct');
-      words.forEach((w, n) => { w.style.transitionDelay = (n * 90) + 'ms'; });
-      void card.offsetWidth;
-      requestAnimationFrame(() => card.classList.add('in'));
-      heroDots.forEach((d, n) => {
-        d.classList.remove('active', 'done');
-        d.style.removeProperty('animation-duration');
-        if(n < i) d.classList.add('done');
+    /* === HERO KINETIC REVEAL === */
+    (function heroReveal(){
+      const quote = document.getElementById('hero-quote');
+      if(!quote) return;
+      if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        quote.classList.add('in');
+        return;
+      }
+      // Dramatic, deliberate pacing. After each line's last word lands,
+      // hold the full line in stillness before starting the next.
+      const lines = quote.querySelectorAll('.hero-lede, .hero-question, .hero-answer');
+      const perWord    = [140, 170, 320];  // stagger between consecutive words on a line
+      const wordFade   = [550, 600, 950];  // word transition duration (must match CSS or be overridden)
+      const holdAfter  = [1400, 1700, 0];  // pause AFTER the line is fully on screen, before next starts
+      let cursor = 0;
+      lines.forEach((line, li) => {
+        const ws = line.querySelectorAll('.w');
+        ws.forEach((w, i) => {
+          w.style.transitionDelay = (cursor + i * perWord[li]) + 'ms';
+          w.style.transitionDuration = wordFade[li] + 'ms, ' + (wordFade[li] + 100) + 'ms';
+        });
+        // Time when the LAST word in this line is fully visible:
+        const lineEnd = cursor + (ws.length - 1) * perWord[li] + wordFade[li];
+        cursor = lineEnd + holdAfter[li];
       });
-      heroDots[i].classList.add('active');
-      heroDots[i].style.animationDuration = heroDur[i] + 'ms';
-    }
-    function nextHero(){
-      showHero(heroIdx);
-      setTimeout(() => { heroIdx = (heroIdx + 1) % cards.length; nextHero(); }, heroDur[heroIdx]);
-    }
+      requestAnimationFrame(() => quote.classList.add('in'));
+    })();
 
     /* === MOVIE === */
     const movie = document.getElementById('movie');
@@ -931,16 +1144,42 @@
     ];
     for(let i=0; i<beats.length; i++) progressEl.appendChild(document.createElement('span'));
 
+    const isMobileLayout = () => window.matchMedia('(max-width:900px)').matches;
+    const reducedMotion  = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function maybeScrollToActiveStep(){
+      if(reducedMotion) return;
+      if(!isMobileLayout()) return;
+      const live = document.querySelector('.narration-step.live');
+      if(!live) return;
+      const r = live.getBoundingClientRect();
+      const vh = window.innerHeight;
+      const margin = 80;
+      if(r.top < margin || r.bottom > vh - margin){
+        const target = window.scrollY + r.top - (vh / 2 - r.height / 2);
+        window.scrollTo({top: target, behavior:'smooth'});
+      }
+    }
     function setActive(sel){
       document.querySelectorAll('.scene').forEach(s => s.classList.remove('active'));
       const el = document.querySelector(sel);
       if(el) el.classList.add('active');
-      // Update narration highlight
       const beatName = sel.replace('[data-beat="', '').replace('"]', '');
+      let liveChanged = false;
       narrationSteps.forEach(step => {
         const beats = (step.dataset.step || '').split(',');
-        step.classList.toggle('live', beats.includes(beatName));
+        const wasLive = step.classList.contains('live');
+        const nowLive = beats.includes(beatName);
+        if(wasLive !== nowLive){ liveChanged = true; step.classList.toggle('live', nowLive); }
       });
+      // Auto-scroll only on mobile single-column where the sticky movie is gone.
+      // Only fire when the walkthrough section itself is in view (don't yank the user back).
+      if(liveChanged){
+        const wt = document.getElementById('walkthrough');
+        if(wt){
+          const wtR = wt.getBoundingClientRect();
+          if(wtR.top < window.innerHeight && wtR.bottom > 0) maybeScrollToActiveStep();
+        }
+      }
       return el;
     }
     function setProgress(i){
@@ -988,7 +1227,7 @@
         y: r.top  - movieRect.top  + r.height / 2 - 1.5,
       };
     }
-    let entryRot = 0;
+    let lastEntryIdx = -1;
     function pickEntry(target){
       const movieRect = movie.getBoundingClientRect();
       const W = movieRect.width, H = movieRect.height;
@@ -999,15 +1238,18 @@
         {x: W * 0.08, y: H * 0.92}, {x: W * 0.92, y: H * 0.18},
         {x: W * 0.50, y: H * 0.05}, {x: W * 0.08, y: H * 0.50},
       ];
+      const minDist = Math.min(W, H) * 0.45;
+      const candidates = [];
       for(let i = 0; i < edges.length; i++){
-        const idx = (entryRot + i) % edges.length;
-        const c = edges[idx];
-        if(Math.hypot(c.x - cx.x, c.y - cx.y) > Math.min(W, H) * 0.45){
-          entryRot = (idx + 1) % edges.length;
-          return {x: c.x + (Math.random()*30 - 15), y: c.y + (Math.random()*24 - 12)};
-        }
+        if(i === lastEntryIdx) continue;
+        const c = edges[i];
+        if(Math.hypot(c.x - cx.x, c.y - cx.y) > minDist) candidates.push(i);
       }
-      return edges[entryRot++ % edges.length];
+      const pool = candidates.length ? candidates : edges.map((_, i) => i).filter(i => i !== lastEntryIdx);
+      const pick = pool[Math.floor(Math.random() * pool.length)];
+      lastEntryIdx = pick;
+      const c = edges[pick];
+      return {x: c.x + (Math.random()*30 - 15), y: c.y + (Math.random()*24 - 12)};
     }
     function performClickSequence(targetKey, beat){
       const target = document.querySelector('.scene.active [data-click="' + targetKey + '"]');
@@ -1064,15 +1306,67 @@
       setTimeout(() => { beatIdx = (beatIdx + 1) % beats.length; runBeat(); }, beat.dur);
     }
 
-    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-      cards[3].classList.add('active', 'in');
-      cards[3].querySelectorAll('.word, .punct').forEach(w => { w.style.transitionDelay = '0s'; });
-      document.getElementById('hero-progress').style.display = 'none';
+    /* === Size toggle for the math section === */
+    (function initSizeToggle(){
+      const SIZES = {
+        small:{
+          label:'small', providers:100,
+          'save-fto':'~$6,000','save-remediation':'~$5,000','save-legal':'~$8,000','save-to':'~$4,500',
+          'save-total':'$23,500','save-net':'~$13,500','pq':'$10,000',
+          'diy-savings':'~$26,000','hires-est':'~10',
+          lms:'$8,000/yr', ce:'$8,000/yr', compliance:'$8,000/yr',
+          'diy-y1':'$36,000',
+        },
+        medium:{
+          label:'medium', providers:300,
+          'save-fto':'~$18,000','save-remediation':'~$12,000','save-legal':'~$15,000','save-to':'~$9,000',
+          'save-total':'$54,000','save-net':'~$24,000','pq':'$30,000',
+          'diy-savings':'~$46,000','hires-est':'~30',
+          lms:'$22,000/yr', ce:'$24,000/yr', compliance:'$18,000/yr',
+          'diy-y1':'$76,000',
+        },
+        large:{
+          label:'large', providers:500,
+          'save-fto':'~$30,000','save-remediation':'~$20,000','save-legal':'~$25,000','save-to':'~$12,000',
+          'save-total':'$87,000','save-net':'~$37,000','pq':'$50,000',
+          'diy-savings':'~$68,000','hires-est':'~50',
+          lms:'$36,000/yr', ce:'$40,000/yr', compliance:'$30,000/yr',
+          'diy-y1':'$118,000',
+        },
+      };
+      const buttons = document.querySelectorAll('.size-btn');
+      const valEls  = document.querySelectorAll('[data-size-val]');
+      const textEls = document.querySelectorAll('[data-size-text]');
+      const root    = document.getElementById('value-section');
+      if(!buttons.length || !root) return;
+      function applySize(size){
+        const data = SIZES[size];
+        if(!data) return;
+        root.classList.add('swapping');
+        setTimeout(() => {
+          valEls.forEach(el => { const k = el.dataset.sizeVal; if(data[k] !== undefined) el.textContent = data[k]; });
+          textEls.forEach(el => { const k = el.dataset.sizeText; if(data[k] !== undefined) el.textContent = data[k]; });
+          buttons.forEach(b => {
+            const isActive = b.dataset.size === size;
+            b.classList.toggle('active', isActive);
+            b.setAttribute('aria-selected', isActive ? 'true' : 'false');
+          });
+          root.classList.remove('swapping');
+          try{ localStorage.setItem('protoquiz_agency_size', size); }catch(_){}
+        }, 80);
+      }
+      buttons.forEach(btn => btn.addEventListener('click', () => applySize(btn.dataset.size)));
+      let saved = 'medium';
+      try{ saved = localStorage.getItem('protoquiz_agency_size') || 'medium'; }catch(_){}
+      if(SIZES[saved]) applySize(saved);
+    })();
+
+    if(reducedMotion){
       setActive('[data-beat="admin-dash"]');
       progressEl.style.display = 'none';
       return;
     }
-    window.addEventListener('load', () => { nextHero(); runBeat(); });
+    window.addEventListener('load', () => { runBeat(); });
   })();
   </script>
 </body>
