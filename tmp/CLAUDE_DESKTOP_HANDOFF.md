@@ -35,26 +35,12 @@ The founder wants the walkthrough section of the agency page to feel like a vide
 
 What makes the current preview's movie work is that a fake cursor floats in, hovers a target, clicks, and the screen advances. That motion is what sells it as "someone using the product" instead of a slide deck of screenshots. **Preserve that behavior** — the existing JS in `movie-preview.html` (search `performClickSequence`, `pickEntry`) already does this and was tuned in the previous session. Don't rebuild it; reuse it.
 
-**You have two valid ways to build each scene — pick whichever is faster per beat:**
+**How you build each scene is your call.** Pick whatever produces the best UI/UX per beat — real screenshots, CSS mockups, SVG-built UI, or a mix. The founder's view: don't bother choosing a doctrine, just make it look great and feel real. The constraints are:
 
-**Option A: Real screenshots as the scene background.**
-- Browse the demo subdomains with Chrome MCP, capture screens at 2x retina.
-- Embed them as `<img>` inside the existing `<div class="scene">` blocks.
-- Position the cursor target zones absolutely on top of the image (e.g. an invisible div over the "Cardiac" tile that the cursor flies to and clicks).
-- The screen "advances" by switching to the next screenshot. Cursor still moves and clicks.
-- **Strip all "DEMO" / "Sandbox" branding from screenshots before embedding** — DevTools CSS injection to hide badges, then capture; or post-process with image editing. The viewer must believe this is full-access usage.
-
-**Option B: CSS-mocked scenes (what the current preview does).**
-- Hand-code the scene in HTML + CSS, inspired by what you saw on the live demo.
-- More work per beat, but lets you control the data perfectly (no demo artifacts to scrub).
-- Cursor system works identically.
-
-**Mix the two.** Use real screenshots where the screen is information-rich and hard to mock cleanly (the admin dashboard heatmap, the PDF view). Use CSS mocks where the screen is simple and you want pixel-perfect control (the home screen with topic tiles, the quiz question with answer reveal). Pick per beat based on what sells the moment best.
-
-In all cases:
-- The cursor moves and clicks. Always.
-- No "DEMO" / "Sandbox" / fake-tenant branding visible.
-- Data on screen is believable for a real Denver Metro EMS deployment.
+- **The cursor moves and clicks.** Every beat.
+- **No "DEMO" / "Sandbox" / fake-tenant branding visible** anywhere. If using screenshots, scrub the badges before capture (DevTools CSS injection) or post-process. If using CSS mocks, just don't put them in.
+- **Data on screen is believable for a real Denver Metro EMS deployment** — real-sounding agency name, realistic provider counts, realistic protocol references. Not "Lorem Ipsum", not "Test Agency".
+- **Visually polished** — match Inter for body, Georgia for serif headings, JetBrains Mono for labels and metadata, project ease `cubic-bezier(.16,1,.3,1)`. Consistent with the rest of the page.
 
 The pattern (movie frame on the left, narration on the right) is approved — you'll change the narration to a single active-beat panel with prev/next chevrons (see Layout section).
 
@@ -108,9 +94,7 @@ Founder is explicit: don't lock in a number of beats or a per-beat duration. Pic
 5. **Frame variants in CSS.** The current preview uses one 9:16 frame for everything. Add a second variant: a 16:9 laptop frame, used for admin beats. The frame visually morphs (cross-fade or animated dimensions) when the movie transitions from medic to admin. This reinforces the "you're a medic / you're an admin" narrative.
 
 6. **Build the beat list.** Use this as a starting reference, adjust freely:
-   - **Medic arc:** open the app, browse what to study, take a quiz question, see the answer cite the protocol PDF (page reference, highlighted on tap), then **also show a scenario with a real-looking EKG** — this is a founder must. Scenarios are a key differentiator (interactive clinical cases, not just trivia), and an EKG visible on screen reads instantly to a working medic as "this is built for me." The EKG can be:
-     - A real screenshot of a scenario from the demo with a believable rhythm strip, OR
-     - A CSS/SVG-rendered EKG trace inside a scenario card (cleaner, more controllable — there are open-source EKG SVG libraries you can adapt; the rhythm shown should match the scenario, e.g. STEMI → ST elevation visible).
+   - **Medic arc:** open the app, browse what to study, take a quiz question, see the answer cite the protocol PDF (page reference, highlighted on tap), then **also show a scenario with a real-looking EKG visible** — this is a founder must. Scenarios are a key differentiator (interactive clinical cases, not just trivia), and an EKG on screen reads instantly to a working medic as "this is built for me." The rhythm shown should match the scenario clinically (e.g. STEMI scenario → ST elevation visible, V-tach scenario → wide-complex tachycardia). How you render it is up to you.
    - **Admin arc:** open the dashboard, see weakest topics, assign training to crews, confirmation.
    No fixed count. Whatever tells the story cleanly. Cut anything that's filler.
 
@@ -118,8 +102,8 @@ Founder is explicit: don't lock in a number of beats or a per-beat duration. Pic
 
 8. **Build the new player widget.**
    - Strip the existing vertical narration list (`<div class="walkthrough-narration">` with multiple `.narration-step` divs).
-   - Replace with: left = movie frame containing scenes (mix of real screenshots embedded as `<img>` AND CSS-mocked `<div class="scene">` blocks, your call per beat), right = single `.beat-narration` panel that cross-fades content per active beat, prev/next chevrons below or beside.
-   - **The cursor must move and click through every beat.** Reuse the existing `performClickSequence` / `pickEntry` JS — don't rewrite it. Each scene declares a `data-click="..."` target where the cursor lands. For screenshot-based scenes, position invisible click-target divs on top of the image at the spot the cursor should hit.
+   - Replace with: left = movie frame with scenes (build them however you want — best UI/UX wins), right = single `.beat-narration` panel that cross-fades content per active beat, prev/next chevrons below or beside.
+   - **The cursor must move and click through every beat.** Reuse the existing `performClickSequence` / `pickEntry` JS — don't rewrite it. Each scene declares a `data-click="..."` target where the cursor lands.
    - Auto-play loop drives the active beat. User clicking prev/next pauses auto-play, sets the active beat manually, optionally resumes after N seconds of inactivity (your call — propose to founder).
 
 9. **Verify reduced-motion fallback.** With `prefers-reduced-motion: reduce`, freeze on the most representative beat (probably the admin dashboard) and show its narration statically. The current preview already does this for the dashboard scene; preserve the pattern.
@@ -128,17 +112,16 @@ Founder is explicit: don't lock in a number of beats or a per-beat duration. Pic
 
 11. **Show the founder.** Open the preview live. Don't merge to `agency/preview.html` yet.
 
-### Asset storage
+### Asset storage (only if you use image assets)
 
-- **Real screenshots used in scenes:** save to `tmp/walkthrough-frames/`. Naming: `01-home.png`, `02-cardiac.png`, etc. — match the beat name.
-- Capture at 2x retina. Strip "DEMO" / "Sandbox" branding via DevTools CSS injection before capturing, or post-process. The screenshots that ship must show full-access usage.
-- **Reference-only screenshots** (study material you don't embed) can also live in `tmp/walkthrough-frames/` — prefix with `ref-` so it's clear which is which.
-- CSS-mocked scenes have no asset files; they're pure HTML/CSS in `movie-preview.html`.
+- If a beat uses real screenshots, save to `tmp/walkthrough-frames/`. Naming: `01-home.png`, `02-cardiac.png`, etc. — match the beat name. Capture at 2x retina.
+- Reference-only screenshots (for your own study, not embedded) prefix with `ref-` in the same folder.
+- Strip "DEMO" / "Sandbox" branding before capture (DevTools CSS injection) or post-process out.
 
 ### Definition of done (for this session)
 
-- CSS-mockup walkthrough covering both arcs (medic + admin), however many beats it takes — no fixed count.
-- Mockups are built in HTML + CSS, inspired by real screenshots from the demo subdomains, but indistinguishable from a real-product UI in voice and styling. No "demo" anywhere.
+- Walkthrough covers both arcs (medic + admin), however many beats it takes — no fixed count.
+- Visual quality is high — best UI/UX wins. Build scenes however you want (real screenshots, CSS mocks, SVG, mix). No "demo" branding visible.
 - Single-beat narration panel on the right, not a scroll-list. Manual prev/next chevrons work. Auto-play is the default.
 - Phone frame for medic beats, laptop frame for admin beats. Frame variant transitions on arc switch.
 - Founder-approved copy for every beat (you proposed 2–3 options, founder picked).
