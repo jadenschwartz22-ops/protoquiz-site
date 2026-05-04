@@ -1,0 +1,1079 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Agency page — full preview (text-loop hero + chronological app walkthrough)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#e8eaf2;
+    --muted:#9aa0b4;
+    --muted2:#6b7280;
+    --accent:#6366f1;
+    --accent2:#06b6d4;
+    --success:#22c55e;
+    --warn:#f59e0b;
+    --red:#ef4444;
+    --bg:#05060a;
+    --surface:#0a0a0a;
+    --surface2:#0f1117;
+    --line:rgba(255,255,255,.08);
+    --line-soft:rgba(255,255,255,.05);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0; padding:0; background:var(--bg); color:var(--ink); font-family:'Inter',system-ui,sans-serif; -webkit-font-smoothing:antialiased;}
+
+  .wrap{max-width:1140px; margin:0 auto; padding:0 32px;}
+
+  /* ============ HEADER ============ */
+  .site-header{
+    position:fixed; top:0; left:0; right:0;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 36px; z-index:50;
+    background:linear-gradient(180deg, rgba(5,6,10,.78), rgba(5,6,10,0));
+    backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+  }
+  .site-header .brand{display:flex; align-items:center; gap:10px; font-size:14px; font-weight:800; color:#fff; letter-spacing:-.01em; text-decoration:none;}
+  .site-header .brand img{width:26px; height:26px; border-radius:5px;}
+  .site-header nav{display:flex; gap:24px; font-size:12px; color:var(--ink); font-weight:500;}
+  .site-header nav span{cursor:pointer;}
+  .site-header .cta{background:#fff; color:#000; padding:8px 14px; border-radius:6px; font-size:12px; font-weight:700; text-decoration:none;}
+
+  /* ============ HERO TEXT LOOP ============ */
+  .hero{
+    position:relative;
+    height:100vh; min-height:620px;
+    display:flex; align-items:center; justify-content:center;
+    overflow:hidden;
+    background:var(--bg);
+  }
+  .card{
+    position:absolute; inset:0;
+    display:flex; align-items:center; justify-content:center;
+    padding:80px 8vw 110px;
+    opacity:0; visibility:hidden;
+  }
+  .card.active{opacity:1; visibility:visible;}
+  .card .line{
+    font-family:Georgia, 'Times New Roman', serif;
+    color:#fff; font-weight:400;
+    line-height:1.08; letter-spacing:-.022em;
+    text-align:left; max-width:980px;
+  }
+  .card .word, .card .punct{
+    display:inline-block;
+    opacity:0; transform:translateY(16px);
+    transition:opacity .48s cubic-bezier(.16,1,.3,1), transform .58s cubic-bezier(.16,1,.3,1);
+  }
+  .card.in .word, .card.in .punct{opacity:1; transform:translateY(0);}
+  .card .accent{color:var(--accent2); font-style:italic;}
+  .card.c1 .line{font-size:clamp(34px, 5.8vw, 76px);}
+  .card.c2 .line{font-style:italic; font-size:clamp(42px, 8vw, 104px); letter-spacing:-.028em;}
+  .card.c3 .line{font-size:clamp(40px, 7.5vw, 96px);}
+  .card.c4 .line{font-size:clamp(40px, 7.5vw, 96px);}
+  .card .credit{
+    display:block; margin-top:32px;
+    font-family:'JetBrains Mono', ui-monospace, monospace;
+    color:var(--muted); font-size:11px;
+    letter-spacing:.2em; text-transform:uppercase; font-style:normal;
+    opacity:0;
+    transition:opacity .6s cubic-bezier(.16,1,.3,1) 1.4s;
+  }
+  .card.in .credit{opacity:1;}
+
+  .scroll-cue{
+    position:absolute; left:50%; bottom:42px; transform:translateX(-50%);
+    display:flex; flex-direction:column; align-items:center; gap:10px;
+    font-family:'JetBrains Mono', ui-monospace, monospace;
+    font-size:10px; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--muted); z-index:10; text-decoration:none;
+  }
+  .scroll-cue .arrow{
+    width:1px; height:32px;
+    background:linear-gradient(180deg, transparent, var(--muted));
+    animation:scrollPulse 2.4s cubic-bezier(.16,1,.3,1) infinite;
+  }
+  @keyframes scrollPulse{0%, 100%{transform:scaleY(.4); transform-origin:top; opacity:.4;} 50%{transform:scaleY(1); opacity:1;}}
+
+  .hero-progress{
+    position:absolute; bottom:24px; left:50%; transform:translateX(-50%);
+    display:flex; gap:6px; z-index:5;
+  }
+  .hero-progress span{
+    width:36px; height:2px; border-radius:1px;
+    background:rgba(255,255,255,.14); position:relative; overflow:hidden;
+  }
+  .hero-progress span.done::after{transform:scaleX(1);}
+  .hero-progress span.active::after{
+    transform:scaleX(0); transform-origin:left;
+    animation:progFill linear forwards;
+  }
+  .hero-progress span::after{
+    content:""; position:absolute; inset:0;
+    background:#fff; transform:scaleX(0); transform-origin:left;
+  }
+  @keyframes progFill{from{transform:scaleX(0);} to{transform:scaleX(1);}}
+
+  /* ============ SECTION SHELL ============ */
+  .section{padding:120px 0; border-top:1px solid var(--line);}
+  .section.alt{background:var(--surface);}
+  .section-center{text-align:center; max-width:780px; margin:0 auto 48px;}
+  .section-label{
+    font-family:'JetBrains Mono', ui-monospace, monospace;
+    color:var(--accent2); font-size:11px;
+    letter-spacing:.22em; text-transform:uppercase; margin-bottom:18px;
+  }
+  .section-title{
+    font-family:Georgia, serif;
+    font-size:clamp(36px, 5vw, 60px); line-height:1.05;
+    letter-spacing:-.02em; color:#fff; margin:0 0 18px;
+  }
+  .section-desc{font-size:17px; line-height:1.6; color:var(--muted); margin:0;}
+
+  /* ============ APP WALKTHROUGH ============ */
+  /* The hero of "below the fold". Movie left, narrated text right. Scroll-synced highlight. */
+  .walkthrough{
+    display:grid;
+    grid-template-columns:minmax(360px, 480px) 1fr;
+    gap:80px;
+    align-items:start;
+    max-width:1140px; margin:0 auto;
+    padding:0 32px;
+  }
+  .walkthrough-stage{
+    position:sticky; top:96px;
+  }
+  .movie{
+    position:relative;
+    aspect-ratio:9/16;
+    max-height:680px;
+    border-radius:14px; overflow:hidden;
+    background:var(--surface);
+    border:1px solid var(--line);
+    box-shadow:0 30px 80px -20px rgba(0,0,0,.6);
+  }
+
+  .walkthrough-narration{
+    display:flex; flex-direction:column;
+    gap:0;
+    padding:40px 0 80px;
+  }
+  .narration-step{
+    padding:36px 0;
+    border-bottom:1px solid var(--line-soft);
+    opacity:.35;
+    transition:opacity .4s cubic-bezier(.16,1,.3,1);
+  }
+  .narration-step:last-child{border-bottom:none;}
+  .narration-step.live{opacity:1;}
+  .narration-num{
+    font-family:'JetBrains Mono', ui-monospace, monospace;
+    font-size:11px; color:var(--accent2);
+    letter-spacing:.22em; text-transform:uppercase;
+    margin-bottom:12px;
+  }
+  .narration-step h3{
+    font-family:Georgia, serif;
+    font-size:clamp(24px, 3vw, 36px);
+    color:#fff; line-height:1.15; letter-spacing:-.015em;
+    margin:0 0 14px; font-weight:400;
+  }
+  .narration-step p{
+    font-size:15.5px; line-height:1.65;
+    color:var(--ink); margin:0;
+    max-width:480px;
+  }
+
+  /* === Movie internals (same as v10) === */
+  .scene{position:absolute; inset:0; opacity:0; visibility:hidden; overflow:hidden; background:var(--surface);}
+  .scene.active{opacity:1; visibility:visible;}
+
+  .ah{display:flex; align-items:center; justify-content:space-between; padding:11px 16px; border-bottom:1px solid var(--line); background:var(--surface);}
+  .ah-logo{width:30px; height:30px; border-radius:5px; background:#1f2937; padding:4px; display:flex; align-items:center; justify-content:center;}
+  .ah-logo img{width:100%; height:100%; display:block;}
+  .ah-nav{display:flex; gap:13px; font-size:10px; color:var(--ink); font-weight:500;}
+  .ah-profile{background:var(--accent); color:#fff; padding:4px 10px; border-radius:4px; font-size:10px; font-weight:700;}
+
+  .home-body{padding:14px 16px; height:calc(100% - 52px); overflow:hidden;}
+  .home-logo-card{
+    width:88px; height:62px; margin:6px auto 10px;
+    background:#fff; border-radius:10px; padding:6px;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 8px 24px rgba(99,102,241,.18);
+  }
+  .home-logo-card img{width:46px; height:46px; display:block;}
+  .home-title{font-size:18px; font-weight:900; color:#fff; text-align:center; margin-bottom:2px; letter-spacing:-.02em;}
+  .home-sub{font-size:10px; color:var(--muted); text-align:center; margin-bottom:14px;}
+  .home-tiles{display:flex; flex-direction:column; gap:6px;}
+  .home-tile{
+    border:1.5px solid; border-radius:9px;
+    padding:11px 14px; background:var(--surface2);
+    transition:transform .2s cubic-bezier(.16,1,.3,1), box-shadow .2s cubic-bezier(.16,1,.3,1);
+  }
+  .home-tile h3{margin:0 0 1px; font-size:13px; font-weight:800; color:#fff; letter-spacing:-.01em;}
+  .home-tile p{margin:0; font-size:9.5px; color:rgba(255,255,255,.55);}
+  .ht-protocol{border-color:#3b82f6; background:linear-gradient(180deg, rgba(30,64,175,.18), rgba(15,23,42,.5));}
+  .ht-scenarios{border-color:#22c55e; background:linear-gradient(180deg, rgba(21,128,61,.16), rgba(15,23,42,.5));}
+  .ht-pharm{border-color:#a855f7; background:linear-gradient(180deg, rgba(126,34,206,.18), rgba(15,23,42,.5));}
+  .ht-procedures{border-color:#ef4444; background:linear-gradient(180deg, rgba(153,27,27,.18), rgba(15,23,42,.5));}
+  .ht-learn{border-color:#14b8a6; background:linear-gradient(180deg, rgba(15,118,110,.18), rgba(15,23,42,.5));}
+
+  [data-click]{position:relative; transition:transform .15s cubic-bezier(.16,1,.3,1), box-shadow .15s ease;}
+  [data-click].clicked{transform:scale(.985); box-shadow:0 0 0 2px rgba(99,102,241,.55);}
+  [data-click].clicked::after{
+    content:""; position:absolute; top:50%; left:50%;
+    width:34px; height:34px; border-radius:50%;
+    background:rgba(99,102,241,.32);
+    transform:translate(-50%, -50%) scale(.2);
+    animation:tapRipple .65s cubic-bezier(.16,1,.3,1);
+    pointer-events:none;
+  }
+  @keyframes tapRipple{0%{transform:translate(-50%, -50%) scale(.2); opacity:.95;} 100%{transform:translate(-50%, -50%) scale(3.5); opacity:0;}}
+
+  .quiz-body{padding:14px 16px; height:calc(100% - 52px); overflow:hidden;}
+  .qb-back{font-size:11px; color:var(--accent); font-weight:600; margin-bottom:8px;}
+  .qb-title{font-size:17px; font-weight:900; color:#fff; letter-spacing:-.01em; margin-bottom:2px;}
+  .qb-sub{font-size:10px; color:var(--muted); margin-bottom:10px;}
+  .topic-grid{display:grid; grid-template-columns:1fr 1fr; gap:6px;}
+  .topic-card{padding:10px 12px; border-radius:8px; background:var(--surface2); border:1px solid var(--line);}
+  .topic-card h4{margin:0 0 1px; font-size:12px; font-weight:800; color:#fff; letter-spacing:-.01em;}
+  .topic-card .meta{font-size:9px; color:var(--muted);}
+
+  .modal-wrap{position:absolute; inset:0; padding:0; background:rgba(0,0,0,.65); display:flex; align-items:center; justify-content:center;}
+  .modal{
+    width:84%; max-width:340px;
+    background:var(--surface2); border:1px solid var(--line);
+    border-radius:12px; padding:16px;
+    animation:modalIn .32s cubic-bezier(.16,1,.3,1);
+  }
+  @keyframes modalIn{from{transform:scale(.94); opacity:0;} to{transform:scale(1); opacity:1;}}
+  .modal-h{font-size:16px; font-weight:900; color:#fff; margin-bottom:2px; letter-spacing:-.02em;}
+  .modal-sub{font-size:10px; color:var(--muted); margin-bottom:12px;}
+  .modal-test{padding:10px 14px; border-radius:8px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.10); margin-bottom:6px;}
+  .modal-test h5{margin:0 0 1px; font-size:12px; font-weight:800; color:#fff;}
+  .modal-test p{margin:0; font-size:9.5px; color:var(--muted);}
+
+  .qz-num{font-size:13px; font-weight:800; color:#fff; margin-bottom:6px;}
+  .qz-bar{height:4px; background:rgba(255,255,255,.08); border-radius:2px; overflow:hidden; margin-bottom:10px;}
+  .qz-fill{height:100%; background:linear-gradient(90deg, var(--accent), var(--accent2));}
+  .qz-dots{display:flex; gap:5px; margin-bottom:12px; flex-wrap:wrap;}
+  .qz-dot{width:22px; height:22px; border-radius:50%; background:#1f2230; color:var(--muted); display:inline-flex; align-items:center; justify-content:center; font-size:10px; font-weight:700;}
+  .qz-dot.done{background:var(--success); color:#fff;}
+  .qz-dot.cur{background:var(--accent); color:#fff;}
+  .qz-q{font-size:13px; font-weight:700; color:#fff; line-height:1.45; margin-bottom:11px; letter-spacing:-.005em;}
+  .qz-choice{padding:10px 13px; border-radius:8px; background:var(--surface2); border:1px solid var(--line); margin-bottom:6px; font-size:11px; color:var(--ink); display:flex; gap:11px; align-items:center; transition:background .35s cubic-bezier(.16,1,.3,1), border-color .35s cubic-bezier(.16,1,.3,1);}
+  .qz-choice .l{width:22px; height:22px; border-radius:50%; background:rgba(255,255,255,.06); color:var(--muted); display:inline-flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; flex-shrink:0;}
+  .qz-choice.right{background:rgba(34,197,94,.12); border-color:var(--success);}
+  .qz-choice.right .l{background:var(--success); color:#fff;}
+  .qz-correct{margin-top:9px; padding:10px 13px; background:rgba(34,197,94,.08); border:1px solid rgba(34,197,94,.4); border-radius:8px; opacity:0; transform:translateY(4px); transition:opacity .42s cubic-bezier(.16,1,.3,1), transform .42s cubic-bezier(.16,1,.3,1); transition-delay:.4s;}
+  .scene.active .qz-correct{opacity:1; transform:translateY(0);}
+  .qz-correct-h{display:flex; justify-content:space-between; align-items:center; margin-bottom:5px;}
+  .qz-correct-h strong{color:#fff; font-size:11px;}
+  .qz-explain{font-size:10px; color:var(--ink); line-height:1.45; margin-bottom:6px;}
+  .qz-ref{padding:7px 11px; border-radius:6px; background:rgba(99,102,241,.14); border:1px solid rgba(99,102,241,.3); color:var(--accent2); font-size:10px; font-weight:700; display:flex; justify-content:space-between; align-items:center;}
+
+  .pdf-h{text-align:center; padding:7px; color:var(--accent); font-size:10px; font-weight:700; background:var(--surface); font-family:'JetBrains Mono', ui-monospace, monospace; letter-spacing:.05em; border-bottom:1px solid var(--line);}
+  .pdf-page{background:#fff; color:#000; padding:14px 16px; border-radius:3px; font-size:9.5px; line-height:1.45; height:calc(100% - 30px); overflow:hidden; margin:0 12px;}
+  .pdf-page h2{text-align:center; font-size:11px; font-weight:700; margin:0 0 8px; letter-spacing:.04em;}
+  .pdf-page h3{font-style:italic; font-size:10.5px; font-weight:700; margin:0 0 4px; padding-bottom:4px; border-bottom:1px solid #000;}
+  .pdf-section{padding:5px 0; border-bottom:1px solid #ccc;}
+  .pdf-section h4{font-size:10px; font-weight:700; margin:0 0 3px;}
+  .pdf-section p, .pdf-section ul{margin:0; font-size:9.5px; color:#222;}
+  .pdf-section ul{padding-left:14px;}
+  .pdf-section li{margin-bottom:2px;}
+  .pdf-hi{background:#fef08a; padding:1px 3px; font-weight:700;}
+  .scene.active .pdf-hi{animation:pdfHi 1.4s cubic-bezier(.16,1,.3,1) .4s both;}
+  @keyframes pdfHi{0%{background:#fef08a; box-shadow:0 0 0 0 rgba(250,204,21,0);} 50%{background:#fde047; box-shadow:0 0 0 4px rgba(250,204,21,.55);} 100%{background:#fde047; box-shadow:0 0 0 0 rgba(250,204,21,0);}}
+
+  .ad-banner{display:flex; align-items:center; justify-content:center; gap:10px; padding:7px 12px; background:#f59e0b; color:#0a0a0a; font-size:10px; font-weight:800; letter-spacing:.10em;}
+  .ad-banner-pill{background:#0a0a0a; color:#fff; padding:3px 10px; border-radius:5px; font-size:9px; font-weight:700;}
+  .ad-tabs{display:flex; gap:4px; margin-bottom:10px; border-bottom:1px solid var(--line); padding-bottom:6px;}
+  .ad-tab{font-size:10px; font-weight:700; padding:6px 10px; border-radius:5px 5px 0 0; color:var(--muted); cursor:pointer;}
+  .ad-tab.on{color:#fff; box-shadow:inset 0 -2px 0 var(--accent);}
+
+  .ad-body{padding:12px 14px; height:calc(100% - 28px); overflow:hidden;}
+  .ad-h{display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:10px;}
+  .ad-title{font-size:14px; font-weight:900; color:#fff; letter-spacing:-.02em; line-height:1.1;}
+  .ad-sub{font-size:9px; color:var(--muted); margin-top:2px;}
+  .ad-controls{display:flex; gap:4px;}
+  .ad-pill{font-size:9px; font-weight:700; padding:4px 8px; border-radius:5px; background:var(--surface2); color:var(--muted); border:1px solid var(--line);}
+  .ad-pill.on{background:var(--accent); color:#fff; border-color:var(--accent);}
+  .ad-kpis{display:grid; grid-template-columns:repeat(4, 1fr); gap:6px; margin-bottom:11px;}
+  .ad-kpi{padding:8px 10px; border-radius:7px; background:var(--surface2); border:1px solid var(--line); border-top:2px solid; opacity:0; transform:translateY(4px); transition:opacity .42s cubic-bezier(.16,1,.3,1), transform .42s cubic-bezier(.16,1,.3,1);}
+  .scene.active .ad-kpi{opacity:1; transform:translateY(0);}
+  .scene.active .ad-kpi:nth-child(1){transition-delay:.10s;}
+  .scene.active .ad-kpi:nth-child(2){transition-delay:.18s;}
+  .scene.active .ad-kpi:nth-child(3){transition-delay:.26s;}
+  .scene.active .ad-kpi:nth-child(4){transition-delay:.34s;}
+  .ad-kpi.k1{border-top-color:#3b82f6;}
+  .ad-kpi.k2{border-top-color:var(--success);}
+  .ad-kpi.k3{border-top-color:var(--accent2);}
+  .ad-kpi.k4{border-top-color:var(--warn);}
+  .ad-kpi-v{font-size:18px; font-weight:900; color:#fff; letter-spacing:-.03em; line-height:1; margin-bottom:2px;}
+  .ad-kpi-l{font-size:7.5px; color:var(--muted); font-weight:700; letter-spacing:.10em; text-transform:uppercase;}
+  .ad-section-h{font-size:10px; color:#fff; font-weight:800; margin:6px 0 6px;}
+  .ad-section-h .meta{color:var(--muted); font-weight:600; margin-left:6px; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:8.5px; letter-spacing:.04em;}
+
+  .heatmap{display:grid; grid-template-columns:60px repeat(12, 1fr); gap:3px;}
+  .hm-month{font-size:7px; color:var(--muted); text-align:center; font-family:'JetBrains Mono',ui-monospace,monospace; padding-bottom:3px;}
+  .hm-topic{font-size:9px; color:var(--ink); font-weight:600; display:flex; align-items:center;}
+  .hm-cell{aspect-ratio:1; border-radius:3px; display:flex; align-items:center; justify-content:center; font-size:7.5px; font-weight:800; color:#fff; font-family:'JetBrains Mono',ui-monospace,monospace; opacity:0; transform:scale(.85);}
+  .scene.active .hm-cell{animation:hmIn .35s cubic-bezier(.16,1,.3,1) forwards;}
+  @keyframes hmIn{to{opacity:1; transform:scale(1);}}
+  .hm-cell.lo{background:#dc2626;}
+  .hm-cell.mid{background:#f59e0b;}
+  .hm-cell.hi{background:#16a34a;}
+
+  .weak-list{display:flex; flex-direction:column; gap:5px;}
+  .weak-row{display:grid; grid-template-columns:80px 1fr 50px 80px; gap:8px; align-items:center; padding:8px 10px; border-radius:7px; background:var(--surface2); border:1px solid var(--line);}
+  .weak-name{font-size:11px; color:#fff; font-weight:600;}
+  .weak-bar{height:6px; background:rgba(255,255,255,.05); border-radius:3px; overflow:hidden;}
+  .weak-bar-fill{height:100%; border-radius:3px;}
+  .weak-bar-fill.lo{background:linear-gradient(90deg, #b91c1c, #ef4444);}
+  .weak-bar-fill.mid{background:linear-gradient(90deg, #b45309, #f59e0b);}
+  .weak-score{font-size:11px; font-weight:800; text-align:right; font-family:'JetBrains Mono', ui-monospace, monospace;}
+  .weak-score.lo{color:#ef4444;}
+  .weak-score.mid{color:#f59e0b;}
+  .weak-action{font-size:9px; font-weight:700; padding:6px 8px; border-radius:5px; background:rgba(99,102,241,.15); color:var(--accent2); border:1px solid rgba(99,102,241,.3); text-align:center;}
+
+  .assign-modal{width:84%; max-width:340px; background:var(--surface2); border:1px solid var(--line); border-radius:12px; padding:18px; animation:modalIn .32s cubic-bezier(.16,1,.3,1);}
+  .assign-h{font-size:14px; font-weight:900; color:#fff; margin-bottom:2px; letter-spacing:-.01em;}
+  .assign-sub{font-size:10px; color:var(--muted); margin-bottom:12px;}
+  .assign-field{margin-bottom:10px;}
+  .assign-l{font-size:9px; color:var(--muted); font-weight:700; letter-spacing:.06em; text-transform:uppercase; margin-bottom:4px;}
+  .assign-v{padding:8px 10px; border-radius:6px; background:rgba(255,255,255,.04); border:1px solid var(--line); font-size:11px; color:#fff; display:flex; justify-content:space-between; align-items:center;}
+  .assign-v .chev{color:var(--muted); font-size:10px;}
+  .assign-confirm{width:100%; padding:10px; background:linear-gradient(120deg, var(--accent), var(--accent2)); color:#fff; font-size:12px; font-weight:800; border:none; border-radius:7px; margin-top:6px;}
+  .assign-toast{position:absolute; left:50%; bottom:34px; transform:translateX(-50%); background:rgba(34,197,94,.18); color:var(--success); border:1px solid rgba(34,197,94,.4); border-radius:7px; padding:8px 14px; font-size:11px; font-weight:700; opacity:0; transition:opacity .35s cubic-bezier(.16,1,.3,1); pointer-events:none;}
+  .scene.active .assign-toast.show{opacity:1; transition-delay:.4s;}
+
+  .cursor{position:absolute; top:0; left:0; width:18px; height:18px; z-index:60; pointer-events:none; filter:drop-shadow(0 2px 4px rgba(0,0,0,.7)); opacity:0;}
+  .cursor svg{display:block; width:100%; height:100%;}
+
+  .progress{position:absolute; left:14px; right:14px; bottom:8px; display:flex; gap:3px; pointer-events:none; z-index:40;}
+  .progress span{flex:1; height:2px; border-radius:1px; background:rgba(255,255,255,.10); overflow:hidden; position:relative;}
+  .progress span.done::after{transform:scaleX(1);}
+  .progress span.active::after{transform:scaleX(0); transform-origin:left; animation:progFill linear forwards;}
+  .progress span::after{content:""; position:absolute; inset:0; background:linear-gradient(90deg, var(--accent), var(--accent2)); transform:scaleX(0); transform-origin:left;}
+
+  /* ============ FOUNDER PULLQUOTE ============ */
+  .pullquote{
+    max-width:880px; margin:0 auto;
+    text-align:left;
+  }
+  .pullquote-lede{
+    font-family:Georgia, serif;
+    font-size:clamp(28px, 4vw, 48px);
+    line-height:1.25; letter-spacing:-.015em;
+    color:var(--muted); margin:0 0 18px; font-weight:400;
+  }
+  .pullquote-lede strong{color:#fff; font-weight:700;}
+  .pullquote-question{
+    font-family:Georgia, serif;
+    font-size:clamp(36px, 5.4vw, 68px);
+    line-height:1.1; letter-spacing:-.02em;
+    color:#fff; margin:0 0 12px; font-weight:400;
+  }
+  .pullquote-answer{
+    font-family:Georgia, serif;
+    font-size:clamp(36px, 5.4vw, 68px);
+    line-height:1.1; letter-spacing:-.02em;
+    color:var(--accent2); margin:0 0 28px; font-weight:400;
+  }
+  .pullquote-byline{
+    display:flex; align-items:center; gap:14px;
+    padding-top:24px; border-top:1px solid var(--line);
+    margin-top:30px;
+  }
+  .pullquote-byline-name{font-size:14px; font-weight:700; color:#fff;}
+  .pullquote-byline-role{font-size:12px; color:var(--muted); margin-top:2px;}
+
+  /* ============ ROLLOUT TIMELINE ============ */
+  .timeline{display:grid; grid-template-columns:repeat(2, 1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:14px; overflow:hidden;}
+  @media (max-width:720px){.timeline{grid-template-columns:1fr;}}
+  .tl-item{background:var(--surface); padding:32px 28px;}
+  .tl-dot{
+    font-family:Georgia, serif; font-size:38px; color:var(--accent);
+    line-height:1; margin-bottom:12px;
+  }
+  .tl-item h3{font-size:16px; font-weight:800; color:#fff; margin:0 0 6px;}
+  .tl-item p{font-size:13.5px; line-height:1.55; color:var(--muted); margin:0;}
+
+  /* ============ MATH PLACEHOLDER ============ */
+  .math-card{
+    max-width:780px; margin:0 auto;
+    background:var(--surface2); border:1px solid var(--line);
+    border-radius:14px; padding:36px 32px;
+  }
+  .math-toggle{display:flex; gap:6px; justify-content:center; margin-bottom:28px;}
+  .math-toggle button{
+    background:var(--surface); border:1px solid var(--line); color:var(--ink);
+    padding:10px 18px; border-radius:8px; font-size:12px; font-weight:700; font-family:inherit; cursor:pointer;
+  }
+  .math-toggle button.on{background:var(--accent); border-color:var(--accent); color:#fff;}
+  .math-row{display:grid; grid-template-columns:1fr auto; gap:8px; padding:10px 0; border-bottom:1px solid var(--line-soft); font-size:14px;}
+  .math-row.sub{color:var(--muted); font-size:12px;}
+  .math-row.total{border-bottom:none; padding-top:18px; font-size:18px; font-weight:800; color:#fff;}
+  .math-row.total .v{color:var(--success);}
+
+  /* ============ PRICING ============ */
+  .price-card{
+    max-width:540px; margin:0 auto;
+    background:linear-gradient(180deg, rgba(99,102,241,.08), rgba(10,15,22,.4));
+    border:1px solid rgba(99,102,241,.25); border-radius:16px;
+    padding:36px 36px 28px; text-align:center;
+  }
+  .price-pilot{
+    display:inline-block; padding:5px 12px; border-radius:5px;
+    background:rgba(34,197,94,.15); color:var(--success);
+    font-size:10px; font-weight:800; letter-spacing:.12em; text-transform:uppercase;
+    margin-bottom:18px;
+  }
+  .price-num{
+    font-family:Georgia, serif; font-size:84px; font-weight:400;
+    color:#fff; line-height:1; margin-bottom:8px; letter-spacing:-.04em;
+  }
+  .price-num .dollar{font-size:48px; vertical-align:24px; color:var(--muted);}
+  .price-unit{font-size:13px; color:var(--muted); margin-bottom:20px;}
+  .price-includes{
+    list-style:none; padding:0; margin:0 0 22px;
+    display:grid; grid-template-columns:1fr 1fr; gap:6px 14px;
+    text-align:left;
+  }
+  .price-includes li{font-size:12px; color:var(--ink); padding-left:18px; position:relative;}
+  .price-includes li::before{content:"+"; position:absolute; left:0; color:var(--success); font-weight:800;}
+  .price-foot{font-size:11px; color:var(--muted); line-height:1.6;}
+
+  /* ============ FAQ ============ */
+  .faq-list{max-width:760px; margin:0 auto; display:flex; flex-direction:column; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:12px; overflow:hidden;}
+  .faq-item{background:var(--surface); padding:22px 26px;}
+  .faq-q{font-size:15px; font-weight:700; color:#fff; margin-bottom:8px;}
+  .faq-a{font-size:13.5px; line-height:1.6; color:var(--muted); margin:0;}
+
+  /* ============ CTA ============ */
+  .cta-section{padding:120px 0; background:linear-gradient(180deg, var(--surface), var(--bg)); text-align:center;}
+  .cta-section h2{font-family:Georgia, serif; font-size:clamp(40px, 6vw, 72px); line-height:1.05; letter-spacing:-.02em; color:#fff; margin:0 0 22px; max-width:820px; margin-left:auto; margin-right:auto;}
+  .cta-section p{font-size:17px; color:var(--muted); margin:0 0 36px;}
+  .btn{display:inline-flex; align-items:center; justify-content:center; padding:14px 26px; border-radius:8px; font-size:14px; font-weight:700; text-decoration:none; cursor:pointer; border:1px solid transparent; transition:transform .15s cubic-bezier(.16,1,.3,1), background .15s ease;}
+  .btn-primary{background:#fff; color:#000;}
+  .btn-primary:hover{transform:translateY(-1px);}
+  .btn-ghost{background:transparent; color:#fff; border-color:rgba(255,255,255,.18);}
+  .btn-ghost:hover{background:rgba(255,255,255,.05);}
+  .cta-actions{display:flex; gap:12px; justify-content:center; flex-wrap:wrap;}
+
+  footer{padding:40px 32px; text-align:center; font-size:12px; color:var(--muted2); border-top:1px solid var(--line);}
+
+  @media (max-width:900px){
+    .walkthrough{grid-template-columns:1fr; gap:40px;}
+    .walkthrough-stage{position:relative; top:0; max-width:380px; margin:0 auto;}
+  }
+  @media (max-width:600px){
+    .site-header{padding:14px 18px;}
+    .site-header nav{display:none;}
+    .card{padding:80px 24px 110px;}
+    .section{padding:80px 0;}
+    .price-includes{grid-template-columns:1fr;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .card{transition:none;}
+    .card .word, .card .punct{opacity:1; transform:none; transition:none;}
+    .scroll-cue .arrow{animation:none;}
+    .hero-progress, .progress{display:none;}
+    .home-tile, .ad-kpi, .hm-cell, .qz-correct{opacity:1 !important; transform:none !important; animation:none !important;}
+    .cursor{display:none;}
+    html{scroll-behavior:auto;}
+    .narration-step{opacity:1;}
+  }
+</style>
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="#" class="brand"><img src="../logo-256.png" alt="">ProtoQuiz</a>
+    <nav><span>How it works</span><span>Pricing</span><span>Pilot</span></nav>
+    <a href="#contact" class="cta">Talk to us</a>
+  </header>
+
+  <!-- ============ HERO TEXT LOOP ============ -->
+  <section class="hero" id="hero">
+    <div class="card c1" data-card="0">
+      <div class="line"><span class="word">You</span> <span class="word">need</span> <span class="word">to</span> <span class="word">know</span> <span class="word">your</span> <span class="word">EMS</span> <span class="word">protocols</span> <span class="word">to</span> <span class="word">work</span> <span class="word">as</span> <span class="word">an</span> <span class="word">EMT</span> <span class="word">or</span> <span class="word">medic</span><span class="punct">.</span></div>
+    </div>
+    <div class="card c2" data-card="1">
+      <div class="line"><span class="word">So</span> <span class="word">why</span> <span class="word">is</span> <span class="word">there</span> <span class="word">no</span> <span class="word">good</span> <span class="word">way</span> <span class="word">to</span> <span class="word">train</span> <span class="word">on</span> <span class="word">them</span><span class="punct">?</span></div>
+    </div>
+    <div class="card c3" data-card="2">
+      <div class="line"><span class="word">Target</span> <span class="word">training</span><br><span class="word">on</span> <span class="word accent">your</span> <span class="word accent">weakest</span> <span class="word accent">topics</span><span class="punct">.</span></div>
+    </div>
+    <div class="card c4" data-card="3">
+      <div class="line"><span class="word">Train</span> <span class="word">your</span> <span class="word">crews</span> <span class="word">on</span> <span class="word">your</span> <span class="word">protocols</span><span class="punct">.</span><span class="credit">Built by working medics</span></div>
+    </div>
+    <div class="hero-progress" id="hero-progress" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    <a class="scroll-cue" href="#walkthrough"><span>See how</span><span class="arrow"></span></a>
+  </section>
+
+  <!-- ============ APP WALKTHROUGH (movie + narrated steps) ============ -->
+  <section class="section" id="walkthrough">
+    <div class="section-center">
+      <div class="section-label">How it works</div>
+      <h2 class="section-title">Watch a shift on ProtoQuiz.</h2>
+      <p class="section-desc">A medic opens the app between calls. A training officer assigns the next round. Both happen here.</p>
+    </div>
+
+    <div class="walkthrough">
+      <div class="walkthrough-stage">
+        <div class="movie" id="movie">
+
+          <!-- Beat 1: Home -->
+          <div class="scene" data-beat="home">
+            <div class="ah"><div class="ah-logo"><img src="../logo-256.png" alt=""></div><div class="ah-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span class="ah-profile">Profile</span></div></div>
+            <div class="home-body">
+              <div class="home-logo-card"><img src="../logo-256.png" alt=""></div>
+              <div class="home-title">Denver Metro X ProtoQuiz</div>
+              <div class="home-sub">Study Tool for Denver Metro EMS Protocols</div>
+              <div class="home-tiles">
+                <div class="home-tile ht-protocol" data-click="protocol-quizzes"><h3>Protocol Quizzes</h3><p>Topic quizzes and comprehensive exams</p></div>
+                <div class="home-tile ht-scenarios"><h3>Scenarios</h3><p>Interactive clinical cases</p></div>
+                <div class="home-tile ht-pharm"><h3>Pharmacology</h3><p>Topic quizzes and comprehensive exams</p></div>
+                <div class="home-tile ht-procedures"><h3>Procedures</h3><p>Study, drill, and apply skills</p></div>
+                <div class="home-tile ht-learn"><h3>Learn Mode</h3><p>Adaptive learning</p></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Beat 2: Topics -->
+          <div class="scene" data-beat="topics">
+            <div class="ah"><div class="ah-logo"><img src="../logo-256.png" alt=""></div><div class="ah-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span class="ah-profile">Profile</span></div></div>
+            <div class="quiz-body">
+              <div class="qb-back">&larr; Back</div>
+              <div class="qb-title">Protocol Quizzes</div>
+              <div class="qb-sub">Master your protocols by category</div>
+              <div class="topic-grid">
+                <div class="topic-card" data-click="cardiac"><h4>Cardiac</h4><div class="meta">44Q · 3 tests</div></div>
+                <div class="topic-card"><h4>Respiratory</h4><div class="meta">33Q · 3 tests</div></div>
+                <div class="topic-card"><h4>Trauma</h4><div class="meta">33Q · 3 tests</div></div>
+                <div class="topic-card"><h4>Behavioral</h4><div class="meta">32Q · 3 tests</div></div>
+                <div class="topic-card"><h4>Environmental</h4><div class="meta">30Q · 2 tests</div></div>
+                <div class="topic-card"><h4>General Medical</h4><div class="meta">56Q · 4 tests</div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Beat 3: Test picker -->
+          <div class="scene" data-beat="test-picker">
+            <div class="ah"><div class="ah-logo"><img src="../logo-256.png" alt=""></div><div class="ah-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span class="ah-profile">Profile</span></div></div>
+            <div class="quiz-body" style="opacity:.35;">
+              <div class="qb-back">&larr; Back</div>
+              <div class="qb-title">Protocol Quizzes</div>
+              <div class="topic-grid">
+                <div class="topic-card"><h4>Cardiac</h4><div class="meta">44Q · 3 tests</div></div>
+                <div class="topic-card"><h4>Respiratory</h4><div class="meta">33Q · 3 tests</div></div>
+              </div>
+            </div>
+            <div class="modal-wrap"><div class="modal">
+              <div class="modal-h">Cardiac</div>
+              <div class="modal-sub">Select a test to begin</div>
+              <div class="modal-test" data-click="test-1"><h5>Test 1</h5><p>15 questions</p></div>
+              <div class="modal-test"><h5>Test 2</h5><p>15 questions</p></div>
+              <div class="modal-test"><h5>Test 3</h5><p>14 questions</p></div>
+            </div></div>
+          </div>
+
+          <!-- Beat 4: Question unanswered -->
+          <div class="scene" data-beat="q-unanswered">
+            <div class="ah"><div class="ah-logo"><img src="../logo-256.png" alt=""></div><div class="ah-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span class="ah-profile">Profile</span></div></div>
+            <div class="quiz-body">
+              <div class="qb-back">&larr; Back</div>
+              <div class="qz-num">Question 1 of 15</div>
+              <div class="qz-bar"><div class="qz-fill" style="width:6.6%;"></div></div>
+              <div class="qz-dots">
+                <span class="qz-dot cur">1</span><span class="qz-dot">2</span><span class="qz-dot">3</span><span class="qz-dot">4</span><span class="qz-dot">5</span><span class="qz-dot">6</span><span class="qz-dot">7</span><span class="qz-dot">8</span><span class="qz-dot">9</span><span class="qz-dot">10</span><span class="qz-dot">11</span><span class="qz-dot">12</span>
+              </div>
+              <div class="qz-q">According to the protocol, what should be done following hypotension after nitroglycerin administration?</div>
+              <div class="qz-choice"><span class="l">A</span> Additional NTG at lower dose</div>
+              <div class="qz-choice"><span class="l">B</span> Discontinue and transport</div>
+              <div class="qz-choice"><span class="l">C</span> Administer vasopressors</div>
+              <div class="qz-choice" data-click="answer-d"><span class="l">D</span> Give 250 mL NS bolus, reassess, repeat as needed</div>
+            </div>
+          </div>
+
+          <!-- Beat 5: Answered + ref -->
+          <div class="scene" data-beat="q-answered">
+            <div class="ah"><div class="ah-logo"><img src="../logo-256.png" alt=""></div><div class="ah-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span class="ah-profile">Profile</span></div></div>
+            <div class="quiz-body">
+              <div class="qz-num">Question 1 of 15</div>
+              <div class="qz-bar"><div class="qz-fill" style="width:6.6%;"></div></div>
+              <div class="qz-q">According to the protocol, what should be done following hypotension after nitroglycerin administration?</div>
+              <div class="qz-choice"><span class="l">A</span> Additional NTG at lower dose</div>
+              <div class="qz-choice"><span class="l">B</span> Discontinue and transport</div>
+              <div class="qz-choice"><span class="l">C</span> Administer vasopressors</div>
+              <div class="qz-choice right"><span class="l">D</span> Give 250 mL NS bolus, reassess, repeat as needed</div>
+              <div class="qz-correct">
+                <div class="qz-correct-h"><strong>Correct</strong></div>
+                <div class="qz-explain">For hypotension following nitroglycerin give 250 ml NS bolus, reassess, and repeat bolus as needed. Do not give additional nitroglycerin.</div>
+                <div class="qz-ref" data-click="ref-72">Protocol Reference: p.72 <span>&rarr;</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Beat 6: PDF -->
+          <div class="scene" data-beat="pdf">
+            <div class="pdf-h">denvermetro-protocol.pdf · Page 72 of 193</div>
+            <div class="pdf-page">
+              <h2>4015 CHEST PAIN / ACS</h2>
+              <h3>NITROGLYCERIN — POST-ADMINISTRATION</h3>
+              <div class="pdf-section"><h4>Indications</h4><p>Suspected acute coronary syndrome with systolic BP &ge; 100 mmHg.</p></div>
+              <div class="pdf-section"><h4>If Hypotension Develops</h4><ul><li><span class="pdf-hi">Give 250 mL NS bolus, reassess, repeat as needed</span></li><li>Do not administer additional nitroglycerin</li><li>Reassess BP every 2 minutes</li></ul></div>
+              <div class="pdf-section"><h4>Contraindications</h4><ul><li>SBP &lt; 100 mmHg</li><li>PDE-5 inhibitor use within 24-48 hours</li><li>Right ventricular infarction</li></ul></div>
+            </div>
+          </div>
+
+          <!-- Beat 7: Admin dashboard -->
+          <div class="scene" data-beat="admin-dash">
+            <div class="ad-banner">ADMIN<span class="ad-banner-pill">Denver Metro</span></div>
+            <div class="ad-body">
+              <div class="ad-tabs">
+                <span class="ad-tab on">Dashboard</span>
+                <span class="ad-tab" data-click="tab-reports">Reports</span>
+                <span class="ad-tab">Training</span>
+                <span class="ad-tab">Team</span>
+              </div>
+              <div class="ad-h">
+                <div><div class="ad-title">Organization Performance</div><div class="ad-sub">All available data · Updated just now</div></div>
+                <div class="ad-controls"><span class="ad-pill">7D</span><span class="ad-pill">30D</span><span class="ad-pill on">All</span></div>
+              </div>
+              <div class="ad-kpis">
+                <div class="ad-kpi k1"><div class="ad-kpi-v">25</div><div class="ad-kpi-l">Active</div></div>
+                <div class="ad-kpi k2"><div class="ad-kpi-v">83%</div><div class="ad-kpi-l">Avg score</div></div>
+                <div class="ad-kpi k3"><div class="ad-kpi-v">586</div><div class="ad-kpi-l">Quizzes</div></div>
+                <div class="ad-kpi k4"><div class="ad-kpi-v">72%</div><div class="ad-kpi-l">Compliance</div></div>
+              </div>
+              <div class="ad-section-h">Score Trends <span class="meta">avg by topic, by month</span></div>
+              <div class="heatmap" id="heatmap">
+                <div></div>
+                <div class="hm-month">Jun</div><div class="hm-month">Jul</div><div class="hm-month">Aug</div><div class="hm-month">Sep</div><div class="hm-month">Oct</div><div class="hm-month">Nov</div><div class="hm-month">Dec</div><div class="hm-month">Jan</div><div class="hm-month">Feb</div><div class="hm-month">Mar</div><div class="hm-month">Apr</div><div class="hm-month">May</div>
+                <div class="hm-topic">Cardiac</div>
+                <div class="hm-cell mid">74</div><div class="hm-cell mid">76</div><div class="hm-cell mid">77</div><div class="hm-cell mid">78</div><div class="hm-cell hi">80</div><div class="hm-cell hi">81</div><div class="hm-cell hi">82</div><div class="hm-cell hi">83</div><div class="hm-cell hi">84</div><div class="hm-cell hi">85</div><div class="hm-cell hi">86</div><div class="hm-cell hi">87</div>
+                <div class="hm-topic">Respir</div>
+                <div class="hm-cell mid">68</div><div class="hm-cell mid">70</div><div class="hm-cell mid">72</div><div class="hm-cell mid">73</div><div class="hm-cell mid">74</div><div class="hm-cell mid">75</div><div class="hm-cell mid">76</div><div class="hm-cell mid">77</div><div class="hm-cell mid">78</div><div class="hm-cell hi">80</div><div class="hm-cell hi">81</div><div class="hm-cell hi">82</div>
+                <div class="hm-topic">Trauma</div>
+                <div class="hm-cell mid">65</div><div class="hm-cell mid">66</div><div class="hm-cell mid">68</div><div class="hm-cell mid">69</div><div class="hm-cell mid">70</div><div class="hm-cell mid">71</div><div class="hm-cell mid">72</div><div class="hm-cell mid">73</div><div class="hm-cell mid">74</div><div class="hm-cell mid">75</div><div class="hm-cell mid">76</div><div class="hm-cell mid">76</div>
+                <div class="hm-topic">Pharm</div>
+                <div class="hm-cell mid">76</div><div class="hm-cell mid">78</div><div class="hm-cell hi">80</div><div class="hm-cell hi">81</div><div class="hm-cell hi">82</div><div class="hm-cell hi">83</div><div class="hm-cell hi">84</div><div class="hm-cell hi">85</div><div class="hm-cell hi">86</div><div class="hm-cell hi">87</div><div class="hm-cell hi">87</div><div class="hm-cell hi">88</div>
+                <div class="hm-topic">OB/Peds</div>
+                <div class="hm-cell lo">52</div><div class="hm-cell lo">54</div><div class="hm-cell lo">55</div><div class="hm-cell lo">57</div><div class="hm-cell lo">58</div><div class="hm-cell lo">59</div><div class="hm-cell mid">61</div><div class="hm-cell mid">62</div><div class="hm-cell mid">63</div><div class="hm-cell mid">65</div><div class="hm-cell mid">66</div><div class="hm-cell mid">67</div>
+                <div class="hm-topic">Sepsis</div>
+                <div class="hm-cell lo">55</div><div class="hm-cell lo">56</div><div class="hm-cell lo">57</div><div class="hm-cell lo">58</div><div class="hm-cell lo">59</div><div class="hm-cell mid">61</div><div class="hm-cell mid">62</div><div class="hm-cell mid">64</div><div class="hm-cell mid">65</div><div class="hm-cell mid">66</div><div class="hm-cell mid">68</div><div class="hm-cell mid">69</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Beat 8: Reports -->
+          <div class="scene" data-beat="admin-reports">
+            <div class="ad-banner">ADMIN<span class="ad-banner-pill">Denver Metro</span></div>
+            <div class="ad-body">
+              <div class="ad-tabs"><span class="ad-tab">Dashboard</span><span class="ad-tab on">Reports</span><span class="ad-tab">Training</span><span class="ad-tab">Team</span></div>
+              <div class="ad-h">
+                <div><div class="ad-title">Weakest topics</div><div class="ad-sub">Sorted by avg score · last 30 days</div></div>
+                <div class="ad-controls"><span class="ad-pill on">All certs</span><span class="ad-pill">BLS</span><span class="ad-pill">ALS</span></div>
+              </div>
+              <div class="weak-list">
+                <div class="weak-row"><span class="weak-name">OB/Peds</span><span class="weak-bar"><span class="weak-bar-fill lo" style="width:67%;"></span></span><span class="weak-score lo">67%</span><span class="weak-action" data-click="assign-obp">Assign training</span></div>
+                <div class="weak-row"><span class="weak-name">Sepsis</span><span class="weak-bar"><span class="weak-bar-fill lo" style="width:69%;"></span></span><span class="weak-score lo">69%</span><span class="weak-action">Assign training</span></div>
+                <div class="weak-row"><span class="weak-name">Trauma</span><span class="weak-bar"><span class="weak-bar-fill mid" style="width:76%;"></span></span><span class="weak-score mid">76%</span><span class="weak-action">Assign training</span></div>
+                <div class="weak-row"><span class="weak-name">Respir</span><span class="weak-bar"><span class="weak-bar-fill mid" style="width:82%;"></span></span><span class="weak-score mid">82%</span><span class="weak-action">Assign training</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Beat 9: Assignment -->
+          <div class="scene" data-beat="admin-assign">
+            <div class="ad-banner">ADMIN<span class="ad-banner-pill">Denver Metro</span></div>
+            <div class="ad-body" style="opacity:.35;">
+              <div class="ad-tabs"><span class="ad-tab">Dashboard</span><span class="ad-tab on">Reports</span><span class="ad-tab">Training</span><span class="ad-tab">Team</span></div>
+              <div class="weak-list" style="margin-top:10px;">
+                <div class="weak-row"><span class="weak-name">OB/Peds</span><span class="weak-bar"><span class="weak-bar-fill lo" style="width:67%;"></span></span><span class="weak-score lo">67%</span><span class="weak-action">Assign training</span></div>
+                <div class="weak-row"><span class="weak-name">Sepsis</span><span class="weak-bar"><span class="weak-bar-fill lo" style="width:69%;"></span></span><span class="weak-score lo">69%</span><span class="weak-action">Assign training</span></div>
+              </div>
+            </div>
+            <div class="modal-wrap"><div class="assign-modal">
+              <div class="assign-h">Assign training</div>
+              <div class="assign-sub">OB/Peds · current avg 67%</div>
+              <div class="assign-field"><div class="assign-l">Assign to</div><div class="assign-v">All providers (25) <span class="chev">&rsaquo;</span></div></div>
+              <div class="assign-field"><div class="assign-l">Required score</div><div class="assign-v">80% <span class="chev">&rsaquo;</span></div></div>
+              <div class="assign-field"><div class="assign-l">Due</div><div class="assign-v">Friday, May 15 <span class="chev">&rsaquo;</span></div></div>
+              <button class="assign-confirm" data-click="confirm-assign">Send to crew</button>
+            </div></div>
+            <div class="assign-toast" id="assign-toast">Assigned to 25 providers</div>
+          </div>
+
+          <div class="cursor" id="cursor" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 2 L3 17 L7 13.5 L9.5 18.5 L11.5 17.5 L9 12.5 L14 12.5 Z" fill="#fff" stroke="#000" stroke-width="1.4" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="progress" id="progress" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <!-- Narration column — these highlight in sync with the movie -->
+      <div class="walkthrough-narration" id="narration">
+        <div class="narration-step" data-step="home,topics,test-picker">
+          <div class="narration-num">01 — Medic on shift</div>
+          <h3>Open the app. Pick a topic.</h3>
+          <p>A medic on a slow night opens the app, taps Protocol Quizzes, picks Cardiac, starts a 15-question test. No login friction. No content they have to ignore.</p>
+        </div>
+        <div class="narration-step" data-step="q-unanswered,q-answered">
+          <div class="narration-num">02 — Real protocol questions</div>
+          <h3>Answers cited to your PDF.</h3>
+          <p>Every question pulled from your protocol document. Every answer references the exact page. No NREMT trivia, no national average. The exact words your medical director signed off on.</p>
+        </div>
+        <div class="narration-step" data-step="pdf">
+          <div class="narration-num">03 — Tap to verify</div>
+          <h3>Open the source, mid-quiz.</h3>
+          <p>Tap the page reference and the protocol opens, highlighted at the line they just got tested on. The app and the source of truth are one click apart, always.</p>
+        </div>
+        <div class="narration-step" data-step="admin-dash">
+          <div class="narration-num">04 — Training officer</div>
+          <h3>See where the org is weak.</h3>
+          <p>Switch hats. The admin dashboard shows topic fluency by month. Red squares are the topics your crews are weakest on. Green is what they've got. No charts to interpret, no PowerPoint to build.</p>
+        </div>
+        <div class="narration-step" data-step="admin-reports">
+          <div class="narration-num">05 — Drill in</div>
+          <h3>Sorted weakest first.</h3>
+          <p>Reports tab opens to a sorted list. OB/Peds at 67% is the worst. One click to act on it.</p>
+        </div>
+        <div class="narration-step" data-step="admin-assign">
+          <div class="narration-num">06 — Assign</div>
+          <h3>One form. Sent to the crew.</h3>
+          <p>Pick who, pick a target score, pick a due date. The assignment lands in everyone's inbox and shows up on their next session. Two clicks from finding the gap to closing it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOUNDER PULLQUOTE ============ -->
+  <section class="section alt">
+    <div class="wrap">
+      <figure class="pullquote">
+        <p class="pullquote-lede">We use our protocols every shift. <strong>It's the highest-frequency thing we do.</strong></p>
+        <p class="pullquote-question">So why is there no good way to train on them?</p>
+        <p class="pullquote-answer"><em>Now there is.</em></p>
+        <figcaption class="pullquote-byline">
+          <div>
+            <div class="pullquote-byline-name">Jaden Schwartz</div>
+            <div class="pullquote-byline-role">Paramedic &amp; Founder, ProtoQuiz</div>
+          </div>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ ROLLOUT TIMELINE ============ -->
+  <section class="section">
+    <div class="wrap" style="max-width:780px;">
+      <div class="section-center">
+        <div class="section-label">Rollout</div>
+        <h2 class="section-title">From email to first quiz: about a week.</h2>
+      </div>
+      <div class="timeline">
+        <div class="tl-item"><div class="tl-dot">01</div><h3>Send us your PDF</h3><p>One email. That's the whole lift on your end.</p></div>
+        <div class="tl-item"><div class="tl-dot">02</div><h3>We stand up your platform</h3><p>Custom subdomain and branding. Your medical director signs off on the question bank before crews see it.</p></div>
+        <div class="tl-item"><div class="tl-dot">03</div><h3>Roll out to your crews</h3><p>One link. No install, no IT ticket.</p></div>
+        <div class="tl-item"><div class="tl-dot">04</div><h3>New revision? Send it.</h3><p>Content updates with it.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE MATH (sketch — full interactive lives in agency/preview.html) ============ -->
+  <section class="section alt">
+    <div class="wrap">
+      <div class="section-center">
+        <div class="section-label">The math</div>
+        <h2 class="section-title">Pays for itself, on conservative numbers.</h2>
+        <p class="section-desc">Pick your agency size. The math below is what ProtoQuiz already saves you, before counting the value of better-trained crews.</p>
+      </div>
+      <div class="math-card">
+        <div class="math-toggle">
+          <button>Small (~100)</button>
+          <button class="on">Medium (~300)</button>
+          <button>Large (500+)</button>
+        </div>
+        <div class="math-row"><span>FTO/instructor hours saved</span><span><strong style="color:#fff;">$24,000</strong>/yr</span></div>
+        <div class="math-row sub">~120 hrs at $200 burdened rate</div>
+        <div class="math-row"><span>Off-shift training reduction</span><span><strong style="color:#fff;">$18,000</strong>/yr</span></div>
+        <div class="math-row sub">~6 sessions × 50 providers × $60</div>
+        <div class="math-row"><span>QA remediation hours</span><span><strong style="color:#fff;">$8,400</strong>/yr</span></div>
+        <div class="math-row sub">~14 fewer remediation cycles</div>
+        <div class="math-row total"><span>Net savings</span><span class="v">$50,400 / yr</span></div>
+        <div style="text-align:center; margin-top:18px; font-size:11px; color:var(--muted);">ProtoQuiz at 300 providers: $30,000/yr. Net positive: <strong style="color:var(--success);">$20,400</strong>.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRICING ============ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-center">
+        <div class="section-label">Pricing</div>
+        <h2 class="section-title">$100 per provider per year.</h2>
+        <p class="section-desc">Flat. No tiers, no setup fees, no add-ons. Free for 6 months for early pilot partners.</p>
+      </div>
+      <div class="price-card">
+        <span class="price-pilot">Free 6-month pilot · 2 spots open</span>
+        <div class="price-num"><span class="dollar">$</span>0</div>
+        <div class="price-unit">For the first six months. Then <strong style="color:#fff;">$100 per provider per year</strong> — about $8.33/mo.</div>
+        <ul class="price-includes">
+          <li>Protocol quizzes &amp; exams</li>
+          <li>Pharmacology drills</li>
+          <li>Procedure quizzes</li>
+          <li>Clinical scenarios</li>
+          <li>Admin dashboard &amp; reports</li>
+          <li>Training assignments</li>
+          <li>Custom subdomain</li>
+          <li>Protocol revision updates</li>
+          <li>Unlimited admins</li>
+          <li>CSV &amp; PDF exports</li>
+        </ul>
+        <div class="price-foot">No risk: if it's not for you after the pilot, you walk away — never pay a thing. Pilot deadline <strong style="color:#fff;">August 1, 2026</strong>.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section alt">
+    <div class="wrap">
+      <div class="section-center">
+        <div class="section-label">FAQ</div>
+        <h2 class="section-title">Common questions.</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item"><div class="faq-q">Does our medical director have to approve every question?</div><p class="faq-a">Yes. Nothing your crews see goes live without medical director sign-off. You stay in control of the content.</p></div>
+        <div class="faq-item"><div class="faq-q">What if our protocols change mid-pilot?</div><p class="faq-a">Send the new PDF. We update the content, your medical director re-signs, your crews see the new questions on their next session.</p></div>
+        <div class="faq-item"><div class="faq-q">How much IT lift is this?</div><p class="faq-a">None. We host on a custom subdomain. Crews access by link in any browser. No install, no SSO setup required (we support it if you want it).</p></div>
+        <div class="faq-item"><div class="faq-q">Can we cancel after the pilot?</div><p class="faq-a">Yes, no commitment. If you don't want to continue past the 6-month pilot, you stop. Never billed.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta-section" id="contact">
+    <div class="wrap">
+      <h2>See what it looks like for your organization.</h2>
+      <p>Free 6-month pilot. If it doesn't help your crews, walk away.</p>
+      <div class="cta-actions">
+        <a href="#" class="btn btn-primary">Start your pilot &rarr;</a>
+        <a href="https://demo.protoquiz.com" class="btn btn-ghost">Try the live demo</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>Preview · combined hero text-loop + chronological app walkthrough + agency page sections</footer>
+
+  <script>
+  (function(){
+    /* === HERO TEXT LOOP === */
+    const cards = document.querySelectorAll('.card');
+    const heroDots = document.querySelectorAll('#hero-progress span');
+    const heroDur = [5400, 4800, 4500, 5000];
+    let heroIdx = 0;
+
+    function showHero(i){
+      cards.forEach(c => c.classList.remove('active', 'in'));
+      const card = cards[i];
+      card.classList.add('active');
+      const words = card.querySelectorAll('.word, .punct');
+      words.forEach((w, n) => { w.style.transitionDelay = (n * 90) + 'ms'; });
+      void card.offsetWidth;
+      requestAnimationFrame(() => card.classList.add('in'));
+      heroDots.forEach((d, n) => {
+        d.classList.remove('active', 'done');
+        d.style.removeProperty('animation-duration');
+        if(n < i) d.classList.add('done');
+      });
+      heroDots[i].classList.add('active');
+      heroDots[i].style.animationDuration = heroDur[i] + 'ms';
+    }
+    function nextHero(){
+      showHero(heroIdx);
+      setTimeout(() => { heroIdx = (heroIdx + 1) % cards.length; nextHero(); }, heroDur[heroIdx]);
+    }
+
+    /* === MOVIE === */
+    const movie = document.getElementById('movie');
+    const cursor = document.getElementById('cursor');
+    const heatmap = document.getElementById('heatmap');
+    const progressEl = document.getElementById('progress');
+    const narrationSteps = document.querySelectorAll('.narration-step');
+
+    if(heatmap){
+      heatmap.querySelectorAll('.hm-cell').forEach((c, i) => {
+        const col = i % 12;
+        const row = Math.floor(i / 12);
+        c.style.animationDelay = (0.5 + col * 0.06 + row * 0.03) + 's';
+      });
+    }
+
+    const beats = [
+      {sel:'[data-beat="home"]',           dur:3800, click:'protocol-quizzes'},
+      {sel:'[data-beat="topics"]',         dur:3800, click:'cardiac'},
+      {sel:'[data-beat="test-picker"]',    dur:3200, click:'test-1'},
+      {sel:'[data-beat="q-unanswered"]',   dur:5500, click:'answer-d'},
+      {sel:'[data-beat="q-answered"]',     dur:4500, click:'ref-72', clickDelay:1500},
+      {sel:'[data-beat="pdf"]',            dur:3200, click:null},
+      {sel:'[data-beat="admin-dash"]',     dur:5200, click:'tab-reports', clickDelay:3200},
+      {sel:'[data-beat="admin-reports"]',  dur:4000, click:'assign-obp',  clickDelay:1500},
+      {sel:'[data-beat="admin-assign"]',   dur:4500, click:'confirm-assign', clickDelay:1500, onClick:'showToast'},
+    ];
+    for(let i=0; i<beats.length; i++) progressEl.appendChild(document.createElement('span'));
+
+    function setActive(sel){
+      document.querySelectorAll('.scene').forEach(s => s.classList.remove('active'));
+      const el = document.querySelector(sel);
+      if(el) el.classList.add('active');
+      // Update narration highlight
+      const beatName = sel.replace('[data-beat="', '').replace('"]', '');
+      narrationSteps.forEach(step => {
+        const beats = (step.dataset.step || '').split(',');
+        step.classList.toggle('live', beats.includes(beatName));
+      });
+      return el;
+    }
+    function setProgress(i){
+      progressEl.querySelectorAll('span').forEach((dot, n) => {
+        dot.classList.remove('active', 'done');
+        dot.style.removeProperty('animation-duration');
+        if(n < i) dot.classList.add('done');
+      });
+      const el = progressEl.querySelectorAll('span')[i];
+      el.classList.add('active');
+      el.style.animationDuration = beats[i].dur + 'ms';
+    }
+
+    let cursorAnim = null, fadeAnim = null;
+    function easeOutQuint(t){ return 1 - Math.pow(1 - t, 5); }
+    function easeInOutCubic(t){ return t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2; }
+    function animateCursor({fromX, fromY, toX, toY, duration, ease, onDone}){
+      if(cursorAnim) cancelAnimationFrame(cursorAnim);
+      const start = performance.now();
+      function tick(now){
+        const t = Math.min(1, (now - start) / duration);
+        const k = ease(t);
+        cursor.style.left = (fromX + (toX - fromX) * k) + 'px';
+        cursor.style.top  = (fromY + (toY - fromY) * k) + 'px';
+        if(t < 1){ cursorAnim = requestAnimationFrame(tick); } else if(onDone){ onDone(); }
+      }
+      cursorAnim = requestAnimationFrame(tick);
+    }
+    function fadeCursor(to, duration){
+      if(fadeAnim) cancelAnimationFrame(fadeAnim);
+      const from = parseFloat(cursor.style.opacity || '0');
+      const start = performance.now();
+      function tick(now){
+        const t = Math.min(1, (now - start) / duration);
+        cursor.style.opacity = (from + (to - from) * t).toFixed(3);
+        if(t < 1) fadeAnim = requestAnimationFrame(tick);
+      }
+      fadeAnim = requestAnimationFrame(tick);
+    }
+    function targetCenter(el){
+      const movieRect = movie.getBoundingClientRect();
+      const r = el.getBoundingClientRect();
+      return {
+        x: r.left - movieRect.left + r.width / 2 - 2.25,
+        y: r.top  - movieRect.top  + r.height / 2 - 1.5,
+      };
+    }
+    let entryRot = 0;
+    function pickEntry(target){
+      const movieRect = movie.getBoundingClientRect();
+      const W = movieRect.width, H = movieRect.height;
+      const cx = targetCenter(target);
+      const edges = [
+        {x: W * 0.92, y: H * 0.92}, {x: W * 0.08, y: H * 0.20},
+        {x: W * 0.50, y: H * 0.95}, {x: W * 0.92, y: H * 0.50},
+        {x: W * 0.08, y: H * 0.92}, {x: W * 0.92, y: H * 0.18},
+        {x: W * 0.50, y: H * 0.05}, {x: W * 0.08, y: H * 0.50},
+      ];
+      for(let i = 0; i < edges.length; i++){
+        const idx = (entryRot + i) % edges.length;
+        const c = edges[idx];
+        if(Math.hypot(c.x - cx.x, c.y - cx.y) > Math.min(W, H) * 0.45){
+          entryRot = (idx + 1) % edges.length;
+          return {x: c.x + (Math.random()*30 - 15), y: c.y + (Math.random()*24 - 12)};
+        }
+      }
+      return edges[entryRot++ % edges.length];
+    }
+    function performClickSequence(targetKey, beat){
+      const target = document.querySelector('.scene.active [data-click="' + targetKey + '"]');
+      if(!target) return;
+      const entry = pickEntry(target);
+      const cx = targetCenter(target);
+      const arcX = cx.x + (Math.random() * 24 - 12);
+      const arcY = cx.y - 14 - Math.random() * 12;
+      cursor.style.left = entry.x + 'px';
+      cursor.style.top  = entry.y + 'px';
+      cursor.style.opacity = 0;
+      requestAnimationFrame(() => {
+        fadeCursor(1, 280);
+        animateCursor({
+          fromX: entry.x, fromY: entry.y, toX: arcX, toY: arcY,
+          duration: 1100, ease: easeOutQuint,
+          onDone: () => {
+            setTimeout(() => {
+              animateCursor({
+                fromX: arcX, fromY: arcY, toX: cx.x, toY: cx.y,
+                duration: 380, ease: easeInOutCubic,
+                onDone: () => {
+                  setTimeout(() => {
+                    target.classList.add('clicked');
+                    fadeCursor(0, 220);
+                    setTimeout(() => target.classList.remove('clicked'), 700);
+                    if(beat.onClick === 'showToast'){
+                      const toast = document.getElementById('assign-toast');
+                      if(toast){
+                        setTimeout(() => toast.classList.add('show'), 200);
+                        setTimeout(() => toast.classList.remove('show'), 1800);
+                      }
+                    }
+                  }, 180);
+                }
+              });
+            }, 250);
+          }
+        });
+      });
+    }
+    let beatIdx = 0;
+    function runBeat(){
+      const beat = beats[beatIdx];
+      setActive(beat.sel);
+      setProgress(beatIdx);
+      if(cursorAnim) cancelAnimationFrame(cursorAnim);
+      cursor.style.opacity = 0;
+      if(beat.click){
+        const fullSeq = 280 + 1100 + 250 + 380 + 180;
+        const fireAt = beat.clickDelay !== undefined ? beat.clickDelay : Math.max(400, beat.dur - fullSeq - 600);
+        setTimeout(() => performClickSequence(beat.click, beat), fireAt);
+      }
+      setTimeout(() => { beatIdx = (beatIdx + 1) % beats.length; runBeat(); }, beat.dur);
+    }
+
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      cards[3].classList.add('active', 'in');
+      cards[3].querySelectorAll('.word, .punct').forEach(w => { w.style.transitionDelay = '0s'; });
+      document.getElementById('hero-progress').style.display = 'none';
+      setActive('[data-beat="admin-dash"]');
+      progressEl.style.display = 'none';
+      return;
+    }
+    window.addEventListener('load', () => { nextHero(); runBeat(); });
+  })();
+  </script>
+</body>
+</html>
