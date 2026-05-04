@@ -92,6 +92,38 @@
     color:var(--accent2); font-weight:500;
     margin-bottom:42px !important;
   }
+  .hero-intro{
+    display:flex; align-items:center; gap:18px;
+    margin-top:48px;
+    opacity:0; transform:translateY(8px);
+    transition:opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1);
+  }
+  .hero-quote.intro-in .hero-intro{opacity:1; transform:translateY(0);}
+  .hero-intro-logo{
+    width:64px; height:64px; border-radius:14px;
+    background:#fff; padding:7px;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 0 0 1px rgba(255,255,255,.12), 0 12px 30px rgba(99,102,241,.18);
+  }
+  .hero-intro-logo img{width:100%; height:100%; display:block;}
+  .hero-intro-text{
+    display:flex; flex-direction:column; gap:2px;
+  }
+  .hero-intro-eyebrow{
+    font-family:'JetBrains Mono', ui-monospace, monospace;
+    font-size:11px; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--muted);
+  }
+  .hero-intro-name{
+    font-family:Georgia, serif;
+    font-size:clamp(22px, 2.6vw, 30px);
+    line-height:1; letter-spacing:-.015em;
+    color:#fff; font-weight:600;
+  }
+  @media (max-width:600px){
+    .hero-intro{margin-top:32px; gap:14px;}
+    .hero-intro-logo{width:52px; height:52px;}
+  }
 
   .scroll-cue{
     position:absolute; left:50%; bottom:42px; transform:translateX(-50%);
@@ -142,87 +174,175 @@
   }
 
   /* ============ APP WALKTHROUGH ============ */
-  /* The hero of "below the fold". Movie left, narrated text right. Scroll-synced highlight. */
   .walkthrough{
     display:grid;
-    grid-template-columns:minmax(360px, 480px) 1fr;
-    gap:80px;
+    grid-template-columns:minmax(460px, 700px) minmax(380px, 1fr);
+    gap:64px;
     align-items:start;
-    max-width:1140px; margin:0 auto;
-    padding:0 32px;
+    max-width:1340px; margin:0 auto;
+    padding:0 40px;
   }
   .walkthrough-stage{
     position:sticky; top:96px;
+    display:flex; flex-direction:column; align-items:center;
+    width:100%;
+    transition:max-width .9s cubic-bezier(.16,1,.3,1);
   }
+  .walkthrough-stage[data-frame="phone"]{max-width:480px;}
+  .walkthrough-stage[data-frame="handoff"]{max-width:700px;}
+  .walkthrough-stage[data-frame="laptop"]{max-width:700px;}
   .movie{
     position:relative;
+    width:100%;
     aspect-ratio:9/16;
-    max-height:680px;
-    border-radius:14px; overflow:hidden;
+    max-height:820px;
+    border-radius:34px; overflow:hidden;
     background:var(--surface);
     border:1px solid var(--line);
-    box-shadow:0 30px 80px -20px rgba(0,0,0,.6);
+    box-shadow:0 30px 80px -20px rgba(0,0,0,.6),
+               0 0 0 6px rgba(255,255,255,.03);
+    transition:aspect-ratio .9s cubic-bezier(.16,1,.3,1),
+               border-radius .9s cubic-bezier(.16,1,.3,1),
+               max-height .9s cubic-bezier(.16,1,.3,1);
+  }
+  .movie.is-laptop{
+    aspect-ratio:16/10;
+    border-radius:10px;
+    max-height:none;
+    box-shadow:0 30px 80px -20px rgba(0,0,0,.6),
+               0 0 0 1px rgba(255,255,255,.06);
+  }
+  .laptop-base{
+    width:120%; height:14px; margin-top:-1px;
+    background:linear-gradient(180deg, #1a1d28, #0a0a0a);
+    border:1px solid var(--line); border-top:none;
+    border-radius:0 0 18px 18px;
+    box-shadow:0 12px 30px -10px rgba(0,0,0,.6);
+    opacity:0;
+    transition:opacity .5s cubic-bezier(.16,1,.3,1) .3s;
+  }
+  .walkthrough-stage[data-frame="laptop"] .laptop-base{opacity:1;}
+
+  .arc-label{
+    font-family:'JetBrains Mono', ui-monospace, monospace;
+    font-size:10px; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:14px; height:14px;
+    display:flex; align-items:center; gap:8px;
+  }
+  .arc-label-dot{
+    width:6px; height:6px; border-radius:50%;
+    background:var(--accent2);
+    box-shadow:0 0 0 3px rgba(6,182,212,.18);
+  }
+  .arc-label-text{transition:opacity .35s cubic-bezier(.16,1,.3,1);}
+
+  /* === Right column: single-beat narration player === */
+  .player{
+    padding:0 0 40px;
+    min-height:560px;
+    display:flex; flex-direction:column;
+    align-items:flex-start;
+    position:sticky; top:96px;
+  }
+  .player-meta{
+    font-family:'JetBrains Mono', ui-monospace, monospace;
+    font-size:12px; color:var(--muted);
+    letter-spacing:.22em; text-transform:uppercase;
+    margin-bottom:24px;
+    display:flex; align-items:center; gap:14px;
+  }
+  .player-meta .beat-num{color:var(--accent2);}
+  .player-meta .beat-divider{opacity:.4;}
+  .player-stage{
+    position:relative;
+    width:100%; max-width:560px;
+    min-height:380px;
+  }
+  .beat{
+    position:absolute; inset:0;
+    opacity:0; transform:translateY(8px);
+    transition:opacity .55s cubic-bezier(.16,1,.3,1),
+               transform .55s cubic-bezier(.16,1,.3,1);
+    pointer-events:none;
+  }
+  .beat.live{opacity:1; transform:none; pointer-events:auto;}
+  .beat-eyebrow{
+    font-family:'JetBrains Mono', ui-monospace, monospace;
+    font-size:11.5px; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--accent2); margin-bottom:18px;
+  }
+  .beat h3{
+    font-family:Georgia, serif;
+    font-size:clamp(34px, 4vw, 52px);
+    line-height:1.08; letter-spacing:-.022em;
+    color:#fff; margin:0 0 22px; font-weight:400;
+  }
+  .beat p{
+    font-size:18px; line-height:1.6;
+    color:var(--ink); margin:0;
+    max-width:540px;
   }
 
-  .walkthrough-narration{
-    display:flex; flex-direction:column;
-    gap:0;
-    padding:40px 0 80px;
+  /* === Player controls === */
+  .player-controls{
+    display:flex; align-items:center; gap:16px;
+    margin-top:36px; padding-top:28px;
+    border-top:1px solid var(--line);
+    width:100%; max-width:560px;
   }
-  .narration-step{
-    padding:36px 0;
-    border-bottom:1px solid var(--line-soft);
-    opacity:.35;
-    transition:opacity .4s cubic-bezier(.16,1,.3,1);
+  .player-btn{
+    width:42px; height:42px; border-radius:50%;
+    background:rgba(255,255,255,.04);
+    border:1px solid var(--line);
+    color:var(--ink);
+    display:inline-flex; align-items:center; justify-content:center;
+    cursor:pointer; padding:0;
+    transition:background .18s ease, border-color .18s ease, transform .18s ease;
   }
-  .narration-step:last-child{border-bottom:none;}
-  .narration-step.live{opacity:1;}
-  .narration-num{
+  .player-btn:hover{background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.18); transform:translateY(-1px);}
+  .player-btn:active{transform:translateY(0);}
+  .player-btn:disabled{opacity:.35; cursor:not-allowed; transform:none;}
+  .player-btn svg{width:18px; height:18px; display:block;}
+  .player-btn.play-toggle{width:46px; height:46px;}
+  .player-counter{
     font-family:'JetBrains Mono', ui-monospace, monospace;
-    font-size:11px; color:var(--accent2);
-    letter-spacing:.22em; text-transform:uppercase;
-    margin-bottom:12px;
+    font-size:11px; letter-spacing:.16em;
+    color:var(--muted);
+    margin-left:auto;
   }
-  .narration-step h3{
-    font-family:Georgia, serif;
-    font-size:clamp(24px, 3vw, 36px);
-    color:#fff; line-height:1.15; letter-spacing:-.015em;
-    margin:0 0 14px; font-weight:400;
-  }
-  .narration-step p{
-    font-size:15.5px; line-height:1.65;
-    color:var(--ink); margin:0;
-    max-width:480px;
-  }
+  .player-counter strong{color:var(--ink); font-weight:700;}
+
+  /* Hidden legacy column (for safety, not used) */
+  .walkthrough-narration{display:none;}
 
   /* === Movie internals (same as v10) === */
   .scene{position:absolute; inset:0; opacity:0; visibility:hidden; overflow:hidden; background:var(--surface);}
   .scene.active{opacity:1; visibility:visible;}
 
-  .ah{display:flex; align-items:center; justify-content:space-between; padding:11px 16px; border-bottom:1px solid var(--line); background:var(--surface);}
-  .ah-logo{width:30px; height:30px; border-radius:5px; background:#1f2937; padding:4px; display:flex; align-items:center; justify-content:center;}
+  .ah{display:flex; align-items:center; justify-content:space-between; padding:14px 20px; border-bottom:1px solid var(--line); background:var(--surface);}
+  .ah-logo{width:36px; height:36px; border-radius:6px; background:#1f2937; padding:5px; display:flex; align-items:center; justify-content:center;}
   .ah-logo img{width:100%; height:100%; display:block;}
-  .ah-nav{display:flex; gap:13px; font-size:10px; color:var(--ink); font-weight:500;}
-  .ah-profile{background:var(--accent); color:#fff; padding:4px 10px; border-radius:4px; font-size:10px; font-weight:700;}
+  .ah-nav{display:flex; gap:16px; font-size:12px; color:var(--ink); font-weight:500;}
+  .ah-profile{background:var(--accent); color:#fff; padding:5px 12px; border-radius:5px; font-size:12px; font-weight:700;}
 
-  .home-body{padding:14px 16px; height:calc(100% - 52px); overflow:hidden;}
+  .home-body{padding:18px 20px; height:calc(100% - 64px); overflow:hidden;}
   .home-logo-card{
-    width:88px; height:62px; margin:6px auto 10px;
-    background:#fff; border-radius:10px; padding:6px;
+    width:108px; height:76px; margin:8px auto 14px;
+    background:#fff; border-radius:12px; padding:8px;
     display:flex; align-items:center; justify-content:center;
     box-shadow:0 8px 24px rgba(99,102,241,.18);
   }
-  .home-logo-card img{width:46px; height:46px; display:block;}
-  .home-title{font-size:18px; font-weight:900; color:#fff; text-align:center; margin-bottom:2px; letter-spacing:-.02em;}
-  .home-sub{font-size:10px; color:var(--muted); text-align:center; margin-bottom:14px;}
-  .home-tiles{display:flex; flex-direction:column; gap:6px;}
+  .home-logo-card img{width:56px; height:56px; display:block;}
+  .home-title{font-size:22px; font-weight:900; color:#fff; text-align:center; margin-bottom:3px; letter-spacing:-.02em;}
+  .home-sub{font-size:12px; color:var(--muted); text-align:center; margin-bottom:18px;}
+  .home-tiles{display:flex; flex-direction:column; gap:8px;}
   .home-tile{
-    border:1.5px solid; border-radius:9px;
-    padding:11px 14px; background:var(--surface2);
+    border:1.5px solid; border-radius:11px;
+    padding:14px 16px; background:var(--surface2);
     transition:transform .2s cubic-bezier(.16,1,.3,1), box-shadow .2s cubic-bezier(.16,1,.3,1);
   }
-  .home-tile h3{margin:0 0 1px; font-size:13px; font-weight:800; color:#fff; letter-spacing:-.01em;}
-  .home-tile p{margin:0; font-size:9.5px; color:rgba(255,255,255,.55);}
+  .home-tile h3{margin:0 0 2px; font-size:16px; font-weight:800; color:#fff; letter-spacing:-.01em;}
+  .home-tile p{margin:0; font-size:11.5px; color:rgba(255,255,255,.55);}
   .ht-protocol{border-color:#3b82f6; background:linear-gradient(180deg, rgba(30,64,175,.18), rgba(15,23,42,.5));}
   .ht-scenarios{border-color:#22c55e; background:linear-gradient(180deg, rgba(21,128,61,.16), rgba(15,23,42,.5));}
   .ht-pharm{border-color:#a855f7; background:linear-gradient(180deg, rgba(126,34,206,.18), rgba(15,23,42,.5));}
@@ -241,55 +361,55 @@
   }
   @keyframes tapRipple{0%{transform:translate(-50%, -50%) scale(.2); opacity:.95;} 100%{transform:translate(-50%, -50%) scale(3.5); opacity:0;}}
 
-  .quiz-body{padding:14px 16px; height:calc(100% - 52px); overflow:hidden;}
-  .qb-back{font-size:11px; color:var(--accent); font-weight:600; margin-bottom:8px;}
-  .qb-title{font-size:17px; font-weight:900; color:#fff; letter-spacing:-.01em; margin-bottom:2px;}
-  .qb-sub{font-size:10px; color:var(--muted); margin-bottom:10px;}
-  .topic-grid{display:grid; grid-template-columns:1fr 1fr; gap:6px;}
-  .topic-card{padding:10px 12px; border-radius:8px; background:var(--surface2); border:1px solid var(--line);}
-  .topic-card h4{margin:0 0 1px; font-size:12px; font-weight:800; color:#fff; letter-spacing:-.01em;}
-  .topic-card .meta{font-size:9px; color:var(--muted);}
+  .quiz-body{padding:18px 20px; height:calc(100% - 64px); overflow:hidden;}
+  .qb-back{font-size:13px; color:var(--accent); font-weight:600; margin-bottom:10px;}
+  .qb-title{font-size:21px; font-weight:900; color:#fff; letter-spacing:-.01em; margin-bottom:3px;}
+  .qb-sub{font-size:12px; color:var(--muted); margin-bottom:14px;}
+  .topic-grid{display:grid; grid-template-columns:1fr 1fr; gap:8px;}
+  .topic-card{padding:13px 15px; border-radius:10px; background:var(--surface2); border:1px solid var(--line);}
+  .topic-card h4{margin:0 0 2px; font-size:15px; font-weight:800; color:#fff; letter-spacing:-.01em;}
+  .topic-card .meta{font-size:11px; color:var(--muted);}
 
   .modal-wrap{position:absolute; inset:0; padding:0; background:rgba(0,0,0,.65); display:flex; align-items:center; justify-content:center;}
   .modal{
-    width:84%; max-width:340px;
+    width:86%; max-width:380px;
     background:var(--surface2); border:1px solid var(--line);
-    border-radius:12px; padding:16px;
+    border-radius:14px; padding:20px;
     animation:modalIn .32s cubic-bezier(.16,1,.3,1);
   }
   @keyframes modalIn{from{transform:scale(.94); opacity:0;} to{transform:scale(1); opacity:1;}}
-  .modal-h{font-size:16px; font-weight:900; color:#fff; margin-bottom:2px; letter-spacing:-.02em;}
-  .modal-sub{font-size:10px; color:var(--muted); margin-bottom:12px;}
-  .modal-test{padding:10px 14px; border-radius:8px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.10); margin-bottom:6px;}
-  .modal-test h5{margin:0 0 1px; font-size:12px; font-weight:800; color:#fff;}
-  .modal-test p{margin:0; font-size:9.5px; color:var(--muted);}
+  .modal-h{font-size:19px; font-weight:900; color:#fff; margin-bottom:3px; letter-spacing:-.02em;}
+  .modal-sub{font-size:12px; color:var(--muted); margin-bottom:14px;}
+  .modal-test{padding:12px 16px; border-radius:9px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.10); margin-bottom:7px;}
+  .modal-test h5{margin:0 0 2px; font-size:14px; font-weight:800; color:#fff;}
+  .modal-test p{margin:0; font-size:11.5px; color:var(--muted);}
 
-  .qz-num{font-size:13px; font-weight:800; color:#fff; margin-bottom:6px;}
-  .qz-bar{height:4px; background:rgba(255,255,255,.08); border-radius:2px; overflow:hidden; margin-bottom:10px;}
+  .qz-num{font-size:15px; font-weight:800; color:#fff; margin-bottom:8px;}
+  .qz-bar{height:5px; background:rgba(255,255,255,.08); border-radius:3px; overflow:hidden; margin-bottom:12px;}
   .qz-fill{height:100%; background:linear-gradient(90deg, var(--accent), var(--accent2));}
-  .qz-dots{display:flex; gap:5px; margin-bottom:12px; flex-wrap:wrap;}
-  .qz-dot{width:22px; height:22px; border-radius:50%; background:#1f2230; color:var(--muted); display:inline-flex; align-items:center; justify-content:center; font-size:10px; font-weight:700;}
+  .qz-dots{display:flex; gap:6px; margin-bottom:14px; flex-wrap:wrap;}
+  .qz-dot{width:26px; height:26px; border-radius:50%; background:#1f2230; color:var(--muted); display:inline-flex; align-items:center; justify-content:center; font-size:12px; font-weight:700;}
   .qz-dot.done{background:var(--success); color:#fff;}
   .qz-dot.cur{background:var(--accent); color:#fff;}
-  .qz-q{font-size:13px; font-weight:700; color:#fff; line-height:1.45; margin-bottom:11px; letter-spacing:-.005em;}
-  .qz-choice{padding:10px 13px; border-radius:8px; background:var(--surface2); border:1px solid var(--line); margin-bottom:6px; font-size:11px; color:var(--ink); display:flex; gap:11px; align-items:center; transition:background .35s cubic-bezier(.16,1,.3,1), border-color .35s cubic-bezier(.16,1,.3,1);}
-  .qz-choice .l{width:22px; height:22px; border-radius:50%; background:rgba(255,255,255,.06); color:var(--muted); display:inline-flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; flex-shrink:0;}
+  .qz-q{font-size:15px; font-weight:700; color:#fff; line-height:1.45; margin-bottom:13px; letter-spacing:-.005em;}
+  .qz-choice{padding:12px 15px; border-radius:10px; background:var(--surface2); border:1px solid var(--line); margin-bottom:7px; font-size:13px; color:var(--ink); display:flex; gap:12px; align-items:center; transition:background .35s cubic-bezier(.16,1,.3,1), border-color .35s cubic-bezier(.16,1,.3,1);}
+  .qz-choice .l{width:26px; height:26px; border-radius:50%; background:rgba(255,255,255,.06); color:var(--muted); display:inline-flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; flex-shrink:0;}
   .qz-choice.right{background:rgba(34,197,94,.12); border-color:var(--success);}
   .qz-choice.right .l{background:var(--success); color:#fff;}
   .qz-correct{margin-top:9px; padding:10px 13px; background:rgba(34,197,94,.08); border:1px solid rgba(34,197,94,.4); border-radius:8px; opacity:0; transform:translateY(4px); transition:opacity .42s cubic-bezier(.16,1,.3,1), transform .42s cubic-bezier(.16,1,.3,1); transition-delay:.4s;}
   .scene.active .qz-correct{opacity:1; transform:translateY(0);}
-  .qz-correct-h{display:flex; justify-content:space-between; align-items:center; margin-bottom:5px;}
-  .qz-correct-h strong{color:#fff; font-size:11px;}
-  .qz-explain{font-size:10px; color:var(--ink); line-height:1.45; margin-bottom:6px;}
-  .qz-ref{padding:7px 11px; border-radius:6px; background:rgba(99,102,241,.14); border:1px solid rgba(99,102,241,.3); color:var(--accent2); font-size:10px; font-weight:700; display:flex; justify-content:space-between; align-items:center;}
+  .qz-correct-h{display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;}
+  .qz-correct-h strong{color:#fff; font-size:13px;}
+  .qz-explain{font-size:12px; color:var(--ink); line-height:1.5; margin-bottom:8px;}
+  .qz-ref{padding:9px 13px; border-radius:8px; background:rgba(99,102,241,.14); border:1px solid rgba(99,102,241,.3); color:var(--accent2); font-size:12px; font-weight:700; display:flex; justify-content:space-between; align-items:center;}
 
-  .pdf-h{text-align:center; padding:7px; color:var(--accent); font-size:10px; font-weight:700; background:var(--surface); font-family:'JetBrains Mono', ui-monospace, monospace; letter-spacing:.05em; border-bottom:1px solid var(--line);}
-  .pdf-page{background:#fff; color:#000; padding:14px 16px; border-radius:3px; font-size:9.5px; line-height:1.45; height:calc(100% - 30px); overflow:hidden; margin:0 12px;}
-  .pdf-page h2{text-align:center; font-size:11px; font-weight:700; margin:0 0 8px; letter-spacing:.04em;}
-  .pdf-page h3{font-style:italic; font-size:10.5px; font-weight:700; margin:0 0 4px; padding-bottom:4px; border-bottom:1px solid #000;}
-  .pdf-section{padding:5px 0; border-bottom:1px solid #ccc;}
-  .pdf-section h4{font-size:10px; font-weight:700; margin:0 0 3px;}
-  .pdf-section p, .pdf-section ul{margin:0; font-size:9.5px; color:#222;}
+  .pdf-h{text-align:center; padding:9px; color:var(--accent); font-size:12px; font-weight:700; background:var(--surface); font-family:'JetBrains Mono', ui-monospace, monospace; letter-spacing:.05em; border-bottom:1px solid var(--line);}
+  .pdf-page{background:#fff; color:#000; padding:18px 20px; border-radius:4px; font-size:12px; line-height:1.5; height:calc(100% - 38px); overflow:hidden; margin:0 16px;}
+  .pdf-page h2{text-align:center; font-size:14px; font-weight:700; margin:0 0 10px; letter-spacing:.04em;}
+  .pdf-page h3{font-style:italic; font-size:13px; font-weight:700; margin:0 0 6px; padding-bottom:5px; border-bottom:1px solid #000;}
+  .pdf-section{padding:7px 0; border-bottom:1px solid #ccc;}
+  .pdf-section h4{font-size:12px; font-weight:700; margin:0 0 4px;}
+  .pdf-section p, .pdf-section ul{margin:0; font-size:11.5px; color:#222;}
   .pdf-section ul{padding-left:14px;}
   .pdf-section li{margin-bottom:2px;}
   .pdf-hi{background:#fef08a; padding:1px 3px; font-weight:700;}
@@ -358,6 +478,357 @@
   .assign-toast{position:absolute; left:50%; bottom:34px; transform:translateX(-50%); background:rgba(34,197,94,.18); color:var(--success); border:1px solid rgba(34,197,94,.4); border-radius:7px; padding:8px 14px; font-size:11px; font-weight:700; opacity:0; transition:opacity .35s cubic-bezier(.16,1,.3,1); pointer-events:none;}
   .scene.active .assign-toast.show{opacity:1; transition-delay:.4s;}
 
+  /* === Scenario beat (medic, phone) === */
+  .sc-body{padding:18px 20px; height:calc(100% - 64px); overflow:hidden; display:flex; flex-direction:column;}
+  .sc-stage{display:flex; align-items:center; gap:10px; margin-bottom:10px;}
+  .sc-stage-num{font-size:13px; font-weight:800; color:#fff;}
+  .sc-stage-bar{flex:1; height:4px; background:rgba(255,255,255,.08); border-radius:2px; overflow:hidden;}
+  .sc-stage-bar-fill{height:100%; background:linear-gradient(90deg, var(--accent), var(--accent2)); border-radius:2px;}
+  .sc-stage-dots{display:flex; gap:5px; margin-bottom:12px;}
+  .sc-stage-dot{width:22px; height:22px; border-radius:50%; background:#1f2230; color:var(--muted); display:inline-flex; align-items:center; justify-content:center; font-size:11px; font-weight:700;}
+  .sc-stage-dot.cur{background:var(--accent); color:#fff;}
+  .sc-stage-dot.done{background:var(--success); color:#fff;}
+  .sc-title{font-size:17px; font-weight:900; color:var(--accent2); margin-bottom:10px; letter-spacing:-.01em;}
+  .sc-card{
+    padding:10px 13px; margin-bottom:7px;
+    background:var(--surface2); border:1px solid var(--line);
+    border-radius:8px;
+  }
+  .sc-card-l{font-family:'JetBrains Mono', ui-monospace, monospace; font-size:9px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin-bottom:4px;}
+  .sc-card-body{font-size:11.5px; color:var(--ink); line-height:1.45;}
+  .sc-vitals{font-family:'JetBrains Mono', ui-monospace, monospace; font-size:11px; color:var(--ink); letter-spacing:.02em; margin-top:6px;}
+  .sc-vitals .v-bad{color:#fca5a5; font-weight:700;}
+  .sc-q{font-size:13px; font-weight:700; color:#fff; line-height:1.4; margin:8px 0 10px; letter-spacing:-.005em;}
+  .sc-choices{display:flex; flex-direction:column; gap:5px;}
+  .sc-choice{padding:9px 12px; border-radius:9px; background:var(--surface2); border:1px solid var(--line); font-size:11.5px; color:var(--ink); display:flex; gap:10px; align-items:center;}
+  .sc-choice .l{width:22px; height:22px; border-radius:50%; background:rgba(255,255,255,.06); color:var(--muted); display:inline-flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; flex-shrink:0;}
+
+  /* === EKG strip (clinically-correct hyperkalemia: peaked T waves) === */
+  .ekg-card{
+    background:#0a0a0a; border:1px solid rgba(239,68,68,.4);
+    border-left:3px solid var(--red);
+    border-radius:9px; padding:10px 10px 8px;
+    margin-bottom:8px;
+  }
+  .ekg-card-l{
+    font-family:'JetBrains Mono', ui-monospace, monospace;
+    font-size:10px; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--red); font-weight:700; margin-bottom:6px;
+  }
+  .ekg-strip{
+    background:#fdf3e7;
+    border-radius:4px; padding:8px 5px 5px;
+    height:140px; position:relative;
+    background-image:
+      linear-gradient(0deg, rgba(220,80,80,.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(220,80,80,.08) 1px, transparent 1px),
+      linear-gradient(0deg, rgba(220,80,80,.18) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(220,80,80,.18) 1px, transparent 1px);
+    background-size: 4px 4px, 4px 4px, 20px 20px, 20px 20px;
+  }
+  .ekg-strip svg{display:block; width:100%; height:100%; position:relative; z-index:2;}
+  .ekg-lead-label{
+    position:absolute; top:5px; left:7px;
+    font-family:'JetBrains Mono', ui-monospace, monospace;
+    font-size:9px; font-weight:700; color:#7c2d12;
+    letter-spacing:.04em;
+    z-index:3;
+  }
+  .ekg-card-foot{
+    font-family:'JetBrains Mono', ui-monospace, monospace;
+    font-size:9px; color:rgba(239,68,68,.8); margin-top:5px;
+    letter-spacing:.04em;
+  }
+
+  /* === Cert picker scene (real product UX) === */
+  .cert-body{padding:18px 20px; height:calc(100% - 64px); overflow:hidden;}
+  .cert-eyebrow{font-family:'JetBrains Mono', ui-monospace, monospace; font-size:10px; color:var(--muted); letter-spacing:.18em; text-transform:uppercase; margin-bottom:6px;}
+  .cert-h1{font-size:22px; font-weight:900; color:#fff; letter-spacing:-.02em; margin-bottom:4px;}
+  .cert-sub{font-size:12px; color:var(--muted); margin-bottom:18px;}
+  .cert-tabs{
+    display:grid; grid-template-columns:1fr 1fr; gap:8px;
+    background:var(--surface2); padding:6px; border-radius:12px;
+    border:1px solid var(--line);
+  }
+  .cert-tab{
+    padding:14px 12px; border-radius:9px;
+    text-align:center; cursor:pointer;
+    background:transparent; color:var(--muted);
+    transition:background .25s ease, color .25s ease;
+  }
+  .cert-tab.on{background:var(--accent); color:#fff;}
+  .cert-tab-name{font-size:14px; font-weight:800; letter-spacing:-.005em; margin-bottom:2px;}
+  .cert-tab-meta{font-size:10px; opacity:.7; font-family:'JetBrains Mono', ui-monospace, monospace; letter-spacing:.05em;}
+  .cert-tab.on .cert-tab-meta{opacity:.85;}
+  .cert-foot{margin-top:14px; font-size:11px; color:var(--muted); line-height:1.5;}
+  .cert-foot strong{color:#fff; font-weight:700;}
+
+  /* === Handoff transition (phone + laptop side-by-side) === */
+  .stage-handoff{
+    display:flex; align-items:flex-end; justify-content:center;
+    gap:32px; width:100%; max-width:700px;
+    height:560px; position:relative;
+    opacity:0; visibility:hidden;
+    transition:opacity .5s cubic-bezier(.16,1,.3,1);
+  }
+  .walkthrough-stage[data-frame="handoff"] .stage-handoff{opacity:1; visibility:visible;}
+  .walkthrough-stage[data-frame="handoff"] > .movie,
+  .walkthrough-stage[data-frame="handoff"] > .laptop-base{display:none;}
+  .stage-handoff-phone{
+    width:200px; aspect-ratio:9/16;
+    background:var(--surface);
+    border:1px solid var(--line); border-radius:22px;
+    box-shadow:0 30px 80px -20px rgba(0,0,0,.6), 0 0 0 4px rgba(255,255,255,.03);
+    display:flex; align-items:center; justify-content:center;
+    flex-direction:column; gap:10px; padding:18px;
+    transform:translateX(20px) rotate(-3deg);
+    animation:handoffPhoneIn .8s cubic-bezier(.16,1,.3,1) forwards;
+  }
+  .stage-handoff-laptop{
+    width:380px; aspect-ratio:16/10;
+    background:var(--surface);
+    border:1px solid var(--line); border-radius:8px;
+    box-shadow:0 30px 80px -20px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.06);
+    display:flex; align-items:center; justify-content:center;
+    flex-direction:column; gap:8px; padding:24px;
+    transform:translateX(-20px);
+    animation:handoffLaptopIn .8s cubic-bezier(.16,1,.3,1) .15s forwards;
+    opacity:0;
+  }
+  @keyframes handoffPhoneIn{from{opacity:0; transform:translateX(40px) rotate(-3deg);} to{opacity:1; transform:translateX(0) rotate(-3deg);}}
+  @keyframes handoffLaptopIn{from{opacity:0; transform:translateX(-40px);} to{opacity:1; transform:translateX(0);}}
+  .stage-handoff-icon{
+    width:46px; height:46px; border-radius:10px;
+    background:#fff; padding:6px;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 8px 24px rgba(99,102,241,.18);
+  }
+  .stage-handoff-icon img{width:100%; height:100%; display:block;}
+  .stage-handoff-label{
+    font-family:'JetBrains Mono', ui-monospace, monospace;
+    font-size:10px; letter-spacing:.18em; text-transform:uppercase;
+    color:#fff; text-align:center; opacity:.85;
+  }
+  .stage-handoff-laptop .stage-handoff-label{font-size:11px;}
+  .stage-handoff-arrow{
+    position:absolute; left:50%; top:50%;
+    transform:translate(-50%, -50%);
+    width:36px; height:36px;
+    background:linear-gradient(135deg, var(--accent), var(--accent2));
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    color:#fff; font-size:16px; font-weight:900;
+    opacity:0;
+    animation:handoffArrowIn .5s cubic-bezier(.16,1,.3,1) .55s forwards;
+    z-index:5; box-shadow:0 8px 22px rgba(99,102,241,.4);
+  }
+  @keyframes handoffArrowIn{from{opacity:0; transform:translate(-50%, -50%) scale(.5);} to{opacity:1; transform:translate(-50%, -50%) scale(1);}}
+
+  /* === Admin laptop dashboard (16:9, scaled to fit) === */
+  .lap-chrome{
+    height:24px; background:#1a1d28;
+    border-bottom:1px solid var(--line);
+    display:flex; align-items:center; gap:6px; padding:0 12px;
+  }
+  .lap-dot{width:8px; height:8px; border-radius:50%;}
+  .lap-dot.r{background:#ff5f57;}
+  .lap-dot.y{background:#febc2e;}
+  .lap-dot.g{background:#28c840;}
+  .lap-url{
+    flex:1; max-width:280px; margin:0 auto;
+    height:14px; background:#0a0a0a;
+    border-radius:4px; display:flex; align-items:center; justify-content:center;
+    font-family:'JetBrains Mono', ui-monospace, monospace;
+    font-size:8px; color:var(--muted); letter-spacing:.02em;
+  }
+
+  .lap-body{height:calc(100% - 24px); display:flex; flex-direction:column; background:var(--bg); overflow:hidden;}
+  .lap-header{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:6px 14px; border-bottom:1px solid var(--line);
+    background:rgba(0,0,0,.3);
+  }
+  .lap-brand{display:flex; align-items:center; gap:6px;}
+  .lap-brand-logo{width:18px; height:18px; border-radius:3px; background:#1f2937; padding:2px; display:flex; align-items:center; justify-content:center;}
+  .lap-brand-logo img{width:100%; height:100%; display:block;}
+  .lap-nav{display:flex; gap:11px; font-size:8.5px; color:var(--ink); font-weight:500;}
+  .lap-nav-buttons{display:flex; gap:5px;}
+  .lap-nav-btn{
+    padding:3px 8px; border-radius:4px;
+    font-size:8px; font-weight:700;
+  }
+  .lap-nav-btn.signin{background:var(--accent); color:#fff;}
+  .lap-nav-btn.admin{background:#ef4444; color:#fff;}
+
+  .lap-main{padding:12px 16px; flex:1; overflow:hidden;}
+  .lap-h1{
+    font-size:15px; font-weight:900; color:#fff;
+    letter-spacing:-.02em; margin:0 0 4px;
+  }
+  .lap-h1-sub{font-size:9px; color:var(--muted); margin-bottom:8px;}
+
+  .lap-tabs{display:flex; gap:1px; background:var(--surface2); padding:3px; border-radius:7px; margin-bottom:10px; width:fit-content;}
+  .lap-tab{
+    padding:5px 12px; border-radius:5px;
+    font-size:9px; font-weight:700; color:var(--muted);
+    cursor:pointer;
+  }
+  .lap-tab.on{background:var(--accent); color:#fff;}
+
+  .lap-perf-h{
+    display:flex; align-items:flex-start; justify-content:space-between;
+    margin-bottom:8px;
+  }
+  .lap-perf-title{font-size:11px; font-weight:800; color:#fff;}
+  .lap-perf-sub{font-size:8px; color:var(--muted); margin-top:1px;}
+  .lap-perf-controls{display:flex; gap:4px;}
+  .lap-perf-pill{
+    font-size:8px; font-weight:700; padding:3px 7px; border-radius:4px;
+    background:var(--surface2); color:var(--muted); border:1px solid var(--line);
+  }
+  .lap-perf-pill.on{background:var(--accent); color:#fff; border-color:var(--accent);}
+  .lap-perf-pill.report{background:var(--accent); color:#fff; border-color:var(--accent);}
+
+  .lap-kpis{display:grid; grid-template-columns:repeat(4, 1fr); gap:6px; margin-bottom:10px;}
+  .lap-kpi{
+    padding:8px 10px; border-radius:7px;
+    background:var(--surface2); border:1px solid var(--line);
+    border-top:2px solid;
+    opacity:0; transform:translateY(4px);
+    transition:opacity .42s cubic-bezier(.16,1,.3,1), transform .42s cubic-bezier(.16,1,.3,1);
+  }
+  .scene.active .lap-kpi{opacity:1; transform:translateY(0);}
+  .scene.active .lap-kpi:nth-child(1){transition-delay:.10s;}
+  .scene.active .lap-kpi:nth-child(2){transition-delay:.18s;}
+  .scene.active .lap-kpi:nth-child(3){transition-delay:.26s;}
+  .scene.active .lap-kpi:nth-child(4){transition-delay:.34s;}
+  .lap-kpi.k1{border-top-color:#3b82f6;}
+  .lap-kpi.k2{border-top-color:var(--success);}
+  .lap-kpi.k3{border-top-color:var(--accent2);}
+  .lap-kpi.k4{border-top-color:var(--warn);}
+  .lap-kpi-v{font-size:18px; font-weight:900; color:#fff; letter-spacing:-.03em; line-height:1; margin-bottom:2px;}
+  .lap-kpi-l{font-size:7px; color:var(--muted); font-weight:700; letter-spacing:.10em; text-transform:uppercase; margin-bottom:3px;}
+  .lap-kpi-delta{font-size:7.5px; font-weight:700;}
+  .lap-kpi-delta.up{color:var(--success);}
+  .lap-kpi-delta.warn{color:var(--warn);}
+
+  .lap-twocol{display:grid; grid-template-columns:1fr 1.4fr; gap:8px;}
+  .lap-card{
+    background:var(--surface2); border:1px solid var(--line);
+    border-radius:8px; padding:10px;
+  }
+  .lap-card-h{font-size:9.5px; font-weight:800; color:#fff; margin-bottom:6px;}
+
+  /* Donut */
+  .lap-donut-wrap{display:flex; flex-direction:column; align-items:center; padding:4px 0;}
+  .lap-donut{position:relative; width:84px; height:84px;}
+  .lap-donut svg{width:100%; height:100%; transform:rotate(-90deg);}
+  .lap-donut-center{
+    position:absolute; inset:0;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+  }
+  .lap-donut-num{font-size:18px; font-weight:900; color:#fff; line-height:1;}
+  .lap-donut-l{font-size:6.5px; font-weight:700; color:var(--muted); letter-spacing:.12em; text-transform:uppercase; margin-top:2px;}
+  .lap-donut-legend{display:flex; gap:10px; margin-top:8px;}
+  .lap-donut-legend span{font-size:7.5px; color:var(--muted); display:flex; align-items:center; gap:4px;}
+  .lap-donut-legend i{width:6px; height:6px; border-radius:50%; display:inline-block;}
+
+  /* Score-bar list */
+  .lap-bars{display:flex; flex-direction:column; gap:6px;}
+  .lap-bar-row{display:grid; grid-template-columns:1fr auto; gap:6px; align-items:center;}
+  .lap-bar-name{font-size:9px; color:var(--ink); font-weight:600;}
+  .lap-bar-num{font-size:9px; font-weight:800; font-family:'JetBrains Mono', ui-monospace, monospace; text-align:right;}
+  .lap-bar-track{
+    grid-column:1 / -1;
+    height:5px; background:rgba(255,255,255,.05);
+    border-radius:3px; overflow:hidden;
+    position:relative;
+  }
+  .lap-bar-fill{
+    height:100%; border-radius:3px;
+    width:0; transition:width .8s cubic-bezier(.16,1,.3,1);
+  }
+  .scene.active .lap-bar-fill{width:var(--w);}
+  .lap-bar-fill.hi{background:linear-gradient(90deg, #16a34a, #22c55e);}
+  .lap-bar-fill.mid{background:linear-gradient(90deg, #6366f1, #818cf8);}
+  .lap-bar-fill.lo{background:linear-gradient(90deg, #b45309, #f59e0b);}
+  .lap-bar-num.hi{color:var(--success);}
+  .lap-bar-num.mid{color:var(--accent2);}
+  .lap-bar-num.lo{color:var(--warn);}
+  .lap-bar-target{
+    position:absolute; top:-2px; bottom:-2px;
+    left:80%; width:1px;
+    background:rgba(255,255,255,.3);
+  }
+
+  /* Assignments list */
+  .lap-assigns{display:flex; flex-direction:column; gap:6px;}
+  .lap-assign-row{
+    padding:8px 10px; border-radius:7px;
+    background:var(--surface2); border:1px solid var(--line);
+    display:grid; grid-template-columns:1fr auto; gap:8px; align-items:center;
+  }
+  .lap-assign-name{font-size:10px; font-weight:800; color:#fff; margin-bottom:2px;}
+  .lap-assign-meta{font-size:8px; color:var(--muted);}
+  .lap-assign-progress{
+    grid-column:1; margin-top:5px;
+    height:4px; background:rgba(255,255,255,.05); border-radius:2px; overflow:hidden;
+  }
+  .lap-assign-progress-fill{
+    height:100%; background:linear-gradient(90deg, #16a34a, #22c55e);
+    width:0; border-radius:2px;
+    transition:width .7s cubic-bezier(.16,1,.3,1);
+  }
+  .scene.active .lap-assign-progress-fill{width:var(--w);}
+  .lap-assign-status{
+    font-size:7.5px; font-weight:800; padding:3px 7px; border-radius:4px;
+    letter-spacing:.04em; white-space:nowrap;
+  }
+  .lap-assign-status.cancel{background:rgba(239,68,68,.12); color:#fca5a5; border:1px solid rgba(239,68,68,.3);}
+
+  .lap-new-btn{
+    padding:8px 12px; border-radius:6px;
+    background:var(--accent); color:#fff;
+    font-size:10px; font-weight:800; letter-spacing:-.005em;
+    text-align:left;
+    margin-bottom:8px; width:100%;
+    border:1px solid var(--accent);
+  }
+
+  /* New-assignment modal in laptop frame */
+  .lap-modal-wrap{
+    position:absolute; inset:0; background:rgba(0,0,0,.65);
+    display:flex; align-items:center; justify-content:center;
+    z-index:5;
+  }
+  .lap-modal{
+    width:280px; background:var(--surface2);
+    border:1px solid var(--line); border-radius:10px;
+    padding:14px; animation:modalIn .32s cubic-bezier(.16,1,.3,1);
+  }
+  .lap-modal-h{font-size:12px; font-weight:900; color:#fff; margin-bottom:10px; letter-spacing:-.01em;}
+  .lap-modal-l{font-size:8px; color:var(--muted); font-weight:700; letter-spacing:.06em; text-transform:uppercase; margin-bottom:4px;}
+  .lap-modal-row{margin-bottom:8px;}
+  .lap-modal-toggle{display:flex; gap:4px;}
+  .lap-modal-toggle-btn{flex:1; padding:5px 8px; border-radius:5px; background:var(--surface); border:1px solid var(--line); font-size:9px; font-weight:700; color:var(--muted); text-align:center;}
+  .lap-modal-toggle-btn.on{background:var(--accent); color:#fff; border-color:var(--accent);}
+  .lap-modal-input{padding:6px 8px; border-radius:5px; background:var(--surface); border:1px solid var(--line); font-size:10px; color:#fff; font-family:'JetBrains Mono', ui-monospace, monospace;}
+  .lap-modal-confirm{
+    width:100%; padding:8px;
+    background:linear-gradient(120deg, var(--accent), var(--accent2));
+    color:#fff; font-size:10px; font-weight:800;
+    border:none; border-radius:6px; margin-top:4px;
+  }
+  .lap-toast{
+    position:absolute; left:50%; bottom:34px; transform:translateX(-50%);
+    background:rgba(34,197,94,.18); color:var(--success);
+    border:1px solid rgba(34,197,94,.4); border-radius:7px;
+    padding:7px 14px; font-size:10px; font-weight:700;
+    opacity:0; transition:opacity .35s cubic-bezier(.16,1,.3,1);
+    pointer-events:none; z-index:6;
+  }
+  .scene.active .lap-toast.show{opacity:1; transition-delay:.4s;}
+
   .cursor{position:absolute; top:0; left:0; width:18px; height:18px; z-index:60; pointer-events:none; filter:drop-shadow(0 2px 4px rgba(0,0,0,.7)); opacity:0;}
   .cursor svg{display:block; width:100%; height:100%;}
 
@@ -411,30 +882,66 @@
   .tl-item p{font-size:13.5px; line-height:1.55; color:var(--muted); margin:0;}
 
   /* ============ MATH (interactive cost-stack, ported from agency/preview.html) ============ */
-  .size-toggle{
-    display:inline-flex; background:rgba(255,255,255,.04);
-    border:1px solid var(--line); border-radius:14px; padding:5px; gap:2px;
+  .size-slider-wrap{
+    max-width:560px; margin:0 auto; padding:18px 22px 14px;
+    background:rgba(255,255,255,.03);
+    border:1px solid var(--line); border-radius:14px;
   }
-  .size-btn{
-    background:transparent; border:none; color:var(--muted);
-    padding:10px 22px; border-radius:10px; cursor:pointer;
-    font-family:inherit; transition:all .18s cubic-bezier(.16,1,.3,1);
-    min-width:120px; text-align:center;
+  .size-slider-head{
+    display:flex; align-items:baseline; justify-content:space-between; gap:12px;
+    margin-bottom:14px;
   }
-  .size-btn:hover{color:var(--ink); background:rgba(255,255,255,.03);}
-  .size-btn.active{
-    background:linear-gradient(135deg, rgba(99,102,241,.22), rgba(6,182,212,.18));
-    color:var(--ink); box-shadow:0 0 0 1px rgba(99,102,241,.4);
+  .size-slider-label{
+    font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--muted); font-weight:700;
   }
-  .size-btn-label{font-weight:700; font-size:14px; letter-spacing:-.01em;}
-  .size-btn-sub{font-size:11px; margin-top:2px; opacity:.75;}
-  @media (max-width:560px){
-    .size-toggle{flex-wrap:wrap; justify-content:center;}
-    .size-btn{min-width:0; flex:1; padding:9px 12px;}
-    .size-btn-label{font-size:13px;} .size-btn-sub{font-size:10px;}
+  .size-slider-readout{
+    display:flex; align-items:baseline; gap:10px;
+  }
+  .size-slider-num{
+    font-size:28px; font-weight:800; color:#fff; letter-spacing:-.02em; line-height:1;
+  }
+  .size-slider-providers{font-size:13px; color:var(--muted); font-weight:600;}
+  .size-slider-tier{
+    display:inline-block; padding:3px 10px; border-radius:999px;
+    background:rgba(99,102,241,.18); color:var(--ink);
+    font-size:10px; font-weight:800; letter-spacing:.12em; text-transform:uppercase;
+    border:1px solid rgba(99,102,241,.35);
+    transition:background .2s ease, border-color .2s ease;
+  }
+  .size-slider-tier[data-tier="small"]{background:rgba(34,197,94,.16); border-color:rgba(34,197,94,.35);}
+  .size-slider-tier[data-tier="medium"]{background:rgba(99,102,241,.18); border-color:rgba(99,102,241,.40);}
+  .size-slider-tier[data-tier="large"]{background:rgba(6,182,212,.18); border-color:rgba(6,182,212,.40);}
+  .size-slider{
+    -webkit-appearance:none; appearance:none;
+    width:100%; height:6px; border-radius:3px;
+    background:linear-gradient(90deg, rgba(34,197,94,.45) 0%, rgba(99,102,241,.55) 50%, rgba(6,182,212,.55) 100%);
+    outline:none; cursor:pointer;
+  }
+  .size-slider::-webkit-slider-thumb{
+    -webkit-appearance:none; appearance:none;
+    width:22px; height:22px; border-radius:50%;
+    background:#fff; border:3px solid var(--accent);
+    box-shadow:0 2px 12px rgba(99,102,241,.5);
+    cursor:grab; transition:transform .15s ease;
+  }
+  .size-slider::-webkit-slider-thumb:active{cursor:grabbing; transform:scale(1.12);}
+  .size-slider::-moz-range-thumb{
+    width:22px; height:22px; border-radius:50%;
+    background:#fff; border:3px solid var(--accent);
+    box-shadow:0 2px 12px rgba(99,102,241,.5);
+    cursor:grab;
+  }
+  .size-slider-ticks{
+    display:flex; justify-content:space-between; margin-top:10px;
+    font-size:10px; color:var(--muted2); font-weight:600; letter-spacing:.04em;
   }
   [data-size-val], [data-size-text]{transition:opacity .15s ease;}
   .swapping [data-size-val], .swapping [data-size-text]{opacity:.35;}
+  @media (max-width:560px){
+    .size-slider-head{flex-direction:column; align-items:flex-start; gap:8px;}
+    .size-slider-num{font-size:24px;}
+  }
 
   .math-hero{
     max-width:680px; margin:32px auto 28px; text-align:center;
@@ -462,13 +969,24 @@
   .math-row{
     display:grid; grid-template-columns:1fr auto; gap:24px; align-items:start;
     padding:18px 4px; border-bottom:1px solid var(--line);
-    text-decoration:none; color:inherit;
-    transition:background .15s ease, padding .15s ease;
   }
-  .math-row:hover{background:rgba(255,255,255,.015); padding-left:14px; padding-right:14px; border-radius:10px;}
   .math-row-title{font-size:15px; font-weight:700; color:#fff; margin-bottom:4px;}
   .math-row-detail{font-size:12.5px; color:var(--muted); line-height:1.5;}
-  .math-row-num{font-size:22px; font-weight:800; color:#fff; letter-spacing:-.02em; white-space:nowrap; align-self:center;}
+  .math-row-num{font-size:22px; font-weight:800; color:var(--success); letter-spacing:-.02em; white-space:nowrap; align-self:center;}
+  .math-row-source{
+    display:block; margin-top:8px; font-size:11.5px; color:var(--muted2); line-height:1.5;
+  }
+  .math-row-source-label{
+    color:var(--muted2); letter-spacing:.10em; text-transform:uppercase;
+    font-weight:700; font-size:10px; margin-right:6px;
+  }
+  .math-row-source a{
+    color:var(--accent); text-decoration:none;
+    border-bottom:1px dotted rgba(99,102,241,.5);
+    transition:color .15s ease, border-color .15s ease;
+  }
+  .math-row-source a:hover{color:var(--accent2); border-bottom-color:var(--accent2);}
+  .math-row-source-sep{margin:0 8px; color:var(--line);}
 
   .math-details{max-width:680px; margin:36px auto 0; border-top:1px dashed var(--line); padding-top:18px;}
   .math-details summary{font-size:13px; color:var(--muted); cursor:pointer; list-style:none; padding:6px 0; transition:color .15s ease;}
@@ -556,6 +1074,20 @@
     font-size:10px; font-weight:800; letter-spacing:.12em; text-transform:uppercase;
     margin-bottom:18px;
   }
+  .price-rate-row{
+    display:flex; align-items:baseline; justify-content:center; gap:12px;
+    margin-bottom:16px; flex-wrap:wrap;
+  }
+  .price-rate-strike{
+    font-size:18px; color:var(--muted2); text-decoration:line-through;
+    text-decoration-color:rgba(255,255,255,.35); font-weight:600;
+  }
+  .price-rate-strike .price-rate-unit{font-size:12px; color:var(--muted2); margin-left:2px;}
+  .price-rate-arrow{color:var(--muted); font-size:16px;}
+  .price-rate-now{
+    font-size:22px; font-weight:800; color:var(--success); letter-spacing:-.01em;
+  }
+  .price-rate-now .price-rate-unit{font-size:13px; color:var(--success); margin-left:2px; opacity:.85;}
   .price-num{
     font-family:Georgia, serif; font-size:84px; font-weight:400;
     color:#fff; line-height:1; margin-bottom:8px; letter-spacing:-.04em;
@@ -604,12 +1136,18 @@
 
   @media (prefers-reduced-motion: reduce){
     .hero-quote .w{opacity:1 !important; transform:none !important; transition:none !important;}
+    .hero-intro{opacity:1 !important; transform:none !important; transition:none !important;}
     .scroll-cue .arrow{animation:none;}
     .progress{display:none;}
-    .home-tile, .ad-kpi, .hm-cell, .qz-correct{opacity:1 !important; transform:none !important; animation:none !important;}
+    .home-tile, .ad-kpi, .hm-cell, .qz-correct,
+    .lap-kpi, .lap-bar-fill, .lap-assign-progress-fill{opacity:1 !important; transform:none !important; animation:none !important; transition:none !important;}
+    .lap-bar-fill, .lap-assign-progress-fill{width:var(--w) !important;}
     .cursor{display:none;}
     html{scroll-behavior:auto;}
     .narration-step{opacity:1;}
+    .beat{opacity:1 !important; transform:none !important; transition:none !important;}
+    .beat:not(.live){display:none;}
+    .walkthrough-stage, .movie{transition:none !important;}
     .math-details[open] .costviz-bar,
     .math-details[open] .costviz-bar .costviz-bar-fill,
     .math-details[open] .costviz-total,
@@ -632,14 +1170,21 @@
   <!-- ============ HERO (founder voice, kinetic reveal) ============ -->
   <section class="hero" id="hero">
     <figure class="hero-quote" id="hero-quote">
-      <p class="hero-lede"><span class="w">We</span> <span class="w">use</span> <span class="w">our</span> <span class="w">protocols</span> <span class="w">every</span> <span class="w">shift.</span> <span class="w em">It's</span> <span class="w em">the</span> <span class="w em">highest-frequency</span> <span class="w em">thing</span> <span class="w em">we</span> <span class="w em">do.</span></p>
-      <p class="hero-question"><span class="w">So</span> <span class="w">why</span> <span class="w">is</span> <span class="w">there</span> <span class="w">no</span> <span class="w">good</span> <span class="w">way</span> <span class="w">to</span> <span class="w">train</span> <span class="w">on</span> <span class="w">them?</span></p>
-      <p class="hero-answer"><span class="w"><em>Now</em></span> <span class="w"><em>there</em></span> <span class="w"><em>is.</em></span></p>
+      <p class="hero-lede"><span class="w">What</span> <span class="w">is</span> <span class="w">the</span> <span class="w">thing</span> <span class="w">every</span> <span class="w">EMT</span> <span class="w">and</span> <span class="w">paramedic</span> <span class="w">uses</span> <span class="w">on</span> <span class="w">every</span> <span class="w">call,</span> <span class="w">but</span> <span class="w">is</span> <span class="w em">hardly</span> <span class="w em">trained</span> <span class="w em">on?</span></p>
+      <p class="hero-question"><span class="w">Real,</span> <span class="w">local</span> <span class="w">protocols.</span> <span class="w"><em>Yours.</em></span></p>
+      <p class="hero-answer"><span class="w">Train</span> <span class="w">on</span> <span class="w">what</span> <span class="w">matters.</span></p>
+      <div class="hero-intro" id="hero-intro" aria-hidden="true">
+        <div class="hero-intro-logo"><img src="../logo-256.png" alt=""></div>
+        <div class="hero-intro-text">
+          <div class="hero-intro-eyebrow">Introducing</div>
+          <div class="hero-intro-name">ProtoQuiz</div>
+        </div>
+      </div>
     </figure>
     <a class="scroll-cue" href="#walkthrough"><span>See how</span><span class="arrow"></span></a>
   </section>
 
-  <!-- ============ APP WALKTHROUGH (movie + narrated steps) ============ -->
+  <!-- ============ APP WALKTHROUGH (movie + single-beat narration) ============ -->
   <section class="section" id="walkthrough">
     <div class="section-center">
       <div class="section-label">How it works</div>
@@ -649,7 +1194,12 @@
     </div>
 
     <div class="walkthrough">
-      <div class="walkthrough-stage">
+      <!-- LEFT: stage with morphing phone/laptop frame -->
+      <div class="walkthrough-stage" id="stage" data-frame="phone">
+        <div class="arc-label" id="arc-label">
+          <span class="arc-label-dot" aria-hidden="true"></span>
+          <span class="arc-label-text" id="arc-label-text">Paramedic on shift</span>
+        </div>
         <div class="movie" id="movie">
 
           <!-- Beat 1: Home -->
@@ -675,15 +1225,32 @@
             <div class="quiz-body">
               <div class="qb-back">&larr; Back</div>
               <div class="qb-title">Protocol Quizzes</div>
-              <div class="qb-sub">Master your protocols by category</div>
+              <div class="qb-sub">Paramedic &middot; Master your protocols by category</div>
               <div class="topic-grid">
-                <div class="topic-card" data-click="cardiac"><h4>Cardiac</h4><div class="meta">44Q · 3 tests</div></div>
-                <div class="topic-card"><h4>Respiratory</h4><div class="meta">33Q · 3 tests</div></div>
-                <div class="topic-card"><h4>Trauma</h4><div class="meta">33Q · 3 tests</div></div>
-                <div class="topic-card"><h4>Behavioral</h4><div class="meta">32Q · 3 tests</div></div>
-                <div class="topic-card"><h4>Environmental</h4><div class="meta">30Q · 2 tests</div></div>
-                <div class="topic-card"><h4>General Medical</h4><div class="meta">56Q · 4 tests</div></div>
+                <div class="topic-card" data-click="cardiac"><h4>Cardiac</h4><div class="meta">44Q &middot; 3 tests</div></div>
+                <div class="topic-card"><h4>Respiratory</h4><div class="meta">33Q &middot; 3 tests</div></div>
+                <div class="topic-card"><h4>Trauma</h4><div class="meta">33Q &middot; 3 tests</div></div>
+                <div class="topic-card"><h4>Toxicology</h4><div class="meta">28Q &middot; 2 tests</div></div>
+                <div class="topic-card"><h4>OB/Peds</h4><div class="meta">35Q &middot; 3 tests</div></div>
+                <div class="topic-card"><h4>General Medical</h4><div class="meta">56Q &middot; 4 tests</div></div>
               </div>
+            </div>
+          </div>
+
+          <!-- Beat 2.5: Cert picker (paramedic) -->
+          <div class="scene" data-beat="cert-picker">
+            <div class="ah"><div class="ah-logo"><img src="../logo-256.png" alt=""></div><div class="ah-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span class="ah-profile">Profile</span></div></div>
+            <div class="cert-body">
+              <div class="cert-eyebrow">My Certification</div>
+              <div class="cert-h1">Set your cert level</div>
+              <div class="cert-sub">Content scopes to what you're allowed to do on shift.</div>
+              <div class="cert-tabs">
+                <div class="cert-tab"><div class="cert-tab-name">EMT</div><div class="cert-tab-meta">BLS scope</div></div>
+                <div class="cert-tab"><div class="cert-tab-name">AEMT</div><div class="cert-tab-meta">Advanced BLS</div></div>
+                <div class="cert-tab"><div class="cert-tab-name">EMT-I</div><div class="cert-tab-meta">Intermediate</div></div>
+                <div class="cert-tab on" data-click="cert-paramedic"><div class="cert-tab-name">Paramedic</div><div class="cert-tab-meta">ALS scope</div></div>
+              </div>
+              <div class="cert-foot">You'll see <strong>paramedic-scope drugs, doses, and procedures</strong>. Switch any time from your profile.</div>
             </div>
           </div>
 
@@ -694,13 +1261,13 @@
               <div class="qb-back">&larr; Back</div>
               <div class="qb-title">Protocol Quizzes</div>
               <div class="topic-grid">
-                <div class="topic-card"><h4>Cardiac</h4><div class="meta">44Q · 3 tests</div></div>
-                <div class="topic-card"><h4>Respiratory</h4><div class="meta">33Q · 3 tests</div></div>
+                <div class="topic-card"><h4>Cardiac</h4><div class="meta">44Q &middot; 3 tests</div></div>
+                <div class="topic-card"><h4>Respiratory</h4><div class="meta">33Q &middot; 3 tests</div></div>
               </div>
             </div>
             <div class="modal-wrap"><div class="modal">
               <div class="modal-h">Cardiac</div>
-              <div class="modal-sub">Select a test to begin</div>
+              <div class="modal-sub">Paramedic &middot; Select a test to begin</div>
               <div class="modal-test" data-click="test-1"><h5>Test 1</h5><p>15 questions</p></div>
               <div class="modal-test"><h5>Test 2</h5><p>15 questions</p></div>
               <div class="modal-test"><h5>Test 3</h5><p>14 questions</p></div>
@@ -744,9 +1311,9 @@
             </div>
           </div>
 
-          <!-- Beat 6: PDF -->
+          <!-- Beat 6: PDF source -->
           <div class="scene" data-beat="pdf">
-            <div class="pdf-h">denvermetro-protocol.pdf · Page 72 of 193</div>
+            <div class="pdf-h">denvermetro-protocol.pdf &middot; Page 72 of 193</div>
             <div class="pdf-page">
               <h2>4015 CHEST PAIN / ACS</h2>
               <h3>NITROGLYCERIN — POST-ADMINISTRATION</h3>
@@ -756,83 +1323,317 @@
             </div>
           </div>
 
-          <!-- Beat 7: Admin dashboard -->
+          <!-- Beat 7: Scenario intro -->
+          <div class="scene" data-beat="scenario-intro">
+            <div class="ah"><div class="ah-logo"><img src="../logo-256.png" alt=""></div><div class="ah-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span class="ah-profile">Profile</span></div></div>
+            <div class="sc-body">
+              <div class="qb-back">&larr; Back</div>
+              <div class="sc-stage">
+                <div class="sc-stage-num">Stage 1 of 5</div>
+                <div class="sc-stage-bar"><div class="sc-stage-bar-fill" style="width:20%;"></div></div>
+              </div>
+              <div class="sc-stage-dots">
+                <span class="sc-stage-dot cur">1</span><span class="sc-stage-dot">2</span><span class="sc-stage-dot">3</span><span class="sc-stage-dot">4</span><span class="sc-stage-dot">5</span>
+              </div>
+              <div class="sc-title">Clinical Scenario &middot; Paramedic</div>
+              <div class="sc-card">
+                <div class="sc-card-l">Initial Presentation</div>
+                <div class="sc-card-body">Dispatch to dialysis center for 62-year-old male, weak and near-syncopal during dialysis. Staff stopped dialysis early due to equipment malfunction. Missed last two sessions. ESRD, diabetes, HTN.</div>
+              </div>
+              <div class="sc-card">
+                <div class="sc-card-l">Patient Status</div>
+                <div class="sc-card-body">Sitting in dialysis chair, weak and lightheaded. Staff reports K+ <span class="v-bad">6.8 mEq/L</span> at session start. AV fistula left arm. Generalized weakness, muscle cramping.</div>
+                <div class="sc-vitals">HR: <span class="v-bad">42</span> &middot; BP: <span class="v-bad">96/58</span> &middot; RR: 20 &middot; SpO2: 95% RA</div>
+              </div>
+              <div class="sc-q">This dialysis patient is bradycardic, hypotensive, and weak. What is the critical first step?</div>
+              <div class="sc-choices">
+                <div class="sc-choice" data-click="sc-answer"><span class="l">A</span> Obtain 12-lead ECG to evaluate for hyperkalemic changes</div>
+                <div class="sc-choice"><span class="l">B</span> Atropine 1mg IV for bradycardia</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Beat 8: Scenario EKG (clinically-correct hyperkalemia) -->
+          <div class="scene" data-beat="scenario-ekg">
+            <div class="ah"><div class="ah-logo"><img src="../logo-256.png" alt=""></div><div class="ah-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span class="ah-profile">Profile</span></div></div>
+            <div class="sc-body">
+              <div class="sc-stage">
+                <div class="sc-stage-num">Stage 2 of 5</div>
+                <div class="sc-stage-bar"><div class="sc-stage-bar-fill" style="width:40%;"></div></div>
+              </div>
+              <div class="sc-stage-dots">
+                <span class="sc-stage-dot done">1</span><span class="sc-stage-dot cur">2</span><span class="sc-stage-dot">3</span><span class="sc-stage-dot">4</span><span class="sc-stage-dot">5</span>
+              </div>
+              <div class="ekg-card">
+                <div class="ekg-card-l">12-Lead ECG &middot; Lead II strip</div>
+                <div class="ekg-strip">
+                  <span class="ekg-lead-label">II</span>
+                  <svg viewBox="0 0 240 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 0 50 L 14 50 L 16 49 L 18 51 L 20 50 L 24 50 L 26 38 L 28 62 L 30 32 L 32 50 L 36 14 L 40 50 L 50 50 L 60 50 L 64 50 L 66 49 L 68 51 L 70 50 L 74 50 L 76 38 L 78 62 L 80 32 L 82 50 L 86 14 L 90 50 L 100 50 L 110 50 L 114 50 L 116 49 L 118 51 L 120 50 L 124 50 L 126 38 L 128 62 L 130 32 L 132 50 L 136 14 L 140 50 L 150 50 L 160 50 L 164 50 L 166 49 L 168 51 L 170 50 L 174 50 L 176 38 L 178 62 L 180 32 L 182 50 L 186 14 L 190 50 L 200 50 L 210 50 L 214 50 L 216 49 L 218 51 L 220 50 L 224 50 L 226 38 L 228 62 L 230 32 L 232 50 L 236 14 L 240 50" stroke="#1a1a1a" stroke-width="1.2" fill="none" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div class="ekg-card-foot">HR 42 &middot; Tall peaked T waves &middot; Wide QRS</div>
+              </div>
+              <div class="sc-q">12-lead shows tall, peaked T waves and widened QRS. Immediate treatment?</div>
+              <div class="sc-choices">
+                <div class="sc-choice"><span class="l">A</span> Dextrose 25g IV with insulin</div>
+                <div class="sc-choice"><span class="l">B</span> Albuterol nebulizer</div>
+                <div class="sc-choice"><span class="l">C</span> Sodium bicarbonate 50 mEq IVP</div>
+                <div class="sc-choice" data-click="sc-ekg-answer"><span class="l">D</span> Calcium gluconate 3g IV over 5 min</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ============ HANDOFF (phone -> laptop) ============ -->
+          <div class="scene" data-beat="handoff">
+            <!-- intentionally empty: stage shows side-by-side phone+laptop via .stage-handoff -->
+          </div>
+
+          <!-- ============ ADMIN ARC (laptop frame) ============ -->
+
+          <!-- Beat 9: Admin dashboard -->
           <div class="scene" data-beat="admin-dash">
-            <div class="ad-banner">ADMIN<span class="ad-banner-pill">Denver Metro</span></div>
-            <div class="ad-body">
-              <div class="ad-tabs">
-                <span class="ad-tab on">Dashboard</span>
-                <span class="ad-tab" data-click="tab-reports">Reports</span>
-                <span class="ad-tab">Training</span>
-                <span class="ad-tab">Team</span>
+            <div class="lap-chrome">
+              <span class="lap-dot r"></span><span class="lap-dot y"></span><span class="lap-dot g"></span>
+              <div class="lap-url">denvermetro.protoquiz.com/admin</div>
+            </div>
+            <div class="lap-body">
+              <div class="lap-header">
+                <div class="lap-brand">
+                  <span class="lap-brand-logo"><img src="../logo-256.png" alt=""></span>
+                  <span class="lap-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span>Feedback</span></span>
+                </div>
+                <div class="lap-nav-buttons"><span class="lap-nav-btn signin">Profile</span><span class="lap-nav-btn admin">Admin</span></div>
               </div>
-              <div class="ad-h">
-                <div><div class="ad-title">Organization Performance</div><div class="ad-sub">All available data · Updated just now</div></div>
-                <div class="ad-controls"><span class="ad-pill">7D</span><span class="ad-pill">30D</span><span class="ad-pill on">All</span></div>
-              </div>
-              <div class="ad-kpis">
-                <div class="ad-kpi k1"><div class="ad-kpi-v">25</div><div class="ad-kpi-l">Active</div></div>
-                <div class="ad-kpi k2"><div class="ad-kpi-v">83%</div><div class="ad-kpi-l">Avg score</div></div>
-                <div class="ad-kpi k3"><div class="ad-kpi-v">586</div><div class="ad-kpi-l">Quizzes</div></div>
-                <div class="ad-kpi k4"><div class="ad-kpi-v">72%</div><div class="ad-kpi-l">Compliance</div></div>
-              </div>
-              <div class="ad-section-h">Score Trends <span class="meta">avg by topic, by month</span></div>
-              <div class="heatmap" id="heatmap">
-                <div></div>
-                <div class="hm-month">Jun</div><div class="hm-month">Jul</div><div class="hm-month">Aug</div><div class="hm-month">Sep</div><div class="hm-month">Oct</div><div class="hm-month">Nov</div><div class="hm-month">Dec</div><div class="hm-month">Jan</div><div class="hm-month">Feb</div><div class="hm-month">Mar</div><div class="hm-month">Apr</div><div class="hm-month">May</div>
-                <div class="hm-topic">Cardiac</div>
-                <div class="hm-cell mid">74</div><div class="hm-cell mid">76</div><div class="hm-cell mid">77</div><div class="hm-cell mid">78</div><div class="hm-cell hi">80</div><div class="hm-cell hi">81</div><div class="hm-cell hi">82</div><div class="hm-cell hi">83</div><div class="hm-cell hi">84</div><div class="hm-cell hi">85</div><div class="hm-cell hi">86</div><div class="hm-cell hi">87</div>
-                <div class="hm-topic">Respir</div>
-                <div class="hm-cell mid">68</div><div class="hm-cell mid">70</div><div class="hm-cell mid">72</div><div class="hm-cell mid">73</div><div class="hm-cell mid">74</div><div class="hm-cell mid">75</div><div class="hm-cell mid">76</div><div class="hm-cell mid">77</div><div class="hm-cell mid">78</div><div class="hm-cell hi">80</div><div class="hm-cell hi">81</div><div class="hm-cell hi">82</div>
-                <div class="hm-topic">Trauma</div>
-                <div class="hm-cell mid">65</div><div class="hm-cell mid">66</div><div class="hm-cell mid">68</div><div class="hm-cell mid">69</div><div class="hm-cell mid">70</div><div class="hm-cell mid">71</div><div class="hm-cell mid">72</div><div class="hm-cell mid">73</div><div class="hm-cell mid">74</div><div class="hm-cell mid">75</div><div class="hm-cell mid">76</div><div class="hm-cell mid">76</div>
-                <div class="hm-topic">Pharm</div>
-                <div class="hm-cell mid">76</div><div class="hm-cell mid">78</div><div class="hm-cell hi">80</div><div class="hm-cell hi">81</div><div class="hm-cell hi">82</div><div class="hm-cell hi">83</div><div class="hm-cell hi">84</div><div class="hm-cell hi">85</div><div class="hm-cell hi">86</div><div class="hm-cell hi">87</div><div class="hm-cell hi">87</div><div class="hm-cell hi">88</div>
-                <div class="hm-topic">OB/Peds</div>
-                <div class="hm-cell lo">52</div><div class="hm-cell lo">54</div><div class="hm-cell lo">55</div><div class="hm-cell lo">57</div><div class="hm-cell lo">58</div><div class="hm-cell lo">59</div><div class="hm-cell mid">61</div><div class="hm-cell mid">62</div><div class="hm-cell mid">63</div><div class="hm-cell mid">65</div><div class="hm-cell mid">66</div><div class="hm-cell mid">67</div>
-                <div class="hm-topic">Sepsis</div>
-                <div class="hm-cell lo">55</div><div class="hm-cell lo">56</div><div class="hm-cell lo">57</div><div class="hm-cell lo">58</div><div class="hm-cell lo">59</div><div class="hm-cell mid">61</div><div class="hm-cell mid">62</div><div class="hm-cell mid">64</div><div class="hm-cell mid">65</div><div class="hm-cell mid">66</div><div class="hm-cell mid">68</div><div class="hm-cell mid">69</div>
+              <div class="lap-main">
+                <div class="lap-h1">Admin Dashboard</div>
+                <div class="lap-h1-sub">Denver Metro EMS</div>
+                <div class="lap-tabs">
+                  <span class="lap-tab on">Dashboard</span>
+                  <span class="lap-tab" data-click="lap-tab-assign">Assignments</span>
+                  <span class="lap-tab">Reports</span>
+                  <span class="lap-tab">Team</span>
+                </div>
+                <div class="lap-perf-h">
+                  <div><div class="lap-perf-title">Organization Performance</div><div class="lap-perf-sub">All available data &middot; Updated just now</div></div>
+                  <div class="lap-perf-controls"><span class="lap-perf-pill report">PDF Report</span><span class="lap-perf-pill">7D</span><span class="lap-perf-pill">30D</span><span class="lap-perf-pill on">All</span></div>
+                </div>
+                <div class="lap-kpis">
+                  <div class="lap-kpi k1"><div class="lap-kpi-l">Active Paramedics</div><div class="lap-kpi-v">86</div><div class="lap-kpi-delta up">+9 this month</div></div>
+                  <div class="lap-kpi k2"><div class="lap-kpi-l">Avg Quiz Score</div><div class="lap-kpi-v">83%</div><div class="lap-kpi-delta up">+3% vs last month</div></div>
+                  <div class="lap-kpi k3"><div class="lap-kpi-l">Quizzes Taken</div><div class="lap-kpi-v">2,184</div><div class="lap-kpi-delta up">+22% vs last month</div></div>
+                  <div class="lap-kpi k4"><div class="lap-kpi-l">Compliance</div><div class="lap-kpi-v">72%</div><div class="lap-kpi-delta warn">Below 80% target</div></div>
+                </div>
+                <div class="lap-twocol">
+                  <div class="lap-card">
+                    <div class="lap-card-h">Compliance Overview</div>
+                    <div class="lap-donut-wrap">
+                      <div class="lap-donut">
+                        <svg viewBox="0 0 36 36">
+                          <circle cx="18" cy="18" r="15.915" fill="none" stroke="#1f2937" stroke-width="3.5"/>
+                          <circle cx="18" cy="18" r="15.915" fill="none" stroke="#22c55e" stroke-width="3.5" stroke-dasharray="72 28" stroke-dashoffset="0"/>
+                          <circle cx="18" cy="18" r="15.915" fill="none" stroke="#f59e0b" stroke-width="3.5" stroke-dasharray="16 84" stroke-dashoffset="-72"/>
+                          <circle cx="18" cy="18" r="15.915" fill="none" stroke="#ef4444" stroke-width="3.5" stroke-dasharray="12 88" stroke-dashoffset="-88"/>
+                        </svg>
+                        <div class="lap-donut-center">
+                          <div class="lap-donut-num">72%</div>
+                          <div class="lap-donut-l">Compliant</div>
+                        </div>
+                      </div>
+                      <div class="lap-donut-legend">
+                        <span><i style="background:#22c55e"></i>Passed (62)</span>
+                        <span><i style="background:#f59e0b"></i>Pending (14)</span>
+                        <span><i style="background:#ef4444"></i>Overdue (10)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="lap-card">
+                    <div class="lap-card-h">Scores by Category</div>
+                    <div class="lap-bars">
+                      <div class="lap-bar-row"><span class="lap-bar-name">Pharmacology</span><span class="lap-bar-num hi">88%</span><div class="lap-bar-track"><div class="lap-bar-fill hi" style="--w:88%;"></div><span class="lap-bar-target"></span></div></div>
+                      <div class="lap-bar-row"><span class="lap-bar-name">Cardiac</span><span class="lap-bar-num hi">87%</span><div class="lap-bar-track"><div class="lap-bar-fill hi" style="--w:87%;"></div><span class="lap-bar-target"></span></div></div>
+                      <div class="lap-bar-row"><span class="lap-bar-name">Respiratory</span><span class="lap-bar-num hi">82%</span><div class="lap-bar-track"><div class="lap-bar-fill hi" style="--w:82%;"></div><span class="lap-bar-target"></span></div></div>
+                      <div class="lap-bar-row"><span class="lap-bar-name">Trauma</span><span class="lap-bar-num mid">76%</span><div class="lap-bar-track"><div class="lap-bar-fill mid" style="--w:76%;"></div><span class="lap-bar-target"></span></div></div>
+                      <div class="lap-bar-row"><span class="lap-bar-name">OB/Pediatrics</span><span class="lap-bar-num lo">71%</span><div class="lap-bar-track"><div class="lap-bar-fill lo" style="--w:71%;"></div><span class="lap-bar-target"></span></div></div>
+                      <div class="lap-bar-row"><span class="lap-bar-name">Sepsis</span><span class="lap-bar-num lo">68%</span><div class="lap-bar-track"><div class="lap-bar-fill lo" style="--w:68%;"></div><span class="lap-bar-target"></span></div></div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Beat 8: Reports -->
-          <div class="scene" data-beat="admin-reports">
-            <div class="ad-banner">ADMIN<span class="ad-banner-pill">Denver Metro</span></div>
-            <div class="ad-body">
-              <div class="ad-tabs"><span class="ad-tab">Dashboard</span><span class="ad-tab on">Reports</span><span class="ad-tab">Training</span><span class="ad-tab">Team</span></div>
-              <div class="ad-h">
-                <div><div class="ad-title">Weakest topics</div><div class="ad-sub">Sorted by avg score · last 30 days</div></div>
-                <div class="ad-controls"><span class="ad-pill on">All certs</span><span class="ad-pill">BLS</span><span class="ad-pill">ALS</span></div>
+          <!-- Beat 10: Admin assignments -->
+          <div class="scene" data-beat="admin-assignments">
+            <div class="lap-chrome">
+              <span class="lap-dot r"></span><span class="lap-dot y"></span><span class="lap-dot g"></span>
+              <div class="lap-url">denvermetro.protoquiz.com/admin</div>
+            </div>
+            <div class="lap-body">
+              <div class="lap-header">
+                <div class="lap-brand">
+                  <span class="lap-brand-logo"><img src="../logo-256.png" alt=""></span>
+                  <span class="lap-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span>Feedback</span></span>
+                </div>
+                <div class="lap-nav-buttons"><span class="lap-nav-btn signin">Profile</span><span class="lap-nav-btn admin">Admin</span></div>
               </div>
-              <div class="weak-list">
-                <div class="weak-row"><span class="weak-name">OB/Peds</span><span class="weak-bar"><span class="weak-bar-fill lo" style="width:67%;"></span></span><span class="weak-score lo">67%</span><span class="weak-action" data-click="assign-obp">Assign training</span></div>
-                <div class="weak-row"><span class="weak-name">Sepsis</span><span class="weak-bar"><span class="weak-bar-fill lo" style="width:69%;"></span></span><span class="weak-score lo">69%</span><span class="weak-action">Assign training</span></div>
-                <div class="weak-row"><span class="weak-name">Trauma</span><span class="weak-bar"><span class="weak-bar-fill mid" style="width:76%;"></span></span><span class="weak-score mid">76%</span><span class="weak-action">Assign training</span></div>
-                <div class="weak-row"><span class="weak-name">Respir</span><span class="weak-bar"><span class="weak-bar-fill mid" style="width:82%;"></span></span><span class="weak-score mid">82%</span><span class="weak-action">Assign training</span></div>
+              <div class="lap-main">
+                <div class="lap-h1">Admin Dashboard</div>
+                <div class="lap-h1-sub">Denver Metro EMS</div>
+                <div class="lap-tabs">
+                  <span class="lap-tab">Dashboard</span>
+                  <span class="lap-tab on">Assignments</span>
+                  <span class="lap-tab">Reports</span>
+                  <span class="lap-tab">Team</span>
+                </div>
+                <button class="lap-new-btn" data-click="lap-new-assign">+ New Assignment</button>
+                <div class="lap-assigns">
+                  <div class="lap-assign-row">
+                    <div>
+                      <div class="lap-assign-name">Weekly Cardiac Review</div>
+                      <div class="lap-assign-meta">Protocol &middot; Min 80% &middot; Due May 11 &middot; All paramedics</div>
+                      <div class="lap-assign-progress"><div class="lap-assign-progress-fill" style="--w:84%;"></div></div>
+                    </div>
+                    <span class="lap-assign-status cancel">72/86 passed</span>
+                  </div>
+                  <div class="lap-assign-row">
+                    <div>
+                      <div class="lap-assign-name">Pharmacology Dosing Check</div>
+                      <div class="lap-assign-meta">Pharmacology &middot; Min 85% &middot; Due May 8 &middot; All paramedics</div>
+                      <div class="lap-assign-progress"><div class="lap-assign-progress-fill" style="--w:78%;"></div></div>
+                    </div>
+                    <span class="lap-assign-status cancel">67/86 passed</span>
+                  </div>
+                  <div class="lap-assign-row">
+                    <div>
+                      <div class="lap-assign-name">OB/Peds Refresher</div>
+                      <div class="lap-assign-meta">Protocol &middot; Min 80% &middot; Due May 18 &middot; All paramedics</div>
+                      <div class="lap-assign-progress"><div class="lap-assign-progress-fill" style="--w:42%;"></div></div>
+                    </div>
+                    <span class="lap-assign-status cancel">36/86 passed</span>
+                  </div>
+                  <div class="lap-assign-row">
+                    <div>
+                      <div class="lap-assign-name">Stroke Recognition Quiz</div>
+                      <div class="lap-assign-meta">Protocol &middot; Min 80% &middot; Due May 25 &middot; All paramedics</div>
+                      <div class="lap-assign-progress"><div class="lap-assign-progress-fill" style="--w:24%;"></div></div>
+                    </div>
+                    <span class="lap-assign-status cancel">21/86 passed</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Beat 9: Assignment -->
-          <div class="scene" data-beat="admin-assign">
-            <div class="ad-banner">ADMIN<span class="ad-banner-pill">Denver Metro</span></div>
-            <div class="ad-body" style="opacity:.35;">
-              <div class="ad-tabs"><span class="ad-tab">Dashboard</span><span class="ad-tab on">Reports</span><span class="ad-tab">Training</span><span class="ad-tab">Team</span></div>
-              <div class="weak-list" style="margin-top:10px;">
-                <div class="weak-row"><span class="weak-name">OB/Peds</span><span class="weak-bar"><span class="weak-bar-fill lo" style="width:67%;"></span></span><span class="weak-score lo">67%</span><span class="weak-action">Assign training</span></div>
-                <div class="weak-row"><span class="weak-name">Sepsis</span><span class="weak-bar"><span class="weak-bar-fill lo" style="width:69%;"></span></span><span class="weak-score lo">69%</span><span class="weak-action">Assign training</span></div>
+          <!-- Beat 11: New assignment modal -->
+          <div class="scene" data-beat="admin-new">
+            <div class="lap-chrome">
+              <span class="lap-dot r"></span><span class="lap-dot y"></span><span class="lap-dot g"></span>
+              <div class="lap-url">denvermetro.protoquiz.com/admin</div>
+            </div>
+            <div class="lap-body">
+              <div class="lap-header" style="opacity:.4;">
+                <div class="lap-brand">
+                  <span class="lap-brand-logo"><img src="../logo-256.png" alt=""></span>
+                  <span class="lap-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span>Feedback</span></span>
+                </div>
+                <div class="lap-nav-buttons"><span class="lap-nav-btn signin">Profile</span><span class="lap-nav-btn admin">Admin</span></div>
+              </div>
+              <div class="lap-main" style="opacity:.4;">
+                <div class="lap-h1">Admin Dashboard</div>
+                <div class="lap-h1-sub">Denver Metro EMS</div>
+                <div class="lap-tabs">
+                  <span class="lap-tab">Dashboard</span>
+                  <span class="lap-tab on">Assignments</span>
+                  <span class="lap-tab">Reports</span>
+                  <span class="lap-tab">Team</span>
+                </div>
               </div>
             </div>
-            <div class="modal-wrap"><div class="assign-modal">
-              <div class="assign-h">Assign training</div>
-              <div class="assign-sub">OB/Peds · current avg 67%</div>
-              <div class="assign-field"><div class="assign-l">Assign to</div><div class="assign-v">All providers (25) <span class="chev">&rsaquo;</span></div></div>
-              <div class="assign-field"><div class="assign-l">Required score</div><div class="assign-v">80% <span class="chev">&rsaquo;</span></div></div>
-              <div class="assign-field"><div class="assign-l">Due</div><div class="assign-v">Friday, May 15 <span class="chev">&rsaquo;</span></div></div>
-              <button class="assign-confirm" data-click="confirm-assign">Send to crew</button>
+            <div class="lap-modal-wrap"><div class="lap-modal">
+              <div class="lap-modal-h">New Assignment</div>
+              <div class="lap-modal-row">
+                <div class="lap-modal-l">Quiz Type</div>
+                <div class="lap-modal-toggle">
+                  <span class="lap-modal-toggle-btn on">Protocol</span>
+                  <span class="lap-modal-toggle-btn">Pharmacology</span>
+                </div>
+              </div>
+              <div class="lap-modal-row">
+                <div class="lap-modal-l">Topic</div>
+                <div class="lap-modal-input">OB/Pediatrics &nbsp;&rsaquo;</div>
+              </div>
+              <div class="lap-modal-row" style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+                <div>
+                  <div class="lap-modal-l">Min Score</div>
+                  <div class="lap-modal-input">80%</div>
+                </div>
+                <div>
+                  <div class="lap-modal-l">Due in</div>
+                  <div class="lap-modal-input">7 days</div>
+                </div>
+              </div>
+              <div class="lap-modal-row">
+                <div class="lap-modal-l">Assign To</div>
+                <div class="lap-modal-input">All paramedics (86)</div>
+              </div>
+              <button class="lap-modal-confirm" data-click="lap-confirm">Send to crew</button>
             </div></div>
-            <div class="assign-toast" id="assign-toast">Assigned to 25 providers</div>
+          </div>
+
+          <!-- Beat 12: Confirmation toast -->
+          <div class="scene" data-beat="admin-confirm">
+            <div class="lap-chrome">
+              <span class="lap-dot r"></span><span class="lap-dot y"></span><span class="lap-dot g"></span>
+              <div class="lap-url">denvermetro.protoquiz.com/admin</div>
+            </div>
+            <div class="lap-body">
+              <div class="lap-header">
+                <div class="lap-brand">
+                  <span class="lap-brand-logo"><img src="../logo-256.png" alt=""></span>
+                  <span class="lap-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span>Feedback</span></span>
+                </div>
+                <div class="lap-nav-buttons"><span class="lap-nav-btn signin">Profile</span><span class="lap-nav-btn admin">Admin</span></div>
+              </div>
+              <div class="lap-main">
+                <div class="lap-h1">Admin Dashboard</div>
+                <div class="lap-h1-sub">Denver Metro EMS</div>
+                <div class="lap-tabs">
+                  <span class="lap-tab">Dashboard</span>
+                  <span class="lap-tab on">Assignments</span>
+                  <span class="lap-tab">Reports</span>
+                  <span class="lap-tab">Team</span>
+                </div>
+                <button class="lap-new-btn">+ New Assignment</button>
+                <div class="lap-assigns">
+                  <div class="lap-assign-row" style="border-color:rgba(34,197,94,.4); background:rgba(34,197,94,.05);">
+                    <div>
+                      <div class="lap-assign-name" style="color:var(--success);">OB/Peds Refresher &middot; NEW</div>
+                      <div class="lap-assign-meta">Protocol &middot; Min 80% &middot; Due May 11 &middot; All paramedics (86)</div>
+                      <div class="lap-assign-progress"><div class="lap-assign-progress-fill" style="--w:0%;"></div></div>
+                    </div>
+                    <span class="lap-assign-status cancel">Just sent</span>
+                  </div>
+                  <div class="lap-assign-row">
+                    <div>
+                      <div class="lap-assign-name">Weekly Cardiac Review</div>
+                      <div class="lap-assign-meta">Protocol &middot; Min 80% &middot; Due May 11 &middot; All paramedics</div>
+                      <div class="lap-assign-progress"><div class="lap-assign-progress-fill" style="--w:84%;"></div></div>
+                    </div>
+                    <span class="lap-assign-status cancel">72/86 passed</span>
+                  </div>
+                  <div class="lap-assign-row">
+                    <div>
+                      <div class="lap-assign-name">Pharmacology Dosing Check</div>
+                      <div class="lap-assign-meta">Pharmacology &middot; Min 85% &middot; Due May 8 &middot; All paramedics</div>
+                      <div class="lap-assign-progress"><div class="lap-assign-progress-fill" style="--w:78%;"></div></div>
+                    </div>
+                    <span class="lap-assign-status cancel">67/86 passed</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="lap-toast" id="lap-toast">Sent to 86 paramedics &middot; tracking enabled</div>
           </div>
 
           <div class="cursor" id="cursor" aria-hidden="true">
@@ -842,56 +1643,111 @@
           </div>
           <div class="progress" id="progress" aria-hidden="true"></div>
         </div>
+        <div class="laptop-base" aria-hidden="true"></div>
+        <div class="stage-handoff" id="stage-handoff" aria-hidden="true">
+          <div class="stage-handoff-phone">
+            <div class="stage-handoff-icon"><img src="../logo-256.png" alt=""></div>
+            <div class="stage-handoff-label">Paramedic<br/>on shift</div>
+          </div>
+          <div class="stage-handoff-arrow">&rarr;</div>
+          <div class="stage-handoff-laptop">
+            <div class="stage-handoff-icon"><img src="../logo-256.png" alt=""></div>
+            <div class="stage-handoff-label">Training officer<br/>at the desk</div>
+          </div>
+        </div>
       </div>
 
-      <!-- Narration column — these highlight in sync with the movie -->
-      <div class="walkthrough-narration" id="narration">
-        <div class="narration-step" data-step="home,topics,test-picker">
-          <div class="narration-num">01 — Medic on shift</div>
-          <h3>Open the app. Pick a topic.</h3>
-          <p>A medic on a slow night opens the app, taps Protocol Quizzes, picks Cardiac, starts a 15-question test. No login friction. No content they have to ignore.</p>
+      <!-- RIGHT: single-beat narration player -->
+      <div class="player">
+        <div class="player-meta">
+          <span class="beat-num"><span id="beat-current">01</span> / <span id="beat-total">12</span></span>
+          <span class="beat-divider">&middot;</span>
+          <span id="beat-arc">Paramedic on shift</span>
         </div>
-        <div class="narration-step" data-step="q-unanswered,q-answered">
-          <div class="narration-num">02 — Real protocol questions</div>
-          <h3>Answers cited to your PDF.</h3>
-          <p>Every question pulled from your protocol document. Every answer references the exact page. No NREMT trivia, no national average. The exact words your medical director signed off on.</p>
+        <div class="player-stage" id="player-stage">
+          <div class="beat" data-beat-text="home">
+            <div class="beat-eyebrow">Open the app on shift</div>
+            <h3>Choose what to study.</h3>
+            <p>Protocol quizzes, clinical scenarios, pharmacology, procedures, learn mode. Phone or desktop, on the truck or at home. The only thing on the home screen is what your medical director signed off on.</p>
+          </div>
+          <div class="beat" data-beat-text="topics">
+            <div class="beat-eyebrow">Pick a topic</div>
+            <h3>Organized your agency's way.</h3>
+            <p>Cardiac, respiratory, toxicology, OB/Peds &mdash; the way your protocol PDF organizes them, not the way an LMS vendor decided. Question counts and tests, generated from the document you sent us.</p>
+          </div>
+          <div class="beat" data-beat-text="cert-picker">
+            <div class="beat-eyebrow">Set your cert</div>
+            <h3>Paramedic content for paramedics.</h3>
+            <p>Pick your level once. The app shows you the drugs, doses, and procedures inside <em>your</em> scope &mdash; not the BLS subset, not someone else's protocol. Switch any time from your profile.</p>
+          </div>
+          <div class="beat" data-beat-text="test-picker">
+            <div class="beat-eyebrow">Start a test</div>
+            <h3>Reps that fit between calls.</h3>
+            <p>Three short tests per topic. 14&ndash;15 questions each. Designed for the slow stretches of a shift &mdash; no schedule changes, no off-duty hours, no pulling people off the truck.</p>
+          </div>
+          <div class="beat" data-beat-text="q-unanswered">
+            <div class="beat-eyebrow">A real protocol question</div>
+            <h3>The exact decision they'll make on the next call.</h3>
+            <p>Hypotension after NTG, dosing thresholds, when to call medical control. The questions are pulled directly from your protocol document &mdash; the same words your crews are accountable for.</p>
+          </div>
+          <div class="beat" data-beat-text="q-answered">
+            <div class="beat-eyebrow">Cited to your PDF</div>
+            <h3>Every answer points back to the source.</h3>
+            <p>Page 72. Section 4015. The exact line your medical director wrote. No "trust us, this is best practice" &mdash; the protocol is the source of truth, and the app says so on every question.</p>
+          </div>
+          <div class="beat" data-beat-text="pdf">
+            <div class="beat-eyebrow">Tap to verify</div>
+            <h3>Open the protocol.</h3>
+            <p>The PDF opens to the exact page, highlighted at the exact line. The app and the source of truth are always one click apart.</p>
+          </div>
+          <div class="beat" data-beat-text="scenario-intro">
+            <div class="beat-eyebrow">Then a scenario</div>
+            <h3>A real call, on a screen.</h3>
+            <p>Five-stage clinical case. Dialysis patient, hyperkalemic, bradycardic. Vitals on screen. The decisions match what they'd actually have to make in 90 seconds in the back of the rig.</p>
+          </div>
+          <div class="beat" data-beat-text="scenario-ekg">
+            <div class="beat-eyebrow">Read the rhythm</div>
+            <h3>Peaked T waves. What do you push?</h3>
+            <p>Hyperkalemia EKG, paramedic-scope drug choices: calcium gluconate, dextrose+insulin, sodium bicarb, albuterol. The reps are the call &mdash; not a trivia question dressed up as one.</p>
+          </div>
+          <div class="beat" data-beat-text="handoff">
+            <div class="beat-eyebrow">Same product, two views</div>
+            <h3>Paramedics on phones. Officers at the desk.</h3>
+            <p>The same content, two surfaces. Your crews study on shift, between calls. The training officer watches the whole org from one dashboard.</p>
+          </div>
+          <div class="beat" data-beat-text="admin-dash">
+            <div class="beat-eyebrow">Now, the training officer</div>
+            <h3>One screen. Where the org is solid, where it isn't.</h3>
+            <p>Active paramedics, average score, compliance, scores by category. Pharmacology and cardiac are strong. Sepsis and OB/Peds are below the 80% target. Stop finding out at QA.</p>
+          </div>
+          <div class="beat" data-beat-text="admin-assignments">
+            <div class="beat-eyebrow">Active training</div>
+            <h3>Every assignment, every paramedic, every status.</h3>
+            <p>What's been assigned, who's passed, who hasn't, what's due when. The training program is documented, dated, and visible &mdash; not stitched together from email, Slack, and a Word doc.</p>
+          </div>
+          <div class="beat" data-beat-text="admin-new">
+            <div class="beat-eyebrow">Close the gap</div>
+            <h3>One form. Sent to the crew.</h3>
+            <p>Pick a topic, set a minimum score, set a due date, send. The assignment lands in every paramedic's app on their next session. Two clicks from finding the gap to closing it.</p>
+          </div>
+          <div class="beat" data-beat-text="admin-confirm">
+            <div class="beat-eyebrow">Sent</div>
+            <h3>86 paramedics. Tracking starts now.</h3>
+            <p>Every attempt, every score, every pass &mdash; tracked. Documented, dated proof of training on the current protocol set. The thing that ends "failure to document training" complaints before they start.</p>
+          </div>
         </div>
-        <div class="narration-step" data-step="pdf">
-          <div class="narration-num">03 — Tap to verify</div>
-          <h3>Open the source, mid-quiz.</h3>
-          <p>Tap the page reference and the protocol opens, highlighted at the line they just got tested on. The app and the source of truth are one click apart, always.</p>
+        <div class="player-controls">
+          <button class="player-btn" id="prev-btn" type="button" aria-label="Previous beat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button class="player-btn play-toggle" id="play-btn" type="button" aria-label="Pause">
+            <svg id="play-icon" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+          </button>
+          <button class="player-btn" id="next-btn" type="button" aria-label="Next beat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+          <span class="player-counter">Auto-play <strong id="autoplay-state">on</strong></span>
         </div>
-        <div class="narration-step" data-step="admin-dash">
-          <div class="narration-num">04 — Training officer</div>
-          <h3>See where the org is weak.</h3>
-          <p>Switch hats. The admin dashboard shows topic fluency by month. Red squares are the topics your crews are weakest on. Green is what they've got. No charts to interpret, no PowerPoint to build.</p>
-        </div>
-        <div class="narration-step" data-step="admin-reports">
-          <div class="narration-num">05 — Drill in</div>
-          <h3>Sorted weakest first.</h3>
-          <p>Reports tab opens to a sorted list. OB/Peds at 67% is the worst. One click to act on it.</p>
-        </div>
-        <div class="narration-step" data-step="admin-assign">
-          <div class="narration-num">06 — Assign</div>
-          <h3>One form. Sent to the crew.</h3>
-          <p>Pick who, pick a target score, pick a due date. The assignment lands in everyone's inbox and shows up on their next session. Two clicks from finding the gap to closing it.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ ROLLOUT TIMELINE ============ -->
-  <section class="section alt">
-    <div class="wrap" style="max-width:780px;">
-      <div class="section-center">
-        <div class="section-label">Rollout</div>
-        <h2 class="section-title">From email to first quiz: about a week.</h2>
-      </div>
-      <div class="timeline">
-        <div class="tl-item"><div class="tl-dot">01</div><h3>Send us your PDF</h3><p>One email. That's the whole lift on your end.</p></div>
-        <div class="tl-item"><div class="tl-dot">02</div><h3>We stand up your platform</h3><p>Custom subdomain and branding. Your medical director signs off on the question bank before crews see it.</p></div>
-        <div class="tl-item"><div class="tl-dot">03</div><h3>Roll out to your crews</h3><p>One link. No install, no IT ticket.</p></div>
-        <div class="tl-item"><div class="tl-dot">04</div><h3>New revision? Send it.</h3><p>Content updates with it.</p></div>
       </div>
     </div>
   </section>
@@ -901,13 +1757,18 @@
     <div class="wrap">
       <div class="section-center">
         <div class="section-label">Pricing</div>
-        <h2 class="section-title">$100 per provider per year.</h2>
-        <p class="section-desc">Flat. No tiers, no setup fees, no add-ons. Free for 6 months for early pilot partners.</p>
+        <h2 class="section-title">$50 per provider per year.</h2>
+        <p class="section-desc">Pilot rate. Locked for life. Standard is $100 &mdash; early agency partners pay half, forever.</p>
       </div>
       <div class="price-card">
-        <span class="price-pilot">Free 6-month pilot &middot; 2 spots open</span>
-        <div class="price-num"><span class="dollar">$</span>0</div>
-        <div class="price-unit">For the first six months. Then <strong style="color:#fff;">$100 per provider per year</strong> &mdash; about $8.33/mo.</div>
+        <span class="price-pilot">Pilot rate &middot; 50% off for life</span>
+        <div class="price-rate-row">
+          <span class="price-rate-strike">$100<span class="price-rate-unit">/provider/yr</span></span>
+          <span class="price-rate-arrow">&rarr;</span>
+          <span class="price-rate-now">$50<span class="price-rate-unit">/provider/yr</span></span>
+        </div>
+        <div class="price-num"><span class="dollar">$</span><span data-price-val="cost-pilot">15,000</span></div>
+        <div class="price-unit">per year for your <span data-price-val="providers">300</span>-provider agency. Standard would be <strong style="color:#fff;"><span data-price-val="cost-std">$30,000</span>/yr</strong>.</div>
         <ul class="price-includes">
           <li>Crews drilled on your protocols, every shift</li>
           <li>New hires onboarded faster</li>
@@ -916,7 +1777,7 @@
           <li>No added training hours</li>
           <li>Live in days, not months</li>
         </ul>
-        <div class="price-foot">No risk: if it's not for you after the pilot, you walk away &mdash; never pay a thing. Pilot deadline <strong style="color:#fff;">August 1, 2026</strong>.</div>
+        <div class="price-foot">Pilot rate locks in for life &mdash; not a temporary promo. Sign on as an early partner before <strong style="color:#fff;">August 1, 2026</strong>.</div>
       </div>
     </div>
   </section>
@@ -930,58 +1791,87 @@
         <p class="section-desc">Pick your agency size. The numbers below are what ProtoQuiz already saves you, before counting the value of better-trained crews.</p>
       </div>
 
-      <div style="display:flex; justify-content:center; margin:24px 0 4px;">
-        <div class="size-toggle" role="tablist" aria-label="Choose agency size">
-          <button class="size-btn" data-size="small" type="button" role="tab" aria-selected="false">
-            <div class="size-btn-label">Small</div><div class="size-btn-sub">~100 providers</div>
-          </button>
-          <button class="size-btn active" data-size="medium" type="button" role="tab" aria-selected="true">
-            <div class="size-btn-label">Medium</div><div class="size-btn-sub">~300 providers</div>
-          </button>
-          <button class="size-btn" data-size="large" type="button" role="tab" aria-selected="false">
-            <div class="size-btn-label">Large</div><div class="size-btn-sub">500+ providers</div>
-          </button>
+      <div style="margin:24px 0 4px;">
+        <div class="size-slider-wrap">
+          <div class="size-slider-head">
+            <div class="size-slider-label">Your agency</div>
+            <div class="size-slider-readout">
+              <span class="size-slider-num"><span data-size-val="providers">300</span></span>
+              <span class="size-slider-providers">providers</span>
+              <span class="size-slider-tier" data-size-val="tier-pill" data-tier="medium">Medium</span>
+            </div>
+          </div>
+          <input type="range" id="size-slider" class="size-slider"
+                 min="25" max="750" step="5" value="300"
+                 aria-label="Number of providers in your agency" />
+          <div class="size-slider-ticks">
+            <span>25</span><span>200</span><span>400</span><span>600</span><span>750</span>
+          </div>
         </div>
       </div>
 
       <div class="math-hero">
-        <div class="math-hero-tag"><span data-size-val="providers">300</span>-provider agency &middot; flat $100/yr each</div>
+        <div class="math-hero-tag"><span data-size-val="providers">300</span>-provider agency &middot; pilot rate $50/provider/yr</div>
         <div class="math-hero-eyebrow">A <span data-size-text="label">medium</span> agency saves about</div>
-        <div class="math-hero-num"><span data-size-val="save-total">$54,000</span><span class="math-hero-unit">/yr</span></div>
+        <div class="math-hero-num"><span data-size-val="save-total">$51,000</span><span class="math-hero-unit">/yr</span></div>
         <div class="math-hero-sub">
-          ProtoQuiz costs <strong data-size-val="pq">$30,000</strong>/yr. Net positive: <strong data-size-val="save-net">~$24,000</strong>/yr &mdash; before counting better training.
+          ProtoQuiz pilot rate: <strong data-size-val="pq-pilot">$15,000</strong>/yr. Net positive: <strong data-size-val="save-net">~$36,000</strong>/yr &mdash; before counting better training. Standard rate <span data-size-val="pq-std">$30,000</span>/yr still nets <span data-size-val="save-net-std">~$21,000</span>/yr.
         </div>
       </div>
 
       <div class="math-rows">
-        <a href="https://pubmed.ncbi.nlm.nih.gov/20199235/" target="_blank" rel="noopener" class="math-row">
+        <div class="math-row">
           <div>
             <div class="math-row-title">Faster onboarding</div>
             <div class="math-row-detail">New hires arrive already drilled on your protocols. A 20% cut in onboarding time across <span data-size-val="hires-est">~30</span> hires/yr, at ~$30/hr loaded labor.</div>
+            <div class="math-row-source">
+              <span class="math-row-source-label">Source</span>
+              <a href="https://pubmed.ncbi.nlm.nih.gov/20199235/" target="_blank" rel="noopener">Cason et al., simulation training reduces onboarding time (PubMed, 2010)</a>
+              <span class="math-row-source-sep">&middot;</span>
+              <a href="https://www.bls.gov/oes/current/oes292041.htm" target="_blank" rel="noopener">BLS paramedic wage data</a>
+            </div>
           </div>
           <div class="math-row-num"><span data-size-val="save-fto">~$18,000</span></div>
-        </a>
-        <a href="https://www.dshs.texas.gov/dshs-ems-trauma-systems/enforcement-actions" target="_blank" rel="noopener" class="math-row">
+        </div>
+        <div class="math-row">
           <div>
             <div class="math-row-title">Fewer mistakes to fix</div>
             <div class="math-row-detail">Each formal remediation &mdash; pulling a provider off shift, retraining, paperwork, retest &mdash; runs $1,500&ndash;$2,000 loaded. Catch weak topics in 5-minute drills, avoid 6&ndash;8 cases a year.</div>
+            <div class="math-row-source">
+              <span class="math-row-source-label">Source</span>
+              <a href="https://www.dshs.texas.gov/dshs-ems-trauma-systems/enforcement-actions" target="_blank" rel="noopener">Texas DSHS EMS Enforcement Actions database</a>
+              <span class="math-row-source-sep">&middot;</span>
+              <a href="https://www.naemt.org/initiatives/ems-workforce" target="_blank" rel="noopener">NAEMT workforce data</a>
+            </div>
           </div>
           <div class="math-row-num"><span data-size-val="save-remediation">~$12,000</span></div>
-        </a>
-        <a href="https://www.professionallicensedefensellc.com/emt-and-paramedic-license-defense" target="_blank" rel="noopener" class="math-row">
+        </div>
+        <div class="math-row">
           <div>
             <div class="math-row-title">Legal &amp; license defense</div>
             <div class="math-row-detail">License defense averages $5k&ndash;$25k per case. "Failure to document training" is a top complaint category. Dated, signed-off records avoid the case &mdash; or end it fast.</div>
+            <div class="math-row-source">
+              <span class="math-row-source-label">Source</span>
+              <a href="https://www.professionallicensedefensellc.com/emt-and-paramedic-license-defense" target="_blank" rel="noopener">Professional License Defense LLC fee data</a>
+              <span class="math-row-source-sep">&middot;</span>
+              <a href="https://www.nremt.org/Document/discipline-policy" target="_blank" rel="noopener">NREMT discipline policy</a>
+            </div>
           </div>
           <div class="math-row-num"><span data-size-val="save-legal">~$15,000</span></div>
-        </a>
-        <a href="https://ems.utah.gov/wp-content/uploads/sites/34/2024/10/Training-Officer-Manual-2024-Final.pdf" target="_blank" rel="noopener" class="math-row">
+        </div>
+        <div class="math-row">
           <div>
-            <div class="math-row-title">Training officer hours back</div>
-            <div class="math-row-detail">200&ndash;400 hrs/yr building Quizlet decks, writing Word-doc tests, chasing CE records. ProtoQuiz handles delivery + documentation.</div>
+            <div class="math-row-title">CE documentation &amp; audit defense</div>
+            <div class="math-row-detail">Every provider needs documented CE for state recert. "Missing or incomplete CE records" is the top finding in state EMS audits &mdash; and the cost falls on the agency, not the provider. ProtoQuiz logs every session, every score, every sign-off, automatically.</div>
+            <div class="math-row-source">
+              <span class="math-row-source-label">Source</span>
+              <a href="https://www.capce.org/recertification-requirements" target="_blank" rel="noopener">CAPCE recertification requirements</a>
+              <span class="math-row-source-sep">&middot;</span>
+              <a href="https://ems.utah.gov/wp-content/uploads/sites/34/2024/10/Training-Officer-Manual-2024-Final.pdf" target="_blank" rel="noopener">Utah EMS Training Officer Manual (2024)</a>
+            </div>
           </div>
-          <div class="math-row-num"><span data-size-val="save-to">~$9,000</span></div>
-        </a>
+          <div class="math-row-num"><span data-size-val="save-ce">~$6,000</span></div>
+        </div>
       </div>
 
       <details class="math-details" id="math-details">
@@ -1035,24 +1925,40 @@
             </div>
             <div class="costviz-vs" style="--d:900ms;">vs.</div>
             <div class="costviz-side costviz-pq">
-              <div class="costviz-side-label">With ProtoQuiz</div>
+              <div class="costviz-side-label">With ProtoQuiz (pilot)</div>
               <div class="costviz-bars">
-                <div class="costviz-bar costviz-bar-pq" style="--w:55%; --d:1050ms;">
+                <div class="costviz-bar costviz-bar-pq" style="--w:24%; --d:1050ms;">
                   <span class="costviz-bar-fill">
                     <span class="costviz-bar-label">All of the above</span>
-                    <span class="costviz-bar-num" data-size-val="pq">$30,000/yr</span>
+                    <span class="costviz-bar-num" data-size-val="pq-pilot-yr">$15,000/yr</span>
                   </span>
                 </div>
               </div>
               <div class="costviz-total costviz-total-pq" style="--d:1200ms;">
                 <span class="costviz-total-label">You save</span>
-                <span class="costviz-total-num"><span data-size-val="diy-savings">~$46,000</span>/yr</span>
+                <span class="costviz-total-num"><span data-size-val="diy-savings">~$61,000</span>/yr</span>
               </div>
             </div>
           </div>
           <p class="math-details-foot">And none of those off-the-shelf platforms have <strong>your protocols</strong>. ProtoQuiz is built around the protocol PDF you send us &mdash; on day one.</p>
         </div>
       </details>
+    </div>
+  </section>
+
+  <!-- ============ ROLLOUT TIMELINE ============ -->
+  <section class="section alt">
+    <div class="wrap" style="max-width:780px;">
+      <div class="section-center">
+        <div class="section-label">Rollout</div>
+        <h2 class="section-title">From email to first quiz: about a week.</h2>
+      </div>
+      <div class="timeline">
+        <div class="tl-item"><div class="tl-dot">01</div><h3>Send us your PDF</h3><p>One email. That's the whole lift on your end.</p></div>
+        <div class="tl-item"><div class="tl-dot">02</div><h3>We stand up your platform</h3><p>Custom subdomain and branding. Your medical director signs off on the question bank before crews see it.</p></div>
+        <div class="tl-item"><div class="tl-dot">03</div><h3>Roll out to your crews</h3><p>One link. No install, no IT ticket.</p></div>
+        <div class="tl-item"><div class="tl-dot">04</div><h3>New revision? Send it.</h3><p>Content updates with it.</p></div>
+      </div>
     </div>
   </section>
 
@@ -1067,7 +1973,7 @@
         <div class="faq-item"><div class="faq-q">Does our medical director have to approve every question?</div><p class="faq-a">Yes. Nothing your crews see goes live without medical director sign-off. You stay in control of the content.</p></div>
         <div class="faq-item"><div class="faq-q">What if our protocols change mid-pilot?</div><p class="faq-a">Send the new PDF. We update the content, your medical director re-signs, your crews see the new questions on their next session.</p></div>
         <div class="faq-item"><div class="faq-q">How much IT lift is this?</div><p class="faq-a">None. We host on a custom subdomain. Crews access by link in any browser. No install, no SSO setup required (we support it if you want it).</p></div>
-        <div class="faq-item"><div class="faq-q">Can we cancel after the pilot?</div><p class="faq-a">Yes, no commitment. If you don't want to continue past the 6-month pilot, you stop. Never billed.</p></div>
+        <div class="faq-item"><div class="faq-q">Is the pilot rate really locked for life?</div><p class="faq-a">Yes. Sign on as an early agency partner before August 1, 2026, and your $50/provider/yr rate stays locked for as long as you stay on &mdash; even after we move other agencies to standard pricing. No commitment to continue; cancel anytime.</p></div>
       </div>
     </div>
   </section>
@@ -1076,7 +1982,7 @@
   <section class="cta-section" id="contact">
     <div class="wrap">
       <h2>See what it looks like for your organization.</h2>
-      <p>Free 6-month pilot. If it doesn't help your crews, walk away.</p>
+      <p>Pilot rate locks in 50% off for life. If it doesn't help your crews, walk away &mdash; no commitment.</p>
       <div class="cta-actions">
         <a href="#" class="btn btn-primary">Start your pilot &rarr;</a>
         <a href="https://demo.protoquiz.com" class="btn btn-ghost">Try the live demo</a>
@@ -1094,6 +2000,7 @@
       if(!quote) return;
       if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
         quote.classList.add('in');
+        quote.classList.add('intro-in');
         return;
       }
       // Dramatic, deliberate pacing. After each line's last word lands,
@@ -1103,6 +2010,7 @@
       const wordFade   = [550, 600, 950];  // word transition duration (must match CSS or be overridden)
       const holdAfter  = [1400, 1700, 0];  // pause AFTER the line is fully on screen, before next starts
       let cursor = 0;
+      let lastLineEnd = 0;
       lines.forEach((line, li) => {
         const ws = line.querySelectorAll('.w');
         ws.forEach((w, i) => {
@@ -1111,86 +2019,115 @@
         });
         // Time when the LAST word in this line is fully visible:
         const lineEnd = cursor + (ws.length - 1) * perWord[li] + wordFade[li];
+        lastLineEnd = lineEnd;
         cursor = lineEnd + holdAfter[li];
       });
       requestAnimationFrame(() => quote.classList.add('in'));
+      // After the cyan line fully lands, reveal the ProtoQuiz logo+wordmark
+      setTimeout(() => quote.classList.add('intro-in'), lastLineEnd + 350);
     })();
 
-    /* === MOVIE === */
+    /* === MOVIE PLAYER === */
+    const stage = document.getElementById('stage');
+    const arcLabelText = document.getElementById('arc-label-text');
     const movie = document.getElementById('movie');
     const cursor = document.getElementById('cursor');
-    const heatmap = document.getElementById('heatmap');
     const progressEl = document.getElementById('progress');
-    const narrationSteps = document.querySelectorAll('.narration-step');
+    const beatNarrations = document.querySelectorAll('.beat');
+    const beatCurrentEl = document.getElementById('beat-current');
+    const beatTotalEl = document.getElementById('beat-total');
+    const beatArcEl = document.getElementById('beat-arc');
+    const playBtn = document.getElementById('play-btn');
+    const playIcon = document.getElementById('play-icon');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const autoplayState = document.getElementById('autoplay-state');
 
-    if(heatmap){
-      heatmap.querySelectorAll('.hm-cell').forEach((c, i) => {
-        const col = i % 12;
-        const row = Math.floor(i / 12);
-        c.style.animationDelay = (0.5 + col * 0.06 + row * 0.03) + 's';
-      });
-    }
+    const PLAY_ICON_PAUSE = '<rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/>';
+    const PLAY_ICON_PLAY = '<polygon points="6 4 20 12 6 20 6 4"/>';
 
+    const ARC_PHONE = 'Paramedic on shift';
+    const ARC_LAPTOP = 'Training officer';
+
+    // Beat metadata: name (matches data-beat / data-beat-text), duration, click target, frame
+    const ARC_HANDOFF = 'Hand-off';
     const beats = [
-      {sel:'[data-beat="home"]',           dur:3800, click:'protocol-quizzes'},
-      {sel:'[data-beat="topics"]',         dur:3800, click:'cardiac'},
-      {sel:'[data-beat="test-picker"]',    dur:3200, click:'test-1'},
-      {sel:'[data-beat="q-unanswered"]',   dur:5500, click:'answer-d'},
-      {sel:'[data-beat="q-answered"]',     dur:4500, click:'ref-72', clickDelay:1500},
-      {sel:'[data-beat="pdf"]',            dur:3200, click:null},
-      {sel:'[data-beat="admin-dash"]',     dur:5200, click:'tab-reports', clickDelay:3200},
-      {sel:'[data-beat="admin-reports"]',  dur:4000, click:'assign-obp',  clickDelay:1500},
-      {sel:'[data-beat="admin-assign"]',   dur:4500, click:'confirm-assign', clickDelay:1500, onClick:'showToast'},
+      {name:'home',              dur:4200, click:'protocol-quizzes', frame:'phone',   arc:ARC_PHONE},
+      {name:'topics',            dur:3800, click:'cardiac',          frame:'phone',   arc:ARC_PHONE},
+      {name:'cert-picker',       dur:4000, click:'cert-paramedic',   frame:'phone',   arc:ARC_PHONE, clickDelay:2400},
+      {name:'test-picker',       dur:3200, click:'test-1',           frame:'phone',   arc:ARC_PHONE},
+      {name:'q-unanswered',      dur:5800, click:'answer-d',         frame:'phone',   arc:ARC_PHONE, clickDelay:2400},
+      {name:'q-answered',        dur:5000, click:'ref-72',           frame:'phone',   arc:ARC_PHONE, clickDelay:1900},
+      {name:'pdf',               dur:3600, click:null,               frame:'phone',   arc:ARC_PHONE},
+      {name:'scenario-intro',    dur:6400, click:'sc-answer',        frame:'phone',   arc:ARC_PHONE, clickDelay:3600},
+      {name:'scenario-ekg',      dur:6800, click:'sc-ekg-answer',    frame:'phone',   arc:ARC_PHONE, clickDelay:3800},
+      {name:'handoff',           dur:3600, click:null,               frame:'handoff', arc:ARC_HANDOFF},
+      {name:'admin-dash',        dur:6200, click:'lap-tab-assign',   frame:'laptop',  arc:ARC_LAPTOP, clickDelay:4000},
+      {name:'admin-assignments', dur:4800, click:'lap-new-assign',   frame:'laptop',  arc:ARC_LAPTOP, clickDelay:1900},
+      {name:'admin-new',         dur:5200, click:'lap-confirm',      frame:'laptop',  arc:ARC_LAPTOP, clickDelay:2400},
+      {name:'admin-confirm',     dur:5400, click:null,               frame:'laptop',  arc:ARC_LAPTOP, onLoad:'showLapToast'},
     ];
-    for(let i=0; i<beats.length; i++) progressEl.appendChild(document.createElement('span'));
+    const TOTAL = beats.length;
+    beatTotalEl.textContent = String(TOTAL).padStart(2, '0');
+    for(let i = 0; i < TOTAL; i++) progressEl.appendChild(document.createElement('span'));
 
     const isMobileLayout = () => window.matchMedia('(max-width:900px)').matches;
-    const reducedMotion  = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    function maybeScrollToActiveStep(){
-      if(reducedMotion) return;
-      if(!isMobileLayout()) return;
-      const live = document.querySelector('.narration-step.live');
-      if(!live) return;
-      const r = live.getBoundingClientRect();
-      const vh = window.innerHeight;
-      const margin = 80;
-      if(r.top < margin || r.bottom > vh - margin){
-        const target = window.scrollY + r.top - (vh / 2 - r.height / 2);
-        window.scrollTo({top: target, behavior:'smooth'});
-      }
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function setFrame(frame){
+      if(stage.dataset.frame === frame) return;
+      stage.dataset.frame = frame;
+      movie.classList.toggle('is-laptop', frame === 'laptop');
     }
-    function setActive(sel){
+
+    function setActiveScene(name){
       document.querySelectorAll('.scene').forEach(s => s.classList.remove('active'));
-      const el = document.querySelector(sel);
-      if(el) el.classList.add('active');
-      const beatName = sel.replace('[data-beat="', '').replace('"]', '');
-      let liveChanged = false;
-      narrationSteps.forEach(step => {
-        const beats = (step.dataset.step || '').split(',');
-        const wasLive = step.classList.contains('live');
-        const nowLive = beats.includes(beatName);
-        if(wasLive !== nowLive){ liveChanged = true; step.classList.toggle('live', nowLive); }
-      });
-      // Auto-scroll only on mobile single-column where the sticky movie is gone.
-      // Only fire when the walkthrough section itself is in view (don't yank the user back).
-      if(liveChanged){
-        const wt = document.getElementById('walkthrough');
-        if(wt){
-          const wtR = wt.getBoundingClientRect();
-          if(wtR.top < window.innerHeight && wtR.bottom > 0) maybeScrollToActiveStep();
-        }
-      }
-      return el;
+      const sceneEl = document.querySelector('[data-beat="' + name + '"]');
+      if(sceneEl) sceneEl.classList.add('active');
+      // Reset any leftover toast
+      const toast = document.getElementById('lap-toast');
+      if(toast) toast.classList.remove('show');
     }
+
+    function setActiveNarration(name){
+      beatNarrations.forEach(b => b.classList.toggle('live', b.dataset.beatText === name));
+    }
+
     function setProgress(i){
-      progressEl.querySelectorAll('span').forEach((dot, n) => {
+      const spans = progressEl.querySelectorAll('span');
+      spans.forEach((dot, n) => {
         dot.classList.remove('active', 'done');
         dot.style.removeProperty('animation-duration');
         if(n < i) dot.classList.add('done');
       });
-      const el = progressEl.querySelectorAll('span')[i];
-      el.classList.add('active');
-      el.style.animationDuration = beats[i].dur + 'ms';
+      const el = spans[i];
+      if(el){
+        el.classList.add('active');
+        el.style.animationDuration = beats[i].dur + 'ms';
+      }
+    }
+
+    function updateMeta(i){
+      beatCurrentEl.textContent = String(i + 1).padStart(2, '0');
+      beatArcEl.textContent = beats[i].arc;
+      arcLabelText.textContent = beats[i].arc;
+    }
+
+    function maybeScrollIntoView(){
+      if(reducedMotion) return;
+      if(!isMobileLayout()) return;
+      const wt = document.getElementById('walkthrough');
+      if(!wt) return;
+      const wtR = wt.getBoundingClientRect();
+      if(wtR.bottom < 0 || wtR.top > window.innerHeight) return;
+      const live = document.querySelector('.beat.live');
+      if(!live) return;
+      const r = live.getBoundingClientRect();
+      const margin = 80;
+      if(r.top < margin || r.bottom > window.innerHeight - margin){
+        const target = window.scrollY + r.top - (window.innerHeight / 2 - r.height / 2);
+        window.scrollTo({top: target, behavior:'smooth'});
+      }
     }
 
     let cursorAnim = null, fadeAnim = null;
@@ -1251,9 +2188,23 @@
       const c = edges[pick];
       return {x: c.x + (Math.random()*30 - 15), y: c.y + (Math.random()*24 - 12)};
     }
-    function performClickSequence(targetKey, beat){
+    let clickGen = 0;
+    const pendingTimeouts = new Set();
+    function safeTimeout(fn, ms){
+      const id = setTimeout(() => { pendingTimeouts.delete(id); fn(); }, ms);
+      pendingTimeouts.add(id);
+      return id;
+    }
+    function clearAllPending(){
+      pendingTimeouts.forEach(id => clearTimeout(id));
+      pendingTimeouts.clear();
+    }
+
+    function performClickSequence(targetKey){
       const target = document.querySelector('.scene.active [data-click="' + targetKey + '"]');
       if(!target) return;
+      const myGen = ++clickGen;
+      const aborted = () => myGen !== clickGen;
       const entry = pickEntry(target);
       const cx = targetCenter(target);
       const arcX = cx.x + (Math.random() * 24 - 12);
@@ -1262,27 +2213,25 @@
       cursor.style.top  = entry.y + 'px';
       cursor.style.opacity = 0;
       requestAnimationFrame(() => {
+        if(aborted()) return;
         fadeCursor(1, 280);
         animateCursor({
           fromX: entry.x, fromY: entry.y, toX: arcX, toY: arcY,
           duration: 1100, ease: easeOutQuint,
           onDone: () => {
-            setTimeout(() => {
+            if(aborted()) return;
+            safeTimeout(() => {
+              if(aborted()) return;
               animateCursor({
                 fromX: arcX, fromY: arcY, toX: cx.x, toY: cx.y,
                 duration: 380, ease: easeInOutCubic,
                 onDone: () => {
-                  setTimeout(() => {
+                  if(aborted()) return;
+                  safeTimeout(() => {
+                    if(aborted()) return;
                     target.classList.add('clicked');
                     fadeCursor(0, 220);
-                    setTimeout(() => target.classList.remove('clicked'), 700);
-                    if(beat.onClick === 'showToast'){
-                      const toast = document.getElementById('assign-toast');
-                      if(toast){
-                        setTimeout(() => toast.classList.add('show'), 200);
-                        setTimeout(() => toast.classList.remove('show'), 1800);
-                      }
-                    }
+                    safeTimeout(() => target.classList.remove('clicked'), 700);
                   }, 180);
                 }
               });
@@ -1291,82 +2240,222 @@
         });
       });
     }
+
+    /* === Player state machine === */
     let beatIdx = 0;
-    function runBeat(){
-      const beat = beats[beatIdx];
-      setActive(beat.sel);
-      setProgress(beatIdx);
-      if(cursorAnim) cancelAnimationFrame(cursorAnim);
+    let isPlaying = true;
+    let advanceTimer = null;
+    let clickTimer = null;
+    let toastTimer = null;
+    let resumeTimer = null;
+
+    function clearTimers(){
+      if(advanceTimer){ clearTimeout(advanceTimer); advanceTimer = null; }
+      if(clickTimer){ clearTimeout(clickTimer); clickTimer = null; }
+      if(toastTimer){ clearTimeout(toastTimer); toastTimer = null; }
+      clearAllPending();
+      clickGen++;
+      if(cursorAnim){ cancelAnimationFrame(cursorAnim); cursorAnim = null; }
+      if(fadeAnim){ cancelAnimationFrame(fadeAnim); fadeAnim = null; }
       cursor.style.opacity = 0;
-      if(beat.click){
+    }
+
+    function setPlayState(playing){
+      isPlaying = playing;
+      autoplayState.textContent = playing ? 'on' : 'off';
+      playIcon.innerHTML = playing ? PLAY_ICON_PAUSE : PLAY_ICON_PLAY;
+      playBtn.setAttribute('aria-label', playing ? 'Pause' : 'Play');
+    }
+
+    function showLapToast(){
+      const toast = document.getElementById('lap-toast');
+      if(!toast) return;
+      setTimeout(() => toast.classList.add('show'), 250);
+    }
+
+    function runBeat(i){
+      clearTimers();
+      beatIdx = ((i % TOTAL) + TOTAL) % TOTAL;
+      const beat = beats[beatIdx];
+      setFrame(beat.frame);
+      setActiveScene(beat.name);
+      setActiveNarration(beat.name);
+      updateMeta(beatIdx);
+      setProgress(beatIdx);
+      maybeScrollIntoView();
+
+      if(beat.onLoad === 'showLapToast') showLapToast();
+
+      if(beat.click && isPlaying){
         const fullSeq = 280 + 1100 + 250 + 380 + 180;
         const fireAt = beat.clickDelay !== undefined ? beat.clickDelay : Math.max(400, beat.dur - fullSeq - 600);
-        setTimeout(() => performClickSequence(beat.click, beat), fireAt);
+        clickTimer = setTimeout(() => performClickSequence(beat.click), fireAt);
       }
-      setTimeout(() => { beatIdx = (beatIdx + 1) % beats.length; runBeat(); }, beat.dur);
+
+      if(isPlaying){
+        advanceTimer = setTimeout(() => runBeat(beatIdx + 1), beat.dur);
+      }
     }
 
-    /* === Size toggle for the math section === */
-    (function initSizeToggle(){
-      const SIZES = {
-        small:{
-          label:'small', providers:100,
-          'save-fto':'~$6,000','save-remediation':'~$5,000','save-legal':'~$8,000','save-to':'~$4,500',
-          'save-total':'$23,500','save-net':'~$13,500','pq':'$10,000',
-          'diy-savings':'~$26,000','hires-est':'~10',
-          lms:'$8,000/yr', ce:'$8,000/yr', compliance:'$8,000/yr',
-          'diy-y1':'$36,000',
-        },
-        medium:{
-          label:'medium', providers:300,
-          'save-fto':'~$18,000','save-remediation':'~$12,000','save-legal':'~$15,000','save-to':'~$9,000',
-          'save-total':'$54,000','save-net':'~$24,000','pq':'$30,000',
-          'diy-savings':'~$46,000','hires-est':'~30',
-          lms:'$22,000/yr', ce:'$24,000/yr', compliance:'$18,000/yr',
-          'diy-y1':'$76,000',
-        },
-        large:{
-          label:'large', providers:500,
-          'save-fto':'~$30,000','save-remediation':'~$20,000','save-legal':'~$25,000','save-to':'~$12,000',
-          'save-total':'$87,000','save-net':'~$37,000','pq':'$50,000',
-          'diy-savings':'~$68,000','hires-est':'~50',
-          lms:'$36,000/yr', ce:'$40,000/yr', compliance:'$30,000/yr',
-          'diy-y1':'$118,000',
-        },
-      };
-      const buttons = document.querySelectorAll('.size-btn');
-      const valEls  = document.querySelectorAll('[data-size-val]');
-      const textEls = document.querySelectorAll('[data-size-text]');
-      const root    = document.getElementById('value-section');
-      if(!buttons.length || !root) return;
-      function applySize(size){
-        const data = SIZES[size];
-        if(!data) return;
-        root.classList.add('swapping');
-        setTimeout(() => {
-          valEls.forEach(el => { const k = el.dataset.sizeVal; if(data[k] !== undefined) el.textContent = data[k]; });
-          textEls.forEach(el => { const k = el.dataset.sizeText; if(data[k] !== undefined) el.textContent = data[k]; });
-          buttons.forEach(b => {
-            const isActive = b.dataset.size === size;
-            b.classList.toggle('active', isActive);
-            b.setAttribute('aria-selected', isActive ? 'true' : 'false');
-          });
-          root.classList.remove('swapping');
-          try{ localStorage.setItem('protoquiz_agency_size', size); }catch(_){}
-        }, 80);
+    function pauseAndJump(newIdx){
+      setPlayState(false);
+      runBeat(newIdx);
+      // Optional auto-resume after long inactivity
+      if(resumeTimer){ clearTimeout(resumeTimer); }
+      resumeTimer = setTimeout(() => {
+        if(!isPlaying){ setPlayState(true); runBeat(beatIdx + 1); }
+      }, 18000);
+    }
+
+    prevBtn.addEventListener('click', () => pauseAndJump(beatIdx - 1));
+    nextBtn.addEventListener('click', () => pauseAndJump(beatIdx + 1));
+    playBtn.addEventListener('click', () => {
+      if(isPlaying){
+        setPlayState(false);
+        clearTimers();
+      } else {
+        setPlayState(true);
+        runBeat(beatIdx);
       }
-      buttons.forEach(btn => btn.addEventListener('click', () => applySize(btn.dataset.size)));
-      let saved = 'medium';
-      try{ saved = localStorage.getItem('protoquiz_agency_size') || 'medium'; }catch(_){}
-      if(SIZES[saved]) applySize(saved);
-    })();
+    });
 
     if(reducedMotion){
-      setActive('[data-beat="admin-dash"]');
+      // Freeze on a representative beat (admin dashboard) with static narration
+      const repIdx = beats.findIndex(b => b.name === 'admin-dash');
+      const useIdx = repIdx === -1 ? 0 : repIdx;
+      setFrame(beats[useIdx].frame);
+      setActiveScene(beats[useIdx].name);
+      setActiveNarration(beats[useIdx].name);
+      updateMeta(useIdx);
       progressEl.style.display = 'none';
+      setPlayState(false);
+      // Disable autoplay; controls still work for manual nav
+      playBtn.addEventListener('click', () => {}, true);
+      prevBtn.addEventListener('click', (e) => {
+        e.stopImmediatePropagation();
+        const next = ((beatIdx - 1) % TOTAL + TOTAL) % TOTAL;
+        beatIdx = next;
+        setFrame(beats[next].frame);
+        setActiveScene(beats[next].name);
+        setActiveNarration(beats[next].name);
+        updateMeta(next);
+      }, true);
+      nextBtn.addEventListener('click', (e) => {
+        e.stopImmediatePropagation();
+        const next = (beatIdx + 1) % TOTAL;
+        beatIdx = next;
+        setFrame(beats[next].frame);
+        setActiveScene(beats[next].name);
+        setActiveNarration(beats[next].name);
+        updateMeta(next);
+      }, true);
       return;
     }
-    window.addEventListener('load', () => { runBeat(); });
+
+    /* === Size slider for the math section === */
+    (function initSizeSlider(){
+      const slider = document.getElementById('size-slider');
+      const root   = document.getElementById('value-section');
+      if(!slider || !root) return;
+
+      // Per-provider rates (yearly). Sources unchanged from prior research-backed model.
+      const RATE_FTO = 60, RATE_REM = 40, RATE_LEGAL = 50, RATE_CE = 20;
+      const RATE_PILOT = 50, RATE_STD = 100;
+      const DIY_BASE = 14000, DIY_PER_PROVIDER = 204;
+      // DIY component splits (approximate proportions used in the prior lookup)
+      const LMS_PER = 73, CE_PER = 80, COMPLIANCE_PER = 60;
+
+      function money(n, opts){
+        opts = opts || {};
+        const rounded = opts.round500
+          ? Math.round(n / 500) * 500
+          : Math.round(n / 100) * 100;
+        return '$' + rounded.toLocaleString('en-US');
+      }
+      function moneyShort(n){ // for slash-yr labels: round to nearest $1,000
+        const rounded = Math.round(n / 1000) * 1000;
+        return '$' + rounded.toLocaleString('en-US');
+      }
+
+      function tierFor(p){
+        if(p < 150) return {key:'small', label:'Small'};
+        if(p < 400) return {key:'medium', label:'Medium'};
+        return {key:'large', label:'Large'};
+      }
+
+      const valEls   = document.querySelectorAll('[data-size-val]');
+      const textEls  = document.querySelectorAll('[data-size-text]');
+      const priceEls = document.querySelectorAll('[data-price-val]');
+
+      function compute(p){
+        const fto = p * RATE_FTO;
+        const rem = p * RATE_REM;
+        const legal = p * RATE_LEGAL;
+        const ce = p * RATE_CE;
+        const total = fto + rem + legal + ce;
+        const pqPilot = p * RATE_PILOT;
+        const pqStd   = p * RATE_STD;
+        const diyY1   = DIY_BASE + p * DIY_PER_PROVIDER;
+        const tier = tierFor(p);
+        const hires = Math.max(2, Math.round(p / 10));
+
+        return {
+          providers: p,
+          tier: tier.key,
+          label: tier.label.toLowerCase(),
+          'tier-pill': tier.label,
+          'save-fto':         '~' + money(fto),
+          'save-remediation': '~' + money(rem),
+          'save-legal':       '~' + money(legal),
+          'save-ce':          '~' + money(ce),
+          'save-total':       money(total, {round500:true}),
+          'pq-pilot':         money(pqPilot),
+          'pq-std':           money(pqStd),
+          'pq-pilot-yr':      moneyShort(pqPilot) + '/yr',
+          'save-net':         '~' + money(total - pqPilot, {round500:true}),
+          'save-net-std':     '~' + money(total - pqStd, {round500:true}),
+          'diy-savings':      '~' + money(diyY1 - pqPilot, {round500:true}),
+          'hires-est':        '~' + hires,
+          lms:        moneyShort(p * LMS_PER) + '/yr',
+          ce:         moneyShort(p * CE_PER) + '/yr',
+          compliance: moneyShort(p * COMPLIANCE_PER) + '/yr',
+          'diy-y1':   money(diyY1),
+          'cost-pilot': pqPilot.toLocaleString('en-US'),
+          'cost-std':   '$' + pqStd.toLocaleString('en-US'),
+        };
+      }
+
+      function apply(p){
+        const data = compute(p);
+        valEls.forEach(el => {
+          const k = el.dataset.sizeVal;
+          if(data[k] !== undefined) el.textContent = data[k];
+        });
+        textEls.forEach(el => {
+          const k = el.dataset.sizeText;
+          if(data[k] !== undefined) el.textContent = data[k];
+        });
+        priceEls.forEach(el => {
+          const k = el.dataset.priceVal;
+          if(data[k] !== undefined) el.textContent = data[k];
+        });
+        // Tier pill color
+        const pill = root.querySelector('.size-slider-tier');
+        if(pill) pill.setAttribute('data-tier', data.tier);
+        try{ localStorage.setItem('protoquiz_agency_providers', String(p)); }catch(_){}
+      }
+
+      slider.addEventListener('input', e => apply(parseInt(e.target.value, 10) || 300));
+      let saved = 300;
+      try{
+        const v = parseInt(localStorage.getItem('protoquiz_agency_providers') || '', 10);
+        if(!isNaN(v) && v >= 25 && v <= 750) saved = v;
+      }catch(_){}
+      slider.value = saved;
+      apply(saved);
+    })();
+
+    window.addEventListener('load', () => { runBeat(0); });
   })();
   </script>
 </body>

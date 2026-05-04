@@ -88,11 +88,11 @@ If a buyer asks "why ProtoQuiz instead of [tool we already use]?" — the answer
 
 > **Sales-team note:** Always reference this section directly. Do not guess pricing from older copy elsewhere. If founder updates pricing, update this section first, then propagate.
 
-- **Standard:** $100 per provider per month, billed monthly or annually. Flat — no tiers, no setup fees, no add-ons.
-- **Pilot rate:** 50% off for life = **$50 per provider per month** for early agency partners. Locked for as long as the agency stays on. (Pilot is the early partnership program — the price isn't a temporary promo; it's permanent for those who sign on now.)
+- **Standard:** $100 per provider per year. Flat — no tiers, no setup fees, no add-ons.
+- **Pilot rate:** 50% off for life = **$50 per provider per year** for early agency partners. Locked for as long as the agency stays on. (Pilot is the early partnership program — the price isn't a temporary promo; it's permanent for those who sign on now.)
 - **Worked example (medium, 300 providers):**
-  - Standard: 300 × $100/mo = **$30,000/mo** ($360,000/yr)
-  - Pilot rate: 300 × $50/mo = **$15,000/mo** ($180,000/yr)
+  - Standard: 300 × $100/yr = **$30,000/yr**
+  - Pilot rate: 300 × $50/yr = **$15,000/yr**
 - **Math is allowed to be visible on the site.** Show the buyer their actual dollars. They'll calculate it anyway.
 - **No "free pilot" framing.** That's old copy. The pilot offer is the 50%-for-life rate, not zero cost. Don't write "free for the first six months" — that's stale.
 
