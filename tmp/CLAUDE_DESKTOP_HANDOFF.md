@@ -14,11 +14,33 @@ You are continuing work on the ProtoQuiz B2B agency landing page. The previous s
 
 ### Read these first, in this order
 
-1. **`VALUE_PROP.md`** — source of truth for B2B voice, positioning, use/avoid words. The doc wins over anything live. Especially §6 (differentiation), §7 (priority order of value props), §9 (voice), §10 (use/avoid), §11 (sales-pitch shorthand).
+1. **`VALUE_PROP.md`** — **non-negotiable, read this whole doc end-to-end before writing or editing any copy.** It is the source of truth for B2B voice, positioning, pricing, and use/avoid words. The doc wins over anything live. Reference sections by number when you make decisions:
+   - §2 (the wedge — agency-specific protocol fluency)
+   - §6 (differentiation — the one thing)
+   - §7 (priority order of value props — for benefits framing)
+   - §8 (proof points)
+   - **§8a (pricing — current model, READ THIS, the price changed)**
+   - §9 (voice and tone)
+   - §10 (words to use vs. avoid — these are enforced)
+   - §11 (sales-pitch shorthand — usable on-page)
+   - §13 (anti-pitches — don't lead with these)
 2. **`tmp/HERO_REDESIGN_NOTES.md`** — what was done in the prior session, what's still open.
 3. **`tmp/movie-preview.html`** — the file you're editing. Read the existing `.scene` blocks (search `data-beat=`) and `.narration-step` blocks to see the current structure.
 4. **Live agency page:** https://protoquiz.com/agency/ — for "what's the production page doing"
 5. **Audit summary in this prompt below** — covers what to keep/drop.
+
+### CRITICAL — pricing model changed (2026-05-04)
+
+The pricing on the current preview and live page is **WRONG / STALE**. Founder updated the model. Read `VALUE_PROP.md §8a` for the canonical version. Summary:
+
+- **Standard rate:** $100 per provider per **month** (NOT per year — the old "$100/yr" copy is dead)
+- **Pilot rate:** 50% off **for life** = **$50 per provider per month**. Locked permanently for early agency partners.
+- **No more "free 6-month pilot" framing.** That's old. The pilot offer IS the 50%-for-life rate.
+- **Show the math on the page.** Founder wants buyers to see actual dollars (e.g. "300 providers × $50/mo = $15,000/mo"). They'll calculate it anyway — show your work.
+
+The math/ROI section in `tmp/movie-preview.html` (search `id="value-section"`) was built around the old yearly price. **It's broken.** The size toggle uses values like `pq: '$30,000'` for medium-yearly — that's now the medium-monthly. All the comparison math (DIY vs ProtoQuiz, savings calcs) needs to be rebuilt against the new monthly model. Coordinate with the founder before re-deriving the savings numbers — the prior numbers were research-backed, the new ones need re-grounding at monthly cadence.
+
+**This pricing update affects more than the walkthrough rebuild.** Even though your scope is the walkthrough, you should flag the math section and pricing card as needing rework — and propose the founder either (a) wait until walkthrough lands, then a separate session does pricing, or (b) tackle pricing in this session because the page can't ship with stale numbers either way.
 
 ### What you have access to
 
