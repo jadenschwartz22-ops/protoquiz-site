@@ -574,7 +574,7 @@
   }
   .outro-tagline{
     font-family:'JetBrains Mono', ui-monospace, monospace;
-    font-size:12px; letter-spacing:.18em; text-transform:uppercase;
+    font-size:13px; letter-spacing:.16em; text-transform:uppercase;
     color:rgba(255,255,255,.55); font-weight:600;
   }
   /* In the laptop frame the outro can scale up a hair since the surface is wider. */
@@ -3816,6 +3816,81 @@
     .src-modal-card{padding:24px 20px 22px; max-height:88vh;}
     .src-modal-title{font-size:20px;}
   }
+
+  /* ============================================================
+     MOBILE OVERRIDES (consolidated)
+     All fixes live below. Desktop CSS above is untouched.
+     Breakpoints: 600px = phone landscape, 500px = small phone, 560px = tablet edge.
+     ============================================================ */
+  @media (max-width:600px){
+    /* --- Section + wrap padding --- */
+    .section{padding:64px 0;}
+    .section-center{margin-bottom:36px; padding:0 18px;}
+    .wrap{padding:0 18px;}
+
+    /* --- Hero --- */
+    .hero{padding:120px 18px 80px; min-height:auto;}
+    .hero-intro{margin-top:32px; gap:14px; flex-wrap:wrap;}
+
+    /* --- Walkthrough movie: tighter padding, scaled frames --- */
+    .walkthrough{padding:0 16px; gap:32px;}
+    .walkthrough-stage[data-frame="phone"]{max-width:300px;}
+    .walkthrough-stage[data-frame="laptop"]{max-width:100%;}
+    .movie{max-height:none;}
+    .laptop-base{width:108%;}
+    .player-stage{min-height:300px;}
+    .beat h3{font-size:26px; margin-bottom:14px;}
+    .beat p{font-size:16px; line-height:1.5;}
+    .beat-eyebrow{font-size:11px; margin-bottom:10px;}
+    .player-controls{gap:10px; margin-top:24px; padding-top:18px;}
+    .player-counter{font-size:10px; letter-spacing:.10em;}
+
+    /* --- Stage-duo (the dual phone+laptop frame in benefits) --- */
+    .stage-duo{gap:10px; padding-bottom:18px;}
+    .duo-phone{width:34%;}
+    .duo-laptop{width:62%;}
+
+    /* --- Pricing chart: tighter columns + smaller numbers --- */
+    .px-frame-col{padding:22px 18px;}
+    .px-frame-num{font-size:38px;}
+    .px-frame-strike-row{font-size:14px;}
+    .px-frame-list{font-size:15.5px;}
+    .px-frame-math-label{font-size:15px;}
+    .px-frame-math-source{font-size:12.5px;}
+    .px-frame-math-num{font-size:20px;}
+    .px-frame-math-row{padding:12px 10px; gap:10px;}
+    .px-frame-net{padding:18px 16px;}
+    .px-frame-net-foot{font-size:13px;}
+
+    /* --- FAQ items --- */
+    .faq-item{padding:18px 18px;}
+    .faq-q{font-size:16px;}
+    .faq-a{font-size:14.5px;}
+
+    /* --- CTA section: real horizontal padding --- */
+    .cta-section{padding:80px 18px;}
+    .cta-section p{font-size:16px;}
+    .btn{padding:14px 22px; font-size:15px;}
+  }
+
+  @media (max-width:560px){
+    /* --- Pricing slider header stacks --- */
+    .px-slider-head{flex-direction:column; align-items:flex-start; gap:6px;}
+    .px-slider-num{font-size:24px;}
+    .px-frame-slider{padding:16px 14px;}
+  }
+
+  @media (max-width:500px){
+    /* --- Source modal tightened for small phones --- */
+    .src-modal{padding:12px;}
+    .src-modal-card{padding:22px 16px 20px;}
+    .src-modal-tldr{padding:14px 14px; font-size:15px;}
+    .src-math-step{padding:10px 12px; gap:10px; font-size:14.5px;}
+    .src-math-total{padding:12px; font-size:15px;}
+    .src-math-total em{font-size:18px;}
+    .src-modal-quote{padding:12px 14px; font-size:13.5px;}
+    .src-modal-link{padding:10px 14px; font-size:11px;}
+  }
 </style>
 </head>
 <body>
@@ -3847,7 +3922,7 @@
         <div class="hero-intro-text">
           <div class="hero-intro-eyebrow">Introducing</div>
           <div class="hero-intro-name">ProtoQuiz</div>
-          <div class="hero-intro-builder">Built by a paramedic student</div>
+          <div class="hero-intro-builder">Built by an EMS provider</div>
         </div>
       </div>
     </figure>
@@ -4951,7 +5026,7 @@
       <div class="px-frame-net">
         <div class="px-frame-net-cell">
           <span class="px-frame-net-label">You pay</span>
-          <span class="px-frame-net-num"><span data-px-val="cost-pilot">$15,000</span>/yr</span>
+          <span class="px-frame-net-num">$<span data-px-val="cost-pilot">15,000</span>/yr</span>
         </div>
         
         <div class="px-frame-net-cell">
@@ -6048,7 +6123,7 @@
             {label: 'Goldberg — 10-yr ambulance claim study (PubMed)', url: 'https://pubmed.ncbi.nlm.nih.gov/10595887/'},
             {label: 'EMT negligence settlement ($1M)', url: 'https://www.lubinandmeyer.com/cases/emt-malpractice.html'},
             {label: 'Paramedic wrongful-death settlement ($975K)', url: 'https://www.sommerspc.com/verdicts/975000-settlement-for-wrongful-death-due-to-emt-paramedics-gross-negligence-medical-malpractice/'},
-            {label: 'EMT negligence verdict ($825K)', url: 'http://www.robertshumanlaw.com/Verdicts-and-Settlements/Medical-Malpractice-EMT-Negligence-825-000.html'},
+            {label: 'EMT negligence verdict ($825K)', url: 'https://www.robertshumanlaw.com/Verdicts-and-Settlements/Medical-Malpractice-EMT-Negligence-825-000.html'},
             {label: 'NREMT Recertification (audit + retention policy)', url: 'https://www.nremt.org/Document/Recertification'},
           ],
           assumption: 'Two estimates we own: the <strong>15% reduction</strong> in protocol-driven cases credited to ProtoQuiz (literature shows 49% on a different intervention; we take a third), and the <strong>scaling from the published study\'s ~150-provider agency to a 100-provider baseline</strong>. Claim rate (1.1/yr), 35% medical-negligence portion, and settlement amounts are all directly citable. Not included in the total.'
