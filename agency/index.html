@@ -325,6 +325,12 @@
     .kpi{
       background:rgba(255,255,255,.025); border:1px solid var(--line);
       border-radius:10px; padding:16px; text-align:center;
+      transition:transform .25s ease, border-color .25s ease, background .25s ease;
+    }
+    .kpi:hover{
+      transform:translateY(-2px);
+      border-color:rgba(99,102,241,.35);
+      background:rgba(99,102,241,.04);
     }
     .kpi-val{font-size:24px; font-weight:800; color:var(--accent);}
     .kpi-label{font-size:10px; color:var(--muted); text-transform:uppercase; letter-spacing:.05em; margin-top:3px;}
@@ -334,7 +340,9 @@
     .chart-card{
       flex:1; background:rgba(255,255,255,.025); border:1px solid var(--line);
       border-radius:12px; padding:18px;
+      transition:border-color .25s ease;
     }
+    .chart-card:hover{border-color:rgba(99,102,241,.3);}
     .chart-card h4{font-size:13px; font-weight:700; margin-bottom:4px;}
     .chart-card .sub{font-size:11px; color:var(--muted); margin-bottom:14px;}
     .donut-wrap{width:100px; height:100px; margin:0 auto; position:relative;}
@@ -582,7 +590,13 @@
     }
 
     /* Footer */
-    footer{padding:40px 0; border-top:1px solid var(--line);}
+    footer{padding:40px 0 36px; border-top:1px solid var(--line);}
+    .footer-tagline{
+      font-size:13px; font-weight:600; color:var(--ink);
+      letter-spacing:-.01em;
+      margin-bottom:18px;
+      opacity:.85;
+    }
     .footer-row{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
     .footer-row a, .footer-row span{color:var(--muted); font-size:13px;}
     .footer-links{display:flex; gap:20px;}
@@ -614,6 +628,72 @@
     /* Animations */
     .fade-up{opacity:0; transform:translateY(30px); transition:all .7s cubic-bezier(.16,1,.3,1);}
     .fade-up.visible{opacity:1; transform:translateY(0);}
+
+    /* Section reveal — title rises first, then body content cascades */
+    .reveal{
+      opacity:0; transform:translateY(48px);
+      transition:opacity 1s cubic-bezier(.16,1,.3,1), transform 1s cubic-bezier(.16,1,.3,1);
+    }
+    .reveal.visible{opacity:1; transform:translateY(0);}
+    .reveal .section-label,
+    .reveal .section-title,
+    .reveal .section-desc{
+      opacity:0; transform:translateY(16px);
+      transition:opacity .8s ease, transform .8s ease;
+    }
+    .reveal.visible .section-label{opacity:1; transform:translateY(0); transition-delay:.06s;}
+    .reveal.visible .section-title{opacity:1; transform:translateY(0); transition-delay:.18s;}
+    .reveal.visible .section-desc {opacity:1; transform:translateY(0); transition-delay:.32s;}
+
+    /* (child cascade removed — section-level reveal alone reads cleaner) */
+
+    /* Subtle horizontal divider between major sections */
+    .section-divider{
+      max-width:120px; height:1px; margin:0 auto;
+      background:linear-gradient(90deg, transparent, rgba(99,102,241,.4), transparent);
+      opacity:0; transform:scaleX(.3);
+      transition:opacity .8s ease, transform .9s cubic-bezier(.16,1,.3,1);
+    }
+    .reveal.visible + .section-divider, .section-divider.visible{
+      opacity:1; transform:scaleX(1);
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .reveal, .reveal .section-label, .reveal .section-title, .reveal .section-desc,
+      .section-divider, .fade-up{
+        opacity:1; transform:none; transition:none;
+      }
+    }
+
+    /* Manifesto block (merged founder + manifesto) */
+    .manifesto{
+      max-width:780px; margin:0 auto; position:relative;
+      background:linear-gradient(180deg, rgba(99,102,241,.06), rgba(10,15,22,.6));
+      border:1px solid rgba(99,102,241,.18); border-radius:18px;
+      padding:36px 40px 30px;
+      box-shadow:0 24px 80px rgba(0,0,0,.35), 0 0 0 1px rgba(255,255,255,.02) inset;
+    }
+    .manifesto::before{
+      content:"\201C"; position:absolute; top:8px; left:18px;
+      font-family:Georgia, serif; font-size:88px; line-height:1;
+      color:var(--accent); opacity:.18; pointer-events:none;
+    }
+    .manifesto p{
+      font-size:16.5px; line-height:1.75; color:var(--ink);
+      margin:0 0 16px; font-weight:500; letter-spacing:-.005em; position:relative;
+    }
+    .manifesto p:last-of-type{margin-bottom:24px;}
+    .manifesto p em{color:var(--accent2); font-style:normal; font-weight:700;}
+    .manifesto-author{
+      display:flex; align-items:center; gap:14px;
+      margin-top:20px; padding-top:20px;
+      border-top:1px solid rgba(255,255,255,.05);
+    }
+    @media (max-width: 600px){
+      .manifesto{padding:28px 22px 22px;}
+      .manifesto p{font-size:15px;}
+      .manifesto::before{font-size:60px; top:4px; left:12px;}
+    }
 
     @media (max-width:980px){
       .outcomes{grid-template-columns:repeat(2,1fr);}
@@ -712,6 +792,19 @@
       border:1px solid rgba(99,102,241,.25);
       border-radius:18px;
     }
+    .math-hero-tag{
+      display:inline-block;
+      padding:4px 12px;
+      border-radius:999px;
+      background:rgba(99,102,241,.08);
+      border:1px solid rgba(99,102,241,.22);
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      color:var(--accent2);
+      margin-bottom:14px;
+    }
     .math-hero-eyebrow{
       font-size:13px;
       color:var(--muted);
@@ -720,7 +813,7 @@
     }
     .math-hero-eyebrow span{color:var(--ink); font-weight:700;}
     .math-hero-num{
-      font-size:72px;
+      font-size:clamp(44px, 11vw, 72px);
       font-weight:900;
       color:var(--ink);
       line-height:1;
@@ -728,7 +821,7 @@
       margin-bottom:10px;
     }
     .math-hero-num .math-hero-unit{
-      font-size:24px;
+      font-size:clamp(18px, 3.5vw, 24px);
       color:var(--muted);
       font-weight:600;
       letter-spacing:0;
@@ -1069,55 +1162,308 @@
       font-weight:600;
     }
 
-    /* Kinetic typography hero panel */
-    .kinetic{
-      position:relative; min-height:420px;
-      display:flex; align-items:center; justify-content:center;
-      padding:32px 28px;
+    /* Hero "movie" — auto-cycling product scenes */
+    .movie{
+      position:relative; min-height:480px; border-radius:14px; overflow:hidden;
+      background:linear-gradient(180deg, #0d0e15 0%, #0a0a10 100%);
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:0 30px 80px -20px rgba(0,0,0,.6);
+    }
+    .movie-chrome{
+      display:flex; align-items:center; gap:6px;
+      padding:11px 14px; background:rgba(255,255,255,.04);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .movie-chrome .mdot{width:9px; height:9px; border-radius:50%; background:rgba(255,255,255,.18);}
+    .movie-chrome .mdot:nth-child(1){background:#ff5f57;}
+    .movie-chrome .mdot:nth-child(2){background:#ffbd2e;}
+    .movie-chrome .mdot:nth-child(3){background:#28ca42;}
+    .movie-url{
+      flex:1; margin:0 14px; padding:5px 12px; border-radius:6px;
+      background:rgba(255,255,255,.06); font-size:11px; color:rgba(230,232,240,.7);
+      text-align:center; letter-spacing:.02em;
+    }
+    .movie-tag{
+      display:inline-flex; align-items:center; gap:6px;
+      font-size:10px; font-weight:700; letter-spacing:.14em;
+      text-transform:uppercase; color:var(--accent2);
+    }
+    .movie-tag-dot{
+      width:7px; height:7px; border-radius:50%;
+      background:#ef4444; box-shadow:0 0 0 3px rgba(239,68,68,.18);
+      animation:moviePulse 1.6s ease-in-out infinite;
+    }
+    @keyframes moviePulse{
+      0%,100%{transform:scale(1); opacity:1;}
+      50%{transform:scale(1.3); opacity:.6;}
+    }
+    .movie-stage{
+      position:relative; min-height:380px;
+      padding:28px 24px;
       background:
-        radial-gradient(ellipse 600px 300px at 30% 20%, rgba(99,102,241,.18), transparent),
-        radial-gradient(ellipse 500px 300px at 80% 80%, rgba(6,182,212,.12), transparent),
-        rgba(10,10,14,.9);
+        radial-gradient(ellipse 600px 320px at 30% 20%, rgba(99,102,241,.16), transparent 60%),
+        radial-gradient(ellipse 480px 300px at 80% 90%, rgba(6,182,212,.12), transparent 60%);
+    }
+    .scene{
+      position:absolute; inset:28px 24px;
+      opacity:0; transform:translateY(12px);
+      animation:sceneCycle 24s infinite;
+    }
+    .scene-1{animation-delay:0s;}
+    .scene-2{animation-delay:6s;}
+    .scene-3{animation-delay:12s;}
+    .scene-4{animation-delay:18s;}
+    @keyframes sceneCycle{
+      0%   {opacity:0; transform:translateY(12px);}
+      2%   {opacity:1; transform:translateY(0);}
+      23%  {opacity:1; transform:translateY(0);}
+      26%  {opacity:0; transform:translateY(-8px);}
+      100% {opacity:0; transform:translateY(-8px);}
+    }
+
+    /* Scene 1: train menu */
+    .scene-q{
+      font-size:18px; font-weight:800; color:var(--ink);
+      letter-spacing:-.01em; margin-bottom:18px;
+    }
+    .scene-tiles{
+      display:grid; grid-template-columns:1fr 1fr; gap:10px;
+    }
+    .tile{
+      padding:14px; border-radius:10px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.07);
+      transition:transform .3s ease;
+    }
+    .tile-icon{
+      display:inline-flex; align-items:center; justify-content:center;
+      width:32px; height:32px; border-radius:8px;
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      color:#fff; font-size:11px; font-weight:800; letter-spacing:.04em;
+      margin-bottom:10px;
+    }
+    .tile-name{font-size:13px; font-weight:700; color:var(--ink);}
+    .tile-meta{font-size:11px; color:var(--muted); margin-top:2px;}
+
+    /* Scene 2: quiz question */
+    .scene-eyebrow{
+      font-size:10px; font-weight:700; letter-spacing:.14em;
+      text-transform:uppercase; color:var(--accent2);
+      margin-bottom:12px;
+    }
+    .scene-question{
+      font-size:17px; font-weight:800; color:var(--ink);
+      line-height:1.35; margin-bottom:14px; letter-spacing:-.01em;
+    }
+    .scene-choices{display:flex; flex-direction:column; gap:8px; margin-bottom:14px;}
+    .choice{
+      padding:11px 14px; border-radius:9px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.07);
+      font-size:13px; color:var(--ink); font-weight:600;
+      display:flex; justify-content:space-between; align-items:center;
+    }
+    .choice.correct{
+      background:linear-gradient(135deg, rgba(34,197,94,.18), rgba(34,197,94,.08));
+      border-color:rgba(34,197,94,.5);
+      color:#86efac;
+      animation:choiceFlash 6s 1.4s infinite;
+    }
+    .choice-check{
+      display:inline-flex; align-items:center; justify-content:center;
+      width:20px; height:20px; border-radius:50%;
+      background:#22c55e; color:#fff; font-size:11px; font-weight:800;
+    }
+    @keyframes choiceFlash{
+      0%,80%,100%{box-shadow:0 0 0 0 rgba(34,197,94,.4);}
+      85%{box-shadow:0 0 0 6px rgba(34,197,94,.0);}
+    }
+    .scene-cite{
+      font-size:11px; color:var(--accent2); font-weight:600;
+      padding-top:10px; border-top:1px dashed rgba(255,255,255,.08);
+    }
+
+    /* Scene 3: scenario */
+    .scenario-vitals{
+      display:grid; grid-template-columns:repeat(4, 1fr); gap:8px;
+      margin-bottom:14px;
+    }
+    .vital{
+      padding:10px 8px; border-radius:8px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.07);
+      text-align:center;
+    }
+    .vital-l{
+      display:block; font-size:9px; font-weight:700; letter-spacing:.12em;
+      text-transform:uppercase; color:var(--muted); margin-bottom:3px;
+    }
+    .vital-v{font-size:15px; font-weight:800; color:var(--ink); letter-spacing:-.01em;}
+    .scenario-text{
+      font-size:13px; color:var(--ink); line-height:1.5;
+      padding:12px 14px; border-radius:9px;
+      background:rgba(99,102,241,.08); border:1px solid rgba(99,102,241,.18);
+      margin-bottom:12px;
+    }
+    .scenario-prompt{
+      font-size:14px; font-weight:700; color:var(--ink);
+      letter-spacing:-.01em;
+    }
+    .scenario-prompt strong{
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+
+    /* Scene 4: dashboard */
+    .bar{
+      display:grid; grid-template-columns:120px 1fr 40px;
+      align-items:center; gap:12px; margin-bottom:10px;
+    }
+    .bar-l{font-size:12px; font-weight:600; color:var(--ink);}
+    .bar-track{
+      height:8px; border-radius:4px;
+      background:rgba(255,255,255,.06); overflow:hidden;
+    }
+    .bar-fill{
+      display:block; height:100%; width:var(--w);
+      background:linear-gradient(90deg, var(--accent), var(--accent2));
+      border-radius:4px;
+      transform-origin:left; transform:scaleX(0);
+      animation:barGrow 1.2s 18.5s ease-out forwards infinite;
+    }
+    .bar.warn .bar-fill{background:linear-gradient(90deg, #f59e0b, #ef4444);}
+    .bar-v{font-size:12px; font-weight:700; color:var(--muted); text-align:right;}
+    @keyframes barGrow{
+      0%,100%{transform:scaleX(0);}
+      4%,22%{transform:scaleX(1);}
+    }
+    .dash-foot{
+      margin-top:14px; padding:10px 12px; border-radius:8px;
+      background:rgba(245,158,11,.1); border:1px solid rgba(245,158,11,.25);
+      font-size:12px; color:#fbbf24;
+    }
+    .dash-foot strong{color:#fff;}
+
+    /* Progress indicator */
+    .movie-progress{
+      position:absolute; left:24px; right:24px; bottom:14px;
+      display:flex; gap:6px; pointer-events:none;
+    }
+    .movie-progress span{
+      flex:1; height:2px; border-radius:1px;
+      background:rgba(255,255,255,.08); overflow:hidden; position:relative;
+    }
+    .movie-progress span::after{
+      content:""; position:absolute; inset:0;
+      background:linear-gradient(90deg, var(--accent), var(--accent2));
+      transform:scaleX(0); transform-origin:left;
+      animation:progressBar 24s infinite;
+    }
+    .movie-progress span:nth-child(1)::after{animation-delay:0s;}
+    .movie-progress span:nth-child(2)::after{animation-delay:6s;}
+    .movie-progress span:nth-child(3)::after{animation-delay:12s;}
+    .movie-progress span:nth-child(4)::after{animation-delay:18s;}
+    @keyframes progressBar{
+      0%{transform:scaleX(0);}
+      25%{transform:scaleX(1);}
+      28%,100%{transform:scaleX(1); opacity:.3;}
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .scene, .bar-fill, .movie-progress span::after, .movie-tag-dot, .choice.correct{
+        animation:none;
+      }
+      .scene{opacity:0;}
+      .scene-1{opacity:1; transform:none;}
+      .bar-fill{transform:scaleX(1);}
+    }
+
+    /* Kinetic typography hero panel (legacy, unused) */
+    .kinetic{
+      position:relative; min-height:440px;
+      display:flex; align-items:center; justify-content:center;
+      padding:44px 32px 64px;
+      overflow:hidden;
+      background:
+        radial-gradient(ellipse 620px 320px at 28% 18%, rgba(99,102,241,.22), transparent 60%),
+        radial-gradient(ellipse 520px 320px at 82% 82%, rgba(6,182,212,.16), transparent 60%),
+        linear-gradient(180deg, #0b0b12 0%, #0a0a0f 100%);
+    }
+    /* faint grid overlay for depth */
+    .kinetic::before{
+      content:""; position:absolute; inset:0; pointer-events:none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+      background-size:32px 32px;
+      mask-image:radial-gradient(ellipse 80% 70% at 50% 50%, #000 30%, transparent 80%);
+      -webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 50%, #000 30%, transparent 80%);
     }
     .kinetic-stage{
-      position:relative; width:100%; max-width:520px;
-      font-size:clamp(20px, 2.4vw, 28px);
-      font-weight:800; line-height:1.25; color:var(--ink);
-      letter-spacing:-.01em;
+      position:relative; width:100%; max-width:520px; min-height:200px;
+      font-weight:800; line-height:1.22; color:var(--ink);
+      letter-spacing:-.015em;
       text-align:left;
     }
     .kinetic-line{
       position:absolute; inset:0;
-      opacity:0; transform:translateY(8px);
-      animation:kineticCycle 12s infinite;
+      opacity:0; transform:translateY(10px);
+      animation:kineticCycle 14s infinite;
+      font-size:clamp(20px, 2.3vw, 27px);
     }
     .kinetic-line:nth-child(1){animation-delay:0s;}
-    .kinetic-line:nth-child(2){animation-delay:3s;}
-    .kinetic-line:nth-child(3){animation-delay:6s;}
-    .kinetic-line:nth-child(4){animation-delay:9s;}
+    .kinetic-line:nth-child(2){animation-delay:3.5s;}
+    .kinetic-line:nth-child(3){animation-delay:7s; font-style:italic; font-weight:700;}
+    .kinetic-line:nth-child(4){animation-delay:10.5s; animation:kineticFinal 14s 10.5s infinite;}
     .kinetic-line .accent{
+      position:relative; display:inline-block;
       background:linear-gradient(135deg, var(--accent), var(--accent2));
       -webkit-background-clip:text; background-clip:text; color:transparent;
     }
-    .kinetic-line .strike{
-      color:var(--muted); text-decoration:line-through; text-decoration-color:rgba(255,99,99,.6);
+    .kinetic-line .accent::after{
+      content:""; position:absolute; left:0; bottom:-3px;
+      width:100%; height:2px; transform:scaleX(0); transform-origin:left;
+      background:linear-gradient(90deg, var(--accent), var(--accent2));
+      animation:kineticUnderline 14s infinite;
     }
+    .kinetic-line:nth-child(1) .accent::after{animation-delay:.4s;}
+    .kinetic-line:nth-child(2) .accent::after{animation-delay:3.9s;}
+    .kinetic-line:nth-child(3) .accent::after{animation-delay:7.4s;}
     .kinetic-line .built{
-      display:inline-block; padding:6px 14px; margin-top:8px;
+      display:inline-flex; align-items:center; gap:8px;
+      font-size:1.15em; font-weight:900;
       background:linear-gradient(135deg, var(--accent), var(--accent2));
-      color:#fff; border-radius:8px; font-size:.95em;
-      box-shadow:0 8px 24px rgba(99,102,241,.4);
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+      letter-spacing:-.02em;
+    }
+    .kinetic-line .built::after{
+      content:"\2192"; -webkit-text-fill-color:var(--accent2);
+      animation:kineticArrow 1.6s ease-in-out infinite;
     }
     @keyframes kineticCycle{
-      0%   {opacity:0; transform:translateY(8px);}
-      4%   {opacity:1; transform:translateY(0);}
-      14%  {opacity:1; transform:translateY(0);}
-      18%  {opacity:0; transform:translateY(-8px);}
-      100% {opacity:0; transform:translateY(-8px);}
+      0%   {opacity:0; transform:translateY(10px);}
+      3%   {opacity:1; transform:translateY(0);}
+      22%  {opacity:1; transform:translateY(0);}
+      26%  {opacity:0; transform:translateY(-10px);}
+      100% {opacity:0; transform:translateY(-10px);}
+    }
+    @keyframes kineticFinal{
+      0%   {opacity:0; transform:translateY(10px);}
+      3%   {opacity:1; transform:translateY(0);}
+      100% {opacity:1; transform:translateY(0);}
+    }
+    @keyframes kineticUnderline{
+      0%, 2% {transform:scaleX(0);}
+      6%, 22% {transform:scaleX(1);}
+      26%, 100% {transform:scaleX(0);}
+    }
+    @keyframes kineticArrow{
+      0%,100%{transform:translateX(0);}
+      50%{transform:translateX(4px);}
     }
     .kinetic-cursor{
-      display:inline-block; width:3px; height:1em;
-      background:var(--accent2); margin-left:4px; vertical-align:middle;
+      display:inline-block; width:3px; height:.95em;
+      background:var(--accent2); margin-left:4px; vertical-align:-2px;
       animation:kineticBlink 1s steps(2) infinite;
     }
     @keyframes kineticBlink{
@@ -1125,8 +1471,8 @@
       51%, 100% {opacity:0;}
     }
     .kinetic-tag{
-      position:absolute; top:14px; left:18px;
-      font-size:10px; font-weight:700; letter-spacing:.14em;
+      position:absolute; top:18px; left:22px; z-index:2;
+      font-size:10px; font-weight:700; letter-spacing:.16em;
       text-transform:uppercase; color:var(--accent2);
       display:flex; align-items:center; gap:8px;
     }
@@ -1139,9 +1485,36 @@
       0%,100%{transform:scale(1); opacity:1;}
       50%{transform:scale(1.3); opacity:.6;}
     }
+    /* protocol ticker along the bottom */
+    .kinetic-ticker{
+      position:absolute; left:0; right:0; bottom:0;
+      padding:10px 0;
+      border-top:1px solid rgba(255,255,255,.06);
+      background:rgba(0,0,0,.35);
+      overflow:hidden; mask-image:linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+      -webkit-mask-image:linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+    }
+    .kinetic-ticker-track{
+      display:flex; gap:28px; white-space:nowrap;
+      animation:kineticTicker 32s linear infinite;
+      font-size:11px; font-weight:600; letter-spacing:.12em;
+      text-transform:uppercase; color:rgba(230,232,240,.55);
+    }
+    .kinetic-ticker-track span{display:inline-flex; align-items:center;}
+    .kinetic-ticker-track span::before{
+      content:"\2022"; margin-right:28px; color:var(--accent2); opacity:.5;
+    }
+    @keyframes kineticTicker{
+      from{transform:translateX(0);}
+      to{transform:translateX(-50%);}
+    }
     @media (prefers-reduced-motion: reduce){
-      .kinetic-line, .kinetic-cursor, .kinetic-tag::before{animation:none;}
-      .kinetic-line:first-child{opacity:1; transform:none;}
+      .kinetic-line, .kinetic-cursor, .kinetic-tag::before,
+      .kinetic-line .accent::after, .kinetic-line .built::after,
+      .kinetic-ticker-track{animation:none;}
+      .kinetic-line{opacity:0;}
+      .kinetic-line:nth-child(4){opacity:1; transform:none;}
+      .kinetic-line:nth-child(4) .accent::after{transform:scaleX(1);}
     }
   </style>
 </head>
@@ -1170,26 +1543,78 @@
         <div class="hero-grid">
           <div>
             <div class="hero-eyebrow"><span class="pulse"></span>Free 6-month pilot &middot; only 2 more agencies before Aug 1, 2026</div>
-            <h1>A training platform<br>for your organization,<br><span class="gradient">based on your actual protocols.</span></h1>
-            <p class="hero-sub" style="margin-top:18px;">
-              Train your crews on <strong style="color:var(--ink);">your protocols</strong>, based on <strong style="color:var(--ink);">their scope</strong>.
+            <h1>The future of<br><span class="gradient">EMS training.</span></h1>
+            <p class="hero-sub" style="margin-top:22px; max-width:520px;">
+              Train your crews on <strong style="color:var(--ink);">your protocols</strong>, based on <strong style="color:var(--ink);">their scope</strong>. The highest-frequency, most-overlooked part of the job &mdash; finally trainable.
             </p>
             <div class="hero-actions">
-              <a href="https://demo.protoquiz.com" target="_blank" rel="noopener" class="btn btn-primary btn-demo" data-track="AgencyLiveDemo">See the Live Demo &rarr;</a>
-              <button type="button" class="btn btn-ghost" id="openContact2" data-track="AgencyContactOpen">Start a Conversation</button>
+              <a href="https://demo.protoquiz.com" target="_blank" rel="noopener" class="btn btn-primary btn-demo" data-track="AgencyLiveDemo">Try the live demo &rarr;</a>
+              <button type="button" class="btn btn-ghost" id="openContact2" data-track="AgencyContactOpen">Send us a message</button>
             </div>
             <div class="hero-trust">
               <span>Try it free for 6 months. If it's not for you, you stop &mdash; and never pay a thing.</span>
             </div>
           </div>
           <div class="hero-preview">
-            <div class="kinetic">
-              <div class="kinetic-tag">The Problem</div>
-              <div class="kinetic-stage">
-                <div class="kinetic-line">Your providers run <span class="accent">your protocols</span>.<br>Every shift. Every call.<span class="kinetic-cursor"></span></div>
-                <div class="kinetic-line">It's the <span class="accent">single highest-frequency</span> thing they do on the job.</div>
-                <div class="kinetic-line">So why is there <span class="accent">no tool</span> built to train on it?</div>
-                <div class="kinetic-line">There is now. <span class="built">ProtoQuiz &rarr;</span></div>
+            <div class="movie">
+              <div class="movie-chrome">
+                <span class="mdot"></span><span class="mdot"></span><span class="mdot"></span>
+                <div class="movie-url">demo.protoquiz.com</div>
+                <div class="movie-tag"><span class="movie-tag-dot"></span>Live</div>
+              </div>
+
+              <div class="movie-stage">
+
+                <!-- Scene 1: Train menu -->
+                <div class="scene scene-1">
+                  <div class="scene-q">What do you want to train on?</div>
+                  <div class="scene-tiles">
+                    <div class="tile"><div class="tile-icon">PQ</div><div class="tile-name">Protocol Quizzes</div><div class="tile-meta">142 questions</div></div>
+                    <div class="tile"><div class="tile-icon">SC</div><div class="tile-name">Scenarios</div><div class="tile-meta">38 patient cases</div></div>
+                    <div class="tile"><div class="tile-icon">RX</div><div class="tile-name">Pharmacology</div><div class="tile-meta">Your formulary</div></div>
+                    <div class="tile"><div class="tile-icon">PR</div><div class="tile-name">Procedures</div><div class="tile-meta">Skills &amp; algorithms</div></div>
+                  </div>
+                </div>
+
+                <!-- Scene 2: Live quiz question with citation -->
+                <div class="scene scene-2">
+                  <div class="scene-eyebrow">Pharmacology &middot; ALS scope</div>
+                  <div class="scene-question">Adult cardiac arrest. Initial epinephrine dose?</div>
+                  <div class="scene-choices">
+                    <div class="choice">A &middot; 0.3 mg IM 1:1,000</div>
+                    <div class="choice correct">B &middot; 1 mg IV/IO 1:10,000<span class="choice-check">&#10003;</span></div>
+                    <div class="choice">C &middot; 0.5 mg IV 1:10,000</div>
+                  </div>
+                  <div class="scene-cite">Cited &middot; Cardiac Arrest protocol, p.&nbsp;47</div>
+                </div>
+
+                <!-- Scene 3: Scenario card -->
+                <div class="scene scene-3">
+                  <div class="scene-eyebrow">Patient scenario</div>
+                  <div class="scenario-vitals">
+                    <div class="vital"><span class="vital-l">BP</span><span class="vital-v">88/52</span></div>
+                    <div class="vital"><span class="vital-l">HR</span><span class="vital-v">132</span></div>
+                    <div class="vital"><span class="vital-l">SpO<sub>2</sub></span><span class="vital-v">91%</span></div>
+                    <div class="vital"><span class="vital-l">RR</span><span class="vital-v">28</span></div>
+                  </div>
+                  <div class="scenario-text">76yo M, chest pain radiating to L arm. Diaphoretic. 12-lead shows STEMI in II, III, aVF.</div>
+                  <div class="scenario-prompt">What's your next move per <strong>your protocol</strong>?</div>
+                </div>
+
+                <!-- Scene 4: Admin dashboard -->
+                <div class="scene scene-4">
+                  <div class="scene-eyebrow">Admin dashboard &middot; Protocol fluency</div>
+                  <div class="bar"><span class="bar-l">Cardiac arrest</span><span class="bar-track"><span class="bar-fill" style="--w:92%"></span></span><span class="bar-v">92%</span></div>
+                  <div class="bar"><span class="bar-l">Stroke alert</span><span class="bar-track"><span class="bar-fill" style="--w:88%"></span></span><span class="bar-v">88%</span></div>
+                  <div class="bar warn"><span class="bar-l">Pediatric dosing</span><span class="bar-track"><span class="bar-fill" style="--w:54%"></span></span><span class="bar-v">54%</span></div>
+                  <div class="bar"><span class="bar-l">Refusal / AMA</span><span class="bar-track"><span class="bar-fill" style="--w:81%"></span></span><span class="bar-v">81%</span></div>
+                  <div class="dash-foot">12 providers need more reps on <strong>Pediatric dosing</strong></div>
+                </div>
+
+              </div>
+
+              <div class="movie-progress" aria-hidden="true">
+                <span></span><span></span><span></span><span></span>
               </div>
             </div>
           </div>
@@ -1197,54 +1622,20 @@
       </div>
     </section>
 
-    <!-- Outcomes (benefits-first) -->
-    <section class="section fade-up" style="padding-top:24px;">
+    <!-- Manifesto + Founder (merged) -->
+    <section class="section reveal" style="padding-top:48px;">
       <div class="wrap">
-        <div class="section-center">
-          <div class="section-label">Why it matters</div>
-          <div class="section-title">What it changes for your agency</div>
+        <div class="section-center" style="margin-bottom:28px;">
+          <div class="section-label">Why this exists</div>
+          <div class="section-title">EMS lags behind. Let's fix it.</div>
         </div>
 
-        <div class="outcomes">
-          <div class="outcome">
-            <div class="outcome-num">01</div>
-            <h3>Better clinicians</h3>
-            <p>Your providers know your protocols inside and out, so they make the right call &mdash; and know when and how to deviate &mdash; with a better footing on real patients.</p>
-          </div>
-          <div class="outcome">
-            <div class="outcome-num">02</div>
-            <h3>Faster onboarding</h3>
-            <p>New providers can study your protocols from day one. FTOs spend their time on judgment instead of teaching the basics.</p>
-          </div>
-          <div class="outcome">
-            <div class="outcome-num">03</div>
-            <h3>Admin insight</h3>
-            <p>The dashboard shows which protocols and which providers need more reps, so you can fix problems before they show up on a call.</p>
-          </div>
-          <div class="outcome">
-            <div class="outcome-num">04</div>
-            <h3>Focus where it counts</h3>
-            <p>You see exactly what's trained, by whom, and when. Spend training time on the gaps, not on what your team already knows.</p>
-          </div>
-        </div>
+        <div class="manifesto">
+          <p>Every other field in medicine has modern, protocol-specific training. EMS doesn't &mdash; outdated practices, generic CE that has nothing to do with how we actually work, and tools built for the test, not the job.</p>
+          <p>The priorities are backwards. We pour hours into low-frequency events &mdash; MCIs, mass-cas, once-a-career calls &mdash; while the highest-frequency thing a provider does, the thing that actually decides patient outcomes, is knowing and using <em>your protocols</em>. Every shift. Every call.</p>
+          <p>ProtoQuiz is built around that idea: train providers on the protocols they actually run, in the scope they actually work, with the reps and feedback to make it stick.</p>
 
-        <div style="margin-top:36px; padding:22px 28px; max-width:760px; margin-left:auto; margin-right:auto; background:rgba(6,182,212,.05); border:1px solid rgba(6,182,212,.18); border-radius:14px; text-align:center;">
-          <div style="font-size:11px; font-weight:700; color:var(--accent2); letter-spacing:.1em; text-transform:uppercase; margin-bottom:8px;">No added hours</div>
-          <p style="font-size:15px; color:var(--ink); line-height:1.6; margin:0;">
-            Train without bolting more hours onto the schedule. Providers can knock out reps during a shift, on a slow night, or a few minutes a week from anywhere.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Founder voice -->
-    <section class="section fade-up" style="padding-top:28px;">
-      <div class="wrap">
-        <div class="founder fade-up">
-          <p class="founder-quote">
-            No matter where you go in EMS, every agency has its own unique protocols &mdash; but there's no way to actually train on them. Same story everywhere: tons of NREMT apps, plenty of generic CE, zero tools built around the protocols we use to do our jobs. So I built one.
-          </p>
-          <div class="founder-meta">
+          <div class="manifesto-author">
             <div class="founder-avatar">JS</div>
             <div>
               <div class="founder-name">Jaden Schwartz</div>
@@ -1255,29 +1646,10 @@
       </div>
     </section>
 
-    <!-- Why this exists / manifesto -->
-    <section class="section fade-up" style="padding-top:28px;">
-      <div class="wrap">
-        <div class="section-center" style="margin-bottom:28px;">
-          <div class="section-label">Why this exists</div>
-          <div class="section-title">EMS lags behind. Let's fix it.</div>
-        </div>
-        <div style="max-width:760px; margin:0 auto; background:rgba(99,102,241,.05); border:1px solid rgba(99,102,241,.18); border-radius:14px; padding:28px 32px;">
-          <p style="font-size:16px; color:var(--ink); line-height:1.7; margin:0 0 16px;">
-            Every other field in medicine has modern, protocol-specific training. EMS doesn't. We are the red-headed stepchild &mdash; outdated practices, generic CE that has nothing to do with how we actually work, and tools built for the test, not the job. We can do better.
-          </p>
-          <p style="font-size:16px; color:var(--ink); line-height:1.7; margin:0 0 16px;">
-            And the priorities are backwards. We pour hours into low-frequency events &mdash; MCIs, mass-cas, once-a-career calls &mdash; while the highest-frequency thing a provider does, the thing that actually decides patient outcomes, is knowing and using <em>your protocols</em>. Every shift. Every call. That's where training time should go.
-          </p>
-          <p style="font-size:16px; color:var(--ink); line-height:1.7; margin:0;">
-            ProtoQuiz is built around that idea: train providers on the protocols they actually run, in the scope they actually work, with the reps and feedback to make it stick. This is the way.
-          </p>
-        </div>
-      </div>
-    </section>
+    <div class="section-divider"></div>
 
     <!-- Admin Dashboard Mockup -->
-    <section class="section fade-up">
+    <section class="section reveal">
       <div class="wrap">
         <div class="section-center" style="margin-bottom:36px;">
           <div class="section-label">For command staff</div>
@@ -1373,7 +1745,7 @@
                   <span style="display:inline-flex; align-items:center; gap:4px; font-size:10px; color:var(--muted);"><span style="width:8px;height:8px;border-radius:2px;background:#ef4444;display:inline-block;"></span>&lt;60</span>
                 </div>
               </div>
-              <div style="overflow-x:auto;">
+              <div style="overflow-x:auto; border-radius:10px;">
                 <div style="display:inline-block; min-width:100%;">
                   <div style="display:flex; align-items:flex-end; padding-left:120px; margin-bottom:6px;">
                     <span style="width:40px; font-size:10px; color:var(--muted); text-align:center; font-weight:600;">Dec</span>
@@ -1450,14 +1822,17 @@
           </div>
         </div>
 
-        <div style="text-align:center; margin-top:28px;">
-          <a href="https://demo.protoquiz.com" target="_blank" rel="noopener" class="btn btn-ghost" data-track="AgencyDashboardDemo">Walk through the live dashboard</a>
+        <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:32px;">
+          <a href="https://demo.protoquiz.com" target="_blank" rel="noopener" class="btn btn-primary btn-demo" data-track="AgencyDashboardDemo">Try the live demo &rarr;</a>
+          <button type="button" class="btn btn-ghost" id="openContact4" data-track="AgencyContactOpen">Send us a message</button>
         </div>
       </div>
     </section>
 
+    <div class="section-divider"></div>
+
     <!-- Comparison -->
-    <section class="section fade-up">
+    <section class="section reveal">
       <div class="wrap">
         <div class="section-center">
           <div class="section-label">Side by side</div>
@@ -1518,8 +1893,10 @@
       </div>
     </section>
 
+    <div class="section-divider"></div>
+
     <!-- How it Works -->
-    <section class="section fade-up">
+    <section class="section reveal">
       <div class="wrap" style="max-width:680px;">
         <div class="section-center">
           <div class="section-label">Rollout</div>
@@ -1552,8 +1929,10 @@
     </section>
 
 
+    <div class="section-divider"></div>
+
     <!-- The math (single minimal section) -->
-    <section class="section fade-up" id="value-section">
+    <section class="section reveal" id="value-section">
       <div class="wrap">
         <div class="section-center">
           <div class="section-label">The math</div>
@@ -1581,12 +1960,12 @@
 
         <!-- Hero savings number -->
         <div class="math-hero">
+          <div class="math-hero-tag"><span data-size-val="providers">300</span>-provider agency &middot; flat $100/yr each</div>
           <div class="math-hero-eyebrow">A <span data-size-text="label">medium</span> agency saves about</div>
           <div class="math-hero-num"><span data-size-val="save-total">$54,000</span><span class="math-hero-unit">/yr</span></div>
           <div class="math-hero-sub">
             ProtoQuiz costs <strong data-size-val="pq">$30,000</strong>/yr.
-            Net positive: <strong data-size-val="save-net">~$24,000</strong>/yr,
-            <strong data-size-val="save-multiple">1.8x</strong> payback &mdash; before counting better training.
+            Net positive: <strong data-size-val="save-net">~$24,000</strong>/yr &mdash; before counting better training.
           </div>
         </div>
 
@@ -1706,8 +2085,10 @@
       </div>
     </section>
 
+    <div class="section-divider"></div>
+
     <!-- Pricing -->
-    <section class="section fade-up">
+    <section class="section reveal">
       <div class="wrap">
         <div class="section-center">
           <div class="section-label">Pricing</div>
@@ -1717,8 +2098,8 @@
 
         <div class="price-card">
           <div class="price-pilot">Free 6-month pilot &middot; 2 spots open</div>
-          <div class="price-num"><span class="strike">$100</span><span class="dollar">$</span>0</div>
-          <div class="price-unit">For the first six months. Then $100 / provider / year ($8.33/month).</div>
+          <div class="price-num"><span class="dollar">$</span>0</div>
+          <div class="price-unit">For the first six months. Then <strong style="color:var(--ink); font-weight:700;">$100 per provider per year</strong> &mdash; about $8.33 a month.</div>
 
           <ul class="price-includes">
             <li>Protocol quizzes &amp; exams</li>
@@ -1742,8 +2123,10 @@
       </div>
     </section>
 
+    <div class="section-divider"></div>
+
     <!-- FAQ -->
-    <section class="section fade-up">
+    <section class="section reveal">
       <div class="wrap">
         <div class="section-center">
           <div class="section-label">FAQ</div>
@@ -1791,22 +2174,26 @@
       </div>
     </section>
 
+    <div class="section-divider"></div>
+
     <!-- CTA -->
-    <section class="cta-section">
+    <section class="cta-section reveal">
       <div class="wrap">
+        <div class="section-label" style="text-align:center;">Get started</div>
         <h2>See what it looks like for <span class="gradient">your organization.</span></h2>
         <p>Send us your protocols and we'll stand up a working preview &mdash; branded for your department, populated with your content.</p>
+        <div class="early-badge" style="margin:0 auto 28px;">Free for 6 months &middot; if it's not for you, you stop and never pay a thing</div>
         <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
-          <a href="https://demo.protoquiz.com" target="_blank" rel="noopener" class="btn btn-primary btn-demo" data-track="AgencyLiveDemo">See the Live Demo &rarr;</a>
-          <button type="button" class="btn btn-ghost" id="openContact3" data-track="AgencyContactOpen">Start a Conversation</button>
+          <a href="https://demo.protoquiz.com" target="_blank" rel="noopener" class="btn btn-primary btn-demo" data-track="AgencyLiveDemo">Try the live demo &rarr;</a>
+          <button type="button" class="btn btn-ghost" id="openContact3" data-track="AgencyContactOpen">Send us a message</button>
         </div>
-        <div class="early-badge">Free for 6 months &middot; if it's not for you, you stop and never pay a thing</div>
       </div>
     </section>
   </main>
 
   <footer>
     <div class="wrap">
+      <div class="footer-tagline">Built for EMS, by an EMS provider.</div>
       <div class="footer-row">
         <span>&copy; 2026 <a href="https://teachmetolive.com" target="_blank" rel="noopener">Teach Me to Live LLC</a></span>
         <div class="footer-links">
@@ -1864,7 +2251,7 @@
 
   <script>
     const dialog = document.getElementById('contactDialog');
-    ['openContact','openContact2','openContact3']
+    ['openContact','openContact2','openContact3','openContact4']
       .map(id => document.getElementById(id)).filter(Boolean)
       .forEach(btn => btn.addEventListener('click', () => dialog.showModal()));
 
@@ -1885,11 +2272,28 @@
       }
     });
 
-    // Scroll reveal
+    // Scroll reveal — handles both .fade-up (legacy) and .reveal (new sleek transitions)
+    // Each .reveal section auto-tags its content children as .reveal-child + assigns staggered delays.
     const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+      entries.forEach(e => {
+        if (e.isIntersecting){
+          e.target.classList.add('visible');
+          obs.unobserve(e.target);
+        }
+      });
     }, {threshold:0.08});
-    document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+    // Reveal anything already in the viewport on initial load (handles fast-scroll/refresh cases).
+    const watch = document.querySelectorAll('.fade-up, .reveal, .section-divider');
+    const vh = window.innerHeight;
+    watch.forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < vh && r.bottom > 0){
+        el.classList.add('visible');
+      } else {
+        obs.observe(el);
+      }
+    });
 
     // Animate chart bars
     const chartObs = new IntersectionObserver(entries => {

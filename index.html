@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- build: v8 - Sleek & Sexy Redesign -->
+<!-- build: v9 - Amber CAD console redesign -->
 <html lang="en" id="top">
 <head>
   <meta charset="utf-8" />
@@ -13,8 +13,6 @@
   <link rel="alternate" hreflang="en" href="https://protoquiz.com/">
   <link rel="alternate" hreflang="x-default" href="https://protoquiz.com/">
   <meta name="robots" content="index,follow" />
-
-  <!-- Keywords -->
   <meta name="keywords" content="EMS quiz app, paramedic study app, EMT protocol quiz, EMS protocol training, paramedic pharmacology, EMS scenario simulator, NREMT prep, agency protocol study, EMS continuing education, protocol PDF quiz" />
 
   <!-- Social -->
@@ -28,7 +26,7 @@
   <meta property="og:image:alt" content="EMS ProtoQuiz - turn your protocol PDF into quizzes and scenarios. Free iOS app." />
   <meta property="og:site_name" content="EMS ProtoQuiz" />
   <meta property="og:locale" content="en_US" />
-  <meta name="theme-color" content="#05080c" />
+  <meta name="theme-color" content="#06050a" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -40,7 +38,7 @@
   <!-- App Store Smart Banner -->
   <meta name="apple-itunes-app" content="app-id=6753611139">
 
-  <!-- Favicon - Optimized sizes -->
+  <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
@@ -56,102 +54,32 @@
     "url":"https://protoquiz.com/",
     "publisher":{"@type":"Organization","name":"Teach Me to Live LLC"},
     "description":"Turns your agency's protocol PDF into pharmacology quizzes, algorithm tests, and adaptive patient scenarios. Every answer is page-cited back to the source PDF.",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.7",
-      "reviewCount": "6"
-    },
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    }
+    "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.7", "reviewCount": "6"},
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
   }
   </script>
-
-  <!-- Structured data - Organization -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Teach Me to Live LLC",
-    "legalName": "Teach Me to Live LLC",
     "url": "https://protoquiz.com/",
     "logo": "https://protoquiz.com/logo-256.png",
     "foundingDate": "2025",
-    "founders": [
-      {
-        "@type": "Person",
-        "name": "Jaden",
-        "jobTitle": "Founder & Paramedic Student"
-      }
-    ],
+    "founders": [{"@type": "Person", "name": "Jaden", "jobTitle": "Founder & Paramedic Student"}],
     "description": "Developer of EMS ProtoQuiz, a protocol-based quiz and training app for emergency medical services professionals.",
-    "sameAs": [
-      "https://apps.apple.com/app/id6753611139"
-    ],
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "Customer Support",
-      "availableLanguage": "English"
-    }
+    "sameAs": ["https://apps.apple.com/app/id6753611139"]
   }
   </script>
-
-  <!-- Structured data - FAQ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What protocols does ProtoQuiz work with?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Whatever PDF your agency hands you. Drop in your local protocol document and the app indexes every medication, algorithm, procedure, and policy. It's not preloaded with generic NREMT content. It's your protocol set, exactly."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is it actually accurate? AI gets things wrong.",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Every answer cites the exact page in your PDF where it came from. One tap and you're looking at the source. Unlike AI chatbots that hallucinate, ProtoQuiz only pulls from the document you uploaded, and if you ever spot an extraction error, you can edit it directly in the app."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What kinds of quizzes can I make?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Pharmacology (adult dose, pediatric dose, indications, contraindications, routes, mechanism), algorithm tests pulled from your protocol flowcharts, and adaptive patient scenarios where the patient deteriorates or improves based on the calls you make. You pick the topic, the difficulty, and the length."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How realistic are the scenarios?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "They run on your exact protocols and standing orders. Patients present, deteriorate, and respond the way they would on an actual call, which means the right intervention works and the wrong one has consequences. Each scenario is generated fresh, so you can run the same chief complaint twice and get a different presentation."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What does it cost?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Free to download and free to use. The app is ad-supported. There's an optional paid upgrade that removes ads if you'd rather study without them, but no features are gated behind it."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is there an Android version?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Not yet. ProtoQuiz is iOS only for now. If demand for Android is strong enough we'll get there."
-        }
-      }
+      {"@type": "Question","name": "What protocols does ProtoQuiz work with?","acceptedAnswer": {"@type": "Answer","text": "Whatever PDF your agency hands you. The app indexes every medication, algorithm, procedure, and policy. No preloaded NREMT filler. Your protocol set, exactly."}},
+      {"@type": "Question","name": "Is it actually accurate? AI gets things wrong.","acceptedAnswer": {"@type": "Answer","text": "Every answer cites the exact page in your PDF. One tap and you're at the source. Nothing is generated outside the document you uploaded, and you can edit any extraction yourself."}},
+      {"@type": "Question","name": "What does it cost?","acceptedAnswer": {"@type": "Answer","text": "Free, ad-supported. Optional paid upgrade clears the ads. No features paywalled behind premium."}},
+      {"@type": "Question","name": "Is there an Android version?","acceptedAnswer": {"@type": "Answer","text": "Not yet. iOS only."}}
     ]
   }
   </script>
@@ -163,14 +91,11 @@
     function gtag(){ dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-LNSS9BMEP8');
-
-    function track(name, props){
-      try { gtag('event', name, props || {}); } catch(e){}
-    }
+    function track(name, props){ try { gtag('event', name, props || {}); } catch(e){} }
     const PAGE = 'home';
   </script>
 
-  <!-- Meta Pixel Code -->
+  <!-- Meta Pixel -->
   <script>
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -180,27 +105,15 @@
   t.src=v;s=b.getElementsByTagName(e)[0];
   s.parentNode.insertBefore(t,s)}(window, document,'script',
   'https://connect.facebook.net/en_US/fbevents.js');
-
-  // TODO: Replace YOUR_PIXEL_ID with your actual Meta Pixel ID
-  // Get it from: https://business.facebook.com/events_manager
-  const META_PIXEL_ID = 'YOUR_PIXEL_ID'; // ← REPLACE THIS
-
+  const META_PIXEL_ID = 'YOUR_PIXEL_ID';
   if (META_PIXEL_ID !== 'YOUR_PIXEL_ID') {
     fbq('init', META_PIXEL_ID);
     fbq('track', 'PageView');
-
-    // Enhanced tracking function that reports to both GA4 and Meta
     const originalTrack = window.track;
     window.track = function(name, props) {
-      // Track in GA4 (original behavior)
       originalTrack(name, props);
-
-      // Track in Meta Pixel
       if (name === 'AppStoreHero' || name === 'AppStoreClick') {
-        fbq('track', 'Lead', {
-          content_name: 'App Store Button',
-          content_category: props?.location || 'unknown'
-        });
+        fbq('track', 'Lead', {content_name: 'App Store Button', content_category: props?.location || 'unknown'});
       } else if (name === 'form_submit' || name === 'ContactSubmit') {
         fbq('track', 'Contact');
       } else {
@@ -209,1551 +122,1134 @@
     };
   }
   </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-         src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/>
-  </noscript>
-  <!-- End Meta Pixel Code -->
 
-  <!-- TikTok Pixel Code -->
+  <!-- TikTok Pixel -->
   <script>
   !function (w, d, t) {
     w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=i+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
-
-  // TikTok Pixel ID for ProtoQuiz: EMS
   const TIKTOK_PIXEL_ID = 'C9S6KRF1139';
-
   if (TIKTOK_PIXEL_ID !== 'YOUR_TIKTOK_PIXEL_ID') {
-    ttq.load(TIKTOK_PIXEL_ID);
-    ttq.page();
-
-    // Enhanced tracking function that reports to GA4, Meta, and TikTok
+    ttq.load(TIKTOK_PIXEL_ID); ttq.page();
     const originalTrack = window.track;
     window.track = function(name, props) {
-      // Track in GA4 and Meta (original behavior)
-      if (typeof originalTrack === 'function') {
-        originalTrack(name, props);
-      }
-
-      // Track in TikTok Pixel
+      if (typeof originalTrack === 'function') originalTrack(name, props);
       if (name === 'AppStoreHero' || name === 'AppStoreClick') {
-        ttq.track('ClickButton', {
-          content_type: 'App Store Button',
-          content_name: props?.location || 'unknown'
-        });
+        ttq.track('ClickButton', {content_type: 'App Store Button', content_name: props?.location || 'unknown'});
       } else if (name === 'form_submit' || name === 'ContactSubmit') {
         ttq.track('Contact');
       } else if (name === 'PricingFree' || name === 'FinalCTA') {
-        ttq.track('ClickButton', {
-          content_type: 'Download Button',
-          content_name: name
-        });
+        ttq.track('ClickButton', {content_type: 'Download Button', content_name: name});
       } else {
-        // Track custom event
         ttq.track(name, props);
       }
     };
   }
   </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-         src="https://analytics.tiktok.com/i18n/pixel/static.html?sdkid=C9S6KRF1139&ev=PageView&noscript=1"/>
-  </noscript>
-  <!-- End TikTok Pixel Code -->
 
-  <!-- Preload Critical Resources -->
-  <link rel="preload" href="logo-256.png" as="image" type="image/png">
-  <link rel="preload" href="logo-48.png" as="image" type="image/png">
-
-  <!-- Inter Font -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg:#05080c;
-      --panel:#0a0f15;
-      --ink:#e6edf7;
-      --muted:#9aa4b2;
-      --line:#16202b;
-      --cyan:#06d6e0;
-      --violet:#b45cf6;
-      --success:#10b981;
-      --warning:#f59e0b;
-      --radius:18px;
-      --max:1080px;
+      /* Warm-shifted near-blacks. No pure #000 anywhere. */
+      --bg:#06050a;
+      --bg-2:#0c0a07;
+      --panel:#100d08;
+      --ink:#f4f1ea;
+      --ink-soft:#a8a399;
+      --muted:#6e6a60;
+      --line:#1c1a14;
+      --line-2:#2a2620;
+      --amber:#ffb000;
+      --amber-deep:#cc8a00;
+      --amber-soft:#3a2a08;
+      --green:#00d27a;
+      --siren:#ff3b30;
+      --highlight:#ffb000;
+      --mono:'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+      --sans:'Inter', system-ui, -apple-system, sans-serif;
+      --max:1240px;
     }
-
     *{box-sizing:border-box; margin:0; padding:0;}
     html{scroll-behavior:smooth;}
     body{
-      color:var(--ink);
-      font-family:'Inter', system-ui,-apple-system,sans-serif;
-      font-size:16px;
-      line-height:1.6;
       background:var(--bg);
-      min-height:100vh;
+      color:var(--ink);
+      font-family:var(--mono);
+      font-size:15px;
+      line-height:1.55;
       -webkit-font-smoothing:antialiased;
       text-rendering:optimizeLegibility;
       overflow-x:hidden;
+      font-feature-settings:"ss01" on;
     }
 
-    /* Ambient glow - animated shift */
+    /* CRT scanline texture, very subtle */
     body::before{
-      content:"";
-      position:fixed;
-      inset:-20%;
-      width:140%;
-      height:140%;
-      background:
-        radial-gradient(ellipse 900px 500px at 25% 10%, rgba(6,214,224,.14), transparent),
-        radial-gradient(ellipse 700px 400px at 75% 30%, rgba(180,92,246,.12), transparent),
-        radial-gradient(ellipse 600px 600px at 50% 85%, rgba(6,214,224,.08), transparent),
-        radial-gradient(ellipse 400px 300px at 10% 60%, rgba(180,92,246,.07), transparent);
-      pointer-events:none;
-      animation:ambientShift 20s ease-in-out infinite;
+      content:""; position:fixed; inset:0; pointer-events:none; z-index:1;
+      background:repeating-linear-gradient(0deg, rgba(255,255,255,0) 0, rgba(255,255,255,0) 2px, rgba(255,176,0,.012) 2px, rgba(255,176,0,.012) 3px);
+      mix-blend-mode:screen;
     }
-
-    @keyframes ambientShift{
-      0%,100%{transform:translate(0,0) rotate(0deg);}
-      25%{transform:translate(3%,-2%) rotate(.5deg);}
-      50%{transform:translate(-2%,3%) rotate(-.3deg);}
-      75%{transform:translate(2%,1%) rotate(.2deg);}
-    }
-
-    /* Grain texture */
+    /* Subtle vignette */
     body::after{
-      content:""; position:fixed; inset:0; pointer-events:none; opacity:.03; z-index:0;
-      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-      background-size:128px;
+      content:""; position:fixed; inset:0; pointer-events:none; z-index:0;
+      background:radial-gradient(ellipse 100% 80% at 50% 50%, transparent 50%, rgba(0,0,0,.4));
     }
 
-    a{color:inherit; text-decoration:none; transition:opacity .2s;}
-    a:hover{opacity:0.85;}
+    a{color:var(--amber); text-decoration:none; transition:color .15s;}
+    a:hover{color:var(--ink);}
 
-    .wrap{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:0 20px;
-      position:relative;
-      z-index:1;
-    }
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 32px; position:relative; z-index:2;}
 
-    /* Navigation - Simplified */
-    header{
-      position:fixed;
-      top:0;
-      left:0;
-      right:0;
-      z-index:100;
-      background:rgba(5,8,12,.8);
-      backdrop-filter:blur(20px) saturate(180%);
-      border-bottom:1px solid var(--line);
-      transition:all .3s ease;
-    }
-
-    header.scrolled{
-      background:rgba(5,8,12,.95);
-      box-shadow:0 4px 20px rgba(0,0,0,.3);
-    }
-
-    .navbar{
+    /* ========================================
+       STATUS BAR — top fixed CAD console
+       ======================================== */
+    .statusbar{
+      position:fixed; top:0; left:0; right:0; z-index:100;
+      background:rgba(6,5,10,.88);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line-2);
+      padding:8px 32px;
+      font-family:var(--mono);
+      font-size:14px;
+      font-weight:500;
+      letter-spacing:.06em;
       display:flex;
-      align-items:center;
       justify-content:space-between;
-      padding:16px 0;
-      gap:16px;
+      align-items:center;
+      color:var(--ink-soft);
+      text-transform:uppercase;
     }
+    .statusbar-left{display:flex; gap:22px; align-items:center;}
+    .statusbar-right{display:flex; gap:22px; align-items:center;}
 
-    .brand-link{
-      display:flex;
+    .brand{
+      display:inline-flex;
       align-items:center;
       gap:12px;
-      font-weight:800;
-      font-size:18px;
-      letter-spacing:-.02em;
-      white-space:nowrap;
-      flex-shrink:0;
+      padding:2px 0;
+      transition:opacity .15s;
     }
-
-    .brand-link img{
+    .brand:hover{opacity:.8;}
+    .brand img{
+      display:block;
       width:48px;
       height:48px;
-      border-radius:12px;
-      box-shadow:0 4px 12px rgba(34,211,238,.2);
-      flex-shrink:0;
+      border-radius:10px;
     }
-
-    .nav-links{
-      display:flex;
-      gap:16px;
-      align-items:center;
-      flex-wrap:wrap;
-    }
-
-    .nav-btn{
-      padding:8px 16px;
-      border-radius:999px;
-      font-size:14px;
-      font-weight:600;
-      transition:all .2s;
-      cursor:pointer;
-      border:1px solid transparent;
-      background:transparent;
+    .brand-name{
+      font-family:var(--mono);
+      font-size:15px;
+      font-weight:700;
+      letter-spacing:.04em;
+      text-transform:uppercase;
       color:var(--ink);
     }
-
-    .nav-btn:hover{
-      border-color:var(--line);
-      background:rgba(255,255,255,.03);
+    @media (max-width:560px){
+      .brand-name{display:none;}
+      .brand img{width:42px; height:42px;}
     }
 
-    .nav-btn.active-page{
-      color:var(--cyan);
+    .statusbar a{color:var(--ink-soft);}
+    .statusbar a:hover, .statusbar a.is-active{color:var(--amber);}
+    .timestamp{color:var(--ink-soft); font-variant-numeric:tabular-nums;}
+
+    .statusbar .contact-btn{
+      background:transparent;
+      border:1px solid var(--line-2);
+      color:var(--amber);
+      padding:8px 14px;
+      font-family:var(--mono);
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      cursor:pointer;
+      transition:all .15s;
+    }
+    .statusbar .contact-btn:hover{
+      background:var(--amber);
+      color:var(--bg);
+      border-color:var(--amber);
     }
 
-    .nav-btn.contact{
-      background:linear-gradient(135deg, var(--cyan), var(--violet));
-      color:#05080c;
-      border:none;
-      box-shadow:0 4px 16px rgba(6,214,224,.25);
+    /* Console-style nav toggle (mobile) */
+    .nav-toggle{
+      display:none;
+      background:transparent;
+      border:1px solid var(--line-2);
+      color:var(--amber);
+      padding:8px 14px;
+      font-family:var(--mono);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      cursor:pointer;
+      transition:all .15s;
     }
+    .nav-toggle:hover{background:var(--amber); color:var(--bg); border-color:var(--amber);}
+    .nav-toggle .nav-toggle-x{display:none;}
+    .nav-open .nav-toggle .nav-toggle-x{display:inline;}
+    .nav-open .nav-toggle .nav-toggle-menu{display:none;}
 
-    .nav-btn.contact:hover{
-      transform:translateY(-1px);
-      box-shadow:0 6px 20px rgba(6,214,224,.4);
+    /* Console drawer */
+    .nav-drawer{
+      display:none;
+      position:fixed;
+      inset:46px 0 0 0;
+      z-index:99;
+      background:var(--bg);
+      border-top:1px solid var(--line-2);
+      padding:32px 24px 48px;
+      flex-direction:column;
+      gap:0;
     }
-
-    /* Hero Section */
-    .hero{
-      padding:140px 0 80px;
-      min-height:90vh;
+    .nav-open .nav-drawer{display:flex;}
+    .nav-drawer a{
+      font-family:var(--mono);
+      font-size:14px;
+      font-weight:700;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--ink);
+      padding:18px 0;
+      border-bottom:1px solid var(--line-2);
       display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .nav-drawer a:hover{color:var(--amber);}
+    .nav-drawer a::after{
+      content:"→";
+      color:var(--amber);
+      font-weight:400;
+      opacity:.6;
+    }
+    .nav-drawer .drawer-foot{
+      margin-top:24px;
+      font-family:var(--mono);
+      font-size:11.5px;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      color:var(--muted);
+      display:flex;
+      justify-content:space-between;
+    }
+    .nav-drawer .drawer-foot .green{color:var(--green);}
+
+    @media (max-width:880px){
+      .statusbar{padding:10px 18px; font-size:11.5px; gap:12px;}
+      .statusbar-left{gap:14px;}
+      .statusbar-right{gap:14px;}
+      .statusbar-left .nav-link{display:none;}
+      .nav-toggle{display:inline-flex;}
+    }
+    @media (max-width:560px){
+      .hide-sm{display:none;}
+    }
+
+    /* ========================================
+       BUTTONS
+       ======================================== */
+    .btn{
+      font-family:var(--mono);
+      font-weight:700;
+      font-size:14px;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      padding:16px 24px;
+      border:none;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      transition:transform .15s ease, background .15s, color .15s;
+      text-decoration:none;
+      line-height:1;
+    }
+    .btn-primary{
+      background:var(--amber);
+      color:var(--bg);
+    }
+    .btn-primary:hover{
+      background:var(--ink);
+      color:var(--bg);
+      transform:translateY(-1px);
+    }
+    .btn-ghost{
+      background:transparent;
+      color:var(--ink);
+      border:1px solid var(--line-2);
+    }
+    .btn-ghost:hover{
+      border-color:var(--amber);
+      color:var(--amber);
+    }
+
+    /* ========================================
+       HERO
+       ======================================== */
+    .hero{
+      padding:140px 0 100px;
+      border-bottom:1px solid var(--line);
+      position:relative;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      top:30%;
+      left:50%;
+      width:1100px; height:600px;
+      transform:translate(-50%,-50%);
+      background:radial-gradient(ellipse, rgba(255,176,0,.10), transparent 65%);
+      pointer-events:none;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.15fr 1fr;
+      gap:80px;
       align-items:center;
       position:relative;
     }
 
-    .hero::before{
-      content:""; position:absolute; inset:0; pointer-events:none; opacity:.04; z-index:0;
-      background-image:
-        linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
-      background-size:60px 60px;
-      mask-image:radial-gradient(ellipse 70% 50% at 50% 40%, black, transparent);
-      -webkit-mask-image:radial-gradient(ellipse 70% 50% at 50% 40%, black, transparent);
+    .hero-incident{
+      font-family:var(--mono);
+      font-size:13.5px;
+      font-weight:700;
+      color:var(--amber);
+      letter-spacing:.18em;
+      margin-bottom:36px;
+      display:flex;
+      align-items:center;
+      gap:14px;
     }
-
-    .hero::after{
-      content:""; position:absolute; bottom:-1px; left:0; right:0; height:200px;
-      background:linear-gradient(180deg, transparent, var(--bg));
-      pointer-events:none; z-index:0;
+    .siren-dot{
+      width:9px; height:9px; border-radius:50%;
+      background:var(--siren);
+      box-shadow:0 0 12px var(--siren);
+      animation:sirenBlink 1.2s ease-in-out infinite;
+      flex-shrink:0;
     }
-
-    .hero-content{
-      width:100%;
-    }
-
-    .hero-badge{
-      display:inline-block;
-      padding:6px 14px;
-      border-radius:999px;
-      background:linear-gradient(135deg, rgba(6,214,224,.12), rgba(180,92,246,.12));
-      border:1px solid rgba(6,214,224,.3);
-      font-size:12px;
-      font-weight:600;
-      text-transform:uppercase;
-      letter-spacing:.05em;
-      margin-bottom:20px;
+    @keyframes sirenBlink{
+      0%,100%{opacity:.5; transform:scale(.85);}
+      50%{opacity:1; transform:scale(1.1);}
     }
 
     h1{
-      font-size:clamp(32px, 5vw, 48px);
+      font-family:var(--mono);
+      font-size:clamp(34px, 4.6vw, 56px);
       font-weight:700;
-      line-height:1.1;
-      letter-spacing:-.02em;
-      margin-bottom:16px;
-      background:linear-gradient(180deg, #ffffff, #e0e7ff);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-
-    .hero-subtitle{
-      font-size:clamp(14px, 2vw, 18px);
-      font-weight:500;
-      color:#a0b3d8;
-      margin-bottom:12px;
-    }
-
-    .hero-description{
-      font-size:clamp(14px, 1.5vw, 16px);
-      color:var(--muted);
-      max-width:600px;
-      margin-bottom:24px;
-      line-height:1.6;
-    }
-
-    .hero-stats{
-      display:flex;
-      gap:24px;
-      margin-bottom:32px;
-      flex-wrap:wrap;
-    }
-
-    .stat-item{
-      display:flex;
-      align-items:center;
-      gap:8px;
-      font-size:15px;
-      color:#cbd5e1;
-    }
-
-    .stat-item .stars{
-      color:var(--warning);
-    }
-
-    .stat-item strong{
-      color:var(--cyan);
-      font-weight:700;
-    }
-
-    .hero-cta{
-      display:flex;
-      gap:16px;
-      flex-wrap:wrap;
-      margin-bottom:24px;
-    }
-
-    .btn{
-      padding:14px 28px;
-      border-radius:12px;
-      font-weight:700;
-      font-size:16px;
-      cursor:pointer;
-      transition:all .2s;
-      border:none;
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-    }
-
-    .btn-primary{
-      background:linear-gradient(135deg, var(--cyan), var(--violet));
-      color:#05080c;
-      box-shadow:0 8px 24px rgba(6,214,224,.3);
-    }
-
-    .btn-primary:hover{
-      transform:translateY(-2px);
-      box-shadow:0 12px 32px rgba(6,214,224,.45);
-    }
-
-    .btn-secondary{
-      background:rgba(255,255,255,.05);
+      line-height:1.04;
+      letter-spacing:-.025em;
       color:var(--ink);
-      border:1px solid rgba(255,255,255,.1);
-      backdrop-filter:blur(10px);
+      margin-bottom:32px;
+      text-transform:uppercase;
+    }
+    h1 .highlight{
+      background:var(--amber);
+      color:var(--bg);
+      padding:0 .14em;
+      display:inline-block;
     }
 
-    .btn-secondary:hover{
-      background:rgba(255,255,255,.08);
-      border-color:rgba(255,255,255,.2);
-    }
-
-    /* Pricing Section */
-    .pricing{
-      padding:60px 0;
-      background:linear-gradient(180deg, transparent, rgba(255,255,255,.02));
-      position:relative;
-    }
-
-    .pricing::before{
-      content:""; position:absolute; inset:0; pointer-events:none;
-      background:radial-gradient(ellipse 500px 300px at 50% 50%, rgba(34,211,238,.06), transparent);
-    }
-
-    .section-header{
-      text-align:center;
+    .hero-sub{
+      font-family:var(--sans);
+      font-size:18px;
+      line-height:1.55;
+      color:var(--ink-soft);
+      max-width:50ch;
       margin-bottom:40px;
     }
-
-    .section-title{
-      font-size:clamp(24px, 4vw, 32px);
-      font-weight:700;
-      margin-bottom:12px;
-      background:linear-gradient(180deg, #ffffff, #cbd5e1);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-
-    .section-subtitle{
-      font-size:15px;
-      color:var(--muted);
-    }
-
-    .pricing-cards{
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
-      gap:32px;
-      max-width:720px;
-      margin:0 auto;
-    }
-
-    .pricing-card{
-      background:rgba(255,255,255,.03);
-      border:1px solid var(--line);
-      border-radius:20px;
-      padding:28px;
-      position:relative;
-      transition:all .3s;
-      backdrop-filter:blur(10px);
-    }
-
-    .pricing-card:hover{
-      transform:translateY(-4px);
-      border-color:rgba(6,214,224,.5);
-      box-shadow:0 16px 36px rgba(6,214,224,.2);
-    }
-
-    .pricing-card.featured{
-      border:2px solid var(--cyan);
-      background:linear-gradient(180deg, rgba(6,214,224,.05), rgba(180,92,246,.05));
-      box-shadow:0 16px 36px rgba(6,214,224,.2);
-    }
-
-    .pricing-badge{
-      position:absolute;
-      top:-12px;
-      left:50%;
-      transform:translateX(-50%);
-      padding:4px 16px;
-      background:linear-gradient(135deg, var(--cyan), var(--violet));
-      color:#05080c;
-      font-size:12px;
-      font-weight:700;
-      border-radius:999px;
-      text-transform:uppercase;
-      letter-spacing:.05em;
-    }
-
-    .pricing-card h3{
-      font-size:24px;
-      font-weight:700;
-      margin-bottom:8px;
-    }
-
-    .price{
-      font-size:42px;
-      font-weight:900;
-      margin-bottom:4px;
+    .hero-cta{
       display:flex;
-      align-items:baseline;
-    }
-
-    .price span{
-      font-size:16px;
-      font-weight:400;
-      color:var(--muted);
-      margin-left:4px;
-    }
-
-    .price-annual{
-      font-size:14px;
-      color:var(--success);
-      margin-bottom:24px;
-    }
-
-    .pricing-features{
-      list-style:none;
-      margin-bottom:32px;
-    }
-
-    .pricing-features li{
-      padding:8px 0;
-      display:flex;
+      gap:14px;
       align-items:center;
-      gap:12px;
-      color:#e2e8f0;
-    }
-
-    .pricing-features li::before{
-      content:"✓";
-      color:var(--success);
-      font-weight:700;
-      font-size:18px;
-    }
-
-    .pricing-cta{
-      width:100%;
-    }
-
-    /* Pricing Split Layout */
-    .pricing-split{
-      display:grid;
-      grid-template-columns:1fr 1.1fr;
-      gap:48px;
-      align-items:center;
-      max-width:1100px;
-      margin:0 auto;
-      padding:40px;
-      background:linear-gradient(180deg, rgba(6,214,224,.04), rgba(180,92,246,.04));
-      border:1px solid var(--line);
-      border-radius:24px;
-      position:relative;
-      overflow:hidden;
-    }
-
-    .pricing-split::before{
-      content:""; position:absolute; inset:0; pointer-events:none;
-      background:radial-gradient(ellipse 400px 300px at 0% 0%, rgba(6,214,224,.10), transparent 60%),
-                 radial-gradient(ellipse 400px 300px at 100% 100%, rgba(180,92,246,.10), transparent 60%);
-    }
-
-    .pricing-pitch{position:relative; z-index:1;}
-
-    .pricing-pitch .price-headline{
-      font-size:clamp(36px, 5vw, 52px);
-      font-weight:900;
-      line-height:1.05;
-      margin-bottom:12px;
-      background:linear-gradient(135deg, var(--cyan), var(--violet));
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-
-    .pricing-pitch .price-sub{
-      color:#cbd5e1;
-      font-size:16px;
-      line-height:1.6;
-      margin-bottom:20px;
-    }
-
-    .pricing-meta{
-      display:flex;
       flex-wrap:wrap;
-      gap:8px;
-      margin-bottom:24px;
+      margin-bottom:28px;
     }
-
-    .pricing-meta span{
-      font-size:12px;
-      font-weight:600;
-      color:#cbd5e1;
-      padding:5px 12px;
-      background:rgba(255,255,255,.04);
-      border:1px solid var(--line);
-      border-radius:999px;
-    }
-
-    .pricing-cta-row{
-      display:flex;
-      align-items:center;
-      gap:16px;
-      flex-wrap:wrap;
-    }
-
-    .pricing-cta-row .btn-primary{
-      padding:16px 32px;
-      font-size:17px;
-    }
-
-    .pricing-cta-note{
-      font-size:13px;
-      color:var(--muted);
-    }
-
-    .pricing-checklist{
-      position:relative;
-      z-index:1;
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:14px 24px;
-      list-style:none;
-      padding:0;
-      margin:0;
-    }
-
-    .pricing-checklist li{
-      display:flex;
-      align-items:flex-start;
-      gap:10px;
-      color:#e2e8f0;
-      font-size:15px;
-      line-height:1.4;
-    }
-
-    .pricing-checklist li::before{
-      content:"";
-      flex:0 0 20px;
-      width:20px;
-      height:20px;
-      margin-top:1px;
-      border-radius:6px;
-      background:linear-gradient(135deg, rgba(6,214,224,.2), rgba(180,92,246,.2));
-      border:1px solid rgba(6,214,224,.4);
-      background-image:
-        linear-gradient(135deg, rgba(6,214,224,.2), rgba(180,92,246,.2)),
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%2306d6e0' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' d='M3.5 8.5l3 3 6-6'/></svg>");
-      background-repeat:no-repeat;
-      background-position:center;
-      background-size:cover, 14px 14px;
-    }
-
-    /* How It Works - 3 Step */
-    .howsteps{
-      padding:72px 0;
-      position:relative;
-    }
-    .howsteps::before{
-      content:""; position:absolute; inset:0; pointer-events:none;
-      background:radial-gradient(ellipse 700px 360px at 50% 0%, rgba(6,214,224,.05), transparent 70%);
-    }
-    .howsteps-grid{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:24px;
-      margin-top:40px;
-      position:relative;
-    }
-    .howsteps-grid::before{
-      content:"";
-      position:absolute;
-      top:34px;
-      left:14%;
-      right:14%;
-      height:1px;
-      background:linear-gradient(90deg, transparent, rgba(6,214,224,.35) 18%, rgba(180,92,246,.35) 82%, transparent);
-      pointer-events:none;
-    }
-    .howstep{
-      position:relative;
-      background:rgba(255,255,255,.025);
-      border:1px solid var(--line);
-      border-radius:20px;
-      padding:28px 24px 26px;
-      transition:transform .35s ease, border-color .35s ease, box-shadow .35s ease;
-      overflow:hidden;
-    }
-    .howstep::after{
-      content:""; position:absolute; inset:0; pointer-events:none; opacity:0;
-      background:radial-gradient(ellipse 320px 200px at 50% 0%, rgba(6,214,224,.10), transparent 65%);
-      transition:opacity .4s;
-    }
-    .howstep:hover{
-      transform:translateY(-4px);
-      border-color:rgba(6,214,224,.35);
-      box-shadow:0 18px 40px -16px rgba(6,214,224,.20);
-    }
-    .howstep:hover::after{opacity:1;}
-    .howstep .step-num{
-      position:relative;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      width:48px; height:48px;
-      border-radius:14px;
-      background:linear-gradient(135deg, rgba(6,214,224,.18), rgba(180,92,246,.14));
-      border:1px solid rgba(6,214,224,.35);
-      font-size:14px;
-      font-weight:800;
-      letter-spacing:.04em;
-      color:var(--cyan);
-      font-variant-numeric:tabular-nums;
-      margin-bottom:18px;
-      box-shadow:inset 0 1px 0 rgba(255,255,255,.06);
-    }
-    .howstep:nth-child(2) .step-num{
-      background:linear-gradient(135deg, rgba(180,92,246,.18), rgba(6,214,224,.14));
-      border-color:rgba(180,92,246,.4);
-      color:var(--violet);
-    }
-    .howstep:nth-child(3) .step-num{
-      background:linear-gradient(135deg, rgba(6,214,224,.18), rgba(180,92,246,.18));
-      border-color:rgba(6,214,224,.4);
-      color:var(--cyan);
-    }
-    .howstep h3{
-      font-size:18px;
-      font-weight:700;
-      letter-spacing:-.01em;
-      margin-bottom:8px;
-    }
-    .howstep p{
-      color:var(--muted);
+    .hero-meta{
+      font-family:var(--mono);
       font-size:14.5px;
-      line-height:1.6;
-    }
-    .howstep-visual{
-      margin-top:22px;
-      height:150px;
-      border-radius:14px;
-      background:linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,.01));
-      border:1px solid rgba(255,255,255,.04);
-      position:relative;
-      overflow:hidden;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-    }
-
-    /* Visual 1: Stack of PDFs with upload arrow */
-    .viz-upload{
-      position:relative;
-      width:140px; height:120px;
-    }
-    .viz-upload .pdf{
-      position:absolute;
-      width:78px; height:96px;
-      border-radius:8px;
-      background:linear-gradient(180deg, #14202c, #0d141c);
-      border:1px solid rgba(6,214,224,.25);
-      box-shadow:0 12px 28px -12px rgba(0,0,0,.7);
-      display:flex;
-      flex-direction:column;
-      padding:10px 8px;
-      gap:5px;
-    }
-    .viz-upload .pdf::before{
-      content:"";
-      position:absolute;
-      top:0; right:0;
-      width:18px; height:18px;
-      background:linear-gradient(225deg, rgba(6,214,224,.22) 50%, transparent 50%);
-      border-bottom-left-radius:4px;
-    }
-    .viz-upload .pdf .lbl{
-      font-size:7px;
-      font-weight:800;
-      letter-spacing:.08em;
-      color:var(--cyan);
-      margin-bottom:2px;
-    }
-    .viz-upload .pdf .ln{
-      height:3px;
-      border-radius:2px;
-      background:rgba(255,255,255,.08);
-    }
-    .viz-upload .pdf .ln.s{width:65%;}
-    .viz-upload .pdf .ln.m{width:80%;}
-    .viz-upload .pdf .ln.l{width:90%;}
-    .viz-upload .pdf-1{transform:translate(-22px, 14px) rotate(-9deg); opacity:.55;}
-    .viz-upload .pdf-2{transform:translate(0, 6px) rotate(-2deg); opacity:.85;}
-    .viz-upload .pdf-3{transform:translate(22px, -2px) rotate(5deg);}
-    .viz-upload .arrow{
-      position:absolute;
-      top:-18px; left:50%;
-      transform:translateX(-50%);
-      width:30px; height:30px;
-      border-radius:50%;
-      background:linear-gradient(135deg, var(--cyan), var(--violet));
-      display:flex; align-items:center; justify-content:center;
-      color:#05080c;
-      box-shadow:0 8px 22px -6px rgba(6,214,224,.55);
-      animation:upBob 2.2s ease-in-out infinite;
-    }
-    .viz-upload .arrow svg{width:16px; height:16px;}
-    @keyframes upBob{
-      0%,100%{transform:translate(-50%,0);}
-      50%{transform:translate(-50%,-6px);}
-    }
-
-    /* Visual 2: PDF page with highlighted med rows */
-    .viz-page{
-      position:relative;
-      width:170px; height:120px;
-      border-radius:8px;
-      background:linear-gradient(180deg, #0f1720, #0a1018);
-      border:1px solid rgba(180,92,246,.25);
-      padding:10px 12px;
-      display:flex;
-      flex-direction:column;
-      gap:6px;
-      box-shadow:0 14px 30px -14px rgba(0,0,0,.6);
-    }
-    .viz-page .pg{
-      position:absolute;
-      top:8px; right:10px;
-      font-size:8px;
-      font-weight:800;
-      letter-spacing:.08em;
-      color:var(--violet);
-      opacity:.85;
-    }
-    .viz-page .ttl{
-      font-size:8px;
-      font-weight:800;
-      letter-spacing:.1em;
-      color:#cbd5e1;
-      margin-bottom:2px;
-    }
-    .viz-page .row{
-      display:flex; align-items:center; gap:6px;
-      height:14px;
-    }
-    .viz-page .row .dot{
-      width:5px; height:5px;
-      border-radius:50%;
-      background:rgba(255,255,255,.18);
-      flex:0 0 5px;
-    }
-    .viz-page .row .bar{
-      height:5px;
-      border-radius:3px;
-      background:rgba(255,255,255,.10);
-      flex:1;
-    }
-    .viz-page .row.hl{
-      background:linear-gradient(90deg, rgba(180,92,246,.22), rgba(180,92,246,.06));
-      border-radius:5px;
-      padding:0 4px;
-      margin:0 -4px;
-    }
-    .viz-page .row.hl .dot{background:var(--violet); box-shadow:0 0 8px rgba(180,92,246,.6);}
-    .viz-page .row.hl .bar{background:linear-gradient(90deg, rgba(180,92,246,.6), rgba(180,92,246,.15));}
-    .viz-page .row .cite{
-      font-size:7px;
-      font-weight:700;
-      color:var(--violet);
-      opacity:.8;
-      flex:0 0 auto;
-    }
-
-    /* Visual 3: stacked mini cards */
-    .viz-cards{
-      position:relative;
-      width:160px; height:120px;
-    }
-    .viz-cards .card{
-      position:absolute;
-      width:120px;
-      border-radius:10px;
-      padding:9px 10px;
-      background:linear-gradient(180deg, #14202c, #0d141c);
-      border:1px solid rgba(255,255,255,.06);
-      box-shadow:0 10px 24px -10px rgba(0,0,0,.6);
-      display:flex; align-items:center; gap:8px;
-    }
-    .viz-cards .card .ic{
-      width:22px; height:22px; border-radius:6px;
-      flex:0 0 22px;
-      display:flex; align-items:center; justify-content:center;
-    }
-    .viz-cards .card .lines{flex:1; display:flex; flex-direction:column; gap:3px;}
-    .viz-cards .card .lines .ln{height:3px; border-radius:2px; background:rgba(255,255,255,.10);}
-    .viz-cards .card .lines .ln.s{width:50%;}
-    .viz-cards .card .lines .ln.l{width:85%;}
-    .viz-cards .c1{
-      top:0; left:8px;
-      transform:rotate(-4deg);
-      border-color:rgba(6,214,224,.25);
-    }
-    .viz-cards .c1 .ic{background:rgba(6,214,224,.15); color:var(--cyan);}
-    .viz-cards .c2{
-      top:32px; left:24px;
-      transform:rotate(2deg);
-      border-color:rgba(180,92,246,.25);
-    }
-    .viz-cards .c2 .ic{background:rgba(180,92,246,.15); color:var(--violet);}
-    .viz-cards .c3{
-      top:64px; left:16px;
-      transform:rotate(-2deg);
-      border-color:rgba(245,158,11,.25);
-    }
-    .viz-cards .c3 .ic{
-      background:conic-gradient(var(--cyan) 0 70%, rgba(255,255,255,.10) 70% 100%);
-      position:relative;
-    }
-    .viz-cards .c3 .ic::after{
-      content:""; position:absolute; inset:4px; border-radius:50%; background:#0d141c;
-    }
-    .viz-cards .card .ic svg{width:13px; height:13px; stroke-width:2; fill:none; stroke:currentColor; stroke-linecap:round; stroke-linejoin:round; position:relative; z-index:1;}
-
-    @media (max-width: 880px){
-      .howsteps-grid{
-        grid-template-columns:1fr;
-        gap:16px;
-      }
-      .howsteps-grid::before{display:none;}
-      .howstep-visual{height:130px;}
-    }
-
-    /* Features Grid */
-    .features{
-      padding:60px 0;
-    }
-
-    .features-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
-      gap:16px;
-      margin-top:32px;
-    }
-
-    .feature-card{
-      background:rgba(255,255,255,.025);
-      border:1px solid var(--line);
-      border-left:2px solid rgba(6,214,224,.4);
-      border-radius:14px;
-      padding:20px;
-      transition:all .3s;
-      position:relative;
-      overflow:hidden;
-    }
-
-    .feature-card::before{
-      content:""; position:absolute; inset:0; opacity:0;
-      background:radial-gradient(circle at 0% 50%, rgba(34,211,238,.06), transparent 70%);
-      transition:opacity .4s;
-    }
-
-    .feature-card:hover::before{opacity:1;}
-
-    .feature-card:hover{
-      border-color:rgba(34,211,238,.4);
-      border-left-color:var(--cyan);
-      background:rgba(255,255,255,.04);
-      transform:translateY(-4px);
-      box-shadow:0 12px 32px rgba(34,211,238,.12);
-    }
-
-    .feature-card:nth-child(1){transition-delay:0ms;}
-    .feature-card:nth-child(2){transition-delay:60ms;}
-    .feature-card:nth-child(3){transition-delay:120ms;}
-    .feature-card:nth-child(4){transition-delay:180ms;}
-    .feature-card:nth-child(5){transition-delay:240ms;}
-    .feature-card:nth-child(6){transition-delay:300ms;}
-
-    .feature-icon{
-      width:44px;
-      height:44px;
-      background:linear-gradient(135deg, rgba(6,214,224,.18), rgba(180,92,246,.14));
-      border:1px solid rgba(6,214,224,.25);
-      border-radius:12px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:16px;
-      font-weight:800;
-      margin-bottom:14px;
-      color:var(--cyan);
-      box-shadow:inset 0 1px 0 rgba(255,255,255,.05);
-    }
-    .feature-icon svg{
-      width:22px; height:22px;
-      stroke:currentColor;
-      stroke-width:1.8;
-      fill:none;
-      stroke-linecap:round;
-      stroke-linejoin:round;
-    }
-    .feature-card:nth-child(even) .feature-icon{
-      border-color:rgba(180,92,246,.3);
-      color:var(--violet);
-    }
-    .features-cta{
-      display:flex;
-      justify-content:center;
-      margin-top:36px;
-    }
-
-    .feature-card h3{
-      font-size:17px;
-      font-weight:700;
-      margin-bottom:6px;
-    }
-
-    .feature-card p{
-      color:var(--muted);
-      line-height:1.7;
-    }
-
-    /* Reviews Section */
-    .reviews{
-      padding:60px 0;
-      background:linear-gradient(180deg, transparent, rgba(255,255,255,.02));
-    }
-
-    .reviews-container{
-      max-width:1100px;
-      margin:0 auto;
-    }
-
-    .review-count{
-      color:var(--muted);
-    }
-
-    .reviews-trust{
-      text-align:center;
-      margin:-18px auto 28px;
-      font-size:14px;
-      color:var(--muted);
-      letter-spacing:.01em;
-    }
-    .reviews-trust .stars{color:#FFD700; margin-right:6px;}
-    .reviews-trust strong{color:var(--cyan); font-weight:700;}
-
-    .reviews-grid{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:20px;
-      max-width:1100px;
-      margin:0 auto;
-    }
-
-    .review-tile{
-      background:rgba(255,255,255,.03);
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:24px;
-      transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease;
-      display:flex;
-      flex-direction:column;
-    }
-    .review-tile:hover{
-      transform:translateY(-4px);
-      border-color:rgba(6,214,224,.35);
-      box-shadow:0 12px 30px rgba(6,214,224,.08);
-    }
-    .review-tile .stars{color:#FFD700; font-size:18px; letter-spacing:1px; margin-bottom:10px;}
-    .review-tile h4{font-size:16px; font-weight:700; color:var(--ink); margin-bottom:10px;}
-    .review-tile .quote{font-size:14px; line-height:1.6; color:#cbd5e1; font-style:italic; margin-bottom:14px;}
-    .review-tile .who{font-size:13px; color:var(--muted); opacity:.8; margin-top:auto;}
-
-    @media (max-width: 980px){
-      .reviews-grid{grid-template-columns:1fr; max-width:520px;}
-    }
-
-    /* Compete Mode spotlight section */
-    .compete-spotlight{
-      padding:80px 0;
-      position:relative;
-      overflow:hidden;
-    }
-    .compete-spotlight::before{
-      content:"";
-      position:absolute; inset:0;
-      background:
-        radial-gradient(ellipse 600px 320px at 80% 20%, rgba(180,92,246,.18), transparent 70%),
-        radial-gradient(ellipse 500px 280px at 10% 90%, rgba(180,92,246,.10), transparent 70%);
-      pointer-events:none;
-    }
-    .compete-grid{
-      position:relative;
-      display:grid;
-      grid-template-columns:1fr 1.1fr;
-      gap:48px;
-      align-items:center;
-      max-width:1180px;
-      margin:0 auto;
-    }
-    .compete-eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:5px 14px;
-      background:linear-gradient(90deg, rgba(180,92,246,.12), rgba(6,214,224,.08));
-      border:1px solid rgba(180,92,246,.28);
-      border-radius:999px;
-      font-size:11px;
-      font-weight:700;
-      color:var(--violet);
-      text-transform:uppercase;
+      color:var(--ink-soft);
       letter-spacing:.06em;
-      margin-bottom:14px;
-    }
-    .compete-eyebrow .new-pill{
-      font-size:9px;
-      font-weight:800;
-      letter-spacing:.08em;
-      padding:2px 6px;
-      border-radius:4px;
-      background:linear-gradient(135deg, var(--violet), var(--cyan));
-      color:#05080c;
-    }
-    .compete-spotlight h2{
-      font-size:clamp(28px, 4vw, 40px);
-      font-weight:800;
-      margin-bottom:16px;
-      background:linear-gradient(120deg, #ffffff 30%, #d6b8ff);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-      letter-spacing:-.02em;
-    }
-    .compete-spotlight p.compete-lede{
-      color:var(--muted);
-      font-size:16px;
-      line-height:1.7;
-      margin-bottom:20px;
-    }
-    .compete-badges{
+      text-transform:uppercase;
       display:flex;
+      gap:14px;
       flex-wrap:wrap;
-      gap:8px;
-      margin-bottom:24px;
-    }
-    .compete-badges span{
-      display:inline-flex;
       align-items:center;
-      gap:6px;
-      padding:6px 12px;
-      background:rgba(180,92,246,.08);
-      border:1px solid rgba(180,92,246,.25);
-      border-radius:999px;
-      font-size:12px;
-      color:#e2d3ff;
-      font-weight:600;
     }
-    .compete-badges span::before{
-      content:"";
-      width:6px; height:6px; border-radius:50%;
-      background:var(--violet);
-      box-shadow:0 0 8px var(--violet);
-    }
-    .compete-spotlight .btn-primary{
-      background:linear-gradient(135deg, var(--violet), #8b3fe0);
-    }
-    .compete-spotlight .btn-primary:hover{
-      box-shadow:0 12px 30px rgba(180,92,246,.35);
-    }
-    /* Compete visual: two stacked phones */
-    .compete-visual{
+    .hero-meta strong{color:var(--ink); font-weight:700;}
+    .hero-meta .sep{color:var(--muted);}
+    .hero-meta .star{color:var(--amber); margin-right:2px;}
+    .hero-meta .green{color:var(--green);}
+
+    /* ========================================
+       PHONE SLOT
+       Placeholder for the simulator screenshot.
+       Replace the inner <div class="screen-placeholder"> with an <img>
+       once Claude Desktop captures real screens.
+       ======================================== */
+    .phone-slot{
       position:relative;
-      margin:0;
-      border-radius:24px;
-      overflow:hidden;
-      border:1px solid rgba(180,92,246,.28);
+      justify-self:end;
+      width:min(340px, 100%);
+    }
+    .phone-frame{
+      position:relative;
+      width:100%;
+      aspect-ratio: 9/19.5;
+      background:var(--bg);
+      border-radius:42px;
+      border:1px solid var(--line-2);
       box-shadow:
-        0 40px 90px -20px rgba(180,92,246,.35),
-        0 20px 60px -15px rgba(6,214,224,.12),
-        0 0 0 1px rgba(255,255,255,.04) inset;
-      aspect-ratio: 3 / 2;
-      background:#05080c;
-      transform:rotate(-1deg);
-      transition:transform .5s cubic-bezier(.16,1,.3,1);
+        0 60px 120px -20px rgba(255,176,0,.14),
+        inset 0 0 0 1px rgba(255,255,255,.04);
+      overflow:hidden;
     }
-    .compete-visual:hover{
-      transform:rotate(0deg) translateY(-4px);
-    }
-    .compete-visual picture,
-    .compete-visual img{
+    .phone-frame img{
       display:block;
       width:100%;
       height:100%;
       object-fit:cover;
-      object-position:center 38%;
+      object-position:center top;
     }
-    .compete-visual::after{
-      content:"";
+    .phone-tag{
       position:absolute;
-      inset:0;
-      pointer-events:none;
-      background:
-        radial-gradient(ellipse 45% 35% at 100% 0%, rgba(180,92,246,.22), transparent 70%),
-        radial-gradient(ellipse 45% 35% at 0% 100%, rgba(6,214,224,.14), transparent 70%);
-      mix-blend-mode:screen;
-      z-index:2;
-    }
-    @media (max-width: 980px){
-      .compete-grid{grid-template-columns:1fr; gap:32px;}
-      .compete-visual{aspect-ratio: 16 / 10; max-width:560px; margin:0 auto;}
+      top:0; right:0;
+      background:var(--amber);
+      color:var(--bg);
+      font-family:var(--mono);
+      font-size:11.5px;
+      font-weight:700;
+      letter-spacing:.14em;
+      padding:6px 12px;
+      z-index:3;
+      text-transform:uppercase;
     }
 
-    /* Founder pill + avatar */
-    .founder-pill{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      padding:5px 14px;
-      background:rgba(245,158,11,.10);
-      border:1px solid rgba(245,158,11,.28);
-      border-radius:999px;
-      font-size:11px;
-      font-weight:700;
-      color:var(--warning);
-      text-transform:uppercase;
-      letter-spacing:.06em;
-      margin-bottom:14px;
+    /* Empty screen slot — diagonal hatch, no label */
+    .screen-placeholder{
+      width:100%;
+      height:100%;
+      background:
+        repeating-linear-gradient(45deg, rgba(255,176,0,.04) 0 12px, transparent 12px 24px),
+        #0a0a0c;
     }
-    .founder-attr{
+
+    .phone-corners{
+      position:absolute;
+      inset:-14px;
+      pointer-events:none;
+    }
+    .phone-corners::before, .phone-corners::after,
+    .phone-corners > span{
+      position:absolute;
+      width:18px; height:18px;
+      border:2px solid var(--amber);
+      content:"";
+    }
+    .phone-corners::before{top:0; left:0; border-right:none; border-bottom:none;}
+    .phone-corners::after{top:0; right:0; border-left:none; border-bottom:none;}
+    .phone-corners .c3{bottom:0; left:0; border-right:none; border-top:none;}
+    .phone-corners .c4{bottom:0; right:0; border-left:none; border-top:none;}
+
+    /* ========================================
+       SECTIONS
+       ======================================== */
+    .section{
+      padding:96px 0;
+      border-bottom:1px solid var(--line);
+      position:relative;
+    }
+    .section-header{
+      display:grid;
+      grid-template-columns:160px 1fr;
+      gap:40px;
+      margin-bottom:60px;
+      align-items:start;
+    }
+    .section-tag{
+      font-family:var(--mono);
+      font-size:14px;
+      font-weight:700;
+      color:var(--amber);
+      letter-spacing:.18em;
+      padding-top:14px;
+      text-transform:uppercase;
+    }
+    .section-tag::before{
+      content:""; display:inline-block;
+      width:24px; height:1px;
+      background:var(--amber);
+      margin-right:12px;
+      vertical-align:middle;
+    }
+
+    h2{
+      font-family:var(--mono);
+      font-size:clamp(28px, 3.6vw, 44px);
+      font-weight:700;
+      letter-spacing:-.024em;
+      line-height:1.06;
+      color:var(--ink);
+      text-transform:uppercase;
+      max-width:22ch;
+    }
+    h2 .highlight{
+      background:var(--amber);
+      color:var(--bg);
+      padding:0 .14em;
+      display:inline-block;
+    }
+
+    .section-subtitle{
+      font-family:var(--sans);
+      font-size:17px;
+      line-height:1.55;
+      color:var(--ink-soft);
+      max-width:54ch;
+      margin-top:18px;
+    }
+
+    /* ========================================
+       WEDGE — three numbered theses
+       ======================================== */
+    .wedge-list{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:0;
+      border-top:1px solid var(--line-2);
+    }
+    .wedge-item{
+      border-bottom:1px solid var(--line-2);
+      border-right:1px solid var(--line-2);
+      padding:36px 32px 40px;
+      position:relative;
+      transition:background .25s;
+    }
+    .wedge-item:last-child{border-right:none;}
+    .wedge-item:hover{background:rgba(255,176,0,.02);}
+    .wedge-num{
+      font-family:var(--mono);
+      font-size:14px;
+      font-weight:700;
+      color:var(--amber);
+      letter-spacing:.18em;
+      margin-bottom:18px;
       display:flex;
       align-items:center;
-      gap:12px;
-      margin-top:20px;
+      gap:10px;
     }
-    .founder-avatar{
-      width:40px; height:40px; border-radius:50%;
-      background:linear-gradient(135deg, var(--cyan), #4be9ef);
-      color:#05080c;
-      display:flex; align-items:center; justify-content:center;
-      font-weight:800; font-size:18px;
+    .wedge-num::before{
+      content:"";
+      width:10px; height:10px;
+      border:1.5px solid var(--amber);
+      border-radius:50%;
+    }
+    .wedge-item h3{
+      font-family:var(--mono);
+      font-size:18px;
+      font-weight:700;
+      line-height:1.3;
+      color:var(--ink);
+      margin-bottom:14px;
+      text-transform:uppercase;
+      letter-spacing:-.005em;
+    }
+    .wedge-item p{
+      font-family:var(--sans);
+      font-size:14.5px;
+      line-height:1.65;
+      color:var(--ink-soft);
+    }
+
+    /* ========================================
+       APP — phone showcase grid
+       ======================================== */
+    .app-shots{
+      display:grid;
+      grid-template-columns:repeat(6, 1fr);
+      gap:18px;
+    }
+    .shot-cell{position:relative; margin:0;}
+    .shot-frame{
+      position:relative;
+      aspect-ratio: 9/19.5;
+      background:var(--bg);
+      border:1px solid var(--line-2);
+      overflow:hidden;
+      transition:border-color .25s, transform .25s;
+    }
+    .shot-cell:hover .shot-frame{
+      border-color:var(--amber);
+      transform:translateY(-3px);
+    }
+    .shot-frame img{
+      display:block; width:100%; height:100%;
+      object-fit:cover;
+      object-position:center top;
+    }
+    /* Subtle stagger: only middle cells, never first/last, so the row reads as a CAD strip */
+    .shot-cell:not(:first-child):not(:last-child):nth-child(odd) .shot-frame{transform:translateY(12px);}
+    .shot-cell:not(:first-child):not(:last-child):nth-child(odd):hover .shot-frame{transform:translateY(9px);}
+
+    /* ========================================
+       COMPETE
+       ======================================== */
+    .compete-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+      align-items:center;
+    }
+    .compete-copy h2{margin-bottom:24px;}
+    .compete-copy > p{
+      font-family:var(--sans);
+      font-size:16px;
+      color:var(--ink-soft);
+      line-height:1.65;
+      margin-bottom:28px;
+      max-width:50ch;
+    }
+    .compete-list{
+      list-style:none;
+      font-family:var(--mono);
+      font-size:14px;
+      color:var(--ink);
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      margin-bottom:32px;
+    }
+    .compete-list li{
+      padding:16px 0;
+      border-top:1px solid var(--line-2);
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+    .compete-list li:last-child{border-bottom:1px solid var(--line-2);}
+    .compete-list li::before{
+      content:"+";
+      color:var(--amber);
+      font-weight:700;
       flex-shrink:0;
     }
-    .founder-attr .meta{display:flex; flex-direction:column; line-height:1.3;}
-    .founder-attr .meta .name{color:var(--cyan); font-weight:700; font-size:15px;}
-    .founder-attr .meta .role{color:var(--muted); font-size:12px;}
 
-    /* Accessible focus ring */
-    :focus-visible{
-      outline:2px solid var(--cyan);
-      outline-offset:3px;
-      border-radius:8px;
+    .compete-photo{
+      position:relative;
+      aspect-ratio: 4/3;
+      overflow:hidden;
+      border:1px solid var(--line-2);
     }
-    .btn-primary:focus-visible{
-      outline-color:#fff;
-      outline-offset:4px;
+    .compete-photo img{
+      display:block; width:100%; height:100%; object-fit:cover;
+      filter:saturate(.85) contrast(1.05);
     }
-    .compete-spotlight .btn-primary:focus-visible{
-      outline-color:var(--violet);
+    .compete-photo::after{
+      content:"";
+      position:absolute; inset:0;
+      background:linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,.65));
+      pointer-events:none;
     }
-    /* Suppress focus ring for mouse users */
-    :focus:not(:focus-visible){outline:none;}
-
-    .reviews-list{
-      display:grid;
-      gap:20px;
-    }
-
-    .review-card{
-      background:rgba(255,255,255,.02);
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:24px;
-      transition:all .3s;
-      opacity:0;
-      animation:slideIn .5s ease forwards;
-    }
-
-    .review-card:nth-child(1){animation-delay:.1s;}
-    .review-card:nth-child(2){animation-delay:.2s;}
-    .review-card:nth-child(3){animation-delay:.3s;}
-    .review-card:nth-child(4){animation-delay:.4s;}
-    .review-card:nth-child(5){animation-delay:.5s;}
-
-    @keyframes slideIn{
-      from{
-        opacity:0;
-        transform:translateX(-20px);
-      }
-      to{
-        opacity:1;
-        transform:translateX(0);
-      }
-    }
-
-    .review-header{
+    .compete-photo-stamp{
+      position:absolute;
+      bottom:18px; left:18px;
+      font-family:var(--mono);
+      font-size:13px;
+      font-weight:700;
+      color:var(--amber);
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      z-index:2;
       display:flex;
-      justify-content:space-between;
       align-items:center;
-      margin-bottom:12px;
+      gap:9px;
+    }
+    .compete-photo-stamp::before{
+      content:""; width:7px; height:7px; border-radius:50%;
+      background:var(--green);
+      box-shadow:0 0 8px var(--green);
+      animation:greenBlink 2s infinite;
     }
 
-    .review-author{
-      font-weight:600;
-    }
-
-    .review-rating-stars{
-      color:var(--warning);
-    }
-
-    .review-text{
-      color:#e2e8f0;
-      line-height:1.7;
-      font-style:italic;
-    }
-
-    .review-date{
-      font-size:12px;
-      color:var(--muted);
-      margin-top:8px;
-    }
-
-    /* Trust Section */
-    .trust{
-      padding:60px 0;
-    }
-
-    .trust-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
-      gap:24px;
-      margin-top:32px;
+    /* ========================================
+       FOUNDER PULL
+       ======================================== */
+    .founder{
       text-align:center;
+      padding:140px 0;
+      border-bottom:1px solid var(--line);
+    }
+    .founder blockquote{
+      font-family:var(--sans);
+      font-size:clamp(22px, 2.6vw, 32px);
+      line-height:1.45;
+      letter-spacing:-.014em;
+      color:var(--ink);
+      max-width:32em;
+      margin:0 auto 36px;
+      font-weight:500;
+    }
+    .founder-cite{
+      font-family:var(--mono);
+      font-size:14px;
+      color:var(--amber);
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      display:inline-flex;
+      align-items:center;
+      gap:14px;
+    }
+    .founder-cite::before{
+      content:""; display:inline-block;
+      width:32px; height:1px;
+      background:var(--amber);
     }
 
-    .trust-item{
-      opacity:0;
-      animation:fadeIn .5s ease forwards;
-    }
-
-    .trust-item:nth-child(1){animation-delay:.1s;}
-    .trust-item:nth-child(2){animation-delay:.2s;}
-    .trust-item:nth-child(3){animation-delay:.3s;}
-    .trust-item:nth-child(4){animation-delay:.4s;}
-
-    @keyframes fadeIn{
-      to{opacity:1;}
-    }
-
-
-    /* FAQ/How it Works */
-    .how{
-      padding:60px 0;
-      background:linear-gradient(180deg, transparent, rgba(255,255,255,.02));
-    }
-
-    .faq-list{
-      max-width:700px;
+    /* ========================================
+       REVIEWS — rotating carousel
+       ======================================== */
+    .reviews-stage{
+      position:relative;
+      max-width:760px;
       margin:0 auto;
-      margin-top:32px;
+      border:1px solid var(--line-2);
+      padding:48px 56px 44px;
+      min-height:280px;
     }
-
-    details{
-      background:rgba(255,255,255,.02);
-      border:1px solid var(--line);
-      border-left:2px solid rgba(34,211,238,.3);
-      border-radius:16px;
-      padding:20px;
-      margin-bottom:16px;
-      transition:all .3s;
+    .reviews-track{
+      position:relative;
     }
-
-    details[open]{
-      background:rgba(255,255,255,.04);
-      border-color:rgba(34,211,238,.2);
-      border-left-color:var(--cyan);
+    .review{
+      position:absolute;
+      inset:0;
+      opacity:0;
+      transform:translateY(8px);
+      transition:opacity .5s cubic-bezier(.25,1,.3,1), transform .5s cubic-bezier(.25,1,.3,1);
+      pointer-events:none;
     }
-
-    summary{
-      cursor:pointer;
-      font-weight:600;
+    .review.is-active{
+      opacity:1;
+      transform:translateY(0);
+      pointer-events:auto;
+      position:relative;
+    }
+    .review-stars{
+      color:var(--amber);
       font-size:18px;
-      list-style:none;
+      letter-spacing:3px;
+      margin-bottom:18px;
+    }
+    .review-title{
+      font-family:var(--mono);
+      font-size:17px;
+      font-weight:700;
+      color:var(--ink);
+      margin-bottom:14px;
+      text-transform:uppercase;
+      letter-spacing:.02em;
+    }
+    .review-quote{
+      font-family:var(--sans);
+      font-size:18px;
+      line-height:1.55;
+      color:var(--ink);
+      margin-bottom:24px;
+      max-width:55ch;
+    }
+    .review-author{
+      font-family:var(--mono);
+      font-size:13px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+    .review-author::before{
+      content:"//";
+      color:var(--amber);
+      margin-right:8px;
+      letter-spacing:0;
+    }
+
+    /* Carousel controls */
+    .reviews-nav{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      width:36px; height:36px;
+      background:transparent;
+      border:1px solid var(--line-2);
+      color:var(--ink-soft);
+      cursor:pointer;
       display:flex;
       align-items:center;
+      justify-content:center;
+      font-family:var(--mono);
+      font-size:18px;
+      font-weight:400;
+      transition:all .15s ease;
+      z-index:2;
+    }
+    .reviews-nav:hover{
+      border-color:var(--amber);
+      color:var(--amber);
+    }
+    .reviews-prev{left:-18px;}
+    .reviews-next{right:-18px;}
+
+    .reviews-progress{
+      display:flex;
+      gap:6px;
+      justify-content:center;
+      margin-top:32px;
+    }
+    .reviews-progress button{
+      flex:0 0 auto;
+      width:28px;
+      height:2px;
+      background:var(--line-2);
+      border:none;
+      padding:0;
+      cursor:pointer;
+      position:relative;
+      overflow:hidden;
+      transition:background .2s;
+    }
+    .reviews-progress button:hover{background:var(--ink-soft);}
+    .reviews-progress button .bar{
+      position:absolute;
+      inset:0;
+      background:var(--amber);
+      transform:scaleX(0);
+      transform-origin:left;
+    }
+    .reviews-progress button.is-active .bar{
+      animation:reviewBar 6s linear forwards;
+    }
+    @keyframes reviewBar{
+      from{transform:scaleX(0);}
+      to{transform:scaleX(1);}
+    }
+    .reviews-stage.is-paused .reviews-progress button.is-active .bar{
+      animation-play-state:paused;
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .review{transition:none;}
+      .reviews-progress button.is-active .bar{animation:none; transform:scaleX(.4);}
+    }
+
+    @media (max-width:560px){
+      .reviews-stage{padding:36px 28px 36px; min-height:320px;}
+      .reviews-nav{display:none;}
+    }
+    .reviews-trust{
+      font-family:var(--mono);
+      font-size:14px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--ink-soft);
+      margin-bottom:32px;
+      display:flex;
+      gap:14px;
+      align-items:center;
+    }
+    .reviews-trust .star{color:var(--amber); font-size:14px;}
+    .reviews-trust strong{color:var(--ink);}
+
+    /* ========================================
+       FAQ
+       ======================================== */
+    .faq-list{max-width:780px; margin:0 auto;}
+    .faq-list details{
+      border-bottom:1px solid var(--line-2);
+      padding:24px 0;
+    }
+    .faq-list details:first-child{border-top:1px solid var(--line-2);}
+    .faq-list details summary{
+      cursor:pointer;
+      list-style:none;
+      font-family:var(--mono);
+      font-size:14px;
+      font-weight:700;
+      color:var(--ink);
+      text-transform:uppercase;
+      letter-spacing:.02em;
+      display:flex;
       justify-content:space-between;
+      align-items:center;
+      gap:24px;
     }
-
-    summary::-webkit-details-marker{display:none;}
-
-    summary::after{
+    .faq-list summary::-webkit-details-marker{display:none;}
+    .faq-list summary::after{
       content:"+";
-      font-size:24px;
-      color:var(--cyan);
-      transition:transform .3s;
+      color:var(--amber);
+      font-weight:700;
+      font-size:18px;
+      transition:transform .25s ease;
+      flex-shrink:0;
     }
-
-    details[open] summary::after{
-      transform:rotate(45deg);
-    }
-
-    .faq-content{
+    .faq-list details[open] summary::after{transform:rotate(45deg);}
+    .faq-list details p{
       margin-top:16px;
-      color:var(--muted);
-      line-height:1.8;
+      font-family:var(--sans);
+      font-size:15px;
+      color:var(--ink-soft);
+      line-height:1.65;
+      max-width:60ch;
     }
-
-    .android-cta{
+    .faq-list .android-cta{
       display:inline-flex;
       align-items:center;
       gap:10px;
-      margin-top:18px;
+      margin-top:16px;
       padding:11px 18px;
-      border-radius:12px;
-      background:linear-gradient(135deg, rgba(61,220,132,.10), rgba(6,214,224,.06));
-      border:1px solid rgba(61,220,132,.32);
-      color:#a7f0c2;
-      font-size:14px;
-      font-weight:600;
-      font-family:inherit;
-      letter-spacing:-.005em;
+      border:1px solid var(--line-2);
+      background:transparent;
+      color:var(--amber);
+      font-family:var(--mono);
+      font-size:13.5px;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
       cursor:pointer;
-      transition:transform .15s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease;
-      text-align:left;
+      transition:all .15s;
     }
-
-    .android-cta:hover{
-      transform:translateY(-1px);
-      border-color:rgba(61,220,132,.55);
-      box-shadow:0 10px 24px -10px rgba(61,220,132,.4);
-      background:linear-gradient(135deg, rgba(61,220,132,.16), rgba(6,214,224,.08));
+    .faq-list .android-cta:hover{
+      background:var(--amber);
+      color:var(--bg);
+      border-color:var(--amber);
     }
-
-    .android-cta svg{
-      width:20px; height:20px;
-      flex:0 0 20px;
-      color:#3ddc84;
-    }
-
-    .android-cta.tapped{
-      background:rgba(61,220,132,.12);
-      border-color:rgba(61,220,132,.45);
-      color:#c8f7d8;
+    .faq-list .android-cta.tapped{
+      opacity:.6;
       pointer-events:none;
     }
-
-    /* Final CTA */
-    .final-cta{
-      padding:80px 0;
-      text-align:center;
-      position:relative;
+    .faq-list .android-cta svg{
+      width:14px; height:14px;
+      flex:0 0 14px;
     }
 
-    .final-cta::before{
+    /* ========================================
+       FINAL CTA
+       ======================================== */
+    .final{
+      padding:140px 0;
+      text-align:center;
+      background:var(--bg);
+      border-bottom:1px solid var(--line);
+      position:relative;
+      overflow:hidden;
+    }
+    .final::before{
       content:"";
       position:absolute;
-      inset:0;
-      background:
-        radial-gradient(ellipse 500px 250px at 50% 50%, rgba(34,211,238,.1), transparent),
-        radial-gradient(ellipse 300px 200px at 40% 40%, rgba(168,85,247,.06), transparent);
+      top:50%; left:50%;
+      width:1000px; height:600px;
+      transform:translate(-50%,-50%);
+      background:radial-gradient(ellipse, rgba(255,176,0,.18), transparent 65%);
       pointer-events:none;
     }
-
-    .final-cta::after{
-      content:""; position:absolute; inset:0; pointer-events:none; opacity:.03;
-      background-image:
-        linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
-      background-size:60px 60px;
-      mask-image:radial-gradient(ellipse 50% 50% at 50% 50%, black, transparent);
-      -webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%, black, transparent);
+    .final h2{
+      margin:0 auto 36px;
+      font-size:clamp(34px, 5.4vw, 64px);
+      max-width:18ch;
+    }
+    .final p{
+      font-family:var(--sans);
+      font-size:17px;
+      color:var(--ink-soft);
+      max-width:48ch;
+      margin:0 auto 36px;
+      line-height:1.55;
+    }
+    .final .btn-primary{
+      font-size:16px;
+      padding:22px 38px;
     }
 
-    .final-cta h2{
-      font-size:clamp(36px, 5vw, 56px);
-      font-weight:800;
-      margin-bottom:20px;
-      background:linear-gradient(180deg, #ffffff, #cbd5e1);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-
-    .final-cta p{
-      font-size:20px;
-      color:var(--muted);
-      margin-bottom:32px;
-    }
-
-    /* Footer */
-    footer{
+    /* ========================================
+       FOR AGENCY BAND
+       ======================================== */
+    .for-agency{
       padding:48px 0;
+      border-bottom:1px solid var(--line);
       border-top:1px solid var(--line);
-      background:rgba(255,255,255,.01);
     }
-
-    .footer-content{
+    .for-agency .wrap{
       display:flex;
       justify-content:space-between;
       align-items:center;
+      gap:32px;
       flex-wrap:wrap;
-      gap:24px;
     }
-
-    .footer-links{
+    .for-agency-copy{
+      flex:1;
+      min-width:280px;
+    }
+    .for-agency-tag{
+      font-family:var(--mono);
+      font-size:13px;
+      font-weight:700;
+      color:var(--amber);
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      margin-bottom:10px;
       display:flex;
-      gap:24px;
+      align-items:center;
+      gap:12px;
     }
-
-    .footer-links a{
-      color:var(--muted);
-      font-size:14px;
-      transition:color .2s;
+    .for-agency-tag::before{
+      content:""; display:inline-block;
+      width:24px; height:1px;
+      background:var(--amber);
     }
-
-    .footer-links a:hover{
+    .for-agency h3{
+      font-family:var(--mono);
+      font-size:clamp(20px, 2.4vw, 26px);
+      font-weight:700;
+      line-height:1.15;
+      letter-spacing:-.012em;
       color:var(--ink);
+      text-transform:uppercase;
     }
-
-    .footer-copy{
-      color:var(--muted);
+    .for-agency-cta{
+      font-family:var(--mono);
       font-size:14px;
+      font-weight:700;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      padding:14px 22px;
+      border:1px solid var(--amber);
+      color:var(--amber);
+      background:transparent;
+      transition:all .15s;
+      flex-shrink:0;
+    }
+    .for-agency-cta:hover{
+      background:var(--amber);
+      color:var(--bg);
+    }
+    @media (max-width:560px){
+      .for-agency .wrap{flex-direction:column; align-items:flex-start;}
+      .for-agency-cta{width:100%; text-align:center; justify-content:center;}
     }
 
-    /* Dialog */
+    /* ========================================
+       FOOTER
+       ======================================== */
+    footer{
+      padding:48px 0;
+      font-family:var(--mono);
+      font-size:12.5px;
+      color:var(--muted);
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+    footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:18px;}
+    footer a{color:var(--muted);}
+    footer a:hover{color:var(--amber);}
+
+    /* ========================================
+       MOBILE APP BANNER
+       ======================================== */
+    .app-banner{
+      display:none;
+      padding:12px 20px;
+      background:rgba(255,176,0,.10);
+      border-bottom:1px solid rgba(255,176,0,.3);
+      text-align:center;
+      font-family:var(--mono);
+      font-size:13.5px;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--amber);
+      cursor:pointer;
+    }
+
+    /* ========================================
+       CONTACT DIALOG
+       ======================================== */
     dialog{
       width:min(560px, 96vw);
-      border:1px solid var(--line);
-      border-radius:24px;
+      border:1px solid var(--line-2);
       padding:0;
-      background:var(--panel);
+      background:var(--bg-2);
       color:var(--ink);
-      backdrop-filter:blur(20px);
     }
-
     dialog::backdrop{
-      background:rgba(5,8,12,.8);
-      backdrop-filter:blur(10px);
+      background:rgba(0,0,0,.85);
+      backdrop-filter:blur(6px);
     }
-
     .dialog-header{
       display:flex;
       justify-content:space-between;
       align-items:center;
-      padding:20px 24px;
-      border-bottom:1px solid var(--line);
+      padding:18px 24px;
+      border-bottom:1px solid var(--line-2);
     }
-
     .dialog-title{
-      font-size:20px;
+      font-family:var(--mono);
+      font-size:14px;
       font-weight:700;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      color:var(--amber);
     }
-
     .dialog-close{
       background:transparent;
-      border:1px solid var(--line);
+      border:1px solid var(--line-2);
       color:var(--ink);
-      padding:6px 12px;
-      border-radius:8px;
+      padding:8px 16px;
+      font-family:var(--mono);
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
       cursor:pointer;
-      font-size:14px;
-      transition:all .2s;
+      transition:all .15s;
     }
-
     .dialog-close:hover{
-      background:rgba(255,255,255,.05);
+      border-color:var(--amber);
+      color:var(--amber);
     }
-
-    .dialog-body{
-      padding:24px;
-    }
-
-    .form-field{
-      margin-bottom:20px;
-    }
-
+    .dialog-body{padding:24px;}
+    .form-field{margin-bottom:18px;}
     .form-field label{
       display:block;
       margin-bottom:8px;
-      font-weight:500;
-      font-size:14px;
+      font-family:var(--mono);
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      color:var(--ink-soft);
     }
-
     .form-field input,
     .form-field textarea,
     .form-field select{
       width:100%;
-      padding:12px 16px;
-      background:rgba(255,255,255,.05);
-      border:1px solid var(--line);
-      border-radius:12px;
+      padding:12px 14px;
+      background:var(--bg);
+      border:1px solid var(--line-2);
       color:var(--ink);
-      font-family:inherit;
-      font-size:15px;
-      transition:all .2s;
+      font-family:var(--mono);
+      font-size:14px;
+      transition:border-color .15s;
     }
-
     .form-field input:focus,
     .form-field textarea:focus,
     .form-field select:focus{
       outline:none;
-      border-color:var(--cyan);
-      background:rgba(255,255,255,.08);
+      border-color:var(--amber);
     }
-
     .form-field textarea{
       min-height:120px;
       resize:vertical;
     }
-
     .form-actions{
       display:flex;
       gap:12px;
@@ -1761,1194 +1257,437 @@
       margin-top:24px;
     }
 
-    /* Mobile App Banner */
-    .app-banner{
-      display:none;
-      padding:12px 20px;
-      background:linear-gradient(135deg, rgba(34,211,238,.1), rgba(168,85,247,.1));
-      border-bottom:1px solid rgba(34,211,238,.3);
-      text-align:center;
-      font-size:14px;
+    /* ========================================
+       FOCUS / A11y
+       ======================================== */
+    :focus-visible{
+      outline:2px solid var(--amber);
+      outline-offset:3px;
     }
+    :focus:not(:focus-visible){outline:none;}
 
-    /* Scroll animations - one-shot, no re-trigger */
+    /* ========================================
+       FADE-UP
+       ======================================== */
     .fade-up{
       opacity:0;
-      transform:translateY(30px);
-      transition:opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1);
+      transform:translateY(20px);
+      transition:opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1);
     }
-
     .fade-up.visible{
       opacity:1;
       transform:translateY(0);
     }
-
-    /* Floating orbs - larger, more visible, slower drift */
-    .orb{position:fixed; border-radius:50%; filter:blur(100px); pointer-events:none; z-index:0;}
-    .orb-1{width:600px; height:600px; background:rgba(6,214,224,.10); top:0%; left:-15%; animation:orbFloat1 30s ease-in-out infinite;}
-    .orb-2{width:450px; height:450px; background:rgba(180,92,246,.09); top:35%; right:-12%; animation:orbFloat2 24s ease-in-out infinite;}
-    .orb-3{width:350px; height:350px; background:rgba(6,214,224,.07); bottom:5%; left:20%; animation:orbFloat3 28s ease-in-out infinite;}
-    .orb-4{width:300px; height:300px; background:rgba(180,92,246,.06); top:60%; left:40%; animation:orbFloat4 32s ease-in-out infinite;}
-    @keyframes orbFloat1{0%,100%{transform:translate(0,0) scale(1);}25%{transform:translate(60px,-40px) scale(1.05);}50%{transform:translate(20px,50px) scale(.95);}75%{transform:translate(-40px,10px) scale(1.02);}}
-    @keyframes orbFloat2{0%,100%{transform:translate(0,0) scale(1);}25%{transform:translate(-50px,30px) scale(1.03);}50%{transform:translate(30px,-40px) scale(.97);}75%{transform:translate(-20px,-20px) scale(1.05);}}
-    @keyframes orbFloat3{0%,100%{transform:translate(0,0) scale(1);}33%{transform:translate(30px,40px) scale(1.04);}66%{transform:translate(-40px,-20px) scale(.96);}}
-    @keyframes orbFloat4{0%,100%{transform:translate(0,0) scale(1);}33%{transform:translate(-35px,-30px) scale(1.06);}66%{transform:translate(25px,35px) scale(.94);}}
-
-    /* Logo pulse */
-    @keyframes logoPulse{
-      0%,100%{box-shadow:0 12px 48px rgba(0,200,255,0.35), 0 0 80px rgba(34,211,238,0.15);}
-      50%{box-shadow:0 16px 56px rgba(0,200,255,0.5), 0 0 120px rgba(34,211,238,0.25), 0 0 180px rgba(168,85,247,0.08);}
+    @media (prefers-reduced-motion: reduce){
+      .fade-up{opacity:1; transform:none; transition:none;}
+      .siren-dot, .brand-name::before, .compete-photo-stamp::before{animation:none;}
     }
 
-    /* Product showcase */
-    .showcase{padding:60px 0; position:relative;}
-    .showcase::before{content:""; position:absolute; inset:0; pointer-events:none; background:radial-gradient(ellipse 600px 300px at 50% 50%, rgba(34,211,238,.05), transparent);}
-    .sc-grid{display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-top:48px;}
-    .sc-card{
-      background:rgba(255,255,255,.025); border:1px solid var(--line); border-radius:16px; overflow:hidden;
-      box-shadow:0 16px 60px rgba(0,0,0,.25), 0 0 40px rgba(34,211,238,.04);
-      transition:all .3s;
+    /* ========================================
+       RESPONSIVE
+       ======================================== */
+    @media (max-width:980px){
+      .hero{padding:120px 0 70px;}
+      .hero-grid{grid-template-columns:1fr; gap:60px;}
+      .phone-slot{justify-self:center; max-width:300px;}
+      .section{padding:72px 0;}
+      .section-header{grid-template-columns:1fr; gap:14px;}
+      .section-tag{padding-top:0;}
+      .wedge-list{grid-template-columns:1fr; border-top:1px solid var(--line-2);}
+      .wedge-item{border-right:none;}
+      .app-shots{grid-template-columns:repeat(3, 1fr); gap:14px;}
+      .compete-grid{grid-template-columns:1fr; gap:32px;}
+      .reviews-stage{padding:40px 32px;}
+      .founder{padding:96px 0;}
+      .final{padding:96px 0;}
     }
-    .sc-card:hover{transform:translateY(-4px); box-shadow:0 24px 80px rgba(0,0,0,.3), 0 0 60px rgba(34,211,238,.08);}
-    .sc-head{padding:14px 20px; border-bottom:1px solid var(--line); display:flex; justify-content:space-between; align-items:center;}
-    .sc-head span{font-size:13px; font-weight:700;}
-    .sc-ring{width:36px; height:36px; border-radius:50%; border:3px solid var(--line); border-top-color:var(--cyan); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:var(--cyan);}
-    .sc-badge{display:inline-block; padding:3px 10px; border-radius:6px; font-size:11px; font-weight:700; background:rgba(245,158,11,.12); color:var(--warning);}
-    .sc-body{padding:20px;}
-    .sc-q{font-size:15px; font-weight:600; line-height:1.5; margin-bottom:16px;}
-    .sc-opts{display:flex; flex-direction:column; gap:8px;}
-    .sc-opt{padding:12px 16px; border-radius:10px; font-size:13px; border:1px solid var(--line); background:rgba(255,255,255,.02);}
-    .sc-opt.ok{border-color:var(--success); background:rgba(16,185,129,.08); color:var(--success);}
-    .sc-opt.no{border-color:#ef4444; background:rgba(239,68,68,.06); color:#ef4444; opacity:.5;}
-    .sc-cite{padding:12px 20px; border-top:1px solid var(--line); font-size:12px; color:var(--muted);}
-    .sc-cite strong{color:var(--cyan);}
-    .sc-vitals{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-bottom:16px;}
-    .sc-vital{background:rgba(255,255,255,.03); border:1px solid var(--line); border-radius:8px; padding:8px; text-align:center;}
-    .sc-vval{font-size:16px; font-weight:800; color:var(--cyan);}
-    .sc-vlbl{font-size:10px; color:var(--muted); text-transform:uppercase; letter-spacing:.03em;}
-    .sc-text{font-size:14px; line-height:1.6; color:var(--muted); margin-bottom:16px;}
-    .sc-prompt{font-size:14px; font-weight:600; margin-bottom:12px;}
-    .sc-sopt{padding:10px 14px; border-radius:8px; font-size:12px; font-weight:500; border:1px solid var(--line); background:rgba(255,255,255,.02); margin-bottom:6px;}
-    .sc-sopt.picked{border-color:var(--cyan); background:rgba(34,211,238,.08); color:var(--cyan);}
-
-    /* Responsive */
-    @media (max-width:768px){
-      .hero{
-        padding:120px 0 60px;
-        min-height:auto;
-      }
-
-      .brand-link{
-        font-size:16px;
-        gap:8px;
-      }
-
-      .brand-link img{
-        width:36px;
-        height:36px;
-      }
-
-      .nav-links{
-        gap:8px;
-      }
-
-      .nav-btn{
-        font-size:12px;
-        padding:6px 10px;
-      }
-
-      h1{
-        font-size:clamp(36px, 10vw, 56px);
-      }
-
-      .hero-stats{
-        flex-direction:column;
-        gap:12px;
-      }
-
-      .pricing-cards{
-        grid-template-columns:1fr;
-      }
-
-      .pricing-split{
-        grid-template-columns:1fr;
-        gap:28px;
-        padding:28px 22px;
-      }
-
-      .pricing-checklist{
-        grid-template-columns:1fr;
-        gap:12px;
-      }
-
-      .pricing-cta-row{
-        flex-direction:column;
-        align-items:stretch;
-        gap:12px;
-      }
-
-      .pricing-cta-row .btn-primary{
-        justify-content:center;
-        width:100%;
-      }
-
-      .pricing-cta-note{text-align:center;}
-
-      .features-grid{
-        grid-template-columns:1fr;
-      }
-
-      .trust-grid{
-        grid-template-columns:repeat(2, 1fr);
-      }
-
-      .footer-content{
-        flex-direction:column;
-        text-align:center;
-      }
-
-      .footer-links{
-        flex-direction:column;
-        gap:12px;
-      }
-
-      .app-banner{
-        display:block;
-      }
-
-      .sc-grid{grid-template-columns:1fr;}
-      .orb{display:none;}
-    }
-
-    /* Loading animation for reviews */
-    .loading{
-      display:inline-block;
-      width:20px;
-      height:20px;
-      border:2px solid rgba(34,211,238,.2);
-      border-top-color:var(--cyan);
-      border-radius:50%;
-      animation:spin 1s linear infinite;
-    }
-
-    @keyframes spin{
-      to{transform:rotate(360deg);}
-    }
-
-    /* ---------- Hero v2: split with phone mockup ---------- */
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap:56px;
-      align-items:center;
-      width:100%;
-    }
-
-    .hero-copy{
-      max-width:560px;
-    }
-
-    .hero-copy h1{
-      font-size:clamp(38px, 5.4vw, 60px);
-      font-weight:800;
-      line-height:1.04;
-      letter-spacing:-.025em;
-      margin-bottom:18px;
-    }
-
-    .hero-copy .hero-subtitle{
-      font-size:clamp(15px, 1.6vw, 18px);
-      margin-bottom:14px;
-    }
-
-    .hero-copy .hero-description{
-      max-width:540px;
-      margin-bottom:28px;
-      font-size:clamp(15px, 1.4vw, 17px);
-      line-height:1.65;
-      color:#b4becd;
-    }
-
-    .hero-cta-row{
-      display:flex;
-      flex-wrap:wrap;
-      align-items:center;
-      gap:16px;
-      margin-bottom:18px;
-    }
-
-    .hero-cta-row .btn-primary{
-      padding:16px 30px;
-      font-size:16px;
-    }
-
-    .hero-microcopy{
-      font-size:13px;
-      color:var(--muted);
-      letter-spacing:.01em;
-    }
-
-    .hero-microcopy .dot{
-      display:inline-block;
-      width:3px; height:3px;
-      border-radius:50%;
-      background:var(--muted);
-      margin:0 8px;
-      vertical-align:middle;
-    }
-
-    /* Phone mockup */
-    .hero-mock{
-      position:relative;
-      justify-self:end;
-      width:min(340px, 100%);
-      aspect-ratio: 9 / 18.5;
-      perspective:1400px;
-    }
-
-    .hero-mock::before{
-      content:"";
-      position:absolute;
-      inset:-220px -260px -160px -260px;
-      background:
-        radial-gradient(ellipse 50% 35% at 50% 28%, rgba(239,68,68,.55), rgba(239,68,68,.18) 35%, transparent 70%),
-        radial-gradient(ellipse 65% 55% at 50% 78%, rgba(180,92,246,.14), transparent 70%);
-      filter:blur(40px);
-      pointer-events:none;
-      z-index:0;
-      animation:heroSirenBleed 1.4s ease-in-out infinite;
-    }
-
-    @keyframes heroSirenBleed{
-      0%,100%{opacity:.78; transform:scale(.97);}
-      50%{opacity:1; transform:scale(1.04);}
-    }
-
-    .hero-mock::after{
-      content:"";
-      position:absolute;
-      inset:-100px -120px -80px -120px;
-      background:radial-gradient(ellipse 38% 28% at 50% 26%, rgba(239,68,68,.85), rgba(239,68,68,.25) 35%, transparent 70%);
-      filter:blur(20px);
-      pointer-events:none;
-      z-index:0;
-      mix-blend-mode:screen;
-      animation:heroSirenCore 1.4s ease-in-out infinite;
-    }
-
-    @keyframes heroSirenCore{
-      0%,100%{opacity:.45;}
-      50%{opacity:.85;}
-    }
-
-    .phone{
-      position:relative;
-      z-index:1;
-      width:100%;
-      height:100%;
-      background:#0a0f15;
-      border-radius:46px;
-      border:1px solid rgba(255,255,255,.1);
-      box-shadow:
-        0 60px 120px -30px rgba(6,214,224,.22),
-        0 30px 80px -20px rgba(180,92,246,.16),
-        0 0 0 7px rgba(255,255,255,.025),
-        inset 0 0 0 1px rgba(255,255,255,.05);
-      overflow:hidden;
-      transform:rotateY(-7deg) rotateX(3deg);
-      animation:phoneFloat 9s ease-in-out infinite;
-      transform-origin:center;
-    }
-
-    @keyframes phoneFloat{
-      0%,100%{transform:rotateY(-7deg) rotateX(3deg) translateY(0);}
-      50%{transform:rotateY(-6deg) rotateX(3.5deg) translateY(-10px);}
-    }
-
-    .phone-notch{
-      position:absolute;
-      top:10px;
-      left:50%;
-      transform:translateX(-50%);
-      width:104px;
-      height:26px;
-      background:#000;
-      border-radius:14px;
-      z-index:3;
-    }
-
-    .phone-screen{
-      position:absolute;
-      inset:6px;
-      background:#000;
-      border-radius:36px;
-      padding:46px 16px 16px;
-      overflow:hidden;
-      display:flex;
-      flex-direction:column;
-    }
-
-    .phone-quiz-top{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:0 4px;
-      margin-bottom:10px;
-    }
-
-    .phone-quiz-counter{
-      font-size:11px;
-      font-weight:600;
-      color:#9aa3af;
-      letter-spacing:.01em;
-    }
-
-    .phone-quiz-score{
-      display:inline-flex;
-      align-items:center;
-      gap:4px;
-      padding:3px 9px 3px 7px;
-      border-radius:999px;
-      background:#15191f;
-      font-size:10px;
-      font-weight:600;
-      color:#cfd5dd;
-    }
-
-    .phone-quiz-score svg{
-      width:10px; height:10px;
-      stroke:#22c55e;
-      stroke-width:3;
-      fill:none;
-      stroke-linecap:round;
-      stroke-linejoin:round;
-    }
-
-    .phone-progress-dots{
-      display:flex;
-      justify-content:center;
-      gap:6px;
-      margin-bottom:14px;
-    }
-
-    .phone-progress-dots span{
-      width:5px; height:5px;
-      border-radius:50%;
-      background:#2a2f37;
-    }
-
-    .phone-progress-dots span.active{
-      background:#0a84ff;
-      box-shadow:0 0 8px rgba(10,132,255,.5);
-    }
-
-    .phone-card{
-      background:#0e1218;
-      border:1px solid rgba(255,255,255,.07);
-      border-radius:16px;
-      padding:18px 16px;
-      margin-bottom:14px;
-    }
-
-    .phone-card .question{
-      font-size:14px;
-      font-weight:600;
-      line-height:1.35;
-      color:#f1f3f6;
-      letter-spacing:-.005em;
-    }
-
-    .phone-card .question strong{
-      font-weight:700;
-      color:#ffffff;
-      letter-spacing:.01em;
-    }
-
-    .phone-opts{
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-      margin-bottom:14px;
-    }
-
-    .phone-opt{
-      padding:11px 14px;
-      border-radius:12px;
-      font-size:12.5px;
-      font-weight:500;
-      color:#dfe3ea;
-      background:#15191f;
-      border:1px solid transparent;
-      text-align:left;
-    }
-
-    .phone-opt.selected{
-      background:#15191f;
-      border-color:rgba(10,132,255,.55);
-      box-shadow:0 0 0 2px rgba(10,132,255,.12);
-      color:#ffffff;
-    }
-
-    .phone-submit{
-      display:block;
-      width:100%;
-      padding:11px 14px;
-      border-radius:14px;
-      background:#0a84ff;
-      color:#fff;
-      font-size:13px;
-      font-weight:600;
-      text-align:center;
-      letter-spacing:.005em;
-      box-shadow:0 6px 18px -6px rgba(10,132,255,.6);
-      margin-bottom:12px;
-    }
-
-    .phone-nav{
-      display:flex;
-      justify-content:center;
-      gap:8px;
-      margin-top:auto;
-    }
-
-    .phone-nav span{
-      padding:6px 14px;
-      border-radius:999px;
-      background:#15191f;
-      font-size:10.5px;
-      font-weight:500;
-      color:#7e8794;
-      letter-spacing:.01em;
-    }
-
-    /* Dispatched-to loading screen ----------------------- */
-    .phone-screen.dispatched{
-      padding:0;
-      background:#000;
-      align-items:center;
-      justify-content:center;
-    }
-
-    .dsp-glow{
-      position:absolute;
-      top:34%;
-      left:50%;
-      width:240px; height:240px;
-      transform:translate(-50%, -50%);
-      background:radial-gradient(circle, rgba(239,68,68,.55), rgba(239,68,68,.18) 35%, transparent 65%);
-      filter:blur(2px);
-      pointer-events:none;
-      animation:dspGlowPulse 2.4s ease-in-out infinite;
-    }
-
-    @keyframes dspGlowPulse{
-      0%,100%{opacity:.78; transform:translate(-50%,-50%) scale(.96);}
-      50%{opacity:1; transform:translate(-50%,-50%) scale(1.05);}
-    }
-
-    .dsp-center{
-      position:relative;
-      z-index:1;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      text-align:center;
-      padding:0 26px;
-      width:100%;
-    }
-
-    .dsp-siren{
-      width:54px; height:54px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      margin-bottom:36px;
-      filter:drop-shadow(0 0 18px rgba(239,68,68,.85));
-      animation:sirenPulse 1.4s ease-in-out infinite;
-    }
-
-    .dsp-siren svg{width:100%; height:100%;}
-
-    .dsp-called{
-      font-size:14px;
-      font-weight:800;
-      color:#ef4444;
-      letter-spacing:.005em;
-      margin:0 0 14px 0;
-      text-shadow:0 0 12px rgba(239,68,68,.4);
-    }
-
-    .dsp-patient{
-      font-size:17px;
-      font-weight:800;
-      color:#ffffff;
-      line-height:1.25;
-      letter-spacing:-.005em;
-      margin:0 0 36px 0;
-    }
-
-    .dsp-loading{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      font-size:11.5px;
-      font-weight:500;
-      color:#9aa3af;
-      margin:0;
-    }
-
-    .dsp-spinner{
-      width:11px; height:11px;
-      border-radius:50%;
-      border:1.5px solid rgba(154,163,175,.25);
-      border-top-color:#9aa3af;
-      animation:dspSpin .9s linear infinite;
-    }
-
-    @keyframes dspSpin{
-      to{transform:rotate(360deg);}
-    }
-
-    @keyframes sirenPulse{
-      0%,100%{filter:drop-shadow(0 0 6px rgba(239,68,68,.5)); transform:scale(.96);}
-      50%{filter:drop-shadow(0 0 16px rgba(239,68,68,.95)); transform:scale(1.04);}
-    }
-
-    /* ---------- Hero stats v2: typographic strip ---------- */
-    .hero-statstrip{
-      display:flex;
-      align-items:stretch;
-      flex-wrap:wrap;
-      gap:0;
-      margin-top:28px;
-      padding:18px 0 0;
-      border-top:1px solid var(--line);
-    }
-
-    .hero-statstrip .stat{
-      flex:1 1 0;
-      min-width:0;
-      padding:0 14px;
-      border-right:1px solid var(--line);
-      display:flex;
-      flex-direction:column;
-      gap:2px;
-    }
-
-    .hero-statstrip .stat:first-child{padding-left:0;}
-    .hero-statstrip .stat:last-child{border-right:none; padding-right:0;}
-
-    .hero-statstrip .stat-value{
-      font-size:20px;
-      font-weight:800;
-      letter-spacing:-.01em;
-      color:var(--ink);
-      line-height:1.1;
-      font-variant-numeric:tabular-nums;
-    }
-
-    .hero-statstrip .stat-value .stars{
-      color:var(--warning);
-      font-size:14px;
-      margin-right:4px;
-    }
-
-    .hero-statstrip .stat-label{
-      font-size:10.5px;
-      color:var(--muted);
-      letter-spacing:.04em;
-      text-transform:uppercase;
-      font-weight:600;
-    }
-
-    /* ---------- Feature glyphs v2 ---------- */
-    .feature-card{
-      padding:24px;
-    }
-
-    .feature-glyph{
-      width:44px;
-      height:44px;
-      border-radius:12px;
-      background:linear-gradient(135deg, rgba(6,214,224,.18), rgba(180,92,246,.14));
-      border:1px solid rgba(6,214,224,.25);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      margin-bottom:14px;
-      box-shadow:inset 0 1px 0 rgba(255,255,255,.05);
-      color:var(--cyan);
-    }
-
-    .feature-glyph svg{
-      width:22px;
-      height:22px;
-      stroke:var(--cyan);
-      stroke-width:1.8;
-      fill:none;
-      stroke-linecap:round;
-      stroke-linejoin:round;
-    }
-
-    .feature-card:nth-child(even) .feature-glyph svg{
-      stroke:var(--violet);
-    }
-    .feature-card:nth-child(even) .feature-glyph{
-      border-color:rgba(180,92,246,.3);
-      color:var(--violet);
-    }
-
-    .feature-card h3{
-      font-size:18px;
-      letter-spacing:-.01em;
-    }
-
-    .feature-card .new-tag{
-      display:inline-block;
-      font-size:9px;
-      font-weight:800;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      padding:2px 7px;
-      margin-left:8px;
-      border-radius:4px;
-      background:linear-gradient(135deg, var(--cyan), var(--violet));
-      color:#05080c;
-      vertical-align:middle;
-    }
-
-    /* ---------- Hero responsive ---------- */
-    @media (max-width: 980px){
-      .hero-grid{
-        grid-template-columns:1fr;
-        gap:40px;
-        text-align:center;
-      }
-      .hero-copy{margin:0 auto;}
-      .hero-copy .hero-description{margin-left:auto; margin-right:auto;}
-      .hero-cta-row{justify-content:center;}
-      .hero-mock{justify-self:center; width:min(300px, 80%);}
-      .hero-statstrip{justify-content:center;}
-    }
-
-    @media (max-width: 640px){
-      .hero-statstrip{
-        display:grid;
-        grid-template-columns:1fr 1fr;
-        gap:0;
-        padding-top:18px;
-      }
-      .hero-statstrip .stat{
-        padding:14px 14px;
-        border-right:1px solid var(--line);
-        border-bottom:1px solid var(--line);
-        align-items:flex-start;
-      }
-      .hero-statstrip .stat:nth-child(2n){border-right:none;}
-      .hero-statstrip .stat:nth-last-child(2),
-      .hero-statstrip .stat:last-child{border-bottom:none;}
-      .hero-mock{aspect-ratio: 9 / 17.5; width:min(260px, 75%);}
+    @media (max-width:560px){
+      h1{font-size:32px;}
+      .hero-cta{flex-direction:column; align-items:stretch;}
+      .hero-cta .btn{justify-content:center;}
+      .app-shots{grid-template-columns:repeat(2, 1fr); gap:12px;}
+      .shot-cell .shot-frame{transform:none !important;}
+      footer .wrap{flex-direction:column; align-items:center; text-align:center;}
     }
   </style>
 </head>
 <body>
-  <!-- Floating orbs -->
-  <div class="orb orb-1" aria-hidden="true"></div>
-  <div class="orb orb-2" aria-hidden="true"></div>
-  <div class="orb orb-3" aria-hidden="true"></div>
-  <div class="orb orb-4" aria-hidden="true"></div>
 
   <!-- Mobile App Banner -->
   <div class="app-banner" id="appBanner">
-    Get the ProtoQuiz iOS app for the full experience
+    Get the ProtoQuiz iOS app →
   </div>
 
-  <!-- Navigation -->
-  <header id="header">
-    <div class="wrap">
-      <nav class="navbar">
-        <a href="#top" class="brand-link">
-          <img src="logo-48.png" alt="EMS ProtoQuiz - Protocol Quiz and Training App for EMTs and Paramedics" width="48" height="48" loading="lazy">
-          <span>EMS ProtoQuiz</span>
-        </a>
-        <div class="nav-links">
-          <a href="./" class="nav-btn active-page">Home</a>
-          <a href="agency/" class="nav-btn" data-track="AgencyPage">For Agencies</a>
-          <a href="blog/" class="nav-btn" data-track="BlogPage">Blog</a>
-          <button type="button" class="nav-btn contact" id="openContact" data-track="ContactOpen">Contact</button>
-        </div>
-      </nav>
+  <!-- ========================================
+       STATUS BAR (replaces traditional nav)
+       ======================================== -->
+  <nav class="statusbar" aria-label="Site navigation">
+    <div class="statusbar-left">
+      <a href="#top" class="brand" aria-label="ProtoQuiz home">
+        <img src="logo-64.png" alt="" width="34" height="34">
+        <span class="brand-name">PROTOQUIZ</span>
+      </a>
+      <a href="#wedge" class="nav-link">THE ISSUE</a>
+      <a href="#app" class="nav-link">APP</a>
+      <a href="#compete" class="nav-link">COMPETE</a>
+      <a href="agency/" data-track="AgencyPage" class="nav-link">FOR AGENCIES</a>
+      <a href="blog/" data-track="BlogPage" class="nav-link">BLOG</a>
     </div>
-  </header>
+    <div class="statusbar-right">
+      <span class="timestamp" id="ts" aria-hidden="true">--:--:--</span>
+      <button type="button" class="contact-btn" id="openContact" data-track="ContactOpen">CONTACT</button>
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navDrawer">
+        <span class="nav-toggle-menu">MENU +</span>
+        <span class="nav-toggle-x">CLOSE ×</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile drawer -->
+  <div class="nav-drawer" id="navDrawer" aria-hidden="true">
+    <a href="#wedge" data-nav-close>THE ISSUE</a>
+    <a href="#app" data-nav-close>APP</a>
+    <a href="#compete" data-nav-close>COMPETE</a>
+    <a href="agency/" data-track="AgencyPage" data-nav-close>FOR AGENCIES</a>
+    <a href="blog/" data-track="BlogPage" data-nav-close>BLOG</a>
+    <a href="#download" data-nav-close>DOWNLOAD</a>
+    <div class="drawer-foot">
+      <span class="green">● IN SERVICE</span>
+      <span id="tsDrawer">--:--:--</span>
+    </div>
+  </div>
 
   <main>
-    <!-- Hero Section -->
+    <!-- ========================================
+         HERO
+         ======================================== -->
     <section class="hero">
       <div class="wrap">
         <div class="hero-grid">
           <div class="hero-copy">
-            <span class="hero-badge">Fastest-Growing EMS Study Tool</span>
-            <h1>Master your local protocols.</h1>
-            <p class="hero-subtitle">Built for EMS.</p>
-            <p class="hero-description">
-              Upload your agency's protocol PDF and quiz yourself on the pharmacology, algorithms, procedures, and policies you'll actually use on shift. Run patient scenarios built from your own protocols. Not generic NREMT content. Every answer links to the exact source page.
+            <div class="hero-incident">
+              <span class="siren-dot" aria-hidden="true"></span>
+              INCIDENT <span id="incidentNum">26-1402</span> &middot; ALS PRIORITY 1
+            </div>
+            <h1>Master the protocols you use <span class="highlight">every shift.</span></h1>
+            <p class="hero-sub">
+              Upload your agency's protocol PDF. Quiz yourself on pharmacology, algorithms, and scenarios. Page-cited on every answer.
             </p>
-
-            <div class="hero-cta-row">
+            <div class="hero-cta">
               <a href="https://apps.apple.com/app/id6753611139?utm_source=website&utm_medium=hero&utm_campaign=download"
                  target="_blank"
                  rel="noopener"
                  class="btn btn-primary"
                  data-track="AppStoreHero">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="margin-right:8px;vertical-align:-3px;">
-                  <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
-                </svg>
-                Download on the App Store
+                ↓ Download on App Store
               </a>
+              <a href="#wedge" class="btn btn-ghost">↓ How it works</a>
             </div>
-
-            <p class="hero-microcopy">
-              Free to download<span class="dot"></span>iOS only
-            </p>
-
-            <div class="hero-statstrip">
-              <div class="stat">
-                <span class="stat-value"><span class="stars">&#9733;</span><span id="appRating">4.7</span></span>
-                <span class="stat-label">App Store rating</span>
-              </div>
-              <div class="stat">
-                <span class="stat-value" id="downloadCount">700+</span>
-                <span class="stat-label">Downloads</span>
-              </div>
-              <div class="stat">
-                <span class="stat-value" id="protocolCount">3000+</span>
-                <span class="stat-label">Protocols uploaded</span>
-              </div>
-              <div class="stat">
-                <span class="stat-value" id="quizCount">700+</span>
-                <span class="stat-label">Scenarios generated</span>
-              </div>
-              <span id="scenarioCount" hidden aria-hidden="true">700+</span>
+            <div class="hero-meta">
+              <span><span class="star">★</span><strong id="appRating">4.7</strong> App Store</span>
+              <span class="sep">·</span>
+              <span><span class="green">●</span> iOS</span>
+              <span class="sep">·</span>
+              <span>Free, ad-supported</span>
             </div>
           </div>
 
-          <div class="hero-mock" aria-hidden="true">
-            <div class="phone">
-              <div class="phone-notch"></div>
-              <div class="phone-screen dispatched">
-                <div class="dsp-glow" aria-hidden="true"></div>
-                <div class="dsp-center">
-                  <span class="dsp-siren" aria-hidden="true">
-                    <svg viewBox="0 0 32 32" fill="none">
-                      <path d="M6 26h20v-4a10 10 0 0 0-20 0v4z" fill="#ef4444"/>
-                      <rect x="14.75" y="15" width="2.5" height="9" rx="1" fill="#000"/>
-                      <path d="M16 4v4M7.5 7.5l3 3M24.5 7.5l-3 3M3 14h3M26 14h3" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round"/>
-                    </svg>
-                  </span>
-                  <p class="dsp-called">You are called to...</p>
-                  <p class="dsp-patient">68-year-old male,<br>general weakness<br>and palpitations</p>
-                  <p class="dsp-loading">
-                    <span class="dsp-spinner" aria-hidden="true"></span>
-                    Preparing scenario...
-                  </p>
-                </div>
-              </div>
+          <!--
+            SCREEN SLOT (hero). Replace <div class="screen-placeholder"></div>
+            with <img src="..." alt="..."> — frame crops 9:19.5 automatically.
+          -->
+          <div class="phone-slot" data-screen-slot="hero">
+            <div class="phone-frame">
+              <span class="phone-tag">LIVE</span>
+              <div class="screen-placeholder"></div>
             </div>
-
+            <div class="phone-corners" aria-hidden="true">
+              <span class="c3"></span><span class="c4"></span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- How It Works - 3 Step -->
-    <section class="howsteps fade-up">
+    <!-- ========================================
+         WEDGE
+         ======================================== -->
+    <section class="section fade-up" id="wedge">
       <div class="wrap">
         <div class="section-header">
-          <span style="display:inline-flex;align-items:center;gap:6px;padding:5px 14px;background:rgba(6,214,224,.08);border:1px solid rgba(6,214,224,.2);border-radius:999px;font-size:11px;font-weight:700;color:var(--cyan);text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px;">How It Works</span>
-          <h2 class="section-title">From PDF to mastery in three steps.</h2>
-          <p class="section-subtitle">Your protocols. Your doses. Your call types.</p>
+          <div class="section-tag">01 / THE ISSUE</div>
+          <div>
+            <h2>School teaches you the <span class="highlight">NREMT.</span><br>To work, you need to know your local protocols.</h2>
+            <p class="section-subtitle">
+              When you start working, you have to learn a whole new protocol set.
+            </p>
+          </div>
         </div>
-
-        <div class="howsteps-grid">
-          <div class="howstep">
-            <div class="step-num">01</div>
-            <h3>Upload your protocol PDF</h3>
-            <p>Drop in your agency's actual protocol document.</p>
-            <div class="howstep-visual" aria-hidden="true">
-              <div class="viz-upload">
-                <div class="pdf pdf-1">
-                  <span class="lbl">PDF</span>
-                  <span class="ln s"></span><span class="ln m"></span><span class="ln l"></span>
-                </div>
-                <div class="pdf pdf-2">
-                  <span class="lbl">PDF</span>
-                  <span class="ln m"></span><span class="ln l"></span><span class="ln s"></span>
-                </div>
-                <div class="pdf pdf-3">
-                  <span class="lbl">AGENCY</span>
-                  <span class="ln l"></span><span class="ln m"></span><span class="ln l"></span><span class="ln s"></span>
-                </div>
-                <div class="arrow">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 19V5"/><path d="M5 12l7-7 7 7"/>
-                  </svg>
-                </div>
-              </div>
-            </div>
+        <div class="wedge-list">
+          <div class="wedge-item">
+            <div class="wedge-num">A &middot; 01</div>
+            <h3>Generic prep stops working day one</h3>
+            <p>The NREMT was a baseline. The day you're hired, what matters is your agency's drugs, doses, and decision points. Nothing else trains on that.</p>
           </div>
-
-          <div class="howstep">
-            <div class="step-num">02</div>
-            <h3>Auto-extracted, page-cited</h3>
-            <p>Every medication, dose, algorithm, and procedure indexed and linked to its source page.</p>
-            <div class="howstep-visual" aria-hidden="true">
-              <div class="viz-page">
-                <span class="pg">p. 142</span>
-                <span class="ttl">MEDICATION REFERENCE</span>
-                <div class="row"><span class="dot"></span><span class="bar"></span><span class="cite">p.140</span></div>
-                <div class="row hl"><span class="dot"></span><span class="bar"></span><span class="cite">p.142</span></div>
-                <div class="row"><span class="dot"></span><span class="bar"></span><span class="cite">p.143</span></div>
-                <div class="row hl"><span class="dot"></span><span class="bar"></span><span class="cite">p.145</span></div>
-                <div class="row"><span class="dot"></span><span class="bar"></span><span class="cite">p.147</span></div>
-              </div>
-            </div>
+          <div class="wedge-item">
+            <div class="wedge-num">B &middot; 02</div>
+            <h3>Highest-frequency. Every shift. Every call.</h3>
+            <p>The protocols govern every drug you push and every decision you make. The highest-frequency thing in EMS, with no proper way to train on it. Until now.</p>
           </div>
-
-          <div class="howstep">
-            <div class="step-num">03</div>
-            <h3>Drill what you'll actually use</h3>
-            <p>Pharmacology quizzes, adaptive scenarios, and learn mode with spaced repetition.</p>
-            <div class="howstep-visual" aria-hidden="true">
-              <div class="viz-cards">
-                <div class="card c1">
-                  <div class="ic">
-                    <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-                  </div>
-                  <div class="lines"><span class="ln l"></span><span class="ln s"></span></div>
-                </div>
-                <div class="card c2">
-                  <div class="ic">
-                    <svg viewBox="0 0 24 24"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
-                  </div>
-                  <div class="lines"><span class="ln l"></span><span class="ln s"></span></div>
-                </div>
-                <div class="card c3">
-                  <div class="ic"></div>
-                  <div class="lines"><span class="ln l"></span><span class="ln s"></span></div>
-                </div>
-              </div>
-            </div>
+          <div class="wedge-item">
+            <div class="wedge-num">C &middot; 03</div>
+            <h3>Built by a paramedic student</h3>
+            <p>For working medics.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features fade-up">
+    <!-- ========================================
+         APP
+         ======================================== -->
+    <section class="section fade-up" id="app">
       <div class="wrap">
         <div class="section-header">
-          <span style="display:inline-flex;align-items:center;gap:6px;padding:5px 14px;background:rgba(180,92,246,.08);border:1px solid rgba(180,92,246,.2);border-radius:999px;font-size:11px;font-weight:700;color:var(--violet);text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px;">What's Inside</span>
-          <h2 class="section-title">Built around your real protocols.</h2>
-          <p class="section-subtitle">Six things that make ProtoQuiz different.</p>
+          <div class="section-tag">02 / APP</div>
+          <div>
+            <h2>Pharmacology. Algorithms.<br><span class="highlight">Scenarios.</span> Learn mode.</h2>
+          </div>
         </div>
 
-        <div class="features-grid">
-          <div class="feature-card">
-            <div class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v18H6.5A2.5 2.5 0 0 0 4 22.5z"/><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/></svg>
-            </div>
-            <h3>Local-First</h3>
-            <p>Your agency's protocols, not generic NREMT filler.</p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M7 7h4v4c0 2.5-1.5 4-4 5"/><path d="M15 7h4v4c0 2.5-1.5 4-4 5"/></svg>
-            </div>
-            <h3>Page-Cited</h3>
-            <p>Every answer links to the exact page in your PDF.</p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><rect x="3" y="9" width="18" height="6" rx="3" transform="rotate(-30 12 12)"/><path d="M8.5 7.5l8 8"/></svg>
-            </div>
-            <h3>Dose-Safe</h3>
-            <p>Doses pulled directly from your protocols. No hallucinations.</p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg>
-            </div>
-            <h3>Realistic Scenarios</h3>
-            <p>Patients deteriorate, respond, and adapt to your decisions.</p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 7-8"/><path d="M14 7h6v6"/></svg>
-            </div>
-            <h3>Track Progress</h3>
-            <p>See improvement over time and target weak areas.</p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 15.5-6.3L21 8"/><path d="M21 4v4h-4"/><path d="M21 12a9 9 0 0 1-15.5 6.3L3 16"/><path d="M3 20v-4h4"/></svg>
-            </div>
-            <h3>Always Updated</h3>
-            <p>Re-upload when protocols change. Quizzes refresh automatically.</p>
-          </div>
-
-        </div>
-
-        <div class="features-cta">
-          <a href="https://apps.apple.com/app/id6753611139?utm_source=website&utm_medium=features&utm_campaign=download"
-             target="_blank"
-             rel="noopener"
-             class="btn btn-primary"
-             data-track="FeaturesCTA">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="margin-right:8px;vertical-align:-3px;">
-              <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
-            </svg>
-            Download on the App Store
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Compete Mode Spotlight -->
-    <section class="compete-spotlight fade-up">
-      <div class="wrap">
-        <div class="compete-grid">
-          <div class="compete-copy">
-            <span class="compete-eyebrow">Compete Mode <span class="new-pill">New</span></span>
-            <h2>Study during your shift!</h2>
-            <p class="compete-lede">
-              Spin up a private room, share a code, and go head-to-head on pharmacology, algorithms, or scenarios pulled from your own PDFs. Winners climb a worldwide leaderboard.
-            </p>
-            <div class="compete-badges">
-              <span>Private rooms</span>
-              <span>Live scoring</span>
-              <span>Global leaderboard</span>
-            </div>
-            <a href="https://apps.apple.com/app/id6753611139?utm_source=website&utm_medium=compete&utm_campaign=download"
-               target="_blank"
-               rel="noopener"
-               class="btn btn-primary"
-               data-track="CompeteCTA">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="margin-right:8px;vertical-align:-3px;">
-                <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
-              </svg>
-              Download to play
-            </a>
-          </div>
-
-          <figure class="compete-visual">
-            <picture>
-              <source srcset="compete-mode.webp" type="image/webp">
-              <img src="compete-mode.png" alt="Two EMS partners in the front of an ambulance, both holding their phones running ProtoQuiz Compete Mode, smiling and pointing at each other's screens." loading="lazy" width="1400" height="934">
-            </picture>
+        <!--
+          SCREEN SLOTS (6). For each .shot-frame, replace the inner
+          <div class="screen-placeholder"></div> with <img src="..." alt="...">.
+          Frame auto-crops to 9:19.5.
+        -->
+        <div class="app-shots">
+          <figure class="shot-cell" data-screen-slot="app-1">
+            <div class="shot-frame"><div class="screen-placeholder"></div></div>
+          </figure>
+          <figure class="shot-cell" data-screen-slot="app-2">
+            <div class="shot-frame"><div class="screen-placeholder"></div></div>
+          </figure>
+          <figure class="shot-cell" data-screen-slot="app-3">
+            <div class="shot-frame"><div class="screen-placeholder"></div></div>
+          </figure>
+          <figure class="shot-cell" data-screen-slot="app-4">
+            <div class="shot-frame"><div class="screen-placeholder"></div></div>
+          </figure>
+          <figure class="shot-cell" data-screen-slot="app-5">
+            <div class="shot-frame"><div class="screen-placeholder"></div></div>
+          </figure>
+          <figure class="shot-cell" data-screen-slot="app-6">
+            <div class="shot-frame"><div class="screen-placeholder"></div></div>
           </figure>
         </div>
       </div>
     </section>
 
-
-    <!-- Reviews Section -->
-    <section class="reviews fade-up">
+    <!-- ========================================
+         COMPETE
+         ======================================== -->
+    <section class="section fade-up" id="compete">
       <div class="wrap">
-        <div class="section-header">
-          <span style="display:inline-flex;align-items:center;gap:6px;padding:5px 14px;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);border-radius:999px;font-size:11px;font-weight:700;color:var(--warning);text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px;">Reviews</span>
-          <h2 class="section-title">Reviews from real users</h2>
-        </div>
-
-        <p class="reviews-trust">
-          <span class="stars">&#9733;</span>
-          <strong id="reviewsRating">4.7</strong> average rating on the App Store
-        </p>
-
-        <div class="reviews-container">
-          <div class="reviews-grid">
-            <article class="review-tile">
-              <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              <h4>Excellent</h4>
-              <p class="quote">&ldquo;Impressive UI, accessible and usable.&rdquo;</p>
-              <p class="who">&mdash; Jackeroo98</p>
-            </article>
-            <article class="review-tile">
-              <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              <h4>Seriously the best</h4>
-              <p class="quote">&ldquo;Superior for professionals. Perfect balance of gamification, no intrusive ads, and strong free/paid options.&rdquo;</p>
-              <p class="who">&mdash; Anon5872</p>
-            </article>
-            <article class="review-tile">
-              <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              <h4>Super fun scenarios</h4>
-              <p class="quote">&ldquo;I&rsquo;m in paramedic school and have to learn a set of protocols front to back. This is a great way to do it &mdash; the scenarios are exciting.&rdquo;</p>
-              <p class="who">&mdash; AJ1A1</p>
-            </article>
+        <div class="compete-grid">
+          <div class="compete-copy">
+            <div class="section-tag" style="margin-bottom:24px;">03 / COMPETE</div>
+            <h2>Compete with<br>your <span class="highlight">partner.</span></h2>
+            <p>
+              Study or train during your shift. Stop wasting time scrolling. Pick a topic, share a code or QR, go head-to-head on pharmacology, algorithms, or scenarios from your own PDF. Solo? Add an AI opponent (easy, medium, or hard) and play anytime. Speed bonus, streak multiplier, worldwide leaderboard.
+            </p>
+            <ul class="compete-list">
+              <li>The whole shift in one room</li>
+              <li>Live scoring, synced start</li>
+              <li>Worldwide leaderboard</li>
+            </ul>
+            <a href="https://apps.apple.com/app/id6753611139?utm_source=website&utm_medium=compete&utm_campaign=download"
+               target="_blank"
+               rel="noopener"
+               class="btn btn-primary"
+               data-track="CompeteCTA">↓ Download to play</a>
+          </div>
+          <div class="compete-photo">
+            <picture>
+              <source srcset="compete-mode.webp" type="image/webp">
+              <img src="compete-mode.png" alt="Two EMS partners in the front of an ambulance, both holding their phones running ProtoQuiz Compete Mode" loading="lazy" width="1400" height="934">
+            </picture>
+            <div class="compete-photo-stamp">UNIT 1 &middot; 14:27</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Trust Section - Founder Story -->
-    <section class="trust fade-up">
+    <!-- ========================================
+         REVIEWS
+         ======================================== -->
+    <section class="section fade-up">
       <div class="wrap">
         <div class="section-header">
-          <span class="founder-pill">From the Founder</span>
-          <h2 class="section-title">Built for EMS workers by a paramedic student.</h2>
-          <p class="section-subtitle">Released in October 2025</p>
-        </div>
-
-        <div style="max-width:700px; margin:32px auto; padding:32px; background:rgba(255,255,255,.03); border:1px solid var(--line); border-left:2px solid rgba(34,211,238,.4); border-radius:24px; position:relative; overflow:hidden;">
-          <p style="font-size:18px; line-height:1.7; color:#cbd5e1; font-style:italic;">
-            &ldquo;I needed to learn more than just the NREMT protocols &mdash; I needed to learn the actual protocols I&rsquo;d be using for my field internship. The only study tools I could find were NREMT-focused, or I&rsquo;d be making my own Quizlet from scratch. So I built one that pulls quizzes straight from your own PDF and cites the page on every answer.&rdquo;
-          </p>
-          <div class="founder-attr">
-            <div class="founder-avatar" aria-hidden="true">J</div>
-            <div class="meta">
-              <span class="name">Jaden</span>
-              <span class="role">Founder &amp; Paramedic Student</span>
+          <div class="section-tag">04 / REVIEWS</div>
+          <div>
+            <h2>Reviews.</h2>
+            <div class="reviews-trust">
+              <span class="star">★</span>
+              <strong id="reviewsRating">4.7</strong>
+              AVERAGE ON THE APP STORE
             </div>
           </div>
         </div>
+        <div class="reviews-stage" id="reviewsStage" aria-roledescription="carousel" aria-label="App Store reviews">
+          <button type="button" class="reviews-nav reviews-prev" id="reviewsPrev" aria-label="Previous review">‹</button>
+          <button type="button" class="reviews-nav reviews-next" id="reviewsNext" aria-label="Next review">›</button>
 
+          <div class="reviews-track">
+            <article class="review is-active" aria-roledescription="slide" aria-label="Review 1 of 3">
+              <div class="review-stars" aria-label="5 out of 5">★★★★★</div>
+              <h4 class="review-title">Excellent</h4>
+              <p class="review-quote">Impressive UI, accessible and usable.</p>
+              <div class="review-author">JACKEROO98</div>
+            </article>
+            <article class="review" aria-roledescription="slide" aria-label="Review 2 of 3" aria-hidden="true">
+              <div class="review-stars" aria-label="5 out of 5">★★★★★</div>
+              <h4 class="review-title">Seriously the best</h4>
+              <p class="review-quote">Superior for professionals. Perfect balance, no intrusive ads, strong free/paid options.</p>
+              <div class="review-author">ANON5872</div>
+            </article>
+            <article class="review" aria-roledescription="slide" aria-label="Review 3 of 3" aria-hidden="true">
+              <div class="review-stars" aria-label="5 out of 5">★★★★★</div>
+              <h4 class="review-title">Super fun scenarios</h4>
+              <p class="review-quote">I'm in paramedic school and have to learn a set of protocols front to back. This is a great way to do it. The scenarios are exciting.</p>
+              <div class="review-author">AJ1A1</div>
+            </article>
+          </div>
+
+          <div class="reviews-progress" role="tablist">
+            <button type="button" class="is-active" data-review-idx="0" aria-label="Go to review 1"><span class="bar"></span></button>
+            <button type="button" data-review-idx="1" aria-label="Go to review 2"><span class="bar"></span></button>
+            <button type="button" data-review-idx="2" aria-label="Go to review 3"><span class="bar"></span></button>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="how fade-up" id="faq">
+    <!-- ========================================
+         FOUNDER
+         ======================================== -->
+    <section class="founder fade-up">
+      <div class="wrap">
+        <blockquote>
+          I needed to learn the protocols I'd be using during my P school field internship. Every study tool I could find was generic NREMT prep. The other option was making flashcards from scratch. I knew there had to be a better way. Now there is.
+        </blockquote>
+        <div class="founder-cite">JADEN &middot; FOUNDER &middot; PARAMEDIC STUDENT</div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         FAQ
+         ======================================== -->
+    <section class="section fade-up" id="faq">
       <div class="wrap">
         <div class="section-header">
-          <span style="display:inline-flex;align-items:center;gap:6px;padding:5px 14px;background:rgba(6,214,224,.08);border:1px solid rgba(6,214,224,.2);border-radius:999px;font-size:11px;font-weight:700;color:var(--cyan);text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px;">FAQ</span>
-          <h2 class="section-title">Frequently Asked Questions</h2>
-          <p class="section-subtitle">Everything you need to know before you download.</p>
+          <div class="section-tag">05 / FAQ</div>
+          <h2>FAQ.</h2>
         </div>
-
         <div class="faq-list">
           <details>
-            <summary>What protocols does ProtoQuiz work with?</summary>
-            <div class="faq-content">
-              Whatever PDF your agency hands you. Drop in your local protocol document and the app indexes every medication, algorithm, procedure, and policy. It's not preloaded with generic NREMT content. It's your protocol set, exactly.
-            </div>
+            <summary>What protocols does it work with?</summary>
+            <p>Any full-length protocol document: medication formulary, treatment protocols, algorithms, procedures. That's what powers the scenarios, pharmacology quizzes, and algorithm tests. No preloaded NREMT filler. Your protocol set, exactly.</p>
           </details>
-
           <details>
-            <summary>Is it actually accurate? AI gets things wrong.</summary>
-            <div class="faq-content">
-              Every answer cites the exact page in your PDF where it came from. One tap and you're looking at the source. Unlike AI chatbots that hallucinate, ProtoQuiz only pulls from the document you uploaded — and if you ever spot an extraction error, you can edit it directly in the app.
-            </div>
+            <summary>Is it accurate?</summary>
+            <p>Every answer cites the exact page in your PDF. One tap and you're at the source. Nothing is generated outside the document you uploaded, and you can edit any extraction yourself.</p>
           </details>
-
           <details>
-            <summary>What kinds of quizzes can I make?</summary>
-            <div class="faq-content">
-              Pharmacology (adult dose, pediatric dose, indications, contraindications, routes, mechanism), algorithm tests pulled from your protocol flowcharts, and adaptive patient scenarios where the patient deteriorates or improves based on the calls you make. You pick the topic, the difficulty, and the length.
-            </div>
+            <summary>What kinds of quizzes are there?</summary>
+            <p>Pharmacology (adult and pediatric doses, indications, contraindications, routes, mechanism, adverse effects, side effects), algorithm tests pulled from your protocol flowcharts, adaptive patient scenarios where the patient responds to your decisions, and Learn Mode (spaced repetition on the meds you keep missing). Pick the topic, difficulty, and length.</p>
           </details>
-
-          <details>
-            <summary>How realistic are the scenarios?</summary>
-            <div class="faq-content">
-              They run on your exact protocols and standing orders. Patients present, deteriorate, and respond the way they would on an actual call — which means the right intervention works and the wrong one has consequences. Each scenario is generated fresh, so you can run the same chief complaint twice and get a different presentation.
-            </div>
-          </details>
-
           <details>
             <summary>What does it cost?</summary>
-            <div class="faq-content">
-              Free to download and free to use. The app is ad-supported. There's an optional paid upgrade that removes ads if you'd rather study without them, but no features are gated behind it.
-            </div>
+            <p>Free, ad-supported. Optional paid upgrade clears the ads. No features paywalled behind premium.</p>
           </details>
-
           <details>
             <summary>Is there an Android version?</summary>
-            <div class="faq-content">
-              Not yet. ProtoQuiz is iOS only for now. The more people who tap the button below, the faster Android happens.
-              <button type="button" class="android-cta" data-track="AndroidInterest" onclick="this.classList.add('tapped'); this.querySelector('.android-cta-label').textContent = 'Got it. We’ll let you know.';">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M5 16V9a7 7 0 0 1 14 0v7"/>
-                  <line x1="8" y1="3" x2="6.5" y2="1"/>
-                  <line x1="16" y1="3" x2="17.5" y2="1"/>
-                  <circle cx="9" cy="11" r=".6" fill="currentColor"/>
-                  <circle cx="15" cy="11" r=".6" fill="currentColor"/>
-                  <rect x="3" y="11" width="2" height="7" rx="1"/>
-                  <rect x="19" y="11" width="2" height="7" rx="1"/>
-                  <rect x="5" y="16" width="14" height="5" rx="2"/>
-                  <rect x="9" y="20" width="2" height="3" rx="1"/>
-                  <rect x="13" y="20" width="2" height="3" rx="1"/>
-                </svg>
-                <span class="android-cta-label">I want the Android version (coming soon)</span>
-              </button>
-            </div>
+            <p>Not yet. iOS only. Tap below if you want Android. The list grows, Android comes sooner.</p>
+            <button type="button" class="android-cta" id="androidInterestBtn" data-track="AndroidInterest">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 16V9a7 7 0 0 1 14 0v7"/><line x1="8" y1="3" x2="6.5" y2="1"/><line x1="16" y1="3" x2="17.5" y2="1"/><circle cx="9" cy="11" r=".6" fill="currentColor"/><circle cx="15" cy="11" r=".6" fill="currentColor"/><rect x="3" y="11" width="2" height="7" rx="1"/><rect x="19" y="11" width="2" height="7" rx="1"/><rect x="5" y="16" width="14" height="5" rx="2"/><rect x="9" y="20" width="2" height="3" rx="1"/><rect x="13" y="20" width="2" height="3" rx="1"/>
+              </svg>
+              <span>I want the Android version</span>
+            </button>
           </details>
         </div>
       </div>
     </section>
 
-    <!-- Final CTA -->
-    <section class="final-cta">
-      <div class="wrap" style="position:relative; z-index:1;">
-        <span style="display:inline-flex;align-items:center;gap:6px;padding:5px 14px;background:rgba(6,214,224,.08);border:1px solid rgba(6,214,224,.2);border-radius:999px;font-size:11px;font-weight:700;color:var(--cyan);text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px;">Join the Field</span>
-        <h2>Ready to master your protocols?</h2>
-        <p>Join EMTs and Paramedics nationwide who are training with THEIR actual protocols</p>
+    <!-- ========================================
+         FINAL CTA
+         ======================================== -->
+    <section class="final" id="download">
+      <div class="wrap" style="position:relative; z-index:2;">
+        <h2>Study what you'll<br><span class="highlight">actually use.</span></h2>
+        <p>Free. iOS only. Page-cited on every answer.</p>
         <a href="https://apps.apple.com/app/id6753611139?utm_source=website&utm_medium=cta&utm_campaign=bottom"
            target="_blank"
            rel="noopener"
            class="btn btn-primary"
            data-track="FinalCTA">
-          Download on the App Store &rarr;
+          ↓ Download on the App Store
         </a>
+      </div>
+    </section>
+
+    <!-- ========================================
+         FOR AGENCY BAND
+         ======================================== -->
+    <section class="for-agency">
+      <div class="wrap">
+        <div class="for-agency-copy">
+          <div class="for-agency-tag">FOR ORGANIZATIONS</div>
+          <h3>Think this could be a good tool<br>for your agency?</h3>
+        </div>
+        <a href="agency/" class="for-agency-cta" data-track="ForAgencyBottom">FOR AGENCIES →</a>
       </div>
     </section>
   </main>
 
-<!-- Footer -->
+  <!-- ========================================
+       FOOTER
+       ======================================== -->
   <footer>
     <div class="wrap">
-      <div class="footer-content">
-        <div class="footer-copy">
-          © <a href="https://teachmetolive.com" target="_blank">2026 Teach Me to Live LLC</a>. All rights reserved.
-        </div>
-        <div class="footer-links">
-          <a href="agency/">For Agencies</a>
-          <a href="blog/">Blog</a>
-          <a href="privacy/">Privacy</a>
-          <a href="terms/">Terms</a>
-          <a href="#" id="openContactFooter">Contact</a>
-        </div>
+      <div>© 2026 <a href="https://teachmetolive.com" rel="noopener">TEACH ME TO LIVE LLC</a></div>
+      <div>
+        <a href="agency/">FOR AGENCIES</a> &middot;
+        <a href="blog/">BLOG</a> &middot;
+        <a href="privacy/">PRIVACY</a> &middot;
+        <a href="terms/">TERMS</a> &middot;
+        <a href="#" id="openContactFooter">CONTACT</a>
       </div>
     </div>
   </footer>
 
-
-
-  <!-- Contact Dialog -->
+  <!-- ========================================
+       CONTACT DIALOG
+       ======================================== -->
   <dialog id="contactDialog" aria-labelledby="dialogTitle">
     <div class="dialog-header">
-      <h3 class="dialog-title" id="dialogTitle">Get in Touch</h3>
+      <h3 class="dialog-title" id="dialogTitle">GET IN TOUCH</h3>
       <form method="dialog" style="margin:0;">
-        <button type="submit" class="dialog-close">Close</button>
+        <button type="submit" class="dialog-close">CLOSE</button>
       </form>
     </div>
     <div class="dialog-body">
       <form id="contactForm" action="https://api.protoquiz.com/api/monitor?type=contactForm" method="POST">
         <input type="text" name="phone" tabindex="-1" autocomplete="off" style="position:absolute;left:-10000px" aria-hidden="true">
         <input type="hidden" name="source" value="website">
-
         <div class="form-field">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" autocomplete="name">
         </div>
-
         <div class="form-field">
           <label for="email">Email *</label>
           <input type="email" id="email" name="email" autocomplete="email" required>
         </div>
-
         <div class="form-field">
           <label for="type">Reason</label>
           <select id="type" name="type">
@@ -2960,43 +1699,194 @@
             <option>Other</option>
           </select>
         </div>
-
         <div class="form-field">
           <label for="message">Message</label>
           <textarea id="message" name="message" placeholder="How can we help?"></textarea>
         </div>
-
         <div class="form-actions">
-          <button type="submit" class="btn btn-primary" data-track="ContactSubmit">Send Message</button>
+          <button type="submit" class="btn btn-primary" data-track="ContactSubmit">SEND MESSAGE</button>
         </div>
       </form>
     </div>
   </dialog>
 
   <script>
-    // Smooth header background on scroll
-    let lastScroll = 0;
-    window.addEventListener('scroll', () => {
-      const header = document.getElementById('header');
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    // CAD-console live timestamp (status bar + drawer)
+    function tickClock(){
+      const d = new Date();
+      const pad = n => String(n).padStart(2,'0');
+      const stamp = `${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+      const a = document.getElementById('ts');
+      const b = document.getElementById('tsDrawer');
+      if (a) a.textContent = stamp;
+      if (b) b.textContent = stamp;
+    }
+    tickClock(); setInterval(tickClock, 1000);
 
-      if (scrollTop > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
+    // Clean URL hash after in-page anchor clicks so a refresh lands at the top, not mid-page.
+    // Logo specifically scrolls to top.
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const href = a.getAttribute('href');
+        if (href === '#top') {
+          e.preventDefault();
+          window.scrollTo({top:0, behavior:'smooth'});
+        }
+        // After the smooth-scroll completes, strip the hash so refresh stays at top
+        setTimeout(() => {
+          if (history.replaceState) {
+            history.replaceState(null, '', window.location.pathname + window.location.search);
+          }
+        }, 600);
+      });
+    });
+
+    // On initial load: if URL has a hash, let it scroll, then clean the hash so refresh resets.
+    if (window.location.hash) {
+      setTimeout(() => {
+        if (history.replaceState) {
+          history.replaceState(null, '', window.location.pathname + window.location.search);
+        }
+      }, 800);
+    }
+
+    // Dynamic incident number: YY-XXXX from date so it changes per visit but feels real
+    (function setIncident(){
+      const el = document.getElementById('incidentNum');
+      if (!el) return;
+      const d = new Date();
+      const yy = String(d.getFullYear()).slice(-2);
+      const num = (d.getMonth() + 1) * 100 + d.getDate() * 4 + d.getHours();
+      el.textContent = `${yy}-${String(num).padStart(4,'0')}`;
+    })();
+
+    // Android interest: fires GA4 + server log, de-dupes per session
+    (function androidInterest(){
+      const btn = document.getElementById('androidInterestBtn');
+      if (!btn) return;
+      const label = btn.querySelector('span');
+      const KEY = 'androidInterestTapped';
+      const alreadyTapped = sessionStorage.getItem(KEY) === '1';
+
+      if (alreadyTapped) {
+        btn.classList.add('tapped');
+        if (label) label.textContent = 'GOT IT. WE’LL LET YOU KNOW.';
       }
 
-      lastScroll = scrollTop;
-    });
+      btn.addEventListener('click', () => {
+        if (btn.classList.contains('tapped')) return;
+        btn.classList.add('tapped');
+        if (label) label.textContent = 'GOT IT. WE’LL LET YOU KNOW.';
+        sessionStorage.setItem(KEY, '1');
+
+        // GA4 event (global click listener also fires; this is the explicit, named call)
+        try {
+          window.track && window.track('AndroidInterest', {
+            page: PAGE,
+            session_id: sessionStorage.getItem('utmParams') || ''
+          });
+        } catch(e) {}
+
+        // Server-side log so totals survive ad blockers
+        try {
+          fetch('https://api.protoquiz.com/api/monitor?type=event', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+              category: 'interest',
+              action: 'android_requested',
+              data: {
+                page: PAGE,
+                userAgent: navigator.userAgent.substring(0, 200),
+                referrer: document.referrer.substring(0, 200)
+              }
+            })
+          }).catch(() => {});
+        } catch(e) {}
+      });
+    })();
+
+    // Reviews carousel: auto-advance every 6s, pause on hover, manual nav
+    (function reviewsCarousel(){
+      const stage = document.getElementById('reviewsStage');
+      if (!stage) return;
+      const slides = stage.querySelectorAll('.review');
+      const dots = stage.querySelectorAll('.reviews-progress button');
+      const prev = document.getElementById('reviewsPrev');
+      const next = document.getElementById('reviewsNext');
+      if (!slides.length) return;
+
+      let idx = 0;
+      let timer = null;
+      const INTERVAL = 6000;
+
+      function show(n){
+        idx = (n + slides.length) % slides.length;
+        slides.forEach((s, i) => {
+          const active = i === idx;
+          s.classList.toggle('is-active', active);
+          s.setAttribute('aria-hidden', String(!active));
+        });
+        dots.forEach((d, i) => {
+          // restart bar animation on the active dot
+          d.classList.remove('is-active');
+        });
+        // force reflow then re-add the active class so the bar animation restarts
+        void dots[idx].offsetWidth;
+        dots[idx].classList.add('is-active');
+      }
+      function nextSlide(){ show(idx + 1); }
+      function prevSlide(){ show(idx - 1); }
+      function start(){
+        stop();
+        timer = setInterval(nextSlide, INTERVAL);
+      }
+      function stop(){ if (timer) { clearInterval(timer); timer = null; } }
+
+      next?.addEventListener('click', () => { show(idx + 1); start(); });
+      prev?.addEventListener('click', () => { show(idx - 1); start(); });
+      dots.forEach((d, i) => d.addEventListener('click', () => { show(i); start(); }));
+
+      stage.addEventListener('mouseenter', () => { stage.classList.add('is-paused'); stop(); });
+      stage.addEventListener('mouseleave', () => { stage.classList.remove('is-paused'); start(); });
+      stage.addEventListener('focusin', () => { stop(); });
+      stage.addEventListener('focusout', () => { start(); });
+
+      // keyboard
+      stage.tabIndex = 0;
+      stage.addEventListener('keydown', e => {
+        if (e.key === 'ArrowLeft') { e.preventDefault(); show(idx - 1); start(); }
+        if (e.key === 'ArrowRight') { e.preventDefault(); show(idx + 1); start(); }
+      });
+
+      // start when the stage scrolls into view
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) start();
+          else stop();
+        });
+      }, {threshold:0.3});
+      io.observe(stage);
+    })();
+
+    // Mobile nav drawer
+    const navToggle = document.getElementById('navToggle');
+    const navDrawer = document.getElementById('navDrawer');
+    function setNavOpen(open){
+      document.body.classList.toggle('nav-open', open);
+      navToggle?.setAttribute('aria-expanded', String(open));
+      navDrawer?.setAttribute('aria-hidden', String(!open));
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+    navToggle?.addEventListener('click', () => setNavOpen(!document.body.classList.contains('nav-open')));
+    document.querySelectorAll('[data-nav-close]').forEach(a => a.addEventListener('click', () => setNavOpen(false)));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') setNavOpen(false); });
 
     // Contact dialog
     const dialog = document.getElementById('contactDialog');
-    const openBtns = ['openContact', 'openContactFooter'].map(id => document.getElementById(id)).filter(Boolean);
-
-    openBtns.forEach(btn => {
-      btn?.addEventListener('click', () => {
-        dialog.showModal();
-      });
+    ['openContact', 'openContactFooter'].forEach(id => {
+      const btn = document.getElementById(id);
+      btn?.addEventListener('click', e => { e.preventDefault(); dialog.showModal(); });
     });
 
     // Contact form submission
@@ -3005,10 +1895,8 @@
       const form = e.target;
       const submitBtn = form.querySelector('[type="submit"]');
       const originalText = submitBtn.textContent;
-
       submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending...';
-
+      submitBtn.textContent = 'SENDING…';
       try {
         const formData = new FormData(form);
         const body = {};
@@ -3018,67 +1906,19 @@
           body: JSON.stringify(body),
           headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}
         });
-
         if (response.ok) {
           form.reset();
-          submitBtn.textContent = '✓ Sent!';
-          setTimeout(() => {
-            dialog.close();
-            submitBtn.textContent = originalText;
-          }, 2000);
-        } else {
-          throw new Error('Failed to send');
-        }
+          submitBtn.textContent = '✓ SENT';
+          setTimeout(() => { dialog.close(); submitBtn.textContent = originalText; submitBtn.disabled = false; }, 2000);
+        } else { throw new Error('Failed to send'); }
       } catch (error) {
-        submitBtn.textContent = 'Error - Try Again';
+        submitBtn.textContent = 'ERROR. TRY AGAIN';
         submitBtn.disabled = false;
-        setTimeout(() => {
-          submitBtn.textContent = originalText;
-        }, 3000);
+        setTimeout(() => { submitBtn.textContent = originalText; }, 3000);
       }
     });
 
-
-    // Load App Store reviews
-    async function loadReviews() {
-      try {
-        const response = await fetch('https://itunes.apple.com/us/rss/customerreviews/id=6753611139/sortBy=mostRecent/json');
-        const data = await response.json();
-
-        if (data.feed && data.feed.entry) {
-          const reviews = data.feed.entry.slice(0, 5);
-          const reviewsList = document.getElementById('reviewsList');
-
-          if (reviews.length > 0) {
-            reviewsList.innerHTML = reviews.map(review => {
-              const rating = parseInt(review['im:rating'].label);
-              const stars = '\u2605'.repeat(rating);
-              const author = review.author.name.label;
-              const content = review.content.label;
-              const title = review.title.label;
-
-              return `
-                <div class="review-card">
-                  <div class="review-header">
-                    <span class="review-author">${author}</span>
-                    <span class="review-rating-stars">${stars}</span>
-                  </div>
-                  <p class="review-text">"${title}: ${content.substring(0, 200)}${content.length > 200 ? '...' : ''}"</p>
-                  <div class="review-date">Via App Store</div>
-                </div>
-              `;
-            }).join('');
-          }
-        }
-      } catch (error) {
-        console.log('Could not load live reviews, using defaults');
-      }
-    }
-
-    // Load reviews on page load
-    loadReviews();
-
-    // Intersection Observer - animate once, no re-trigger
+    // Intersection observer fade-up
     const observer = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -3087,115 +1927,51 @@
         }
       });
     }, { threshold: 0.1 });
-
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-    // Capture and preserve UTM parameters from URL
+    // UTM capture and propagation
     const urlParams = new URLSearchParams(window.location.search);
     const utmParams = {};
     ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(param => {
-      if (urlParams.has(param)) {
-        utmParams[param] = urlParams.get(param);
-      }
+      if (urlParams.has(param)) utmParams[param] = urlParams.get(param);
     });
-
-    // Store UTM params for the session
-    if (Object.keys(utmParams).length > 0) {
-      sessionStorage.setItem('utmParams', JSON.stringify(utmParams));
-    }
-
-    // Get stored UTM params (either from this page load or previous in session)
+    if (Object.keys(utmParams).length > 0) sessionStorage.setItem('utmParams', JSON.stringify(utmParams));
     const storedUtmParams = sessionStorage.getItem('utmParams');
     const activeUtmParams = storedUtmParams ? JSON.parse(storedUtmParams) : {};
 
-    // Update all App Store links with UTM parameters
     function updateAppStoreLinks() {
       const appStoreLinks = document.querySelectorAll('a[href*="apps.apple.com"]');
       appStoreLinks.forEach(link => {
         const url = new URL(link.href);
-
-        // Add/override UTM params from traffic source
         Object.keys(activeUtmParams).forEach(key => {
           url.searchParams.set(key, activeUtmParams[key]);
         });
-
-        // Keep the original location param if it exists (hero, pricing, etc)
         if (!url.searchParams.has('utm_content')) {
           const originalUrl = new URL(link.getAttribute('href'));
           const location = originalUrl.searchParams.get('utm_medium');
-          if (location) {
-            url.searchParams.set('utm_content', location);
-          }
+          if (location) url.searchParams.set('utm_content', location);
         }
-
         link.href = url.toString();
       });
     }
-
-    // Update links on page load
     updateAppStoreLinks();
 
-    // Track events
+    // Track click events on [data-track]
     document.addEventListener('click', (e) => {
       const trackEl = e.target.closest('[data-track]');
       if (trackEl) {
         const eventName = trackEl.dataset.track;
-        const props = {
-          page: PAGE,
-          element: trackEl.textContent?.substring(0, 50)
-        };
-
-        // Add UTM source to event properties
+        const props = { page: PAGE, element: trackEl.textContent?.substring(0, 50) };
         if (activeUtmParams.utm_source) {
           props.utm_source = activeUtmParams.utm_source;
           props.utm_medium = activeUtmParams.utm_medium;
           props.utm_campaign = activeUtmParams.utm_campaign;
         }
-
         track(eventName, props);
       }
     });
 
-    // Animate number counters
-    function animateNumbers() {
-      const numbers = document.querySelectorAll('.trust-number');
-      numbers.forEach(num => {
-        const finalNumber = num.textContent;
-        const isZero = finalNumber === '0';
-        if (isZero) return;
-
-        // Skip animation for non-numeric content (like checkmarks)
-        const numberOnly = parseInt(finalNumber.replace(/\D/g, ''));
-        if (isNaN(numberOnly)) return;
-
-        const suffix = finalNumber.replace(/[0-9]/g, '');
-        let current = 0;
-        const increment = numberOnly / 50;
-        const timer = setInterval(() => {
-          current += increment;
-          if (current >= numberOnly) {
-            current = numberOnly;
-            clearInterval(timer);
-          }
-          num.textContent = Math.floor(current) + suffix;
-        }, 30);
-      });
-    }
-
-    // Trigger number animation when trust section is visible
-    const trustSection = document.querySelector('.trust');
-    const trustObserver = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) {
-        animateNumbers();
-        trustObserver.disconnect();
-      }
-    }, {threshold: 0.3});
-
-    if (trustSection) {
-      trustObserver.observe(trustSection);
-    }
-
-    // Mobile app banner close
+    // Mobile app banner
     const appBanner = document.getElementById('appBanner');
     if (appBanner && /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
       appBanner.style.display = 'block';
@@ -3204,35 +1980,23 @@
       });
     }
 
-    // Load live stats (no animation - instant set to avoid layout shift)
+    // Live stats from Firestore JSON
     async function loadStats() {
       try {
         const response = await fetch('data/firestore-stats.json');
         const stats = await response.json();
         const d = stats.display || {};
-        if (d.appStoreRating) { setText('appRating', d.appStoreRating); setText('reviewsRating', d.appStoreRating); }
-        if (d.appStoreDownloads) setText('downloadCount', d.appStoreDownloads);
-        if (d.protocolsUploaded) setText('protocolCount', d.protocolsUploaded);
-        if (d.scenariosGenerated) setText('quizCount', d.scenariosGenerated);
-        if (d.scenariosGenerated) setText('scenarioCount', d.scenariosGenerated);
-      } catch (e) {
-        // HTML already has fallback values, nothing to do
-      }
+        if (d.appStoreRating) {
+          setText('appRating', d.appStoreRating);
+          setText('reviewsRating', d.appStoreRating);
+        }
+      } catch (e) {}
     }
-
     function setText(id, val) {
       const el = document.getElementById(id);
       if (el) el.textContent = val;
     }
-
     loadStats();
-
-    // Mirror App Store rating into the reviews trust line
-    (function syncRating(){
-      const src = document.getElementById('appRating');
-      const dst = document.getElementById('reviewsRating');
-      if (src && dst && src.textContent.trim()) dst.textContent = src.textContent.trim();
-    })();
   </script>
 </body>
 </html>

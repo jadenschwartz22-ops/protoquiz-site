@@ -72,9 +72,10 @@ If a buyer asks "why ProtoQuiz instead of [tool we already use]?" — the answer
 1. **Train on what you actually use** (the wedge — see above).
 2. **Visibility for command staff.** Admin dashboard shows which protocols and which providers need more reps, by name and by topic. Stop finding out at QA.
 3. **Faster onboarding.** New hires can learn the protocol set from day one, on their own time. FTOs spend their time on judgment instead of basics.
-4. **Lower legal liability.** Documented, dated proof that your providers were trained and signed off on the current protocol set.
-5. **No added training hours.** Providers do reps on shift, on a slow night, or a few minutes a week from anywhere — no schedule changes required.
-6. **Fast to stand up.** Send the PDF, tenant goes live in days, medical director reviews and signs off, single login link to the crews. No app store, no IT ticket.
+4. **Improves CE + clinical competency.** Continuous low-friction reps on the agency's actual protocol set produce measurable per-topic and per-provider improvement (visible on the dashboard). Not a CE provider today (see §12), but the *competency* signal is the leading indicator most agencies don't have.
+5. **Lower legal liability.** Documented, dated proof that your providers were trained and signed off on the current protocol set. (See sales-page caveat: phrase this as "audit + license-defense documentation," not "ProtoQuiz prevents lawsuits.")
+6. **No added training hours.** Providers do reps on shift, on a slow night, or a few minutes a week from anywhere — no schedule changes required.
+7. **Fast to stand up.** Send the PDF, tenant goes live in days, medical director reviews and signs off, single login link to the crews. No app store, no IT ticket.
 
 ## 8. Proof points
 
@@ -84,17 +85,32 @@ If a buyer asks "why ProtoQuiz instead of [tool we already use]?" — the answer
 - Medical director approval gate — nothing goes live without sign-off; agency keeps control.
 - B2C product (App Store) running on the same engine — not vaporware.
 
-## 8a. Pricing (current model — as of 2026-05-04)
+## 8a. Pricing (current model, as of 2026-05-05)
 
-> **Sales-team note:** Always reference this section directly. Do not guess pricing from older copy elsewhere. If founder updates pricing, update this section first, then propagate.
+> Sales-team note: always reference this section directly. Do not guess pricing from older copy elsewhere. If founder updates pricing, update this section first, then propagate.
 
-- **Standard:** $100 per provider per year. Flat — no tiers, no setup fees, no add-ons.
-- **Pilot rate:** 50% off for life = **$50 per provider per year** for early agency partners. Locked for as long as the agency stays on. (Pilot is the early partnership program — the price isn't a temporary promo; it's permanent for those who sign on now.)
-- **Worked example (medium, 300 providers):**
-  - Standard: 300 × $100/yr = **$30,000/yr**
-  - Pilot rate: 300 × $50/yr = **$15,000/yr**
-- **Math is allowed to be visible on the site.** Show the buyer their actual dollars. They'll calculate it anyway.
-- **No "free pilot" framing.** That's old copy. The pilot offer is the 50%-for-life rate, not zero cost. Don't write "free for the first six months" — that's stale.
+- **Standard:** $100 per provider per year. Flat (no tiers, no setup fees, no add-ons).
+- **Pilot rate:** $50 per provider per year, **locked for life**. 50% off the standard rate, permanent for early agency partners.
+- **Pilot perk:** the first 6 months are free for pilot agencies. After the free months, the locked $50/yr rate kicks in.
+- **Pilot scarcity:** only 2 pilot slots remaining. Closes August 1, 2026, or when the last 2 are filled, whichever comes first.
+- **Per-agency math IS shown on the site.** Interactive slider (25 to 750 providers) drives the headline price (their actual yearly cost) and a sourced 4-row savings breakdown. Pilot agency saves roughly **5.9x what they pay** ($295/yr per provider in defensible savings vs $50/yr cost); standard saves ~3x.
+- Pilot rate is permanent for pilot agencies (locked for life). Not a temporary promo.
+
+### Sourced savings model (per provider per year)
+
+These are the real, citable numbers behind the on-site savings calculator. Conservative; each row defensibly sourced. Update here first if numbers change.
+
+| Category | $/provider/yr | Source | Confidence |
+|---|---|---|---|
+| Faster onboarding | $200 | AAA 2022 EMS turnover survey ($9k+/replacement, ~30% annual turnover); modest 10% ramp reduction | High |
+| Fewer remediations | $50 | PMC peer-reviewed prehospital med-error data (up to 12.76% rate); supervisor + FTO time at burdened labor | High |
+| Legal & license defense | $25 | NAEMT/CM&F malpractice insurance discount math (10% × ~$300/yr avg premium) | Medium |
+| CE documentation & audit defense | $20 | NREMT recertification audits handbook; 15-30 min admin time saved per recert cycle | Medium |
+| **Total** | **$295** | | |
+
+**Anti-claims:** Do not say "saves $5k per provider." Do not cite the $297k/$55k ED malpractice averages directly per provider — those are per-incident, not per-provider per year, and inflating them here would not survive a CFO. The $25/yr legal number is the per-provider expected-value math, not "what a license defense case costs."
+
+**Past mistakes:** Earlier copy used $60/$40/$50/$20 = $170/yr with weak source links (a defense-attorney marketing page, a TX state enforcement listing without dollar values, a generic CAPCE requirements page). Those linked pages didn't substantiate the dollars. Replaced with peer-reviewed and industry-standard citations.
 
 ## 9. Voice and tone (Hybrid: blunt insight, professional delivery)
 
