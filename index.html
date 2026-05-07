@@ -3209,17 +3209,20 @@
         if (!getIsActive()) return;
         if (e.button !== undefined && e.button !== 0) return;
         if (e.target.closest('.reach-zoom-ui')) return;
+        if (e.target.closest('.locale') && zoom <= 1.001) return;
         dragging = true; dragMoved = false;
         dragStartX = e.clientX; dragStartY = e.clientY;
         vbStartX = vbX; vbStartY = vbY;
         svg.classList.add('is-panning');
-        svg.setPointerCapture?.(e.pointerId);
+        if (!e.target.closest('.locale')) svg.setPointerCapture?.(e.pointerId);
       });
+      const DRAG_THRESH = 10;
       svg.addEventListener('pointermove', (e) => {
         if (!dragging) return;
-        const r = svg.getBoundingClientRect();
         const dx = e.clientX - dragStartX, dy = e.clientY - dragStartY;
-        if (Math.abs(dx) > 4 || Math.abs(dy) > 4) dragMoved = true;
+        if (Math.abs(dx) < DRAG_THRESH && Math.abs(dy) < DRAG_THRESH) return;
+        dragMoved = true;
+        const r = svg.getBoundingClientRect();
         vbX = vbStartX - (dx / r.width) * vbW;
         vbY = vbStartY - (dy / r.height) * vbH;
         clamp(); apply();
