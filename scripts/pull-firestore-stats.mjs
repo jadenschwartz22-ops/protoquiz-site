@@ -189,7 +189,7 @@ const STATE_RULES = [
   [/alaska|\bak[\s_-]?ems\b/i, 'AK'],
   [/hawaii|\bhi[\s_-]?ems\b/i, 'HI'],
   [/\bnew[\s_-]?mexico\b|\bnm[\s_-]?ems\b/i, 'NM'],
-  [/tcems|tucson/i, 'AZ'],
+  [/tcems|tucson/i, 'AZ'], // catch-all if city rules miss
 ];
 
 function classifyState(name) {
@@ -218,8 +218,8 @@ const CITY_RULES = [
   [/dallas/i,                                         { state:'TX', city:'Dallas',          x:473, y:441 }],
   [/portland/i,                                       { state:'OR', city:'Portland',        x:41,  y:81 }],
   [/multnomah/i,                                      { state:'OR', city:'Multnomah Co',    x:41,  y:81 }],
-  [/maricopa|phoenix/i,                               { state:'AZ', city:'Phoenix',         x:182, y:366 }],
-  [/tcems|tucson/i,                                   { state:'AZ', city:'Tucson',          x:200, y:401 }],
+  [/maricopa|phoenix|tcems/i,                         { state:'AZ', city:'Phoenix',         x:182, y:366 }],
+  [/tucson/i,                                         { state:'AZ', city:'Tucson',          x:200, y:401 }],
   [/\bclark[\s_-]?county\b|las[\s_-]?vegas/i,         { state:'NV', city:'Las Vegas',       x:183, y:312 }],
   [/greater[\s_-]?miami|miami/i,                      { state:'FL', city:'Miami',           x:745, y:559 }],
   [/orlando/i,                                        { state:'FL', city:'Orlando',         x:730, y:520 }],
@@ -232,7 +232,7 @@ const CITY_RULES = [
   [/nashville|middle[\s_-]?tn/i,                      { state:'TN', city:'Nashville',       x:627, y:337 }],
   [/memphis/i,                                        { state:'TN', city:'Memphis',         x:597, y:345 }],
   [/boston[\s_-]?ems/i,                               { state:'MA', city:'Boston',          x:895, y:151 }],
-  [/dcems|\bdc[\s_-]?fems\b|\bdhs[\s_-]?ems\b|fems[\s_-]protocols/i, { state:'DC', city:'Washington, D.C.', x:802, y:252 }],
+  [/dcems|\bdc[\s_-]?fems\b|\bdhs[\s_-]?ems\b|fems[\s_-]protocols/i, { state:'DC', city:'Washington, D.C.', x:797, y:262 }],
   [/baltimore/i,                                      { state:'MD', city:'Baltimore',       x:800, y:250 }],
   [/aurora[\s_-]?south[\s_-]?wi/i,                    { state:'WI', city:'Aurora',          x:605, y:194 }],
   [/milwaukee/i,                                      { state:'WI', city:'Milwaukee',       x:612, y:187 }],

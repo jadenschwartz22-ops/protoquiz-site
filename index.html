@@ -2600,6 +2600,7 @@
       "NC|Craven":           { dx:14,  dy:5,   anchor:"start"  },
       "NC|Charlotte":        { dx:0,   dy:18,  anchor:"middle" },
       "NC|Raleigh":          { dx:0,   dy:-14, anchor:"middle" },
+      "DC|Washington, D.C.": { dx:24,  dy:18,  anchor:"start"  }, // below+right of Baltimore
     };
 
     // State-name lookup for full-state strings in the detail panel
@@ -2681,7 +2682,7 @@
           // to a higher-count labeled dot (proximity-based clustering).
           const sortedByCount = [...r.locales].sort((a,b)=>b.count-a.count);
           const placedLabels = []; // [{x,y}]
-          const PROX_PX = 28; // SVG units below which a tiny label gets suppressed
+          const PROX_PX = 18; // SVG units below which a tiny label gets suppressed
           const shouldLabel = (loc) => {
             // Always label warm/hot
             if (loc.tier === 'hot' || loc.tier === 'warm') return true;
