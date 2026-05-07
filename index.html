@@ -164,6 +164,8 @@
       --line-2:#2a2620;
       --amber:#ffb000;
       --amber-deep:#cc8a00;
+      --amber-warm:#ff7a00;
+      --amber-dim:#7a5a00;
       --amber-soft:#3a2a08;
       --green:#00d27a;
       --siren:#ff3b30;
@@ -468,7 +470,13 @@
     .hero-meta .green{color:var(--green);}
 
     /* === Conveyor hero (corpus-flex) === */
-    .hero-cv{padding:0 0 32px;border-bottom:1px solid var(--line);position:relative;overflow:hidden;}
+    .hero-cv{padding:0 0 56px;border-bottom:1px solid var(--line);position:relative;overflow:hidden;}
+    .hero-cv + .section{padding-top:72px;}
+    .hero-cv + .section::before{
+      content:"";position:absolute;top:-1px;left:50%;transform:translateX(-50%);
+      width:120px;height:2px;background:var(--amber);
+      box-shadow:0 0 14px rgba(255,176,0,.5);
+    }
     .hero-cv::before{
       content:"";position:absolute;top:32%;left:50%;width:1100px;height:600px;
       transform:translate(-50%,-50%);
@@ -493,13 +501,15 @@
     }
     .conveyor{position:relative;width:100%;padding:18px 0;margin-top:8px;}
     .conveyor-eyebrow{
-      text-align:center;margin-bottom:16px;
+      text-align:center;margin:0 auto 16px;max-width:920px;padding:0 16px;
       font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;
       color:var(--ink-soft);font-weight:600;
+      display:flex;justify-content:center;align-items:center;gap:6px;flex-wrap:wrap;
     }
+    .conveyor-eyebrow strong{color:var(--ink);font-weight:700;}
     .conveyor-eyebrow .live{color:var(--green);font-weight:700;}
-    .conveyor-eyebrow .green-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green);vertical-align:middle;margin:0 8px 2px;box-shadow:0 0 8px var(--green);}
-    .conveyor-eyebrow .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--amber);vertical-align:middle;margin:0 10px 2px;animation:cvPulse 2s ease-in-out infinite;box-shadow:0 0 8px var(--amber);}
+    .conveyor-eyebrow .green-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green);margin-right:6px;box-shadow:0 0 8px var(--green);}
+    .conveyor-eyebrow .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--amber);margin:0 6px;animation:cvPulse 2s ease-in-out infinite;box-shadow:0 0 8px var(--amber);}
     @keyframes cvPulse{0%,100%{opacity:.4;}50%{opacity:1;}}
     .belt{
       position:relative;width:100%;overflow:hidden;
@@ -518,8 +528,8 @@
     .doc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--amber);border-radius:3px 3px 0 0;}
     .doc.c2::before{background:var(--green);}
     .doc.c3::before{background:var(--amber-deep);}
-    .doc.c4::before{background:#ff7a00;}
-    .doc.c5::before{background:#7a5a00;}
+    .doc.c4::before{background:var(--amber-warm);}
+    .doc.c5::before{background:var(--amber-dim);}
     .doc-eyebrow{font-size:7.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;font-weight:700;}
     .doc-title{font-size:10.5px;line-height:1.25;color:var(--ink);font-weight:700;margin-bottom:8px;text-transform:uppercase;letter-spacing:.02em;}
     .doc-lines{display:flex;flex-direction:column;gap:3px;flex:1;margin-bottom:8px;}
@@ -551,32 +561,62 @@
     }
     .processor::before{left:-32px;}
     .processor::after{right:-32px;background:var(--green);box-shadow:0 0 8px var(--green);}
-    .stats{
-      max-width:var(--max);margin:0 auto;padding:18px 32px 8px;
-      display:flex;flex-wrap:wrap;gap:8px 32px;
-      font-family:var(--mono);font-size:13px;letter-spacing:.04em;color:var(--ink-soft);
-      border-top:1px solid var(--line);text-transform:uppercase;
+    /* Stats: HUD readout strip, semantic dl, no separators */
+    .hero-cv .stats{
+      margin:32px 0 0;padding:18px 0 0;
+      border-top:1px solid var(--line);
+      display:flex;flex-wrap:wrap;gap:14px 36px;
+      font-family:var(--mono);
     }
-    .stats .num{color:var(--amber);font-weight:700;font-size:18px;letter-spacing:-.01em;text-transform:none;}
-    .stats .num.zero{color:var(--siren);}
-    .stats span{display:inline-flex;align-items:baseline;gap:8px;}
-    .stats .sep{color:var(--muted);}
-    .intro-row{display:flex;align-items:center;gap:18px;margin-top:24px;flex-wrap:wrap;}
+    .hero-cv .stat{
+      display:inline-flex;align-items:baseline;gap:10px;
+      flex-direction:row-reverse;justify-content:flex-end;
+      font-size:13px;letter-spacing:.04em;color:var(--ink-soft);text-transform:uppercase;
+    }
+    .hero-cv .stat dt{margin:0;}
+    .hero-cv .stat dd{margin:0;}
+    .hero-cv .stat .num{
+      font-size:18px;color:var(--amber);font-weight:700;letter-spacing:-.01em;
+      text-transform:none;font-variant-numeric:tabular-nums;
+    }
+    .hero-cv .stat .num.zero{color:var(--siren);}
+    .hero-cv .stat-punch .punch{color:var(--amber);font-weight:700;letter-spacing:.06em;}
+    .hero-cv .stat-punch{flex-basis:100%;padding-top:6px;border-top:1px dashed var(--line);margin-top:4px;}
+
+    /* Outro: CTA primary, intro chip line, meta. Stack by importance. */
+    .hero-outro{margin-top:40px;display:flex;flex-direction:column;gap:22px;}
+    .hero-outro .cta{display:flex;gap:12px;flex-wrap:wrap;}
+    .intro-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
     .intro-row .chip{
       font-family:var(--mono);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;
-      color:var(--bg);background:var(--amber);padding:5px 10px;border-radius:3px;font-weight:700;
+      color:var(--bg);background:var(--amber);padding:6px 10px;border-radius:3px;font-weight:700;
     }
     .intro-row .built{
       font-family:var(--mono);font-size:13.5px;color:var(--ink-soft);letter-spacing:.06em;text-transform:uppercase;
     }
     .intro-row .built b{color:var(--ink);font-weight:700;}
-    .intro-row .cta{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap;}
+
+    /* Mobile sizing: real width/height for crisp type, no transform-scale */
     @media (max-width:880px){
-      .hero-cv .wrap{padding-top:96px;}
-      .doc.s1,.doc.s2,.doc.s3,.doc.s4,.doc.s5,.doc.s6,.doc.s7,.doc.s8{transform:scale(.82);transform-origin:bottom center;margin:0 -10px;}
-      .stats{font-size:11.5px;gap:6px 20px;padding:14px 32px 6px;}
-      .stats .num{font-size:16px;}
-      .intro-row .cta{margin-left:0;width:100%;}
+      .hero-cv .wrap{padding-top:88px;}
+      .hero-cv h1{font-size:clamp(30px,7vw,42px);}
+      .hero-cv .lede{font-size:16px;}
+      .doc.s1{width:106px;height:140px;}
+      .doc.s2{width:114px;height:166px;}
+      .doc.s3{width:98px;height:132px;}
+      .doc.s4{width:128px;height:152px;}
+      .doc.s5{width:110px;height:178px;}
+      .doc.s6{width:122px;height:144px;}
+      .doc.s7{width:102px;height:160px;}
+      .doc.s8{width:132px;height:148px;}
+      .hero-cv .stats{gap:10px 22px;font-size:12px;}
+      .hero-cv .stat{flex-basis:calc(50% - 12px);}
+      .hero-cv .stat .num{font-size:16px;}
+      .hero-cv .stat-punch{flex-basis:100%;}
+    }
+    @media (prefers-reduced-motion: reduce){
+      .track{animation:none;}
+      .conveyor-eyebrow .dot{animation:none;}
     }
 
     .phone-slot{
@@ -1381,17 +1421,16 @@
         </div>
         <h1>There's no good way to study your EMS <span class="highlight">protocols.</span></h1>
         <div class="answer-tag">The ones you actually need to know to do your job.</div>
-        <p class="lede">Every agency has its own. <em>Different drugs. Different formats. Different lengths.</em> Hundreds of pages each. The thing you use on every single call &mdash; and there's no real way to study it.</p>
+        <p class="lede">Every agency has its own. <em>Different drugs. Different formats. Different lengths.</em> Hundreds of pages each. The thing you use on every single call. And no real way to study it.</p>
         <p class="until">Until now.</p>
       </div>
 
-      <div class="conveyor" aria-hidden="true">
-        <div class="conveyor-eyebrow">
-          <span class="green-dot"></span><span class="live">LIVE</span>
-          <span class="dot"></span>123 protocol sets indexed
-          <span class="dot"></span>71,147 pages processed
-        </div>
-        <div class="belt">
+      <div class="conveyor">
+        <p class="conveyor-eyebrow">
+          <span class="green-dot" aria-hidden="true"></span><span class="live">LIVE</span>
+          <span class="dot" aria-hidden="true"></span><span>indexing protocols across the US</span>
+        </p>
+        <div class="belt" aria-hidden="true">
           <div class="track">
             <div class="doc s1"><div class="doc-eyebrow">Los Angeles Co</div><div class="doc-title">LA County Treatment Protocols</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">412p</span></div></div>
             <div class="doc c2 s4"><div class="doc-eyebrow">New York State</div><div class="doc-title">REMAC Unified Protocols</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>v25.1</span><span class="pg">356p</span></div></div>
@@ -1441,33 +1480,32 @@
         </div>
       </div>
 
-      <div class="stats">
-        <span><span class="num">123</span> protocol sets indexed</span>
-        <span class="sep">|</span>
-        <span><span class="num">71,147</span> pages processed</span>
-        <span class="sep">|</span>
-        <span><span class="num">10,000+</span> medications extracted</span>
-        <span class="sep">|</span>
-        <span><span class="num zero">0</span> tools to study them &mdash; until now</span>
-      </div>
-
       <div class="wrap">
-        <div class="intro-row">
-          <span class="chip">▸ INTRODUCING PROTOQUIZ</span>
-          <span class="built"><b>Built by a paramedic student.</b> For working medics.</span>
+        <dl class="stats" aria-label="ProtoQuiz corpus">
+          <div class="stat"><dt>Protocol sets indexed</dt><dd><span class="num">123</span></dd></div>
+          <div class="stat"><dt>Pages processed</dt><dd><span class="num">71,147</span></dd></div>
+          <div class="stat"><dt>Medications extracted</dt><dd><span class="num">10,000+</span></dd></div>
+          <div class="stat stat-punch"><dt>Tools to study them</dt><dd><span class="num zero">0</span><span class="punch">until now.</span></dd></div>
+        </dl>
+
+        <div class="hero-outro">
           <div class="cta">
             <a href="https://apps.apple.com/app/id6753611139?utm_source=website&utm_medium=hero&utm_campaign=download"
                target="_blank" rel="noopener"
-               class="btn btn-primary" data-track="AppStoreHero">↓ App Store</a>
+               class="btn btn-primary" data-track="AppStoreHero">↓ Download on App Store</a>
             <a href="#wedge" class="btn btn-ghost">↓ How it works</a>
           </div>
-        </div>
-        <div class="hero-meta" style="margin-top:18px;">
-          <span><span class="star">★</span><strong id="appRating">4.7</strong> App Store</span>
-          <span class="sep">·</span>
-          <span><span class="green">●</span> iOS</span>
-          <span class="sep">·</span>
-          <span>Free, ad-supported</span>
+          <div class="intro-row">
+            <span class="chip">▸ INTRODUCING PROTOQUIZ</span>
+            <span class="built"><b>Built by a paramedic student.</b> For working medics.</span>
+          </div>
+          <div class="hero-meta">
+            <span><span class="star">★</span><strong id="appRating">4.7</strong> App Store</span>
+            <span class="sep">·</span>
+            <span><span class="green">●</span> iOS</span>
+            <span class="sep">·</span>
+            <span>Free, ad-supported</span>
+          </div>
         </div>
       </div>
     </section>
