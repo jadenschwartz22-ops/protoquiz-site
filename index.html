@@ -752,13 +752,39 @@
     .reach-stage{
       position:relative;width:100%;max-width:1080px;margin:0 auto;
       aspect-ratio: 959 / 593;
+      touch-action:none;
+      user-select:none;
+      -webkit-user-select:none;
     }
     .reach-svg{
       position:absolute;inset:0;width:100%;height:100%;display:block;
+      cursor:grab;
     }
+    .reach-svg.is-zoomed{cursor:grab;}
+    .reach-svg.is-panning{cursor:grabbing;}
+    /* Zoom controls overlay */
+    .reach-zoom-ui{
+      position:absolute;top:10px;right:10px;z-index:3;
+      display:flex;flex-direction:column;gap:4px;
+      font-family:var(--mono);
+    }
+    .reach-zoom-ui button{
+      width:34px;height:34px;
+      background:rgba(6,5,10,.85);
+      border:1px solid var(--line-2);
+      color:var(--ink-soft);
+      font-size:18px;font-weight:700;line-height:1;
+      cursor:pointer;
+      display:flex;align-items:center;justify-content:center;
+      transition:border-color .15s, color .15s, background .15s;
+    }
+    .reach-zoom-ui button:hover{border-color:var(--amber);color:var(--amber);}
+    .reach-zoom-ui button:disabled{opacity:.4;cursor:not-allowed;}
+    .reach-zoom-ui button.reach-zoom-reset{font-size:11px;letter-spacing:.06em;}
     .reach-svg .state{
       fill:transparent;
-      stroke:var(--line-2);stroke-width:.6;
+      stroke:var(--line-2);stroke-width:1;
+      vector-effect:non-scaling-stroke;
     }
     .reach-svg .state.lit{stroke:rgba(255,176,0,.32);}
     .reach-svg .state.lit.warm{stroke:rgba(255,176,0,.5);}
@@ -795,21 +821,25 @@
       80%{opacity:0;transform:scale(2.6);}
       100%{opacity:0;transform:scale(2.6);}
     }
-    /* On-map dot labels */
+    /* On-map dot labels — sizes scale by --rz so labels stay constant on screen as user zooms */
+    .reach-svg{--rz:1;}
     .reach-svg .rl{
-      font-family:var(--mono);font-size:14px;letter-spacing:.06em;
+      font-family:var(--mono);font-size:calc(14px * var(--rz));letter-spacing:.06em;
       fill:var(--ink-soft);text-transform:uppercase;font-weight:600;
-      paint-order:stroke fill;stroke:var(--bg);stroke-width:4;stroke-linejoin:round;
-      transition:fill .15s, font-size .15s;
+      paint-order:stroke fill;stroke:var(--bg);stroke-width:calc(4px * var(--rz));stroke-linejoin:round;
+      transition:fill .15s;
     }
-    .reach-svg .rl-hot{font-size:18px;font-weight:700;fill:var(--ink);letter-spacing:.04em;}
-    .reach-svg .rl-warm{font-size:15.5px;font-weight:700;fill:var(--ink);}
-    .reach-svg .rl-tiny{font-size:12px;letter-spacing:.04em;fill:var(--muted);font-weight:500;}
+    .reach-svg .rl-hot{font-size:calc(18px * var(--rz));font-weight:700;fill:var(--ink);letter-spacing:.04em;}
+    .reach-svg .rl-warm{font-size:calc(15.5px * var(--rz));font-weight:700;fill:var(--ink);}
+    .reach-svg .rl-tiny{font-size:calc(12px * var(--rz));letter-spacing:.04em;fill:var(--muted);font-weight:500;}
     /* Count tspan: always amber regardless of label tier */
     .reach-svg .rl .rl-n{fill:var(--amber);font-weight:700;}
     /* Highlight a label when its dot is hovered/focused (no extra tooltip spawn) */
     .reach-svg .rl.is-hot{fill:var(--amber);}
     .reach-svg .rl.is-hot .rl-n{fill:var(--ink);}
+    /* Cluster-suppressed labels: hidden by default, revealed at deep zoom */
+    .reach-svg .rl.is-suppressed{display:none;}
+    .reach-svg.is-deepzoom .rl.is-suppressed{display:inline;}
 
     /* Hover tooltip */
     .reach-tip .tip-bg{
@@ -1013,20 +1043,26 @@
       .reach-ticker{font-size:10.5px;padding:10px 12px;gap:10px;}
       .reach-ticker .tick-belt{gap:32px;}
       .reach .wrap{padding:0 16px;}
-      .reach-stage{padding:0;}
+      .reach-stage{padding:0;min-height:280px;}
       /* Pump SVG label sizes to compensate for downscaled viewBox on phones */
-      .reach-svg .rl{font-size:24px;letter-spacing:.02em;stroke-width:6;}
-      .reach-svg .rl-hot{font-size:30px;}
-      .reach-svg .rl-warm{font-size:26px;}
-      /* Hide tiny single-upload labels on mobile to reduce clutter */
-      .reach-svg .rl-tiny{display:none;}
-      /* Make dots bigger on mobile for tap-ability */
+      .reach-svg .rl{font-size:calc(24px * var(--rz));letter-spacing:.02em;stroke-width:calc(6px * var(--rz));}
+      .reach-svg .rl-hot{font-size:calc(30px * var(--rz));}
+      .reach-svg .rl-warm{font-size:calc(26px * var(--rz));}
+      .reach-svg .rl-tiny{font-size:calc(20px * var(--rz));}
+      /* Hide tiny single-upload labels on mobile by default; reveal on deep zoom */
+      .reach-svg .rl-tiny.is-suppressed{display:none;}
+      .reach-svg.is-deepzoom .rl-tiny.is-suppressed{display:inline;}
+      /* Bigger dots for tap-ability */
       .reach-svg .locale circle.core{r:3.5;}
       .reach-svg .locale.warm circle.core{r:5;}
       .reach-svg .locale.hot circle.core{r:7;}
       .reach-svg .locale circle.halo{r:8;stroke-width:1.4;}
       .reach-svg .locale.warm circle.halo{r:11;}
       .reach-svg .locale.hot circle.halo{r:18;stroke-width:1.6;}
+      /* Bigger zoom buttons on touch */
+      .reach-zoom-ui{top:8px;right:8px;gap:6px;}
+      .reach-zoom-ui button{width:44px;height:44px;font-size:22px;}
+      .reach-zoom-ui button.reach-zoom-reset{font-size:11px;}
     }
     @media (prefers-reduced-motion: reduce){
       .reach-ticker .tick-belt{animation:none;}
@@ -1933,6 +1969,11 @@
         </div>
 
         <div class="reach-stage">
+          <div class="reach-zoom-ui" aria-hidden="true">
+            <button type="button" class="reach-zoom-in" aria-label="Zoom in">+</button>
+            <button type="button" class="reach-zoom-out" aria-label="Zoom out">−</button>
+            <button type="button" class="reach-zoom-reset" aria-label="Reset zoom" hidden>RESET</button>
+          </div>
           <svg class="reach-svg" viewBox="0 0 959 593" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="US map showing 21 states where ProtoQuiz uploads have come from">
             <path class="state s-al lit on" data-count="2" d="m 643,467.4 .4,-7.3 -.9,-1.2 -1.7,-.7 -2.5,-2.8 .5,-2.9 48.8,-5.1 -.7,-2.2 -1.5,-1.5 -.5,-1.4 .6,-6.3 -2.4,-5.7 .5,-2.6 .3,-3.7 2.2,-3.8 -.2,-1.1 -1.7,-1 v -3.2 l -1.8,-1.9 -2.9,-6.1 -12.9,-45.8 -45.7,4 1.3,2 -1.3,67 4.4,33.2 .9,-.5 1.3,.1 .6,.4 .8,-.1 2,-3.8 v -2.3 l 1.1,-1.1 1.4,.5 3.4,6.4 v .9 l -3.3,2.2 3.5,-.4 4.9,-1.6 z"><title>Alabama</title></path>
 <path class="state s-az lit on" data-count="2" d="m 139.6,387.6 3,-2.2 .8,-2.4 -1,-1.6 -1.8,-.2 -1.1,-1.6 1.1,-6.9 1.6,-.3 2.4,-3.2 1.6,-7 2.4,-3.6 4.8,-1.7 1.3,-1.3 -.4,-1.9 -2.3,-2.5 -1.2,-5.8 -1.4,-1.8 -1.3,-3.4 .9,-2.1 1.4,-3 .5,-2.9 -.5,-4.9 1,-13.6 3.5,-.6 3.7,1.4 1.2,2.7 h 2 l 2.4,-2.9 3.4,-17.5 46.2,8.2 40,6 -17.4,124.1 -37.3,-5.4 -64.2,-37.5 .5,-2.9 2,-1.8 z"><title>Arizona</title></path>
@@ -2792,41 +2833,35 @@
             dot.appendChild(hit);
 
             const willLabel = shouldLabel(loc);
-            if (willLabel) {
-              // Highlight the existing on-map label on hover/focus instead of
-              // spawning a duplicate tooltip.
-              const onIn = () => {
-                const lbl = svg.querySelector(`.reach-labels [data-key="${CSS.escape(key)}"]`);
-                if (lbl) lbl.classList.add('is-hot');
-              };
-              const onOut = () => {
-                const lbl = svg.querySelector(`.reach-labels [data-key="${CSS.escape(key)}"]`);
-                if (lbl) lbl.classList.remove('is-hot');
-              };
-              dot.addEventListener('mouseenter', onIn);
-              dot.addEventListener('focus', onIn);
-              dot.addEventListener('mouseleave', onOut);
-              dot.addEventListener('blur', onOut);
-            } else {
-              // Unlabeled tiny dots: show tooltip since there's no label to highlight.
-              // Use plain text "CITY 9" (count in amber via tspan, no middle-dot).
-              const onIn = () => showTip(loc.x, loc.y, loc.city.toUpperCase(), loc.count);
-              dot.addEventListener('mouseenter', onIn);
-              dot.addEventListener('focus', onIn);
-              dot.addEventListener('mouseleave', hideTip);
-              dot.addEventListener('blur', hideTip);
-            }
+            // Hover always highlights the label (whether or not it's currently visible).
+            // For suppressed-at-default-zoom labels, hover-to-highlight is a no-op
+            // until the user zooms in (when the label becomes visible).
+            const onIn = () => {
+              const lbl = svg.querySelector(`.reach-labels [data-key="${CSS.escape(key)}"]`);
+              if (lbl) lbl.classList.add('is-hot');
+              if (!willLabel) showTip(loc.x, loc.y, loc.city.toUpperCase(), loc.count);
+            };
+            const onOut = () => {
+              const lbl = svg.querySelector(`.reach-labels [data-key="${CSS.escape(key)}"]`);
+              if (lbl) lbl.classList.remove('is-hot');
+              if (!willLabel) hideTip();
+            };
+            dot.addEventListener('mouseenter', onIn);
+            dot.addEventListener('focus', onIn);
+            dot.addEventListener('mouseleave', onOut);
+            dot.addEventListener('blur', onOut);
             dot.addEventListener('click', () => showReachDetail(loc));
             dot.addEventListener('keydown', (e) => {
               if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); showReachDetail(loc); }
             });
             localesG.appendChild(dot);
 
-            // Permanent label unless it's a 'tiny' dot too close to a bigger labeled one
-            if (willLabel) {
+            // Render the label for every locale; mark suppressed ones so CSS
+            // can hide them at default zoom and reveal at deep zoom.
+            {
               const off = REACH_CITY_OFFSETS[`${loc.state}|${loc.city}`] || REACH_LABEL_OFFSETS[loc.state] || REACH_DEFAULT_OFFSET;
               const lbl = document.createElementNS(SVG_NS, 'text');
-              const labelClass = tier === 'hot' ? 'rl rl-hot' : tier === 'warm' ? 'rl rl-warm' : 'rl';
+              const labelClass = tier === 'hot' ? 'rl rl-hot' : tier === 'warm' ? 'rl rl-warm' : (willLabel ? 'rl' : 'rl rl-tiny is-suppressed');
               lbl.setAttribute('class', labelClass);
               lbl.setAttribute('data-key', key);
               lbl.setAttribute('x', loc.x + off.dx);
@@ -2844,7 +2879,7 @@
               lbl.appendChild(cityT);
               lbl.appendChild(countT);
               labelsG.appendChild(lbl);
-              placedLabels.push({ x: loc.x, y: loc.y });
+              if (willLabel) placedLabels.push({ x: loc.x, y: loc.y });
             }
           }
           // Move tooltip to end so it renders on top
@@ -2856,34 +2891,41 @@
       const el = document.getElementById(id);
       if (el) el.textContent = val;
     }
-    // rAF-driven conveyor: smoother than long CSS animation on Chrome.
-    // Track has 2 identical halves; scroll until we've moved -halfWidth, then snap to 0.
+    // rAF-driven conveyor. Smoother than long CSS animations on Chrome.
     (function startConveyor() {
       const track = document.querySelector('.track');
       if (!track) return;
       if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      const PX_PER_SEC = 38; // tune speed; ~90s for 3400px-wide track
+      const PX_PER_SEC = 38;
       let halfWidth = 0;
       let x = 0;
-      let last = performance.now();
+      let last = 0;
       let paused = false;
       const measure = () => {
-        // total width / 2 because track is duplicated content
         halfWidth = track.scrollWidth / 2;
+        if (-x >= halfWidth && halfWidth > 0) x = 0;
       };
-      measure();
-      window.addEventListener('resize', measure);
-      // Pause when tab hidden so we don't burn CPU
+      // Re-measure after fonts settle (web fonts can shift widths).
+      const remeasureAll = () => measure();
+      remeasureAll();
+      window.addEventListener('resize', remeasureAll);
+      window.addEventListener('load', remeasureAll);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(remeasureAll);
+      // Re-measure on a couple of frames after init to catch late layout
+      requestAnimationFrame(() => requestAnimationFrame(remeasureAll));
+      setTimeout(remeasureAll, 1500);
+
       document.addEventListener('visibilitychange', () => {
         paused = document.hidden;
-        if (!paused) last = performance.now();
+        if (!paused) last = 0;
       });
       function frame(now) {
-        if (paused) { last = now; requestAnimationFrame(frame); return; }
-        const dt = (now - last) / 1000;
+        if (last === 0) last = now;
+        if (paused || halfWidth <= 0) { last = now; requestAnimationFrame(frame); return; }
+        const dt = Math.min(0.05, (now - last) / 1000);
         last = now;
         x -= PX_PER_SEC * dt;
-        if (-x >= halfWidth) x += halfWidth; // seamless wrap
+        if (-x >= halfWidth) x += halfWidth;
         track.style.transform = `translate3d(${x}px,0,0)`;
         requestAnimationFrame(frame);
       }
@@ -2898,6 +2940,158 @@
     document.addEventListener('visibilitychange', () => {
       if (!document.hidden) loadReach({ animate: false });
     });
+
+    // === Reach map: pan + zoom ===
+    (function setupReachZoom() {
+      const stage = document.querySelector('.reach-stage');
+      const svg = document.querySelector('.reach-svg');
+      if (!stage || !svg) return;
+      const VB_W = 959, VB_H = 593;
+      const MIN_ZOOM = 1, MAX_ZOOM = 6;
+      let vbX = 0, vbY = 0, vbW = VB_W, vbH = VB_H;
+      let zoom = 1;
+
+      const apply = () => {
+        svg.setAttribute('viewBox', `${vbX} ${vbY} ${vbW} ${vbH}`);
+        svg.classList.toggle('is-zoomed', zoom > 1);
+        // Scale labels & dot strokes inversely so they stay constant on screen
+        svg.style.setProperty('--rz', 1 / zoom);
+        const reset = stage.querySelector('.reach-zoom-reset');
+        if (reset) reset.hidden = zoom <= 1.001;
+        const zin = stage.querySelector('.reach-zoom-in');
+        const zout = stage.querySelector('.reach-zoom-out');
+        if (zin) zin.disabled = zoom >= MAX_ZOOM - 0.01;
+        if (zout) zout.disabled = zoom <= MIN_ZOOM + 0.01;
+      };
+
+      const clamp = () => {
+        // Clamp pan so viewBox stays inside the original 0..VB_W / 0..VB_H
+        if (vbX < 0) vbX = 0;
+        if (vbY < 0) vbY = 0;
+        if (vbX + vbW > VB_W) vbX = VB_W - vbW;
+        if (vbY + vbH > VB_H) vbY = VB_H - vbH;
+      };
+
+      const screenToSvg = (clientX, clientY) => {
+        const r = svg.getBoundingClientRect();
+        const px = (clientX - r.left) / r.width;
+        const py = (clientY - r.top) / r.height;
+        // Account for preserveAspectRatio xMidYMid meet (letterbox if aspect mismatch)
+        const sx = vbX + px * vbW;
+        const sy = vbY + py * vbH;
+        return { x: sx, y: sy };
+      };
+
+      const setZoom = (newZoom, anchorClientX, anchorClientY) => {
+        newZoom = Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, newZoom));
+        if (newZoom === zoom) return;
+        // Anchor: keep the SVG point under the anchor screen position fixed
+        const cx = anchorClientX ?? (svg.getBoundingClientRect().left + svg.getBoundingClientRect().width / 2);
+        const cy = anchorClientY ?? (svg.getBoundingClientRect().top + svg.getBoundingClientRect().height / 2);
+        const before = screenToSvg(cx, cy);
+        zoom = newZoom;
+        vbW = VB_W / zoom;
+        vbH = VB_H / zoom;
+        // Re-derive vbX/vbY so before === screenToSvg(cx, cy) after
+        const r = svg.getBoundingClientRect();
+        const px = (cx - r.left) / r.width;
+        const py = (cy - r.top) / r.height;
+        vbX = before.x - px * vbW;
+        vbY = before.y - py * vbH;
+        clamp();
+        apply();
+        // Toggle "show all labels" CSS on deep zoom for previously-suppressed dots
+        svg.classList.toggle('is-deepzoom', zoom > 1.8);
+      };
+
+      // Wheel: zoom at cursor. Only intercept when actually over the stage.
+      stage.addEventListener('wheel', (e) => {
+        if (zoom === MIN_ZOOM && e.deltaY > 0) return; // already at min, let page scroll
+        e.preventDefault();
+        const factor = e.deltaY < 0 ? 1.15 : 1 / 1.15;
+        setZoom(zoom * factor, e.clientX, e.clientY);
+      }, { passive: false });
+
+      // Drag to pan
+      let dragging = false, dragMoved = false, dragStartX = 0, dragStartY = 0, vbStartX = 0, vbStartY = 0;
+      const onPointerDown = (e) => {
+        // Only left button on mouse, and not on UI buttons
+        if (e.button !== undefined && e.button !== 0) return;
+        if (e.target.closest('.reach-zoom-ui')) return;
+        dragging = true; dragMoved = false;
+        dragStartX = e.clientX; dragStartY = e.clientY;
+        vbStartX = vbX; vbStartY = vbY;
+        svg.classList.add('is-panning');
+        svg.setPointerCapture?.(e.pointerId);
+      };
+      const onPointerMove = (e) => {
+        if (!dragging) return;
+        const r = svg.getBoundingClientRect();
+        const dxScreen = e.clientX - dragStartX;
+        const dyScreen = e.clientY - dragStartY;
+        if (Math.abs(dxScreen) > 4 || Math.abs(dyScreen) > 4) dragMoved = true;
+        // Convert screen delta to SVG delta
+        vbX = vbStartX - (dxScreen / r.width) * vbW;
+        vbY = vbStartY - (dyScreen / r.height) * vbH;
+        clamp();
+        apply();
+      };
+      const onPointerUp = (e) => {
+        if (!dragging) return;
+        dragging = false;
+        svg.classList.remove('is-panning');
+        svg.releasePointerCapture?.(e.pointerId);
+      };
+      svg.addEventListener('pointerdown', onPointerDown);
+      svg.addEventListener('pointermove', onPointerMove);
+      svg.addEventListener('pointerup', onPointerUp);
+      svg.addEventListener('pointercancel', onPointerUp);
+
+      // Suppress dot clicks if we just panned (drag-to-click distinction)
+      svg.addEventListener('click', (e) => {
+        if (dragMoved) { e.stopPropagation(); e.preventDefault(); dragMoved = false; }
+      }, true);
+
+      // Pinch (touch): two-finger zoom via pointer events
+      const activePointers = new Map();
+      svg.addEventListener('pointerdown', (e) => { if (e.pointerType === 'touch') activePointers.set(e.pointerId, e); });
+      svg.addEventListener('pointermove', (e) => {
+        if (e.pointerType !== 'touch' || !activePointers.has(e.pointerId)) return;
+        activePointers.set(e.pointerId, e);
+        if (activePointers.size === 2) {
+          const [a, b] = [...activePointers.values()];
+          const dist = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
+          const cx = (a.clientX + b.clientX) / 2;
+          const cy = (a.clientY + b.clientY) / 2;
+          if (svg._lastPinchDist) {
+            const factor = dist / svg._lastPinchDist;
+            setZoom(zoom * factor, cx, cy);
+          }
+          svg._lastPinchDist = dist;
+          dragMoved = true; // disable click on dot
+        }
+      });
+      const dropPointer = (e) => {
+        activePointers.delete(e.pointerId);
+        if (activePointers.size < 2) svg._lastPinchDist = 0;
+      };
+      svg.addEventListener('pointerup', dropPointer);
+      svg.addEventListener('pointercancel', dropPointer);
+
+      // Double-click toggles 2x zoom at point (or reset if already zoomed)
+      svg.addEventListener('dblclick', (e) => {
+        e.preventDefault();
+        if (zoom > 1.001) { setZoom(1); }
+        else { setZoom(2.5, e.clientX, e.clientY); }
+      });
+
+      // Buttons
+      stage.querySelector('.reach-zoom-in')?.addEventListener('click', () => setZoom(zoom * 1.4));
+      stage.querySelector('.reach-zoom-out')?.addEventListener('click', () => setZoom(zoom / 1.4));
+      stage.querySelector('.reach-zoom-reset')?.addEventListener('click', () => setZoom(1));
+
+      apply();
+    })();
   </script>
 </body>
 </html>
