@@ -254,6 +254,21 @@ function classifyCity(name) {
   return null;
 }
 
+// International (non-US) classifier. Coords for stylized world view at
+// viewBox 0 0 1000 500 with continents as rounded rectangles.
+const INTL_RULES = [
+  [/\bbcehs\b|british[\s_-]?columbia/i, { country:'CA', countryName:'Canada', city:'Vancouver, BC',  x:115, y:155 }],
+  [/\bmoh[\s_-]?als|moh[\s_-]?standards|ontario|toronto|land[\s_-]?ambulance/i, { country:'CA', countryName:'Canada', city:'Toronto, ON',  x:240, y:200 }],
+  [/coll[èe]ge[\s_-]?ellis|chimie[\s_-]?du[\s_-]?vivant|quebec|qu[ée]bec|montreal/i, { country:'CA', countryName:'Canada', city:'Quebec, QC',   x:280, y:190 }],
+  [/\bnhs\b|united[\s_-]?kingdom|\bjrcalc\b|glyceryl[\s_-]?trinitrate/i, { country:'GB', countryName:'UK', city:'London',                  x:480, y:140 }],
+  [/bradykardie|bradykardia|deutschland|notarzt|\bdivi\b/i, { country:'DE', countryName:'Germany', city:'Berlin',                          x:510, y:140 }],
+];
+
+function classifyIntl(name) {
+  for (const [rx, info] of INTL_RULES) if (rx.test(name)) return info;
+  return null;
+}
+
 // Default representative city per US state, with SVG coords for the
 // US-states viewBox 0 0 959 593 (Wikipedia "Blank US Map" projection).
 // New states automatically render as a dot when they show up.
@@ -335,7 +350,24 @@ async function getReachStats() {
     if (!cityData.has(k)) cityData.set(k, { count: 0, protocols: new Map() });
     return cityData.get(k);
   };
+  // International aggregation
+  const intlData = new Map();
+  const countryCounts = new Map();
+  const ensureIntl = (k) => {
+    if (!intlData.has(k)) intlData.set(k, { count: 0, protocols: new Map() });
+    return intlData.get(k);
+  };
   for (const [name, count] of nameCounts) {
+    const intl = classifyIntl(name);
+    if (intl) {
+      const k = `${intl.country}|${intl.city}|${intl.x}|${intl.y}`;
+      const e = ensureIntl(k);
+      e.count += count;
+      e.protocols.set(name, (e.protocols.get(name) || 0) + count);
+      e.countryName = intl.countryName;
+      countryCounts.set(intl.country, (countryCounts.get(intl.country) || 0) + count);
+      continue;
+    }
     const cityInfo = classifyCity(name);
     if (cityInfo) {
       const k = `${cityInfo.state}|${cityInfo.city}|${cityInfo.x}|${cityInfo.y}`;
@@ -396,6 +428,21 @@ async function getReachStats() {
     })
     .sort((a, b) => b.count - a.count);
 
+  // International locales for world view (viewBox 0 0 1000 500)
+  const internationalLocales = [...intlData.entries()]
+    .map(([k, { count, protocols, countryName }]) => {
+      const [country, city, x, y] = k.split('|');
+      const topProtocols = [...protocols.entries()]
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 3)
+        .map(([name, n]) => ({ title: prettifyName(name), count: n }));
+      return {
+        country, countryName, city, x: Number(x), y: Number(y), count, tier: tier(count), topProtocols
+      };
+    })
+    .sort((a, b) => b.count - a.count);
+  const internationalUploads = internationalLocales.reduce((s, l) => s + l.count, 0);
+
   return {
     generatedAt: new Date().toISOString(),
     totalUploads: total,
@@ -403,8 +450,12 @@ async function getReachStats() {
     activeStudiers: userIds.size,
     pagesProcessed: pages,
     statesRepresented: stateCounts.size,
+    countriesRepresented: countryCounts.size,
+    internationalUploads,
     byState: Object.fromEntries([...stateCounts.entries()].sort((a, b) => b[1] - a[1])),
+    byCountry: Object.fromEntries([...countryCounts.entries()].sort((a, b) => b[1] - a[1])),
     locales,
+    internationalLocales,
   };
 }
 

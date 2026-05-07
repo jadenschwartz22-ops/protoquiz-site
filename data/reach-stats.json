@@ -1,10 +1,12 @@
 {
-  "generatedAt": "2026-05-07T19:08:03.274Z",
+  "generatedAt": "2026-05-07T19:18:35.771Z",
   "totalUploads": 352,
   "distinctProtocols": 123,
   "activeStudiers": 127,
   "pagesProcessed": 71147,
   "statesRepresented": 21,
+  "countriesRepresented": 3,
+  "internationalUploads": 8,
   "byState": {
     "CO": 61,
     "NY": 33,
@@ -27,6 +29,11 @@
     "IL": 1,
     "DC": 1,
     "MN": 1
+  },
+  "byCountry": {
+    "CA": 6,
+    "DE": 1,
+    "GB": 1
   },
   "locales": [
     {
@@ -409,6 +416,91 @@
       "topProtocols": [
         {
           "title": "mayoclinicambulanceservicepatientcareguidelines 3ff2827c202a9…",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "internationalLocales": [
+    {
+      "country": "CA",
+      "countryName": "Canada",
+      "city": "Toronto, ON",
+      "x": 240,
+      "y": 200,
+      "count": 4,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "moh standards basic life support patient care standards v3 4…",
+          "count": 2
+        },
+        {
+          "title": "Land Ambulance Medication Profile",
+          "count": 1
+        },
+        {
+          "title": "MOH ALS PCS",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "country": "CA",
+      "countryName": "Canada",
+      "city": "Quebec, QC",
+      "x": 280,
+      "y": 190,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "1 LA CHIMIE DU VIVANT version 2025 DEC College Ellis",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "country": "DE",
+      "countryName": "Germany",
+      "city": "Berlin",
+      "x": 510,
+      "y": 140,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "ALS bradykardia©",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "country": "GB",
+      "countryName": "UK",
+      "city": "London",
+      "x": 480,
+      "y": 140,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "DTP Glyceryl trinitrate",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "country": "CA",
+      "countryName": "Canada",
+      "city": "Vancouver, BC",
+      "x": 115,
+      "y": 155,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "britishcolumbiaprovincialexaminationguidelines",
           "count": 1
         }
       ]
