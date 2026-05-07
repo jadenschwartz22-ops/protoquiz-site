@@ -86,71 +86,47 @@
   </script>
 
   <!-- Google tag (GA4) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LNSS9BMEP8"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){ dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-LNSS9BMEP8');
     function track(name, props){ try { gtag('event', name, props || {}); } catch(e){} }
     const PAGE = 'home';
-  </script>
+    (function deferAnalytics() {
+      var run = function() {
+        // GTM
+        var g = document.createElement('script');
+        g.async = true; g.src = 'https://www.googletagmanager.com/gtag/js?id=G-LNSS9BMEP8';
+        document.head.appendChild(g);
+        gtag('js', new Date());
+        gtag('config', 'G-LNSS9BMEP8');
 
-  <!-- Meta Pixel -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  const META_PIXEL_ID = 'YOUR_PIXEL_ID';
-  if (META_PIXEL_ID !== 'YOUR_PIXEL_ID') {
-    fbq('init', META_PIXEL_ID);
-    fbq('track', 'PageView');
-    const originalTrack = window.track;
-    window.track = function(name, props) {
-      originalTrack(name, props);
-      if (name === 'AppStoreHero' || name === 'AppStoreClick') {
-        fbq('track', 'Lead', {content_name: 'App Store Button', content_category: props?.location || 'unknown'});
-      } else if (name === 'form_submit' || name === 'ContactSubmit') {
-        fbq('track', 'Contact');
-      } else {
-        fbq('trackCustom', name, props);
-      }
-    };
-  }
-  </script>
-
-  <!-- TikTok Pixel -->
-  <script>
-  !function (w, d, t) {
-    w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=i+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
-  const TIKTOK_PIXEL_ID = 'C9S6KRF1139';
-  if (TIKTOK_PIXEL_ID !== 'YOUR_TIKTOK_PIXEL_ID') {
-    ttq.load(TIKTOK_PIXEL_ID); ttq.page();
-    const originalTrack = window.track;
-    window.track = function(name, props) {
-      if (typeof originalTrack === 'function') originalTrack(name, props);
-      if (name === 'AppStoreHero' || name === 'AppStoreClick') {
-        ttq.track('ClickButton', {content_type: 'App Store Button', content_name: props?.location || 'unknown'});
-      } else if (name === 'form_submit' || name === 'ContactSubmit') {
-        ttq.track('Contact');
-      } else if (name === 'PricingFree' || name === 'FinalCTA') {
-        ttq.track('ClickButton', {content_type: 'Download Button', content_name: name});
-      } else {
-        ttq.track(name, props);
-      }
-    };
-  }
+        // TikTok Pixel
+        !function(w,d,t){w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e};ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{};ttq._i[e]=[];ttq._i[e]._u=i;ttq._t=ttq._t||{};ttq._t[e]=+new Date;ttq._o=ttq._o||{};ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src=i+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)}}(window,document,'ttq');
+        ttq.load('C9S6KRF1139'); ttq.page();
+        var origTrack = window.track;
+        window.track = function(name, props) {
+          if (typeof origTrack === 'function') origTrack(name, props);
+          if (name === 'AppStoreHero' || name === 'AppStoreClick') {
+            ttq.track('ClickButton', {content_type:'App Store Button', content_name: props?.location || 'unknown'});
+          } else if (name === 'form_submit' || name === 'ContactSubmit') {
+            ttq.track('Contact');
+          } else if (name === 'PricingFree' || name === 'FinalCTA') {
+            ttq.track('ClickButton', {content_type:'Download Button', content_name: name});
+          } else {
+            ttq.track(name, props);
+          }
+        };
+      };
+      if ('requestIdleCallback' in window) requestIdleCallback(run, {timeout: 3000});
+      else setTimeout(run, 2000);
+    })();
   </script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"></noscript>
 
   <style>
     :root{
