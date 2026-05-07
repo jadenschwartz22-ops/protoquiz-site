@@ -660,6 +660,51 @@
       .conveyor-eyebrow .dot{animation:none;}
     }
 
+    /* === How it works === */
+    .how-list{
+      list-style:none;padding:0;margin:0;
+      display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+      counter-reset:howstep;
+    }
+    .how-item{
+      position:relative;
+      padding:28px 26px 30px;
+      background:linear-gradient(180deg, var(--panel) 0%, rgba(16,13,8,.6) 100%);
+      border:1px solid var(--line-2);
+      border-radius:8px;
+      box-shadow:0 1px 0 rgba(255,176,0,.06), 0 14px 32px rgba(0,0,0,.35);
+    }
+    .how-item::before{
+      content:"";position:absolute;top:-1px;left:-1px;right:-1px;height:2px;
+      background:linear-gradient(90deg, transparent, var(--amber), transparent);
+      border-radius:8px 8px 0 0;
+    }
+    .how-num{
+      font-family:var(--mono);font-size:11px;color:var(--amber);
+      font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+      margin-bottom:18px;
+    }
+    .how-item h3{
+      font-family:var(--mono);font-size:22px;line-height:1.15;letter-spacing:-.01em;
+      color:var(--ink);font-weight:700;text-transform:uppercase;
+      margin-bottom:14px;
+    }
+    .how-item p{
+      font-family:var(--sans);font-size:15.5px;line-height:1.55;
+      color:var(--ink-soft);margin-bottom:18px;
+    }
+    .how-item p strong{color:var(--ink);font-weight:600;}
+    .how-meta{
+      font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;
+      color:var(--muted);text-transform:uppercase;
+      padding-top:14px;border-top:1px solid var(--line);
+    }
+    @media (max-width:880px){
+      .how-list{grid-template-columns:1fr;gap:16px;}
+      .how-item{padding:22px 20px 24px;}
+      .how-item h3{font-size:19px;}
+    }
+
     /* === Reach map (where uploads come from) === */
     .reach{
       position:relative;
@@ -1766,10 +1811,42 @@
       </div>
     </section>
 
+    <section class="section fade-up" id="how">
+      <div class="wrap">
+        <div class="section-header">
+          <div class="section-tag">02 / HOW IT WORKS</div>
+          <div>
+            <h2>Upload your protocol.<br><span class="highlight">Study it.</span> Master it.</h2>
+            <p class="section-subtitle">Three steps. No chart-building. No DIY flashcards. The pipeline does the busy work, you do the reps.</p>
+          </div>
+        </div>
+        <ol class="how-list">
+          <li class="how-item">
+            <div class="how-num">▸ STEP 01</div>
+            <h3>Upload your agency&rsquo;s PDF</h3>
+            <p>Statewide protocol set, county SOP, Word-doc procedure manual, the PDF that lives in your truck binder. Drop it in. <strong>Average upload</strong>: under 60 seconds.</p>
+            <div class="how-meta">PDFs &middot; flowcharts &middot; tables &middot; if-then logic</div>
+          </li>
+          <li class="how-item">
+            <div class="how-num">▸ STEP 02</div>
+            <h3>We extract the structure</h3>
+            <p>Drugs, doses, decision points, algorithms, scenarios &mdash; pulled out and indexed. Every quiz answer cites the exact page in your PDF so you can verify on the fly.</p>
+            <div class="how-meta">Drugs &middot; algorithms &middot; scenarios &middot; page citations</div>
+          </li>
+          <li class="how-item">
+            <div class="how-num">▸ STEP 03</div>
+            <h3>Quiz, learn, compete</h3>
+            <p>Pharmacology drills. Algorithm trees. Real-world scenarios. Spaced-repetition Learn Mode for mastery, head-to-head Compete with your partner on shift, leaderboard for the world.</p>
+            <div class="how-meta">Quiz &middot; Learn Mode &middot; Compete &middot; Leaderboard</div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
     <section class="section fade-up" id="app">
       <div class="wrap">
         <div class="section-header">
-          <div class="section-tag">02 / APP</div>
+          <div class="section-tag">03 / APP</div>
           <div>
             <h2>Pharmacology. Algorithms.<br><span class="highlight">Scenarios.</span> Learn mode.</h2>
           </div>
@@ -1790,7 +1867,7 @@
       <div class="wrap">
         <div class="compete-grid">
           <div class="compete-copy">
-            <div class="section-tag" style="margin-bottom:24px;">03 / COMPETE</div>
+            <div class="section-tag" style="margin-bottom:24px;">04 / COMPETE</div>
             <h2>Compete with<br>your <span class="highlight">partner.</span></h2>
             <p>
               Study or train during your shift. Stop wasting time scrolling. Pick a topic, share a code or QR, go head-to-head on pharmacology, algorithms, or scenarios from your own PDF. Solo? Add an AI opponent (easy, medium, or hard) and play anytime. Speed bonus, streak multiplier, worldwide leaderboard.
@@ -1820,7 +1897,7 @@
     <section class="section fade-up">
       <div class="wrap">
         <div class="section-header">
-          <div class="section-tag">04 / REVIEWS</div>
+          <div class="section-tag">05 / REVIEWS</div>
           <div>
             <h2>Reviews.</h2>
             <div class="reviews-trust">
@@ -1877,7 +1954,7 @@
     <section class="section fade-up" id="faq">
       <div class="wrap">
         <div class="section-header">
-          <div class="section-tag">05 / FAQ</div>
+          <div class="section-tag">06 / FAQ</div>
           <h2>FAQ.</h2>
         </div>
         <div class="faq-list">
