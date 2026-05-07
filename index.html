@@ -568,24 +568,28 @@
     .processor{
       position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
       z-index:10;background:var(--bg);border:1px solid var(--amber);
-      padding:18px 28px;border-radius:6px;
+      padding:14px;border-radius:14px;
+      width:88px;height:88px;
+      display:flex;align-items:center;justify-content:center;
       box-shadow:
         0 0 0 6px var(--bg),
         0 0 0 7px rgba(255,176,0,.25),
         0 0 48px rgba(255,176,0,.55),
         inset 0 0 24px rgba(255,176,0,.12);
-      font-family:var(--mono);text-align:center;pointer-events:none;
+      pointer-events:none;
     }
-    .processor-name{font-size:17px;font-weight:700;letter-spacing:.1em;color:var(--amber);text-shadow:0 0 12px rgba(255,176,0,.6);}
-    .processor-sub{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);margin-top:6px;}
+    .processor img{
+      width:100%;height:100%;display:block;object-fit:contain;
+      border-radius:8px;
+      filter:drop-shadow(0 0 10px rgba(255,176,0,.4));
+    }
     .processor::before, .processor::after{
       content:'';position:absolute;top:50%;width:48px;height:2px;background:var(--amber);transform:translateY(-50%);box-shadow:0 0 10px var(--amber);
     }
     .processor::before{left:-50px;}
     .processor::after{right:-50px;background:var(--green);box-shadow:0 0 10px var(--green);}
     @media (max-width:880px){
-      .processor{padding:14px 22px;}
-      .processor-name{font-size:14px;}
+      .processor{width:72px;height:72px;padding:10px;border-radius:12px;}
       .processor::before, .processor::after{width:28px;}
       .processor::before{left:-30px;}
       .processor::after{right:-30px;}
@@ -729,8 +733,19 @@
       font-family:var(--mono);font-size:13px;letter-spacing:.12em;
       color:var(--ink-soft);text-transform:uppercase;
     }
-    .reach-stats span{display:inline-flex;align-items:baseline;gap:10px;}
-    .reach-stats b{color:var(--amber);font-weight:700;font-size:22px;letter-spacing:-.01em;text-transform:none;font-variant-numeric:tabular-nums;}
+    .rstat{display:inline-flex;align-items:baseline;gap:10px;flex-direction:row-reverse;justify-content:flex-end;}
+    .rstat dt{margin:0;}
+    .rstat dd{margin:0;}
+    .reach-stats b{
+      color:var(--amber);font-weight:700;font-size:22px;
+      letter-spacing:-.01em;text-transform:none;font-variant-numeric:tabular-nums;
+    }
+    .reach-pulse{
+      display:inline-block;width:6px;height:6px;border-radius:50%;
+      background:var(--green);margin-right:8px;vertical-align:middle;
+      box-shadow:0 0 8px var(--green);
+      animation:cvPulse 2s ease-in-out infinite;
+    }
     .reach-foot{
       margin-top:14px;font-family:var(--mono);font-size:11px;
       color:var(--muted);letter-spacing:.06em;text-transform:uppercase;
@@ -1603,9 +1618,8 @@
             <div class="doc s2"><div class="doc-eyebrow">Thurston Co WA</div><div class="doc-title">Thurston County Field</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">192p</span></div></div>
             <div class="doc c2 s3"><div class="doc-eyebrow">Clark County</div><div class="doc-title">Clark Co Office of EMS</div><div class="doc-lines"><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">289p</span></div></div>
           </div>
-          <div class="processor">
-            <div class="processor-name">PROTOQUIZ</div>
-            <div class="processor-sub">scoped &middot; cited &middot; signed-off</div>
+          <div class="processor" aria-label="ProtoQuiz">
+            <img src="logo-256.png" alt="" width="64" height="64" loading="lazy">
           </div>
         </div>
       </div>
@@ -1627,7 +1641,7 @@
           </div>
           <div class="intro-row">
             <span class="chip">▸ INTRODUCING PROTOQUIZ</span>
-            <span class="built"><b>Built by a paramedic student.</b> For working medics.</span>
+            <span class="built"><b>Built by a paramedic student.</b> For working EMTs and Paramedics.</span>
           </div>
           <div class="hero-meta">
             <span><span class="star">★</span><strong id="appRating">4.7</strong> App Store</span>
@@ -1645,8 +1659,8 @@
         <div class="reach-head">
           <div class="reach-tag">02 / Reach</div>
           <div>
-            <h2 class="reach-h2" id="reach-h2">Real medics. <span class="highlight">Real protocols.</span> Across the country.</h2>
-            <p class="reach-sub">Every dot is a state where medics have already uploaded their agency&rsquo;s protocols and started studying them on ProtoQuiz. From statewide protocol sets to single-county SOPs.</p>
+            <h2 class="reach-h2" id="reach-h2">Real EMTs and Paramedics. <span class="highlight">From across the country.</span></h2>
+            <p class="reach-sub">Every dot is a place where a working EMT or Paramedic has already uploaded their agency&rsquo;s protocols and started studying them on ProtoQuiz. From statewide protocol sets to single-county SOPs.</p>
           </div>
         </div>
 
@@ -1713,13 +1727,13 @@
           <div class="reach-scan" aria-hidden="true"></div>
         </div>
 
-        <div class="reach-stats">
-          <span><b>21</b> US states represented</span>
-          <span><b>123</b> agencies indexed</span>
-          <span><b>352</b> active studiers</span>
-          <span><b>71,147</b> pages processed</span>
-        </div>
-        <p class="reach-foot">Pulled from live ProtoQuiz uploads. Refreshed daily.</p>
+        <dl class="reach-stats" id="reachStats" data-live="reach">
+          <div class="rstat"><dt>States represented</dt><dd><b data-stat="states">21</b></dd></div>
+          <div class="rstat"><dt>Different protocols uploaded</dt><dd><b data-stat="protocols">123</b></dd></div>
+          <div class="rstat"><dt>Active studiers</dt><dd><b data-stat="studiers">352</b></dd></div>
+          <div class="rstat"><dt>Pages processed</dt><dd><b data-stat="pages">71,147</b></dd></div>
+        </dl>
+        <p class="reach-foot"><span class="reach-pulse" aria-hidden="true"></span> <span id="reachUpdated">Pulled from live ProtoQuiz uploads. Refreshed daily.</span></p>
       </div>
     </section>
 
@@ -1746,7 +1760,7 @@
           <div class="wedge-item">
             <div class="wedge-num">C &middot; 03</div>
             <h3>Built by a paramedic student</h3>
-            <p>For working medics.</p>
+            <p>For working EMTs and Paramedics.</p>
           </div>
         </div>
       </div>
@@ -1782,8 +1796,8 @@
               Study or train during your shift. Stop wasting time scrolling. Pick a topic, share a code or QR, go head-to-head on pharmacology, algorithms, or scenarios from your own PDF. Solo? Add an AI opponent (easy, medium, or hard) and play anytime. Speed bonus, streak multiplier, worldwide leaderboard.
             </p>
             <ul class="compete-list">
-              <li>The whole shift in one room</li>
-              <li>Live scoring, synced start</li>
+              <li>Study during your shift</li>
+              <li>Stop scrolling during your shift</li>
               <li>Worldwide leaderboard</li>
             </ul>
             <a href="https://apps.apple.com/app/id6753611139?utm_source=website&utm_medium=compete&utm_campaign=download"

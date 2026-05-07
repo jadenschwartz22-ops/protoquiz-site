@@ -44,6 +44,12 @@ ProtoQuiz is that tool.
 
 These are reasonable tools — they just weren't built to train on **the actual protocol set**. They train around it. ProtoQuiz fills that specific gap; it doesn't replace what's already working.
 
+### 4a. Why no good study tool exists today (the corpus problem)
+
+Every agency's protocol set is **different** — different drugs, different doses, different decision points, different formats (PDFs, flowcharts, tables, if-then logic, hyperlinked manuals). Different lengths too — some are 150 pages, some are 400. No off-the-shelf study tool can ingest that variety because no one has the corpus or the extraction pipeline to make it work. So providers have been stuck with **rote memorization or DIY flashcards** for the highest-stakes knowledge they use. ProtoQuiz is the first tool built specifically to handle that variety and turn any agency's protocol PDF into structured, scoped, page-cited study material.
+
+**Use this in B2C copy:** the consumer angle is "you've been doing rote memorization or making your own flashcards because there's no good way to study this stuff. We built one."
+
 ## 5. What we are NOT
 
 - **Not NREMT prep.** NREMT prep tools are great at what they do — preparing you to pass the registry. We're for what comes after, in the field.
