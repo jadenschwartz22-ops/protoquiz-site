@@ -4991,7 +4991,7 @@
               <button type="button" class="px-frame-math-row" data-source="onboarding">
                 <div class="px-frame-math-text">
                   <span class="px-frame-math-label">Faster, better onboarding</span>
-                  <span class="px-frame-math-source">~$140/provider/yr &middot; AAA 2024 turnover study + BLS paramedic wage data<svg class="px-frame-math-ext" viewBox="0 0 14 14" aria-hidden="true"><path d="M5 2H2v10h10V9M9 2h3v3M11.5 2.5L7 7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  <span class="px-frame-math-source">~$140/provider/yr &middot; AAA / Newton 360 turnover + cost-per-replacement (via EMS1) + BLS wage data<svg class="px-frame-math-ext" viewBox="0 0 14 14" aria-hidden="true"><path d="M5 2H2v10h10V9M9 2h3v3M11.5 2.5L7 7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                 </div>
                 <span class="px-frame-math-num" data-px-val="save-fto">~$42,000</span>
               </button>
@@ -5765,7 +5765,7 @@
       if(!slider) return;
 
       // Per-provider yearly rates ($/provider/yr). Grounded in published data
-      // (AAA 2024, BLS May 2024, NREMT NCCP).
+      // (AAA / Newton 360 turnover, BLS OES paramedic wage, NREMT NCCP).
       //   FTO       = onboarding compression (turnover-driven training cost)
       //   TRAINING  = training-officer overhead saved (quizzes, weak-topic targeting)
       // Floor = FTO + TRAINING. Lawsuit expected-value, remediations, and audit defense
@@ -6018,7 +6018,7 @@
       // an inline link to THAT source, so nothing is unfalsifiable.
       const SOURCES = {
         onboarding: {
-          eyebrow: 'Sources: AAA 2024 turnover study + AAA/Newton 360 cost-per-hire + BLS May 2024 wage data',
+          eyebrow: 'Sources: AAA / Newton 360 turnover + cost-per-replacement (via EMS1) + BLS Occupational Employment Statistics',
           title: 'Faster, better onboarding.',
           claim: 'Day-one protocol fluency means field-training time goes to actually using the protocols, not teaching them. We can put a real dollar on the training-related slice of replacement cost.',
           tldr: '<p><strong>~$140/provider/yr</strong> &mdash; the slice of replacement cost that goes to teaching protocols.</p>'
@@ -6029,9 +6029,9 @@
               + '</ul>',
           math: '<p>Three citable inputs:</p>'
                 + '<ol class="src-math-steps">'
-                + '<li class="src-math-step"><span class="src-math-step-n">A</span><span class="src-math-step-body"><strong>Turnover:</strong> <em>20–30%/yr</em> (AAA 2024). Use 25%.</span></li>'
-                + '<li class="src-math-step"><span class="src-math-step-n">B</span><span class="src-math-step-body"><strong>Cost per replacement:</strong> <em>$6,780/EMT</em>, <em>$9,113/paramedic</em> (AAA 2021), <em>&gt;$11K/person</em> by 2023. Use <em>$8,000</em> mid.</span></li>'
-                + '<li class="src-math-step"><span class="src-math-step-n">C</span><span class="src-math-step-body"><strong>Wage:</strong> BLS May 2024 paramedic median <em>$27.62/hr</em>, loaded ~$40/hr. (Already baked into AAA cost; cited for transparency.)</span></li>'
+                + '<li class="src-math-step"><span class="src-math-step-n">A</span><span class="src-math-step-body"><strong>Turnover:</strong> <em>20–36%/yr</em> for EMTs and paramedics (AAA / Newton 360, via EMS1). Use 25% as a conservative midpoint.</span></li>'
+                + '<li class="src-math-step"><span class="src-math-step-n">B</span><span class="src-math-step-body"><strong>Cost per replacement:</strong> <em>$6,780/EMT</em>, <em>$9,113/paramedic</em> (AAA 2021, via EMS1). Use <em>$8,000</em> mid for a mixed crew.</span></li>'
+                + '<li class="src-math-step"><span class="src-math-step-n">C</span><span class="src-math-step-body"><strong>Wage:</strong> BLS paramedic median <em>$28/hr</em>, loaded ~$40/hr. (Already baked into AAA cost; cited for transparency.)</span></li>'
                 + '</ol>'
                 + '<p>Example, <strong>100 providers, 25% turnover</strong>:</p>'
                 + '<ol class="src-math-steps">'
@@ -6044,16 +6044,16 @@
                 + '<li class="src-math-total">$14K &divide; 100 = <em>$140/provider/yr</em></li>'
                 + '</ol>'
                 + '<p class="src-math-note">The two estimates we own: <strong>~35% training-related</strong> portion of replacement cost (AAA reports the total, not the breakdown) and <strong>20% reduction</strong> credited to ProtoQuiz. Both at the conservative end. No step rounds up.</p>',
-          quote: 'AAA/Newton 360 2024: turnover sits between <span class="src-mark">20% to 30% annually</span>. 2023 update: <span class="src-mark">"direct cost of turnover exceeds $11,000 per person"</span> &mdash; covering recruitment, screening, selection, onboarding, and training.',
+          quote: 'EMS1 (citing AAA / Newton 360): the turnover rate is in the <span class="src-mark">20-36% range for EMTs and Paramedics, a 6% increase over the prior year</span>. Replacement cost (AAA 2021): <span class="src-mark">$6,780 to attract, screen, select, onboard and train a new EMT</span>; <span class="src-mark">$9,113 for a paramedic</span>.',
           sources: [
-            {label: 'AAA 2024 Turnover Study (Newton 360)', url: 'https://ambulance.org/2024/03/18/survey-2024-turnover/'},
-            {label: 'EMS1: AAA cost breakdown ($6,780 EMT / $9,113 paramedic)', url: 'https://www.ems1.com/recruitment-and-retention/articles/turnover-we-have-measured-it-but-can-we-manage-it-JfFuhyrBEf5gqU2O/'},
-            {label: 'BLS May 2024: Paramedic median wage', url: 'https://www.bls.gov/oes/2023/may/oes292043.htm'},
+            {label: 'EMS1: AAA / Newton 360 turnover survey — 20-36% turnover quote', url: 'https://www.ems1.com/recruitment-and-retention/articles/flattening-the-turnover-curve-ERwaFmjlKOvSGKfr/'},
+            {label: 'EMS1: AAA cost-per-replacement ($6,780 EMT / $9,113 paramedic)', url: 'https://www.ems1.com/recruitment-and-retention/articles/turnover-we-have-measured-it-but-can-we-manage-it-JfFuhyrBEf5gqU2O/'},
+            {label: 'BLS Occupational Outlook Handbook — EMTs and Paramedics ($58,410 median annual / ~$28/hr)', url: 'https://www.bls.gov/ooh/healthcare/emts-and-paramedics.htm'},
           ],
-          assumption: 'Two estimates, both at the conservative end: <strong>~35% of replacement cost is training-related</strong>, and <strong>20% reduction</strong> in the protocol-learning portion. Turnover (25%), replacement cost ($8K), and wage ($27.62) are directly citable.'
+          assumption: 'Two estimates, both at the conservative end: <strong>~35% of replacement cost is training-related</strong>, and <strong>20% reduction</strong> in the protocol-learning portion. Turnover (25%), replacement cost ($8K), and wage ($28) are directly citable.'
         },
         training: {
-          eyebrow: 'Source: BLS May 2024 wage data + buyer-pain time-and-motion estimates',
+          eyebrow: 'Source: BLS Occupational Employment Statistics (paramedics) + buyer-pain time-and-motion estimates',
           title: 'Higher quality providers.',
           claim: 'Continuous reps on the actual protocol set + a dashboard that surfaces weak topics by name = sharper crews and less rote work for the training officer. The dollar lever is the training-officer time saved.',
           tldr: '<p><strong>~$50/provider/yr</strong> &mdash; the cost equivalent of training-officer time saved on quiz building, manual tracking, and weak-topic targeting.</p>'
@@ -6077,9 +6077,9 @@
                 + '<li class="src-math-total">$5,000 &divide; 100 providers = <em>$50/provider/yr</em></li>'
                 + '</ol>'
                 + '<p class="src-math-note">This is <strong>not</strong> "less training." It&rsquo;s the same training program with the rote work taken off the training officer&rsquo;s plate &mdash; freeing them to focus on advanced training beyond the bare minimum of knowing the protocols: running calls, managing scenes, judgment, and the gray-area decisions that actually need a human in the room.</p>',
-          quote: 'BLS May 2024 paramedic median: <span class="src-mark">$27.62/hr</span>. EMS training officers typically run <em>1.4&ndash;1.6&times;</em> the line-medic wage, landing loaded around <em>$50/hr</em>.',
+          quote: 'BLS paramedic median: <span class="src-mark">~$28/hr</span> ($58,410 annual median, May 2024). EMS training officers typically run <em>1.4&ndash;1.6&times;</em> the line-medic wage, landing loaded around <em>$50/hr</em>.',
           sources: [
-            {label: 'BLS May 2024: Paramedic / EMT median wage', url: 'https://www.bls.gov/oes/2023/may/oes292043.htm'},
+            {label: 'BLS Occupational Outlook Handbook — EMTs and Paramedics ($58,410 median annual / ~$28/hr)', url: 'https://www.bls.gov/ooh/healthcare/emts-and-paramedics.htm'},
           ],
           assumption: 'Three internal estimates: <strong>~2 hrs/week</strong> of training-officer time on quiz building + manual tracking, <strong>$50/hr</strong> loaded training-officer labor (extrapolated from BLS line-medic data), and the <strong>100-provider agency</strong> baseline. Pulled from the buyer-pain pattern across early agency conversations. The BLS wage is directly citable.'
         },
@@ -6107,8 +6107,8 @@
                 + '</ul>'
                 + '<p><strong>Example for the lawsuit lever (100-provider agency):</strong></p>'
                 + '<ol class="src-math-steps">'
-                + '<li class="src-math-step"><span class="src-math-step-n">1</span><span class="src-math-step-body">Published claim rate (Goldberg, 10-yr study): <em>1.1 lawsuits/yr</em> at one urban agency, <em>35%</em> medical negligence</span></li>'
-                + '<li class="src-math-step"><span class="src-math-step-n">2</span><span class="src-math-step-body">Scaled to 100 providers: <em>~0.7 medical-negligence cases/yr</em></span></li>'
+                + '<li class="src-math-step"><span class="src-math-step-n">1</span><span class="src-math-step-body">Published claim rate (Colwell et al., 10-yr study): <em>~1.1 lawsuits/yr</em> at one urban agency (11 lawsuits over 10 years), <em>35%</em> medical negligence</span></li>'
+                + '<li class="src-math-step"><span class="src-math-step-n">2</span><span class="src-math-step-body">Per-100-providers estimate: <em>~0.7 medical-negligence cases/yr</em> (Colwell\'s service was a single urban 911 system; the paper doesn\'t publish provider count, so we use 100 as a conservative order-of-magnitude baseline)</span></li>'
                 + '<li class="src-math-step"><span class="src-math-step-n">3</span><span class="src-math-step-body">Conservative ProtoQuiz reduction in protocol-driven cases: <em>~15%</em> (less than a third of the 49% literature finding)</span></li>'
                 + '<li class="src-math-step"><span class="src-math-step-n">4</span><span class="src-math-step-body">0.7 &times; 15% = <em>~0.11 cases avoided/yr</em></span></li>'
                 + '<li class="src-math-step"><span class="src-math-step-n">5</span><span class="src-math-step-body">0.11 &times; <strong>$900K</strong> avg settlement = <em>~$10K/yr</em> per 100 providers</span></li>'
@@ -6116,17 +6116,17 @@
                 + '</ol>'
                 + '<p><strong>And when one does land:</strong> NREMT requires <em>36+ months</em> of retained training records and random-audits recerts. State EMS offices and license-defense complaints all want dated training records for the period in question. ProtoQuiz already has them &mdash; "we have it" beats "let me reconstruct."</p>'
                 + '<p class="src-math-note">Expected value is probability &times; cost. We\'re not claiming you\'ll avoid a $900K case this year. We\'re claiming that even a small reduction in protocol-driven cases &mdash; multiplied by real settlement size &mdash; is worth real money on the actuarial side. Not included in the total.</p>',
-          quote: 'Misasi &amp; Keebler 2018: a verification intervention produced <span class="src-mark">"a decrease in the average monthly error rate&hellip; for all medications administered (49.0%)"</span>. Goldberg 10-yr claim study: <span class="src-mark">"an average of 8.2 claims per year and 1.1 lawsuits per year"</span>; <span class="src-mark">"medical negligence claims&hellip; 35% of the dollars lost"</span>. NREMT: <span class="src-mark">"Keep all recertification supporting documentation for at least three years"</span>; applications are <span class="src-mark">"randomly selected for audit"</span>.',
+          quote: 'Misasi &amp; Keebler 2018: a verification intervention produced <span class="src-mark">"a decrease in the average monthly error rate&hellip; for all medications administered (49.0%)"</span>. Colwell et al. (10-yr ambulance claim study): <span class="src-mark">"Eighty-two claims resulting in 11 lawsuits were filed"</span> over 10 years; <span class="src-mark">"medical negligence claims&hellip; 35% of the dollars lost"</span>. NREMT: <span class="src-mark">"Keep all recertification supporting documentation for at least three years"</span>; applications are <span class="src-mark">"randomly selected for audit"</span>.',
           sources: [
             {label: 'Misasi & Keebler — Medication safety in EMS (PMC6351968)', url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC6351968/'},
             {label: 'Hoyle et al. 2023 — pediatric dosing errors (Michigan 34.7%)', url: 'https://pubmed.ncbi.nlm.nih.gov/36652452/'},
-            {label: 'Goldberg — 10-yr ambulance claim study (PubMed)', url: 'https://pubmed.ncbi.nlm.nih.gov/10595887/'},
+            {label: 'Colwell et al. — Claims against a paramedic ambulance service, 10-yr experience (82 claims, 11 lawsuits, 35% medical-negligence dollars)', url: 'https://pubmed.ncbi.nlm.nih.gov/10595887/'},
             {label: 'EMT negligence settlement ($1M)', url: 'https://www.lubinandmeyer.com/cases/emt-malpractice.html'},
             {label: 'Paramedic wrongful-death settlement ($975K)', url: 'https://www.sommerspc.com/verdicts/975000-settlement-for-wrongful-death-due-to-emt-paramedics-gross-negligence-medical-malpractice/'},
             {label: 'EMT negligence verdict ($825K)', url: 'https://www.robertshumanlaw.com/Verdicts-and-Settlements/Medical-Malpractice-EMT-Negligence-825-000.html'},
             {label: 'NREMT Recertification (audit + retention policy)', url: 'https://www.nremt.org/Document/Recertification'},
           ],
-          assumption: 'Two estimates we own: the <strong>15% reduction</strong> in protocol-driven cases credited to ProtoQuiz (literature shows 49% on a different intervention; we take a third), and the <strong>scaling from the published study\'s ~150-provider agency to a 100-provider baseline</strong>. Claim rate (1.1/yr), 35% medical-negligence portion, and settlement amounts are all directly citable. Not included in the total.'
+          assumption: 'Three estimates we own: the <strong>15% reduction</strong> in protocol-driven cases credited to ProtoQuiz (literature shows 49% on a different intervention; we take less than a third), <strong>scaling Colwell\'s single urban ambulance service to a per-100-provider baseline</strong> (the paper doesn\'t publish provider count — we use 100 as an order-of-magnitude estimate for an urban 911 service), and <strong>$900K average settlement</strong> (midpoint of the three real settlements cited). Lawsuit count (11/10 yrs), 35% medical-negligence portion, and individual settlement amounts are all directly citable. Not included in the total.'
         },
       };
 
