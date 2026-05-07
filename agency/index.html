@@ -20,9 +20,9 @@
   <meta name="twitter:image" content="https://protoquiz.com/logo-256.png" />
   <meta name="theme-color" content="#05080c" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-LNSS9BMEP8"></script>
   <script>
@@ -3512,27 +3512,17 @@
     color:var(--ink); font-weight:600;
     margin:0 0 16px; letter-spacing:-.018em;
   }
-  .benefit-list{
-    list-style:none; padding:0; margin:0;
-    display:flex; flex-direction:column; gap:10px;
-  }
-  .benefit-list li{
-    position:relative;
-    padding-left:22px;
+  .benefit-lede{
+    margin:0;
     font-size:17px; color:var(--muted);
     line-height:1.6;
+    max-width:46ch;
   }
-  .benefit-list li::before{
-    content:""; position:absolute;
-    left:0; top:.65em;
-    width:6px; height:6px; border-radius:50%;
-    background:var(--accent2);
-    opacity:.7;
-  }
+  .benefit-lede strong{color:var(--ink); font-weight:700;}
   @media (max-width:600px){
     .benefit-block{padding:24px 4px 22px;}
     .benefit-h{font-size:24px;}
-    .benefit-list li{font-size:16px;}
+    .benefit-lede{font-size:16px;}
   }
 
   /* === Benefit-block visuals (right-rail charts/diagrams) ===
@@ -3541,12 +3531,13 @@
      no JS, no libraries, prints cleanly. */
   .benefit-block{
     display:grid;
-    grid-template-columns: 1.05fr .95fr;
+    grid-template-columns: .95fr 1.05fr;
     gap:48px;
     align-items:start;
   }
-  .benefit-text{min-width:0;}
+  .benefit-text{min-width:0; order:2;}
   .benefit-viz{
+    order:1;
     align-self:center;
     background:var(--surface);
     border:1px solid var(--line);
@@ -3626,7 +3617,10 @@
     line-height:1.4; max-width:140px;
   }
   .risk-stat{
-    border-left:2px solid var(--accent2); padding-left:14px;
+    background:rgba(138,74,31,.06);
+    border:1px solid rgba(138,74,31,.18);
+    border-radius:8px;
+    padding:14px 16px;
   }
   .risk-stat-num{
     font-family:Georgia, serif;
@@ -3989,9 +3983,9 @@
   .src-modal-bullets li strong{color:var(--ink); font-weight:700;}
   .src-modal-quote{
     margin:0; padding:16px 18px;
-    background:rgba(14,138,163,.06);
-    border-left:3px solid var(--accent2);
-    border-radius:6px;
+    background:rgba(138,74,31,.07);
+    border:1px solid rgba(138,74,31,.18);
+    border-radius:8px;
     font-family:Georgia, serif;
     font-size:14.5px; color:var(--ink);
     line-height:1.55; font-style:italic;
@@ -4019,9 +4013,9 @@
   /* Honest-citations footer: assumption box + multi-source list */
   .src-modal-assumption{
     font-size:13px; color:var(--muted); line-height:1.55; margin:0;
-    padding:10px 12px; border-radius:6px;
-    background:rgba(15,18,25,.04);
-    border-left:3px solid var(--muted2);
+    padding:10px 12px; border-radius:8px;
+    background:rgba(15,18,25,.05);
+    border:1px solid rgba(15,18,25,.12);
   }
   .src-modal-assumption strong{color:var(--ink); font-weight:700;}
   .src-modal-sources{
@@ -4172,6 +4166,292 @@
     .src-modal-quote{padding:12px 14px; font-size:13.5px;}
     .src-modal-link{padding:10px 14px; font-size:11px;}
   }
+
+  /* === SPLIT-ROW PATTERN (Stripe-style: alternating sides + alternating backgrounds) ===
+     Full-bleed sections, generous vertical rhythm, big headlines, zigzag layout. */
+  .split-row{
+    padding:140px 8vw;
+    position:relative;
+  }
+  /* Alternating full-bleed backgrounds. Manila bg is the page default; we override every other one
+     to a lifted ivory surface so the page reads as banded chapters. */
+  .split-row:nth-of-type(odd){
+    background:var(--bg);
+  }
+  .split-row:nth-of-type(even){
+    background:var(--surface);
+  }
+  /* Soft hairline only between same-color rows to avoid visual stacking */
+  .split-row + .split-row{
+    border-top:1px solid var(--line-soft);
+  }
+  .split-row:nth-of-type(odd) + .split-row:nth-of-type(even),
+  .split-row:nth-of-type(even) + .split-row:nth-of-type(odd){
+    border-top:0;
+  }
+  .split-row-inner{
+    max-width:1180px; margin:0 auto;
+    display:grid; grid-template-columns:1fr 1fr; gap:96px;
+    align-items:center;
+  }
+  /* Zigzag: every other row flips viz to the right, text to the left */
+  .split-row:nth-of-type(even) .split-viz{order:2;}
+  .split-row:nth-of-type(even) .split-text{order:1;}
+  .split-viz{min-width:0;}
+  .split-text{min-width:0; max-width:520px;}
+  .split-eyebrow{
+    font-family:'JetBrains Mono', ui-monospace, monospace;
+    font-size:11px; letter-spacing:.24em; text-transform:uppercase;
+    color:var(--accent2); font-weight:700; margin-bottom:20px;
+  }
+  .split-h{
+    font-family:Georgia, serif;
+    font-size:clamp(34px, 4.4vw, 56px); line-height:1.08; letter-spacing:-.022em;
+    color:var(--ink); font-weight:600; margin:0 0 24px;
+  }
+  .split-h em{color:var(--accent); font-style:normal;}
+  .split-body{
+    font-size:18px; line-height:1.62; color:var(--muted); margin:0;
+  }
+  .split-body p{margin:0 0 16px;} .split-body p:last-child{margin-bottom:0;}
+  .split-body strong{color:var(--ink); font-weight:600;}
+  .split-foot{
+    margin-top:28px; padding-top:16px; border-top:1px dashed var(--line-soft);
+    font-family:'JetBrains Mono', ui-monospace, monospace;
+    font-size:11px; color:var(--muted2); letter-spacing:.04em;
+  }
+  .split-foot a{color:var(--accent2); text-decoration:none;}
+  .split-foot a:hover{text-decoration:underline;}
+  @media (max-width:1100px){
+    .split-row{padding:96px 7vw;}
+    .split-row-inner{gap:56px;}
+  }
+  @media (max-width:880px){
+    .split-row{padding:64px 6vw;}
+    .split-row-inner{grid-template-columns:1fr; gap:36px;}
+    /* On mobile every row collapses to text-first / viz-second regardless of nth-of-type */
+    .split-row:nth-of-type(even) .split-viz,
+    .split-row:nth-of-type(odd) .split-viz{order:2;}
+    .split-row:nth-of-type(even) .split-text,
+    .split-row:nth-of-type(odd) .split-text{order:1; max-width:none;}
+    .split-h{font-size:clamp(28px, 7vw, 38px);}
+    .split-body{font-size:16.5px;}
+  }
+
+  /* === Visual: stacked stat strip (vertical, left column) === */
+  .vstats{
+    display:flex; flex-direction:column; gap:0;
+    background:#fff; border:1px solid var(--line); border-radius:14px;
+    overflow:hidden; box-shadow:0 1px 0 rgba(17,20,27,.03), 0 12px 36px rgba(17,20,27,.05);
+  }
+  .vstats-row{
+    display:grid; grid-template-columns:140px 1fr;
+    align-items:center; gap:18px;
+    padding:20px 24px; border-bottom:1px solid var(--line-soft);
+  }
+  .vstats-row:last-child{border-bottom:0;}
+  .vstats-num{
+    font-family:Georgia, serif; font-size:36px; font-weight:600;
+    letter-spacing:-.018em; color:var(--accent); line-height:1;
+  }
+  .vstats-num .unit{font-size:14px; color:var(--muted2); font-weight:500; letter-spacing:0;}
+  .vstats-label{font-family:'JetBrains Mono', ui-monospace, monospace; font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted2); font-weight:700;}
+  .vstats-cap{font-size:13px; color:var(--muted); margin-top:4px; line-height:1.4;}
+
+  /* === Visual: gap diagram in left column === */
+  .gap-viz{}
+  .gap-viz .hero-gap{margin-top:0; max-width:none; opacity:1; transform:none; transition:none;}
+
+  /* === Visual: ticker (left column) === */
+  .ticker-viz .ticker-shell{margin:0; max-width:none;}
+
+  /* === Visual: range bar (left column) === */
+  .range-viz{
+    background:#fff; border:1px solid var(--line); border-radius:14px;
+    padding:32px 28px;
+    box-shadow:0 1px 0 rgba(17,20,27,.03), 0 12px 36px rgba(17,20,27,.05);
+  }
+  .range-viz .range-head-row{margin-bottom:6px;}
+  .range-viz .range-track{margin-top:32px;}
+  /* Hide intermediate range labels on narrow viewports; keep only min and max so they don't overlap */
+  @media (max-width:640px){
+    .range-lbl{font-size:9px;}
+    .range-lbl[style*="left:33%"], .range-lbl[style*="left:54%"]{display:none;}
+    .range-dot[style*="left:33%"], .range-dot[style*="left:54%"]{opacity:.4;}
+  }
+
+  /* === Visual: matrix (left column, fits) === */
+  .matrix-viz .matrix{margin:0;}
+
+  /* === Visual: cost stack (left column, vertical) === */
+  .stack-viz{
+    background:#fff; border:1px solid var(--line); border-radius:14px;
+    padding:28px 26px;
+    box-shadow:0 1px 0 rgba(17,20,27,.03), 0 12px 36px rgba(17,20,27,.05);
+  }
+  .stack-viz .stack-list{display:flex; flex-direction:column; gap:10px;}
+  .stack-viz .stack-item{display:grid; grid-template-columns:140px 1fr 60px; gap:12px; align-items:center; font-size:13px;}
+  .stack-viz .stack-item-label{color:var(--ink); font-weight:600;}
+  .stack-viz .stack-bar{height:14px; border-radius:5px; background:rgba(17,20,27,.06); overflow:hidden;}
+  .stack-viz .stack-bar-fill{height:100%; border-radius:5px; background:linear-gradient(90deg, var(--red), #d97706); transform:scaleX(0); transform-origin:left center; transition:transform 1s cubic-bezier(.22,.9,.18,1);}
+  .stack-viz.in .stack-item .stack-bar-fill{transform:scaleX(var(--w));}
+  .stack-viz .stack-num{font-family:Georgia, serif; font-weight:600; text-align:right; color:var(--ink); font-size:14px;}
+  .stack-viz .stack-total{margin-top:14px; padding-top:12px; border-top:1px solid var(--line); display:flex; justify-content:space-between; align-items:baseline;}
+  .stack-viz .stack-total-num{font-family:Georgia, serif; font-size:32px; font-weight:600; letter-spacing:-.02em; color:var(--red);}
+  .stack-viz-vs{
+    margin-top:18px; padding-top:18px; border-top:2px solid var(--accent);
+    display:flex; justify-content:space-between; align-items:center;
+  }
+  .stack-viz-vs-lbl{font-family:'JetBrains Mono', ui-monospace, monospace; font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); font-weight:700;}
+  .stack-viz-vs-num{font-family:Georgia, serif; font-size:36px; font-weight:600; letter-spacing:-.02em; color:var(--accent);}
+  .stack-viz-vs-num span{font-size:14px; color:var(--muted2); font-weight:500;}
+  .stack-viz .stack-list .stack-item:nth-child(1) .stack-bar-fill{transition-delay:.05s;}
+  .stack-viz .stack-list .stack-item:nth-child(2) .stack-bar-fill{transition-delay:.15s;}
+  .stack-viz .stack-list .stack-item:nth-child(3) .stack-bar-fill{transition-delay:.25s;}
+  .stack-viz .stack-list .stack-item:nth-child(4) .stack-bar-fill{transition-delay:.35s;}
+  .stack-viz .stack-list .stack-item:nth-child(5) .stack-bar-fill{transition-delay:.45s;}
+  .stack-viz .stack-list .stack-item:nth-child(6) .stack-bar-fill{transition-delay:.55s;}
+
+  /* === ADDITION 1: Stat strip (after hero) === */
+  .stat-strip-section{padding:0 8vw 64px; margin-top:-32px;}
+  .stat-strip{
+    max-width:1080px; margin:0 auto;
+    display:grid; grid-template-columns:repeat(4, 1fr); gap:0;
+    background:#fff; border:1px solid var(--line); border-radius:14px; overflow:hidden;
+    box-shadow:0 1px 0 rgba(17,20,27,.03), 0 12px 36px rgba(17,20,27,.05);
+  }
+  .stat-strip-cell{padding:26px 24px; text-align:left; border-right:1px solid var(--line);}
+  .stat-strip-cell:last-child{border-right:0;}
+  .stat-strip-eyebrow{font-family:'JetBrains Mono', ui-monospace, monospace; font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted2); font-weight:700;}
+  .stat-strip-num{font-family:Georgia, serif; font-size:38px; font-weight:600; letter-spacing:-.02em; color:var(--accent); margin-top:6px; line-height:1;}
+  .stat-strip-num .unit{font-size:16px; color:var(--muted2); font-weight:500; letter-spacing:0;}
+  .stat-strip-cap{font-size:12px; color:var(--muted); margin-top:8px; line-height:1.4;}
+  @media (max-width:880px){
+    .stat-strip{grid-template-columns:1fr 1fr;}
+    .stat-strip-cell{border-right:0; border-bottom:1px solid var(--line);}
+    .stat-strip-cell:nth-child(odd){border-right:1px solid var(--line);}
+    .stat-strip-cell:nth-last-child(-n+2){border-bottom:0;}
+  }
+  @media (max-width:520px){
+    .stat-strip{grid-template-columns:1fr;}
+    .stat-strip-cell{border-right:0 !important; border-bottom:1px solid var(--line);}
+    .stat-strip-cell:last-child{border-bottom:0;}
+  }
+
+  /* === ADDITION 2: Live ticker (after walkthrough) === */
+  .ticker-section{padding:0 8vw 96px;}
+  .ticker-shell{
+    max-width:1080px; margin:0 auto;
+    background:#0e1117; color:#e8eaf2; border-radius:14px;
+    padding:24px 28px; font-family:'JetBrains Mono', ui-monospace, monospace;
+    overflow:hidden; position:relative;
+  }
+  .ticker-eyebrow{
+    font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:#6b7280;
+    font-weight:700; margin-bottom:16px;
+    display:flex; align-items:center; justify-content:space-between; gap:8px;
+  }
+  .ticker-eyebrow-left{display:flex; align-items:center; gap:8px;}
+  .ticker-eyebrow .dot{width:7px; height:7px; border-radius:50%; background:#22c55e; box-shadow:0 0 8px #22c55e; animation:tickerpulse 1.4s ease-in-out infinite;}
+  .ticker-eyebrow-right{color:#6b7280; font-size:9px;}
+  @keyframes tickerpulse{50%{opacity:.4;}}
+  .ticker-window{height:120px; position:relative; overflow:hidden;}
+  .ticker-row{
+    position:absolute; left:0; right:0; top:0;
+    display:grid; grid-template-columns:1fr 110px 100px; gap:24px; align-items:center;
+    padding:18px 0; border-bottom:1px solid rgba(255,255,255,.06);
+    transform:translateY(120px); opacity:0;
+    transition:transform .5s cubic-bezier(.22,.9,.18,1), opacity .5s;
+  }
+  .ticker-row.is-show{transform:translateY(0); opacity:1;}
+  .ticker-row.is-out{transform:translateY(-120px); opacity:0;}
+  .ticker-topic{font-size:16px; color:#e8eaf2; font-weight:600;}
+  .ticker-topic small{display:block; color:#6b7280; font-size:11px; margin-top:3px; font-weight:500; letter-spacing:.04em;}
+  .ticker-pct{font-size:24px; text-align:right; font-weight:700;}
+  .ticker-pct.bad{color:#ef4444;} .ticker-pct.warn{color:#fbbf24;} .ticker-pct.good{color:#22c55e;}
+  .ticker-pct small{display:block; font-size:9px; color:#6b7280; letter-spacing:.18em; margin-top:2px;}
+  .ticker-action{text-align:right; font-size:11px; color:#6366f1; font-weight:700; letter-spacing:.06em; text-transform:uppercase;}
+  @media (max-width:600px){
+    .ticker-row{grid-template-columns:1fr 80px;}
+    .ticker-action{display:none;}
+  }
+
+  /* === ADDITION 3: Time-to-cleared range bar === */
+  .range-section{padding:0 8vw 96px;}
+  .range-wrap{max-width:1080px; margin:0 auto;}
+  .range-head-row{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:14px; flex-wrap:wrap; gap:8px;}
+  .range-eyebrow{font-family:'JetBrains Mono', ui-monospace, monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted2); font-weight:700;}
+  .range-val{font-family:Georgia, serif; font-size:14px; color:var(--muted);}
+  .range-track{position:relative; height:40px; background:rgba(17,20,27,.05); border-radius:6px; overflow:hidden; margin-top:24px;}
+  .range-fill-cool{position:absolute; left:0; top:0; bottom:0; width:25%; background:linear-gradient(90deg, rgba(45,58,140,.18), rgba(138,74,31,.15));}
+  .range-fill-warm{position:absolute; left:25%; right:0; top:0; bottom:0; background:linear-gradient(90deg, rgba(138,74,31,.15), rgba(185,28,28,.15));}
+  .range-dot{position:absolute; top:50%; transform:translate(-50%, -50%); width:9px; height:9px; border-radius:50%; background:var(--accent);}
+  .range-lbl{position:absolute; top:-22px; font-family:'JetBrains Mono', ui-monospace, monospace; font-size:10px; color:var(--muted); letter-spacing:.06em; transform:translateX(-50%); white-space:nowrap;}
+  .range-axis{display:flex; justify-content:space-between; margin-top:10px; font-size:11px; color:var(--muted2); font-family:'JetBrains Mono', ui-monospace, monospace; letter-spacing:.04em;}
+  .range-cap{margin-top:22px; font-size:15px; color:var(--ink); line-height:1.6; max-width:780px;}
+  .range-cap strong{color:var(--accent); font-weight:700;}
+  .range-src{margin-top:18px; padding-top:12px; border-top:1px dashed var(--line-soft); font-size:11px; color:var(--muted2); font-family:'JetBrains Mono', ui-monospace, monospace; letter-spacing:.04em;}
+  .range-src a{color:var(--accent2); text-decoration:none;}
+  .range-src a:hover{text-decoration:underline;}
+
+  /* === ADDITION 4: Matrix (before pricing) === */
+  .matrix-section{padding:0 8vw 96px;}
+  .matrix-wrap{max-width:1080px; margin:0 auto;}
+  .matrix-head{margin-bottom:24px;}
+  .matrix{background:#fff; border:1px solid var(--line); border-radius:14px; overflow:hidden; box-shadow:0 1px 0 rgba(17,20,27,.03), 0 12px 36px rgba(17,20,27,.05);}
+  .matrix-row{display:grid; grid-template-columns:1.5fr repeat(5, 1fr); border-top:1px solid var(--line);}
+  .matrix-row:first-child{border-top:0; background:var(--surface);}
+  .matrix-cell{padding:14px 16px; font-size:13px; text-align:center; border-right:1px solid var(--line);}
+  .matrix-cell:last-child{border-right:0;}
+  .matrix-cell.label{text-align:left; font-weight:600; color:var(--ink);}
+  .matrix-cell.head{font-family:'JetBrains Mono', ui-monospace, monospace; font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted2); font-weight:700; padding:18px 16px;}
+  .matrix-cell .x{color:var(--muted2); font-size:18px;}
+  .matrix-cell .check{color:var(--success); font-size:18px; font-weight:700;}
+  .matrix-row.us{background:rgba(45,58,140,.04);}
+  .matrix-row.us .matrix-cell.label{color:var(--accent); font-weight:700;}
+  @media (max-width:760px){
+    /* Pivot: each row becomes a stacked card with capability on top, ProtoQuiz=fills the gap */
+    .matrix{border:0; background:transparent; box-shadow:none;}
+    .matrix-row{
+      display:grid; grid-template-columns:1fr; gap:0;
+      background:#fff; border:1px solid var(--line); border-radius:10px;
+      margin-bottom:10px; padding:14px 16px; border-top:1px solid var(--line);
+    }
+    .matrix-row:first-child{display:none;}
+    .matrix-cell{
+      border:0 !important; padding:4px 0; text-align:left;
+      display:grid; grid-template-columns:auto 1fr; gap:10px; align-items:center;
+      font-size:14px;
+    }
+    .matrix-cell.label{
+      font-size:15px; padding-bottom:10px; margin-bottom:6px;
+      border-bottom:1px solid var(--line-soft) !important;
+      grid-template-columns:1fr;
+    }
+    .matrix-cell:not(.label):not(.head)::before{
+      font-family:'JetBrains Mono', ui-monospace, monospace;
+      font-size:10px; letter-spacing:.16em; text-transform:uppercase;
+      color:var(--muted2); font-weight:700; min-width:110px;
+    }
+    .matrix-cell:nth-child(2)::before{content:"NREMT prep";}
+    .matrix-cell:nth-child(3)::before{content:"General LMS";}
+    .matrix-cell:nth-child(4)::before{content:"CE library";}
+    .matrix-cell:nth-child(5)::before{content:"Word-doc tests";}
+    .matrix-cell:nth-child(6)::before{content:"ProtoQuiz"; color:var(--accent);}
+    .matrix-cell.head{display:none;}
+    .matrix-row.us{background:rgba(45,58,140,.06); border-color:var(--accent);}
+  }
+
+  /* (Cost-stack styles consolidated into .stack-viz / split-row block below) */
+
+  /* Section eyebrow shared */
+  .add-section-head{
+    max-width:1080px; margin:0 auto 28px;
+    display:flex; flex-direction:column; gap:6px;
+  }
+  .add-section-eyebrow{font-family:'JetBrains Mono', ui-monospace, monospace; font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--muted2); font-weight:700;}
+  .add-section-h{font-family:Georgia, serif; font-size:32px; font-weight:600; letter-spacing:-.018em; margin:0;}
+  .add-section-sub{color:var(--muted); font-size:14px; line-height:1.5; max-width:680px; margin:6px 0 0;}
 </style>
 </head>
 <body>
@@ -4180,7 +4460,7 @@
 
   <header class="site-header">
     <div class="header-left">
-      <a href="#hero" class="brand"><img src="../logo-256.png" alt="">ProtoQuiz</a>
+      <a href="#hero" class="brand"><img src="/logo-256.png" alt="">ProtoQuiz</a>
       <a href="/" class="back-to-consumer" aria-label="Back to ProtoQuiz consumer app">&larr; Consumer app</a>
     </div>
     <nav aria-label="Primary"><a href="#walkthrough">How it works</a><a href="#pricing-section">Pricing</a><a href="#contact">Pilot</a></nav>
@@ -4202,28 +4482,9 @@
         <p class="hero-why-body"><span class="bw">In</span> <span class="bw">school,</span> <span class="bw">you</span> <span class="bw">learn</span> <span class="bw">the</span> <span class="bw">NREMT.</span> <span class="bw">Once</span> <span class="bw">you</span> <span class="bw">get</span> <span class="bw">a</span> <span class="bw">job,</span> <span class="bw">you</span> <span class="bw">need</span> <span class="bw">to</span> <span class="bw">learn</span> <span class="bw">an</span> <span class="bw">entirely</span> <span class="bw">new</span> <span class="bw">set</span> <span class="bw">of</span> <span class="bw">protocols.</span> <span class="bw">They&#39;re</span> <span class="bw">hundreds</span> <span class="bw">of</span> <span class="bw">pages</span> <span class="bw">&mdash;</span> <span class="bw">that&#39;s</span> <span class="bw">no</span> <span class="bw">small</span> <span class="bw">task.</span> <span class="bw">And</span> <span class="bw">there&#39;s</span> <span class="bw">no</span> <span class="bw">good</span> <span class="bw">way</span> <span class="bw">to</span> <span class="bw">study</span> <span class="bw">or</span> <span class="bw">learn</span> <span class="bw">them.</span></p>
         <p class="hero-why-tag">Until now.</p>
       </div>
-      <div class="hero-gap" aria-label="The training gap: school teaches NREMT, the field demands local protocols, nothing trains in between.">
-        <div class="hero-gap-track">
-          <div class="hero-gap-cell">
-            <span class="lab">Step 1 &middot; School</span>
-            <span class="val">NREMT</span>
-            <span class="sub">Generic, lowest-common-denominator framework. Trained for. Tested for.</span>
-          </div>
-          <div class="hero-gap-mid" aria-hidden="true">
-            <span class="gap-x">&times;</span>
-            <span class="gap-lbl">No tool<br>built for this</span>
-          </div>
-          <div class="hero-gap-cell">
-            <span class="lab">Step 2 &middot; The job</span>
-            <span class="val">Your local protocols</span>
-            <span class="sub">Hundreds of pages. Drugs, doses, decision points. The thing every shift actually runs on.</span>
-          </div>
-        </div>
-        <p class="hero-gap-foot">Until now, providers studied the highest-stakes knowledge they use with hand-built flashcards or rote memorization.</p>
-      </div>
 
       <div class="hero-intro" id="hero-intro">
-        <div class="hero-intro-logo"><img src="../logo-256.png" alt=""></div>
+        <div class="hero-intro-logo"><img src="/logo-256.png" alt=""></div>
         <div class="hero-intro-text">
           <div class="hero-intro-eyebrow">Introducing</div>
           <div class="hero-intro-name">ProtoQuiz</div>
@@ -4232,100 +4493,6 @@
       </div>
     </figure>
     <a class="scroll-cue" href="#benefits"><span>See more</span><span class="arrow"></span></a>
-  </section>
-
-  <!-- ============ BENEFITS (outcomes, not features) ============ -->
-  <section class="section reveal" id="benefits">
-    <div class="wrap">
-      <div class="section-center benefits-head">
-        <h2 class="section-title">What it does for your org.</h2>
-      </div>
-
-      <div class="benefits-stack">
-        <div class="benefit-block">
-          <div class="benefit-text">
-            <h3 class="benefit-h">Faster, better onboarding.</h3>
-            <ul class="benefit-list">
-              <li>New hires learn the protocols on ProtoQuiz before they ever step on a truck. They show up knowing the doses, the decision points, and the formulary cold.</li>
-              <li>FTO ride time goes to <em>how to actually run a call</em> &mdash; scene management, judgment, the gray-area decisions &mdash; instead of teaching the basics that should already be locked in.</li>
-              <li>Time-to-cleared drops. Real labor savings per hire, on top of a sharper finished product.</li>
-            </ul>
-          </div>
-          <aside class="benefit-viz" aria-label="FTO ride hours per new hire, before and after ProtoQuiz">
-            <div class="benefit-viz-eyebrow">FTO hours per new hire</div>
-            <div class="bench-bars">
-              <div class="bench-row">
-                <div class="bench-row-head"><span>Without ProtoQuiz</span><span class="bench-num">~120 hrs</span></div>
-                <div class="bench-bar"><span class="bench-bar-fill is-bad" style="--w:1;"></span></div>
-              </div>
-              <div class="bench-row">
-                <div class="bench-row-head"><span>With ProtoQuiz</span><span class="bench-num">~75 hrs</span></div>
-                <div class="bench-bar"><span class="bench-bar-fill is-good" style="--w:.625;"></span></div>
-              </div>
-            </div>
-            <div class="bench-foot">~<strong>45 hours saved</strong> per hire &middot; ~$1,400 in FTO labor</div>
-          </aside>
-        </div>
-
-        <div class="benefit-block">
-          <div class="benefit-text">
-            <h3 class="benefit-h">Lower clinical and legal risk.</h3>
-            <ul class="benefit-list">
-              <li>The more fluent providers are on their protocols, the fewer mistakes they make. Peer-reviewed: structured fluency interventions cut prehospital medication errors <strong>49%</strong>.</li>
-              <li>Fewer mistakes mean fewer remediations, fewer adverse outcomes, and fewer lawsuits. EMS negligence cases settle for <strong>$825K to $1M+</strong>.</li>
-              <li>Live dashboard catches weak topics by name before they become a QA case. Dated, signed-off training records hold up under audit and license-defense complaints.</li>
-            </ul>
-          </div>
-          <aside class="benefit-viz" aria-label="49 percent reduction in medication errors. EMS negligence settlements run $825K to $1M+.">
-            <div class="benefit-viz-eyebrow">Risk reduction</div>
-            <div class="risk-grid">
-              <div class="donut-wrap">
-                <div class="donut-figure">
-                  <svg class="donut" viewBox="0 0 120 120" aria-hidden="true">
-                    <circle class="donut-track" cx="60" cy="60" r="54" fill="none" stroke-width="10"/>
-                    <circle class="donut-fill" cx="60" cy="60" r="54" fill="none" stroke-width="10" stroke-linecap="round"/>
-                  </svg>
-                  <div class="donut-num">49%<small>fewer errors</small></div>
-                </div>
-                <div class="donut-cap">Peer-reviewed: structured fluency interventions</div>
-              </div>
-              <div class="risk-stat">
-                <div class="risk-stat-num">$825K&ndash;$1M+</div>
-                <div class="risk-stat-lbl">Average EMS negligence settlement. One avoided case pays the platform for a decade.</div>
-              </div>
-            </div>
-          </aside>
-        </div>
-
-        <div class="benefit-block">
-          <div class="benefit-text">
-            <h3 class="benefit-h">Higher quality providers.</h3>
-            <ul class="benefit-list">
-              <li>Reps on your actual protocol set, not generic content.</li>
-              <li>Reps happen whenever and wherever. It can be on shift, between calls. You don&rsquo;t need to add more extracurricular hours, no schedule changes.</li>
-              <li>Crews fluent in their agency&rsquo;s protocols are better at following them, and also at deviating when needed, with a solid footing.</li>
-            </ul>
-          </div>
-          <aside class="benefit-viz" aria-label="Sample fluency heatmap: providers on the left, protocol topics across the top, color shows mastery.">
-            <div class="benefit-viz-eyebrow">Fluency, by provider &times; protocol</div>
-            <div class="fluency">
-              <div class="fluency-row"><span class="fluency-name">Medic 1</span><div class="fluency-cells"><span class="l4"></span><span class="l4"></span><span class="l3"></span><span class="l4"></span><span class="l3"></span><span class="l4"></span><span class="l4"></span><span class="l3"></span><span class="l4"></span><span class="l3"></span><span class="l4"></span><span class="l4"></span></div></div>
-              <div class="fluency-row"><span class="fluency-name">Medic 2</span><div class="fluency-cells"><span class="l3"></span><span class="l4"></span><span class="l3"></span><span class="l2"></span><span class="l3"></span><span class="l3"></span><span class="l4"></span><span class="l3"></span><span class="l3"></span><span class="l2"></span><span class="l3"></span><span class="l4"></span></div></div>
-              <div class="fluency-row"><span class="fluency-name">EMT 1</span><div class="fluency-cells"><span class="l2"></span><span class="l3"></span><span class="l1"></span><span class="l2"></span><span class="l2"></span><span class="l3"></span><span class="l3"></span><span class="l1"></span><span class="l2"></span><span class="l3"></span><span class="l2"></span><span class="l3"></span></div></div>
-              <div class="fluency-row"><span class="fluency-name">Medic 3</span><div class="fluency-cells"><span class="l4"></span><span class="l3"></span><span class="l4"></span><span class="l3"></span><span class="l4"></span><span class="l3"></span><span class="l3"></span><span class="l4"></span><span class="l4"></span><span class="l3"></span><span class="l3"></span><span class="l4"></span></div></div>
-              <div class="fluency-row"><span class="fluency-name">EMT 2</span><div class="fluency-cells"><span class="l3"></span><span class="l2"></span><span class="l1"></span><span class="l3"></span><span class="l2"></span><span class="l2"></span><span class="l3"></span><span class="l1"></span><span class="l2"></span><span class="l2"></span><span class="l3"></span><span class="l2"></span></div></div>
-              <div class="fluency-row"><span class="fluency-name">Medic 4</span><div class="fluency-cells"><span class="l3"></span><span class="l4"></span><span class="l3"></span><span class="l3"></span><span class="l4"></span><span class="l4"></span><span class="l3"></span><span class="l4"></span><span class="l3"></span><span class="l4"></span><span class="l4"></span><span class="l3"></span></div></div>
-            </div>
-            <div class="fluency-legend">
-              <span><i style="background:#f0d9b8"></i>weak</span>
-              <span><i style="background:#d6a96a"></i></span>
-              <span><i style="background:#8a4a1f"></i></span>
-              <span><i style="background:#2d3a8c"></i>strong</span>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </div>
   </section>
 
   <!-- ============ APP WALKTHROUGH (movie + single-beat narration) ============ -->
@@ -4366,9 +4533,9 @@
 
           <!-- Beat 1: Home -->
           <div class="scene" data-beat="home">
-            <div class="ah"><div class="ah-logo"><img src="../logo-256.png" alt=""></div><div class="ah-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span class="ah-profile">Profile</span></div></div>
+            <div class="ah"><div class="ah-logo"><img src="/logo-256.png" alt=""></div><div class="ah-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span class="ah-profile">Profile</span></div></div>
             <div class="home-body">
-              <div class="home-logo-card"><img src="../logo-256.png" alt=""></div>
+              <div class="home-logo-card"><img src="/logo-256.png" alt=""></div>
               <div class="home-title">Denver Metro X ProtoQuiz</div>
               <div class="home-sub">Study Tool for Denver Metro EMS Protocols</div>
               <div class="home-tiles">
@@ -4383,7 +4550,7 @@
 
           <!-- Beat 2: Topics (Protocol Quizzes page with cert tabs) -->
           <div class="scene" data-beat="topics">
-            <div class="ah"><div class="ah-logo"><img src="../logo-256.png" alt=""></div><div class="ah-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span class="ah-profile">Profile</span></div></div>
+            <div class="ah"><div class="ah-logo"><img src="/logo-256.png" alt=""></div><div class="ah-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span class="ah-profile">Profile</span></div></div>
             <div class="quiz-body">
               <div class="qb-back">&larr; Back</div>
               <div class="qb-title">Protocol Quizzes</div>
@@ -4418,7 +4585,7 @@
 
           <!-- Beat 2.5: Cert picker (paramedic) -->
           <div class="scene" data-beat="cert-picker">
-            <div class="ah"><div class="ah-logo"><img src="../logo-256.png" alt=""></div><div class="ah-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span class="ah-profile">Profile</span></div></div>
+            <div class="ah"><div class="ah-logo"><img src="/logo-256.png" alt=""></div><div class="ah-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span class="ah-profile">Profile</span></div></div>
             <div class="cert-body">
               <div class="cert-eyebrow">My Certification</div>
               <div class="cert-h1">Set your cert level</div>
@@ -4435,7 +4602,7 @@
 
           <!-- Beat 3: Test picker (modal over Protocol Quizzes page) -->
           <div class="scene" data-beat="test-picker">
-            <div class="ah"><div class="ah-logo"><img src="../logo-256.png" alt=""></div><div class="ah-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span class="ah-profile">Profile</span></div></div>
+            <div class="ah"><div class="ah-logo"><img src="/logo-256.png" alt=""></div><div class="ah-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span class="ah-profile">Profile</span></div></div>
             <div class="quiz-body" style="opacity:.35;">
               <div class="qb-back">&larr; Back</div>
               <div class="qb-title">Protocol Quizzes</div>
@@ -4465,7 +4632,7 @@
 
           <!-- Beat 4: Question unanswered -->
           <div class="scene" data-beat="q-unanswered">
-            <div class="ah"><div class="ah-logo"><img src="../logo-256.png" alt=""></div><div class="ah-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span class="ah-profile">Profile</span></div></div>
+            <div class="ah"><div class="ah-logo"><img src="/logo-256.png" alt=""></div><div class="ah-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span class="ah-profile">Profile</span></div></div>
             <div class="quiz-body">
               <div class="qb-back">&larr; Back</div>
               <div class="qz-num">Question 1 of 15</div>
@@ -4483,7 +4650,7 @@
 
           <!-- Beat 5: Answered + ref -->
           <div class="scene" data-beat="q-answered">
-            <div class="ah"><div class="ah-logo"><img src="../logo-256.png" alt=""></div><div class="ah-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span class="ah-profile">Profile</span></div></div>
+            <div class="ah"><div class="ah-logo"><img src="/logo-256.png" alt=""></div><div class="ah-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span class="ah-profile">Profile</span></div></div>
             <div class="quiz-body">
               <div class="qz-num">Question 1 of 15</div>
               <div class="qz-bar"><div class="qz-fill" style="width:6.6%;"></div></div>
@@ -4539,7 +4706,7 @@
 
           <!-- Beat 6.5: Scenarios list page -->
           <div class="scene" data-beat="scenarios-list">
-            <div class="ah"><div class="ah-logo"><img src="../logo-256.png" alt=""></div><div class="ah-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span class="ah-profile">Profile</span></div></div>
+            <div class="ah"><div class="ah-logo"><img src="/logo-256.png" alt=""></div><div class="ah-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span class="ah-profile">Profile</span></div></div>
             <div class="quiz-body">
               <div class="qb-back">&larr; Back</div>
               <div class="qb-title">Clinical Scenarios</div>
@@ -4568,7 +4735,7 @@
 
           <!-- Beat 7: Scenario intro -->
           <div class="scene" data-beat="scenario-intro">
-            <div class="ah"><div class="ah-logo"><img src="../logo-256.png" alt=""></div><div class="ah-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span class="ah-profile">Profile</span></div></div>
+            <div class="ah"><div class="ah-logo"><img src="/logo-256.png" alt=""></div><div class="ah-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span class="ah-profile">Profile</span></div></div>
             <div class="sc-body">
               <div class="qb-back">&larr; Back</div>
               <div class="sc-stage">
@@ -4600,7 +4767,7 @@
 
           <!-- Beat 7b: Scenario intro correct state (A highlighted + Continue button) -->
           <div class="scene" data-beat="scenario-intro-correct">
-            <div class="ah"><div class="ah-logo"><img src="../logo-256.png" alt=""></div><div class="ah-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span class="ah-profile">Profile</span></div></div>
+            <div class="ah"><div class="ah-logo"><img src="/logo-256.png" alt=""></div><div class="ah-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span class="ah-profile">Profile</span></div></div>
             <div class="sc-body">
               <div class="qb-back">&larr; Back</div>
               <div class="sc-stage">
@@ -4637,7 +4804,7 @@
 
           <!-- Beat 8: Scenario EKG (single Lead II rhythm strip, peaked T-wave hyperkalemia) -->
           <div class="scene" data-beat="scenario-ekg">
-            <div class="ah"><div class="ah-logo"><img src="../logo-256.png" alt=""></div><div class="ah-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span class="ah-profile">Profile</span></div></div>
+            <div class="ah"><div class="ah-logo"><img src="/logo-256.png" alt=""></div><div class="ah-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span class="ah-profile">Profile</span></div></div>
             <div class="sc-body">
               <div class="sc-stage">
                 <div class="sc-stage-num">Stage 2 of 5</div>
@@ -4673,7 +4840,7 @@
           <!-- Beat 8b: EKG correct state (D highlighted, brief explainer, Finish button) -->
           <!-- Mirrors scenario-ekg with the EKG strip preserved + correct highlight + Finish CTA -->
           <div class="scene" data-beat="scenario-ekg-correct">
-            <div class="ah"><div class="ah-logo"><img src="../logo-256.png" alt=""></div><div class="ah-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span class="ah-profile">Profile</span></div></div>
+            <div class="ah"><div class="ah-logo"><img src="/logo-256.png" alt=""></div><div class="ah-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span class="ah-profile">Profile</span></div></div>
             <div class="sc-body">
               <div class="sc-stage">
                 <div class="sc-stage-num">Stage 2 of 5</div>
@@ -4712,7 +4879,7 @@
 
           <!-- Beat 9: Scenario complete (post-answer summary, mirrors real /scenarios/complete page) -->
           <div class="scene" data-beat="scenario-complete">
-            <div class="ah"><div class="ah-logo"><img src="../logo-256.png" alt=""></div><div class="ah-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span class="ah-profile">Profile</span></div></div>
+            <div class="ah"><div class="ah-logo"><img src="/logo-256.png" alt=""></div><div class="ah-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span class="ah-profile">Profile</span></div></div>
             <div class="sc-complete-body">
               <div class="sc-complete-h">Quiz Complete</div>
               <div class="sc-complete-sub">Scenario 1 &middot; Hyperkalemia</div>
@@ -4788,14 +4955,14 @@
             <div class="lap-body">
               <div class="lap-header">
                 <div class="lap-brand">
-                  <span class="lap-brand-logo"><img src="../logo-256.png" alt=""></span>
+                  <span class="lap-brand-logo"><img src="/logo-256.png" alt=""></span>
                   <span class="lap-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span>Feedback</span></span>
                 </div>
                 <div class="lap-nav-buttons"><span class="lap-real-pill profile">Profile</span><span class="lap-real-pill admin" data-click="lap-admin-enter">Admin</span></div>
               </div>
               <div class="lap-main">
                 <div class="lap-home-real">
-                  <div class="lap-home-logo-real"><img src="../logo-256.png" alt=""></div>
+                  <div class="lap-home-logo-real"><img src="/logo-256.png" alt=""></div>
                   <div class="lap-home-title-real">Denver Metro X ProtoQuiz</div>
                   <div class="lap-home-sub-real">Study Tool for Denver Metro EMS Protocols</div>
                   <div class="lap-home-tiles-real">
@@ -4819,7 +4986,7 @@
             <div class="lap-body">
               <div class="lap-header">
                 <div class="lap-brand">
-                  <span class="lap-brand-logo"><img src="../logo-256.png" alt=""></span>
+                  <span class="lap-brand-logo"><img src="/logo-256.png" alt=""></span>
                   <span class="lap-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span>Feedback</span></span>
                 </div>
                 <div class="lap-nav-buttons"><span class="lap-nav-btn signin">Profile</span><span class="lap-nav-btn admin">Admin</span></div>
@@ -4873,7 +5040,7 @@
             <div class="lap-body">
               <div class="lap-header">
                 <div class="lap-brand">
-                  <span class="lap-brand-logo"><img src="../logo-256.png" alt=""></span>
+                  <span class="lap-brand-logo"><img src="/logo-256.png" alt=""></span>
                   <span class="lap-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span>Feedback</span></span>
                 </div>
                 <div class="lap-nav-buttons"><span class="lap-nav-btn signin">Profile</span><span class="lap-nav-btn admin">Admin</span></div>
@@ -4935,7 +5102,7 @@
             <div class="lap-body">
               <div class="lap-header" style="opacity:.4;">
                 <div class="lap-brand">
-                  <span class="lap-brand-logo"><img src="../logo-256.png" alt=""></span>
+                  <span class="lap-brand-logo"><img src="/logo-256.png" alt=""></span>
                   <span class="lap-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span>Feedback</span></span>
                 </div>
                 <div class="lap-nav-buttons"><span class="lap-nav-btn signin">Profile</span><span class="lap-nav-btn admin">Admin</span></div>
@@ -4991,7 +5158,7 @@
             <div class="lap-body">
               <div class="lap-header">
                 <div class="lap-brand">
-                  <span class="lap-brand-logo"><img src="../logo-256.png" alt=""></span>
+                  <span class="lap-brand-logo"><img src="/logo-256.png" alt=""></span>
                   <span class="lap-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span>Feedback</span></span>
                 </div>
                 <div class="lap-nav-buttons"><span class="lap-nav-btn signin">Profile</span><span class="lap-nav-btn admin">Admin</span></div>
@@ -5098,7 +5265,7 @@
           <!-- Outro: closing logo card. Shared between provider + admin tracks. -->
           <div class="scene scene-outro" data-beat="outro">
             <div class="outro-card">
-              <div class="outro-logo"><img src="../logo-256.png" alt=""></div>
+              <div class="outro-logo"><img src="/logo-256.png" alt=""></div>
               <div class="outro-wordmark">ProtoQuiz</div>
               <div class="outro-tagline">Train how you fight.</div>
             </div>
@@ -5116,9 +5283,9 @@
           <div class="duo-phone">
             <div class="duo-phone-bezel">
               <div class="duo-screen">
-                <div class="ah"><div class="ah-logo"><img src="../logo-256.png" alt=""></div></div>
+                <div class="ah"><div class="ah-logo"><img src="/logo-256.png" alt=""></div></div>
                 <div class="duo-body">
-                  <div class="duo-logo-card"><img src="../logo-256.png" alt=""></div>
+                  <div class="duo-logo-card"><img src="/logo-256.png" alt=""></div>
                   <div class="duo-title">Denver Metro X ProtoQuiz</div>
                   <div class="duo-sub">Choose what to study</div>
                   <div class="duo-tiles">
@@ -5141,9 +5308,9 @@
                   <div class="duo-browser-url">denvermetro.protoquiz.com</div>
                   <div style="width:36px;"></div>
                 </div>
-                <div class="ah"><div class="ah-logo"><img src="../logo-256.png" alt=""></div><div class="ah-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span>Feedback</span></div><div class="ah-pills"><span class="ah-pill profile">Profile</span><span class="ah-pill admin">Admin</span></div></div>
+                <div class="ah"><div class="ah-logo"><img src="/logo-256.png" alt=""></div><div class="ah-nav"><span>Leaderboard</span><span>Analytics</span><span>Protocol</span><span>Feedback</span></div><div class="ah-pills"><span class="ah-pill profile">Profile</span><span class="ah-pill admin">Admin</span></div></div>
                 <div class="duo-body">
-                  <div class="duo-logo-card"><img src="../logo-256.png" alt=""></div>
+                  <div class="duo-logo-card"><img src="/logo-256.png" alt=""></div>
                   <div class="duo-title">Denver Metro X ProtoQuiz</div>
                   <div class="duo-sub-real">Study Tool for Denver Metro EMS Protocols</div>
                   <div class="duo-tiles">
@@ -5265,6 +5432,302 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
           </button>
           <span class="player-counter" role="status" aria-live="polite" aria-atomic="true">Auto-play <strong id="autoplay-state">on</strong></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ADDITION 2: STAT STRIP + intro text ============ -->
+  <section class="split-row reveal">
+    <div class="split-row-inner">
+      <div class="split-viz">
+        <div class="vstats">
+          <div class="vstats-row">
+            <div class="vstats-num"><span data-counter="7">0</span> <span class="unit">days</span></div>
+            <div>
+              <div class="vstats-label">Time to live</div>
+              <div class="vstats-cap">From PDF received to crews logging in.</div>
+            </div>
+          </div>
+          <div class="vstats-row">
+            <div class="vstats-num"><span data-counter="49">0</span><span class="unit">%</span></div>
+            <div>
+              <div class="vstats-label">Med-error reduction</div>
+              <div class="vstats-cap">Peer-reviewed structured fluency intervention.</div>
+            </div>
+          </div>
+          <div class="vstats-row">
+            <div class="vstats-num"><span class="unit">$</span><span data-counter="50">0</span><span class="unit">/yr</span></div>
+            <div>
+              <div class="vstats-label">Cost per provider</div>
+              <div class="vstats-cap">Pilot rate, locked for life. $100/yr standard.</div>
+            </div>
+          </div>
+          <div class="vstats-row">
+            <div class="vstats-num"><span class="unit">$</span><span data-counter="825">0</span><span class="unit">K+</span></div>
+            <div>
+              <div class="vstats-label">Settlement risk avoided</div>
+              <div class="vstats-cap">Avg EMS negligence settlement, low end.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="split-text">
+        <div class="split-eyebrow">The numbers</div>
+        <h2 class="split-h">Pays for itself short-term. Saves far more long-term.</h2>
+        <div class="split-body">
+          <p>Short term: fewer FTO hours per hire, faster time-to-cleared.</p>
+          <p>Long term: fewer errors, fewer remediations, audit-ready records. One avoided settlement covers the platform for years.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ADDITION 1: GAP DIAGRAM + intro text ============ -->
+  <section class="split-row reveal">
+    <div class="split-row-inner">
+      <div class="split-viz gap-viz">
+        <div class="hero-gap">
+          <div class="hero-gap-track">
+            <div class="hero-gap-cell">
+              <span class="lab">Step 1 &middot; School</span>
+              <span class="val">NREMT</span>
+              <span class="sub">Generic framework. Same content for every EMT and paramedic in the country.</span>
+            </div>
+            <div class="hero-gap-mid" aria-hidden="true">
+              <span class="gap-x">&times;</span>
+              <span class="gap-lbl">No tool<br>built for this</span>
+            </div>
+            <div class="hero-gap-cell">
+              <span class="lab">Step 2 &middot; Your agency</span>
+              <span class="val">Your protocol set</span>
+              <span class="sub">Hundreds of pages. Your formulary, your scope, your decision points. Different at every agency.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="split-text">
+        <div class="split-eyebrow">The gap</div>
+        <h2 class="split-h">School teaches NREMT. Then they show up at <em>your</em> agency.</h2>
+        <div class="split-body">
+          <p>What new hires actually need to know is your protocol set: signed by your medical director, scoped to their cert level, governing their clinical behavior.</p>
+          <p>Today that gap closes one of two ways: <strong>thin classroom study</strong> ProtoQuiz can compress, or <strong>FTO ride time on the truck</strong> teaching baseline protocols when it should be teaching judgment. Or it doesn't close, and crews piece it together for years.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BENEFITS (outcomes, not features) ============ -->
+  <section class="section reveal" id="benefits">
+    <div class="wrap">
+      <div class="section-center benefits-head">
+        <h2 class="section-title">What it does for your org.</h2>
+      </div>
+
+      <div class="benefits-stack">
+        <div class="benefit-block">
+          <div class="benefit-text">
+            <h3 class="benefit-h">Faster, better onboarding.</h3>
+            <p class="benefit-lede">New hires arrive knowing the protocols. FTO time goes to judgment, not basics. Sharper finished product, fewer paid hours per hire.</p>
+          </div>
+          <aside class="benefit-viz" aria-label="FTO ride hours per new hire, before and after ProtoQuiz">
+            <div class="benefit-viz-eyebrow">FTO hours per new hire</div>
+            <div class="bench-bars">
+              <div class="bench-row">
+                <div class="bench-row-head"><span>Without ProtoQuiz</span><span class="bench-num">~120 hrs</span></div>
+                <div class="bench-bar"><span class="bench-bar-fill is-bad" style="--w:1;"></span></div>
+              </div>
+              <div class="bench-row">
+                <div class="bench-row-head"><span>With ProtoQuiz</span><span class="bench-num">~75 hrs</span></div>
+                <div class="bench-bar"><span class="bench-bar-fill is-good" style="--w:.625;"></span></div>
+              </div>
+            </div>
+            <div class="bench-foot">~<strong>45 hours saved</strong> per hire &middot; ~$1,400 in FTO labor</div>
+          </aside>
+        </div>
+
+        <div class="benefit-block">
+          <div class="benefit-text">
+            <h3 class="benefit-h">Lower clinical and legal risk.</h3>
+            <p class="benefit-lede">Fluency cuts medication errors <strong>49%</strong> in peer-reviewed work. EMS negligence settlements run <strong>$825K to $1M+</strong>. One avoided case pays the platform for years.</p>
+          </div>
+          <aside class="benefit-viz" aria-label="49 percent reduction in medication errors. EMS negligence settlements run $825K to $1M+.">
+            <div class="benefit-viz-eyebrow">Risk reduction</div>
+            <div class="risk-grid">
+              <div class="donut-wrap">
+                <div class="donut-figure">
+                  <svg class="donut" viewBox="0 0 120 120" aria-hidden="true">
+                    <circle class="donut-track" cx="60" cy="60" r="54" fill="none" stroke-width="10"/>
+                    <circle class="donut-fill" cx="60" cy="60" r="54" fill="none" stroke-width="10" stroke-linecap="round"/>
+                  </svg>
+                  <div class="donut-num">49%<small>fewer errors</small></div>
+                </div>
+                <div class="donut-cap">Peer-reviewed: structured fluency interventions</div>
+              </div>
+              <div class="risk-stat">
+                <div class="risk-stat-num">$825K&ndash;$1M+</div>
+                <div class="risk-stat-lbl">Average EMS negligence settlement. One avoided case pays the platform for a decade.</div>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="benefit-block">
+          <div class="benefit-text">
+            <h3 class="benefit-h">Higher quality providers.</h3>
+            <p class="benefit-lede">Reps on your protocol set, not generic content. On shift, between calls, on a slow night. No extra hours, no schedule changes. Crews fluent in their protocols follow them more reliably, deviate with footing when they need to.</p>
+          </div>
+          <aside class="benefit-viz" aria-label="Sample fluency heatmap: providers on the left, protocol topics across the top, color shows mastery.">
+            <div class="benefit-viz-eyebrow">Fluency, by provider &times; protocol</div>
+            <div class="fluency">
+              <div class="fluency-row"><span class="fluency-name">Medic 1</span><div class="fluency-cells"><span class="l4"></span><span class="l4"></span><span class="l3"></span><span class="l4"></span><span class="l3"></span><span class="l4"></span><span class="l4"></span><span class="l3"></span><span class="l4"></span><span class="l3"></span><span class="l4"></span><span class="l4"></span></div></div>
+              <div class="fluency-row"><span class="fluency-name">Medic 2</span><div class="fluency-cells"><span class="l3"></span><span class="l4"></span><span class="l3"></span><span class="l2"></span><span class="l3"></span><span class="l3"></span><span class="l4"></span><span class="l3"></span><span class="l3"></span><span class="l2"></span><span class="l3"></span><span class="l4"></span></div></div>
+              <div class="fluency-row"><span class="fluency-name">EMT 1</span><div class="fluency-cells"><span class="l2"></span><span class="l3"></span><span class="l1"></span><span class="l2"></span><span class="l2"></span><span class="l3"></span><span class="l3"></span><span class="l1"></span><span class="l2"></span><span class="l3"></span><span class="l2"></span><span class="l3"></span></div></div>
+              <div class="fluency-row"><span class="fluency-name">Medic 3</span><div class="fluency-cells"><span class="l4"></span><span class="l3"></span><span class="l4"></span><span class="l3"></span><span class="l4"></span><span class="l3"></span><span class="l3"></span><span class="l4"></span><span class="l4"></span><span class="l3"></span><span class="l3"></span><span class="l4"></span></div></div>
+              <div class="fluency-row"><span class="fluency-name">EMT 2</span><div class="fluency-cells"><span class="l3"></span><span class="l2"></span><span class="l1"></span><span class="l3"></span><span class="l2"></span><span class="l2"></span><span class="l3"></span><span class="l1"></span><span class="l2"></span><span class="l2"></span><span class="l3"></span><span class="l2"></span></div></div>
+              <div class="fluency-row"><span class="fluency-name">Medic 4</span><div class="fluency-cells"><span class="l3"></span><span class="l4"></span><span class="l3"></span><span class="l3"></span><span class="l4"></span><span class="l4"></span><span class="l3"></span><span class="l4"></span><span class="l3"></span><span class="l4"></span><span class="l4"></span><span class="l3"></span></div></div>
+            </div>
+            <div class="fluency-legend">
+              <span><i style="background:#f0d9b8"></i>weak</span>
+              <span><i style="background:#d6a96a"></i></span>
+              <span><i style="background:#8a4a1f"></i></span>
+              <span><i style="background:#2d3a8c"></i>strong</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ADDITION 3: LIVE TICKER (split row) ============ -->
+  <section class="split-row reveal">
+    <div class="split-row-inner">
+      <div class="split-viz ticker-viz">
+        <div class="ticker-shell">
+          <div class="ticker-eyebrow">
+            <div class="ticker-eyebrow-left"><span class="dot"></span>Live admin feed &middot; sample data</div>
+            <div class="ticker-eyebrow-right">Updated 8s ago</div>
+          </div>
+          <div class="ticker-window" id="tickerWindow" aria-live="polite" aria-atomic="true" aria-label="Sample admin feed showing weak protocol topics"></div>
+        </div>
+      </div>
+      <div class="split-text">
+        <div class="split-eyebrow">For command staff</div>
+        <h2 class="split-h">See your weak spots, <em>by name</em>.</h2>
+        <div class="split-body">
+          <p>Which protocols, which providers, before QA finds them.</p>
+          <p>Assign a drill in one tap. Dated, signed-off completion goes on the audit-ready training record automatically.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ADDITION 4: TIME-TO-CLEARED RANGE BAR (split row) ============ -->
+  <section class="split-row reveal">
+    <div class="split-row-inner">
+      <div class="split-viz">
+        <div class="range-viz">
+          <div class="range-head-row">
+            <div class="range-eyebrow">Across published EMS agencies</div>
+            <div class="range-val">9 to 24+ weeks</div>
+          </div>
+          <div class="range-track">
+            <div class="range-fill-cool"></div>
+            <div class="range-fill-warm"></div>
+            <div class="range-dot" style="left:13%;"></div><div class="range-lbl" style="left:13%;">9 wk min</div>
+            <div class="range-dot" style="left:33%;"></div><div class="range-lbl" style="left:33%;">12 wk</div>
+            <div class="range-dot" style="left:54%;"></div><div class="range-lbl" style="left:54%;">13 wk</div>
+            <div class="range-dot" style="left:99%; background:var(--red);"></div><div class="range-lbl" style="left:99%;">24+ wk</div>
+          </div>
+          <div class="range-axis"><span>Wk 0</span><span>Wk 6</span><span>Wk 12</span><span>Wk 18</span><span>Wk 24+</span></div>
+        </div>
+      </div>
+      <div class="split-text">
+        <div class="split-eyebrow">Onboarding, today</div>
+        <h2 class="split-h">Right now, <em>your FTOs</em> are the protocol training program.</h2>
+        <div class="split-body">
+          <p>Time-to-cleared: 9 to 24+ weeks across published agencies. Most of that window is FTO ride time teaching baseline protocols on the truck. Paid hours, one hire at a time.</p>
+          <p><strong>The most expensive way to teach a protocol set.</strong> ProtoQuiz handles the baseline before they ride. FTO time picks up at judgment.</p>
+        </div>
+        <div class="split-foot">
+          Sources &middot;
+          <a href="https://www.medstar911.org/paramedic-and-emt-application-and-hiring-process/" target="_blank" rel="noopener">MedStar911</a> &middot;
+          <a href="https://www.medic911.com/careers-faq/" target="_blank" rel="noopener">Medic 911 / Ada County</a> &middot;
+          <a href="https://www.ems1.com/ems-training/articles/how-the-field-training-evaluation-program-prepares-new-paramedics-to-practice-Yba676lggmycVNiw/" target="_blank" rel="noopener">EMS1 FTEP overview</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ADDITION 5: MATRIX (split row) ============ -->
+  <section class="split-row reveal">
+    <div class="split-row-inner">
+      <div class="split-viz matrix-viz">
+        <div class="matrix">
+        <div class="matrix-row">
+          <div class="matrix-cell head label">&nbsp;</div>
+          <div class="matrix-cell head">NREMT prep</div>
+          <div class="matrix-cell head">General LMS</div>
+          <div class="matrix-cell head">CE library</div>
+          <div class="matrix-cell head">Word-doc tests</div>
+          <div class="matrix-cell head">ProtoQuiz</div>
+        </div>
+        <div class="matrix-row">
+          <div class="matrix-cell label">Pass the NREMT registry</div>
+          <div class="matrix-cell"><span class="check">&check;</span></div><div class="matrix-cell"><span class="x">&times;</span></div><div class="matrix-cell"><span class="x">&times;</span></div><div class="matrix-cell"><span class="x">&times;</span></div><div class="matrix-cell"><span class="x">&times;</span></div>
+        </div>
+        <div class="matrix-row">
+          <div class="matrix-cell label">CE hour tracking + delivery</div>
+          <div class="matrix-cell"><span class="x">&times;</span></div><div class="matrix-cell"><span class="check">&check;</span></div><div class="matrix-cell"><span class="check">&check;</span></div><div class="matrix-cell"><span class="x">&times;</span></div><div class="matrix-cell"><span class="x">&times;</span></div>
+        </div>
+        <div class="matrix-row">
+          <div class="matrix-cell label">Compliance &amp; onboarding paperwork</div>
+          <div class="matrix-cell"><span class="x">&times;</span></div><div class="matrix-cell"><span class="check">&check;</span></div><div class="matrix-cell"><span class="x">&times;</span></div><div class="matrix-cell"><span class="x">&times;</span></div><div class="matrix-cell"><span class="x">&times;</span></div>
+        </div>
+        <div class="matrix-row">
+          <div class="matrix-cell label">Broad clinical content (cardiology, peds, trauma)</div>
+          <div class="matrix-cell"><span class="check">&check;</span></div><div class="matrix-cell"><span class="check">&check;</span></div><div class="matrix-cell"><span class="check">&check;</span></div><div class="matrix-cell"><span class="x">&times;</span></div><div class="matrix-cell"><span class="x">&times;</span></div>
+        </div>
+        <div class="matrix-row">
+          <div class="matrix-cell label">Reusable across many agencies</div>
+          <div class="matrix-cell"><span class="check">&check;</span></div><div class="matrix-cell"><span class="check">&check;</span></div><div class="matrix-cell"><span class="check">&check;</span></div><div class="matrix-cell"><span class="x">&times;</span></div><div class="matrix-cell"><span class="x">&times;</span></div>
+        </div>
+        <div class="matrix-row">
+          <div class="matrix-cell label">Specific to <em>your</em> agency&rsquo;s protocols</div>
+          <div class="matrix-cell"><span class="x">&times;</span></div><div class="matrix-cell"><span class="x">&times;</span></div><div class="matrix-cell"><span class="x">&times;</span></div><div class="matrix-cell"><span class="check">&check;</span></div><div class="matrix-cell"><span class="check">&check;</span></div>
+        </div>
+        <div class="matrix-row">
+          <div class="matrix-cell label">Scoped per cert level (EMT / AEMT / Medic)</div>
+          <div class="matrix-cell"><span class="check">&check;</span></div><div class="matrix-cell"><span class="x">&times;</span></div><div class="matrix-cell"><span class="x">&times;</span></div><div class="matrix-cell"><span class="x">&times;</span></div><div class="matrix-cell"><span class="check">&check;</span></div>
+        </div>
+        <div class="matrix-row">
+          <div class="matrix-cell label">Page-cited answers from the source PDF</div>
+          <div class="matrix-cell"><span class="x">&times;</span></div><div class="matrix-cell"><span class="x">&times;</span></div><div class="matrix-cell"><span class="x">&times;</span></div><div class="matrix-cell"><span class="x">&times;</span></div><div class="matrix-cell"><span class="check">&check;</span></div>
+        </div>
+        <div class="matrix-row">
+          <div class="matrix-cell label">Live weak-topic dashboard, by name</div>
+          <div class="matrix-cell"><span class="x">&times;</span></div><div class="matrix-cell"><span class="x">&times;</span></div><div class="matrix-cell"><span class="x">&times;</span></div><div class="matrix-cell"><span class="x">&times;</span></div><div class="matrix-cell"><span class="check">&check;</span></div>
+        </div>
+        <div class="matrix-row">
+          <div class="matrix-cell label">Auto-updates when protocols change</div>
+          <div class="matrix-cell"><span class="x">&times;</span></div><div class="matrix-cell"><span class="x">&times;</span></div><div class="matrix-cell"><span class="x">&times;</span></div><div class="matrix-cell"><span class="x">&times;</span></div><div class="matrix-cell"><span class="check">&check;</span></div>
+        </div>
+        <div class="matrix-row us">
+          <div class="matrix-cell label">Verdict</div>
+          <div class="matrix-cell" style="color:var(--muted)">Keep using</div>
+          <div class="matrix-cell" style="color:var(--muted)">Keep using</div>
+          <div class="matrix-cell" style="color:var(--muted)">Keep using</div>
+          <div class="matrix-cell" style="color:var(--muted)">Replace</div>
+          <div class="matrix-cell" style="color:var(--accent); font-weight:700;">Add this</div>
+        </div>
+        </div>
+      </div>
+      <div class="split-text">
+        <div class="split-eyebrow">Why no other tool does this</div>
+        <h2 class="split-h">The other tools are good. Built for <em>different jobs</em>.</h2>
+        <div class="split-body">
+          <p>NREMT prep got a generation through the registry. General LMS handles compliance, CE, and paperwork. CE libraries keep crews current on broad content. Keep using them.</p>
+          <p>None were built around your protocol set: your PDF, your formulary, page-cited, scoped per cert level, signed by your medical director. <strong>That's the gap ProtoQuiz fills.</strong></p>
         </div>
       </div>
     </div>
@@ -5400,6 +5863,40 @@
           <span class="px-frame-net-num px-frame-net-num-final"><span data-px-val="save-net">~$42,000</span>/yr</span>
         </div>
         <div class="px-frame-net-foot">Plus another <strong><span data-px-val="save-upside">~$30,000</span>/yr</strong> in expected-value lawsuit-risk reduction, fewer remediations, and sharper crews.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ADDITION 6: COST STACK (split row) ============ -->
+  <section class="split-row reveal">
+    <div class="split-row-inner">
+      <div class="split-viz">
+        <div class="stack-viz">
+          <div class="stack-list">
+            <div class="stack-item"><div class="stack-item-label">General-purpose LMS</div><div class="stack-bar"><div class="stack-bar-fill" style="--w:.85;"></div></div><div class="stack-num">$24K</div></div>
+            <div class="stack-item"><div class="stack-item-label">CE content library</div><div class="stack-bar"><div class="stack-bar-fill" style="--w:.55;"></div></div><div class="stack-num">$15K</div></div>
+            <div class="stack-item"><div class="stack-item-label">Custom content build</div><div class="stack-bar"><div class="stack-bar-fill" style="--w:.4;"></div></div><div class="stack-num">$11K</div></div>
+            <div class="stack-item"><div class="stack-item-label">Annual revisions</div><div class="stack-bar"><div class="stack-bar-fill" style="--w:.32;"></div></div><div class="stack-num">$9K</div></div>
+            <div class="stack-item"><div class="stack-item-label">Compliance tracking</div><div class="stack-bar"><div class="stack-bar-fill" style="--w:.3;"></div></div><div class="stack-num">$8K</div></div>
+            <div class="stack-item"><div class="stack-item-label">Setup &amp; integration</div><div class="stack-bar"><div class="stack-bar-fill" style="--w:.32;"></div></div><div class="stack-num">$9K</div></div>
+          </div>
+          <div class="stack-total">
+            <span class="stack-total-lbl">Year 1, status quo</span>
+            <span class="stack-total-num">$76,000</span>
+          </div>
+          <div class="stack-viz-vs">
+            <span class="stack-viz-vs-lbl">With ProtoQuiz</span>
+            <span class="stack-viz-vs-num">$30,000<span>/yr</span></span>
+          </div>
+        </div>
+      </div>
+      <div class="split-text">
+        <div class="split-eyebrow">Year 1 math</div>
+        <h2 class="split-h">100 providers, kept protocol-fluent.</h2>
+        <div class="split-body">
+          <p>The typical stack runs ~$76K in year one. None of it is built around your protocols.</p>
+          <p><strong>$30K covers the protocol-fluency job.</strong> Sits alongside your LMS and CE provider, fills the gap they weren't built for.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -6266,6 +6763,84 @@
         if(r.top < window.innerHeight && r.bottom > 0) fire(el);
         else obs.observe(el);
       });
+    })();
+
+    // ===== Stat-strip counters (single shared observer) =====
+    (function(){
+      const els = document.querySelectorAll('[data-counter]');
+      if(!els.length) return;
+      function animate(el){
+        const target = parseFloat(el.dataset.counter);
+        const start = performance.now();
+        const dur = 1500;
+        (function tick(t){
+          const p = Math.min(1, (t - start) / dur);
+          const eased = 1 - Math.pow(1 - p, 3);
+          const v = target * eased;
+          el.textContent = target % 1 === 0 ? Math.round(v) : v.toFixed(1);
+          if(p < 1) requestAnimationFrame(tick);
+        })(start);
+      }
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if(e.isIntersecting){ animate(e.target); obs.unobserve(e.target); }
+        });
+      }, {threshold:0.4});
+      els.forEach(el => obs.observe(el));
+    })();
+
+    // ===== Cost-stack reveal trigger =====
+    (function(){
+      const sec = document.querySelector('.stack-viz');
+      if(!sec) return;
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if(e.isIntersecting){ sec.classList.add('in'); obs.unobserve(sec); } });
+      }, {threshold:0.2});
+      const r = sec.getBoundingClientRect();
+      if(r.top < window.innerHeight && r.bottom > 0) sec.classList.add('in');
+      else obs.observe(sec);
+    })();
+
+    // ===== Live ticker =====
+    (function(){
+      const data = [
+        {topic:'Pediatric cardiac arrest', sub:'4 medics weak &middot; last drill: 47 days ago', pct:'42%', cls:'bad', action:'Assign drill'},
+        {topic:'Refractory VF / amiodarone', sub:'3 medics weak &middot; protocol v3.2 update', pct:'58%', cls:'warn', action:'Review'},
+        {topic:'Naloxone, peds &lt; 5kg', sub:'7 EMTs weak &middot; high-frequency call type', pct:'51%', cls:'bad', action:'Assign drill'},
+        {topic:'Adult RSI', sub:'2 medics weak &middot; new protocol section', pct:'63%', cls:'warn', action:'Review'},
+        {topic:'STEMI activation criteria', sub:'agency-wide &middot; trending up', pct:'89%', cls:'good', action:'On track'},
+        {topic:'Refusal documentation', sub:'5 medics weak &middot; legal exposure', pct:'48%', cls:'bad', action:'Assign drill'},
+        {topic:'Hypoglycemia, adult', sub:'agency-wide &middot; stable', pct:'92%', cls:'good', action:'On track'},
+      ];
+      const win = document.getElementById('tickerWindow');
+      if(!win) return;
+      let i = 0; let current = null; let timer = null;
+      function show(){
+        const d = data[i % data.length]; i++;
+        const row = document.createElement('div');
+        row.className = 'ticker-row';
+        row.innerHTML = '<div class="ticker-topic">' + d.topic + '<small>' + d.sub + '</small></div><div class="ticker-pct ' + d.cls + '">' + d.pct + '<small>fluency</small></div><div class="ticker-action">' + d.action + '</div>';
+        win.appendChild(row);
+        requestAnimationFrame(() => row.classList.add('is-show'));
+        if(current){
+          const out = current; out.classList.remove('is-show'); out.classList.add('is-out');
+          setTimeout(() => out.remove(), 600);
+        }
+        current = row;
+      }
+      // Only run when in viewport (saves CPU on long pages)
+      const shell = win.closest('.ticker-shell');
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if(e.isIntersecting && !timer){
+            show();
+            timer = setInterval(show, 2400);
+          } else if(!e.isIntersecting && timer){
+            clearInterval(timer); timer = null;
+          }
+        });
+      }, {threshold:0.1});
+      obs.observe(shell);
     })();
 
 
