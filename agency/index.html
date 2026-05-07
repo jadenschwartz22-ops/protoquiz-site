@@ -3535,6 +3535,236 @@
     .benefit-list li{font-size:16px;}
   }
 
+  /* === Benefit-block visuals (right-rail charts/diagrams) ===
+     Each benefit gets a small inline data viz on the right at desktop,
+     full-width below the bullets at mobile. Uses CSS bars + tiny SVG so
+     no JS, no libraries, prints cleanly. */
+  .benefit-block{
+    display:grid;
+    grid-template-columns: 1.05fr .95fr;
+    gap:48px;
+    align-items:start;
+  }
+  .benefit-text{min-width:0;}
+  .benefit-viz{
+    align-self:center;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:22px 22px 20px;
+    box-shadow:0 1px 0 rgba(17,20,27,.03), 0 8px 24px rgba(17,20,27,.04);
+  }
+  .benefit-viz-eyebrow{
+    font-family:'JetBrains Mono', ui-monospace, monospace;
+    font-size:11px; letter-spacing:.2em; text-transform:uppercase;
+    color:var(--muted2); font-weight:700;
+    margin-bottom:14px;
+  }
+  /* Bar comparison (onboarding) */
+  .bench-bars{display:flex; flex-direction:column; gap:14px;}
+  .bench-row{display:flex; flex-direction:column; gap:6px;}
+  .bench-row-head{
+    display:flex; justify-content:space-between; align-items:baseline;
+    font-size:13px; color:var(--ink); font-weight:600;
+  }
+  .bench-row-head .bench-num{
+    font-family:Georgia, serif;
+    font-size:22px; font-weight:600; letter-spacing:-.01em;
+    color:var(--ink);
+  }
+  .bench-bar{
+    position:relative; height:14px; border-radius:7px;
+    background:rgba(17,20,27,.06);
+    overflow:hidden;
+  }
+  .bench-bar-fill{
+    position:absolute; inset:0 auto 0 0; height:100%;
+    border-radius:7px;
+    transform-origin:left center;
+    transform:scaleX(0);
+    transition:transform 1.1s cubic-bezier(.22,.9,.18,1);
+  }
+  .benefit-viz.in .bench-bar-fill{transform:scaleX(var(--w, 1));}
+  .bench-bar-fill.is-bad{background:linear-gradient(90deg, #b91c1c, #d97706);}
+  .bench-bar-fill.is-good{background:linear-gradient(90deg, #2d3a8c, #06b6d4);}
+  .bench-foot{
+    margin-top:14px;
+    font-family:'JetBrains Mono', ui-monospace, monospace;
+    font-size:11px; letter-spacing:.05em; color:var(--muted2);
+    border-top:1px dashed var(--line-soft);
+    padding-top:10px;
+  }
+  .bench-foot strong{color:var(--accent); font-weight:700;}
+
+  /* Donut + settlement (risk) */
+  .risk-grid{
+    display:grid; grid-template-columns: 1fr 1fr; gap:18px;
+    align-items:center;
+  }
+  .donut-wrap{display:flex; flex-direction:column; align-items:center; gap:8px;}
+  .donut-figure{position:relative; width:128px; height:128px;}
+  .donut{width:128px; height:128px; transform:rotate(-90deg); display:block;}
+  .donut-track{stroke:rgba(17,20,27,.08);}
+  .donut-fill{
+    stroke:var(--accent);
+    stroke-dasharray:339.292;
+    stroke-dashoffset:339.292;
+    transition:stroke-dashoffset 1.3s cubic-bezier(.22,.9,.18,1);
+  }
+  .benefit-viz.in .donut-fill{stroke-dashoffset:173;}
+  .donut-num{
+    position:absolute; inset:0;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center;
+    font-family:Georgia, serif;
+    font-size:32px; font-weight:600; letter-spacing:-.02em; color:var(--ink);
+    line-height:1; pointer-events:none;
+  }
+  .donut-num small{display:block; font-size:9px; font-family:'JetBrains Mono', monospace; letter-spacing:.16em; color:var(--muted2); font-weight:700; text-transform:uppercase; margin-top:5px;}
+  .donut-cap{
+    font-size:12px; color:var(--muted); text-align:center;
+    line-height:1.4; max-width:140px;
+  }
+  .risk-stat{
+    border-left:2px solid var(--accent2); padding-left:14px;
+  }
+  .risk-stat-num{
+    font-family:Georgia, serif;
+    font-size:28px; font-weight:600; letter-spacing:-.012em; color:var(--ink);
+    line-height:1;
+  }
+  .risk-stat-lbl{
+    margin-top:6px;
+    font-size:12px; color:var(--muted); line-height:1.4;
+  }
+
+  /* Mini fluency grid (quality) */
+  .fluency{
+    display:flex; flex-direction:column; gap:10px;
+  }
+  .fluency-row{
+    display:grid; grid-template-columns: 92px 1fr; gap:10px; align-items:center;
+  }
+  .fluency-name{
+    font-size:12px; color:var(--ink); font-weight:600;
+    text-align:right; letter-spacing:-.005em;
+    overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+  }
+  .fluency-cells{
+    display:grid; grid-template-columns: repeat(12, 1fr); gap:3px;
+  }
+  .fluency-cells span{
+    aspect-ratio:1; border-radius:2px;
+    background:rgba(17,20,27,.06);
+    transform:scale(.4); opacity:0;
+    transition:transform .5s cubic-bezier(.16,1,.3,1), opacity .5s, background .4s;
+  }
+  .benefit-viz.in .fluency-cells span{transform:scale(1); opacity:1;}
+  .fluency-cells span.l1{background:#f0d9b8;}
+  .fluency-cells span.l2{background:#d6a96a;}
+  .fluency-cells span.l3{background:#8a4a1f;}
+  .fluency-cells span.l4{background:#2d3a8c;}
+  .fluency-legend{
+    display:flex; gap:14px; align-items:center; justify-content:flex-end;
+    margin-top:10px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:10px; letter-spacing:.12em; color:var(--muted2); text-transform:uppercase;
+  }
+  .fluency-legend i{display:inline-block; width:10px; height:10px; border-radius:2px; margin-right:5px; vertical-align:-1px;}
+
+  /* Stagger the cell reveal */
+  .benefit-viz.in .fluency-cells span:nth-child(1){transition-delay:.02s;}
+  .benefit-viz.in .fluency-cells span:nth-child(2){transition-delay:.05s;}
+  .benefit-viz.in .fluency-cells span:nth-child(3){transition-delay:.08s;}
+  .benefit-viz.in .fluency-cells span:nth-child(4){transition-delay:.11s;}
+  .benefit-viz.in .fluency-cells span:nth-child(5){transition-delay:.14s;}
+  .benefit-viz.in .fluency-cells span:nth-child(6){transition-delay:.17s;}
+  .benefit-viz.in .fluency-cells span:nth-child(7){transition-delay:.20s;}
+  .benefit-viz.in .fluency-cells span:nth-child(8){transition-delay:.23s;}
+  .benefit-viz.in .fluency-cells span:nth-child(9){transition-delay:.26s;}
+  .benefit-viz.in .fluency-cells span:nth-child(10){transition-delay:.29s;}
+  .benefit-viz.in .fluency-cells span:nth-child(11){transition-delay:.32s;}
+  .benefit-viz.in .fluency-cells span:nth-child(12){transition-delay:.35s;}
+
+  @media (max-width:880px){
+    .benefit-block{grid-template-columns:1fr; gap:24px;}
+    .benefit-viz{order:2;}
+    .benefit-text{order:1;}
+  }
+
+  /* === Hero "training gap" diagram === */
+  .hero-gap{
+    margin-top:44px; max-width:780px;
+    opacity:0; transform:translateY(10px);
+    transition:opacity .9s cubic-bezier(.16,1,.3,1) .2s, transform .9s cubic-bezier(.16,1,.3,1) .2s;
+  }
+  .hero-quote.tag-in .hero-gap{opacity:1; transform:translateY(0);}
+  .hero-gap-track{
+    position:relative;
+    display:grid; grid-template-columns:1fr auto 1fr;
+    align-items:stretch; gap:0;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:0;
+    overflow:hidden;
+  }
+  .hero-gap-cell{
+    padding:18px 22px;
+    display:flex; flex-direction:column; gap:6px;
+  }
+  .hero-gap-cell .lab{
+    font-family:'JetBrains Mono', monospace;
+    font-size:10px; letter-spacing:.2em; text-transform:uppercase;
+    color:var(--muted2); font-weight:700;
+  }
+  .hero-gap-cell .val{
+    font-family:Georgia, serif;
+    font-size:18px; color:var(--ink); font-weight:600; letter-spacing:-.005em;
+    line-height:1.25;
+  }
+  .hero-gap-cell .sub{
+    font-size:12px; color:var(--muted); line-height:1.4;
+  }
+  .hero-gap-mid{
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    padding:0 18px;
+    border-left:1px dashed var(--line);
+    border-right:1px dashed var(--line);
+    background:repeating-linear-gradient(135deg, rgba(185,28,28,.05) 0 6px, transparent 6px 12px);
+    min-width:140px;
+  }
+  .hero-gap-mid .gap-x{
+    width:28px; height:28px; border-radius:50%;
+    border:1.5px solid var(--red);
+    color:var(--red); font-weight:700; font-size:18px;
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:8px;
+  }
+  .hero-gap-mid .gap-lbl{
+    font-family:'JetBrains Mono', monospace;
+    font-size:10px; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--red); font-weight:700; text-align:center;
+    line-height:1.3;
+  }
+  .hero-gap-foot{
+    margin-top:12px;
+    font-size:13px; color:var(--muted); line-height:1.5;
+    font-style:italic;
+  }
+  @media (max-width:680px){
+    .hero-gap{margin-top:32px;}
+    .hero-gap-track{grid-template-columns:1fr; }
+    .hero-gap-mid{
+      border-left:0; border-right:0;
+      border-top:1px dashed var(--line);
+      border-bottom:1px dashed var(--line);
+      padding:14px 18px;
+      flex-direction:row; gap:10px;
+    }
+    .hero-gap-mid .gap-x{margin-bottom:0;}
+  }
+
   /* === Walkthrough tab switcher (provider vs admin tracks) === */
   .walk-tabs{
     display:inline-flex; align-items:stretch; gap:6px;
@@ -3972,6 +4202,26 @@
         <p class="hero-why-body"><span class="bw">In</span> <span class="bw">school,</span> <span class="bw">you</span> <span class="bw">learn</span> <span class="bw">the</span> <span class="bw">NREMT.</span> <span class="bw">Once</span> <span class="bw">you</span> <span class="bw">get</span> <span class="bw">a</span> <span class="bw">job,</span> <span class="bw">you</span> <span class="bw">need</span> <span class="bw">to</span> <span class="bw">learn</span> <span class="bw">an</span> <span class="bw">entirely</span> <span class="bw">new</span> <span class="bw">set</span> <span class="bw">of</span> <span class="bw">protocols.</span> <span class="bw">They&#39;re</span> <span class="bw">hundreds</span> <span class="bw">of</span> <span class="bw">pages</span> <span class="bw">&mdash;</span> <span class="bw">that&#39;s</span> <span class="bw">no</span> <span class="bw">small</span> <span class="bw">task.</span> <span class="bw">And</span> <span class="bw">there&#39;s</span> <span class="bw">no</span> <span class="bw">good</span> <span class="bw">way</span> <span class="bw">to</span> <span class="bw">study</span> <span class="bw">or</span> <span class="bw">learn</span> <span class="bw">them.</span></p>
         <p class="hero-why-tag">Until now.</p>
       </div>
+      <div class="hero-gap" aria-label="The training gap: school teaches NREMT, the field demands local protocols, nothing trains in between.">
+        <div class="hero-gap-track">
+          <div class="hero-gap-cell">
+            <span class="lab">Step 1 &middot; School</span>
+            <span class="val">NREMT</span>
+            <span class="sub">Generic, lowest-common-denominator framework. Trained for. Tested for.</span>
+          </div>
+          <div class="hero-gap-mid" aria-hidden="true">
+            <span class="gap-x">&times;</span>
+            <span class="gap-lbl">No tool<br>built for this</span>
+          </div>
+          <div class="hero-gap-cell">
+            <span class="lab">Step 2 &middot; The job</span>
+            <span class="val">Your local protocols</span>
+            <span class="sub">Hundreds of pages. Drugs, doses, decision points. The thing every shift actually runs on.</span>
+          </div>
+        </div>
+        <p class="hero-gap-foot">Until now, providers studied the highest-stakes knowledge they use with hand-built flashcards or rote memorization.</p>
+      </div>
+
       <div class="hero-intro" id="hero-intro">
         <div class="hero-intro-logo"><img src="../logo-256.png" alt=""></div>
         <div class="hero-intro-text">
@@ -3993,30 +4243,86 @@
 
       <div class="benefits-stack">
         <div class="benefit-block">
-          <h3 class="benefit-h">Faster, better onboarding.</h3>
-          <ul class="benefit-list">
-            <li>New hires learn the protocols on ProtoQuiz before they ever step on a truck. They show up knowing the doses, the decision points, and the formulary cold.</li>
-            <li>FTO ride time goes to <em>how to actually run a call</em> &mdash; scene management, judgment, the gray-area decisions &mdash; instead of teaching the basics that should already be locked in.</li>
-            <li>Time-to-cleared drops. Real labor savings per hire, on top of a sharper finished product.</li>
-          </ul>
+          <div class="benefit-text">
+            <h3 class="benefit-h">Faster, better onboarding.</h3>
+            <ul class="benefit-list">
+              <li>New hires learn the protocols on ProtoQuiz before they ever step on a truck. They show up knowing the doses, the decision points, and the formulary cold.</li>
+              <li>FTO ride time goes to <em>how to actually run a call</em> &mdash; scene management, judgment, the gray-area decisions &mdash; instead of teaching the basics that should already be locked in.</li>
+              <li>Time-to-cleared drops. Real labor savings per hire, on top of a sharper finished product.</li>
+            </ul>
+          </div>
+          <aside class="benefit-viz" aria-label="FTO ride hours per new hire, before and after ProtoQuiz">
+            <div class="benefit-viz-eyebrow">FTO hours per new hire</div>
+            <div class="bench-bars">
+              <div class="bench-row">
+                <div class="bench-row-head"><span>Without ProtoQuiz</span><span class="bench-num">~120 hrs</span></div>
+                <div class="bench-bar"><span class="bench-bar-fill is-bad" style="--w:1;"></span></div>
+              </div>
+              <div class="bench-row">
+                <div class="bench-row-head"><span>With ProtoQuiz</span><span class="bench-num">~75 hrs</span></div>
+                <div class="bench-bar"><span class="bench-bar-fill is-good" style="--w:.625;"></span></div>
+              </div>
+            </div>
+            <div class="bench-foot">~<strong>45 hours saved</strong> per hire &middot; ~$1,400 in FTO labor</div>
+          </aside>
         </div>
 
         <div class="benefit-block">
-          <h3 class="benefit-h">Lower clinical and legal risk.</h3>
-          <ul class="benefit-list">
-            <li>The more fluent providers are on their protocols, the fewer mistakes they make. Peer-reviewed: structured fluency interventions cut prehospital medication errors <strong>49%</strong>.</li>
-            <li>Fewer mistakes mean fewer remediations, fewer adverse outcomes, and fewer lawsuits. EMS negligence cases settle for <strong>$825K to $1M+</strong>.</li>
-            <li>Live dashboard catches weak topics by name before they become a QA case. Dated, signed-off training records hold up under audit and license-defense complaints.</li>
-          </ul>
+          <div class="benefit-text">
+            <h3 class="benefit-h">Lower clinical and legal risk.</h3>
+            <ul class="benefit-list">
+              <li>The more fluent providers are on their protocols, the fewer mistakes they make. Peer-reviewed: structured fluency interventions cut prehospital medication errors <strong>49%</strong>.</li>
+              <li>Fewer mistakes mean fewer remediations, fewer adverse outcomes, and fewer lawsuits. EMS negligence cases settle for <strong>$825K to $1M+</strong>.</li>
+              <li>Live dashboard catches weak topics by name before they become a QA case. Dated, signed-off training records hold up under audit and license-defense complaints.</li>
+            </ul>
+          </div>
+          <aside class="benefit-viz" aria-label="49 percent reduction in medication errors. EMS negligence settlements run $825K to $1M+.">
+            <div class="benefit-viz-eyebrow">Risk reduction</div>
+            <div class="risk-grid">
+              <div class="donut-wrap">
+                <div class="donut-figure">
+                  <svg class="donut" viewBox="0 0 120 120" aria-hidden="true">
+                    <circle class="donut-track" cx="60" cy="60" r="54" fill="none" stroke-width="10"/>
+                    <circle class="donut-fill" cx="60" cy="60" r="54" fill="none" stroke-width="10" stroke-linecap="round"/>
+                  </svg>
+                  <div class="donut-num">49%<small>fewer errors</small></div>
+                </div>
+                <div class="donut-cap">Peer-reviewed: structured fluency interventions</div>
+              </div>
+              <div class="risk-stat">
+                <div class="risk-stat-num">$825K&ndash;$1M+</div>
+                <div class="risk-stat-lbl">Average EMS negligence settlement. One avoided case pays the platform for a decade.</div>
+              </div>
+            </div>
+          </aside>
         </div>
 
         <div class="benefit-block">
-          <h3 class="benefit-h">Higher quality providers.</h3>
-          <ul class="benefit-list">
-            <li>Reps on your actual protocol set, not generic content.</li>
-            <li>Reps happen whenever and wherever. It can be on shift, between calls. You don&rsquo;t need to add more extracurricular hours, no schedule changes.</li>
-            <li>Crews fluent in their agency&rsquo;s protocols are better at following them, and also at deviating when needed, with a solid footing.</li>
-          </ul>
+          <div class="benefit-text">
+            <h3 class="benefit-h">Higher quality providers.</h3>
+            <ul class="benefit-list">
+              <li>Reps on your actual protocol set, not generic content.</li>
+              <li>Reps happen whenever and wherever. It can be on shift, between calls. You don&rsquo;t need to add more extracurricular hours, no schedule changes.</li>
+              <li>Crews fluent in their agency&rsquo;s protocols are better at following them, and also at deviating when needed, with a solid footing.</li>
+            </ul>
+          </div>
+          <aside class="benefit-viz" aria-label="Sample fluency heatmap: providers on the left, protocol topics across the top, color shows mastery.">
+            <div class="benefit-viz-eyebrow">Fluency, by provider &times; protocol</div>
+            <div class="fluency">
+              <div class="fluency-row"><span class="fluency-name">Medic 1</span><div class="fluency-cells"><span class="l4"></span><span class="l4"></span><span class="l3"></span><span class="l4"></span><span class="l3"></span><span class="l4"></span><span class="l4"></span><span class="l3"></span><span class="l4"></span><span class="l3"></span><span class="l4"></span><span class="l4"></span></div></div>
+              <div class="fluency-row"><span class="fluency-name">Medic 2</span><div class="fluency-cells"><span class="l3"></span><span class="l4"></span><span class="l3"></span><span class="l2"></span><span class="l3"></span><span class="l3"></span><span class="l4"></span><span class="l3"></span><span class="l3"></span><span class="l2"></span><span class="l3"></span><span class="l4"></span></div></div>
+              <div class="fluency-row"><span class="fluency-name">EMT 1</span><div class="fluency-cells"><span class="l2"></span><span class="l3"></span><span class="l1"></span><span class="l2"></span><span class="l2"></span><span class="l3"></span><span class="l3"></span><span class="l1"></span><span class="l2"></span><span class="l3"></span><span class="l2"></span><span class="l3"></span></div></div>
+              <div class="fluency-row"><span class="fluency-name">Medic 3</span><div class="fluency-cells"><span class="l4"></span><span class="l3"></span><span class="l4"></span><span class="l3"></span><span class="l4"></span><span class="l3"></span><span class="l3"></span><span class="l4"></span><span class="l4"></span><span class="l3"></span><span class="l3"></span><span class="l4"></span></div></div>
+              <div class="fluency-row"><span class="fluency-name">EMT 2</span><div class="fluency-cells"><span class="l3"></span><span class="l2"></span><span class="l1"></span><span class="l3"></span><span class="l2"></span><span class="l2"></span><span class="l3"></span><span class="l1"></span><span class="l2"></span><span class="l2"></span><span class="l3"></span><span class="l2"></span></div></div>
+              <div class="fluency-row"><span class="fluency-name">Medic 4</span><div class="fluency-cells"><span class="l3"></span><span class="l4"></span><span class="l3"></span><span class="l3"></span><span class="l4"></span><span class="l4"></span><span class="l3"></span><span class="l4"></span><span class="l3"></span><span class="l4"></span><span class="l4"></span><span class="l3"></span></div></div>
+            </div>
+            <div class="fluency-legend">
+              <span><i style="background:#f0d9b8"></i>weak</span>
+              <span><i style="background:#d6a96a"></i></span>
+              <span><i style="background:#8a4a1f"></i></span>
+              <span><i style="background:#2d3a8c"></i>strong</span>
+            </div>
+          </aside>
         </div>
       </div>
     </div>
@@ -5942,6 +6248,23 @@
         } else {
           obs.observe(el);
         }
+      });
+    })();
+
+    // ===== Benefit-viz inline-chart observer =====
+    (function(){
+      const vizes = document.querySelectorAll('.benefit-viz');
+      if(!vizes.length) return;
+      const fire = el => el.classList.add('in');
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if(e.isIntersecting){ fire(e.target); obs.unobserve(e.target); }
+        });
+      }, {threshold:0.25});
+      vizes.forEach(el => {
+        const r = el.getBoundingClientRect();
+        if(r.top < window.innerHeight && r.bottom > 0) fire(el);
+        else obs.observe(el);
       });
     })();
 

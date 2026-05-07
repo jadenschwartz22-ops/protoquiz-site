@@ -769,10 +769,12 @@
     .reach-svg .locale:nth-of-type(3n) circle.ping{animation-delay:.9s;}
     .reach-svg .locale:nth-of-type(5n) circle.ping{animation-delay:1.5s;}
     .reach-svg .locale:nth-of-type(7n) circle.ping{animation-delay:2.1s;}
-    .reach-svg .locale{cursor:pointer;}
+    .reach-svg .locale{cursor:pointer;outline:none;}
     .reach-svg .locale:hover circle.core, .reach-svg .locale:focus circle.core{
       fill:#fff;filter:drop-shadow(0 0 10px var(--amber));
     }
+    .reach-svg .locale:focus-visible circle.halo{stroke-width:2;opacity:1;}
+    .reach-svg .locale .hit{cursor:pointer;}
     @keyframes reachPing{
       0%{opacity:.6;transform:scale(.6);}
       80%{opacity:0;transform:scale(2.6);}
@@ -787,6 +789,15 @@
     .reach-svg .rl-hot{font-size:18px;font-weight:700;fill:var(--ink);letter-spacing:.04em;}
     .reach-svg .rl-warm{font-size:15.5px;font-weight:700;fill:var(--ink);}
     .reach-svg .rl-tiny{font-size:12px;letter-spacing:.04em;fill:var(--muted);font-weight:500;}
+
+    /* Hover tooltip */
+    .reach-tip .tip-bg{
+      fill:rgba(6,5,10,.95);stroke:var(--amber);stroke-width:.8;
+    }
+    .reach-tip .tip-text{
+      font-family:var(--mono);font-size:13px;font-weight:700;
+      fill:var(--ink);letter-spacing:.04em;text-transform:uppercase;
+    }
 
     /* NE inset (zoomed Northeast cluster) */
     .reach-inset .inset-frame{
@@ -1925,6 +1936,11 @@
               <text class="rl" x="688" y="296" text-anchor="end">CHARLESTON &middot; 4</text>
             </g>
 
+            <!-- Tooltip overlay (populated on hover/focus) -->
+            <g class="reach-tip" id="reachTip" style="visibility:hidden" pointer-events="none">
+              <rect class="tip-bg" x="0" y="0" rx="3" ry="3" width="0" height="0"/>
+              <text class="tip-text" x="0" y="0"></text>
+            </g>
           </svg>
         </div>
 
@@ -2471,6 +2487,25 @@
         }
       } catch (e) {}
     }
+    // Label-offset overrides for the East Coast / dense cluster.
+    // Keys are state codes; values are SVG x/y offsets relative to the dot
+    // and an SVG text-anchor.
+    const REACH_LABEL_OFFSETS = {
+      NY:  { dx:0,  dy:-25, anchor:"middle", short:"NEW YORK" },
+      NJ:  { dx:42, dy:14,  anchor:"end",    short:"NEWARK" },
+      PA:  { dx:62, dy:2,   anchor:"end",    short:"PHILLY" },
+      MD:  { dx:24, dy:8,   anchor:"end",    short:"BALTIMORE" },
+      DC:  { dx:22, dy:32,  anchor:"end",    short:"D.C." },
+      MA:  { dx:36, dy:-30, anchor:"end",    short:"BOSTON" },
+      WV:  { dx:-42,dy:18,  anchor:"end",    short:"CHARLESTON" },
+      DE:  { dx:50, dy:0,   anchor:"end",    short:"WILMINGTON" },
+      CT:  { dx:50, dy:8,   anchor:"end",    short:"HARTFORD" },
+      RI:  { dx:50, dy:14,  anchor:"end",    short:"PROVIDENCE" },
+      VA:  { dx:0,  dy:18,  anchor:"middle", short:"RICHMOND" },
+      // West coast keeps default; CA cities get individual handling if multiple appear
+    };
+    const REACH_DEFAULT_OFFSET = { dx:0, dy:-14, anchor:"middle" };
+
     async function loadReach() {
       try {
         const r = await (await fetch('data/reach-stats.json')).json();
@@ -2487,7 +2522,98 @@
           const when = days === 0 ? 'today' : days === 1 ? 'yesterday' : `${days} days ago`;
           ts.textContent = `Live from ProtoQuiz uploads. Updated ${when}.`;
         }
-      } catch (e) {}
+
+        // Render dots + labels dynamically if the data is there
+        if (Array.isArray(r.locales) && r.locales.length) {
+          const SVG_NS = 'http://www.w3.org/2000/svg';
+          const svg = document.querySelector('.reach-svg');
+          if (!svg) return;
+          const localesG = svg.querySelector('.locales');
+          const labelsG = svg.querySelector('.reach-labels');
+          const tip = document.getElementById('reachTip');
+          if (!localesG || !labelsG) return;
+          localesG.replaceChildren();
+          labelsG.replaceChildren();
+
+          // Sort by count desc; label only the top 5 permanently (avoids cluster overlap).
+          const sorted = [...r.locales].sort((a,b)=>b.count-a.count);
+          const topLabeled = new Set(sorted.slice(0, 5).map(l => `${l.state}|${l.city}`));
+
+          const showTip = (x, y, txt) => {
+            if (!tip) return;
+            const t = tip.querySelector('.tip-text');
+            const bg = tip.querySelector('.tip-bg');
+            t.textContent = txt;
+            // measure
+            const bb = t.getBBox();
+            // place text 14px above the dot, centered
+            const tx = x;
+            const ty = y - 14;
+            t.setAttribute('x', tx);
+            t.setAttribute('y', ty);
+            t.setAttribute('text-anchor', 'middle');
+            // bg around text
+            const padX = 8, padY = 5;
+            bg.setAttribute('x', tx - bb.width/2 - padX);
+            bg.setAttribute('y', ty - bb.height + 2);
+            bg.setAttribute('width', bb.width + padX*2);
+            bg.setAttribute('height', bb.height + padY);
+            tip.style.visibility = 'visible';
+          };
+          const hideTip = () => { if (tip) tip.style.visibility = 'hidden'; };
+
+          for (const loc of r.locales) {
+            if (loc.x < 0 || loc.x > 959 || loc.y < 0 || loc.y > 593) continue;
+            const tier = loc.tier || (loc.count >= 30 ? 'hot' : loc.count >= 5 ? 'warm' : loc.count >= 2 ? 'on' : 'tiny');
+            const dot = document.createElementNS(SVG_NS, 'g');
+            dot.setAttribute('class', `locale ${tier === 'hot' ? 'hot' : tier === 'warm' ? 'warm' : ''}`.trim());
+            dot.setAttribute('transform', `translate(${loc.x} ${loc.y})`);
+            dot.setAttribute('data-loc', `${loc.city}, ${loc.state}`);
+            dot.setAttribute('data-count', loc.count);
+            dot.setAttribute('tabindex', '0');
+            dot.setAttribute('role', 'button');
+            dot.setAttribute('aria-label', `${loc.city}, ${loc.state}: ${loc.count} upload${loc.count === 1 ? '' : 's'}`);
+            const sizes = tier === 'hot' ? [14,6,5] : tier === 'warm' ? [9,3.6,3.5] : tier === 'on' ? [6,2.6,2.4] : [4,2,1.8];
+            for (const [cls, rad] of [['halo', sizes[0]], ['ping', sizes[1]], ['core', sizes[2]]]) {
+              const c = document.createElementNS(SVG_NS, 'circle');
+              c.setAttribute('class', cls);
+              c.setAttribute('r', rad);
+              dot.appendChild(c);
+            }
+            // Invisible hit-target for easy hover on tiny dots
+            const hit = document.createElementNS(SVG_NS, 'circle');
+            hit.setAttribute('r', Math.max(sizes[0] + 4, 12));
+            hit.setAttribute('fill', 'transparent');
+            hit.setAttribute('class', 'hit');
+            dot.appendChild(hit);
+
+            const txt = `${loc.city.toUpperCase()} · ${loc.count}`;
+            const onIn = () => showTip(loc.x, loc.y, txt);
+            dot.addEventListener('mouseenter', onIn);
+            dot.addEventListener('focus', onIn);
+            dot.addEventListener('mouseleave', hideTip);
+            dot.addEventListener('blur', hideTip);
+            localesG.appendChild(dot);
+
+            // Permanent label only for top 5
+            if (topLabeled.has(`${loc.state}|${loc.city}`)) {
+              const off = REACH_LABEL_OFFSETS[loc.state] || REACH_DEFAULT_OFFSET;
+              const lbl = document.createElementNS(SVG_NS, 'text');
+              const labelClass = tier === 'hot' ? 'rl rl-hot' : tier === 'warm' ? 'rl rl-warm' : 'rl';
+              lbl.setAttribute('class', labelClass);
+              lbl.setAttribute('x', loc.x + off.dx);
+              lbl.setAttribute('y', loc.y + off.dy);
+              lbl.setAttribute('text-anchor', off.anchor);
+              lbl.setAttribute('pointer-events', 'none');
+              const cityName = (off.short || loc.city).toUpperCase();
+              lbl.textContent = `${cityName} · ${loc.count}`;
+              labelsG.appendChild(lbl);
+            }
+          }
+          // Move tooltip to end so it renders on top
+          if (tip && tip.parentNode === svg) svg.appendChild(tip);
+        }
+      } catch (e) { console.warn('reach load failed', e); }
     }
     function setText(id, val) {
       const el = document.getElementById(id);

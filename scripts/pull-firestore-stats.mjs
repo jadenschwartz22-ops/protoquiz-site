@@ -197,6 +197,120 @@ function classifyState(name) {
   return null;
 }
 
+// City-level rules. Match more specific cities before falling back to state-level.
+// Returns { state, city, x, y } or null.
+const CITY_RULES = [
+  [/\bla[\s_-]?county\b|los[\s_-]?angeles|\blacoun?ty\b|laems|lacountytreatment/i, { state:'CA', city:'Los Angeles',     x:98,  y:336 }],
+  [/san[\s_-]?diego/i,                                { state:'CA', city:'San Diego',       x:112, y:398 }],
+  [/santa[\s_-]?cruz/i,                               { state:'CA', city:'Santa Cruz',      x:55,  y:288 }],
+  [/orange[\s_-]?county|\boc[\s_-]?ems\b/i,           { state:'CA', city:'Orange County',   x:108, y:380 }],
+  [/sacramento|sac[\s_-]?county/i,                    { state:'CA', city:'Sacramento',      x:75,  y:265 }],
+  [/\bsan[\s_-]?francisco\b|\bsf[\s_-]?ems\b|sfems/i, { state:'CA', city:'San Francisco',   x:50,  y:295 }],
+  [/king[\s_-]?county/i,                              { state:'WA', city:'Seattle',         x:155, y:78 }],
+  [/snohomish/i,                                      { state:'WA', city:'Snohomish County',x:165, y:75 }],
+  [/thurston/i,                                       { state:'WA', city:'Olympia',         x:140, y:90 }],
+  [/emt[\s_-]?wa\b|\bwa[\s_-]?protocol|\bwa[\s_-]?bls/i,{ state:'WA', city:'Statewide WA',  x:155, y:78 }],
+  [/dmemsmd|denver[\s_-]?metro|\bdenver\b/i,          { state:'CO', city:'Denver',          x:392, y:285 }],
+  [/fdny|nyc[\s_-]?ems/i,                             { state:'NY', city:'NYC',             x:858, y:185 }],
+  [/\bnys?\b[\s_-]?coll|\bremac\b|ny[\s_-]?colla?b|ny_collab|new[\s_-]?york/i, { state:'NY', city:'New York', x:814, y:195 }],
+  [/austin[\s_-]?travis|\beprip\b|erip[\s_-]?tx/i,    { state:'TX', city:'Austin',          x:455, y:455 }],
+  [/houston/i,                                        { state:'TX', city:'Houston',         x:510, y:478 }],
+  [/dallas/i,                                         { state:'TX', city:'Dallas',          x:475, y:415 }],
+  [/portland/i,                                       { state:'OR', city:'Portland',        x:130, y:130 }],
+  [/multnomah/i,                                      { state:'OR', city:'Multnomah Co',    x:130, y:130 }],
+  [/maricopa|phoenix/i,                               { state:'AZ', city:'Phoenix',         x:183, y:366 }],
+  [/tcems|tucson/i,                                   { state:'AZ', city:'Tucson',          x:225, y:395 }],
+  [/\bclark[\s_-]?county\b|las[\s_-]?vegas/i,         { state:'NV', city:'Las Vegas',       x:178, y:312 }],
+  [/greater[\s_-]?miami|miami/i,                      { state:'FL', city:'Miami',           x:765, y:540 }],
+  [/orlando/i,                                        { state:'FL', city:'Orlando',         x:725, y:495 }],
+  [/jacksonville/i,                                   { state:'FL', city:'Jacksonville',    x:715, y:455 }],
+  [/atlanta|grady/i,                                  { state:'GA', city:'Atlanta',         x:692, y:410 }],
+  [/region[\s_-]?iii/i,                               { state:'GA', city:'Region III',      x:692, y:410 }],
+  [/region[\s_-]?xi|cfd|nwc[\s_-]?ems|chicago/i,      { state:'IL', city:'Chicago',         x:595, y:220 }],
+  [/mayo[\s_-]?clinic|mayoclinic|rochester[\s_-]?mn/i,{ state:'MN', city:'Rochester',       x:538, y:170 }],
+  [/minneapolis|hennepin/i,                           { state:'MN', city:'Minneapolis',     x:520, y:165 }],
+  [/nashville|middle[\s_-]?tn/i,                      { state:'TN', city:'Nashville',       x:645, y:340 }],
+  [/memphis/i,                                        { state:'TN', city:'Memphis',         x:585, y:355 }],
+  [/boston[\s_-]?ems/i,                               { state:'MA', city:'Boston',          x:880, y:172 }],
+  [/dcems|\bdc[\s_-]?fems\b|\bdhs[\s_-]?ems\b|fems[\s_-]protocols/i, { state:'DC', city:'Washington, D.C.', x:802, y:252 }],
+  [/baltimore/i,                                      { state:'MD', city:'Baltimore',       x:800, y:252 }],
+  [/aurora[\s_-]?south[\s_-]?wi/i,                    { state:'WI', city:'Aurora',          x:550, y:200 }],
+  [/milwaukee/i,                                      { state:'WI', city:'Milwaukee',       x:582, y:190 }],
+  [/philadelphia|philly/i,                            { state:'PA', city:'Philadelphia',    x:808, y:232 }],
+  [/charleston[\s_-]?wv|\bcharleston\b/i,             { state:'WV', city:'Charleston',      x:730, y:278 }],
+  [/charlotte/i,                                      { state:'NC', city:'Charlotte',       x:752, y:343 }],
+  [/raleigh/i,                                        { state:'NC', city:'Raleigh',         x:790, y:340 }],
+  [/craven/i,                                         { state:'NC', city:'Craven',          x:805, y:345 }],
+  [/indianapolis/i,                                   { state:'IN', city:'Indianapolis',    x:638, y:248 }],
+  [/newark|\bnj[\s_-]?ems\b|new[\s_-]?jersey/i,       { state:'NJ', city:'Newark',          x:833, y:202 }],
+  [/birmingham|alabama|\bal[\s_-]?protocol|master\.alabama/i, { state:'AL', city:'Birmingham', x:648, y:408 }],
+  [/salt[\s_-]?lake|utah|\but[\s_-]?ems\b/i,          { state:'UT', city:'Salt Lake',       x:248, y:245 }],
+  [/west[\s_-]?virginia|\bwv\b/i,                     { state:'WV', city:'Charleston',      x:730, y:278 }],
+  [/maryland|\bmd[\s_-]?med/i,                        { state:'MD', city:'Baltimore',       x:800, y:252 }],
+];
+
+function classifyCity(name) {
+  for (const [rx, info] of CITY_RULES) if (rx.test(name)) return info;
+  return null;
+}
+
+// Default representative city per US state, with SVG coords for the
+// US-states viewBox 0 0 959 593 (Wikipedia "Blank US Map" projection).
+// New states automatically render as a dot when they show up.
+const STATE_CITIES = {
+  AL: { city: "Birmingham", x: 648, y: 408 },
+  AK: { city: "Anchorage", x: 110, y: 575 }, // off-mainland; rendered if outside viewBox handled separately
+  AZ: { city: "Phoenix", x: 183, y: 366 },
+  AR: { city: "Little Rock", x: 555, y: 380 },
+  CA: { city: "Los Angeles", x: 98, y: 336 },
+  CO: { city: "Denver", x: 392, y: 285 },
+  CT: { city: "Hartford", x: 860, y: 178 },
+  DE: { city: "Wilmington", x: 822, y: 232 },
+  DC: { city: "Washington, D.C.", x: 802, y: 252 },
+  FL: { city: "Miami", x: 765, y: 540 },
+  GA: { city: "Atlanta", x: 692, y: 410 },
+  HI: { city: "Honolulu", x: 280, y: 575 },
+  ID: { city: "Boise", x: 195, y: 175 },
+  IL: { city: "Chicago", x: 595, y: 220 },
+  IN: { city: "Indianapolis", x: 638, y: 248 },
+  IA: { city: "Des Moines", x: 540, y: 215 },
+  KS: { city: "Wichita", x: 450, y: 295 },
+  KY: { city: "Louisville", x: 642, y: 300 },
+  LA: { city: "New Orleans", x: 580, y: 470 },
+  ME: { city: "Portland", x: 895, y: 110 },
+  MD: { city: "Baltimore", x: 800, y: 252 },
+  MA: { city: "Boston", x: 880, y: 172 },
+  MI: { city: "Detroit", x: 660, y: 175 },
+  MN: { city: "Rochester", x: 538, y: 170 },
+  MS: { city: "Jackson", x: 595, y: 425 },
+  MO: { city: "Kansas City", x: 510, y: 275 },
+  MT: { city: "Billings", x: 270, y: 130 },
+  NE: { city: "Omaha", x: 480, y: 235 },
+  NV: { city: "Las Vegas", x: 178, y: 312 },
+  NH: { city: "Manchester", x: 880, y: 145 },
+  NJ: { city: "Newark", x: 833, y: 202 },
+  NM: { city: "Albuquerque", x: 305, y: 350 },
+  NY: { city: "New York", x: 814, y: 195 },
+  NC: { city: "Charlotte", x: 752, y: 343 },
+  ND: { city: "Bismarck", x: 410, y: 130 },
+  OH: { city: "Columbus", x: 678, y: 240 },
+  OK: { city: "Oklahoma City", x: 460, y: 360 },
+  OR: { city: "Portland", x: 130, y: 130 },
+  PA: { city: "Philadelphia", x: 808, y: 232 },
+  RI: { city: "Providence", x: 880, y: 178 },
+  SC: { city: "Columbia", x: 728, y: 380 },
+  SD: { city: "Sioux Falls", x: 470, y: 175 },
+  TN: { city: "Nashville", x: 645, y: 340 },
+  TX: { city: "Houston", x: 510, y: 478 },
+  UT: { city: "Salt Lake City", x: 248, y: 245 },
+  VT: { city: "Burlington", x: 855, y: 130 },
+  VA: { city: "Richmond", x: 765, y: 285 },
+  WA: { city: "Seattle", x: 155, y: 78 },
+  WV: { city: "Charleston", x: 730, y: 278 },
+  WI: { city: "Milwaukee", x: 582, y: 190 },
+  WY: { city: "Cheyenne", x: 320, y: 215 },
+};
+
 async function getReachStats() {
   const snap = await db.collection('protocol_uploads').where('status', '==', 'success').get();
   const nameCounts = new Map();
@@ -214,10 +328,39 @@ async function getReachStats() {
     if (n) nameCounts.set(n, (nameCounts.get(n) || 0) + 1);
   }
   const stateCounts = new Map();
+  // City-level aggregation: key = "STATE|CITY|x|y"
+  const cityCounts = new Map();
   for (const [name, count] of nameCounts) {
+    const cityInfo = classifyCity(name);
+    if (cityInfo) {
+      const k = `${cityInfo.state}|${cityInfo.city}|${cityInfo.x}|${cityInfo.y}`;
+      cityCounts.set(k, (cityCounts.get(k) || 0) + count);
+      stateCounts.set(cityInfo.state, (stateCounts.get(cityInfo.state) || 0) + count);
+      continue;
+    }
     const st = classifyState(name);
-    if (st) stateCounts.set(st, (stateCounts.get(st) || 0) + count);
+    if (st) {
+      // Fall back to representative city for that state
+      const c = STATE_CITIES[st];
+      if (c) {
+        const k = `${st}|${c.city}|${c.x}|${c.y}`;
+        cityCounts.set(k, (cityCounts.get(k) || 0) + count);
+      }
+      stateCounts.set(st, (stateCounts.get(st) || 0) + count);
+    }
   }
+  // Tier helper for dot/label sizing.
+  const tier = (c) => (c >= 30 ? "hot" : c >= 5 ? "warm" : c >= 2 ? "on" : "tiny");
+
+  // Build the locales array consumed by the homepage to render dots dynamically.
+  // City-level granularity where filenames support it; state-level fallback otherwise.
+  const locales = [...cityCounts.entries()]
+    .map(([k, count]) => {
+      const [state, city, x, y] = k.split('|');
+      return { state, city, x: Number(x), y: Number(y), count, tier: tier(count) };
+    })
+    .sort((a, b) => b.count - a.count);
+
   return {
     generatedAt: new Date().toISOString(),
     totalUploads: total,
@@ -226,6 +369,7 @@ async function getReachStats() {
     pagesProcessed: pages,
     statesRepresented: stateCounts.size,
     byState: Object.fromEntries([...stateCounts.entries()].sort((a, b) => b[1] - a[1])),
+    locales,
   };
 }
 
