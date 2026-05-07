@@ -783,6 +783,15 @@
       80%{opacity:0;transform:scale(2.6);}
       100%{opacity:0;transform:scale(2.6);}
     }
+    /* On-map dot labels */
+    .reach-svg .rl{
+      font-family:var(--mono);font-size:14px;letter-spacing:.06em;
+      fill:var(--ink-soft);text-transform:uppercase;font-weight:600;
+      paint-order:stroke fill;stroke:var(--bg);stroke-width:4;stroke-linejoin:round;
+    }
+    .reach-svg .rl-hot{font-size:18px;font-weight:700;fill:var(--ink);letter-spacing:.04em;}
+    .reach-svg .rl-warm{font-size:15.5px;font-weight:700;fill:var(--ink);}
+    .reach-svg .rl-tiny{font-size:12px;letter-spacing:.04em;fill:var(--muted);font-weight:500;}
     /* Ranked locales list */
     .reach-list{
       font-family:var(--mono);
@@ -1869,10 +1878,26 @@
               <g class="locale" data-loc="Rochester, MN" data-count="1" transform="translate(537 163)"><circle class="halo" r="4"/><circle class="ping" r="2"/><circle class="core" r="1.8"/></g>
               <g class="locale" data-loc="Washington, DC" data-count="1" transform="translate(802 252)"><circle class="halo" r="4"/><circle class="ping" r="2"/><circle class="core" r="1.8"/></g>
             </g>
-            <!-- Tooltip overlay shown on hover/focus -->
-            <g class="reach-tip" aria-hidden="true" style="display:none">
-              <rect class="tip-bg" x="0" y="0" rx="3" ry="3" width="0" height="0"/>
-              <text class="tip-text" x="0" y="0"></text>
+            <!-- Per-dot labels: skip dense east-coast cluster (handled in side list) -->
+            <g class="reach-labels" aria-hidden="true">
+              <text class="rl rl-hot" x="324" y="280" text-anchor="middle">DENVER &middot; 61</text>
+              <text class="rl rl-hot" x="98" y="356" text-anchor="middle">LOS ANGELES &middot; 14</text>
+              <text class="rl rl-warm" x="794" y="592" text-anchor="middle">MIAMI &middot; 9</text>
+              <text class="rl" x="121" y="4" text-anchor="middle">SEATTLE &middot; 4</text>
+              <text class="rl" x="222" y="200" text-anchor="middle">SALT LAKE &middot; 2</text>
+              <text class="rl" x="183" y="356" text-anchor="middle">PHOENIX &middot; 2</text>
+              <text class="rl" x="648" y="412" text-anchor="middle">BIRMINGHAM &middot; 2</text>
+              <text class="rl" x="490" y="528" text-anchor="middle">HOUSTON &middot; 1</text>
+              <text class="rl" x="615" y="216" text-anchor="middle">CHICAGO &middot; 1</text>
+              <text class="rl" x="745" y="358" text-anchor="middle">CHARLOTTE &middot; 1</text>
+              <text class="rl rl-tiny" x="183" y="298" text-anchor="middle">LAS VEGAS &middot; 1</text>
+              <text class="rl rl-tiny" x="49" y="278" text-anchor="middle">SANTA CRUZ &middot; 1</text>
+              <text class="rl rl-tiny" x="112" y="398" text-anchor="middle">SAN DIEGO &middot; 2</text>
+              <text class="rl rl-tiny" x="641" y="278" text-anchor="middle">INDIANAPOLIS &middot; 1</text>
+              <text class="rl rl-tiny" x="612" y="178" text-anchor="middle">MILWAUKEE &middot; 1</text>
+              <text class="rl rl-tiny" x="537" y="155" text-anchor="middle">ROCHESTER &middot; 1</text>
+              <!-- East coast cluster (NYC, Newark, Philly, Baltimore, DC, Boston, Charleston) intentionally
+                   labeled only in the side ranked list to avoid overlap. -->
             </g>
           </svg>
         </div>
