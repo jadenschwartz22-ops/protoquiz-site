@@ -536,8 +536,17 @@
     }
     .belt::before{top:0;}
     .belt::after{bottom:0;}
-    .track{display:flex;gap:14px;animation:cvScroll 70s linear infinite;width:max-content;align-items:flex-end;padding:8px 0;}
-    @keyframes cvScroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+    .track{
+      display:flex;gap:14px;width:max-content;align-items:flex-end;padding:8px 0;
+      animation:cvScroll 90s linear infinite;
+      will-change:transform;
+      backface-visibility:hidden;
+      transform:translate3d(0,0,0);
+    }
+    @keyframes cvScroll{
+      from{transform:translate3d(0,0,0);}
+      to{transform:translate3d(-50%,0,0);}
+    }
     .doc{
       flex-shrink:0;background:var(--panel);border:1px solid var(--line);border-radius:3px;
       padding:14px 14px 12px;
@@ -747,7 +756,6 @@
     }
     .reach-svg{
       position:absolute;inset:0;width:100%;height:100%;display:block;
-      filter:drop-shadow(0 0 22px rgba(255,176,0,.12));
     }
     .reach-svg .state{
       fill:transparent;
@@ -764,16 +772,19 @@
       animation:reachPing 3s cubic-bezier(.16,1,.3,1) infinite;
     }
     .reach-svg .locale.hot circle.core{r:5.5;}
-    .reach-svg .locale.hot circle.halo{r:16;stroke-width:1.6;opacity:.75;}
-    .reach-svg .locale.hot circle.core{filter:drop-shadow(0 0 8px rgba(255,176,0,.9));}
+    .reach-svg .locale.hot circle.halo{r:16;stroke-width:1.4;opacity:.55;}
     .reach-svg .locale.warm circle.core{r:4;}
+    .reach-svg .locale.warm circle.halo{opacity:.5;}
     .reach-svg .locale:nth-of-type(2n) circle.ping{animation-delay:.4s;}
     .reach-svg .locale:nth-of-type(3n) circle.ping{animation-delay:.9s;}
     .reach-svg .locale:nth-of-type(5n) circle.ping{animation-delay:1.5s;}
     .reach-svg .locale:nth-of-type(7n) circle.ping{animation-delay:2.1s;}
     .reach-svg .locale{cursor:pointer;outline:none;}
     .reach-svg .locale:hover circle.core, .reach-svg .locale:focus circle.core{
-      fill:var(--amber);filter:drop-shadow(0 0 12px rgba(255,176,0,.95));
+      fill:var(--amber);
+    }
+    .reach-svg .locale:hover circle.halo, .reach-svg .locale:focus circle.halo{
+      opacity:1;stroke-width:2;
     }
     .reach-svg .locale:focus-visible circle.halo{stroke-width:2;opacity:1;}
     .reach-svg .locale .hit{cursor:pointer;}
