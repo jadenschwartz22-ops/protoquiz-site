@@ -191,10 +191,14 @@
       content:""; position:fixed; inset:0; pointer-events:none; z-index:1;
       background:repeating-linear-gradient(0deg, rgba(255,255,255,0) 0, rgba(255,255,255,0) 2px, rgba(255,176,0,.012) 2px, rgba(255,176,0,.012) 3px);
       mix-blend-mode:screen;
+      transform:translateZ(0);
+      will-change:transform;
     }
     body::after{
       content:""; position:fixed; inset:0; pointer-events:none; z-index:0;
       background:radial-gradient(ellipse 100% 80% at 50% 50%, transparent 50%, rgba(0,0,0,.4));
+      transform:translateZ(0);
+      will-change:transform;
     }
     a{color:var(--amber); text-decoration:none; transition:color .15s;}
     a:hover{color:var(--ink);}
@@ -528,6 +532,8 @@
       mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 94%,transparent 100%);
       -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 94%,transparent 100%);
       padding:14px 0;
+      transform:translateZ(0);
+      contain:layout paint;
     }
     .belt::before, .belt::after{
       content:"";position:absolute;left:0;right:0;height:1px;
@@ -1003,6 +1009,21 @@
       .reach-stats b{font-size:14px;}
       .reach-ticker{font-size:10.5px;padding:10px 12px;gap:10px;}
       .reach-ticker .tick-belt{gap:32px;}
+      .reach .wrap{padding:0 16px;}
+      .reach-stage{padding:0;}
+      /* Pump SVG label sizes to compensate for downscaled viewBox on phones */
+      .reach-svg .rl{font-size:24px;letter-spacing:.02em;stroke-width:6;}
+      .reach-svg .rl-hot{font-size:30px;}
+      .reach-svg .rl-warm{font-size:26px;}
+      /* Hide tiny single-upload labels on mobile to reduce clutter */
+      .reach-svg .rl-tiny{display:none;}
+      /* Make dots bigger on mobile for tap-ability */
+      .reach-svg .locale circle.core{r:3.5;}
+      .reach-svg .locale.warm circle.core{r:5;}
+      .reach-svg .locale.hot circle.core{r:7;}
+      .reach-svg .locale circle.halo{r:8;stroke-width:1.4;}
+      .reach-svg .locale.warm circle.halo{r:11;}
+      .reach-svg .locale.hot circle.halo{r:18;stroke-width:1.6;}
     }
     @media (prefers-reduced-motion: reduce){
       .reach-ticker .tick-belt{animation:none;}
@@ -2552,11 +2573,13 @@
       "WA|Snohomish County": { dx:30,  dy:6,   anchor:"start"  },
       "WA|Statewide WA":     { dx:30,  dy:32,  anchor:"start"  },
       "OR|Portland":         { dx:0,   dy:18,  anchor:"middle" },
-      "CA|Santa Cruz":       { dx:22,  dy:4,   anchor:"start"  },
-      "CA|San Francisco":    { dx:22,  dy:0,   anchor:"start"  },
-      "CA|Los Angeles":      { dx:0,   dy:18,  anchor:"middle" },
-      "CA|San Diego":        { dx:0,   dy:18,  anchor:"middle" },
-      "CA|Sacramento":       { dx:22,  dy:0,   anchor:"start"  },
+      "CA|Santa Cruz":       { dx:0,   dy:-12, anchor:"middle" }, // above dot
+      "CA|San Francisco":    { dx:0,   dy:-12, anchor:"middle" },
+      "CA|Los Angeles":      { dx:0,   dy:22,  anchor:"middle" }, // below dot
+      "CA|San Diego":        { dx:0,   dy:22,  anchor:"middle" }, // below dot
+      "CA|Sacramento":       { dx:0,   dy:-12, anchor:"middle" },
+      "AZ|Phoenix":          { dx:18,  dy:4,   anchor:"start"  }, // right of dot
+      "NV|Las Vegas":        { dx:0,   dy:-12, anchor:"middle" }, // above dot, north of LA
       "FL|Miami":            { dx:0,   dy:18,  anchor:"middle" },
       "ME|Portland":         { dx:-14, dy:0,   anchor:"end"    },
       "NC|Craven":           { dx:14,  dy:5,   anchor:"start"  },
