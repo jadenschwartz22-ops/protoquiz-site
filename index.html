@@ -1913,7 +1913,7 @@
               <text class="rl rl-hot" x="324" y="280" text-anchor="middle">DENVER &middot; 61</text>
               <text class="rl rl-hot" x="98" y="356" text-anchor="middle">LOS ANGELES &middot; 14</text>
               <text class="rl rl-warm" x="794" y="592" text-anchor="middle">MIAMI &middot; 9</text>
-              <text class="rl" x="121" y="4" text-anchor="middle">SEATTLE &middot; 4</text>
+              <text class="rl" x="155" y="96" text-anchor="middle">SEATTLE &middot; 4</text>
               <text class="rl" x="222" y="200" text-anchor="middle">SALT LAKE &middot; 2</text>
               <text class="rl" x="183" y="356" text-anchor="middle">PHOENIX &middot; 2</text>
               <text class="rl" x="648" y="412" text-anchor="middle">BIRMINGHAM &middot; 2</text>
@@ -1921,7 +1921,7 @@
               <text class="rl" x="615" y="216" text-anchor="middle">CHICAGO &middot; 1</text>
               <text class="rl" x="745" y="358" text-anchor="middle">CHARLOTTE &middot; 1</text>
               <text class="rl rl-tiny" x="183" y="298" text-anchor="middle">LAS VEGAS &middot; 1</text>
-              <text class="rl rl-tiny" x="49" y="278" text-anchor="middle">SANTA CRUZ &middot; 1</text>
+              <text class="rl rl-tiny" x="73" y="292" text-anchor="start">SANTA CRUZ &middot; 1</text>
               <text class="rl rl-tiny" x="112" y="398" text-anchor="middle">SAN DIEGO &middot; 2</text>
               <text class="rl rl-tiny" x="641" y="278" text-anchor="middle">INDIANAPOLIS &middot; 1</text>
               <text class="rl rl-tiny" x="612" y="178" text-anchor="middle">MILWAUKEE &middot; 1</text>
@@ -2502,9 +2502,22 @@
       CT:  { dx:50, dy:8,   anchor:"end",    short:"HARTFORD" },
       RI:  { dx:50, dy:14,  anchor:"end",    short:"PROVIDENCE" },
       VA:  { dx:0,  dy:18,  anchor:"middle", short:"RICHMOND" },
-      // West coast keeps default; CA cities get individual handling if multiple appear
     };
     const REACH_DEFAULT_OFFSET = { dx:0, dy:-14, anchor:"middle" };
+    // Per-city overrides (state|city -> offset). Used for cities near viewBox edges
+    // or that need special positioning even when the state has its own override.
+    const REACH_CITY_OFFSETS = {
+      "WA|Seattle":          { dx:0,   dy:18,  anchor:"middle" }, // below dot (top edge)
+      "WA|Snohomish County": { dx:0,   dy:-14, anchor:"middle" },
+      "WA|Statewide WA":     { dx:0,   dy:18,  anchor:"middle" },
+      "CA|Santa Cruz":       { dx:18,  dy:4,   anchor:"start"  }, // right of dot (left edge)
+      "CA|San Francisco":    { dx:18,  dy:0,   anchor:"start"  },
+      "CA|Los Angeles":      { dx:0,   dy:18,  anchor:"middle" }, // below dot
+      "CA|San Diego":        { dx:0,   dy:18,  anchor:"middle" },
+      "CA|Sacramento":       { dx:18,  dy:0,   anchor:"start"  },
+      "FL|Miami":            { dx:0,   dy:18,  anchor:"middle" },
+      "ME|Portland":         { dx:-14, dy:0,   anchor:"end"    }, // left of dot (right edge)
+    };
 
     async function loadReach() {
       try {
@@ -2597,7 +2610,7 @@
 
             // Permanent label only for top 5
             if (topLabeled.has(`${loc.state}|${loc.city}`)) {
-              const off = REACH_LABEL_OFFSETS[loc.state] || REACH_DEFAULT_OFFSET;
+              const off = REACH_CITY_OFFSETS[`${loc.state}|${loc.city}`] || REACH_LABEL_OFFSETS[loc.state] || REACH_DEFAULT_OFFSET;
               const lbl = document.createElementNS(SVG_NS, 'text');
               const labelClass = tier === 'hot' ? 'rl rl-hot' : tier === 'warm' ? 'rl rl-warm' : 'rl';
               lbl.setAttribute('class', labelClass);
