@@ -189,10 +189,8 @@
     }
     body::before{
       content:""; position:fixed; inset:0; pointer-events:none; z-index:1;
-      background:repeating-linear-gradient(0deg, rgba(255,255,255,0) 0, rgba(255,255,255,0) 2px, rgba(255,176,0,.012) 2px, rgba(255,176,0,.012) 3px);
-      mix-blend-mode:screen;
+      background:repeating-linear-gradient(0deg, rgba(255,176,0,0) 0, rgba(255,176,0,0) 2px, rgba(255,176,0,.018) 2px, rgba(255,176,0,.018) 3px);
       transform:translateZ(0);
-      will-change:transform;
     }
     body::after{
       content:""; position:fixed; inset:0; pointer-events:none; z-index:0;
@@ -206,8 +204,7 @@
 
     .statusbar{
       position:fixed; top:0; left:0; right:0; z-index:100;
-      background:rgba(6,5,10,.88);
-      backdrop-filter:blur(10px);
+      background:rgba(6,5,10,.96);
       border-bottom:1px solid var(--line-2);
       padding:8px 32px;
       font-family:var(--mono);
@@ -2571,8 +2568,8 @@
       "WA|Snohomish County": { dx:30,  dy:6,   anchor:"start"  },
       "WA|Statewide WA":     { dx:30,  dy:32,  anchor:"start"  },
       "OR|Portland":         { dx:0,   dy:18,  anchor:"middle" },
-      "CA|Santa Cruz":       { dx:0,   dy:-12, anchor:"middle" }, // above dot
-      "CA|San Francisco":    { dx:0,   dy:-12, anchor:"middle" },
+      "CA|Santa Cruz":       { dx:14,  dy:-2,  anchor:"start"  }, // right of dot, near west edge
+      "CA|San Francisco":    { dx:14,  dy:-2,  anchor:"start"  },
       "CA|Los Angeles":      { dx:0,   dy:22,  anchor:"middle" }, // below dot
       "CA|San Diego":        { dx:0,   dy:22,  anchor:"middle" }, // below dot
       "CA|Sacramento":       { dx:0,   dy:-12, anchor:"middle" },
@@ -2784,12 +2781,17 @@
             hit.setAttribute('class', 'hit');
             dot.appendChild(hit);
 
-            const txt = `${loc.city.toUpperCase()} · ${loc.count}`;
-            const onIn = () => showTip(loc.x, loc.y, txt);
-            dot.addEventListener('mouseenter', onIn);
-            dot.addEventListener('focus', onIn);
-            dot.addEventListener('mouseleave', hideTip);
-            dot.addEventListener('blur', hideTip);
+            const willLabel = shouldLabel(loc);
+            // Only show hover tooltip on dots that AREN'T permanently labeled
+            // (avoids "two names on screen" duplication).
+            if (!willLabel) {
+              const txt = `${loc.city.toUpperCase()} · ${loc.count}`;
+              const onIn = () => showTip(loc.x, loc.y, txt);
+              dot.addEventListener('mouseenter', onIn);
+              dot.addEventListener('focus', onIn);
+              dot.addEventListener('mouseleave', hideTip);
+              dot.addEventListener('blur', hideTip);
+            }
             dot.addEventListener('click', () => showReachDetail(loc));
             dot.addEventListener('keydown', (e) => {
               if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); showReachDetail(loc); }
@@ -2797,7 +2799,7 @@
             localesG.appendChild(dot);
 
             // Permanent label unless it's a 'tiny' dot too close to a bigger labeled one
-            if (shouldLabel(loc)) {
+            if (willLabel) {
               const off = REACH_CITY_OFFSETS[`${loc.state}|${loc.city}`] || REACH_LABEL_OFFSETS[loc.state] || REACH_DEFAULT_OFFSET;
               const lbl = document.createElementNS(SVG_NS, 'text');
               const labelClass = tier === 'hot' ? 'rl rl-hot' : tier === 'warm' ? 'rl rl-warm' : 'rl';
