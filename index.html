@@ -778,6 +778,7 @@
       pointer-events:none;
     }
     .reach-label.hot{fill:var(--ink);font-weight:700;font-size:12px;}
+    .reach-label.dim{font-size:9px;letter-spacing:.04em;fill:var(--muted);font-weight:600;}
     .reach-scan{
       position:absolute;inset:0;pointer-events:none;
       background:linear-gradient(180deg, transparent 0%, rgba(255,176,0,.08) 50%, transparent 100%);
@@ -1776,62 +1777,57 @@
 <path class="state s-wi lit on" data-count="1" d="m 611,144 -2.9,.8 .2,2.3 -2.4,3.4 -.2,3.1 .6,.7 .8,-.7 .5,-1.6 2,-1.1 1.6,-4.2 3.5,-1.1 .8,-3.3 .7,-.9 .4,-2.1 1.8,-1.1 v -1.5 l 1,-.9 1.4,.1 v 2 l -1,.1 .5,1.2 -.7,2.2 -.6,.1 -1.2,4.5 -.7,.5 -2.8,7.2 -.3,4.2 .6,2 .1,1.3 -2.4,1.9 .3,1.9 -.9,3.1 .3,1.6 .4,3.7 -1.1,4.1 -1.5,5 1,1.5 -.3,.3 .8,1.7 -.5,1.1 1.1,.9 v 2.7 l 1.3,1.5 -.4,3 .3,4 -45.9,2.8 -1.3,-2.8 -3.3,-.7 -2.7,-1.5 -2,-5.5 .1,-2.5 1.6,-3.3 -.6,-1.1 -2.1,-1.6 -.2,-2.6 -1.1,-4.5 -.2,-3 -2.2,-3 -2.8,-.7 -5.2,-3.6 -.6,-3.3 -6.3,-3.1 -.2,-1.3 h -3.3 l -2.2,-2.6 -2,-1.3 .7,-5.1 -.9,-1.6 .5,-5.4 1,-1.8 -.3,-2.7 -1.2,-1.3 -1.8,-.3 v -1.7 l 2.8,-5.8 5.9,-3.9 -.4,-13 .9,.4 .6,-.5 .1,-1.1 .9,-.6 1.4,1.2 .7,-.1 h 2.6 l 6.8,-2.6 .3,-1 h 1.2 l .7,-1.2 .4,.8 1.8,-.9 1.8,-1.7 .3,.5 1,-1 2.2,1.6 -.8,1.6 -1.2,1.4 .5,1.5 -1.4,1.6 .4,.9 2.3,-1.1 v -1.4 l 3.3,1.9 1.9,.7 1.9,.7 3,3.8 17,3.8 1.4,1 4,.8 .7,.5 2.8,-.2 4.9,.8 1.4,1.5 -1,1 .8,.8 3.8,.7 1.2,1.2 .1,4.4 -1.3,2.8 2,.1 1,-.8 .9,.8 -1.1,3.1 1,1.6 1.2,.3 z m -49.5,-37.3 -.5,.1 -1.5,1.6 .2,.5 1.5,-.6 v -.6 l .9,-.3 z m 1.6,-1.1 -1,.3 -.2,.7 .9,-.1 z m -1.3,-1.6 -.2,.9 h 1.7 l .6,-.4 .1,-1 z m 2.8,-3 -.3,1.9 1.2,-.5 .1,-1.4 z m 58.3,31.9 -2,.3 -.4,1.3 1.3,1.7 z"><title>Wisconsin</title></path>
 <path class="state s-wy" d="m 355.3,143.7 -51,-5.3 -57.3,-7.9 -2,10.7 -8.5,54.8 -3.3,21.9 32.1,4.8 44.9,5.7 37.5,3.4 3.7,-44.2 z"><title>Wyoming</title></path>
 <path class="state s-dc lit on" data-count="1" d="m 803.5,252 -2.6,-1.8 -1,1.7 .5,.4 .4,.1 .6,.5 .3,.7 -.1,.5 .2,.5 z"><title>District of Columbia</title></path>
-            <!-- Locale dots: precise city/county positions -->
+            <!-- Locale dots: precise city/county positions, with per-dot count labels -->
             <g class="locales" id="reachLocales">
-              <!-- CO Denver — hot (61) -->
-              <g class="locale hot" data-loc="Denver, CO"><circle class="halo" cx="392" cy="285" r="14"/><circle class="ping" cx="392" cy="285" r="6"/><circle class="core" cx="392" cy="285" r="5"/></g>
-              <!-- NY NYC — hot (33) -->
-              <g class="locale hot" data-loc="NYC, NY"><circle class="halo" cx="814" cy="195" r="14"/><circle class="ping" cx="814" cy="195" r="6"/><circle class="core" cx="814" cy="195" r="5"/></g>
-              <!-- CA LA — warm (LA County) -->
-              <g class="locale warm" data-loc="Los Angeles, CA"><circle class="halo" cx="92" cy="365" r="9"/><circle class="ping" cx="92" cy="365" r="3.6"/><circle class="core" cx="92" cy="365" r="3.5"/></g>
-              <!-- CA San Diego -->
-              <g class="locale" data-loc="San Diego, CA"><circle class="halo" cx="105" cy="395" r="7"/><circle class="ping" cx="105" cy="395" r="3"/><circle class="core" cx="105" cy="395" r="2.6"/></g>
-              <!-- CA Bay Area / Santa Cruz -->
-              <g class="locale" data-loc="Santa Cruz, CA"><circle class="halo" cx="55" cy="320" r="6"/><circle class="ping" cx="55" cy="320" r="2.6"/><circle class="core" cx="55" cy="320" r="2.4"/></g>
-              <!-- FL Miami — warm (9) -->
-              <g class="locale warm" data-loc="Miami, FL"><circle class="halo" cx="765" cy="540" r="9"/><circle class="ping" cx="765" cy="540" r="3.6"/><circle class="core" cx="765" cy="540" r="3.5"/></g>
-              <!-- NJ Newark — warm (8) -->
-              <g class="locale warm" data-loc="Newark, NJ"><circle class="halo" cx="816" cy="218" r="8"/><circle class="ping" cx="816" cy="218" r="3.4"/><circle class="core" cx="816" cy="218" r="3.2"/></g>
-              <!-- MD Baltimore -->
-              <g class="locale" data-loc="Baltimore, MD"><circle class="halo" cx="790" cy="252" r="6"/><circle class="ping" cx="790" cy="252" r="2.6"/><circle class="core" cx="790" cy="252" r="2.6"/></g>
-              <!-- WV Charleston -->
-              <g class="locale" data-loc="Charleston, WV"><circle class="halo" cx="730" cy="278" r="6"/><circle class="ping" cx="730" cy="278" r="2.6"/><circle class="core" cx="730" cy="278" r="2.4"/></g>
-              <!-- WA Seattle -->
-              <g class="locale" data-loc="Seattle, WA"><circle class="halo" cx="155" cy="78" r="6"/><circle class="ping" cx="155" cy="78" r="2.6"/><circle class="core" cx="155" cy="78" r="2.4"/></g>
-              <!-- PA Philly -->
-              <g class="locale" data-loc="Philadelphia, PA"><circle class="halo" cx="808" cy="232" r="5"/><circle class="ping" cx="808" cy="232" r="2.4"/><circle class="core" cx="808" cy="232" r="2.2"/></g>
-              <!-- UT Salt Lake -->
-              <g class="locale" data-loc="Salt Lake City, UT"><circle class="halo" cx="248" cy="245" r="5"/><circle class="ping" cx="248" cy="245" r="2.4"/><circle class="core" cx="248" cy="245" r="2.2"/></g>
-              <!-- MA Boston -->
-              <g class="locale" data-loc="Boston, MA"><circle class="halo" cx="880" cy="172" r="5"/><circle class="ping" cx="880" cy="172" r="2.4"/><circle class="core" cx="880" cy="172" r="2.2"/></g>
-              <!-- AZ Phoenix -->
-              <g class="locale" data-loc="Phoenix, AZ"><circle class="halo" cx="218" cy="378" r="5"/><circle class="ping" cx="218" cy="378" r="2.4"/><circle class="core" cx="218" cy="378" r="2.2"/></g>
-              <!-- AL Birmingham -->
-              <g class="locale" data-loc="Birmingham, AL"><circle class="halo" cx="638" cy="408" r="5"/><circle class="ping" cx="638" cy="408" r="2.4"/><circle class="core" cx="638" cy="408" r="2.2"/></g>
-              <!-- WI Milwaukee -->
-              <g class="locale" data-loc="Milwaukee, WI"><circle class="halo" cx="582" cy="190" r="4"/><circle class="ping" cx="582" cy="190" r="2"/><circle class="core" cx="582" cy="190" r="1.8"/></g>
-              <!-- TX Houston -->
-              <g class="locale" data-loc="Houston, TX"><circle class="halo" cx="510" cy="478" r="4"/><circle class="ping" cx="510" cy="478" r="2"/><circle class="core" cx="510" cy="478" r="1.8"/></g>
-              <!-- IN Indianapolis -->
-              <g class="locale" data-loc="Indianapolis, IN"><circle class="halo" cx="638" cy="248" r="4"/><circle class="ping" cx="638" cy="248" r="2"/><circle class="core" cx="638" cy="248" r="1.8"/></g>
-              <!-- NV Las Vegas -->
-              <g class="locale" data-loc="Las Vegas, NV"><circle class="halo" cx="178" cy="312" r="4"/><circle class="ping" cx="178" cy="312" r="2"/><circle class="core" cx="178" cy="312" r="1.8"/></g>
-              <!-- NC Charlotte -->
-              <g class="locale" data-loc="Charlotte, NC"><circle class="halo" cx="752" cy="343" r="4"/><circle class="ping" cx="752" cy="343" r="2"/><circle class="core" cx="752" cy="343" r="1.8"/></g>
-              <!-- IL Chicago -->
-              <g class="locale" data-loc="Chicago, IL"><circle class="halo" cx="595" cy="220" r="4"/><circle class="ping" cx="595" cy="220" r="2"/><circle class="core" cx="595" cy="220" r="1.8"/></g>
-              <!-- MN Rochester / Mayo -->
-              <g class="locale" data-loc="Rochester, MN"><circle class="halo" cx="538" cy="170" r="4"/><circle class="ping" cx="538" cy="170" r="2"/><circle class="core" cx="538" cy="170" r="1.8"/></g>
-              <!-- DC -->
-              <g class="locale" data-loc="Washington, DC"><circle class="halo" cx="803" cy="252" r="4"/><circle class="ping" cx="803" cy="252" r="2"/><circle class="core" cx="803" cy="252" r="1.8"/></g>
+              <g class="locale hot" data-loc="Denver, CO" data-count="61" transform="translate(392 285)"><circle class="halo" r="14"/><circle class="ping" r="6"/><circle class="core" r="5"/></g>
+              <g class="locale hot" data-loc="NYC, NY" data-count="33" transform="translate(814 195)"><circle class="halo" r="14"/><circle class="ping" r="6"/><circle class="core" r="5"/></g>
+              <g class="locale warm" data-loc="Los Angeles, CA" data-count="14" transform="translate(92 365)"><circle class="halo" r="9"/><circle class="ping" r="3.6"/><circle class="core" r="3.5"/></g>
+              <g class="locale" data-loc="San Diego, CA" data-count="2" transform="translate(105 395)"><circle class="halo" r="7"/><circle class="ping" r="3"/><circle class="core" r="2.6"/></g>
+              <g class="locale" data-loc="Santa Cruz, CA" data-count="1" transform="translate(55 320)"><circle class="halo" r="6"/><circle class="ping" r="2.6"/><circle class="core" r="2.4"/></g>
+              <g class="locale warm" data-loc="Miami, FL" data-count="9" transform="translate(765 540)"><circle class="halo" r="9"/><circle class="ping" r="3.6"/><circle class="core" r="3.5"/></g>
+              <g class="locale warm" data-loc="Newark, NJ" data-count="8" transform="translate(816 218)"><circle class="halo" r="8"/><circle class="ping" r="3.4"/><circle class="core" r="3.2"/></g>
+              <g class="locale" data-loc="Baltimore, MD" data-count="5" transform="translate(790 252)"><circle class="halo" r="6"/><circle class="ping" r="2.6"/><circle class="core" r="2.6"/></g>
+              <g class="locale" data-loc="Charleston, WV" data-count="4" transform="translate(730 278)"><circle class="halo" r="6"/><circle class="ping" r="2.6"/><circle class="core" r="2.4"/></g>
+              <g class="locale" data-loc="Seattle, WA" data-count="4" transform="translate(155 78)"><circle class="halo" r="6"/><circle class="ping" r="2.6"/><circle class="core" r="2.4"/></g>
+              <g class="locale" data-loc="Philadelphia, PA" data-count="2" transform="translate(808 232)"><circle class="halo" r="5"/><circle class="ping" r="2.4"/><circle class="core" r="2.2"/></g>
+              <g class="locale" data-loc="Salt Lake City, UT" data-count="2" transform="translate(248 245)"><circle class="halo" r="5"/><circle class="ping" r="2.4"/><circle class="core" r="2.2"/></g>
+              <g class="locale" data-loc="Boston, MA" data-count="2" transform="translate(880 172)"><circle class="halo" r="5"/><circle class="ping" r="2.4"/><circle class="core" r="2.2"/></g>
+              <g class="locale" data-loc="Phoenix, AZ" data-count="2" transform="translate(218 378)"><circle class="halo" r="5"/><circle class="ping" r="2.4"/><circle class="core" r="2.2"/></g>
+              <g class="locale" data-loc="Birmingham, AL" data-count="2" transform="translate(638 408)"><circle class="halo" r="5"/><circle class="ping" r="2.4"/><circle class="core" r="2.2"/></g>
+              <g class="locale" data-loc="Milwaukee, WI" data-count="1" transform="translate(582 190)"><circle class="halo" r="4"/><circle class="ping" r="2"/><circle class="core" r="1.8"/></g>
+              <g class="locale" data-loc="Houston, TX" data-count="1" transform="translate(510 478)"><circle class="halo" r="4"/><circle class="ping" r="2"/><circle class="core" r="1.8"/></g>
+              <g class="locale" data-loc="Indianapolis, IN" data-count="1" transform="translate(638 248)"><circle class="halo" r="4"/><circle class="ping" r="2"/><circle class="core" r="1.8"/></g>
+              <g class="locale" data-loc="Las Vegas, NV" data-count="1" transform="translate(178 312)"><circle class="halo" r="4"/><circle class="ping" r="2"/><circle class="core" r="1.8"/></g>
+              <g class="locale" data-loc="Charlotte, NC" data-count="1" transform="translate(752 343)"><circle class="halo" r="4"/><circle class="ping" r="2"/><circle class="core" r="1.8"/></g>
+              <g class="locale" data-loc="Chicago, IL" data-count="1" transform="translate(595 220)"><circle class="halo" r="4"/><circle class="ping" r="2"/><circle class="core" r="1.8"/></g>
+              <g class="locale" data-loc="Rochester, MN" data-count="1" transform="translate(538 170)"><circle class="halo" r="4"/><circle class="ping" r="2"/><circle class="core" r="1.8"/></g>
+              <g class="locale" data-loc="Washington, DC" data-count="1" transform="translate(803 252)"><circle class="halo" r="4"/><circle class="ping" r="2"/><circle class="core" r="1.8"/></g>
             </g>
-            <!-- Hot-locale labels -->
+            <!-- Per-dot labels: city + count -->
             <g class="reach-labels" aria-hidden="true">
               <text class="reach-label hot" x="392" y="270" text-anchor="middle">DENVER &middot; 61</text>
               <text class="reach-label hot" x="814" y="180" text-anchor="middle">NYC &middot; 33</text>
-              <text class="reach-label hot" x="92" y="385" text-anchor="middle">LOS ANGELES</text>
-              <text class="reach-label" x="765" y="528" text-anchor="middle">MIAMI</text>
-              <text class="reach-label" x="838" y="225" text-anchor="start">NEWARK</text>
+              <text class="reach-label hot" x="92" y="385" text-anchor="middle">LOS ANGELES &middot; 14</text>
+              <text class="reach-label" x="765" y="528" text-anchor="middle">MIAMI &middot; 9</text>
+              <text class="reach-label" x="838" y="220" text-anchor="start">NEWARK &middot; 8</text>
+              <text class="reach-label dim" x="790" y="266" text-anchor="middle">BALT &middot; 5</text>
+              <text class="reach-label dim" x="725" y="293" text-anchor="middle">CHARLESTON &middot; 4</text>
+              <text class="reach-label dim" x="155" y="68" text-anchor="middle">SEATTLE &middot; 4</text>
+              <text class="reach-label dim" x="800" y="245" text-anchor="end">PHILLY &middot; 2</text>
+              <text class="reach-label dim" x="248" y="260" text-anchor="middle">SLC &middot; 2</text>
+              <text class="reach-label dim" x="880" y="186" text-anchor="middle">BOS &middot; 2</text>
+              <text class="reach-label dim" x="218" y="392" text-anchor="middle">PHX &middot; 2</text>
+              <text class="reach-label dim" x="638" y="423" text-anchor="middle">B&rsquo;HAM &middot; 2</text>
+              <text class="reach-label dim" x="105" y="410" text-anchor="middle">SD &middot; 2</text>
+              <text class="reach-label dim" x="582" y="180" text-anchor="middle">MKE &middot; 1</text>
+              <text class="reach-label dim" x="510" y="492" text-anchor="middle">HOU &middot; 1</text>
+              <text class="reach-label dim" x="638" y="262" text-anchor="middle">IND &middot; 1</text>
+              <text class="reach-label dim" x="178" y="326" text-anchor="middle">LV &middot; 1</text>
+              <text class="reach-label dim" x="752" y="357" text-anchor="middle">CLT &middot; 1</text>
+              <text class="reach-label dim" x="595" y="234" text-anchor="middle">CHI &middot; 1</text>
+              <text class="reach-label dim" x="538" y="160" text-anchor="middle">MAYO &middot; 1</text>
+              <text class="reach-label dim" x="811" y="266" text-anchor="start">DC &middot; 1</text>
+              <text class="reach-label dim" x="55" y="335" text-anchor="middle">SC &middot; 1</text>
             </g>
           </svg>
           <div class="reach-scan" aria-hidden="true"></div>
