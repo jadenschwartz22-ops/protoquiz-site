@@ -2805,7 +2805,7 @@
           const d = new Date(r.generatedAt);
           const days = Math.floor((Date.now() - d.getTime()) / 86400000);
           const when = days === 0 ? 'today' : days === 1 ? 'yesterday' : `${days} days ago`;
-          ts.textContent = `Live from ProtoQuiz uploads. Updated ${when}.`;
+          ts.textContent = `Live from ProtoQuiz uploads. Updates every day.`;
         }
 
         // Render dots + labels dynamically if the data is there
