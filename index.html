@@ -749,13 +749,29 @@
     }
     .reach-svg .state{
       fill:var(--panel);
-      stroke:var(--line-2);stroke-width:.6;
+      stroke:var(--line-2);stroke-width:.5;
     }
-    .reach-svg .state.lit.on{fill:rgba(255,176,0,.18);stroke:rgba(255,176,0,.55);}
-    .reach-svg .state.lit.warm{fill:rgba(255,176,0,.32);stroke:rgba(255,176,0,.75);stroke-width:.7;}
-    .reach-svg .state.lit.hot{fill:rgba(255,176,0,.5);stroke:rgba(255,176,0,1);stroke-width:.9;}
-    @keyframes hotPulse{0%,100%{opacity:1;}50%{opacity:.78;}}
-    .reach-svg .state.lit.hot{animation:hotPulse 3.6s ease-in-out infinite;}
+    /* lit class kept on lit-states for subtle ambient warmth */
+    .reach-svg .state.lit{fill:#1a140a;stroke:rgba(255,176,0,.22);}
+    .reach-svg .locale circle.core{fill:var(--amber);}
+    .reach-svg .locale circle.halo{fill:none;stroke:var(--amber);stroke-width:1;opacity:.5;}
+    .reach-svg .locale circle.ping{
+      fill:none;stroke:var(--amber);stroke-width:1.4;opacity:0;
+      transform-origin:center;transform-box:fill-box;
+      animation:reachPing 3s cubic-bezier(.16,1,.3,1) infinite;
+    }
+    .reach-svg .locale.hot circle.core{r:5;}
+    .reach-svg .locale.hot circle.halo{r:14;stroke-width:1.4;opacity:.7;}
+    .reach-svg .locale.warm circle.core{r:3.5;}
+    .reach-svg .locale:nth-of-type(2n) circle.ping{animation-delay:.4s;}
+    .reach-svg .locale:nth-of-type(3n) circle.ping{animation-delay:.9s;}
+    .reach-svg .locale:nth-of-type(5n) circle.ping{animation-delay:1.5s;}
+    .reach-svg .locale:nth-of-type(7n) circle.ping{animation-delay:2.1s;}
+    @keyframes reachPing{
+      0%{opacity:.6;transform:scale(.6);}
+      80%{opacity:0;transform:scale(2.6);}
+      100%{opacity:0;transform:scale(2.6);}
+    }
     .reach-label{
       font-family:var(--mono);font-size:11px;letter-spacing:.08em;
       fill:var(--ink-soft);text-transform:uppercase;font-weight:600;
@@ -1760,13 +1776,62 @@
 <path class="state s-wi lit on" data-count="1" d="m 611,144 -2.9,.8 .2,2.3 -2.4,3.4 -.2,3.1 .6,.7 .8,-.7 .5,-1.6 2,-1.1 1.6,-4.2 3.5,-1.1 .8,-3.3 .7,-.9 .4,-2.1 1.8,-1.1 v -1.5 l 1,-.9 1.4,.1 v 2 l -1,.1 .5,1.2 -.7,2.2 -.6,.1 -1.2,4.5 -.7,.5 -2.8,7.2 -.3,4.2 .6,2 .1,1.3 -2.4,1.9 .3,1.9 -.9,3.1 .3,1.6 .4,3.7 -1.1,4.1 -1.5,5 1,1.5 -.3,.3 .8,1.7 -.5,1.1 1.1,.9 v 2.7 l 1.3,1.5 -.4,3 .3,4 -45.9,2.8 -1.3,-2.8 -3.3,-.7 -2.7,-1.5 -2,-5.5 .1,-2.5 1.6,-3.3 -.6,-1.1 -2.1,-1.6 -.2,-2.6 -1.1,-4.5 -.2,-3 -2.2,-3 -2.8,-.7 -5.2,-3.6 -.6,-3.3 -6.3,-3.1 -.2,-1.3 h -3.3 l -2.2,-2.6 -2,-1.3 .7,-5.1 -.9,-1.6 .5,-5.4 1,-1.8 -.3,-2.7 -1.2,-1.3 -1.8,-.3 v -1.7 l 2.8,-5.8 5.9,-3.9 -.4,-13 .9,.4 .6,-.5 .1,-1.1 .9,-.6 1.4,1.2 .7,-.1 h 2.6 l 6.8,-2.6 .3,-1 h 1.2 l .7,-1.2 .4,.8 1.8,-.9 1.8,-1.7 .3,.5 1,-1 2.2,1.6 -.8,1.6 -1.2,1.4 .5,1.5 -1.4,1.6 .4,.9 2.3,-1.1 v -1.4 l 3.3,1.9 1.9,.7 1.9,.7 3,3.8 17,3.8 1.4,1 4,.8 .7,.5 2.8,-.2 4.9,.8 1.4,1.5 -1,1 .8,.8 3.8,.7 1.2,1.2 .1,4.4 -1.3,2.8 2,.1 1,-.8 .9,.8 -1.1,3.1 1,1.6 1.2,.3 z m -49.5,-37.3 -.5,.1 -1.5,1.6 .2,.5 1.5,-.6 v -.6 l .9,-.3 z m 1.6,-1.1 -1,.3 -.2,.7 .9,-.1 z m -1.3,-1.6 -.2,.9 h 1.7 l .6,-.4 .1,-1 z m 2.8,-3 -.3,1.9 1.2,-.5 .1,-1.4 z m 58.3,31.9 -2,.3 -.4,1.3 1.3,1.7 z"><title>Wisconsin</title></path>
 <path class="state s-wy" d="m 355.3,143.7 -51,-5.3 -57.3,-7.9 -2,10.7 -8.5,54.8 -3.3,21.9 32.1,4.8 44.9,5.7 37.5,3.4 3.7,-44.2 z"><title>Wyoming</title></path>
 <path class="state s-dc lit on" data-count="1" d="m 803.5,252 -2.6,-1.8 -1,1.7 .5,.4 .4,.1 .6,.5 .3,.7 -.1,.5 .2,.5 z"><title>District of Columbia</title></path>
-            <!-- Hot-state labels -->
+            <!-- Locale dots: precise city/county positions -->
+            <g class="locales" id="reachLocales">
+              <!-- CO Denver — hot (61) -->
+              <g class="locale hot" data-loc="Denver, CO"><circle class="halo" cx="392" cy="285" r="14"/><circle class="ping" cx="392" cy="285" r="6"/><circle class="core" cx="392" cy="285" r="5"/></g>
+              <!-- NY NYC — hot (33) -->
+              <g class="locale hot" data-loc="NYC, NY"><circle class="halo" cx="814" cy="195" r="14"/><circle class="ping" cx="814" cy="195" r="6"/><circle class="core" cx="814" cy="195" r="5"/></g>
+              <!-- CA LA — warm (LA County) -->
+              <g class="locale warm" data-loc="Los Angeles, CA"><circle class="halo" cx="92" cy="365" r="9"/><circle class="ping" cx="92" cy="365" r="3.6"/><circle class="core" cx="92" cy="365" r="3.5"/></g>
+              <!-- CA San Diego -->
+              <g class="locale" data-loc="San Diego, CA"><circle class="halo" cx="105" cy="395" r="7"/><circle class="ping" cx="105" cy="395" r="3"/><circle class="core" cx="105" cy="395" r="2.6"/></g>
+              <!-- CA Bay Area / Santa Cruz -->
+              <g class="locale" data-loc="Santa Cruz, CA"><circle class="halo" cx="55" cy="320" r="6"/><circle class="ping" cx="55" cy="320" r="2.6"/><circle class="core" cx="55" cy="320" r="2.4"/></g>
+              <!-- FL Miami — warm (9) -->
+              <g class="locale warm" data-loc="Miami, FL"><circle class="halo" cx="765" cy="540" r="9"/><circle class="ping" cx="765" cy="540" r="3.6"/><circle class="core" cx="765" cy="540" r="3.5"/></g>
+              <!-- NJ Newark — warm (8) -->
+              <g class="locale warm" data-loc="Newark, NJ"><circle class="halo" cx="816" cy="218" r="8"/><circle class="ping" cx="816" cy="218" r="3.4"/><circle class="core" cx="816" cy="218" r="3.2"/></g>
+              <!-- MD Baltimore -->
+              <g class="locale" data-loc="Baltimore, MD"><circle class="halo" cx="790" cy="252" r="6"/><circle class="ping" cx="790" cy="252" r="2.6"/><circle class="core" cx="790" cy="252" r="2.6"/></g>
+              <!-- WV Charleston -->
+              <g class="locale" data-loc="Charleston, WV"><circle class="halo" cx="730" cy="278" r="6"/><circle class="ping" cx="730" cy="278" r="2.6"/><circle class="core" cx="730" cy="278" r="2.4"/></g>
+              <!-- WA Seattle -->
+              <g class="locale" data-loc="Seattle, WA"><circle class="halo" cx="155" cy="78" r="6"/><circle class="ping" cx="155" cy="78" r="2.6"/><circle class="core" cx="155" cy="78" r="2.4"/></g>
+              <!-- PA Philly -->
+              <g class="locale" data-loc="Philadelphia, PA"><circle class="halo" cx="808" cy="232" r="5"/><circle class="ping" cx="808" cy="232" r="2.4"/><circle class="core" cx="808" cy="232" r="2.2"/></g>
+              <!-- UT Salt Lake -->
+              <g class="locale" data-loc="Salt Lake City, UT"><circle class="halo" cx="248" cy="245" r="5"/><circle class="ping" cx="248" cy="245" r="2.4"/><circle class="core" cx="248" cy="245" r="2.2"/></g>
+              <!-- MA Boston -->
+              <g class="locale" data-loc="Boston, MA"><circle class="halo" cx="880" cy="172" r="5"/><circle class="ping" cx="880" cy="172" r="2.4"/><circle class="core" cx="880" cy="172" r="2.2"/></g>
+              <!-- AZ Phoenix -->
+              <g class="locale" data-loc="Phoenix, AZ"><circle class="halo" cx="218" cy="378" r="5"/><circle class="ping" cx="218" cy="378" r="2.4"/><circle class="core" cx="218" cy="378" r="2.2"/></g>
+              <!-- AL Birmingham -->
+              <g class="locale" data-loc="Birmingham, AL"><circle class="halo" cx="638" cy="408" r="5"/><circle class="ping" cx="638" cy="408" r="2.4"/><circle class="core" cx="638" cy="408" r="2.2"/></g>
+              <!-- WI Milwaukee -->
+              <g class="locale" data-loc="Milwaukee, WI"><circle class="halo" cx="582" cy="190" r="4"/><circle class="ping" cx="582" cy="190" r="2"/><circle class="core" cx="582" cy="190" r="1.8"/></g>
+              <!-- TX Houston -->
+              <g class="locale" data-loc="Houston, TX"><circle class="halo" cx="510" cy="478" r="4"/><circle class="ping" cx="510" cy="478" r="2"/><circle class="core" cx="510" cy="478" r="1.8"/></g>
+              <!-- IN Indianapolis -->
+              <g class="locale" data-loc="Indianapolis, IN"><circle class="halo" cx="638" cy="248" r="4"/><circle class="ping" cx="638" cy="248" r="2"/><circle class="core" cx="638" cy="248" r="1.8"/></g>
+              <!-- NV Las Vegas -->
+              <g class="locale" data-loc="Las Vegas, NV"><circle class="halo" cx="178" cy="312" r="4"/><circle class="ping" cx="178" cy="312" r="2"/><circle class="core" cx="178" cy="312" r="1.8"/></g>
+              <!-- NC Charlotte -->
+              <g class="locale" data-loc="Charlotte, NC"><circle class="halo" cx="752" cy="343" r="4"/><circle class="ping" cx="752" cy="343" r="2"/><circle class="core" cx="752" cy="343" r="1.8"/></g>
+              <!-- IL Chicago -->
+              <g class="locale" data-loc="Chicago, IL"><circle class="halo" cx="595" cy="220" r="4"/><circle class="ping" cx="595" cy="220" r="2"/><circle class="core" cx="595" cy="220" r="1.8"/></g>
+              <!-- MN Rochester / Mayo -->
+              <g class="locale" data-loc="Rochester, MN"><circle class="halo" cx="538" cy="170" r="4"/><circle class="ping" cx="538" cy="170" r="2"/><circle class="core" cx="538" cy="170" r="1.8"/></g>
+              <!-- DC -->
+              <g class="locale" data-loc="Washington, DC"><circle class="halo" cx="803" cy="252" r="4"/><circle class="ping" cx="803" cy="252" r="2"/><circle class="core" cx="803" cy="252" r="1.8"/></g>
+            </g>
+            <!-- Hot-locale labels -->
             <g class="reach-labels" aria-hidden="true">
-              <text class="reach-label hot" x="335" y="280" text-anchor="middle">CO &middot; 61</text>
-              <text class="reach-label hot" x="775" y="170" text-anchor="middle">NY &middot; 33</text>
-              <text class="reach-label hot" x="100" y="350" text-anchor="middle">CA &middot; 15</text>
-              <text class="reach-label" x="715" y="490" text-anchor="middle">FL &middot; 9</text>
-              <text class="reach-label" x="845" y="225" text-anchor="start">NJ &middot; 8</text>
+              <text class="reach-label hot" x="392" y="270" text-anchor="middle">DENVER &middot; 61</text>
+              <text class="reach-label hot" x="814" y="180" text-anchor="middle">NYC &middot; 33</text>
+              <text class="reach-label hot" x="92" y="385" text-anchor="middle">LOS ANGELES</text>
+              <text class="reach-label" x="765" y="528" text-anchor="middle">MIAMI</text>
+              <text class="reach-label" x="838" y="225" text-anchor="start">NEWARK</text>
             </g>
           </svg>
           <div class="reach-scan" aria-hidden="true"></div>
@@ -1775,7 +1840,7 @@
         <dl class="reach-stats" id="reachStats" data-live="reach">
           <div class="rstat"><dt>States represented</dt><dd><b data-stat="states">21</b></dd></div>
           <div class="rstat"><dt>Different protocols uploaded</dt><dd><b data-stat="protocols">123</b></dd></div>
-          <div class="rstat"><dt>Active studiers</dt><dd><b data-stat="studiers">352</b></dd></div>
+          <div class="rstat"><dt>Active studiers</dt><dd><b data-stat="studiers">127</b></dd></div>
           <div class="rstat"><dt>Pages processed</dt><dd><b data-stat="pages">71,147</b></dd></div>
         </dl>
         <p class="reach-foot"><span class="reach-pulse" aria-hidden="true"></span> <span id="reachUpdated">Pulled from live ProtoQuiz uploads. Refreshed daily.</span></p>
@@ -2315,11 +2380,30 @@
         }
       } catch (e) {}
     }
+    async function loadReach() {
+      try {
+        const r = await (await fetch('data/reach-stats.json')).json();
+        const fmt = n => Number(n).toLocaleString('en-US');
+        const setStat = (k, v) => document.querySelectorAll(`[data-stat="${k}"]`).forEach(el => el.textContent = v);
+        setStat('states', r.statesRepresented);
+        setStat('protocols', r.distinctProtocols);
+        setStat('studiers', r.activeStudiers);
+        setStat('pages', fmt(r.pagesProcessed));
+        const ts = document.getElementById('reachUpdated');
+        if (ts && r.generatedAt) {
+          const d = new Date(r.generatedAt);
+          const days = Math.floor((Date.now() - d.getTime()) / 86400000);
+          const when = days === 0 ? 'today' : days === 1 ? 'yesterday' : `${days} days ago`;
+          ts.textContent = `Live from ProtoQuiz uploads. Updated ${when}.`;
+        }
+      } catch (e) {}
+    }
     function setText(id, val) {
       const el = document.getElementById(id);
       if (el) el.textContent = val;
     }
     loadStats();
+    loadReach();
   </script>
 </body>
 </html>

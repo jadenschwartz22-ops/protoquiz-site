@@ -129,6 +129,106 @@ function displayBucket(n) {
   return `${Math.floor(n / 10000)}0000+`;
 }
 
+// Filename -> US state heuristic. First match wins. Returns null if unknown.
+const STATE_RULES = [
+  [/\bdcems\b|\bdc[\s_-]?fems\b|\bdhs[\s_-]?ems\b|fems[\s_-]protocols/i, 'DC'],
+  [/\bla[\s_-]?county\b|los[\s_-]?angeles|\blacoun?ty\b|laems|lacountytreatment/i, 'CA'],
+  [/san[\s_-]?diego/i, 'CA'],
+  [/santa[\s_-]?cruz/i, 'CA'],
+  [/orange[\s_-]?county|\boc[\s_-]?ems\b/i, 'CA'],
+  [/sacramento|sac[\s_-]?county/i, 'CA'],
+  [/\bsan[\s_-]?francisco\b|\bsf[\s_-]?ems\b|sfems/i, 'CA'],
+  [/aurora[\s_-]?south[\s_-]?wi/i, 'WI'],
+  [/\bma[\s_-]?ems\b|\bma[\s_-]?oems\b|massachusetts|\bma[\s_-]protocols\b|boston[\s_-]?ems/i, 'MA'],
+  [/\bnj[\s_-]?ems\b|new[\s_-]?jersey/i, 'NJ'],
+  [/\bnys?\b[\s_-]?coll|new[\s_-]?york|\bremac\b|fdny|nyc[\s_-]?ems|ny[\s_-]?colla?b|ny_collab/i, 'NY'],
+  [/\bmd[\s_-]?med|maryland/i, 'MD'],
+  [/\bpa[\s_-]?bls\b|\bpa[\s_-]?als\b|pennsylvania|philadelphia|philly/i, 'PA'],
+  [/\bwa[\s_-]?protocol|washington|king[\s_-]?county|snohomish|thurston|emt[\s_-]?wa\b/i, 'WA'],
+  [/utah|\but[\s_-]?ems\b/i, 'UT'],
+  [/west[\s_-]?virginia|\bwv\b/i, 'WV'],
+  [/alabama|\bal[\s_-]?protocol/i, 'AL'],
+  [/indiana|\bin[\s_-]?ems\b/i, 'IN'],
+  [/greater[\s_-]?miami|miami|florida|\bfl[\s_-]?bureau/i, 'FL'],
+  [/\bclark[\s_-]?county\b|nevada|las[\s_-]?vegas/i, 'NV'],
+  [/maricopa|phoenix|arizona|\baz[\s_-]?protocol/i, 'AZ'],
+  [/houston|texas|austin[\s_-]?travis|\btx[\s_-]?ems\b|\beprip\b|erip[\s_-]?tx/i, 'TX'],
+  [/portland|multnomah|oregon|\bor[\s_-]?ems\b/i, 'OR'],
+  [/nashville|tennessee|\btn[\s_-]?oems\b|middle[\s_-]?tn/i, 'TN'],
+  [/minneapolis|minnesota|hennepin|\bmn\b/i, 'MN'],
+  [/atlanta|georgia|grady|region[\s_-]?iii|\bga\b/i, 'GA'],
+  [/mayo[\s_-]?clinic|mayoclinic/i, 'MN'],
+  [/\bdenver\b|colorado|\bco[\s_-]?ems\b|dmemsmd|denver[\s_-]?metro/i, 'CO'],
+  [/chicago|\bil[\s_-]?ems\b|illinois|cfd|region[\s_-]?xi|nwc[\s_-]?ems/i, 'IL'],
+  [/ohio|\boh[\s_-]?ems\b/i, 'OH'],
+  [/connecticut|\bct[\s_-]?ems\b/i, 'CT'],
+  [/\brhode[\s_-]?island\b/i, 'RI'],
+  [/\bnh[\s_-]?ems\b|new[\s_-]?hampshire/i, 'NH'],
+  [/vermont|\bvt[\s_-]?ems\b/i, 'VT'],
+  [/maine|\bme[\s_-]?ems\b/i, 'ME'],
+  [/delaware|\bde[\s_-]?bls\b/i, 'DE'],
+  [/virginia(?!\s*-?\s*ems[\s_-]?bureau)|\bva[\s_-]?oems\b/i, 'VA'],
+  [/north[\s_-]?carolina|\bnc[\s_-]?oems\b|craven/i, 'NC'],
+  [/south[\s_-]?carolina|\bsc[\s_-]?ems\b/i, 'SC'],
+  [/kentucky|\bkbems\b|\bky[\s_-]?ems\b/i, 'KY'],
+  [/mississippi|\bms[\s_-]?bureau/i, 'MS'],
+  [/louisiana|\bla[\s_-]?ems[\s_-]?bureau/i, 'LA'],
+  [/oklahoma|\bok[\s_-]?ems\b/i, 'OK'],
+  [/arkansas|\bar[\s_-]?ems\b/i, 'AR'],
+  [/\bmissouri\b|\bmo[\s_-]?ems\b/i, 'MO'],
+  [/\biowa\b|\bia[\s_-]?ems\b/i, 'IA'],
+  [/\bkansas\b|\bks[\s_-]?ems\b/i, 'KS'],
+  [/nebraska|\bne[\s_-]?ems\b/i, 'NE'],
+  [/\bsouth[\s_-]?dakota\b|\bsd[\s_-]?ems\b/i, 'SD'],
+  [/\bnorth[\s_-]?dakota\b|\bnd[\s_-]?ems\b/i, 'ND'],
+  [/wisconsin|\bwi[\s_-]?ems\b/i, 'WI'],
+  [/michigan|\bmi[\s_-]?mca\b/i, 'MI'],
+  [/montana|\bmt[\s_-]?ems\b/i, 'MT'],
+  [/idaho|\bid[\s_-]?ems\b/i, 'ID'],
+  [/wyoming|\bwy[\s_-]?ems\b/i, 'WY'],
+  [/alaska|\bak[\s_-]?ems\b/i, 'AK'],
+  [/hawaii|\bhi[\s_-]?ems\b/i, 'HI'],
+  [/\bnew[\s_-]?mexico\b|\bnm[\s_-]?ems\b/i, 'NM'],
+  [/tcems|tucson/i, 'AZ'],
+];
+
+function classifyState(name) {
+  for (const [rx, state] of STATE_RULES) if (rx.test(name)) return state;
+  return null;
+}
+
+async function getReachStats() {
+  const snap = await db.collection('protocol_uploads').where('status', '==', 'success').get();
+  const nameCounts = new Map();
+  const userIds = new Set();
+  let total = 0;
+  let pages = 0;
+  for (const d of snap.docs) {
+    const x = d.data();
+    if (isDev(x.userId)) continue;
+    total++;
+    if (x.userId) userIds.add(x.userId);
+    if (typeof x.pageCount === 'number') pages += x.pageCount;
+    else if (typeof x.pages === 'number') pages += x.pages;
+    const n = (x.protocolName || '').trim();
+    if (n) nameCounts.set(n, (nameCounts.get(n) || 0) + 1);
+  }
+  const stateCounts = new Map();
+  for (const [name, count] of nameCounts) {
+    const st = classifyState(name);
+    if (st) stateCounts.set(st, (stateCounts.get(st) || 0) + count);
+  }
+  return {
+    generatedAt: new Date().toISOString(),
+    totalUploads: total,
+    distinctProtocols: nameCounts.size,
+    activeStudiers: userIds.size,
+    pagesProcessed: pages,
+    statesRepresented: stateCounts.size,
+    byState: Object.fromEntries([...stateCounts.entries()].sort((a, b) => b[1] - a[1])),
+  };
+}
+
 async function main() {
   console.log('Pulling Firestore stats...\n');
 
@@ -206,6 +306,11 @@ async function main() {
   const outDir = path.resolve(process.cwd(), 'data');
   await fs.mkdir(outDir, { recursive: true });
   await fs.writeFile(path.join(outDir, 'firestore-stats.json'), JSON.stringify(stats, null, 2));
+
+  // Reach stats — separate file consumed by homepage hero/reach section
+  const reach = await getReachStats();
+  await fs.writeFile(path.join(outDir, 'reach-stats.json'), JSON.stringify(reach, null, 2));
+  console.log(`\nReach: ${reach.statesRepresented} states · ${reach.distinctProtocols} protocols · ${reach.activeStudiers} studiers · ${reach.pagesProcessed} pages`);
 
   console.log('Stats:');
   console.log(`  App Store rating:    ${appStore?.rating ?? 'n/a'} (${appStore?.count ?? 0} ratings)`);
