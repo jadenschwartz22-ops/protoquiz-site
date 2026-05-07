@@ -781,6 +781,66 @@
     .reach-zoom-ui button:hover{border-color:var(--amber);color:var(--amber);}
     .reach-zoom-ui button:disabled{opacity:.4;cursor:not-allowed;}
     .reach-zoom-ui button.reach-zoom-reset{font-size:11px;letter-spacing:.06em;}
+    /* US/World view toggle */
+    .reach-view-toggle{
+      display:inline-flex;border:1px solid var(--line-2);border-radius:3px;overflow:hidden;
+      font-family:var(--mono);font-size:11.5px;font-weight:700;letter-spacing:.14em;
+      margin:18px auto 4px;text-transform:uppercase;
+    }
+    .reach-view-toggle button{
+      background:transparent;border:none;color:var(--ink-soft);
+      padding:10px 18px;cursor:pointer;
+      transition:background .15s, color .15s;min-height:38px;
+    }
+    .reach-view-toggle button.is-active{background:var(--amber);color:var(--bg);}
+    .reach-view-toggle button:not(.is-active):hover{color:var(--amber);}
+    .reach-view-toggle .sep{align-self:stretch;width:1px;background:var(--line-2);}
+    .reach-toggle-row{display:flex;justify-content:center;}
+    /* World map */
+    .reach-svg-world{
+      position:absolute;inset:0;width:100%;height:100%;display:none;
+      cursor:grab;
+    }
+    .reach-stage.is-world .reach-svg{display:none;}
+    .reach-stage.is-world .reach-svg-world{display:block;}
+    .reach-svg-world .continent{
+      fill:rgba(255,176,0,.04);stroke:var(--line-2);stroke-width:1;
+      vector-effect:non-scaling-stroke;rx:8;ry:8;
+    }
+    .reach-svg-world .continent.is-na{fill:rgba(255,176,0,.07);stroke:rgba(255,176,0,.32);}
+    .reach-svg-world .continent-label{
+      font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+      fill:var(--muted);font-weight:700;pointer-events:none;
+    }
+    .reach-svg-world .us-badge-bg{fill:rgba(255,176,0,.14);stroke:var(--amber);stroke-width:1;vector-effect:non-scaling-stroke;rx:4;ry:4;}
+    .reach-svg-world .us-badge-text{
+      font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;
+      fill:var(--amber);font-weight:700;pointer-events:none;
+    }
+    .reach-svg-world .us-badge-num{font-family:var(--mono);font-size:20px;font-weight:700;fill:var(--ink);pointer-events:none;}
+    /* World view dots use the same .locale styling already defined */
+    .reach-svg-world .rl{
+      font-family:var(--mono);font-size:calc(13px * var(--rz, 1));letter-spacing:.06em;
+      fill:var(--ink-soft);text-transform:uppercase;font-weight:600;
+      paint-order:stroke fill;stroke:var(--bg);stroke-width:calc(3.5px * var(--rz, 1));stroke-linejoin:round;
+    }
+    .reach-svg-world .rl-warm,.reach-svg-world .rl-on{fill:var(--ink);font-weight:700;}
+    .reach-svg-world .rl-tiny{fill:var(--muted);font-size:calc(11px * var(--rz, 1));}
+    .reach-svg-world .rl .rl-n{fill:var(--amber);font-weight:700;}
+    .reach-svg-world .locale circle.core{fill:var(--amber);}
+    .reach-svg-world .locale circle.halo{fill:none;stroke:var(--amber);stroke-width:1;opacity:.5;}
+    .reach-svg-world .locale circle.ping{
+      fill:none;stroke:var(--amber);stroke-width:1.4;opacity:0;
+      transform-origin:center;transform-box:fill-box;
+      animation:reachPing 3s cubic-bezier(.16,1,.3,1) infinite;
+    }
+    .reach-svg-world .locale{cursor:pointer;outline:none;}
+    .reach-svg-world .locale:hover circle.halo,.reach-svg-world .locale:focus circle.halo{opacity:1;stroke-width:2;}
+    .reach-svg-world .locale.is-selected circle.core{fill:var(--amber-warm);}
+    .reach-svg-world .locale .hit{cursor:pointer;}
+    .reach-svg-world .tip-bg{fill:rgba(6,5,10,.95);stroke:var(--amber);stroke-width:.8;}
+    .reach-svg-world .tip-text{font-family:var(--mono);font-size:13px;font-weight:700;fill:var(--ink);letter-spacing:.04em;text-transform:uppercase;}
+    .reach-svg-world .tip-text .rl-n{fill:var(--amber);}
     .reach-svg .state{
       fill:transparent;
       stroke:var(--line-2);stroke-width:1;
@@ -1968,6 +2028,14 @@
           </div>
         </div>
 
+        <div class="reach-toggle-row">
+          <div class="reach-view-toggle" role="tablist" aria-label="Map view">
+            <button type="button" class="reach-view-us is-active" role="tab" aria-selected="true">US</button>
+            <span class="sep" aria-hidden="true"></span>
+            <button type="button" class="reach-view-world" role="tab" aria-selected="false">WORLD</button>
+          </div>
+        </div>
+
         <div class="reach-stage">
           <div class="reach-zoom-ui" aria-hidden="true">
             <button type="button" class="reach-zoom-in" aria-label="Zoom in">+</button>
@@ -2030,6 +2098,37 @@
 
             <!-- Tooltip overlay (populated on hover/focus) -->
             <g class="reach-tip" id="reachTip" style="visibility:hidden" pointer-events="none">
+              <rect class="tip-bg" x="0" y="0" rx="3" ry="3" width="0" height="0"/>
+              <text class="tip-text" x="0" y="0"></text>
+            </g>
+          </svg>
+
+          <!-- World view: stylized continents, populated dynamically with intl dots -->
+          <svg class="reach-svg-world" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="World map showing international ProtoQuiz uploads">
+            <!-- Continents as rounded rectangles -->
+            <rect class="continent is-na" x="80"  y="100" width="260" height="180"/>
+            <rect class="continent"        x="240" y="290" width="100" height="180"/>
+            <rect class="continent"        x="450" y="100" width="110" height="100"/>
+            <rect class="continent"        x="460" y="220" width="120" height="190"/>
+            <rect class="continent"        x="570" y="80"  width="270" height="200"/>
+            <rect class="continent"        x="770" y="320" width="150" height="100"/>
+            <text class="continent-label" x="210"  y="295" text-anchor="middle">North America</text>
+            <text class="continent-label" x="290"  y="485" text-anchor="middle">South America</text>
+            <text class="continent-label" x="505"  y="215" text-anchor="middle">Europe</text>
+            <text class="continent-label" x="520"  y="425" text-anchor="middle">Africa</text>
+            <text class="continent-label" x="705"  y="295" text-anchor="middle">Asia</text>
+            <text class="continent-label" x="845"  y="435" text-anchor="middle">Australia</text>
+            <!-- US badge (count populated by JS) -->
+            <g class="us-badge">
+              <rect class="us-badge-bg" x="160" y="180" width="120" height="60"/>
+              <text class="us-badge-text" x="220" y="200" text-anchor="middle">US uploads</text>
+              <text class="us-badge-num" x="220" y="228" text-anchor="middle" id="worldUsCount">--</text>
+            </g>
+            <!-- International dots populated by JS -->
+            <g class="locales-world" id="reachLocalesWorld"></g>
+            <g class="reach-labels-world"></g>
+            <!-- Hover tooltip -->
+            <g class="reach-tip" id="reachTipWorld" style="visibility:hidden" pointer-events="none">
               <rect class="tip-bg" x="0" y="0" rx="3" ry="3" width="0" height="0"/>
               <text class="tip-text" x="0" y="0"></text>
             </g>
@@ -2642,26 +2741,28 @@
       UT:"Utah",VT:"Vermont",VA:"Virginia",WA:"Washington",WV:"West Virginia",WI:"Wisconsin",WY:"Wyoming"
     };
     function clearReachSelection() {
-      const svg = document.querySelector('.reach-svg');
-      if (!svg) return;
-      svg.querySelectorAll('.locale.is-selected').forEach(d => d.classList.remove('is-selected'));
-      svg.querySelectorAll('.reach-labels [data-key]').forEach(l => l.style.removeProperty('display'));
+      document.querySelectorAll('.reach-svg .locale.is-selected, .reach-svg-world .locale.is-selected').forEach(d => d.classList.remove('is-selected'));
+      document.querySelectorAll('.reach-labels [data-key], .reach-labels-world [data-key]').forEach(l => l.style.removeProperty('display'));
     }
     function showReachDetail(loc) {
       const panel = document.getElementById('reachDetail');
       if (!panel) return;
-      const key = `${loc.state}|${loc.city}`;
-      // Update selection: clear prior, mark this dot, hide its on-map label
+      const isIntl = !!loc._intl;
+      const key = isIntl ? `${loc.state}|${loc.city}` : `${loc.state}|${loc.city}`;
+      // Update selection in whichever map is active
       clearReachSelection();
-      const svg = document.querySelector('.reach-svg');
-      if (svg) {
-        const dot = svg.querySelector(`.locale[data-key="${CSS.escape(key)}"]`);
+      const usSvg = document.querySelector('.reach-svg');
+      const wSvg = document.querySelector('.reach-svg-world');
+      const targetSvg = isIntl ? wSvg : usSvg;
+      if (targetSvg) {
+        const dot = targetSvg.querySelector(`.locale[data-key="${CSS.escape(key)}"]`);
         if (dot) dot.classList.add('is-selected');
-        const lbl = svg.querySelector(`.reach-labels [data-key="${CSS.escape(key)}"]`);
+        const labelGroupSel = isIntl ? '.reach-labels-world' : '.reach-labels';
+        const lbl = targetSvg.querySelector(`${labelGroupSel} [data-key="${CSS.escape(key)}"]`);
         if (lbl) lbl.style.display = 'none';
       }
-      const stateFull = REACH_STATE_NAMES[loc.state] || loc.state;
-      document.getElementById('reachDetailEyebrow').textContent = `LOCATION · ${loc.state}`;
+      const stateFull = isIntl ? (loc._countryName || loc.state) : (REACH_STATE_NAMES[loc.state] || loc.state);
+      document.getElementById('reachDetailEyebrow').textContent = `LOCATION · ${isIntl ? loc._countryName.toUpperCase() : loc.state}`;
       document.getElementById('reachDetailTitle').textContent = `${loc.city}, ${stateFull}`;
       const meta = document.getElementById('reachDetailMeta');
       const plural = loc.count === 1 ? 'upload' : 'uploads';
@@ -2767,7 +2868,7 @@
           const sortedByCount = [...r.locales].sort((a,b)=>b.count-a.count);
           const placedLabels = []; // [{x,y}]
           const isMobile = window.innerWidth <= 880;
-          const PROX_PX = isMobile ? 110 : 18;
+          const PROX_PX = isMobile ? 50 : 18;
           const shouldLabel = (loc) => {
             if (loc.tier === 'hot' || loc.tier === 'warm') return true;
             if (loc.tier === 'on' && !isMobile) return true;
@@ -2880,11 +2981,137 @@
               if (willLabel) placedLabels.push({ x: loc.x, y: loc.y });
             }
           }
+          if (isMobile) {
+            const vis = [...labelsG.querySelectorAll('.rl:not(.is-suppressed)')];
+            const kept = [];
+            for (const lbl of vis) {
+              const b = lbl.getBBox();
+              const hit = kept.some(k => {
+                const kb = k.bb;
+                return b.x < kb.x+kb.width+2 && b.x+b.width+2 > kb.x &&
+                       b.y < kb.y+kb.height+2 && b.y+b.height+2 > kb.y;
+              });
+              if (hit) lbl.classList.add('is-suppressed');
+              else kept.push({ el: lbl, bb: b });
+            }
+          }
           // Move tooltip to end so it renders on top
           if (tip && tip.parentNode === svg) svg.appendChild(tip);
         }
+
+        // Render world view: international dots + US badge count
+        const worldSvg = document.querySelector('.reach-svg-world');
+        if (worldSvg) {
+          const SVG_NS2 = 'http://www.w3.org/2000/svg';
+          const intlG = worldSvg.querySelector('.locales-world');
+          const intlLblG = worldSvg.querySelector('.reach-labels-world');
+          const tipW = document.getElementById('reachTipWorld');
+          if (intlG && intlLblG) {
+            intlG.replaceChildren();
+            intlLblG.replaceChildren();
+            const intl = Array.isArray(r.internationalLocales) ? r.internationalLocales : [];
+            // US count badge: total US uploads = totalUploads - international
+            const usCount = (r.totalUploads || 0) - (r.internationalUploads || 0);
+            const usEl = document.getElementById('worldUsCount');
+            if (usEl) usEl.textContent = fmt(usCount);
+
+            const showWTip = (x, y, city, count) => {
+              if (!tipW) return;
+              const t = tipW.querySelector('.tip-text');
+              const bg = tipW.querySelector('.tip-bg');
+              t.replaceChildren();
+              const c1 = document.createElementNS(SVG_NS2, 'tspan'); c1.textContent = city;
+              const c2 = document.createElementNS(SVG_NS2, 'tspan');
+              c2.setAttribute('class', 'rl-n'); c2.setAttribute('dx', '6');
+              c2.textContent = count;
+              t.appendChild(c1); t.appendChild(c2);
+              const bb = t.getBBox();
+              const tx = x, ty = y - 14;
+              t.setAttribute('x', tx); t.setAttribute('y', ty);
+              t.setAttribute('text-anchor', 'middle');
+              const padX = 8, padY = 5;
+              bg.setAttribute('x', tx - bb.width/2 - padX);
+              bg.setAttribute('y', ty - bb.height + 2);
+              bg.setAttribute('width', bb.width + padX*2);
+              bg.setAttribute('height', bb.height + padY);
+              tipW.style.visibility = 'visible';
+            };
+            const hideWTip = () => { if (tipW) tipW.style.visibility = 'hidden'; };
+
+            for (const loc of intl) {
+              const tier = loc.tier || (loc.count >= 5 ? 'warm' : loc.count >= 2 ? 'on' : 'tiny');
+              const dot = document.createElementNS(SVG_NS2, 'g');
+              dot.setAttribute('class', `locale ${tier === 'hot' ? 'hot' : tier === 'warm' ? 'warm' : ''}`.trim());
+              dot.setAttribute('transform', `translate(${loc.x} ${loc.y})`);
+              dot.setAttribute('data-key', `${loc.country}|${loc.city}`);
+              dot.setAttribute('tabindex', '0');
+              dot.setAttribute('role', 'button');
+              dot.setAttribute('aria-label', `${loc.city}, ${loc.countryName}: ${loc.count} upload${loc.count === 1 ? '' : 's'}`);
+              const sizes = tier === 'warm' ? [9,3.6,3.5] : tier === 'on' ? [6,2.6,2.4] : [4,2,1.8];
+              for (const [cls, rad] of [['halo', sizes[0]], ['ping', sizes[1]], ['core', sizes[2]]]) {
+                const c = document.createElementNS(SVG_NS2, 'circle');
+                c.setAttribute('class', cls);
+                c.setAttribute('r', rad);
+                dot.appendChild(c);
+              }
+              const hit = document.createElementNS(SVG_NS2, 'circle');
+              hit.setAttribute('r', Math.max(sizes[0] + 4, 12));
+              hit.setAttribute('fill', 'transparent');
+              hit.setAttribute('class', 'hit');
+              dot.appendChild(hit);
+              dot.addEventListener('mouseenter', () => showWTip(loc.x, loc.y, loc.city.toUpperCase(), loc.count));
+              dot.addEventListener('mouseleave', hideWTip);
+              dot.addEventListener('click', () => showReachDetail({
+                state: loc.country, city: loc.city, count: loc.count, topProtocols: loc.topProtocols,
+                _intl: true, _countryName: loc.countryName,
+              }));
+              dot.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); dot.click(); }
+              });
+              intlG.appendChild(dot);
+              // Permanent label
+              const lbl = document.createElementNS(SVG_NS2, 'text');
+              const cls = tier === 'warm' ? 'rl rl-warm' : tier === 'on' ? 'rl rl-on' : 'rl rl-tiny';
+              lbl.setAttribute('class', cls);
+              lbl.setAttribute('data-key', `${loc.country}|${loc.city}`);
+              lbl.setAttribute('x', loc.x);
+              lbl.setAttribute('y', loc.y - 12);
+              lbl.setAttribute('text-anchor', 'middle');
+              lbl.setAttribute('pointer-events', 'none');
+              const cityT = document.createElementNS(SVG_NS2, 'tspan'); cityT.textContent = loc.city.toUpperCase();
+              const countT = document.createElementNS(SVG_NS2, 'tspan');
+              countT.setAttribute('class', 'rl-n'); countT.setAttribute('dx', '6');
+              countT.textContent = loc.count;
+              lbl.appendChild(cityT); lbl.appendChild(countT);
+              intlLblG.appendChild(lbl);
+            }
+            if (tipW && tipW.parentNode === worldSvg) worldSvg.appendChild(tipW);
+          }
+        }
       } catch (e) { console.warn('reach load failed', e); }
     }
+
+    // === US/World view toggle ===
+    (function setupReachToggle() {
+      const stage = document.querySelector('.reach-stage');
+      if (!stage) return;
+      const btnUs = stage.parentElement.querySelector('.reach-view-us');
+      const btnW  = stage.parentElement.querySelector('.reach-view-world');
+      if (!btnUs || !btnW) return;
+      const setView = (which) => {
+        if (which === 'world') {
+          stage.classList.add('is-world');
+          btnUs.classList.remove('is-active'); btnW.classList.add('is-active');
+          btnUs.setAttribute('aria-selected','false'); btnW.setAttribute('aria-selected','true');
+        } else {
+          stage.classList.remove('is-world');
+          btnW.classList.remove('is-active'); btnUs.classList.add('is-active');
+          btnW.setAttribute('aria-selected','false'); btnUs.setAttribute('aria-selected','true');
+        }
+      };
+      btnUs.addEventListener('click', () => setView('us'));
+      btnW.addEventListener('click', () => setView('world'));
+    })();
     function setText(id, val) {
       const el = document.getElementById(id);
       if (el) el.textContent = val;
