@@ -254,14 +254,14 @@ function classifyCity(name) {
   return null;
 }
 
-// International (non-US) classifier. Coords for stylized world view at
-// viewBox 0 0 1000 500 with continents as rounded rectangles.
+// International (non-US) classifier. Coords for the Wikipedia world map
+// SVG with viewBox 0 0 950 620 (Mercator-ish, hand-tuned per city).
 const INTL_RULES = [
-  [/\bbcehs\b|british[\s_-]?columbia/i, { country:'CA', countryName:'Canada', city:'Vancouver, BC',  x:115, y:155 }],
-  [/\bmoh[\s_-]?als|moh[\s_-]?standards|ontario|toronto|land[\s_-]?ambulance/i, { country:'CA', countryName:'Canada', city:'Toronto, ON',  x:240, y:200 }],
-  [/coll[èe]ge[\s_-]?ellis|chimie[\s_-]?du[\s_-]?vivant|quebec|qu[ée]bec|montreal/i, { country:'CA', countryName:'Canada', city:'Quebec, QC',   x:280, y:190 }],
-  [/\bnhs\b|united[\s_-]?kingdom|\bjrcalc\b|glyceryl[\s_-]?trinitrate/i, { country:'GB', countryName:'UK', city:'London',                  x:480, y:140 }],
-  [/bradykardie|bradykardia|deutschland|notarzt|\bdivi\b/i, { country:'DE', countryName:'Germany', city:'Berlin',                          x:510, y:140 }],
+  [/\bbcehs\b|british[\s_-]?columbia/i, { country:'CA', countryName:'Canada', city:'Vancouver, BC',  x:195, y:195 }],
+  [/\bmoh[\s_-]?als|moh[\s_-]?standards|ontario|toronto|land[\s_-]?ambulance/i, { country:'CA', countryName:'Canada', city:'Toronto, ON',  x:280, y:213 }],
+  [/coll[èe]ge[\s_-]?ellis|chimie[\s_-]?du[\s_-]?vivant|quebec|qu[ée]bec|montreal/i, { country:'CA', countryName:'Canada', city:'Quebec, QC', x:300, y:205 }],
+  [/\bnhs\b|united[\s_-]?kingdom|\bjrcalc\b|glyceryl[\s_-]?trinitrate/i, { country:'GB', countryName:'UK', city:'London',                  x:478, y:160 }],
+  [/bradykardie|bradykardia|deutschland|notarzt|\bdivi\b/i, { country:'DE', countryName:'Germany', city:'Berlin',                          x:515, y:168 }],
 ];
 
 function classifyIntl(name) {
