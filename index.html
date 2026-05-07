@@ -2762,7 +2762,8 @@
         if (lbl) lbl.style.display = 'none';
       }
       const stateFull = isIntl ? (loc._countryName || loc.state) : (REACH_STATE_NAMES[loc.state] || loc.state);
-      document.getElementById('reachDetailEyebrow').textContent = `LOCATION · ${isIntl ? loc._countryName.toUpperCase() : loc.state}`;
+      const eyebrow = isIntl ? (loc._countryName || loc.state).toUpperCase() : loc.state;
+      document.getElementById('reachDetailEyebrow').textContent = `LOCATION · ${eyebrow}`;
       document.getElementById('reachDetailTitle').textContent = `${loc.city}, ${stateFull}`;
       const meta = document.getElementById('reachDetailMeta');
       const plural = loc.count === 1 ? 'upload' : 'uploads';
