@@ -418,6 +418,7 @@
       box-shadow:0 0 12px var(--siren);
       animation:sirenBlink 1.2s ease-in-out infinite;
       flex-shrink:0;
+      will-change:transform,opacity;transform:translateZ(0);
     }
     @keyframes sirenBlink{
       0%,100%{opacity:.5; transform:scale(.85);}
@@ -522,7 +523,7 @@
     .conveyor-eyebrow strong{color:var(--ink);font-weight:700;}
     .conveyor-eyebrow .live{color:var(--green);font-weight:700;}
     .conveyor-eyebrow .green-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green);margin-right:6px;box-shadow:0 0 8px var(--green);}
-    .conveyor-eyebrow .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--amber);margin:0 6px;animation:cvPulse 2s ease-in-out infinite;box-shadow:0 0 8px var(--amber);}
+    .conveyor-eyebrow .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--amber);margin:0 6px;animation:cvPulse 2s ease-in-out infinite;box-shadow:0 0 8px var(--amber);will-change:opacity;transform:translateZ(0);}
     @keyframes cvPulse{0%,100%{opacity:.4;}50%{opacity:1;}}
     .belt{
       position:relative;width:100%;overflow:hidden;
@@ -799,10 +800,16 @@
       font-family:var(--mono);font-size:14px;letter-spacing:.06em;
       fill:var(--ink-soft);text-transform:uppercase;font-weight:600;
       paint-order:stroke fill;stroke:var(--bg);stroke-width:4;stroke-linejoin:round;
+      transition:fill .15s, font-size .15s;
     }
     .reach-svg .rl-hot{font-size:18px;font-weight:700;fill:var(--ink);letter-spacing:.04em;}
     .reach-svg .rl-warm{font-size:15.5px;font-weight:700;fill:var(--ink);}
     .reach-svg .rl-tiny{font-size:12px;letter-spacing:.04em;fill:var(--muted);font-weight:500;}
+    /* Count tspan: always amber regardless of label tier */
+    .reach-svg .rl .rl-n{fill:var(--amber);font-weight:700;}
+    /* Highlight a label when its dot is hovered/focused (no extra tooltip spawn) */
+    .reach-svg .rl.is-hot{fill:var(--amber);}
+    .reach-svg .rl.is-hot .rl-n{fill:var(--ink);}
 
     /* Hover tooltip */
     .reach-tip .tip-bg{
@@ -812,6 +819,7 @@
       font-family:var(--mono);font-size:13px;font-weight:700;
       fill:var(--ink);letter-spacing:.04em;text-transform:uppercase;
     }
+    .reach-tip .tip-text .rl-n{fill:var(--amber);}
 
     /* Click-detail panel */
     .reach-detail{
@@ -2731,20 +2739,22 @@
             return true;
           };
 
-          const showTip = (x, y, txt) => {
+          const showTip = (x, y, city, count) => {
             if (!tip) return;
             const t = tip.querySelector('.tip-text');
             const bg = tip.querySelector('.tip-bg');
-            t.textContent = txt;
-            // measure
+            // Compose city + amber count via tspans, no middle-dot
+            t.replaceChildren();
+            const c1 = document.createElementNS(SVG_NS, 'tspan'); c1.textContent = city;
+            const c2 = document.createElementNS(SVG_NS, 'tspan');
+            c2.setAttribute('class', 'rl-n'); c2.setAttribute('dx', '6');
+            c2.textContent = count;
+            t.appendChild(c1); t.appendChild(c2);
             const bb = t.getBBox();
-            // place text 14px above the dot, centered
-            const tx = x;
-            const ty = y - 14;
+            const tx = x, ty = y - 14;
             t.setAttribute('x', tx);
             t.setAttribute('y', ty);
             t.setAttribute('text-anchor', 'middle');
-            // bg around text
             const padX = 8, padY = 5;
             bg.setAttribute('x', tx - bb.width/2 - padX);
             bg.setAttribute('y', ty - bb.height + 2);
@@ -2782,11 +2792,25 @@
             dot.appendChild(hit);
 
             const willLabel = shouldLabel(loc);
-            // Only show hover tooltip on dots that AREN'T permanently labeled
-            // (avoids "two names on screen" duplication).
-            if (!willLabel) {
-              const txt = `${loc.city.toUpperCase()} · ${loc.count}`;
-              const onIn = () => showTip(loc.x, loc.y, txt);
+            if (willLabel) {
+              // Highlight the existing on-map label on hover/focus instead of
+              // spawning a duplicate tooltip.
+              const onIn = () => {
+                const lbl = svg.querySelector(`.reach-labels [data-key="${CSS.escape(key)}"]`);
+                if (lbl) lbl.classList.add('is-hot');
+              };
+              const onOut = () => {
+                const lbl = svg.querySelector(`.reach-labels [data-key="${CSS.escape(key)}"]`);
+                if (lbl) lbl.classList.remove('is-hot');
+              };
+              dot.addEventListener('mouseenter', onIn);
+              dot.addEventListener('focus', onIn);
+              dot.addEventListener('mouseleave', onOut);
+              dot.addEventListener('blur', onOut);
+            } else {
+              // Unlabeled tiny dots: show tooltip since there's no label to highlight.
+              // Use plain text "CITY 9" (count in amber via tspan, no middle-dot).
+              const onIn = () => showTip(loc.x, loc.y, loc.city.toUpperCase(), loc.count);
               dot.addEventListener('mouseenter', onIn);
               dot.addEventListener('focus', onIn);
               dot.addEventListener('mouseleave', hideTip);
@@ -2810,7 +2834,15 @@
               lbl.setAttribute('text-anchor', off.anchor);
               lbl.setAttribute('pointer-events', 'none');
               const cityName = (off.short || loc.city).toUpperCase();
-              lbl.textContent = `${cityName} · ${loc.count}`;
+              // City name in white, count in amber, no middle-dot separator
+              const cityT = document.createElementNS(SVG_NS, 'tspan');
+              cityT.textContent = cityName;
+              const countT = document.createElementNS(SVG_NS, 'tspan');
+              countT.setAttribute('class', 'rl-n');
+              countT.setAttribute('dx', '6');
+              countT.textContent = loc.count;
+              lbl.appendChild(cityT);
+              lbl.appendChild(countT);
               labelsG.appendChild(lbl);
               placedLabels.push({ x: loc.x, y: loc.y });
             }
