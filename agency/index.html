@@ -97,6 +97,16 @@
     backdrop-filter:blur(20px) saturate(120%); -webkit-backdrop-filter:blur(20px) saturate(120%);
     box-shadow:0 6px 14px -10px rgba(17,20,27,.18);
   }
+  .site-header .header-left{display:flex; align-items:center; gap:18px;}
+  .site-header .back-to-consumer{
+    font-family:'JetBrains Mono', ui-monospace, monospace;
+    font-size:11.5px; letter-spacing:.10em; text-transform:uppercase;
+    color:var(--muted); text-decoration:none; font-weight:600;
+    padding:6px 11px; border-radius:6px;
+    border:1px solid rgba(17,20,27,.12);
+    transition:color .18s ease, border-color .18s ease, background .18s ease;
+  }
+  .site-header .back-to-consumer:hover{color:var(--ink); border-color:rgba(17,20,27,.30); background:rgba(17,20,27,.04);}
   .site-header .brand{display:flex; align-items:center; gap:14px; font-size:19px; font-weight:800; color:var(--ink); letter-spacing:-.01em; text-decoration:none;}
   .site-header .brand img{
     width:56px; height:56px; border-radius:12px;
@@ -106,6 +116,7 @@
   @media (max-width:600px){
     .site-header .brand{font-size:16px; gap:11px;}
     .site-header .brand img{width:44px; height:44px; border-radius:10px;}
+    .site-header .back-to-consumer{display:none;}
   }
   .site-header nav{display:flex; gap:28px; font-size:14px; color:var(--muted); font-weight:500;}
   .site-header nav a{color:inherit; text-decoration:none; transition:color .18s ease;}
@@ -3930,8 +3941,11 @@
   <a href="#main-content" class="skip-link">Skip to content</a>
 
   <header class="site-header">
-    <a href="#hero" class="brand"><img src="../logo-256.png" alt="">ProtoQuiz</a>
-    <nav aria-label="Primary"><a href="#walkthrough">How it works</a><a href="#pricing-section">Pricing</a><a href="#pricing-section">Pilot</a></nav>
+    <div class="header-left">
+      <a href="#hero" class="brand"><img src="../logo-256.png" alt="">ProtoQuiz</a>
+      <a href="/" class="back-to-consumer" aria-label="Back to ProtoQuiz consumer app">&larr; Consumer app</a>
+    </div>
+    <nav aria-label="Primary"><a href="#walkthrough">How it works</a><a href="#pricing-section">Pricing</a><a href="#contact">Pilot</a></nav>
     <div class="header-cta-group">
       <a href="https://demo.protoquiz.com" target="_blank" rel="noopener" class="cta cta-ghost">Try the demo</a>
       <a href="#" class="cta" id="openContact">Contact us</a>
@@ -3947,7 +3961,7 @@
       <h1 class="hero-question hero-cyan"><span class="w">Their</span> <span class="w">local</span> <span class="w">protocols.</span></h1>
       
       <div class="hero-why" id="hero-why">
-        <p class="hero-why-body"><span class="bw">In</span> <span class="bw">school,</span> <span class="bw">you</span> <span class="bw">learn</span> <span class="bw">the</span> <span class="bw">NREMT.</span> <span class="bw">Once</span> <span class="bw">you</span> <span class="bw">get</span> <span class="bw">a</span> <span class="bw">job,</span> <span class="bw">you</span> <span class="bw">need</span> <span class="bw">to</span> <span class="bw">learn</span> <span class="bw">an</span> <span class="bw">entirely</span> <span class="bw">new</span> <span class="bw">set</span> <span class="bw">of</span> <span class="bw">protocols.</span> <span class="bw">No</span> <span class="bw">small</span> <span class="bw">task</span> <span class="bw">when</span> <span class="bw">they</span> <span class="bw">are</span> <span class="bw">hundreds</span> <span class="bw">of</span> <span class="bw">pages,</span> <span class="bw">and</span> <span class="bw">there&#39;s</span> <span class="bw">no</span> <span class="bw">good</span> <span class="bw">way</span> <span class="bw">to</span> <span class="bw">study</span> <span class="bw">or</span> <span class="bw">learn</span> <span class="bw">them.</span></p>
+        <p class="hero-why-body"><span class="bw">In</span> <span class="bw">school,</span> <span class="bw">you</span> <span class="bw">learn</span> <span class="bw">the</span> <span class="bw">NREMT.</span> <span class="bw">Once</span> <span class="bw">you</span> <span class="bw">get</span> <span class="bw">a</span> <span class="bw">job,</span> <span class="bw">you</span> <span class="bw">need</span> <span class="bw">to</span> <span class="bw">learn</span> <span class="bw">an</span> <span class="bw">entirely</span> <span class="bw">new</span> <span class="bw">set</span> <span class="bw">of</span> <span class="bw">protocols.</span> <span class="bw">They&#39;re</span> <span class="bw">hundreds</span> <span class="bw">of</span> <span class="bw">pages</span> <span class="bw">&mdash;</span> <span class="bw">that&#39;s</span> <span class="bw">no</span> <span class="bw">small</span> <span class="bw">task.</span> <span class="bw">And</span> <span class="bw">there&#39;s</span> <span class="bw">no</span> <span class="bw">good</span> <span class="bw">way</span> <span class="bw">to</span> <span class="bw">study</span> <span class="bw">or</span> <span class="bw">learn</span> <span class="bw">them.</span></p>
         <p class="hero-why-tag">Until now.</p>
       </div>
       <div class="hero-intro" id="hero-intro">
@@ -3955,7 +3969,7 @@
         <div class="hero-intro-text">
           <div class="hero-intro-eyebrow">Introducing</div>
           <div class="hero-intro-name">ProtoQuiz</div>
-          <div class="hero-intro-builder">Built by an EMS provider</div>
+          <div class="hero-intro-builder">Built by a paramedic student</div>
         </div>
       </div>
     </figure>
@@ -5091,7 +5105,7 @@
         <h2 class="section-title">Common questions.</h2>
       </div>
       <div class="faq-list">
-        <div class="faq-item"><div class="faq-q">Does our medical director have to approve every question?</div><p class="faq-a">Yes. Nothing your crews see goes live without medical director sign-off. You stay in control of the content.</p></div>
+        <div class="faq-item"><div class="faq-q">How does setup work?</div><p class="faq-a">Send us your protocol PDF. We build out the question bank, scoped per certification level. Your medical director reviews and signs off &mdash; nothing goes live to your crews without that approval. We host on a custom subdomain (e.g. <code>youragency.protoquiz.com</code>), and your crews access by link in any browser. Typical turnaround from PDF to live tenant: about a week.</p></div>
         <div class="faq-item"><div class="faq-q">What if our protocols change mid-pilot?</div><p class="faq-a">Send the new PDF. We update the content, your medical director re-signs, your crews see the new questions on their next session.</p></div>
         <div class="faq-item"><div class="faq-q">How much IT lift is this?</div><p class="faq-a">None. We host on a custom subdomain. Crews access by link in any browser. No install, no SSO setup required (we support it if you want it).</p></div>
         <div class="faq-item"><div class="faq-q">What does the pilot offer actually include?</div><p class="faq-a">Six months free. After the free months end, the rate is <strong>$50/provider/year, locked for life</strong> &mdash; not just for the pilot period, permanently for pilot agencies. Open to the next 2 agency partners only. Closes August 1, 2026, or when those 2 slots are taken, whichever comes first. No commitment to continue; cancel anytime.</p></div>
