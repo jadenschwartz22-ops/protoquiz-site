@@ -799,6 +799,71 @@
       fill:var(--ink);letter-spacing:.04em;text-transform:uppercase;
     }
 
+    /* Click-detail panel */
+    .reach-detail{
+      max-width:680px;margin:24px auto 0;
+      position:relative;
+      padding:22px 28px 24px;
+      background:linear-gradient(180deg, var(--panel) 0%, rgba(16,13,8,.7) 100%);
+      border:1px solid rgba(255,176,0,.32);
+      border-radius:6px;
+      box-shadow:0 0 0 4px rgba(6,5,10,.5), 0 12px 36px rgba(0,0,0,.5), 0 0 24px rgba(255,176,0,.10);
+      animation:reachDetailIn .35s cubic-bezier(.16,1,.3,1);
+    }
+    @keyframes reachDetailIn{
+      from{opacity:0;transform:translateY(8px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+    .reach-detail-close{
+      position:absolute;top:12px;right:14px;
+      background:transparent;border:1px solid var(--line);color:var(--ink-soft);
+      font-family:var(--mono);font-size:18px;line-height:1;width:28px;height:28px;
+      border-radius:3px;cursor:pointer;
+      display:flex;align-items:center;justify-content:center;
+      transition:color .15s, border-color .15s;
+    }
+    .reach-detail-close:hover{color:var(--amber);border-color:var(--amber);}
+    .reach-detail-eyebrow{
+      font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+      color:var(--amber);font-weight:700;
+    }
+    .reach-detail-title{
+      font-family:var(--mono);font-size:clamp(20px,2vw,26px);
+      letter-spacing:-.01em;color:var(--ink);font-weight:700;
+      margin:6px 0 4px;text-transform:uppercase;
+    }
+    .reach-detail-meta{
+      font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;
+      color:var(--ink-soft);text-transform:uppercase;
+    }
+    .reach-detail-meta b{color:var(--amber);font-weight:700;font-size:14px;}
+    .reach-detail-section-tag{
+      margin-top:18px;
+      font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;
+      color:var(--muted);font-weight:600;
+      padding-bottom:8px;border-bottom:1px solid var(--line);
+    }
+    .reach-detail-list{
+      list-style:none;padding:0;margin:14px 0 0;
+      display:flex;flex-direction:column;gap:10px;
+      counter-reset:rdrank;
+    }
+    .reach-detail-list li{
+      display:grid;grid-template-columns:24px 1fr auto;gap:14px;align-items:baseline;
+      counter-increment:rdrank;
+    }
+    .reach-detail-list li::before{
+      content:counter(rdrank, decimal-leading-zero);
+      font-family:var(--mono);font-size:11px;color:var(--muted);font-weight:600;letter-spacing:.06em;
+    }
+    .reach-detail-list .protocol-title{
+      font-family:var(--sans);font-size:15px;line-height:1.4;color:var(--ink);font-weight:500;
+    }
+    .reach-detail-list .protocol-count{
+      font-family:var(--mono);font-size:12px;color:var(--amber);font-weight:700;letter-spacing:.04em;
+      text-transform:uppercase;white-space:nowrap;
+    }
+
     /* NE inset (zoomed Northeast cluster) */
     .reach-inset .inset-frame{
       fill:rgba(10,8,4,.85);
@@ -1944,6 +2009,20 @@
           </svg>
         </div>
 
+        <!-- Click-detail panel: populated by JS when a dot is clicked -->
+        <div class="reach-detail" id="reachDetail" hidden aria-live="polite">
+          <button class="reach-detail-close" id="reachDetailClose" type="button" aria-label="Close detail">&times;</button>
+          <div class="reach-detail-head">
+            <span class="reach-detail-eyebrow" id="reachDetailEyebrow">LOCATION</span>
+            <h3 class="reach-detail-title" id="reachDetailTitle"></h3>
+            <div class="reach-detail-meta" id="reachDetailMeta"></div>
+          </div>
+          <div class="reach-detail-body">
+            <div class="reach-detail-section-tag">Top protocols uploaded from this location</div>
+            <ol class="reach-detail-list" id="reachDetailList"></ol>
+          </div>
+        </div>
+
                 <dl class="reach-stats" id="reachStats" data-live="reach">
           <div class="rstat"><dt>States represented</dt><dd><b data-stat="states">21</b></dd></div>
           <div class="rstat"><dt>Different protocols uploaded</dt><dd><b data-stat="protocols">123</b></dd></div>
@@ -2507,17 +2586,67 @@
     // Per-city overrides (state|city -> offset). Used for cities near viewBox edges
     // or that need special positioning even when the state has its own override.
     const REACH_CITY_OFFSETS = {
-      "WA|Seattle":          { dx:0,   dy:18,  anchor:"middle" }, // below dot (top edge)
-      "WA|Snohomish County": { dx:0,   dy:-14, anchor:"middle" },
-      "WA|Statewide WA":     { dx:0,   dy:18,  anchor:"middle" },
-      "CA|Santa Cruz":       { dx:18,  dy:4,   anchor:"start"  }, // right of dot (left edge)
-      "CA|San Francisco":    { dx:18,  dy:0,   anchor:"start"  },
-      "CA|Los Angeles":      { dx:0,   dy:18,  anchor:"middle" }, // below dot
+      "WA|Seattle":          { dx:0,   dy:24,  anchor:"middle" },
+      "WA|Snohomish County": { dx:30,  dy:6,   anchor:"start"  },
+      "WA|Statewide WA":     { dx:30,  dy:32,  anchor:"start"  },
+      "OR|Portland":         { dx:0,   dy:18,  anchor:"middle" },
+      "CA|Santa Cruz":       { dx:22,  dy:4,   anchor:"start"  },
+      "CA|San Francisco":    { dx:22,  dy:0,   anchor:"start"  },
+      "CA|Los Angeles":      { dx:0,   dy:18,  anchor:"middle" },
       "CA|San Diego":        { dx:0,   dy:18,  anchor:"middle" },
-      "CA|Sacramento":       { dx:18,  dy:0,   anchor:"start"  },
+      "CA|Sacramento":       { dx:22,  dy:0,   anchor:"start"  },
       "FL|Miami":            { dx:0,   dy:18,  anchor:"middle" },
-      "ME|Portland":         { dx:-14, dy:0,   anchor:"end"    }, // left of dot (right edge)
+      "ME|Portland":         { dx:-14, dy:0,   anchor:"end"    },
+      "NC|Craven":           { dx:14,  dy:5,   anchor:"start"  },
+      "NC|Charlotte":        { dx:0,   dy:18,  anchor:"middle" },
+      "NC|Raleigh":          { dx:0,   dy:-14, anchor:"middle" },
     };
+
+    // State-name lookup for full-state strings in the detail panel
+    const REACH_STATE_NAMES = {
+      AL:"Alabama",AK:"Alaska",AZ:"Arizona",AR:"Arkansas",CA:"California",CO:"Colorado",CT:"Connecticut",DE:"Delaware",DC:"District of Columbia",
+      FL:"Florida",GA:"Georgia",HI:"Hawaii",ID:"Idaho",IL:"Illinois",IN:"Indiana",IA:"Iowa",KS:"Kansas",KY:"Kentucky",LA:"Louisiana",
+      ME:"Maine",MD:"Maryland",MA:"Massachusetts",MI:"Michigan",MN:"Minnesota",MS:"Mississippi",MO:"Missouri",MT:"Montana",NE:"Nebraska",
+      NV:"Nevada",NH:"New Hampshire",NJ:"New Jersey",NM:"New Mexico",NY:"New York",NC:"North Carolina",ND:"North Dakota",OH:"Ohio",
+      OK:"Oklahoma",OR:"Oregon",PA:"Pennsylvania",RI:"Rhode Island",SC:"South Carolina",SD:"South Dakota",TN:"Tennessee",TX:"Texas",
+      UT:"Utah",VT:"Vermont",VA:"Virginia",WA:"Washington",WV:"West Virginia",WI:"Wisconsin",WY:"Wyoming"
+    };
+    function showReachDetail(loc) {
+      const panel = document.getElementById('reachDetail');
+      if (!panel) return;
+      const stateFull = REACH_STATE_NAMES[loc.state] || loc.state;
+      document.getElementById('reachDetailEyebrow').textContent = `LOCATION · ${loc.state}`;
+      document.getElementById('reachDetailTitle').textContent = `${loc.city}, ${stateFull}`;
+      const meta = document.getElementById('reachDetailMeta');
+      const plural = loc.count === 1 ? 'upload' : 'uploads';
+      meta.innerHTML = `<b>${loc.count}</b> protocol ${plural} from this location`;
+      const list = document.getElementById('reachDetailList');
+      list.replaceChildren();
+      const protocols = Array.isArray(loc.topProtocols) ? loc.topProtocols : [];
+      if (!protocols.length) {
+        const li = document.createElement('li');
+        li.innerHTML = '<span></span><span class="protocol-title" style="color:var(--ink-soft)">No protocol titles available</span><span></span>';
+        list.appendChild(li);
+      } else {
+        for (const p of protocols) {
+          const li = document.createElement('li');
+          const cnt = p.count > 1 ? `${p.count}×` : '1';
+          li.innerHTML = `<span class="protocol-title">${escapeHtml(p.title)}</span><span class="protocol-count">${cnt}</span>`;
+          list.appendChild(li);
+        }
+      }
+      panel.hidden = false;
+      panel.scrollIntoView({behavior:'smooth', block:'nearest'});
+    }
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      const closeBtn = document.getElementById('reachDetailClose');
+      if (closeBtn) closeBtn.addEventListener('click', () => {
+        const p = document.getElementById('reachDetail'); if (p) p.hidden = true;
+      });
+    });
 
     async function loadReach() {
       try {
@@ -2548,9 +2677,23 @@
           localesG.replaceChildren();
           labelsG.replaceChildren();
 
-          // Sort by count desc; label only the top 5 permanently (avoids cluster overlap).
-          const sorted = [...r.locales].sort((a,b)=>b.count-a.count);
-          const topLabeled = new Set(sorted.slice(0, 5).map(l => `${l.state}|${l.city}`));
+          // Label every locale, but suppress labels for tiny dots that sit too close
+          // to a higher-count labeled dot (proximity-based clustering).
+          const sortedByCount = [...r.locales].sort((a,b)=>b.count-a.count);
+          const placedLabels = []; // [{x,y}]
+          const PROX_PX = 28; // SVG units below which a tiny label gets suppressed
+          const shouldLabel = (loc) => {
+            // Always label warm/hot
+            if (loc.tier === 'hot' || loc.tier === 'warm') return true;
+            // For 'on' (count >= 2) always label
+            if (loc.tier === 'on') return true;
+            // For 'tiny' (count == 1), only label if not too close to an already-placed bigger label
+            for (const p of placedLabels) {
+              const dx = p.x - loc.x, dy = p.y - loc.y;
+              if (dx*dx + dy*dy < PROX_PX*PROX_PX) return false;
+            }
+            return true;
+          };
 
           const showTip = (x, y, txt) => {
             if (!tip) return;
@@ -2575,7 +2718,7 @@
           };
           const hideTip = () => { if (tip) tip.style.visibility = 'hidden'; };
 
-          for (const loc of r.locales) {
+          for (const loc of sortedByCount) {
             if (loc.x < 0 || loc.x > 959 || loc.y < 0 || loc.y > 593) continue;
             const tier = loc.tier || (loc.count >= 30 ? 'hot' : loc.count >= 5 ? 'warm' : loc.count >= 2 ? 'on' : 'tiny');
             const dot = document.createElementNS(SVG_NS, 'g');
@@ -2606,10 +2749,14 @@
             dot.addEventListener('focus', onIn);
             dot.addEventListener('mouseleave', hideTip);
             dot.addEventListener('blur', hideTip);
+            dot.addEventListener('click', () => showReachDetail(loc));
+            dot.addEventListener('keydown', (e) => {
+              if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); showReachDetail(loc); }
+            });
             localesG.appendChild(dot);
 
-            // Permanent label only for top 5
-            if (topLabeled.has(`${loc.state}|${loc.city}`)) {
+            // Permanent label unless it's a 'tiny' dot too close to a bigger labeled one
+            if (shouldLabel(loc)) {
               const off = REACH_CITY_OFFSETS[`${loc.state}|${loc.city}`] || REACH_LABEL_OFFSETS[loc.state] || REACH_DEFAULT_OFFSET;
               const lbl = document.createElementNS(SVG_NS, 'text');
               const labelClass = tier === 'hot' ? 'rl rl-hot' : tier === 'warm' ? 'rl rl-warm' : 'rl';
@@ -2621,6 +2768,7 @@
               const cityName = (off.short || loc.city).toUpperCase();
               lbl.textContent = `${cityName} · ${loc.count}`;
               labelsG.appendChild(lbl);
+              placedLabels.push({ x: loc.x, y: loc.y });
             }
           }
           // Move tooltip to end so it renders on top

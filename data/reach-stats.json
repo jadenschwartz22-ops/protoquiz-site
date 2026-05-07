@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-07T15:49:22.412Z",
+  "generatedAt": "2026-05-07T16:04:40.861Z",
   "totalUploads": 352,
   "distinctProtocols": 123,
   "activeStudiers": 127,
@@ -32,178 +32,358 @@
     {
       "state": "CO",
       "city": "Denver",
-      "x": 392,
-      "y": 285,
+      "x": 324,
+      "y": 263,
       "count": 61,
-      "tier": "hot"
+      "tier": "hot",
+      "topProtocols": [
+        {
+          "title": "DMEMSMD Protocols July 2025 FINAL 2025 07 14",
+          "count": 61
+        }
+      ]
     },
     {
       "state": "NY",
       "city": "New York",
-      "x": 814,
-      "y": 195,
+      "x": 858,
+      "y": 185,
       "count": 33,
-      "tier": "hot"
+      "tier": "hot",
+      "topProtocols": [
+        {
+          "title": "NYS Collaborative",
+          "count": 25
+        },
+        {
+          "title": "ny collaborative protocols",
+          "count": 6
+        },
+        {
+          "title": "NYS collab",
+          "count": 1
+        }
+      ]
     },
     {
       "state": "FL",
       "city": "Miami",
-      "x": 765,
-      "y": 540,
+      "x": 745,
+      "y": 559,
       "count": 9,
-      "tier": "warm"
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "Greater Miami",
+          "count": 9
+        }
+      ]
     },
     {
       "state": "CA",
       "city": "Los Angeles",
       "x": 98,
-      "y": 336,
+      "y": 343,
       "count": 8,
-      "tier": "warm"
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "LA COunty",
+          "count": 5
+        },
+        {
+          "title": "1075386 LACountyTreatmentProtocols",
+          "count": 2
+        },
+        {
+          "title": "laems protocols",
+          "count": 1
+        }
+      ]
     },
     {
       "state": "NJ",
       "city": "Newark",
       "x": 833,
-      "y": 202,
+      "y": 201,
       "count": 8,
-      "tier": "warm"
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "NJ EMS",
+          "count": 6
+        },
+        {
+          "title": "NEWJERSEYEMSCLINICALPRACTICEPROTOCOLS GUIDELINES FINAL8.21.20…",
+          "count": 2
+        }
+      ]
     },
     {
       "state": "MD",
       "city": "Baltimore",
       "x": 800,
-      "y": 252,
+      "y": 250,
       "count": 5,
-      "tier": "warm"
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "MD Medical Protocols 2025 Print",
+          "count": 3
+        },
+        {
+          "title": "MD Medical Protocols 2025 Hyperlinked HR",
+          "count": 2
+        }
+      ]
     },
     {
       "state": "CA",
       "city": "Santa Cruz",
-      "x": 55,
+      "x": 46,
       "y": 288,
       "count": 4,
-      "tier": "on"
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "Santa Cruz",
+          "count": 3
+        },
+        {
+          "title": "Santa Cruz County EMS Policies and Procedures",
+          "count": 1
+        }
+      ]
     },
     {
       "state": "WV",
       "city": "Charleston",
-      "x": 730,
-      "y": 278,
+      "x": 733,
+      "y": 276,
       "count": 4,
-      "tier": "on"
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "West Virginia",
+          "count": 3
+        },
+        {
+          "title": "2025 WV Protocols",
+          "count": 1
+        }
+      ]
     },
     {
       "state": "WA",
       "city": "Statewide WA",
-      "x": 155,
-      "y": 78,
+      "x": 116,
+      "y": 50,
       "count": 3,
-      "tier": "on"
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "EMT B WA Protocols",
+          "count": 2
+        },
+        {
+          "title": "EMT WA Protocol",
+          "count": 1
+        }
+      ]
     },
     {
       "state": "MA",
       "city": "Boston",
-      "x": 880,
-      "y": 172,
+      "x": 895,
+      "y": 151,
       "count": 2,
-      "tier": "on"
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "MA EMS Protocols 2025",
+          "count": 1
+        },
+        {
+          "title": "16 June 2025 MA OEMS Protocols",
+          "count": 1
+        }
+      ]
     },
     {
       "state": "AZ",
       "city": "Tucson",
-      "x": 225,
-      "y": 395,
+      "x": 200,
+      "y": 401,
       "count": 2,
-      "tier": "on"
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "TCEMS PROTOCOL 2025 2027 2",
+          "count": 1
+        },
+        {
+          "title": "TCEMS PROTOCOL 2023",
+          "count": 1
+        }
+      ]
     },
     {
       "state": "PA",
       "city": "Philadelphia",
-      "x": 808,
-      "y": 232,
+      "x": 828,
+      "y": 235,
       "count": 2,
-      "tier": "on"
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "2023v1 2 PA BLS Protocols",
+          "count": 2
+        }
+      ]
     },
     {
       "state": "CA",
       "city": "San Diego",
       "x": 112,
-      "y": 398,
+      "y": 388,
       "count": 2,
-      "tier": "on"
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "San DIego",
+          "count": 2
+        }
+      ]
     },
     {
       "state": "AL",
       "city": "Birmingham",
       "x": 648,
-      "y": 408,
+      "y": 394,
       "count": 2,
-      "tier": "on"
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "master.alabama.protocols.11th.edition.07012025",
+          "count": 1
+        },
+        {
+          "title": "AL protocol",
+          "count": 1
+        }
+      ]
     },
     {
       "state": "UT",
       "city": "Salt Lake",
-      "x": 248,
-      "y": 245,
+      "x": 221,
+      "y": 212,
       "count": 2,
-      "tier": "on"
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "2023 Utah EMS Protocol Guidelines Final 4.10.2024",
+          "count": 2
+        }
+      ]
     },
     {
       "state": "WI",
       "city": "Aurora",
-      "x": 550,
-      "y": 200,
+      "x": 605,
+      "y": 194,
       "count": 1,
-      "tier": "tiny"
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "aurora south wi ems 2024 pre hospital guidelines",
+          "count": 1
+        }
+      ]
     },
     {
       "state": "TX",
       "city": "Austin",
-      "x": 455,
-      "y": 455,
+      "x": 441,
+      "y": 512,
       "count": 1,
-      "tier": "tiny"
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "eprip 2025 EMS Protocols 0",
+          "count": 1
+        }
+      ]
     },
     {
       "state": "IN",
       "city": "Indianapolis",
-      "x": 638,
-      "y": 248,
+      "x": 641,
+      "y": 261,
       "count": 1,
-      "tier": "tiny"
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "indiana ems scope practice 2020 updated",
+          "count": 1
+        }
+      ]
     },
     {
       "state": "NV",
       "city": "Las Vegas",
-      "x": 178,
+      "x": 183,
       "y": 312,
       "count": 1,
-      "tier": "tiny"
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "CLark County",
+          "count": 1
+        }
+      ]
     },
     {
       "state": "NC",
       "city": "Craven",
-      "x": 805,
-      "y": 345,
+      "x": 811,
+      "y": 337,
       "count": 1,
-      "tier": "tiny"
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "2025 Craven Protocols",
+          "count": 1
+        }
+      ]
     },
     {
       "state": "WA",
       "city": "Snohomish County",
-      "x": 165,
-      "y": 75,
+      "x": 128,
+      "y": 61,
       "count": 1,
-      "tier": "tiny"
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "Approved Snohomish Co Protocols 2025",
+          "count": 1
+        }
+      ]
     },
     {
       "state": "IL",
       "city": "Chicago",
-      "x": 595,
-      "y": 220,
+      "x": 615,
+      "y": 224,
       "count": 1,
-      "tier": "tiny"
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "NWC EMSS SOP",
+          "count": 1
+        }
+      ]
     },
     {
       "state": "DC",
@@ -211,15 +391,27 @@
       "x": 802,
       "y": 252,
       "count": 1,
-      "tier": "tiny"
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "DC FEMS Protocols",
+          "count": 1
+        }
+      ]
     },
     {
       "state": "MN",
       "city": "Rochester",
       "x": 538,
-      "y": 170,
+      "y": 163,
       "count": 1,
-      "tier": "tiny"
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "mayoclinicambulanceservicepatientcareguidelines 3ff2827c202a9…",
+          "count": 1
+        }
+      ]
     }
   ]
 }
