@@ -544,14 +544,9 @@
     .belt::after{bottom:0;}
     .track{
       display:flex;gap:14px;width:max-content;align-items:flex-end;padding:8px 0;
-      animation:cvScroll 90s linear infinite;
       will-change:transform;
       backface-visibility:hidden;
       transform:translate3d(0,0,0);
-    }
-    @keyframes cvScroll{
-      from{transform:translate3d(0,0,0);}
-      to{transform:translate3d(-50%,0,0);}
     }
     .doc{
       flex-shrink:0;background:var(--panel);border:1px solid var(--line);border-radius:3px;
@@ -792,6 +787,9 @@
     .reach-svg .locale:hover circle.halo, .reach-svg .locale:focus circle.halo{
       opacity:1;stroke-width:2;
     }
+    .reach-svg .locale.is-selected circle.core{fill:var(--amber-warm);}
+    .reach-svg .locale.is-selected circle.halo{opacity:1;stroke-width:2.4;stroke:var(--amber);}
+    .reach-svg .locale.is-selected circle.ping{animation:none;}
     .reach-svg .locale:focus-visible circle.halo{stroke-width:2;opacity:1;}
     .reach-svg .locale .hit{cursor:pointer;}
     @keyframes reachPing{
@@ -2597,9 +2595,25 @@
       OK:"Oklahoma",OR:"Oregon",PA:"Pennsylvania",RI:"Rhode Island",SC:"South Carolina",SD:"South Dakota",TN:"Tennessee",TX:"Texas",
       UT:"Utah",VT:"Vermont",VA:"Virginia",WA:"Washington",WV:"West Virginia",WI:"Wisconsin",WY:"Wyoming"
     };
+    function clearReachSelection() {
+      const svg = document.querySelector('.reach-svg');
+      if (!svg) return;
+      svg.querySelectorAll('.locale.is-selected').forEach(d => d.classList.remove('is-selected'));
+      svg.querySelectorAll('.reach-labels [data-key]').forEach(l => l.style.removeProperty('display'));
+    }
     function showReachDetail(loc) {
       const panel = document.getElementById('reachDetail');
       if (!panel) return;
+      const key = `${loc.state}|${loc.city}`;
+      // Update selection: clear prior, mark this dot, hide its on-map label
+      clearReachSelection();
+      const svg = document.querySelector('.reach-svg');
+      if (svg) {
+        const dot = svg.querySelector(`.locale[data-key="${CSS.escape(key)}"]`);
+        if (dot) dot.classList.add('is-selected');
+        const lbl = svg.querySelector(`.reach-labels [data-key="${CSS.escape(key)}"]`);
+        if (lbl) lbl.style.display = 'none';
+      }
       const stateFull = REACH_STATE_NAMES[loc.state] || loc.state;
       document.getElementById('reachDetailEyebrow').textContent = `LOCATION · ${loc.state}`;
       document.getElementById('reachDetailTitle').textContent = `${loc.city}, ${stateFull}`;
@@ -2631,6 +2645,14 @@
       const closeBtn = document.getElementById('reachDetailClose');
       if (closeBtn) closeBtn.addEventListener('click', () => {
         const p = document.getElementById('reachDetail'); if (p) p.hidden = true;
+        clearReachSelection();
+      });
+      // Esc closes too
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          const p = document.getElementById('reachDetail');
+          if (p && !p.hidden) { p.hidden = true; clearReachSelection(); }
+        }
       });
     });
 
@@ -2738,9 +2760,11 @@
           for (const loc of sortedByCount) {
             if (loc.x < 0 || loc.x > 959 || loc.y < 0 || loc.y > 593) continue;
             const tier = loc.tier || (loc.count >= 30 ? 'hot' : loc.count >= 5 ? 'warm' : loc.count >= 2 ? 'on' : 'tiny');
+            const key = `${loc.state}|${loc.city}`;
             const dot = document.createElementNS(SVG_NS, 'g');
             dot.setAttribute('class', `locale ${tier === 'hot' ? 'hot' : tier === 'warm' ? 'warm' : ''}`.trim());
             dot.setAttribute('transform', `translate(${loc.x} ${loc.y})`);
+            dot.setAttribute('data-key', key);
             dot.setAttribute('data-loc', `${loc.city}, ${loc.state}`);
             dot.setAttribute('data-count', loc.count);
             dot.setAttribute('tabindex', '0');
@@ -2778,6 +2802,7 @@
               const lbl = document.createElementNS(SVG_NS, 'text');
               const labelClass = tier === 'hot' ? 'rl rl-hot' : tier === 'warm' ? 'rl rl-warm' : 'rl';
               lbl.setAttribute('class', labelClass);
+              lbl.setAttribute('data-key', key);
               lbl.setAttribute('x', loc.x + off.dx);
               lbl.setAttribute('y', loc.y + off.dy);
               lbl.setAttribute('text-anchor', off.anchor);
@@ -2797,6 +2822,40 @@
       const el = document.getElementById(id);
       if (el) el.textContent = val;
     }
+    // rAF-driven conveyor: smoother than long CSS animation on Chrome.
+    // Track has 2 identical halves; scroll until we've moved -halfWidth, then snap to 0.
+    (function startConveyor() {
+      const track = document.querySelector('.track');
+      if (!track) return;
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const PX_PER_SEC = 38; // tune speed; ~90s for 3400px-wide track
+      let halfWidth = 0;
+      let x = 0;
+      let last = performance.now();
+      let paused = false;
+      const measure = () => {
+        // total width / 2 because track is duplicated content
+        halfWidth = track.scrollWidth / 2;
+      };
+      measure();
+      window.addEventListener('resize', measure);
+      // Pause when tab hidden so we don't burn CPU
+      document.addEventListener('visibilitychange', () => {
+        paused = document.hidden;
+        if (!paused) last = performance.now();
+      });
+      function frame(now) {
+        if (paused) { last = now; requestAnimationFrame(frame); return; }
+        const dt = (now - last) / 1000;
+        last = now;
+        x -= PX_PER_SEC * dt;
+        if (-x >= halfWidth) x += halfWidth; // seamless wrap
+        track.style.transform = `translate3d(${x}px,0,0)`;
+        requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+    })();
+
     loadStats();
     loadReach();
     // Re-poll hourly so a long-open tab keeps in sync with daily Pi cron updates.
