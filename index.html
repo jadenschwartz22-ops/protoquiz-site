@@ -3089,8 +3089,7 @@
     (function startConveyor() {
       const track = document.querySelector('.track');
       if (!track) return;
-      if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      const PX_PER_SEC = 38;
+      const PX_PER_SEC = matchMedia('(prefers-reduced-motion: reduce)').matches ? 16 : 38;
       let halfWidth = 0;
       let x = 0;
       let last = 0;
