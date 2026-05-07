@@ -739,20 +739,26 @@
       grid-column:2;font-family:var(--sans);font-size:16px;line-height:1.55;
       color:var(--ink-soft);max-width:60ch;margin-top:14px;
     }
+    /* Layout: map left, ranked locale list right */
+    .reach-grid-wrap{
+      display:grid;grid-template-columns:minmax(0,1.4fr) minmax(280px,1fr);
+      gap:48px;align-items:start;
+    }
     .reach-stage{
-      position:relative;width:100%;max-width:1080px;margin:0 auto;
-      aspect-ratio: 1140 / 625;
+      position:relative;width:100%;
+      aspect-ratio: 959 / 593;
     }
     .reach-svg{
       position:absolute;inset:0;width:100%;height:100%;display:block;
-      filter:drop-shadow(0 0 22px rgba(255,176,0,.18));
+      filter:drop-shadow(0 0 22px rgba(255,176,0,.12));
     }
     .reach-svg .state{
-      fill:var(--panel);
-      stroke:var(--line-2);stroke-width:.5;
+      fill:transparent;
+      stroke:var(--line-2);stroke-width:.6;
     }
-    /* lit class kept on lit-states for subtle ambient warmth */
-    .reach-svg .state.lit{fill:#1a140a;stroke:rgba(255,176,0,.22);}
+    .reach-svg .state.lit{stroke:rgba(255,176,0,.32);}
+    .reach-svg .state.lit.warm{stroke:rgba(255,176,0,.5);}
+    .reach-svg .state.lit.hot{stroke:rgba(255,176,0,.7);}
     .reach-svg .locale circle.core{fill:var(--amber);}
     .reach-svg .locale circle.halo{fill:none;stroke:var(--amber);stroke-width:1;opacity:.5;}
     .reach-svg .locale circle.ping{
@@ -760,38 +766,91 @@
       transform-origin:center;transform-box:fill-box;
       animation:reachPing 3s cubic-bezier(.16,1,.3,1) infinite;
     }
-    .reach-svg .locale.hot circle.core{r:5;}
-    .reach-svg .locale.hot circle.halo{r:14;stroke-width:1.4;opacity:.7;}
-    .reach-svg .locale.warm circle.core{r:3.5;}
+    .reach-svg .locale.hot circle.core{r:5.5;}
+    .reach-svg .locale.hot circle.halo{r:16;stroke-width:1.6;opacity:.75;}
+    .reach-svg .locale.hot circle.core{filter:drop-shadow(0 0 8px rgba(255,176,0,.9));}
+    .reach-svg .locale.warm circle.core{r:4;}
     .reach-svg .locale:nth-of-type(2n) circle.ping{animation-delay:.4s;}
     .reach-svg .locale:nth-of-type(3n) circle.ping{animation-delay:.9s;}
     .reach-svg .locale:nth-of-type(5n) circle.ping{animation-delay:1.5s;}
     .reach-svg .locale:nth-of-type(7n) circle.ping{animation-delay:2.1s;}
+    .reach-svg .locale{cursor:pointer;}
+    .reach-svg .locale:hover circle.core, .reach-svg .locale:focus circle.core{
+      fill:#fff;filter:drop-shadow(0 0 10px var(--amber));
+    }
     @keyframes reachPing{
       0%{opacity:.6;transform:scale(.6);}
       80%{opacity:0;transform:scale(2.6);}
       100%{opacity:0;transform:scale(2.6);}
     }
-    .reach-label{
-      font-family:var(--mono);font-size:11px;letter-spacing:.08em;
-      fill:var(--ink-soft);text-transform:uppercase;font-weight:600;
-      pointer-events:none;
+    /* Ranked locales list */
+    .reach-list{
+      font-family:var(--mono);
+      padding:0;
     }
-    .reach-label.hot{fill:var(--ink);font-weight:700;font-size:12px;}
-    .reach-label.dim{font-size:9px;letter-spacing:.04em;fill:var(--muted);font-weight:600;}
-    .reach-leaders line{
-      stroke:var(--amber);stroke-width:.6;opacity:.45;
-      stroke-dasharray:2 2;
+    .reach-list-head{
+      font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+      color:var(--amber);font-weight:700;margin-bottom:18px;
+      padding-bottom:10px;border-bottom:1px solid var(--line);
     }
-    .reach-scan{
-      position:absolute;inset:0;pointer-events:none;
-      background:linear-gradient(180deg, transparent 0%, rgba(255,176,0,.08) 50%, transparent 100%);
-      height:30%;
-      animation:reachScan 6s ease-in-out infinite;
+    .reach-rank{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px;}
+    .reach-rank li{
+      display:grid;grid-template-columns:minmax(0,1fr) 80px auto;gap:12px;align-items:center;
+      font-size:12.5px;letter-spacing:.02em;color:var(--ink-soft);
     }
-    @keyframes reachScan{
-      0%,100%{transform:translateY(-30%);opacity:0;}
-      50%{transform:translateY(330%);opacity:1;}
+    .reach-rank .rank-loc{color:var(--ink);font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:11.5px;}
+    .reach-rank .rank-bar{
+      position:relative;height:6px;background:rgba(255,176,0,.08);
+      border-radius:1px;overflow:hidden;
+    }
+    .reach-rank .rank-bar > span{
+      display:block;height:100%;background:var(--amber);
+      box-shadow:0 0 8px rgba(255,176,0,.5);
+      transition:width .9s cubic-bezier(.16,1,.3,1);
+    }
+    .reach-rank .rank-n{
+      color:var(--amber);font-weight:700;font-variant-numeric:tabular-nums;
+      font-size:14px;letter-spacing:-.01em;min-width:30px;text-align:right;
+    }
+    .reach-rank .rank-more{margin-top:6px;border-top:1px solid var(--line);padding-top:12px;}
+    .reach-rank .rank-more .rank-loc{color:var(--muted);font-weight:500;}
+    .reach-rank .rank-more .rank-n{color:var(--ink-soft);}
+    /* Live activity ticker */
+    .reach-ticker{
+      margin-top:36px;display:flex;align-items:center;gap:14px;
+      padding:12px 16px;
+      background:var(--panel);
+      border:1px solid var(--line-2);border-radius:4px;
+      font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;
+      color:var(--ink-soft);text-transform:uppercase;
+      overflow:hidden;
+    }
+    .reach-ticker .tick-pulse{
+      flex-shrink:0;width:7px;height:7px;border-radius:50%;
+      background:var(--green);box-shadow:0 0 8px var(--green);
+      animation:cvPulse 1.6s ease-in-out infinite;
+    }
+    .reach-ticker .tick-label{
+      flex-shrink:0;color:var(--amber);font-weight:700;letter-spacing:.18em;
+    }
+    .reach-ticker .tick-track{
+      flex:1;overflow:hidden;
+      mask-image:linear-gradient(90deg,transparent 0,#000 4%,#000 96%,transparent 100%);
+      -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 4%,#000 96%,transparent 100%);
+    }
+    .reach-ticker .tick-belt{
+      display:flex;gap:48px;width:max-content;
+      animation:tickerSlide 60s linear infinite;
+    }
+    .reach-ticker .tick-event{
+      display:inline-flex;align-items:center;gap:14px;flex-shrink:0;
+    }
+    .reach-ticker .tick-time{color:var(--muted);font-variant-numeric:tabular-nums;}
+    .reach-ticker .tick-loc{color:var(--ink);font-weight:600;}
+    .reach-ticker .tick-act{color:var(--amber);}
+    @keyframes tickerSlide{
+      0%{transform:translateX(0);}
+      100%{transform:translateX(-50%);}
     }
     .reach-stats{
       display:flex;flex-wrap:wrap;gap:18px 44px;
@@ -821,14 +880,16 @@
       .reach-head{grid-template-columns:1fr;gap:14px;}
       .reach-sub{grid-column:1;}
       .reach-h2{font-size:clamp(24px,7vw,32px);}
-      .reach-label{font-size:14px;}
-      .reach-label.hot{font-size:16px;}
+      .reach-grid-wrap{grid-template-columns:1fr;gap:32px;}
       .reach-stats{font-size:11px;letter-spacing:.08em;gap:10px 22px;}
       .reach-stats b{font-size:14px;}
+      .reach-ticker{font-size:10.5px;padding:10px 12px;gap:10px;}
+      .reach-ticker .tick-belt{gap:32px;}
     }
     @media (prefers-reduced-motion: reduce){
-      .reach-svg .state.lit.hot{animation:none;}
-      .reach-scan{animation:none;display:none;}
+      .reach-ticker .tick-belt{animation:none;}
+      .reach-ticker .tick-pulse{animation:none;}
+      .reach-svg .locale circle.ping{animation:none;}
     }
 
     .phone-slot{
@@ -1730,8 +1791,9 @@
           </div>
         </div>
 
+        <div class="reach-grid-wrap">
         <div class="reach-stage">
-          <svg class="reach-svg" viewBox="-90 -10 1140 625" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="US map showing 21 states where ProtoQuiz uploads have come from">
+          <svg class="reach-svg" viewBox="0 0 959 593" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="US map showing 21 states where ProtoQuiz uploads have come from">
             <path class="state s-al lit on" data-count="2" d="m 643,467.4 .4,-7.3 -.9,-1.2 -1.7,-.7 -2.5,-2.8 .5,-2.9 48.8,-5.1 -.7,-2.2 -1.5,-1.5 -.5,-1.4 .6,-6.3 -2.4,-5.7 .5,-2.6 .3,-3.7 2.2,-3.8 -.2,-1.1 -1.7,-1 v -3.2 l -1.8,-1.9 -2.9,-6.1 -12.9,-45.8 -45.7,4 1.3,2 -1.3,67 4.4,33.2 .9,-.5 1.3,.1 .6,.4 .8,-.1 2,-3.8 v -2.3 l 1.1,-1.1 1.4,.5 3.4,6.4 v .9 l -3.3,2.2 3.5,-.4 4.9,-1.6 z"><title>Alabama</title></path>
 <path class="state s-az lit on" data-count="2" d="m 139.6,387.6 3,-2.2 .8,-2.4 -1,-1.6 -1.8,-.2 -1.1,-1.6 1.1,-6.9 1.6,-.3 2.4,-3.2 1.6,-7 2.4,-3.6 4.8,-1.7 1.3,-1.3 -.4,-1.9 -2.3,-2.5 -1.2,-5.8 -1.4,-1.8 -1.3,-3.4 .9,-2.1 1.4,-3 .5,-2.9 -.5,-4.9 1,-13.6 3.5,-.6 3.7,1.4 1.2,2.7 h 2 l 2.4,-2.9 3.4,-17.5 46.2,8.2 40,6 -17.4,124.1 -37.3,-5.4 -64.2,-37.5 .5,-2.9 2,-1.8 z"><title>Arizona</title></path>
 <path class="state s-ar" d="m 584.2,367 .9,-2.2 1.2,.5 .7,-1 -.8,-.7 .3,-1.5 -1.1,-.9 .6,-1 -.1,-1.5 -1.1,-.1 .8,-.8 1.3,.8 .3,-1.4 -.4,-1.1 .1,-.7 2,.6 -.4,-1.5 1.6,-1.3 -.5,-.9 -1.1,.1 -.6,-.9 .9,-.9 1.6,-.2 .5,-.8 1.4,-.2 -.1,-.8 -.9,-.9 v -.5 h 1.5 l .4,-.7 -1.4,-1 -.1,-.6 -11.2,.8 2.8,-5.1 1.7,-1.5 v -2.2 l -1.6,-2.5 -39.8,2 -39.1,.7 4.1,24.4 -.7,39 2.6,2.3 2.8,-1.3 3.2,.8 .2,11.9 52.3,-1.3 1.2,-1.5 .5,-3 -1.5,-2.3 -.5,-2.2 .9,-.7 v -.8 l -1.7,-1.1 -.1,-.7 1.6,-.9 -1.2,-1.1 1.7,-7.1 3.4,-1.6 v -.8 l -1.1,-1.4 2.9,-5.4 h 1.9 l 1.5,-1.2 -.3,-5.2 3.1,-4.5 1.8,-.6 -.5,-3.1 z"><title>Arkansas</title></path>
@@ -1807,61 +1869,61 @@
               <g class="locale" data-loc="Rochester, MN" data-count="1" transform="translate(537 163)"><circle class="halo" r="4"/><circle class="ping" r="2"/><circle class="core" r="1.8"/></g>
               <g class="locale" data-loc="Washington, DC" data-count="1" transform="translate(802 252)"><circle class="halo" r="4"/><circle class="ping" r="2"/><circle class="core" r="1.8"/></g>
             </g>
-            <!-- Leader lines for top labels -->
-            <g class="reach-leaders" aria-hidden="true">
-              <!-- NYC: dot 858,185 -> label 940,185 -->
-              <line x1="858" y1="185" x2="935" y2="185"/>
-              <!-- Newark: dot 833,202 -> label 940,210 -->
-              <line x1="833" y1="202" x2="935" y2="210"/>
-              <!-- Baltimore: dot 800,250 -> label 940,250 -->
-              <line x1="800" y1="250" x2="935" y2="250"/>
-              <!-- Boston: dot 895,152 -> label 940,150 -->
-              <line x1="895" y1="152" x2="935" y2="150"/>
-              <!-- Charleston: dot 733,276 -> label 940,275 -->
-              <line x1="733" y1="276" x2="935" y2="275"/>
-              <!-- DC: dot 802,252 -> label 940,302 -->
-              <line x1="802" y1="252" x2="935" y2="302"/>
-              <!-- Philadelphia: dot 829,235 -> label 940,235 -->
-              <line x1="829" y1="235" x2="935" y2="235"/>
-              <!-- LA: dot 98,336 -> label 22,360 -->
-              <line x1="98" y1="336" x2="22" y2="360"/>
-              <!-- San Diego: dot 112,384 -> label 22,400 -->
-              <line x1="112" y1="384" x2="22" y2="400"/>
-              <!-- Santa Cruz: dot 49,288 -> label 22,290 -->
-              <line x1="49" y1="288" x2="22" y2="290"/>
-            </g>
-            <!-- Per-dot labels -->
-            <g class="reach-labels" aria-hidden="true">
-              <!-- Anchored to map (no leader): main hot dots -->
-              <text class="reach-label hot" x="324" y="248" text-anchor="middle">DENVER &middot; 61</text>
-              <text class="reach-label" x="794" y="592" text-anchor="middle">MIAMI &middot; 9</text>
-              <text class="reach-label" x="490" y="551" text-anchor="middle">HOUSTON &middot; 1</text>
-              <text class="reach-label" x="121" y="4" text-anchor="middle">SEATTLE &middot; 4</text>
-              <!-- East coast cluster, leader-line right -->
-              <text class="reach-label hot" x="940" y="155" text-anchor="start">BOSTON &middot; 2</text>
-              <text class="reach-label hot" x="940" y="190" text-anchor="start">NYC &middot; 33</text>
-              <text class="reach-label" x="940" y="215" text-anchor="start">NEWARK &middot; 8</text>
-              <text class="reach-label" x="940" y="240" text-anchor="start">PHILADELPHIA &middot; 2</text>
-              <text class="reach-label" x="940" y="255" text-anchor="start">BALTIMORE &middot; 5</text>
-              <text class="reach-label" x="940" y="280" text-anchor="start">CHARLESTON &middot; 4</text>
-              <text class="reach-label dim" x="940" y="305" text-anchor="start">D.C. &middot; 1</text>
-              <!-- West coast / CA cluster, leader-line left -->
-              <text class="reach-label" x="22" y="295" text-anchor="end">SANTA CRUZ &middot; 1</text>
-              <text class="reach-label hot" x="22" y="365" text-anchor="end">LOS ANGELES &middot; 14</text>
-              <text class="reach-label" x="22" y="405" text-anchor="end">SAN DIEGO &middot; 2</text>
-              <!-- Inland scattered (no leader needed, room around them) -->
-              <text class="reach-label dim" x="222" y="203" text-anchor="middle">SALT LAKE &middot; 2</text>
-              <text class="reach-label dim" x="183" y="380" text-anchor="middle">PHOENIX &middot; 2</text>
-              <text class="reach-label dim" x="183" y="326" text-anchor="middle">LAS VEGAS &middot; 1</text>
-              <text class="reach-label dim" x="648" y="409" text-anchor="middle">BIRMINGHAM &middot; 2</text>
-              <text class="reach-label dim" x="612" y="177" text-anchor="middle">MILWAUKEE &middot; 1</text>
-              <text class="reach-label dim" x="641" y="278" text-anchor="middle">INDIANAPOLIS &middot; 1</text>
-              <text class="reach-label dim" x="745" y="358" text-anchor="middle">CHARLOTTE &middot; 1</text>
-              <text class="reach-label dim" x="615" y="214" text-anchor="middle">CHICAGO &middot; 1</text>
-              <text class="reach-label dim" x="537" y="153" text-anchor="middle">ROCHESTER &middot; 1</text>
+            <!-- Tooltip overlay shown on hover/focus -->
+            <g class="reach-tip" aria-hidden="true" style="display:none">
+              <rect class="tip-bg" x="0" y="0" rx="3" ry="3" width="0" height="0"/>
+              <text class="tip-text" x="0" y="0"></text>
             </g>
           </svg>
-          <div class="reach-scan" aria-hidden="true"></div>
+        </div>
+
+        <aside class="reach-list" aria-label="Locations with the most uploads">
+          <div class="reach-list-head">TOP LOCATIONS</div>
+          <ol class="reach-rank">
+            <li><span class="rank-loc">Denver, CO</span><span class="rank-bar"><span style="width:100%"></span></span><span class="rank-n">61</span></li>
+            <li><span class="rank-loc">New York, NY</span><span class="rank-bar"><span style="width:54%"></span></span><span class="rank-n">33</span></li>
+            <li><span class="rank-loc">Los Angeles, CA</span><span class="rank-bar"><span style="width:23%"></span></span><span class="rank-n">14</span></li>
+            <li><span class="rank-loc">Miami, FL</span><span class="rank-bar"><span style="width:15%"></span></span><span class="rank-n">9</span></li>
+            <li><span class="rank-loc">Newark, NJ</span><span class="rank-bar"><span style="width:13%"></span></span><span class="rank-n">8</span></li>
+            <li><span class="rank-loc">Baltimore, MD</span><span class="rank-bar"><span style="width:8%"></span></span><span class="rank-n">5</span></li>
+            <li><span class="rank-loc">Charleston, WV</span><span class="rank-bar"><span style="width:7%"></span></span><span class="rank-n">4</span></li>
+            <li><span class="rank-loc">Seattle, WA</span><span class="rank-bar"><span style="width:7%"></span></span><span class="rank-n">4</span></li>
+            <li><span class="rank-loc">San Diego, CA</span><span class="rank-bar"><span style="width:3%"></span></span><span class="rank-n">2</span></li>
+            <li><span class="rank-loc">Boston, MA</span><span class="rank-bar"><span style="width:3%"></span></span><span class="rank-n">2</span></li>
+            <li><span class="rank-loc">Philadelphia, PA</span><span class="rank-bar"><span style="width:3%"></span></span><span class="rank-n">2</span></li>
+            <li><span class="rank-loc">Salt Lake City, UT</span><span class="rank-bar"><span style="width:3%"></span></span><span class="rank-n">2</span></li>
+            <li><span class="rank-loc">Phoenix, AZ</span><span class="rank-bar"><span style="width:3%"></span></span><span class="rank-n">2</span></li>
+            <li><span class="rank-loc">Birmingham, AL</span><span class="rank-bar"><span style="width:3%"></span></span><span class="rank-n">2</span></li>
+            <li class="rank-more"><span class="rank-loc">+ 9 more cities</span><span class="rank-n">9</span></li>
+          </ol>
+        </aside>
+        </div>
+
+        <!-- Live activity ticker -->
+        <div class="reach-ticker" aria-hidden="true">
+          <span class="tick-pulse"></span>
+          <span class="tick-label">UPLOAD STREAM</span>
+          <div class="tick-track">
+            <div class="tick-belt">
+              <span class="tick-event"><span class="tick-time">14:32:01</span><span class="tick-loc">DENVER, CO</span><span class="tick-act">+1 protocol indexed</span></span>
+              <span class="tick-event"><span class="tick-time">13:08:44</span><span class="tick-loc">PHILADELPHIA, PA</span><span class="tick-act">+1 protocol indexed</span></span>
+              <span class="tick-event"><span class="tick-time">11:51:19</span><span class="tick-loc">NYC, NY</span><span class="tick-act">+1 protocol indexed</span></span>
+              <span class="tick-event"><span class="tick-time">10:22:08</span><span class="tick-loc">MIAMI, FL</span><span class="tick-act">+1 protocol indexed</span></span>
+              <span class="tick-event"><span class="tick-time">08:47:33</span><span class="tick-loc">LOS ANGELES, CA</span><span class="tick-act">+1 protocol indexed</span></span>
+              <span class="tick-event"><span class="tick-time">07:14:55</span><span class="tick-loc">CHARLESTON, WV</span><span class="tick-act">+1 protocol indexed</span></span>
+              <span class="tick-event"><span class="tick-time">05:38:21</span><span class="tick-loc">SEATTLE, WA</span><span class="tick-act">+1 protocol indexed</span></span>
+              <span class="tick-event"><span class="tick-time">03:11:02</span><span class="tick-loc">PHOENIX, AZ</span><span class="tick-act">+1 protocol indexed</span></span>
+              <!-- duplicates for seamless loop -->
+              <span class="tick-event"><span class="tick-time">14:32:01</span><span class="tick-loc">DENVER, CO</span><span class="tick-act">+1 protocol indexed</span></span>
+              <span class="tick-event"><span class="tick-time">13:08:44</span><span class="tick-loc">PHILADELPHIA, PA</span><span class="tick-act">+1 protocol indexed</span></span>
+              <span class="tick-event"><span class="tick-time">11:51:19</span><span class="tick-loc">NYC, NY</span><span class="tick-act">+1 protocol indexed</span></span>
+              <span class="tick-event"><span class="tick-time">10:22:08</span><span class="tick-loc">MIAMI, FL</span><span class="tick-act">+1 protocol indexed</span></span>
+              <span class="tick-event"><span class="tick-time">08:47:33</span><span class="tick-loc">LOS ANGELES, CA</span><span class="tick-act">+1 protocol indexed</span></span>
+              <span class="tick-event"><span class="tick-time">07:14:55</span><span class="tick-loc">CHARLESTON, WV</span><span class="tick-act">+1 protocol indexed</span></span>
+              <span class="tick-event"><span class="tick-time">05:38:21</span><span class="tick-loc">SEATTLE, WA</span><span class="tick-act">+1 protocol indexed</span></span>
+              <span class="tick-event"><span class="tick-time">03:11:02</span><span class="tick-loc">PHOENIX, AZ</span><span class="tick-act">+1 protocol indexed</span></span>
+            </div>
+          </div>
         </div>
 
         <dl class="reach-stats" id="reachStats" data-live="reach">
