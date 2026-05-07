@@ -3019,11 +3019,23 @@
             };
             const hideWTip = () => { if (tipW) tipW.style.visibility = 'hidden'; };
 
+            const WORLD_DOT_NUDGE = {
+              'Vancouver, BC': { dx: 12, dy: 0 },
+            };
+            const WORLD_LABEL_OFFSETS = {
+              'Toronto, ON':   { dx: -14, dy: -14, anchor: 'end' },
+              'Quebec, QC':    { dx: 14,  dy: 12,  anchor: 'start' },
+              'Vancouver, BC': { dx: 0,   dy: -14, anchor: 'middle' },
+              'London':        { dx: 0,   dy: -14, anchor: 'middle' },
+              'Berlin':        { dx: 14,  dy: 4,   anchor: 'start' },
+            };
             for (const loc of intl) {
+              const nudge = WORLD_DOT_NUDGE[loc.city] || { dx: 0, dy: 0 };
+              const lx = loc.x + nudge.dx, ly = loc.y + nudge.dy;
               const tier = loc.tier || (loc.count >= 5 ? 'warm' : loc.count >= 2 ? 'on' : 'tiny');
               const dot = document.createElementNS(SVG_NS2, 'g');
               dot.setAttribute('class', `locale ${tier === 'hot' ? 'hot' : tier === 'warm' ? 'warm' : ''}`.trim());
-              dot.setAttribute('transform', `translate(${loc.x} ${loc.y})`);
+              dot.setAttribute('transform', `translate(${lx} ${ly})`);
               dot.setAttribute('data-key', `${loc.country}|${loc.city}`);
               dot.setAttribute('tabindex', '0');
               dot.setAttribute('role', 'button');
@@ -3040,7 +3052,7 @@
               hit.setAttribute('fill', 'transparent');
               hit.setAttribute('class', 'hit');
               dot.appendChild(hit);
-              dot.addEventListener('mouseenter', () => showWTip(loc.x, loc.y, loc.city.toUpperCase(), loc.count));
+              dot.addEventListener('mouseenter', () => showWTip(lx, ly, loc.city.toUpperCase(), loc.count));
               dot.addEventListener('mouseleave', hideWTip);
               dot.addEventListener('click', () => showReachDetail({
                 state: loc.country, city: loc.city, count: loc.count, topProtocols: loc.topProtocols,
@@ -3050,14 +3062,14 @@
                 if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); dot.click(); }
               });
               intlG.appendChild(dot);
-              // Permanent label
+              const wOff = WORLD_LABEL_OFFSETS[loc.city] || { dx: 0, dy: -12, anchor: 'middle' };
               const lbl = document.createElementNS(SVG_NS2, 'text');
               const cls = tier === 'warm' ? 'rl rl-warm' : tier === 'on' ? 'rl rl-on' : 'rl rl-tiny';
               lbl.setAttribute('class', cls);
               lbl.setAttribute('data-key', `${loc.country}|${loc.city}`);
-              lbl.setAttribute('x', loc.x);
-              lbl.setAttribute('y', loc.y - 12);
-              lbl.setAttribute('text-anchor', 'middle');
+              lbl.setAttribute('x', lx + wOff.dx);
+              lbl.setAttribute('y', ly + wOff.dy);
+              lbl.setAttribute('text-anchor', wOff.anchor);
               lbl.setAttribute('pointer-events', 'none');
               const cityT = document.createElementNS(SVG_NS2, 'tspan'); cityT.textContent = loc.city.toUpperCase();
               const countT = document.createElementNS(SVG_NS2, 'tspan');
