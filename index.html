@@ -3148,11 +3148,10 @@
     });
 
     // === Reach map: pan + zoom ===
-    (function setupReachZoom() {
+    // === Reach map: pan + zoom (works on both US + World maps) ===
+    function setupReachZoom(svg, VB_W, VB_H, getIsActive) {
       const stage = document.querySelector('.reach-stage');
-      const svg = document.querySelector('.reach-svg');
       if (!stage || !svg) return;
-      const VB_W = 959, VB_H = 593;
       const MIN_ZOOM = 1, MAX_ZOOM = 6;
       let vbX = 0, vbY = 0, vbW = VB_W, vbH = VB_H;
       let zoom = 1;
@@ -3160,8 +3159,8 @@
       const apply = () => {
         svg.setAttribute('viewBox', `${vbX} ${vbY} ${vbW} ${vbH}`);
         svg.classList.toggle('is-zoomed', zoom > 1);
-        // Scale labels & dot strokes inversely so they stay constant on screen
         svg.style.setProperty('--rz', 1 / zoom);
+        if (!getIsActive()) return;
         const reset = stage.querySelector('.reach-zoom-reset');
         if (reset) reset.hidden = zoom <= 1.001;
         const zin = stage.querySelector('.reach-zoom-in');
@@ -3169,59 +3168,45 @@
         if (zin) zin.disabled = zoom >= MAX_ZOOM - 0.01;
         if (zout) zout.disabled = zoom <= MIN_ZOOM + 0.01;
       };
-
       const clamp = () => {
-        // Clamp pan so viewBox stays inside the original 0..VB_W / 0..VB_H
         if (vbX < 0) vbX = 0;
         if (vbY < 0) vbY = 0;
         if (vbX + vbW > VB_W) vbX = VB_W - vbW;
         if (vbY + vbH > VB_H) vbY = VB_H - vbH;
       };
-
-      const screenToSvg = (clientX, clientY) => {
+      const screenToSvg = (cx, cy) => {
         const r = svg.getBoundingClientRect();
-        const px = (clientX - r.left) / r.width;
-        const py = (clientY - r.top) / r.height;
-        // Account for preserveAspectRatio xMidYMid meet (letterbox if aspect mismatch)
-        const sx = vbX + px * vbW;
-        const sy = vbY + py * vbH;
-        return { x: sx, y: sy };
+        return { x: vbX + ((cx - r.left) / r.width) * vbW, y: vbY + ((cy - r.top) / r.height) * vbH };
       };
-
-      const setZoom = (newZoom, anchorClientX, anchorClientY) => {
+      const setZoom = (newZoom, ax, ay) => {
         newZoom = Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, newZoom));
         if (newZoom === zoom) return;
-        // Anchor: keep the SVG point under the anchor screen position fixed
-        const cx = anchorClientX ?? (svg.getBoundingClientRect().left + svg.getBoundingClientRect().width / 2);
-        const cy = anchorClientY ?? (svg.getBoundingClientRect().top + svg.getBoundingClientRect().height / 2);
+        const r = svg.getBoundingClientRect();
+        const cx = ax ?? (r.left + r.width / 2);
+        const cy = ay ?? (r.top + r.height / 2);
         const before = screenToSvg(cx, cy);
         zoom = newZoom;
-        vbW = VB_W / zoom;
-        vbH = VB_H / zoom;
-        // Re-derive vbX/vbY so before === screenToSvg(cx, cy) after
-        const r = svg.getBoundingClientRect();
-        const px = (cx - r.left) / r.width;
-        const py = (cy - r.top) / r.height;
+        vbW = VB_W / zoom; vbH = VB_H / zoom;
+        const r2 = svg.getBoundingClientRect();
+        const px = (cx - r2.left) / r2.width;
+        const py = (cy - r2.top) / r2.height;
         vbX = before.x - px * vbW;
         vbY = before.y - py * vbH;
-        clamp();
-        apply();
-        // Toggle "show all labels" CSS on deep zoom for previously-suppressed dots
+        clamp(); apply();
         svg.classList.toggle('is-deepzoom', zoom > 1.8);
       };
 
-      // Wheel: zoom at cursor. Only intercept when actually over the stage.
-      stage.addEventListener('wheel', (e) => {
-        if (zoom === MIN_ZOOM && e.deltaY > 0) return; // already at min, let page scroll
+      svg.addEventListener('wheel', (e) => {
+        if (!getIsActive()) return;
+        if (zoom === MIN_ZOOM && e.deltaY > 0) return;
         e.preventDefault();
         const factor = e.deltaY < 0 ? 1.15 : 1 / 1.15;
         setZoom(zoom * factor, e.clientX, e.clientY);
       }, { passive: false });
 
-      // Drag to pan
       let dragging = false, dragMoved = false, dragStartX = 0, dragStartY = 0, vbStartX = 0, vbStartY = 0;
-      const onPointerDown = (e) => {
-        // Only left button on mouse, and not on UI buttons
+      svg.addEventListener('pointerdown', (e) => {
+        if (!getIsActive()) return;
         if (e.button !== undefined && e.button !== 0) return;
         if (e.target.closest('.reach-zoom-ui')) return;
         dragging = true; dragMoved = false;
@@ -3229,75 +3214,72 @@
         vbStartX = vbX; vbStartY = vbY;
         svg.classList.add('is-panning');
         svg.setPointerCapture?.(e.pointerId);
-      };
-      const onPointerMove = (e) => {
+      });
+      svg.addEventListener('pointermove', (e) => {
         if (!dragging) return;
         const r = svg.getBoundingClientRect();
-        const dxScreen = e.clientX - dragStartX;
-        const dyScreen = e.clientY - dragStartY;
-        if (Math.abs(dxScreen) > 4 || Math.abs(dyScreen) > 4) dragMoved = true;
-        // Convert screen delta to SVG delta
-        vbX = vbStartX - (dxScreen / r.width) * vbW;
-        vbY = vbStartY - (dyScreen / r.height) * vbH;
-        clamp();
-        apply();
-      };
-      const onPointerUp = (e) => {
+        const dx = e.clientX - dragStartX, dy = e.clientY - dragStartY;
+        if (Math.abs(dx) > 4 || Math.abs(dy) > 4) dragMoved = true;
+        vbX = vbStartX - (dx / r.width) * vbW;
+        vbY = vbStartY - (dy / r.height) * vbH;
+        clamp(); apply();
+      });
+      const onUp = (e) => {
         if (!dragging) return;
         dragging = false;
         svg.classList.remove('is-panning');
         svg.releasePointerCapture?.(e.pointerId);
       };
-      svg.addEventListener('pointerdown', onPointerDown);
-      svg.addEventListener('pointermove', onPointerMove);
-      svg.addEventListener('pointerup', onPointerUp);
-      svg.addEventListener('pointercancel', onPointerUp);
-
-      // Suppress dot clicks if we just panned (drag-to-click distinction)
+      svg.addEventListener('pointerup', onUp);
+      svg.addEventListener('pointercancel', onUp);
       svg.addEventListener('click', (e) => {
         if (dragMoved) { e.stopPropagation(); e.preventDefault(); dragMoved = false; }
       }, true);
 
-      // Pinch (touch): two-finger zoom via pointer events
-      const activePointers = new Map();
-      svg.addEventListener('pointerdown', (e) => { if (e.pointerType === 'touch') activePointers.set(e.pointerId, e); });
+      const ptrs = new Map();
+      svg.addEventListener('pointerdown', (e) => { if (e.pointerType === 'touch') ptrs.set(e.pointerId, e); });
       svg.addEventListener('pointermove', (e) => {
-        if (e.pointerType !== 'touch' || !activePointers.has(e.pointerId)) return;
-        activePointers.set(e.pointerId, e);
-        if (activePointers.size === 2) {
-          const [a, b] = [...activePointers.values()];
-          const dist = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
-          const cx = (a.clientX + b.clientX) / 2;
-          const cy = (a.clientY + b.clientY) / 2;
-          if (svg._lastPinchDist) {
-            const factor = dist / svg._lastPinchDist;
-            setZoom(zoom * factor, cx, cy);
-          }
-          svg._lastPinchDist = dist;
-          dragMoved = true; // disable click on dot
+        if (e.pointerType !== 'touch' || !ptrs.has(e.pointerId)) return;
+        ptrs.set(e.pointerId, e);
+        if (ptrs.size === 2) {
+          const [a, b] = [...ptrs.values()];
+          const d = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
+          const cx = (a.clientX + b.clientX) / 2, cy = (a.clientY + b.clientY) / 2;
+          if (svg._lpd) setZoom(zoom * (d / svg._lpd), cx, cy);
+          svg._lpd = d;
+          dragMoved = true;
         }
       });
-      const dropPointer = (e) => {
-        activePointers.delete(e.pointerId);
-        if (activePointers.size < 2) svg._lastPinchDist = 0;
-      };
-      svg.addEventListener('pointerup', dropPointer);
-      svg.addEventListener('pointercancel', dropPointer);
+      const drop = (e) => { ptrs.delete(e.pointerId); if (ptrs.size < 2) svg._lpd = 0; };
+      svg.addEventListener('pointerup', drop);
+      svg.addEventListener('pointercancel', drop);
 
-      // Double-click toggles 2x zoom at point (or reset if already zoomed)
       svg.addEventListener('dblclick', (e) => {
+        if (!getIsActive()) return;
         e.preventDefault();
-        if (zoom > 1.001) { setZoom(1); }
-        else { setZoom(2.5, e.clientX, e.clientY); }
+        if (zoom > 1.001) setZoom(1); else setZoom(2.5, e.clientX, e.clientY);
       });
 
-      // Buttons
-      stage.querySelector('.reach-zoom-in')?.addEventListener('click', () => setZoom(zoom * 1.4));
-      stage.querySelector('.reach-zoom-out')?.addEventListener('click', () => setZoom(zoom / 1.4));
-      stage.querySelector('.reach-zoom-reset')?.addEventListener('click', () => setZoom(1));
-
       apply();
-    })();
+      return {
+        zoomIn: () => setZoom(zoom * 1.4),
+        zoomOut: () => setZoom(zoom / 1.4),
+        reset: () => setZoom(1),
+      };
+    }
+
+    // Wire both maps
+    const usSvgEl = document.querySelector('.reach-svg');
+    const worldSvgEl = document.querySelector('.reach-svg-world');
+    const stageEl = document.querySelector('.reach-stage');
+    const isUsActive = () => stageEl && !stageEl.classList.contains('is-world');
+    const isWorldActive = () => stageEl && stageEl.classList.contains('is-world');
+    const usZoom = usSvgEl ? setupReachZoom(usSvgEl, 959, 593, isUsActive) : null;
+    const worldZoom = worldSvgEl ? setupReachZoom(worldSvgEl, 950, 620, isWorldActive) : null;
+    const activeZoom = () => isWorldActive() ? worldZoom : usZoom;
+    document.querySelector('.reach-zoom-in')?.addEventListener('click', () => activeZoom()?.zoomIn());
+    document.querySelector('.reach-zoom-out')?.addEventListener('click', () => activeZoom()?.zoomOut());
+    document.querySelector('.reach-zoom-reset')?.addEventListener('click', () => activeZoom()?.reset());
   </script>
 </body>
 </html>
