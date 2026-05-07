@@ -467,6 +467,118 @@
     .hero-meta .star{color:var(--amber); margin-right:2px;}
     .hero-meta .green{color:var(--green);}
 
+    /* === Conveyor hero (corpus-flex) === */
+    .hero-cv{padding:0 0 32px;border-bottom:1px solid var(--line);position:relative;overflow:hidden;}
+    .hero-cv::before{
+      content:"";position:absolute;top:32%;left:50%;width:1100px;height:600px;
+      transform:translate(-50%,-50%);
+      background:radial-gradient(ellipse, rgba(255,176,0,.10), transparent 65%);
+      pointer-events:none;
+    }
+    .hero-cv .wrap{position:relative;z-index:5;padding-top:120px;}
+    .hero-cv h1{margin-bottom:18px;}
+    .hero-cv .answer-tag{
+      font-family:var(--mono);font-size:clamp(15px,1.3vw,19px);
+      color:var(--amber);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:18px;
+    }
+    .hero-cv .lede{
+      font-family:var(--sans);font-size:clamp(17px,1.4vw,21px);line-height:1.55;
+      color:var(--ink-soft);max-width:65ch;margin-bottom:10px;
+    }
+    .hero-cv .lede em{color:var(--ink);font-weight:700;font-style:normal;}
+    .hero-cv .until{
+      font-family:var(--mono);font-size:clamp(18px,1.5vw,22px);
+      color:var(--ink);font-weight:700;text-transform:uppercase;letter-spacing:.04em;
+      margin:14px 0 36px;
+    }
+    .conveyor{position:relative;width:100%;padding:18px 0;margin-top:8px;}
+    .conveyor-eyebrow{
+      text-align:center;margin-bottom:16px;
+      font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+      color:var(--ink-soft);font-weight:600;
+    }
+    .conveyor-eyebrow .live{color:var(--green);font-weight:700;}
+    .conveyor-eyebrow .green-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green);vertical-align:middle;margin:0 8px 2px;box-shadow:0 0 8px var(--green);}
+    .conveyor-eyebrow .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--amber);vertical-align:middle;margin:0 10px 2px;animation:cvPulse 2s ease-in-out infinite;box-shadow:0 0 8px var(--amber);}
+    @keyframes cvPulse{0%,100%{opacity:.4;}50%{opacity:1;}}
+    .belt{
+      position:relative;width:100%;overflow:hidden;
+      mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 94%,transparent 100%);
+      -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 94%,transparent 100%);
+    }
+    .track{display:flex;gap:14px;animation:cvScroll 70s linear infinite;width:max-content;align-items:flex-end;padding:8px 0;}
+    @keyframes cvScroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+    .doc{
+      flex-shrink:0;background:var(--panel);border:1px solid var(--line);border-radius:3px;
+      padding:12px 12px 10px;
+      box-shadow:0 1px 0 rgba(255,176,0,.04),0 8px 24px rgba(0,0,0,.5);
+      display:flex;flex-direction:column;justify-content:space-between;
+      position:relative;font-family:var(--mono);
+    }
+    .doc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--amber);border-radius:3px 3px 0 0;}
+    .doc.c2::before{background:var(--green);}
+    .doc.c3::before{background:var(--amber-deep);}
+    .doc.c4::before{background:#ff7a00;}
+    .doc.c5::before{background:#7a5a00;}
+    .doc-eyebrow{font-size:7.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;font-weight:700;}
+    .doc-title{font-size:10.5px;line-height:1.25;color:var(--ink);font-weight:700;margin-bottom:8px;text-transform:uppercase;letter-spacing:.02em;}
+    .doc-lines{display:flex;flex-direction:column;gap:3px;flex:1;margin-bottom:8px;}
+    .doc-lines i{display:block;height:1px;border-radius:1px;background:var(--line);}
+    .doc-lines i:nth-child(odd){width:88%;background:rgba(168,163,153,.18);}
+    .doc-lines i:nth-child(even){width:70%;}
+    .doc-lines i:nth-child(3n){width:55%;}
+    .doc-pages{font-size:8px;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:5px;display:flex;justify-content:space-between;letter-spacing:.04em;}
+    .doc-pages .pg{color:var(--amber);font-weight:700;}
+    .doc.s1{width:130px;height:170px;}
+    .doc.s2{width:140px;height:200px;}
+    .doc.s3{width:120px;height:160px;}
+    .doc.s4{width:155px;height:185px;}
+    .doc.s5{width:135px;height:215px;}
+    .doc.s6{width:148px;height:175px;}
+    .doc.s7{width:125px;height:195px;}
+    .doc.s8{width:160px;height:180px;}
+    .processor{
+      position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+      z-index:10;background:var(--bg);border:1px solid var(--amber);
+      padding:14px 22px;border-radius:6px;
+      box-shadow:0 0 0 4px var(--bg),0 0 32px rgba(255,176,0,.5),inset 0 0 18px rgba(255,176,0,.10);
+      font-family:var(--mono);text-align:center;pointer-events:none;
+    }
+    .processor-name{font-size:14px;font-weight:700;letter-spacing:.08em;color:var(--amber);}
+    .processor-sub{font-size:8.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);margin-top:5px;}
+    .processor::before, .processor::after{
+      content:'';position:absolute;top:50%;width:30px;height:2px;background:var(--amber);transform:translateY(-50%);box-shadow:0 0 8px var(--amber);
+    }
+    .processor::before{left:-32px;}
+    .processor::after{right:-32px;background:var(--green);box-shadow:0 0 8px var(--green);}
+    .stats{
+      max-width:var(--max);margin:0 auto;padding:18px 32px 8px;
+      display:flex;flex-wrap:wrap;gap:8px 32px;
+      font-family:var(--mono);font-size:13px;letter-spacing:.04em;color:var(--ink-soft);
+      border-top:1px solid var(--line);text-transform:uppercase;
+    }
+    .stats .num{color:var(--amber);font-weight:700;font-size:18px;letter-spacing:-.01em;text-transform:none;}
+    .stats .num.zero{color:var(--siren);}
+    .stats span{display:inline-flex;align-items:baseline;gap:8px;}
+    .stats .sep{color:var(--muted);}
+    .intro-row{display:flex;align-items:center;gap:18px;margin-top:24px;flex-wrap:wrap;}
+    .intro-row .chip{
+      font-family:var(--mono);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;
+      color:var(--bg);background:var(--amber);padding:5px 10px;border-radius:3px;font-weight:700;
+    }
+    .intro-row .built{
+      font-family:var(--mono);font-size:13.5px;color:var(--ink-soft);letter-spacing:.06em;text-transform:uppercase;
+    }
+    .intro-row .built b{color:var(--ink);font-weight:700;}
+    .intro-row .cta{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap;}
+    @media (max-width:880px){
+      .hero-cv .wrap{padding-top:96px;}
+      .doc.s1,.doc.s2,.doc.s3,.doc.s4,.doc.s5,.doc.s6,.doc.s7,.doc.s8{transform:scale(.82);transform-origin:bottom center;margin:0 -10px;}
+      .stats{font-size:11.5px;gap:6px 20px;padding:14px 32px 6px;}
+      .stats .num{font-size:16px;}
+      .intro-row .cta{margin-left:0;width:100%;}
+    }
+
     .phone-slot{
       position:relative;
       justify-self:end;
@@ -1261,46 +1373,101 @@
   </div>
 
   <main>
-    <section class="hero">
+    <section class="hero hero-cv">
       <div class="wrap">
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <div class="hero-incident">
-              <span class="siren-dot" aria-hidden="true"></span>
-              INCIDENT <span id="incidentNum">26-1402</span> &middot; ALS PRIORITY 1
-            </div>
-            <h1>Master the protocols you use <span class="highlight">every shift.</span></h1>
-            <p class="hero-sub">
-              Upload your agency's protocol PDF. Quiz yourself on pharmacology, algorithms, and scenarios. Page-cited on every answer.
-            </p>
-            <div class="hero-cta">
-              <a href="https://apps.apple.com/app/id6753611139?utm_source=website&utm_medium=hero&utm_campaign=download"
-                 target="_blank"
-                 rel="noopener"
-                 class="btn btn-primary"
-                 data-track="AppStoreHero">
-                ↓ Download on App Store
-              </a>
-              <a href="#wedge" class="btn btn-ghost">↓ How it works</a>
-            </div>
-            <div class="hero-meta">
-              <span><span class="star">★</span><strong id="appRating">4.7</strong> App Store</span>
-              <span class="sep">·</span>
-              <span><span class="green">●</span> iOS</span>
-              <span class="sep">·</span>
-              <span>Free, ad-supported</span>
-            </div>
-          </div>
+        <div class="hero-incident">
+          <span class="siren-dot" aria-hidden="true"></span>
+          INCIDENT <span id="incidentNum">26-1402</span> &middot; ALS PRIORITY 1
+        </div>
+        <h1>What do EMTs &amp; medics use every shift, but <span class="highlight">hardly train on?</span></h1>
+        <div class="answer-tag">Their local protocols.</div>
+        <p class="lede">Every agency has its own. <em>Different drugs. Different formats. Different lengths.</em> Hundreds of pages each. No good way to study them.</p>
+        <p class="until">Until now.</p>
+      </div>
 
-          <div class="phone-slot" data-screen-slot="hero">
-            <div class="phone-frame">
-              <span class="phone-tag">LIVE</span>
-              <img src="app-shots/hero.png" alt="ProtoQuiz drug detail screen showing AMIODARONE dosing" width="600" height="1303" loading="eager" fetchpriority="high">
-            </div>
-            <div class="phone-corners" aria-hidden="true">
-              <span class="c3"></span><span class="c4"></span>
-            </div>
+      <div class="conveyor" aria-hidden="true">
+        <div class="conveyor-eyebrow">
+          <span class="green-dot"></span><span class="live">LIVE</span>
+          <span class="dot"></span>123 protocol sets indexed
+          <span class="dot"></span>71,147 pages processed
+        </div>
+        <div class="belt">
+          <div class="track">
+            <div class="doc s1"><div class="doc-eyebrow">Los Angeles Co</div><div class="doc-title">LA County Treatment Protocols</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">412p</span></div></div>
+            <div class="doc c2 s4"><div class="doc-eyebrow">New York State</div><div class="doc-title">REMAC Unified Protocols</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>v25.1</span><span class="pg">356p</span></div></div>
+            <div class="doc c3 s2"><div class="doc-eyebrow">Massachusetts</div><div class="doc-title">MA OEMS Statewide</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">284p</span></div></div>
+            <div class="doc s3"><div class="doc-eyebrow">New Jersey</div><div class="doc-title">NJ EMS Clinical Practice</div><div class="doc-lines"><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">241p</span></div></div>
+            <div class="doc c4 s5"><div class="doc-eyebrow">Washington</div><div class="doc-title">EMT WA Protocol Set</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2024</span><span class="pg">198p</span></div></div>
+            <div class="doc c5 s6"><div class="doc-eyebrow">Maryland</div><div class="doc-title">MD Medical Protocols</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">327p</span></div></div>
+            <div class="doc s7"><div class="doc-eyebrow">Utah</div><div class="doc-title">Utah EMS Guidelines</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2024</span><span class="pg">219p</span></div></div>
+            <div class="doc c2 s8"><div class="doc-eyebrow">Pennsylvania</div><div class="doc-title">PA BLS Protocols v23.1</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2024</span><span class="pg">176p</span></div></div>
+            <div class="doc c3 s1"><div class="doc-eyebrow">San Diego Co</div><div class="doc-title">SD Protocol Packet</div><div class="doc-lines"><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>24-25</span><span class="pg">381p</span></div></div>
+            <div class="doc s4"><div class="doc-eyebrow">West Virginia</div><div class="doc-title">WV State Protocols</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">304p</span></div></div>
+            <div class="doc c4 s2"><div class="doc-eyebrow">Alabama</div><div class="doc-title">AL Master Protocols 11e</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">422p</span></div></div>
+            <div class="doc c5 s3"><div class="doc-eyebrow">Indiana</div><div class="doc-title">IN EMS Scope of Practice</div><div class="doc-lines"><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">167p</span></div></div>
+            <div class="doc s5"><div class="doc-eyebrow">Santa Cruz Co</div><div class="doc-title">Santa Cruz EMS Policies</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2024</span><span class="pg">289p</span></div></div>
+            <div class="doc c2 s6"><div class="doc-eyebrow">Greater Miami</div><div class="doc-title">Miami-Dade Fire Rescue</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">344p</span></div></div>
+            <div class="doc c3 s7"><div class="doc-eyebrow">Snohomish Co</div><div class="doc-title">Snohomish Co Protocols</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">213p</span></div></div>
+            <div class="doc s8"><div class="doc-eyebrow">Mayo Clinic</div><div class="doc-title">Mayo Clinic Ambulance PCG</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">156p</span></div></div>
+            <div class="doc c4 s1"><div class="doc-eyebrow">Aurora South WI</div><div class="doc-title">Aurora EMS Pre-Hospital</div><div class="doc-lines"><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2024</span><span class="pg">223p</span></div></div>
+            <div class="doc c5 s4"><div class="doc-eyebrow">DC FEMS</div><div class="doc-title">DC Fire EMS Protocols</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">278p</span></div></div>
+            <div class="doc s2"><div class="doc-eyebrow">Thurston Co WA</div><div class="doc-title">Thurston County Field</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">192p</span></div></div>
+            <div class="doc c2 s3"><div class="doc-eyebrow">Clark County</div><div class="doc-title">Clark Co Office of EMS</div><div class="doc-lines"><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">289p</span></div></div>
+            <div class="doc s1"><div class="doc-eyebrow">Los Angeles Co</div><div class="doc-title">LA County Treatment Protocols</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">412p</span></div></div>
+            <div class="doc c2 s4"><div class="doc-eyebrow">New York State</div><div class="doc-title">REMAC Unified Protocols</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>v25.1</span><span class="pg">356p</span></div></div>
+            <div class="doc c3 s2"><div class="doc-eyebrow">Massachusetts</div><div class="doc-title">MA OEMS Statewide</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">284p</span></div></div>
+            <div class="doc s3"><div class="doc-eyebrow">New Jersey</div><div class="doc-title">NJ EMS Clinical Practice</div><div class="doc-lines"><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">241p</span></div></div>
+            <div class="doc c4 s5"><div class="doc-eyebrow">Washington</div><div class="doc-title">EMT WA Protocol Set</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2024</span><span class="pg">198p</span></div></div>
+            <div class="doc c5 s6"><div class="doc-eyebrow">Maryland</div><div class="doc-title">MD Medical Protocols</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">327p</span></div></div>
+            <div class="doc s7"><div class="doc-eyebrow">Utah</div><div class="doc-title">Utah EMS Guidelines</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2024</span><span class="pg">219p</span></div></div>
+            <div class="doc c2 s8"><div class="doc-eyebrow">Pennsylvania</div><div class="doc-title">PA BLS Protocols v23.1</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2024</span><span class="pg">176p</span></div></div>
+            <div class="doc c3 s1"><div class="doc-eyebrow">San Diego Co</div><div class="doc-title">SD Protocol Packet</div><div class="doc-lines"><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>24-25</span><span class="pg">381p</span></div></div>
+            <div class="doc s4"><div class="doc-eyebrow">West Virginia</div><div class="doc-title">WV State Protocols</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">304p</span></div></div>
+            <div class="doc c4 s2"><div class="doc-eyebrow">Alabama</div><div class="doc-title">AL Master Protocols 11e</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">422p</span></div></div>
+            <div class="doc c5 s3"><div class="doc-eyebrow">Indiana</div><div class="doc-title">IN EMS Scope of Practice</div><div class="doc-lines"><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">167p</span></div></div>
+            <div class="doc s5"><div class="doc-eyebrow">Santa Cruz Co</div><div class="doc-title">Santa Cruz EMS Policies</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2024</span><span class="pg">289p</span></div></div>
+            <div class="doc c2 s6"><div class="doc-eyebrow">Greater Miami</div><div class="doc-title">Miami-Dade Fire Rescue</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">344p</span></div></div>
+            <div class="doc c3 s7"><div class="doc-eyebrow">Snohomish Co</div><div class="doc-title">Snohomish Co Protocols</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">213p</span></div></div>
+            <div class="doc s8"><div class="doc-eyebrow">Mayo Clinic</div><div class="doc-title">Mayo Clinic Ambulance PCG</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">156p</span></div></div>
+            <div class="doc c4 s1"><div class="doc-eyebrow">Aurora South WI</div><div class="doc-title">Aurora EMS Pre-Hospital</div><div class="doc-lines"><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2024</span><span class="pg">223p</span></div></div>
+            <div class="doc c5 s4"><div class="doc-eyebrow">DC FEMS</div><div class="doc-title">DC Fire EMS Protocols</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">278p</span></div></div>
+            <div class="doc s2"><div class="doc-eyebrow">Thurston Co WA</div><div class="doc-title">Thurston County Field</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">192p</span></div></div>
+            <div class="doc c2 s3"><div class="doc-eyebrow">Clark County</div><div class="doc-title">Clark Co Office of EMS</div><div class="doc-lines"><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">289p</span></div></div>
           </div>
+          <div class="processor">
+            <div class="processor-name">PROTOQUIZ</div>
+            <div class="processor-sub">scoped &middot; cited &middot; signed-off</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats">
+        <span><span class="num">123</span> protocol sets indexed</span>
+        <span class="sep">|</span>
+        <span><span class="num">71,147</span> pages processed</span>
+        <span class="sep">|</span>
+        <span><span class="num">10,000+</span> medications extracted</span>
+        <span class="sep">|</span>
+        <span><span class="num zero">0</span> tools to study them &mdash; until now</span>
+      </div>
+
+      <div class="wrap">
+        <div class="intro-row">
+          <span class="chip">▸ INTRODUCING PROTOQUIZ</span>
+          <span class="built"><b>Built by a paramedic student.</b> For working medics.</span>
+          <div class="cta">
+            <a href="https://apps.apple.com/app/id6753611139?utm_source=website&utm_medium=hero&utm_campaign=download"
+               target="_blank" rel="noopener"
+               class="btn btn-primary" data-track="AppStoreHero">↓ App Store</a>
+            <a href="#wedge" class="btn btn-ghost">↓ How it works</a>
+          </div>
+        </div>
+        <div class="hero-meta" style="margin-top:18px;">
+          <span><span class="star">★</span><strong id="appRating">4.7</strong> App Store</span>
+          <span class="sep">·</span>
+          <span><span class="green">●</span> iOS</span>
+          <span class="sep">·</span>
+          <span>Free, ad-supported</span>
         </div>
       </div>
     </section>
