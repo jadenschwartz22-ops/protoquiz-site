@@ -244,7 +244,7 @@
     }
     @media (max-width:560px){
       .brand-name{display:none;}
-      .brand img{width:42px; height:42px;}
+      .brand img{width:44px; height:44px;}
     }
 
     .statusbar a{color:var(--ink-soft);}
@@ -1884,7 +1884,7 @@
       <div class="conveyor">
         <p class="conveyor-eyebrow">
           <span class="green-dot" aria-hidden="true"></span><span class="live">LIVE</span>
-          <span class="dot" aria-hidden="true"></span><span>indexing protocols across the US</span>
+          <span class="dot" aria-hidden="true"></span><span>indexing protocols across the US &amp; the world</span>
         </p>
         <div class="belt" aria-hidden="true">
           <div class="track">
@@ -2766,13 +2766,11 @@
           // to a higher-count labeled dot (proximity-based clustering).
           const sortedByCount = [...r.locales].sort((a,b)=>b.count-a.count);
           const placedLabels = []; // [{x,y}]
-          const PROX_PX = 18; // SVG units below which a tiny label gets suppressed
+          const isMobile = window.innerWidth <= 880;
+          const PROX_PX = isMobile ? 110 : 18;
           const shouldLabel = (loc) => {
-            // Always label warm/hot
             if (loc.tier === 'hot' || loc.tier === 'warm') return true;
-            // For 'on' (count >= 2) always label
-            if (loc.tier === 'on') return true;
-            // For 'tiny' (count == 1), only label if not too close to an already-placed bigger label
+            if (loc.tier === 'on' && !isMobile) return true;
             for (const p of placedLabels) {
               const dx = p.x - loc.x, dy = p.y - loc.y;
               if (dx*dx + dy*dy < PROX_PX*PROX_PX) return false;
@@ -2861,7 +2859,7 @@
             {
               const off = REACH_CITY_OFFSETS[`${loc.state}|${loc.city}`] || REACH_LABEL_OFFSETS[loc.state] || REACH_DEFAULT_OFFSET;
               const lbl = document.createElementNS(SVG_NS, 'text');
-              const labelClass = tier === 'hot' ? 'rl rl-hot' : tier === 'warm' ? 'rl rl-warm' : (willLabel ? 'rl' : 'rl rl-tiny is-suppressed');
+              const labelClass = tier === 'hot' ? 'rl rl-hot' : tier === 'warm' ? 'rl rl-warm' : willLabel ? 'rl' : ('rl rl-tiny is-suppressed');
               lbl.setAttribute('class', labelClass);
               lbl.setAttribute('data-key', key);
               lbl.setAttribute('x', loc.x + off.dx);
