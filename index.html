@@ -1290,6 +1290,7 @@
       display:block; width:100%; height:100%;
       object-fit:cover;
       object-position:center top;
+      filter:brightness(.82) saturate(.85) sepia(.08);
     }
     .shot-cell:not(:first-child):not(:last-child):nth-child(odd) .shot-frame{transform:translateY(12px);}
     .shot-cell:not(:first-child):not(:last-child):nth-child(odd):hover .shot-frame{transform:translateY(9px);}
@@ -1826,6 +1827,17 @@
 
     :focus-visible{outline:2px solid var(--amber); outline-offset:3px;}
     :focus:not(:focus-visible){outline:none;}
+    .qr-body{padding:32px 24px;text-align:center;}
+    .qr-body img{margin:0 auto 20px;display:block;border-radius:8px;background:#fff;padding:12px;width:200px;height:200px;}
+    .qr-body p{font-family:var(--sans);font-size:15px;color:var(--ink-soft);line-height:1.5;margin-bottom:20px;}
+    .qr-body .qr-link{
+      display:inline-block;font-family:var(--mono);font-size:13px;font-weight:700;
+      letter-spacing:.06em;text-transform:uppercase;color:var(--amber);
+      border:1px solid var(--amber);padding:12px 24px;min-height:44px;
+      text-decoration:none;transition:all .15s;
+    }
+    .qr-body .qr-link:hover{background:var(--amber);color:var(--bg);}
+
     .fade-up{
       opacity:0;
       transform:translateY(20px);
@@ -2400,6 +2412,18 @@
     </div>
   </dialog>
 
+  <dialog id="qrDialog" aria-labelledby="qrDialogTitle" aria-modal="true">
+    <div class="dialog-header">
+      <span class="dialog-title" id="qrDialogTitle">Download ProtoQuiz</span>
+      <button type="button" class="dialog-close" id="qrDialogClose">&times;</button>
+    </div>
+    <div class="qr-body">
+      <img src="qr-appstore.png" alt="QR code to download ProtoQuiz" width="200" height="200">
+      <p>Scan with your phone camera to open in the App Store.</p>
+      <a href="https://apps.apple.com/app/id6753611139" target="_blank" rel="noopener" class="qr-link">Open in App Store</a>
+    </div>
+  </dialog>
+
   <script>
     function tickClock(){
       const d = new Date();
@@ -2614,6 +2638,22 @@
       });
     }
     updateAppStoreLinks();
+
+    /* QR modal for desktop users clicking App Store links */
+    (function(){
+      var dlg = document.getElementById('qrDialog');
+      var isDesktop = matchMedia('(pointer:fine)').matches;
+      if (isDesktop && dlg) {
+        document.addEventListener('click', function(e) {
+          var link = e.target.closest('a[href*="apps.apple.com"]');
+          if (!link || link.closest('#qrDialog')) return;
+          e.preventDefault();
+          dlg.showModal();
+        });
+        document.getElementById('qrDialogClose').addEventListener('click', function(){ dlg.close(); });
+        dlg.addEventListener('click', function(e){ if (e.target === dlg) dlg.close(); });
+      }
+    })();
 
     document.addEventListener('click', (e) => {
       const trackEl = e.target.closest('[data-track]');
