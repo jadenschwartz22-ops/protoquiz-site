@@ -327,12 +327,55 @@ const STATE_CITIES = {
   WY: { city: "Cheyenne",        x:320, y:215 },
 };
 
+// SVG coords for the US-states viewBox 0 0 959 593. Used when AI returns
+// city/state but we don't have a hardcoded city pin yet.
+function coordsForCity(city, state) {
+  // Best effort: scan CITY_RULES for an exact city+state match.
+  for (const [, info] of CITY_RULES) {
+    if (info.state === state && info.city.toLowerCase() === (city || '').toLowerCase()) {
+      return { x: info.x, y: info.y };
+    }
+  }
+  // Fall back to state default.
+  const sc = STATE_CITIES[state];
+  return sc ? { x: sc.x, y: sc.y, fallbackCity: sc.city } : null;
+}
+
 async function getReachStats() {
-  const snap = await db.collection('protocol_uploads').where('status', '==', 'success').get();
+  // Source of truth: protocol_uploads_success.
+  // Each doc carries its own location (locationCity/State/Country) once tagged
+  // by the backend extract pipeline. Filename regex is a fallback for older
+  // docs that haven't been classified yet (no PDF reference, can't backfill).
+  // The legacy `protocol_uploads` collection has been dead since Nov 2025.
+  const snap = await db.collection('protocol_uploads_success').get();
+  let aiHits = 0, regexHits = 0, locUnknown = 0;
+
   const nameCounts = new Map();
   const userIds = new Set();
   let total = 0;
   let pages = 0;
+
+  const stateCounts = new Map();
+  const countryCounts = new Map();
+  const cityData = new Map();   // "STATE|CITY|x|y" -> { count, protocols: Map }
+  const intlData = new Map();   // "COUNTRY|CITY|x|y" -> { count, protocols, countryName }
+  const ensureCity = (k) => { if (!cityData.has(k)) cityData.set(k, { count: 0, protocols: new Map() }); return cityData.get(k); };
+  const ensureIntl = (k) => { if (!intlData.has(k)) intlData.set(k, { count: 0, protocols: new Map() }); return intlData.get(k); };
+
+  // International country code -> world map coords (rough centroids on 1000x500 viewBox)
+  const INTL_COORDS = {
+    GB: { city: 'London',   x: 478, y: 152, name: 'United Kingdom' },
+    CA: { city: 'Toronto',  x: 245, y: 135, name: 'Canada' },
+    AU: { city: 'Sydney',   x: 850, y: 380, name: 'Australia' },
+    NZ: { city: 'Auckland', x: 905, y: 410, name: 'New Zealand' },
+    IE: { city: 'Dublin',   x: 462, y: 150, name: 'Ireland' },
+    DE: { city: 'Berlin',   x: 510, y: 158, name: 'Germany' },
+    FR: { city: 'Paris',    x: 488, y: 170, name: 'France' },
+    IN: { city: 'Delhi',    x: 670, y: 232, name: 'India' },
+    ZA: { city: 'Cape Town',x: 540, y: 380, name: 'South Africa' },
+  };
+
+  // Per-doc loop. AI takes priority; regex is fallback per upload (not per filename).
   for (const d of snap.docs) {
     const x = d.data();
     if (isDev(x.userId)) continue;
@@ -340,55 +383,86 @@ async function getReachStats() {
     if (x.userId) userIds.add(x.userId);
     if (typeof x.pageCount === 'number') pages += x.pageCount;
     else if (typeof x.pages === 'number') pages += x.pages;
-    const n = (x.protocolName || '').trim();
-    if (n) nameCounts.set(n, (nameCounts.get(n) || 0) + 1);
-  }
-  const stateCounts = new Map();
-  // City-level aggregation: key = "STATE|CITY|x|y" -> { count, protocols: Map<name,count> }
-  const cityData = new Map();
-  const ensureCity = (k) => {
-    if (!cityData.has(k)) cityData.set(k, { count: 0, protocols: new Map() });
-    return cityData.get(k);
-  };
-  // International aggregation
-  const intlData = new Map();
-  const countryCounts = new Map();
-  const ensureIntl = (k) => {
-    if (!intlData.has(k)) intlData.set(k, { count: 0, protocols: new Map() });
-    return intlData.get(k);
-  };
-  for (const [name, count] of nameCounts) {
-    const intl = classifyIntl(name);
-    if (intl) {
-      const k = `${intl.country}|${intl.city}|${intl.x}|${intl.y}`;
-      const e = ensureIntl(k);
-      e.count += count;
-      e.protocols.set(name, (e.protocols.get(name) || 0) + count);
-      e.countryName = intl.countryName;
-      countryCounts.set(intl.country, (countryCounts.get(intl.country) || 0) + count);
-      continue;
-    }
-    const cityInfo = classifyCity(name);
-    if (cityInfo) {
-      const k = `${cityInfo.state}|${cityInfo.city}|${cityInfo.x}|${cityInfo.y}`;
-      const e = ensureCity(k);
-      e.count += count;
-      e.protocols.set(name, (e.protocols.get(name) || 0) + count);
-      stateCounts.set(cityInfo.state, (stateCounts.get(cityInfo.state) || 0) + count);
-      continue;
-    }
-    const st = classifyState(name);
-    if (st) {
-      const c = STATE_CITIES[st];
-      if (c) {
-        const k = `${st}|${c.city}|${c.x}|${c.y}`;
-        const e = ensureCity(k);
-        e.count += count;
-        e.protocols.set(name, (e.protocols.get(name) || 0) + count);
+    const name = (x.protocolName || '').trim();
+    if (name) nameCounts.set(name, (nameCounts.get(name) || 0) + 1);
+
+    // Read AI-classified location directly from this doc
+    const ai = (x.locationStatus === 'classified' && (x.locationState || x.locationCountry))
+      ? {
+          country: x.locationCountry || 'US',
+          state: x.locationState || null,
+          city: x.locationCity || null,
+          agency: x.locationAgency || null,
+          confidence: x.locationConfidence || 'low',
+        }
+      : null;
+
+    let placed = false;
+    if (ai) {
+      if (ai.country && ai.country !== 'US') {
+        const meta = INTL_COORDS[ai.country];
+        if (meta) {
+          const k = `${ai.country}|${meta.city}|${meta.x}|${meta.y}`;
+          const e = ensureIntl(k);
+          e.count += 1;
+          if (name) e.protocols.set(name, (e.protocols.get(name) || 0) + 1);
+          e.countryName = meta.name;
+          countryCounts.set(ai.country, (countryCounts.get(ai.country) || 0) + 1);
+          aiHits++; placed = true;
+        }
+      } else if (ai.state) {
+        const coords = coordsForCity(ai.city, ai.state);
+        if (coords) {
+          const cityName = ai.city || coords.fallbackCity || ai.state;
+          const k = `${ai.state}|${cityName}|${coords.x}|${coords.y}`;
+          const e = ensureCity(k);
+          e.count += 1;
+          if (name) e.protocols.set(name, (e.protocols.get(name) || 0) + 1);
+          stateCounts.set(ai.state, (stateCounts.get(ai.state) || 0) + 1);
+          aiHits++; placed = true;
+        }
       }
-      stateCounts.set(st, (stateCounts.get(st) || 0) + count);
     }
+
+    // Fallback: filename regex (legacy path) per doc
+    if (!placed && name) {
+      const intl = classifyIntl(name);
+      if (intl) {
+        const k = `${intl.country}|${intl.city}|${intl.x}|${intl.y}`;
+        const e = ensureIntl(k);
+        e.count += 1;
+        e.protocols.set(name, (e.protocols.get(name) || 0) + 1);
+        e.countryName = intl.countryName;
+        countryCounts.set(intl.country, (countryCounts.get(intl.country) || 0) + 1);
+        regexHits++; placed = true;
+      } else {
+        const cityInfo = classifyCity(name);
+        if (cityInfo) {
+          const k = `${cityInfo.state}|${cityInfo.city}|${cityInfo.x}|${cityInfo.y}`;
+          const e = ensureCity(k);
+          e.count += 1;
+          e.protocols.set(name, (e.protocols.get(name) || 0) + 1);
+          stateCounts.set(cityInfo.state, (stateCounts.get(cityInfo.state) || 0) + 1);
+          regexHits++; placed = true;
+        } else {
+          const st = classifyState(name);
+          if (st) {
+            const c = STATE_CITIES[st];
+            if (c) {
+              const k = `${st}|${c.city}|${c.x}|${c.y}`;
+              const e = ensureCity(k);
+              e.count += 1;
+              e.protocols.set(name, (e.protocols.get(name) || 0) + 1);
+            }
+            stateCounts.set(st, (stateCounts.get(st) || 0) + 1);
+            regexHits++; placed = true;
+          }
+        }
+      }
+    }
+    if (!placed) locUnknown++;
   }
+  console.log(`[reach] uploads=${total} ai=${aiHits} regex=${regexHits} unknown=${locUnknown}`);
   // Tier helper for dot/label sizing.
   const tier = (c) => (c >= 30 ? "hot" : c >= 5 ? "warm" : c >= 2 ? "on" : "tiny");
 
