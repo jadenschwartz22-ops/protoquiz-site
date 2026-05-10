@@ -1,25 +1,25 @@
 {
-  "generatedAt": "2026-05-09T19:07:35.788Z",
-  "totalUploads": 174,
-  "distinctProtocols": 133,
-  "activeStudiers": 68,
-  "pagesProcessed": 17896,
+  "generatedAt": "2026-05-10T19:07:38.864Z",
+  "totalUploads": 175,
+  "distinctProtocols": 134,
+  "activeStudiers": 69,
+  "pagesProcessed": 18121,
   "statesRepresented": 25,
   "countriesRepresented": 1,
   "internationalUploads": 2,
   "byState": {
     "CO": 16,
     "MI": 10,
+    "NY": 7,
     "PA": 6,
-    "NY": 6,
     "CA": 5,
     "AZ": 5,
     "WA": 3,
+    "FL": 3,
     "OK": 2,
     "DC": 2,
     "WI": 2,
     "MA": 2,
-    "FL": 2,
     "NJ": 2,
     "IL": 2,
     "WV": 2,
@@ -127,6 +127,28 @@
       ]
     },
     {
+      "state": "NY",
+      "city": "New York",
+      "x": 858,
+      "y": 185,
+      "count": 5,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "ny collaborative protocols",
+          "count": 1
+        },
+        {
+          "title": "ny collaborative protocols",
+          "count": 1
+        },
+        {
+          "title": "NYS BLS Protocols 2025",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "AZ",
       "city": "Phoenix",
       "x": 182,
@@ -141,28 +163,6 @@
         {
           "title": "tcems protocol 2023",
           "count": 2
-        }
-      ]
-    },
-    {
-      "state": "NY",
-      "city": "New York",
-      "x": 858,
-      "y": 185,
-      "count": 4,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "ny collaborative protocols",
-          "count": 1
-        },
-        {
-          "title": "ny collaborative protocols",
-          "count": 1
-        },
-        {
-          "title": "NYS BLS Protocols 2025",
-          "count": 1
         }
       ]
     },
@@ -310,6 +310,24 @@
         },
         {
           "title": "test.bls",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "FL",
+      "city": "Palm Beach Gardens",
+      "x": 745,
+      "y": 559,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "palmbeachgardensfirerescuepatientcareprotocols2025 091bdd8ec7…",
+          "count": 1
+        },
+        {
+          "title": "palmbeachgardensfirerescuepatientcareprotocols2025 bf30c8b884…",
           "count": 1
         }
       ]
@@ -496,20 +514,6 @@
       "topProtocols": [
         {
           "title": "MFDESNAParamedicFormulary",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "FL",
-      "city": "Palm Beach Gardens",
-      "x": 745,
-      "y": 559,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "palmbeachgardensfirerescuepatientcareprotocols2025 091bdd8ec7…",
           "count": 1
         }
       ]
