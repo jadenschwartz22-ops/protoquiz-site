@@ -15,7 +15,9 @@
 
 import admin from 'firebase-admin';
 import fs from 'fs/promises';
+import fsSync from 'node:fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
 const KEY_PATH = process.env.SERVICE_ACCOUNT_JSON
   || '/Users/jadenschwartz/.secrets/protoquiz/ems-protoquiz-tracking-firebase-adminsdk-fbsvc-658d1741a4.json';
@@ -347,37 +349,83 @@ function canonicalCity(city, state) {
   return CITY_ALIASES[`${state}|${city.toLowerCase()}`] || city;
 }
 
-// Deterministic per-city jitter (px) around the state-default pin so that
-// multiple unknown cities in the same state don't silently stack. ~12-22px
-// radius keeps them visually adjacent to the state but distinguishable.
-function jitterFor(city, state) {
-  const s = `${state}|${(city || '').toLowerCase()}`;
-  let h = 2166136261;
-  for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = (h * 16777619) >>> 0; }
-  const ang = (h % 360) * Math.PI / 180;
-  const rad = 12 + ((h >>> 9) % 11); // 12..22px
-  return { dx: Math.round(Math.cos(ang) * rad), dy: Math.round(Math.sin(ang) * rad) };
+// Albers equal-area conic → SVG (viewBox 0 0 959 593).
+// Affine params least-squares-fitted against ~30 known city→SVG pairs.
+const _d2r = Math.PI / 180;
+const _n = (Math.sin(29.5*_d2r) + Math.sin(45.5*_d2r)) / 2;
+const _C = Math.cos(29.5*_d2r)**2 + 2*_n*Math.sin(29.5*_d2r);
+const _rho0 = Math.sqrt(_C - 2*_n*Math.sin(38*_d2r)) / _n;
+function latLonToSVG(lat, lon) {
+  const phi = lat*_d2r, lam = lon*_d2r;
+  const rho = Math.sqrt(_C - 2*_n*Math.sin(phi)) / _n;
+  const theta = _n * (lam - (-96*_d2r));
+  const ax = rho*Math.sin(theta), ay = _rho0 - rho*Math.cos(theta);
+  return {
+    x: Math.round(1236.71*ax + 48.34*ay + 480.93),
+    y: Math.round(-25.82*ax + -1286.77*ay + 311.71),
+  };
 }
 
-// SVG coords for the US-states viewBox 0 0 959 593. Used when AI returns
-// city/state but we don't have a hardcoded city pin yet.
+// Geocode cache: scripts/data/geocode-cache.json
+const __dir = path.dirname(fileURLToPath(import.meta.url));
+const GEO_CACHE_PATH = path.join(__dir, 'data', 'geocode-cache.json');
+let _geoCache = {};
+try { _geoCache = JSON.parse(fsSync.readFileSync(GEO_CACHE_PATH, 'utf8')); } catch {}
+
+async function geocodeToSVG(city, state) {
+  const key = `${state}|${city}`;
+  if (_geoCache[key]) return _geoCache[key];
+  try {
+    const q = encodeURIComponent(`${city}, ${state}, United States`);
+    const r = await fetch(`https://nominatim.openstreetmap.org/search?q=${q}&format=json&limit=1&countrycodes=us`, {
+      headers: { 'User-Agent': 'ProtoQuiz-ReachMap/1.0' }
+    });
+    const data = await r.json();
+    if (!data.length) return null;
+    const { lat, lon } = data[0];
+    const sv = latLonToSVG(parseFloat(lat), parseFloat(lon));
+    sv.lat = parseFloat(lat); sv.lon = parseFloat(lon);
+    sv.x = Math.max(0, Math.min(959, sv.x));
+    sv.y = Math.max(0, Math.min(593, sv.y));
+    _geoCache[key] = sv;
+    await new Promise(r => setTimeout(r, 1100)); // Nominatim 1 req/s
+    return sv;
+  } catch (e) {
+    console.warn(`[reach] geocode failed for ${city}, ${state}:`, e.message);
+    return null;
+  }
+}
+
+function flushGeoCache() {
+  try {
+    const dir = path.dirname(GEO_CACHE_PATH);
+    if (!fsSync.existsSync(dir)) fsSync.mkdirSync(dir, { recursive: true });
+    fsSync.writeFileSync(GEO_CACHE_PATH, JSON.stringify(_geoCache, null, 2));
+  } catch (e) { console.warn('[reach] cache write failed:', e.message); }
+}
+
+// SVG coords for the US-states viewBox 0 0 959 593.
+// Priority: CITY_RULES regex → geocode → state default.
+const _pendingGeocodes = [];
 function coordsForCity(city, state) {
   const canon = canonicalCity(city, state);
-  // Best effort: scan CITY_RULES for an exact city+state match.
   for (const [, info] of CITY_RULES) {
     if (info.state === state && info.city.toLowerCase() === (canon || '').toLowerCase()) {
       return { x: info.x, y: info.y, canonicalCity: canon };
     }
   }
-  // Fall back to state default + deterministic jitter so unknown cities never
-  // silently stack on top of the state pin or each other.
+  const geoKey = `${state}|${canon || city}`;
+  if (_geoCache[geoKey]) {
+    const c = _geoCache[geoKey];
+    return { x: c.x, y: c.y, canonicalCity: canon };
+  }
+  if (canon && state) _pendingGeocodes.push({ city: canon, state });
   const sc = STATE_CITIES[state];
   if (!sc) return null;
   if (!canon || canon.toLowerCase() === sc.city.toLowerCase()) {
     return { x: sc.x, y: sc.y, fallbackCity: sc.city, canonicalCity: canon };
   }
-  const j = jitterFor(canon, state);
-  return { x: sc.x + j.dx, y: sc.y + j.dy, fallbackCity: sc.city, canonicalCity: canon };
+  return { x: sc.x, y: sc.y, fallbackCity: sc.city, canonicalCity: canon };
 }
 
 async function getReachStats() {
@@ -529,7 +577,37 @@ async function getReachStats() {
     return t;
   }
 
-  // Build the locales array consumed by the homepage to render dots dynamically.
+  // Resolve pending geocodes for cities the AI classified but we have no coords for.
+  if (_pendingGeocodes.length) {
+    const unique = [...new Map(_pendingGeocodes.map(g => [`${g.state}|${g.city}`, g])).values()];
+    console.log(`[reach] geocoding ${unique.length} unknown cities...`);
+    for (const { city, state } of unique) {
+      const sv = await geocodeToSVG(city, state);
+      if (sv) console.log(`[reach]   ${city}, ${state} → (${sv.x}, ${sv.y})`);
+      else console.warn(`[reach]   ${city}, ${state} → FAILED`);
+    }
+    flushGeoCache();
+    // Re-resolve any cityData entries that used state defaults
+    for (const [k, data] of [...cityData.entries()]) {
+      const [state, city, x, y] = k.split('|');
+      const sc = STATE_CITIES[state];
+      if (!sc) continue;
+      const geoKey = `${state}|${city}`;
+      const cached = _geoCache[geoKey];
+      if (cached && (Number(x) === sc.x || Math.abs(Number(x)-sc.x) < 25) && Number(x) !== cached.x) {
+        cityData.delete(k);
+        const newK = `${state}|${city}|${cached.x}|${cached.y}`;
+        const existing = cityData.get(newK);
+        if (existing) {
+          existing.count += data.count;
+          for (const [p, c] of data.protocols) existing.protocols.set(p, (existing.protocols.get(p)||0)+c);
+        } else {
+          cityData.set(newK, data);
+        }
+      }
+    }
+  }
+
   const locales = [...cityData.entries()]
     .map(([k, { count, protocols }]) => {
       const [state, city, x, y] = k.split('|');
