@@ -211,6 +211,11 @@ const CITY_RULES = [
   [/thurston/i,                                       { state:'WA', city:'Olympia',         x:115, y:80 }],
   [/emt[\s_-]?wa\b|\bwa[\s_-]?protocol|\bwa[\s_-]?bls/i,{ state:'WA', city:'Statewide WA',  x:116, y:50 }],
   [/dmemsmd|denver[\s_-]?metro|\bdenver\b/i,          { state:'CO', city:'Denver',          x:324, y:263 }],
+  [/boco|boulder/i,                                   { state:'CO', city:'Boulder',         x:316, y:255 }],
+  [/loveland|larimer|tvems/i,                         { state:'CO', city:'Loveland',        x:318, y:243 }],
+  [/colorado[\s_-]?springs/i,                         { state:'CO', city:'Colorado Springs',x:332, y:278 }],
+  [/west[\s_-]?palm[\s_-]?beach|\bwpb\b/i,            { state:'FL', city:'West Palm Beach', x:750, y:538 }],
+  [/palm[\s_-]?beach[\s_-]?gardens/i,                 { state:'FL', city:'Palm Beach Gardens', x:752, y:530 }],
   [/fdny|nyc[\s_-]?ems/i,                             { state:'NY', city:'NYC',             x:858, y:185 }],
   [/\bnys?\b[\s_-]?coll|\bremac\b|ny[\s_-]?colla?b|ny_collab|new[\s_-]?york/i, { state:'NY', city:'New York', x:858, y:185 }],
   [/austin[\s_-]?travis|\beprip\b|erip[\s_-]?tx/i,    { state:'TX', city:'Austin',          x:441, y:512 }],
@@ -327,27 +332,63 @@ const STATE_CITIES = {
   WY: { city: "Cheyenne",        x:320, y:215 },
 };
 
+// Aliases collapse synonyms into a single canonical city so they don't render
+// as two stacked dots. Key: `${state}|${cityLowercase}` -> canonical city.
+const CITY_ALIASES = {
+  'NY|new york city': 'New York',
+  'NY|nyc':           'New York',
+  'NY|manhattan':     'New York',
+  'NY|brooklyn':      'New York',
+  'NY|bronx':         'New York',
+  'NY|queens':        'New York',
+};
+function canonicalCity(city, state) {
+  if (!city) return city;
+  return CITY_ALIASES[`${state}|${city.toLowerCase()}`] || city;
+}
+
+// Deterministic per-city jitter (px) around the state-default pin so that
+// multiple unknown cities in the same state don't silently stack. ~12-22px
+// radius keeps them visually adjacent to the state but distinguishable.
+function jitterFor(city, state) {
+  const s = `${state}|${(city || '').toLowerCase()}`;
+  let h = 2166136261;
+  for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = (h * 16777619) >>> 0; }
+  const ang = (h % 360) * Math.PI / 180;
+  const rad = 12 + ((h >>> 9) % 11); // 12..22px
+  return { dx: Math.round(Math.cos(ang) * rad), dy: Math.round(Math.sin(ang) * rad) };
+}
+
 // SVG coords for the US-states viewBox 0 0 959 593. Used when AI returns
 // city/state but we don't have a hardcoded city pin yet.
 function coordsForCity(city, state) {
+  const canon = canonicalCity(city, state);
   // Best effort: scan CITY_RULES for an exact city+state match.
   for (const [, info] of CITY_RULES) {
-    if (info.state === state && info.city.toLowerCase() === (city || '').toLowerCase()) {
-      return { x: info.x, y: info.y };
+    if (info.state === state && info.city.toLowerCase() === (canon || '').toLowerCase()) {
+      return { x: info.x, y: info.y, canonicalCity: canon };
     }
   }
-  // Fall back to state default.
+  // Fall back to state default + deterministic jitter so unknown cities never
+  // silently stack on top of the state pin or each other.
   const sc = STATE_CITIES[state];
-  return sc ? { x: sc.x, y: sc.y, fallbackCity: sc.city } : null;
+  if (!sc) return null;
+  if (!canon || canon.toLowerCase() === sc.city.toLowerCase()) {
+    return { x: sc.x, y: sc.y, fallbackCity: sc.city, canonicalCity: canon };
+  }
+  const j = jitterFor(canon, state);
+  return { x: sc.x + j.dx, y: sc.y + j.dy, fallbackCity: sc.city, canonicalCity: canon };
 }
 
 async function getReachStats() {
-  // Source of truth: protocol_uploads_success.
+  // Source of truth: protocol_uploads_v2 where status='success'.
   // Each doc carries its own location (locationCity/State/Country) once tagged
-  // by the backend extract pipeline. Filename regex is a fallback for older
-  // docs that haven't been classified yet (no PDF reference, can't backfill).
-  // The legacy `protocol_uploads` collection has been dead since Nov 2025.
-  const snap = await db.collection('protocol_uploads_success').get();
+  // by monitor.js's classifyAndPersistLocation handler. Filename regex remains
+  // a fallback for older docs without a PDF reference.
+  // Switched 2026-05-09 from legacy protocol_uploads_success (still dual-written
+  // for ~30d as backup); pre-cutover docs were backfilled to v2 via
+  // scripts/backfill-uploads-v2.mjs. Legacy `protocol_uploads` is dead since Nov 2025.
+  const snap = await db.collection('protocol_uploads_v2').where('status', '==', 'success').get();
   let aiHits = 0, regexHits = 0, locUnknown = 0;
 
   const nameCounts = new Map();
@@ -413,7 +454,7 @@ async function getReachStats() {
       } else if (ai.state) {
         const coords = coordsForCity(ai.city, ai.state);
         if (coords) {
-          const cityName = ai.city || coords.fallbackCity || ai.state;
+          const cityName = coords.canonicalCity || ai.city || coords.fallbackCity || ai.state;
           const k = `${ai.state}|${cityName}|${coords.x}|${coords.y}`;
           const e = ensureCity(k);
           e.count += 1;
@@ -501,6 +542,31 @@ async function getReachStats() {
       };
     })
     .sort((a, b) => b.count - a.count);
+
+  // Final safety net: fan out any locales that still share an exact pixel.
+  // Highest-count locale keeps the pin; the rest get pushed onto a ring around
+  // it (deterministic by city name). Logs a warning so we know to add proper
+  // coords. Never silently overlaps again.
+  {
+    const byCoord = new Map();
+    for (const l of locales) {
+      const k = `${l.x},${l.y}`;
+      if (!byCoord.has(k)) byCoord.set(k, []);
+      byCoord.get(k).push(l);
+    }
+    for (const [k, group] of byCoord) {
+      if (group.length < 2) continue;
+      console.warn(`[reach] coord collision at ${k}: ${group.map(g => `${g.state}|${g.city}=${g.count}`).join(', ')} -- fanning out (add coords to CITY_RULES)`);
+      group.sort((a, b) => b.count - a.count);
+      const [anchor, ...rest] = group;
+      rest.forEach((l, i) => {
+        const ang = (i / rest.length) * Math.PI * 2 + (i === 0 ? -Math.PI / 2 : 0);
+        const rad = 14;
+        l.x = Math.round(anchor.x + Math.cos(ang) * rad);
+        l.y = Math.round(anchor.y + Math.sin(ang) * rad);
+      });
+    }
+  }
 
   // International locales for world view (viewBox 0 0 1000 500)
   const internationalLocales = [...intlData.entries()]

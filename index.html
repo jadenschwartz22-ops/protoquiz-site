@@ -2709,22 +2709,42 @@
     // or that need special positioning even when the state has its own override.
     const REACH_CITY_OFFSETS = {
       "WA|Seattle":          { dx:0,   dy:24,  anchor:"middle" },
+      "WA|Olympia":          { dx:0,   dy:-16, anchor:"middle" },
       "WA|Snohomish County": { dx:30,  dy:6,   anchor:"start"  },
       "WA|Statewide WA":     { dx:30,  dy:32,  anchor:"start"  },
       "OR|Portland":         { dx:0,   dy:18,  anchor:"middle" },
-      "CA|Santa Cruz":       { dx:14,  dy:-2,  anchor:"start"  }, // right of dot, near west edge
+      "CA|Santa Cruz":       { dx:14,  dy:-2,  anchor:"start"  },
       "CA|San Francisco":    { dx:14,  dy:-2,  anchor:"start"  },
-      "CA|Los Angeles":      { dx:0,   dy:22,  anchor:"middle" }, // below dot
-      "CA|San Diego":        { dx:0,   dy:22,  anchor:"middle" }, // below dot
+      "CA|Los Angeles":      { dx:0,   dy:22,  anchor:"middle" },
+      "CA|San Diego":        { dx:0,   dy:22,  anchor:"middle" },
       "CA|Sacramento":       { dx:0,   dy:-12, anchor:"middle" },
-      "AZ|Phoenix":          { dx:18,  dy:4,   anchor:"start"  }, // right of dot
-      "NV|Las Vegas":        { dx:0,   dy:-12, anchor:"middle" }, // above dot, north of LA
+      "AZ|Phoenix":          { dx:18,  dy:4,   anchor:"start"  },
+      "NV|Las Vegas":        { dx:0,   dy:-12, anchor:"middle" },
       "FL|Miami":            { dx:0,   dy:18,  anchor:"middle" },
       "ME|Portland":         { dx:-14, dy:0,   anchor:"end"    },
+      // CO cluster: Denver/Boulder/Loveland within ~20px
+      "CO|Denver":           { dx:14,  dy:6,   anchor:"start"  },
+      "CO|Boulder":          { dx:14,  dy:18,  anchor:"start"  },
+      "CO|Loveland":         { dx:-14, dy:-6,  anchor:"end"    },
+      "CO|Colorado Springs": { dx:14,  dy:18,  anchor:"start"  },
+      // MD/DC: 13px apart vertically
+      "MD|Baltimore":        { dx:14,  dy:-6,  anchor:"start"  },
+      "DC|Washington, D.C.": { dx:14,  dy:18,  anchor:"start"  },
+      // NC/SC: Charlotte above Columbia
+      "NC|Charlotte":        { dx:14,  dy:-6,  anchor:"start"  },
+      "NC|Davidson County":  { dx:14,  dy:-6,  anchor:"start"  },
       "NC|Craven":           { dx:14,  dy:5,   anchor:"start"  },
-      "NC|Charlotte":        { dx:0,   dy:18,  anchor:"middle" },
       "NC|Raleigh":          { dx:0,   dy:-14, anchor:"middle" },
-      "DC|Washington, D.C.": { dx:24,  dy:18,  anchor:"start"  }, // below+right of Baltimore
+      "SC|Columbia":         { dx:14,  dy:14,  anchor:"start"  },
+      // Midwest spread: Iowa City / Madison / Aurora / Chicago / Dayton
+      "IA|Iowa City":        { dx:-14, dy:-6,  anchor:"end"    },
+      "WI|Madison":          { dx:-14, dy:-8,  anchor:"end"    },
+      "WI|Aurora":           { dx:14,  dy:-6,  anchor:"start"  },
+      "IL|Chicago":          { dx:14,  dy:14,  anchor:"start"  },
+      "OH|Dayton":           { dx:14,  dy:14,  anchor:"start"  },
+      // TN/WV near each other
+      "TN|Knoxville":        { dx:0,   dy:18,  anchor:"middle" },
+      "WV|Charleston":       { dx:-14, dy:-6,  anchor:"end"    },
     };
 
     // State-name lookup for full-state strings in the detail panel
@@ -2860,13 +2880,51 @@
           localesG.replaceChildren();
           labelsG.replaceChildren();
 
-          // Label every locale, but suppress labels for tiny dots that sit too close
-          // to a higher-count labeled dot (proximity-based clustering).
           const sortedByCount = [...r.locales].sort((a,b)=>b.count-a.count);
+          {
+            const CLUSTER_R = 28;
+            const claimed = new Set();
+            for (let i = 0; i < sortedByCount.length; i++) {
+              if (claimed.has(i)) continue;
+              const anchor = sortedByCount[i];
+              const sats = [];
+              for (let j = i + 1; j < sortedByCount.length; j++) {
+                if (claimed.has(j)) continue;
+                const l = sortedByCount[j];
+                const dx = l.x - anchor.x, dy = l.y - anchor.y;
+                if (dx*dx + dy*dy <= CLUSTER_R*CLUSTER_R) {
+                  sats.push(l);
+                  claimed.add(j);
+                }
+              }
+              if (!sats.length) continue;
+              const slots = sats.length;
+              sats.forEach((l, k) => {
+                if (REACH_CITY_OFFSETS[`${l.state}|${l.city}`]) return;
+                const labelRad = 44;
+                let ang;
+                if (slots === 1) {
+                  ang = Math.PI * 0.25;
+                } else if (slots === 2) {
+                  ang = k === 0 ? Math.PI * 0.2 : Math.PI * 0.8;
+                } else {
+                  const t = (k + 0.5) / slots;
+                  ang = t * Math.PI * 2 - Math.PI / 2;
+                }
+                l._labelOffset = {
+                  dx: Math.round(Math.cos(ang) * labelRad),
+                  dy: Math.round(Math.sin(ang) * labelRad) + 2,
+                  anchor: Math.cos(ang) > 0.3 ? 'start' : Math.cos(ang) < -0.3 ? 'end' : 'middle',
+                };
+              });
+            }
+          }
           const placedLabels = []; // [{x,y}]
           const isMobile = window.innerWidth <= 880;
           const PROX_PX = isMobile ? 50 : 18;
           const shouldLabel = (loc) => {
+            if (loc._labelOffset) return true;
+            if (REACH_CITY_OFFSETS[`${loc.state}|${loc.city}`]) return true;
             if (loc.tier === 'hot' || loc.tier === 'warm') return true;
             if (loc.tier === 'on' && !isMobile) return true;
             for (const p of placedLabels) {
@@ -2955,7 +3013,7 @@
             // Render the label for every locale; mark suppressed ones so CSS
             // can hide them at default zoom and reveal at deep zoom.
             {
-              const off = REACH_CITY_OFFSETS[`${loc.state}|${loc.city}`] || REACH_LABEL_OFFSETS[loc.state] || REACH_DEFAULT_OFFSET;
+              const off = loc._labelOffset || REACH_CITY_OFFSETS[`${loc.state}|${loc.city}`] || REACH_LABEL_OFFSETS[loc.state] || REACH_DEFAULT_OFFSET;
               const lbl = document.createElementNS(SVG_NS, 'text');
               const labelClass = tier === 'hot' ? 'rl rl-hot' : tier === 'warm' ? 'rl rl-warm' : willLabel ? 'rl' : ('rl rl-tiny is-suppressed');
               lbl.setAttribute('class', labelClass);
@@ -2976,6 +3034,26 @@
               lbl.appendChild(countT);
               labelsG.appendChild(lbl);
               if (willLabel) placedLabels.push({ x: loc.x, y: loc.y });
+            }
+          }
+          {
+            const allLabels = [...labelsG.querySelectorAll('.rl:not(.is-suppressed)')];
+            const boxes = allLabels.map(el => ({ el, bb: el.getBBox() }));
+            const PAD = 3;
+            for (let i = 0; i < boxes.length; i++) {
+              for (let j = i + 1; j < boxes.length; j++) {
+                const a = boxes[i].bb, b = boxes[j].bb;
+                const overlapX = (a.x - PAD < b.x + b.width + PAD) && (a.x + a.width + PAD > b.x - PAD);
+                const overlapY = (a.y - PAD < b.y + b.height + PAD) && (a.y + a.height + PAD > b.y - PAD);
+                if (!overlapX || !overlapY) continue;
+                const el = boxes[j].el;
+                const curY = parseFloat(el.getAttribute('y'));
+                const nudge = (a.y + a.height + PAD * 2) - b.y;
+                if (nudge > 0 && nudge < 24) {
+                  el.setAttribute('y', curY + nudge);
+                  boxes[j].bb = el.getBBox();
+                }
+              }
             }
           }
           if (isMobile) {
@@ -3045,8 +3123,37 @@
               'London':        { dx: 0,   dy: -14, anchor: 'middle' },
               'Berlin':        { dx: 14,  dy: 4,   anchor: 'start' },
             };
-            for (const loc of intl) {
-              const nudge = WORLD_DOT_NUDGE[loc.city] || { dx: 0, dy: 0 };
+            // Fan out world-map locales whose pins overlap so labels/dots never silently stack.
+            const intlSorted = [...intl].sort((a, b) => b.count - a.count);
+            {
+              const CLUSTER_R = 18;
+              const claimed = new Set();
+              for (let i = 0; i < intlSorted.length; i++) {
+                if (claimed.has(i)) continue;
+                const anchor = intlSorted[i];
+                const sats = [];
+                for (let j = i + 1; j < intlSorted.length; j++) {
+                  if (claimed.has(j)) continue;
+                  const l = intlSorted[j];
+                  const dx = l.x - anchor.x, dy = l.y - anchor.y;
+                  if (dx*dx + dy*dy <= CLUSTER_R*CLUSTER_R) { sats.push(l); claimed.add(j); }
+                }
+                const slots = sats.length;
+                sats.forEach((l, k) => {
+                  const t = (k + 0.5) / slots;
+                  const ang = t * Math.PI * 2 - Math.PI / 2;
+                  const dotRad = 10, labelRad = 26;
+                  l._dotNudge = { dx: Math.round(Math.cos(ang) * dotRad), dy: Math.round(Math.sin(ang) * dotRad) };
+                  l._labelOffset = {
+                    dx: Math.round(Math.cos(ang) * labelRad),
+                    dy: Math.round(Math.sin(ang) * labelRad) + 2,
+                    anchor: Math.cos(ang) > 0.3 ? 'start' : Math.cos(ang) < -0.3 ? 'end' : 'middle',
+                  };
+                });
+              }
+            }
+            for (const loc of intlSorted) {
+              const nudge = loc._dotNudge || WORLD_DOT_NUDGE[loc.city] || { dx: 0, dy: 0 };
               const lx = loc.x + nudge.dx, ly = loc.y + nudge.dy;
               const tier = loc.tier || (loc.count >= 5 ? 'warm' : loc.count >= 2 ? 'on' : 'tiny');
               const dot = document.createElementNS(SVG_NS2, 'g');
@@ -3078,7 +3185,7 @@
                 if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); dot.click(); }
               });
               intlG.appendChild(dot);
-              const wOff = WORLD_LABEL_OFFSETS[loc.city] || { dx: 0, dy: -12, anchor: 'middle' };
+              const wOff = loc._labelOffset || WORLD_LABEL_OFFSETS[loc.city] || { dx: 0, dy: -12, anchor: 'middle' };
               const lbl = document.createElementNS(SVG_NS2, 'text');
               const cls = tier === 'warm' ? 'rl rl-warm' : tier === 'on' ? 'rl rl-on' : 'rl rl-tiny';
               lbl.setAttribute('class', cls);
