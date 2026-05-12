@@ -246,6 +246,29 @@
       color:var(--bg);
       border-color:var(--amber);
     }
+    .statusbar .download-btn{
+      background:var(--amber);
+      border:1px solid var(--amber);
+      color:var(--bg);
+      padding:12px 16px;
+      min-height:44px;
+      font-family:var(--mono);
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      cursor:pointer;
+      transition:all .15s;
+    }
+    .statusbar .download-btn:hover{
+      background:var(--ink);
+      color:var(--bg);
+      border-color:var(--ink);
+      transform:translateY(-1px);
+    }
 
     .nav-toggle{
       display:none;
@@ -314,8 +337,11 @@
     @media (max-width:880px){
       .statusbar{padding:8px 20px; font-size:11px; gap:12px;}
       .statusbar-left{gap:14px;}
-      .statusbar-right{gap:14px;}
+      .statusbar-right{gap:10px;}
       .statusbar-left .nav-link{display:none;}
+      .statusbar .contact-btn{display:none;}
+      .statusbar .download-btn{padding:10px 12px; font-size:11px;}
+      .statusbar .timestamp{display:none;}
       .nav-toggle{display:inline-flex;}
     }
 
@@ -1899,6 +1925,11 @@
     </div>
     <div class="statusbar-right">
       <span class="timestamp" id="ts" aria-hidden="true">--:--:--</span>
+      <a href="https://apps.apple.com/app/id6753611139?utm_source=website&utm_medium=nav&utm_campaign=download"
+         target="_blank"
+         rel="noopener"
+         class="download-btn"
+         data-track="NavDownload">↓ DOWNLOAD</a>
       <button type="button" class="contact-btn" id="openContact" data-track="ContactOpen">CONTACT</button>
       <button type="button" class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="navDrawer">
         <span class="nav-toggle-menu">MENU +</span>
