@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-11T19:07:37.133Z",
+  "generatedAt": "2026-05-12T00:44:16.852Z",
   "totalUploads": 175,
   "distinctProtocols": 134,
   "activeStudiers": 69,
@@ -17,16 +17,16 @@
     "WA": 3,
     "FL": 3,
     "OK": 2,
-    "DC": 2,
+    "NC": 2,
     "WI": 2,
     "MA": 2,
     "NJ": 2,
     "IL": 2,
     "WV": 2,
     "UT": 1,
+    "DC": 1,
     "IA": 1,
     "NV": 1,
-    "NC": 1,
     "OH": 1,
     "SC": 1,
     "MN": 1,
@@ -225,24 +225,6 @@
       ]
     },
     {
-      "state": "DC",
-      "city": "Washington, D.C.",
-      "x": 797,
-      "y": 262,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "2025 DCEMS Protocols 9 5 2025",
-          "count": 1
-        },
-        {
-          "title": "2026 DHS EMS Protocols w: Hyperlinks",
-          "count": 1
-        }
-      ]
-    },
-    {
       "state": "WA",
       "city": "Olympia",
       "x": 115,
@@ -374,6 +356,34 @@
       "topProtocols": [
         {
           "title": "2023 Utah EMS Protocol Guidelines Final 4.10.2024",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "NC",
+      "city": "Davidson County",
+      "x": 744,
+      "y": 344,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "2025 DCEMS Protocols 9 5 2025",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "DC",
+      "city": "Washington, D.C.",
+      "x": 797,
+      "y": 262,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "2026 DHS EMS Protocols w: Hyperlinks",
           "count": 1
         }
       ]
