@@ -1063,6 +1063,14 @@
       margin-top:14px;font-family:var(--mono);font-size:11px;
       color:var(--muted);letter-spacing:.06em;text-transform:uppercase;
     }
+    .reach-cta{
+      margin-top:36px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;
+    }
+    .reach-cta .btn{font-size:15px;padding:16px 28px;}
+    .reach-cta-sub{
+      font-family:var(--mono);font-size:12px;color:var(--ink-soft);
+      letter-spacing:.06em;text-transform:uppercase;margin:0;
+    }
     @media (max-width:880px){
       .reach{padding:56px 0 72px;}
       .reach-head{grid-template-columns:1fr;gap:14px;}
@@ -2124,6 +2132,14 @@
           <div class="rstat"><dt>Pages processed</dt><dd><b data-stat="pages">--</b></dd></div>
         </dl>
         <p class="reach-foot"><span class="reach-pulse" aria-hidden="true"></span> <span id="reachUpdated">Pulled from live ProtoQuiz uploads. Refreshed daily.</span></p>
+        <div class="reach-cta">
+          <a href="https://apps.apple.com/app/id6753611139?utm_source=website&utm_medium=reach&utm_campaign=upload"
+             target="_blank"
+             rel="noopener"
+             class="btn btn-primary"
+             data-track="ReachUploadCTA">↑ Upload your protocols</a>
+          <p class="reach-cta-sub">Join the EMTs and Paramedics who want to be better.</p>
+        </div>
       </div>
     </section>
 
