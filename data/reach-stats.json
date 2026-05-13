@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-05-12T19:07:35.904Z",
-  "totalUploads": 175,
-  "distinctProtocols": 134,
-  "activeStudiers": 69,
-  "pagesProcessed": 18121,
-  "statesRepresented": 25,
+  "generatedAt": "2026-05-13T19:07:36.496Z",
+  "totalUploads": 177,
+  "distinctProtocols": 136,
+  "activeStudiers": 70,
+  "pagesProcessed": 19121,
+  "statesRepresented": 26,
   "countriesRepresented": 1,
   "internationalUploads": 2,
   "byState": {
     "CO": 16,
-    "MI": 10,
+    "MI": 11,
     "NY": 7,
     "PA": 6,
     "CA": 5,
@@ -25,6 +25,7 @@
     "WV": 2,
     "UT": 1,
     "DC": 1,
+    "ID": 1,
     "IA": 1,
     "NV": 1,
     "OH": 1,
@@ -65,7 +66,7 @@
       "city": "Detroit",
       "x": 660,
       "y": 175,
-      "count": 10,
+      "count": 11,
       "tier": "warm",
       "topProtocols": [
         {
@@ -73,11 +74,11 @@
           "count": 1
         },
         {
-          "title": "Section 1 General Treatment Berrien County",
+          "title": "HEMS State Protocol Suite may 2026",
           "count": 1
         },
         {
-          "title": "Section 10 Special Operations Berrien County",
+          "title": "Section 1 General Treatment Berrien County",
           "count": 1
         }
       ]
@@ -548,6 +549,20 @@
       "topProtocols": [
         {
           "title": "UT LIFESTAR Air Medical Patient Care Guidlines (25.2)",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "ID",
+      "city": "Ada County",
+      "x": 173,
+      "y": 161,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "ADAP",
           "count": 1
         }
       ]
