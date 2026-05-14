@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-13T19:07:36.496Z",
-  "totalUploads": 177,
-  "distinctProtocols": 136,
-  "activeStudiers": 70,
-  "pagesProcessed": 19121,
-  "statesRepresented": 26,
+  "generatedAt": "2026-05-14T19:07:39.289Z",
+  "totalUploads": 179,
+  "distinctProtocols": 138,
+  "activeStudiers": 71,
+  "pagesProcessed": 19411,
+  "statesRepresented": 27,
   "countriesRepresented": 1,
   "internationalUploads": 2,
   "byState": {
@@ -18,6 +18,7 @@
     "FL": 3,
     "OK": 2,
     "NC": 2,
+    "OR": 2,
     "WI": 2,
     "MA": 2,
     "NJ": 2,
@@ -311,6 +312,24 @@
         },
         {
           "title": "WV Protocols 2025",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "OR",
+      "city": "Dallas",
+      "x": 78,
+      "y": 102,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "2026 05 14 Signed 2026 EMS Protocol",
+          "count": 1
+        },
+        {
+          "title": "Signed 2026 EMS Protocol",
           "count": 1
         }
       ]
