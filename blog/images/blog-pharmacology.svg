@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="EMS pharmacology study guide">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a0e1a"/>
+      <stop offset="1" stop-color="#05080c"/>
+    </linearGradient>
+    <linearGradient id="capCyan" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#06d6e0" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#06d6e0" stop-opacity="0.05"/>
+    </linearGradient>
+    <linearGradient id="capViolet" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#b45cf6" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#b45cf6" stop-opacity="0.35"/>
+    </linearGradient>
+    <linearGradient id="stroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#06d6e0"/>
+      <stop offset="1" stop-color="#b45cf6"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#06d6e0" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#06d6e0" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <ellipse cx="800" cy="460" rx="500" ry="300" fill="url(#glow)"/>
+
+  <!-- Central pill capsule (rotated -15 degrees) -->
+  <g transform="translate(800 450) rotate(-15)">
+    <!-- Left half cyan -->
+    <path d="M -260 -80 Q -340 -80 -340 0 Q -340 80 -260 80 L 0 80 L 0 -80 Z"
+          fill="url(#capCyan)" stroke="#06d6e0" stroke-width="5"/>
+    <!-- Right half violet -->
+    <path d="M 260 -80 Q 340 -80 340 0 Q 340 80 260 80 L 0 80 L 0 -80 Z"
+          fill="url(#capViolet)" stroke="#b45cf6" stroke-width="5"/>
+    <!-- Divider line -->
+    <line x1="0" y1="-80" x2="0" y2="80" stroke="#e6edf7" stroke-width="2" opacity="0.6"/>
+    <!-- Shine -->
+    <path d="M -240 -60 Q -300 -50 -300 0" stroke="#e6edf7" stroke-width="3" fill="none" opacity="0.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Vial left -->
+  <g transform="translate(280 460)" stroke="#06d6e0" stroke-width="4" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <rect x="-30" y="-110" width="60" height="20"/>
+    <rect x="-40" y="-90" width="80" height="180" rx="8"/>
+    <line x1="-40" y1="-30" x2="40" y2="-30"/>
+    <rect x="-40" y="-30" width="80" height="120" rx="8" fill="#06d6e0" fill-opacity="0.18" stroke="none"/>
+    <line x1="-25" y1="-10" x2="25" y2="-10" opacity="0.5"/>
+    <line x1="-25" y1="20" x2="25" y2="20" opacity="0.5"/>
+    <line x1="-25" y1="50" x2="25" y2="50" opacity="0.5"/>
+  </g>
+
+  <!-- Dosing card right -->
+  <g transform="translate(1290 460)" stroke="#b45cf6" stroke-width="4" fill="none" stroke-linejoin="round">
+    <rect x="-90" y="-110" width="180" height="220" rx="10"/>
+    <line x1="-70" y1="-70" x2="70" y2="-70"/>
+    <line x1="-70" y1="-30" x2="50" y2="-30" opacity="0.6"/>
+    <line x1="-70" y1="0" x2="60" y2="0" opacity="0.6"/>
+    <line x1="-70" y1="30" x2="40" y2="30" opacity="0.6"/>
+    <line x1="-70" y1="60" x2="70" y2="60" opacity="0.6"/>
+    <line x1="-70" y1="90" x2="30" y2="90" opacity="0.6"/>
+  </g>
+
+  <!-- Title -->
+  <text x="800" y="780" text-anchor="middle" font-family="Inter, sans-serif" font-weight="800" font-size="44" letter-spacing="8" fill="url(#stroke)">PHARMACOLOGY</text>
+
+  <!-- Sparkles -->
+  <g fill="#06d6e0" opacity="0.85">
+    <path d="M 1320 200 l 0 -22 l 3 17 l 17 3 l -17 3 l -3 17 l -3 -17 l -17 -3 l 17 -3 z"/>
+    <path d="M 220 250 l 0 -18 l 3 14 l 14 3 l -14 3 l -3 14 l -3 -14 l -14 -3 l 14 -3 z"/>
+  </g>
+</svg>

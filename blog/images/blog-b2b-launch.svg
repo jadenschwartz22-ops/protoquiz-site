@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="ProtoQuiz B2B is live">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a0e1a"/>
+      <stop offset="1" stop-color="#05080c"/>
+    </linearGradient>
+    <linearGradient id="stroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#06d6e0"/>
+      <stop offset="1" stop-color="#b45cf6"/>
+    </linearGradient>
+    <radialGradient id="centerGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#06d6e0" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#06d6e0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nodeGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#b45cf6" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#b45cf6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="800" cy="450" r="380" fill="url(#centerGlow)"/>
+
+  <!-- Connection lines -->
+  <g stroke="url(#stroke)" stroke-width="2" fill="none" opacity="0.6" stroke-linecap="round">
+    <line x1="800" y1="450" x2="300" y2="250"/>
+    <line x1="800" y1="450" x2="280" y2="500"/>
+    <line x1="800" y1="450" x2="320" y2="730"/>
+    <line x1="800" y1="450" x2="1300" y2="240"/>
+    <line x1="800" y1="450" x2="1320" y2="460"/>
+    <line x1="800" y1="450" x2="1280" y2="720"/>
+    <line x1="800" y1="450" x2="600" y2="180"/>
+    <line x1="800" y1="450" x2="1000" y2="180"/>
+    <line x1="800" y1="450" x2="600" y2="780"/>
+    <line x1="800" y1="450" x2="1000" y2="780"/>
+  </g>
+
+  <!-- Animated-looking dashed inner ring -->
+  <circle cx="800" cy="450" r="170" fill="none" stroke="#06d6e0" stroke-width="2" stroke-dasharray="6 14" opacity="0.4"/>
+
+  <!-- Central node: ProtoQuiz diamond -->
+  <g transform="translate(800 450)">
+    <circle r="120" fill="#0a0e1a" stroke="url(#stroke)" stroke-width="5"/>
+    <g transform="rotate(45)">
+      <rect x="-50" y="-50" width="100" height="100" fill="none" stroke="url(#stroke)" stroke-width="5" rx="6"/>
+    </g>
+    <text y="9" text-anchor="middle" font-family="Inter, sans-serif" font-size="34" font-weight="900" fill="url(#stroke)" letter-spacing="2">PQ</text>
+  </g>
+
+  <!-- Agency nodes (small badges) -->
+  <g font-family="Inter, sans-serif" font-size="14" font-weight="700">
+    <!-- top-left -->
+    <g transform="translate(300 250)">
+      <circle r="58" fill="url(#nodeGlow)"/>
+      <circle r="44" fill="#0d1219" stroke="#06d6e0" stroke-width="3"/>
+      <text text-anchor="middle" y="5" fill="#06d6e0">AGENCY</text>
+    </g>
+    <!-- left middle -->
+    <g transform="translate(280 500)">
+      <circle r="58" fill="url(#nodeGlow)"/>
+      <circle r="44" fill="#0d1219" stroke="#b45cf6" stroke-width="3"/>
+      <text text-anchor="middle" y="5" fill="#b45cf6">AGENCY</text>
+    </g>
+    <!-- bottom-left -->
+    <g transform="translate(320 730)">
+      <circle r="58" fill="url(#nodeGlow)"/>
+      <circle r="44" fill="#0d1219" stroke="#06d6e0" stroke-width="3"/>
+      <text text-anchor="middle" y="5" fill="#06d6e0">AGENCY</text>
+    </g>
+    <!-- top-right -->
+    <g transform="translate(1300 240)">
+      <circle r="58" fill="url(#nodeGlow)"/>
+      <circle r="44" fill="#0d1219" stroke="#b45cf6" stroke-width="3"/>
+      <text text-anchor="middle" y="5" fill="#b45cf6">AGENCY</text>
+    </g>
+    <!-- right middle -->
+    <g transform="translate(1320 460)">
+      <circle r="58" fill="url(#nodeGlow)"/>
+      <circle r="44" fill="#0d1219" stroke="#06d6e0" stroke-width="3"/>
+      <text text-anchor="middle" y="5" fill="#06d6e0">AGENCY</text>
+    </g>
+    <!-- bottom-right -->
+    <g transform="translate(1280 720)">
+      <circle r="58" fill="url(#nodeGlow)"/>
+      <circle r="44" fill="#0d1219" stroke="#b45cf6" stroke-width="3"/>
+      <text text-anchor="middle" y="5" fill="#b45cf6">AGENCY</text>
+    </g>
+    <!-- top center-left -->
+    <g transform="translate(600 180)">
+      <circle r="46" fill="url(#nodeGlow)"/>
+      <circle r="34" fill="#0d1219" stroke="#06d6e0" stroke-width="2.5" opacity="0.85"/>
+    </g>
+    <!-- top center-right -->
+    <g transform="translate(1000 180)">
+      <circle r="46" fill="url(#nodeGlow)"/>
+      <circle r="34" fill="#0d1219" stroke="#b45cf6" stroke-width="2.5" opacity="0.85"/>
+    </g>
+    <!-- bottom center-left -->
+    <g transform="translate(600 780)">
+      <circle r="46" fill="url(#nodeGlow)"/>
+      <circle r="34" fill="#0d1219" stroke="#06d6e0" stroke-width="2.5" opacity="0.85"/>
+    </g>
+    <!-- bottom center-right -->
+    <g transform="translate(1000 780)">
+      <circle r="46" fill="url(#nodeGlow)"/>
+      <circle r="34" fill="#0d1219" stroke="#b45cf6" stroke-width="2.5" opacity="0.85"/>
+    </g>
+  </g>
+
+  <!-- "LIVE" pill top -->
+  <g transform="translate(800 90)">
+    <rect x="-90" y="-26" width="180" height="52" rx="26" fill="#0d1219" stroke="#06d6e0" stroke-width="2"/>
+    <circle cx="-50" cy="0" r="7" fill="#06d6e0"/>
+    <text x="-30" y="7" font-family="Inter, sans-serif" font-size="20" font-weight="800" fill="#06d6e0" letter-spacing="3">LIVE</text>
+  </g>
+
+  <!-- Sparkles -->
+  <g fill="#06d6e0" opacity="0.9">
+    <path d="M 150 150 l 0 -22 l 3 17 l 17 3 l -17 3 l -3 17 l -3 -17 l -17 -3 l 17 -3 z"/>
+    <path d="M 1450 750 l 0 -22 l 3 17 l 17 3 l -17 3 l -3 17 l -3 -17 l -17 -3 l 17 -3 z"/>
+  </g>
+  <g fill="#b45cf6" opacity="0.85">
+    <path d="M 1480 130 l 0 -20 l 3 15 l 15 3 l -15 3 l -3 15 l -3 -15 l -15 -3 l 15 -3 z"/>
+  </g>
+</svg>

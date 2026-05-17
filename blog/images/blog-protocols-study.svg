@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="How to study EMS protocols">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a0e1a"/>
+      <stop offset="1" stop-color="#05080c"/>
+    </linearGradient>
+    <linearGradient id="stroke" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#06d6e0"/>
+      <stop offset="1" stop-color="#b45cf6"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#06d6e0" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#06d6e0" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="800" cy="450" r="340" fill="url(#glow)"/>
+
+  <!-- Dashed orbit ring -->
+  <circle cx="800" cy="450" r="280" fill="none" stroke="#06d6e0" stroke-width="2" stroke-dasharray="4 12" opacity="0.4"/>
+
+  <!-- Central brain -->
+  <g stroke="url(#stroke)" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 720 380 Q 680 380 670 420 Q 640 430 650 470 Q 630 490 650 520 Q 660 560 720 560
+             L 720 580 L 800 580 L 800 380 L 720 380 Z"/>
+    <path d="M 800 380 L 880 380 Q 920 380 930 420 Q 960 430 950 470 Q 970 490 950 520
+             Q 940 560 880 560 L 880 580 L 800 580"/>
+    <path d="M 720 420 Q 740 430 760 420"/>
+    <path d="M 720 470 Q 740 480 760 470"/>
+    <path d="M 720 520 Q 740 530 760 520"/>
+    <path d="M 880 420 Q 860 430 840 420"/>
+    <path d="M 880 470 Q 860 480 840 470"/>
+    <path d="M 880 520 Q 860 530 840 520"/>
+  </g>
+
+  <!-- Orbiting elements: book (top), lightbulb (right), checkmark (left), clock (bottom) -->
+  <!-- Book top -->
+  <g stroke="#06d6e0" stroke-width="4" fill="none" stroke-linejoin="round">
+    <rect x="760" y="130" width="80" height="60" rx="4"/>
+    <line x1="800" y1="130" x2="800" y2="190"/>
+    <line x1="775" y1="150" x2="790" y2="150"/>
+    <line x1="810" y1="150" x2="825" y2="150"/>
+    <line x1="775" y1="170" x2="790" y2="170"/>
+    <line x1="810" y1="170" x2="825" y2="170"/>
+  </g>
+
+  <!-- Lightbulb right -->
+  <g stroke="#b45cf6" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 1140 430 Q 1140 390 1180 390 Q 1220 390 1220 430 Q 1220 450 1205 465 L 1205 490 L 1155 490 L 1155 465 Q 1140 450 1140 430 Z"/>
+    <line x1="1165" y1="510" x2="1195" y2="510"/>
+    <line x1="1170" y1="525" x2="1190" y2="525"/>
+  </g>
+
+  <!-- Checkmark left -->
+  <g stroke="#06d6e0" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="400" cy="450" r="42"/>
+    <path d="M 380 450 L 395 468 L 425 432"/>
+  </g>
+
+  <!-- Clock bottom -->
+  <g stroke="#b45cf6" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="800" cy="760" r="42"/>
+    <line x1="800" y1="760" x2="800" y2="730"/>
+    <line x1="800" y1="760" x2="822" y2="772"/>
+  </g>
+
+  <!-- Sparkles -->
+  <g fill="#06d6e0" opacity="0.85">
+    <path d="M 1300 250 l 0 -22 l 3 17 l 17 3 l -17 3 l -3 17 l -3 -17 l -17 -3 l 17 -3 z"/>
+    <path d="M 280 200 l 0 -18 l 3 14 l 14 3 l -14 3 l -3 14 l -3 -14 l -14 -3 l 14 -3 z"/>
+  </g>
+</svg>

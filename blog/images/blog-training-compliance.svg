@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="EMS training compliance dashboard">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a0e1a"/>
+      <stop offset="1" stop-color="#05080c"/>
+    </linearGradient>
+    <linearGradient id="stroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#06d6e0"/>
+      <stop offset="1" stop-color="#b45cf6"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#06d6e0" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#06d6e0" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <ellipse cx="800" cy="450" rx="600" ry="320" fill="url(#glow)"/>
+
+  <!-- Dashboard frame -->
+  <g stroke="#16202b" stroke-width="3" fill="#0d1219">
+    <rect x="280" y="180" width="1040" height="560" rx="16"/>
+  </g>
+  <!-- Top bar -->
+  <g stroke="#16202b" stroke-width="2">
+    <line x1="280" y1="240" x2="1320" y2="240"/>
+    <circle cx="320" cy="210" r="6" fill="#06d6e0"/>
+    <circle cx="345" cy="210" r="6" fill="#b45cf6" opacity="0.6"/>
+    <circle cx="370" cy="210" r="6" fill="#16202b" stroke="#9aa4b2" stroke-width="1"/>
+  </g>
+  <text x="420" y="220" font-family="Inter, sans-serif" font-size="18" fill="#9aa4b2" font-weight="700" letter-spacing="2">TRAINING COMPLIANCE</text>
+
+  <!-- Bar chart left -->
+  <g>
+    <text x="320" y="290" font-family="Inter, sans-serif" font-size="14" fill="#9aa4b2" font-weight="600">FLUENCY BY PROTOCOL</text>
+    <rect x="320" y="320" width="80" height="60" rx="4" fill="#06d6e0" opacity="0.7"/>
+    <rect x="410" y="305" width="80" height="75" rx="4" fill="#06d6e0" opacity="0.85"/>
+    <rect x="500" y="290" width="80" height="90" rx="4" fill="url(#stroke)"/>
+    <rect x="590" y="335" width="80" height="45" rx="4" fill="#b45cf6" opacity="0.55"/>
+    <rect x="680" y="315" width="80" height="65" rx="4" fill="#b45cf6" opacity="0.75"/>
+    <line x1="310" y1="382" x2="780" y2="382" stroke="#16202b" stroke-width="2"/>
+  </g>
+
+  <!-- Provider list right -->
+  <g stroke="#16202b" stroke-width="2" fill="none">
+    <text x="850" y="290" font-family="Inter, sans-serif" font-size="14" fill="#9aa4b2" font-weight="600">PROVIDERS</text>
+    <!-- Row 1 -->
+    <circle cx="870" cy="335" r="14" fill="#06d6e0" opacity="0.25" stroke="#06d6e0"/>
+    <line x1="900" y1="335" x2="1180" y2="335"/>
+    <rect x="1200" y="325" width="80" height="20" rx="4" fill="#06d6e0" opacity="0.8" stroke="none"/>
+    <!-- Row 2 -->
+    <circle cx="870" cy="380" r="14" fill="#b45cf6" opacity="0.25" stroke="#b45cf6"/>
+    <line x1="900" y1="380" x2="1180" y2="380"/>
+    <rect x="1200" y="370" width="60" height="20" rx="4" fill="#b45cf6" opacity="0.7" stroke="none"/>
+    <!-- Row 3 -->
+    <circle cx="870" cy="425" r="14" fill="#06d6e0" opacity="0.25" stroke="#06d6e0"/>
+    <line x1="900" y1="425" x2="1180" y2="425"/>
+    <rect x="1200" y="415" width="90" height="20" rx="4" fill="#06d6e0" opacity="0.85" stroke="none"/>
+    <!-- Row 4 -->
+    <circle cx="870" cy="470" r="14" fill="#b45cf6" opacity="0.25" stroke="#b45cf6"/>
+    <line x1="900" y1="470" x2="1180" y2="470"/>
+    <rect x="1200" y="460" width="70" height="20" rx="4" fill="#b45cf6" opacity="0.7" stroke="none"/>
+  </g>
+
+  <!-- KPI cards bottom -->
+  <g stroke="#16202b" stroke-width="2" fill="#05080c">
+    <rect x="320" y="540" width="280" height="160" rx="10"/>
+    <rect x="620" y="540" width="280" height="160" rx="10"/>
+    <rect x="920" y="540" width="280" height="160" rx="10"/>
+  </g>
+  <g font-family="Inter, sans-serif" font-weight="800">
+    <text x="460" y="615" text-anchor="middle" font-size="48" fill="#06d6e0">94%</text>
+    <text x="460" y="660" text-anchor="middle" font-size="13" fill="#9aa4b2" letter-spacing="2">FLUENCY</text>
+    <text x="760" y="615" text-anchor="middle" font-size="48" fill="url(#stroke)">42</text>
+    <text x="760" y="660" text-anchor="middle" font-size="13" fill="#9aa4b2" letter-spacing="2">PROVIDERS</text>
+    <text x="1060" y="615" text-anchor="middle" font-size="48" fill="#b45cf6">12</text>
+    <text x="1060" y="660" text-anchor="middle" font-size="13" fill="#9aa4b2" letter-spacing="2">PROTOCOLS</text>
+  </g>
+
+  <!-- Checkmark badge floating -->
+  <g transform="translate(1380 200)">
+    <circle r="38" fill="#06d6e0" opacity="0.18"/>
+    <circle r="38" fill="none" stroke="url(#stroke)" stroke-width="4"/>
+    <path d="M -16 0 L -4 14 L 18 -12" stroke="#06d6e0" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Sparkle -->
+  <g fill="#b45cf6" opacity="0.85">
+    <path d="M 200 750 l 0 -20 l 3 15 l 15 3 l -15 3 l -3 15 l -3 -15 l -15 -3 l 15 -3 z"/>
+  </g>
+</svg>
