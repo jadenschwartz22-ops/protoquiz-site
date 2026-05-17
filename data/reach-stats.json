@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-16T19:07:36.839Z",
-  "totalUploads": 180,
-  "distinctProtocols": 139,
-  "activeStudiers": 70,
-  "pagesProcessed": 19548,
-  "statesRepresented": 27,
+  "generatedAt": "2026-05-17T19:07:41.985Z",
+  "totalUploads": 181,
+  "distinctProtocols": 140,
+  "activeStudiers": 71,
+  "pagesProcessed": 19809,
+  "statesRepresented": 28,
   "countriesRepresented": 1,
   "internationalUploads": 2,
   "byState": {
@@ -34,6 +34,7 @@
     "MN": 1,
     "MD": 1,
     "TX": 1,
+    "NH": 1,
     "TN": 1
   },
   "byCountry": {
@@ -540,6 +541,20 @@
       "topProtocols": [
         {
           "title": "Paramedic Protocols 2026",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "NH",
+      "city": "Manchester",
+      "x": 880,
+      "y": 145,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "patient care protocols",
           "count": 1
         }
       ]
