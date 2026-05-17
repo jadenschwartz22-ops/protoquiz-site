@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-05-12T03:04:00.710Z",
-  "totalUploads": 175,
-  "distinctProtocols": 134,
-  "activeStudiers": 69,
-  "pagesProcessed": 18121,
-  "statesRepresented": 25,
+  "generatedAt": "2026-05-16T19:07:36.839Z",
+  "totalUploads": 180,
+  "distinctProtocols": 139,
+  "activeStudiers": 70,
+  "pagesProcessed": 19548,
+  "statesRepresented": 27,
   "countriesRepresented": 1,
   "internationalUploads": 2,
   "byState": {
     "CO": 16,
-    "MI": 10,
+    "MI": 11,
     "NY": 7,
     "PA": 6,
     "CA": 5,
@@ -17,14 +17,16 @@
     "WA": 3,
     "FL": 3,
     "OK": 2,
+    "UT": 2,
     "NC": 2,
+    "OR": 2,
     "WI": 2,
     "MA": 2,
     "NJ": 2,
     "IL": 2,
     "WV": 2,
-    "UT": 1,
     "DC": 1,
+    "ID": 1,
     "IA": 1,
     "NV": 1,
     "OH": 1,
@@ -65,7 +67,7 @@
       "city": "Detroit",
       "x": 660,
       "y": 175,
-      "count": 10,
+      "count": 11,
       "tier": "warm",
       "topProtocols": [
         {
@@ -73,11 +75,11 @@
           "count": 1
         },
         {
-          "title": "Section 1 General Treatment Berrien County",
+          "title": "HEMS State Protocol Suite may 2026",
           "count": 1
         },
         {
-          "title": "Section 10 Special Operations Berrien County",
+          "title": "Section 1 General Treatment Berrien County",
           "count": 1
         }
       ]
@@ -315,6 +317,24 @@
       ]
     },
     {
+      "state": "OR",
+      "city": "Dallas",
+      "x": 78,
+      "y": 102,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "2026 05 14 Signed 2026 EMS Protocol",
+          "count": 1
+        },
+        {
+          "title": "Signed 2026 EMS Protocol",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "WA",
       "city": "Seattle",
       "x": 122,
@@ -343,6 +363,20 @@
       ]
     },
     {
+      "state": "NC",
+      "city": "Davidson County",
+      "x": 753,
+      "y": 333,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "2025 DCEMS Protocols 9 5 2025",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "DC",
       "city": "Washington, D.C.",
       "x": 797,
@@ -352,6 +386,20 @@
       "topProtocols": [
         {
           "title": "2026 DHS EMS Protocols w: Hyperlinks",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "IA",
+      "city": "Iowa City",
+      "x": 556,
+      "y": 225,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "AirCare Protocols",
           "count": 1
         }
       ]
@@ -413,6 +461,20 @@
       ]
     },
     {
+      "state": "OH",
+      "city": "Dayton",
+      "x": 677,
+      "y": 255,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "Greater Miami",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "SC",
       "city": "Columbia",
       "x": 728,
@@ -455,62 +517,6 @@
       ]
     },
     {
-      "state": "CO",
-      "city": "Loveland",
-      "x": 318,
-      "y": 243,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "TVEMS Master Protocols August 2025",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "NC",
-      "city": "Davidson County",
-      "x": 753,
-      "y": 333,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "2025 DCEMS Protocols 9 5 2025",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "IA",
-      "city": "Iowa City",
-      "x": 556,
-      "y": 225,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "AirCare Protocols",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "OH",
-      "city": "Dayton",
-      "x": 677,
-      "y": 255,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "Greater Miami",
-          "count": 1
-        }
-      ]
-    },
-    {
       "state": "WI",
       "city": "Madison",
       "x": 589,
@@ -539,6 +545,20 @@
       ]
     },
     {
+      "state": "CO",
+      "city": "Loveland",
+      "x": 318,
+      "y": 243,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "TVEMS Master Protocols August 2025",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "TN",
       "city": "Knoxville",
       "x": 688,
@@ -548,6 +568,34 @@
       "topProtocols": [
         {
           "title": "UT LIFESTAR Air Medical Patient Care Guidlines (25.2)",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "ID",
+      "city": "Ada County",
+      "x": 173,
+      "y": 161,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "ADAP",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "UT",
+      "city": "Tooele",
+      "x": 205,
+      "y": 237,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "Protocols",
           "count": 1
         }
       ]
