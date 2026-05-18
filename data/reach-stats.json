@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-05-17T19:07:41.985Z",
-  "totalUploads": 181,
-  "distinctProtocols": 140,
-  "activeStudiers": 71,
-  "pagesProcessed": 19809,
+  "generatedAt": "2026-05-18T19:07:42.822Z",
+  "totalUploads": 182,
+  "distinctProtocols": 141,
+  "activeStudiers": 72,
+  "pagesProcessed": 20122,
   "statesRepresented": 28,
   "countriesRepresented": 1,
   "internationalUploads": 2,
@@ -15,10 +15,10 @@
     "CA": 5,
     "AZ": 5,
     "WA": 3,
+    "NC": 3,
     "FL": 3,
     "OK": 2,
     "UT": 2,
-    "NC": 2,
     "OR": 2,
     "WI": 2,
     "MA": 2,
@@ -611,6 +611,20 @@
       "topProtocols": [
         {
           "title": "Protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "NC",
+      "city": "Stanly County",
+      "x": 753,
+      "y": 343,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "RenderAsset",
           "count": 1
         }
       ]
