@@ -27,8 +27,13 @@ if (!admin.apps.length) {
   admin.initializeApp({ credential: admin.credential.cert(sa), projectId: 'ems-protoquiz-tracking' });
 }
 const db = admin.firestore();
-const DEV_USER_ID = 'UQLMSLQZ';
-const isDev = (u) => typeof u === 'string' && u.startsWith(DEV_USER_ID);
+// Dev/test account — its uploads must never count toward public stats.
+// Was 'UQLMSLQZ' (wrong: not even a prefix of the real UID, and case-mismatched),
+// so ~17 dev uploads silently inflated totalUploads + activeStudiers. The real
+// anonymous-auth UID is in PQ-B2C/CLAUDE.md. Matched case-insensitively as a guard.
+const DEV_USER_ID = 'UqLmSIqzm9bNDnuS6ily2pUX5n22';
+const isDev = (u) => typeof u === 'string'
+  && u.toLowerCase().startsWith(DEV_USER_ID.toLowerCase());
 
 async function getUserDocAggregates() {
   const snap = await db.collection('users').get();
