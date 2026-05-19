@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-05-19T15:55:28.892Z",
-  "totalUploads": 166,
-  "distinctProtocols": 125,
-  "activeStudiers": 98,
-  "pagesProcessed": 16345,
+  "generatedAt": "2026-05-19T18:07:44.702Z",
+  "totalUploads": 167,
+  "distinctProtocols": 126,
+  "activeStudiers": 99,
+  "pagesProcessed": 16531,
   "statesRepresented": 24,
   "countriesRepresented": 1,
   "internationalUploads": 1,
@@ -12,7 +12,7 @@
     "MI": 11,
     "PA": 6,
     "NY": 6,
-    "AZ": 5,
+    "AZ": 6,
     "CA": 4,
     "FL": 3,
     "OK": 2,
@@ -130,7 +130,7 @@
       "city": "Phoenix",
       "x": 182,
       "y": 366,
-      "count": 5,
+      "count": 6,
       "tier": "warm",
       "topProtocols": [
         {
@@ -140,6 +140,10 @@
         {
           "title": "tcems protocol 2023",
           "count": 2
+        },
+        {
+          "title": "red book chapter 3 2026",
+          "count": 1
         }
       ]
     },
