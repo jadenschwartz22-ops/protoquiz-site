@@ -469,7 +469,18 @@ async function getReachStats() {
     const x = d.data();
     if (isDev(x.userId)) continue;
     total++;
-    if (x.userId) userIds.add(x.userId);
+    // Studier count = distinct real people who uploaded a protocol.
+    // Legacy backfilled docs (Nov 2025, ~66 of them) all carry the placeholder
+    // userId 'anonymous' — their original per-user identity was never recorded.
+    // Collapsing them to one studier under-counts ~10-27 real early adopters,
+    // so for those rows we key the studier set on the protocol name instead
+    // (each distinct legacy protocol ≈ at least one real medic/agency).
+    if (x.userId === 'anonymous' || x.userId === 'unknown') {
+      const pn = (x.protocolName || '').trim().toLowerCase();
+      userIds.add(pn ? `legacy:${pn}` : `legacy:${d.id}`);
+    } else if (x.userId) {
+      userIds.add(x.userId);
+    }
     if (typeof x.pageCount === 'number') pages += x.pageCount;
     else if (typeof x.pages === 'number') pages += x.pages;
     const name = (x.protocolName || '').trim();
