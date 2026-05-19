@@ -2524,8 +2524,17 @@
       const btn = document.getElementById('androidInterestBtn');
       if (!btn) return;
       const label = btn.querySelector('span');
-      const KEY = 'androidInterestTapped';
-      if (sessionStorage.getItem(KEY) === '1') {
+      const TAPPED_KEY = 'androidInterestTapped';
+      const SID_KEY = 'pq_visitor_id';
+      let sid = '';
+      try {
+        sid = localStorage.getItem(SID_KEY) || '';
+        if (!sid) {
+          sid = 'v_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 10);
+          localStorage.setItem(SID_KEY, sid);
+        }
+      } catch(e) {}
+      if (sessionStorage.getItem(TAPPED_KEY) === '1') {
         btn.classList.add('tapped');
         if (label) label.textContent = 'GOT IT. WE’LL LET YOU KNOW.';
       }
@@ -2533,25 +2542,18 @@
         if (btn.classList.contains('tapped')) return;
         btn.classList.add('tapped');
         if (label) label.textContent = 'GOT IT. WE’LL LET YOU KNOW.';
-        sessionStorage.setItem(KEY, '1');
+        sessionStorage.setItem(TAPPED_KEY, '1');
+        try { window.track && window.track('AndroidInterest', { page: PAGE, session_id: sid }); } catch(e) {}
         try {
-          window.track && window.track('AndroidInterest', {
-            page: PAGE,
-            session_id: sessionStorage.getItem('utmParams') || ''
-          });
-        } catch(e) {}
-        try {
-          fetch('https://api.protoquiz.com/api/monitor?type=event', {
+          fetch('https://api.protoquiz.com/api/monitor?type=androidInterest', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
+            keepalive: true,
             body: JSON.stringify({
-              category: 'interest',
-              action: 'android_requested',
-              data: {
-                page: PAGE,
-                userAgent: navigator.userAgent.substring(0, 200),
-                referrer: document.referrer.substring(0, 200)
-              }
+              sessionId: sid,
+              page: PAGE,
+              referrer: document.referrer.substring(0, 200),
+              userAgent: navigator.userAgent.substring(0, 200)
             })
           }).catch(() => {});
         } catch(e) {}
