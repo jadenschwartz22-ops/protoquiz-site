@@ -2873,7 +2873,11 @@
       });
     });
 
-    const REACH_FLOOR_KEY = 'pq_reach_floor_v1';
+    // Bumped v1 -> v2 on 2026-05-19: the reach numbers were intentionally
+    // corrected DOWNWARD (dev-account uploads + miscounted legacy docs removed).
+    // The v1 monotonic floor would otherwise pin returning visitors to the old
+    // inflated values. A fresh key resets every browser to the correct numbers.
+    const REACH_FLOOR_KEY = 'pq_reach_floor_v2';
     function readFloor() {
       try { return JSON.parse(localStorage.getItem(REACH_FLOOR_KEY) || '{}'); } catch { return {}; }
     }
