@@ -1,68 +1,42 @@
 {
-  "generatedAt": "2026-05-19T15:42:01.327Z",
-  "totalUploads": 183,
-  "distinctProtocols": 142,
-  "activeStudiers": 99,
-  "pagesProcessed": 20397,
-  "statesRepresented": 28,
+  "generatedAt": "2026-05-19T15:55:28.892Z",
+  "totalUploads": 166,
+  "distinctProtocols": 125,
+  "activeStudiers": 98,
+  "pagesProcessed": 16345,
+  "statesRepresented": 24,
   "countriesRepresented": 1,
-  "internationalUploads": 2,
+  "internationalUploads": 1,
   "byState": {
-    "CO": 16,
+    "CO": 13,
     "MI": 11,
-    "NY": 7,
     "PA": 6,
-    "CA": 5,
+    "NY": 6,
     "AZ": 5,
-    "WA": 3,
-    "NC": 3,
+    "CA": 4,
     "FL": 3,
     "OK": 2,
     "UT": 2,
-    "OR": 2,
+    "NC": 2,
     "WI": 2,
     "MA": 2,
-    "NJ": 2,
-    "IL": 2,
     "TX": 2,
-    "WV": 2,
+    "WA": 1,
     "DC": 1,
-    "ID": 1,
     "IA": 1,
-    "NV": 1,
-    "OH": 1,
     "SC": 1,
-    "MN": 1,
     "MD": 1,
+    "NJ": 1,
+    "IL": 1,
     "NH": 1,
-    "TN": 1
+    "OR": 1,
+    "TN": 1,
+    "WV": 1
   },
   "byCountry": {
-    "CA": 2
+    "CA": 1
   },
   "locales": [
-    {
-      "state": "CO",
-      "city": "Denver",
-      "x": 324,
-      "y": 263,
-      "count": 12,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "dmemsmd protocols july 2025 final 2025 07 14",
-          "count": 7
-        },
-        {
-          "title": "DMEMSMD January 2026",
-          "count": 1
-        },
-        {
-          "title": "DMEMSMD January 2026 copy",
-          "count": 1
-        }
-      ]
-    },
     {
       "state": "MI",
       "city": "Detroit",
@@ -86,23 +60,23 @@
       ]
     },
     {
-      "state": "NY",
-      "city": "New York",
-      "x": 858,
-      "y": 185,
-      "count": 7,
+      "state": "CO",
+      "city": "Denver",
+      "x": 324,
+      "y": 263,
+      "count": 9,
       "tier": "warm",
       "topProtocols": [
         {
-          "title": "2024 02 REMAC Unified Prehospital Treatment Protocols 07 09 25",
+          "title": "dmemsmd protocols july 2025 final 2025 07 14",
+          "count": 7
+        },
+        {
+          "title": "DMEMSMD Protocols January 2026 FINAL 2025 02 02",
           "count": 1
         },
         {
-          "title": "2024 REMAC Unified Prehospital Protocols 2024 01 004",
-          "count": 1
-        },
-        {
-          "title": "ny collaborative protocols",
+          "title": "eprip 2025 EMS Protocols 0",
           "count": 1
         }
       ]
@@ -130,23 +104,23 @@
       ]
     },
     {
-      "state": "CA",
-      "city": "Los Angeles",
-      "x": 98,
-      "y": 343,
-      "count": 5,
+      "state": "NY",
+      "city": "New York",
+      "x": 858,
+      "y": 185,
+      "count": 6,
       "tier": "warm",
       "topProtocols": [
         {
-          "title": "103 Ready to Print Policy Manual Complete",
+          "title": "2024 02 REMAC Unified Prehospital Treatment Protocols 07 09 25",
           "count": 1
         },
         {
-          "title": "App protocols",
+          "title": "2024 REMAC Unified Prehospital Protocols 2024 01 004",
           "count": 1
         },
         {
-          "title": "LA COunty",
+          "title": "ny collaborative protocols",
           "count": 1
         }
       ]
@@ -166,6 +140,28 @@
         {
           "title": "tcems protocol 2023",
           "count": 2
+        }
+      ]
+    },
+    {
+      "state": "CA",
+      "city": "Los Angeles",
+      "x": 98,
+      "y": 343,
+      "count": 4,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "103 Ready to Print Policy Manual Complete",
+          "count": 1
+        },
+        {
+          "title": "App protocols",
+          "count": 1
+        },
+        {
+          "title": "MC protocols",
+          "count": 1
         }
       ]
     },
@@ -210,24 +206,6 @@
       ]
     },
     {
-      "state": "WA",
-      "city": "Olympia",
-      "x": 115,
-      "y": 80,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "2025 Thurston County EMS Field Protocols",
-          "count": 1
-        },
-        {
-          "title": "EXT 007 2025 thurston county ems field protocols pdf 4F7BB5A6",
-          "count": 1
-        }
-      ]
-    },
-    {
       "state": "MA",
       "city": "Boston",
       "x": 895,
@@ -246,42 +224,6 @@
       ]
     },
     {
-      "state": "NJ",
-      "city": "Newark",
-      "x": 833,
-      "y": 201,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "NEWJERSEYEMSCLINICALPRACTICEPROTOCOLS GUIDELINES FINAL8.21.20…",
-          "count": 1
-        },
-        {
-          "title": "NJ EMS",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "IL",
-      "city": "Chicago",
-      "x": 615,
-      "y": 224,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "NWC EMSS SOP",
-          "count": 1
-        },
-        {
-          "title": "test.bls",
-          "count": 1
-        }
-      ]
-    },
-    {
       "state": "FL",
       "city": "Palm Beach Gardens",
       "x": 752,
@@ -295,56 +237,6 @@
         },
         {
           "title": "palmbeachgardensfirerescuepatientcareprotocols2025 bf30c8b884…",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "WV",
-      "city": "Charleston",
-      "x": 733,
-      "y": 276,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "West Virginia",
-          "count": 1
-        },
-        {
-          "title": "WV Protocols 2025",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "OR",
-      "city": "Dallas",
-      "x": 78,
-      "y": 102,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "2026 05 14 Signed 2026 EMS Protocol",
-          "count": 1
-        },
-        {
-          "title": "Signed 2026 EMS Protocol",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "WA",
-      "city": "Seattle",
-      "x": 122,
-      "y": 71,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "2023 kingcounty",
           "count": 1
         }
       ]
@@ -373,6 +265,20 @@
       "topProtocols": [
         {
           "title": "2025 DCEMS Protocols 9 5 2025",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "WA",
+      "city": "Olympia",
+      "x": 115,
+      "y": 80,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "2025 Thurston County EMS Field Protocols",
           "count": 1
         }
       ]
@@ -420,20 +326,6 @@
       ]
     },
     {
-      "state": "NV",
-      "city": "Las Vegas",
-      "x": 183,
-      "y": 312,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "CLark County",
-          "count": 1
-        }
-      ]
-    },
-    {
       "state": "FL",
       "city": "West Palm Beach",
       "x": 750,
@@ -448,34 +340,6 @@
       ]
     },
     {
-      "state": "NC",
-      "city": "Charlotte",
-      "x": 744,
-      "y": 344,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "Error 2025 dcems protocols 9 5 2025",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "OH",
-      "city": "Dayton",
-      "x": 677,
-      "y": 255,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "Greater Miami",
-          "count": 1
-        }
-      ]
-    },
-    {
       "state": "SC",
       "city": "Columbia",
       "x": 728,
@@ -485,20 +349,6 @@
       "topProtocols": [
         {
           "title": "kershawcountyemsclinicaloperatingguidelines 261d3ca1e3d229bf1…",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "MN",
-      "city": "Rochester",
-      "x": 538,
-      "y": 163,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "MayoClinic",
           "count": 1
         }
       ]
@@ -527,6 +377,34 @@
       "topProtocols": [
         {
           "title": "MFDESNAParamedicFormulary",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "NJ",
+      "city": "Newark",
+      "x": 833,
+      "y": 201,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "NEWJERSEYEMSCLINICALPRACTICEPROTOCOLS GUIDELINES FINAL8.21.20…",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "IL",
+      "city": "Chicago",
+      "x": 615,
+      "y": 224,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "NWC EMSS SOP",
           "count": 1
         }
       ]
@@ -588,15 +466,15 @@
       ]
     },
     {
-      "state": "ID",
-      "city": "Ada County",
-      "x": 173,
-      "y": 161,
+      "state": "WV",
+      "city": "Charleston",
+      "x": 733,
+      "y": 276,
       "count": 1,
       "tier": "tiny",
       "topProtocols": [
         {
-          "title": "ADAP",
+          "title": "WV Protocols 2025",
           "count": 1
         }
       ]
@@ -630,6 +508,20 @@
       ]
     },
     {
+      "state": "OR",
+      "city": "Dallas",
+      "x": 78,
+      "y": 102,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "Signed 2026 EMS Protocol",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "TX",
       "city": "Georgetown",
       "x": 444,
@@ -651,13 +543,9 @@
       "city": "Toronto",
       "x": 245,
       "y": 135,
-      "count": 2,
-      "tier": "on",
+      "count": 1,
+      "tier": "tiny",
       "topProtocols": [
-        {
-          "title": "EXT 007 emr student study guide august 2018 pdf 46A9D2DF",
-          "count": 1
-        },
         {
           "title": "MFR Protocols EMT Feb 02 2017",
           "count": 1
