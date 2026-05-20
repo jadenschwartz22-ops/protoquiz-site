@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-05-19T18:07:44.702Z",
+  "generatedAt": "2026-05-20T00:07:48.809Z",
   "totalUploads": 167,
   "distinctProtocols": 126,
-  "activeStudiers": 99,
+  "activeStudiers": 100,
   "pagesProcessed": 16531,
   "statesRepresented": 24,
   "countriesRepresented": 1,
@@ -13,7 +13,7 @@
     "PA": 6,
     "NY": 6,
     "AZ": 6,
-    "CA": 4,
+    "CA": 5,
     "FL": 3,
     "OK": 2,
     "UT": 2,
@@ -437,6 +437,20 @@
       "topProtocols": [
         {
           "title": "patient care protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "CA",
+      "city": "Sacramento",
+      "x": 63,
+      "y": 261,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "PP 8001 Allergic Reaction Anaphylaxis 1",
           "count": 1
         }
       ]
