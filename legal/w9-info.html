@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>W-9 — ProtoQuiz Vendor Information</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="stylesheet" href="/legal/_shared.css" />
+  <style>
+    .w9-block{
+      background:var(--panel);
+      border:1px solid var(--line-2);
+      border-left:3px solid var(--amber);
+      padding:22px 26px;
+      margin:24px 0;
+      font-family:var(--mono);
+      font-size:13px;
+      line-height:1.8;
+    }
+    .w9-block strong{color:var(--amber);display:inline-block;min-width:200px;}
+    .w9-block .value{color:var(--ink);}
+    ol.steps{margin-left:24px;}
+    ol.steps li{margin:8px 0;color:var(--ink-soft);}
+    ol.steps li strong{color:var(--ink);}
+    .print-btn{display:inline-block;font-family:var(--mono);font-size:12px;background:var(--amber);color:var(--bg);padding:8px 16px;border:none;cursor:pointer;letter-spacing:0.5px;}
+    @media print {
+      .statusbar, footer, .print-btn { display:none; }
+      body { background:white; color:black; }
+      a, h1, h2, strong { color:black; }
+      .w9-block { background:#fafafa; border-color:#999; color:black; }
+      .w9-block strong { color:#444; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="statusbar">
+  <a href="/" class="brand">PROTOQUIZ</a>
+  <div class="right">
+    <a href="/">Home</a>
+    <a href="/b2b/terms/">Terms</a>
+    <a href="/b2b/privacy/">Privacy</a>
+    <a href="/legal/ach-authorization.html">ACH Form</a>
+    <button class="print-btn" onclick="window.print()">PRINT / PDF</button>
+  </div>
+</div>
+
+<main>
+  <header class="doc-header">
+    <div class="doc-kicker">VENDOR INFORMATION // FORM W-9</div>
+    <h1 class="doc-title">W-9 Vendor Reference Sheet</h1>
+    <div class="doc-meta">
+      <span><strong>Vendor:</strong> Teach Me to Live LLC, d/b/a ProtoQuiz</span>
+    </div>
+  </header>
+
+  <p>If your procurement department requires a Form W-9 to issue payment, use the IRS-published Form W-9 (available at <a href="https://www.irs.gov/pub/irs-pdf/fw9.pdf">irs.gov/pub/irs-pdf/fw9.pdf</a>) and enter the following information.</p>
+
+  <section>
+    <h2><span class="num">1.</span> Values to Enter on Form W-9</h2>
+    <div class="w9-block">
+      <div><strong>Line 1 — Legal Name:</strong> <span class="value">Teach Me to Live LLC</span></div>
+      <div><strong>Line 2 — Business Name (DBA):</strong> <span class="value">ProtoQuiz</span></div>
+      <div><strong>Line 3 — Federal Tax Classification:</strong> <span class="value">Limited Liability Company — single-member LLC treated as a disregarded entity for federal tax purposes</span></div>
+      <div><strong>Line 4 — Exemptions:</strong> <span class="value">(leave blank — not applicable)</span></div>
+      <div><strong>Line 5 — Address:</strong> <span class="value">5250 S Geneva Way, Englewood, CO 80111</span></div>
+      <div><strong>Line 6 — City/State/ZIP:</strong> <span class="value">(included on Line 5)</span></div>
+      <div><strong>Part I — Employer Identification Number (EIN):</strong> <span class="value">39-2573937</span></div>
+      <div><strong>Part II — Signature:</strong> <span class="value">Jaden Schwartz, Member</span></div>
+      <div><strong>Date:</strong> <span class="value">(date of signing)</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2.</span> Quick Reference for Procurement</h2>
+    <div class="w9-block">
+      <div><strong>Vendor Type:</strong> <span class="value">Software / SaaS (training services)</span></div>
+      <div><strong>Backup Withholding:</strong> <span class="value">Not subject (provide certification on Form W-9 Part II)</span></div>
+      <div><strong>FATCA Code:</strong> <span class="value">Not applicable (US person)</span></div>
+      <div><strong>Preferred Payment Method:</strong> <span class="value">ACH bank transfer</span></div>
+      <div><strong>Bank ACH Details:</strong> <span class="value">Provided separately via signed ACH Authorization form</span></div>
+      <div><strong>Insurance:</strong> <span class="value">Certificate of Insurance available upon request from legal@protoquiz.com</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3.</span> How to Request a Signed W-9 from Us</h2>
+    <ol class="steps">
+      <li><strong>Send an email</strong> to <a href="mailto:billing@protoquiz.com">billing@protoquiz.com</a> with the subject line "<em>W-9 request — [your agency name]</em>".</li>
+      <li><strong>Include:</strong> your agency's procurement contact name + email, and any agency-specific vendor onboarding form.</li>
+      <li><strong>You will receive</strong> a signed PDF W-9 from <strong>billing@protoquiz.com</strong> within one business day.</li>
+    </ol>
+  </section>
+
+  <p style="margin-top:48px;font-family:var(--mono);font-size:11px;color:var(--muted);">
+    This reference sheet is provided to streamline your vendor-onboarding process.<br/>
+    The IRS form itself must be downloaded from <a href="https://www.irs.gov/pub/irs-pdf/fw9.pdf">irs.gov</a> and signed in original.
+  </p>
+</main>
+
+<footer>
+  &copy; 2026 Teach Me to Live LLC. d/b/a ProtoQuiz. All rights reserved.<br/>
+  <a href="/">Home</a> · <a href="/b2b/privacy/">Privacy</a> · <a href="/b2b/terms/">Terms</a> · <a href="/legal/msa.html">MSA</a> · <a href="/legal/dpa.html">DPA</a>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ACH Payment Authorization — ProtoQuiz</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="stylesheet" href="/legal/_shared.css" />
+  <style>
+    .field-row{
+      display:flex;
+      gap:24px;
+      margin:18px 0;
+      flex-wrap:wrap;
+    }
+    .field{flex:1;min-width:240px;}
+    .field-label{font-family:var(--mono);font-size:10px;color:var(--amber);letter-spacing:1.4px;text-transform:uppercase;margin-bottom:6px;}
+    .field-line{border-bottom:1px solid var(--ink-soft);min-height:32px;padding:4px 0;color:var(--ink);}
+    .vendor-block{
+      background:var(--panel);
+      border:1px solid var(--line-2);
+      padding:18px 22px;
+      margin:20px 0;
+      font-family:var(--mono);
+      font-size:13px;
+      color:var(--ink-soft);
+    }
+    .vendor-block strong{color:var(--ink);display:inline-block;min-width:140px;}
+    .auth-block{
+      background:rgba(255,176,0,0.05);
+      border:1px solid var(--amber-soft);
+      border-left:3px solid var(--amber);
+      padding:18px 22px;
+      margin:24px 0;
+      font-size:14px;
+    }
+    .print-btn{display:inline-block;font-family:var(--mono);font-size:12px;background:var(--amber);color:var(--bg);padding:8px 16px;border:none;cursor:pointer;letter-spacing:0.5px;}
+    @media print {
+      .statusbar, footer, .print-btn { display:none; }
+      body { background:white; color:black; }
+      a, h1, h2, strong, .field-line, .doc-title { color:black; }
+      .field-label { color:#444; }
+      .vendor-block, .auth-block { background:#fafafa; border-color:#999; color:black; }
+      .doc-kicker { color:#444; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="statusbar">
+  <a href="/" class="brand">PROTOQUIZ</a>
+  <div class="right">
+    <a href="/">Home</a>
+    <a href="/b2b/terms/">Terms</a>
+    <a href="/b2b/privacy/">Privacy</a>
+    <button class="print-btn" onclick="window.print()">PRINT / PDF</button>
+  </div>
+</div>
+
+<main>
+  <header class="doc-header">
+    <div class="doc-kicker">FORM // ACH PAYMENT AUTHORIZATION</div>
+    <h1 class="doc-title">ACH Payment Authorization</h1>
+    <div class="doc-meta">
+      <span><strong>For:</strong> Teach Me to Live LLC, d/b/a ProtoQuiz</span>
+      <span><strong>Version:</strong> 1.0</span>
+    </div>
+  </header>
+
+  <p>This form authorizes Teach Me to Live LLC (doing business as ProtoQuiz) to initiate electronic debit (ACH) entries from the Customer's bank account for invoices issued under an active ProtoQuiz subscription, in accordance with the U.S. National Automated Clearing House Association ("<strong>NACHA</strong>") Operating Rules.</p>
+  <p style="background:rgba(255,80,80,0.06);border-left:3px solid #c33;padding:12px 16px;font-size:13px;color:var(--ink);"><strong>Do not email this form with bank account numbers in plain text.</strong> Use the secure upload link provided in your onboarding email, encrypt the PDF before sending, or mail the printed form. ProtoQuiz cannot accept responsibility for account information transmitted insecurely.</p>
+
+  <section>
+    <h2><span class="num">1.</span> Vendor Receiving Payment</h2>
+    <div class="vendor-block">
+      <div><strong>Legal Name:</strong> Teach Me to Live LLC</div>
+      <div><strong>DBA:</strong> ProtoQuiz</div>
+      <div><strong>EIN:</strong> 39-2573937</div>
+      <div><strong>Address:</strong> 5250 S Geneva Way, Englewood, CO 80111</div>
+      <div><strong>Billing Email:</strong> billing@protoquiz.com</div>
+      <div><strong>Phone:</strong> (720) 441-2532</div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2.</span> Customer Information</h2>
+    <div class="field-row">
+      <div class="field">
+        <div class="field-label">Organization Legal Name</div>
+        <div class="field-line">&nbsp;</div>
+      </div>
+      <div class="field">
+        <div class="field-label">ProtoQuiz Org ID</div>
+        <div class="field-line">&nbsp;</div>
+      </div>
+    </div>
+    <div class="field-row">
+      <div class="field">
+        <div class="field-label">Billing Contact Name</div>
+        <div class="field-line">&nbsp;</div>
+      </div>
+      <div class="field">
+        <div class="field-label">Billing Contact Title</div>
+        <div class="field-line">&nbsp;</div>
+      </div>
+    </div>
+    <div class="field-row">
+      <div class="field">
+        <div class="field-label">Billing Email</div>
+        <div class="field-line">&nbsp;</div>
+      </div>
+      <div class="field">
+        <div class="field-label">Billing Phone</div>
+        <div class="field-line">&nbsp;</div>
+      </div>
+    </div>
+    <div class="field-row">
+      <div class="field" style="flex-basis:100%;">
+        <div class="field-label">Billing Address (Street, City, State, ZIP)</div>
+        <div class="field-line">&nbsp;</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3.</span> Bank Account Information</h2>
+    <div class="field-row">
+      <div class="field">
+        <div class="field-label">Bank Name</div>
+        <div class="field-line">&nbsp;</div>
+      </div>
+      <div class="field">
+        <div class="field-label">Account Holder Name</div>
+        <div class="field-line">&nbsp;</div>
+      </div>
+    </div>
+    <div class="field-row">
+      <div class="field">
+        <div class="field-label">Account Type</div>
+        <div class="field-line">&nbsp;&nbsp;&#9633; Checking&nbsp;&nbsp;&nbsp;&#9633; Savings</div>
+      </div>
+      <div class="field">
+        <div class="field-label">Routing Number (9 digits)</div>
+        <div class="field-line">&nbsp;</div>
+      </div>
+    </div>
+    <div class="field-row">
+      <div class="field">
+        <div class="field-label">Account Number</div>
+        <div class="field-line">&nbsp;</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">4.</span> Debit Type, Amount, and Frequency</h2>
+    <div class="field-row">
+      <div class="field">
+        <div class="field-label">Debit Type</div>
+        <div class="field-line">&nbsp;&nbsp;[ ] One-time&nbsp;&nbsp;&nbsp;[ ] Recurring (per invoice)</div>
+      </div>
+      <div class="field">
+        <div class="field-label">Frequency (if recurring)</div>
+        <div class="field-line">&nbsp;&nbsp;[ ] Monthly&nbsp;&nbsp;[ ] Quarterly&nbsp;&nbsp;[ ] Annual</div>
+      </div>
+    </div>
+    <div class="field-row">
+      <div class="field" style="flex-basis:100%;">
+        <div class="field-label">Authorized Amount (USD)</div>
+        <div class="field-line">&nbsp;</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:4px;">Enter a fixed amount, "per invoice as issued," or a per-debit maximum (e.g., "up to $X per debit"). If amounts vary, ProtoQuiz will provide at least ten (10) calendar days' advance notice of each debit amount and date in accordance with NACHA Rules.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">5.</span> Authorization</h2>
+    <div class="auth-block">
+      <p style="margin:0 0 12px 0;">I, the undersigned, authorize Teach Me to Live LLC (d/b/a ProtoQuiz) ("<strong>Originator</strong>") to initiate electronic ACH debit entries from the bank account identified in Section&nbsp;3 for amounts owed under our active ProtoQuiz subscription, in accordance with the type, amount, and frequency in Section&nbsp;4 and the NACHA Operating Rules. I authorize the financial institution named above to honor those debits.</p>
+      <p style="margin:0 0 12px 0;"><strong>Advance notice of variable debits.</strong> If the amount of a debit will vary from the amount stated above or from the prior debit, Originator will send written notice to the Billing Contact email in Section&nbsp;2 at least ten (10) calendar days before the debit date.</p>
+      <p style="margin:0 0 12px 0;"><strong>Right to revoke.</strong> I may revoke this authorization at any time by sending written notice to billing@protoquiz.com or by U.S. mail to the address in Section&nbsp;1, in a manner and time that affords Originator and the financial institution a reasonable opportunity to act on the revocation (which the parties agree is at least ten (10) business days before the next scheduled debit). Revocation does not relieve Customer of obligations to pay amounts already owed under the applicable Order Form.</p>
+      <p style="margin:0 0 12px 0;"><strong>Returned debits.</strong> If a debit is returned for insufficient funds, closed account, or any other reason, Originator may re-present the debit up to two (2) additional times as permitted by NACHA Rules and may assess a returned-item fee as stated in the applicable Order Form or invoice.</p>
+      <p style="margin:0;">I represent that I am authorized to act on behalf of the named organization in providing this authorization and that the bank account information in Section&nbsp;3 is accurate. A voided check or a bank-issued account verification letter must be attached to this authorization.</p>
+    </div>
+    <div class="field-row" style="margin-top:32px;">
+      <div class="field">
+        <div class="field-label">Authorized Signature</div>
+        <div class="field-line" style="min-height:44px;">&nbsp;</div>
+      </div>
+      <div class="field">
+        <div class="field-label">Printed Name</div>
+        <div class="field-line">&nbsp;</div>
+      </div>
+    </div>
+    <div class="field-row">
+      <div class="field">
+        <div class="field-label">Title</div>
+        <div class="field-line">&nbsp;</div>
+      </div>
+      <div class="field">
+        <div class="field-label">Date</div>
+        <div class="field-line">&nbsp;</div>
+      </div>
+    </div>
+  </section>
+
+  <p style="margin-top:48px;font-family:var(--mono);font-size:11px;color:var(--muted);">
+    Return signed form to: <a href="mailto:billing@protoquiz.com">billing@protoquiz.com</a> or mail to Teach Me to Live LLC, 5250 S Geneva Way, Englewood, CO 80111.
+    Keep a copy for your records.
+  </p>
+</main>
+
+<footer>
+  &copy; 2026 Teach Me to Live LLC. d/b/a ProtoQuiz. All rights reserved.
+</footer>
+
+</body>
+</html>
