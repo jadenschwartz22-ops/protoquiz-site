@@ -2163,6 +2163,7 @@
         </div>
 
                 <dl class="reach-stats" id="reachStats" data-live="reach">
+          <div class="rstat"><dt>Uploads</dt><dd><b data-stat="uploads">--</b></dd></div>
           <div class="rstat"><dt>States represented</dt><dd><b data-stat="states">--</b></dd></div>
           <div class="rstat"><dt>Different protocols uploaded</dt><dd><b data-stat="protocols">--</b></dd></div>
           <div class="rstat"><dt>Active studiers</dt><dd><b data-stat="studiers">--</b></dd></div>
@@ -2915,6 +2916,7 @@
             else el.textContent = formatter(v);
           });
         };
+        setStat('uploads', r.totalUploads);
         setStat('states', r.statesRepresented);
         setStat('protocols', r.distinctProtocols);
         setStat('studiers', r.activeStudiers);
