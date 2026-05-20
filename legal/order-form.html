@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Order Form — ProtoQuiz</title>
+  <meta name="description" content="ProtoQuiz Order Form for agencies executing under the Master Services Agreement." />
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="stylesheet" href="/legal/_shared.css" />
+  <style>
+    .field-row{display:flex;gap:24px;margin:18px 0;flex-wrap:wrap;}
+    .field{flex:1;min-width:240px;}
+    .field-label{font-family:var(--mono);font-size:10px;color:var(--amber);letter-spacing:1.4px;text-transform:uppercase;margin-bottom:6px;}
+    .field-line{border-bottom:1px solid var(--ink-soft);min-height:32px;padding:4px 0;color:var(--ink);}
+    .order-block{background:var(--panel);border:1px solid var(--line-2);padding:18px 22px;margin:20px 0;font-family:var(--mono);font-size:13px;color:var(--ink-soft);}
+    .order-block strong{color:var(--ink);display:inline-block;min-width:160px;}
+    .summary-table{width:100%;border-collapse:collapse;margin:18px 0;font-size:13px;}
+    .summary-table th,.summary-table td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);}
+    .summary-table th{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--amber);text-transform:uppercase;border-bottom:1px solid var(--line-2);}
+    .summary-table td:first-child{color:var(--ink);font-weight:600;}
+    .summary-table .total{border-top:2px solid var(--amber);}
+    .summary-table .total td{color:var(--ink);font-weight:700;font-size:15px;padding-top:14px;}
+    .signature-block{margin-top:48px;padding-top:24px;border-top:1px solid var(--line);}
+    .signature-block table{width:100%;border-collapse:separate;border-spacing:32px 0;}
+    .signature-block td{vertical-align:top;width:50%;}
+    .signature-line{border-bottom:1px solid var(--ink-soft);min-height:36px;padding:4px 0;color:var(--ink);}
+    .signature-label{font-family:var(--mono);font-size:10px;color:var(--amber);letter-spacing:1.2px;text-transform:uppercase;margin-top:4px;margin-bottom:14px;}
+    .print-btn{display:inline-block;font-family:var(--mono);font-size:12px;background:var(--amber);color:var(--bg);padding:8px 16px;border:none;cursor:pointer;letter-spacing:0.5px;}
+    @media print{
+      .statusbar,footer,.print-btn{display:none;}
+      body{background:white;color:black;}
+      a,h1,h2,strong,.field-line,.doc-title,.signature-line{color:black;}
+      .field-label,.signature-label{color:#444;}
+      .order-block,.summary-table th,.summary-table td{background:#fafafa;border-color:#999;color:black;}
+    }
+  </style>
+</head>
+<body>
+
+<div class="statusbar">
+  <a href="/" class="brand">PROTOQUIZ</a>
+  <div class="right">
+    <a href="/">Home</a>
+    <a href="/legal/msa.html">MSA</a>
+    <a href="/legal/dpa.html">DPA</a>
+    <a href="/b2b/terms/">Terms</a>
+    <button class="print-btn" onclick="window.print()">PRINT / PDF</button>
+  </div>
+</div>
+
+<main>
+  <header class="doc-header">
+    <div class="doc-kicker">LEGAL // ORDER FORM</div>
+    <h1 class="doc-title">ProtoQuiz Order Form</h1>
+    <div class="doc-meta">
+      <span><strong>Order #:</strong> &nbsp;_______________</span>
+      <span><strong>Order Effective Date:</strong> &nbsp;_______________</span>
+      <span><strong>Version:</strong> 1.0</span>
+    </div>
+  </header>
+
+  <div class="callout">
+    This Order Form is executed under the Master Services Agreement (MSA) between Teach Me to Live LLC, d/b/a ProtoQuiz ("<strong>Provider</strong>") and the Customer named below. It incorporates the MSA at <a href="https://protoquiz.com/legal/msa.html">protoquiz.com/legal/msa.html</a>, the DPA at <a href="https://protoquiz.com/legal/dpa.html">protoquiz.com/legal/dpa.html</a>, and the B2B Terms at <a href="https://protoquiz.com/b2b/terms/">protoquiz.com/b2b/terms</a> by reference. Capitalized terms have the meanings given in the MSA.
+  </div>
+
+  <section>
+    <h2><span class="num">1.</span> Provider</h2>
+    <div class="order-block">
+      <div><strong>Legal Name:</strong> Teach Me to Live LLC</div>
+      <div><strong>DBA:</strong> ProtoQuiz</div>
+      <div><strong>EIN:</strong> 39-2573937</div>
+      <div><strong>Address:</strong> 5250 S Geneva Way, Englewood, CO 80111</div>
+      <div><strong>Contract Contact:</strong> <a href="mailto:legal@protoquiz.com">legal@protoquiz.com</a></div>
+      <div><strong>Billing Contact:</strong> <a href="mailto:billing@protoquiz.com">billing@protoquiz.com</a></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2.</span> Customer</h2>
+    <div class="field-row">
+      <div class="field"><div class="field-label">Organization Legal Name</div><div class="field-line">&nbsp;</div></div>
+      <div class="field"><div class="field-label">DBA (if any)</div><div class="field-line">&nbsp;</div></div>
+    </div>
+    <div class="field-row">
+      <div class="field"><div class="field-label">Entity Type</div><div class="field-line">&nbsp;</div></div>
+      <div class="field"><div class="field-label">State of Formation</div><div class="field-line">&nbsp;</div></div>
+    </div>
+    <div class="field-row">
+      <div class="field" style="flex-basis:100%;"><div class="field-label">Principal Address (Street, City, State, ZIP)</div><div class="field-line">&nbsp;</div></div>
+    </div>
+    <div class="field-row">
+      <div class="field"><div class="field-label">Signing Contact Name</div><div class="field-line">&nbsp;</div></div>
+      <div class="field"><div class="field-label">Signing Contact Title</div><div class="field-line">&nbsp;</div></div>
+    </div>
+    <div class="field-row">
+      <div class="field"><div class="field-label">Billing Contact Name</div><div class="field-line">&nbsp;</div></div>
+      <div class="field"><div class="field-label">Billing Contact Email</div><div class="field-line">&nbsp;</div></div>
+    </div>
+    <div class="field-row">
+      <div class="field"><div class="field-label">Technical Contact Name</div><div class="field-line">&nbsp;</div></div>
+      <div class="field"><div class="field-label">Technical Contact Email</div><div class="field-line">&nbsp;</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3.</span> Subscription</h2>
+    <div class="field-row">
+      <div class="field"><div class="field-label">Organization Identifier (assigned by Provider)</div><div class="field-line">&nbsp;</div></div>
+      <div class="field"><div class="field-label">Initial Term</div><div class="field-line">12 months from Order Effective Date</div></div>
+    </div>
+    <div class="field-row">
+      <div class="field"><div class="field-label">Renewal</div><div class="field-line">Auto-renews 12 months unless either party gives 30-day non-renewal notice</div></div>
+      <div class="field"><div class="field-label">Annual Uplift Cap</div><div class="field-line">7% per MSA §3.2 unless waived below</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">4.</span> Fees</h2>
+    <table class="summary-table">
+      <thead>
+        <tr><th>Item</th><th>Quantity</th><th>Unit Price (USD)</th><th>Annual Fee (USD)</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ProtoQuiz Agency Subscription</td>
+          <td>_____ seats</td>
+          <td>$100.00 / seat / year</td>
+          <td>$________</td>
+        </tr>
+        <tr>
+          <td>Optional: Onboarding &amp; Protocol Ingestion</td>
+          <td>1</td>
+          <td>$0 (included)</td>
+          <td>$0.00</td>
+        </tr>
+        <tr>
+          <td>Optional: Custom Branding</td>
+          <td>1</td>
+          <td>$0 (included)</td>
+          <td>$0.00</td>
+        </tr>
+        <tr class="total">
+          <td colspan="3">Total Annual Fee</td>
+          <td>$________</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:12px;color:var(--muted);font-family:var(--mono);margin-top:8px;">Fees are exclusive of applicable taxes per MSA §6.4. Net 30 from invoice date.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">5.</span> Payment</h2>
+    <div class="field-row">
+      <div class="field"><div class="field-label">Payment Method</div><div class="field-line">[ ] ACH (preferred)&nbsp;&nbsp;[ ] Credit Card&nbsp;&nbsp;[ ] Wire&nbsp;&nbsp;[ ] Check</div></div>
+      <div class="field"><div class="field-label">Billing Frequency</div><div class="field-line">Annual in advance</div></div>
+    </div>
+    <p style="font-size:12px;color:var(--muted);font-family:var(--mono);">If ACH, complete the ACH Authorization at <a href="https://protoquiz.com/legal/ach-authorization.html">protoquiz.com/legal/ach-authorization.html</a> and return separately via secure upload (not plain email).</p>
+  </section>
+
+  <section>
+    <h2><span class="num">6.</span> Service Level</h2>
+    <p>The Platform is provided subject to the Service Level commitment in MSA §7.5 (99.5% Monthly Uptime; tiered service credits as sole remedy).</p>
+  </section>
+
+  <section>
+    <h2><span class="num">7.</span> Order-Specific Terms</h2>
+    <p style="color:var(--muted);font-size:13px;">Any terms below modify the MSA solely for this Order Form. If none, write "None."</p>
+    <div class="field-row">
+      <div class="field" style="flex-basis:100%;">
+        <div class="field-label">Special Terms (optional)</div>
+        <div class="field-line" style="min-height:90px;">&nbsp;</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">8.</span> Signatures</h2>
+    <p style="font-size:13px;color:var(--ink-soft);">By signing below, the Parties agree to be bound by this Order Form and the MSA it incorporates.</p>
+    <div class="signature-block">
+      <table>
+        <tr>
+          <td>
+            <div style="font-size:11px;color:var(--amber);letter-spacing:1px;margin-bottom:14px;">PROVIDER</div>
+            <div style="color:var(--ink);margin-bottom:14px;">Teach Me to Live LLC,<br/>d/b/a ProtoQuiz</div>
+            <div class="signature-line">&nbsp;</div>
+            <div class="signature-label">SIGNATURE</div>
+            <div class="signature-line" style="margin-top:18px;">Jaden Schwartz</div>
+            <div class="signature-label">NAME</div>
+            <div class="signature-line" style="margin-top:18px;">Member</div>
+            <div class="signature-label">TITLE</div>
+            <div class="signature-line" style="margin-top:18px;">&nbsp;</div>
+            <div class="signature-label">DATE</div>
+          </td>
+          <td>
+            <div style="font-size:11px;color:var(--amber);letter-spacing:1px;margin-bottom:14px;">CUSTOMER</div>
+            <div style="color:var(--ink);margin-bottom:14px;">&nbsp;</div>
+            <div class="signature-line">&nbsp;</div>
+            <div class="signature-label">SIGNATURE</div>
+            <div class="signature-line" style="margin-top:18px;">&nbsp;</div>
+            <div class="signature-label">NAME</div>
+            <div class="signature-line" style="margin-top:18px;">&nbsp;</div>
+            <div class="signature-label">TITLE</div>
+            <div class="signature-line" style="margin-top:18px;">&nbsp;</div>
+            <div class="signature-label">DATE</div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <p style="margin-top:48px;font-family:var(--mono);font-size:11px;color:var(--muted);">
+    Return executed Order Form to: <a href="mailto:legal@protoquiz.com">legal@protoquiz.com</a> or mail to Teach Me to Live LLC, 5250 S Geneva Way, Englewood, CO 80111.
+  </p>
+</main>
+
+<footer>
+  &copy; 2026 Teach Me to Live LLC. d/b/a ProtoQuiz. All rights reserved.<br/>
+  <a href="/">Home</a> · <a href="/b2b/terms/">Terms</a> · <a href="/b2b/privacy/">Privacy</a> · <a href="/legal/msa.html">MSA</a> · <a href="/legal/dpa.html">DPA</a>
+</footer>
+
+</body>
+</html>

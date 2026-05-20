@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Trust &amp; Security — ProtoQuiz</title>
+  <meta name="description" content="ProtoQuiz security posture, subprocessors, data handling, and incident response. The short version of what we do to protect Customer data." />
+  <link rel="canonical" href="https://protoquiz.com/trust/" />
+  <meta name="robots" content="index,follow" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="stylesheet" href="/legal/_shared.css" />
+  <style>
+    .badge-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:24px 0;}
+    .badge{background:var(--panel);border:1px solid var(--line-2);border-left:3px solid var(--amber);padding:14px 18px;}
+    .badge-title{font-family:var(--mono);font-size:10px;color:var(--amber);letter-spacing:1.4px;text-transform:uppercase;margin-bottom:6px;}
+    .badge-body{font-size:13px;color:var(--ink-soft);line-height:1.5;}
+    .sub-table{width:100%;border-collapse:collapse;margin:18px 0;font-size:13px;}
+    .sub-table th,.sub-table td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;}
+    .sub-table th{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--amber);text-transform:uppercase;border-bottom:1px solid var(--line-2);}
+    .sub-table td:first-child{color:var(--ink);font-weight:600;white-space:nowrap;}
+    .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:18px 0;}
+    .contact-card{background:var(--panel);border:1px solid var(--line-2);padding:12px 16px;font-family:var(--mono);font-size:13px;}
+    .contact-card strong{color:var(--amber);font-size:10px;letter-spacing:1.4px;text-transform:uppercase;display:block;margin-bottom:4px;}
+    .contact-card a{color:var(--ink);border:none;}
+    .contact-card a:hover{color:var(--amber);}
+  </style>
+</head>
+<body>
+
+<div class="statusbar">
+  <a href="/" class="brand">PROTOQUIZ</a>
+  <div class="right">
+    <a href="/">Home</a>
+    <a href="/agency/">Agencies</a>
+    <a href="/b2b/terms/">Terms</a>
+    <a href="/b2b/privacy/">Privacy</a>
+    <a href="/legal/dpa.html">DPA</a>
+  </div>
+</div>
+
+<main>
+  <header class="doc-header">
+    <div class="doc-kicker">TRUST &amp; SECURITY</div>
+    <h1 class="doc-title">How we protect your data</h1>
+    <div class="doc-meta">
+      <span><strong>Last reviewed:</strong> 2026-05-20</span>
+      <span><strong>Operator:</strong> Teach Me to Live LLC, d/b/a ProtoQuiz</span>
+    </div>
+  </header>
+
+  <div class="callout">
+    Short version: TLS in transit, AES-256 at rest, per-organization tenant isolation enforced at the database layer, daily backups, 72-hour breach notification commitment, and a published subprocessor list. Long version below. The contractual versions live in the <a href="/legal/dpa.html">Data Processing Addendum</a>.
+  </div>
+
+  <section>
+    <h2><span class="num">1.</span> Security at a glance</h2>
+    <div class="badge-grid">
+      <div class="badge">
+        <div class="badge-title">Encryption in transit</div>
+        <div class="badge-body">TLS 1.2 or higher for every connection. HSTS preloaded.</div>
+      </div>
+      <div class="badge">
+        <div class="badge-title">Encryption at rest</div>
+        <div class="badge-body">AES-256 (or equivalent) via Google Cloud and Vercel storage.</div>
+      </div>
+      <div class="badge">
+        <div class="badge-title">Tenant isolation</div>
+        <div class="badge-body">Firestore security rules enforce per-organization data isolation. Cross-tenant queries denied at the database layer.</div>
+      </div>
+      <div class="badge">
+        <div class="badge-title">Access control</div>
+        <div class="badge-body">Role-based access for personnel. MFA required for production. Quarterly access reviews.</div>
+      </div>
+      <div class="badge">
+        <div class="badge-title">Backups</div>
+        <div class="badge-body">Daily automated backups, 30-day retention. Restoration tested annually.</div>
+      </div>
+      <div class="badge">
+        <div class="badge-title">Patching</div>
+        <div class="badge-body">Critical patches within 7 days; high-severity within 30 days.</div>
+      </div>
+      <div class="badge">
+        <div class="badge-title">Audit logging</div>
+        <div class="badge-body">Administrative actions and security events retained at least 90 days.</div>
+      </div>
+      <div class="badge">
+        <div class="badge-title">Network protection</div>
+        <div class="badge-body">Cloudflare edge for DDoS and WAF. Backend services require authenticated APIs.</div>
+      </div>
+      <div class="badge">
+        <div class="badge-title">Service level</div>
+        <div class="badge-body">99.5% monthly uptime target with tiered service credits as contractual remedy.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2.</span> What we store, and what we don't</h2>
+    <h3>We store</h3>
+    <ul>
+      <li>Account info via Google OAuth (email, display name, photo URL, Google ID). No passwords.</li>
+      <li>Organization role, certification level, access status.</li>
+      <li>Quiz attempts, scenario responses, leaderboard scores, progress.</li>
+      <li>Customer-uploaded protocol PDFs and generated study content.</li>
+      <li>Technical telemetry: browser type, IP (transient, security only), session ID.</li>
+    </ul>
+    <h3>We do not store</h3>
+    <ul>
+      <li>Patient information or Protected Health Information (PHI). The Platform is not a HIPAA-covered service. Uploads are scanned for PHI markers and quarantined when detected.</li>
+      <li>Payment card or bank account numbers. Stripe handles all card and ACH processing (PCI-DSS Level 1).</li>
+      <li>GPS or precise location data.</li>
+      <li>Microphone, camera, or contacts.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">3.</span> Subprocessors</h2>
+    <p>We use the following third-party services to operate the Platform. Each is bound by a written agreement requiring at least the same data-protection posture stated here.</p>
+    <table class="sub-table">
+      <thead>
+        <tr><th>Subprocessor</th><th>Purpose</th><th>Region</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Google Cloud / Firebase</td><td>Auth, database (Firestore), file storage, hosting</td><td>United States</td></tr>
+        <tr><td>Vercel, Inc.</td><td>Backend APIs and billing infrastructure</td><td>United States</td></tr>
+        <tr><td>Cloudflare, Inc.</td><td>DNS, edge protection, email routing</td><td>Global</td></tr>
+        <tr><td>Stripe, Inc.</td><td>Payment processing, invoicing, ACH collection (PCI-DSS Level 1)</td><td>United States</td></tr>
+        <tr><td>Brevo (Sendinblue SAS)</td><td>Transactional email delivery</td><td>EU / US</td></tr>
+        <tr><td>Discord, Inc.</td><td>Internal operational alerts (minimized event data)</td><td>United States</td></tr>
+        <tr><td>Google AI / Vertex AI (Gemini)</td><td>LLM content generation from Customer-uploaded protocols. No-training contract.</td><td>United States</td></tr>
+      </tbody>
+    </table>
+    <p>Customers receive at least 30 days' notice before any new subprocessor begins processing Customer data. The contractual notice mechanism is described in <a href="/legal/dpa.html">DPA §4.2</a>.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">4.</span> AI use</h2>
+    <p>ProtoQuiz uses third-party LLM services (currently Google Gemini / Vertex AI) to generate quiz questions, scenarios, and drug-comparison content from Customer-uploaded protocol PDFs. We send only the protocol content needed to generate the requested output. We do not send User personal information (email, name, photo) to LLM providers. The provider's terms prohibit training their foundation models on submitted Customer content.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">5.</span> Incident response</h2>
+    <p>If we become aware of a confirmed Security Incident affecting Customer Personal Data, we will notify the affected Customer's designated contact <strong>within 72 hours</strong>, with the information then available: nature of the incident, affected data categories and approximate scope, likely consequences, and measures taken or proposed. We will continue to coordinate as the investigation progresses. This commitment is contractual under <a href="/legal/dpa.html">DPA §6</a>.</p>
+    <p>Vulnerability reports: send to <a href="mailto:security@protoquiz.com">security@protoquiz.com</a>. We respond promptly and do not pursue good-faith security researchers acting within standard responsible-disclosure norms.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">6.</span> Data export &amp; deletion</h2>
+    <p>Customers can request a machine-readable export (CSV or JSON) of their data at any time during the subscription, or for 90 days following termination. After 90 days post-termination, Customer data is deleted from production systems; backup snapshots are purged within an additional 30 days, subject to legal retention requirements (e.g., financial records).</p>
+  </section>
+
+  <section>
+    <h2><span class="num">7.</span> Compliance posture</h2>
+    <p>We are early-stage and do not yet hold formal third-party certifications (SOC 2, ISO 27001). We are happy to share our completed Vendor Security Questionnaire (SIG Lite / CAIQ-Lite), discuss controls in detail, or work toward a security questionnaire your procurement team prefers. Contact <a href="mailto:security@protoquiz.com">security@protoquiz.com</a>.</p>
+    <p>We are not a HIPAA Business Associate; the Platform is not designed to process PHI. CCPA, GDPR, and UK DPA-aligned commitments are in the DPA. Standard Contractual Clauses are available where required for cross-border transfers.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">8.</span> How to reach us</h2>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <strong>Security</strong>
+        <a href="mailto:security@protoquiz.com">security@protoquiz.com</a>
+      </div>
+      <div class="contact-card">
+        <strong>Privacy</strong>
+        <a href="mailto:privacy@protoquiz.com">privacy@protoquiz.com</a>
+      </div>
+      <div class="contact-card">
+        <strong>Legal &amp; contracts</strong>
+        <a href="mailto:legal@protoquiz.com">legal@protoquiz.com</a>
+      </div>
+      <div class="contact-card">
+        <strong>Sales</strong>
+        <a href="mailto:sales@protoquiz.com">sales@protoquiz.com</a>
+      </div>
+      <div class="contact-card">
+        <strong>Support</strong>
+        <a href="mailto:support@protoquiz.com">support@protoquiz.com</a>
+      </div>
+      <div class="contact-card">
+        <strong>Billing</strong>
+        <a href="mailto:billing@protoquiz.com">billing@protoquiz.com</a>
+      </div>
+    </div>
+    <p style="margin-top:24px;font-family:var(--mono);font-size:12px;color:var(--muted);">Teach Me to Live LLC, d/b/a ProtoQuiz<br/>5250 S Geneva Way, Englewood, CO 80111<br/>(720) 441-2532</p>
+  </section>
+</main>
+
+<footer>
+  &copy; 2026 Teach Me to Live LLC. d/b/a ProtoQuiz. All rights reserved.<br/>
+  <a href="/">Home</a> · <a href="/agency/">For Agencies</a> · <a href="/b2b/terms/">Terms</a> · <a href="/b2b/privacy/">Privacy</a> · <a href="/legal/msa.html">MSA</a> · <a href="/legal/dpa.html">DPA</a>
+</footer>
+
+</body>
+</html>
