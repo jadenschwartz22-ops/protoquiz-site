@@ -1,24 +1,24 @@
 {
-  "generatedAt": "2026-05-21T00:07:40.545Z",
-  "totalUploads": 168,
-  "distinctProtocols": 127,
-  "activeStudiers": 101,
-  "pagesProcessed": 17093,
+  "generatedAt": "2026-05-21T06:07:44.455Z",
+  "totalUploads": 170,
+  "distinctProtocols": 129,
+  "activeStudiers": 103,
+  "pagesProcessed": 17654,
   "statesRepresented": 24,
   "countriesRepresented": 1,
   "internationalUploads": 1,
   "byState": {
     "CO": 13,
     "MI": 11,
-    "PA": 6,
+    "PA": 7,
     "NY": 6,
     "AZ": 6,
     "CA": 5,
+    "WI": 3,
     "FL": 3,
     "OK": 2,
     "UT": 2,
     "NC": 2,
-    "WI": 2,
     "MA": 2,
     "TX": 2,
     "WA": 1,
@@ -86,7 +86,7 @@
       "city": "Philadelphia",
       "x": 828,
       "y": 235,
-      "count": 6,
+      "count": 7,
       "tier": "warm",
       "topProtocols": [
         {
@@ -98,7 +98,7 @@
           "count": 1
         },
         {
-          "title": "2023v1 2 PA BLS Protocols",
+          "title": "2023v1 2 PA ALS Protocols",
           "count": 1
         }
       ]
@@ -325,6 +325,20 @@
       "topProtocols": [
         {
           "title": "aurora south wi ems 2024 pre hospital guidelines",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "WI",
+      "city": "Milwaukee",
+      "x": 612,
+      "y": 187,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "Aurora South WI EMS 2026 Pre Hospital Guidelines 4.1.26",
           "count": 1
         }
       ]
