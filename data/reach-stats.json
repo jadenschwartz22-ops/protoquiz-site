@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-24T12:07:51.399Z",
-  "totalUploads": 170,
-  "distinctProtocols": 129,
-  "activeStudiers": 103,
-  "pagesProcessed": 17654,
-  "statesRepresented": 24,
+  "generatedAt": "2026-05-24T18:07:44.869Z",
+  "totalUploads": 171,
+  "distinctProtocols": 130,
+  "activeStudiers": 104,
+  "pagesProcessed": 17962,
+  "statesRepresented": 25,
   "countriesRepresented": 1,
   "internationalUploads": 1,
   "byState": {
@@ -23,6 +23,7 @@
     "TX": 2,
     "WA": 1,
     "DC": 1,
+    "VA": 1,
     "IA": 1,
     "SC": 1,
     "MD": 1,
@@ -297,6 +298,20 @@
       "topProtocols": [
         {
           "title": "2026 DHS EMS Protocols w: Hyperlinks",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "VA",
+      "city": "Richmond",
+      "x": 815,
+      "y": 286,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "6a070791b4b80bc675b07bc3 20250701i Protocols compressed copy…",
           "count": 1
         }
       ]
