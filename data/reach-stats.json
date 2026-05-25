@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-25T12:07:43.966Z",
-  "totalUploads": 171,
-  "distinctProtocols": 130,
-  "activeStudiers": 104,
-  "pagesProcessed": 17962,
-  "statesRepresented": 25,
+  "generatedAt": "2026-05-25T18:07:46.515Z",
+  "totalUploads": 172,
+  "distinctProtocols": 131,
+  "activeStudiers": 105,
+  "pagesProcessed": 18538,
+  "statesRepresented": 26,
   "countriesRepresented": 1,
   "internationalUploads": 1,
   "byState": {
@@ -24,6 +24,7 @@
     "WA": 1,
     "DC": 1,
     "VA": 1,
+    "ID": 1,
     "IA": 1,
     "SC": 1,
     "MD": 1,
@@ -312,6 +313,20 @@
       "topProtocols": [
         {
           "title": "6a070791b4b80bc675b07bc3 20250701i Protocols compressed copy…",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "ID",
+      "city": "Boise",
+      "x": 175,
+      "y": 175,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "ADA COUNTY Boise",
           "count": 1
         }
       ]
