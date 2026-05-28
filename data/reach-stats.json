@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-05-28T00:07:45.648Z",
-  "totalUploads": 173,
-  "distinctProtocols": 132,
-  "activeStudiers": 106,
-  "pagesProcessed": 18720,
+  "generatedAt": "2026-05-28T06:07:45.865Z",
+  "totalUploads": 174,
+  "distinctProtocols": 133,
+  "activeStudiers": 107,
+  "pagesProcessed": 19339,
   "statesRepresented": 27,
   "countriesRepresented": 1,
   "internationalUploads": 1,
@@ -15,12 +15,12 @@
     "AZ": 6,
     "CA": 5,
     "WI": 3,
+    "TX": 3,
     "FL": 3,
     "OK": 2,
     "UT": 2,
     "NC": 2,
     "MA": 2,
-    "TX": 2,
     "WA": 1,
     "DC": 1,
     "VA": 1,
@@ -384,6 +384,20 @@
       "topProtocols": [
         {
           "title": "CA Protocols 2025 October UPDATED",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "TX",
+      "city": "Houston",
+      "x": 490,
+      "y": 536,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "COGs 3.2 Bexar Frio04282026164702",
           "count": 1
         }
       ]
