@@ -114,8 +114,9 @@ async function main() {
   console.log('🔗 URL: https://protoquiz.com/blog/feed.xml\n');
 }
 
-// Run if called directly
-if (import.meta.url === `file://${process.argv[1]}`) {
+// Run if called directly (pathToFileURL handles spaces/encoding in the path)
+import { pathToFileURL } from 'url';
+if (import.meta.url === pathToFileURL(process.argv[1]).href) {
   main();
 }
 
