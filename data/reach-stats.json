@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-05-30T00:07:45.149Z",
-  "totalUploads": 178,
-  "distinctProtocols": 137,
-  "activeStudiers": 110,
-  "pagesProcessed": 19809,
+  "generatedAt": "2026-05-30T06:07:51.075Z",
+  "totalUploads": 179,
+  "distinctProtocols": 138,
+  "activeStudiers": 111,
+  "pagesProcessed": 19987,
   "statesRepresented": 28,
   "countriesRepresented": 1,
   "internationalUploads": 1,
@@ -11,9 +11,9 @@
     "CO": 14,
     "MI": 11,
     "PA": 7,
+    "CA": 6,
     "NY": 6,
     "AZ": 6,
-    "CA": 5,
     "WI": 3,
     "TX": 3,
     "FL": 3,
@@ -581,6 +581,20 @@
       "topProtocols": [
         {
           "title": "WV Protocols 2025",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "CA",
+      "city": "San Leandro",
+      "x": 46,
+      "y": 264,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "2026 Alameda County EMS Field Manual Rev3",
           "count": 1
         }
       ]
