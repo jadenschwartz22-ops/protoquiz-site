@@ -6123,6 +6123,7 @@
     let clickTimer = null;
     let toastTimer = null;
     let resumeTimer = null;
+    let trackSwitchTimer = null;  // Pending crossfade -> beat 0 after a track switch.
     let chainGen = 0;  // Multi-step beat chain generation; survives clickGen bumps from inner clicks.
 
     function clearTimers(){
@@ -6130,6 +6131,7 @@
       if(clickTimer){ clearTimeout(clickTimer); clickTimer = null; }
       if(toastTimer){ clearTimeout(toastTimer); toastTimer = null; }
       if(resumeTimer){ clearTimeout(resumeTimer); resumeTimer = null; }
+      if(trackSwitchTimer){ clearTimeout(trackSwitchTimer); trackSwitchTimer = null; }
       if(progressAnim){ cancelAnimationFrame(progressAnim); progressAnim = null; }
       clearAllPending();
       clickGen++;
@@ -6570,22 +6572,16 @@
       TOTAL = beats.length;
       beatTotalEl.textContent = String(TOTAL).padStart(2, '0');
       rebuildProgressDots();
-      // Hard-snap any currently-live narration to opacity:0 BEFORE runBeat
-      // schedules the new one. Without `was-live` the old beat would slowly
-      // fade out (0.7s) while the new beat fades in starting at +280ms (during
-      // the frame swap), producing a visible stack mid-fade.
-      document.querySelectorAll('.beat.live').forEach(b => {
-        b.classList.remove('live');
-        b.classList.add('was-live');
-      });
-      // Drop the snap class on the next frame so beats can fade in normally later.
-      requestAnimationFrame(() => {
-        document.querySelectorAll('.beat.was-live').forEach(b => b.classList.remove('was-live'));
-      });
-      // Reset to beat 0 of the new track and play (unless user had paused)
-      beatIdx = 0;
+      // Smooth crossfade instead of a hard reset (which read as a page
+      // "reload"). Let the current beat fade OUT gently via its natural 0.7s
+      // opacity transition, hold briefly so the swap doesn't snap, then build
+      // beat 0 of the new track — runBeat's own frame-swap choreography fades
+      // the new content back IN. Stagger keeps the two from stacking mid-fade.
       clearTimers();
-      runBeat(0);
+      document.querySelectorAll('.beat.live').forEach(b => b.classList.remove('live'));
+      beatIdx = 0;
+      if(trackSwitchTimer) clearTimeout(trackSwitchTimer);
+      trackSwitchTimer = setTimeout(() => { runBeat(0); }, 260);
     }
 
     // Wire the tab buttons
