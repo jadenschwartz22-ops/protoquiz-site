@@ -32,6 +32,10 @@ agency/index.html.backup-*
 # Vercel local linkage
 .vercel/
 
+# Unpublished blog draft (not ready to go live) — kept on disk, not deployed
+blog/posts/2026-05-19-what-51-ems-protocols-actually-say.html
+blog/images/protocol-map-51.svg
+
 # Cloud-sync conflict copies (" 2.html", " 3.svg", etc.)
 * [0-9].html
 * [0-9].svg
