@@ -2,6 +2,7 @@ User-agent: *
 Allow: /
 Disallow: /tmp/
 Disallow: /node_modules/
+Disallow: /legal/
 
 # Block search params on internal pages from being indexed
 Disallow: /*?utm_*

@@ -26,4 +26,16 @@ Thumbs.db
 *~
 .claude/
 app-shots/raw-*.png
+app-shots/backup/
 agency/index.html.backup-*
+
+# Vercel local linkage
+.vercel/
+
+# Cloud-sync conflict copies (" 2.html", " 3.svg", etc.)
+* [0-9].html
+* [0-9].svg
+* [0-9].mjs
+* [0-9].css
+* [0-9].js
+* [0-9].json
