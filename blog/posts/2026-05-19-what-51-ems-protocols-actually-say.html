@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>I Compared 51 EMS Protocols From Across the Country. Here's What I Noticed. - EMS ProtoQuiz Blog</title>
+  <meta name="description" content="I looked at 51 EMS protocols from all over the US. Almost every service carries the same 19 drugs — but they don't dose them the same, and what's risky when you switch agencies isn't what you'd expect. Here are the patterns." />
+
+  <!-- SEO -->
+  <link rel="canonical" href="https://protoquiz.com/blog/posts/2026-05-19-what-51-ems-protocols-actually-say.html">
+  <meta name="robots" content="index,follow" />
+  <meta name="keywords" content="EMS protocols, EMS protocol comparison, paramedic drug formulary, EMS medication standardization, prehospital protocols, EMS protocol variation, national EMS protocol, switching EMS agencies" />
+
+  <!-- Social / Open Graph -->
+  <meta property="og:title" content="I Compared 51 EMS Protocols From Across the Country. Here's What I Noticed." />
+  <meta property="og:description" content="Almost every US EMS service carries the same 19 drugs — but they don't dose them the same, and what's risky when you switch agencies isn't what you'd expect. The patterns I found in 51 protocols." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://protoquiz.com/blog/posts/2026-05-19-what-51-ems-protocols-actually-say.html" />
+  <meta property="og:image" content="https://protoquiz.com/blog/images/protocol-map-51.svg" />
+  <meta property="article:published_time" content="2026-05-19" />
+  <meta property="article:author" content="Jaden" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="I Compared 51 EMS Protocols From Across the Country. Here's What I Noticed." />
+  <meta name="twitter:description" content="Almost every US EMS service carries the same 19 drugs — but they don't dose them the same. The patterns I found in 51 protocols." />
+  <meta name="twitter:image" content="https://protoquiz.com/blog/images/protocol-map-51.svg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png" />
+
+  <!-- Structured Data - BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "I Compared 51 EMS Protocols From Across the Country. Here's What I Noticed.",
+    "description": "I looked at 51 EMS protocols from all over the US. Almost every service carries the same 19 drugs — but they don't dose them the same, and what's risky when you switch agencies isn't what you'd expect.",
+    "author": {
+      "@type": "Person",
+      "name": "Jaden",
+      "jobTitle": "Paramedic & Developer"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Teach Me to Live LLC",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://protoquiz.com/logo-256.png"
+      }
+    },
+    "datePublished": "2026-05-19",
+    "dateModified": "2026-05-19",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://protoquiz.com/blog/posts/2026-05-19-what-51-ems-protocols-actually-say.html"
+    }
+  }
+  </script>
+
+  <!-- Google tag (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LNSS9BMEP8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-LNSS9BMEP8');
+
+    function track(name, props){
+      try { gtag('event', name, props || {}); } catch(e){}
+    }
+    const PAGE = 'blog_post';
+    track('blog_post_view', { title: 'What 51 US EMS Protocols Actually Say' });
+
+    // Track view in Firestore
+    (async () => {
+      try {
+        const slug = window.location.pathname.split('/').pop().replace('.html', '');
+        await fetch('https://ems-router.vercel.app/api/blog-views', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ slug })
+        });
+      } catch (e) {
+        console.log('View tracking failed:', e);
+      }
+    })();
+  </script>
+
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../_shared-styles.css">
+
+  <style>
+    /* Post-specific styles */
+    .post-container { max-width: 720px; margin: 0 auto; }
+    .post-header { margin-bottom: 40px; padding-bottom: 32px; border-bottom: 1px solid var(--line); }
+    .post-category-badge {
+      display: inline-block; padding: 6px 14px; border-radius: 8px;
+      background: rgba(34,211,238,.1); color: var(--cyan);
+      font-weight: 700; font-size: 12px; text-transform: uppercase;
+      letter-spacing: .05em; margin-bottom: 20px;
+    }
+    .post-category-badge.updates { background: rgba(168,85,247,.1); color: var(--violet); }
+    .post-header h1 {
+      font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 900;
+      line-height: 1.2; letter-spacing: -.02em; margin-bottom: 20px;
+    }
+    .post-meta-info { display: flex; align-items: center; gap: 16px; color: var(--muted); font-size: 14px; }
+    .post-meta-info .author { display: flex; align-items: center; gap: 8px; font-weight: 600; color: var(--ink); }
+    .post-content { font-size: 17px; line-height: 1.8; color: var(--ink); }
+    .post-content h2 { font-size: 1.75rem; font-weight: 800; margin-top: 48px; margin-bottom: 20px; letter-spacing: -.02em; }
+    .post-content h3 { font-size: 1.35rem; font-weight: 700; margin-top: 36px; margin-bottom: 16px; }
+    .post-content p { margin-bottom: 24px; }
+    .post-content ul, .post-content ol { margin-bottom: 24px; padding-left: 28px; }
+    .post-content li { margin-bottom: 12px; }
+    .post-content a { color: var(--cyan); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+    .post-content a:hover { color: var(--violet); }
+    .post-content strong { font-weight: 700; color: var(--ink); }
+    .post-content blockquote { border-left: 3px solid var(--cyan); padding-left: 20px; margin: 32px 0; color: var(--muted); font-style: italic; }
+    .post-content blockquote p { margin-bottom: 12px; }
+    .post-figure { margin: 36px 0; }
+    .post-figure figcaption { margin-top: 12px; font-size: 14px; color: var(--muted); line-height: 1.6; }
+    /* Zoomable map */
+    .map-zoom { position: relative; border: 1px solid var(--line); border-radius: var(--radius); background: #0a0c10; overflow: hidden; }
+    .map-zoom-viewport { overflow: hidden; cursor: grab; touch-action: none; }
+    .map-zoom-viewport.grabbing { cursor: grabbing; }
+    .map-zoom-viewport img { width: 100%; height: auto; display: block; transform-origin: 0 0; will-change: transform; user-select: none; -webkit-user-drag: none; }
+    .map-zoom-ctrl { position: absolute; top: 12px; right: 12px; z-index: 2; display: flex; flex-direction: column; gap: 6px; }
+    .map-zoom-ctrl button {
+      width: 34px; height: 34px; border-radius: 8px; border: 1px solid var(--line);
+      background: rgba(10,12,16,.85); color: var(--ink); font-size: 18px; font-weight: 700;
+      cursor: pointer; line-height: 1; display: flex; align-items: center; justify-content: center;
+      backdrop-filter: blur(4px); transition: all .15s;
+    }
+    .map-zoom-ctrl button:hover { border-color: var(--cyan); color: var(--cyan); }
+    .map-zoom-hint { position: absolute; left: 12px; bottom: 10px; z-index: 2; font-size: 11px; color: var(--muted); background: rgba(10,12,16,.7); padding: 3px 8px; border-radius: 6px; pointer-events: none; }
+    /* Source list */
+    .sources-box { margin: 32px 0; }
+    .sources-box > summary {
+      cursor: pointer; list-style: none; font-weight: 700; font-size: 17px; color: var(--ink);
+      padding: 16px 20px; border: 1px solid var(--line); border-radius: var(--radius);
+      background: var(--panel); display: flex; align-items: center; justify-content: space-between;
+    }
+    .sources-box > summary::-webkit-details-marker { display: none; }
+    .sources-box > summary::after { content: "▾"; color: var(--cyan); transition: transform .2s; }
+    .sources-box[open] > summary { border-radius: var(--radius) var(--radius) 0 0; }
+    .sources-box[open] > summary::after { transform: rotate(180deg); }
+    .sources-grid {
+      border: 1px solid var(--line); border-top: none; border-radius: 0 0 var(--radius) var(--radius);
+      padding: 20px; column-count: 2; column-gap: 28px;
+    }
+    @media (max-width: 560px) { .sources-grid { column-count: 1; } }
+    .src-group { break-inside: avoid; -webkit-column-break-inside: avoid; margin-bottom: 18px; }
+    .src-group h4 { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--cyan); margin: 0 0 8px; display: flex; align-items: center; gap: 8px; }
+    .src-group .src-n { background: rgba(34,211,238,.12); color: var(--cyan); border-radius: 6px; padding: 1px 7px; font-size: 11px; }
+    .src-list { list-style: none; margin: 0; padding: 0; }
+    .src-list li { font-size: 14px; line-height: 1.5; margin-bottom: 7px; color: var(--ink); padding-left: 0; }
+    .src-st { display: inline-block; min-width: 26px; font-family: 'SF Mono', Monaco, monospace; font-size: 11px; font-weight: 700; color: var(--muted); margin-right: 4px; }
+    .method-body { border: 1px solid var(--line); border-top: none; border-radius: 0 0 var(--radius) var(--radius); padding: 20px; font-size: 14px; color: var(--muted); }
+    .method-body h4 { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--cyan); margin: 18px 0 8px; }
+    .method-body h4:first-child { margin-top: 0; }
+    .method-body ul { margin: 0 0 4px; padding-left: 20px; }
+    .method-body li { margin-bottom: 6px; line-height: 1.5; }
+    .method-body p { margin: 12px 0 0; line-height: 1.6; }
+    /* Data table */
+    .post-table-wrap { overflow-x: auto; margin: 32px 0; border: 1px solid var(--line); border-radius: var(--radius); }
+    .post-content table { width: 100%; border-collapse: collapse; font-size: 15px; }
+    .post-content table th, .post-content table td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--line); }
+    .post-content table th { background: var(--panel); font-weight: 700; color: var(--cyan); text-transform: uppercase; letter-spacing: .03em; font-size: 12px; }
+    .post-content table tr:last-child td { border-bottom: none; }
+    .stats-callout {
+      background: linear-gradient(135deg, rgba(34,211,238,.05), rgba(168,85,247,.05));
+      border: 1px solid rgba(34,211,238,.2); border-radius: var(--radius);
+      padding: 24px; margin: 40px 0;
+    }
+    .stats-callout h3 { font-size: 16px; font-weight: 700; margin-bottom: 12px; color: var(--cyan); text-transform: uppercase; letter-spacing: .05em; }
+    .stats-callout p { margin-bottom: 8px; font-size: 15px; }
+    .stats-callout strong { color: var(--cyan); font-weight: 800; }
+    .cta-box { background: linear-gradient(135deg, var(--cyan), var(--violet)); border-radius: var(--radius); padding: 32px; text-align: center; margin: 48px 0; }
+    .cta-box h3 { color: #05080c; font-size: 1.5rem; font-weight: 800; margin-bottom: 12px; }
+    .cta-box p { color: rgba(5,8,12,.8); margin-bottom: 20px; font-size: 16px; }
+    .cta-btn { display: inline-block; padding: 14px 32px; background: #05080c; color: var(--cyan); font-weight: 700; border-radius: 999px; font-size: 16px; transition: all .2s; border: 2px solid #05080c; }
+    .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.4); opacity: 1; }
+    .comments-section { margin-top: 80px; padding-top: 40px; border-top: 2px solid var(--line); }
+    .comments-section h2 { font-size: 1.75rem; font-weight: 800; margin-bottom: 24px; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-weight: 600; margin-bottom: 32px; transition: color .2s; }
+    .back-link:hover { color: var(--cyan); }
+    .back-link::before { content: "←"; }
+    .post-footnote { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); }
+    .post-footnote h3 { font-size: 1.1rem; font-weight: 700; color: var(--ink); margin-top: 28px; margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <header>
+    <div class="wrap">
+      <nav class="navbar">
+        <a href="../../" class="brand-link">
+          <img src="../../logo-48.png" alt="ProtoQuiz Logo" width="48" height="48">
+          <span>ProtoQuiz</span>
+        </a>
+        <div class="nav-links">
+          <a href="../../" class="nav-btn">Home</a>
+          <a href="../" class="nav-btn">Blog</a>
+          <a href="https://apps.apple.com/app/id6753611139" class="nav-btn primary" onclick="track('download_app', {source: 'blog_post'})">
+            Download App
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="wrap">
+      <div class="post-container">
+        <a href="../" class="back-link">Back to Blog</a>
+
+        <!-- Post Header -->
+        <article class="post-header">
+          <span class="post-category-badge">Research</span>
+          <h1>I Compared 51 EMS Protocols From Across the Country. Here's What I Noticed.</h1>
+          <div class="post-meta-info">
+            <span class="author">By Jaden</span>
+            <span>•</span>
+            <time datetime="2026-05-19">May 19, 2026</time>
+          </div>
+        </article>
+
+        <!-- Post Content -->
+        <div class="post-content">
+          <blockquote>
+            <p>I run an app that EMTs and medics use to study their own service's protocols. That means I have access to hundreds of real EMS protocol documents from all over the country.</p>
+            <p>So I compared a bunch of them. Here's what I found in 51.</p>
+          </blockquote>
+
+          <p>If you've worked at more than one EMS agency, you already know the secret: <strong>the basics transfer, the details don't.</strong></p>
+
+          <p>You'll show up to a new service knowing how to run a cardiac arrest, how to set up a 12-lead, how to push epi, how to start an IO. None of that will surprise you. The surprises will be small and dangerous:</p>
+
+          <ul>
+            <li>The midazolam dose is different.</li>
+            <li>The drug for a violent patient is different.</li>
+            <li>The thing you used to do on your own now needs a call to medical control.</li>
+            <li>The vial you keep reaching for isn't on the truck.</li>
+          </ul>
+
+          <p>I wanted to know how much of this is just shop talk and how much is real. So I actually looked.</p>
+
+          <p>I run <a href="../../">ProtoQuiz</a>, an app where EMTs and paramedics upload their service's protocol PDF and quiz themselves on it. Because of that, I've ended up with hundreds of real EMS protocols from all over the country, with the drugs pulled out and lined up in a way I can actually compare.</p>
+
+          <p>I picked the 51 cleanest ones — spread across every region of the US, a mix of statewide, county, big-city, and air-medical services — and went through them.</p>
+
+          <figure class="post-figure">
+            <div class="map-zoom" id="mapZoom">
+              <div class="map-zoom-ctrl">
+                <button type="button" data-z="in" aria-label="Zoom in">+</button>
+                <button type="button" data-z="out" aria-label="Zoom out">&minus;</button>
+                <button type="button" data-z="reset" aria-label="Reset zoom">&#8634;</button>
+              </div>
+              <div class="map-zoom-viewport" id="mapViewport">
+                <img src="../images/protocol-map-51.svg" id="mapImg" alt="US map showing the EMS services in the 51-protocol sample, spread across all four census regions, with each service named" width="1284" height="609" draggable="false">
+              </div>
+              <span class="map-zoom-hint">Scroll or use + / &minus; to zoom &middot; drag to pan</span>
+            </div>
+            <figcaption>Where the 51 came from. Statewide systems, big-city fire EMS, rural counties, and air-medical services — coast to coast, plus the National Model Guidelines and one international reference (St John New Zealand) as outliers. The full list is below.</figcaption>
+          </figure>
+
+          <details class="sources-box">
+            <summary>The 51 sources &mdash; every protocol in the sample</summary>
+            <div class="sources-grid">
+              <div class="src-group">
+                <h4>West <span class="src-n">22</span></h4>
+                <ul class="src-list">
+                  <li><span class="src-st">AZ</span> Arizona Red Book / AEMS Statewide Guidelines</li>
+                  <li><span class="src-st">AZ</span> Metro Regional EMS Consortium (Phoenix/Maricopa, AZ)</li>
+                  <li><span class="src-st">CA</span> ALCO Field Manual (Alameda?)</li>
+                  <li><span class="src-st">CA</span> Alameda County (ADAP)</li>
+                  <li><span class="src-st">CA</span> Antelope Valley CPG</li>
+                  <li><span class="src-st">CA</span> California LEMSA Field Manual chapter (unidentified county)</li>
+                  <li><span class="src-st">CA</span> California LEMSA Section 800 (chapter fragment, unidentified county)</li>
+                  <li><span class="src-st">CA</span> LA County EMS</li>
+                  <li><span class="src-st">CA</span> REMSA Riverside County CA - Policy Manual 103 (Ready-to-Print)</li>
+                  <li><span class="src-st">CO</span> Boulder County (BoCo)</li>
+                  <li><span class="src-st">CO</span> Denver City EMS (DCEMS)</li>
+                  <li><span class="src-st">CO</span> Denver Metro EMS (DMEMSMD)</li>
+                  <li><span class="src-st">NV</span> Clark County NV EMS System (Las Vegas)</li>
+                  <li><span class="src-st">NV</span> REMSA (Reno NV)</li>
+                  <li><span class="src-st">OR</span> Dallas Fire &amp; EMS / Polk County FPD No.1 (Oregon)</li>
+                  <li><span class="src-st">OR</span> Tualatin Valley EMS (TVEMS)</li>
+                  <li><span class="src-st">UT</span> Mountain West Ambulance (Utah)</li>
+                  <li><span class="src-st">UT</span> Mountain West Ambulance (Utah) &mdash; 2nd protocol doc</li>
+                  <li><span class="src-st">UT</span> UT Lifestar Air Medical</li>
+                  <li><span class="src-st">WA</span> Eastside Fire/ECEMS WA</li>
+                  <li><span class="src-st">WA</span> Grant/Okanogan/Chelan/Douglas WA</li>
+                  <li><span class="src-st">WA</span> Thurston County WA</li>
+                </ul>
+              </div>
+              <div class="src-group">
+                <h4>Midwest <span class="src-n">6</span></h4>
+                <ul class="src-list">
+                  <li><span class="src-st">IA</span> UnityPoint Health AirCare (Iowa - Dubuque/Waterloo)</li>
+                  <li><span class="src-st">IL</span> Northwest Chicago EMSS</li>
+                  <li><span class="src-st">MI</span> Berrien County MI</li>
+                  <li><span class="src-st">MN</span> Mayo Clinic (reference)</li>
+                  <li><span class="src-st">MN</span> Minneapolis Fire ESNA Paramedic Formulary</li>
+                  <li><span class="src-st">WI</span> Aurora South WI EMS</li>
+                </ul>
+              </div>
+              <div class="src-group">
+                <h4>South <span class="src-n">9</span></h4>
+                <ul class="src-list">
+                  <li><span class="src-st">FL</span> Greater Miami</li>
+                  <li><span class="src-st">FL</span> Palm Beach Gardens Fire Rescue</li>
+                  <li><span class="src-st">FL</span> West Palm Beach EMS</li>
+                  <li><span class="src-st">MD</span> Maryland Statewide</li>
+                  <li><span class="src-st">NC</span> North Carolina OEMS Statewide (combined update)</li>
+                  <li><span class="src-st">SC</span> Kershaw County SC</li>
+                  <li><span class="src-st">TX</span> CareFlite (Dallas-Fort Worth, TX)</li>
+                  <li><span class="src-st">TX</span> South Plains EMS (Lubbock, TX)</li>
+                  <li><span class="src-st">WV</span> West Virginia Statewide</li>
+                </ul>
+              </div>
+              <div class="src-group">
+                <h4>Northeast <span class="src-n">9</span></h4>
+                <ul class="src-list">
+                  <li><span class="src-st">CT</span> Connecticut Statewide</li>
+                  <li><span class="src-st">MA</span> Massachusetts Statewide STP</li>
+                  <li><span class="src-st">MA</span> Massachusetts Statewide 2018 (older)</li>
+                  <li><span class="src-st">MA</span> Massachusetts Statewide Treatment Protocols (plain-text edition)</li>
+                  <li><span class="src-st">ME</span> Maine EPRIP Statewide</li>
+                  <li><span class="src-st">NH</span> New Hampshire Statewide Patient Care Protocols v9.3</li>
+                  <li><span class="src-st">NJ</span> New Jersey Statewide</li>
+                  <li><span class="src-st">NY</span> NYC REMAC Unified</li>
+                  <li><span class="src-st">NY</span> NYS Collaborative ALS Protocols (Statewide)</li>
+                </ul>
+              </div>
+              <div class="src-group">
+                <h4>National &amp; International <span class="src-n">2</span></h4>
+                <ul class="src-list">
+                  <li><span class="src-st">US</span> National Model EMS Clinical Guidelines v3 (reference)</li>
+                  <li><span class="src-st">NZ</span> St John New Zealand CPGs (international reference)</li>
+                </ul>
+              </div>
+              <div class="src-group">
+                <h4>State not identified <span class="src-n">3</span></h4>
+                <ul class="src-list">
+                  <li><span class="src-st">?</span> BLS/ILS Protocol Guidance #530-281</li>
+                  <li><span class="src-st">?</span> HEMS Statewide protocol suite</li>
+                  <li><span class="src-st">?</span> WCEMS (county EMS, "Study Draft")</li>
+                </ul>
+              </div>
+            </div>
+          </details>
+
+          <p>Three patterns jumped out. Here they are, then what I think they mean for anyone working a truck.</p>
+
+          <h2>1. Almost every service carries the same 19 drugs</h2>
+
+          <p>When I lined all 51 up, <strong>19 drugs showed up in at least 4 out of every 5 services.</strong> I'll call these the <strong>common core</strong> — the drugs you can basically count on being on the truck no matter where in the country you're working:</p>
+
+          <blockquote>
+            <p>Naloxone, Albuterol, Atropine, Epinephrine, Midazolam, Nitroglycerin, Sodium Bicarbonate, Diphenhydramine, Fentanyl, Aspirin, Lidocaine, Amiodarone, Glucagon, Magnesium Sulfate, Adenosine, Ketamine, Oral Glucose, Tranexamic Acid (TXA), Acetaminophen.</p>
+          </blockquote>
+
+          <p>A couple of things stood out to me.</p>
+
+          <p><strong>TXA and ketamine are part of that core now.</strong> A decade ago, neither would have made a top-20 list. Here, TXA showed up in 82% of services and ketamine in 86%. Ketamine is the Swiss Army knife of the box — sedation, pain, agitation, induction for intubation, all from one vial. That versatility is probably why it spread so fast.</p>
+
+          <p><strong>Services agree more on the <em>job</em> than on the <em>drug</em>.</strong> Ask "does this service carry fentanyl?" and 94% say yes. Ask "does this service carry <em>something</em> for moderate pain" (fentanyl, morphine, or hydromorphone) and it's 96%. Almost everyone has a tool for the job — they just don't always pick the same one.</p>
+
+          <p><strong>This common core is most of any service's drug box.</strong> On average, those 19 drugs make up about <strong>45%</strong> of a given service's whole formulary. For busy street-ALS services — Denver Metro, Boulder County, Eastside WA, NJ, Massachusetts — they make up <strong>55% to 67%</strong> of the list.</p>
+
+          <p>So when someone says "I know my drugs," it's true — they already know roughly two-thirds of any new service's drug box the day they walk in.</p>
+
+          <p>It's the other third that gets people.</p>
+
+          <h2>2. Even the shared drugs aren't dosed the same</h2>
+
+          <p>You already know epi does a dozen different jobs, and each one has its own dose — the 1 mg arrest dose, a push-dose pressor for shock, a drip for the post-arrest patient. So I held all of that still and looked at one exact thing: <strong>the initial adult IM dose for anaphylaxis</strong>. Same drug, same indication, same point in the algorithm — and it still doesn't agree from service to service:</p>
+
+          <div class="post-table-wrap">
+            <table>
+              <thead>
+                <tr><th>Service</th><th>Initial adult IM epi, anaphylaxis</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Alameda County (ADAP, CA)</td><td>0.15 mg IM</td></tr>
+                <tr><td>Boulder County</td><td>0.3 mg (1:1,000) IM</td></tr>
+                <tr><td>Antelope Valley CPG (CA)</td><td>0.5 mg IM</td></tr>
+                <tr><td>Denver Metro EMS</td><td>no fixed adult number; repeat q20min IM</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>Same first dose, same patient — and it's written as 0.15, 0.3, <em>and</em> 0.5 mg depending on where you work. (Yes, every one of these has its own IV-push and drip orders for the refractory case too — but those are a separate step, so I'm not mixing them in here.)</p>
+
+          <p>That matters more than it sounds. If you trained somewhere that did 0.3 mg IM and move to a place that does 0.5, your reflex dose is now low. Move the other way and you're giving more than double what the new protocol calls for. Same drug, same patient, same call — different number.</p>
+
+          <p>Midazolam for a seizure is even messier. Some services start at 10 mg IM, some at 5, some at 2 and titrate up. <strong>For the exact same emergency, the first IM dose ranges from 2 mg to 10 mg depending on where you work</strong> — and a 2 mg start may not stop a seizure that a 10 mg start would.</p>
+
+          <p>This is the part that doesn't transfer between services. Even the routine drugs have a catch.</p>
+
+          <h2>3. The big algorithms match. The fine print doesn't.</h2>
+
+          <p>Quick note on what I did here, because it's different from the drug part. The drug counts and dose tables above come from all 51 protocols. Algorithms are a different kind of work — you have to actually read the document, not just pull a drug list — so for this part I sat down with a smaller set: <strong>12 services, four of them line by line</strong> (Denver Metro, DC Fire, North Carolina, Aurora South WI) and eight more at the structural level. I'm not going to pretend I read every page of all 51; that's a different project. But across the 12, nine major algorithms — cardiac arrest, anaphylaxis, STEMI, sepsis, stroke, trauma triage, OB, behavioral, and when to call a code in the field — were enough to see the pattern clearly.</p>
+
+          <p><strong>Eight of the nine are basically the same everywhere.</strong> The overall flow of how EMS handles a cardiac arrest, or an anaphylaxis, or a STEMI is nearly identical from service to service. The national standards (ACLS, AHA, the CDC trauma criteria) won — everybody runs the same playbook.</p>
+
+          <p><strong>The differences are in the fine print:</strong></p>
+
+          <ol>
+            <li><strong>The numbers.</strong> What counts as a STEMI (1.0 mm of ST elevation at some services, 2.0 at others), how long before you can call a code (20 vs 30 minutes), how much fluid in sepsis, what blood pressure to allow in trauma.</li>
+            <li><strong>Which drug at each step.</strong> Which medication is the go-to, which is backup, which is held in reserve.</li>
+            <li><strong>Whether you need a doctor's OK.</strong> Some services let a medic call a code in the field on their own; others make you phone medical control for the exact same situation. Same criteria, different permission.</li>
+            <li><strong>Where "pediatric" starts.</strong> The age cutoff for "kid" changes from protocol to protocol — sometimes even within the same service, depending on the decision.</li>
+          </ol>
+
+          <p>The one that really splits is <strong>RSI</strong> (using drugs to help intubate). Of the 12 I looked at closely, 4 don't allow it at all (North Carolina, Massachusetts, New Jersey, Northwest Chicago).</p>
+
+          <p>And where it is allowed, the details are all different. Some prefer one paralytic, others another. Some put ketamine first for sedation afterward, others fentanyl. Some let a medic do it on standing orders; others require sign-off even if your cert allows it. <strong>One procedure, several different rulebooks.</strong></p>
+
+          <p>The protocol for a violently agitated patient was the clearest example — three genuinely different philosophies:</p>
+
+          <ul>
+            <li><strong>Pick from a menu</strong> (Denver Metro): score the patient, then choose midazolam or an antipsychotic.</li>
+            <li><strong>Give the combo</strong> (DC Fire): haloperidol + midazolam together.</li>
+            <li><strong>Ketamine first</strong> (Aurora South WI): skip the scoring, ketamine is the primary drug.</li>
+          </ul>
+
+          <p>Those aren't dosing nitpicks — they're three different beliefs about how to handle the same patient, on a topic EMS as a field is still arguing about. If you train people across services, you have to teach the <em>thinking</em>, not just the number.</p>
+
+          <h2>What's actually dangerous when you switch services</h2>
+
+          <p>I figured the risky part of changing agencies would be the new stuff you've never used. It's actually the opposite.</p>
+
+          <p>The risky part is <strong>what your old service had that the new one doesn't.</strong></p>
+
+          <p>Look at two real services 30 miles apart — Denver Metro and Boulder County, both Colorado, both current.</p>
+
+          <ul>
+            <li>They share 41 drugs.</li>
+            <li>Boulder carries 2 that Denver doesn't (a pair of eye-numbing drops).</li>
+            <li>Denver carries 16 that Boulder doesn't. Most are minor, but a few aren't: <strong>calcium, dopamine, pralidoxime, blood, diltiazem.</strong></li>
+          </ul>
+
+          <p>A medic moving from Denver to Boulder loses the calcium they'd reach for in a hyperkalemic arrest. Loses dopamine for cardiogenic shock. Loses pralidoxime for a pesticide exposure. Loses blood for major bleeding — now it's TXA and fluids only.</p>
+
+          <p><strong>Their hand keeps going for a vial that isn't on the truck anymore.</strong> That's the real hazard.</p>
+
+          <p>The brand-new drugs at a service get all the attention. It's the ones quietly missing that bite you.</p>
+
+          <h2>Why a national EMS protocol is harder than it sounds</h2>
+
+          <p>There actually is a national one — the National Model EMS Clinical Guidelines. It's in my set. It's a perfectly reasonable protocol. So why doesn't everyone just use it?</p>
+
+          <p>After going through 51 of these, the reasons are pretty clear:</p>
+
+          <ol>
+            <li><strong>States don't agree on what each cert level can do.</strong> Wisconsin has a tier that's allowed to do things that are paramedic-only elsewhere. A single national protocol would either hold everyone to the lowest level or have to spell out scope state by state.</li>
+            <li><strong>A lot of the choices are preference, not science.</strong> Which steroid, which pressor, which sedative — the evidence is fine for several options, so each service picks based on its own medical director and pharmacy. There's no obviously-correct national answer to lock in.</li>
+            <li><strong>Who's allowed to pull the trigger varies.</strong> Whether a medic can act on their own or has to call a doctor first is a local decision. A national rule saying "you can always do X" would step on that.</li>
+            <li><strong>Regions just practice differently.</strong> The Northeast leans on certain sedatives and pressors, the South on certain anti-nausea drugs, the Midwest carries things the coasts don't. Some of it's supply, some of it's the local teaching hospitals, some of it's just how it's always been done. A single document won't erase that.</li>
+            <li><strong>Different kinds of services need different things.</strong> Maryland tracks community-paramedic drugs, air services carry blood, fire services carry HazMat antidotes. A national protocol would have to be a set of modules you mix and match — not one document.</li>
+          </ol>
+
+          <p>The part everyone <em>already</em> agrees on — the common core of drugs and the big algorithms — is basically standardized today. The useful thing isn't a single "one true protocol." It's a clear way to show <strong>how your service differs from the next one.</strong></p>
+
+          <p>That's what I'm building next.</p>
+
+          <h2>What I'm doing with this data</h2>
+
+          <p>ProtoQuiz lets you upload your service's protocol PDF and quiz yourself on it. It also has a Compare feature that shows how your service stacks up against another. The first version just put two drug lists side by side. Fine, but not that useful.</p>
+
+          <p>Everything above is the groundwork for a better one. <strong>The next version of Compare is built around what I actually found:</strong></p>
+
+          <ul>
+            <li>The common core tucked away by default — you already know it</li>
+            <li>The differences front and center — what your old service had that the new one doesn't, and vice versa</li>
+            <li>The few drugs you might reach for out of habit that aren't there anymore, flagged at the very top</li>
+            <li>Quizzes built right off those differences, so you can drill the parts that are actually new to you</li>
+          </ul>
+
+          <p>If you're an EMT or a medic and you've ever switched services, you already know this is the right shape. And if you're about to switch for the first time — your hand is going to reach for vials out of habit. The whole job is knowing which ones are still there.</p>
+
+          <div class="stats-callout">
+            <h3>By the numbers</h3>
+            <p><strong>51</strong> separate US EMS protocols</p>
+            <p><strong>2,394</strong> drug entries → <strong>258</strong> distinct drugs once cleaned up</p>
+            <p><strong>19</strong> drugs found in 80%+ of services (the common core)</p>
+            <p><strong>9</strong> major algorithms compared service by service</p>
+            <p><strong>4</strong> US regions: West 22, South 9, Northeast 9, Midwest 6</p>
+          </div>
+
+
+          <details class="sources-box">
+            <summary>How I did this &mdash; method &amp; limitations</summary>
+            <div class="method-body">
+              <h4>How I did it</h4>
+              <p style="margin:0 0 8px;">Two layers, and they cover different amounts of the set:</p>
+              <ul>
+                <li><strong>Drugs (all 51 protocols):</strong> 2,394 drug entries pulled from every one, cleaned down to 258 distinct drugs. The common core, the dose tables, and the per-service comparisons all come from the full 51.</li>
+                <li><strong>Algorithms (12 of the 51):</strong> 4 services read line by line (Denver Metro, DC Fire, North Carolina, Aurora South WI) + 8 more reviewed structurally. 9 algorithms mapped service by service. I did <em>not</em> read every page of all 51 for this part.</li>
+                <li>4 regions: West 22, South 9, Northeast 9, Midwest 6 (plus 1 national, 1 international, 3 where I couldn't pin the state)</li>
+                <li>Pulled May 2026</li>
+              </ul>
+
+              <h4>What this isn't</h4>
+              <ul>
+                <li>I didn't interview anyone — this is reading the documents, not surveying medics</li>
+                <li>I'm not saying any service is right or wrong, only that they differ</li>
+                <li>It's US-focused (the one New Zealand set is just a curiosity)</li>
+                <li>I'm not proposing a national protocol</li>
+              </ul>
+
+              <h4>Worth being honest about</h4>
+              <ul>
+                <li>51 is a small slice of the thousands of EMS systems out there</li>
+                <li>The extraction isn't perfect — about 95 dose entries got flagged for review</li>
+                <li>The algorithm findings lean on 12 services, not all 51 — so treat those as a strong read of the pattern, not a full census</li>
+                <li>Only 3 air-medical services, which is too few to generalize about flight crews</li>
+              </ul>
+
+              <p>If you're an EMS medical director or researcher and want to dig into the raw data, it's available — get in touch.</p>
+            </div>
+          </details>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-box">
+          <h3>Know Your Protocols Cold</h3>
+          <p>Upload your service's PDF, get instant quizzes with page citations, and Compare against any other service. Free to start.</p>
+          <a href="https://apps.apple.com/app/id6753611139" class="cta-btn" onclick="track('download_app', {source: 'blog_post_cta', post: '51-protocols'})">
+            Download ProtoQuiz
+          </a>
+        </div>
+
+        <!-- Comments Section -->
+        <div class="comments-section">
+          <h2>Comments</h2>
+          <script src="https://giscus.app/client.js"
+                  data-repo="jadenschwartz22-ops/protoquiz-site"
+                  data-repo-id="R_kgDOP_OVLw"
+                  data-category="Blog Comments"
+                  data-category-id="DIC_kwDOP_OVL84CyFhj"
+                  data-mapping="pathname"
+                  data-strict="0"
+                  data-reactions-enabled="1"
+                  data-emit-metadata="0"
+                  data-input-position="top"
+                  data-theme="dark"
+                  data-lang="en"
+                  crossorigin="anonymous"
+                  async>
+          </script>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="../../">Home</a>
+          <a href="../">Blog</a>
+          <a href="../../privacy/">Privacy</a>
+          <a href="../../terms/">Terms</a>
+          <a href="https://apps.apple.com/app/id6753611139">Download</a>
+        </div>
+        <p class="footer-copy">© 2026 Teach Me to Live LLC. Built by a Paramedic, for EMS.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const wrap = document.getElementById('mapZoom');
+      if (!wrap) return;
+      const vp = document.getElementById('mapViewport');
+      const img = document.getElementById('mapImg');
+      let scale = 1, tx = 0, ty = 0;
+      const MIN = 1, MAX = 6;
+      let dragging = false, sx = 0, sy = 0, stx = 0, sty = 0;
+
+      const clamp = () => {
+        const w = vp.clientWidth, h = vp.clientHeight;
+        const minX = w - w * scale, minY = h - h * scale;
+        tx = Math.min(0, Math.max(minX, tx));
+        ty = Math.min(0, Math.max(minY, ty));
+        if (scale <= 1) { tx = 0; ty = 0; }
+      };
+      const apply = () => { clamp(); img.style.transform = `translate(${tx}px,${ty}px) scale(${scale})`; };
+
+      const zoomAt = (cx, cy, factor) => {
+        const ns = Math.min(MAX, Math.max(MIN, scale * factor));
+        if (ns === scale) return;
+        // keep the point under the cursor stable
+        tx = cx - (cx - tx) * (ns / scale);
+        ty = cy - (cy - ty) * (ns / scale);
+        scale = ns;
+        apply();
+      };
+
+      wrap.querySelector('[data-z="in"]').onclick = () => zoomAt(vp.clientWidth / 2, vp.clientHeight / 2, 1.4);
+      wrap.querySelector('[data-z="out"]').onclick = () => zoomAt(vp.clientWidth / 2, vp.clientHeight / 2, 1 / 1.4);
+      wrap.querySelector('[data-z="reset"]').onclick = () => { scale = 1; tx = 0; ty = 0; apply(); };
+
+      vp.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        const r = vp.getBoundingClientRect();
+        zoomAt(e.clientX - r.left, e.clientY - r.top, e.deltaY < 0 ? 1.12 : 1 / 1.12);
+      }, { passive: false });
+
+      const start = (x, y) => { if (scale <= 1) return; dragging = true; sx = x; sy = y; stx = tx; sty = ty; vp.classList.add('grabbing'); };
+      const move = (x, y) => { if (!dragging) return; tx = stx + (x - sx); ty = sty + (y - sy); apply(); };
+      const end = () => { dragging = false; vp.classList.remove('grabbing'); };
+
+      vp.addEventListener('mousedown', (e) => start(e.clientX, e.clientY));
+      window.addEventListener('mousemove', (e) => move(e.clientX, e.clientY));
+      window.addEventListener('mouseup', end);
+      vp.addEventListener('touchstart', (e) => { const t = e.touches[0]; start(t.clientX, t.clientY); }, { passive: true });
+      vp.addEventListener('touchmove', (e) => { if (!dragging) return; e.preventDefault(); const t = e.touches[0]; move(t.clientX, t.clientY); }, { passive: false });
+      vp.addEventListener('touchend', end);
+    })();
+  </script>
+</body>
+</html>
