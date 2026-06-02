@@ -1650,6 +1650,48 @@
       width:14px; height:14px;
       flex:0 0 14px;
     }
+    .faq-list .android-form{
+      display:flex;
+      gap:8px;
+      margin-top:16px;
+      max-width:420px;
+      flex-wrap:wrap;
+    }
+    .faq-list .android-form input{
+      flex:1 1 200px;
+      padding:11px 14px;
+      border:1px solid var(--line-2);
+      background:transparent;
+      color:var(--ink);
+      font-family:var(--mono);
+      font-size:14px;
+    }
+    .faq-list .android-form input:focus{
+      outline:none;
+      border-color:var(--amber);
+    }
+    .faq-list .android-form button{
+      padding:11px 18px;
+      border:1px solid var(--amber);
+      background:var(--amber);
+      color:var(--bg);
+      font-family:var(--mono);
+      font-size:13.5px;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      cursor:pointer;
+      transition:opacity .15s;
+    }
+    .faq-list .android-form button:disabled{opacity:.5; cursor:default;}
+    .faq-list .android-confirm{
+      margin-top:16px;
+      color:var(--amber);
+      font-family:var(--mono);
+      font-size:13.5px;
+      font-weight:700;
+      letter-spacing:.04em;
+    }
 
     .final{
       padding:140px 0;
@@ -2385,6 +2427,12 @@
               </svg>
               <span>Notify me when Android releases</span>
             </button>
+            <form class="android-form" id="androidInterestForm" hidden novalidate>
+              <input type="email" id="androidInterestEmail" inputmode="email" autocomplete="email" required
+                     placeholder="you@email.com" aria-label="Email for Android launch notification">
+              <button type="submit">Notify me</button>
+            </form>
+            <p class="android-confirm" id="androidInterestConfirm" hidden role="status">On the list. We'll email you the day Android launches.</p>
           </details>
         </div>
       </div>
@@ -2526,9 +2574,11 @@
 
     (function androidInterest(){
       const btn = document.getElementById('androidInterestBtn');
-      if (!btn) return;
-      const label = btn.querySelector('span');
-      const TAPPED_KEY = 'androidInterestTapped';
+      const form = document.getElementById('androidInterestForm');
+      const input = document.getElementById('androidInterestEmail');
+      const confirm = document.getElementById('androidInterestConfirm');
+      if (!btn || !form || !input || !confirm) return;
+      const DONE_KEY = 'androidInterestDone';
       const SID_KEY = 'pq_visitor_id';
       let sid = '';
       try {
@@ -2538,16 +2588,9 @@
           localStorage.setItem(SID_KEY, sid);
         }
       } catch(e) {}
-      if (sessionStorage.getItem(TAPPED_KEY) === '1') {
-        btn.classList.add('tapped');
-        if (label) label.textContent = 'GOT IT. WE’LL LET YOU KNOW.';
-      }
-      btn.addEventListener('click', () => {
-        if (btn.classList.contains('tapped')) return;
-        btn.classList.add('tapped');
-        if (label) label.textContent = 'GOT IT. WE’LL LET YOU KNOW.';
-        sessionStorage.setItem(TAPPED_KEY, '1');
-        try { window.track && window.track('AndroidInterest', { page: PAGE, session_id: sid }); } catch(e) {}
+
+      function send(email){
+        try { window.track && window.track('AndroidInterest', { page: PAGE, session_id: sid, hasEmail: !!email }); } catch(e) {}
         try {
           fetch('https://api.protoquiz.com/api/monitor?type=androidInterest', {
             method: 'POST',
@@ -2555,12 +2598,33 @@
             keepalive: true,
             body: JSON.stringify({
               sessionId: sid,
+              email: email || undefined,
               page: PAGE,
               referrer: document.referrer.substring(0, 200),
               userAgent: navigator.userAgent.substring(0, 200)
             })
           }).catch(() => {});
         } catch(e) {}
+      }
+
+      function showConfirmed(){
+        btn.hidden = true; form.hidden = true; confirm.hidden = false;
+      }
+      if (localStorage.getItem(DONE_KEY) === '1') { showConfirmed(); return; }
+
+      // First tap reveals the email field and registers the interest signal.
+      btn.addEventListener('click', () => {
+        btn.hidden = true; form.hidden = false; input.focus();
+        send('');
+      });
+
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        const email = input.value.trim();
+        if (!input.checkValidity() || !email) { input.reportValidity(); return; }
+        send(email);
+        try { localStorage.setItem(DONE_KEY, '1'); } catch(e) {}
+        showConfirmed();
       });
     })();
 
