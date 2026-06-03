@@ -820,6 +820,7 @@
       font-family:var(--mono);font-size:calc(13px * var(--rz, 1));letter-spacing:.06em;
       fill:var(--ink-soft);text-transform:uppercase;font-weight:600;
       paint-order:stroke fill;stroke:var(--bg);stroke-width:calc(3.5px * var(--rz, 1));stroke-linejoin:round;
+      cursor:pointer;pointer-events:all;
     }
     .reach-svg-world .rl-warm,.reach-svg-world .rl-on{fill:var(--ink);font-weight:700;}
     .reach-svg-world .rl-tiny{fill:var(--muted);font-size:calc(11px * var(--rz, 1));}
@@ -832,7 +833,8 @@
       animation:reachPing 3s cubic-bezier(.16,1,.3,1) infinite;
     }
     .reach-svg-world .locale{cursor:pointer;outline:none;}
-    .reach-svg-world .locale:hover circle.halo,.reach-svg-world .locale:focus circle.halo{opacity:1;stroke-width:2;}
+    .reach-svg-world .locale:hover circle.halo,.reach-svg-world .locale:focus circle.halo,.reach-svg-world .locale.is-hot circle.halo{opacity:1;stroke-width:2.4;stroke:var(--amber-warm);}
+    .reach-svg-world .locale.is-hot circle.core{fill:var(--amber-warm);}
     .reach-svg-world .locale.is-selected circle.core{fill:var(--amber-warm);}
     .reach-svg-world .locale .hit{cursor:pointer;}
     .reach-svg-world .tip-bg{fill:rgba(6,5,10,.95);stroke:var(--amber);stroke-width:.8;}
@@ -862,12 +864,17 @@
     .reach-svg .locale:nth-of-type(5n) circle.ping{animation-delay:1.5s;}
     .reach-svg .locale:nth-of-type(7n) circle.ping{animation-delay:2.1s;}
     .reach-svg .locale{cursor:pointer;outline:none;}
-    .reach-svg .locale:hover circle.core, .reach-svg .locale:focus circle.core{
-      fill:var(--amber);
+    .reach-svg .locale:hover circle.core, .reach-svg .locale:focus circle.core,
+    .reach-svg .locale.is-hot circle.core{
+      fill:var(--amber-warm);
     }
-    .reach-svg .locale:hover circle.halo, .reach-svg .locale:focus circle.halo{
-      opacity:1;stroke-width:2;
+    .reach-svg .locale:hover circle.halo, .reach-svg .locale:focus circle.halo,
+    .reach-svg .locale.is-hot circle.halo{
+      opacity:1;stroke-width:2.4;
     }
+    /* When a dot is highlighted from hovering its label, pulse the halo so it's
+       easy to spot which dot belongs to the name. */
+    .reach-svg .locale.is-hot circle.halo{stroke:var(--amber-warm);}
     .reach-svg .locale.is-selected circle.core{fill:var(--amber-warm);}
     .reach-svg .locale.is-selected circle.halo{opacity:1;stroke-width:2.4;stroke:var(--amber);}
     .reach-svg .locale.is-selected circle.ping{animation:none;}
@@ -885,6 +892,7 @@
       fill:var(--ink-soft);text-transform:uppercase;font-weight:600;
       paint-order:stroke fill;stroke:var(--bg);stroke-width:calc(4px * var(--rz));stroke-linejoin:round;
       transition:fill .15s;
+      cursor:pointer;pointer-events:all;  /* clickable: opens the same detail panel as the dot */
     }
     .reach-svg .rl-hot{font-size:calc(18px * var(--rz));font-weight:700;fill:var(--ink);letter-spacing:.04em;}
     .reach-svg .rl-warm{font-size:calc(15.5px * var(--rz));font-weight:700;fill:var(--ink);}
@@ -2811,64 +2819,87 @@
         }
       } catch (e) {}
     }
-    // Label-offset overrides for the East Coast / dense cluster.
-    // Keys are state codes; values are SVG x/y offsets relative to the dot
-    // and an SVG text-anchor.
-    const REACH_LABEL_OFFSETS = {
-      NY:  { dx:0,  dy:-25, anchor:"middle", short:"NEW YORK" },
-      NJ:  { dx:42, dy:14,  anchor:"end",    short:"NEWARK" },
-      PA:  { dx:62, dy:2,   anchor:"end",    short:"PHILLY" },
-      MD:  { dx:24, dy:8,   anchor:"end",    short:"BALTIMORE" },
-      DC:  { dx:22, dy:32,  anchor:"end",    short:"D.C." },
-      MA:  { dx:36, dy:-30, anchor:"end",    short:"BOSTON" },
-      WV:  { dx:-42,dy:18,  anchor:"end",    short:"CHARLESTON" },
-      DE:  { dx:50, dy:0,   anchor:"end",    short:"WILMINGTON" },
-      CT:  { dx:50, dy:8,   anchor:"end",    short:"HARTFORD" },
-      RI:  { dx:50, dy:14,  anchor:"end",    short:"PROVIDENCE" },
-      VA:  { dx:0,  dy:18,  anchor:"middle", short:"RICHMOND" },
+    // Display-name overrides only (content, not positioning). Keys are
+    // "state|city"; value is the short label text shown on the map. Positioning
+    // is fully automatic (see placeReachLabels) — never add dx/dy/anchor here.
+    const REACH_SHORT_NAMES = {
+      "NY|New York":         "NEW YORK",
+      "NJ|Newark":           "NEWARK",
+      "PA|Philadelphia":     "PHILLY",
+      "DC|Washington, D.C.": "D.C.",
     };
-    const REACH_DEFAULT_OFFSET = { dx:0, dy:-14, anchor:"middle" };
-    // Per-city overrides (state|city -> offset). Used for cities near viewBox edges
-    // or that need special positioning even when the state has its own override.
-    const REACH_CITY_OFFSETS = {
-      "WA|Seattle":          { dx:0,   dy:24,  anchor:"middle" },
-      "WA|Olympia":          { dx:0,   dy:-16, anchor:"middle" },
-      "WA|Snohomish County": { dx:30,  dy:6,   anchor:"start"  },
-      "WA|Statewide WA":     { dx:30,  dy:32,  anchor:"start"  },
-      "OR|Portland":         { dx:0,   dy:18,  anchor:"middle" },
-      "CA|Santa Cruz":       { dx:14,  dy:-2,  anchor:"start"  },
-      "CA|San Francisco":    { dx:14,  dy:-2,  anchor:"start"  },
-      "CA|Los Angeles":      { dx:0,   dy:22,  anchor:"middle" },
-      "CA|San Diego":        { dx:0,   dy:22,  anchor:"middle" },
-      "CA|Sacramento":       { dx:0,   dy:-12, anchor:"middle" },
-      "AZ|Phoenix":          { dx:18,  dy:4,   anchor:"start"  },
-      "NV|Las Vegas":        { dx:0,   dy:-12, anchor:"middle" },
-      "FL|Miami":            { dx:0,   dy:18,  anchor:"middle" },
-      "ME|Portland":         { dx:-14, dy:0,   anchor:"end"    },
-      // CO cluster: Loveland north, Boulder middle, Denver south
-      "CO|Loveland":         { dx:14,  dy:-6,  anchor:"start"  },
-      "CO|Boulder":          { dx:14,  dy:-6,  anchor:"start"  },
-      "CO|Denver":           { dx:14,  dy:16,  anchor:"start"  },
-      "CO|Colorado Springs": { dx:14,  dy:18,  anchor:"start"  },
-      // MD/DC: 13px apart vertically
-      "MD|Baltimore":        { dx:14,  dy:-6,  anchor:"start"  },
-      "DC|Washington, D.C.": { dx:14,  dy:18,  anchor:"start"  },
-      // NC/SC: Charlotte above Columbia
-      "NC|Charlotte":        { dx:14,  dy:-6,  anchor:"start"  },
-      "NC|Davidson County":  { dx:14,  dy:-6,  anchor:"start"  },
-      "NC|Craven":           { dx:14,  dy:5,   anchor:"start"  },
-      "NC|Raleigh":          { dx:0,   dy:-14, anchor:"middle" },
-      "SC|Columbia":         { dx:14,  dy:14,  anchor:"start"  },
-      // Midwest spread: Iowa City / Madison / Aurora / Chicago / Dayton
-      "IA|Iowa City":        { dx:-14, dy:-6,  anchor:"end"    },
-      "WI|Madison":          { dx:-14, dy:-8,  anchor:"end"    },
-      "WI|Aurora":           { dx:14,  dy:-6,  anchor:"start"  },
-      "IL|Chicago":          { dx:14,  dy:14,  anchor:"start"  },
-      "OH|Dayton":           { dx:14,  dy:-8,  anchor:"start"  },
-      // TN/WV near each other
-      "TN|Knoxville":        { dx:0,   dy:18,  anchor:"middle" },
-      "WV|Charleston":       { dx:-14, dy:14,  anchor:"end"    },
-    };
+
+    // Automatic point-label placement (fixed-position / slider model, the
+    // standard cartographic approach). For each label we try candidate
+    // positions around its dot, score each by edge-overflow + overlap with
+    // already-placed labels and with dots, and keep the best. No per-city
+    // tuning — handles edges (Manchester), dense clusters (NY/NJ/PA), and any
+    // future city automatically. `items` must be pre-sorted by priority
+    // (highest count first) so important labels claim the best slots.
+    //   items: [{ el, x, y, r }]  el=<text>, x/y=dot center, r=dot radius
+    //   vb: [minX, minY, w, h] viewBox bounds
+    function placeReachLabels(items, vb, opts = {}) {
+      const [vbX, vbY, vbW, vbH] = vb;
+      const M = 4;                 // keep this far inside each edge
+      const GAP = 5;               // base gap between a label and its dot
+      const PAD = opts.pad || 0;   // extra breathing room around each label box
+      // Directions in cartographic preference order: up-right, up-left,
+      // down-right, down-left, right, left, up, down. Each is tried at a few
+      // push-out distances so crowded labels can step further out to find room.
+      const DIRS = [
+        { ax: 1, ay:-1, anchor:'start'  }, { ax:-1, ay:-1, anchor:'end'    },
+        { ax: 1, ay: 1, anchor:'start'  }, { ax:-1, ay: 1, anchor:'end'    },
+        { ax: 1, ay: 0, anchor:'start'  }, { ax:-1, ay: 0, anchor:'end'    },
+        { ax: 0, ay:-1, anchor:'middle' }, { ax: 0, ay: 1, anchor:'middle' },
+      ];
+      const STEPS = [0, 10, 22, 38];   // extra push-out distance, in user units
+      const overlap = (a, b) =>
+        a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h && a.y + a.h > b.y;
+      const inBounds = (b) => b.x >= vbX + M && b.y >= vbY + M
+        && b.x + b.w <= vbX + vbW - M && b.y + b.h <= vbY + vbH - M;
+      // Greedy ranked placement (the standard model). Items are pre-sorted by
+      // priority (highest count first). A label is shown only if it finds a
+      // candidate slot that is in-bounds AND clear of every already-shown label;
+      // otherwise it stays a dot (sized by count) until the user zooms in, when
+      // CSS reveals the hidden labels. Dots also block, so a label never sits on
+      // a marker. No eviction, no per-city tuning — density falls out of the
+      // geometry and resolves naturally on zoom.
+      const shown = [];   // committed visible label boxes
+      const dots = items.map(it => ({ x: it.x - it.r, y: it.y - it.r, w: it.r*2, h: it.r*2 }));
+
+      for (const it of items) {
+        const bb = it.el.getBBox();           // intrinsic text size at x=0
+        const w = bb.width, h = bb.height;
+        let placed = null;
+        search:
+        for (let si = 0; si < STEPS.length; si++) {
+          for (let di = 0; di < DIRS.length; di++) {
+            const c = DIRS[di];
+            const off = it.r + GAP + STEPS[si];
+            const ax = it.x + c.ax * off;
+            const boxX = c.anchor === 'end' ? ax - w : c.anchor === 'middle' ? ax - w/2 : ax;
+            const boxY = it.y + c.ay * off - h/2;
+            const box = { x: boxX - PAD, y: boxY - PAD, w: w + PAD*2, h: h + PAD*2 };
+            if (!inBounds({ x: boxX, y: boxY, w, h })) continue;   // never clip an edge
+            let clear = true;
+            for (const s of shown) if (overlap(box, s)) { clear = false; break; }
+            if (clear) for (const d of dots) if (overlap(box, d)) { clear = false; break; }
+            if (clear) { placed = { boxX, boxY, off, c }; break search; }
+          }
+        }
+        if (placed) {
+          it.el.setAttribute('x', it.x + placed.c.ax * placed.off);
+          // SVG y is the baseline; box top is boxY and bb.y is the (negative)
+          // baseline-to-top offset, so baseline = box top - bb.y.
+          it.el.setAttribute('y', placed.boxY - bb.y);
+          it.el.setAttribute('text-anchor', placed.c.anchor);
+          it.el.classList.remove('is-suppressed');
+          shown.push({ x: placed.boxX, y: placed.boxY, w, h });
+        } else {
+          it.el.classList.add('is-suppressed');  // dot only until zoom
+        }
+      }
+    }
 
     // State-name lookup for full-state strings in the detail panel
     const REACH_STATE_NAMES = {
@@ -3009,58 +3040,8 @@
           labelsG.replaceChildren();
 
           const sortedByCount = [...r.locales].sort((a,b)=>b.count-a.count);
-          {
-            const CLUSTER_R = 28;
-            const claimed = new Set();
-            for (let i = 0; i < sortedByCount.length; i++) {
-              if (claimed.has(i)) continue;
-              const anchor = sortedByCount[i];
-              const sats = [];
-              for (let j = i + 1; j < sortedByCount.length; j++) {
-                if (claimed.has(j)) continue;
-                const l = sortedByCount[j];
-                const dx = l.x - anchor.x, dy = l.y - anchor.y;
-                if (dx*dx + dy*dy <= CLUSTER_R*CLUSTER_R) {
-                  sats.push(l);
-                  claimed.add(j);
-                }
-              }
-              if (!sats.length) continue;
-              const slots = sats.length;
-              sats.forEach((l, k) => {
-                if (REACH_CITY_OFFSETS[`${l.state}|${l.city}`]) return;
-                const labelRad = 44;
-                let ang;
-                if (slots === 1) {
-                  ang = Math.PI * 0.25;
-                } else if (slots === 2) {
-                  ang = k === 0 ? Math.PI * 0.2 : Math.PI * 0.8;
-                } else {
-                  const t = (k + 0.5) / slots;
-                  ang = t * Math.PI * 2 - Math.PI / 2;
-                }
-                l._labelOffset = {
-                  dx: Math.round(Math.cos(ang) * labelRad),
-                  dy: Math.round(Math.sin(ang) * labelRad) + 2,
-                  anchor: Math.cos(ang) > 0.3 ? 'start' : Math.cos(ang) < -0.3 ? 'end' : 'middle',
-                };
-              });
-            }
-          }
-          const placedLabels = []; // [{x,y}]
+          const labelItems = [];  // [{el,x,y,r}] for the automatic placer
           const isMobile = window.innerWidth <= 880;
-          const PROX_PX = isMobile ? 50 : 18;
-          const shouldLabel = (loc) => {
-            if (loc._labelOffset) return true;
-            if (REACH_CITY_OFFSETS[`${loc.state}|${loc.city}`]) return true;
-            if (loc.tier === 'hot' || loc.tier === 'warm') return true;
-            if (loc.tier === 'on' && !isMobile) return true;
-            for (const p of placedLabels) {
-              const dx = p.x - loc.x, dy = p.y - loc.y;
-              if (dx*dx + dy*dy < PROX_PX*PROX_PX) return false;
-            }
-            return true;
-          };
 
           const showTip = (x, y, city, count) => {
             if (!tip) return;
@@ -3114,20 +3095,20 @@
             hit.setAttribute('class', 'hit');
             dot.appendChild(hit);
 
-            const willLabel = shouldLabel(loc);
-            // Hover always highlights the label (whether or not it's currently visible).
-            // For suppressed-at-default-zoom labels, hover-to-highlight is a no-op
-            // until the user zooms in (when the label becomes visible).
-            const onIn = () => {
+            // Hovering the dot OR its label highlights both together, so you can
+            // trace which dot belongs to which city name (and vice versa). When
+            // the label is hidden (crowded out at this zoom) a tooltip shows the
+            // name instead. setHot is wired to both elements below.
+            const setHot = (on) => {
+              dot.classList.toggle('is-hot', on);
               const lbl = svg.querySelector(`.reach-labels [data-key="${CSS.escape(key)}"]`);
-              if (lbl) lbl.classList.add('is-hot');
-              if (!willLabel) showTip(loc.x, loc.y, loc.city.toUpperCase(), loc.count);
+              if (lbl) lbl.classList.toggle('is-hot', on);
+              if (on && (!lbl || lbl.classList.contains('is-suppressed')))
+                showTip(loc.x, loc.y, (REACH_SHORT_NAMES[key] || loc.city).toUpperCase(), loc.count);
+              else if (!on) hideTip();
             };
-            const onOut = () => {
-              const lbl = svg.querySelector(`.reach-labels [data-key="${CSS.escape(key)}"]`);
-              if (lbl) lbl.classList.remove('is-hot');
-              if (!willLabel) hideTip();
-            };
+            const onIn = () => setHot(true);
+            const onOut = () => setHot(false);
             dot.addEventListener('mouseenter', onIn);
             dot.addEventListener('focus', onIn);
             dot.addEventListener('mouseleave', onOut);
@@ -3138,19 +3119,22 @@
             });
             localesG.appendChild(dot);
 
-            // Render the label for every locale; mark suppressed ones so CSS
-            // can hide them at default zoom and reveal at deep zoom.
+            // Create the label (unpositioned). The placer below positions it and
+            // decides visibility: a label shows only if it found a clear slot at
+            // this zoom; crowded-out ones get is-suppressed and reveal on zoom.
+            // Tier classes drive styling (size/weight) only.
             {
-              const off = loc._labelOffset || REACH_CITY_OFFSETS[`${loc.state}|${loc.city}`] || REACH_LABEL_OFFSETS[loc.state] || REACH_DEFAULT_OFFSET;
               const lbl = document.createElementNS(SVG_NS, 'text');
-              const labelClass = tier === 'hot' ? 'rl rl-hot' : tier === 'warm' ? 'rl rl-warm' : willLabel ? 'rl' : ('rl rl-tiny is-suppressed');
-              lbl.setAttribute('class', labelClass);
+              const tierCls = tier === 'hot' ? 'rl rl-hot' : tier === 'warm' ? 'rl rl-warm' : tier === 'on' ? 'rl' : 'rl rl-tiny';
+              lbl.setAttribute('class', tierCls);
               lbl.setAttribute('data-key', key);
-              lbl.setAttribute('x', loc.x + off.dx);
-              lbl.setAttribute('y', loc.y + off.dy);
-              lbl.setAttribute('text-anchor', off.anchor);
-              lbl.setAttribute('pointer-events', 'none');
-              const cityName = (off.short || loc.city).toUpperCase();
+              // Label is interactive: hovering it highlights the dot, and clicking
+              // it opens the same detail panel as the dot.
+              lbl.style.cursor = 'pointer';
+              lbl.addEventListener('mouseenter', onIn);
+              lbl.addEventListener('mouseleave', onOut);
+              lbl.addEventListener('click', () => showReachDetail(loc));
+              const cityName = (REACH_SHORT_NAMES[key] || loc.city).toUpperCase();
               // City name in white, count in amber, no middle-dot separator
               const cityT = document.createElementNS(SVG_NS, 'tspan');
               cityT.textContent = cityName;
@@ -3161,42 +3145,20 @@
               lbl.appendChild(cityT);
               lbl.appendChild(countT);
               labelsG.appendChild(lbl);
-              if (willLabel) placedLabels.push({ x: loc.x, y: loc.y });
+              labelItems.push({ el: lbl, x: loc.x, y: loc.y, r: sizes[0], count: loc.count });
             }
           }
+          // One automatic placement pass: positions every label at its best slot
+          // and hides (is-suppressed) any that can't fit without overlap at this
+          // zoom. Highest-count labels are placed first so they win the space.
           {
-            const allLabels = [...labelsG.querySelectorAll('.rl:not(.is-suppressed)')];
-            const boxes = allLabels.map(el => ({ el, bb: el.getBBox() }));
-            const PAD = 3;
-            for (let i = 0; i < boxes.length; i++) {
-              for (let j = i + 1; j < boxes.length; j++) {
-                const a = boxes[i].bb, b = boxes[j].bb;
-                const overlapX = (a.x - PAD < b.x + b.width + PAD) && (a.x + a.width + PAD > b.x - PAD);
-                const overlapY = (a.y - PAD < b.y + b.height + PAD) && (a.y + a.height + PAD > b.y - PAD);
-                if (!overlapX || !overlapY) continue;
-                const el = boxes[j].el;
-                const curY = parseFloat(el.getAttribute('y'));
-                const nudge = (a.y + a.height + PAD * 2) - b.y;
-                if (nudge > 0 && nudge < 24) {
-                  el.setAttribute('y', curY + nudge);
-                  boxes[j].bb = el.getBBox();
-                }
-              }
-            }
-          }
-          if (isMobile) {
-            const vis = [...labelsG.querySelectorAll('.rl:not(.is-suppressed)')];
-            const kept = [];
-            for (const lbl of vis) {
-              const b = lbl.getBBox();
-              const hit = kept.some(k => {
-                const kb = k.bb;
-                return b.x < kb.x+kb.width+2 && b.x+b.width+2 > kb.x &&
-                       b.y < kb.y+kb.height+2 && b.y+b.height+2 > kb.y;
-              });
-              if (hit) lbl.classList.add('is-suppressed');
-              else kept.push({ el: lbl, bb: b });
-            }
+            const vb = svg.getAttribute('viewBox').split(/\s+/).map(Number);
+            // Require more empty space between labels on smaller screens, so
+            // crowded ones collapse to dots (revealed on zoom) instead of packing
+            // edge-to-edge. Phones get the most breathing room.
+            const w = window.innerWidth;
+            const pad = w <= 560 ? 22 : w <= 880 ? 12 : 2;
+            placeReachLabels(labelItems, vb, { pad });
           }
           // Move tooltip to end so it renders on top
           if (tip && tip.parentNode === svg) svg.appendChild(tip);
@@ -3241,17 +3203,9 @@
             };
             const hideWTip = () => { if (tipW) tipW.style.visibility = 'hidden'; };
 
-            const WORLD_DOT_NUDGE = {
-              'Vancouver, BC': { dx: 12, dy: 0 },
-            };
-            const WORLD_LABEL_OFFSETS = {
-              'Toronto, ON':   { dx: -14, dy: -14, anchor: 'end' },
-              'Quebec, QC':    { dx: 14,  dy: 12,  anchor: 'start' },
-              'Vancouver, BC': { dx: 0,   dy: -14, anchor: 'middle' },
-              'London':        { dx: 0,   dy: -14, anchor: 'middle' },
-              'Berlin':        { dx: 14,  dy: 4,   anchor: 'start' },
-            };
-            // Fan out world-map locales whose pins overlap so labels/dots never silently stack.
+            const worldLabelItems = []; // [{el,x,y,r}] for the automatic placer
+            // Fan out world-map dots whose pins overlap so the markers never
+            // silently stack. (Label positioning is automatic; see placeReachLabels.)
             const intlSorted = [...intl].sort((a, b) => b.count - a.count);
             {
               const CLUSTER_R = 18;
@@ -3270,18 +3224,13 @@
                 sats.forEach((l, k) => {
                   const t = (k + 0.5) / slots;
                   const ang = t * Math.PI * 2 - Math.PI / 2;
-                  const dotRad = 10, labelRad = 26;
+                  const dotRad = 10;
                   l._dotNudge = { dx: Math.round(Math.cos(ang) * dotRad), dy: Math.round(Math.sin(ang) * dotRad) };
-                  l._labelOffset = {
-                    dx: Math.round(Math.cos(ang) * labelRad),
-                    dy: Math.round(Math.sin(ang) * labelRad) + 2,
-                    anchor: Math.cos(ang) > 0.3 ? 'start' : Math.cos(ang) < -0.3 ? 'end' : 'middle',
-                  };
                 });
               }
             }
             for (const loc of intlSorted) {
-              const nudge = loc._dotNudge || WORLD_DOT_NUDGE[loc.city] || { dx: 0, dy: 0 };
+              const nudge = loc._dotNudge || { dx: 0, dy: 0 };
               const lx = loc.x + nudge.dx, ly = loc.y + nudge.dy;
               const tier = loc.tier || (loc.count >= 5 ? 'warm' : loc.count >= 2 ? 'on' : 'tiny');
               const dot = document.createElementNS(SVG_NS2, 'g');
@@ -3303,8 +3252,20 @@
               hit.setAttribute('fill', 'transparent');
               hit.setAttribute('class', 'hit');
               dot.appendChild(hit);
-              dot.addEventListener('mouseenter', () => showWTip(lx, ly, loc.city.toUpperCase(), loc.count));
-              dot.addEventListener('mouseleave', hideWTip);
+              const wKey = `${loc.country}|${loc.city}`;
+              const setHotW = (on) => {
+                dot.classList.toggle('is-hot', on);
+                const l = intlLblG.querySelector(`[data-key="${CSS.escape(wKey)}"]`);
+                if (l) l.classList.toggle('is-hot', on);
+                if (on && (!l || l.classList.contains('is-suppressed'))) showWTip(lx, ly, loc.city.toUpperCase(), loc.count);
+                else if (!on) hideWTip();
+              };
+              const onInW = () => setHotW(true);
+              const onOutW = () => setHotW(false);
+              dot.addEventListener('mouseenter', onInW);
+              dot.addEventListener('mouseleave', onOutW);
+              dot.addEventListener('focus', onInW);
+              dot.addEventListener('blur', onOutW);
               dot.addEventListener('click', () => showReachDetail({
                 state: loc.country, city: loc.city, count: loc.count, topProtocols: loc.topProtocols,
                 _intl: true, _countryName: loc.countryName,
@@ -3313,22 +3274,27 @@
                 if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); dot.click(); }
               });
               intlG.appendChild(dot);
-              const wOff = loc._labelOffset || WORLD_LABEL_OFFSETS[loc.city] || { dx: 0, dy: -12, anchor: 'middle' };
               const lbl = document.createElementNS(SVG_NS2, 'text');
               const cls = tier === 'warm' ? 'rl rl-warm' : tier === 'on' ? 'rl rl-on' : 'rl rl-tiny';
               lbl.setAttribute('class', cls);
-              lbl.setAttribute('data-key', `${loc.country}|${loc.city}`);
-              lbl.setAttribute('x', lx + wOff.dx);
-              lbl.setAttribute('y', ly + wOff.dy);
-              lbl.setAttribute('text-anchor', wOff.anchor);
-              lbl.setAttribute('pointer-events', 'none');
+              lbl.setAttribute('data-key', wKey);
+              lbl.style.cursor = 'pointer';
+              lbl.addEventListener('mouseenter', onInW);
+              lbl.addEventListener('mouseleave', onOutW);
+              lbl.addEventListener('click', () => showReachDetail({
+                state: loc.country, city: loc.city, count: loc.count, topProtocols: loc.topProtocols,
+                _intl: true, _countryName: loc.countryName,
+              }));
               const cityT = document.createElementNS(SVG_NS2, 'tspan'); cityT.textContent = loc.city.toUpperCase();
               const countT = document.createElementNS(SVG_NS2, 'tspan');
               countT.setAttribute('class', 'rl-n'); countT.setAttribute('dx', '6');
               countT.textContent = loc.count;
               lbl.appendChild(cityT); lbl.appendChild(countT);
               intlLblG.appendChild(lbl);
+              worldLabelItems.push({ el: lbl, x: lx, y: ly, r: sizes[0], count: loc.count });
             }
+            // One automatic placement pass for all world labels (same system as US).
+            placeReachLabels(worldLabelItems, worldSvg.getAttribute('viewBox').split(/\s+/).map(Number));
             if (tipW && tipW.parentNode === worldSvg) worldSvg.appendChild(tipW);
           }
         }
@@ -3467,16 +3433,20 @@
       }, { passive: false });
 
       let dragging = false, dragMoved = false, dragStartX = 0, dragStartY = 0, vbStartX = 0, vbStartY = 0;
+      // A dot (.locale) or a city label (.rl) is an interactive target — don't
+      // start a pan or capture the pointer on it at default zoom, so its click
+      // (open detail panel) fires normally. Panning still works from empty map.
+      const isInteractive = (t) => t.closest('.locale') || t.closest('.rl');
       svg.addEventListener('pointerdown', (e) => {
         if (!getIsActive()) return;
         if (e.button !== undefined && e.button !== 0) return;
         if (e.target.closest('.reach-zoom-ui')) return;
-        if (e.target.closest('.locale') && zoom <= 1.001) return;
+        if (isInteractive(e.target) && zoom <= 1.001) return;
         dragging = true; dragMoved = false;
         dragStartX = e.clientX; dragStartY = e.clientY;
         vbStartX = vbX; vbStartY = vbY;
         svg.classList.add('is-panning');
-        if (!e.target.closest('.locale')) svg.setPointerCapture?.(e.pointerId);
+        if (!isInteractive(e.target)) svg.setPointerCapture?.(e.pointerId);
       });
       const DRAG_THRESH = 10;
       svg.addEventListener('pointermove', (e) => {
