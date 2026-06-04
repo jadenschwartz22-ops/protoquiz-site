@@ -98,7 +98,7 @@ If a buyer asks "why ProtoQuiz instead of [tool we already use]?" — the answer
 - **Standard:** $100 per provider per year. Flat (no tiers, no setup fees, no add-ons).
 - **Pilot rate:** $50 per provider per year, **locked for life**. 50% off the standard rate, permanent for early agency partners.
 - **Pilot perk:** the first 6 months are free for pilot agencies. After the free months, the locked $50/yr rate kicks in.
-- **Pilot scarcity:** only 2 pilot slots remaining. Closes August 1, 2026, or when the last 2 are filled, whichever comes first.
+- **Pilot scarcity:** only 1 pilot slot remaining. Closes August 1, 2026, or when the last slot is filled, whichever comes first.
 - **Per-agency math IS shown on the site.** Interactive slider (25 to 750 providers) drives the headline price (their actual yearly cost) and a sourced 4-row savings breakdown. Pilot agency saves roughly **5.9x what they pay** ($295/yr per provider in defensible savings vs $50/yr cost); standard saves ~3x.
 - Pilot rate is permanent for pilot agencies (locked for life). Not a temporary promo.
 
