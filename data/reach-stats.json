@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-08T18:07:57.501Z",
-  "totalUploads": 182,
-  "distinctProtocols": 141,
-  "activeStudiers": 114,
-  "pagesProcessed": 20413,
-  "statesRepresented": 28,
+  "generatedAt": "2026-06-09T00:08:01.445Z",
+  "totalUploads": 183,
+  "distinctProtocols": 142,
+  "activeStudiers": 115,
+  "pagesProcessed": 20623,
+  "statesRepresented": 29,
   "countriesRepresented": 1,
   "internationalUploads": 1,
   "byState": {
@@ -30,6 +30,7 @@
     "IA": 1,
     "GA": 1,
     "SC": 1,
+    "AL": 1,
     "MD": 1,
     "NJ": 1,
     "IL": 1,
@@ -441,6 +442,20 @@
       "topProtocols": [
         {
           "title": "kershawcountyemsclinicaloperatingguidelines 261d3ca1e3d229bf1…",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "AL",
+      "city": "Birmingham",
+      "x": 648,
+      "y": 394,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "master.alabama.protocols.11th.edition.07012025",
           "count": 1
         }
       ]
