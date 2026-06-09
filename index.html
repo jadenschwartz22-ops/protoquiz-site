@@ -379,6 +379,17 @@
       border-color:var(--amber);
       color:var(--amber);
     }
+    .btn-android{
+      background:transparent;
+      color:var(--ink);
+      border:1px solid var(--line-2);
+    }
+    .btn-android:hover{
+      border-color:var(--amber);
+      color:var(--amber);
+      transform:translateY(-1px);
+    }
+    .btn-android svg{width:15px;height:15px;flex:none;}
 
     .hero{
       padding:140px 0 100px;
@@ -2075,6 +2086,10 @@
             <a href="https://apps.apple.com/app/id6753611139?utm_source=website&utm_medium=hero&utm_campaign=download"
                target="_blank" rel="noopener"
                class="btn btn-primary" data-track="AppStoreHero">↓ Download on App Store</a>
+            <button type="button" class="btn btn-android" id="androidHeroBtn" data-track="AndroidInterestHero">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.6 9.48l1.84-3.18a.4.4 0 0 0-.69-.4l-1.86 3.23a11.4 11.4 0 0 0-9.78 0L5.25 5.9a.4.4 0 1 0-.69.4L6.4 9.48A10.8 10.8 0 0 0 1 18h22a10.8 10.8 0 0 0-5.4-8.52zM7 15.25a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm10 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/></svg>
+              Android — notify me
+            </button>
             <a href="#wedge" class="btn btn-ghost">↓ How it works</a>
           </div>
           <div class="intro-row">
@@ -2618,6 +2633,19 @@
       function showConfirmed(){
         btn.hidden = true; form.hidden = true; confirm.hidden = false;
       }
+
+      // Hero button: register the interest signal, then jump to the FAQ waitlist form.
+      const heroBtn = document.getElementById('androidHeroBtn');
+      if (heroBtn) heroBtn.addEventListener('click', () => {
+        send('');
+        const details = btn.closest('details');
+        if (details) details.open = true;
+        if (localStorage.getItem(DONE_KEY) !== '1') { btn.hidden = true; form.hidden = false; }
+        const target = details || document.getElementById('faq');
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (!input.disabled && !form.hidden) setTimeout(() => input.focus({ preventScroll: true }), 500);
+      });
+
       if (localStorage.getItem(DONE_KEY) === '1') { showConfirmed(); return; }
 
       // First tap reveals the email field and registers the interest signal.
@@ -3022,9 +3050,8 @@
         const ts = document.getElementById('reachUpdated');
         if (ts && r.generatedAt) {
           const d = new Date(r.generatedAt);
-          const days = Math.floor((Date.now() - d.getTime()) / 86400000);
-          const when = days === 0 ? 'today' : days === 1 ? 'yesterday' : `${days} days ago`;
-          ts.textContent = `Live from ProtoQuiz uploads. Updates every day.`;
+          const last = d.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+          ts.textContent = `Live from ProtoQuiz uploads. Updates every day. Last update ${last}.`;
         }
 
         // Render dots + labels dynamically if the data is there
