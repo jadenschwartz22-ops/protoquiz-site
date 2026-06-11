@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-06-11T00:07:59.615Z",
-  "totalUploads": 188,
-  "distinctProtocols": 147,
-  "activeStudiers": 120,
-  "pagesProcessed": 21678,
+  "generatedAt": "2026-06-11T18:07:57.086Z",
+  "totalUploads": 190,
+  "distinctProtocols": 149,
+  "activeStudiers": 122,
+  "pagesProcessed": 22345,
   "statesRepresented": 31,
   "countriesRepresented": 1,
   "internationalUploads": 1,
   "byState": {
     "CO": 14,
     "MI": 11,
+    "CA": 7,
     "PA": 7,
-    "CA": 6,
     "NY": 6,
     "AZ": 6,
     "UT": 4,
@@ -20,6 +20,7 @@
     "FL": 3,
     "OK": 2,
     "NC": 2,
+    "SC": 2,
     "WA": 2,
     "MA": 2,
     "TN": 2,
@@ -29,7 +30,6 @@
     "ID": 1,
     "IA": 1,
     "GA": 1,
-    "SC": 1,
     "AL": 1,
     "MD": 1,
     "NJ": 1,
@@ -159,19 +159,19 @@
       "city": "Los Angeles",
       "x": 98,
       "y": 343,
-      "count": 4,
-      "tier": "on",
+      "count": 5,
+      "tier": "warm",
       "topProtocols": [
         {
           "title": "103 Ready to Print Policy Manual Complete",
           "count": 1
         },
         {
-          "title": "App protocols",
+          "title": "1075386 LACountyTreatmentProtocols",
           "count": 1
         },
         {
-          "title": "MC protocols",
+          "title": "App protocols",
           "count": 1
         }
       ]
@@ -212,6 +212,24 @@
         },
         {
           "title": "2018 state protocols with references 4 18 2018",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "SC",
+      "city": "Columbia",
+      "x": 728,
+      "y": 380,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "2025 Patient Care Guidelines PDF",
+          "count": 1
+        },
+        {
+          "title": "kershawcountyemsclinicaloperatingguidelines 261d3ca1e3d229bf1…",
           "count": 1
         }
       ]
@@ -452,20 +470,6 @@
       "topProtocols": [
         {
           "title": "EMS Protocol 2024 WPB",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "SC",
-      "city": "Columbia",
-      "x": 728,
-      "y": 380,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "kershawcountyemsclinicaloperatingguidelines 261d3ca1e3d229bf1…",
           "count": 1
         }
       ]
