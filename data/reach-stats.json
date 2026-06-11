@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-10T18:07:57.971Z",
-  "totalUploads": 185,
-  "distinctProtocols": 144,
-  "activeStudiers": 117,
-  "pagesProcessed": 21187,
-  "statesRepresented": 30,
+  "generatedAt": "2026-06-11T00:07:59.615Z",
+  "totalUploads": 188,
+  "distinctProtocols": 147,
+  "activeStudiers": 120,
+  "pagesProcessed": 21678,
+  "statesRepresented": 31,
   "countriesRepresented": 1,
   "internationalUploads": 1,
   "byState": {
@@ -14,11 +14,11 @@
     "CA": 6,
     "NY": 6,
     "AZ": 6,
+    "UT": 4,
     "TX": 4,
     "WI": 3,
     "FL": 3,
     "OK": 2,
-    "UT": 2,
     "NC": 2,
     "WA": 2,
     "MA": 2,
@@ -37,6 +37,7 @@
     "NH": 1,
     "OR": 1,
     "RI": 1,
+    "CT": 1,
     "WV": 1
   },
   "byCountry": {
@@ -234,6 +235,24 @@
       ]
     },
     {
+      "state": "UT",
+      "city": "Salt Lake City",
+      "x": 221,
+      "y": 212,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "2025 Utah EMS Protocol Guidelines 3",
+          "count": 1
+        },
+        {
+          "title": "Safari",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "MA",
       "city": "Boston",
       "x": 895,
@@ -287,7 +306,7 @@
       "state": "UT",
       "city": "Salt Lake",
       "x": 221,
-      "y": 212,
+      "y": 198,
       "count": 1,
       "tier": "tiny",
       "topProtocols": [
@@ -601,6 +620,20 @@
       "topProtocols": [
         {
           "title": "UT LIFESTAR Air Medical Patient Care Guidlines (25.2)",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "CT",
+      "city": "Hartford",
+      "x": 863,
+      "y": 177,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "v2025 2 ctemsstatewideprotocolsfinalver1",
           "count": 1
         }
       ]
