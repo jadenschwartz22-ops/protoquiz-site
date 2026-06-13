@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-06-12T18:07:56.769Z",
-  "totalUploads": 190,
-  "distinctProtocols": 149,
-  "activeStudiers": 122,
-  "pagesProcessed": 22345,
+  "generatedAt": "2026-06-13T00:07:57.247Z",
+  "totalUploads": 191,
+  "distinctProtocols": 150,
+  "activeStudiers": 123,
+  "pagesProcessed": 22527,
   "statesRepresented": 31,
   "countriesRepresented": 1,
   "internationalUploads": 1,
@@ -22,6 +22,7 @@
     "NC": 2,
     "SC": 2,
     "WA": 2,
+    "IL": 2,
     "MA": 2,
     "TN": 2,
     "KY": 1,
@@ -33,7 +34,6 @@
     "AL": 1,
     "MD": 1,
     "NJ": 1,
-    "IL": 1,
     "NH": 1,
     "OR": 1,
     "RI": 1,
@@ -266,6 +266,24 @@
         },
         {
           "title": "Safari",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "IL",
+      "city": "Chicago",
+      "x": 615,
+      "y": 224,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "428",
+          "count": 1
+        },
+        {
+          "title": "NWC EMSS SOP",
           "count": 1
         }
       ]
@@ -526,20 +544,6 @@
       "topProtocols": [
         {
           "title": "NEWJERSEYEMSCLINICALPRACTICEPROTOCOLS GUIDELINES FINAL8.21.20…",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "IL",
-      "city": "Chicago",
-      "x": 615,
-      "y": 224,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "NWC EMSS SOP",
           "count": 1
         }
       ]
