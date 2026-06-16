@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-06-16T06:07:59.662Z",
-  "totalUploads": 192,
-  "distinctProtocols": 151,
-  "activeStudiers": 124,
-  "pagesProcessed": 22733,
+  "generatedAt": "2026-06-16T12:07:59.680Z",
+  "totalUploads": 193,
+  "distinctProtocols": 152,
+  "activeStudiers": 125,
+  "pagesProcessed": 22930,
   "statesRepresented": 31,
   "countriesRepresented": 1,
   "internationalUploads": 1,
@@ -16,12 +16,12 @@
     "AZ": 6,
     "UT": 4,
     "TX": 4,
+    "WA": 3,
     "WI": 3,
     "FL": 3,
     "OK": 2,
     "NC": 2,
     "SC": 2,
-    "WA": 2,
     "IL": 2,
     "MA": 2,
     "TN": 2,
@@ -698,6 +698,20 @@
       "topProtocols": [
         {
           "title": "2026 Alameda County EMS Field Manual Rev3",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "WA",
+      "city": "Tacoma",
+      "x": 106,
+      "y": 55,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "Pierce county",
           "count": 1
         }
       ]
