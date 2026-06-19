@@ -102,13 +102,14 @@
     .post-header { margin-bottom: 40px; padding-bottom: 32px; border-bottom: 1px solid var(--line); }
     .post-category-badge {
       display: inline-block; padding: 6px 14px; border-radius: 8px;
-      background: rgba(34,211,238,.1); color: var(--cyan);
+      background: rgba(255,176,0,.1); color: var(--cyan);
       font-weight: 700; font-size: 12px; text-transform: uppercase;
       letter-spacing: .05em; margin-bottom: 20px;
     }
-    .post-category-badge.updates { background: rgba(168,85,247,.1); color: var(--violet); }
+    .post-category-badge.updates { background: rgba(204,138,0,.1); color: var(--violet); }
     .post-header h1 {
-      font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 900;
+      font-family: var(--mono);
+      font-size: clamp(1.9rem, 3.8vw, 2.6rem); font-weight: 700;
       line-height: 1.2; letter-spacing: -.02em; margin-bottom: 20px;
     }
     .post-meta-info {
@@ -147,8 +148,8 @@
       margin: 32px 0; color: var(--muted); font-style: italic;
     }
     .stats-callout {
-      background: linear-gradient(135deg, rgba(34,211,238,.05), rgba(168,85,247,.05));
-      border: 1px solid rgba(34,211,238,.2);
+      background: linear-gradient(135deg, rgba(255,176,0,.05), rgba(204,138,0,.05));
+      border: 1px solid rgba(255,176,0,.2);
       border-radius: var(--radius); padding: 24px; margin: 40px 0;
     }
     .stats-callout h3 {
@@ -162,13 +163,13 @@
       border-radius: var(--radius); padding: 32px;
       text-align: center; margin: 48px 0;
     }
-    .cta-box h3 { color: #05080c; font-size: 1.5rem; font-weight: 800; margin-bottom: 12px; }
-    .cta-box p { color: rgba(5,8,12,.8); margin-bottom: 20px; font-size: 16px; }
+    .cta-box h3 { color: #1b1610; font-size: 1.5rem; font-weight: 800; margin-bottom: 12px; }
+    .cta-box p { color: rgba(27,22,16,.85); margin-bottom: 20px; font-size: 16px; }
     .cta-btn {
       display: inline-block; padding: 14px 32px;
-      background: #05080c; color: var(--cyan);
+      background: #1b1610; color: var(--cyan);
       font-weight: 700; border-radius: 999px;
-      font-size: 16px; transition: all .2s; border: 2px solid #05080c;
+      font-size: 16px; transition: all .2s; border: 2px solid #1b1610;
     }
     .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.4); opacity: 1; }
     .comments-section { margin-top: 80px; padding-top: 40px; border-top: 2px solid var(--line); }
@@ -305,7 +306,7 @@
     <div class="wrap" style="max-width: 600px; text-align: center;">
       <h2 style="font-size: 1.75rem; margin-bottom: 12px;">Never Miss a Post</h2>
       <p style="color: var(--muted); margin-bottom: 24px;">
-        Get new EMS study tips and app updates delivered straight to your inbox. Bi-weekly.
+        Get new EMS study tips and app updates delivered straight to your inbox.
       </p>
       <div class="followit--follow-form-container" attr-a attr-b attr-c attr-d attr-e attr-f>
         <form data-v-e7d63655="" action="https://api.follow.it/subscription-form/NWJTVitFcEpGcGU0ajJvTmNST01hckl3ZFI0cTFHMmZkTmVBRlIwSUpnV0NOckQxVWdoNnljMnA2VCtEQU1Eb3VwdStGclRRZzRPZ05qbnpndU43NE90UlIyeC9RcDYxQ3pHYmFqeDl1aXBjcE5zc1F4dXhuR0dKN3ppVFdqdHl8cUl5dytUOE54R2h0TmFUUlppeEhIZXVkQ1k1blBuczY4Z3NQMmFlMGQ3QT0=/8" method="post">

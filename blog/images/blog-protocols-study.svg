@@ -1,16 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="How to study EMS protocols">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#0a0e1a"/>
-      <stop offset="1" stop-color="#05080c"/>
+      <stop offset="0" stop-color="#14110b"/>
+      <stop offset="1" stop-color="#0c0a07"/>
     </linearGradient>
     <linearGradient id="stroke" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#06d6e0"/>
-      <stop offset="1" stop-color="#b45cf6"/>
+      <stop offset="0" stop-color="#ffb000"/>
+      <stop offset="1" stop-color="#cc8a00"/>
     </linearGradient>
     <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0" stop-color="#06d6e0" stop-opacity="0.30"/>
-      <stop offset="1" stop-color="#06d6e0" stop-opacity="0"/>
+      <stop offset="0" stop-color="#ffb000" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#ffb000" stop-opacity="0"/>
     </radialGradient>
   </defs>
 
@@ -18,7 +18,7 @@
   <circle cx="800" cy="450" r="340" fill="url(#glow)"/>
 
   <!-- Dashed orbit ring -->
-  <circle cx="800" cy="450" r="280" fill="none" stroke="#06d6e0" stroke-width="2" stroke-dasharray="4 12" opacity="0.4"/>
+  <circle cx="800" cy="450" r="280" fill="none" stroke="#ffb000" stroke-width="2" stroke-dasharray="4 12" opacity="0.4"/>
 
   <!-- Central brain -->
   <g stroke="url(#stroke)" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -36,7 +36,7 @@
 
   <!-- Orbiting elements: book (top), lightbulb (right), checkmark (left), clock (bottom) -->
   <!-- Book top -->
-  <g stroke="#06d6e0" stroke-width="4" fill="none" stroke-linejoin="round">
+  <g stroke="#ffb000" stroke-width="4" fill="none" stroke-linejoin="round">
     <rect x="760" y="130" width="80" height="60" rx="4"/>
     <line x1="800" y1="130" x2="800" y2="190"/>
     <line x1="775" y1="150" x2="790" y2="150"/>
@@ -46,27 +46,27 @@
   </g>
 
   <!-- Lightbulb right -->
-  <g stroke="#b45cf6" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <g stroke="#cc8a00" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round">
     <path d="M 1140 430 Q 1140 390 1180 390 Q 1220 390 1220 430 Q 1220 450 1205 465 L 1205 490 L 1155 490 L 1155 465 Q 1140 450 1140 430 Z"/>
     <line x1="1165" y1="510" x2="1195" y2="510"/>
     <line x1="1170" y1="525" x2="1190" y2="525"/>
   </g>
 
   <!-- Checkmark left -->
-  <g stroke="#06d6e0" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <g stroke="#ffb000" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="400" cy="450" r="42"/>
     <path d="M 380 450 L 395 468 L 425 432"/>
   </g>
 
   <!-- Clock bottom -->
-  <g stroke="#b45cf6" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <g stroke="#cc8a00" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="800" cy="760" r="42"/>
     <line x1="800" y1="760" x2="800" y2="730"/>
     <line x1="800" y1="760" x2="822" y2="772"/>
   </g>
 
   <!-- Sparkles -->
-  <g fill="#06d6e0" opacity="0.85">
+  <g fill="#ffb000" opacity="0.85">
     <path d="M 1300 250 l 0 -22 l 3 17 l 17 3 l -17 3 l -3 17 l -3 -17 l -17 -3 l 17 -3 z"/>
     <path d="M 280 200 l 0 -18 l 3 14 l 14 3 l -14 3 l -3 14 l -3 -14 l -14 -3 l 14 -3 z"/>
   </g>
