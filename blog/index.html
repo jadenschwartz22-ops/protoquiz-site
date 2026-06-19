@@ -499,6 +499,23 @@
         track('blog_post_click', { title });
       });
     });
+
+    // Show view counts on each card (GET = read-only, does not inflate)
+    posts.forEach(async post => {
+      try {
+        const m = (post.getAttribute('onclick') || '').match(/posts\/([^']+)\.html/);
+        if (!m) return;
+        const res = await fetch('https://ems-router.vercel.app/api/blog-views?slug=' + encodeURIComponent(m[1]));
+        const data = await res.json();
+        if (typeof data.count !== 'number') return;
+        const meta = post.querySelector('.meta-right');
+        if (!meta) return;
+        const dot = document.createElement('span'); dot.className = 'dot';
+        const v = document.createElement('span');
+        v.textContent = data.count.toLocaleString() + (data.count === 1 ? ' view' : ' views');
+        meta.appendChild(dot); meta.appendChild(v);
+      } catch (e) {}
+    });
   </script>
 </body>
 </html>
