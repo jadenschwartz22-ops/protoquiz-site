@@ -78,11 +78,21 @@
     (async () => {
       try {
         const slug = window.location.pathname.split('/').pop().replace('.html', '');
-        await fetch('https://ems-router.vercel.app/api/blog-views', {
+        const res = await fetch('https://ems-router.vercel.app/api/blog-views', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ slug })
         });
+        const data = await res.json();
+        if (typeof data.count === 'number') {
+          const meta = document.querySelector('.post-meta-info');
+          if (meta) {
+            const sep = document.createElement('span'); sep.innerHTML = '&bull;';
+            const v = document.createElement('span');
+            v.textContent = data.count.toLocaleString() + (data.count === 1 ? ' view' : ' views');
+            meta.appendChild(sep); meta.appendChild(v);
+          }
+        }
       } catch (e) {
         console.log('View tracking failed:', e);
       }

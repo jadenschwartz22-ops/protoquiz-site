@@ -1,0 +1,997 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>We Compared 53 EMS Protocols From Across the Country. This Is What We Found. - EMS ProtoQuiz Blog</title>
+  <meta name="description" content="A survey of 53 real EMS protocol documents that working providers uploaded to ProtoQuiz to study their own agency's rules, spanning 30 states and regions: drugs, algorithms, procedures, scope of practice, system policies, and outliers. Every standout is page-cited and adversarially verified." />
+
+  <!-- SEO -->
+  <link rel="canonical" href="https://protoquiz.com/blog/posts/2026-06-14-what-stands-out-across-53-ems-protocols.html">
+  <meta name="robots" content="index,follow" />
+  <meta name="keywords" content="EMS protocol survey, prehospital protocol differences, EMS scope of practice comparison, EMS system policy variance, paramedic protocol outliers, EMS standing orders OLMC" />
+
+  <!-- Social / Open Graph -->
+  <meta property="og:title" content="We Compared 53 EMS Protocols From Across the Country. This Is What We Found." />
+  <meta property="og:description" content="A survey of 53 real EMS protocol documents that working providers uploaded to ProtoQuiz to study their own agency's rules, spanning 30 states and regions: drugs, algorithms, procedures, scope of practice, system policies, and outliers. Every standout is page-cited and adversarially verified." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://protoquiz.com/blog/posts/2026-06-14-what-stands-out-across-53-ems-protocols.html" />
+  <meta property="og:image" content="https://protoquiz.com/logo-256.png" />
+  <meta property="article:published_time" content="2026-06-14" />
+  <meta property="article:author" content="Jaden" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="We Compared 53 EMS Protocols From Across the Country. This Is What We Found." />
+  <meta name="twitter:description" content="A survey of 53 real EMS protocol documents that working providers uploaded to ProtoQuiz to study their own agency's rules, spanning 30 states and regions: drugs, algorithms, procedures, scope of practice, system policies, and outliers. Every standout is page-cited and adversarially verified." />
+  <meta name="twitter:image" content="https://protoquiz.com/logo-256.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png" />
+
+  <!-- Structured Data - BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "We Compared 53 EMS Protocols From Across the Country. This Is What We Found.",
+    "description": "A survey of 53 real EMS protocol documents that working providers uploaded to ProtoQuiz to study their own agency's rules, spanning 30 states and regions: drugs, algorithms, procedures, scope of practice, system policies, and outliers. Every standout is page-cited and adversarially verified.",
+    "author": {
+      "@type": "Person",
+      "name": "Jaden",
+      "jobTitle": "Paramedic Student & Developer"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Teach Me to Live LLC",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://protoquiz.com/logo-256.png"
+      }
+    },
+    "datePublished": "2026-06-14",
+    "dateModified": "2026-06-14",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://protoquiz.com/blog/posts/2026-06-14-what-stands-out-across-53-ems-protocols.html"
+    }
+  }
+  </script>
+
+  <!-- Google tag (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LNSS9BMEP8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-LNSS9BMEP8');
+
+    function track(name, props){
+      try { gtag('event', name, props || {}); } catch(e){}
+    }
+    const PAGE = 'blog_post';
+    track('blog_post_view', { title: 'We Compared 53 EMS Protocols From Across the Country. This Is What We Found.' });
+
+    // Track view in Firestore and display the count
+    (async () => {
+      try {
+        const slug = window.location.pathname.split('/').pop().replace('.html', '');
+        const res = await fetch('https://ems-router.vercel.app/api/blog-views', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ slug })
+        });
+        const data = await res.json();
+        const el = document.getElementById('viewCount');
+        if (el && typeof data.count === 'number') {
+          el.textContent = data.count.toLocaleString() + (data.count === 1 ? ' view' : ' views');
+        }
+      } catch (e) {
+        console.log('View tracking failed:', e);
+      }
+    })();
+  </script>
+
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../_shared-styles.css">
+
+  <style>
+    /* Post-specific styles */
+    .post-container {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .post-header {
+      margin-bottom: 40px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .post-category-badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 8px;
+      background: rgba(255,176,0,.12);
+      color: var(--cyan);
+      font-family: var(--mono);
+      font-weight: 700;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      margin-bottom: 20px;
+    }
+
+    .post-category-badge.updates {
+      background: rgba(204,138,0,.1);
+      color: var(--violet);
+    }
+
+    .post-category-badge.stories {
+      background: rgba(16,185,129,.1);
+      color: var(--success);
+    }
+
+    .post-category-badge.study {
+      background: rgba(245,158,11,.1);
+      color: var(--warning);
+    }
+
+    .post-header h1 {
+      font-family: var(--mono);
+      font-size: clamp(1.9rem, 3.8vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.22;
+      letter-spacing: -.02em;
+      margin-bottom: 20px;
+    }
+
+    .post-meta-info {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .post-meta-info .author {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .post-content {
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--ink);
+    }
+
+    .post-content h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin-top: 48px;
+      margin-bottom: 20px;
+      letter-spacing: -.02em;
+    }
+
+    .post-content h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-top: 36px;
+      margin-bottom: 16px;
+    }
+
+    .post-content p {
+      margin-bottom: 24px;
+    }
+
+    .post-content ul,
+    .post-content ol {
+      margin-bottom: 24px;
+      padding-left: 28px;
+    }
+
+    .post-content li {
+      margin-bottom: 12px;
+    }
+
+    .post-content a {
+      color: var(--cyan);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    .post-content a:hover {
+      color: var(--violet);
+    }
+
+    .post-content strong {
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .post-content code {
+      background: var(--panel);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.9em;
+      font-family: 'SF Mono', Monaco, monospace;
+      border: 1px solid var(--line);
+    }
+
+    .post-content blockquote {
+      border-left: 3px solid var(--cyan);
+      padding-left: 20px;
+      margin: 32px 0;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* Data tables */
+    .table-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 28px 0;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--card);
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+      line-height: 1.5;
+      min-width: 560px;
+    }
+
+    .data-table caption {
+      caption-side: top;
+      text-align: left;
+      font-size: 13px;
+      color: var(--muted);
+      padding: 14px 16px 0;
+      font-style: italic;
+    }
+
+    .data-table thead th {
+      position: sticky;
+      top: 0;
+      background: var(--panel);
+      color: var(--cyan);
+      font-weight: 700;
+      text-align: left;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      white-space: nowrap;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .03em;
+    }
+
+    .data-table tbody td {
+      padding: 11px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      color: var(--ink);
+    }
+
+    .data-table tbody tr:nth-child(even) {
+      background: rgba(255,255,255,.015);
+    }
+
+    .data-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .data-table .col-state {
+      font-weight: 700;
+      color: var(--cyan);
+      white-space: nowrap;
+    }
+
+    .data-table .col-dose {
+      font-weight: 600;
+    }
+
+    .data-table .col-page {
+      color: var(--muted);
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .so-yes { color: var(--success); font-weight: 700; }
+    .so-no { color: var(--warning); font-weight: 700; }
+
+    .table-note {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: -12px;
+      margin-bottom: 28px;
+      font-style: italic;
+    }
+
+    .stats-callout {
+      background: linear-gradient(135deg, rgba(255,176,0,.05), rgba(204,138,0,.05));
+      border: 1px solid rgba(255,176,0,.2);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin: 40px 0;
+    }
+
+    .stats-callout h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+
+    .stats-callout p {
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+
+    .stats-callout strong {
+      color: var(--cyan);
+      font-weight: 800;
+    }
+
+    .verify-card {
+      background: rgba(245,158,11,.06);
+      border: 1px solid rgba(245,158,11,.25);
+      border-radius: var(--radius);
+      padding: 8px 24px 24px;
+      margin: 40px 0;
+    }
+
+    .verify-card h3 {
+      color: var(--warning);
+    }
+
+    .verify-card ul { padding-left: 22px; }
+
+    .verify-card cite {
+      display: block;
+      font-size: 13px;
+      color: var(--muted);
+      font-style: normal;
+      margin-top: 4px;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--cyan), var(--violet));
+      border-radius: var(--radius);
+      padding: 32px;
+      text-align: center;
+      margin: 48px 0;
+    }
+
+    .cta-box h3 {
+      color: #1b1610;
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .cta-box p {
+      color: rgba(27,22,16,.85);
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 14px 32px;
+      background: #1b1610;
+      color: var(--cyan);
+      font-weight: 700;
+      border-radius: 999px;
+      font-size: 16px;
+      transition: all .2s;
+      border: 2px solid #1b1610;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,.4);
+      opacity: 1;
+    }
+
+    /* Comments Section */
+    .comments-section {
+      margin-top: 80px;
+      padding-top: 40px;
+      border-top: 2px solid var(--line);
+    }
+
+    .comments-section h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin-bottom: 24px;
+    }
+
+    /* Back Link */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 32px;
+      transition: color .2s;
+    }
+
+    .back-link:hover {
+      color: var(--cyan);
+    }
+
+    .back-link::before {
+      content: "\2190";
+    }
+
+    /* Progressive-scope US cartogram */
+    .scope-map {
+      margin: 28px 0 8px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--card);
+      padding: 22px 18px 18px;
+    }
+
+    .cartogram {
+      display: grid;
+      grid-template-columns: repeat(11, 1fr);
+      gap: 5px;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .tile {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .02em;
+      color: var(--ink);
+      border: 1px solid var(--line);
+      background: var(--panel);
+    }
+
+    .tile.empty { background: none; border: none; }
+    .tile.nodata { color: var(--muted); opacity: .45; }
+
+    /* 4-step scale: low -> high progressiveTotal */
+    .tile.t1 { background: rgba(255,176,0,.10); color: var(--ink); }
+    .tile.t2 { background: rgba(255,176,0,.28); }
+    .tile.t3 { background: rgba(255,176,0,.55); color: #1b1610; }
+    .tile.t4 { background: rgba(255,176,0,.92); color: #1b1610; }
+
+    .tile.flag::after {
+      content: "*";
+      position: absolute;
+      top: 1px;
+      right: 3px;
+      font-size: 11px;
+      line-height: 1;
+      color: var(--warning);
+    }
+
+    .map-legend {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+      margin: 18px auto 0;
+      max-width: 560px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .map-legend .swatch {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .map-legend .box {
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+      border: 1px solid var(--line);
+    }
+
+    .map-legend .box.t1 { background: rgba(255,176,0,.10); }
+    .map-legend .box.t2 { background: rgba(255,176,0,.28); }
+    .map-legend .box.t3 { background: rgba(255,176,0,.55); }
+    .map-legend .box.t4 { background: rgba(255,176,0,.92); }
+    .map-legend .box.nodata { background: var(--panel); opacity: .5; }
+
+    .map-caption {
+      font-size: 13px;
+      color: var(--muted);
+      font-style: italic;
+      text-align: center;
+      margin: 14px auto 0;
+      max-width: 560px;
+    }
+
+    .col-score { font-weight: 700; color: var(--cyan); font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .col-sub { font-variant-numeric: tabular-nums; white-space: nowrap; color: var(--muted); }
+
+    @media (max-width: 520px) {
+      .tile { font-size: 8px; border-radius: 4px; }
+      .cartogram { gap: 3px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <header>
+    <div class="wrap">
+      <nav class="navbar">
+        <a href="../../" class="brand-link">
+          <img src="../../logo-48.png" alt="ProtoQuiz Logo" width="48" height="48">
+          <span>ProtoQuiz</span>
+        </a>
+        <div class="nav-links">
+          <a href="../../" class="nav-btn">Home</a>
+          <a href="../" class="nav-btn">Blog</a>
+          <a href="https://apps.apple.com/app/id6753611139" class="nav-btn primary" onclick="track('download_app', {source: 'blog_post'})">
+            Download App
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="wrap">
+      <div class="post-container">
+        <a href="../" class="back-link">Back to Blog</a>
+
+        <!-- Post Header -->
+        <article class="post-header">
+          <span class="post-category-badge">Data</span>
+          <h1>We Compared 53 EMS Protocols From Across the Country. This Is What We Found.</h1>
+          <div class="post-meta-info">
+            <span class="author">By Jaden</span>
+            <span>&bull;</span>
+            <time datetime="2026-06-14">June 14, 2026</time>
+            <span>&bull;</span>
+            <span>8 min read</span>
+            <span>&bull;</span>
+            <span id="viewCount">&mdash; views</span>
+          </div>
+        </article>
+
+        <!-- Post Content -->
+        <div class="post-content">
+          <p>Each one was uploaded to ProtoQuiz by an EMT or medic studying their own agency's rules &mdash; so these are protocols people actually use on the job.</p>
+
+          <p>Reading all of them took an AI model about <strong>47 million tokens over six days</strong>, page by page, pulling every drug, algorithm, procedure, and oddity into one comparable format. Every fact below is tied to the page it came from and was checked by three independent passes before it made the cut. Here is what stood out.</p>
+
+          <div class="stats-callout">
+            <h3>Five interesting findings</h3>
+            <p><strong>Maple syrup is an approved oral glucose.</strong> Vermont lists maple syrup as an acceptable source of oral glucose for the conscious hypoglycemic patient. <cite style="color:var(--muted);font-style:normal;font-size:13px;display:block;"><a href="https://www.healthvermont.gov/sites/default/files/document/eprip-2025-EMS-Protocols_0.pdf" target="_blank" rel="noopener">Vermont EMS Statewide Protocols</a></cite></p>
+            <p><strong>Naloxone is banned in cardiac arrest &mdash; in red text.</strong> San Diego County explicitly prohibits naloxone during arrest, contradicting the common "it won't hurt" practice. <cite style="color:var(--muted);font-style:normal;font-size:13px;display:block;"><a href="https://www.sandiegocounty.gov/content/sdc/ems/prehospital_systemv2.html" target="_blank" rel="noopener">San Diego County EMS, p.57</a></cite></p>
+            <p><strong>A horizontal-gaze stroke test instead of FAST.</strong> Alabama uses a proprietary EMSA scale (Eyes / Motor / Speech) where "Eyes" is a gaze-tracking test, not facial droop. <cite style="color:var(--muted);font-style:normal;font-size:13px;display:block;"><a href="https://www.alabamapublichealth.gov/ems/assets/master-alabama-protocols-0401.pdf" target="_blank" rel="noopener">Alabama Statewide EMS Protocols, p.206</a></cite></p>
+            <p><strong>Field thrombolytics for STEMI.</strong> St John New Zealand gives tenecteplase plus heparin 5000 U on a standing order &mdash; none of the US systems do this. <cite style="color:var(--muted);font-style:normal;font-size:13px;display:block;"><a href="https://www.stjohn.org.nz/globalassets/documents/health-practitioners/clinical-procedures-and-guidelines---comprehensive-edition.pdf" target="_blank" rel="noopener">St John New Zealand, p.62</a></cite></p>
+            <p><strong>Field perimortem cesarean section.</strong> Mayo Clinic Ambulance &mdash; a critical-care transport service &mdash; authorizes it at 4 minutes without ROSC, &ge;20 weeks gestation, as a critical-care-paramedic procedure. <cite style="color:var(--muted);font-style:normal;font-size:13px;display:block;">Mayo Clinic Ambulance, p.255</cite></p>
+          </div>
+
+          <h2>Where the protocols came from</h2>
+
+          <p>The 53 protocols come from 30 states and regions, plus the NASEMSO national model, St John New Zealand, and Alberta. The map shades each state by how many landed from there. Colorado and California lead with six each; most states show one.</p>
+
+          <div class="scope-map">
+            <div class="cartogram" role="img" aria-label="US map shading each state by how many of the 53 protocols were uploaded from it. Colorado and California highest at six each; New York four; Michigan and Wisconsin three.">
+              <span class="tile nodata" title="AK: none">AK</span><span class="tile empty"></span><span class="tile empty"></span><span class="tile empty"></span><span class="tile empty"></span><span class="tile empty"></span><span class="tile empty"></span><span class="tile empty"></span><span class="tile empty"></span><span class="tile empty"></span><span class="tile nodata" title="ME: none">ME</span>
+              <span class="tile empty"></span><span class="tile empty"></span><span class="tile empty"></span><span class="tile empty"></span><span class="tile empty"></span><span class="tile empty"></span><span class="tile empty"></span><span class="tile empty"></span><span class="tile empty"></span><span class="tile t1" title="VT: 1 protocol">VT</span><span class="tile nodata" title="NH: none">NH</span>
+              <span class="tile t1" title="WA: 1 protocol">WA</span><span class="tile t1" title="ID: 1 protocol">ID</span><span class="tile nodata" title="MT: none">MT</span><span class="tile nodata" title="ND: none">ND</span><span class="tile t1" title="MN: 1 protocol">MN</span><span class="tile t2" title="IL: 2 protocols">IL</span><span class="tile t3" title="WI: 3 protocols">WI</span><span class="tile t3" title="MI: 3 protocols">MI</span><span class="tile t3" title="NY: 4 protocols">NY</span><span class="tile nodata" title="RI: none">RI</span><span class="tile t1" title="MA: 1 protocol">MA</span>
+              <span class="tile t2" title="OR: 2 protocols">OR</span><span class="tile nodata" title="NV: none">NV</span><span class="tile nodata" title="WY: none">WY</span><span class="tile nodata" title="SD: none">SD</span><span class="tile t1" title="IA: 1 protocol">IA</span><span class="tile nodata" title="IN: none">IN</span><span class="tile t2" title="OH: 2 protocols">OH</span><span class="tile t1" title="PA: 1 protocol">PA</span><span class="tile t1" title="NJ: 1 protocol">NJ</span><span class="tile nodata" title="CT: none">CT</span><span class="tile empty"></span>
+              <span class="tile t4" title="CA: 6 protocols">CA</span><span class="tile t1" title="UT: 1 protocol">UT</span><span class="tile t4" title="CO: 6 protocols">CO</span><span class="tile nodata" title="NE: none">NE</span><span class="tile nodata" title="MO: none">MO</span><span class="tile t1" title="KY: 1 protocol">KY</span><span class="tile t2" title="WV: 2 protocols">WV</span><span class="tile nodata" title="VA: none">VA</span><span class="tile nodata" title="MD: none">MD</span><span class="tile nodata" title="DE: none">DE</span><span class="tile empty"></span>
+              <span class="tile empty"></span><span class="tile t1" title="AZ: 1 protocol">AZ</span><span class="tile nodata" title="NM: none">NM</span><span class="tile nodata" title="KS: none">KS</span><span class="tile nodata" title="AR: none">AR</span><span class="tile t1" title="TN: 1 protocol">TN</span><span class="tile t1" title="NC: 1 protocol">NC</span><span class="tile t1" title="SC: 1 protocol">SC</span><span class="tile nodata" title="DC: none">DC</span><span class="tile empty"></span><span class="tile empty"></span>
+              <span class="tile empty"></span><span class="tile empty"></span><span class="tile empty"></span><span class="tile t1" title="OK: 1 protocol">OK</span><span class="tile nodata" title="LA: none">LA</span><span class="tile nodata" title="MS: none">MS</span><span class="tile t1" title="AL: 1 protocol">AL</span><span class="tile nodata" title="GA: none">GA</span><span class="tile empty"></span><span class="tile empty"></span><span class="tile empty"></span>
+              <span class="tile nodata" title="HI: none">HI</span><span class="tile empty"></span><span class="tile empty"></span><span class="tile t2" title="TX: 2 protocols">TX</span><span class="tile empty"></span><span class="tile empty"></span><span class="tile empty"></span><span class="tile t2" title="FL: 2 protocols">FL</span><span class="tile empty"></span><span class="tile empty"></span><span class="tile empty"></span>
+            </div>
+            <div class="map-legend">
+              <span class="swatch"><span class="box t1"></span>1</span>
+              <span class="swatch"><span class="box t2"></span>2</span>
+              <span class="swatch"><span class="box t3"></span>3&ndash;4</span>
+              <span class="swatch"><span class="box t4"></span>5&ndash;6</span>
+              <span class="swatch"><span class="box nodata"></span>none</span>
+            </div>
+            <p class="map-caption">Protocols uploaded per state. Three came from outside the map: the NASEMSO national model, St John New Zealand, and Alberta. One spans Minnesota and Wisconsin (Mayo Clinic Ambulance).</p>
+            <p class="map-caption">Don't see your state? <a href="https://apps.apple.com/app/id6753611139" onclick="track('download_app', {source: 'blog_map_cta'})">Upload your EMS protocols to ProtoQuiz</a> and it gets added.</p>
+          </div>
+          <p class="table-note">Alabama and Vermont are new since the last version of this survey. Together, the 53 protocols add up to 5,556 medication entries, 2,470 algorithms, and 1,393 procedures.</p>
+
+          <h2>Medications</h2>
+
+          <p>Formulary size alone ranges from <strong>4 drugs</strong> (Davidson County, NC) to <strong>177</strong> (Kentucky) &mdash; a 44-fold spread. A few that stand out:</p>
+
+          <ul>
+            <li><strong>The same drug, very different starting dose.</strong> Most systems start adenosine at 6 mg; a cluster (Boulder, Denver Metro, San Antonio, West Palm Beach) skips straight to 12 mg. TXA splits cleanly between 1 g and 2 g camps. San Antonio gives half-dose arrest epinephrine, 0.5 mg.</li>
+            <li><strong>D10 is quietly replacing D50.</strong> Santa Cruz uses D10 for <em>all</em> hypoglycemia &mdash; no D50 or D25 anywhere &mdash; and LA County does the same, citing vein damage and rebound highs from concentrated dextrose (p.228, p.25).</li>
+            <li><strong>Drugs you don't expect in a field bag.</strong> Mayo carries an ICU transfer formulary (inhaled nitric oxide, nitroprusside, insulin). St John New Zealand stocks metaraminol &mdash; a pressor no US system here carries &mdash; plus Penthrox inhalers (p.508). Kentucky's 2021 book still lists streptokinase and MAST trousers (p.331).</li>
+            <li><strong>Field addiction medicine is arriving.</strong> San Diego paramedics score the COWS scale and start buprenorphine-naloxone in withdrawal, with leave-behind naloxone (p.85); Massachusetts pushes buprenorphine down to EMT level (p.109).</li>
+          </ul>
+
+          <h2>Algorithms &amp; decision trees</h2>
+
+          <p>The same emergency is rarely handled the same way twice. A few of the sharpest forks:</p>
+
+          <ul>
+            <li><strong>Cardiac arrest is not standardized.</strong> Berrien County picks lidocaine over amiodarone outright (p.91). Vasopressin survives in Kentucky and Miami despite the AHA dropping it in 2020 (p.54). Oklahoma makes you call medical control before repeating epi on anyone over 50 or hypertensive (p.209). San Diego and San Antonio route refractory arrests to ECMO (p.61, p.107) &mdash; and San Diego bans naloxone in arrest outright, in red text (p.57).</li>
+            <li><strong>When you can stop varies widely.</strong> Alameda lets you terminate only if 2 or fewer shocks were given &mdash; a third shock makes the patient ineligible (p.92). LA County runs refractory VF up to 40 minutes on scene (p.45). Santa Cruz uses a sustained EtCO2 &le;10 as the stop signal (p.305).</li>
+            <li><strong>Stroke screening has no standard.</strong> Nearly every system picked a different LVO scale and cutoff (LAMS, FAST-ED, C-STAT, RACE). Alabama dropped FAST for a scale where "Eyes" is a gaze-tracking test, not facial droop (p.206). Pennsylvania's scale uses the phrase "The sky is blue in Pennsylvania" (p.149). The thrombectomy-routing window ranges from 3.5 hours to 24 (p.136).</li>
+            <li><strong>Who decides, and when.</strong> Pennsylvania flips the usual gate &mdash; opioids are a standing order only for <em>severe</em> pain; mild pain needs a phone call (p.139). The NASEMSO national model puts cardiac-arrest victims ahead of the walking wounded in lightning strikes, and says fixed pupils are not a death sign there (p.352).</li>
+          </ul>
+
+          <h2>Procedures &amp; skills</h2>
+
+          <p>Advanced procedures cluster in a few systems rather than spreading evenly. The far end:</p>
+
+          <ul>
+            <li><strong>Surgery in the field.</strong> Mayo Clinic Ambulance &mdash; a critical-care transport service &mdash; authorizes a perimortem cesarean at 4 minutes without ROSC (p.255). Massachusetts carries field amputation (p.143). Lake Cities' tactical medics can do incision-and-drainage, dental blocks, and wound repair (p.132).</li>
+            <li><strong>Whole blood is no longer rare</strong> &mdash; roughly a third of these systems carry it &mdash; but who's allowed varies from a Critical Care endorsement (Denver Metro) down to EMT-Intermediate (Salem Health, p.127).</li>
+            <li><strong>Hospital-grade ultrasound on a 911 truck.</strong> Thurston County (WA), a ground service, authorizes POCUS-guided pericardiocentesis and central lines (p.211) &mdash; the kind of scope you'd normally only see on a critical-care unit like Mayo, which does prehospital fetal heart-rate monitoring (p.337).</li>
+            <li><strong>The evidence is changing practice.</strong> Mountain West makes the iGel the first-line airway, citing the AIRWAYS-2 trial (p.126). San Diego moved needle decompression to the axilla, the military site (p.16). Santa Cruz outright bans oxygen-powered ventilators and nasotracheal intubation (p.286).</li>
+          </ul>
+
+          <h2>Scope of practice</h2>
+
+          <p>EMS school teaches one answer. The <a href="https://www.ems.gov/assets/National_EMS_Scope_of_Practice_Model_2019.pdf" target="_blank" rel="noopener">National EMS Scope of Practice Model</a> &mdash; the baseline behind the NREMT exam &mdash; defines what each certification level can do. Real systems treat it as a floor, a ceiling, or a suggestion. Compare the national standard to what these 53 actually allow:</p>
+
+          <div class="table-scroll">
+            <table class="data-table">
+              <caption>National scope-of-practice baseline (what you learn in school) vs. the range across the 53 protocols.</caption>
+              <thead>
+                <tr><th>Skill</th><th>National standard</th><th>Across real systems</th></tr>
+              </thead>
+              <tbody>
+                <tr><td class="col-dose">Tourniquet</td><td class="col-state">EMR</td><td>EMR in most; some restrict to EMT+</td></tr>
+                <tr><td class="col-dose">CPAP</td><td class="col-state">EMT</td><td>EMT in ~20 systems, paramedic-only in others</td></tr>
+                <tr><td class="col-dose">IO access</td><td class="col-state">AEMT</td><td>AEMT baseline; some push to EMT, some hold at paramedic</td></tr>
+                <tr><td class="col-dose">Intubation</td><td class="col-state">Paramedic</td><td>Paramedic standard; Alberta's program doesn't authorize it at all</td></tr>
+                <tr><td class="col-dose">RSI</td><td class="col-state">&mdash; (not in model)</td><td>Paramedic in many; Critical-Care-only in Alabama, Kentucky, Denver, Boulder</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>The deviations from that baseline are where it gets interesting:</p>
+
+          <ul>
+            <li><strong>Drugs pushed down to EMT.</strong> New York lets EMTs give oral moxifloxacin for open fractures (p.86) and administer flu and COVID vaccines (p.66). Massachusetts pushes buprenorphine and oral antipsychotics to EMT level (p.107). Santa Cruz EMTs draw up and inject epinephrine, not just fire an auto-injector (p.222).</li>
+            <li><strong>Procedures pushed down, too.</strong> West Virginia lets AEMTs access indwelling PICC lines (p.188). New York authorizes joint reductions and tooth reimplantation down to first-responder level (p.153). Davidson County (NC) runs Swan-Ganz catheters and arterial lines at plain paramedic level.</li>
+            <li><strong>RSI is the dividing line.</strong> Alabama bans paramedic RSI entirely &mdash; Critical Care only (p.189). Denver Metro, Boulder, San Antonio, and Kentucky each gate it behind a special endorsement above paramedic.</li>
+            <li><strong>And one that goes the other way.</strong> Alberta tops out at EMT &mdash; no intubation at any level, no seizure benzo in the whole formulary (p.7, p.33).</li>
+          </ul>
+
+          <h2>Where the most progressive scopes are</h2>
+
+          <p>We scored each system 0&ndash;30 on how "progressive" its scope is: how much a medic can do without calling medical control, how far advanced skills are pushed down to EMTs, and how many cutting-edge interventions it carries (TXA, ketamine, whole blood, POCUS, field antibiotics, ECMO routing). It's one lens, not a quality measure. The map shades each state by its top ground system; air and critical-care transport are scored separately, since their scope reflects mission, not local trust.</p>
+
+          <div class="scope-map">
+            <div class="cartogram" role="img" aria-label="US cartogram shading each state by its highest-scoring ground EMS system on a 0 to 30 progressive-scope composite. Highest tiers: Washington, Florida, Texas, Wisconsin, Colorado.">
+              <span class="tile nodata">AK</span><span class="tile empty"></span><span class="tile empty"></span><span class="tile empty"></span><span class="tile empty"></span><span class="tile empty"></span><span class="tile empty"></span><span class="tile empty"></span><span class="tile empty"></span><span class="tile empty"></span><span class="tile nodata">ME</span>
+              <span class="tile empty"></span><span class="tile empty"></span><span class="tile empty"></span><span class="tile empty"></span><span class="tile empty"></span><span class="tile empty"></span><span class="tile empty"></span><span class="tile empty"></span><span class="tile empty"></span><span class="tile t2 flag">VT</span><span class="tile nodata">NH</span>
+              <span class="tile t4">WA</span><span class="tile t3">ID</span><span class="tile nodata">MT</span><span class="tile nodata">ND</span><span class="tile nodata">MN</span><span class="tile t3">IL</span><span class="tile t4">WI</span><span class="tile t2">MI</span><span class="tile t1">NY</span><span class="tile nodata">RI</span><span class="tile nodata">MA</span>
+              <span class="tile t3">OR</span><span class="tile nodata">NV</span><span class="tile nodata">WY</span><span class="tile nodata">SD</span><span class="tile nodata">IA</span><span class="tile nodata">IN</span><span class="tile t3">OH</span><span class="tile nodata">PA</span><span class="tile nodata">NJ</span><span class="tile nodata">CT</span><span class="tile empty"></span>
+              <span class="tile t3">CA</span><span class="tile t3 flag">UT</span><span class="tile t4">CO</span><span class="tile nodata">NE</span><span class="tile nodata">MO</span><span class="tile nodata">KY</span><span class="tile nodata">WV</span><span class="tile nodata">VA</span><span class="tile nodata">MD</span><span class="tile nodata">DE</span><span class="tile empty"></span>
+              <span class="tile empty"></span><span class="tile t3">AZ</span><span class="tile nodata">NM</span><span class="tile nodata">KS</span><span class="tile nodata">AR</span><span class="tile nodata">TN</span><span class="tile t3">NC</span><span class="tile t3">SC</span><span class="tile nodata">DC</span><span class="tile empty"></span><span class="tile empty"></span>
+              <span class="tile empty"></span><span class="tile empty"></span><span class="tile empty"></span><span class="tile nodata">OK</span><span class="tile nodata">LA</span><span class="tile nodata">MS</span><span class="tile t2 flag">AL</span><span class="tile nodata">GA</span><span class="tile empty"></span><span class="tile empty"></span><span class="tile empty"></span>
+              <span class="tile nodata">HI</span><span class="tile empty"></span><span class="tile empty"></span><span class="tile t4">TX</span><span class="tile empty"></span><span class="tile empty"></span><span class="tile empty"></span><span class="tile t4">FL</span><span class="tile empty"></span><span class="tile empty"></span><span class="tile empty"></span>
+            </div>
+            <div class="map-legend">
+              <span class="swatch"><span class="box t1"></span>Low (6&ndash;14)</span>
+              <span class="swatch"><span class="box t2"></span>Moderate (15&ndash;20)</span>
+              <span class="swatch"><span class="box t3"></span>High (21&ndash;24)</span>
+              <span class="swatch"><span class="box t4"></span>Highest (25&ndash;28)</span>
+              <span class="swatch"><span class="box nodata"></span>No protocol uploaded</span>
+            </div>
+            <p class="map-caption">Each state shaded by its highest ground-system composite (/30). Shaded states reflect only the protocols users uploaded &mdash; 53 in all &mdash; not every EMS system in that state. <span style="color:var(--warning)">*</span> Utah is shaded conservatively (see the note below the ranking); Alabama and Vermont are shaded from their statewide-model score, since the only document uploaded for each is a statewide model rather than a single ground agency.</p>
+          </div>
+
+          <h3>Tier 1 &mdash; Ground / 911 systems (scored)</h3>
+
+          <p>The ranking that drives the map. Top systems by composite; where a system publishes multiple documents, its highest is shown.</p>
+
+          <div class="table-scroll">
+            <table class="data-table">
+              <caption>Top ground / 911 systems by progressive-scope composite. Sub-scores (each /10): A = standing-order autonomy, S = advanced skills pushed to lower certs, C = cutting-edge interventions.</caption>
+              <thead>
+                <tr><th>#</th><th>System</th><th>State</th><th>Total /30</th><th>A</th><th>S</th><th>C</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>1</td><td>Thurston County Medic One</td><td class="col-state">WA</td><td class="col-score">28</td><td class="col-sub">8</td><td class="col-sub">10</td><td class="col-sub">10</td></tr>
+                <tr><td>2</td><td>Palm Beach Gardens Fire Rescue</td><td class="col-state">FL</td><td class="col-score">27</td><td class="col-sub">9</td><td class="col-sub">8</td><td class="col-sub">10</td></tr>
+                <tr><td>3</td><td>San Antonio / STRAC (Bexar-Frio)</td><td class="col-state">TX</td><td class="col-score">27</td><td class="col-sub">8</td><td class="col-sub">9</td><td class="col-sub">10</td></tr>
+                <tr><td>4</td><td>Aurora South WI EMS</td><td class="col-state">WI</td><td class="col-score">26</td><td class="col-sub">8</td><td class="col-sub">9</td><td class="col-sub">9</td></tr>
+                <tr><td>5</td><td>West Palm Beach Fire Dept EMS</td><td class="col-state">FL</td><td class="col-score">26</td><td class="col-sub">7</td><td class="col-sub">9</td><td class="col-sub">10</td></tr>
+                <tr><td>6</td><td>Boulder County EMS</td><td class="col-state">CO</td><td class="col-score">26</td><td class="col-sub">9</td><td class="col-sub">9</td><td class="col-sub">8</td></tr>
+                <tr><td>7</td><td>Denver Metro EMS (Jan 2026)</td><td class="col-state">CO</td><td class="col-score">25</td><td class="col-sub">7</td><td class="col-sub">9</td><td class="col-sub">9</td></tr>
+                <tr><td>8</td><td>San Diego County EMS</td><td class="col-state">CA</td><td class="col-score">24</td><td class="col-sub">8</td><td class="col-sub">7</td><td class="col-sub">9</td></tr>
+                <tr><td>9</td><td>Salem Health West Valley / Polk County</td><td class="col-state">OR</td><td class="col-score">24</td><td class="col-sub">8</td><td class="col-sub">8</td><td class="col-sub">8</td></tr>
+                <tr><td>10</td><td>Ada County Paramedics (ACCESS)</td><td class="col-state">ID</td><td class="col-score">23</td><td class="col-sub">8</td><td class="col-sub">7</td><td class="col-sub">8</td></tr>
+                <tr><td>11</td><td>Riverside County EMS Agency (REMSA)</td><td class="col-state">CA</td><td class="col-score">22</td><td class="col-sub">6</td><td class="col-sub">8</td><td class="col-sub">8</td></tr>
+                <tr><td>12</td><td>Central Arizona Regional EMS (CAREMSG)</td><td class="col-state">AZ</td><td class="col-score">22</td><td class="col-sub">8</td><td class="col-sub">7</td><td class="col-sub">7</td></tr>
+                <tr><td>13</td><td>Davidson County EMS</td><td class="col-state">NC</td><td class="col-score">22</td><td class="col-sub">7</td><td class="col-sub">9</td><td class="col-sub">6</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="table-note">California spans the whole range &mdash; LA County scores 14 (conservative, heavily medical-control-driven) while San Diego hits 24; the state's tile reflects San Diego. Mountain West (UT) is held back from the headline after a second pass found its score overstated. New Zealand is excluded as non-US.</p>
+
+          <div class="stats-callout">
+            <h3>Tier 2 &mdash; Air-medical / CCT (shown separately, not on the map)</h3>
+            <p>These services carry deep ICU-level scope because that is their mission &mdash; interfacility critical-care and scene flight &mdash; not because of jurisdictional autonomy. They are <strong>not comparable</strong> to ground 911 systems and are excluded from the scored map for fairness.</p>
+            <p>Mayo Clinic Ambulance (MN) <strong>&middot; 28</strong> &nbsp; AirCare / MobileCare &mdash; Univ. of Iowa (IA) <strong>&middot; 26</strong> &nbsp; UT LIFESTAR (TN) <strong>&middot; 25</strong> &nbsp; Air Care (OH) <strong>&middot; 22</strong> &nbsp; Hartford Hospital LIFE STAR (CT) <strong>&middot; 21</strong></p>
+          </div>
+
+          <p class="table-note">Statewide model documents are likewise held separate from the ground ranking, since they define a floor for many agencies rather than one agency's practice. On the same composite: New York State EMS Collaborative Protocols (25), Massachusetts Statewide Treatment Protocols (25), New Jersey EMS Clinical Practice Guidelines (24), West Virginia Office of EMS Statewide Protocols (23), Michigan MDHHS Statewide Protocols (23), Northwest Community EMSS (22), Pennsylvania Statewide ALS Protocols (21), Vermont EMS Statewide Protocols (20), and Alabama Statewide EMS Protocols (18). Vermont and Alabama are the only states whose single uploaded document is a statewide model, so on the map above they are shaded from these scores rather than from a ground agency.</p>
+
+          <h2>System policies</h2>
+
+          <p>The protocols differ on the non-clinical rules too &mdash; who you can divert, who you can leave, who you have to call:</p>
+
+          <ul>
+            <li><strong>Riverside bans ambulance diversion outright.</strong> A STEMI or stroke center that tries to divert loses its designation pending review (p.340).</li>
+            <li><strong>Ketamine is audited per dose.</strong> Pennsylvania reports every ketamine administration to the state quarterly (p.139); Colorado requires a waiver and CDPHE report for each use.</li>
+            <li><strong>Spine boards are out in places.</strong> Davidson County (NC) bans rigid boards for transport, saying they cause harm without benefit; Oklahoma drops spinal restriction for penetrating trauma (p.284).</li>
+            <li><strong>Hard stops on controlled drugs.</strong> Thompson Valley requires transport after any opioid, benzo, ketamine, or etomidate &mdash; refusal needs a physician on the phone (p.489). Pennsylvania caps standing-order sedation to ages 16&ndash;65 (p.165).</li>
+          </ul>
+
+          <h2>Outliers &amp; quirks</h2>
+
+          <p>And the ones that don't fit anywhere else:</p>
+
+          <ul>
+            <li><strong>Maple syrup is approved oral glucose</strong> in Vermont &mdash; found nowhere else.</li>
+            <li><strong>Field thrombolytics for STEMI.</strong> St John New Zealand gives tenecteplase on a standing order (p.62). No US system here does.</li>
+            <li><strong>Transvenous pacing</strong> shows up in exactly one ground service, Boulder County, restricted to critical-care interfacility transport (p.199).</li>
+            <li><strong>The double EpiPen.</strong> Greater Miami Valley has patients over 30 kg fire both an adult and a junior auto-injector at once, 0.45 mg total.</li>
+          </ul>
+
+          <h2>How we did this</h2>
+
+          <p>These 53 protocols are exactly the ones that real ProtoQuiz users uploaded to study &mdash; we did not go looking for them, providers brought them. Each PDF was read page by page by an AI model, in roughly 20-page chunks, pulling out the same set of fields every time: which service it is, its treatment algorithms, its medications (with dose, route, and page), its procedures, and anything unusual. Every fact in this post is tied to the page it came from. The reading ran quietly on a Raspberry Pi over several days. Every number here is counted across those same 53 protocols.</p>
+
+          <p>Every standout in this survey was then independently fact-checked by three separate AI skeptic agents, each instructed to re-open the cited file and page and default to refuting the claim unless the source plainly supported it. An item appears here only if at least two of the three confirmed it.</p>
+
+          <!-- Stats Callout -->
+          <div class="stats-callout">
+            <h3>At a glance</h3>
+            <p><strong>53</strong> complete protocol documents, uploaded by real EMS providers, spanning <strong>30</strong> states and regions.</p>
+            <p><strong>5,556</strong> medications, <strong>2,470</strong> algorithms, <strong>1,393</strong> procedures, counted across all 53.</p>
+            <p>Formularies range <strong>4 to 177</strong> meds; algorithm counts top out at <strong>85</strong>.</p>
+            <p><strong>3</strong> skeptic agents per standout; <strong>2-of-3</strong> confirmation required. Every item page-cited.</p>
+          </div>
+
+          <h2>Sources</h2>
+
+          <p>We don't host these documents &mdash; every system below is linked to the protocol its own agency publishes publicly. A handful of services (Mayo Clinic Ambulance, West Palm Beach, Berrien County, Lake Cities, Mountain West, Salem Health/Polk County) don't post their protocols publicly, so they're cited here without a link.</p>
+
+          <ul style="columns:2;column-gap:32px;font-size:14px;line-height:1.7;">
+            <li><a href="https://adacounty.id.gov/paramedics/wp-content/uploads/sites/62/00-SWOsCombined-01Aug25.pdf" target="_blank" rel="noopener">Ada County (ID)</a></li>
+            <li><a href="https://www.alabamapublichealth.gov/ems/assets/master-alabama-protocols-0401.pdf" target="_blank" rel="noopener">Alabama (state)</a></li>
+            <li><a href="https://ems.acgov.org/ems-assets/docs/Clinical/Field%20Protocols/2026/2026%20Alameda%20County%20EMS%20Field%20Manual%20Rev3.pdf" target="_blank" rel="noopener">Alameda County (CA)</a></li>
+            <li><a href="https://www.bocofire.org/documents/protocols/index.php" target="_blank" rel="noopener">Boulder County (CO)</a></li>
+            <li><a href="https://aems.org/images/pdf/redbook/red-book-chapter-3-2026.pdf" target="_blank" rel="noopener">Central Arizona (AEMS)</a></li>
+            <li><a href="https://oems.nc.gov/systems/" target="_blank" rel="noopener">Davidson County (NC)</a></li>
+            <li><a href="https://www.dmemsmd.org/sites/default/files/DMEMSMD%20Protocols%20January%202026%20FINAL%202025-02-02.pdf" target="_blank" rel="noopener">Denver Metro (CO)</a></li>
+            <li><a href="https://gmvemsc.org/protocols.html" target="_blank" rel="noopener">Greater Miami Valley (OH)</a></li>
+            <li><a href="https://kbems.ky.gov/Medical-Direction/Documents/Kentucky_EMS_State_Protocols_2025-04-30_rev.2025-07-28.pdf" target="_blank" rel="noopener">Kentucky (state)</a></li>
+            <li><a href="https://dhs.lacounty.gov/emergency-medical-services-agency/home/resources-ems/manuals-and-protocols/protocols/" target="_blank" rel="noopener">Los Angeles County (CA)</a></li>
+            <li><a href="https://www.mass.gov/lists/emergency-medical-services-statewide-treatment-protocols" target="_blank" rel="noopener">Massachusetts (state)</a></li>
+            <li><a href="https://www.michigan.gov/mdhhs/inside-mdhhs/legislationpolicy/ems/protocols/michigan-protocols" target="_blank" rel="noopener">Michigan (state)</a></li>
+            <li><a href="https://nasemso.org/wp-content/uploads/National-Model-EMS-Clinical-Guidelines_2022.pdf" target="_blank" rel="noopener">NASEMSO national model</a></li>
+            <li><a href="https://www.nj.gov/health/ems/documents/NEWJERSEYEMSCLINICALPRACTICEPROTOCOLS_GUIDELINES_FINAL8.21.2025v1.pdf" target="_blank" rel="noopener">New Jersey (state)</a></li>
+            <li><a href="https://www.health.ny.gov/professionals/ems/protocol.htm" target="_blank" rel="noopener">New York State / NYC REMAC</a></li>
+            <li><a href="https://oklahoma.gov/content/dam/ok/en/health/health2/aem-documents/protective-health/emergency-systems/ems-division/protocols/2018-state-protocols-with-references-4-18-2018.pdf" target="_blank" rel="noopener">Oklahoma (state)</a></li>
+            <li><a href="https://www.pa.gov/content/dam/copapwp-pagov/en/health/documents/topics/documents/ems/2023v1-2%20PA%20ALS%20Protocols.pdf" target="_blank" rel="noopener">Pennsylvania (state ALS)</a></li>
+            <li><a href="https://rivcoready.org/riverside-county-ems-agency/protocols" target="_blank" rel="noopener">Riverside County / REMSA (CA)</a></li>
+            <li><a href="https://www.strac.org/prehospital/" target="_blank" rel="noopener">San Antonio / STRAC (TX)</a></li>
+            <li><a href="https://www.sandiegocounty.gov/content/sdc/ems/prehospital_systemv2.html" target="_blank" rel="noopener">San Diego County (CA)</a></li>
+            <li><a href="https://www.santacruzhealth.org/Portals/7/Pdfs/EMS/PP/Santa%20Cruz%20County%20EMS%20Policies%20and%20Procedures.pdf" target="_blank" rel="noopener">Santa Cruz County (CA)</a></li>
+            <li><a href="https://tvems.com/wp-content/uploads/2024/08/Master-Document-FULL-V26.1.pdf" target="_blank" rel="noopener">Thompson Valley (CO)</a></li>
+            <li><a href="https://www.thurstoncountywa.gov/departments/medic-one/ems-field-protocols" target="_blank" rel="noopener">Thurston County (WA)</a></li>
+            <li><a href="https://www.healthvermont.gov/sites/default/files/document/eprip-2025-EMS-Protocols_0.pdf" target="_blank" rel="noopener">Vermont (state)</a></li>
+            <li><a href="https://dhhr.wv.gov/oems/medicaldirection/Documents/Protocols/2026/2026%20Protocol%20Booklet%20Final%20April%202026%20-%20INTERACTIVE.pdf" target="_blank" rel="noopener">West Virginia (state)</a></li>
+            <li><a href="https://www.stjohn.org.nz/globalassets/documents/health-practitioners/clinical-procedures-and-guidelines---comprehensive-edition.pdf" target="_blank" rel="noopener">St John New Zealand</a></li>
+          </ul>
+
+          <h2>Why this matters for studying</h2>
+
+          <p>The breadth is the point. Across these 53 systems there is no single right answer for most of prehospital care &mdash; not the adenosine start, not the anaphylaxis epi dose, not who is allowed to perform CPAP or RSI, not whether your service can divert or carry whole blood, not even whether maple syrup counts as oral glucose. Generic NREMT material teaches the conventional version; your agency's protocol is the one that holds up on a call.</p>
+
+          <p>And that is exactly why this dataset exists: every document here was uploaded by someone who needed to know their own protocol cold. <a href="https://apps.apple.com/app/id6753611139">ProtoQuiz</a> was built around that gap: upload your agency's protocol PDF and it quizzes you on your actual doses, routes, scope, and standing-order rules, with every answer page-cited back to the source. The same page-by-page reading behind this survey is what powers the app.</p>
+
+          <p><a href="../">Back to the blog</a> for more EMS data and study tips.</p>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-box">
+          <h3>Study Your Protocols, Not the Average</h3>
+          <p>Upload your PDF, get instant quizzes with page citations. Free to start.</p>
+          <a href="https://apps.apple.com/app/id6753611139" class="cta-btn" onclick="track('download_app', {source: 'blog_post_cta'})">
+            Download ProtoQuiz
+          </a>
+        </div>
+
+        <!-- Comments Section -->
+        <div class="comments-section">
+          <h2>Comments</h2>
+          <script src="https://giscus.app/client.js"
+                  data-repo="jadenschwartz22-ops/protoquiz-site"
+                  data-repo-id="R_kgDOP_OVLw"
+                  data-category="Blog Comments"
+                  data-category-id="DIC_kwDOP_OVL84CyFhj"
+                  data-mapping="pathname"
+                  data-strict="0"
+                  data-reactions-enabled="1"
+                  data-emit-metadata="0"
+                  data-input-position="top"
+                  data-theme="dark"
+                  data-lang="en"
+                  crossorigin="anonymous"
+                  async>
+          </script>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Newsletter Signup -->
+  <section style="background: var(--panel); border-top: 1px solid var(--line); padding: 60px 0; margin-top: 80px;">
+    <div class="wrap" style="max-width: 600px; text-align: center;">
+      <h2 style="font-size: 1.75rem; margin-bottom: 12px;">Never Miss a Post</h2>
+      <p style="color: var(--muted); margin-bottom: 24px;">
+        Get new EMS study tips and app updates delivered straight to your inbox.
+      </p>
+
+      <!-- Email Signup Form (Follow.it) -->
+      <style>
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview {
+          display: flex !important;
+          flex-direction: column !important;
+          justify-content: center !important;
+          margin-top: 30px !important;
+          padding: clamp(17px, 5%, 40px) clamp(17px, 7%, 50px) !important;
+          max-width: none !important;
+          border-radius: 6px !important;
+          box-shadow: 0 5px 25px rgba(34, 60, 47, 0.25) !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview,
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview * {
+          box-sizing: border-box !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-heading {
+          width: 100% !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-heading h5 {
+          margin-top: 0 !important;
+          margin-bottom: 0 !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field {
+          margin-top: 20px !important;
+          width: 100% !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input {
+          width: 100% !important;
+          height: 40px !important;
+          border-radius: 6px !important;
+          border: 2px solid #e9e8e8 !important;
+          background-color: #fff;
+          outline: none !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input {
+          color: #000000 !important;
+          font-family: "Montserrat" !important;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 20px;
+          text-align: center;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input::placeholder {
+          color: #000000 !important;
+          opacity: 1 !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input:-ms-input-placeholder {
+          color: #000000 !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input::-ms-input-placeholder {
+          color: #000000 !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-submit-button {
+          margin-top: 10px !important;
+          width: 100% !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-submit-button button {
+          width: 100% !important;
+          height: 40px !important;
+          border: 0 !important;
+          border-radius: 6px !important;
+          line-height: 0px !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-submit-button button:hover {
+          cursor: pointer !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .powered-by-line {
+          color: #231f20 !important;
+          font-family: "Montserrat" !important;
+          font-size: 13px !important;
+          font-weight: 400 !important;
+          line-height: 25px !important;
+          text-align: center !important;
+          text-decoration: none !important;
+          display: flex !important;
+          width: 100% !important;
+          justify-content: center !important;
+          align-items: center !important;
+          margin-top: 10px !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .powered-by-line img {
+          margin-left: 10px !important;
+          height: 1.13em !important;
+          max-height: 1.13em !important;
+        }
+      </style>
+      <div class="followit--follow-form-container" attr-a attr-b attr-c attr-d attr-e attr-f>
+        <form data-v-e7d63655="" action="https://api.follow.it/subscription-form/NWJTVitFcEpGcGU0ajJvTmNST01hckl3ZFI0cTFHMmZkTmVBRlIwSUpnV0NOckQxVWdoNnljMnA2VCtEQU1Eb3VwdStGclRRZzRPZ05qbnpndU43NE90UlIyeC9RcDYxQ3pHYmFqeDl1aXBjcE5zc1F4dXhuR0dKN3ppVFdqdHl8cUl5dytUOE54R2h0TmFUUlppeEhIZXVkQ1k1blBuczY4Z3NQMmFlMGQ3QT0=/8" method="post">
+          <div data-v-e7d63655="" class="form-preview" style="background-color: rgb(255, 255, 255); border-style: solid; border-width: 1px; border-color: rgb(204, 204, 204); position: relative;">
+            <div data-v-e7d63655="" class="preview-heading">
+              <h5 data-v-e7d63655="" style="font-family: Arial; font-weight: bold; color: rgb(0, 0, 0); font-size: 16px; text-align: center; text-transform: none !important;">Get new posts by email:</h5>
+            </div>
+            <div data-v-e7d63655="" class="preview-input-field">
+              <input data-v-e7d63655="" type="email" name="email" required="" placeholder="Enter your email" spellcheck="false" style="font-family: Arial; font-weight: normal; color: rgb(0, 0, 0); font-size: 14px; text-align: center; background-color: rgb(255, 255, 255); text-transform: none !important;">
+            </div>
+            <div data-v-e7d63655="" class="preview-submit-button">
+              <button data-v-e7d63655="" type="submit" style="font-family: Arial; font-weight: bold; color: rgb(255, 255, 255); font-size: 16px; text-align: center; background-color: rgb(0, 0, 0); text-transform: none !important;">Subscribe</button>
+            </div>
+          </div>
+        </form>
+        <a href="https://follow.it" class="powered-by-line">Powered by <img src="https://follow.it/images/colored-logo.svg" alt="follow.it" height="17px"/></a>
+      </div>
+
+      <p style="font-size: 13px; color: var(--muted); margin-top: 16px;">
+        Or subscribe via <a href="../feed.xml" style="color: var(--cyan); text-decoration: underline;">RSS feed</a>
+      </p>
+      <p style="font-size: 12px; color: var(--muted); margin-top: 8px;">
+        No spam. Unsubscribe anytime. View our <a href="../../privacy/" style="color: var(--cyan);">Privacy Policy</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="../../">Home</a>
+          <a href="../">Blog</a>
+          <a href="../../privacy/">Privacy</a>
+          <a href="../../terms/">Terms</a>
+          <a href="https://apps.apple.com/app/id6753611139">Download</a>
+        </div>
+        <p class="footer-copy">&copy; 2026 Teach Me to Live LLC. Built by a Paramedic student, for EMS.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
