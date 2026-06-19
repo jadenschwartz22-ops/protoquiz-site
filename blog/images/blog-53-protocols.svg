@@ -1,65 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="53 EMS protocols compared">
-  <defs>
-    <linearGradient id="bg53" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#14110b"/>
-      <stop offset="1" stop-color="#0c0a07"/>
-    </linearGradient>
-    <linearGradient id="amber53" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#ffb000"/>
-      <stop offset="1" stop-color="#cc8a00"/>
-    </linearGradient>
-    <radialGradient id="glow53" cx="0.5" cy="0.5" r="0.6">
-      <stop offset="0" stop-color="#ffb000" stop-opacity="0.30"/>
-      <stop offset="1" stop-color="#ffb000" stop-opacity="0"/>
-    </radialGradient>
-  </defs>
-
+  <defs><linearGradient id="bg53" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#06181c"/><stop offset="1" stop-color="#040f12"/></linearGradient></defs>
   <rect width="1600" height="900" fill="url(#bg53)"/>
-  <ellipse cx="800" cy="450" rx="640" ry="380" fill="url(#glow53)"/>
-
-  <!-- big 53 -->
-  <text x="800" y="290" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-weight="700" font-size="200" fill="url(#amber53)" letter-spacing="-6">53</text>
-
-  <!-- abstract US heat-map: shaded protocol tiles, centered below the number -->
-  <g>
-    <g>
-      <rect x="470" y="400" width="58" height="58" rx="8" fill="#ffb000" opacity="0.95"/>
-      <rect x="536" y="400" width="58" height="58" rx="8" fill="#cc8a00" opacity="0.55"/>
-      <rect x="602" y="400" width="58" height="58" rx="8" fill="#ffb000" opacity="0.30"/>
-      <rect x="668" y="400" width="58" height="58" rx="8" fill="#cc8a00" opacity="0.45"/>
-      <rect x="734" y="400" width="58" height="58" rx="8" fill="#ffb000" opacity="0.80"/>
-      <rect x="800" y="400" width="58" height="58" rx="8" fill="#cc8a00" opacity="0.35"/>
-      <rect x="866" y="400" width="58" height="58" rx="8" fill="#ffb000" opacity="0.55"/>
-      <rect x="932" y="400" width="58" height="58" rx="8" fill="#ffb000" opacity="0.95"/>
-      <rect x="998" y="400" width="58" height="58" rx="8" fill="#cc8a00" opacity="0.40"/>
-    </g>
-    <g>
-      <rect x="470" y="466" width="58" height="58" rx="8" fill="#ffb000" opacity="0.95"/>
-      <rect x="536" y="466" width="58" height="58" rx="8" fill="#cc8a00" opacity="0.50"/>
-      <rect x="602" y="466" width="58" height="58" rx="8" fill="#ffb000" opacity="0.35"/>
-      <rect x="668" y="466" width="58" height="58" rx="8" fill="#cc8a00" opacity="0.30"/>
-      <rect x="734" y="466" width="58" height="58" rx="8" fill="#ffb000" opacity="0.45"/>
-      <rect x="800" y="466" width="58" height="58" rx="8" fill="#cc8a00" opacity="0.55"/>
-      <rect x="866" y="466" width="58" height="58" rx="8" fill="#ffb000" opacity="0.30"/>
-      <rect x="932" y="466" width="58" height="58" rx="8" fill="#cc8a00" opacity="0.50"/>
-      <rect x="998" y="466" width="58" height="58" rx="8" fill="#ffb000" opacity="0.70"/>
-      <rect x="1064" y="466" width="58" height="58" rx="8" fill="#cc8a00" opacity="0.35"/>
-    </g>
-    <g>
-      <rect x="536" y="532" width="58" height="58" rx="8" fill="#cc8a00" opacity="0.40"/>
-      <rect x="602" y="532" width="58" height="58" rx="8" fill="#ffb000" opacity="0.55"/>
-      <rect x="668" y="532" width="58" height="58" rx="8" fill="#cc8a00" opacity="0.30"/>
-      <rect x="734" y="532" width="58" height="58" rx="8" fill="#ffb000" opacity="0.35"/>
-      <rect x="800" y="532" width="58" height="58" rx="8" fill="#cc8a00" opacity="0.45"/>
-      <rect x="866" y="532" width="58" height="58" rx="8" fill="#ffb000" opacity="0.60"/>
-      <rect x="932" y="532" width="58" height="58" rx="8" fill="#cc8a00" opacity="0.30"/>
-    </g>
-    <g>
-      <rect x="602" y="598" width="58" height="58" rx="8" fill="#ffb000" opacity="0.45"/>
-      <rect x="668" y="598" width="58" height="58" rx="8" fill="#cc8a00" opacity="0.30"/>
-      <rect x="734" y="598" width="58" height="58" rx="8" fill="#ffb000" opacity="0.35"/>
-      <rect x="800" y="598" width="58" height="58" rx="8" fill="#ffb000" opacity="0.95"/>
-      <rect x="866" y="598" width="58" height="58" rx="8" fill="#cc8a00" opacity="0.40"/>
-    </g>
+  <!-- comparison bars, lower band, away from the number -->
+  <g opacity="0.22">
+    <rect x="150" y="640" width="74" height="60" fill="#2bd4d4"/>
+    <rect x="244" y="600" width="74" height="100" fill="#2bd4d4"/>
+    <rect x="338" y="560" width="74" height="140" fill="#2bd4d4"/>
+    <rect x="1188" y="600" width="74" height="100" fill="#2bd4d4"/>
+    <rect x="1282" y="640" width="74" height="60" fill="#2bd4d4"/>
+    <rect x="1376" y="560" width="74" height="140" fill="#2bd4d4"/>
   </g>
+  <text x="800" y="500" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-weight="700" font-size="400" fill="#3fe0e0" letter-spacing="-16">53</text>
+  <text x="800" y="600" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-weight="600" font-size="40" fill="#bfeef0" letter-spacing="12">PROTOCOLS</text>
 </svg>
