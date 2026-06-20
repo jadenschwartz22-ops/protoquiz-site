@@ -1,0 +1,6 @@
+{
+  "down": false,
+  "userMessage": "",
+  "reason": "",
+  "_doc": "Vercel-INDEPENDENT status switch read by the iOS app ONLY when api.protoquiz.com is already unreachable. Served from GitHub Pages (protoquiz.com/status.json), so it survives a total Vercel/backend outage. Default {down:false} is dormant: it changes NOTHING for users. To explain a real outage: set down=true and put a CALM, user-safe ETA in userMessage (e.g. 'Back online by ~3pm MT'). NEVER put internal words ('suspended','billing','vercel') in userMessage — the app shows it verbatim. Put the real internal cause in reason; the app logs it for you but NEVER shows it to users. Commit + push; GitHub Pages publishes in ~1-2 min. Only iOS builds >= 2.5.5 read this (older builds just show generic offline copy)."
+}
