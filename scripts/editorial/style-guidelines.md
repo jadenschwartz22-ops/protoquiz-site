@@ -3,7 +3,7 @@
 ## Voice & Tone
 
 **Who We Are:**
-- Built by a Paramedic student, for EMS providers
+- Built by a Paramedic, for EMS providers
 - Data-driven and transparent about our metrics
 - Technical but accessible - explain the why behind features
 - Product-focused, not generic EMS advice
