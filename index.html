@@ -2827,7 +2827,21 @@
     const storedUtmParams = sessionStorage.getItem('utmParams');
     const activeUtmParams = storedUtmParams ? JSON.parse(storedUtmParams) : {};
 
+    // Apple campaign attribution: stamp pt/ct so website Download clicks land in the
+    // ASC Campaigns report (ct=<source>_<campaign>_<yyyymm>). Bridges ad traffic that
+    // is forced through the website (e.g. Meta) into Apple-native attribution.
+    const APPLE_PROVIDER_TOKEN = '127927355';
+    function appleCampaignToken() {
+      const src = (activeUtmParams.utm_source || '').toLowerCase();
+      if (!src) return null;
+      const camp = (activeUtmParams.utm_campaign || 'web').toLowerCase().replace(/[^a-z0-9]+/g, '');
+      const d = new Date();
+      const ym = `${d.getFullYear()}${String(d.getMonth() + 1).padStart(2, '0')}`;
+      return `${src}_${camp}_${ym}`.slice(0, 40); // Apple ct max 40 chars
+    }
+
     function updateAppStoreLinks() {
+      const ct = appleCampaignToken();
       const appStoreLinks = document.querySelectorAll('a[href*="apps.apple.com"]');
       appStoreLinks.forEach(link => {
         const url = new URL(link.href);
@@ -2838,6 +2852,10 @@
           const originalUrl = new URL(link.getAttribute('href'));
           const location = originalUrl.searchParams.get('utm_medium');
           if (location) url.searchParams.set('utm_content', location);
+        }
+        if (ct) {
+          url.searchParams.set('pt', APPLE_PROVIDER_TOKEN);
+          url.searchParams.set('ct', ct);
         }
         link.href = url.toString();
       });
