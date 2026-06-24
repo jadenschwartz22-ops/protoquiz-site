@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ProtoQuiz Update: NREMT Prep Is Now Built In - and It's Free - EMS ProtoQuiz Blog</title>
+  <meta name="description" content="ProtoQuiz now has a full NREMT prep section: 1,700+ questions, per-option rationales, a readiness dashboard, and an adaptive exam simulator. Everything the paid apps charge for - free. Plus a look at Medicine Mode, coming next." />
+
+  <!-- SEO -->
+  <link rel="canonical" href="https://protoquiz.com/blog/posts/2026-06-24-nremt-prep-is-live-and-its-free.html">
+  <meta name="robots" content="index,follow" />
+  <meta name="keywords" content="NREMT prep, free NREMT practice questions, NREMT practice test, EMT exam prep, paramedic exam prep, Pocket Prep alternative, free EMT study app, adaptive NREMT simulator, ProtoQuiz" />
+
+  <!-- Social / Open Graph -->
+  <meta property="og:title" content="ProtoQuiz Update: NREMT Prep Is Now Built In - and It's Free" />
+  <meta property="og:description" content="1,700+ NREMT questions, per-option rationales, a readiness dashboard, and an adaptive exam simulator - free. Plus a look at Medicine Mode, coming next." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://protoquiz.com/blog/posts/2026-06-24-nremt-prep-is-live-and-its-free.html" />
+  <meta property="og:image" content="https://protoquiz.com/logo-256.png" />
+  <meta property="article:published_time" content="2026-06-24" />
+  <meta property="article:author" content="Jaden" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ProtoQuiz Update: NREMT Prep Is Now Built In - and It's Free" />
+  <meta name="twitter:description" content="1,700+ NREMT questions, per-option rationales, a readiness dashboard, and an adaptive exam simulator - free. Plus a look at Medicine Mode, coming next." />
+  <meta name="twitter:image" content="https://protoquiz.com/logo-256.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png" />
+
+  <!-- Structured Data - BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "ProtoQuiz Update: NREMT Prep Is Now Built In - and It's Free",
+    "description": "ProtoQuiz now has a full NREMT prep section: 1,700+ questions, per-option rationales, a readiness dashboard, and an adaptive exam simulator. Everything the paid apps charge for - free.",
+    "author": {
+      "@type": "Person",
+      "name": "Jaden",
+      "jobTitle": "Paramedic & Developer"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ProtoQuiz",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://protoquiz.com/logo-256.png"
+      }
+    },
+    "datePublished": "2026-06-24",
+    "dateModified": "2026-06-24",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://protoquiz.com/blog/posts/2026-06-24-nremt-prep-is-live-and-its-free.html"
+    }
+  }
+  </script>
+
+  <!-- Google tag (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LNSS9BMEP8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-LNSS9BMEP8');
+
+    function track(name, props){
+      try { gtag('event', name, props || {}); } catch(e){}
+    }
+    const PAGE = 'blog_post';
+    track('blog_post_view', { title: 'ProtoQuiz Update: NREMT Prep Now Built In' });
+
+    // Track view in Firestore
+    (async () => {
+      try {
+        const slug = window.location.pathname.split('/').pop().replace('.html', '');
+        const res = await fetch('https://ems-router.vercel.app/api/blog-views', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ slug })
+        });
+        const data = await res.json();
+        if (typeof data.count === 'number') {
+          const meta = document.querySelector('.post-meta-info');
+          if (meta) {
+            const sep = document.createElement('span'); sep.innerHTML = '&bull;';
+            const v = document.createElement('span');
+            v.textContent = data.count.toLocaleString() + (data.count === 1 ? ' view' : ' views');
+            meta.appendChild(sep); meta.appendChild(v);
+          }
+        }
+      } catch (e) {
+        console.log('View tracking failed:', e);
+      }
+    })();
+  </script>
+
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../_shared-styles.css">
+
+  <style>
+    /* Post-specific styles */
+    .post-container {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .post-header {
+      margin-bottom: 40px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .post-category-badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 8px;
+      background: rgba(255,176,0,.12);
+      color: var(--cyan);
+      font-family: var(--mono);
+      font-weight: 700;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      margin-bottom: 20px;
+    }
+
+    .post-category-badge.updates {
+      background: rgba(204,138,0,.1);
+      color: var(--violet);
+    }
+
+    .post-category-badge.stories {
+      background: rgba(16,185,129,.1);
+      color: var(--success);
+    }
+
+    .post-header h1 {
+      font-family: var(--mono);
+      font-size: clamp(1.9rem, 3.8vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.22;
+      letter-spacing: -.02em;
+      margin-bottom: 20px;
+    }
+
+    .post-meta-info {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .post-meta-info .author {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .post-content {
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--ink);
+    }
+
+    .post-content h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin-top: 48px;
+      margin-bottom: 20px;
+      letter-spacing: -.02em;
+    }
+
+    .post-content h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-top: 36px;
+      margin-bottom: 16px;
+    }
+
+    .post-content p {
+      margin-bottom: 24px;
+    }
+
+    .post-content ul,
+    .post-content ol {
+      margin-bottom: 24px;
+      padding-left: 28px;
+    }
+
+    .post-content li {
+      margin-bottom: 12px;
+    }
+
+    .post-content a {
+      color: var(--cyan);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    .post-content a:hover {
+      color: var(--violet);
+    }
+
+    .post-content strong {
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .post-content code {
+      background: var(--panel);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.9em;
+      font-family: 'SF Mono', Monaco, monospace;
+      border: 1px solid var(--line);
+    }
+
+    .post-content blockquote {
+      border-left: 3px solid var(--cyan);
+      padding-left: 20px;
+      margin: 32px 0;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .stats-callout {
+      background: linear-gradient(135deg, rgba(255,176,0,.05), rgba(204,138,0,.05));
+      border: 1px solid rgba(255,176,0,.2);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin: 40px 0;
+    }
+
+    .stats-callout h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+
+    .stats-callout p {
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+
+    .stats-callout strong {
+      color: var(--cyan);
+      font-weight: 800;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--cyan), var(--violet));
+      border-radius: var(--radius);
+      padding: 32px;
+      text-align: center;
+      margin: 48px 0;
+    }
+
+    .cta-box h3 {
+      color: #1b1610;
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .cta-box p {
+      color: rgba(27,22,16,.85);
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 14px 32px;
+      background: #1b1610;
+      color: var(--cyan);
+      font-weight: 700;
+      border-radius: 999px;
+      font-size: 16px;
+      transition: all .2s;
+      border: 2px solid #1b1610;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,.4);
+      opacity: 1;
+    }
+
+    /* Comments Section */
+    .comments-section {
+      margin-top: 80px;
+      padding-top: 40px;
+      border-top: 2px solid var(--line);
+    }
+
+    .comments-section h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin-bottom: 24px;
+    }
+
+    /* Back Link */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 32px;
+      transition: color .2s;
+    }
+
+    .back-link:hover {
+      color: var(--cyan);
+    }
+
+    .back-link::before {
+      content: "\2190";
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <header>
+    <div class="wrap">
+      <nav class="navbar">
+        <a href="../../" class="brand-link">
+          <img src="../../logo-48.png" alt="ProtoQuiz Logo" width="48" height="48">
+          <span>ProtoQuiz</span>
+        </a>
+        <div class="nav-links">
+          <a href="../../" class="nav-btn">Home</a>
+          <a href="../" class="nav-btn">Blog</a>
+          <a href="https://apps.apple.com/app/id6753611139" class="nav-btn primary" onclick="track('download_app', {source: 'blog_post'})">
+            Download App
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="wrap">
+      <div class="post-container">
+        <a href="../" class="back-link">Back to Blog</a>
+
+        <!-- Post Header -->
+        <article class="post-header">
+          <span class="post-category-badge updates">App Updates</span>
+          <h1>ProtoQuiz Update: NREMT Prep Is Now Built In - and It's Free</h1>
+          <div class="post-meta-info">
+            <span class="author">By Jaden</span>
+            <span>&bull;</span>
+            <time datetime="2026-06-24">June 24, 2026</time>
+          </div>
+        </article>
+
+        <!-- Post Content -->
+        <div class="post-content">
+          <p>When I was studying for my NREMT paramedic exam, I used ProtoQuiz to study - and I passed. So I wanted to build that out properly and help other people do the same. ProtoQuiz now has a full NREMT prep section built in.</p>
+
+          <p>Over 1,700 practice questions across the EMT and Paramedic levels, every answer explained, a readiness dashboard that tells you where you actually stand, and an adaptive exam simulator that mimics how the real test behaves.</p>
+
+          <p>And like everything else in ProtoQuiz: it's free. No question caps, no "unlock the full bank" paywall, no trial timer. The whole thing, free.</p>
+
+          <h2>What's Actually In It</h2>
+
+          <p>This isn't a token "100 sample questions" feature to check a marketing box. It's a real bank, built to compete with the apps people pay $15-$50 for.</p>
+
+          <ul>
+            <li><strong>1,700+ questions</strong> spanning both the EMT and Paramedic blueprints. Flip the level toggle and the whole bank, dashboard, and simulator switch with you.</li>
+            <li><strong>Full per-option rationales.</strong> Every question explains not just the right answer but why each of the other three is wrong. That's the part most free question banks skip - and it's the part that actually teaches you.</li>
+            <li><strong>Built to the current NREMT blueprint.</strong> Questions are mapped to the exam domains - airway and ventilation, cardiology, trauma, medical and OB/GYN, EMS operations - so you can drill by area instead of guessing.</li>
+            <li><strong>Custom quiz builder.</strong> Pick your level, your domains, your length. Want 25 cardiology questions before a shift? Two taps.</li>
+            <li><strong>A missed-question bank.</strong> Anything you get wrong gets saved automatically and recycled back to you until you get it right, then retires itself. Spaced repetition, but for your weak spots specifically.</li>
+            <li><strong>Question of the Day + a study streak,</strong> for the days you only have two minutes but want to keep the habit alive.</li>
+          </ul>
+
+          <h2>The Readiness Dashboard</h2>
+
+          <p>The part I'm proudest of. Most prep apps give you a running percentage and call it a day. ProtoQuiz breaks your performance down <strong>by domain</strong> and points you straight at your weakest area with a one-tap drill.</p>
+
+          <p>It also won't lie to you. The "are you ready" verdict stays locked until you've answered enough questions to mean something - no telling someone they're exam-ready off a 6-question sample. When it does give you a read, it's a read you can trust.</p>
+
+          <h2>The Adaptive Exam Simulator</h2>
+
+          <p>The real NREMT is computer-adaptive: it gets harder when you're doing well, easier when you're not, and stops when it's confident about your ability. A fixed 50-question practice quiz doesn't prepare you for that rhythm.</p>
+
+          <p>So ProtoQuiz has an adaptive simulator that runs the same way - a variable-length exam (roughly 70 to 120 items) that tracks your ability as you go and estimates a pass/fail outcome. It's the closest thing to test-day conditions you can practice on, and it's the feature paid apps charge the most for.</p>
+
+          <h2>How It Stacks Up Against the Paid Apps</h2>
+
+          <p>I'll be straight with you, because that's how I've always written these posts.</p>
+
+          <p>On the things that matter for passing the NREMT - <strong>question volume, per-option rationales, domain-level analytics, an adaptive simulator</strong> - ProtoQuiz is right there with Pocket Prep and the other big paid names. In a few areas (the per-option explanations, the pathophysiology and ECG depth on the Paramedic side) I'd put it ahead.</p>
+
+          <p>Where the paid apps still have an edge: they've had years of human review and a few item formats I haven't built yet (drag-and-drop, ordered-list items - ProtoQuiz currently does standard and multi-select). And in the interest of being honest: the question bank is large and carefully written, but it hasn't yet gone through a formal paramedic-educator review pass. I'd treat it as a powerful drilling tool alongside your official course material, not a replacement for it. That review is on the roadmap.</p>
+
+          <p>But here's the honest bottom line: the gap between "free ProtoQuiz" and "the paid app you were about to buy" is smaller than the price tag suggests. For a lot of people, it's smaller than it needs to be to justify spending anything at all.</p>
+
+          <div class="stats-callout">
+            <h3>NREMT Prep, By the Numbers</h3>
+            <p><strong>1,700+</strong> practice questions across EMT and Paramedic</p>
+            <p><strong>Every option</strong> explained, not just the correct one</p>
+            <p><strong>1</strong> adaptive, test-day-style exam simulator</p>
+            <p><strong>$0</strong> - no caps, no trial, no paywall</p>
+          </div>
+
+          <h2>Why Free, Again</h2>
+
+          <p>Same reason as <a href="2026-04-22-why-we-made-protoquiz-fully-free.html">everything else in the app</a>. The people who need NREMT prep most - students, career-changers, folks testing on a tight timeline - are exactly the people least able to drop $40 on a study app. Walling that off never sat right with me.</p>
+
+          <p>ProtoQuiz stays free, supported by optional ads, with a cheap ad-free upgrade if you'd rather study without them. The NREMT section is in there for everyone from the moment you open it.</p>
+
+          <h2>Coming Next: Medicine Mode</h2>
+
+          <p>The next thing I'm building tackles one of the genuinely hard parts of this job: staying current on the medicine, the pathophysiology, and the evidence behind why we do what we do.</p>
+
+          <p>For most of us, the textbook and the classroom were a long time ago - and medicine doesn't hold still. Guidelines change, drugs come and go, the research behind a treatment shifts, and it's on us to keep up while working full shifts. There's no easy way to do that. So a lot of providers end up running a protocol without really knowing the evidence underneath it.</p>
+
+          <p>That's what <strong>Medicine Mode</strong> is for, and it's bigger than just facts to memorize. The goal is to keep you current on the medicine and the pathophysiology - what's actually happening in the body - <em>and</em> the research that explains why we treat it the way we do. Not just the step, but the reason for the step, and the evidence that backs it. That's the difference between following a protocol and practicing medicine - and EMS is a profession, not just a checklist.</p>
+
+          <p>A lot of it is built around the topics you'd find in the textbook - the conditions you actually see on the truck, across cardiac, respiratory, toxicology, trauma, neuro, OB, environmental, psych, and more. Think of it like the textbook you never got around to reading, done for you: each topic explains the pathophysiology in plain language and the evidence behind the treatment, backed by real, current medical literature, with a built-in glossary so you can tap any term you don't recognize. It's a wide library, and it keeps growing.</p>
+
+          <p>The part I'm most excited about is that it's built to let you rabbit-hole. You can stay at the quick answer, or keep peeling back the layers - <em>why</em> we do it this way, what's actually killing the patient, how much, how fast, what the research says. Tap a term, follow it somewhere you didn't expect, nerd out. And it doesn't stop at handoff: you can follow the case into the hospital - what the ER does, what the ICU course looks like, how it turns out - so you finally get to see where your patients go after you wheel them through the doors. Go as deep as your curiosity takes you, or stay surface-level when you just need the answer.</p>
+
+          <p>It's in active development and lands in an upcoming release. I'll have more to share soon.</p>
+
+          <h2>Go Try It</h2>
+
+          <p>Open ProtoQuiz, head to the Learn hub, and tap into NREMT. Pick your level, run a quick custom quiz, or jump straight into the adaptive simulator and see where you stand. No upload required - the NREMT bank is built in and ready to go.</p>
+
+          <p>And as always: file feedback in the app, drop a comment below, or email me. If a question reads wrong or an explanation could be clearer, tell me - that's exactly how this bank gets better.</p>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-box">
+          <h3>Start Your NREMT Prep - Free</h3>
+          <p>1,700+ questions, full rationales, and an adaptive simulator. No caps, no paywall.</p>
+          <a href="https://apps.apple.com/app/id6753611139" class="cta-btn" onclick="track('download_app', {source: 'blog_post_cta'})">
+            Download ProtoQuiz
+          </a>
+        </div>
+
+        <!-- Comments Section -->
+        <div class="comments-section">
+          <h2>Comments</h2>
+          <script src="https://giscus.app/client.js"
+                  data-repo="jadenschwartz22-ops/protoquiz-site"
+                  data-repo-id="R_kgDOP_OVLw"
+                  data-category="Blog Comments"
+                  data-category-id="DIC_kwDOP_OVL84CyFhj"
+                  data-mapping="pathname"
+                  data-strict="0"
+                  data-reactions-enabled="1"
+                  data-emit-metadata="0"
+                  data-input-position="top"
+                  data-theme="dark"
+                  data-lang="en"
+                  crossorigin="anonymous"
+                  async>
+          </script>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Newsletter Signup -->
+  <section style="background: var(--panel); border-top: 1px solid var(--line); padding: 60px 0; margin-top: 80px;">
+    <div class="wrap" style="max-width: 600px; text-align: center;">
+      <h2 style="font-size: 1.75rem; margin-bottom: 12px;">Never Miss a Post</h2>
+      <p style="color: var(--muted); margin-bottom: 24px;">
+        Get new EMS study tips and app updates delivered straight to your inbox.
+      </p>
+
+      <!-- Email Signup Form (Follow.it) -->
+      <style>
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview {
+          display: flex !important;
+          flex-direction: column !important;
+          justify-content: center !important;
+          margin-top: 30px !important;
+          padding: clamp(17px, 5%, 40px) clamp(17px, 7%, 50px) !important;
+          max-width: none !important;
+          border-radius: 6px !important;
+          box-shadow: 0 5px 25px rgba(34, 60, 47, 0.25) !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview,
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview * {
+          box-sizing: border-box !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-heading {
+          width: 100% !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-heading h5 {
+          margin-top: 0 !important;
+          margin-bottom: 0 !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field {
+          margin-top: 20px !important;
+          width: 100% !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input {
+          width: 100% !important;
+          height: 40px !important;
+          border-radius: 6px !important;
+          border: 2px solid #e9e8e8 !important;
+          background-color: #fff;
+          outline: none !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input {
+          color: #000000 !important;
+          font-family: "Montserrat" !important;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 20px;
+          text-align: center;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input::placeholder {
+          color: #000000 !important;
+          opacity: 1 !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input:-ms-input-placeholder {
+          color: #000000 !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input::-ms-input-placeholder {
+          color: #000000 !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-submit-button {
+          margin-top: 10px !important;
+          width: 100% !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-submit-button button {
+          width: 100% !important;
+          height: 40px !important;
+          border: 0 !important;
+          border-radius: 6px !important;
+          line-height: 0px !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-submit-button button:hover {
+          cursor: pointer !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .powered-by-line {
+          color: #231f20 !important;
+          font-family: "Montserrat" !important;
+          font-size: 13px !important;
+          font-weight: 400 !important;
+          line-height: 25px !important;
+          text-align: center !important;
+          text-decoration: none !important;
+          display: flex !important;
+          width: 100% !important;
+          justify-content: center !important;
+          align-items: center !important;
+          margin-top: 10px !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .powered-by-line img {
+          margin-left: 10px !important;
+          height: 1.13em !important;
+          max-height: 1.13em !important;
+        }
+      </style>
+      <div class="followit--follow-form-container" attr-a attr-b attr-c attr-d attr-e attr-f>
+        <form data-v-e7d63655="" action="https://api.follow.it/subscription-form/NWJTVitFcEpGcGU0ajJvTmNST01hckl3ZFI0cTFHMmZkTmVBRlIwSUpnV0NOckQxVWdoNnljMnA2VCtEQU1Eb3VwdStGclRRZzRPZ05qbnpndU43NE90UlIyeC9RcDYxQ3pHYmFqeDl1aXBjcE5zc1F4dXhuR0dKN3ppVFdqdHl8cUl5dytUOE54R2h0TmFUUlppeEhIZXVkQ1k1blBuczY4Z3NQMmFlMGQ3QT0=/8" method="post">
+          <div data-v-e7d63655="" class="form-preview" style="background-color: rgb(255, 255, 255); border-style: solid; border-width: 1px; border-color: rgb(204, 204, 204); position: relative;">
+            <div data-v-e7d63655="" class="preview-heading">
+              <h5 data-v-e7d63655="" style="font-family: Arial; font-weight: bold; color: rgb(0, 0, 0); font-size: 16px; text-align: center; text-transform: none !important;">Get new posts by email:</h5>
+            </div>
+            <div data-v-e7d63655="" class="preview-input-field">
+              <input data-v-e7d63655="" type="email" name="email" required="" placeholder="Enter your email" spellcheck="false" style="font-family: Arial; font-weight: normal; color: rgb(0, 0, 0); font-size: 14px; text-align: center; background-color: rgb(255, 255, 255); text-transform: none !important;">
+            </div>
+            <div data-v-e7d63655="" class="preview-submit-button">
+              <button data-v-e7d63655="" type="submit" style="font-family: Arial; font-weight: bold; color: rgb(255, 255, 255); font-size: 16px; text-align: center; background-color: rgb(0, 0, 0); text-transform: none !important;">Subscribe</button>
+            </div>
+          </div>
+        </form>
+        <a href="https://follow.it" class="powered-by-line">Powered by <img src="https://follow.it/images/colored-logo.svg" alt="follow.it" height="17px"/></a>
+      </div>
+
+      <p style="font-size: 13px; color: var(--muted); margin-top: 16px;">
+        Or subscribe via <a href="../feed.xml" style="color: var(--cyan); text-decoration: underline;">RSS feed</a>
+      </p>
+      <p style="font-size: 12px; color: var(--muted); margin-top: 8px;">
+        No spam. Unsubscribe anytime. View our <a href="../../privacy/" style="color: var(--cyan);">Privacy Policy</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="../../">Home</a>
+          <a href="../">Blog</a>
+          <a href="../../privacy/">Privacy</a>
+          <a href="../../terms/">Terms</a>
+          <a href="https://apps.apple.com/app/id6753611139">Download</a>
+        </div>
+        <p class="footer-copy">&copy; 2026 ProtoQuiz&trade;. Built by a Paramedic, for EMS.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
