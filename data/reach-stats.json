@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-06-25T00:07:57.845Z",
-  "totalUploads": 193,
-  "distinctProtocols": 152,
-  "activeStudiers": 125,
-  "pagesProcessed": 22930,
+  "generatedAt": "2026-06-25T06:07:59.607Z",
+  "totalUploads": 195,
+  "distinctProtocols": 154,
+  "activeStudiers": 127,
+  "pagesProcessed": 23497,
   "statesRepresented": 31,
   "countriesRepresented": 1,
   "internationalUploads": 1,
@@ -16,13 +16,14 @@
     "AZ": 6,
     "UT": 4,
     "TX": 4,
-    "WA": 3,
+    "WA": 4,
     "WI": 3,
     "FL": 3,
     "OK": 2,
     "NC": 2,
     "SC": 2,
     "IL": 2,
+    "CT": 2,
     "MA": 2,
     "TN": 2,
     "KY": 1,
@@ -37,7 +38,6 @@
     "NH": 1,
     "OR": 1,
     "RI": 1,
-    "CT": 1,
     "WV": 1
   },
   "byCountry": {
@@ -289,6 +289,24 @@
       ]
     },
     {
+      "state": "CT",
+      "city": "Hartford",
+      "x": 863,
+      "y": 177,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "CT EMS Statewide Protocols",
+          "count": 1
+        },
+        {
+          "title": "v2025 2 ctemsstatewideprotocolsfinalver1",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "MA",
       "city": "Boston",
       "x": 895,
@@ -390,6 +408,20 @@
       "topProtocols": [
         {
           "title": "6a070791b4b80bc675b07bc3 20250701i Protocols compressed copy…",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "WA",
+      "city": "Seattle",
+      "x": 122,
+      "y": 71,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "ABFY County Protocols 2025",
           "count": 1
         }
       ]
@@ -628,20 +660,6 @@
       "topProtocols": [
         {
           "title": "UT LIFESTAR Air Medical Patient Care Guidlines (25.2)",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CT",
-      "city": "Hartford",
-      "x": 863,
-      "y": 177,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "v2025 2 ctemsstatewideprotocolsfinalver1",
           "count": 1
         }
       ]
