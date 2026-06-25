@@ -2882,6 +2882,9 @@
       }
     })();
 
+    // Download-intent CTAs — when one of these is clicked we also tell OUR backend (not just GA4/pixels)
+    // so v3 can show a web→install funnel by ad source from our own data.
+    var DOWNLOAD_EVENTS = ['AppStoreHero','AppStoreClick','NavDownload','CompeteCTA','FinalCTA','PricingFree'];
     document.addEventListener('click', (e) => {
       const trackEl = e.target.closest('[data-track]');
       if (trackEl) {
@@ -2893,6 +2896,17 @@
           props.utm_campaign = activeUtmParams.utm_campaign;
         }
         track(eventName, props);
+        // Record download intent in our own Firestore (best-effort, non-blocking — the link still navigates).
+        if (DOWNLOAD_EVENTS.indexOf(eventName) !== -1) {
+          try {
+            var sid = (window.__pqSid || (window.__pqSid = (Date.now().toString(36) + Math.random().toString(36).slice(2, 8))));
+            var body = JSON.stringify({ event: eventName, page: PAGE, sessionId: sid,
+              utm_source: activeUtmParams.utm_source || '', utm_campaign: activeUtmParams.utm_campaign || '' });
+            // sendBeacon survives the navigation away to the App Store; fetch keepalive is the fallback.
+            if (navigator.sendBeacon) navigator.sendBeacon('https://api.protoquiz.com/api/monitor?type=webClick', new Blob([body], {type:'application/json'}));
+            else fetch('https://api.protoquiz.com/api/monitor?type=webClick', { method:'POST', headers:{'Content-Type':'application/json'}, body: body, keepalive: true });
+          } catch (err) {}
+        }
       }
     });
 
