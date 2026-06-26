@@ -867,7 +867,7 @@
     .reach-stage.is-world .reach-svg{display:none;}
     .reach-stage.is-world .reach-svg-world{display:block;}
     .reach-svg-world .landmass{
-      fill:rgba(255,176,0,.06);stroke:rgba(255,176,0,.22);stroke-width:.6;
+      fill:transparent;stroke:#565045;stroke-width:1.2;
       vector-effect:non-scaling-stroke;
     }
     .reach-svg-world .us-badge-bg{fill:rgba(255,176,0,.14);stroke:var(--amber);stroke-width:1;vector-effect:non-scaling-stroke;}
@@ -1279,6 +1279,19 @@
       margin-bottom:60px;
       align-items:start;
     }
+    /* Centered variant: tag stacked above a centered headline, with clear
+       breathing room between each sentence-line. */
+    .section-header--centered{
+      grid-template-columns:1fr;
+      justify-items:center;
+      text-align:center;
+      gap:28px;
+    }
+    .section-header--centered .section-tag{padding-top:0;}
+    .section-header--centered h2{margin-inline:auto;max-width:26ch;}
+    .section-header--centered .section-subtitle{margin-inline:auto;}
+    h2 .hl-line{display:block;}
+    h2 .hl-line + .hl-line{margin-top:.5em;}
     .section-tag{
       font-family:var(--mono);
       font-size:14px;
@@ -2294,10 +2307,10 @@
 
     <section class="section fade-up" id="wedge">
       <div class="wrap">
-        <div class="section-header">
+        <div class="section-header section-header--centered">
           <div class="section-tag">01 / THE ISSUE</div>
           <div>
-            <h2>School teaches you the NREMT.<br>To work, you need to know your <span class="highlight">local</span> protocols.</h2>
+            <h2><span class="hl-line">School teaches you the NREMT.</span><span class="hl-line">To work, you need to know your <span class="highlight">local</span> protocols.</span></h2>
             <p class="section-subtitle">When you start working, you have to learn a whole new protocol set.</p>
           </div>
         </div>
@@ -2323,10 +2336,10 @@
 
     <section class="section fade-up" id="how">
       <div class="wrap">
-        <div class="section-header">
+        <div class="section-header section-header--centered">
           <div class="section-tag">03 / HOW IT WORKS</div>
           <div>
-            <h2>Upload your protocol.<br><span class="highlight">Study it.</span> Master it.</h2>
+            <h2><span class="hl-line">Upload your protocol.</span><span class="hl-line"><span class="highlight">Study it.</span> Master it.</span></h2>
             <p class="section-subtitle">Three steps. No chart-building. No DIY flashcards. The pipeline does the busy work, you do the reps.</p>
           </div>
         </div>
