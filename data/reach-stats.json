@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-29T00:07:59.541Z",
+  "generatedAt": "2026-06-29T06:08:02.960Z",
   "totalUploads": 197,
   "distinctProtocols": 156,
   "activeStudiers": 129,
@@ -10,7 +10,7 @@
   "byState": {
     "CO": 15,
     "MI": 10,
-    "CA": 7,
+    "CA": 8,
     "PA": 7,
     "NY": 6,
     "AZ": 6,
@@ -111,6 +111,28 @@
       ]
     },
     {
+      "state": "CA",
+      "city": "Los Angeles",
+      "x": 98,
+      "y": 343,
+      "count": 6,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "103 Ready to Print Policy Manual Complete",
+          "count": 1
+        },
+        {
+          "title": "1075386 LACountyTreatmentProtocols",
+          "count": 1
+        },
+        {
+          "title": "ALCO FM 2025 DRAFT 07 31 2024",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "NY",
       "city": "New York",
       "x": 858,
@@ -150,28 +172,6 @@
         },
         {
           "title": "red book chapter 3 2026",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CA",
-      "city": "Los Angeles",
-      "x": 98,
-      "y": 343,
-      "count": 5,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "103 Ready to Print Policy Manual Complete",
-          "count": 1
-        },
-        {
-          "title": "1075386 LACountyTreatmentProtocols",
-          "count": 1
-        },
-        {
-          "title": "App protocols",
           "count": 1
         }
       ]
