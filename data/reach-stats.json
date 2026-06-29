@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-06-29T12:07:58.823Z",
-  "totalUploads": 197,
-  "distinctProtocols": 156,
-  "activeStudiers": 129,
-  "pagesProcessed": 24101,
+  "generatedAt": "2026-06-29T18:07:58.759Z",
+  "totalUploads": 199,
+  "distinctProtocols": 158,
+  "activeStudiers": 131,
+  "pagesProcessed": 24664,
   "statesRepresented": 31,
   "countriesRepresented": 1,
   "internationalUploads": 1,
@@ -17,11 +17,11 @@
     "TX": 5,
     "UT": 4,
     "WA": 4,
+    "NC": 3,
     "WI": 3,
     "MA": 3,
     "FL": 3,
     "OK": 2,
-    "NC": 2,
     "SC": 2,
     "IL": 2,
     "CT": 2,
@@ -510,6 +510,20 @@
       "topProtocols": [
         {
           "title": "COGs 3.2 Bexar Frio04282026164702",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "NC",
+      "city": "Charlotte",
+      "x": 744,
+      "y": 344,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "DCEMS protocols",
           "count": 1
         }
       ]
