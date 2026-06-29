@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-06-28T18:08:02.942Z",
-  "totalUploads": 195,
-  "distinctProtocols": 154,
-  "activeStudiers": 127,
-  "pagesProcessed": 23497,
+  "generatedAt": "2026-06-29T00:07:59.541Z",
+  "totalUploads": 197,
+  "distinctProtocols": 156,
+  "activeStudiers": 129,
+  "pagesProcessed": 24101,
   "statesRepresented": 31,
   "countriesRepresented": 1,
   "internationalUploads": 1,
@@ -14,17 +14,17 @@
     "PA": 7,
     "NY": 6,
     "AZ": 6,
+    "TX": 5,
     "UT": 4,
-    "TX": 4,
     "WA": 4,
     "WI": 3,
+    "MA": 3,
     "FL": 3,
     "OK": 2,
     "NC": 2,
     "SC": 2,
     "IL": 2,
     "CT": 2,
-    "MA": 2,
     "TN": 2,
     "KY": 1,
     "DC": 1,
@@ -199,6 +199,28 @@
       ]
     },
     {
+      "state": "MA",
+      "city": "Boston",
+      "x": 895,
+      "y": 151,
+      "count": 3,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "download",
+          "count": 1
+        },
+        {
+          "title": "Google",
+          "count": 1
+        },
+        {
+          "title": "statewide treatment protocols 2026 1",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "OK",
       "city": "Oklahoma City",
       "x": 460,
@@ -302,24 +324,6 @@
         },
         {
           "title": "v2025 2 ctemsstatewideprotocolsfinalver1",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "MA",
-      "city": "Boston",
-      "x": 895,
-      "y": 151,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "download",
-          "count": 1
-        },
-        {
-          "title": "statewide treatment protocols 2026 1",
           "count": 1
         }
       ]
@@ -520,6 +524,20 @@
       "topProtocols": [
         {
           "title": "EMS Protocol 2024 WPB",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "TX",
+      "city": "Austin",
+      "x": 441,
+      "y": 512,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "MASTER COG",
           "count": 1
         }
       ]
