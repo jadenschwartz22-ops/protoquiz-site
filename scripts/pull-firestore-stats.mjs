@@ -109,7 +109,8 @@ async function getAppStoreRating(appId = '6753611139') {
     const r = json?.results?.[0];
     if (!r) return null;
     return {
-      rating: r.averageUserRating != null ? Math.round(r.averageUserRating * 10) / 10 : null,
+      // Truncate, don't round — the App Store listing shows 4.66667 as 4.6
+      rating: r.averageUserRating != null ? Math.floor(r.averageUserRating * 10) / 10 : null,
       count: r.userRatingCount ?? null
     };
   } catch (e) {
