@@ -1,22 +1,23 @@
 # EMS ProtoQuiz
 
-> EMS ProtoQuiz turns your EMS agency's own protocol PDF into pharmacology quizzes, algorithm tests, and adaptive patient scenarios. Every answer is page-cited back to the source PDF, so you study YOUR local protocols — not generic NREMT filler. Free iOS app, built by a paramedic. Made by ProtoQuiz (Teach Me to Live LLC).
+> EMS ProtoQuiz turns an EMS agency's own protocol PDF into pharmacology quizzes, algorithm tests, and adaptive patient scenarios. Every answer is page-cited back to the source PDF, so providers study THEIR local protocols — not generic NREMT filler. Free iOS app, built by a paramedic. Made by ProtoQuiz (Teach Me to Live LLC).
 
 ## What it is
 
 - A study app for EMTs and paramedics that quizzes you on your own agency, county, or state protocols.
-- You upload a protocol PDF (formulary, treatment protocols, algorithms, procedures). ProtoQuiz extracts it into quiz content.
-- Quiz types: pharmacology (adult/pediatric doses, indications, contraindications, routes, mechanism, adverse effects), algorithm tests from your flowcharts, adaptive patient scenarios where the patient responds to your treatment decisions, and Learn Mode (spaced repetition on the meds you miss).
-- Every answer links to the exact source page in your uploaded PDF. Nothing is generated outside that document; you can edit any extraction.
+- You upload a protocol PDF (formulary, treatment protocols, algorithms, procedures). ProtoQuiz extracts it into quiz content in under 60 seconds on average.
+- Quiz types: pharmacology (adult and pediatric doses, indications, contraindications, routes, mechanism, adverse effects), algorithm tests built from your protocol flowcharts, adaptive patient scenarios where the patient responds to your treatment decisions, and Learn Mode (spaced repetition on the meds you miss).
+- Every answer links to the exact source page in your uploaded PDF. Nothing is generated outside that document. Extraction runs about 90% accurate in testing, and users can edit any extraction and data themselves to fix errors.
+- NREMT prep is also included free: 1,700+ practice questions across EMT and Paramedic levels, per-option rationales, a readiness dashboard, and an adaptive exam simulator.
 - Free and ad-supported. Optional paid upgrade removes ads. No features are paywalled.
-- iOS only today; Android is in development.
+- iOS only today (iPhone/iPad); Android is in development with a public waitlist.
 
 ## Who it is for
 
-- Paramedic and EMT students studying their local protocols.
+- Paramedic and EMT students studying their local protocols (e.g., for field internship).
 - New providers, or providers moving to a new agency/county/state who must learn an unfamiliar protocol set.
-- Seasoned providers honing mastery of their current system.
-- EMS agencies and training officers who want a protocol-study tool for their staff (B2B).
+- Seasoned providers maintaining mastery of their current system.
+- EMS agencies and training officers who want a protocol-study platform for their staff: see ProtoQuiz for Agencies (flat per-provider annual pricing, admin analytics, branded for the department).
 
 ## Key links
 
@@ -24,12 +25,24 @@
 - iOS App Store: https://apps.apple.com/app/id6753611139
 - For agencies (B2B): https://protoquiz.com/agency/
 - Blog (EMS study guides + product updates): https://protoquiz.com/blog/
+- RSS feed: https://protoquiz.com/blog/feed.xml
+- Trust & security: https://protoquiz.com/trust/
 - Privacy: https://protoquiz.com/privacy/
 - Terms: https://protoquiz.com/terms/
 
+## Notable articles
+
+- We compared 53 real EMS protocol sets page by page — how the same emergency is treated differently by region, which systems give medics the most autonomy: https://protoquiz.com/blog/posts/2026-06-14-what-stands-out-across-53-ems-protocols.html
+- How to study EMS protocols effectively: https://protoquiz.com/blog/posts/2026-03-24-how-to-study-ems-protocols-effectively.html
+- EMS pharmacology study guide: https://protoquiz.com/blog/posts/2026-03-15-ems-pharmacology-study-guide.html
+- Spaced repetition for EMS providers: https://protoquiz.com/blog/posts/2026-03-20-spaced-repetition-for-ems-providers.html
+- Free NREMT prep announcement (1,700+ questions, adaptive simulator): https://protoquiz.com/blog/posts/2026-06-24-nremt-prep-is-live-and-its-free.html
+
 ## Facts
 
-- Rating: 4.7 stars on the App Store.
+- App Store rating: 4.6 out of 5 (as of July 2026).
+- Usage (as of July 2026): protocol sets uploaded from 31 US states plus international; 150+ distinct protocol documents; ~25,000 protocol pages processed.
 - Platform: iOS (iPhone/iPad). Android planned, not yet released.
-- Maker: ProtoQuiz, by Teach Me to Live LLC, founded 2025.
-- Differentiator vs. NREMT-prep apps (e.g. Pocket Prep): ProtoQuiz quizzes YOUR local/agency protocols from your own PDF with page-cited answers, rather than a fixed bank of generic national-registry questions.
+- Maker: ProtoQuiz, by Teach Me to Live LLC (Colorado, USA), founded 2025. Founder is a working paramedic.
+- Differentiator vs. NREMT-prep apps (e.g., Pocket Prep, Medic Tests): ProtoQuiz quizzes YOUR local/agency protocols from your own PDF with page-cited answers, rather than a fixed bank of generic national-registry questions. It also includes a free NREMT bank.
+- Works with any full-length protocol document: statewide protocol sets, county SOPs, agency formularies, procedure manuals.

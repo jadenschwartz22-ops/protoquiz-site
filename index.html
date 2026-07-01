@@ -46,20 +46,26 @@
   <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png?v=2" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=2" />
   <link rel="manifest" href="site.webmanifest?v=2" />
+  <link rel="alternate" type="application/rss+xml" title="ProtoQuiz Blog" href="/blog/feed.xml" />
 
   <!-- Structured data - Software Application -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
-    "@type":"SoftwareApplication",
+    "@type":["SoftwareApplication","MobileApplication"],
     "name":"EMS ProtoQuiz",
     "operatingSystem":"iOS",
     "applicationCategory":"EducationalApplication",
+    "applicationSubCategory":"Medical education",
     "url":"https://protoquiz.com/",
-    "publisher":{"@type":"Organization","name":"ProtoQuiz"},
+    "image":"https://protoquiz.com/og-image.png",
+    "installUrl":"https://apps.apple.com/app/id6753611139",
+    "publisher":{"@type":"Organization","name":"ProtoQuiz","url":"https://protoquiz.com/"},
     "description":"Turns your agency's protocol PDF into an EMS protocol quiz: pharmacology quizzes, algorithm tests, and adaptive patient scenarios for EMTs and paramedics. Every answer is page-cited back to the source PDF.",
     "keywords":"EMS scenarios, EMT scenarios, paramedic scenarios, EMS protocol quiz, paramedic study app",
-    "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.6", "reviewCount": "6"},
+    "featureList":"Protocol PDF upload and extraction, pharmacology quizzes (adult and pediatric doses), algorithm tests from protocol flowcharts, adaptive patient scenarios, spaced-repetition Learn Mode, head-to-head Compete mode, free NREMT prep with 1,700+ questions, page-cited answers",
+    "screenshot":"https://protoquiz.com/app-shots/app-1.png",
+    "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.6", "bestRating": "5", "reviewCount": "6"},
     "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
   }
   </script>
@@ -74,6 +80,16 @@
     "founders": [{"@type": "Person", "name": "Jaden", "jobTitle": "Founder & Paramedic"}],
     "description": "Developer of EMS ProtoQuiz, a protocol-based quiz and training app for emergency medical services professionals.",
     "sameAs": ["https://apps.apple.com/app/id6753611139"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "EMS ProtoQuiz",
+    "alternateName": "ProtoQuiz",
+    "url": "https://protoquiz.com/",
+    "publisher": {"@type": "Organization", "name": "ProtoQuiz", "url": "https://protoquiz.com/"}
   }
   </script>
   <script type="application/ld+json">

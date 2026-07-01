@@ -1,3 +1,6 @@
+# protoquiz.com — search and AI crawlers are welcome.
+# AI/LLM overview of this site: https://protoquiz.com/llms.txt
+
 User-agent: *
 Allow: /
 Disallow: /tmp/
@@ -6,5 +9,28 @@ Disallow: /legal/
 
 # Block search params on internal pages from being indexed
 Disallow: /*?utm_*
+
+# AI assistants and AI search crawlers — explicitly allowed
+# (named groups override *, so the same housekeeping disallows are restated)
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-User
+User-agent: Claude-SearchBot
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot
+User-agent: Applebot-Extended
+User-agent: meta-externalagent
+User-agent: Amazonbot
+User-agent: CCBot
+User-agent: DuckAssistBot
+User-agent: MistralAI-User
+Allow: /
+Disallow: /tmp/
+Disallow: /node_modules/
+Disallow: /legal/
 
 Sitemap: https://protoquiz.com/sitemap.xml
