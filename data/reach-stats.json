@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-02T12:07:58.157Z",
-  "totalUploads": 199,
-  "distinctProtocols": 158,
+  "generatedAt": "2026-07-02T18:08:02.346Z",
+  "totalUploads": 200,
+  "distinctProtocols": 159,
   "activeStudiers": 131,
-  "pagesProcessed": 24664,
+  "pagesProcessed": 24776,
   "statesRepresented": 31,
   "countriesRepresented": 1,
   "internationalUploads": 1,
@@ -12,8 +12,8 @@
     "MI": 10,
     "CA": 8,
     "PA": 7,
+    "AZ": 7,
     "NY": 6,
-    "AZ": 6,
     "TX": 5,
     "UT": 4,
     "WA": 4,
@@ -818,6 +818,20 @@
       "topProtocols": [
         {
           "title": "WCEMS Protocol Master 2026.1 Study Draft",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "AZ",
+      "city": "Prescott",
+      "x": 190,
+      "y": 370,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "yrmc ems guidelines 2",
           "count": 1
         }
       ]
