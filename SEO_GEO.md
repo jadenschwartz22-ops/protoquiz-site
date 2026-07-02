@@ -5,7 +5,7 @@ Last updated: 2026-07-01 (branch `site-seo-copy-2026-07-01`). What's in place, w
 ## The 2026 reality check (what actually moves AI visibility)
 
 1. **Don't be blocked.** Cloudflare — not robots.txt — is where AI visibility dies. New zones block AI crawlers by default (since Jul 2025), and from **Sept 15, 2026** new domains also get Training/Agent crawlers blocked by default on ad-bearing pages. If AI citations stop: check Cloudflare AI Crawl Control first (all crawlers Allow, managed robots.txt OFF, no Pay Per Crawl). This bit us once already (fixed 2026-06-27).
-2. **Be in Bing's index.** ChatGPT Search and Copilot ride Bing. → Bing Webmaster Tools verification (user action, pending) + IndexNow ping after deploys: `node scripts/indexnow-ping.mjs` (key file `8b35c18e9a5be2a5d49fd2996c45ff6b.txt` at root).
+2. **Be in Bing's index.** ChatGPT Search and Copilot ride Bing. → Bing Webmaster Tools verification (user action, pending) + IndexNow auto-ping on deploy (GitHub Action; manual fallback `node scripts/indexnow-ping.mjs` (key file `8b35c18e9a5be2a5d49fd2996c45ff6b.txt` at root).
 3. **Third-party mentions beat on-page for AI citations** (Ahrefs 75K-brand study: mentions correlate 0.66–0.74; backlinks ≈ 0). Reddit (r/ems, r/NewToEMS), EMS YouTube reviews, "best NREMT prep app" listicles are the highest-ceiling lever. Nothing in this repo can do that — it's outreach.
 4. **Fresh, answer-first, evidence-dense pages win the long tail.** Only 38% of AI Overview citations come from top-10 results; 31% come from beyond top-100. Niche EMS sub-queries have thin retrieval pools — a dated, statistic-bearing post can be the whole candidate set. The 53-protocols comparison post is our citation magnet.
 
@@ -43,7 +43,7 @@ Carried in: `<title>`, meta description, OG/Twitter titles, SoftwareApplication 
 1. Head: canonical, OG image = `og-image.png` or a post-specific 1200x630 card (never the square logo), BlogPosting + BreadcrumbList JSON-LD, `apple-itunes-app` meta (all in `_template.html`).
 2. Add to `blog/index.html`, `blog/feed.xml`, `sitemap.xml` (with lastmod).
 3. Write answer-first: first paragraph under each H2 answers that H2's question (44% of ChatGPT citations come from the first 30% of a document). Dated stats > adjectives.
-4. After deploy: `node scripts/indexnow-ping.mjs`.
+4. IndexNow ping is AUTOMATED (.github/workflows/indexnow-ping.yml fires on content pushes to main). Manual fallback: `node scripts/indexnow-ping.mjs`.
 5. Flagship/data pieces → llms.txt "Notable articles".
 
 ## Other conventions
