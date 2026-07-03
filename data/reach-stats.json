@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-02T18:08:02.346Z",
-  "totalUploads": 200,
-  "distinctProtocols": 159,
-  "activeStudiers": 131,
-  "pagesProcessed": 24776,
+  "generatedAt": "2026-07-03T00:08:04.458Z",
+  "totalUploads": 201,
+  "distinctProtocols": 160,
+  "activeStudiers": 132,
+  "pagesProcessed": 25219,
   "statesRepresented": 31,
   "countriesRepresented": 1,
   "internationalUploads": 1,
@@ -13,8 +13,8 @@
     "CA": 8,
     "PA": 7,
     "AZ": 7,
+    "TX": 6,
     "NY": 6,
-    "TX": 5,
     "UT": 4,
     "WA": 4,
     "NC": 3,
@@ -216,6 +216,24 @@
         },
         {
           "title": "statewide treatment protocols 2026 1",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "TX",
+      "city": "Austin",
+      "x": 441,
+      "y": 512,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "02 06 2026 COG Master Document",
+          "count": 1
+        },
+        {
+          "title": "MASTER COG",
           "count": 1
         }
       ]
@@ -538,20 +556,6 @@
       "topProtocols": [
         {
           "title": "EMS Protocol 2024 WPB",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "TX",
-      "city": "Austin",
-      "x": 441,
-      "y": 512,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "MASTER COG",
           "count": 1
         }
       ]
