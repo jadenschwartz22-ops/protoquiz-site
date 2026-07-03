@@ -27,9 +27,15 @@ Carried in: `<title>`, meta description, OG/Twitter titles, SoftwareApplication 
 | Page | JSON-LD |
 |---|---|
 | `/` | SoftwareApplication+MobileApplication (offers, featureList, installUrl — no rating), Organization, WebSite (no potentialAction), FAQPage |
+| `/about/` | ProfilePage + Person (founder, E-E-A-T) |
 | `/agency/` | Product (BusinessAudience) |
 | `/blog/` | Blog |
 | `/blog/posts/*` | BlogPosting + BreadcrumbList |
+
+## Analytics
+
+- GA4 tag `G-LNSS9BMEP8` fires on EVERY page (index, about, agency, blog, blog posts, trust, privacy, terms). trust/privacy/terms were the last untracked pages — fixed 2026-07-03. GA4 property owned by jaden@protoquiz.com (same account as Search Console).
+- Note for local debugging: this Mac's DNS is AdGuard (94.140.14.14), which sinkholes `analytics.google.com` → 0.0.0.0. The GA4 *dashboard* won't load from this Mac (data collection is unaffected — visitors aren't on your filter). View it from a phone on cellular or allowlist the host in AdGuard.
 
 ## GEO plumbing
 
@@ -54,9 +60,14 @@ Carried in: `<title>`, meta description, OG/Twitter titles, SoftwareApplication 
 - **Deploy = push to main** (GitHub Pages + Cloudflare proxy). The Pi commits daily stats to main at 13:07 UTC.
 - Homepage/agency `lastmod` in sitemap: bump on meaningful content change.
 
-## Open items (need Jaden)
+## Done (2026-07-03) — search engines wired up
 
-- **Bing Webmaster Tools**: verify protoquiz.com (free, ~10 min) — the control panel for the index ChatGPT Search draws from.
-- **About page upgrade**: /about/ shipped 2026-07-01 (truthful minimal: paramedic, Colorado, founder story, Person+ProfilePage schema, blog bylines link to it). Jaden can strengthen it with cert level and years of experience.
-- **Off-page mentions** (see #3 above) — the biggest measured lever, entirely outside this repo.
+- **Bing Webmaster Tools**: verified (imported from GSC under jaden@protoquiz.com), sitemap `https://protoquiz.com/sitemap.xml` submitted + processing. This is the index ChatGPT Search / Copilot draw from.
+- **Google Search Console**: sitemap submitted successfully (property is Domain-type, so it needs the FULL URL `https://protoquiz.com/sitemap.xml`, not just `sitemap.xml`). Owned by jaden@protoquiz.com.
+- Both are self-updating from here; IndexNow auto-pings Bing on every content deploy.
+
+## Open items (need Jaden — everything on-site is now optimal)
+
+- **Off-page mentions** — THE remaining lever. Reddit (r/ems, r/NewToEMS), EMS YouTube reviews, "best NREMT app" listicles. Biggest measured driver of AI citations, entirely outside this repo. Claude can draft the material; Jaden posts it.
+- **About page**: /about/ is live (paramedic, Colorado, founder story, Person+ProfilePage schema, blog bylines link to it). Optional: strengthen with cert level + years.
 - **Cloudflare re-audit after Sept 15, 2026** (new default AI-crawler blocks on ad-bearing pages).
