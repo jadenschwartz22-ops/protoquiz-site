@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-02T12:07:58.157Z",
-  "totalUploads": 199,
-  "distinctProtocols": 158,
-  "activeStudiers": 131,
-  "pagesProcessed": 24664,
+  "generatedAt": "2026-07-03T18:08:00.863Z",
+  "totalUploads": 201,
+  "distinctProtocols": 160,
+  "activeStudiers": 132,
+  "pagesProcessed": 25219,
   "statesRepresented": 31,
   "countriesRepresented": 1,
   "internationalUploads": 1,
@@ -12,9 +12,9 @@
     "MI": 10,
     "CA": 8,
     "PA": 7,
+    "AZ": 7,
+    "TX": 6,
     "NY": 6,
-    "AZ": 6,
-    "TX": 5,
     "UT": 4,
     "WA": 4,
     "NC": 3,
@@ -216,6 +216,24 @@
         },
         {
           "title": "statewide treatment protocols 2026 1",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "TX",
+      "city": "Austin",
+      "x": 441,
+      "y": 512,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "02 06 2026 COG Master Document",
+          "count": 1
+        },
+        {
+          "title": "MASTER COG",
           "count": 1
         }
       ]
@@ -543,20 +561,6 @@
       ]
     },
     {
-      "state": "TX",
-      "city": "Austin",
-      "x": 441,
-      "y": 512,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "MASTER COG",
-          "count": 1
-        }
-      ]
-    },
-    {
       "state": "AL",
       "city": "Birmingham",
       "x": 648,
@@ -818,6 +822,20 @@
       "topProtocols": [
         {
           "title": "WCEMS Protocol Master 2026.1 Study Draft",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "AZ",
+      "city": "Prescott",
+      "x": 190,
+      "y": 370,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "yrmc ems guidelines 2",
           "count": 1
         }
       ]
