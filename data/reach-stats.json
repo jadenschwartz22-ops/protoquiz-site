@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-07-05T00:08:12.662Z",
-  "totalUploads": 201,
-  "distinctProtocols": 160,
-  "activeStudiers": 132,
-  "pagesProcessed": 25219,
+  "generatedAt": "2026-07-05T06:08:03.950Z",
+  "totalUploads": 204,
+  "distinctProtocols": 163,
+  "activeStudiers": 133,
+  "pagesProcessed": 25230,
   "statesRepresented": 31,
   "countriesRepresented": 1,
   "internationalUploads": 1,
   "byState": {
     "CO": 15,
-    "MI": 10,
+    "MI": 13,
     "CA": 8,
     "PA": 7,
     "AZ": 7,
@@ -45,6 +45,28 @@
   },
   "locales": [
     {
+      "state": "MI",
+      "city": "Detroit",
+      "x": 660,
+      "y": 175,
+      "count": 13,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "2025 Berrien County EMS Protocols Combined",
+          "count": 1
+        },
+        {
+          "title": "4.4 Pediatric Altered Mental Status 925",
+          "count": 1
+        },
+        {
+          "title": "4.5 Pediatric Respiratory Distress Failure or Arrest",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "CO",
       "city": "Denver",
       "x": 324,
@@ -62,28 +84,6 @@
         },
         {
           "title": "DMEMSMD Protocols January 2026 FINAL 2025 02 02",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "MI",
-      "city": "Detroit",
-      "x": 660,
-      "y": 175,
-      "count": 10,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "2025 Berrien County EMS Protocols Combined",
-          "count": 1
-        },
-        {
-          "title": "Section 1 General Treatment Berrien County",
-          "count": 1
-        },
-        {
-          "title": "Section 10 Special Operations Berrien County",
           "count": 1
         }
       ]
