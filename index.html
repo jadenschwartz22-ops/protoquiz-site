@@ -2875,6 +2875,19 @@
     const storedUtmParams = sessionStorage.getItem('utmParams');
     const activeUtmParams = storedUtmParams ? JSON.parse(storedUtmParams) : {};
 
+    // Page-view counter (the DENOMINATOR for website_clicks). One beacon per session so
+    // v3 can compute a visit->download-click conversion RATE per source. text/plain Blob =
+    // CORS-simple, no preflight, backend parses the raw string (mirrors the webClick beacon).
+    try {
+      if (!sessionStorage.getItem('pvSent')) {
+        sessionStorage.setItem('pvSent', '1');
+        var pvBody = JSON.stringify({ page: PAGE,
+          utm_source: activeUtmParams.utm_source || '', utm_campaign: activeUtmParams.utm_campaign || '' });
+        if (navigator.sendBeacon) navigator.sendBeacon('https://api.protoquiz.com/api/monitor?type=sitePageView', new Blob([pvBody], {type:'text/plain'}));
+        else fetch('https://api.protoquiz.com/api/monitor?type=sitePageView', { method:'POST', headers:{'Content-Type':'application/json'}, body: pvBody, keepalive: true });
+      }
+    } catch (err) {}
+
     // Apple campaign attribution: stamp pt/ct so website Download clicks land in the
     // ASC Campaigns report (ct=<source>_<campaign>_<yyyymm>). Bridges ad traffic that
     // is forced through the website (e.g. Meta) into Apple-native attribution.
