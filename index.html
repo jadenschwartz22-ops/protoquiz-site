@@ -2947,7 +2947,10 @@
             var body = JSON.stringify({ event: eventName, page: PAGE, sessionId: sid,
               utm_source: activeUtmParams.utm_source || '', utm_campaign: activeUtmParams.utm_campaign || '' });
             // sendBeacon survives the navigation away to the App Store; fetch keepalive is the fallback.
-            if (navigator.sendBeacon) navigator.sendBeacon('https://api.protoquiz.com/api/monitor?type=webClick', new Blob([body], {type:'application/json'}));
+            // Blob type must be text/plain (a CORS-simple content type) so the beacon skips a
+            // preflight — sendBeacon can't wait on one, so an application/json Blob silently drops
+            // the real POST behind an OPTIONS that never gets a follow-up. Backend parses the raw string.
+            if (navigator.sendBeacon) navigator.sendBeacon('https://api.protoquiz.com/api/monitor?type=webClick', new Blob([body], {type:'text/plain'}));
             else fetch('https://api.protoquiz.com/api/monitor?type=webClick', { method:'POST', headers:{'Content-Type':'application/json'}, body: body, keepalive: true });
           } catch (err) {}
         }
