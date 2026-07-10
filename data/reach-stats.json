@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-07-09T18:08:04.267Z",
-  "totalUploads": 219,
-  "distinctProtocols": 178,
-  "activeStudiers": 134,
-  "pagesProcessed": 25644,
+  "generatedAt": "2026-07-10T00:08:03.267Z",
+  "totalUploads": 220,
+  "distinctProtocols": 179,
+  "activeStudiers": 135,
+  "pagesProcessed": 25648,
   "statesRepresented": 31,
   "countriesRepresented": 1,
   "internationalUploads": 1,
   "byState": {
     "MI": 27,
     "CO": 15,
-    "CA": 8,
+    "CA": 9,
     "PA": 7,
     "AZ": 7,
     "TX": 6,
@@ -89,6 +89,28 @@
       ]
     },
     {
+      "state": "CA",
+      "city": "Los Angeles",
+      "x": 98,
+      "y": 343,
+      "count": 7,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "103 Ready to Print Policy Manual Complete",
+          "count": 1
+        },
+        {
+          "title": "1075386 LACountyTreatmentProtocols",
+          "count": 1
+        },
+        {
+          "title": "p14 p14010 2",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "PA",
       "city": "Philadelphia",
       "x": 828,
@@ -106,28 +128,6 @@
         },
         {
           "title": "2023v1 2 PA ALS Protocols",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CA",
-      "city": "Los Angeles",
-      "x": 98,
-      "y": 343,
-      "count": 6,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "103 Ready to Print Policy Manual Complete",
-          "count": 1
-        },
-        {
-          "title": "1075386 LACountyTreatmentProtocols",
-          "count": 1
-        },
-        {
-          "title": "ALCO FM 2025 DRAFT 07 31 2024",
           "count": 1
         }
       ]
