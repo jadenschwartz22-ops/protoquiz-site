@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-07-11T00:08:04.847Z",
-  "totalUploads": 221,
+  "generatedAt": "2026-07-11T06:08:07.871Z",
+  "totalUploads": 222,
   "distinctProtocols": 180,
   "activeStudiers": 135,
-  "pagesProcessed": 25841,
+  "pagesProcessed": 26019,
   "statesRepresented": 31,
   "countriesRepresented": 1,
   "internationalUploads": 1,
   "byState": {
     "MI": 27,
     "CO": 16,
-    "CA": 9,
+    "CA": 10,
     "PA": 7,
     "AZ": 7,
     "TX": 6,
@@ -365,6 +365,20 @@
         {
           "title": "palmbeachgardensfirerescuepatientcareprotocols2025 bf30c8b884…",
           "count": 1
+        }
+      ]
+    },
+    {
+      "state": "CA",
+      "city": "San Leandro",
+      "x": 46,
+      "y": 264,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "2026 Alameda County EMS Field Manual Rev3",
+          "count": 2
         }
       ]
     },
@@ -742,20 +756,6 @@
       "topProtocols": [
         {
           "title": "2024 Lake Cities Protocols",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CA",
-      "city": "San Leandro",
-      "x": 46,
-      "y": 264,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "2026 Alameda County EMS Field Manual Rev3",
           "count": 1
         }
       ]
