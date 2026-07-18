@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-18T12:08:04.962Z",
-  "totalUploads": 226,
+  "generatedAt": "2026-07-18T18:08:05.599Z",
+  "totalUploads": 227,
   "distinctProtocols": 182,
   "activeStudiers": 139,
-  "pagesProcessed": 26727,
+  "pagesProcessed": 26937,
   "statesRepresented": 32,
   "countriesRepresented": 1,
   "internationalUploads": 1,
@@ -11,7 +11,7 @@
     "MI": 27,
     "CO": 16,
     "CA": 11,
-    "TX": 8,
+    "TX": 9,
     "PA": 7,
     "AZ": 7,
     "NY": 6,
@@ -402,6 +402,20 @@
       ]
     },
     {
+      "state": "TX",
+      "city": "Crowley",
+      "x": 452,
+      "y": 435,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "CFD Protocols",
+          "count": 2
+        }
+      ]
+    },
+    {
       "state": "KY",
       "city": "Louisville",
       "x": 644,
@@ -775,20 +789,6 @@
       "topProtocols": [
         {
           "title": "2024 Lake Cities Protocols",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "TX",
-      "city": "Crowley",
-      "x": 452,
-      "y": 435,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "CFD Protocols",
           "count": 1
         }
       ]
