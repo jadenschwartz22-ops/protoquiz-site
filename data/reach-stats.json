@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-07-18T00:08:02.464Z",
-  "totalUploads": 224,
-  "distinctProtocols": 181,
-  "activeStudiers": 137,
-  "pagesProcessed": 26339,
+  "generatedAt": "2026-07-18T06:08:09.237Z",
+  "totalUploads": 226,
+  "distinctProtocols": 182,
+  "activeStudiers": 139,
+  "pagesProcessed": 26727,
   "statesRepresented": 32,
   "countriesRepresented": 1,
   "internationalUploads": 1,
   "byState": {
     "MI": 27,
     "CO": 16,
-    "CA": 10,
-    "TX": 7,
+    "CA": 11,
+    "TX": 8,
     "PA": 7,
     "AZ": 7,
     "NY": 6,
@@ -244,6 +244,20 @@
       ]
     },
     {
+      "state": "CA",
+      "city": "San Leandro",
+      "x": 46,
+      "y": 264,
+      "count": 3,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "2026 Alameda County EMS Field Manual Rev3",
+          "count": 3
+        }
+      ]
+    },
+    {
       "state": "TX",
       "city": "Austin",
       "x": 441,
@@ -384,20 +398,6 @@
         {
           "title": "palmbeachgardensfirerescuepatientcareprotocols2025 bf30c8b884…",
           "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CA",
-      "city": "San Leandro",
-      "x": 46,
-      "y": 264,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "2026 Alameda County EMS Field Manual Rev3",
-          "count": 2
         }
       ]
     },
@@ -775,6 +775,20 @@
       "topProtocols": [
         {
           "title": "2024 Lake Cities Protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "TX",
+      "city": "Crowley",
+      "x": 452,
+      "y": 435,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "CFD Protocols",
           "count": 1
         }
       ]
