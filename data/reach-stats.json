@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-18T18:08:05.599Z",
-  "totalUploads": 227,
+  "generatedAt": "2026-07-19T00:08:05.498Z",
+  "totalUploads": 228,
   "distinctProtocols": 182,
-  "activeStudiers": 139,
-  "pagesProcessed": 26937,
+  "activeStudiers": 140,
+  "pagesProcessed": 27221,
   "statesRepresented": 32,
   "countriesRepresented": 1,
   "internationalUploads": 1,
@@ -18,13 +18,13 @@
     "UT": 4,
     "WA": 4,
     "NC": 3,
+    "CT": 3,
     "IL": 3,
     "WI": 3,
     "MA": 3,
     "FL": 3,
     "OK": 2,
     "SC": 2,
-    "CT": 2,
     "TN": 2,
     "KY": 1,
     "NV": 1,
@@ -200,6 +200,28 @@
       ]
     },
     {
+      "state": "CT",
+      "city": "Hartford",
+      "x": 863,
+      "y": 177,
+      "count": 3,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "v20251 ctemsstatewideprotocolsfinal",
+          "count": 1
+        },
+        {
+          "title": "CT EMS Statewide Protocols",
+          "count": 1
+        },
+        {
+          "title": "v2025 2 ctemsstatewideprotocolsfinalver1",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "IL",
       "city": "Chicago",
       "x": 615,
@@ -361,24 +383,6 @@
         },
         {
           "title": "COGs 3.2 Bexar Frio04282026164702",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CT",
-      "city": "Hartford",
-      "x": 863,
-      "y": 177,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "CT EMS Statewide Protocols",
-          "count": 1
-        },
-        {
-          "title": "v2025 2 ctemsstatewideprotocolsfinalver1",
           "count": 1
         }
       ]
