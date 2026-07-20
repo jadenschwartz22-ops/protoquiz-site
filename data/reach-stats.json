@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-07-20T12:08:08.363Z",
-  "totalUploads": 230,
-  "distinctProtocols": 183,
-  "activeStudiers": 142,
-  "pagesProcessed": 28002,
-  "statesRepresented": 32,
+  "generatedAt": "2026-07-20T18:08:34.351Z",
+  "totalUploads": 232,
+  "distinctProtocols": 184,
+  "activeStudiers": 144,
+  "pagesProcessed": 28614,
+  "statesRepresented": 33,
   "countriesRepresented": 1,
   "internationalUploads": 1,
   "byState": {
     "MI": 27,
-    "CO": 16,
+    "CO": 17,
     "CA": 11,
     "TX": 9,
     "PA": 7,
@@ -29,6 +29,7 @@
     "VA": 2,
     "TN": 2,
     "KY": 1,
+    "OH": 1,
     "NV": 1,
     "DC": 1,
     "ID": 1,
@@ -72,7 +73,7 @@
       "city": "Denver",
       "x": 324,
       "y": 263,
-      "count": 11,
+      "count": 12,
       "tier": "warm",
       "topProtocols": [
         {
@@ -80,11 +81,11 @@
           "count": 7
         },
         {
-          "title": "***2025 Protocols *** Google Drive",
-          "count": 1
+          "title": "DMEMSMD Protocols January 2026 FINAL 2025 02 02",
+          "count": 2
         },
         {
-          "title": "DMEMSMD January 2026",
+          "title": "***2025 Protocols *** Google Drive",
           "count": 1
         }
       ]
@@ -489,6 +490,20 @@
       "topProtocols": [
         {
           "title": "2025 DCEMS Protocols 9 5 2025",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "OH",
+      "city": "Columbus",
+      "x": 678,
+      "y": 240,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "2025 UH EMS Protocol R11",
           "count": 1
         }
       ]
