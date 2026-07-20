@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-20T00:08:06.818Z",
-  "totalUploads": 229,
-  "distinctProtocols": 182,
-  "activeStudiers": 141,
-  "pagesProcessed": 27482,
+  "generatedAt": "2026-07-20T06:08:08.142Z",
+  "totalUploads": 230,
+  "distinctProtocols": 183,
+  "activeStudiers": 142,
+  "pagesProcessed": 28002,
   "statesRepresented": 32,
   "countriesRepresented": 1,
   "internationalUploads": 1,
@@ -26,11 +26,11 @@
     "OK": 2,
     "SC": 2,
     "NH": 2,
+    "VA": 2,
     "TN": 2,
     "KY": 1,
     "NV": 1,
     "DC": 1,
-    "VA": 1,
     "ID": 1,
     "IA": 1,
     "GA": 1,
@@ -434,6 +434,24 @@
       ]
     },
     {
+      "state": "VA",
+      "city": "Richmond",
+      "x": 794,
+      "y": 284,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "ODEMSA 2018 Patient Care Protocols",
+          "count": 1
+        },
+        {
+          "title": "6a070791b4b80bc675b07bc3 20250701i Protocols compressed copy…",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "KY",
       "city": "Louisville",
       "x": 644,
@@ -499,20 +517,6 @@
       "topProtocols": [
         {
           "title": "2026 DHS EMS Protocols w: Hyperlinks",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "VA",
-      "city": "Richmond",
-      "x": 815,
-      "y": 286,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "6a070791b4b80bc675b07bc3 20250701i Protocols compressed copy…",
           "count": 1
         }
       ]
