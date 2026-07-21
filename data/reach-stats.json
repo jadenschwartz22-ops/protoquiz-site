@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-07-21T12:08:09.067Z",
-  "totalUploads": 241,
-  "distinctProtocols": 190,
-  "activeStudiers": 152,
-  "pagesProcessed": 30176,
+  "generatedAt": "2026-07-21T18:08:11.023Z",
+  "totalUploads": 243,
+  "distinctProtocols": 191,
+  "activeStudiers": 154,
+  "pagesProcessed": 30883,
   "statesRepresented": 34,
   "countriesRepresented": 1,
   "internationalUploads": 1,
   "byState": {
     "MI": 27,
-    "CO": 18,
+    "CO": 19,
     "CA": 13,
     "TX": 9,
     "PA": 8,
@@ -28,6 +28,7 @@
     "NH": 2,
     "VA": 2,
     "NV": 2,
+    "MD": 2,
     "TN": 2,
     "KY": 1,
     "MO": 1,
@@ -37,7 +38,6 @@
     "IA": 1,
     "GA": 1,
     "AL": 1,
-    "MD": 1,
     "NJ": 1,
     "OR": 1,
     "RI": 1,
@@ -74,7 +74,7 @@
       "city": "Denver",
       "x": 324,
       "y": 263,
-      "count": 13,
+      "count": 14,
       "tier": "warm",
       "topProtocols": [
         {
@@ -83,7 +83,7 @@
         },
         {
           "title": "DMEMSMD Protocols January 2026 FINAL 2025 02 02",
-          "count": 3
+          "count": 4
         },
         {
           "title": "***2025 Protocols *** Google Drive",
@@ -408,6 +408,24 @@
       ]
     },
     {
+      "state": "MD",
+      "city": "Baltimore",
+      "x": 800,
+      "y": 250,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "MD Medical Protocols 2026 Hyperlinked",
+          "count": 1
+        },
+        {
+          "title": "MD Medical Protocols 2025 Print",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "NC",
       "city": "Charlotte",
       "x": 744,
@@ -671,20 +689,6 @@
       "topProtocols": [
         {
           "title": "master.alabama.protocols.11th.edition.07012025",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "MD",
-      "city": "Baltimore",
-      "x": 800,
-      "y": 250,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "MD Medical Protocols 2025 Print",
           "count": 1
         }
       ]
