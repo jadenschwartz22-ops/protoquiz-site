@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-07-21T06:08:09.859Z",
-  "totalUploads": 239,
-  "distinctProtocols": 188,
-  "activeStudiers": 150,
-  "pagesProcessed": 29860,
+  "generatedAt": "2026-07-21T12:08:09.067Z",
+  "totalUploads": 241,
+  "distinctProtocols": 190,
+  "activeStudiers": 152,
+  "pagesProcessed": 30176,
   "statesRepresented": 34,
   "countriesRepresented": 1,
   "internationalUploads": 1,
   "byState": {
     "MI": 27,
     "CO": 18,
-    "CA": 12,
+    "CA": 13,
     "TX": 9,
     "PA": 8,
     "AZ": 7,
@@ -19,12 +19,12 @@
     "NC": 4,
     "WA": 4,
     "IL": 4,
+    "SC": 3,
     "CT": 3,
     "WI": 3,
     "MA": 3,
     "FL": 3,
     "OK": 2,
-    "SC": 2,
     "NH": 2,
     "VA": 2,
     "NV": 2,
@@ -220,6 +220,28 @@
       ]
     },
     {
+      "state": "SC",
+      "city": "Columbia",
+      "x": 728,
+      "y": 380,
+      "count": 3,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "2025 Patient Care Guidelines PDF",
+          "count": 1
+        },
+        {
+          "title": "DCEMS 2025 Guidelines Rev 4",
+          "count": 1
+        },
+        {
+          "title": "kershawcountyemsclinicaloperatingguidelines 261d3ca1e3d229bf1…",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "CT",
       "city": "Hartford",
       "x": 863,
@@ -317,24 +339,6 @@
         },
         {
           "title": "2018 state protocols with references 4 18 2018",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "SC",
-      "city": "Columbia",
-      "x": 728,
-      "y": 380,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "2025 Patient Care Guidelines PDF",
-          "count": 1
-        },
-        {
-          "title": "kershawcountyemsclinicaloperatingguidelines 261d3ca1e3d229bf1…",
           "count": 1
         }
       ]
@@ -849,6 +853,20 @@
       "topProtocols": [
         {
           "title": "eae0ef3826d74d5f8c4bdc5cb18abe04",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "CA",
+      "city": "Riverside",
+      "x": 103,
+      "y": 366,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "104 Ready to Print Policy Manual 4000 Series",
           "count": 1
         }
       ]
