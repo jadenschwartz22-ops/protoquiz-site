@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-07-21T00:08:09.483Z",
-  "totalUploads": 235,
-  "distinctProtocols": 186,
-  "activeStudiers": 146,
-  "pagesProcessed": 29269,
+  "generatedAt": "2026-07-21T06:08:09.859Z",
+  "totalUploads": 239,
+  "distinctProtocols": 188,
+  "activeStudiers": 150,
+  "pagesProcessed": 29860,
   "statesRepresented": 34,
   "countriesRepresented": 1,
   "internationalUploads": 1,
   "byState": {
     "MI": 27,
-    "CO": 17,
-    "CA": 11,
+    "CO": 18,
+    "CA": 12,
     "TX": 9,
     "PA": 8,
     "AZ": 7,
@@ -18,8 +18,8 @@
     "UT": 4,
     "NC": 4,
     "WA": 4,
+    "IL": 4,
     "CT": 3,
-    "IL": 3,
     "WI": 3,
     "MA": 3,
     "FL": 3,
@@ -27,11 +27,11 @@
     "SC": 2,
     "NH": 2,
     "VA": 2,
+    "NV": 2,
     "TN": 2,
     "KY": 1,
     "MO": 1,
     "OH": 1,
-    "NV": 1,
     "DC": 1,
     "ID": 1,
     "IA": 1,
@@ -74,7 +74,7 @@
       "city": "Denver",
       "x": 324,
       "y": 263,
-      "count": 12,
+      "count": 13,
       "tier": "warm",
       "topProtocols": [
         {
@@ -83,7 +83,7 @@
         },
         {
           "title": "DMEMSMD Protocols January 2026 FINAL 2025 02 02",
-          "count": 2
+          "count": 3
         },
         {
           "title": "***2025 Protocols *** Google Drive",
@@ -202,6 +202,24 @@
       ]
     },
     {
+      "state": "CA",
+      "city": "San Leandro",
+      "x": 46,
+      "y": 264,
+      "count": 4,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "2026 Alameda County EMS Field Manual Rev3",
+          "count": 3
+        },
+        {
+          "title": "alco fm 2025 draft 07 31 2024",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "CT",
       "city": "Hartford",
       "x": 863,
@@ -264,20 +282,6 @@
         {
           "title": "statewide treatment protocols 2026 1",
           "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CA",
-      "city": "San Leandro",
-      "x": 46,
-      "y": 264,
-      "count": 3,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "2026 Alameda County EMS Field Manual Rev3",
-          "count": 3
         }
       ]
     },
@@ -381,6 +385,20 @@
       "topProtocols": [
         {
           "title": "patient care protocols",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "state": "NV",
+      "city": "Las Vegas",
+      "x": 183,
+      "y": 312,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "ems protocol manual",
           "count": 2
         }
       ]
@@ -523,20 +541,6 @@
       "topProtocols": [
         {
           "title": "2025 UH EMS Protocol R11",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "NV",
-      "city": "Las Vegas",
-      "x": 183,
-      "y": 312,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "ems protocol manual",
           "count": 1
         }
       ]
@@ -831,6 +835,20 @@
       "topProtocols": [
         {
           "title": "adultpediatricprotocolsandprocedures d726027d913a8b36add7d",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "IL",
+      "city": "Peoria",
+      "x": 587,
+      "y": 245,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "eae0ef3826d74d5f8c4bdc5cb18abe04",
           "count": 1
         }
       ]
