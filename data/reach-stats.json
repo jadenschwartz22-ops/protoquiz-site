@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-22T00:08:12.644Z",
-  "totalUploads": 244,
-  "distinctProtocols": 192,
+  "generatedAt": "2026-07-22T06:08:10.848Z",
+  "totalUploads": 245,
+  "distinctProtocols": 193,
   "activeStudiers": 155,
-  "pagesProcessed": 31067,
+  "pagesProcessed": 31581,
   "statesRepresented": 34,
   "countriesRepresented": 1,
   "internationalUploads": 1,
@@ -20,6 +20,7 @@
     "WA": 4,
     "IL": 4,
     "SC": 3,
+    "MD": 3,
     "CT": 3,
     "WI": 3,
     "MA": 3,
@@ -28,7 +29,6 @@
     "NH": 2,
     "VA": 2,
     "NV": 2,
-    "MD": 2,
     "TN": 2,
     "KY": 1,
     "MO": 1,
@@ -242,6 +242,28 @@
       ]
     },
     {
+      "state": "MD",
+      "city": "Baltimore",
+      "x": 800,
+      "y": 250,
+      "count": 3,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "MD Protocols 2026",
+          "count": 1
+        },
+        {
+          "title": "MD Medical Protocols 2026 Hyperlinked",
+          "count": 1
+        },
+        {
+          "title": "MD Medical Protocols 2025 Print",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "CT",
       "city": "Hartford",
       "x": 863,
@@ -404,24 +426,6 @@
         {
           "title": "ems protocol manual",
           "count": 2
-        }
-      ]
-    },
-    {
-      "state": "MD",
-      "city": "Baltimore",
-      "x": 800,
-      "y": 250,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "MD Medical Protocols 2026 Hyperlinked",
-          "count": 1
-        },
-        {
-          "title": "MD Medical Protocols 2025 Print",
-          "count": 1
         }
       ]
     },
