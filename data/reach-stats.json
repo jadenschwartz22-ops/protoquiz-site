@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-23T12:08:15.947Z",
-  "totalUploads": 245,
-  "distinctProtocols": 193,
-  "activeStudiers": 155,
-  "pagesProcessed": 31581,
+  "generatedAt": "2026-07-23T18:08:17.189Z",
+  "totalUploads": 246,
+  "distinctProtocols": 194,
+  "activeStudiers": 156,
+  "pagesProcessed": 31974,
   "statesRepresented": 34,
   "countriesRepresented": 1,
   "internationalUploads": 1,
@@ -29,6 +29,7 @@
     "NH": 2,
     "VA": 2,
     "NV": 2,
+    "GA": 2,
     "TN": 2,
     "KY": 1,
     "MO": 1,
@@ -36,7 +37,6 @@
     "DC": 1,
     "ID": 1,
     "IA": 1,
-    "GA": 1,
     "AL": 1,
     "NJ": 1,
     "OR": 1,
@@ -430,6 +430,24 @@
       ]
     },
     {
+      "state": "GA",
+      "city": "Atlanta",
+      "x": 695,
+      "y": 375,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "FCEMS COG Jan 26",
+          "count": 1
+        },
+        {
+          "title": "CA Protocols 2025 October UPDATED",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "NC",
       "city": "Charlotte",
       "x": 744,
@@ -651,20 +669,6 @@
       "topProtocols": [
         {
           "title": "Aurora South WI EMS 2026 Pre Hospital Guidelines 4.1.26",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "GA",
-      "city": "Atlanta",
-      "x": 695,
-      "y": 375,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "CA Protocols 2025 October UPDATED",
           "count": 1
         }
       ]
