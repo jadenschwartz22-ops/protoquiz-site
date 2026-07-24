@@ -1,25 +1,25 @@
 {
-  "generatedAt": "2026-07-24T00:08:31.609Z",
-  "totalUploads": 251,
-  "distinctProtocols": 198,
-  "activeStudiers": 161,
-  "pagesProcessed": 32994,
+  "generatedAt": "2026-07-24T06:08:25.911Z",
+  "totalUploads": 259,
+  "distinctProtocols": 204,
+  "activeStudiers": 169,
+  "pagesProcessed": 34641,
   "statesRepresented": 35,
   "countriesRepresented": 1,
   "internationalUploads": 1,
   "byState": {
     "MI": 27,
-    "CO": 19,
+    "CO": 21,
     "CA": 13,
     "TX": 9,
     "PA": 8,
     "NY": 7,
     "AZ": 7,
+    "WA": 6,
+    "FL": 5,
     "UT": 4,
     "NC": 4,
-    "WA": 4,
     "IL": 4,
-    "FL": 4,
     "MA": 4,
     "SC": 3,
     "MD": 3,
@@ -28,12 +28,12 @@
     "CT": 3,
     "WI": 3,
     "OK": 2,
+    "IN": 2,
     "NH": 2,
     "NV": 2,
     "GA": 2,
     "KY": 1,
     "MO": 1,
-    "IN": 1,
     "OH": 1,
     "DC": 1,
     "ID": 1,
@@ -75,7 +75,7 @@
       "city": "Denver",
       "x": 324,
       "y": 263,
-      "count": 14,
+      "count": 16,
       "tier": "warm",
       "topProtocols": [
         {
@@ -84,7 +84,7 @@
         },
         {
           "title": "DMEMSMD Protocols January 2026 FINAL 2025 02 02",
-          "count": 4
+          "count": 6
         },
         {
           "title": "***2025 Protocols *** Google Drive",
@@ -403,6 +403,24 @@
       ]
     },
     {
+      "state": "WA",
+      "city": "Seattle",
+      "x": 122,
+      "y": 71,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "Pend Oreille County Protocols 2022",
+          "count": 1
+        },
+        {
+          "title": "ABFY County Protocols 2025",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "NH",
       "city": "Manchester",
       "x": 880,
@@ -498,6 +516,24 @@
         },
         {
           "title": "palmbeachgardensfirerescuepatientcareprotocols2025 bf30c8b884…",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "WA",
+      "city": "Tacoma",
+      "x": 106,
+      "y": 55,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "2025 Patient Care Protocol Final 10 2025",
+          "count": 1
+        },
+        {
+          "title": "Pierce county",
           "count": 1
         }
       ]
@@ -614,20 +650,6 @@
       "topProtocols": [
         {
           "title": "2026 DHS EMS Protocols w: Hyperlinks",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "WA",
-      "city": "Seattle",
-      "x": 122,
-      "y": 71,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "ABFY County Protocols 2025",
           "count": 1
         }
       ]
@@ -899,6 +921,20 @@
       ]
     },
     {
+      "state": "IN",
+      "city": "Evansville",
+      "x": 623,
+      "y": 303,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "EFD ALS Protocols FINAL V26.1 2.13.2026",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "TN",
       "city": "Pulaski",
       "x": 635,
@@ -941,15 +977,15 @@
       ]
     },
     {
-      "state": "WA",
-      "city": "Tacoma",
-      "x": 106,
-      "y": 55,
+      "state": "FL",
+      "city": "Bradenton",
+      "x": 730,
+      "y": 524,
       "count": 1,
       "tier": "tiny",
       "topProtocols": [
         {
-          "title": "Pierce county",
+          "title": "2026:7 manatee ems protocols",
           "count": 1
         }
       ]
