@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-07-24T12:08:27.734Z",
-  "totalUploads": 262,
-  "distinctProtocols": 206,
-  "activeStudiers": 171,
-  "pagesProcessed": 35013,
-  "statesRepresented": 35,
+  "generatedAt": "2026-07-24T18:08:24.238Z",
+  "totalUploads": 267,
+  "distinctProtocols": 210,
+  "activeStudiers": 176,
+  "pagesProcessed": 36005,
+  "statesRepresented": 36,
   "countriesRepresented": 1,
   "internationalUploads": 1,
   "byState": {
@@ -16,25 +16,26 @@
     "PA": 8,
     "AZ": 7,
     "WA": 6,
+    "MA": 6,
     "FL": 5,
     "UT": 4,
     "NC": 4,
+    "TN": 4,
     "IL": 4,
-    "MA": 4,
     "SC": 3,
     "MD": 3,
     "VA": 3,
-    "TN": 3,
     "CT": 3,
     "WI": 3,
     "OK": 2,
+    "OH": 2,
     "IN": 2,
     "NH": 2,
     "NV": 2,
     "GA": 2,
     "KY": 1,
     "MO": 1,
-    "OH": 1,
+    "AR": 1,
     "DC": 1,
     "ID": 1,
     "IA": 1,
@@ -159,6 +160,28 @@
       ]
     },
     {
+      "state": "MA",
+      "city": "Boston",
+      "x": 895,
+      "y": 151,
+      "count": 6,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "download",
+          "count": 2
+        },
+        {
+          "title": "2026 MA state protocols",
+          "count": 1
+        },
+        {
+          "title": "download",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "AZ",
       "city": "Phoenix",
       "x": 182,
@@ -176,28 +199,6 @@
         },
         {
           "title": "red book chapter 3 2026",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "MA",
-      "city": "Boston",
-      "x": 895,
-      "y": 151,
-      "count": 4,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "download",
-          "count": 1
-        },
-        {
-          "title": "download",
-          "count": 1
-        },
-        {
-          "title": "Google",
           "count": 1
         }
       ]
@@ -398,6 +399,24 @@
         },
         {
           "title": "Safari",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "TN",
+      "city": "Nashville",
+      "x": 627,
+      "y": 337,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "CCEMS Protocols 1.2",
+          "count": 1
+        },
+        {
+          "title": "WEMA Protocols POCKET GUIDE AMBULANCE V3 9 23 15",
           "count": 1
         }
       ]
@@ -659,6 +678,20 @@
       ]
     },
     {
+      "state": "AR",
+      "city": "Little Rock",
+      "x": 555,
+      "y": 380,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "EMT EMR Protocols May26",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "DC",
       "city": "Washington, D.C.",
       "x": 797,
@@ -841,20 +874,6 @@
       ]
     },
     {
-      "state": "TN",
-      "city": "Nashville",
-      "x": 627,
-      "y": 337,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "WEMA Protocols POCKET GUIDE AMBULANCE V3 9 23 15",
-          "count": 1
-        }
-      ]
-    },
-    {
       "state": "WV",
       "city": "Charleston",
       "x": 733,
@@ -920,6 +939,20 @@
       "topProtocols": [
         {
           "title": "WVEMS Protocols 2026",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "OH",
+      "city": "Miami Valley",
+      "x": 675,
+      "y": 247,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "2026protocol",
           "count": 1
         }
       ]
