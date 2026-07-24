@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-07-23T18:08:17.189Z",
-  "totalUploads": 246,
-  "distinctProtocols": 194,
-  "activeStudiers": 156,
-  "pagesProcessed": 31974,
-  "statesRepresented": 34,
+  "generatedAt": "2026-07-24T00:08:31.609Z",
+  "totalUploads": 251,
+  "distinctProtocols": 198,
+  "activeStudiers": 161,
+  "pagesProcessed": 32994,
+  "statesRepresented": 35,
   "countriesRepresented": 1,
   "internationalUploads": 1,
   "byState": {
@@ -19,20 +19,21 @@
     "NC": 4,
     "WA": 4,
     "IL": 4,
+    "FL": 4,
+    "MA": 4,
     "SC": 3,
     "MD": 3,
+    "VA": 3,
+    "TN": 3,
     "CT": 3,
     "WI": 3,
-    "MA": 3,
-    "FL": 3,
     "OK": 2,
     "NH": 2,
-    "VA": 2,
     "NV": 2,
     "GA": 2,
-    "TN": 2,
     "KY": 1,
     "MO": 1,
+    "IN": 1,
     "OH": 1,
     "DC": 1,
     "ID": 1,
@@ -180,6 +181,28 @@
       ]
     },
     {
+      "state": "MA",
+      "city": "Boston",
+      "x": 895,
+      "y": 151,
+      "count": 4,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "download",
+          "count": 1
+        },
+        {
+          "title": "download",
+          "count": 1
+        },
+        {
+          "title": "Google",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "CO",
       "city": "Boulder",
       "x": 316,
@@ -303,28 +326,6 @@
         },
         {
           "title": "NWC EMSS SOP",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "MA",
-      "city": "Boston",
-      "x": 895,
-      "y": 151,
-      "count": 3,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "download",
-          "count": 1
-        },
-        {
-          "title": "Google",
-          "count": 1
-        },
-        {
-          "title": "statewide treatment protocols 2026 1",
           "count": 1
         }
       ]
@@ -571,6 +572,20 @@
       "topProtocols": [
         {
           "title": "2025 DCEMS Protocols 9 5 2025",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "FL",
+      "city": "Miami",
+      "x": 745,
+      "y": 559,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "LAKE COUNTY MARCH 2022 PROTOCOLS",
           "count": 1
         }
       ]
@@ -865,6 +880,48 @@
       "topProtocols": [
         {
           "title": "eae0ef3826d74d5f8c4bdc5cb18abe04",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "VA",
+      "city": "Roanoke",
+      "x": 753,
+      "y": 299,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "WVEMS Protocols 2026",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "TN",
+      "city": "Pulaski",
+      "x": 635,
+      "y": 364,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "gilescountyambulance 5269aed19ab810ba6bd02",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "IN",
+      "city": "Rensselaer",
+      "x": 627,
+      "y": 235,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "RensselaerEMSProtocol10032022",
           "count": 1
         }
       ]
