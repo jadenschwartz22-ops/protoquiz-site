@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-24T06:08:25.911Z",
-  "totalUploads": 259,
-  "distinctProtocols": 204,
-  "activeStudiers": 169,
-  "pagesProcessed": 34641,
+  "generatedAt": "2026-07-24T12:08:27.734Z",
+  "totalUploads": 262,
+  "distinctProtocols": 206,
+  "activeStudiers": 171,
+  "pagesProcessed": 35013,
   "statesRepresented": 35,
   "countriesRepresented": 1,
   "internationalUploads": 1,
@@ -11,9 +11,9 @@
     "MI": 27,
     "CO": 21,
     "CA": 13,
-    "TX": 9,
+    "TX": 10,
+    "NY": 9,
     "PA": 8,
-    "NY": 7,
     "AZ": 7,
     "WA": 6,
     "FL": 5,
@@ -93,6 +93,28 @@
       ]
     },
     {
+      "state": "NY",
+      "city": "New York",
+      "x": 858,
+      "y": 185,
+      "count": 9,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "bls protocols V.26.0",
+          "count": 2
+        },
+        {
+          "title": "2024 02 REMAC Unified Prehospital Treatment Protocols 07 09 25",
+          "count": 1
+        },
+        {
+          "title": "2024 REMAC Unified Prehospital Protocols 2024 01 004",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "PA",
       "city": "Philadelphia",
       "x": 828,
@@ -132,28 +154,6 @@
         },
         {
           "title": "p14 p14010 2",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "NY",
-      "city": "New York",
-      "x": 858,
-      "y": 185,
-      "count": 7,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "2024 02 REMAC Unified Prehospital Treatment Protocols 07 09 25",
-          "count": 1
-        },
-        {
-          "title": "2024 REMAC Unified Prehospital Protocols 2024 01 004",
-          "count": 1
-        },
-        {
-          "title": "ny collaborative protocols",
           "count": 1
         }
       ]
@@ -445,6 +445,24 @@
         {
           "title": "ems protocol manual",
           "count": 2
+        }
+      ]
+    },
+    {
+      "state": "TX",
+      "city": "Lubbock",
+      "x": 373,
+      "y": 411,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "EMT Basic Protocols 2026",
+          "count": 1
+        },
+        {
+          "title": "Paramedic Protocols 2026",
+          "count": 1
         }
       ]
     },
@@ -762,20 +780,6 @@
       "topProtocols": [
         {
           "title": "NEWJERSEYEMSCLINICALPRACTICEPROTOCOLS GUIDELINES FINAL8.21.20…",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "TX",
-      "city": "Lubbock",
-      "x": 373,
-      "y": 411,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "Paramedic Protocols 2026",
           "count": 1
         }
       ]
