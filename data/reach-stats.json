@@ -1,44 +1,45 @@
 {
-  "generatedAt": "2026-07-25T12:08:27.771Z",
-  "totalUploads": 290,
-  "distinctProtocols": 228,
-  "activeStudiers": 190,
-  "pagesProcessed": 38238,
-  "statesRepresented": 39,
+  "generatedAt": "2026-07-25T18:08:44.552Z",
+  "totalUploads": 298,
+  "distinctProtocols": 236,
+  "activeStudiers": 197,
+  "pagesProcessed": 40058,
+  "statesRepresented": 40,
   "countriesRepresented": 1,
   "internationalUploads": 1,
   "byState": {
     "MI": 27,
     "CO": 22,
+    "TX": 14,
     "CA": 13,
-    "TX": 11,
     "NY": 10,
     "WY": 10,
     "PA": 9,
     "WA": 7,
+    "IL": 7,
     "AZ": 7,
     "TN": 6,
     "MA": 6,
-    "IL": 5,
     "FL": 5,
     "UT": 4,
     "NC": 4,
+    "CT": 4,
     "SC": 3,
     "MD": 3,
     "VA": 3,
     "NV": 3,
-    "CT": 3,
     "WI": 3,
     "OK": 2,
     "OH": 2,
     "IN": 2,
+    "AR": 2,
     "NH": 2,
     "GA": 2,
     "KY": 1,
     "MO": 1,
     "NE": 1,
     "DE": 1,
-    "AR": 1,
+    "VT": 1,
     "DC": 1,
     "ID": 1,
     "IA": 1,
@@ -229,6 +230,50 @@
       ]
     },
     {
+      "state": "IL",
+      "city": "Chicago",
+      "x": 615,
+      "y": 224,
+      "count": 5,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "region x sop",
+          "count": 1
+        },
+        {
+          "title": "CCT Protocols 2024",
+          "count": 1
+        },
+        {
+          "title": "short.bls",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "CT",
+      "city": "Hartford",
+      "x": 863,
+      "y": 177,
+      "count": 4,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "v2025 2 ctemsstatewideprotocolsFINALver1",
+          "count": 1
+        },
+        {
+          "title": "v20251 ctemsstatewideprotocolsfinal",
+          "count": 1
+        },
+        {
+          "title": "CT EMS Statewide Protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "TN",
       "city": "Nashville",
       "x": 627,
@@ -246,6 +291,28 @@
         },
         {
           "title": "WEMA Protocols POCKET GUIDE AMBULANCE V3 9 23 15",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "TX",
+      "city": "Houston",
+      "x": 484,
+      "y": 497,
+      "count": 4,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "HCEMS Protocols 9 8 25 Reduced",
+          "count": 1
+        },
+        {
+          "title": "2026 Protocols",
+          "count": 1
+        },
+        {
+          "title": "Final cog",
           "count": 1
         }
       ]
@@ -345,50 +412,6 @@
         {
           "title": "ems protocol manual",
           "count": 3
-        }
-      ]
-    },
-    {
-      "state": "CT",
-      "city": "Hartford",
-      "x": 863,
-      "y": 177,
-      "count": 3,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "v20251 ctemsstatewideprotocolsfinal",
-          "count": 1
-        },
-        {
-          "title": "CT EMS Statewide Protocols",
-          "count": 1
-        },
-        {
-          "title": "v2025 2 ctemsstatewideprotocolsfinalver1",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "IL",
-      "city": "Chicago",
-      "x": 615,
-      "y": 224,
-      "count": 3,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "short.bls",
-          "count": 1
-        },
-        {
-          "title": "428",
-          "count": 1
-        },
-        {
-          "title": "NWC EMSS SOP",
-          "count": 1
         }
       ]
     },
@@ -497,6 +520,24 @@
       ]
     },
     {
+      "state": "AR",
+      "city": "Little Rock",
+      "x": 555,
+      "y": 380,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "SWEMS ALS Protocols April2024",
+          "count": 1
+        },
+        {
+          "title": "EMT EMR Protocols May26",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "NH",
       "city": "Manchester",
       "x": 880,
@@ -560,24 +601,6 @@
         },
         {
           "title": "DCEMS protocols",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "TX",
-      "city": "Houston",
-      "x": 484,
-      "y": 497,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "2026 Protocols",
-          "count": 1
-        },
-        {
-          "title": "COGs 3.2 Bexar Frio04282026164702",
           "count": 1
         }
       ]
@@ -735,15 +758,15 @@
       ]
     },
     {
-      "state": "AR",
-      "city": "Little Rock",
-      "x": 555,
-      "y": 380,
+      "state": "VT",
+      "city": "Burlington",
+      "x": 855,
+      "y": 130,
       "count": 1,
       "tier": "tiny",
       "topProtocols": [
         {
-          "title": "EMT EMR Protocols May26",
+          "title": "eprip 2025 EMS Protocols",
           "count": 1
         }
       ]
@@ -1052,6 +1075,20 @@
       "topProtocols": [
         {
           "title": "gilescountyambulance 5269aed19ab810ba6bd02",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "TX",
+      "city": "Abilene",
+      "x": 408,
+      "y": 438,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "AFD AMR Protocols ver2126 PDF (1)",
           "count": 1
         }
       ]
