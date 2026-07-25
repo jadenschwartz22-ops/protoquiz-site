@@ -1,26 +1,26 @@
 {
-  "generatedAt": "2026-07-24T18:08:24.238Z",
-  "totalUploads": 267,
-  "distinctProtocols": 210,
-  "activeStudiers": 176,
-  "pagesProcessed": 36005,
-  "statesRepresented": 36,
+  "generatedAt": "2026-07-25T00:08:25.810Z",
+  "totalUploads": 274,
+  "distinctProtocols": 215,
+  "activeStudiers": 183,
+  "pagesProcessed": 37170,
+  "statesRepresented": 38,
   "countriesRepresented": 1,
   "internationalUploads": 1,
   "byState": {
     "MI": 27,
-    "CO": 21,
+    "CO": 22,
     "CA": 13,
     "TX": 10,
+    "PA": 9,
     "NY": 9,
-    "PA": 8,
     "AZ": 7,
     "WA": 6,
     "MA": 6,
+    "TN": 5,
     "FL": 5,
     "UT": 4,
     "NC": 4,
-    "TN": 4,
     "IL": 4,
     "SC": 3,
     "MD": 3,
@@ -35,6 +35,8 @@
     "GA": 2,
     "KY": 1,
     "MO": 1,
+    "NE": 1,
+    "DE": 1,
     "AR": 1,
     "DC": 1,
     "ID": 1,
@@ -76,20 +78,42 @@
       "city": "Denver",
       "x": 324,
       "y": 263,
-      "count": 16,
+      "count": 17,
       "tier": "warm",
       "topProtocols": [
+        {
+          "title": "DMEMSMD Protocols January 2026 FINAL 2025 02 02",
+          "count": 7
+        },
         {
           "title": "dmemsmd protocols july 2025 final 2025 07 14",
           "count": 7
         },
         {
-          "title": "DMEMSMD Protocols January 2026 FINAL 2025 02 02",
-          "count": 6
-        },
-        {
           "title": "***2025 Protocols *** Google Drive",
           "count": 1
+        }
+      ]
+    },
+    {
+      "state": "PA",
+      "city": "Philadelphia",
+      "x": 828,
+      "y": 235,
+      "count": 9,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "2023v1 2 pa bls protocols",
+          "count": 3
+        },
+        {
+          "title": "2023v1 2 PA ALS Protocols",
+          "count": 2
+        },
+        {
+          "title": "2023v1 2 PA BLS Protocols",
+          "count": 2
         }
       ]
     },
@@ -111,28 +135,6 @@
         },
         {
           "title": "2024 REMAC Unified Prehospital Protocols 2024 01 004",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "PA",
-      "city": "Philadelphia",
-      "x": 828,
-      "y": 235,
-      "count": 8,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "2023v1 2 pa bls protocols",
-          "count": 3
-        },
-        {
-          "title": "2023v1 2 PA ALS Protocols",
-          "count": 2
-        },
-        {
-          "title": "2020 PA BLS Protocols",
           "count": 1
         }
       ]
@@ -288,6 +290,28 @@
       ]
     },
     {
+      "state": "TN",
+      "city": "Nashville",
+      "x": 627,
+      "y": 337,
+      "count": 3,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "CCEMS Protocols 1.2",
+          "count": 1
+        },
+        {
+          "title": "2026 COG",
+          "count": 1
+        },
+        {
+          "title": "WEMA Protocols POCKET GUIDE AMBULANCE V3 9 23 15",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "CT",
       "city": "Hartford",
       "x": 863,
@@ -399,24 +423,6 @@
         },
         {
           "title": "Safari",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "TN",
-      "city": "Nashville",
-      "x": 627,
-      "y": 337,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "CCEMS Protocols 1.2",
-          "count": 1
-        },
-        {
-          "title": "WEMA Protocols POCKET GUIDE AMBULANCE V3 9 23 15",
           "count": 1
         }
       ]
@@ -659,6 +665,34 @@
       "topProtocols": [
         {
           "title": "LAKE COUNTY MARCH 2022 PROTOCOLS",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "NE",
+      "city": "Omaha",
+      "x": 475,
+      "y": 240,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "EMS Model Protocols 2024",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "DE",
+      "city": "Wilmington",
+      "x": 822,
+      "y": 232,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "2ALSFinal2022",
           "count": 1
         }
       ]
