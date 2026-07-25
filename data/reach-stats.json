@@ -1,37 +1,38 @@
 {
-  "generatedAt": "2026-07-25T00:08:25.810Z",
-  "totalUploads": 274,
-  "distinctProtocols": 215,
-  "activeStudiers": 183,
-  "pagesProcessed": 37170,
-  "statesRepresented": 38,
+  "generatedAt": "2026-07-25T06:08:28.599Z",
+  "totalUploads": 290,
+  "distinctProtocols": 228,
+  "activeStudiers": 190,
+  "pagesProcessed": 38238,
+  "statesRepresented": 39,
   "countriesRepresented": 1,
   "internationalUploads": 1,
   "byState": {
     "MI": 27,
     "CO": 22,
     "CA": 13,
-    "TX": 10,
+    "TX": 11,
+    "NY": 10,
+    "WY": 10,
     "PA": 9,
-    "NY": 9,
+    "WA": 7,
     "AZ": 7,
-    "WA": 6,
+    "TN": 6,
     "MA": 6,
-    "TN": 5,
+    "IL": 5,
     "FL": 5,
     "UT": 4,
     "NC": 4,
-    "IL": 4,
     "SC": 3,
     "MD": 3,
     "VA": 3,
+    "NV": 3,
     "CT": 3,
     "WI": 3,
     "OK": 2,
     "OH": 2,
     "IN": 2,
     "NH": 2,
-    "NV": 2,
     "GA": 2,
     "KY": 1,
     "MO": 1,
@@ -96,6 +97,50 @@
       ]
     },
     {
+      "state": "NY",
+      "city": "New York",
+      "x": 858,
+      "y": 185,
+      "count": 10,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "bls protocols V.26.0",
+          "count": 2
+        },
+        {
+          "title": "2024 02 REMAC Unified Prehospital Treatment Protocols 07 09 25",
+          "count": 1
+        },
+        {
+          "title": "2024 REMAC Unified Prehospital Protocols 2024 01 004",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "WY",
+      "city": "Jackson",
+      "x": 257,
+      "y": 174,
+      "count": 10,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "17 14 Albuterol",
+          "count": 1
+        },
+        {
+          "title": "17 16 Atropine",
+          "count": 1
+        },
+        {
+          "title": "17 17 Dextrose",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "PA",
       "city": "Philadelphia",
       "x": 828,
@@ -114,28 +159,6 @@
         {
           "title": "2023v1 2 PA BLS Protocols",
           "count": 2
-        }
-      ]
-    },
-    {
-      "state": "NY",
-      "city": "New York",
-      "x": 858,
-      "y": 185,
-      "count": 9,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "bls protocols V.26.0",
-          "count": 2
-        },
-        {
-          "title": "2024 02 REMAC Unified Prehospital Treatment Protocols 07 09 25",
-          "count": 1
-        },
-        {
-          "title": "2024 REMAC Unified Prehospital Protocols 2024 01 004",
-          "count": 1
         }
       ]
     },
@@ -201,6 +224,28 @@
         },
         {
           "title": "red book chapter 3 2026",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "TN",
+      "city": "Nashville",
+      "x": 627,
+      "y": 337,
+      "count": 4,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "CCEMS Protocols 1.2",
+          "count": 2
+        },
+        {
+          "title": "2026 COG",
+          "count": 1
+        },
+        {
+          "title": "WEMA Protocols POCKET GUIDE AMBULANCE V3 9 23 15",
           "count": 1
         }
       ]
@@ -290,24 +335,16 @@
       ]
     },
     {
-      "state": "TN",
-      "city": "Nashville",
-      "x": 627,
-      "y": 337,
+      "state": "NV",
+      "city": "Las Vegas",
+      "x": 183,
+      "y": 312,
       "count": 3,
       "tier": "on",
       "topProtocols": [
         {
-          "title": "CCEMS Protocols 1.2",
-          "count": 1
-        },
-        {
-          "title": "2026 COG",
-          "count": 1
-        },
-        {
-          "title": "WEMA Protocols POCKET GUIDE AMBULANCE V3 9 23 15",
-          "count": 1
+          "title": "ems protocol manual",
+          "count": 3
         }
       ]
     },
@@ -352,6 +389,20 @@
         {
           "title": "NWC EMSS SOP",
           "count": 1
+        }
+      ]
+    },
+    {
+      "state": "TX",
+      "city": "Crowley",
+      "x": 452,
+      "y": 435,
+      "count": 3,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "CFD Protocols",
+          "count": 3
         }
       ]
     },
@@ -455,20 +506,6 @@
       "topProtocols": [
         {
           "title": "patient care protocols",
-          "count": 2
-        }
-      ]
-    },
-    {
-      "state": "NV",
-      "city": "Las Vegas",
-      "x": 183,
-      "y": 312,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "ems protocol manual",
           "count": 2
         }
       ]
@@ -578,20 +615,6 @@
         {
           "title": "Pierce county",
           "count": 1
-        }
-      ]
-    },
-    {
-      "state": "TX",
-      "city": "Crowley",
-      "x": 452,
-      "y": 435,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "CFD Protocols",
-          "count": 2
         }
       ]
     },
@@ -936,6 +959,20 @@
       ]
     },
     {
+      "state": "IL",
+      "city": "Elgin",
+      "x": 607,
+      "y": 212,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "asjhe region ix 2023 smo for print",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "MO",
       "city": "Sedalia",
       "x": 528,
@@ -1043,6 +1080,20 @@
       "topProtocols": [
         {
           "title": "104 Ready to Print Policy Manual 4000 Series",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "WA",
+      "city": "Las Vegas",
+      "x": 959,
+      "y": 593,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "Clark County Protocols 2026",
           "count": 1
         }
       ]
