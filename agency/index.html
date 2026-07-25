@@ -859,14 +859,13 @@
       linear-gradient(90deg, rgba(220,80,80,.18) 1px, transparent 1px);
     background-size: 4px 4px, 4px 4px, 20px 20px, 20px 20px;
   }
-  .ekg-strip svg{display:block; width:100%; height:100%; position:relative; z-index:2;}
-  .ekg-lead-label{
-    position:absolute; top:5px; left:7px;
+  .ekg-strip.photo{padding:0; overflow:hidden; background:none;}
+  .ekg-strip.photo img{display:block; width:100%; height:100%; object-fit:cover; object-position:left center;}
+  .ekg-attrib{
     font-family:'JetBrains Mono', ui-monospace, monospace;
-    font-size:9px; font-weight:700; color:#7c2d12;
-    letter-spacing:.04em;
-    z-index:3;
+    font-size:8px; color:#737373; margin-top:3px; letter-spacing:.02em;
   }
+  .ekg-attrib a{color:#737373;}
   .ekg-card-foot{
     font-family:'JetBrains Mono', ui-monospace, monospace;
     font-size:9px; color:rgba(239,68,68,.8); margin-top:5px;
@@ -4762,14 +4761,14 @@
               <div class="sc-card">
                 <div class="sc-card-l">Patient Status</div>
                 <div class="sc-card-body">Sitting in dialysis chair, weak and lightheaded. Staff reports K+ <span class="v-bad">6.8 mEq/L</span> at session start. AV fistula left arm. Generalized weakness, muscle cramping.</div>
-                <div class="sc-vitals">HR: <span class="v-bad">42</span> &middot; BP: <span class="v-bad">96/58</span> &middot; RR: 20 &middot; SpO2: 95% RA</div>
+                <div class="sc-vitals">HR: 84 &middot; BP: <span class="v-bad">96/58</span> &middot; RR: 20 &middot; SpO2: 95% RA</div>
               </div>
-              <div class="sc-q">This dialysis patient is bradycardic, hypotensive, and weak. What is the critical first step?</div>
+              <div class="sc-q">This dialysis patient is hypotensive and weak with a reported K+ of 6.8. What is the critical first step?</div>
               <div class="sc-choices">
                 <div class="sc-choice" data-click="sc-answer"><span class="l">A</span> Obtain 12-lead ECG</div>
-                <div class="sc-choice"><span class="l">B</span> Atropine 1mg IV for bradycardia</div>
+                <div class="sc-choice"><span class="l">B</span> Check glucose; treat if low</div>
                 <div class="sc-choice"><span class="l">C</span> 500 mL NS bolus, reassess</div>
-                <div class="sc-choice"><span class="l">D</span> Transcutaneous pacing at 80 bpm</div>
+                <div class="sc-choice"><span class="l">D</span> Rapid transport, assess en route</div>
               </div>
             </div>
           </div>
@@ -4794,18 +4793,18 @@
               <div class="sc-card">
                 <div class="sc-card-l">Patient Status</div>
                 <div class="sc-card-body">Sitting in dialysis chair, weak and lightheaded. Staff reports K+ <span class="v-bad">6.8 mEq/L</span> at session start. AV fistula left arm. Generalized weakness, muscle cramping.</div>
-                <div class="sc-vitals">HR: <span class="v-bad">42</span> &middot; BP: <span class="v-bad">96/58</span> &middot; RR: 20 &middot; SpO2: 95% RA</div>
+                <div class="sc-vitals">HR: 84 &middot; BP: <span class="v-bad">96/58</span> &middot; RR: 20 &middot; SpO2: 95% RA</div>
               </div>
-              <div class="sc-q">This dialysis patient is bradycardic, hypotensive, and weak. What is the critical first step?</div>
+              <div class="sc-q">This dialysis patient is hypotensive and weak with a reported K+ of 6.8. What is the critical first step?</div>
               <div class="sc-choices">
                 <div class="sc-choice right"><span class="l">A</span> Obtain 12-lead ECG</div>
-                <div class="sc-choice"><span class="l">B</span> Atropine 1mg IV for bradycardia</div>
+                <div class="sc-choice"><span class="l">B</span> Check glucose; treat if low</div>
                 <div class="sc-choice"><span class="l">C</span> 500 mL NS bolus, reassess</div>
-                <div class="sc-choice"><span class="l">D</span> Transcutaneous pacing at 80 bpm</div>
+                <div class="sc-choice"><span class="l">D</span> Rapid transport, assess en route</div>
               </div>
               <div class="sc-correct">
                 <div class="sc-correct-h"><strong>Correct</strong><span class="sc-correct-tag">12-lead first</span></div>
-                <div class="sc-explain">Bradycardia + hypotension + dialysis history points to hyperkalemia. Get the 12-lead before any drug or pacing decision.</div>
+                <div class="sc-explain">K+ 6.8 + missed dialysis + weakness points to hyperkalemia. Get the 12-lead before any treatment decision.</div>
               </div>
               <div class="sc-finish" data-click="sc-continue">Continue &rarr;</div>
             </div>
@@ -4824,17 +4823,11 @@
               </div>
               <div class="ekg-card">
                 <div class="ekg-card-l">12-Lead ECG &middot; Lead II strip</div>
-                <div class="ekg-strip">
-                  <span class="ekg-lead-label">II</span>
-                  <svg viewBox="0 0 360 144" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Hyperkalemia, Lead II rhythm strip, HR ~42 (3 beats):
-                         - Absent P-wave (flat baseline before each QRS)
-                         - Wide/slurred QRS (broad rounded R via cubic Beziers)
-                         - Tall symmetric tented T-wave, taller than R, sharp peak -->
-                    <path d="M 0 84 L 36 84 L 41 89 C 45 89 47 34 54 34 C 61 34 63 89 67 84 L 84 84 C 90 84 92 78 98 60 L 106 24 L 114 60 C 120 78 122 84 128 84 L 156 84 L 161 89 C 165 89 167 34 174 34 C 181 34 183 89 187 84 L 204 84 C 210 84 212 78 218 60 L 226 24 L 234 60 C 240 78 242 84 248 84 L 276 84 L 281 89 C 285 89 287 34 294 34 C 301 34 303 89 307 84 L 324 84 C 330 84 332 78 338 60 L 346 24 L 354 60 C 358 70 359 78 360 84" stroke="#171717" stroke-width="2" fill="none" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
-                  </svg>
+                <div class="ekg-strip photo">
+                  <img src="/agency/ekg-hyperk-lead2.jpg" alt="Lead II rhythm strip with tall peaked T waves consistent with hyperkalemia" loading="lazy">
                 </div>
-                <div class="ekg-card-foot">HR 42 &middot; 12-Lead acquired</div>
+                <div class="ekg-card-foot">HR 81 &middot; 12-Lead acquired</div>
+                <div class="ekg-attrib">ECG: Agbayani &amp; Gonzales / <a href="https://commons.wikimedia.org/wiki/File:Hyperkalemia_ECG.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> / CC BY 4.0, cropped</div>
               </div>
               <div class="sc-q">Based on the ECG and clinical picture, what is the immediate next step?</div>
               <div class="sc-choices">
@@ -4860,17 +4853,11 @@
               </div>
               <div class="ekg-card">
                 <div class="ekg-card-l">12-Lead ECG &middot; Lead II strip</div>
-                <div class="ekg-strip">
-                  <span class="ekg-lead-label">II</span>
-                  <svg viewBox="0 0 360 144" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Hyperkalemia, Lead II rhythm strip, HR ~42 (3 beats):
-                         - Absent P-wave (flat baseline before each QRS)
-                         - Wide/slurred QRS (broad rounded R via cubic Beziers)
-                         - Tall symmetric tented T-wave, taller than R, sharp peak -->
-                    <path d="M 0 84 L 36 84 L 41 89 C 45 89 47 34 54 34 C 61 34 63 89 67 84 L 84 84 C 90 84 92 78 98 60 L 106 24 L 114 60 C 120 78 122 84 128 84 L 156 84 L 161 89 C 165 89 167 34 174 34 C 181 34 183 89 187 84 L 204 84 C 210 84 212 78 218 60 L 226 24 L 234 60 C 240 78 242 84 248 84 L 276 84 L 281 89 C 285 89 287 34 294 34 C 301 34 303 89 307 84 L 324 84 C 330 84 332 78 338 60 L 346 24 L 354 60 C 358 70 359 78 360 84" stroke="#171717" stroke-width="2" fill="none" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
-                  </svg>
+                <div class="ekg-strip photo">
+                  <img src="/agency/ekg-hyperk-lead2.jpg" alt="Lead II rhythm strip with tall peaked T waves consistent with hyperkalemia" loading="lazy">
                 </div>
-                <div class="ekg-card-foot">HR 42 &middot; 12-Lead acquired</div>
+                <div class="ekg-card-foot">HR 81 &middot; 12-Lead acquired</div>
+                <div class="ekg-attrib">ECG: Agbayani &amp; Gonzales / <a href="https://commons.wikimedia.org/wiki/File:Hyperkalemia_ECG.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> / CC BY 4.0, cropped</div>
               </div>
               <div class="sc-choices">
                 <div class="sc-choice"><span class="l">A</span> Dextrose 25g IV with insulin</div>
@@ -4880,7 +4867,7 @@
               </div>
               <div class="sc-correct">
                 <div class="sc-correct-h"><strong>Correct</strong><span class="sc-correct-tag">Calcium first</span></div>
-                <div class="sc-explain">Peaked T waves with bradycardia and known dialysis... Stabilize the myocardium. Calcium gluconate 3g IV before insulin/D50 or bicarb.</div>
+                <div class="sc-explain">Peaked T waves with K+ 6.8 and missed dialysis... Stabilize the myocardium. Calcium gluconate 3g IV before insulin/D50 or bicarb.</div>
               </div>
               <div class="sc-finish" data-click="sc-finish">Finish scenario &rarr;</div>
             </div>
