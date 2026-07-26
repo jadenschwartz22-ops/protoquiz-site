@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-26T12:08:49.671Z",
-  "totalUploads": 309,
-  "distinctProtocols": 246,
-  "activeStudiers": 208,
-  "pagesProcessed": 41911,
+  "generatedAt": "2026-07-26T18:08:54.345Z",
+  "totalUploads": 312,
+  "distinctProtocols": 247,
+  "activeStudiers": 211,
+  "pagesProcessed": 42612,
   "statesRepresented": 40,
   "countriesRepresented": 1,
   "internationalUploads": 1,
@@ -24,27 +24,27 @@
     "FL": 5,
     "UT": 4,
     "CT": 4,
+    "NV": 4,
     "GA": 4,
     "SC": 3,
     "MD": 3,
     "VA": 3,
-    "NV": 3,
     "WI": 3,
     "OK": 2,
+    "NE": 2,
     "AL": 2,
     "OH": 2,
     "IN": 2,
     "AR": 2,
     "NH": 2,
+    "NJ": 2,
     "KY": 1,
     "MO": 1,
-    "NE": 1,
     "DE": 1,
     "VT": 1,
     "DC": 1,
     "ID": 1,
     "IA": 1,
-    "NJ": 1,
     "OR": 1,
     "RI": 1,
     "WV": 1
@@ -318,6 +318,20 @@
       ]
     },
     {
+      "state": "NV",
+      "city": "Las Vegas",
+      "x": 183,
+      "y": 312,
+      "count": 4,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "ems protocol manual",
+          "count": 4
+        }
+      ]
+    },
+    {
       "state": "NC",
       "city": "Charlotte",
       "x": 744,
@@ -420,20 +434,6 @@
         {
           "title": "MD Medical Protocols 2025 Print",
           "count": 1
-        }
-      ]
-    },
-    {
-      "state": "NV",
-      "city": "Las Vegas",
-      "x": 183,
-      "y": 312,
-      "count": 3,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "ems protocol manual",
-          "count": 3
         }
       ]
     },
@@ -546,6 +546,24 @@
       ]
     },
     {
+      "state": "NE",
+      "city": "Omaha",
+      "x": 475,
+      "y": 240,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "EMS Model Protocols",
+          "count": 1
+        },
+        {
+          "title": "EMS Model Protocols 2024",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "WA",
       "city": "Seattle",
       "x": 122,
@@ -609,6 +627,20 @@
       "topProtocols": [
         {
           "title": "patient care protocols",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "state": "NJ",
+      "city": "Newark",
+      "x": 833,
+      "y": 201,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "NEWJERSEYEMSCLINICALPRACTICEPROTOCOLS GUIDELINES FINAL8.21.20…",
           "count": 2
         }
       ]
@@ -737,20 +769,6 @@
       "topProtocols": [
         {
           "title": "LAKE COUNTY MARCH 2022 PROTOCOLS",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "NE",
-      "city": "Omaha",
-      "x": 475,
-      "y": 240,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "EMS Model Protocols 2024",
           "count": 1
         }
       ]
@@ -891,20 +909,6 @@
       "topProtocols": [
         {
           "title": "MFDESNAParamedicFormulary",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "NJ",
-      "city": "Newark",
-      "x": 833,
-      "y": 201,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "NEWJERSEYEMSCLINICALPRACTICEPROTOCOLS GUIDELINES FINAL8.21.20…",
           "count": 1
         }
       ]
