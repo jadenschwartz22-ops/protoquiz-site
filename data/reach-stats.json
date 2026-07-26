@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-07-26T06:08:37.626Z",
-  "totalUploads": 307,
-  "distinctProtocols": 245,
-  "activeStudiers": 206,
-  "pagesProcessed": 41277,
+  "generatedAt": "2026-07-26T12:08:49.671Z",
+  "totalUploads": 309,
+  "distinctProtocols": 246,
+  "activeStudiers": 208,
+  "pagesProcessed": 41911,
   "statesRepresented": 40,
   "countriesRepresented": 1,
   "internationalUploads": 1,
   "byState": {
-    "MI": 27,
+    "MI": 29,
     "CO": 22,
     "TX": 14,
     "CA": 14,
@@ -31,6 +31,7 @@
     "NV": 3,
     "WI": 3,
     "OK": 2,
+    "AL": 2,
     "OH": 2,
     "IN": 2,
     "AR": 2,
@@ -43,7 +44,6 @@
     "DC": 1,
     "ID": 1,
     "IA": 1,
-    "AL": 1,
     "NJ": 1,
     "OR": 1,
     "RI": 1,
@@ -58,19 +58,19 @@
       "city": "Detroit",
       "x": 660,
       "y": 175,
-      "count": 27,
+      "count": 29,
       "tier": "warm",
       "topProtocols": [
+        {
+          "title": "HEMS State Protocol Suite may 2026",
+          "count": 2
+        },
         {
           "title": "1.5 Shock",
           "count": 1
         },
         {
           "title": "1.9 Opioid Overdose Treatment and Prevention",
-          "count": 1
-        },
-        {
-          "title": "2.5 Soft Tissue and Orthopedic Injuries",
           "count": 1
         }
       ]
@@ -564,6 +564,24 @@
       ]
     },
     {
+      "state": "AL",
+      "city": "Birmingham",
+      "x": 648,
+      "y": 394,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "master alabama protocols",
+          "count": 1
+        },
+        {
+          "title": "master.alabama.protocols.11th.edition.07012025",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "AR",
       "city": "Little Rock",
       "x": 555,
@@ -859,20 +877,6 @@
       "topProtocols": [
         {
           "title": "EMS Protocol 2024 WPB",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "AL",
-      "city": "Birmingham",
-      "x": 648,
-      "y": 394,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "master.alabama.protocols.11th.edition.07012025",
           "count": 1
         }
       ]
