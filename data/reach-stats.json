@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-25T18:08:44.552Z",
-  "totalUploads": 298,
-  "distinctProtocols": 236,
-  "activeStudiers": 197,
-  "pagesProcessed": 40058,
+  "generatedAt": "2026-07-26T00:08:51.658Z",
+  "totalUploads": 301,
+  "distinctProtocols": 239,
+  "activeStudiers": 200,
+  "pagesProcessed": 40192,
   "statesRepresented": 40,
   "countriesRepresented": 1,
   "internationalUploads": 1,
@@ -24,6 +24,7 @@
     "UT": 4,
     "NC": 4,
     "CT": 4,
+    "GA": 4,
     "SC": 3,
     "MD": 3,
     "VA": 3,
@@ -34,7 +35,6 @@
     "IN": 2,
     "AR": 2,
     "NH": 2,
-    "GA": 2,
     "KY": 1,
     "MO": 1,
     "NE": 1,
@@ -416,6 +416,28 @@
       ]
     },
     {
+      "state": "GA",
+      "city": "Atlanta",
+      "x": 695,
+      "y": 375,
+      "count": 3,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "2024 Scope of Practice 260123",
+          "count": 1
+        },
+        {
+          "title": "FCEMS COG Jan 26",
+          "count": 1
+        },
+        {
+          "title": "CA Protocols 2025 October UPDATED",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "TX",
       "city": "Crowley",
       "x": 452,
@@ -565,24 +587,6 @@
         },
         {
           "title": "Paramedic Protocols 2026",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "GA",
-      "city": "Atlanta",
-      "x": 695,
-      "y": 375,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "FCEMS COG Jan 26",
-          "count": 1
-        },
-        {
-          "title": "CA Protocols 2025 October UPDATED",
           "count": 1
         }
       ]
@@ -1117,6 +1121,20 @@
       "topProtocols": [
         {
           "title": "104 Ready to Print Policy Manual 4000 Series",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "GA",
+      "city": "Douglas",
+      "x": 678,
+      "y": 393,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "Coffee Regional EMS Protocols 2025",
           "count": 1
         }
       ]
