@@ -391,8 +391,13 @@ async function geocodeToSVG(city, state) {
     const { lat, lon } = data[0];
     const sv = latLonToSVG(parseFloat(lat), parseFloat(lon));
     sv.lat = parseFloat(lat); sv.lon = parseFloat(lon);
-    sv.x = Math.max(0, Math.min(959, sv.x));
-    sv.y = Math.max(0, Math.min(593, sv.y));
+    // Reject results that project off the CONUS canvas (e.g. Nominatim matching
+    // "Las Vegas, WA" to Las Vegas, Puerto Rico) — clamping parks a dot in the
+    // corner. Null falls back to the state's default city.
+    if (sv.x < 0 || sv.x > 959 || sv.y < 0 || sv.y > 593) {
+      console.warn(`[reach] geocode off-map for ${city}, ${state} (${lat},${lon}) — using state default`);
+      return null;
+    }
     _geoCache[key] = sv;
     await new Promise(r => setTimeout(r, 1100)); // Nominatim 1 req/s
     return sv;
