@@ -378,16 +378,37 @@ const GEO_CACHE_PATH = path.join(__dir, 'data', 'geocode-cache.json');
 let _geoCache = {};
 try { _geoCache = JSON.parse(fsSync.readFileSync(GEO_CACHE_PATH, 'utf8')); } catch {}
 
+const STATE_NAMES = {
+  AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',
+  DE:'Delaware',DC:'District of Columbia',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',
+  IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',
+  MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',
+  NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',
+  OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',
+  TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',
+  WI:'Wisconsin',WY:'Wyoming',
+};
+
 async function geocodeToSVG(city, state) {
   const key = `${state}|${city}`;
   if (_geoCache[key]) return _geoCache[key];
   try {
-    const q = encodeURIComponent(`${city}, ${state}, United States`);
-    const r = await fetch(`https://nominatim.openstreetmap.org/search?q=${q}&format=json&limit=1&countrycodes=us`, {
+    // Structured query (city= & state=) — unlike free-text q=, it returns empty
+    // instead of fuzzy-matching a same-named city in the wrong state
+    // ("Springfield, MT" → Springfield, MO). Empty → state-default fallback.
+    const r = await fetch(`https://nominatim.openstreetmap.org/search?city=${encodeURIComponent(city)}&state=${encodeURIComponent(state)}&format=json&limit=1&countrycodes=us`, {
       headers: { 'User-Agent': 'ProtoQuiz-ReachMap/1.0' }
     });
     const data = await r.json();
     if (!data.length) return null;
+    // Nominatim silently drops the state constraint when nothing matches in it
+    // (e.g. "Las Vegas, WA" → Las Vegas, Puerto Rico). Require the requested
+    // state's name in the result before trusting it.
+    const stateName = STATE_NAMES[state];
+    if (stateName && !data[0].display_name.includes(stateName)) {
+      console.warn(`[reach] geocode wrong-state for ${city}, ${state}: "${data[0].display_name}" — using state default`);
+      return null;
+    }
     const { lat, lon } = data[0];
     const sv = latLonToSVG(parseFloat(lat), parseFloat(lon));
     sv.lat = parseFloat(lat); sv.lon = parseFloat(lon);
