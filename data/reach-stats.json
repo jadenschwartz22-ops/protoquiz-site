@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-26T19:06:19.177Z",
+  "generatedAt": "2026-07-26T19:39:49.595Z",
   "totalUploads": 312,
   "distinctProtocols": 247,
   "activeStudiers": 211,
@@ -56,8 +56,8 @@
     {
       "state": "MI",
       "city": "Detroit",
-      "x": 660,
-      "y": 175,
+      "x": 690,
+      "y": 194,
       "count": 29,
       "tier": "warm",
       "topProtocols": [
@@ -78,8 +78,8 @@
     {
       "state": "CO",
       "city": "Denver",
-      "x": 324,
-      "y": 263,
+      "x": 330,
+      "y": 258,
       "count": 17,
       "tier": "warm",
       "topProtocols": [
@@ -101,7 +101,7 @@
       "state": "PA",
       "city": "Philadelphia",
       "x": 828,
-      "y": 235,
+      "y": 223,
       "count": 10,
       "tier": "warm",
       "topProtocols": [
@@ -122,8 +122,8 @@
     {
       "state": "NY",
       "city": "New York",
-      "x": 858,
-      "y": 185,
+      "x": 843,
+      "y": 202,
       "count": 10,
       "tier": "warm",
       "topProtocols": [
@@ -144,8 +144,8 @@
     {
       "state": "WY",
       "city": "Jackson",
-      "x": 257,
-      "y": 174,
+      "x": 246,
+      "y": 164,
       "count": 10,
       "tier": "warm",
       "topProtocols": [
@@ -166,8 +166,8 @@
     {
       "state": "CA",
       "city": "Los Angeles",
-      "x": 98,
-      "y": 343,
+      "x": 80,
+      "y": 345,
       "count": 7,
       "tier": "warm",
       "topProtocols": [
@@ -188,8 +188,8 @@
     {
       "state": "MA",
       "city": "Boston",
-      "x": 895,
-      "y": 151,
+      "x": 881,
+      "y": 155,
       "count": 6,
       "tier": "warm",
       "topProtocols": [
@@ -210,8 +210,8 @@
     {
       "state": "AZ",
       "city": "Phoenix",
-      "x": 182,
-      "y": 366,
+      "x": 188,
+      "y": 380,
       "count": 6,
       "tier": "warm",
       "topProtocols": [
@@ -232,8 +232,8 @@
     {
       "state": "IL",
       "city": "Chicago",
-      "x": 615,
-      "y": 224,
+      "x": 617,
+      "y": 212,
       "count": 5,
       "tier": "warm",
       "topProtocols": [
@@ -254,8 +254,8 @@
     {
       "state": "CT",
       "city": "Hartford",
-      "x": 863,
-      "y": 177,
+      "x": 858,
+      "y": 174,
       "count": 4,
       "tier": "on",
       "topProtocols": [
@@ -276,7 +276,7 @@
     {
       "state": "TN",
       "city": "Nashville",
-      "x": 627,
+      "x": 643,
       "y": 337,
       "count": 4,
       "tier": "on",
@@ -298,8 +298,8 @@
     {
       "state": "TX",
       "city": "Houston",
-      "x": 484,
-      "y": 497,
+      "x": 493,
+      "y": 487,
       "count": 4,
       "tier": "on",
       "topProtocols": [
@@ -318,10 +318,28 @@
       ]
     },
     {
+      "state": "CA",
+      "city": "San Leandro",
+      "x": 34,
+      "y": 249,
+      "count": 4,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "2026 Alameda County EMS Field Manual Rev3",
+          "count": 3
+        },
+        {
+          "title": "alco fm 2025 draft 07 31 2024",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "NV",
       "city": "Las Vegas",
-      "x": 183,
-      "y": 312,
+      "x": 145,
+      "y": 311,
       "count": 4,
       "tier": "on",
       "topProtocols": [
@@ -334,7 +352,7 @@
     {
       "state": "NC",
       "city": "Charlotte",
-      "x": 744,
+      "x": 751,
       "y": 344,
       "count": 4,
       "tier": "on",
@@ -356,8 +374,8 @@
     {
       "state": "CO",
       "city": "Boulder",
-      "x": 316,
-      "y": 255,
+      "x": 326,
+      "y": 252,
       "count": 4,
       "tier": "on",
       "topProtocols": [
@@ -376,19 +394,23 @@
       ]
     },
     {
-      "state": "CA",
-      "city": "San Leandro",
-      "x": 46,
-      "y": 264,
-      "count": 4,
+      "state": "UT",
+      "city": "Salt Lake City",
+      "x": 218,
+      "y": 221,
+      "count": 3,
       "tier": "on",
       "topProtocols": [
         {
-          "title": "2026 Alameda County EMS Field Manual Rev3",
-          "count": 3
+          "title": "2023 Utah EMS Protocol Guidelines Final 4.10.2024",
+          "count": 1
         },
         {
-          "title": "alco fm 2025 draft 07 31 2024",
+          "title": "2025 Utah EMS Protocol Guidelines 3",
+          "count": 1
+        },
+        {
+          "title": "Safari",
           "count": 1
         }
       ]
@@ -396,8 +418,8 @@
     {
       "state": "SC",
       "city": "Columbia",
-      "x": 728,
-      "y": 380,
+      "x": 752,
+      "y": 372,
       "count": 3,
       "tier": "on",
       "topProtocols": [
@@ -418,8 +440,8 @@
     {
       "state": "MD",
       "city": "Baltimore",
-      "x": 800,
-      "y": 250,
+      "x": 807,
+      "y": 242,
       "count": 3,
       "tier": "on",
       "topProtocols": [
@@ -438,10 +460,24 @@
       ]
     },
     {
+      "state": "TX",
+      "city": "Crowley",
+      "x": 456,
+      "y": 424,
+      "count": 3,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "CFD Protocols",
+          "count": 3
+        }
+      ]
+    },
+    {
       "state": "GA",
       "city": "Atlanta",
-      "x": 695,
-      "y": 375,
+      "x": 692,
+      "y": 386,
       "count": 3,
       "tier": "on",
       "topProtocols": [
@@ -461,23 +497,9 @@
     },
     {
       "state": "TX",
-      "city": "Crowley",
-      "x": 452,
-      "y": 435,
-      "count": 3,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "CFD Protocols",
-          "count": 3
-        }
-      ]
-    },
-    {
-      "state": "TX",
       "city": "Austin",
-      "x": 441,
-      "y": 512,
+      "x": 448,
+      "y": 475,
       "count": 2,
       "tier": "on",
       "topProtocols": [
@@ -494,7 +516,7 @@
     {
       "state": "OK",
       "city": "Oklahoma City",
-      "x": 460,
+      "x": 454,
       "y": 360,
       "count": 2,
       "tier": "on",
@@ -512,8 +534,8 @@
     {
       "state": "WA",
       "city": "Olympia",
-      "x": 115,
-      "y": 80,
+      "x": 79,
+      "y": 47,
       "count": 2,
       "tier": "on",
       "topProtocols": [
@@ -528,28 +550,10 @@
       ]
     },
     {
-      "state": "UT",
-      "city": "Salt Lake City",
-      "x": 221,
-      "y": 212,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "2025 Utah EMS Protocol Guidelines 3",
-          "count": 1
-        },
-        {
-          "title": "Safari",
-          "count": 1
-        }
-      ]
-    },
-    {
       "state": "NE",
       "city": "Omaha",
-      "x": 475,
-      "y": 240,
+      "x": 482,
+      "y": 232,
       "count": 2,
       "tier": "on",
       "topProtocols": [
@@ -566,8 +570,8 @@
     {
       "state": "WA",
       "city": "Seattle",
-      "x": 122,
-      "y": 71,
+      "x": 91,
+      "y": 38,
       "count": 2,
       "tier": "on",
       "topProtocols": [
@@ -582,10 +586,28 @@
       ]
     },
     {
+      "state": "WA",
+      "city": "Tacoma",
+      "x": 87,
+      "y": 45,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "2025 Patient Care Protocol Final 10 2025",
+          "count": 1
+        },
+        {
+          "title": "Pierce county",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "AL",
       "city": "Birmingham",
-      "x": 648,
-      "y": 394,
+      "x": 649,
+      "y": 396,
       "count": 2,
       "tier": "on",
       "topProtocols": [
@@ -602,8 +624,8 @@
     {
       "state": "AR",
       "city": "Little Rock",
-      "x": 555,
-      "y": 380,
+      "x": 547,
+      "y": 375,
       "count": 2,
       "tier": "on",
       "topProtocols": [
@@ -620,8 +642,8 @@
     {
       "state": "NH",
       "city": "Manchester",
-      "x": 880,
-      "y": 145,
+      "x": 871,
+      "y": 143,
       "count": 2,
       "tier": "on",
       "topProtocols": [
@@ -634,8 +656,8 @@
     {
       "state": "NJ",
       "city": "Newark",
-      "x": 833,
-      "y": 201,
+      "x": 840,
+      "y": 202,
       "count": 2,
       "tier": "on",
       "topProtocols": [
@@ -646,10 +668,28 @@
       ]
     },
     {
+      "state": "VA",
+      "city": "Richmond",
+      "x": 801,
+      "y": 283,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "ODEMSA 2018 Patient Care Protocols",
+          "count": 1
+        },
+        {
+          "title": "6a070791b4b80bc675b07bc3 20250701i Protocols compressed copy…",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "TX",
       "city": "Lubbock",
-      "x": 373,
-      "y": 411,
+      "x": 374,
+      "y": 399,
       "count": 2,
       "tier": "on",
       "topProtocols": [
@@ -666,8 +706,8 @@
     {
       "state": "FL",
       "city": "Palm Beach Gardens",
-      "x": 752,
-      "y": 530,
+      "x": 794,
+      "y": 525,
       "count": 2,
       "tier": "on",
       "topProtocols": [
@@ -682,46 +722,10 @@
       ]
     },
     {
-      "state": "WA",
-      "city": "Tacoma",
-      "x": 106,
-      "y": 55,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "2025 Patient Care Protocol Final 10 2025",
-          "count": 1
-        },
-        {
-          "title": "Pierce county",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "VA",
-      "city": "Richmond",
-      "x": 794,
-      "y": 284,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "ODEMSA 2018 Patient Care Protocols",
-          "count": 1
-        },
-        {
-          "title": "6a070791b4b80bc675b07bc3 20250701i Protocols compressed copy…",
-          "count": 1
-        }
-      ]
-    },
-    {
       "state": "KY",
       "city": "Louisville",
-      "x": 644,
-      "y": 312,
+      "x": 656,
+      "y": 289,
       "count": 1,
       "tier": "tiny",
       "topProtocols": [
@@ -732,262 +736,10 @@
       ]
     },
     {
-      "state": "UT",
-      "city": "Salt Lake",
-      "x": 221,
-      "y": 198,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "2023 Utah EMS Protocol Guidelines Final 4.10.2024",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "NC",
-      "city": "Davidson County",
-      "x": 753,
-      "y": 333,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "2025 DCEMS Protocols 9 5 2025",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "FL",
-      "city": "Miami",
-      "x": 745,
-      "y": 559,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "LAKE COUNTY MARCH 2022 PROTOCOLS",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "DE",
-      "city": "Wilmington",
-      "x": 822,
-      "y": 232,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "2ALSFinal2022",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "OH",
-      "city": "Columbus",
-      "x": 678,
-      "y": 240,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "2025 UH EMS Protocol R11",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "VT",
-      "city": "Burlington",
-      "x": 855,
-      "y": 130,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "eprip 2025 EMS Protocols",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "DC",
-      "city": "Washington, D.C.",
-      "x": 797,
-      "y": 262,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "2026 DHS EMS Protocols w: Hyperlinks",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "ID",
-      "city": "Boise",
-      "x": 175,
-      "y": 175,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "ADA COUNTY Boise",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "IA",
-      "city": "Iowa City",
-      "x": 556,
-      "y": 225,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "AirCare Protocols",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "WI",
-      "city": "Aurora",
-      "x": 605,
-      "y": 194,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "aurora south wi ems 2024 pre hospital guidelines",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "WI",
-      "city": "Milwaukee",
-      "x": 612,
-      "y": 187,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "Aurora South WI EMS 2026 Pre Hospital Guidelines 4.1.26",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "FL",
-      "city": "West Palm Beach",
-      "x": 750,
-      "y": 538,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "EMS Protocol 2024 WPB",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "WI",
-      "city": "Madison",
-      "x": 589,
-      "y": 191,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "MFDESNAParamedicFormulary",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CA",
-      "city": "Sacramento",
-      "x": 63,
-      "y": 261,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "PP 8001 Allergic Reaction Anaphylaxis 1",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "RI",
-      "city": "Providence",
-      "x": 880,
-      "y": 178,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "StatewideEmergencyMedicalServices 2024",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CO",
-      "city": "Loveland",
-      "x": 318,
-      "y": 243,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "TVEMS Master Protocols August 2025",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "TN",
-      "city": "Knoxville",
-      "x": 688,
-      "y": 340,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "UT LIFESTAR Air Medical Patient Care Guidlines (25.2)",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "WV",
-      "city": "Charleston",
-      "x": 733,
-      "y": 276,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "WV Protocols 2025",
-          "count": 1
-        }
-      ]
-    },
-    {
       "state": "TX",
       "city": "Lake Dallas",
-      "x": 458,
-      "y": 423,
+      "x": 462,
+      "y": 412,
       "count": 1,
       "tier": "tiny",
       "topProtocols": [
@@ -998,10 +750,24 @@
       ]
     },
     {
+      "state": "NC",
+      "city": "Davidson County",
+      "x": 760,
+      "y": 330,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "2025 DCEMS Protocols 9 5 2025",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "IL",
       "city": "Elgin",
-      "x": 607,
-      "y": 212,
+      "x": 606,
+      "y": 209,
       "count": 1,
       "tier": "tiny",
       "topProtocols": [
@@ -1015,7 +781,7 @@
       "state": "MO",
       "city": "Sedalia",
       "x": 528,
-      "y": 294,
+      "y": 288,
       "count": 1,
       "tier": "tiny",
       "topProtocols": [
@@ -1029,7 +795,7 @@
       "state": "IL",
       "city": "Peoria",
       "x": 587,
-      "y": 245,
+      "y": 241,
       "count": 1,
       "tier": "tiny",
       "topProtocols": [
@@ -1042,8 +808,8 @@
     {
       "state": "VA",
       "city": "Roanoke",
-      "x": 753,
-      "y": 299,
+      "x": 759,
+      "y": 297,
       "count": 1,
       "tier": "tiny",
       "topProtocols": [
@@ -1054,10 +820,38 @@
       ]
     },
     {
+      "state": "FL",
+      "city": "Miami",
+      "x": 797,
+      "y": 548,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "LAKE COUNTY MARCH 2022 PROTOCOLS",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "DE",
+      "city": "Wilmington",
+      "x": 822,
+      "y": 229,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "2ALSFinal2022",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "OH",
       "city": "Miami Valley",
-      "x": 675,
-      "y": 247,
+      "x": 684,
+      "y": 251,
       "count": 1,
       "tier": "tiny",
       "topProtocols": [
@@ -1070,8 +864,8 @@
     {
       "state": "IN",
       "city": "Evansville",
-      "x": 623,
-      "y": 303,
+      "x": 626,
+      "y": 298,
       "count": 1,
       "tier": "tiny",
       "topProtocols": [
@@ -1084,8 +878,8 @@
     {
       "state": "TN",
       "city": "Pulaski",
-      "x": 635,
-      "y": 364,
+      "x": 641,
+      "y": 359,
       "count": 1,
       "tier": "tiny",
       "topProtocols": [
@@ -1098,8 +892,8 @@
     {
       "state": "TX",
       "city": "Abilene",
-      "x": 408,
-      "y": 438,
+      "x": 411,
+      "y": 426,
       "count": 1,
       "tier": "tiny",
       "topProtocols": [
@@ -1113,7 +907,7 @@
       "state": "IN",
       "city": "Rensselaer",
       "x": 627,
-      "y": 235,
+      "y": 232,
       "count": 1,
       "tier": "tiny",
       "topProtocols": [
@@ -1124,10 +918,24 @@
       ]
     },
     {
+      "state": "OH",
+      "city": "Columbus",
+      "x": 698,
+      "y": 246,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "2025 UH EMS Protocol R11",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "CA",
       "city": "Riverside",
-      "x": 103,
-      "y": 366,
+      "x": 95,
+      "y": 350,
       "count": 1,
       "tier": "tiny",
       "topProtocols": [
@@ -1138,10 +946,24 @@
       ]
     },
     {
+      "state": "VT",
+      "city": "Burlington",
+      "x": 836,
+      "y": 118,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "eprip 2025 EMS Protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "GA",
       "city": "Douglas",
-      "x": 678,
-      "y": 393,
+      "x": 727,
+      "y": 431,
       "count": 1,
       "tier": "tiny",
       "topProtocols": [
@@ -1154,8 +976,8 @@
     {
       "state": "WA",
       "city": "Vancouver",
-      "x": 92,
-      "y": 89,
+      "x": 74,
+      "y": 78,
       "count": 1,
       "tier": "tiny",
       "topProtocols": [
@@ -1168,8 +990,8 @@
     {
       "state": "FL",
       "city": "Bradenton",
-      "x": 730,
-      "y": 524,
+      "x": 744,
+      "y": 518,
       "count": 1,
       "tier": "tiny",
       "topProtocols": [
@@ -1182,8 +1004,8 @@
     {
       "state": "CA",
       "city": "Rocklin",
-      "x": 68,
-      "y": 245,
+      "x": 55,
+      "y": 230,
       "count": 1,
       "tier": "tiny",
       "topProtocols": [
@@ -1194,10 +1016,122 @@
       ]
     },
     {
+      "state": "DC",
+      "city": "Washington, D.C.",
+      "x": 801,
+      "y": 252,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "2026 DHS EMS Protocols w: Hyperlinks",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "ID",
+      "city": "Boise",
+      "x": 162,
+      "y": 146,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "ADA COUNTY Boise",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "IA",
+      "city": "Iowa City",
+      "x": 554,
+      "y": 221,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "AirCare Protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "WI",
+      "city": "Aurora",
+      "x": 609,
+      "y": 188,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "aurora south wi ems 2024 pre hospital guidelines",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "WI",
+      "city": "Milwaukee",
+      "x": 611,
+      "y": 187,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "Aurora South WI EMS 2026 Pre Hospital Guidelines 4.1.26",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "FL",
+      "city": "West Palm Beach",
+      "x": 796,
+      "y": 527,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "EMS Protocol 2024 WPB",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "WI",
+      "city": "Madison",
+      "x": 587,
+      "y": 188,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "MFDESNAParamedicFormulary",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "CA",
+      "city": "Sacramento",
+      "x": 50,
+      "y": 233,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "PP 8001 Allergic Reaction Anaphylaxis 1",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "UT",
       "city": "Tooele",
-      "x": 205,
-      "y": 237,
+      "x": 211,
+      "y": 225,
       "count": 1,
       "tier": "tiny",
       "topProtocols": [
@@ -1210,8 +1144,8 @@
     {
       "state": "NC",
       "city": "Stanly County",
-      "x": 753,
-      "y": 343,
+      "x": 761,
+      "y": 341,
       "count": 1,
       "tier": "tiny",
       "topProtocols": [
@@ -1224,8 +1158,8 @@
     {
       "state": "OR",
       "city": "Dallas",
-      "x": 78,
-      "y": 102,
+      "x": 60,
+      "y": 90,
       "count": 1,
       "tier": "tiny",
       "topProtocols": [
@@ -1236,10 +1170,52 @@
       ]
     },
     {
+      "state": "RI",
+      "city": "Providence",
+      "x": 878,
+      "y": 168,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "StatewideEmergencyMedicalServices 2024",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "CO",
+      "city": "Loveland",
+      "x": 330,
+      "y": 244,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "TVEMS Master Protocols August 2025",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "TN",
+      "city": "Knoxville",
+      "x": 694,
+      "y": 336,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "UT LIFESTAR Air Medical Patient Care Guidlines (25.2)",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "TX",
       "city": "Georgetown",
-      "x": 444,
-      "y": 479,
+      "x": 449,
+      "y": 467,
       "count": 1,
       "tier": "tiny",
       "topProtocols": [
@@ -1250,10 +1226,24 @@
       ]
     },
     {
+      "state": "WV",
+      "city": "Charleston",
+      "x": 726,
+      "y": 278,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "WV Protocols 2025",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "AZ",
       "city": "Prescott",
-      "x": 190,
-      "y": 370,
+      "x": 185,
+      "y": 355,
       "count": 1,
       "tier": "tiny",
       "topProtocols": [

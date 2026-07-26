@@ -205,61 +205,62 @@ function classifyState(name) {
   return null;
 }
 
-// City-level rules. Coords derived from each state's actual SVG path bbox
-// using city-position-within-state ratios.
+// City-level rules. Positions are real lat/lon, projected onto the SVG at
+// startup by latLonToSVG (see the calibration note there). Never hand-place
+// x/y pixels — that is how Vegas ended up in Arizona.
 const CITY_RULES = [
-  [/\bla[\s_-]?county\b|los[\s_-]?angeles|\blacoun?ty\b|laems|lacountytreatment/i, { state:'CA', city:'Los Angeles',     x:98,  y:343 }],
-  [/san[\s_-]?diego/i,                                { state:'CA', city:'San Diego',       x:112, y:388 }],
-  [/santa[\s_-]?cruz/i,                               { state:'CA', city:'Santa Cruz',      x:46,  y:288 }],
-  [/orange[\s_-]?county|\boc[\s_-]?ems\b/i,           { state:'CA', city:'Orange County',   x:105, y:365 }],
-  [/sacramento|sac[\s_-]?county/i,                    { state:'CA', city:'Sacramento',      x:63,  y:261 }],
-  [/\bsan[\s_-]?francisco\b|\bsf[\s_-]?ems\b|sfems/i, { state:'CA', city:'San Francisco',   x:35,  y:276 }],
-  [/king[\s_-]?county/i,                              { state:'WA', city:'Seattle',         x:122, y:71 }],
-  [/snohomish/i,                                      { state:'WA', city:'Snohomish County',x:128, y:61 }],
-  [/thurston/i,                                       { state:'WA', city:'Olympia',         x:115, y:80 }],
-  [/emt[\s_-]?wa\b|\bwa[\s_-]?protocol|\bwa[\s_-]?bls/i,{ state:'WA', city:'Statewide WA',  x:116, y:50 }],
-  [/dmemsmd|denver[\s_-]?metro|\bdenver\b/i,          { state:'CO', city:'Denver',          x:324, y:263 }],
-  [/boco|boulder/i,                                   { state:'CO', city:'Boulder',         x:316, y:255 }],
-  [/loveland|larimer|tvems/i,                         { state:'CO', city:'Loveland',        x:318, y:243 }],
-  [/colorado[\s_-]?springs/i,                         { state:'CO', city:'Colorado Springs',x:332, y:278 }],
-  [/west[\s_-]?palm[\s_-]?beach|\bwpb\b/i,            { state:'FL', city:'West Palm Beach', x:750, y:538 }],
-  [/palm[\s_-]?beach[\s_-]?gardens/i,                 { state:'FL', city:'Palm Beach Gardens', x:752, y:530 }],
-  [/fdny|nyc[\s_-]?ems/i,                             { state:'NY', city:'NYC',             x:858, y:185 }],
-  [/\bnys?\b[\s_-]?coll|\bremac\b|ny[\s_-]?colla?b|ny_collab|new[\s_-]?york/i, { state:'NY', city:'New York', x:858, y:185 }],
-  [/austin[\s_-]?travis|\beprip\b|erip[\s_-]?tx/i,    { state:'TX', city:'Austin',          x:441, y:512 }],
-  [/houston/i,                                        { state:'TX', city:'Houston',         x:484, y:497 }],
-  [/dallas/i,                                         { state:'TX', city:'Dallas',          x:473, y:441 }],
-  [/portland/i,                                       { state:'OR', city:'Portland',        x:41,  y:81 }],
-  [/multnomah/i,                                      { state:'OR', city:'Multnomah Co',    x:41,  y:81 }],
-  [/maricopa|phoenix|tcems/i,                         { state:'AZ', city:'Phoenix',         x:182, y:366 }],
-  [/tucson/i,                                         { state:'AZ', city:'Tucson',          x:200, y:401 }],
-  [/\bclark[\s_-]?county\b|las[\s_-]?vegas/i,         { state:'NV', city:'Las Vegas',       x:183, y:312 }],
-  [/greater[\s_-]?miami|miami/i,                      { state:'FL', city:'Miami',           x:745, y:559 }],
-  [/orlando/i,                                        { state:'FL', city:'Orlando',         x:730, y:520 }],
-  [/jacksonville/i,                                   { state:'FL', city:'Jacksonville',    x:710, y:475 }],
-  [/atlanta|grady/i,                                  { state:'GA', city:'Atlanta',         x:695, y:375 }],
-  [/region[\s_-]?iii/i,                               { state:'GA', city:'Region III',      x:695, y:375 }],
-  [/region[\s_-]?xi|cfd|nwc[\s_-]?ems|chicago/i,      { state:'IL', city:'Chicago',         x:615, y:224 }],
-  [/mayo[\s_-]?clinic|mayoclinic|rochester[\s_-]?mn/i,{ state:'MN', city:'Rochester',       x:538, y:163 }],
-  [/minneapolis|hennepin/i,                           { state:'MN', city:'Minneapolis',     x:526, y:154 }],
-  [/nashville|middle[\s_-]?tn/i,                      { state:'TN', city:'Nashville',       x:627, y:337 }],
-  [/memphis/i,                                        { state:'TN', city:'Memphis',         x:597, y:345 }],
-  [/boston[\s_-]?ems/i,                               { state:'MA', city:'Boston',          x:895, y:151 }],
-  [/dcems|\bdc[\s_-]?fems\b|\bdhs[\s_-]?ems\b|fems[\s_-]protocols/i, { state:'DC', city:'Washington, D.C.', x:797, y:262 }],
-  [/baltimore/i,                                      { state:'MD', city:'Baltimore',       x:800, y:250 }],
-  [/aurora[\s_-]?south[\s_-]?wi/i,                    { state:'WI', city:'Aurora',          x:605, y:194 }],
-  [/milwaukee/i,                                      { state:'WI', city:'Milwaukee',       x:612, y:187 }],
-  [/philadelphia|philly/i,                            { state:'PA', city:'Philadelphia',    x:828, y:235 }],
-  [/charleston[\s_-]?wv|\bcharleston\b/i,             { state:'WV', city:'Charleston',      x:733, y:276 }],
-  [/charlotte/i,                                      { state:'NC', city:'Charlotte',       x:744, y:344 }],
-  [/raleigh/i,                                        { state:'NC', city:'Raleigh',         x:775, y:334 }],
-  [/craven/i,                                         { state:'NC', city:'Craven',          x:811, y:337 }],
-  [/indianapolis/i,                                   { state:'IN', city:'Indianapolis',    x:641, y:261 }],
-  [/newark|\bnj[\s_-]?ems\b|new[\s_-]?jersey/i,       { state:'NJ', city:'Newark',          x:833, y:201 }],
-  [/birmingham|alabama|\bal[\s_-]?protocol|master\.alabama/i, { state:'AL', city:'Birmingham', x:648, y:394 }],
-  [/salt[\s_-]?lake|utah|\but[\s_-]?ems\b/i,          { state:'UT', city:'Salt Lake',       x:221, y:212 }],
-  [/west[\s_-]?virginia|\bwv\b/i,                     { state:'WV', city:'Charleston',      x:733, y:276 }],
-  [/maryland|\bmd[\s_-]?med/i,                        { state:'MD', city:'Baltimore',       x:800, y:250 }],
+  [/\bla[\s_-]?county\b|los[\s_-]?angeles|\blacoun?ty\b|laems|lacountytreatment/i, { state:'CA', city:'Los Angeles',     lat:34.0522, lon:-118.2437 }],
+  [/san[\s_-]?diego/i,                                { state:'CA', city:'San Diego',       lat:32.7157, lon:-117.1611 }],
+  [/santa[\s_-]?cruz/i,                               { state:'CA', city:'Santa Cruz',      lat:36.9741, lon:-122.0308 }],
+  [/orange[\s_-]?county|\boc[\s_-]?ems\b/i,           { state:'CA', city:'Orange County',   lat:33.7175, lon:-117.8311 }],
+  [/sacramento|sac[\s_-]?county/i,                    { state:'CA', city:'Sacramento',      lat:38.5816, lon:-121.4944 }],
+  [/\bsan[\s_-]?francisco\b|\bsf[\s_-]?ems\b|sfems/i, { state:'CA', city:'San Francisco',   lat:37.7749, lon:-122.4194 }],
+  [/king[\s_-]?county/i,                              { state:'WA', city:'Seattle',         lat:47.6062, lon:-122.3321 }],
+  [/snohomish/i,                                      { state:'WA', city:'Snohomish County',lat:47.9790, lon:-122.2021 }],
+  [/thurston/i,                                       { state:'WA', city:'Olympia',         lat:47.0379, lon:-122.9007 }],
+  [/emt[\s_-]?wa\b|\bwa[\s_-]?protocol|\bwa[\s_-]?bls/i,{ state:'WA', city:'Statewide WA',  lat:47.3826, lon:-120.4472 }],
+  [/dmemsmd|denver[\s_-]?metro|\bdenver\b/i,          { state:'CO', city:'Denver',          lat:39.7392, lon:-104.9903 }],
+  [/boco|boulder/i,                                   { state:'CO', city:'Boulder',         lat:40.0150, lon:-105.2705 }],
+  [/loveland|larimer|tvems/i,                         { state:'CO', city:'Loveland',        lat:40.3978, lon:-105.0748 }],
+  [/colorado[\s_-]?springs/i,                         { state:'CO', city:'Colorado Springs',lat:38.8339, lon:-104.8214 }],
+  [/west[\s_-]?palm[\s_-]?beach|\bwpb\b/i,            { state:'FL', city:'West Palm Beach', lat:26.7153, lon:-80.0534 }],
+  [/palm[\s_-]?beach[\s_-]?gardens/i,                 { state:'FL', city:'Palm Beach Gardens', lat:26.8234, lon:-80.1387 }],
+  [/fdny|nyc[\s_-]?ems/i,                             { state:'NY', city:'NYC',             lat:40.7128, lon:-74.0060 }],
+  [/\bnys?\b[\s_-]?coll|\bremac\b|ny[\s_-]?colla?b|ny_collab|new[\s_-]?york/i, { state:'NY', city:'New York', lat:40.7128, lon:-74.0060 }],
+  [/austin[\s_-]?travis|\beprip\b|erip[\s_-]?tx/i,    { state:'TX', city:'Austin',          lat:30.2672, lon:-97.7431 }],
+  [/houston/i,                                        { state:'TX', city:'Houston',         lat:29.7604, lon:-95.3698 }],
+  [/dallas/i,                                         { state:'TX', city:'Dallas',          lat:32.7767, lon:-96.7970 }],
+  [/portland/i,                                       { state:'OR', city:'Portland',        lat:45.5152, lon:-122.6784 }],
+  [/multnomah/i,                                      { state:'OR', city:'Multnomah Co',    lat:45.5152, lon:-122.6784 }],
+  [/maricopa|phoenix|tcems/i,                         { state:'AZ', city:'Phoenix',         lat:33.4484, lon:-112.0740 }],
+  [/tucson/i,                                         { state:'AZ', city:'Tucson',          lat:32.2226, lon:-110.9747 }],
+  [/\bclark[\s_-]?county\b|las[\s_-]?vegas/i,         { state:'NV', city:'Las Vegas',       lat:36.1699, lon:-115.1398 }],
+  [/greater[\s_-]?miami|miami/i,                      { state:'FL', city:'Miami',           lat:25.7617, lon:-80.1918 }],
+  [/orlando/i,                                        { state:'FL', city:'Orlando',         lat:28.5384, lon:-81.3789 }],
+  [/jacksonville/i,                                   { state:'FL', city:'Jacksonville',    lat:30.3322, lon:-81.6557 }],
+  [/atlanta|grady/i,                                  { state:'GA', city:'Atlanta',         lat:33.7490, lon:-84.3880 }],
+  [/region[\s_-]?iii/i,                               { state:'GA', city:'Region III',      lat:33.7490, lon:-84.3880 }],
+  [/region[\s_-]?xi|cfd|nwc[\s_-]?ems|chicago/i,      { state:'IL', city:'Chicago',         lat:41.8781, lon:-87.6298 }],
+  [/mayo[\s_-]?clinic|mayoclinic|rochester[\s_-]?mn/i,{ state:'MN', city:'Rochester',       lat:44.0121, lon:-92.4802 }],
+  [/minneapolis|hennepin/i,                           { state:'MN', city:'Minneapolis',     lat:44.9778, lon:-93.2650 }],
+  [/nashville|middle[\s_-]?tn/i,                      { state:'TN', city:'Nashville',       lat:36.1627, lon:-86.7816 }],
+  [/memphis/i,                                        { state:'TN', city:'Memphis',         lat:35.1495, lon:-90.0490 }],
+  [/boston[\s_-]?ems/i,                               { state:'MA', city:'Boston',          lat:42.3601, lon:-71.0589 }],
+  [/dcems|\bdc[\s_-]?fems\b|\bdhs[\s_-]?ems\b|fems[\s_-]protocols/i, { state:'DC', city:'Washington, D.C.', lat:38.9072, lon:-77.0369 }],
+  [/baltimore/i,                                      { state:'MD', city:'Baltimore',       lat:39.2904, lon:-76.6122 }],
+  [/aurora[\s_-]?south[\s_-]?wi/i,                    { state:'WI', city:'Aurora',          lat:43.0167, lon:-88.0070 }],
+  [/milwaukee/i,                                      { state:'WI', city:'Milwaukee',       lat:43.0389, lon:-87.9065 }],
+  [/philadelphia|philly/i,                            { state:'PA', city:'Philadelphia',    lat:39.9526, lon:-75.1652 }],
+  [/charleston[\s_-]?wv|\bcharleston\b/i,             { state:'WV', city:'Charleston',      lat:38.3498, lon:-81.6326 }],
+  [/charlotte/i,                                      { state:'NC', city:'Charlotte',       lat:35.2271, lon:-80.8431 }],
+  [/raleigh/i,                                        { state:'NC', city:'Raleigh',         lat:35.7796, lon:-78.6382 }],
+  [/craven/i,                                         { state:'NC', city:'Craven',          lat:35.1085, lon:-77.0441 }],
+  [/indianapolis/i,                                   { state:'IN', city:'Indianapolis',    lat:39.7684, lon:-86.1581 }],
+  [/newark|\bnj[\s_-]?ems\b|new[\s_-]?jersey/i,       { state:'NJ', city:'Newark',          lat:40.7357, lon:-74.1724 }],
+  [/birmingham|alabama|\bal[\s_-]?protocol|master\.alabama/i, { state:'AL', city:'Birmingham', lat:33.5186, lon:-86.8104 }],
+  [/salt[\s_-]?lake|utah|\but[\s_-]?ems\b/i,          { state:'UT', city:'Salt Lake City',  lat:40.7608, lon:-111.8910 }],
+  [/west[\s_-]?virginia|\bwv\b/i,                     { state:'WV', city:'Charleston',      lat:38.3498, lon:-81.6326 }],
+  [/maryland|\bmd[\s_-]?med/i,                        { state:'MD', city:'Baltimore',       lat:39.2904, lon:-76.6122 }],
 ];
 
 function classifyCity(name) {
@@ -282,62 +283,62 @@ function classifyIntl(name) {
   return null;
 }
 
-// Default representative city per US state, with SVG coords for the
-// US-states viewBox 0 0 959 593 (Wikipedia "Blank US Map" projection).
+// Default representative city per US state (lat/lon, projected at startup).
 // New states automatically render as a dot when they show up.
-// Fallback representative city per state, with bbox-derived coords.
+// AK/HI keep fixed pixel coords: the map has no AK/HI shapes, so they render
+// at hand-picked inset spots the projection can't produce.
 const STATE_CITIES = {
-  AL: { city: "Birmingham",      x:648, y:394 },
+  AL: { city: "Birmingham",      lat:33.5186, lon:-86.8104 },
   AK: { city: "Anchorage",       x:110, y:575 },
-  AZ: { city: "Phoenix",         x:182, y:366 },
-  AR: { city: "Little Rock",     x:555, y:380 },
-  CA: { city: "Los Angeles",     x:98,  y:343 },
-  CO: { city: "Denver",          x:324, y:263 },
-  CT: { city: "Hartford",        x:863, y:177 },
-  DE: { city: "Wilmington",      x:822, y:232 },
-  DC: { city: "Washington, D.C.",x:802, y:252 },
-  FL: { city: "Miami",           x:745, y:559 },
-  GA: { city: "Atlanta",         x:695, y:375 },
+  AZ: { city: "Phoenix",         lat:33.4484, lon:-112.0740 },
+  AR: { city: "Little Rock",     lat:34.7465, lon:-92.2896 },
+  CA: { city: "Los Angeles",     lat:34.0522, lon:-118.2437 },
+  CO: { city: "Denver",          lat:39.7392, lon:-104.9903 },
+  CT: { city: "Hartford",        lat:41.7658, lon:-72.6734 },
+  DE: { city: "Wilmington",      lat:39.7391, lon:-75.5398 },
+  DC: { city: "Washington, D.C.",lat:38.9072, lon:-77.0369 },
+  FL: { city: "Miami",           lat:25.7617, lon:-80.1918 },
+  GA: { city: "Atlanta",         lat:33.7490, lon:-84.3880 },
   HI: { city: "Honolulu",        x:280, y:575 },
-  ID: { city: "Boise",           x:175, y:175 },
-  IL: { city: "Chicago",         x:615, y:224 },
-  IN: { city: "Indianapolis",    x:641, y:261 },
-  IA: { city: "Des Moines",      x:540, y:215 },
-  KS: { city: "Wichita",         x:445, y:300 },
-  KY: { city: "Louisville",      x:644, y:312 },
-  LA: { city: "New Orleans",     x:580, y:470 },
-  ME: { city: "Portland",        x:890, y:115 },
-  MD: { city: "Baltimore",       x:800, y:250 },
-  MA: { city: "Boston",          x:895, y:151 },
-  MI: { city: "Detroit",         x:660, y:175 },
-  MN: { city: "Minneapolis",     x:526, y:154 },
-  MS: { city: "Jackson",         x:595, y:425 },
-  MO: { city: "Kansas City",     x:495, y:265 },
-  MT: { city: "Billings",        x:280, y:135 },
-  NE: { city: "Omaha",           x:475, y:240 },
-  NV: { city: "Las Vegas",       x:183, y:312 },
-  NH: { city: "Manchester",      x:880, y:145 },
-  NJ: { city: "Newark",          x:833, y:201 },
-  NM: { city: "Albuquerque",     x:305, y:350 },
-  NY: { city: "New York",        x:858, y:185 },
-  NC: { city: "Charlotte",       x:744, y:344 },
-  ND: { city: "Bismarck",        x:415, y:130 },
-  OH: { city: "Columbus",        x:678, y:240 },
-  OK: { city: "Oklahoma City",   x:460, y:360 },
-  OR: { city: "Portland",        x:41,  y:81 },
-  PA: { city: "Philadelphia",    x:828, y:235 },
-  RI: { city: "Providence",      x:880, y:178 },
-  SC: { city: "Columbia",        x:728, y:380 },
-  SD: { city: "Sioux Falls",     x:470, y:175 },
-  TN: { city: "Nashville",       x:627, y:337 },
-  TX: { city: "Houston",         x:484, y:497 },
-  UT: { city: "Salt Lake City",  x:221, y:212 },
-  VT: { city: "Burlington",      x:855, y:130 },
-  VA: { city: "Richmond",        x:815, y:286 },
-  WA: { city: "Seattle",         x:122, y:71 },
-  WV: { city: "Charleston",      x:733, y:276 },
-  WI: { city: "Milwaukee",       x:612, y:187 },
-  WY: { city: "Cheyenne",        x:320, y:215 },
+  ID: { city: "Boise",           lat:43.6150, lon:-116.2023 },
+  IL: { city: "Chicago",         lat:41.8781, lon:-87.6298 },
+  IN: { city: "Indianapolis",    lat:39.7684, lon:-86.1581 },
+  IA: { city: "Des Moines",      lat:41.5868, lon:-93.6250 },
+  KS: { city: "Wichita",         lat:37.6872, lon:-97.3301 },
+  KY: { city: "Louisville",      lat:38.2527, lon:-85.7585 },
+  LA: { city: "New Orleans",     lat:29.9511, lon:-90.0715 },
+  ME: { city: "Portland",        lat:43.6591, lon:-70.2568 },
+  MD: { city: "Baltimore",       lat:39.2904, lon:-76.6122 },
+  MA: { city: "Boston",          lat:42.3601, lon:-71.0589 },
+  MI: { city: "Detroit",         lat:42.3314, lon:-83.0458 },
+  MN: { city: "Minneapolis",     lat:44.9778, lon:-93.2650 },
+  MS: { city: "Jackson",         lat:32.2988, lon:-90.1848 },
+  MO: { city: "Kansas City",     lat:39.0997, lon:-94.5786 },
+  MT: { city: "Billings",        lat:45.7833, lon:-108.5007 },
+  NE: { city: "Omaha",           lat:41.2565, lon:-95.9345 },
+  NV: { city: "Las Vegas",       lat:36.1699, lon:-115.1398 },
+  NH: { city: "Manchester",      lat:42.9956, lon:-71.4548 },
+  NJ: { city: "Newark",          lat:40.7357, lon:-74.1724 },
+  NM: { city: "Albuquerque",     lat:35.0844, lon:-106.6504 },
+  NY: { city: "New York",        lat:40.7128, lon:-74.0060 },
+  NC: { city: "Charlotte",       lat:35.2271, lon:-80.8431 },
+  ND: { city: "Bismarck",        lat:46.8083, lon:-100.7837 },
+  OH: { city: "Columbus",        lat:39.9612, lon:-82.9988 },
+  OK: { city: "Oklahoma City",   lat:35.4676, lon:-97.5164 },
+  OR: { city: "Portland",        lat:45.5152, lon:-122.6784 },
+  PA: { city: "Philadelphia",    lat:39.9526, lon:-75.1652 },
+  RI: { city: "Providence",      lat:41.8240, lon:-71.4128 },
+  SC: { city: "Columbia",        lat:34.0007, lon:-81.0348 },
+  SD: { city: "Sioux Falls",     lat:43.5460, lon:-96.7313 },
+  TN: { city: "Nashville",       lat:36.1627, lon:-86.7816 },
+  TX: { city: "Houston",         lat:29.7604, lon:-95.3698 },
+  UT: { city: "Salt Lake City",  lat:40.7608, lon:-111.8910 },
+  VT: { city: "Burlington",      lat:44.4759, lon:-73.2121 },
+  VA: { city: "Richmond",        lat:37.5407, lon:-77.4360 },
+  WA: { city: "Seattle",         lat:47.6062, lon:-122.3321 },
+  WV: { city: "Charleston",      lat:38.3498, lon:-81.6326 },
+  WI: { city: "Milwaukee",       lat:43.0389, lon:-87.9065 },
+  WY: { city: "Cheyenne",        lat:41.1400, lon:-104.8202 },
 };
 
 // Aliases collapse synonyms into a single canonical city so they don't render
@@ -349,6 +350,8 @@ const CITY_ALIASES = {
   'NY|brooklyn':      'New York',
   'NY|bronx':         'New York',
   'NY|queens':        'New York',
+  'UT|salt lake':     'Salt Lake City',
+  'DC|washington':    'Washington, D.C.',
 };
 function canonicalCity(city, state) {
   if (!city) return city;
@@ -356,7 +359,11 @@ function canonicalCity(city, state) {
 }
 
 // Albers equal-area conic → SVG (viewBox 0 0 959 593).
-// Affine params least-squares-fitted against ~30 known city→SVG pairs.
+// Affine params least-squares-fitted 2026-07-26 against the map's OWN state
+// polygons: SVG area centroid of all 48 CONUS states + DC vs each state's
+// geographic centroid (anchor RMS 0.4px; 74/79 test cities land inside the
+// right state, the 5 misses are border cities <=1px outside). Do not re-fit
+// against hand-placed city pixels — that is what skewed the previous fit.
 const _d2r = Math.PI / 180;
 const _n = (Math.sin(29.5*_d2r) + Math.sin(45.5*_d2r)) / 2;
 const _C = Math.cos(29.5*_d2r)**2 + 2*_n*Math.sin(29.5*_d2r);
@@ -367,16 +374,96 @@ function latLonToSVG(lat, lon) {
   const theta = _n * (lam - (-96*_d2r));
   const ax = rho*Math.sin(theta), ay = _rho0 - rho*Math.cos(theta);
   return {
-    x: Math.round(1236.71*ax + 48.34*ay + 480.93),
-    y: Math.round(-25.82*ax + -1286.77*ay + 311.71),
+    x: Math.round(1265.5764*ax + 0.1009*ay + 480.7351),
+    y: Math.round(0.3620*ax + -1261.0220*ay + 304.1855),
   };
+}
+
+// Project the lat/lon tables into SVG pixels once at startup. Entries that
+// already carry x/y (AK/HI insets) are left alone.
+for (const info of [...CITY_RULES.map(([, i]) => i), ...Object.values(STATE_CITIES)]) {
+  if (info.lat != null) Object.assign(info, latLonToSVG(info.lat, info.lon));
+}
+
+// --- State-shape validation (generation-time guard) ---
+// Parses the state outline paths from the site's own index.html so every dot
+// can be checked against the polygon it claims to be in. Border cities can
+// legitimately project a couple px outside their shape, hence the tolerance.
+const _SITE_ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
+let _statePolys = null;
+function statePolys() {
+  if (_statePolys) return _statePolys;
+  _statePolys = {};
+  try {
+    const html = fsSync.readFileSync(path.join(_SITE_ROOT, 'index.html'), 'utf8');
+    for (const m of html.matchAll(/<path class="state s-([a-z]{2})" d="([^"]+)"/g)) {
+      const toks = m[2].match(/[a-zA-Z]|-?\d*\.?\d+/g);
+      const polys = []; let poly = [], x = 0, y = 0, sx = 0, sy = 0, cmd = null, i = 0;
+      const num = () => parseFloat(toks[i++]);
+      while (i < toks.length) {
+        if (/[a-zA-Z]/.test(toks[i])) {
+          cmd = toks[i++];
+          if (cmd.toLowerCase() === 'z') { if (poly.length > 2) polys.push(poly); poly = []; x = sx; y = sy; continue; }
+        }
+        switch (cmd) {
+          case 'm': x += num(); y += num(); poly = [[x, y]]; sx = x; sy = y; cmd = 'l'; break;
+          case 'M': x = num(); y = num(); poly = [[x, y]]; sx = x; sy = y; cmd = 'L'; break;
+          case 'l': x += num(); y += num(); poly.push([x, y]); break;
+          case 'L': x = num(); y = num(); poly.push([x, y]); break;
+          case 'h': x += num(); poly.push([x, y]); break;
+          case 'H': x = num(); poly.push([x, y]); break;
+          case 'v': y += num(); poly.push([x, y]); break;
+          case 'V': y = num(); poly.push([x, y]); break;
+          default: i++;
+        }
+      }
+      if (poly.length > 2) polys.push(poly);
+      _statePolys[m[1].toUpperCase()] = polys;
+    }
+  } catch (e) { console.warn('[reach] state-shape guard unavailable:', e.message); }
+  return _statePolys;
+}
+function _inPoly(px, py, poly) {
+  let inside = false;
+  for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
+    const [xi, yi] = poly[i], [xj, yj] = poly[j];
+    if ((yi > py) !== (yj > py) && px < ((xj - xi) * (py - yi)) / (yj - yi) + xi) inside = !inside;
+  }
+  return inside;
+}
+// true if (x,y) is inside state's shape or within tolPx of its outline.
+// Unknown shapes (AK/HI, bad state code) pass — the guard only rejects when
+// it positively knows the point is wrong.
+function insideState(x, y, state, tolPx = 4) {
+  const polys = statePolys()[state];
+  if (!polys || !polys.length) return true;
+  for (const p of polys) if (_inPoly(x, y, p)) return true;
+  let best = Infinity;
+  for (const p of polys) for (const [px, py] of p) best = Math.min(best, Math.hypot(px - x, py - y));
+  return best <= tolPx;
 }
 
 // Geocode cache: scripts/data/geocode-cache.json
 const __dir = path.dirname(fileURLToPath(import.meta.url));
 const GEO_CACHE_PATH = path.join(__dir, 'data', 'geocode-cache.json');
 let _geoCache = {};
-try { _geoCache = JSON.parse(fsSync.readFileSync(GEO_CACHE_PATH, 'utf8')); } catch {}
+try {
+  const raw = JSON.parse(fsSync.readFileSync(GEO_CACHE_PATH, 'utf8'));
+  // Migrate: recompute x/y from the cached lat/lon so entries projected with
+  // an older calibration self-heal; drop entries with no lat/lon, and drop
+  // poisoned entries whose point isn't in the state the key claims — both
+  // re-geocode through the current guards.
+  for (const [k, v] of Object.entries(raw)) {
+    if (!v || !Number.isFinite(v.lat) || !Number.isFinite(v.lon)) continue;
+    const sv = { ...v, ...latLonToSVG(v.lat, v.lon) };
+    const state = k.split('|')[0];
+    if (!insideState(sv.x, sv.y, state)) {
+      console.warn(`[reach] dropping poisoned cache entry ${k} (${sv.x},${sv.y})`);
+      continue;
+    }
+    _geoCache[k] = sv;
+  }
+} catch {}
 
 const STATE_NAMES = {
   AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',
@@ -396,10 +483,15 @@ async function geocodeToSVG(city, state) {
     // Structured query (city= & state=) — unlike free-text q=, it returns empty
     // instead of fuzzy-matching a same-named city in the wrong state
     // ("Springfield, MT" → Springfield, MO). Empty → state-default fallback.
-    const r = await fetch(`https://nominatim.openstreetmap.org/search?city=${encodeURIComponent(city)}&state=${encodeURIComponent(state)}&format=json&limit=1&countrycodes=us`, {
-      headers: { 'User-Agent': 'ProtoQuiz-ReachMap/1.0' }
-    });
-    const data = await r.json();
+    const search = (params) =>
+      fetch(`https://nominatim.openstreetmap.org/search?${params}&state=${encodeURIComponent(state)}&format=json&limit=1&countrycodes=us`, {
+        headers: { 'User-Agent': 'ProtoQuiz-ReachMap/1.0' }
+      }).then(r => r.json());
+    let data = await search(`city=${encodeURIComponent(city)}`);
+    if (!data.length && /county$/i.test(city)) {
+      await new Promise(r => setTimeout(r, 1100));
+      data = await search(`county=${encodeURIComponent(city)}`);
+    }
     if (!data.length) return null;
     // Nominatim silently drops the state constraint when nothing matches in it
     // (e.g. "Las Vegas, WA" → Las Vegas, Puerto Rico). Require the requested
@@ -417,6 +509,12 @@ async function geocodeToSVG(city, state) {
     // corner. Null falls back to the state's default city.
     if (sv.x < 0 || sv.x > 959 || sv.y < 0 || sv.y > 593) {
       console.warn(`[reach] geocode off-map for ${city}, ${state} (${lat},${lon}) — using state default`);
+      return null;
+    }
+    // Strongest guard: the projected point must land in (or within a few px
+    // of) the claimed state's actual SVG shape.
+    if (!insideState(sv.x, sv.y, state)) {
+      console.warn(`[reach] geocode outside ${state} shape for ${city} (${sv.x},${sv.y}) — using state default`);
       return null;
     }
     _geoCache[key] = sv;
@@ -686,6 +784,15 @@ async function getReachStats() {
         l.x = Math.round(anchor.x + Math.cos(ang) * rad);
         l.y = Math.round(anchor.y + Math.sin(ang) * rad);
       });
+    }
+  }
+
+  // Final audit: every US dot must sit in (or hug the border of) its state's
+  // SVG shape. Warn-only — positions come from verified lat/lons, so a hit
+  // here means a table or classifier regression that needs a human look.
+  for (const l of locales) {
+    if (l.state !== 'AK' && l.state !== 'HI' && !insideState(l.x, l.y, l.state, 8)) {
+      console.warn(`[reach] AUDIT: ${l.city}, ${l.state} (${l.x},${l.y}) is outside its state shape`);
     }
   }
 
