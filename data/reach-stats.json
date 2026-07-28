@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-07-27T18:08:01.881Z",
-  "totalUploads": 318,
-  "distinctProtocols": 247,
-  "activeStudiers": 214,
-  "pagesProcessed": 44226,
-  "statesRepresented": 40,
+  "generatedAt": "2026-07-28T00:08:13.940Z",
+  "totalUploads": 323,
+  "distinctProtocols": 250,
+  "activeStudiers": 219,
+  "pagesProcessed": 45632,
+  "statesRepresented": 41,
   "countriesRepresented": 1,
   "internationalUploads": 1,
   "byState": {
@@ -18,18 +18,18 @@
     "CT": 9,
     "WA": 7,
     "IL": 7,
+    "MA": 7,
     "AZ": 7,
     "NC": 6,
     "TN": 6,
-    "MA": 6,
     "FL": 5,
+    "NV": 5,
     "UT": 4,
-    "NV": 4,
+    "MD": 4,
+    "WI": 4,
     "GA": 4,
     "SC": 3,
-    "MD": 3,
     "VA": 3,
-    "WI": 3,
     "OK": 2,
     "NE": 2,
     "AL": 2,
@@ -42,6 +42,7 @@
     "MO": 1,
     "DE": 1,
     "VT": 1,
+    "LA": 1,
     "DC": 1,
     "ID": 1,
     "IA": 1,
@@ -212,12 +213,12 @@
       "city": "Boston",
       "x": 881,
       "y": 155,
-      "count": 6,
+      "count": 7,
       "tier": "warm",
       "topProtocols": [
         {
           "title": "download",
-          "count": 2
+          "count": 3
         },
         {
           "title": "2026 MA state protocols",
@@ -252,6 +253,20 @@
       ]
     },
     {
+      "state": "NV",
+      "city": "Las Vegas",
+      "x": 145,
+      "y": 311,
+      "count": 5,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "ems protocol manual",
+          "count": 5
+        }
+      ]
+    },
+    {
       "state": "IL",
       "city": "Chicago",
       "x": 617,
@@ -269,6 +284,28 @@
         },
         {
           "title": "short.bls",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "MD",
+      "city": "Baltimore",
+      "x": 807,
+      "y": 242,
+      "count": 4,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "MD Protocols 2026",
+          "count": 1
+        },
+        {
+          "title": "MD Medical Protocols 2026 Hyperlinked",
+          "count": 1
+        },
+        {
+          "title": "MD Medical Protocols 2026 Print",
           "count": 1
         }
       ]
@@ -332,20 +369,6 @@
         {
           "title": "alco fm 2025 draft 07 31 2024",
           "count": 1
-        }
-      ]
-    },
-    {
-      "state": "NV",
-      "city": "Las Vegas",
-      "x": 145,
-      "y": 311,
-      "count": 4,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "ems protocol manual",
-          "count": 4
         }
       ]
     },
@@ -433,28 +456,6 @@
         },
         {
           "title": "kershawcountyemsclinicaloperatingguidelines 261d3ca1e3d229bf1…",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "MD",
-      "city": "Baltimore",
-      "x": 807,
-      "y": 242,
-      "count": 3,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "MD Protocols 2026",
-          "count": 1
-        },
-        {
-          "title": "MD Medical Protocols 2026 Hyperlinked",
-          "count": 1
-        },
-        {
-          "title": "MD Medical Protocols 2025 Print",
           "count": 1
         }
       ]
@@ -681,6 +682,24 @@
         },
         {
           "title": "6a070791b4b80bc675b07bc3 20250701i Protocols compressed copy…",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "WI",
+      "city": "Milwaukee",
+      "x": 611,
+      "y": 187,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "2025 Mercyhealth Pre Hospital Medical Guidelines for Wisconsi…",
+          "count": 1
+        },
+        {
+          "title": "Aurora South WI EMS 2026 Pre Hospital Guidelines 4.1.26",
           "count": 1
         }
       ]
@@ -988,6 +1007,20 @@
       ]
     },
     {
+      "state": "LA",
+      "city": "New Orleans",
+      "x": 594,
+      "y": 479,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "rope 2024 final 05 02 24",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "FL",
       "city": "Bradenton",
       "x": 744,
@@ -1067,20 +1100,6 @@
       "topProtocols": [
         {
           "title": "aurora south wi ems 2024 pre hospital guidelines",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "WI",
-      "city": "Milwaukee",
-      "x": 611,
-      "y": 187,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "Aurora South WI EMS 2026 Pre Hospital Guidelines 4.1.26",
           "count": 1
         }
       ]
