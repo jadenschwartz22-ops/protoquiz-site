@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-28T12:07:59.653Z",
-  "totalUploads": 326,
-  "distinctProtocols": 253,
-  "activeStudiers": 222,
-  "pagesProcessed": 46787,
+  "generatedAt": "2026-07-28T18:08:08.164Z",
+  "totalUploads": 328,
+  "distinctProtocols": 255,
+  "activeStudiers": 224,
+  "pagesProcessed": 47329,
   "statesRepresented": 41,
   "countriesRepresented": 1,
   "internationalUploads": 1,
@@ -16,7 +16,7 @@
     "NY": 10,
     "WY": 10,
     "CT": 9,
-    "WA": 7,
+    "WA": 8,
     "IL": 7,
     "MA": 7,
     "AZ": 7,
@@ -31,6 +31,7 @@
     "OK": 3,
     "SC": 3,
     "VA": 3,
+    "KY": 2,
     "NE": 2,
     "AL": 2,
     "OH": 2,
@@ -38,7 +39,6 @@
     "AR": 2,
     "NH": 2,
     "NJ": 2,
-    "KY": 1,
     "MO": 1,
     "DE": 1,
     "VT": 1,
@@ -497,6 +497,28 @@
       ]
     },
     {
+      "state": "WA",
+      "city": "Seattle",
+      "x": 91,
+      "y": 38,
+      "count": 3,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "Pend Oreille County Protocols 2022",
+          "count": 1
+        },
+        {
+          "title": "EMS Stephen’s County Protocols",
+          "count": 1
+        },
+        {
+          "title": "ABFY County Protocols 2025",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "TX",
       "city": "Austin",
       "x": 448,
@@ -564,24 +586,6 @@
         },
         {
           "title": "EMS Model Protocols 2024",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "WA",
-      "city": "Seattle",
-      "x": 91,
-      "y": 38,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "Pend Oreille County Protocols 2022",
-          "count": 1
-        },
-        {
-          "title": "ABFY County Protocols 2025",
           "count": 1
         }
       ]
@@ -1282,6 +1286,20 @@
       "topProtocols": [
         {
           "title": "2026 PROTOCOLS",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "KY",
+      "city": "Fern Creek",
+      "x": 659,
+      "y": 291,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "FCFEMS PROTOCOLS 2026",
           "count": 1
         }
       ]
