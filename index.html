@@ -1211,13 +1211,18 @@
       .reach-ticker .tick-belt{gap:32px;}
       .reach .wrap{padding:0 16px;}
       .reach-stage{padding:0;min-height:280px;}
-      /* Pump SVG label sizes to compensate for downscaled viewBox on phones */
-      .reach-svg .rl{font-size:calc(24px * var(--rz));letter-spacing:.02em;stroke-width:calc(6px * var(--rz));}
-      .reach-svg .rl-hot{font-size:calc(30px * var(--rz));}
-      .reach-svg .rl-warm{font-size:calc(26px * var(--rz));}
-      .reach-svg .rl-tiny{font-size:calc(20px * var(--rz));}
-      /* Hide tiny single-upload labels on mobile by default; reveal on deep zoom */
-      .reach-svg .rl-tiny.is-suppressed{display:none;}
+      /* Pump SVG label sizes to compensate for downscaled viewBox on phones.
+         Kept deliberately tight: the packed-with-places look IS the point (it's
+         the proof that real medics everywhere upload), so labels are sized just
+         big enough to read at arm's length and no bigger. Every extra px here
+         costs several visible city names — label area, not font size, is what
+         the placer trades against. */
+      .reach-svg .rl{font-size:calc(17px * var(--rz));letter-spacing:.02em;stroke-width:calc(5px * var(--rz));}
+      .reach-svg .rl-hot{font-size:calc(22px * var(--rz));}
+      .reach-svg .rl-warm{font-size:calc(19px * var(--rz));}
+      .reach-svg .rl-tiny{font-size:calc(15px * var(--rz));}
+      /* Tiny single-upload labels stay visible on phones — they're most of the
+         density. The placer still drops any that genuinely cannot fit. */
       .reach-svg.is-deepzoom .rl-tiny.is-suppressed{display:inline;}
       /* Bigger dots for tap-ability */
       .reach-svg .locale circle.core{r:3.5;}
@@ -1227,9 +1232,13 @@
       .reach-svg .locale.warm circle.halo{r:11;}
       .reach-svg .locale.hot circle.halo{r:18;stroke-width:1.6;}
       /* Bigger zoom buttons on touch */
-      .reach-zoom-ui{top:8px;right:8px;gap:6px;}
-      .reach-zoom-ui button{width:44px;height:44px;font-size:22px;}
-      .reach-zoom-ui button.reach-zoom-reset{font-size:11px;}
+      /* Bottom-LEFT on phones: the map fills the width here, so the old
+         top-right position sat squarely on the Northeast — burying Newark,
+         Baltimore, Richmond, Burlington and Charlotte, which is the densest
+         upload cluster on the map. Bottom-left is open ocean/Pacific. */
+      .reach-zoom-ui{top:auto;bottom:8px;right:auto;left:8px;gap:6px;flex-direction:row;}
+      .reach-zoom-ui button{width:38px;height:38px;font-size:20px;}
+      .reach-zoom-ui button.reach-zoom-reset{width:auto;padding:0 10px;font-size:10px;}
     }
     @media (prefers-reduced-motion: reduce){
       .reach-ticker .tick-belt{animation:none;}
@@ -3338,11 +3347,13 @@
           // zoom. Highest-count labels are placed first so they win the space.
           {
             const vb = svg.getAttribute('viewBox').split(/\s+/).map(Number);
-            // Require more empty space between labels on smaller screens, so
-            // crowded ones collapse to dots (revealed on zoom) instead of packing
-            // edge-to-edge. Phones get the most breathing room.
+            // Phones used to demand 22 user-units of breathing room vs desktop's 2
+            // — an 11x stricter collision test that, combined with larger mobile
+            // type, suppressed ~35 of ~55 city names. The dense, packed look is the
+            // point (it reads as "medics everywhere are uploading"), so phones now
+            // pack nearly as tight as desktop; only true overlaps get dropped.
             const w = window.innerWidth;
-            const pad = w <= 560 ? 22 : w <= 880 ? 12 : 2;
+            const pad = w <= 560 ? 3 : w <= 880 ? 3 : 2;
             placeReachLabels(labelItems, vb, { pad });
           }
           // Move tooltip to end so it renders on top
