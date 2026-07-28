@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-07-28T00:08:13.940Z",
-  "totalUploads": 323,
-  "distinctProtocols": 250,
-  "activeStudiers": 219,
-  "pagesProcessed": 45632,
+  "generatedAt": "2026-07-28T06:07:59.063Z",
+  "totalUploads": 325,
+  "distinctProtocols": 252,
+  "activeStudiers": 221,
+  "pagesProcessed": 46393,
   "statesRepresented": 41,
   "countriesRepresented": 1,
   "internationalUploads": 1,
   "byState": {
-    "MI": 29,
+    "MI": 30,
     "CO": 22,
     "TX": 14,
     "CA": 14,
@@ -24,10 +24,10 @@
     "TN": 6,
     "FL": 5,
     "NV": 5,
+    "GA": 5,
     "UT": 4,
     "MD": 4,
     "WI": 4,
-    "GA": 4,
     "SC": 3,
     "VA": 3,
     "OK": 2,
@@ -59,8 +59,8 @@
       "city": "Detroit",
       "x": 690,
       "y": 194,
-      "count": 29,
-      "tier": "warm",
+      "count": 30,
+      "tier": "hot",
       "topProtocols": [
         {
           "title": "HEMS State Protocol Suite may 2026",
@@ -373,6 +373,28 @@
       ]
     },
     {
+      "state": "GA",
+      "city": "Atlanta",
+      "x": 692,
+      "y": 386,
+      "count": 4,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "Whole Protocol V 3807012026150232 (1)",
+          "count": 1
+        },
+        {
+          "title": "2024 Scope of Practice 260123",
+          "count": 1
+        },
+        {
+          "title": "FCEMS COG Jan 26",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "NC",
       "city": "Charlotte",
       "x": 751,
@@ -471,28 +493,6 @@
         {
           "title": "CFD Protocols",
           "count": 3
-        }
-      ]
-    },
-    {
-      "state": "GA",
-      "city": "Atlanta",
-      "x": 692,
-      "y": 386,
-      "count": 3,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "2024 Scope of Practice 260123",
-          "count": 1
-        },
-        {
-          "title": "FCEMS COG Jan 26",
-          "count": 1
-        },
-        {
-          "title": "CA Protocols 2025 October UPDATED",
-          "count": 1
         }
       ]
     },
