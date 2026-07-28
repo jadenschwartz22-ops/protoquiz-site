@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-28T06:07:59.063Z",
-  "totalUploads": 325,
-  "distinctProtocols": 252,
-  "activeStudiers": 221,
-  "pagesProcessed": 46393,
+  "generatedAt": "2026-07-28T12:07:59.653Z",
+  "totalUploads": 326,
+  "distinctProtocols": 253,
+  "activeStudiers": 222,
+  "pagesProcessed": 46787,
   "statesRepresented": 41,
   "countriesRepresented": 1,
   "internationalUploads": 1,
@@ -28,9 +28,9 @@
     "UT": 4,
     "MD": 4,
     "WI": 4,
+    "OK": 3,
     "SC": 3,
     "VA": 3,
-    "OK": 2,
     "NE": 2,
     "AL": 2,
     "OH": 2,
@@ -1268,6 +1268,20 @@
       "topProtocols": [
         {
           "title": "yrmc ems guidelines 2",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "OK",
+      "city": "Muskogee",
+      "x": 492,
+      "y": 354,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "2026 PROTOCOLS",
           "count": 1
         }
       ]
