@@ -3202,7 +3202,14 @@
         if (ts && r.generatedAt) {
           const d = new Date(r.generatedAt);
           const last = d.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
-          ts.textContent = `Live from ProtoQuiz uploads. Updates every day. Last update ${last}.`;
+          // "Updates every day" is a PROMISE, and the refresh job runs on hardware
+          // that can be off (moved, unplugged, offline). Only make the claim while
+          // the data actually backs it up; past ~2 days, just state the fact. The
+          // date is derived from generatedAt either way, so it's never wrong.
+          const staleDays = (Date.now() - d.getTime()) / 86400000;
+          ts.textContent = staleDays <= 2
+            ? `Live from ProtoQuiz uploads. Updates every day. Last update ${last}.`
+            : `Live from ProtoQuiz uploads. Last update ${last}.`;
         }
 
         // Render dots + labels dynamically if the data is there
