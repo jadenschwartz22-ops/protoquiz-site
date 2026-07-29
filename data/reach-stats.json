@@ -1,27 +1,27 @@
 {
-  "generatedAt": "2026-07-29T00:08:30.093Z",
-  "totalUploads": 341,
-  "distinctProtocols": 266,
-  "activeStudiers": 226,
-  "pagesProcessed": 48501,
+  "generatedAt": "2026-07-29T06:08:05.061Z",
+  "totalUploads": 345,
+  "distinctProtocols": 268,
+  "activeStudiers": 230,
+  "pagesProcessed": 49210,
   "statesRepresented": 41,
   "countriesRepresented": 1,
   "internationalUploads": 1,
   "byState": {
     "MI": 30,
     "CO": 22,
+    "CA": 15,
     "TX": 14,
-    "CA": 14,
-    "PA": 11,
+    "PA": 12,
     "VA": 11,
     "NY": 10,
     "WY": 10,
     "CT": 9,
     "WA": 8,
+    "NC": 7,
     "IL": 7,
     "MA": 7,
     "AZ": 7,
-    "NC": 6,
     "TN": 6,
     "FL": 5,
     "NV": 5,
@@ -31,9 +31,9 @@
     "WI": 4,
     "OK": 3,
     "SC": 3,
+    "NE": 3,
     "AL": 3,
     "KY": 2,
-    "NE": 2,
     "OH": 2,
     "IN": 2,
     "AR": 2,
@@ -103,12 +103,12 @@
       "city": "Philadelphia",
       "x": 828,
       "y": 223,
-      "count": 11,
+      "count": 12,
       "tier": "warm",
       "topProtocols": [
         {
           "title": "2023v1 2 PA ALS Protocols",
-          "count": 3
+          "count": 4
         },
         {
           "title": "2023v1 2 pa bls protocols",
@@ -191,7 +191,7 @@
       "city": "Los Angeles",
       "x": 80,
       "y": 345,
-      "count": 7,
+      "count": 8,
       "tier": "warm",
       "topProtocols": [
         {
@@ -285,6 +285,28 @@
         {
           "title": "ems protocol manual",
           "count": 5
+        }
+      ]
+    },
+    {
+      "state": "NC",
+      "city": "Charlotte",
+      "x": 751,
+      "y": 344,
+      "count": 5,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "BCEMS Protocols",
+          "count": 1
+        },
+        {
+          "title": "19 +2023+NCCEP+and+NCMB+List+Approved+Medications",
+          "count": 1
+        },
+        {
+          "title": "2026CJPPROTOCOLS (1)",
+          "count": 1
         }
       ]
     },
@@ -417,28 +439,6 @@
       ]
     },
     {
-      "state": "NC",
-      "city": "Charlotte",
-      "x": 751,
-      "y": 344,
-      "count": 4,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "BCEMS Protocols",
-          "count": 1
-        },
-        {
-          "title": "19 +2023+NCCEP+and+NCMB+List+Approved+Medications",
-          "count": 1
-        },
-        {
-          "title": "NCCEP 2025 Protocols",
-          "count": 1
-        }
-      ]
-    },
-    {
       "state": "CO",
       "city": "Boulder",
       "x": 326,
@@ -500,6 +500,24 @@
         },
         {
           "title": "kershawcountyemsclinicaloperatingguidelines 261d3ca1e3d229bf1…",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "NE",
+      "city": "Omaha",
+      "x": 482,
+      "y": 232,
+      "count": 3,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "EMS Model Protocols",
+          "count": 2
+        },
+        {
+          "title": "EMS Model Protocols 2024",
           "count": 1
         }
       ]
@@ -626,24 +644,6 @@
         },
         {
           "title": "2026 Thurston Co Protocol Draft",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "NE",
-      "city": "Omaha",
-      "x": 482,
-      "y": 232,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "EMS Model Protocols",
-          "count": 1
-        },
-        {
-          "title": "EMS Model Protocols 2024",
           "count": 1
         }
       ]
