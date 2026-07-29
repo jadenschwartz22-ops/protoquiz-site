@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-29T12:08:03.480Z",
-  "totalUploads": 345,
-  "distinctProtocols": 268,
-  "activeStudiers": 230,
-  "pagesProcessed": 49210,
+  "generatedAt": "2026-07-29T18:08:08.482Z",
+  "totalUploads": 346,
+  "distinctProtocols": 269,
+  "activeStudiers": 231,
+  "pagesProcessed": 49698,
   "statesRepresented": 41,
   "countriesRepresented": 1,
   "internationalUploads": 1,
@@ -17,8 +17,8 @@
     "NY": 10,
     "WY": 10,
     "CT": 9,
+    "NC": 8,
     "WA": 8,
-    "NC": 7,
     "IL": 7,
     "MA": 7,
     "AZ": 7,
@@ -253,6 +253,28 @@
       ]
     },
     {
+      "state": "NC",
+      "city": "Charlotte",
+      "x": 751,
+      "y": 344,
+      "count": 6,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "MEDIC ALS",
+          "count": 1
+        },
+        {
+          "title": "BCEMS Protocols",
+          "count": 1
+        },
+        {
+          "title": "19 +2023+NCCEP+and+NCMB+List+Approved+Medications",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "AZ",
       "city": "Phoenix",
       "x": 188,
@@ -285,28 +307,6 @@
         {
           "title": "ems protocol manual",
           "count": 5
-        }
-      ]
-    },
-    {
-      "state": "NC",
-      "city": "Charlotte",
-      "x": 751,
-      "y": 344,
-      "count": 5,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "BCEMS Protocols",
-          "count": 1
-        },
-        {
-          "title": "19 +2023+NCCEP+and+NCMB+List+Approved+Medications",
-          "count": 1
-        },
-        {
-          "title": "2026CJPPROTOCOLS (1)",
-          "count": 1
         }
       ]
     },
