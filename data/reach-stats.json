@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-28T18:08:08.164Z",
-  "totalUploads": 328,
-  "distinctProtocols": 255,
-  "activeStudiers": 224,
-  "pagesProcessed": 47329,
+  "generatedAt": "2026-07-29T00:08:30.093Z",
+  "totalUploads": 341,
+  "distinctProtocols": 266,
+  "activeStudiers": 226,
+  "pagesProcessed": 48501,
   "statesRepresented": 41,
   "countriesRepresented": 1,
   "internationalUploads": 1,
@@ -13,6 +13,7 @@
     "TX": 14,
     "CA": 14,
     "PA": 11,
+    "VA": 11,
     "NY": 10,
     "WY": 10,
     "CT": 9,
@@ -30,10 +31,9 @@
     "WI": 4,
     "OK": 3,
     "SC": 3,
-    "VA": 3,
+    "AL": 3,
     "KY": 2,
     "NE": 2,
-    "AL": 2,
     "OH": 2,
     "IN": 2,
     "AR": 2,
@@ -204,6 +204,28 @@
         },
         {
           "title": "p14 p14010 2",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "VA",
+      "city": "Richmond",
+      "x": 801,
+      "y": 283,
+      "count": 7,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "Section 7 Toxicological",
+          "count": 1
+        },
+        {
+          "title": "Section 9 Peds Medical Revised Racemic Epi",
+          "count": 1
+        },
+        {
+          "title": "Section 8 Pediatric Cardiac",
           "count": 1
         }
       ]
@@ -519,6 +541,42 @@
       ]
     },
     {
+      "state": "AL",
+      "city": "Birmingham",
+      "x": 649,
+      "y": 396,
+      "count": 3,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "master alabama protocols",
+          "count": 2
+        },
+        {
+          "title": "master.alabama.protocols.11th.edition.07012025",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "VA",
+      "city": "Henrico",
+      "x": 799,
+      "y": 282,
+      "count": 3,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "Section 1 Introduction REV072021 (1)",
+          "count": 2
+        },
+        {
+          "title": "ODEMSA Protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "TX",
       "city": "Austin",
       "x": 448,
@@ -609,24 +667,6 @@
       ]
     },
     {
-      "state": "AL",
-      "city": "Birmingham",
-      "x": 649,
-      "y": 396,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "master alabama protocols",
-          "count": 1
-        },
-        {
-          "title": "master.alabama.protocols.11th.edition.07012025",
-          "count": 1
-        }
-      ]
-    },
-    {
       "state": "AR",
       "city": "Little Rock",
       "x": 547,
@@ -669,24 +709,6 @@
         {
           "title": "NEWJERSEYEMSCLINICALPRACTICEPROTOCOLS GUIDELINES FINAL8.21.20…",
           "count": 2
-        }
-      ]
-    },
-    {
-      "state": "VA",
-      "city": "Richmond",
-      "x": 801,
-      "y": 283,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "ODEMSA 2018 Patient Care Protocols",
-          "count": 1
-        },
-        {
-          "title": "6a070791b4b80bc675b07bc3 20250701i Protocols compressed copy…",
-          "count": 1
         }
       ]
     },
