@@ -81,7 +81,7 @@
     (async () => {
       try {
         const slug = window.location.pathname.split('/').pop().replace('.html', '');
-        const res = await fetch('https://ems-router.vercel.app/api/blog-views', {
+        const res = await fetch('https://api.protoquiz.com/api/blog-views', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ slug })

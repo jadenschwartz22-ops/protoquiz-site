@@ -6,7 +6,7 @@
 
 import fetch from 'node-fetch';
 
-const API_URL = 'https://ems-router.vercel.app/api/blog-views?summary=true';
+const API_URL = 'https://api.protoquiz.com/api/blog-views?summary=true';
 
 console.log('📊 Fetching blog view statistics...\n');
 

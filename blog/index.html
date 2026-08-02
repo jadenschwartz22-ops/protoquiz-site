@@ -530,7 +530,7 @@
       try {
         const m = (post.getAttribute('onclick') || '').match(/posts\/([^']+)\.html/);
         if (!m) return;
-        const res = await fetch('https://ems-router.vercel.app/api/blog-views?slug=' + encodeURIComponent(m[1]));
+        const res = await fetch('https://api.protoquiz.com/api/blog-views?slug=' + encodeURIComponent(m[1]));
         const data = await res.json();
         if (typeof data.count !== 'number') return;
         const meta = post.querySelector('.meta-right');
