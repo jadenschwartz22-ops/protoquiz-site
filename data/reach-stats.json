@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-03T12:08:05.566Z",
-  "totalUploads": 379,
-  "distinctProtocols": 290,
-  "activeStudiers": 259,
-  "pagesProcessed": 58427,
+  "generatedAt": "2026-08-03T18:08:05.092Z",
+  "totalUploads": 381,
+  "distinctProtocols": 292,
+  "activeStudiers": 261,
+  "pagesProcessed": 58795,
   "statesRepresented": 42,
   "countriesRepresented": 1,
   "internationalUploads": 1,
@@ -11,7 +11,7 @@
     "MI": 31,
     "CO": 24,
     "TX": 19,
-    "CA": 16,
+    "CA": 17,
     "NY": 14,
     "PA": 13,
     "VA": 12,
@@ -30,8 +30,8 @@
     "WI": 5,
     "KY": 4,
     "UT": 4,
+    "SC": 4,
     "OK": 3,
-    "SC": 3,
     "NE": 3,
     "AL": 3,
     "MN": 2,
@@ -382,6 +382,28 @@
       ]
     },
     {
+      "state": "SC",
+      "city": "Columbia",
+      "x": 752,
+      "y": 372,
+      "count": 4,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "2025 Patient Care Guidelines PDF",
+          "count": 1
+        },
+        {
+          "title": "DCEMS 2025 Guidelines Rev 4",
+          "count": 1
+        },
+        {
+          "title": "612",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "TN",
       "city": "Nashville",
       "x": 643,
@@ -483,28 +505,6 @@
         },
         {
           "title": "Safari",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "SC",
-      "city": "Columbia",
-      "x": 752,
-      "y": 372,
-      "count": 3,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "2025 Patient Care Guidelines PDF",
-          "count": 1
-        },
-        {
-          "title": "DCEMS 2025 Guidelines Rev 4",
-          "count": 1
-        },
-        {
-          "title": "kershawcountyemsclinicaloperatingguidelines 261d3ca1e3d229bf1…",
           "count": 1
         }
       ]
@@ -812,6 +812,24 @@
       ]
     },
     {
+      "state": "CA",
+      "city": "Rocklin",
+      "x": 55,
+      "y": 230,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "SSV Field Manual",
+          "count": 1
+        },
+        {
+          "title": "Field Manual 79",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "FL",
       "city": "Palm Beach Gardens",
       "x": 794,
@@ -1105,20 +1123,6 @@
       "topProtocols": [
         {
           "title": "2026:7 manatee ems protocols",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CA",
-      "city": "Rocklin",
-      "x": 55,
-      "y": 230,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "SSV Field Manual",
           "count": 1
         }
       ]
