@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-03T00:08:00.990Z",
+  "generatedAt": "2026-08-03T06:07:59.568Z",
   "totalUploads": 379,
   "distinctProtocols": 290,
   "activeStudiers": 259,
@@ -27,9 +27,9 @@
     "TN": 6,
     "FL": 6,
     "GA": 5,
+    "WI": 5,
     "KY": 4,
     "UT": 4,
-    "WI": 4,
     "OK": 3,
     "SC": 3,
     "NE": 3,
@@ -582,6 +582,28 @@
       ]
     },
     {
+      "state": "WI",
+      "city": "Milwaukee",
+      "x": 611,
+      "y": 187,
+      "count": 3,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "2025 Mercyhealth Pre Hospital Medical Guidelines for Wisconsi…",
+          "count": 1
+        },
+        {
+          "title": "MEP SSM Protocols 2026",
+          "count": 1
+        },
+        {
+          "title": "Aurora South WI EMS 2026 Pre Hospital Guidelines 4.1.26",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "VA",
       "city": "Henrico",
       "x": 799,
@@ -768,24 +790,6 @@
         {
           "title": "NEWJERSEYEMSCLINICALPRACTICEPROTOCOLS GUIDELINES FINAL8.21.20…",
           "count": 2
-        }
-      ]
-    },
-    {
-      "state": "WI",
-      "city": "Milwaukee",
-      "x": 611,
-      "y": 187,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "2025 Mercyhealth Pre Hospital Medical Guidelines for Wisconsi…",
-          "count": 1
-        },
-        {
-          "title": "Aurora South WI EMS 2026 Pre Hospital Guidelines 4.1.26",
-          "count": 1
         }
       ]
     },
