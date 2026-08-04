@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-04T00:08:00.115Z",
-  "totalUploads": 382,
-  "distinctProtocols": 293,
-  "activeStudiers": 262,
-  "pagesProcessed": 59058,
+  "generatedAt": "2026-08-04T06:07:59.524Z",
+  "totalUploads": 384,
+  "distinctProtocols": 295,
+  "activeStudiers": 264,
+  "pagesProcessed": 59169,
   "statesRepresented": 42,
   "countriesRepresented": 1,
   "internationalUploads": 1,
@@ -11,7 +11,7 @@
     "MI": 31,
     "CO": 24,
     "TX": 19,
-    "CA": 17,
+    "CA": 18,
     "NY": 14,
     "PA": 13,
     "VA": 12,
@@ -26,10 +26,10 @@
     "AZ": 7,
     "TN": 6,
     "FL": 6,
+    "UT": 5,
     "GA": 5,
     "WI": 5,
     "KY": 4,
-    "UT": 4,
     "SC": 4,
     "OK": 3,
     "NE": 3,
@@ -382,6 +382,28 @@
       ]
     },
     {
+      "state": "UT",
+      "city": "Salt Lake City",
+      "x": 218,
+      "y": 221,
+      "count": 4,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "2023 Utah EMS Protocol Guidelines Final 4.10.2024",
+          "count": 1
+        },
+        {
+          "title": "2025 Utah EMS Protocol Guidelines 3",
+          "count": 1
+        },
+        {
+          "title": "2026 SL Co EMS Protocols 7.1.2026",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "SC",
       "city": "Columbia",
       "x": 752,
@@ -483,28 +505,6 @@
         },
         {
           "title": "BoCo Protocols Oct 2025 (1)",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "UT",
-      "city": "Salt Lake City",
-      "x": 218,
-      "y": 221,
-      "count": 3,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "2023 Utah EMS Protocol Guidelines Final 4.10.2024",
-          "count": 1
-        },
-        {
-          "title": "2025 Utah EMS Protocol Guidelines 3",
-          "count": 1
-        },
-        {
-          "title": "Safari",
           "count": 1
         }
       ]
@@ -825,6 +825,24 @@
         },
         {
           "title": "Field Manual 79",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "CA",
+      "city": "Sacramento",
+      "x": 50,
+      "y": 233,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "8001.21 Allergic Reaction Anaphylaxis",
+          "count": 1
+        },
+        {
+          "title": "PP 8001 Allergic Reaction Anaphylaxis 1",
           "count": 1
         }
       ]
@@ -1225,20 +1243,6 @@
       "topProtocols": [
         {
           "title": "MFDESNAParamedicFormulary",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CA",
-      "city": "Sacramento",
-      "x": 50,
-      "y": 233,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "PP 8001 Allergic Reaction Anaphylaxis 1",
           "count": 1
         }
       ]
