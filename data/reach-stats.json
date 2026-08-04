@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-03T18:08:05.092Z",
-  "totalUploads": 381,
-  "distinctProtocols": 292,
-  "activeStudiers": 261,
-  "pagesProcessed": 58795,
+  "generatedAt": "2026-08-04T00:08:00.115Z",
+  "totalUploads": 382,
+  "distinctProtocols": 293,
+  "activeStudiers": 262,
+  "pagesProcessed": 59058,
   "statesRepresented": 42,
   "countriesRepresented": 1,
   "internationalUploads": 1,
@@ -42,14 +42,14 @@
     "AR": 2,
     "NH": 2,
     "NJ": 2,
+    "WV": 2,
     "MO": 1,
     "LA": 1,
     "DC": 1,
     "ID": 1,
     "IA": 1,
     "OR": 1,
-    "RI": 1,
-    "WV": 1
+    "RI": 1
   },
   "byCountry": {
     "CA": 1
@@ -830,6 +830,24 @@
       ]
     },
     {
+      "state": "WV",
+      "city": "Charleston",
+      "x": 726,
+      "y": 278,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "2026 Protocol Booklet Final April 2026 INTERACTIVE",
+          "count": 1
+        },
+        {
+          "title": "WV Protocols 2025",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "FL",
       "city": "Palm Beach Gardens",
       "x": 794,
@@ -1319,20 +1337,6 @@
       "topProtocols": [
         {
           "title": "WCEMS Protocol Master 2026.1 Study Draft",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "WV",
-      "city": "Charleston",
-      "x": 726,
-      "y": 278,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "WV Protocols 2025",
           "count": 1
         }
       ]
