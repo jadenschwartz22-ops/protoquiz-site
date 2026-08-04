@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-04T12:08:00.456Z",
-  "totalUploads": 384,
-  "distinctProtocols": 295,
-  "activeStudiers": 264,
-  "pagesProcessed": 59169,
+  "generatedAt": "2026-08-04T18:08:01.496Z",
+  "totalUploads": 387,
+  "distinctProtocols": 297,
+  "activeStudiers": 267,
+  "pagesProcessed": 60094,
   "statesRepresented": 42,
   "countriesRepresented": 1,
   "internationalUploads": 1,
@@ -15,7 +15,7 @@
     "NY": 14,
     "PA": 13,
     "VA": 12,
-    "NC": 10,
+    "NC": 11,
     "WY": 10,
     "CT": 9,
     "WA": 8,
@@ -254,6 +254,28 @@
       ]
     },
     {
+      "state": "NC",
+      "city": "Charlotte",
+      "x": 751,
+      "y": 344,
+      "count": 8,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "MEDIC ALS",
+          "count": 1
+        },
+        {
+          "title": "BCEMS Protocols",
+          "count": 1
+        },
+        {
+          "title": "2025 2026 FirstHealth EMS System Protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "MA",
       "city": "Boston",
       "x": 881,
@@ -293,28 +315,6 @@
         },
         {
           "title": "Section 8 Pediatric Cardiac",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "NC",
-      "city": "Charlotte",
-      "x": 751,
-      "y": 344,
-      "count": 7,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "MEDIC ALS",
-          "count": 1
-        },
-        {
-          "title": "BCEMS Protocols",
-          "count": 1
-        },
-        {
-          "title": "2025 2026 FirstHealth EMS System Protocols",
           "count": 1
         }
       ]
