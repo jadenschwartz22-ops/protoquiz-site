@@ -275,14 +275,25 @@
   /* the book is a STACK — hundreds of pages, not a sheet */
   .ustack { position:relative; }
   .sheet { position:absolute; inset:0; border:1px solid #cfccc3; box-shadow:0 10px 28px rgba(0,0,0,.35); }
-  .sheet.s1 { background:#d9d6cd; transform:rotate(-4deg) translate(-13px,8px); }
-  .sheet.s2 { background:#e0ddd4; transform:rotate(3deg) translate(10px,5px); }
-  .sheet.s3 { background:#eae7df; transform:rotate(-1.6deg) translate(-4px,2px); }
+  .sheet.s1 { background:#d9d6cd; transform:rotate(-5deg) translate(-16px,10px); }
+  .sheet.s2 { background:#e0ddd4; transform:rotate(3.5deg) translate(13px,6px); }
+  .sheet.s3 { background:#eae7df; transform:rotate(-1.8deg) translate(-5px,3px); }
   #bU .ustack[data-r] { transform:translateX(-60px) rotate(-1.5deg); transition:opacity .6s var(--ease), transform .8s var(--ease); }
   #bU.on .ustack { transform:none; }
-  .upain { position:absolute; left:50%; transform:translateX(-50%); bottom:-42px; white-space:nowrap; font-family:var(--mono); font-size:12px; letter-spacing:.16em; color:var(--mut); }
-  .upain b { color:var(--amber); font-weight:700; }
-  .udoc { position:relative; width:310px; background:#f4f2ec; color:#1c1e21; padding:28px 26px 22px; box-shadow:0 18px 50px rgba(0,0,0,.45); overflow:hidden; }
+  .upain { position:absolute; left:50%; transform:translateX(-50%); bottom:-58px; white-space:nowrap; font-family:var(--mono); font-size:13px; letter-spacing:.16em; color:var(--mut); }
+  .upain b { color:var(--amber); font-weight:700; font-size:19px; letter-spacing:.06em; font-variant-numeric:tabular-nums; }
+  /* the ream: stepped solid shadows = visible sheet edges, so the thing reads as a 2-inch slab */
+  .udoc { position:relative; width:310px; background:#f4f2ec; color:#1c1e21; padding:28px 26px 22px; overflow:hidden;
+          box-shadow:0 2px 0 #e2dfd6, 0 4px 0 #cfccc3, 0 6px 0 #e2dfd6, 0 8px 0 #c5c2b9, 0 10px 0 #dcd9d0,
+                     0 12px 0 #bfbcb3, 0 14px 0 #d6d3ca, 0 16px 0 #b8b5ac, 0 18px 0 #cfccc3, 0 20px 0 #aeaba2,
+                     0 34px 60px rgba(0,0,0,.5); }
+  /* pages peel off the stack and fly into the parser while the count runs */
+  .fly { position:absolute; inset:0; background:#f8f6f0; border:1px solid #d8d5cc; opacity:0; pointer-events:none; }
+  #bU.on .fly.f1 { animation:flyoff 1s cubic-bezier(.4,.1,.6,1) 1.05s forwards; }
+  #bU.on .fly.f2 { animation:flyoff 1s cubic-bezier(.4,.1,.6,1) 1.5s forwards; }
+  #bU.on .fly.f3 { animation:flyoff 1s cubic-bezier(.4,.1,.6,1) 1.95s forwards; }
+  #bU.on .fly.f4 { animation:flyoff 1s cubic-bezier(.4,.1,.6,1) 2.4s forwards; }
+  @keyframes flyoff { 0%{opacity:0; transform:none} 14%{opacity:1} 100%{opacity:0; transform:translate(330px,-46px) rotate(16deg) scale(.55)} }
   .udocT { font-weight:700; font-size:17.5px; }
   .udocS { font-family:var(--mono); font-size:10px; letter-spacing:.16em; color:#8a8d93; margin:4px 0 18px; }
   .uline { display:block; height:8px; background:#dcd9d0; margin-bottom:10px; }
@@ -299,7 +310,7 @@
   .uchip .cn { font-size:15px; color:var(--sec); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
   .uchipF { grid-column:1/-1; font-family:var(--mono); font-size:11.5px; letter-spacing:.16em; color:var(--mut); margin-top:5px; opacity:0; transition:opacity .6s var(--ease) 1.6s; }
   #bU.on .uchipF { opacity:1; }
-  .usub { margin-top:58px; font-size:27px; color:var(--sec); }
+  .usub { margin-top:84px; font-size:27px; color:var(--sec); }
   .usub b { color:var(--ink); font-weight:600; }
 
   /* BM mastery — the compounding claim */
@@ -357,9 +368,10 @@
           <div class="udocT">Cedar Ridge Fire Protection District</div>
           <div class="udocS">EMS FIELD PROTOCOLS &middot; 2026 EDITION</div>
           <i class="uline" style="width:92%"></i><i class="uline" style="width:100%"></i><i class="uline" style="width:78%"></i><i class="uline" style="width:96%"></i><i class="uline" style="width:60%"></i><i class="uline" style="width:88%"></i><i class="uline" style="width:70%"></i>
-          <div class="udocF"><span>PDF &middot; 438 PAGES</span><span>AS-IS &middot; NO REFORMATTING</span></div>
+          <div class="udocF"><span>PDF &middot; 438 PAGES</span><span>SENT AS-IS</span></div>
         </div>
-        <div class="upain"><b>438 PAGES</b> &middot; NOBODY STUDIES IT COVER TO COVER</div>
+        <i class="fly f1"></i><i class="fly f2"></i><i class="fly f3"></i><i class="fly f4"></i>
+        <div class="upain"><b><span id="pgN">438</span> PAGES</b> &middot; NOBODY STUDIES IT COVER TO COVER</div>
       </div>
       <div class="umid" data-r style="--d:550ms">
         <div class="uproc">PARSED &middot; INDEXED &middot; QUIZZED</div>
@@ -610,6 +622,7 @@
   var EVENTS = [
     [0,     function(){ go('b0'); cap('01 / 09','TRAIN HOW YOU FIGHT'); }],
     [5500,  function(){ go('bU'); cap('02 / 09','YOUR PROTOCOLS IN, QUIZZES OUT'); }],
+    [6200,  function(){ cnt('#pgN', 438, 1500); }],
     [12800, function(){ go('b2'); cap('03 / 09','ONE PROTOCOL, EVERY SHIFT'); }],
     [14400, function(){ q('#ticks').classList.add('go'); }],
     [18200, function(){ go('b3'); cap('04 / 09','FIVE MINUTES, FIRST TRY'); }],
