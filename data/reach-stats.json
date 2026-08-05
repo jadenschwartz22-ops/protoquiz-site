@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-08-05T06:08:01.864Z",
-  "totalUploads": 393,
-  "distinctProtocols": 301,
-  "activeStudiers": 272,
-  "pagesProcessed": 62274,
+  "generatedAt": "2026-08-05T12:08:04.169Z",
+  "totalUploads": 395,
+  "distinctProtocols": 302,
+  "activeStudiers": 274,
+  "pagesProcessed": 63167,
   "statesRepresented": 42,
   "countriesRepresented": 1,
-  "internationalUploads": 1,
+  "internationalUploads": 2,
   "byState": {
     "MI": 31,
     "CO": 24,
     "TX": 20,
     "CA": 19,
+    "PA": 14,
     "NY": 14,
-    "PA": 13,
     "NC": 13,
     "VA": 12,
     "WY": 10,
@@ -52,7 +52,7 @@
     "RI": 1
   },
   "byCountry": {
-    "CA": 1
+    "CA": 2
   },
   "locales": [
     {
@@ -100,6 +100,28 @@
       ]
     },
     {
+      "state": "PA",
+      "city": "Philadelphia",
+      "x": 828,
+      "y": 223,
+      "count": 14,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "2023v1 2 PA ALS Protocols",
+          "count": 5
+        },
+        {
+          "title": "2023v1 2 PA BLS Protocols",
+          "count": 3
+        },
+        {
+          "title": "2023v1 2 pa bls protocols",
+          "count": 3
+        }
+      ]
+    },
+    {
       "state": "NY",
       "city": "New York",
       "x": 843,
@@ -118,28 +140,6 @@
         {
           "title": "ny collaborative protocols",
           "count": 2
-        }
-      ]
-    },
-    {
-      "state": "PA",
-      "city": "Philadelphia",
-      "x": 828,
-      "y": 223,
-      "count": 13,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "2023v1 2 PA ALS Protocols",
-          "count": 4
-        },
-        {
-          "title": "2023v1 2 PA BLS Protocols",
-          "count": 3
-        },
-        {
-          "title": "2023v1 2 pa bls protocols",
-          "count": 3
         }
       ]
     },
@@ -1511,9 +1511,13 @@
       "city": "Toronto",
       "x": 245,
       "y": 135,
-      "count": 1,
-      "tier": "tiny",
+      "count": 2,
+      "tier": "on",
       "topProtocols": [
+        {
+          "title": "BCEHS clinical practice guidelines",
+          "count": 1
+        },
         {
           "title": "MFR Protocols EMT Feb 02 2017",
           "count": 1
