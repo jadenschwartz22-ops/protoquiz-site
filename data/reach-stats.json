@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-05T18:08:04.037Z",
-  "totalUploads": 398,
-  "distinctProtocols": 305,
-  "activeStudiers": 275,
-  "pagesProcessed": 63821,
+  "generatedAt": "2026-08-05T19:11:27.541Z",
+  "totalUploads": 399,
+  "distinctProtocols": 306,
+  "activeStudiers": 276,
+  "pagesProcessed": 63922,
   "statesRepresented": 42,
   "countriesRepresented": 1,
   "internationalUploads": 2,
@@ -34,9 +34,9 @@
     "OK": 3,
     "NE": 3,
     "AL": 3,
+    "DE": 3,
     "MN": 2,
     "VT": 2,
-    "DE": 2,
     "OH": 2,
     "IN": 2,
     "AR": 2,
@@ -582,6 +582,28 @@
       ]
     },
     {
+      "state": "DE",
+      "city": "Wilmington",
+      "x": 822,
+      "y": 229,
+      "count": 3,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "2ALSFinal2022",
+          "count": 1
+        },
+        {
+          "title": "2024 BLS Protocols Revised September 2024 min",
+          "count": 1
+        },
+        {
+          "title": "Delaware ALS Protocols 2024",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "WI",
       "city": "Milwaukee",
       "x": 611,
@@ -725,24 +747,6 @@
         },
         {
           "title": "eprip 2025 EMS Protocols",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "DE",
-      "city": "Wilmington",
-      "x": 822,
-      "y": 229,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "2ALSFinal2022",
-          "count": 1
-        },
-        {
-          "title": "2024 BLS Protocols Revised September 2024 min",
           "count": 1
         }
       ]
