@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-08-04T18:08:01.496Z",
-  "totalUploads": 387,
-  "distinctProtocols": 297,
-  "activeStudiers": 267,
-  "pagesProcessed": 60094,
+  "generatedAt": "2026-08-05T00:08:03.514Z",
+  "totalUploads": 392,
+  "distinctProtocols": 300,
+  "activeStudiers": 271,
+  "pagesProcessed": 62121,
   "statesRepresented": 42,
   "countriesRepresented": 1,
   "internationalUploads": 1,
   "byState": {
     "MI": 31,
     "CO": 24,
-    "TX": 19,
+    "TX": 20,
     "CA": 18,
     "NY": 14,
     "PA": 13,
+    "NC": 13,
     "VA": 12,
-    "NC": 11,
     "WY": 10,
     "CT": 9,
     "WA": 8,
@@ -42,10 +42,10 @@
     "AR": 2,
     "NH": 2,
     "NJ": 2,
+    "DC": 2,
     "WV": 2,
     "MO": 1,
     "LA": 1,
-    "DC": 1,
     "ID": 1,
     "IA": 1,
     "OR": 1,
@@ -166,6 +166,28 @@
       ]
     },
     {
+      "state": "NC",
+      "city": "Charlotte",
+      "x": 751,
+      "y": 344,
+      "count": 10,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "Haywood County EMS 2026 Protocols Policies and Procedures",
+          "count": 3
+        },
+        {
+          "title": "MEDIC ALS",
+          "count": 1
+        },
+        {
+          "title": "BCEMS Protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "CT",
       "city": "Hartford",
       "x": 858,
@@ -250,28 +272,6 @@
         {
           "title": "MD Medical Protocols 2026 Print",
           "count": 2
-        }
-      ]
-    },
-    {
-      "state": "NC",
-      "city": "Charlotte",
-      "x": 751,
-      "y": 344,
-      "count": 8,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "MEDIC ALS",
-          "count": 1
-        },
-        {
-          "title": "BCEMS Protocols",
-          "count": 1
-        },
-        {
-          "title": "2025 2026 FirstHealth EMS System Protocols",
-          "count": 1
         }
       ]
     },
@@ -830,6 +830,24 @@
       ]
     },
     {
+      "state": "DC",
+      "city": "Washington, D.C.",
+      "x": 801,
+      "y": 252,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "DC Fire & EMS Protocols August 2024",
+          "count": 1
+        },
+        {
+          "title": "2026 DHS EMS Protocols w: Hyperlinks",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "CA",
       "city": "Sacramento",
       "x": 50,
@@ -1164,20 +1182,6 @@
       ]
     },
     {
-      "state": "DC",
-      "city": "Washington, D.C.",
-      "x": 801,
-      "y": 252,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "2026 DHS EMS Protocols w: Hyperlinks",
-          "count": 1
-        }
-      ]
-    },
-    {
       "state": "ID",
       "city": "Boise",
       "x": 162,
@@ -1467,6 +1471,20 @@
       "topProtocols": [
         {
           "title": "EMS Protocols 2025",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "TX",
+      "city": "Southlake",
+      "x": 460,
+      "y": 416,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "2026 Southlake Protocols combined",
           "count": 1
         }
       ]
