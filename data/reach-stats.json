@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-05T00:08:03.514Z",
-  "totalUploads": 392,
-  "distinctProtocols": 300,
-  "activeStudiers": 271,
-  "pagesProcessed": 62121,
+  "generatedAt": "2026-08-05T06:08:01.864Z",
+  "totalUploads": 393,
+  "distinctProtocols": 301,
+  "activeStudiers": 272,
+  "pagesProcessed": 62274,
   "statesRepresented": 42,
   "countriesRepresented": 1,
   "internationalUploads": 1,
@@ -11,7 +11,7 @@
     "MI": 31,
     "CO": 24,
     "TX": 20,
-    "CA": 18,
+    "CA": 19,
     "NY": 14,
     "PA": 13,
     "NC": 13,
@@ -1177,6 +1177,20 @@
       "topProtocols": [
         {
           "title": "2026:7 manatee ems protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "CA",
+      "city": "San Diego",
+      "x": 93,
+      "y": 378,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "2026 2027 Protocol Packet",
           "count": 1
         }
       ]
