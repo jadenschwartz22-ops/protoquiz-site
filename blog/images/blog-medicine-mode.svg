@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Medicine Mode - a living textbook for EMS">
+  <defs><linearGradient id="bgmed" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#120a1e"/><stop offset="1" stop-color="#0a0614"/></linearGradient></defs>
+  <rect width="1600" height="900" fill="url(#bgmed)"/>
+  <!-- open book -->
+  <g transform="translate(800,430)">
+    <path d="M0,-170 C-110,-230 -300,-230 -370,-190 L-370,150 C-300,110 -110,110 0,170 Z" fill="none" stroke="#a78bfa" stroke-width="14" stroke-linejoin="round"/>
+    <path d="M0,-170 C110,-230 300,-230 370,-190 L370,150 C300,110 110,110 0,170 Z" fill="none" stroke="#a78bfa" stroke-width="14" stroke-linejoin="round"/>
+    <line x1="0" y1="-170" x2="0" y2="170" stroke="#a78bfa" stroke-width="10"/>
+    <!-- text lines -->
+    <g stroke="#6d5a96" stroke-width="10" stroke-linecap="round">
+      <line x1="-300" y1="-120" x2="-80" y2="-135"/>
+      <line x1="-300" y1="-60" x2="-80" y2="-75"/>
+      <line x1="-300" y1="0" x2="-80" y2="-15"/>
+      <line x1="80" y1="-135" x2="300" y2="-120"/>
+    </g>
+    <!-- pulse line on right page -->
+    <polyline points="80,-45 140,-55 175,-55 205,-120 235,10 265,-55 300,-45" fill="none" stroke="#c4b5fd" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="800" y="730" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-weight="600" font-size="40" fill="#ddd0ff" letter-spacing="12">MEDICINE MODE</text>
+  <text x="800" y="790" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-weight="500" font-size="26" fill="#8b7bb3" letter-spacing="6">A LIVING TEXTBOOK FOR EMS</text>
+</svg>
