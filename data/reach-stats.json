@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-08-06T01:42:43.587Z",
-  "totalUploads": 401,
-  "distinctProtocols": 307,
-  "activeStudiers": 277,
-  "pagesProcessed": 64290,
+  "generatedAt": "2026-08-06T06:07:46.899Z",
+  "totalUploads": 403,
+  "distinctProtocols": 308,
+  "activeStudiers": 279,
+  "pagesProcessed": 64905,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 4,
   "byState": {
     "MI": 32,
     "CO": 24,
-    "TX": 21,
-    "CA": 19,
+    "TX": 22,
+    "CA": 20,
     "PA": 16,
     "NY": 15,
     "NC": 13,
@@ -190,6 +190,28 @@
       ]
     },
     {
+      "state": "TX",
+      "city": "Houston",
+      "x": 493,
+      "y": 487,
+      "count": 9,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "UTHETEMS Protocols (with Drugs)",
+          "count": 2
+        },
+        {
+          "title": "HCEMS Protocols 9 8 25 Reduced",
+          "count": 1
+        },
+        {
+          "title": "UTHETEMS Protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "CT",
       "city": "Hartford",
       "x": 858,
@@ -229,28 +251,6 @@
         },
         {
           "title": "p14 p14010 2",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "TX",
-      "city": "Houston",
-      "x": 493,
-      "y": 487,
-      "count": 8,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "UTHETEMS Protocols (with Drugs)",
-          "count": 2
-        },
-        {
-          "title": "HCEMS Protocols 9 8 25 Reduced",
-          "count": 1
-        },
-        {
-          "title": "UTHETEMS Protocols",
           "count": 1
         }
       ]
@@ -836,6 +836,20 @@
       ]
     },
     {
+      "state": "CA",
+      "city": "San Diego",
+      "x": 93,
+      "y": 378,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "2026 2027 Protocol Packet",
+          "count": 2
+        }
+      ]
+    },
+    {
       "state": "DC",
       "city": "Washington, D.C.",
       "x": 801,
@@ -1239,20 +1253,6 @@
       "topProtocols": [
         {
           "title": "2026:7 manatee ems protocols",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CA",
-      "city": "San Diego",
-      "x": 93,
-      "y": 378,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "2026 2027 Protocol Packet",
           "count": 1
         }
       ]
