@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-08-06T00:08:05.283Z",
-  "totalUploads": 400,
+  "generatedAt": "2026-08-06T01:42:43.587Z",
+  "totalUploads": 401,
   "distinctProtocols": 307,
   "activeStudiers": 277,
-  "pagesProcessed": 64104,
+  "pagesProcessed": 64290,
   "statesRepresented": 42,
-  "countriesRepresented": 1,
-  "internationalUploads": 2,
+  "countriesRepresented": 3,
+  "internationalUploads": 4,
   "byState": {
     "MI": 32,
     "CO": 24,
     "TX": 21,
     "CA": 19,
     "PA": 16,
-    "NY": 14,
+    "NY": 15,
     "NC": 13,
     "VA": 12,
     "WY": 10,
@@ -52,7 +52,9 @@
     "RI": 1
   },
   "byCountry": {
-    "CA": 2
+    "CA": 2,
+    "AU": 1,
+    "NZ": 1
   },
   "locales": [
     {
@@ -126,16 +128,16 @@
       "city": "New York",
       "x": 843,
       "y": 202,
-      "count": 14,
+      "count": 15,
       "tier": "warm",
       "topProtocols": [
         {
-          "title": "bls protocols V.26.0",
+          "title": "ny collaborative protocols",
           "count": 3
         },
         {
-          "title": "ny collaborative protocols",
-          "count": 2
+          "title": "bls protocols V.26.0",
+          "count": 3
         },
         {
           "title": "ny collaborative protocols",
@@ -542,6 +544,24 @@
       ]
     },
     {
+      "state": "VA",
+      "city": "Henrico",
+      "x": 799,
+      "y": 282,
+      "count": 3,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "Section 1 Introduction REV072021 (1)",
+          "count": 2
+        },
+        {
+          "title": "ODEMSA Protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "WA",
       "city": "Seattle",
       "x": 91,
@@ -621,24 +641,6 @@
         },
         {
           "title": "Aurora South WI EMS 2026 Pre Hospital Guidelines 4.1.26",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "VA",
-      "city": "Henrico",
-      "x": 799,
-      "y": 282,
-      "count": 3,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "Section 1 Introduction REV072021 (1)",
-          "count": 2
-        },
-        {
-          "title": "ODEMSA Protocols",
           "count": 1
         }
       ]
@@ -1046,6 +1048,20 @@
       ]
     },
     {
+      "state": "MN",
+      "city": "Waconia",
+      "x": 515,
+      "y": 152,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "RAS Protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "TN",
       "city": "Pulaski",
       "x": 641,
@@ -1088,6 +1104,20 @@
       ]
     },
     {
+      "state": "KY",
+      "city": "Georgetown",
+      "x": 677,
+      "y": 288,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "GSCEMS 2025 Master 8.2025 (2)",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "OH",
       "city": "Columbus",
       "x": 698,
@@ -1111,6 +1141,20 @@
       "topProtocols": [
         {
           "title": "104 Ready to Print Policy Manual 4000 Series",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "OK",
+      "city": "Muskogee",
+      "x": 492,
+      "y": 354,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "2026 PROTOCOLS",
           "count": 1
         }
       ]
@@ -1172,6 +1216,20 @@
       ]
     },
     {
+      "state": "KY",
+      "city": "Fern Creek",
+      "x": 659,
+      "y": 291,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "FCFEMS PROTOCOLS 2026",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "FL",
       "city": "Bradenton",
       "x": 744,
@@ -1195,6 +1253,90 @@
       "topProtocols": [
         {
           "title": "2026 2027 Protocol Packet",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "CA",
+      "city": "Santa Barbara",
+      "x": 57,
+      "y": 331,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "Policy 533 Compiled Manual 2023 Packet Final (1)",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "TX",
+      "city": "Arlington",
+      "x": 460,
+      "y": 421,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "26 008+New+Protocol+Format",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "VA",
+      "city": "Gloucester",
+      "x": 817,
+      "y": 283,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "regionalpatientprotocolspoliciesandprocedures 79eaedbc7dd1c77…",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "NC",
+      "city": "Rowan",
+      "x": 799,
+      "y": 352,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "EMS Protocols 2025",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "TX",
+      "city": "Southlake",
+      "x": 460,
+      "y": 416,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "2026 Southlake Protocols combined",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "TX",
+      "city": "Galveston",
+      "x": 504,
+      "y": 497,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "2025 Protocols",
           "count": 1
         }
       ]
@@ -1380,162 +1522,63 @@
           "count": 1
         }
       ]
-    },
-    {
-      "state": "MN",
-      "city": "Waconia",
-      "x": 515,
-      "y": 152,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "RAS Protocols",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "KY",
-      "city": "Georgetown",
-      "x": 677,
-      "y": 288,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "GSCEMS 2025 Master 8.2025 (2)",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "OK",
-      "city": "Muskogee",
-      "x": 492,
-      "y": 354,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "2026 PROTOCOLS",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "KY",
-      "city": "Fern Creek",
-      "x": 659,
-      "y": 291,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "FCFEMS PROTOCOLS 2026",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CA",
-      "city": "Santa Barbara",
-      "x": 57,
-      "y": 331,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "Policy 533 Compiled Manual 2023 Packet Final (1)",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "TX",
-      "city": "Arlington",
-      "x": 460,
-      "y": 421,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "26 008+New+Protocol+Format",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "VA",
-      "city": "Gloucester",
-      "x": 817,
-      "y": 283,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "regionalpatientprotocolspoliciesandprocedures 79eaedbc7dd1c77…",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "NC",
-      "city": "Rowan",
-      "x": 799,
-      "y": 352,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "EMS Protocols 2025",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "TX",
-      "city": "Southlake",
-      "x": 460,
-      "y": 416,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "2026 Southlake Protocols combined",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "TX",
-      "city": "Galveston",
-      "x": 504,
-      "y": 497,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "2025 Protocols",
-          "count": 1
-        }
-      ]
     }
   ],
   "internationalLocales": [
     {
       "country": "CA",
       "countryName": "Canada",
-      "city": "Toronto",
-      "x": 245,
-      "y": 135,
-      "count": 2,
-      "tier": "on",
+      "city": "Vancouver, BC",
+      "x": 134,
+      "y": 157,
+      "count": 1,
+      "tier": "tiny",
       "topProtocols": [
         {
           "title": "BCEHS clinical practice guidelines",
           "count": 1
-        },
+        }
+      ]
+    },
+    {
+      "country": "AU",
+      "countryName": "Australia",
+      "city": "Melbourne, VIC",
+      "x": 845,
+      "y": 471,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "avcpg 0",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "country": "NZ",
+      "countryName": "New Zealand",
+      "city": "Auckland",
+      "x": 916,
+      "y": 486,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "clinical procedures and guidelines comprehensive edition",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "country": "CA",
+      "countryName": "Canada",
+      "city": "Calgary, AB",
+      "x": 158,
+      "y": 148,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
         {
           "title": "MFR Protocols EMT Feb 02 2017",
           "count": 1
