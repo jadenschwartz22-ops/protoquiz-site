@@ -268,14 +268,56 @@ function classifyCity(name) {
   return null;
 }
 
-// International (non-US) classifier. Coords for the Wikipedia world map
-// SVG with viewBox 0 0 950 620 (Mercator-ish, hand-tuned per city).
+// World map projection (index.html .reach-svg-world, viewBox 0 0 950 620,
+// Mercator). Constants fitted 2026-08-05 against the map's OWN landmass
+// polygons (contiguous-US bbox = lon [-125,-66.9] lat [49,24.5]); Mexico's
+// polygon independently confirms the fit to ~2px. NEVER hand-place world x/y —
+// add lat/lon (plus a dx/dy nudge only where the simplified map shifts a
+// landmass, e.g. New Zealand).
+function latLonToWorldSVG(lat, lon, dx = 0, dy = 0) {
+  const merc = Math.log(Math.tan(Math.PI/4 + (lat * Math.PI/180) / 2));
+  return {
+    x: Math.round(2.6506*lon + 460.33 + dx),
+    y: Math.round(339.6 - 184.57*merc + dy),
+  };
+}
+
+// International city registry: one canonical entry per region, keyed for both
+// the AI path (country|state) and the filename-regex fallback.
+const INTL_CITIES = {
+  'CA|BC': { country:'CA', countryName:'Canada',      city:'Vancouver, BC', lat:49.2827, lon:-123.1207 },
+  'CA|AB': { country:'CA', countryName:'Canada',      city:'Calgary, AB',   lat:51.0447, lon:-114.0719 },
+  'CA|ON': { country:'CA', countryName:'Canada',      city:'Toronto, ON',   lat:43.6532, lon:-79.3832 },
+  'CA|QC': { country:'CA', countryName:'Canada',      city:'Montreal, QC',  lat:45.5019, lon:-73.5674 },
+  'GB|*':  { country:'GB', countryName:'UK',          city:'London',        lat:51.5074, lon:-0.1278 },
+  'DE|*':  { country:'DE', countryName:'Germany',     city:'Berlin',        lat:52.52,   lon:13.405 },
+  'IE|*':  { country:'IE', countryName:'Ireland',     city:'Dublin',        lat:53.3498, lon:-6.2603 },
+  'FR|*':  { country:'FR', countryName:'France',      city:'Paris',         lat:48.8566, lon:2.3522 },
+  'AU|VIC':{ country:'AU', countryName:'Australia',   city:'Melbourne, VIC',lat:-37.8136,lon:144.9631 },
+  'AU|*':  { country:'AU', countryName:'Australia',   city:'Sydney, NSW',   lat:-33.8688,lon:151.2093 },
+  // Map's simplified NZ sits south/west of true projection; nudge onto land.
+  'NZ|*':  { country:'NZ', countryName:'New Zealand', city:'Auckland',      lat:-36.8485,lon:174.7633, dx:-8, dy:19 },
+  'IN|*':  { country:'IN', countryName:'India',       city:'Delhi',         lat:28.6139, lon:77.209 },
+  'ZA|*':  { country:'ZA', countryName:'South Africa',city:'Cape Town',     lat:-33.9249,lon:18.4241 },
+};
+for (const info of Object.values(INTL_CITIES)) {
+  Object.assign(info, latLonToWorldSVG(info.lat, info.lon, info.dx || 0, info.dy || 0));
+}
+// AI-classified docs resolve country+state -> region entry -> country default.
+function intlCityFor(country, state) {
+  return INTL_CITIES[`${country}|${state}`] || INTL_CITIES[`${country}|*`] || null;
+}
+
+// Filename-regex fallback for legacy docs with no AI classification.
 const INTL_RULES = [
-  [/\bbcehs\b|british[\s_-]?columbia/i, { country:'CA', countryName:'Canada', city:'Vancouver, BC',  x:195, y:195 }],
-  [/\bmoh[\s_-]?als|moh[\s_-]?standards|ontario|toronto|land[\s_-]?ambulance/i, { country:'CA', countryName:'Canada', city:'Toronto, ON',  x:280, y:213 }],
-  [/coll[èe]ge[\s_-]?ellis|chimie[\s_-]?du[\s_-]?vivant|quebec|qu[ée]bec|montreal/i, { country:'CA', countryName:'Canada', city:'Quebec, QC', x:300, y:205 }],
-  [/\bnhs\b|united[\s_-]?kingdom|\bjrcalc\b|glyceryl[\s_-]?trinitrate/i, { country:'GB', countryName:'UK', city:'London',                  x:478, y:160 }],
-  [/bradykardie|bradykardia|deutschland|notarzt|\bdivi\b/i, { country:'DE', countryName:'Germany', city:'Berlin',                          x:515, y:168 }],
+  [/\bbcehs\b|british[\s_-]?columbia/i, INTL_CITIES['CA|BC']],
+  [/\balberta\b/i, INTL_CITIES['CA|AB']],
+  [/\bmoh[\s_-]?als|moh[\s_-]?standards|ontario|toronto|land[\s_-]?ambulance/i, INTL_CITIES['CA|ON']],
+  [/coll[èe]ge[\s_-]?ellis|chimie[\s_-]?du[\s_-]?vivant|quebec|qu[ée]bec|montreal/i, INTL_CITIES['CA|QC']],
+  [/\bnhs\b|united[\s_-]?kingdom|\bjrcalc\b|glyceryl[\s_-]?trinitrate/i, INTL_CITIES['GB|*']],
+  [/bradykardie|bradykardia|deutschland|notarzt|\bdivi\b/i, INTL_CITIES['DE|*']],
+  [/avcpg|ambulance[\s_-]?victoria/i, INTL_CITIES['AU|VIC']],
+  [/clinical-procedures-and-guidelines|st[\s_-]?john[\s_-]?nz/i, INTL_CITIES['NZ|*']],
 ];
 
 function classifyIntl(name) {
@@ -581,19 +623,6 @@ async function getReachStats() {
   const ensureCity = (k) => { if (!cityData.has(k)) cityData.set(k, { count: 0, protocols: new Map() }); return cityData.get(k); };
   const ensureIntl = (k) => { if (!intlData.has(k)) intlData.set(k, { count: 0, protocols: new Map() }); return intlData.get(k); };
 
-  // International country code -> world map coords (rough centroids on 1000x500 viewBox)
-  const INTL_COORDS = {
-    GB: { city: 'London',   x: 478, y: 152, name: 'United Kingdom' },
-    CA: { city: 'Toronto',  x: 245, y: 135, name: 'Canada' },
-    AU: { city: 'Sydney',   x: 850, y: 380, name: 'Australia' },
-    NZ: { city: 'Auckland', x: 905, y: 410, name: 'New Zealand' },
-    IE: { city: 'Dublin',   x: 462, y: 150, name: 'Ireland' },
-    DE: { city: 'Berlin',   x: 510, y: 158, name: 'Germany' },
-    FR: { city: 'Paris',    x: 488, y: 170, name: 'France' },
-    IN: { city: 'Delhi',    x: 670, y: 232, name: 'India' },
-    ZA: { city: 'Cape Town',x: 540, y: 380, name: 'South Africa' },
-  };
-
   // Per-doc loop. AI takes priority; regex is fallback per upload (not per filename).
   for (const d of snap.docs) {
     const x = d.data();
@@ -630,13 +659,13 @@ async function getReachStats() {
     let placed = false;
     if (ai) {
       if (ai.country && ai.country !== 'US') {
-        const meta = INTL_COORDS[ai.country];
+        const meta = intlCityFor(ai.country, ai.state);
         if (meta) {
           const k = `${ai.country}|${meta.city}|${meta.x}|${meta.y}`;
           const e = ensureIntl(k);
           e.count += 1;
           if (name) e.protocols.set(name, (e.protocols.get(name) || 0) + 1);
-          e.countryName = meta.name;
+          e.countryName = meta.countryName;
           countryCounts.set(ai.country, (countryCounts.get(ai.country) || 0) + 1);
           aiHits++; placed = true;
         }
@@ -796,7 +825,7 @@ async function getReachStats() {
     }
   }
 
-  // International locales for world view (viewBox 0 0 1000 500)
+  // International locales for world view (viewBox 0 0 950 620, latLonToWorldSVG)
   const internationalLocales = [...intlData.entries()]
     .map(([k, { count, protocols, countryName }]) => {
       const [country, city, x, y] = k.split('|');
