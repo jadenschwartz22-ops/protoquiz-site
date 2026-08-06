@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-08-05T19:11:27.541Z",
-  "totalUploads": 399,
-  "distinctProtocols": 306,
-  "activeStudiers": 276,
-  "pagesProcessed": 63922,
+  "generatedAt": "2026-08-06T00:08:05.283Z",
+  "totalUploads": 400,
+  "distinctProtocols": 307,
+  "activeStudiers": 277,
+  "pagesProcessed": 64104,
   "statesRepresented": 42,
   "countriesRepresented": 1,
   "internationalUploads": 2,
   "byState": {
     "MI": 32,
     "CO": 24,
-    "TX": 20,
+    "TX": 21,
     "CA": 19,
     "PA": 16,
     "NY": 14,
@@ -1503,6 +1503,20 @@
       "topProtocols": [
         {
           "title": "2026 Southlake Protocols combined",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "TX",
+      "city": "Galveston",
+      "x": 504,
+      "y": 497,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "2025 Protocols",
           "count": 1
         }
       ]
