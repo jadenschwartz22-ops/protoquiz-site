@@ -1,0 +1,2497 @@
+{
+ "docId": "dmemsmd-protocols-january-2026-final-2025-02-02",
+ "protocolName": "dmemsmd-protocols-january-2026-final-2025-02-02",
+ "extractionVersion": "HERO3",
+ "exportedAt": "2026-08-06T02:28:52.358Z",
+ "medsCount": 42,
+ "extractedDrugs": [
+  {
+   "drug": "ACETAMINOPHEN",
+   "indications": [
+    "Mild, moderate, or severe pain",
+    "Fever"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Mild, moderate, or severe pain",
+     "adultDose": "1000 mg",
+     "adultRoute": "PO",
+     "adultRepeat": "See dosing chart for pediatric weight-based doses",
+     "adultNotes": null,
+     "pedsDose": "15 mg/kg",
+     "route": "PO",
+     "repeat": "See dosing chart for pediatric weight-based doses",
+     "pediatricDoses": [
+      {
+       "dose": "15 mg/kg",
+       "route": "PO",
+       "ageRange": "All ages",
+       "notes": "See dosing chart for pediatric weight-based doses"
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      122
+     ]
+    },
+    {
+     "indication": "Mild, moderate, or severe pain",
+     "adultDose": "1000 mg",
+     "adultRoute": "IV",
+     "adultRepeat": "Infused over 15 minutes",
+     "adultNotes": null,
+     "pedsDose": null,
+     "route": "IV",
+     "repeat": "Infused over 15 minutes",
+     "pediatricDoses": [],
+     "standing": true,
+     "sourcePages": [
+      122
+     ]
+    },
+    {
+     "indication": "Fever",
+     "adultDose": null,
+     "adultRoute": "PO",
+     "adultRepeat": "For fever >38.3C/101F",
+     "adultNotes": null,
+     "pedsDose": "15 mg/kg",
+     "route": "PO",
+     "repeat": "For fever >38.3C/101F",
+     "pediatricDoses": [
+      {
+       "dose": "15 mg/kg",
+       "route": "PO",
+       "ageRange": "All ages",
+       "notes": "For fever >38.3C/101F"
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      122
+     ]
+    }
+   ],
+   "contraindications": [
+    "History of allergy to acetaminophen",
+    "Chronic liver disease",
+    "Therapeutic dose of acetaminophen within past 6 hours",
+    "Greater than 3 gm in last 24 hours"
+   ],
+   "adverseEffects": [
+    "Headache",
+    "Nausea",
+    "Vomiting",
+    "Hypersensitivity",
+    "Allergic reactions"
+   ],
+   "mechanism": "Elevates the pain threshold and readjusts hypothalamic temperature-regulatory center.",
+   "baseContact": false
+  },
+  {
+   "drug": "ADENOSINE",
+   "indications": [
+    "Narrow-complex supraventricular tachyarrhythmia"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Narrow-complex supraventricular tachyarrhythmia",
+     "adultDose": "12 mg",
+     "adultRoute": "IV",
+     "adultRepeat": "Adult: Followed by normal saline flush, may repeat 12 mg. Pediatric: Max 6 mg, may repeat 0.2 mg/kg (max 12 mg). Pediatric requires direct verbal order.",
+     "adultNotes": null,
+     "pedsDose": "0.1 mg/kg",
+     "route": "IV",
+     "repeat": "Adult: Followed by normal saline flush, may repeat 12 mg. Pediatric: Max 6 mg, may repeat 0.2 mg/kg (max 12 mg). Pediatric requires direct verbal order.",
+     "pediatricDoses": [
+      {
+       "dose": "0.1 mg/kg",
+       "route": "IV",
+       "ageRange": "All ages",
+       "notes": "Adult: Followed by normal saline flush, may repeat 12 mg. Pediatric: Max 6 mg, may repeat 0.2 mg/kg (max 12 mg). Pediatric requires direct verbal order."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      123
+     ]
+    }
+   ],
+   "contraindications": [
+    "Any irregular tachycardia",
+    "Irregular wide-complex tachycardia",
+    "Heart transplant"
+   ],
+   "adverseEffects": [
+    "Chest pain",
+    "Shortness of breath",
+    "Diaphoresis",
+    "Palpitations",
+    "Lightheadedness"
+   ],
+   "mechanism": "Transiently blocks conduction through the AV node.",
+   "baseContact": false
+  },
+  {
+   "drug": "ALBUTEROL",
+   "indications": [
+    "Bronchospasm",
+    "Hyperkalemia"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Bronchospasm",
+     "adultDose": "2.5 mg",
+     "adultRoute": "Nebulizer",
+     "adultRepeat": "May be repeated twice (total of 3 doses). Continuous neb: 7.5 mg in 9 mL.",
+     "adultNotes": null,
+     "pedsDose": "2.5 mg",
+     "route": "Nebulizer",
+     "repeat": "May be repeated twice (total of 3 doses). Continuous neb: 7.5 mg in 9 mL.",
+     "pediatricDoses": [
+      {
+       "dose": "2.5 mg",
+       "route": "Nebulizer",
+       "ageRange": "All ages",
+       "notes": "May be repeated twice (total of 3 doses). Continuous neb: 7.5 mg in 9 mL."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      125
+     ]
+    },
+    {
+     "indication": "Hyperkalemia",
+     "adultDose": "2.5 mg",
+     "adultRoute": "Nebulizer",
+     "adultRepeat": "May be repeated twice (total of 3 doses). Continuous neb: 7.5 mg in 9 mL.",
+     "adultNotes": null,
+     "pedsDose": "2.5 mg",
+     "route": "Nebulizer",
+     "repeat": "May be repeated twice (total of 3 doses). Continuous neb: 7.5 mg in 9 mL.",
+     "pediatricDoses": [
+      {
+       "dose": "2.5 mg",
+       "route": "Nebulizer",
+       "ageRange": "All ages",
+       "notes": "May be repeated twice (total of 3 doses). Continuous neb: 7.5 mg in 9 mL."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      125
+     ]
+    }
+   ],
+   "contraindications": [
+    "Severe tachycardia"
+   ],
+   "adverseEffects": [
+    "Tachycardia",
+    "Palpitations",
+    "Dysrhythmias"
+   ],
+   "mechanism": "Selective ß-2 adrenergic receptor agonist; bronchodilator and positive chronotrope.",
+   "baseContact": false
+  },
+  {
+   "drug": "AMIODARONE",
+   "indications": [
+    "Pulseless arrest",
+    "Symptomatic VT and undifferentiated wide complex tachycardia with a pulse"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Pulseless arrest",
+     "adultDose": "300 mg",
+     "adultRoute": "IV/IO",
+     "adultRepeat": "Adult: May repeat 150 mg in 3-5 minutes. Pediatric: Contact base for additional doses.",
+     "adultNotes": null,
+     "pedsDose": "5 mg/kg",
+     "route": "IV/IO",
+     "repeat": "Adult: May repeat 150 mg in 3-5 minutes. Pediatric: Contact base for additional doses.",
+     "pediatricDoses": [
+      {
+       "dose": "5 mg/kg",
+       "route": "IV/IO",
+       "ageRange": "All ages",
+       "notes": "Adult: May repeat 150 mg in 3-5 minutes. Pediatric: Contact base for additional doses."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      127
+     ]
+    },
+    {
+     "indication": "Symptomatic VT and undifferentiated wide complex tachycardia with a pulse",
+     "adultDose": "150 mg",
+     "adultRoute": "IV/IO",
+     "adultRepeat": "Infusion over 10 minutes. Requires contact base.",
+     "adultNotes": null,
+     "pedsDose": null,
+     "route": "IV/IO",
+     "repeat": "Infusion over 10 minutes. Requires contact base.",
+     "pediatricDoses": [],
+     "standing": true,
+     "sourcePages": [
+      127
+     ]
+    }
+   ],
+   "contraindications": [
+    "2nd or 3rd degree AV block",
+    "Cardiogenic shock"
+   ],
+   "adverseEffects": [
+    "Hypotension",
+    "Bradycardia"
+   ],
+   "mechanism": "Prolongation of the action potential duration and the refractory period.",
+   "baseContact": false
+  },
+  {
+   "drug": "ONDANSETRON",
+   "indications": [
+    "Nausea and vomiting"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Nausea and vomiting",
+     "adultDose": "4 mg",
+     "adultRoute": "IV/IM/PO/ODT",
+     "adultRepeat": "Adult: May repeat x 1 dose. Pediatric >= 4 years: 4 mg.",
+     "adultNotes": null,
+     "pedsDose": "2 mg",
+     "route": "IV/IM/PO/ODT",
+     "repeat": "Adult: May repeat x 1 dose. Pediatric >= 4 years: 4 mg.",
+     "pediatricDoses": [
+      {
+       "dose": "2 mg",
+       "route": "IV/IM/PO/ODT",
+       "ageRange": "All ages",
+       "notes": "Adult: May repeat x 1 dose. Pediatric >= 4 years: 4 mg."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      128
+     ]
+    }
+   ],
+   "contraindications": [
+    "Should be used with caution in first trimester of pregnancy and should be reserved for only those patients with severe dehydration and intractable vomiting"
+   ],
+   "adverseEffects": [],
+   "mechanism": "Selective serotonin 5-HT3 receptor antagonist.",
+   "baseContact": false
+  },
+  {
+   "drug": "PROMETHAZINE",
+   "indications": [
+    "Nausea and vomiting"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Nausea and vomiting",
+     "adultDose": "12.5 mg",
+     "adultRoute": "IV/IM",
+     "adultRepeat": "Adult: May repeat x 1 dose. Pediatric: Max single dose 12.5 mg.",
+     "adultNotes": null,
+     "pedsDose": "1 mg/kg",
+     "route": "IV/IM",
+     "repeat": "Adult: May repeat x 1 dose. Pediatric: Max single dose 12.5 mg.",
+     "pediatricDoses": [
+      {
+       "dose": "1 mg/kg",
+       "route": "IV/IM",
+       "ageRange": "All ages",
+       "notes": "Adult: May repeat x 1 dose. Pediatric: Max single dose 12.5 mg."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      128
+     ]
+    }
+   ],
+   "contraindications": [
+    "Age < 2 years",
+    "Patients with respiratory or CNS depression",
+    "Allergy to sulfites"
+   ],
+   "adverseEffects": [
+    "Hypotension",
+    "CNS depression",
+    "Altered mental status",
+    "Pain on injection",
+    "Tissue necrosis with extravasation",
+    "Extrapyramidal symptoms",
+    "Urinary retention",
+    "Drowsiness",
+    "Dizziness",
+    "Dry mouth",
+    "Blurred or double vision"
+   ],
+   "mechanism": "Non-selective central and peripheral H-1 type histamine antagonist.",
+   "baseContact": false
+  },
+  {
+   "drug": "METOCLOPRAMIDE",
+   "indications": [
+    "Nausea and vomiting"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Nausea and vomiting",
+     "adultDose": "10 mg",
+     "adultRoute": "IV/IM",
+     "adultRepeat": null,
+     "adultNotes": null,
+     "pedsDose": "5 mg",
+     "route": "IV/IM",
+     "repeat": null,
+     "pediatricDoses": [
+      {
+       "dose": "5 mg",
+       "route": "IV/IM",
+       "ageRange": "All ages",
+       "notes": ""
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      128
+     ]
+    }
+   ],
+   "contraindications": [
+    "Age < 8 years",
+    "Suspected bowel obstruction"
+   ],
+   "adverseEffects": [
+    "Restlessness",
+    "Agitation",
+    "Extrapyramidal symptoms",
+    "Sedation",
+    "Drowsiness",
+    "Dizziness",
+    "Dry mouth",
+    "Blurred or double vision"
+   ],
+   "mechanism": "Dopamine antagonist.",
+   "baseContact": false
+  },
+  {
+   "drug": "DROPERIDOL",
+   "indications": [
+    "Agitation",
+    "Nausea and vomiting"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Agitation",
+     "adultDose": "10 mg",
+     "adultRoute": "IM",
+     "adultRepeat": "Max single dose 1.25 mg for peds. For adult, contact base for additional sedation orders.",
+     "adultNotes": null,
+     "pedsDose": "0.025 mg/kg",
+     "route": "IM",
+     "repeat": "Max single dose 1.25 mg for peds. For adult, contact base for additional sedation orders.",
+     "pediatricDoses": [
+      {
+       "dose": "0.025 mg/kg",
+       "route": "IM",
+       "ageRange": "All ages",
+       "notes": "Max single dose 1.25 mg for peds. For adult, contact base for additional sedation orders."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      130
+     ]
+    },
+    {
+     "indication": "Nausea and vomiting",
+     "adultDose": "1.25 mg",
+     "adultRoute": "IV/IM",
+     "adultRepeat": "Slow push. Not indicated for pediatric.",
+     "adultNotes": null,
+     "pedsDose": null,
+     "route": "IV/IM",
+     "repeat": "Slow push. Not indicated for pediatric.",
+     "pediatricDoses": [],
+     "standing": true,
+     "sourcePages": [
+      130
+     ]
+    }
+   ],
+   "contraindications": [
+    "Suspected acute myocardial infarction/acute coronary syndrome",
+    "Systolic blood pressure under 100 mmHg",
+    "Absence of a palpable radial pulse",
+    "Signs of respiratory depression",
+    "Known QTc prolongation",
+    "Pregnancy"
+   ],
+   "adverseEffects": [
+    "Transient hypotension",
+    "Tachycardia",
+    "Prolonged QT interval",
+    "Restlessness",
+    "Hyperactivity",
+    "Anxiety",
+    "Akathisia",
+    "Neuroleptic malignant syndrome"
+   ],
+   "mechanism": "Butyrophenone antipsychotic; produces dopaminergic blockade, mild alpha-adrenergic blockade, and peripheral vasodilation.",
+   "baseContact": false
+  },
+  {
+   "drug": "HALOPERIDOL",
+   "indications": [
+    "Agitation"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Agitation",
+     "adultDose": "5 mg",
+     "adultRoute": "IV/IM",
+     "adultRepeat": "Slow IV or IM. Max single dose 2.5 mg for peds. If still agitated after 5 min, repeat dose or switch to benzodiazepine.",
+     "adultNotes": null,
+     "pedsDose": "0.05 mg/kg",
+     "route": "IV/IM",
+     "repeat": "Slow IV or IM. Max single dose 2.5 mg for peds. If still agitated after 5 min, repeat dose or switch to benzodiazepine.",
+     "pediatricDoses": [
+      {
+       "dose": "0.05 mg/kg",
+       "route": "IV/IM",
+       "ageRange": "All ages",
+       "notes": "Slow IV or IM. Max single dose 2.5 mg for peds. If still agitated after 5 min, repeat dose or switch to benzodiazepine."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      130
+     ]
+    }
+   ],
+   "contraindications": [
+    "Suspected acute myocardial infarction/acute coronary syndrome",
+    "Systolic blood pressure under 100 mmHg",
+    "Absence of a palpable radial pulse",
+    "Signs of respiratory depression",
+    "Known QTc prolongation",
+    "Pregnancy"
+   ],
+   "adverseEffects": [
+    "Transient hypotension",
+    "Prolonged QT interval",
+    "Restlessness",
+    "Hyperactivity",
+    "Anxiety",
+    "Akathisia",
+    "Neuroleptic malignant syndrome"
+   ],
+   "mechanism": "Butyrophenone antipsychotic; produces dopaminergic blockade, mild alpha-adrenergic blockade, and peripheral vasodilation.",
+   "baseContact": false
+  },
+  {
+   "drug": "OLANZAPINE",
+   "indications": [
+    "Agitation"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Agitation",
+     "adultDose": "5 mg",
+     "adultRoute": "IV/IM",
+     "adultRepeat": "Slow IV or IM. If still agitated after 5 min, repeat dose or switch to benzodiazepine.",
+     "adultNotes": null,
+     "pedsDose": null,
+     "route": "IV/IM",
+     "repeat": "Slow IV or IM. If still agitated after 5 min, repeat dose or switch to benzodiazepine.",
+     "pediatricDoses": [],
+     "standing": true,
+     "sourcePages": [
+      132
+     ]
+    },
+    {
+     "indication": "Agitation",
+     "adultDose": "10 mg",
+     "adultRoute": "ODT",
+     "adultRepeat": "For cooperative patients able to self-administer. Pediatric dose: 2.5 mg for 8-9 yrs, 5 mg for 10-11 yrs.",
+     "adultNotes": null,
+     "pedsDose": "2.5 mg - 5 mg",
+     "route": "ODT",
+     "repeat": "For cooperative patients able to self-administer. Pediatric dose: 2.5 mg for 8-9 yrs, 5 mg for 10-11 yrs.",
+     "pediatricDoses": [
+      {
+       "dose": "2.5 mg - 5 mg",
+       "route": "ODT",
+       "ageRange": "All ages",
+       "notes": "For cooperative patients able to self-administer. Pediatric dose: 2.5 mg for 8-9 yrs, 5 mg for 10-11 yrs."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      132
+     ]
+    }
+   ],
+   "contraindications": [
+    "Suspected acute myocardial infarction/acute coronary syndrome",
+    "Systolic blood pressure under 100 mmHg",
+    "Absence of a palpable radial pulse",
+    "Signs of respiratory depression",
+    "Known QTc prolongation",
+    "Pregnancy"
+   ],
+   "adverseEffects": [
+    "Transient hypotension",
+    "Prolonged QT interval",
+    "Restlessness",
+    "Hyperactivity",
+    "Anxiety",
+    "Akathisia",
+    "Neuroleptic malignant syndrome"
+   ],
+   "mechanism": "Second-generation antipsychotic; acts through combination of dopamine and serotonin type 2 receptor site antagonism.",
+   "baseContact": false
+  },
+  {
+   "drug": "ASPIRIN",
+   "indications": [
+    "Acute coronary syndrome"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Acute coronary syndrome",
+     "adultDose": "324 mg",
+     "adultRoute": "PO",
+     "adultRepeat": null,
+     "adultNotes": null,
+     "pedsDose": null,
+     "route": "PO",
+     "repeat": null,
+     "pediatricDoses": [],
+     "standing": true,
+     "sourcePages": [
+      134
+     ]
+    }
+   ],
+   "contraindications": [
+    "Active gastrointestinal bleeding",
+    "Aspirin allergy",
+    "Less than 16 years old"
+   ],
+   "adverseEffects": [],
+   "mechanism": "Inhibits platelet aggregation and blood clotting.",
+   "baseContact": false
+  },
+  {
+   "drug": "ATROPINE",
+   "indications": [
+    "Symptomatic bradycardia",
+    "Organophosphate poisoning"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Symptomatic bradycardia",
+     "adultDose": "1 mg",
+     "adultRoute": "IV/IO",
+     "adultRepeat": "Adult: Repeat q3-5min to max 3mg. Pediatric: Min 0.1mg, max single 0.5mg.",
+     "adultNotes": null,
+     "pedsDose": "0.02 mg/kg",
+     "route": "IV/IO",
+     "repeat": "Adult: Repeat q3-5min to max 3mg. Pediatric: Min 0.1mg, max single 0.5mg.",
+     "pediatricDoses": [
+      {
+       "dose": "0.02 mg/kg",
+       "route": "IV/IO",
+       "ageRange": "All ages",
+       "notes": "Adult: Repeat q3-5min to max 3mg. Pediatric: Min 0.1mg, max single 0.5mg."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      135
+     ]
+    },
+    {
+     "indication": "Organophosphate poisoning",
+     "adultDose": "2 mg",
+     "adultRoute": "IV/IM",
+     "adultRepeat": "Adult: 40kg and up. Pediatric: Min 0.1mg. Contact base for additional doses.",
+     "adultNotes": null,
+     "pedsDose": "0.02 mg/kg",
+     "route": "IV/IM",
+     "repeat": "Adult: 40kg and up. Pediatric: Min 0.1mg. Contact base for additional doses.",
+     "pediatricDoses": [
+      {
+       "dose": "0.02 mg/kg",
+       "route": "IV/IM",
+       "ageRange": "All ages",
+       "notes": "Adult: 40kg and up. Pediatric: Min 0.1mg. Contact base for additional doses."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      135
+     ]
+    }
+   ],
+   "contraindications": [
+    "Closed angle glaucoma"
+   ],
+   "adverseEffects": [
+    "Anticholinergic toxidrome (blind as a bat, mad as a hatter, dry as a bone, red as a beet)"
+   ],
+   "mechanism": "Antimuscarinic, anticholinergic substance; increases heart rate and AV node conduction.",
+   "baseContact": false
+  },
+  {
+   "drug": "MIDAZOLAM",
+   "indications": [
+    "Seizure",
+    "Sedation for cardioversion or transcutaneous pacing",
+    "Agitation"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Seizure",
+     "adultDose": "10 mg",
+     "adultRoute": "IN/IM",
+     "adultRepeat": "Adult: IN preferred over IM. Repeat x1 after 5 min. Pediatric: Max single 10mg. Repeat x1 after 5 min. Contact base for >2 doses.",
+     "adultNotes": null,
+     "pedsDose": "0.2 mg/kg",
+     "route": "IN/IM",
+     "repeat": "Adult: IN preferred over IM. Repeat x1 after 5 min. Pediatric: Max single 10mg. Repeat x1 after 5 min. Contact base for >2 doses.",
+     "pediatricDoses": [
+      {
+       "dose": "0.2 mg/kg",
+       "route": "IN/IM",
+       "ageRange": "All ages",
+       "notes": "Adult: IN preferred over IM. Repeat x1 after 5 min. Pediatric: Max single 10mg. Repeat x1 after 5 min. Contact base for >2 doses."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      136
+     ]
+    },
+    {
+     "indication": "Seizure",
+     "adultDose": "5 mg",
+     "adultRoute": "IV/IO",
+     "adultRepeat": "Adult: Repeat x1 after 5 min. Pediatric: Max single 5mg. Repeat x1 after 5 min. Contact base for >2 doses.",
+     "adultNotes": null,
+     "pedsDose": "0.1 mg/kg",
+     "route": "IV/IO",
+     "repeat": "Adult: Repeat x1 after 5 min. Pediatric: Max single 5mg. Repeat x1 after 5 min. Contact base for >2 doses.",
+     "pediatricDoses": [
+      {
+       "dose": "0.1 mg/kg",
+       "route": "IV/IO",
+       "ageRange": "All ages",
+       "notes": "Adult: Repeat x1 after 5 min. Pediatric: Max single 5mg. Repeat x1 after 5 min. Contact base for >2 doses."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      136
+     ]
+    },
+    {
+     "indication": "Sedation for cardioversion or transcutaneous pacing",
+     "adultDose": "5 mg",
+     "adultRoute": "IN/IM",
+     "adultRepeat": "Adult: Repeat x1 after 5 min. Pediatric: Max single 5mg. Repeat x1 after 5 min. Contact base for >2 doses.",
+     "adultNotes": null,
+     "pedsDose": "0.2 mg/kg",
+     "route": "IN/IM",
+     "repeat": "Adult: Repeat x1 after 5 min. Pediatric: Max single 5mg. Repeat x1 after 5 min. Contact base for >2 doses.",
+     "pediatricDoses": [
+      {
+       "dose": "0.2 mg/kg",
+       "route": "IN/IM",
+       "ageRange": "All ages",
+       "notes": "Adult: Repeat x1 after 5 min. Pediatric: Max single 5mg. Repeat x1 after 5 min. Contact base for >2 doses."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      137
+     ]
+    },
+    {
+     "indication": "Sedation for cardioversion or transcutaneous pacing",
+     "adultDose": "2 mg",
+     "adultRoute": "IV/IO",
+     "adultRepeat": "Adult: Repeat x1 after 5 min. Pediatric: Max single 2mg. Repeat x1 after 5 min. Contact base for >2 doses.",
+     "adultNotes": null,
+     "pedsDose": "0.1 mg/kg",
+     "route": "IV/IO",
+     "repeat": "Adult: Repeat x1 after 5 min. Pediatric: Max single 2mg. Repeat x1 after 5 min. Contact base for >2 doses.",
+     "pediatricDoses": [
+      {
+       "dose": "0.1 mg/kg",
+       "route": "IV/IO",
+       "ageRange": "All ages",
+       "notes": "Adult: Repeat x1 after 5 min. Pediatric: Max single 2mg. Repeat x1 after 5 min. Contact base for >2 doses."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      137
+     ]
+    },
+    {
+     "indication": "Agitation",
+     "adultDose": "5 mg",
+     "adultRoute": "IV/IO/IM",
+     "adultRepeat": "Pediatric: 2.5mg for 8-10yrs, 5mg for 11yrs. If still agitated after 5 min, switch to antipsychotic.",
+     "adultNotes": null,
+     "pedsDose": "2.5 mg - 5 mg",
+     "route": "IV/IO/IM",
+     "repeat": "Pediatric: 2.5mg for 8-10yrs, 5mg for 11yrs. If still agitated after 5 min, switch to antipsychotic.",
+     "pediatricDoses": [
+      {
+       "dose": "2.5 mg - 5 mg",
+       "route": "IV/IO/IM",
+       "ageRange": "All ages",
+       "notes": "Pediatric: 2.5mg for 8-10yrs, 5mg for 11yrs. If still agitated after 5 min, switch to antipsychotic."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      137
+     ]
+    },
+    {
+     "indication": "Agitation",
+     "adultDose": "10 mg",
+     "adultRoute": "IM",
+     "adultRepeat": "For adult patient with imminent risk of bodily harm. Contact base for additional sedation.",
+     "adultNotes": null,
+     "pedsDose": null,
+     "route": "IM",
+     "repeat": "For adult patient with imminent risk of bodily harm. Contact base for additional sedation.",
+     "pediatricDoses": [],
+     "standing": true,
+     "sourcePages": [
+      137
+     ]
+    }
+   ],
+   "contraindications": [
+    "Hypotension",
+    "Respiratory depression"
+   ],
+   "adverseEffects": [
+    "Respiratory depression",
+    "Apnea",
+    "Hypotension"
+   ],
+   "mechanism": "Sedative-hypnotic; increases GABA activity in the brain.",
+   "baseContact": false
+  },
+  {
+   "drug": "DIAZEPAM",
+   "indications": [
+    "Seizure",
+    "Sedation for cardioversion or transcutaneous pacing"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Seizure",
+     "adultDose": "5 mg",
+     "adultRoute": "IV/IO/IM",
+     "adultRepeat": "Pediatric: 0.5mg for >Neonate to <5yrs, 1mg for 5-12yrs. Repeat x1 after 5 min. Contact base for >2 doses.",
+     "adultNotes": null,
+     "pedsDose": "0.5 mg - 1 mg",
+     "route": "IV/IO/IM",
+     "repeat": "Pediatric: 0.5mg for >Neonate to <5yrs, 1mg for 5-12yrs. Repeat x1 after 5 min. Contact base for >2 doses.",
+     "pediatricDoses": [
+      {
+       "dose": "0.5 mg - 1 mg",
+       "route": "IV/IO/IM",
+       "ageRange": "All ages",
+       "notes": "Pediatric: 0.5mg for >Neonate to <5yrs, 1mg for 5-12yrs. Repeat x1 after 5 min. Contact base for >2 doses."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      137
+     ]
+    },
+    {
+     "indication": "Sedation for cardioversion or transcutaneous pacing",
+     "adultDose": "5 mg",
+     "adultRoute": "IV/IO/IM",
+     "adultRepeat": "Pediatric: 0.5mg for >Neonate to <5yrs, 1mg for 5-12yrs. Repeat x1 after 5 min. Contact base for >2 doses.",
+     "adultNotes": null,
+     "pedsDose": "0.5 mg - 1 mg",
+     "route": "IV/IO/IM",
+     "repeat": "Pediatric: 0.5mg for >Neonate to <5yrs, 1mg for 5-12yrs. Repeat x1 after 5 min. Contact base for >2 doses.",
+     "pediatricDoses": [
+      {
+       "dose": "0.5 mg - 1 mg",
+       "route": "IV/IO/IM",
+       "ageRange": "All ages",
+       "notes": "Pediatric: 0.5mg for >Neonate to <5yrs, 1mg for 5-12yrs. Repeat x1 after 5 min. Contact base for >2 doses."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      137
+     ]
+    }
+   ],
+   "contraindications": [
+    "Hypotension",
+    "Respiratory depression"
+   ],
+   "adverseEffects": [
+    "Respiratory depression",
+    "Apnea",
+    "Hypotension"
+   ],
+   "mechanism": "Sedative-hypnotic; increases GABA activity in the brain.",
+   "baseContact": false
+  },
+  {
+   "drug": "LORAZEPAM",
+   "indications": [
+    "Seizure",
+    "Sedation for cardioversion or transcutaneous pacing",
+    "Agitation"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Seizure",
+     "adultDose": "2 mg",
+     "adultRoute": "IV/IO/IM",
+     "adultRepeat": "Dose may be repeated x 1 after 5 minutes if still seizing. Contact Base for more than 2 doses. Max single pediatric dose 2 mg.",
+     "adultNotes": null,
+     "pedsDose": "0.1 mg/kg",
+     "route": "IV/IO/IM",
+     "repeat": "Dose may be repeated x 1 after 5 minutes if still seizing. Contact Base for more than 2 doses. Max single pediatric dose 2 mg.",
+     "pediatricDoses": [
+      {
+       "dose": "0.1 mg/kg",
+       "route": "IV/IO/IM",
+       "ageRange": "All ages",
+       "notes": "Dose may be repeated x 1 after 5 minutes if still seizing. Contact Base for more than 2 doses. Max single pediatric dose 2 mg."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      138
+     ]
+    },
+    {
+     "indication": "Sedation for cardioversion or transcutaneous pacing",
+     "adultDose": "1 mg",
+     "adultRoute": "IV/IO/IM",
+     "adultRepeat": "Dose may be repeated x 1 after 5 minutes. Contact Base for more than 2 doses.",
+     "adultNotes": null,
+     "pedsDose": null,
+     "route": "IV/IO/IM",
+     "repeat": "Dose may be repeated x 1 after 5 minutes. Contact Base for more than 2 doses.",
+     "pediatricDoses": [],
+     "standing": true,
+     "sourcePages": [
+      138
+     ]
+    },
+    {
+     "indication": "Agitation",
+     "adultDose": "2 mg",
+     "adultRoute": "IV/IO/IM",
+     "adultRepeat": "If patient still agitated and disruptive 5 minutes after first benzodiazepine dose (IMC-RASS +3 or +4), switch to antipsychotic. If additional sedation medication needed Contact Base. Max single pediatric dose 2 mg.",
+     "adultNotes": null,
+     "pedsDose": "0.05 mg/kg",
+     "route": "IV/IO/IM",
+     "repeat": "If patient still agitated and disruptive 5 minutes after first benzodiazepine dose (IMC-RASS +3 or +4), switch to antipsychotic. If additional sedation medication needed Contact Base. Max single pediatric dose 2 mg.",
+     "pediatricDoses": [
+      {
+       "dose": "0.05 mg/kg",
+       "route": "IV/IO/IM",
+       "ageRange": "All ages",
+       "notes": "If patient still agitated and disruptive 5 minutes after first benzodiazepine dose (IMC-RASS +3 or +4), switch to antipsychotic. If additional sedation medication needed Contact Base. Max single pediatric dose 2 mg."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      138
+     ]
+    }
+   ],
+   "contraindications": [
+    "Hypotension",
+    "Respiratory depression"
+   ],
+   "adverseEffects": [
+    "Respiratory depression",
+    "Apnea",
+    "Hypotension"
+   ],
+   "mechanism": "Sedative-hypnotic that acts by increasing GABA activity in the brain.",
+   "baseContact": false
+  },
+  {
+   "drug": "CALCIUM GLUCONATE",
+   "indications": [
+    "Pulseless arrest due to hyperkalemia",
+    "Hyperkalemia",
+    "Calcium channel blocker overdose"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Pulseless arrest due to hyperkalemia",
+     "adultDose": "3 gm",
+     "adultRoute": "IV/IO",
+     "adultRepeat": "Slow IV/IO push.",
+     "adultNotes": null,
+     "pedsDose": null,
+     "route": "IV/IO",
+     "repeat": "Slow IV/IO push.",
+     "pediatricDoses": [],
+     "standing": true,
+     "sourcePages": [
+      140
+     ]
+    },
+    {
+     "indication": "Hyperkalemia",
+     "adultDose": "3 gm",
+     "adultRoute": "IV/IO",
+     "adultRepeat": "Over 5 minutes. For renal failure, ECG changes, or crush/suspension injury.",
+     "adultNotes": null,
+     "pedsDose": null,
+     "route": "IV/IO",
+     "repeat": "Over 5 minutes. For renal failure, ECG changes, or crush/suspension injury.",
+     "pediatricDoses": [],
+     "standing": true,
+     "sourcePages": [
+      140
+     ]
+    },
+    {
+     "indication": "Calcium channel blocker overdose",
+     "adultDose": "3 gm",
+     "adultRoute": "IV/IO",
+     "adultRepeat": "Over 5 minutes. Contact Base for order. Dose may be repeated every 5 minutes for total of 3 doses. Pediatric max 1 g.",
+     "adultNotes": null,
+     "pedsDose": "60 mg/kg",
+     "route": "IV/IO",
+     "repeat": "Over 5 minutes. Contact Base for order. Dose may be repeated every 5 minutes for total of 3 doses. Pediatric max 1 g.",
+     "pediatricDoses": [
+      {
+       "dose": "60 mg/kg",
+       "route": "IV/IO",
+       "ageRange": "All ages",
+       "notes": "Over 5 minutes. Contact Base for order. Dose may be repeated every 5 minutes for total of 3 doses. Pediatric max 1 g."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      140
+     ]
+    }
+   ],
+   "contraindications": [
+    "Known or suspected hypercalcemia",
+    "Known or suspected digoxin toxicity"
+   ],
+   "adverseEffects": [],
+   "mechanism": "Cardioprotective agent in hyperkalemia.",
+   "baseContact": false
+  },
+  {
+   "drug": "CALCIUM CHLORIDE",
+   "indications": [
+    "Pulseless arrest due to hyperkalemia",
+    "Hyperkalemia",
+    "Calcium channel blocker overdose"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Pulseless arrest due to hyperkalemia",
+     "adultDose": "1 g",
+     "adultRoute": "IV/IO",
+     "adultRepeat": "Slow IV/IO push.",
+     "adultNotes": null,
+     "pedsDose": null,
+     "route": "IV/IO",
+     "repeat": "Slow IV/IO push.",
+     "pediatricDoses": [],
+     "standing": true,
+     "sourcePages": [
+      140
+     ]
+    },
+    {
+     "indication": "Hyperkalemia",
+     "adultDose": "1 g",
+     "adultRoute": "IV/IO",
+     "adultRepeat": "Over 5 minutes. For renal failure, ECG changes, or crush/suspension injury.",
+     "adultNotes": null,
+     "pedsDose": null,
+     "route": "IV/IO",
+     "repeat": "Over 5 minutes. For renal failure, ECG changes, or crush/suspension injury.",
+     "pediatricDoses": [],
+     "standing": true,
+     "sourcePages": [
+      141
+     ]
+    },
+    {
+     "indication": "Calcium channel blocker overdose",
+     "adultDose": "1 g",
+     "adultRoute": "IV/IO",
+     "adultRepeat": "Over 5 minutes. Contact Base for order. Dose may be repeated every 5 minutes for total of 3 doses. Pediatric max 1 g.",
+     "adultNotes": null,
+     "pedsDose": "20 mg/kg",
+     "route": "IV/IO",
+     "repeat": "Over 5 minutes. Contact Base for order. Dose may be repeated every 5 minutes for total of 3 doses. Pediatric max 1 g.",
+     "pediatricDoses": [
+      {
+       "dose": "20 mg/kg",
+       "route": "IV/IO",
+       "ageRange": "All ages",
+       "notes": "Over 5 minutes. Contact Base for order. Dose may be repeated every 5 minutes for total of 3 doses. Pediatric max 1 g."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      141
+     ]
+    }
+   ],
+   "contraindications": [
+    "Known or suspected hypercalcemia",
+    "Known or suspected digoxin toxicity"
+   ],
+   "adverseEffects": [],
+   "mechanism": "Cardioprotective agent in hyperkalemia.",
+   "baseContact": false
+  },
+  {
+   "drug": "DEXTROSE",
+   "indications": [
+    "Hypoglycemia"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Hypoglycemia",
+     "adultDose": "25 gm",
+     "adultRoute": "IV/IO",
+     "adultRepeat": "Adult: 250 mL of 10% solution infusion OR 50 mL of 50% solution bolus. Pediatric: 10% solution (max 250 mL).",
+     "adultNotes": null,
+     "pedsDose": "5 mL/kg",
+     "route": "IV/IO",
+     "repeat": "Adult: 250 mL of 10% solution infusion OR 50 mL of 50% solution bolus. Pediatric: 10% solution (max 250 mL).",
+     "pediatricDoses": [
+      {
+       "dose": "5 mL/kg",
+       "route": "IV/IO",
+       "ageRange": "All ages",
+       "notes": "Adult: 250 mL of 10% solution infusion OR 50 mL of 50% solution bolus. Pediatric: 10% solution (max 250 mL)."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      142
+     ]
+    }
+   ],
+   "contraindications": [],
+   "adverseEffects": [],
+   "mechanism": "Glucose is the body's basic fuel and is required for cellular metabolism.",
+   "baseContact": false
+  },
+  {
+   "drug": "DILTIAZEM",
+   "indications": [
+    "Atrial fibrillation/Atrial flutter with rapid ventricular response",
+    "Narrow complex tachycardia refractory to adenosine"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Atrial fibrillation/Atrial flutter with rapid ventricular response",
+     "adultDose": "0.25 mg/kg",
+     "adultRoute": "IV/IO",
+     "adultRepeat": "Over at least 2-3 minutes. Repeat in 10 minutes at 0.35 mg/kg if necessary. Elderly: half dose, max initial 10 mg, max second 20 mg. Base Contact required.",
+     "adultNotes": null,
+     "pedsDose": null,
+     "route": "IV/IO",
+     "repeat": "Over at least 2-3 minutes. Repeat in 10 minutes at 0.35 mg/kg if necessary. Elderly: half dose, max initial 10 mg, max second 20 mg. Base Contact required.",
+     "pediatricDoses": [],
+     "standing": true,
+     "sourcePages": [
+      143
+     ]
+    },
+    {
+     "indication": "Narrow complex tachycardia refractory to adenosine",
+     "adultDose": "0.25 mg/kg",
+     "adultRoute": "IV/IO",
+     "adultRepeat": "Over at least 2-3 minutes. Repeat in 10 minutes at 0.35 mg/kg if necessary. Elderly: half dose, max initial 10 mg, max second 20 mg. Base Contact required.",
+     "adultNotes": null,
+     "pedsDose": null,
+     "route": "IV/IO",
+     "repeat": "Over at least 2-3 minutes. Repeat in 10 minutes at 0.35 mg/kg if necessary. Elderly: half dose, max initial 10 mg, max second 20 mg. Base Contact required.",
+     "pediatricDoses": [],
+     "standing": true,
+     "sourcePages": [
+      143
+     ]
+    }
+   ],
+   "contraindications": [
+    "Hypotension",
+    "Acute decompensated or symptomatic congestive heart failure",
+    "AMI",
+    "2nd or 3rd degree AV block",
+    "Patients who have received IV beta blockers within 3 hours",
+    "Ventricular tachycardia or any wide complex tachycardia of unknown origin",
+    "Sick sinus syndrome except in those with a functioning ventricular pacemaker",
+    "Patients with atrial fibrillation or atrial flutter associated with Wolff-Parkinson White syndrome (WPW) or short PR syndrome",
+    "Concern for sepsis or sepsis syndrome"
+   ],
+   "adverseEffects": [
+    "Hypotension",
+    "Bradycardia",
+    "2nd or 3rd degree AV block"
+   ],
+   "mechanism": "Class 4 antidysrhythmic calcium channel blocker.",
+   "baseContact": false
+  },
+  {
+   "drug": "DIPHENHYDRAMINE",
+   "indications": [
+    "Allergic reaction",
+    "Dystonic medication reactions or akathisia"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Allergic reaction",
+     "adultDose": "50 mg",
+     "adultRoute": "IV/IO/IM",
+     "adultRepeat": "Adult: For patients over 65 years old, administer half-dose of 25 mg. For mild allergic reactions consider PO. Pediatric: max 50 mg. For mild allergic reactions consider PO.",
+     "adultNotes": null,
+     "pedsDose": "1 mg/kg",
+     "route": "IV/IO/IM",
+     "repeat": "Adult: For patients over 65 years old, administer half-dose of 25 mg. For mild allergic reactions consider PO. Pediatric: max 50 mg. For mild allergic reactions consider PO.",
+     "pediatricDoses": [
+      {
+       "dose": "1 mg/kg",
+       "route": "IV/IO/IM",
+       "ageRange": "All ages",
+       "notes": "Adult: For patients over 65 years old, administer half-dose of 25 mg. For mild allergic reactions consider PO. Pediatric: max 50 mg. For mild allergic reactions consider PO."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      144
+     ]
+    },
+    {
+     "indication": "Dystonic medication reactions or akathisia",
+     "adultDose": "50 mg",
+     "adultRoute": "IV/IO/IM",
+     "adultRepeat": "Adult: For patients over 65 years old, administer half-dose of 25 mg. Pediatric: max 50 mg.",
+     "adultNotes": null,
+     "pedsDose": "1 mg/kg",
+     "route": "IV/IO/IM",
+     "repeat": "Adult: For patients over 65 years old, administer half-dose of 25 mg. Pediatric: max 50 mg.",
+     "pediatricDoses": [
+      {
+       "dose": "1 mg/kg",
+       "route": "IV/IO/IM",
+       "ageRange": "All ages",
+       "notes": "Adult: For patients over 65 years old, administer half-dose of 25 mg. Pediatric: max 50 mg."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      144
+     ]
+    }
+   ],
+   "contraindications": [
+    "Asthma or COPD (thickens bronchial secretions)",
+    "Narrow-angle glaucoma"
+   ],
+   "adverseEffects": [
+    "Drowsiness",
+    "Dilated pupils",
+    "Dry mouth and throat",
+    "Flushing"
+   ],
+   "mechanism": "Antihistamine for treating histamine-mediated symptoms of allergic reaction. Also, anticholinergic and antiparkinsonian effects.",
+   "baseContact": false
+  },
+  {
+   "drug": "DOPAMINE",
+   "indications": [
+    "Hypotension with poor perfusion refractory to fluid resuscitation",
+    "Bradycardia with signs of poor perfusion"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Hypotension with poor perfusion refractory to fluid resuscitation",
+     "adultDose": "5-20 mcg/kg/min",
+     "adultRoute": "IV/IO",
+     "adultRepeat": "Start at 5 mcg/kg/min, titrate dose up 5 mcg/kg/min every 5 min to a max of 20 mcg/kg/min.",
+     "adultNotes": null,
+     "pedsDose": null,
+     "route": "IV/IO",
+     "repeat": "Start at 5 mcg/kg/min, titrate dose up 5 mcg/kg/min every 5 min to a max of 20 mcg/kg/min.",
+     "pediatricDoses": [],
+     "standing": true,
+     "sourcePages": [
+      145
+     ]
+    },
+    {
+     "indication": "Bradycardia with signs of poor perfusion",
+     "adultDose": "5-20 mcg/kg/min",
+     "adultRoute": "IV/IO",
+     "adultRepeat": "Start at 5 mcg/kg/min, titrate dose up 5 mcg/kg/min every 5 min to a max of 20 mcg/kg/min.",
+     "adultNotes": null,
+     "pedsDose": null,
+     "route": "IV/IO",
+     "repeat": "Start at 5 mcg/kg/min, titrate dose up 5 mcg/kg/min every 5 min to a max of 20 mcg/kg/min.",
+     "pediatricDoses": [],
+     "standing": true,
+     "sourcePages": [
+      145
+     ]
+    }
+   ],
+   "contraindications": [
+    "Pediatric patients (age less than 12 years)"
+   ],
+   "adverseEffects": [
+    "Dysrhythmia",
+    "Hypertension",
+    "Anxiety",
+    "Angina"
+   ],
+   "mechanism": "Endogenous catecholamine; increases blood pressure through combination of dopamine, alpha and beta receptor effects.",
+   "baseContact": false
+  },
+  {
+   "drug": "DUODOTE",
+   "indications": [
+    "Nerve agent exposure"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Nerve agent exposure",
+     "adultDose": "2.1 mg atropine and 600 mg pralidoxime chloride",
+     "adultRoute": "IM",
+     "adultRepeat": "No more than three (3) sets of antidotes should be administered.",
+     "adultNotes": null,
+     "pedsDose": null,
+     "route": "IM",
+     "repeat": "No more than three (3) sets of antidotes should be administered.",
+     "pediatricDoses": [],
+     "standing": true,
+     "sourcePages": [
+      146
+     ]
+    }
+   ],
+   "contraindications": [],
+   "adverseEffects": [],
+   "mechanism": "Nerve agent antidote kit containing atropine and pralidoxime chloride.",
+   "baseContact": false
+  },
+  {
+   "drug": "EPINEPHRINE",
+   "indications": [
+    "Pulseless arrest",
+    "Bradycardia with poor perfusion",
+    "Systemic allergic reaction",
+    "Wheezing",
+    "Stridor at rest"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Pulseless arrest",
+     "adultDose": "1 mg",
+     "adultRoute": "IV/IO",
+     "adultRepeat": "Repeat every 3-5 minutes. Max 3 doses for adults.",
+     "adultNotes": null,
+     "pedsDose": "0.01 mg/kg",
+     "route": "IV/IO",
+     "repeat": "Repeat every 3-5 minutes. Max 3 doses for adults.",
+     "pediatricDoses": [
+      {
+       "dose": "0.01 mg/kg",
+       "route": "IV/IO",
+       "ageRange": "All ages",
+       "notes": "Repeat every 3-5 minutes. Max 3 doses for adults."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      148
+     ]
+    },
+    {
+     "indication": "Bradycardia with poor perfusion",
+     "adultDose": null,
+     "adultRoute": "IV/IO",
+     "adultRepeat": null,
+     "adultNotes": null,
+     "pedsDose": "0.01 mg/kg",
+     "route": "IV/IO",
+     "repeat": null,
+     "pediatricDoses": [
+      {
+       "dose": "0.01 mg/kg",
+       "route": "IV/IO",
+       "ageRange": "All ages",
+       "notes": ""
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      149
+     ]
+    },
+    {
+     "indication": "Systemic allergic reaction",
+     "adultDose": "0.3 mg",
+     "adultRoute": "IM",
+     "adultRepeat": "Adult: may repeat dose x 1. Pediatric: may repeat dose x 2 every 5 minutes.",
+     "adultNotes": null,
+     "pedsDose": "0.15 mg for <25 kg; 0.3 mg for >25 kg",
+     "route": "IM",
+     "repeat": "Adult: may repeat dose x 1. Pediatric: may repeat dose x 2 every 5 minutes.",
+     "pediatricDoses": [
+      {
+       "dose": "0.15 mg for <25 kg; 0.3 mg for >25 kg",
+       "route": "IM",
+       "ageRange": "All ages",
+       "notes": "Adult: may repeat dose x 1. Pediatric: may repeat dose x 2 every 5 minutes."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      148
+     ]
+    },
+    {
+     "indication": "Wheezing",
+     "adultDose": null,
+     "adultRoute": "IM",
+     "adultRepeat": "May repeat dose x 2 every 5 minutes.",
+     "adultNotes": null,
+     "pedsDose": "0.15 mg for <25 kg; 0.3 mg for >25 kg",
+     "route": "IM",
+     "repeat": "May repeat dose x 2 every 5 minutes.",
+     "pediatricDoses": [
+      {
+       "dose": "0.15 mg for <25 kg; 0.3 mg for >25 kg",
+       "route": "IM",
+       "ageRange": "All ages",
+       "notes": "May repeat dose x 2 every 5 minutes."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      149
+     ]
+    },
+    {
+     "indication": "Stridor at rest",
+     "adultDose": "5 mL of 1mg/mL",
+     "adultRoute": "Nebulizer",
+     "adultRepeat": "x 1 dose. Contact Base for repeated dosing.",
+     "adultNotes": null,
+     "pedsDose": "5 mL of 1mg/mL",
+     "route": "Nebulizer",
+     "repeat": "x 1 dose. Contact Base for repeated dosing.",
+     "pediatricDoses": [
+      {
+       "dose": "5 mL of 1mg/mL",
+       "route": "Nebulizer",
+       "ageRange": "All ages",
+       "notes": "x 1 dose. Contact Base for repeated dosing."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      148
+     ]
+    }
+   ],
+   "contraindications": [
+    "May increase myocardial oxygen demand and angina pectoris. Use with caution in patients with known or suspected CAD.",
+    "Intramuscular injection into the thigh is preferred route and site of administration."
+   ],
+   "adverseEffects": [
+    "Tachycardia",
+    "Tachypnea",
+    "Tachydysrhythmia",
+    "Hypertension",
+    "Anxiety",
+    "Increased myocardial oxygen demand"
+   ],
+   "mechanism": "Alpha, beta-1, and beta-2 adrenergic receptor agonist.",
+   "baseContact": false
+  },
+  {
+   "drug": "GLUCAGON",
+   "indications": [
+    "Hypoglycemia",
+    "Beta-blocker or calcium channel blocker overdose"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Hypoglycemia",
+     "adultDose": "1 mg",
+     "adultRoute": "IM",
+     "adultRepeat": null,
+     "adultNotes": null,
+     "pedsDose": "0.5 mg for <25 kg; 1 mg for >25 kg",
+     "route": "IM",
+     "repeat": null,
+     "pediatricDoses": [
+      {
+       "dose": "0.5 mg for <25 kg; 1 mg for >25 kg",
+       "route": "IM",
+       "ageRange": "All ages",
+       "notes": ""
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      151
+     ]
+    },
+    {
+     "indication": "Beta-blocker or calcium channel blocker overdose",
+     "adultDose": "2 mg",
+     "adultRoute": "IV",
+     "adultRepeat": null,
+     "adultNotes": null,
+     "pedsDose": "0.1 mg/kg",
+     "route": "IV",
+     "repeat": null,
+     "pediatricDoses": [
+      {
+       "dose": "0.1 mg/kg",
+       "route": "IV",
+       "ageRange": "All ages",
+       "notes": ""
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      151
+     ]
+    }
+   ],
+   "contraindications": [],
+   "adverseEffects": [
+    "Tachycardia",
+    "Headache",
+    "Nausea and vomiting"
+   ],
+   "mechanism": "Increases blood sugar concentration by converting liver glycogen to glucose.",
+   "baseContact": false
+  },
+  {
+   "drug": "HYDROXOCOBALAMIN",
+   "indications": [
+    "Cyanide poisoning"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Cyanide poisoning",
+     "adultDose": "5 gm",
+     "adultRoute": "IV/IO",
+     "adultRepeat": "Pediatric max dose 5 gm.",
+     "adultNotes": null,
+     "pedsDose": "70 mg/kg",
+     "route": "IV/IO",
+     "repeat": "Pediatric max dose 5 gm.",
+     "pediatricDoses": [
+      {
+       "dose": "70 mg/kg",
+       "route": "IV/IO",
+       "ageRange": "All ages",
+       "notes": "Pediatric max dose 5 gm."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      153
+     ]
+    }
+   ],
+   "contraindications": [],
+   "adverseEffects": [
+    "Hypertension",
+    "Allergic reaction",
+    "Anaphylaxis"
+   ],
+   "mechanism": "Binds cyanide ions to form cyanocobalamin.",
+   "baseContact": false
+  },
+  {
+   "drug": "IPRATROPIUM",
+   "indications": [
+    "Bronchospasm"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Bronchospasm",
+     "adultDose": "0.5 mg",
+     "adultRoute": "Nebulizer",
+     "adultRepeat": "Adult: may repeat twice (total 3 doses). Pediatric 2-12 years: may repeat twice (total 3 doses). Pediatric 1 to <2 years: not indicated for repetitive dose.",
+     "adultNotes": null,
+     "pedsDose": "0.5 mg for 2-12 years; 0.25 mg for 1 to <2 years",
+     "route": "Nebulizer",
+     "repeat": "Adult: may repeat twice (total 3 doses). Pediatric 2-12 years: may repeat twice (total 3 doses). Pediatric 1 to <2 years: not indicated for repetitive dose.",
+     "pediatricDoses": [
+      {
+       "dose": "0.5 mg for 2-12 years; 0.25 mg for 1 to <2 years",
+       "route": "Nebulizer",
+       "ageRange": "All ages",
+       "notes": "Adult: may repeat twice (total 3 doses). Pediatric 2-12 years: may repeat twice (total 3 doses). Pediatric 1 to <2 years: not indicated for repetitive dose."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      155
+     ]
+    }
+   ],
+   "contraindications": [
+    "Soy or peanut allergy (for MDI only)"
+   ],
+   "adverseEffects": [
+    "Palpitations",
+    "Tremors",
+    "Dry mouth"
+   ],
+   "mechanism": "Anticholinergic bronchodilator.",
+   "baseContact": false
+  },
+  {
+   "drug": "LIDOCAINE",
+   "indications": [
+    "Pain during intraosseous infusion"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Pain during intraosseous infusion",
+     "adultDose": "50 mg",
+     "adultRoute": "IO",
+     "adultRepeat": "Slow push over 2-3 minutes.",
+     "adultNotes": null,
+     "pedsDose": null,
+     "route": "IO",
+     "repeat": "Slow push over 2-3 minutes.",
+     "pediatricDoses": [],
+     "standing": true,
+     "sourcePages": [
+      156
+     ]
+    }
+   ],
+   "contraindications": [
+    "Known allergy to local anesthetics (for Lidocaine Jelly 2%)"
+   ],
+   "adverseEffects": [
+    "Seizures",
+    "Drowsiness",
+    "Tachycardia",
+    "Bradycardia",
+    "Confusion",
+    "Hypotension"
+   ],
+   "mechanism": "Local anesthetic.",
+   "baseContact": false
+  },
+  {
+   "drug": "MAGNESIUM SULFATE",
+   "indications": [
+    "Torsades de pointes",
+    "Refractory severe bronchospasm",
+    "Eclampsia"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Torsades de pointes",
+     "adultDose": "2 gm",
+     "adultRoute": "IV/IO",
+     "adultRepeat": "Adult: 2 gm diluted in 50 mL NS over 15 min (stable) or 2 gm undiluted IV push over 2 min (unstable) or 2 gm undiluted IV/IO push (arrest). Pediatric: 25 mg/kg undiluted IV/IO push (max 2 gm).",
+     "adultNotes": null,
+     "pedsDose": "25 mg/kg",
+     "route": "IV/IO",
+     "repeat": "Adult: 2 gm diluted in 50 mL NS over 15 min (stable) or 2 gm undiluted IV push over 2 min (unstable) or 2 gm undiluted IV/IO push (arrest). Pediatric: 25 mg/kg undiluted IV/IO push (max 2 gm).",
+     "pediatricDoses": [
+      {
+       "dose": "25 mg/kg",
+       "route": "IV/IO",
+       "ageRange": "All ages",
+       "notes": "Adult: 2 gm diluted in 50 mL NS over 15 min (stable) or 2 gm undiluted IV push over 2 min (unstable) or 2 gm undiluted IV/IO push (arrest). Pediatric: 25 mg/kg undiluted IV/IO push (max 2 gm)."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      157
+     ]
+    },
+    {
+     "indication": "Refractory severe bronchospasm",
+     "adultDose": "2 gm",
+     "adultRoute": "IV",
+     "adultRepeat": "Adult: 2 gm diluted in 50 mL NS over 15 min. Pediatric: 50 mg/kg (max 2 gm) over 30 min.",
+     "adultNotes": null,
+     "pedsDose": "50 mg/kg",
+     "route": "IV",
+     "repeat": "Adult: 2 gm diluted in 50 mL NS over 15 min. Pediatric: 50 mg/kg (max 2 gm) over 30 min.",
+     "pediatricDoses": [
+      {
+       "dose": "50 mg/kg",
+       "route": "IV",
+       "ageRange": "All ages",
+       "notes": "Adult: 2 gm diluted in 50 mL NS over 15 min. Pediatric: 50 mg/kg (max 2 gm) over 30 min."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      157
+     ]
+    },
+    {
+     "indication": "Eclampsia",
+     "adultDose": "6 gm",
+     "adultRoute": "IV/IO",
+     "adultRepeat": "Diluted in 50 mL NS over 15 min.",
+     "adultNotes": null,
+     "pedsDose": null,
+     "route": "IV/IO",
+     "repeat": "Diluted in 50 mL NS over 15 min.",
+     "pediatricDoses": [],
+     "standing": true,
+     "sourcePages": [
+      157
+     ]
+    },
+    {
+     "indication": "Eclampsia",
+     "adultDose": "10 gm",
+     "adultRoute": "IM",
+     "adultRepeat": "Administered as 5 gm in each buttock. Max volume per site 10 mL.",
+     "adultNotes": null,
+     "pedsDose": null,
+     "route": "IM",
+     "repeat": "Administered as 5 gm in each buttock. Max volume per site 10 mL.",
+     "pediatricDoses": [],
+     "standing": true,
+     "sourcePages": [
+      157
+     ]
+    }
+   ],
+   "contraindications": [
+    "Bradycardia",
+    "Hypotension",
+    "Respiratory depression"
+   ],
+   "adverseEffects": [
+    "Bradycardia",
+    "Hypotension",
+    "Respiratory depression"
+   ],
+   "mechanism": "Reduces striated muscle contractions and blocks peripheral neuromuscular transmission.",
+   "baseContact": false
+  },
+  {
+   "drug": "METHYLPREDNISOLONE",
+   "indications": [
+    "Anaphylaxis",
+    "Severe asthma",
+    "COPD",
+    "Adrenal insufficiency"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Anaphylaxis",
+     "adultDose": "125 mg",
+     "adultRoute": "IV/IO",
+     "adultRepeat": "Administer slowly over 2 minutes",
+     "adultNotes": null,
+     "pedsDose": "2 mg/kg",
+     "route": "IV/IO",
+     "repeat": "Administer slowly over 2 minutes",
+     "pediatricDoses": [
+      {
+       "dose": "2 mg/kg",
+       "route": "IV/IO",
+       "ageRange": "All ages",
+       "notes": "Administer slowly over 2 minutes"
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      158
+     ]
+    },
+    {
+     "indication": "Severe asthma",
+     "adultDose": "125 mg",
+     "adultRoute": "IV/IO",
+     "adultRepeat": "Administer slowly over 2 minutes",
+     "adultNotes": null,
+     "pedsDose": "2 mg/kg",
+     "route": "IV/IO",
+     "repeat": "Administer slowly over 2 minutes",
+     "pediatricDoses": [
+      {
+       "dose": "2 mg/kg",
+       "route": "IV/IO",
+       "ageRange": "All ages",
+       "notes": "Administer slowly over 2 minutes"
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      158
+     ]
+    },
+    {
+     "indication": "COPD",
+     "adultDose": "125 mg",
+     "adultRoute": "IV/IO",
+     "adultRepeat": "Administer slowly over 2 minutes",
+     "adultNotes": null,
+     "pedsDose": "2 mg/kg",
+     "route": "IV/IO",
+     "repeat": "Administer slowly over 2 minutes",
+     "pediatricDoses": [
+      {
+       "dose": "2 mg/kg",
+       "route": "IV/IO",
+       "ageRange": "All ages",
+       "notes": "Administer slowly over 2 minutes"
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      158
+     ]
+    },
+    {
+     "indication": "Adrenal insufficiency",
+     "adultDose": "125 mg",
+     "adultRoute": "IV/IO",
+     "adultRepeat": "Administer slowly over 2 minutes",
+     "adultNotes": null,
+     "pedsDose": "2 mg/kg",
+     "route": "IV/IO",
+     "repeat": "Administer slowly over 2 minutes",
+     "pediatricDoses": [
+      {
+       "dose": "2 mg/kg",
+       "route": "IV/IO",
+       "ageRange": "All ages",
+       "notes": "Administer slowly over 2 minutes"
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      158
+     ]
+    }
+   ],
+   "contraindications": [
+    "Active GI bleed"
+   ],
+   "adverseEffects": [
+    "Gastrointestinal bleeding",
+    "Hypertension",
+    "Hyperglycemia"
+   ],
+   "mechanism": "Synthetic steroid that suppresses acute and chronic inflammation and may alter the immune response",
+   "baseContact": false
+  },
+  {
+   "drug": "NALOXONE",
+   "indications": [
+    "Opioid overdose"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Opioid overdose",
+     "adultDose": "0.5 mg",
+     "adultRoute": "IV/IO/IM/IN",
+     "adultRepeat": "Titrate to desired effect, up to 2 mg total. In severe respiratory compromise or arrest, 2 mg bolus is appropriate.",
+     "adultNotes": null,
+     "pedsDose": "0.5 mg",
+     "route": "IV/IO/IM/IN",
+     "repeat": "Titrate to desired effect, up to 2 mg total. In severe respiratory compromise or arrest, 2 mg bolus is appropriate.",
+     "pediatricDoses": [
+      {
+       "dose": "0.5 mg",
+       "route": "IV/IO/IM/IN",
+       "ageRange": "All ages",
+       "notes": "Titrate to desired effect, up to 2 mg total. In severe respiratory compromise or arrest, 2 mg bolus is appropriate."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      159
+     ]
+    }
+   ],
+   "contraindications": [],
+   "adverseEffects": [
+    "Tachycardia",
+    "Nausea and vomiting",
+    "Pulmonary Edema"
+   ],
+   "mechanism": "Competitive opioid receptor antagonist",
+   "baseContact": false
+  },
+  {
+   "drug": "NITROGLYCERIN",
+   "indications": [
+    "Acute coronary syndrome",
+    "Pulmonary edema"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Acute coronary syndrome",
+     "adultDose": "0.4 mg",
+     "adultRoute": "SL",
+     "adultRepeat": "Every 5 minutes PRN up to a total of 3 doses for persistent CP",
+     "adultNotes": null,
+     "pedsDose": null,
+     "route": "SL",
+     "repeat": "Every 5 minutes PRN up to a total of 3 doses for persistent CP",
+     "pediatricDoses": [],
+     "standing": true,
+     "sourcePages": [
+      161
+     ]
+    },
+    {
+     "indication": "Pulmonary edema",
+     "adultDose": "0.4 mg",
+     "adultRoute": "SL",
+     "adultRepeat": "Every 5 minutes PRN titrated to symptoms and blood pressure",
+     "adultNotes": null,
+     "pedsDose": null,
+     "route": "SL",
+     "repeat": "Every 5 minutes PRN titrated to symptoms and blood pressure",
+     "pediatricDoses": [],
+     "standing": true,
+     "sourcePages": [
+      161
+     ]
+    }
+   ],
+   "contraindications": [
+    "Suspected right ventricular ST-segment elevation MI",
+    "Hypotension SBP < 100",
+    "Recent use of erectile dysfunction medication"
+   ],
+   "adverseEffects": [
+    "Hypotension",
+    "Headache",
+    "Syncope"
+   ],
+   "mechanism": "Short-acting peripheral venodilator decreasing cardiac preload and afterload",
+   "baseContact": false
+  },
+  {
+   "drug": "IBUPROFEN",
+   "indications": [
+    "Pain",
+    "Fever"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Pain",
+     "adultDose": "600 mg",
+     "adultRoute": "PO",
+     "adultRepeat": null,
+     "adultNotes": null,
+     "pedsDose": "10 mg/kg",
+     "route": "PO",
+     "repeat": null,
+     "pediatricDoses": [
+      {
+       "dose": "10 mg/kg",
+       "route": "PO",
+       "ageRange": "All ages",
+       "notes": ""
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      162
+     ]
+    },
+    {
+     "indication": "Fever",
+     "adultDose": null,
+     "adultRoute": "PO",
+     "adultRepeat": null,
+     "adultNotes": null,
+     "pedsDose": "10 mg/kg",
+     "route": "PO",
+     "repeat": null,
+     "pediatricDoses": [
+      {
+       "dose": "10 mg/kg",
+       "route": "PO",
+       "ageRange": "All ages",
+       "notes": ""
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      162
+     ]
+    }
+   ],
+   "contraindications": [
+    "Allergy to NSAIDs",
+    "Pregnancy or breast feeding",
+    "History of GI bleeding or active stomach ulcer",
+    "History of chronic kidney disease or kidney transplant",
+    "Anticoagulation/antiplatelet or history of blood clotting disorder",
+    "Multisystem trauma",
+    "Acute head trauma or suspected intracranial bleed",
+    "Severe dehydration"
+   ],
+   "adverseEffects": [
+    "Allergic reactions",
+    "Nausea and vomiting",
+    "GI bleeding",
+    "Acute kidney injury"
+   ],
+   "mechanism": "Inhibits cyclooxygenase enzymes resulting in blockade of prostaglandin synthesis",
+   "baseContact": false
+  },
+  {
+   "drug": "KETOROLAC",
+   "indications": [
+    "Pain"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Pain",
+     "adultDose": "15 mg",
+     "adultRoute": "IV or IM",
+     "adultRepeat": null,
+     "adultNotes": null,
+     "pedsDose": "10 mg",
+     "route": "IV or IM",
+     "repeat": null,
+     "pediatricDoses": [
+      {
+       "dose": "10 mg",
+       "route": "IV or IM",
+       "ageRange": "All ages",
+       "notes": ""
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      162
+     ]
+    }
+   ],
+   "contraindications": [
+    "Allergy to NSAIDs",
+    "Pregnancy or breast feeding",
+    "History of GI bleeding or active stomach ulcer",
+    "History of chronic kidney disease or kidney transplant",
+    "Anticoagulation/antiplatelet or history of blood clotting disorder",
+    "Multisystem trauma",
+    "Acute head trauma or suspected intracranial bleed",
+    "Ages less than 8-years-old and over 65-years-old",
+    "Severe dehydration"
+   ],
+   "adverseEffects": [
+    "Allergic reactions",
+    "Nausea and vomiting",
+    "GI bleeding",
+    "Acute kidney injury"
+   ],
+   "mechanism": "Inhibits cyclooxygenase enzymes resulting in blockade of prostaglandin synthesis",
+   "baseContact": false
+  },
+  {
+   "drug": "FENTANYL",
+   "indications": [
+    "Pain"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Pain",
+     "adultDose": "1-2 mcg/kg",
+     "adultRoute": "IV/IO/IM",
+     "adultRepeat": "Adult: Max cumulative 3 mcg/kg. Pediatric: Max cumulative 3 mcg/kg.",
+     "adultNotes": null,
+     "pedsDose": "1-2 mcg/kg",
+     "route": "IV/IO/IM",
+     "repeat": "Adult: Max cumulative 3 mcg/kg. Pediatric: Max cumulative 3 mcg/kg.",
+     "pediatricDoses": [
+      {
+       "dose": "1-2 mcg/kg",
+       "route": "IV/IO/IM",
+       "ageRange": "All ages",
+       "notes": "Adult: Max cumulative 3 mcg/kg. Pediatric: Max cumulative 3 mcg/kg."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      163
+     ]
+    },
+    {
+     "indication": "Pain",
+     "adultDose": "1-2 mcg/kg",
+     "adultRoute": "IN",
+     "adultRepeat": "Adult: Max 1 ml/nostril, max cumulative 4 mcg/kg. Pediatric: Max 1 ml/nostril, max cumulative 4 mcg/kg.",
+     "adultNotes": null,
+     "pedsDose": "2 mcg/kg",
+     "route": "IN",
+     "repeat": "Adult: Max 1 ml/nostril, max cumulative 4 mcg/kg. Pediatric: Max 1 ml/nostril, max cumulative 4 mcg/kg.",
+     "pediatricDoses": [
+      {
+       "dose": "2 mcg/kg",
+       "route": "IN",
+       "ageRange": "All ages",
+       "notes": "Adult: Max 1 ml/nostril, max cumulative 4 mcg/kg. Pediatric: Max 1 ml/nostril, max cumulative 4 mcg/kg."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      163
+     ]
+    }
+   ],
+   "contraindications": [
+    "Hemodynamic instability or shock",
+    "Respiratory depression"
+   ],
+   "adverseEffects": [
+    "Respiratory depression",
+    "Hypotension",
+    "Chest wall rigidity"
+   ],
+   "mechanism": "Opioid analgesic",
+   "baseContact": false
+  },
+  {
+   "drug": "MORPHINE",
+   "indications": [
+    "Pain"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Pain",
+     "adultDose": "5-10 mg",
+     "adultRoute": "IV/IO/IM",
+     "adultRepeat": "Adult: Max cumulative 10 mg. Pediatric: Max single dose 6 mg, max cumulative 0.2 mg/kg or 10 mg.",
+     "adultNotes": null,
+     "pedsDose": "0.1 mg/kg",
+     "route": "IV/IO/IM",
+     "repeat": "Adult: Max cumulative 10 mg. Pediatric: Max single dose 6 mg, max cumulative 0.2 mg/kg or 10 mg.",
+     "pediatricDoses": [
+      {
+       "dose": "0.1 mg/kg",
+       "route": "IV/IO/IM",
+       "ageRange": "All ages",
+       "notes": "Adult: Max cumulative 10 mg. Pediatric: Max single dose 6 mg, max cumulative 0.2 mg/kg or 10 mg."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      164
+     ]
+    }
+   ],
+   "contraindications": [
+    "Hypotension",
+    "Hemodynamic instability or shock",
+    "Respiratory depression"
+   ],
+   "adverseEffects": [
+    "Respiratory depression",
+    "Hypotension"
+   ],
+   "mechanism": "Opioid analgesic",
+   "baseContact": false
+  },
+  {
+   "drug": "HYDROMORPHONE",
+   "indications": [
+    "Moderate to severe pain"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Moderate to severe pain",
+     "adultDose": "0.5 mg",
+     "adultRoute": "IV/IO/IM",
+     "adultRepeat": "Dose may be repeated after 10 minutes and titrated to clinical effect up to maximum cumulative dose of 1.5 mg. Additional cumulative dosing requires BASE CONTACT.",
+     "adultNotes": null,
+     "pedsDose": null,
+     "route": "IV/IO/IM",
+     "repeat": "Dose may be repeated after 10 minutes and titrated to clinical effect up to maximum cumulative dose of 1.5 mg. Additional cumulative dosing requires BASE CONTACT.",
+     "pediatricDoses": [],
+     "standing": true,
+     "sourcePages": [
+      164
+     ]
+    }
+   ],
+   "contraindications": [
+    "Hypotension",
+    "Hemodynamic instability",
+    "Shock",
+    "Respiratory depression"
+   ],
+   "adverseEffects": [
+    "Respiratory depression",
+    "Hypotension"
+   ],
+   "mechanism": "Opioid analgesic",
+   "baseContact": false
+  },
+  {
+   "drug": "ORAL GLUCOSE",
+   "indications": [
+    "Hypoglycemia"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Hypoglycemia",
+     "adultDose": "15 g",
+     "adultRoute": "buccal",
+     "adultRepeat": "One full tube 15 g buccal.",
+     "adultNotes": null,
+     "pedsDose": "15 g",
+     "route": "buccal",
+     "repeat": "One full tube 15 g buccal.",
+     "pediatricDoses": [
+      {
+       "dose": "15 g",
+       "route": "buccal",
+       "ageRange": "All ages",
+       "notes": "One full tube 15 g buccal."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      165
+     ]
+    }
+   ],
+   "contraindications": [
+    "Inability to swallow or protect airway",
+    "Unable to take PO meds for another reason"
+   ],
+   "adverseEffects": [],
+   "mechanism": "Glucose is the body's basic fuel and is required for cellular metabolism",
+   "baseContact": false
+  },
+  {
+   "drug": "PHENYLEPHRINE",
+   "indications": [
+    "Nasotracheal intubation",
+    "Epistaxis"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Nasotracheal intubation",
+     "adultDose": "2 drops of 1% solution or 2 sprays",
+     "adultRoute": "intranasal",
+     "adultRepeat": "Instill in each nostril prior to attempting nasotracheal intubation.",
+     "adultNotes": null,
+     "pedsDose": null,
+     "route": "intranasal",
+     "repeat": "Instill in each nostril prior to attempting nasotracheal intubation.",
+     "pediatricDoses": [],
+     "standing": true,
+     "sourcePages": [
+      167
+     ]
+    },
+    {
+     "indication": "Epistaxis",
+     "adultDose": "2 sprays",
+     "adultRoute": "intranasal",
+     "adultRepeat": "First have patient blow nose to expel clots. Then, administer 2 sprays into affected naris(es).",
+     "adultNotes": null,
+     "pedsDose": "2 sprays",
+     "route": "intranasal",
+     "repeat": "First have patient blow nose to expel clots. Then, administer 2 sprays into affected naris(es).",
+     "pediatricDoses": [
+      {
+       "dose": "2 sprays",
+       "route": "intranasal",
+       "ageRange": "All ages",
+       "notes": "First have patient blow nose to expel clots. Then, administer 2 sprays into affected naris(es)."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      167
+     ]
+    }
+   ],
+   "contraindications": [
+    "Avoid administration into the eyes"
+   ],
+   "adverseEffects": [],
+   "mechanism": "Alpha adrenergic agonist causing vasoconstriction",
+   "baseContact": false
+  },
+  {
+   "drug": "RACEMIC EPINEPHRINE",
+   "indications": [
+    "Stridor at rest"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Stridor at rest",
+     "adultDose": "0.5 mL",
+     "adultRoute": "nebulizer",
+     "adultRepeat": "Mixed in 3 mL saline, administer over 15 minutes.",
+     "adultNotes": null,
+     "pedsDose": "0.5 mL",
+     "route": "nebulizer",
+     "repeat": "Mixed in 3 mL saline, administer over 15 minutes.",
+     "pediatricDoses": [
+      {
+       "dose": "0.5 mL",
+       "route": "nebulizer",
+       "ageRange": "All ages",
+       "notes": "Mixed in 3 mL saline, administer over 15 minutes."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      168
+     ]
+    }
+   ],
+   "contraindications": [
+    "Do not confuse the side effects with respiratory failure or imminent respiratory arrest."
+   ],
+   "adverseEffects": [
+    "Tachycardia",
+    "Palpitations",
+    "Muscle tremors"
+   ],
+   "mechanism": "Bronchodilator and vasoconstrictor",
+   "baseContact": false
+  },
+  {
+   "drug": "SODIUM BICARBONATE",
+   "indications": [
+    "Hyperkalemia",
+    "Sodium channel blocker poisoning"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Hyperkalemia",
+     "adultDose": "1 mEq/kg",
+     "adultRoute": "IV/IO",
+     "adultRepeat": "Slow IV/IO push. Repeat if needed x 2 every 5 minutes or until QRS is narrowed.",
+     "adultNotes": null,
+     "pedsDose": "1 mEq/kg",
+     "route": "IV/IO",
+     "repeat": "Slow IV/IO push. Repeat if needed x 2 every 5 minutes or until QRS is narrowed.",
+     "pediatricDoses": [
+      {
+       "dose": "1 mEq/kg",
+       "route": "IV/IO",
+       "ageRange": "All ages",
+       "notes": "Slow IV/IO push. Repeat if needed x 2 every 5 minutes or until QRS is narrowed."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      169
+     ]
+    },
+    {
+     "indication": "Sodium channel blocker poisoning",
+     "adultDose": "1 mEq/kg",
+     "adultRoute": "IV/IO",
+     "adultRepeat": "Slow IV/IO push. Repeat if needed x 2 every 5 minutes or until QRS is narrowed.",
+     "adultNotes": null,
+     "pedsDose": "1 mEq/kg",
+     "route": "IV/IO",
+     "repeat": "Slow IV/IO push. Repeat if needed x 2 every 5 minutes or until QRS is narrowed.",
+     "pediatricDoses": [
+      {
+       "dose": "1 mEq/kg",
+       "route": "IV/IO",
+       "ageRange": "All ages",
+       "notes": "Slow IV/IO push. Repeat if needed x 2 every 5 minutes or until QRS is narrowed."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      169
+     ]
+    }
+   ],
+   "contraindications": [
+    "Metabolic and respiratory alkalosis",
+    "Hypocalcemia",
+    "Hypokalemia"
+   ],
+   "adverseEffects": [
+    "Metabolic alkalosis",
+    "Paradoxical cerebral intracellular acidosis",
+    "Volume overload"
+   ],
+   "mechanism": "Alkalinizing solution",
+   "baseContact": false
+  },
+  {
+   "drug": "PROPARACAINE",
+   "indications": [
+    "Eye pain",
+    "Eye irrigation"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Eye pain",
+     "adultDose": "2 drops",
+     "adultRoute": "ophthalmic",
+     "adultRepeat": "Instill into affected eye. Contact Base for repeat dosing.",
+     "adultNotes": null,
+     "pedsDose": "2 drops",
+     "route": "ophthalmic",
+     "repeat": "Instill into affected eye. Contact Base for repeat dosing.",
+     "pediatricDoses": [
+      {
+       "dose": "2 drops",
+       "route": "ophthalmic",
+       "ageRange": "All ages",
+       "notes": "Instill into affected eye. Contact Base for repeat dosing."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      170
+     ]
+    },
+    {
+     "indication": "Eye irrigation",
+     "adultDose": "2 drops",
+     "adultRoute": "ophthalmic",
+     "adultRepeat": "Instill into affected eye. Contact Base for repeat dosing.",
+     "adultNotes": null,
+     "pedsDose": "2 drops",
+     "route": "ophthalmic",
+     "repeat": "Instill into affected eye. Contact Base for repeat dosing.",
+     "pediatricDoses": [
+      {
+       "dose": "2 drops",
+       "route": "ophthalmic",
+       "ageRange": "All ages",
+       "notes": "Instill into affected eye. Contact Base for repeat dosing."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      170
+     ]
+    }
+   ],
+   "contraindications": [
+    "Known allergy to local anesthetics",
+    "Globe lacerations or rupture"
+   ],
+   "adverseEffects": [],
+   "mechanism": "Local anesthetic",
+   "baseContact": false
+  },
+  {
+   "drug": "TETRACAINE",
+   "indications": [
+    "Eye pain",
+    "Eye irrigation"
+   ],
+   "indicationDoses": [
+    {
+     "indication": "Eye pain",
+     "adultDose": "2 drops",
+     "adultRoute": "ophthalmic",
+     "adultRepeat": "Instill into affected eye. Contact Base for repeat dosing.",
+     "adultNotes": null,
+     "pedsDose": "2 drops",
+     "route": "ophthalmic",
+     "repeat": "Instill into affected eye. Contact Base for repeat dosing.",
+     "pediatricDoses": [
+      {
+       "dose": "2 drops",
+       "route": "ophthalmic",
+       "ageRange": "All ages",
+       "notes": "Instill into affected eye. Contact Base for repeat dosing."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      170
+     ]
+    },
+    {
+     "indication": "Eye irrigation",
+     "adultDose": "2 drops",
+     "adultRoute": "ophthalmic",
+     "adultRepeat": "Instill into affected eye. Contact Base for repeat dosing.",
+     "adultNotes": null,
+     "pedsDose": "2 drops",
+     "route": "ophthalmic",
+     "repeat": "Instill into affected eye. Contact Base for repeat dosing.",
+     "pediatricDoses": [
+      {
+       "dose": "2 drops",
+       "route": "ophthalmic",
+       "ageRange": "All ages",
+       "notes": "Instill into affected eye. Contact Base for repeat dosing."
+      }
+     ],
+     "standing": true,
+     "sourcePages": [
+      170
+     ]
+    }
+   ],
+   "contraindications": [
+    "Known allergy to local anesthetics",
+    "Globe lacerations or rupture"
+   ],
+   "adverseEffects": [],
+   "mechanism": "Local anesthetic",
+   "baseContact": false
+  }
+ ]
+}
