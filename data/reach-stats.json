@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-06T18:07:47.642Z",
-  "totalUploads": 403,
-  "distinctProtocols": 308,
-  "activeStudiers": 279,
-  "pagesProcessed": 64905,
+  "generatedAt": "2026-08-07T00:07:47.316Z",
+  "totalUploads": 404,
+  "distinctProtocols": 309,
+  "activeStudiers": 280,
+  "pagesProcessed": 65059,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 4,
@@ -35,10 +35,10 @@
     "NE": 3,
     "AL": 3,
     "DE": 3,
+    "IN": 3,
     "MN": 2,
     "VT": 2,
     "OH": 2,
-    "IN": 2,
     "AR": 2,
     "NH": 2,
     "NJ": 2,
@@ -800,6 +800,24 @@
       ]
     },
     {
+      "state": "IN",
+      "city": "Rensselaer",
+      "x": 627,
+      "y": 232,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "RensselaerEMSProtocol10032022",
+          "count": 1
+        },
+        {
+          "title": "JEMS PROTOCOLS",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "TX",
       "city": "Lubbock",
       "x": 374,
@@ -1099,20 +1117,6 @@
       "topProtocols": [
         {
           "title": "AFD AMR Protocols ver2126 PDF (1)",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "IN",
-      "city": "Rensselaer",
-      "x": 627,
-      "y": 232,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "RensselaerEMSProtocol10032022",
           "count": 1
         }
       ]
