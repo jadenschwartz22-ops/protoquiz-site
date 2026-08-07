@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-07T06:07:49.193Z",
-  "totalUploads": 404,
-  "distinctProtocols": 309,
-  "activeStudiers": 280,
-  "pagesProcessed": 65059,
+  "generatedAt": "2026-08-07T12:07:49.374Z",
+  "totalUploads": 409,
+  "distinctProtocols": 314,
+  "activeStudiers": 281,
+  "pagesProcessed": 65381,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 4,
@@ -26,6 +26,7 @@
     "AZ": 7,
     "TN": 6,
     "FL": 6,
+    "OR": 6,
     "UT": 5,
     "GA": 5,
     "WI": 5,
@@ -48,7 +49,6 @@
     "LA": 1,
     "ID": 1,
     "IA": 1,
-    "OR": 1,
     "RI": 1
   },
   "byCountry": {
@@ -485,6 +485,28 @@
         },
         {
           "title": "FCEMS COG Jan 26",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "OR",
+      "city": "Portland",
+      "x": 73,
+      "y": 80,
+      "count": 4,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "New",
+          "count": 1
+        },
+        {
+          "title": "EMTTTT",
+          "count": 1
+        },
+        {
+          "title": "Two",
           "count": 1
         }
       ]
@@ -1523,6 +1545,20 @@
       "topProtocols": [
         {
           "title": "yrmc ems guidelines 2",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "OR",
+      "city": "Hillsboro",
+      "x": 69,
+      "y": 79,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "WASHSO Meds",
           "count": 1
         }
       ]
