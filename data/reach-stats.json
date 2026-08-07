@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-07T13:47:19.124Z",
-  "totalUploads": 409,
-  "distinctProtocols": 314,
-  "activeStudiers": 281,
-  "pagesProcessed": 65381,
+  "generatedAt": "2026-08-07T18:07:49.276Z",
+  "totalUploads": 412,
+  "distinctProtocols": 315,
+  "activeStudiers": 284,
+  "pagesProcessed": 65889,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 4,
@@ -12,15 +12,15 @@
     "CO": 24,
     "TX": 22,
     "CA": 20,
-    "PA": 16,
-    "NY": 15,
+    "PA": 17,
+    "NY": 16,
     "NC": 13,
     "VA": 12,
     "WY": 10,
     "CT": 9,
+    "MA": 9,
     "WA": 8,
     "MD": 8,
-    "MA": 8,
     "IL": 7,
     "NV": 7,
     "AZ": 7,
@@ -106,7 +106,7 @@
       "city": "Philadelphia",
       "x": 828,
       "y": 223,
-      "count": 16,
+      "count": 17,
       "tier": "warm",
       "topProtocols": [
         {
@@ -128,12 +128,12 @@
       "city": "New York",
       "x": 843,
       "y": 202,
-      "count": 15,
+      "count": 16,
       "tier": "warm",
       "topProtocols": [
         {
           "title": "ny collaborative protocols",
-          "count": 3
+          "count": 4
         },
         {
           "title": "bls protocols V.26.0",
@@ -234,6 +234,28 @@
       ]
     },
     {
+      "state": "MA",
+      "city": "Boston",
+      "x": 881,
+      "y": 155,
+      "count": 9,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "download",
+          "count": 5
+        },
+        {
+          "title": "2026 MA state protocols",
+          "count": 1
+        },
+        {
+          "title": "download",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "CA",
       "city": "Los Angeles",
       "x": 80,
@@ -274,28 +296,6 @@
         {
           "title": "MD Medical Protocols 2026 Print",
           "count": 2
-        }
-      ]
-    },
-    {
-      "state": "MA",
-      "city": "Boston",
-      "x": 881,
-      "y": 155,
-      "count": 8,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "download",
-          "count": 4
-        },
-        {
-          "title": "2026 MA state protocols",
-          "count": 1
-        },
-        {
-          "title": "download",
-          "count": 1
         }
       ]
     },
