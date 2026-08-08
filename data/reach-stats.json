@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-07T18:07:49.276Z",
-  "totalUploads": 412,
-  "distinctProtocols": 315,
-  "activeStudiers": 284,
-  "pagesProcessed": 65889,
+  "generatedAt": "2026-08-08T00:07:54.322Z",
+  "totalUploads": 420,
+  "distinctProtocols": 323,
+  "activeStudiers": 286,
+  "pagesProcessed": 66497,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 4,
@@ -16,17 +16,17 @@
     "NY": 16,
     "NC": 13,
     "VA": 12,
+    "OR": 12,
     "WY": 10,
     "CT": 9,
     "MA": 9,
     "WA": 8,
     "MD": 8,
     "IL": 7,
+    "FL": 7,
     "NV": 7,
     "AZ": 7,
     "TN": 6,
-    "FL": 6,
-    "OR": 6,
     "UT": 5,
     "GA": 5,
     "WI": 5,
@@ -43,12 +43,12 @@
     "AR": 2,
     "NH": 2,
     "NJ": 2,
+    "IA": 2,
     "DC": 2,
     "WV": 2,
     "MO": 1,
     "LA": 1,
     "ID": 1,
-    "IA": 1,
     "RI": 1
   },
   "byCountry": {
@@ -251,6 +251,28 @@
         },
         {
           "title": "download",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "OR",
+      "city": "Portland",
+      "x": 73,
+      "y": 80,
+      "count": 9,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "New",
+          "count": 1
+        },
+        {
+          "title": "WASHCO Treatment",
+          "count": 1
+        },
+        {
+          "title": "AMR WASHCO PROTOCOL",
           "count": 1
         }
       ]
@@ -485,28 +507,6 @@
         },
         {
           "title": "FCEMS COG Jan 26",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "OR",
-      "city": "Portland",
-      "x": 73,
-      "y": 80,
-      "count": 4,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "New",
-          "count": 1
-        },
-        {
-          "title": "EMTTTT",
-          "count": 1
-        },
-        {
-          "title": "Two",
           "count": 1
         }
       ]
@@ -1284,6 +1284,20 @@
       ]
     },
     {
+      "state": "IA",
+      "city": "Des Moines",
+      "x": 520,
+      "y": 224,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "Iowa Paramount Adult Protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "CA",
       "city": "Santa Barbara",
       "x": 57,
@@ -1551,6 +1565,20 @@
     },
     {
       "state": "OR",
+      "city": "Washington County",
+      "x": 68,
+      "y": 78,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "WASHCO Meds",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "OR",
       "city": "Hillsboro",
       "x": 69,
       "y": 79,
@@ -1559,6 +1587,20 @@
       "topProtocols": [
         {
           "title": "WASHSO Meds",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "FL",
+      "city": "Ocala",
+      "x": 747,
+      "y": 480,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "Marion county protocols",
           "count": 1
         }
       ]
