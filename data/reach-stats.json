@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-08-08T00:07:54.322Z",
-  "totalUploads": 420,
-  "distinctProtocols": 323,
-  "activeStudiers": 286,
-  "pagesProcessed": 66497,
+  "generatedAt": "2026-08-08T06:07:56.323Z",
+  "totalUploads": 422,
+  "distinctProtocols": 325,
+  "activeStudiers": 288,
+  "pagesProcessed": 66812,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 4,
   "byState": {
     "MI": 32,
     "CO": 24,
-    "TX": 22,
+    "TX": 23,
     "CA": 20,
     "PA": 17,
     "NY": 16,
@@ -1573,6 +1573,20 @@
       "topProtocols": [
         {
           "title": "WASHCO Meds",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "TX",
+      "city": "Boerne",
+      "x": 428,
+      "y": 485,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "BCESD4 SMOPS Complete",
           "count": 1
         }
       ]
