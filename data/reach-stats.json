@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-08T12:07:54.988Z",
-  "totalUploads": 422,
+  "generatedAt": "2026-08-08T18:07:56.309Z",
+  "totalUploads": 423,
   "distinctProtocols": 325,
-  "activeStudiers": 288,
-  "pagesProcessed": 66812,
+  "activeStudiers": 289,
+  "pagesProcessed": 67022,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 4,
@@ -32,9 +32,9 @@
     "WI": 5,
     "KY": 4,
     "SC": 4,
+    "AL": 4,
     "OK": 3,
     "NE": 3,
-    "AL": 3,
     "DE": 3,
     "IN": 3,
     "MN": 2,
@@ -472,6 +472,24 @@
       ]
     },
     {
+      "state": "AL",
+      "city": "Birmingham",
+      "x": 649,
+      "y": 396,
+      "count": 4,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "master alabama protocols",
+          "count": 3
+        },
+        {
+          "title": "master.alabama.protocols.11th.edition.07012025",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "CA",
       "city": "San Leandro",
       "x": 34,
@@ -601,24 +619,6 @@
         },
         {
           "title": "ABFY County Protocols 2025",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "AL",
-      "city": "Birmingham",
-      "x": 649,
-      "y": 396,
-      "count": 3,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "master alabama protocols",
-          "count": 2
-        },
-        {
-          "title": "master.alabama.protocols.11th.edition.07012025",
           "count": 1
         }
       ]
