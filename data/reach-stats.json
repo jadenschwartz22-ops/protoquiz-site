@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-09T00:07:58.378Z",
-  "totalUploads": 423,
-  "distinctProtocols": 325,
-  "activeStudiers": 289,
-  "pagesProcessed": 67022,
+  "generatedAt": "2026-08-09T06:07:54.538Z",
+  "totalUploads": 424,
+  "distinctProtocols": 326,
+  "activeStudiers": 290,
+  "pagesProcessed": 67098,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 4,
@@ -45,10 +45,10 @@
     "NJ": 2,
     "IA": 2,
     "DC": 2,
+    "ID": 2,
     "WV": 2,
     "MO": 1,
     "LA": 1,
-    "ID": 1,
     "RI": 1
   },
   "byCountry": {
@@ -908,6 +908,24 @@
       ]
     },
     {
+      "state": "ID",
+      "city": "Boise",
+      "x": 162,
+      "y": 146,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "EMSPC Statewide Protocols 2024 1.1",
+          "count": 1
+        },
+        {
+          "title": "ADA COUNTY Boise",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "CA",
       "city": "Sacramento",
       "x": 50,
@@ -1377,20 +1395,6 @@
       "topProtocols": [
         {
           "title": "2025 Protocols",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "ID",
-      "city": "Boise",
-      "x": 162,
-      "y": 146,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "ADA COUNTY Boise",
           "count": 1
         }
       ]
