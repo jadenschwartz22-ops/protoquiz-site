@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-10T12:07:55.655Z",
-  "totalUploads": 428,
-  "distinctProtocols": 328,
-  "activeStudiers": 294,
-  "pagesProcessed": 67745,
+  "generatedAt": "2026-08-10T18:07:56.336Z",
+  "totalUploads": 430,
+  "distinctProtocols": 329,
+  "activeStudiers": 296,
+  "pagesProcessed": 68205,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 4,
@@ -18,8 +18,8 @@
     "OR": 13,
     "VA": 12,
     "WY": 10,
-    "CT": 9,
-    "MA": 9,
+    "CT": 10,
+    "MA": 10,
     "WA": 8,
     "MD": 8,
     "IL": 7,
@@ -168,6 +168,28 @@
       ]
     },
     {
+      "state": "CT",
+      "city": "Hartford",
+      "x": 858,
+      "y": 174,
+      "count": 10,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "v2025 2 ctemsstatewideprotocolsFINALver1",
+          "count": 6
+        },
+        {
+          "title": "v2025 2 ctemsstatewideprotocolsfinalver1",
+          "count": 2
+        },
+        {
+          "title": "v20251 ctemsstatewideprotocolsfinal",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "NC",
       "city": "Charlotte",
       "x": 751,
@@ -185,6 +207,28 @@
         },
         {
           "title": "BCEMS Protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "MA",
+      "city": "Boston",
+      "x": 881,
+      "y": 155,
+      "count": 10,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "download",
+          "count": 5
+        },
+        {
+          "title": "2026 MA state protocols",
+          "count": 1
+        },
+        {
+          "title": "download",
           "count": 1
         }
       ]
@@ -251,50 +295,6 @@
         },
         {
           "title": "UTHETEMS Protocols",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CT",
-      "city": "Hartford",
-      "x": 858,
-      "y": 174,
-      "count": 9,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "v2025 2 ctemsstatewideprotocolsFINALver1",
-          "count": 6
-        },
-        {
-          "title": "v20251 ctemsstatewideprotocolsfinal",
-          "count": 1
-        },
-        {
-          "title": "CT EMS Statewide Protocols",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "MA",
-      "city": "Boston",
-      "x": 881,
-      "y": 155,
-      "count": 9,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "download",
-          "count": 5
-        },
-        {
-          "title": "2026 MA state protocols",
-          "count": 1
-        },
-        {
-          "title": "download",
           "count": 1
         }
       ]
