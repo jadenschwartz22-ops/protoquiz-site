@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-09T18:07:57.102Z",
-  "totalUploads": 424,
+  "generatedAt": "2026-08-10T00:07:57.585Z",
+  "totalUploads": 426,
   "distinctProtocols": 326,
-  "activeStudiers": 290,
-  "pagesProcessed": 67098,
+  "activeStudiers": 292,
+  "pagesProcessed": 67471,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 4,
@@ -11,7 +11,7 @@
     "MI": 32,
     "CO": 24,
     "TX": 23,
-    "CA": 20,
+    "CA": 22,
     "PA": 17,
     "NY": 16,
     "NC": 13,
@@ -190,6 +190,28 @@
       ]
     },
     {
+      "state": "CA",
+      "city": "Los Angeles",
+      "x": 80,
+      "y": 345,
+      "count": 9,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "103 Ready to Print Policy Manual Complete",
+          "count": 1
+        },
+        {
+          "title": "1075386 LACountyTreatmentProtocols",
+          "count": 1
+        },
+        {
+          "title": "p14 p14010 2",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "TX",
       "city": "Houston",
       "x": 493,
@@ -278,28 +300,6 @@
       ]
     },
     {
-      "state": "CA",
-      "city": "Los Angeles",
-      "x": 80,
-      "y": 345,
-      "count": 8,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "103 Ready to Print Policy Manual Complete",
-          "count": 1
-        },
-        {
-          "title": "1075386 LACountyTreatmentProtocols",
-          "count": 1
-        },
-        {
-          "title": "p14 p14010 2",
-          "count": 1
-        }
-      ]
-    },
-    {
       "state": "MD",
       "city": "Baltimore",
       "x": 807,
@@ -379,6 +379,24 @@
         },
         {
           "title": "red book chapter 3 2026",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "CA",
+      "city": "San Leandro",
+      "x": 34,
+      "y": 249,
+      "count": 5,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "2026 Alameda County EMS Field Manual Rev3",
+          "count": 4
+        },
+        {
+          "title": "alco fm 2025 draft 07 31 2024",
           "count": 1
         }
       ]
@@ -485,24 +503,6 @@
         },
         {
           "title": "master.alabama.protocols.11th.edition.07012025",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CA",
-      "city": "San Leandro",
-      "x": 34,
-      "y": 249,
-      "count": 4,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "2026 Alameda County EMS Field Manual Rev3",
-          "count": 3
-        },
-        {
-          "title": "alco fm 2025 draft 07 31 2024",
           "count": 1
         }
       ]
