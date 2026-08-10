@@ -1,22 +1,22 @@
 {
-  "generatedAt": "2026-08-10T00:07:57.585Z",
-  "totalUploads": 426,
-  "distinctProtocols": 326,
-  "activeStudiers": 292,
-  "pagesProcessed": 67471,
+  "generatedAt": "2026-08-10T06:07:57.574Z",
+  "totalUploads": 428,
+  "distinctProtocols": 328,
+  "activeStudiers": 294,
+  "pagesProcessed": 67745,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 4,
   "byState": {
     "MI": 32,
-    "CO": 24,
+    "CO": 25,
     "TX": 23,
     "CA": 22,
     "PA": 17,
     "NY": 16,
     "NC": 13,
+    "OR": 13,
     "VA": 12,
-    "OR": 12,
     "WY": 10,
     "CT": 9,
     "MA": 9,
@@ -84,7 +84,7 @@
       "city": "Denver",
       "x": 330,
       "y": 258,
-      "count": 19,
+      "count": 20,
       "tier": "warm",
       "topProtocols": [
         {
@@ -190,6 +190,28 @@
       ]
     },
     {
+      "state": "OR",
+      "city": "Portland",
+      "x": 73,
+      "y": 80,
+      "count": 10,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "New",
+          "count": 1
+        },
+        {
+          "title": "WASHCO Treatment",
+          "count": 1
+        },
+        {
+          "title": "httpss3.amazonaws.comtsresources.targetsolutions.com197A1159…",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "CA",
       "city": "Los Angeles",
       "x": 80,
@@ -273,28 +295,6 @@
         },
         {
           "title": "download",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "OR",
-      "city": "Portland",
-      "x": 73,
-      "y": 80,
-      "count": 9,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "New",
-          "count": 1
-        },
-        {
-          "title": "WASHCO Treatment",
-          "count": 1
-        },
-        {
-          "title": "AMR WASHCO PROTOCOL",
           "count": 1
         }
       ]
