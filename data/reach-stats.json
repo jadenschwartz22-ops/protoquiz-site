@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-08-11T12:07:58.685Z",
-  "totalUploads": 439,
+  "generatedAt": "2026-08-11T18:07:56.820Z",
+  "totalUploads": 442,
   "distinctProtocols": 331,
-  "activeStudiers": 298,
-  "pagesProcessed": 69868,
+  "activeStudiers": 300,
+  "pagesProcessed": 70443,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 4,
   "byState": {
     "MI": 32,
-    "CO": 26,
+    "CO": 27,
     "TX": 23,
-    "CA": 22,
+    "CA": 23,
     "PA": 17,
     "NY": 16,
     "NC": 13,
+    "GA": 13,
     "OR": 13,
     "VA": 12,
-    "GA": 12,
     "WY": 10,
     "CT": 10,
     "MA": 10,
@@ -150,12 +150,12 @@
       "city": "Atlanta",
       "x": 692,
       "y": 386,
-      "count": 11,
+      "count": 12,
       "tier": "warm",
       "topProtocols": [
         {
           "title": "National EMS Patient Care Guidelines Sept 2024 Revision 01.66…",
-          "count": 7
+          "count": 8
         },
         {
           "title": "Whole Protocol V 3807012026150232 (1)",
@@ -163,6 +163,28 @@
         },
         {
           "title": "2024 Scope of Practice 260123",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "CA",
+      "city": "Los Angeles",
+      "x": 80,
+      "y": 345,
+      "count": 10,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "Field Manual 79",
+          "count": 2
+        },
+        {
+          "title": "103 Ready to Print Policy Manual Complete",
+          "count": 1
+        },
+        {
+          "title": "1075386 LACountyTreatmentProtocols",
           "count": 1
         }
       ]
@@ -273,28 +295,6 @@
         },
         {
           "title": "httpss3.amazonaws.comtsresources.targetsolutions.com197A1159…",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CA",
-      "city": "Los Angeles",
-      "x": 80,
-      "y": 345,
-      "count": 9,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "103 Ready to Print Policy Manual Complete",
-          "count": 1
-        },
-        {
-          "title": "1075386 LACountyTreatmentProtocols",
-          "count": 1
-        },
-        {
-          "title": "p14 p14010 2",
           "count": 1
         }
       ]
@@ -464,6 +464,28 @@
       ]
     },
     {
+      "state": "CO",
+      "city": "Boulder",
+      "x": 326,
+      "y": 252,
+      "count": 5,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "BoCo Protocols Oct 2025",
+          "count": 2
+        },
+        {
+          "title": "BoCo Protocols Apr 2026",
+          "count": 1
+        },
+        {
+          "title": "BoCo Protocols Oct 2025 (1)",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "UT",
       "city": "Salt Lake City",
       "x": 218,
@@ -525,28 +547,6 @@
         },
         {
           "title": "WEMA Protocols POCKET GUIDE AMBULANCE V3 9 23 15",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CO",
-      "city": "Boulder",
-      "x": 326,
-      "y": 252,
-      "count": 4,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "BoCo Protocols Apr 2026",
-          "count": 1
-        },
-        {
-          "title": "BoCo Protocols Oct 2025",
-          "count": 1
-        },
-        {
-          "title": "BoCo Protocols Oct 2025 (1)",
           "count": 1
         }
       ]
