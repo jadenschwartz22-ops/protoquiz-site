@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-11T18:07:56.820Z",
-  "totalUploads": 442,
+  "generatedAt": "2026-08-12T00:07:58.547Z",
+  "totalUploads": 447,
   "distinctProtocols": 331,
-  "activeStudiers": 300,
-  "pagesProcessed": 70443,
+  "activeStudiers": 301,
+  "pagesProcessed": 71346,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 4,
@@ -13,9 +13,9 @@
     "TX": 23,
     "CA": 23,
     "PA": 17,
+    "GA": 17,
     "NY": 16,
     "NC": 13,
-    "GA": 13,
     "OR": 13,
     "VA": 12,
     "WY": 10,
@@ -23,9 +23,9 @@
     "MA": 10,
     "WA": 8,
     "MD": 8,
+    "NV": 8,
     "IL": 7,
     "FL": 7,
-    "NV": 7,
     "AZ": 7,
     "TN": 6,
     "UT": 5,
@@ -150,12 +150,12 @@
       "city": "Atlanta",
       "x": 692,
       "y": 386,
-      "count": 12,
+      "count": 16,
       "tier": "warm",
       "topProtocols": [
         {
           "title": "National EMS Patient Care Guidelines Sept 2024 Revision 01.66…",
-          "count": 8
+          "count": 12
         },
         {
           "title": "Whole Protocol V 3807012026150232 (1)",
@@ -344,6 +344,24 @@
       ]
     },
     {
+      "state": "NV",
+      "city": "Las Vegas",
+      "x": 145,
+      "y": 311,
+      "count": 8,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "ems protocol manual",
+          "count": 7
+        },
+        {
+          "title": "2026 EMS Protocol Manual",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "VA",
       "city": "Richmond",
       "x": 801,
@@ -361,24 +379,6 @@
         },
         {
           "title": "Section 8 Pediatric Cardiac",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "NV",
-      "city": "Las Vegas",
-      "x": 145,
-      "y": 311,
-      "count": 7,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "ems protocol manual",
-          "count": 6
-        },
-        {
-          "title": "2026 EMS Protocol Manual",
           "count": 1
         }
       ]
