@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-12T12:08:00.919Z",
-  "totalUploads": 452,
+  "generatedAt": "2026-08-12T18:08:02.348Z",
+  "totalUploads": 453,
   "distinctProtocols": 334,
-  "activeStudiers": 302,
-  "pagesProcessed": 72872,
+  "activeStudiers": 303,
+  "pagesProcessed": 73055,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 4,
@@ -21,9 +21,9 @@
     "WY": 10,
     "CT": 10,
     "MA": 10,
+    "NV": 9,
     "WA": 8,
     "MD": 8,
-    "NV": 8,
     "IL": 7,
     "FL": 7,
     "AZ": 7,
@@ -322,6 +322,24 @@
       ]
     },
     {
+      "state": "NV",
+      "city": "Las Vegas",
+      "x": 145,
+      "y": 311,
+      "count": 9,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "ems protocol manual",
+          "count": 8
+        },
+        {
+          "title": "2026 EMS Protocol Manual",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "MD",
       "city": "Baltimore",
       "x": 807,
@@ -340,24 +358,6 @@
         {
           "title": "MD Medical Protocols 2026 Print",
           "count": 2
-        }
-      ]
-    },
-    {
-      "state": "NV",
-      "city": "Las Vegas",
-      "x": 145,
-      "y": 311,
-      "count": 8,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "ems protocol manual",
-          "count": 7
-        },
-        {
-          "title": "2026 EMS Protocol Manual",
-          "count": 1
         }
       ]
     },
