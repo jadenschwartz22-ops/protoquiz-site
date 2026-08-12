@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-08-12T00:07:58.547Z",
-  "totalUploads": 447,
-  "distinctProtocols": 331,
+  "generatedAt": "2026-08-12T06:08:00.370Z",
+  "totalUploads": 451,
+  "distinctProtocols": 333,
   "activeStudiers": 301,
-  "pagesProcessed": 71346,
+  "pagesProcessed": 72871,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 4,
   "byState": {
     "MI": 32,
-    "CO": 27,
+    "CO": 28,
     "TX": 23,
     "CA": 23,
+    "GA": 18,
     "PA": 17,
-    "GA": 17,
     "NY": 16,
     "NC": 13,
     "OR": 13,
@@ -33,6 +33,7 @@
     "WI": 5,
     "KY": 4,
     "SC": 4,
+    "ID": 4,
     "OK": 3,
     "NE": 3,
     "DE": 3,
@@ -45,7 +46,6 @@
     "NJ": 2,
     "IA": 2,
     "DC": 2,
-    "ID": 2,
     "WV": 2,
     "MO": 1,
     "LA": 1,
@@ -84,7 +84,7 @@
       "city": "Denver",
       "x": 330,
       "y": 258,
-      "count": 21,
+      "count": 22,
       "tier": "warm",
       "topProtocols": [
         {
@@ -124,6 +124,28 @@
       ]
     },
     {
+      "state": "GA",
+      "city": "Atlanta",
+      "x": 692,
+      "y": 386,
+      "count": 17,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "National EMS Patient Care Guidelines Sept 2024 Revision 01.66…",
+          "count": 13
+        },
+        {
+          "title": "Whole Protocol V 3807012026150232 (1)",
+          "count": 1
+        },
+        {
+          "title": "2024 Scope of Practice 260123",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "NY",
       "city": "New York",
       "x": 843,
@@ -142,28 +164,6 @@
         {
           "title": "ny collaborative protocols",
           "count": 2
-        }
-      ]
-    },
-    {
-      "state": "GA",
-      "city": "Atlanta",
-      "x": 692,
-      "y": 386,
-      "count": 16,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "National EMS Patient Care Guidelines Sept 2024 Revision 01.66…",
-          "count": 12
-        },
-        {
-          "title": "Whole Protocol V 3807012026150232 (1)",
-          "count": 1
-        },
-        {
-          "title": "2024 Scope of Practice 260123",
-          "count": 1
         }
       ]
     },
@@ -976,6 +976,20 @@
         {
           "title": "palmbeachgardensfirerescuepatientcareprotocols2025 bf30c8b884…",
           "count": 1
+        }
+      ]
+    },
+    {
+      "state": "ID",
+      "city": "Ada County",
+      "x": 160,
+      "y": 150,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "ADAP",
+          "count": 2
         }
       ]
     },
