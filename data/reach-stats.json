@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-13T12:08:00.907Z",
-  "totalUploads": 453,
-  "distinctProtocols": 334,
-  "activeStudiers": 303,
-  "pagesProcessed": 73055,
+  "generatedAt": "2026-08-13T18:08:25.081Z",
+  "totalUploads": 458,
+  "distinctProtocols": 336,
+  "activeStudiers": 305,
+  "pagesProcessed": 73861,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 4,
@@ -12,12 +12,12 @@
     "CO": 28,
     "TX": 23,
     "CA": 23,
+    "PA": 20,
     "GA": 18,
-    "PA": 17,
-    "NY": 16,
+    "NY": 17,
     "NC": 13,
+    "VA": 13,
     "OR": 13,
-    "VA": 12,
     "WY": 10,
     "CT": 10,
     "MA": 10,
@@ -106,19 +106,41 @@
       "city": "Philadelphia",
       "x": 828,
       "y": 223,
-      "count": 17,
+      "count": 20,
       "tier": "warm",
       "topProtocols": [
         {
           "title": "2023v1 2 PA ALS Protocols",
-          "count": 5
+          "count": 6
         },
         {
           "title": "2023v1 2 PA BLS Protocols",
-          "count": 3
+          "count": 4
         },
         {
           "title": "2023v1 2 pa bls protocols",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "state": "NY",
+      "city": "New York",
+      "x": 843,
+      "y": 202,
+      "count": 17,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "ny collaborative protocols",
+          "count": 4
+        },
+        {
+          "title": "bls protocols V.26.0",
+          "count": 3
+        },
+        {
+          "title": "ny collaborative protocols",
           "count": 3
         }
       ]
@@ -142,28 +164,6 @@
         {
           "title": "2024 Scope of Practice 260123",
           "count": 1
-        }
-      ]
-    },
-    {
-      "state": "NY",
-      "city": "New York",
-      "x": 843,
-      "y": 202,
-      "count": 16,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "ny collaborative protocols",
-          "count": 4
-        },
-        {
-          "title": "bls protocols V.26.0",
-          "count": 3
-        },
-        {
-          "title": "ny collaborative protocols",
-          "count": 2
         }
       ]
     },
@@ -366,7 +366,7 @@
       "city": "Richmond",
       "x": 801,
       "y": 283,
-      "count": 7,
+      "count": 8,
       "tier": "warm",
       "topProtocols": [
         {
