@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-08-14T12:08:04.299Z",
-  "totalUploads": 466,
-  "distinctProtocols": 342,
-  "activeStudiers": 313,
-  "pagesProcessed": 75682,
+  "generatedAt": "2026-08-14T18:08:04.820Z",
+  "totalUploads": 468,
+  "distinctProtocols": 343,
+  "activeStudiers": 315,
+  "pagesProcessed": 75873,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 4,
   "byState": {
     "MI": 32,
     "CO": 29,
+    "CA": 24,
     "TX": 23,
-    "CA": 23,
     "PA": 20,
     "NY": 19,
     "GA": 18,
@@ -168,6 +168,28 @@
       ]
     },
     {
+      "state": "CA",
+      "city": "Los Angeles",
+      "x": 80,
+      "y": 345,
+      "count": 11,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "Field Manual 79",
+          "count": 2
+        },
+        {
+          "title": "103 Ready to Print Policy Manual Complete",
+          "count": 1
+        },
+        {
+          "title": "1075386 LACountyTreatmentProtocols",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "NC",
       "city": "Charlotte",
       "x": 751,
@@ -185,28 +207,6 @@
         },
         {
           "title": "BCEMS Protocols",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CA",
-      "city": "Los Angeles",
-      "x": 80,
-      "y": 345,
-      "count": 10,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "Field Manual 79",
-          "count": 2
-        },
-        {
-          "title": "103 Ready to Print Policy Manual Complete",
-          "count": 1
-        },
-        {
-          "title": "1075386 LACountyTreatmentProtocols",
           "count": 1
         }
       ]
