@@ -1,27 +1,27 @@
 {
-  "generatedAt": "2026-08-13T18:08:25.081Z",
-  "totalUploads": 458,
-  "distinctProtocols": 336,
-  "activeStudiers": 305,
-  "pagesProcessed": 73861,
+  "generatedAt": "2026-08-14T00:08:06.173Z",
+  "totalUploads": 465,
+  "distinctProtocols": 341,
+  "activeStudiers": 312,
+  "pagesProcessed": 75509,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 4,
   "byState": {
     "MI": 32,
-    "CO": 28,
+    "CO": 29,
     "TX": 23,
     "CA": 23,
     "PA": 20,
+    "NY": 19,
     "GA": 18,
-    "NY": 17,
-    "NC": 13,
-    "VA": 13,
+    "NC": 14,
+    "VA": 14,
     "OR": 13,
     "WY": 10,
     "CT": 10,
+    "NV": 10,
     "MA": 10,
-    "NV": 9,
     "WA": 8,
     "MD": 8,
     "IL": 7,
@@ -84,7 +84,7 @@
       "city": "Denver",
       "x": 330,
       "y": 258,
-      "count": 22,
+      "count": 23,
       "tier": "warm",
       "topProtocols": [
         {
@@ -128,7 +128,7 @@
       "city": "New York",
       "x": 843,
       "y": 202,
-      "count": 17,
+      "count": 19,
       "tier": "warm",
       "topProtocols": [
         {
@@ -137,7 +137,7 @@
         },
         {
           "title": "bls protocols V.26.0",
-          "count": 3
+          "count": 4
         },
         {
           "title": "ny collaborative protocols",
@@ -163,6 +163,28 @@
         },
         {
           "title": "2024 Scope of Practice 260123",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "NC",
+      "city": "Charlotte",
+      "x": 751,
+      "y": 344,
+      "count": 11,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "Haywood County EMS 2026 Protocols Policies and Procedures",
+          "count": 3
+        },
+        {
+          "title": "MEDIC ALS",
+          "count": 1
+        },
+        {
+          "title": "BCEMS Protocols",
           "count": 1
         }
       ]
@@ -234,23 +256,23 @@
       ]
     },
     {
-      "state": "NC",
-      "city": "Charlotte",
-      "x": 751,
-      "y": 344,
+      "state": "NV",
+      "city": "Las Vegas",
+      "x": 145,
+      "y": 311,
       "count": 10,
       "tier": "warm",
       "topProtocols": [
         {
-          "title": "Haywood County EMS 2026 Protocols Policies and Procedures",
-          "count": 3
+          "title": "ems protocol manual",
+          "count": 8
         },
         {
-          "title": "MEDIC ALS",
+          "title": "2026 EMS Protocol Manual",
           "count": 1
         },
         {
-          "title": "BCEMS Protocols",
+          "title": "emc protocols",
           "count": 1
         }
       ]
@@ -317,24 +339,6 @@
         },
         {
           "title": "UTHETEMS Protocols",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "NV",
-      "city": "Las Vegas",
-      "x": 145,
-      "y": 311,
-      "count": 9,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "ems protocol manual",
-          "count": 8
-        },
-        {
-          "title": "2026 EMS Protocol Manual",
           "count": 1
         }
       ]
@@ -1591,6 +1595,20 @@
       "topProtocols": [
         {
           "title": "WASHCO Meds",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "VA",
+      "city": "Fairfax",
+      "x": 797,
+      "y": 254,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "2024emsmanual1 16 2024 d1857f3401fae1e5c50fe",
           "count": 1
         }
       ]
