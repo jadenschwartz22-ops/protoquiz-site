@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-14T00:08:06.173Z",
-  "totalUploads": 465,
-  "distinctProtocols": 341,
-  "activeStudiers": 312,
-  "pagesProcessed": 75509,
+  "generatedAt": "2026-08-14T06:08:03.857Z",
+  "totalUploads": 466,
+  "distinctProtocols": 342,
+  "activeStudiers": 313,
+  "pagesProcessed": 75682,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 4,
@@ -33,11 +33,11 @@
     "WI": 5,
     "KY": 4,
     "SC": 4,
+    "IN": 4,
     "ID": 4,
     "OK": 3,
     "NE": 3,
     "DE": 3,
-    "IN": 3,
     "MN": 2,
     "VT": 2,
     "OH": 2,
@@ -1315,6 +1315,20 @@
       "topProtocols": [
         {
           "title": "2026:7 manatee ems protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "IN",
+      "city": "Indianapolis",
+      "x": 646,
+      "y": 256,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "176",
           "count": 1
         }
       ]
