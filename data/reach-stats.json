@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-14T18:08:04.820Z",
-  "totalUploads": 468,
-  "distinctProtocols": 343,
-  "activeStudiers": 315,
-  "pagesProcessed": 75873,
+  "generatedAt": "2026-08-15T00:08:08.293Z",
+  "totalUploads": 471,
+  "distinctProtocols": 344,
+  "activeStudiers": 318,
+  "pagesProcessed": 76638,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 4,
@@ -13,10 +13,10 @@
     "CA": 24,
     "TX": 23,
     "PA": 20,
-    "NY": 19,
+    "NY": 20,
     "GA": 18,
+    "VA": 15,
     "NC": 14,
-    "VA": 14,
     "OR": 13,
     "WY": 10,
     "CT": 10,
@@ -44,11 +44,11 @@
     "AR": 2,
     "NH": 2,
     "NJ": 2,
+    "LA": 2,
     "IA": 2,
     "DC": 2,
     "WV": 2,
     "MO": 1,
-    "LA": 1,
     "RI": 1
   },
   "byCountry": {
@@ -128,12 +128,12 @@
       "city": "New York",
       "x": 843,
       "y": 202,
-      "count": 19,
+      "count": 20,
       "tier": "warm",
       "topProtocols": [
         {
           "title": "ny collaborative protocols",
-          "count": 4
+          "count": 5
         },
         {
           "title": "bls protocols V.26.0",
@@ -344,6 +344,28 @@
       ]
     },
     {
+      "state": "VA",
+      "city": "Richmond",
+      "x": 801,
+      "y": 283,
+      "count": 9,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "Section 7 Toxicological",
+          "count": 1
+        },
+        {
+          "title": "Section 9 Peds Medical Revised Racemic Epi",
+          "count": 1
+        },
+        {
+          "title": "Section 8 Pediatric Cardiac",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "MD",
       "city": "Baltimore",
       "x": 807,
@@ -362,28 +384,6 @@
         {
           "title": "MD Medical Protocols 2026 Print",
           "count": 2
-        }
-      ]
-    },
-    {
-      "state": "VA",
-      "city": "Richmond",
-      "x": 801,
-      "y": 283,
-      "count": 8,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "Section 7 Toxicological",
-          "count": 1
-        },
-        {
-          "title": "Section 9 Peds Medical Revised Racemic Epi",
-          "count": 1
-        },
-        {
-          "title": "Section 8 Pediatric Cardiac",
-          "count": 1
         }
       ]
     },
@@ -862,6 +862,20 @@
       ]
     },
     {
+      "state": "LA",
+      "city": "New Orleans",
+      "x": 594,
+      "y": 479,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "rope 2024 final 05 02 24",
+          "count": 2
+        }
+      ]
+    },
+    {
       "state": "CA",
       "city": "Rocklin",
       "x": 55,
@@ -1273,20 +1287,6 @@
       "topProtocols": [
         {
           "title": "Clark County Protocols 2026",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "LA",
-      "city": "New Orleans",
-      "x": 594,
-      "y": 479,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "rope 2024 final 05 02 24",
           "count": 1
         }
       ]
