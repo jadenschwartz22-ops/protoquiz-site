@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-15T18:08:06.777Z",
-  "totalUploads": 471,
-  "distinctProtocols": 344,
-  "activeStudiers": 318,
-  "pagesProcessed": 76638,
+  "generatedAt": "2026-08-16T00:08:08.456Z",
+  "totalUploads": 473,
+  "distinctProtocols": 345,
+  "activeStudiers": 319,
+  "pagesProcessed": 77065,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 4,
@@ -18,10 +18,10 @@
     "VA": 15,
     "NC": 14,
     "OR": 13,
+    "MA": 11,
     "WY": 10,
     "CT": 10,
     "NV": 10,
-    "MA": 10,
     "WA": 8,
     "MD": 8,
     "IL": 7,
@@ -30,10 +30,10 @@
     "TN": 6,
     "UT": 5,
     "AL": 5,
+    "IN": 5,
     "WI": 5,
     "KY": 4,
     "SC": 4,
-    "IN": 4,
     "ID": 4,
     "OK": 3,
     "NE": 3,
@@ -212,6 +212,28 @@
       ]
     },
     {
+      "state": "MA",
+      "city": "Boston",
+      "x": 881,
+      "y": 155,
+      "count": 11,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "download",
+          "count": 5
+        },
+        {
+          "title": "download",
+          "count": 2
+        },
+        {
+          "title": "2026 MA state protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "WY",
       "city": "Jackson",
       "x": 246,
@@ -273,28 +295,6 @@
         },
         {
           "title": "emc protocols",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "MA",
-      "city": "Boston",
-      "x": 881,
-      "y": 155,
-      "count": 10,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "download",
-          "count": 5
-        },
-        {
-          "title": "2026 MA state protocols",
-          "count": 1
-        },
-        {
-          "title": "download",
           "count": 1
         }
       ]
@@ -1609,6 +1609,20 @@
       "topProtocols": [
         {
           "title": "WASHCO Meds",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "IN",
+      "city": "Fort Wayne",
+      "x": 660,
+      "y": 226,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "7.1.2026 Protocols",
           "count": 1
         }
       ]
