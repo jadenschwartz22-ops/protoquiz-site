@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-08-16T12:08:06.656Z",
-  "totalUploads": 474,
-  "distinctProtocols": 345,
-  "activeStudiers": 319,
-  "pagesProcessed": 77258,
+  "generatedAt": "2026-08-16T18:08:08.836Z",
+  "totalUploads": 476,
+  "distinctProtocols": 346,
+  "activeStudiers": 320,
+  "pagesProcessed": 77630,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 4,
   "byState": {
     "MI": 32,
-    "CO": 30,
+    "CO": 31,
     "CA": 24,
     "TX": 23,
     "PA": 20,
     "NY": 20,
     "GA": 18,
-    "VA": 15,
+    "VA": 16,
     "NC": 14,
     "OR": 13,
     "MA": 11,
@@ -388,6 +388,28 @@
       ]
     },
     {
+      "state": "CO",
+      "city": "Boulder",
+      "x": 326,
+      "y": 252,
+      "count": 6,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "BoCo Protocols Oct 2025",
+          "count": 2
+        },
+        {
+          "title": "BoCo Protocols Apr 2026",
+          "count": 1
+        },
+        {
+          "title": "BoCo Protocols Apr 2026",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "AZ",
       "city": "Phoenix",
       "x": 188,
@@ -463,28 +485,6 @@
         },
         {
           "title": "short.bls",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CO",
-      "city": "Boulder",
-      "x": 326,
-      "y": 252,
-      "count": 5,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "BoCo Protocols Oct 2025",
-          "count": 2
-        },
-        {
-          "title": "BoCo Protocols Apr 2026",
-          "count": 1
-        },
-        {
-          "title": "BoCo Protocols Oct 2025 (1)",
           "count": 1
         }
       ]
@@ -740,6 +740,20 @@
         {
           "title": "2026 Thurston Co Protocol Draft",
           "count": 1
+        }
+      ]
+    },
+    {
+      "state": "VA",
+      "city": "Roanoke",
+      "x": 759,
+      "y": 297,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "WVEMS Protocols 2026",
+          "count": 2
         }
       ]
     },
@@ -1091,20 +1105,6 @@
       "topProtocols": [
         {
           "title": "mayoclinicambulanceservicepatientcareguidelines cb9878846fe31…",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "VA",
-      "city": "Roanoke",
-      "x": 759,
-      "y": 297,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "WVEMS Protocols 2026",
           "count": 1
         }
       ]
