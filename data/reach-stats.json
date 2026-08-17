@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-08-17T12:08:07.179Z",
-  "totalUploads": 477,
-  "distinctProtocols": 346,
-  "activeStudiers": 321,
-  "pagesProcessed": 77824,
+  "generatedAt": "2026-08-17T18:08:16.719Z",
+  "totalUploads": 479,
+  "distinctProtocols": 347,
+  "activeStudiers": 323,
+  "pagesProcessed": 78109,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 4,
   "byState": {
-    "MI": 32,
+    "MI": 33,
     "CO": 31,
     "CA": 24,
     "TX": 23,
@@ -18,9 +18,9 @@
     "VA": 16,
     "NC": 14,
     "OR": 13,
+    "CT": 11,
     "MA": 11,
     "WY": 10,
-    "CT": 10,
     "NV": 10,
     "WA": 8,
     "MD": 8,
@@ -62,7 +62,7 @@
       "city": "Detroit",
       "x": 690,
       "y": 194,
-      "count": 32,
+      "count": 33,
       "tier": "hot",
       "topProtocols": [
         {
@@ -190,6 +190,28 @@
       ]
     },
     {
+      "state": "CT",
+      "city": "Hartford",
+      "x": 858,
+      "y": 174,
+      "count": 11,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "v2025 2 ctemsstatewideprotocolsFINALver1",
+          "count": 6
+        },
+        {
+          "title": "v2025 2 ctemsstatewideprotocolsfinalver1",
+          "count": 3
+        },
+        {
+          "title": "v20251 ctemsstatewideprotocolsfinal",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "NC",
       "city": "Charlotte",
       "x": 751,
@@ -251,28 +273,6 @@
         },
         {
           "title": "17 17 Dextrose",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CT",
-      "city": "Hartford",
-      "x": 858,
-      "y": 174,
-      "count": 10,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "v2025 2 ctemsstatewideprotocolsFINALver1",
-          "count": 6
-        },
-        {
-          "title": "v2025 2 ctemsstatewideprotocolsfinalver1",
-          "count": 2
-        },
-        {
-          "title": "v20251 ctemsstatewideprotocolsfinal",
           "count": 1
         }
       ]
