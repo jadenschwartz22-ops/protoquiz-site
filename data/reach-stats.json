@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-08-18T00:08:13.199Z",
-  "totalUploads": 479,
+  "generatedAt": "2026-08-18T06:08:10.390Z",
+  "totalUploads": 480,
   "distinctProtocols": 347,
-  "activeStudiers": 323,
-  "pagesProcessed": 78109,
+  "activeStudiers": 324,
+  "pagesProcessed": 78262,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 4,
   "byState": {
     "MI": 33,
     "CO": 31,
-    "CA": 24,
+    "CA": 25,
     "TX": 23,
     "PA": 21,
     "NY": 20,
@@ -672,6 +672,20 @@
       ]
     },
     {
+      "state": "CA",
+      "city": "San Diego",
+      "x": 93,
+      "y": 378,
+      "count": 3,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "2026 2027 Protocol Packet",
+          "count": 3
+        }
+      ]
+    },
+    {
       "state": "TX",
       "city": "Austin",
       "x": 448,
@@ -904,20 +918,6 @@
         {
           "title": "Field Manual 79",
           "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CA",
-      "city": "San Diego",
-      "x": 93,
-      "y": 378,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "2026 2027 Protocol Packet",
-          "count": 2
         }
       ]
     },
