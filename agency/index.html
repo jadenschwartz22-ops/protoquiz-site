@@ -3048,6 +3048,69 @@
     .card{padding:80px 24px 110px;}
     .section{padding:80px 0;}
   }
+  /* ===== MOBILE NAV DRAWER =====
+     Ported from the consumer site's statusbar drawer (/index.html) so both
+     pages behave identically, re-skinned to the manila/indigo palette.
+     Before this, <=700px hid the primary nav with NO replacement: How it
+     works / Pricing / Trust / Pilot, the demo link and the route back to the
+     consumer site were all unreachable on a phone. The brand mark points at
+     #hero, so it scrolled instead of escaping. */
+  .nav-toggle{
+    display:none;
+    background:transparent;
+    border:1px solid var(--line);
+    color:var(--ink);
+    padding:10px 14px;
+    min-height:44px;                 /* touch target */
+    font-family:'JetBrains Mono', ui-monospace, monospace;
+    font-size:11.5px; font-weight:700;
+    letter-spacing:.10em; text-transform:uppercase;
+    cursor:pointer; border-radius:6px;
+    transition:background .18s ease, color .18s ease, border-color .18s ease;
+  }
+  .nav-toggle:hover{background:var(--ink); color:var(--bg); border-color:var(--ink);}
+  .nav-toggle .nav-toggle-x{display:none;}
+  .nav-open .nav-toggle .nav-toggle-x{display:inline;}
+  .nav-open .nav-toggle .nav-toggle-menu{display:none;}
+
+  .nav-drawer{
+    display:none;
+    position:fixed; inset:76px 0 0 0;   /* clears the fixed header */
+    z-index:99;
+    background:var(--bg);
+    border-top:1px solid var(--line-soft);
+    padding:28px 22px 44px;
+    flex-direction:column;
+    overflow-y:auto;                   /* short landscape phones */
+  }
+  .nav-open .nav-drawer{display:flex;}
+  .nav-drawer a{
+    font-family:'JetBrains Mono', ui-monospace, monospace;
+    font-size:14px; font-weight:700;
+    letter-spacing:.12em; text-transform:uppercase;
+    color:var(--ink); text-decoration:none;
+    padding:18px 0;
+    border-bottom:1px solid var(--line-soft);
+    display:flex; justify-content:space-between; align-items:center;
+  }
+  .nav-drawer a:hover{color:var(--accent);}
+  .nav-drawer a::after{content:"→"; color:var(--accent); font-weight:400; opacity:.6;}
+  /* Leaving the B2B page is a different action than jumping within it. */
+  .nav-drawer .drawer-exit{
+    margin-top:26px; border-bottom:none;
+    font-size:11.5px; color:var(--muted);
+  }
+  .nav-drawer .drawer-exit::after{content:"↗";}
+
+  @media (max-width:700px){
+    .nav-toggle{display:inline-flex;}
+  }
+  /* The drawer is the ONLY nav under 700px — never let it stay open on a
+     resize back to desktop, where the toggle disappears and would strand it. */
+  @media (min-width:701px){
+    .nav-drawer{display:none !important;}
+  }
+
 
   @media (prefers-reduced-motion: reduce){
     .hero-quote .w,
@@ -4462,15 +4525,31 @@
 
   <header class="site-header">
     <div class="header-left">
-      <a href="#hero" class="brand"><img src="/logo-256.png" alt="EMS ProtoQuiz logo">ProtoQuiz</a>
+      <a href="#hero" class="brand"><img src="/logo-256.png" alt="EMS ProtoQuiz logo">ProtoQuiz&trade;</a>
       <a href="/" class="back-to-consumer" aria-label="Back to ProtoQuiz consumer app">&larr; Consumer app</a>
     </div>
     <nav aria-label="Primary"><a href="#walkthrough">How it works</a><a href="#pricing-section">Pricing</a><a href="/trust/">Trust</a><a href="#contact">Pilot</a></nav>
     <div class="header-cta-group">
       <a href="https://demo.protoquiz.com" target="_blank" rel="noopener" class="cta cta-ghost">Try the demo</a>
       <a href="#" class="cta" id="openContact">Contact us</a>
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="navDrawer">
+        <span class="nav-toggle-menu">Menu +</span>
+        <span class="nav-toggle-x">Close &times;</span>
+      </button>
     </div>
   </header>
+
+  <!-- Mobile-only nav. Mirrors the desktop primary nav plus the two links
+       that 600px and below hide (demo, consumer app), so nothing is
+       unreachable on a phone. -->
+  <div class="nav-drawer" id="navDrawer" aria-hidden="true">
+    <a href="#walkthrough" data-nav-close>How it works</a>
+    <a href="#pricing-section" data-nav-close>Pricing</a>
+    <a href="/trust/" data-nav-close>Trust</a>
+    <a href="#contact" data-nav-close>Start a pilot</a>
+    <a href="https://demo.protoquiz.com" target="_blank" rel="noopener" data-nav-close>Try the demo</a>
+    <a href="/" class="drawer-exit" data-nav-close>ProtoQuiz consumer app</a>
+  </div>
 
   <main id="main-content">
 
@@ -5669,7 +5748,7 @@
   </dialog>
 
   <footer style="border-top:1px solid rgba(15,18,25,.10); padding:48px 24px 36px; font-family:JetBrains Mono, ui-monospace, monospace; font-size:12px; color:rgba(15,18,25,.55); letter-spacing:.02em; line-height:1.6;">
-    <div style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:32px 28px;">
+    <div style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); gap:30px 24px;">
       <div>
         <div style="font-size:10px; letter-spacing:.18em; color:rgba(15,18,25,.45); text-transform:uppercase; margin-bottom:10px;">Product</div>
         <div><a href="/" style="color:rgba(15,18,25,.75); text-decoration:none;">Home</a></div>
@@ -5698,8 +5777,6 @@
         <div><a href="mailto:support@protoquiz.com" style="color:rgba(15,18,25,.75); text-decoration:none;">support@protoquiz.com</a></div>
         <div><a href="mailto:legal@protoquiz.com" style="color:rgba(15,18,25,.75); text-decoration:none;">legal@protoquiz.com</a></div>
         <div><a href="mailto:billing@protoquiz.com" style="color:rgba(15,18,25,.75); text-decoration:none;">billing@protoquiz.com</a></div>
-        <div><a href="mailto:security@protoquiz.com" style="color:rgba(15,18,25,.75); text-decoration:none;">security@protoquiz.com</a></div>
-        <div><a href="mailto:privacy@protoquiz.com" style="color:rgba(15,18,25,.75); text-decoration:none;">privacy@protoquiz.com</a></div>
       </div>
     </div>
     <div style="max-width:1100px; margin:36px auto 0; padding-top:24px; border-top:1px solid rgba(15,18,25,.08); display:flex; flex-wrap:wrap; justify-content:space-between; gap:14px; font-size:11px; color:rgba(15,18,25,.45);">
@@ -6887,6 +6964,34 @@
           e.preventDefault(); first.focus();
         }
       });
+    })();
+
+    /* === Mobile nav drawer ===
+       Ported from the consumer site. Body scroll locks while open so the page
+       behind doesn't slide under the fixed drawer. The desktop breakpoint also
+       force-hides the drawer in CSS, so a resize can't strand it open with the
+       toggle gone -- but we still clear the lock here, since CSS can't. */
+    (function navDrawer(){
+      const toggle = document.getElementById('navToggle');
+      const drawer = document.getElementById('navDrawer');
+      if(!toggle || !drawer) return;
+      function setOpen(open){
+        document.body.classList.toggle('nav-open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+        drawer.setAttribute('aria-hidden', String(!open));
+        document.body.style.overflow = open ? 'hidden' : '';
+      }
+      toggle.addEventListener('click', () =>
+        setOpen(!document.body.classList.contains('nav-open')));
+      drawer.querySelectorAll('[data-nav-close]')
+        .forEach(a => a.addEventListener('click', () => setOpen(false)));
+      document.addEventListener('keydown', e => { if(e.key === 'Escape') setOpen(false); });
+      // Header "Contact us" opens a <dialog>; leaving the drawer open would
+      // keep overflow:hidden after the modal closes and freeze the page.
+      document.getElementById('openContact')
+        ?.addEventListener('click', () => setOpen(false));
+      window.matchMedia('(min-width:701px)')
+        .addEventListener('change', e => { if(e.matches) setOpen(false); });
     })();
 
     /* === Contact dialog: same backend as agency/index.html === */
