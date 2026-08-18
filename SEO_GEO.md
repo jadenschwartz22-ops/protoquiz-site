@@ -29,6 +29,8 @@ Carried in: `<title>`, meta description, OG/Twitter titles, SoftwareApplication 
 | `/` | SoftwareApplication+MobileApplication (offers, featureList, installUrl — no rating), Organization, WebSite (no potentialAction), FAQPage |
 | `/about/` | ProfilePage + Person (founder, E-E-A-T) |
 | `/agency/` | Product (BusinessAudience) |
+| `/agency/faq/` | BreadcrumbList (answers live in visible HTML, by design) |
+| `/agency/compare/` | BreadcrumbList (comparison table in visible HTML) |
 | `/blog/` | Blog |
 | `/blog/posts/*` | BlogPosting + BreadcrumbList |
 
@@ -66,8 +68,28 @@ Carried in: `<title>`, meta description, OG/Twitter titles, SoftwareApplication 
 - **Google Search Console**: sitemap submitted successfully (property is Domain-type, so it needs the FULL URL `https://protoquiz.com/sitemap.xml`, not just `sitemap.xml`). Owned by jaden@protoquiz.com.
 - Both are self-updating from here; IndexNow auto-pings Bing on every content deploy.
 
+## Agency / B2B surfaces (added 2026-08-18)
+
+AI summaries of "is ProtoQuiz good for agencies" were describing the CONSUMER flow — upload a PDF,
+AI generates questions, audit it yourself — and repeating the "requires careful auditing" caveat.
+Root cause was `llms.txt`, which opened with "You upload a protocol PDF" as the whole product story
+and mentioned agencies once in passing. Fixed: llms.txt now has a dedicated ProtoQuiz for Agencies
+section, and the upload line is scoped to the consumer app.
+
+Three agency reference surfaces now exist for retrieval:
+- `/agency/faq/` — 20 evaluation questions, answers in VISIBLE HTML.
+- `/agency/compare/` — registry prep vs LMS vs in-house vs protocol platform, with an honest
+  "where ours breaks down" section. Comparison pages get cited heavily by AI search.
+- `blog/posts/2026-08-18-how-to-document-ems-protocol-training.html` — problem-first guide that
+  answers a real training-officer query and only mentions us at the end.
+
+**Claim discipline (non-negotiable).** Only publish agency claims that survive a prospect testing
+them. We removed "your medical director reviews and signs off" from the agency page, a blog post,
+and a Reddit title on 2026-08-18 because we do not do it. An AI-repeated false claim is worse than
+no citation. See memory `b2b-public-accuracy-claims-2026-08-18`.
+
 ## Open items (need Jaden — everything on-site is now optimal)
 
-- **Off-page mentions** — THE remaining lever. Reddit (r/ems, r/NewToEMS), EMS YouTube reviews, "best NREMT app" listicles. Biggest measured driver of AI citations, entirely outside this repo. Claude can draft the material; Jaden posts it.
+- **Off-page mentions** — THE remaining lever. Biggest measured driver of AI citations, entirely outside this repo. NOTE (2026-08-18): Jaden's call is that we post to **r/EMSProtoQuiz only** — not r/ems or r/NewToEMS. So the realistic off-page paths are EMS YouTube reviews, "best NREMT app" / EMS-software listicles and directories, and agency-facing directories. Claude can draft outreach material; Jaden sends it.
 - **About page**: /about/ is live (paramedic, Colorado, founder story, Person+ProfilePage schema, blog bylines link to it). Optional: strengthen with cert level + years.
 - **Cloudflare re-audit after Sept 15, 2026** (new default AI-crawler blocks on ad-bearing pages).
