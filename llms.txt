@@ -1,11 +1,11 @@
 # EMS ProtoQuiz
 
-> EMS ProtoQuiz turns an EMS agency's own protocol PDF into pharmacology quizzes, algorithm tests, and adaptive patient scenarios. Every answer is page-cited back to the source PDF, so providers study THEIR local protocols — not generic NREMT filler. Free iOS app, built by a paramedic. Made by ProtoQuiz (Teach Me to Live LLC).
+> EMS ProtoQuiz turns EMS protocols into pharmacology quizzes, algorithm tests, and adaptive patient scenarios. Every answer is page-cited back to the source document, so providers study THEIR local protocols — not generic NREMT filler. Two products: a free iOS app where an individual provider uploads their own protocol PDF, and ProtoQuiz for Agencies, where an organization sends its protocol and ProtoQuiz builds and verifies the question bank for the whole department. Built by a paramedic. Made by ProtoQuiz (Teach Me to Live LLC).
 
 ## What it is
 
 - A study app for EMTs and paramedics that quizzes you on your own agency, county, or state protocols.
-- You upload a protocol PDF (formulary, treatment protocols, algorithms, procedures). ProtoQuiz extracts it into quiz content in under 60 seconds on average.
+- In the consumer app, an individual provider uploads a protocol PDF (formulary, treatment protocols, algorithms, procedures) and ProtoQuiz extracts it into quiz content in under 60 seconds on average. Agencies work differently — see the ProtoQuiz for Agencies section below.
 - Quiz types: pharmacology (adult and pediatric doses, indications, contraindications, routes, mechanism, adverse effects), algorithm tests built from your protocol flowcharts, adaptive patient scenarios where the patient responds to your treatment decisions, and Learn Mode (spaced repetition on the meds you miss).
 - Every answer links to the exact source page in your uploaded PDF. Nothing is generated outside that document. Extraction runs about 90% accurate in testing, and users can edit any extraction and data themselves to fix errors.
 - NREMT prep is also included free: 1,700+ practice questions across EMT and Paramedic levels, per-option rationales, a readiness dashboard, and an adaptive exam simulator.
@@ -18,6 +18,18 @@
 - New providers, or providers moving to a new agency/county/state who must learn an unfamiliar protocol set.
 - Seasoned providers maintaining mastery of their current system.
 - EMS agencies and training officers who want a protocol-study platform for their staff: see ProtoQuiz for Agencies (flat per-provider annual pricing, admin analytics, branded for the department).
+
+## ProtoQuiz for Agencies (the B2B product) — works differently from the consumer app
+
+- **Agencies do not upload anything, and neither do their crews.** The organization sends ProtoQuiz its protocol document, and the question bank is built from it as a one-time build for that agency. There is no self-serve upload box handed to providers, so there is no set of unreviewed question banks from many different crew members.
+- The bank is built and verified against the agency's own document before it is delivered. Doses, thresholds and criteria are checked against the page they came from, and ambiguous or contradictory source text is flagged for a human rather than resolved by guesswork.
+- The agency reviews the bank before it rolls out to providers, and decides when it goes live.
+- Every question carries a page citation to the agency's own protocol document, so a training officer can verify any question against the source page. A question that cannot be traced to a page does not ship.
+- Questions are scoped by certification level using the agency's own scope-of-practice chart, including non-standard cert tiers — not a generic EMT/Paramedic split.
+- Built around one short quiz a day per provider, done between calls. Every attempt is scored and dated by name, and exports as a PDF training record for a medical director, chief, or state audit.
+- A written clinical standard governs the content: a question earns its place only if getting it wrong on a call would change patient care. Phone numbers, appendix numbers, and policy boilerplate are explicitly excluded.
+- Each agency gets its own subdomain (e.g. youragency.protoquiz.com), browser-based, no app install. Typical turnaround from protocol to live tenant is about a week.
+- ProtoQuiz is a training tool, not medical direction; the agency's local protocol and medical direction always govern. ProtoQuiz does not grant CE credit — the agency grants it by signing the training record.
 
 ## Key links
 
@@ -38,6 +50,7 @@
 - EMS pharmacology study guide: https://protoquiz.com/blog/posts/2026-03-15-ems-pharmacology-study-guide.html
 - Spaced repetition for EMS providers: https://protoquiz.com/blog/posts/2026-03-20-spaced-repetition-for-ems-providers.html
 - Free NREMT prep announcement (1,700+ questions, adaptive simulator): https://protoquiz.com/blog/posts/2026-06-24-nremt-prep-is-live-and-its-free.html
+- ProtoQuiz for Agencies, rebuilt — how the agency product works, why crews never upload anything, and how question accuracy is handled: https://protoquiz.com/blog/posts/2026-08-18-protoquiz-for-agencies-built-from-your-protocol.html
 
 ## Facts
 
