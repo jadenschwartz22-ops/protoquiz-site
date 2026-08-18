@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ProtoQuiz for Agencies FAQ - How protocol question banks are built, verified, and documented</title>
+  <meta name="description" content="Straight answers for EMS training officers evaluating ProtoQuiz for an agency: how question banks are built from your protocol, how accuracy is handled, what crews and admins actually get, pricing, security, and what we do not do." />
+
+  <meta name="apple-itunes-app" content="app-id=6753611139" />
+  <link rel="canonical" href="https://protoquiz.com/agency/faq/">
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="ProtoQuiz for Agencies - Frequently Asked Questions" />
+  <meta property="og:description" content="Straight answers for EMS training officers: how question banks are built from your protocol, how accuracy is handled, pricing, security, and what we do not do." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://protoquiz.com/agency/faq/" />
+  <meta property="og:image" content="https://protoquiz.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ProtoQuiz for Agencies - Frequently Asked Questions" />
+  <meta name="twitter:description" content="Straight answers for EMS training officers evaluating a protocol training platform." />
+  <meta name="twitter:image" content="https://protoquiz.com/og-image.png" />
+  <meta name="theme-color" content="#05080c" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=4" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=4" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=4" />
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://protoquiz.com/"},
+    {"@type":"ListItem","position":2,"name":"For Agencies","item":"https://protoquiz.com/agency/"},
+    {"@type":"ListItem","position":3,"name":"FAQ","item":"https://protoquiz.com/agency/faq/"}]}
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LNSS9BMEP8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-LNSS9BMEP8');
+    function track(name, props){ try { gtag('event', name, props || {}); } catch(e){} }
+    track('agency_faq_view', {});
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#05080c; --panel:#0b1018; --line:#1b2532;
+      --ink:#e8eef6; --muted:#93a3b8; --cyan:#ffb000; --cyan-dim:rgba(255,176,0,.12);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);
+      font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      -webkit-font-smoothing:antialiased;line-height:1.6}
+    a{color:var(--cyan)}
+    .wrap{max-width:820px;margin:0 auto;padding:0 24px}
+    header{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(5,8,12,.92);
+      backdrop-filter:blur(10px);z-index:10}
+    .navbar{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+    .brand-link{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;
+      font-weight:800;letter-spacing:.02em}
+    .brand-link img{width:34px;height:34px}
+    .nav-links{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+    .nav-btn{color:var(--muted);text-decoration:none;font-size:.9rem;font-weight:600;
+      padding:8px 12px;border-radius:8px}
+    .nav-btn:hover{color:var(--ink);background:var(--panel)}
+    .nav-btn.primary{background:var(--cyan);color:#111;font-weight:800}
+    h1{font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;letter-spacing:-.02em;margin:0 0 14px}
+    .lede{color:var(--muted);font-size:1.08rem;margin:0 0 8px}
+    .updated{color:var(--muted);font-size:.85rem;margin:0}
+    .badge{display:inline-block;padding:6px 14px;border-radius:8px;background:var(--cyan-dim);
+      color:var(--cyan);font-size:.76rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+      margin-bottom:18px}
+    main{padding:52px 0 90px}
+    .toc{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 24px;margin:34px 0 8px}
+    .toc h2{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+    .toc ul{margin:0;padding-left:18px}
+    .toc li{margin:5px 0}
+    .toc a{text-decoration:none}
+    .toc a:hover{text-decoration:underline}
+    section{margin-top:46px}
+    section > h2{font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan);
+      margin:0 0 6px;font-weight:800}
+    .q{margin-top:30px;padding-top:26px;border-top:1px solid var(--line)}
+    .q:first-of-type{border-top:0;padding-top:6px}
+    .q h3{font-size:1.16rem;margin:0 0 10px;letter-spacing:-.01em;line-height:1.35}
+    .q p{margin:0 0 12px;color:#cfdae7}
+    .q ul{margin:0 0 12px;padding-left:20px;color:#cfdae7}
+    .q li{margin:6px 0}
+    strong{color:var(--ink)}
+    .cta{margin-top:60px;background:var(--panel);border:1px solid var(--line);border-radius:16px;
+      padding:32px;text-align:center}
+    .cta h2{margin:0 0 8px;font-size:1.4rem}
+    .cta p{color:var(--muted);margin:0 0 20px}
+    .cta a{display:inline-block;background:var(--cyan);color:#111;font-weight:800;text-decoration:none;
+      padding:13px 26px;border-radius:10px}
+    footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:.86rem}
+    footer a{color:var(--muted)}
+    @media(max-width:620px){ .nav-links .nav-btn:not(.primary){display:none} }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav class="navbar">
+        <a href="/" class="brand-link"><img src="/logo-128.png" alt="ProtoQuiz logo" width="34" height="34"><span>ProtoQuiz</span></a>
+        <div class="nav-links">
+          <a href="/agency/" class="nav-btn">For Agencies</a>
+          <a href="/trust/" class="nav-btn">Trust</a>
+          <a href="/blog/" class="nav-btn">Blog</a>
+          <a href="/agency/#contact" class="nav-btn primary" onclick="track('agency_cta',{source:'faq_nav'})">Start a pilot</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <span class="badge">For Agencies</span>
+      <h1>ProtoQuiz for Agencies: frequently asked questions</h1>
+      <p class="lede">Written for the training officer, EMS chief, or medical director who has been asked whether this is worth doing. Direct answers, including the things we do not do.</p>
+      <p class="updated">Last reviewed: August 18, 2026</p>
+
+      <div class="toc">
+        <h2>On this page</h2>
+        <ul>
+          <li><a href="#build">How the question bank gets built</a></li>
+          <li><a href="#accuracy">Accuracy and clinical quality</a></li>
+          <li><a href="#crews">What crews and training officers actually get</a></li>
+          <li><a href="#ops">Setup, pricing, and IT</a></li>
+          <li><a href="#limits">What ProtoQuiz does not do</a></li>
+        </ul>
+      </div>
+
+      <section id="build">
+        <h2>How the question bank gets built</h2>
+
+        <div class="q">
+          <h3>Do our crews upload our protocol PDF themselves?</h3>
+          <p><strong>No. Nobody at your agency uploads anything.</strong> Your organization sends ProtoQuiz your protocol document once, and the question bank is built from it on our side as a one-time build for your agency.</p>
+          <p>This is the single biggest difference between the agency product and the consumer ProtoQuiz app, where an individual medic can upload their own PDF for personal study. In the agency product there is no upload box in front of your providers, so you never end up with thirty crew members each generating their own unreviewed question set from their own copy of a document.</p>
+          <p>One protocol set. One tenant. One question bank.</p>
+        </div>
+
+        <div class="q">
+          <h3>What exactly do you need from us to start?</h3>
+          <p>Your current protocol document, and your scope of practice chart if it is a separate file. That is the entire ask to get a build started.</p>
+          <p>Statewide protocol sets, county SOPs, agency formularies, and procedure manuals all work. If your protocols live in several documents rather than one, tell us and we will confirm what we need before starting.</p>
+        </div>
+
+        <div class="q">
+          <h3>How long does it take from sending the protocol to crews using it?</h3>
+          <p>Typically about a week. That covers the build, the verification pass against your source pages, and your review before rollout.</p>
+          <p>Unusually long, heavily fragmented, or flowchart-dense documents can take longer. We would rather tell you that up front than rush a bank that a medic then has to second-guess on a call.</p>
+        </div>
+
+        <div class="q">
+          <h3>What happens when our protocols change?</h3>
+          <p>Send the updated document. We rebuild the affected content against the new pages, you review the changes, and your crews see the new questions on their next session. Existing training records stay intact, so the history of who trained on the previous version is not lost.</p>
+          <p>Agencies on a paid plan get a quarterly content refresh as part of the price rather than as a change order.</p>
+        </div>
+      </section>
+
+      <section id="accuracy">
+        <h2>Accuracy and clinical quality</h2>
+
+        <div class="q">
+          <h3>How do we know the questions are actually right?</h3>
+          <p>Three things, in order of how much they matter.</p>
+          <ul>
+            <li><strong>The bank is verified against your document before it is delivered.</strong> Doses, thresholds, and criteria are checked against the page they came from during the build. Ambiguous or contradictory source text is flagged for a human rather than resolved by guesswork.</li>
+            <li><strong>Every question carries a page citation to your own protocol.</strong> Your training officer can open the source page and check any question in seconds. A question that cannot be traced to a page in your document does not ship.</li>
+            <li><strong>Your agency reviews the bank before it reaches providers</strong>, and you decide when it goes live.</li>
+          </ul>
+          <p>We would rather you spot-check us than take our word for it. The page citations exist specifically so that checking is fast.</p>
+        </div>
+
+        <div class="q">
+          <h3>Is there a standard for what makes a question worth asking?</h3>
+          <p>Yes, and it is written down. One test governs it: <strong>a question earns its place only if getting it wrong on a call would change patient care.</strong></p>
+          <p>What that means in practice - the content aims at decision points where an algorithm branches, thresholds that change management, contraindications and hard stops, time-critical sequencing, inclusion and exclusion criteria, and the doses a provider genuinely needs to know cold.</p>
+          <p>What it rules out: phone numbers, radio channels, which appendix covers what, who signs which form, where the sharps container goes, and policy preamble. Those are all faithfully in your protocol document and none of them belong in a training bank. Your providers' training time is finite.</p>
+        </div>
+
+        <div class="q">
+          <h3>What if we find a question we disagree with?</h3>
+          <p>Tell us and we fix it in your bank. Every agency has a direct line for this, and corrections are treated as defects, not feedback to file away.</p>
+          <p>A tool that trains people on protocol has to be correctable, and the fastest path to a correction is a training officer who reports one. If your medical direction and our content ever disagree, your medical direction is right.</p>
+        </div>
+
+        <div class="q">
+          <h3>Are questions scoped to certification level?</h3>
+          <p>Yes, using your agency's own scope of practice chart. An EMT is not drilled on paramedic-scope drugs and doses, and when a provider moves up a level their content moves with them.</p>
+          <p>If your system uses non-standard tiers, we build to your structure rather than forcing your people into a generic EMT/Paramedic split. National registry prep cannot do this, because it does not know your scope - your protocol does.</p>
+        </div>
+      </section>
+
+      <section id="crews">
+        <h2>What crews and training officers actually get</h2>
+
+        <div class="q">
+          <h3>How much time does this take from a provider?</h3>
+          <p>The product is built around <strong>one short quiz a day</strong>, done between calls on a phone. No class to schedule, no shift to block out.</p>
+          <p>That cadence is deliberate. What determines whether protocol training works is not the size of the question bank, it is whether anyone actually does it. Sustained exposure across months beats one forgettable annual refresher.</p>
+        </div>
+
+        <div class="q">
+          <h3>What does a training officer see?</h3>
+          <ul>
+            <li><strong>A dashboard that names names</strong> - who is weak, on what, by provider, rather than an aggregate score that tells you nothing you can act on.</li>
+            <li><strong>Assignments</strong> - pick a topic, set a minimum score and a due date, send it. Two clicks from finding a gap to closing it.</li>
+            <li><strong>Exports</strong> - a PDF training record for your medical director, your chief, or a state audit, covering every metric, provider, and assignment.</li>
+          </ul>
+        </div>
+
+        <div class="q">
+          <h3>Does this help with documenting training?</h3>
+          <p>That is one of the main reasons agencies use it. Every attempt is scored and dated and attributable by name, so when someone asks you to prove your people were trained on the current protocol set, the answer is a document rather than a recollection.</p>
+          <p>The training record exports with a signature line for your training officer and medical director. <strong>ProtoQuiz does not grant CE credit</strong> - your agency grants it by signing the record, exactly as it would for any in-house training.</p>
+        </div>
+
+        <div class="q">
+          <h3>Can crews use it without installing an app?</h3>
+          <p>Yes. Each agency gets its own subdomain, for example youragency.protoquiz.com, and crews access it by link in any browser. No app store install, no per-device setup, no MDM push.</p>
+        </div>
+      </section>
+
+      <section id="ops">
+        <h2>Setup, pricing, and IT</h2>
+
+        <div class="q">
+          <h3>How much IT work is this on our side?</h3>
+          <p>Effectively none. We host it. Crews sign in by link in a browser. SSO is supported if you want it, but nothing requires it.</p>
+        </div>
+
+        <div class="q">
+          <h3>What does it cost?</h3>
+          <p>Flat per-provider annual pricing with no setup fees, no add-ons, and no per-seat tiers. Current pricing and the pilot terms are on the <a href="/agency/">ProtoQuiz for Agencies page</a>.</p>
+        </div>
+
+        <div class="q">
+          <h3>How is our data handled?</h3>
+          <p>TLS in transit, AES-256 at rest, per-organization tenant isolation enforced at the database layer, daily backups, and a published subprocessor list. ProtoQuiz stores no patient information.</p>
+          <p>The full detail, including our breach-notification commitment and uptime target, is on the <a href="/trust/">Trust and Security page</a>, and the contractual version is in the <a href="/legal/dpa.html">Data Processing Addendum</a>. We answer security questionnaires at security@protoquiz.com.</p>
+        </div>
+
+        <div class="q">
+          <h3>Can we see it on our own protocols before committing?</h3>
+          <p>Yes, and this is the part worth taking us up on. Send your protocol and we will show you your own content, scoped to your own certification levels, before you commit to anything. A demo built on somebody else's protocol does not tell you much.</p>
+        </div>
+      </section>
+
+      <section id="limits">
+        <h2>What ProtoQuiz does not do</h2>
+
+        <div class="q">
+          <h3>Is ProtoQuiz medical direction?</h3>
+          <p>No. It is a training tool. Your local protocol and your medical direction always govern, and the app says so to your providers.</p>
+        </div>
+
+        <div class="q">
+          <h3>Does ProtoQuiz grant CE credit?</h3>
+          <p>No. We produce the documented, dated training record; your agency grants CE by signing it. Any vendor telling you their quiz app confers CE credit on its own is worth a second question.</p>
+        </div>
+
+        <div class="q">
+          <h3>Does it track training per shift or against our roster?</h3>
+          <p>No. There is no roster or shift-schedule model, so compliance is tracked per provider over calendar time rather than against an A/B/C shift pattern or Kelly days. If someone tells you a training platform is shift-aware, ask them specifically how it ingests your schedule.</p>
+        </div>
+
+        <div class="q">
+          <h3>Will it replace hands-on skills training?</h3>
+          <p>No, and it is not trying to. ProtoQuiz drills protocol knowledge - the decisions, thresholds, doses, and contraindications a provider carries into a call. Psychomotor skills, scene work, and crew resource management still happen in person.</p>
+        </div>
+      </section>
+
+      <div class="cta">
+        <h2>See it built on your own protocol</h2>
+        <p>Send us your protocol document and we will show you your own content before you commit to anything.</p>
+        <a href="/agency/#contact" onclick="track('agency_cta',{source:'faq_footer'})">Talk to us about a pilot</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>&copy; 2026 Teach Me to Live LLC, d/b/a ProtoQuiz&trade;. &middot; <a href="/agency/">For Agencies</a> &middot; <a href="/trust/">Trust &amp; Security</a> &middot; <a href="/blog/">Blog</a></p>
+    </div>
+  </footer>
+</body>
+</html>
