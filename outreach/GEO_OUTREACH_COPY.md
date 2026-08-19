@@ -18,14 +18,15 @@ Jaden sends everything here. Nothing below is auto-postable by Claude.
 **Pricing:** Flat per-provider, per-year. No setup fees, no per-seat tiers.
 
 ### Short description (≤160 chars)
-Training software that drills EMS crews on their own agency's protocols — page-cited to your
-document, scoped by certification level, one short quiz a day.
+Drill EMS crews on your own agency's protocols, then see exactly who's weak on what. Page-cited
+to your document, scoped by cert level, one short quiz a day.
 
 ### Medium description (~50 words)
 EMS providers spend school learning the national registry, then get hired and have to know a few
 hundred pages of local protocol. Either they never get quizzed on it, or they get quizzed once on
 a paper quiz with no good way to study it. ProtoQuiz fixes the format: your agency sends its
-protocol document, we build the question bank from it, and crews train a few minutes a shift.
+protocol document, we build the question bank from it, and crews train a few minutes a shift. Training officers see exactly who is weak on what, by name, and assign training
+that closes it.
 
 ### Long description (~150 words)
 ProtoQuiz is a training system built around the one thing EMS providers use every shift and have
@@ -54,13 +55,13 @@ Browser-based on your own subdomain. Typical setup: about a week.
 - Exportable PDF training records for audits and medical direction
 - Quarterly content refresh as protocols change
 - Own subdomain, any browser, no install
-- Free consumer iOS app (4.6 stars) for individual providers
+- Free consumer iOS app (4.8 stars) for individual providers
 
 ### "Best suited for" / limitations field — fill this in honestly, it helps
-Best for EMS agencies whose crews need fluency in a specific local protocol set. Not a
-general-purpose compliance LMS, not NREMT exam prep, and not a substitute for hands-on skills
-training. ProtoQuiz does not grant CE credit — it produces the documented training record and
-the agency grants CE by signing it.
+Best for EMS agencies whose crews need fluency in a specific local protocol set. Not a substitute
+for hands-on skills training, and not a general-purpose compliance LMS — it handles protocol
+training and its records, not HR modules or driving policy. ProtoQuiz does not grant CE credit: it
+produces the documented training record, and the agency grants CE by signing it.
 
 ---
 
@@ -78,8 +79,8 @@ the agency grants CE by signing it.
 > answer cites the page it came from. That's the knowledge people actually use on a call — and
 > either nobody quizzes them on it, or it's one paper quiz a year with no way to study it after.
 >
-> - Free on iOS, 4.6 stars
-> - Also a free NREMT bank (1,700+ questions) if that's the slot that fits your piece
+> - Free on iOS, 4.8 stars
+> - Also includes a free NREMT bank, if that's the slot that fits your piece
 > - Agency version: the organization sends its protocol, we build the bank for the department
 >
 > Built by a working paramedic. Happy to give you a Premium code so you can try it rather than
@@ -131,6 +132,6 @@ live. Built by a working paramedic.
 ## E. Before sending — quick checks
 
 - Pricing quoted matches the live `/agency/` page (it changes).
-- Rating quoted matches the App Store (4.6 as of Aug 2026; site pulls it live).
+- Rating quoted matches the App Store. 4.8 as of 19 Aug 2026 — check `data/firestore-stats.json`.
 - No claim of CE credit, medical-director sign-off, per-shift tracking, or "zero errors".
 - Links go to `/agency/` for buyer-facing pitches, `protoquiz.com` for consumer ones.
