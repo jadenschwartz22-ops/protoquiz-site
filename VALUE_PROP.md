@@ -44,6 +44,23 @@ ProtoQuiz is that tool.
 
 These are reasonable tools — they just weren't built to train on **the actual protocol set**. They train around it. ProtoQuiz fills that specific gap; it doesn't replace what's already working.
 
+### 4b. The fork (say it this way — it survives pushback)
+
+Don't say "nobody quizzes them on their protocols." A training officer will correct you, because
+plenty of agencies do. Say the fork instead, because **both branches are broken**:
+
+> Either providers never get quizzed on their local protocols — the thing they actually need to
+> know — or they get quizzed once, on a paper quiz, and there's still no good way to study it.
+
+Why this lands harder than "there's a gap":
+- It concedes the agency is already doing something, so it doesn't insult the training officer
+  who built that paper quiz on their own time.
+- It relocates the problem from "you're not training" to "the format can't work" — one-time,
+  unscored, un-restudiable. That's a tooling problem, not an effort problem, which is exactly
+  the problem we solve.
+- The second branch is the more common one, and it's the one where the buyer already feels the
+  friction. Lead with it when talking to someone who clearly runs a real training program.
+
 ### 4a. Why no good study tool exists today (the corpus problem)
 
 Every agency's protocol set is **different** — different drugs, different doses, different decision points, different formats (PDFs, flowcharts, tables, if-then logic, hyperlinked manuals). Different lengths too — some are 150 pages, some are 400. No off-the-shelf study tool can ingest that variety because no one has the corpus or the extraction pipeline to make it work. So providers have been stuck with **rote memorization or DIY flashcards** for the highest-stakes knowledge they use. ProtoQuiz is the first tool built specifically to handle that variety and turn any agency's protocol PDF into structured, scoped, page-cited study material.

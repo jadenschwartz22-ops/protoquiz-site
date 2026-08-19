@@ -22,14 +22,15 @@ Training software that drills EMS crews on their own agency's protocols — page
 document, scoped by certification level, one short quiz a day.
 
 ### Medium description (~50 words)
-EMS providers spend school learning the national registry, then get hired and have to know a
-few hundred pages of local protocol nobody quizzes them on. ProtoQuiz closes that gap: your
-agency sends its protocol document, we build the question bank from it, and crews train a few
-minutes a shift.
+EMS providers spend school learning the national registry, then get hired and have to know a few
+hundred pages of local protocol. Either they never get quizzed on it, or they get quizzed once on
+a paper quiz with no good way to study it. ProtoQuiz fixes the format: your agency sends its
+protocol document, we build the question bank from it, and crews train a few minutes a shift.
 
 ### Long description (~150 words)
-ProtoQuiz is a training system built around the one thing EMS providers use every shift and
-almost never train on: their own agency's protocols.
+ProtoQuiz is a training system built around the one thing EMS providers use every shift and have
+no good way to study: their own agency's protocols. Either crews never get quizzed on them, or
+they get quizzed once on a paper quiz and it stops there.
 
 Your organization sends its protocol document. We build and verify the question bank from it,
 then your agency reviews it before it reaches crews — nobody on the crew uploads anything.
@@ -74,9 +75,8 @@ the agency grants CE by signing it.
 >
 > Almost every EMS study app on those lists quizzes the national registry. ProtoQuiz quizzes
 > **your own agency's protocols** — the provider gives it their protocol document and every
-> answer cites the page it came from. That is the knowledge people actually use on a call and
-> the one thing nobody builds study material for, because every agency's protocol set is
-> different.
+> answer cites the page it came from. That's the knowledge people actually use on a call — and
+> either nobody quizzes them on it, or it's one paper quiz a year with no way to study it after.
 >
 > - Free on iOS, 4.6 stars
 > - Also a free NREMT bank (1,700+ questions) if that's the slot that fits your piece
