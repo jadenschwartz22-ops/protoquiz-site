@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Documenting EMS protocol training">
+  <defs><linearGradient id="bgrec" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#06161a"/><stop offset="1" stop-color="#03090b"/></linearGradient></defs>
+  <rect width="1600" height="900" fill="url(#bgrec)"/>
+  <g stroke="#12454f" stroke-width="3" fill="none">
+    <rect x="520" y="250" width="560" height="150" rx="10"/>
+    <rect x="520" y="430" width="560" height="150" rx="10"/>
+    <rect x="520" y="610" width="560" height="150" rx="10"/>
+  </g>
+  <g fill="#2de1f0">
+    <circle cx="596" cy="325" r="17"/><circle cx="596" cy="505" r="17"/>
+  </g>
+  <circle cx="596" cy="685" r="17" fill="none" stroke="#7a5a1a" stroke-width="3"/>
+  <g fill="#5f8792" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="30" letter-spacing="3">
+    <text x="650" y="336">SIGNED &#183; DATED &#183; BY NAME</text>
+    <text x="650" y="516">SIGNED &#183; DATED &#183; BY NAME</text>
+  </g>
+  <text x="650" y="696" fill="#8a6a2a" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="30" letter-spacing="3">ATTENDANCE ONLY</text>
+  <text x="800" y="160" text-anchor="middle" fill="#2de1f0" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-weight="700" font-size="66" letter-spacing="6">TRAINING RECORDS</text>
+</svg>
