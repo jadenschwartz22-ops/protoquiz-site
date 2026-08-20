@@ -5895,9 +5895,8 @@
       if(!quote) return;
       if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
         // Same five-part sequence, but each part fades in as a whole block --
-        // no per-word stagger, no travel. Runs ~1.65s total vs ~16s for the
-        // full motion path.
-        const RM_STEP = 550;
+        // no per-word stagger, no travel. ~2.4s total.
+        const RM_STEP = 800;
         requestAnimationFrame(() => quote.classList.add('in'));
         setTimeout(() => quote.classList.add('why-in'),   RM_STEP);
         setTimeout(() => quote.classList.add('tag-in'),   RM_STEP * 2);
@@ -5914,7 +5913,7 @@
       // --- Part 1: lede word stagger ---
       const ledeLine    = quote.querySelector('.hero-lede');
       const ledeWords   = ledeLine.querySelectorAll('.w');
-      const LEDE_PER    = 270;          // ms between word starts (was 320 — slightly faster)
+      const LEDE_PER    = 165;          // ms between word starts
       const LEDE_FADE   = 650;          // ms each word fades in
       ledeWords.forEach((w, i) => {
         w.style.transitionDelay = (i * LEDE_PER) + 'ms';
@@ -5925,7 +5924,7 @@
       // --- Part 2: cyan all-at-once ---
       const cyanLine    = quote.querySelector('.hero-question');
       const cyanWords   = cyanLine.querySelectorAll('.w');
-      const CYAN_PAUSE  = 1100;         // pause after lede before cyan appears
+      const CYAN_PAUSE  = 500;          // pause after lede before cyan appears
       const CYAN_FADE   = 900;          // single fade duration for the whole cyan line
       const cyanStart   = ledeEnd + CYAN_PAUSE;
       cyanWords.forEach(w => {
@@ -5938,8 +5937,8 @@
       // transitionDelay on .bw is RELATIVE to when .why-in is added (not absolute from page load).
       // So we only stagger across body words, not from page-load.
       const bodyWords   = quote.querySelectorAll('.hero-why-body .bw');
-      const BODY_PAUSE  = 800;          // pause after cyan before body starts
-      const BODY_PER    = 130;          // ms between body words (slower for readability)
+      const BODY_PAUSE  = 500;          // pause after cyan before body starts
+      const BODY_PER    = 55;           // ms between body words -- fast enough to read normally
       const BODY_FADE   = 600;
       bodyWords.forEach((w, i) => {
         w.style.transitionDelay = (i * BODY_PER) + 'ms';
@@ -5950,10 +5949,10 @@
       const bodyEnd      = bodyStart + bodyDuration;                            // absolute time body finishes
 
       // --- Part 4 + Part 5 timing ---
-      const TAG_PAUSE   = 700;          // shortish pause after body
-      const INTRO_PAUSE = 900;          // shortish pause after "Until now."
+      const TAG_PAUSE   = 400;          // shortish pause after body
+      const INTRO_PAUSE = 450;          // shortish pause after "Until now."
       const tagStart    = bodyEnd + TAG_PAUSE;
-      const introStart  = tagStart + 900 + INTRO_PAUSE;   // tag fade is ~900ms
+      const introStart  = tagStart + 600 + INTRO_PAUSE;   // tag fade overlaps slightly
 
       requestAnimationFrame(() => quote.classList.add('in'));
       // why-in releases the body word chain (delays handle the stagger).
