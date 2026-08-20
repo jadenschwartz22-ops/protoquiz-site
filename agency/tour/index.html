@@ -735,11 +735,13 @@
 
   var jump = location.hash.match(/at=(\d+)/);
   if (jump) seek(+jump[1]);
-  else if (matchMedia('(prefers-reduced-motion: reduce)').matches){
-    document.body.classList.add('static');
-    seek(2000);
-  }
   else {
+    // Reduced motion drops the CSS transitions (via .static) but still
+    // autoplays on scroll -- freezing on one frame meant the tour never
+    // played at all for anyone with Reduce Motion on.
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches){
+      document.body.classList.add('static');
+    }
     new IntersectionObserver(function(es){
       es.forEach(function(e){ setPlaying(e.isIntersecting && !drag ? true : false); });
     }, { threshold: .3 }).observe(view);
