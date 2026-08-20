@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-20T00:08:11.350Z",
-  "totalUploads": 487,
+  "generatedAt": "2026-08-20T06:08:08.552Z",
+  "totalUploads": 489,
   "distinctProtocols": 351,
-  "activeStudiers": 330,
-  "pagesProcessed": 79353,
+  "activeStudiers": 332,
+  "pagesProcessed": 79820,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 4,
@@ -18,10 +18,10 @@
     "VA": 16,
     "NC": 14,
     "OR": 13,
-    "CT": 11,
+    "CT": 12,
+    "NV": 11,
     "MA": 11,
     "WY": 10,
-    "NV": 10,
     "WA": 8,
     "MD": 8,
     "IL": 7,
@@ -194,7 +194,7 @@
       "city": "Hartford",
       "x": 858,
       "y": 174,
-      "count": 11,
+      "count": 12,
       "tier": "warm",
       "topProtocols": [
         {
@@ -203,7 +203,7 @@
         },
         {
           "title": "v2025 2 ctemsstatewideprotocolsfinalver1",
-          "count": 3
+          "count": 4
         },
         {
           "title": "v20251 ctemsstatewideprotocolsfinal",
@@ -229,6 +229,28 @@
         },
         {
           "title": "BCEMS Protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "NV",
+      "city": "Las Vegas",
+      "x": 145,
+      "y": 311,
+      "count": 11,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "ems protocol manual",
+          "count": 9
+        },
+        {
+          "title": "2026 EMS Protocol Manual",
+          "count": 1
+        },
+        {
+          "title": "emc protocols",
           "count": 1
         }
       ]
@@ -273,28 +295,6 @@
         },
         {
           "title": "17 17 Dextrose",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "NV",
-      "city": "Las Vegas",
-      "x": 145,
-      "y": 311,
-      "count": 10,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "ems protocol manual",
-          "count": 8
-        },
-        {
-          "title": "2026 EMS Protocol Manual",
-          "count": 1
-        },
-        {
-          "title": "emc protocols",
           "count": 1
         }
       ]
