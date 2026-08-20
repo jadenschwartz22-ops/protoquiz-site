@@ -3113,10 +3113,13 @@
 
 
   @media (prefers-reduced-motion: reduce){
+    /* Reduced motion: no travel, but still a soft fade so the hero reads as a
+       sequence instead of dumping fully-formed on load. Opacity alone doesn't
+       trigger vestibular discomfort -- translate/scale are what we drop. */
     .hero-quote .w,
-    .hero-why-body .bw{opacity:1 !important; transform:none !important; transition:none !important;}
-    .hero-why-tag{opacity:1 !important; transform:none !important; transition:none !important;}
-    .hero-intro{opacity:1 !important; transform:none !important; transition:none !important;}
+    .hero-why-body .bw{transform:none !important; transition:opacity .5s ease !important;}
+    .hero-why-tag{transform:none !important; transition:opacity .5s ease !important;}
+    .hero-intro{transform:none !important; transition:opacity .5s ease !important;}
     .scroll-cue .arrow{animation:none;}
     .progress{display:none;}
     .home-tile, .ad-kpi, .hm-cell, .qz-correct,
@@ -5891,10 +5894,14 @@
       const quote = document.getElementById('hero-quote');
       if(!quote) return;
       if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-        quote.classList.add('in');
-        quote.classList.add('why-in');
-        quote.classList.add('tag-in');
-        quote.classList.add('intro-in');
+        // Same five-part sequence, but each part fades in as a whole block --
+        // no per-word stagger, no travel. Runs ~1.65s total vs ~16s for the
+        // full motion path.
+        const RM_STEP = 550;
+        requestAnimationFrame(() => quote.classList.add('in'));
+        setTimeout(() => quote.classList.add('why-in'),   RM_STEP);
+        setTimeout(() => quote.classList.add('tag-in'),   RM_STEP * 2);
+        setTimeout(() => quote.classList.add('intro-in'), RM_STEP * 3);
         return;
       }
       // Five-part hero reveal. Every timing constant lives here for easy tuning.
