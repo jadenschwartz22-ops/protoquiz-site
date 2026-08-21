@@ -94,7 +94,7 @@
     <p><strong>2.1 Roles.</strong> For Customer Personal Data, Customer acts as the controller (or data exporter) and Provider acts as the processor (or data importer). Provider processes Customer Personal Data only on documented instructions from Customer, as set forth in the Principal Agreement, this DPA, and the Platform's documentation.</p>
     <p><strong>2.2 Scope of Processing.</strong> Provider processes Customer Personal Data solely to: (a) provide and maintain the Platform; (b) authenticate Users and enforce access controls; (c) generate per-organization analytics, leaderboards, and compliance reports; (d) provide support; (e) prevent abuse and ensure security; and (f) comply with legal obligations.</p>
     <p><strong>2.3 Categories of Data Subjects.</strong> Users (e.g., EMTs, paramedics, training officers, administrators) of Customer's Organization.</p>
-    <p><strong>2.4 Categories of Personal Data.</strong> Email address, display name, profile photo URL, Google user identifier, certification level, organizational role, quiz attempts, scenario responses, leaderboard entries, and technical data (browser, IP for security and abuse prevention only, session identifier).</p>
+    <p><strong>2.4 Categories of Personal Data.</strong> Email address, display name, authentication identifiers (profile photo URL and Google user identifier for Google sign-in; email-based sign-in stores no password), certification level, organizational role, quiz attempts, scenario responses, leaderboard entries, and technical data (browser, IP for security and abuse prevention only, session identifier).</p>
     <p><strong>2.5 No Sensitive Data.</strong> The Platform is not intended to process special categories of data under GDPR Article 9, Protected Health Information (PHI) as defined under HIPAA, or sensitive personal information under CCPA. Customer agrees not to upload such data. Provider may scan or sample Customer-uploaded content for indicators of PHI or other sensitive data and may, without liability, reject the upload, quarantine the file pending review, or remove the file and notify the uploading administrator. Provider's enforcement actions under this Section 2.5 do not waive Customer's warranty against uploading such data.</p>
   </section>
 
@@ -175,19 +175,19 @@
     <p>Provider implements and maintains technical and organizational security measures including:</p>
     <ul>
       <li><strong>Encryption.</strong> TLS 1.2 or higher for data in transit. AES-256 (or equivalent) for data at rest as provided by Google Cloud storage.</li>
-      <li><strong>Access Controls.</strong> Role-based access for Provider personnel. Multi-factor authentication for production system access. Quarterly access reviews.</li>
+      <li><strong>Access Controls.</strong> Role-based access for Provider personnel. Multi-factor authentication for production system access. Access is limited to personnel who require it to provide the Platform.</li>
       <li><strong>Tenant Isolation.</strong> Firestore security rules enforce per-organization data isolation. Cross-tenant queries are denied at the database layer.</li>
       <li><strong>Audit Logging.</strong> System events are logged. Administrative actions and security-relevant events are retained for at least ninety (90) days.</li>
       <li><strong>Network Security.</strong> Firewall and DDoS protection at the edge (Cloudflare). Backend services accessible only via authenticated APIs.</li>
-      <li><strong>Vulnerability Management.</strong> Dependency security scanning. Critical patches applied within seven (7) days; high-severity patches within thirty (30) days.</li>
-      <li><strong>Backups.</strong> Daily automated backups with thirty (30) day retention. Tested restoration at least annually.</li>
-      <li><strong>Personnel.</strong> Background checks for personnel with production access (when applicable). Annual security training. Confidentiality obligations in employment and contractor agreements.</li>
+      <li><strong>Vulnerability Management.</strong> Dependencies are monitored for security advisories; security patches are applied on a prioritized schedule based on severity.</li>
+      <li><strong>Backups.</strong> Periodic backups retained on a rolling window of up to thirty (30) days.</li>
+      <li><strong>Personnel.</strong> Personnel with production access are bound by confidentiality obligations.</li>
     </ul>
   </section>
 
   <section>
     <h2><span class="num">6.</span> Security Incident Notification</h2>
-    <p>Provider will notify Customer without undue delay, and in any case within seventy-two (72) hours, after becoming aware of a confirmed Security Incident affecting Customer Personal Data. The notification will, to the extent then known: (a) describe the nature of the Security Incident; (b) identify affected data categories and approximate number of affected data subjects; (c) describe the likely consequences; and (d) describe measures taken or proposed to address the Security Incident.</p>
+    <p>Provider will notify Customer without undue delay after becoming aware of a Security Incident involving Customer Personal Data, and will provide information reasonably available to Provider to assist Customer in meeting Customer's own notification obligations, including, to the extent then known: (a) the nature of the Security Incident; (b) the affected data categories and approximate number of affected data subjects; (c) the likely consequences; and (d) measures taken or proposed to address the Security Incident.</p>
     <p>Provider will reasonably cooperate with Customer in investigating and mitigating any Security Incident.</p>
   </section>
 
@@ -215,12 +215,12 @@
 
   <section>
     <h2><span class="num">11.</span> HIPAA &amp; PHI</h2>
-    <p>Provider is not a "Business Associate" within the meaning of HIPAA and the Platform is not designed to store, process, or transmit Protected Health Information. Customer warrants that it will not upload PHI to the Platform. Provider is not required to enter into a Business Associate Agreement. If a Customer believes PHI has been uploaded to the Platform inadvertently, Customer should contact <a href="mailto:legal@protoquiz.com">legal@protoquiz.com</a> immediately to coordinate removal.</p>
+    <p>ProtoQuiz is not intended to receive, store, or process Protected Health Information (PHI), and Customer must not upload PHI to the Platform. Customer warrants that it will not do so. Provider does not provide a Business Associate Agreement (BAA) unless expressly agreed in writing. If a Customer believes PHI has been uploaded to the Platform inadvertently, Customer should contact <a href="mailto:legal@protoquiz.com">legal@protoquiz.com</a> immediately to coordinate removal.</p>
   </section>
 
   <section>
     <h2><span class="num">12.</span> General</h2>
-    <p><strong>12.1 Order of Precedence.</strong> In the event of conflict, this DPA controls over the Principal Agreement on data-processing matters.</p>
+    <p><strong>12.1 Order of Precedence.</strong> In the event of a conflict among the contract documents, the order of precedence is: (1) the Order Form, (2) this DPA, (3) the MSA, (4) the B2B Terms of Service. On data-processing matters, this DPA controls over the Principal Agreement.</p>
     <p><strong>12.2 Liability.</strong> Each Party's liability arising under or in connection with this DPA is subject to the limitations of liability set forth in the Principal Agreement.</p>
     <p><strong>12.3 Term.</strong> This DPA takes effect on the effective date of the Principal Agreement and terminates automatically upon termination or expiration of the Principal Agreement, except that provisions necessary to protect Customer Personal Data already in Provider's possession survive.</p>
     <p><strong>12.4 Governing Law.</strong> This DPA is governed by the laws specified in the Principal Agreement.</p>

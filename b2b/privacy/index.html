@@ -95,7 +95,7 @@
       <li>comply with legal obligations and respond to lawful requests.</li>
     </ul>
     <p>We do <strong>not</strong> use your data to train external AI models, sell your data to third parties, or display third-party advertising in the Platform.</p>
-    <p><strong>AI-assisted processing of protocol content.</strong> We use third-party large-language-model ("LLM") services — currently Anthropic (Claude) and Google AI — to help draft quiz questions, scenarios, and similar study content from the protocol documents an Organization provides to us. This drafting happens on our side during onboarding and content updates, and the resulting content is verified against the Organization's own document and reviewed before it is delivered; the agency's document remains the source of truth, and every question carries a page citation back to it. Protocol content is sent to an LLM provider only for this purpose, under provider terms that prohibit training the provider's models on that content. Generated content is stored under the Customer's Organization. We do not send User personal information (email, name, photo) to any LLM provider.</p>
+    <p><strong>AI-assisted processing of protocol content.</strong> We use third-party large-language-model ("LLM") services — currently commercial API offerings from Anthropic (Claude) and Google — to help draft quiz questions, scenarios, and similar study content from the protocol documents an Organization provides to us. This drafting happens on our side during onboarding and content updates, and the resulting content is verified against the Organization's own document and reviewed before it is delivered; the agency's document remains the source of truth, and questions are designed to carry a citation to the source document. Protocol content is sent to an LLM provider only for this purpose, using commercial API offerings whose applicable terms provide that customer content is not used to train the provider's models. Generated content is stored under the Customer's Organization. ProtoQuiz does not intentionally transmit User account or profile information to LLM providers; Customer Content provided for protocol processing may be transmitted as described in this Policy.</p>
   </section>
 
   <section id="sharing">
@@ -130,10 +130,10 @@
       <dd>Internal operational alerts sent via webhook from our backend. Discord receives summarized event data (e.g., "new sign-up at south-metro"); user-identifying information is minimized.</dd>
 
       <dt>Anthropic, PBC (Claude)</dt>
-      <dd>Large-language-model drafting of quiz questions, scenarios, and related study content from protocol documents provided by the Organization, verified against the document before delivery. Region: United States. Provider terms prohibit training foundation models on content submitted through these APIs.</dd>
+      <dd>Large-language-model drafting of quiz questions, scenarios, and related study content from protocol documents provided by the Organization, verified against the document before delivery. Region: United States. Commercial API offering whose applicable terms provide that customer content is not used to train Anthropic's models.</dd>
 
       <dt>Google AI / Vertex AI (Gemini)</dt>
-      <dd>Large-language-model drafting of study content from protocol documents provided by the Organization, same verification and no-training terms as above. Region: United States.</dd>
+      <dd>Large-language-model drafting of study content from protocol documents provided by the Organization, with the same verification. Region: United States. Commercial API offering whose applicable terms provide that customer content is not used to train Google's models.</dd>
 
       <dt>Documenso, Inc.</dt>
       <dd>Contract e-signature workflow for Master Services Agreement and Order Form execution. Processes the signing party's name, email address, and applied signature image. Region: United States.</dd>
@@ -143,9 +143,16 @@
 
   <section id="retention">
     <h2><span class="num">5.</span> Data Retention</h2>
-    <p>We retain user account data and quiz history for as long as the Organization maintains an active subscription. After an Organization's subscription ends, we retain Customer Content for up to ninety (90) days to allow export, after which it may be deleted from production systems.</p>
-    <p>Aggregated, de-identified analytics may be retained indefinitely. Backup snapshots may persist for up to thirty (30) days after deletion before being purged from backup storage.</p>
-    <p>You may request earlier deletion by emailing <a href="mailto:support@protoquiz.com">support@protoquiz.com</a>, subject to our legal obligations to retain certain records (e.g., financial records for tax purposes).</p>
+    <p>We retain information by category:</p>
+    <ul>
+      <li><strong>Account &amp; profile data</strong> (email, display name, role, certification level): retained while the Organization's subscription is active; deleted on verified request or following termination, per the DPA.</li>
+      <li><strong>Customer Content</strong> (protocol documents and materials provided by the Organization): retained for up to ninety (90) days after the subscription ends to allow export, then deleted from production systems.</li>
+      <li><strong>Quiz &amp; performance records</strong> (attempts, scores, leaderboard entries, compliance history): treated as part of Customer Content for export purposes and deleted on the same ninety (90) day post-termination schedule.</li>
+      <li><strong>Billing &amp; financial records</strong>: retained as required by law (e.g., tax record-keeping).</li>
+      <li><strong>Backups</strong>: kept on a rolling window of up to thirty (30) days; deleted data is purged from backup storage as that window rolls over.</li>
+      <li><strong>Aggregated, de-identified analytics</strong>: may be retained.</li>
+    </ul>
+    <p>You may request earlier deletion by emailing <a href="mailto:support@protoquiz.com">support@protoquiz.com</a>, subject to our legal obligations to retain certain records.</p>
   </section>
 
   <section id="security">
@@ -178,7 +185,7 @@
   <section id="hipaa">
     <h2><span class="num">8.</span> HIPAA &amp; Clinical Data</h2>
     <div class="callout">
-      <strong>ProtoQuiz is NOT a HIPAA-covered service and is NOT designed to store Protected Health Information (PHI).</strong> Users and Organizations must not upload patient charts, run sheets, or any patient-identifying clinical data. The Platform is intended solely for training, education, and continuing-education purposes using non-PHI content (such as the agency's published protocols and de-identified case scenarios).
+      <strong>ProtoQuiz is not intended to receive, store, or process Protected Health Information (PHI), and Customers must not upload PHI.</strong> ProtoQuiz does not provide a Business Associate Agreement (BAA) unless expressly agreed in writing. Users and Organizations must not upload patient charts, run sheets, or any patient-identifying clinical data. The Platform is intended solely for training, education, and continuing-education purposes using non-PHI content (such as the agency's published protocols and de-identified case scenarios).
     </div>
     <p>If you believe PHI has been inadvertently uploaded to the Platform, contact <a href="mailto:legal@protoquiz.com">legal@protoquiz.com</a> immediately so we can assist with removal. We may also scan or sample uploaded content for indicators of PHI and may reject, quarantine, or remove such uploads and notify the uploading administrator.</p>
   </section>
