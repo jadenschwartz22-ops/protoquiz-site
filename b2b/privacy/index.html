@@ -29,7 +29,8 @@
     <h1 class="doc-title">Privacy Policy</h1>
     <div class="doc-meta">
       <span><strong>Effective:</strong> 2026-05-20</span>
-      <span><strong>Version:</strong> 1.0</span>
+      <span><strong>Updated:</strong> 2026-08-21</span>
+      <span><strong>Version:</strong> 1.1</span>
       <span><strong>Owner:</strong> Teach Me to Live LLC, d/b/a ProtoQuiz</span>
     </div>
   </header>
@@ -59,7 +60,7 @@
     <h2><span class="num">1.</span> Information We Collect</h2>
 
     <h3>Account &amp; Authentication Information</h3>
-    <p>When you sign in via Google OAuth, we receive: your email address, display name, profile photo URL, and a unique Google user identifier. We do not receive or store your Google password.</p>
+    <p>The Platform supports two sign-in methods. When you sign in with an emailed one-time code, we store your email address and display name; sign-in codes are short-lived, stored only in salted-hashed form, and there is no password to store. When you sign in via Google OAuth, we receive: your email address, display name, profile photo URL, and a unique Google user identifier. We do not receive or store your Google password.</p>
 
     <h3>Organization &amp; Role Information</h3>
     <p>For each user, we store the organization identifier (e.g., <code>highland</code>), assigned role (user, supervisor, training officer, admin, developer), certification level (e.g., EMT, Paramedic), and access status (pending, approved, rejected).</p>
@@ -70,8 +71,8 @@
     <h3>Technical Data</h3>
     <p>Browser type, device type, IP address (recorded transiently for security and abuse prevention; not used for tracking across sites), and crash/error reports. Page-view pings and error reports are sent to our observability backend (<code>api.protoquiz.com</code>) and may include a session identifier, the visited URL, browser user agent, and the organization identifier.</p>
 
-    <h3>Customer-Uploaded Content</h3>
-    <p>Protocol PDFs, quiz templates, and other content uploaded by an Organization's administrators. We treat this content as the property of the uploading Organization and use it only to provide the Platform to that Organization.</p>
+    <h3>Customer-Provided Content</h3>
+    <p>Protocol PDFs and other materials an Organization provides to us (or its administrators upload) for its tenant. We treat this content as the property of that Organization and use it only to provide the Platform to that Organization.</p>
 
     <h3>What We Do NOT Collect</h3>
     <ul>
@@ -94,7 +95,7 @@
       <li>comply with legal obligations and respond to lawful requests.</li>
     </ul>
     <p>We do <strong>not</strong> use your data to train external AI models, sell your data to third parties, or display third-party advertising in the Platform.</p>
-    <p><strong>AI processing of protocol content.</strong> The Platform uses third-party large-language-model ("LLM") services — currently Google AI (Gemini) — to generate quiz questions, scenario branches, drug-comparison summaries, and similar study content from Customer-uploaded protocol PDFs. Protocol content is sent to the LLM provider only for the purpose of generating that content, under provider terms that prohibit training the provider's models on Customer Content (Google AI / Vertex AI no-training contract). Generated content is stored under the Customer's Organization. We do not send User personal information (email, name, photo) to the LLM provider as part of content generation.</p>
+    <p><strong>AI-assisted processing of protocol content.</strong> We use third-party large-language-model ("LLM") services — currently Anthropic (Claude) and Google AI — to help draft quiz questions, scenarios, and similar study content from the protocol documents an Organization provides to us. This drafting happens on our side during onboarding and content updates, and the resulting content is verified against the Organization's own document and reviewed before it is delivered; the agency's document remains the source of truth, and every question carries a page citation back to it. Protocol content is sent to an LLM provider only for this purpose, under provider terms that prohibit training the provider's models on that content. Generated content is stored under the Customer's Organization. We do not send User personal information (email, name, photo) to any LLM provider.</p>
   </section>
 
   <section id="sharing">
@@ -114,10 +115,7 @@
     <p>We rely on the following trusted subprocessors to deliver the Platform:</p>
     <dl>
       <dt>Google Cloud / Firebase</dt>
-      <dd>Authentication (OAuth), database (Firestore), file hosting, and web hosting. Region: United States. Purpose: storing user accounts, quiz attempts, organization data, and Customer Content.</dd>
-
-      <dt>Vercel, Inc.</dt>
-      <dd>Backend API hosting (<code>api.protoquiz.com</code>) and billing infrastructure (<code>billing.protoquiz.com</code>). Region: United States. Purpose: serving requests, processing webhooks, and routing observability telemetry.</dd>
+      <dd>Authentication, database (Firestore), file hosting, web hosting, and backend API hosting (<code>api.protoquiz.com</code>, Cloud Run). Region: United States. Purpose: storing user accounts, quiz attempts, organization data, and Customer Content; serving requests, processing billing webhooks, and routing observability telemetry.</dd>
 
       <dt>Cloudflare, Inc.</dt>
       <dd>DNS, email routing for <code>*@protoquiz.com</code> addresses, and edge protection. Region: Global edge network.</dd>
@@ -126,13 +124,16 @@
       <dd>Payment processing, invoicing, and ACH bank-transfer collection. Region: United States. Purpose: handling fees from Organizations. Stripe is PCI-DSS Level 1 certified.</dd>
 
       <dt>Brevo (Sendinblue)</dt>
-      <dd>Transactional email delivery (invoices, password reset, system notifications). Region: European Union with US data residency option.</dd>
+      <dd>Transactional email delivery (sign-in codes, invitations, assignment reminders, system notifications). Region: European Union with US data residency option.</dd>
 
       <dt>Discord, Inc.</dt>
       <dd>Internal operational alerts sent via webhook from our backend. Discord receives summarized event data (e.g., "new sign-up at south-metro"); user-identifying information is minimized.</dd>
 
+      <dt>Anthropic, PBC (Claude)</dt>
+      <dd>Large-language-model drafting of quiz questions, scenarios, and related study content from protocol documents provided by the Organization, verified against the document before delivery. Region: United States. Provider terms prohibit training foundation models on content submitted through these APIs.</dd>
+
       <dt>Google AI / Vertex AI (Gemini)</dt>
-      <dd>Large-language-model content generation: quiz questions, scenario branches, drug-comparison summaries, and related study content derived from Customer-uploaded protocols. Region: United States. No-training contract: Google does not train its foundation models on Customer Content submitted through these APIs.</dd>
+      <dd>Large-language-model drafting of study content from protocol documents provided by the Organization, same verification and no-training terms as above. Region: United States.</dd>
 
       <dt>Documenso, Inc.</dt>
       <dd>Contract e-signature workflow for Master Services Agreement and Order Form execution. Processes the signing party's name, email address, and applied signature image. Region: United States.</dd>
@@ -152,7 +153,7 @@
     <p>We implement administrative, technical, and physical safeguards designed to protect user information, including:</p>
     <ul>
       <li>Encryption in transit (TLS 1.2+) for all connections to the Platform;</li>
-      <li>Encryption at rest provided by Google Cloud and Vercel for all stored data;</li>
+      <li>Encryption at rest provided by Google Cloud for all stored data;</li>
       <li>Organization-scoped Firestore security rules that prevent cross-tenant data access;</li>
       <li>Role-based access controls within Organizations;</li>
       <li>Strict access controls on production systems for ProtoQuiz personnel;</li>
@@ -206,7 +207,7 @@
 </main>
 
 <footer>
-  &copy; 2026 Teach Me to Live LLC. d/b/a ProtoQuiz&trade;. All rights reserved.<br/>
+  &copy; 2026 Teach Me to Live LLC, d/b/a ProtoQuiz&trade;. All rights reserved.<br/>
   <a href="/">Home</a> · <a href="/b2b/privacy/">Privacy</a> · <a href="/b2b/terms/">Terms</a> · <a href="/legal/msa.html">MSA</a> · <a href="/legal/dpa.html">DPA</a>
 </footer>
 

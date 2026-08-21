@@ -59,8 +59,9 @@
     <div class="doc-kicker">LEGAL // DATA PROCESSING ADDENDUM</div>
     <h1 class="doc-title">Data Processing Addendum</h1>
     <div class="doc-meta">
-      <span><strong>Version:</strong> 1.0</span>
+      <span><strong>Version:</strong> 1.1</span>
       <span><strong>Effective:</strong> 2026-05-20</span>
+      <span><strong>Updated:</strong> 2026-08-21</span>
     </div>
   </header>
 
@@ -125,12 +126,7 @@
       <tbody>
         <tr>
           <td>Google LLC (Firebase / Cloud)</td>
-          <td>Auth, database, hosting, file storage</td>
-          <td>United States</td>
-        </tr>
-        <tr>
-          <td>Vercel, Inc.</td>
-          <td>Backend APIs and billing infrastructure</td>
+          <td>Auth, database, hosting, file storage, backend APIs (Cloud Run)</td>
           <td>United States</td>
         </tr>
         <tr>
@@ -154,8 +150,13 @@
           <td>United States</td>
         </tr>
         <tr>
+          <td>Anthropic, PBC (Claude)</td>
+          <td>LLM drafting of study content from Customer-provided protocol documents, verified before delivery; no-training terms</td>
+          <td>United States</td>
+        </tr>
+        <tr>
           <td>Google AI / Vertex AI (Gemini)</td>
-          <td>LLM content generation from Customer-uploaded protocols (quiz/scenario/comparison); no-training contract</td>
+          <td>LLM drafting of study content from Customer-provided protocol documents; no-training terms</td>
           <td>United States</td>
         </tr>
         <tr>
@@ -173,7 +174,7 @@
     <h2><span class="num">5.</span> Security Measures</h2>
     <p>Provider implements and maintains technical and organizational security measures including:</p>
     <ul>
-      <li><strong>Encryption.</strong> TLS 1.2 or higher for data in transit. AES-256 (or equivalent) for data at rest as provided by Google Cloud and Vercel storage.</li>
+      <li><strong>Encryption.</strong> TLS 1.2 or higher for data in transit. AES-256 (or equivalent) for data at rest as provided by Google Cloud storage.</li>
       <li><strong>Access Controls.</strong> Role-based access for Provider personnel. Multi-factor authentication for production system access. Quarterly access reviews.</li>
       <li><strong>Tenant Isolation.</strong> Firestore security rules enforce per-organization data isolation. Cross-tenant queries are denied at the database layer.</li>
       <li><strong>Audit Logging.</strong> System events are logged. Administrative actions and security-relevant events are retained for at least ninety (90) days.</li>
@@ -238,7 +239,7 @@
 </main>
 
 <footer>
-  &copy; 2026 Teach Me to Live LLC. d/b/a ProtoQuiz&trade;. All rights reserved.<br/>
+  &copy; 2026 Teach Me to Live LLC, d/b/a ProtoQuiz&trade;. All rights reserved.<br/>
   <a href="/">Home</a> · <a href="/b2b/privacy/">Privacy</a> · <a href="/b2b/terms/">Terms</a> · <a href="/legal/msa.html">MSA</a> · <a href="/legal/dpa.html">DPA</a>
 </footer>
 
