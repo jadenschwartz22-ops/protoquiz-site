@@ -11,6 +11,8 @@
 //   node scripts/gen-reach-creative.mjs                  # square 1080
 //   node scripts/gen-reach-creative.mjs --preset portrait
 //   node scripts/gen-reach-creative.mjs --html-only      # skip the PNG render
+//   node scripts/gen-reach-creative.mjs --stats studying,states,pages
+//        fields: uploads protocols studying medics states countries pages
 //
 // Out: share/creative-reach-<preset>.{html,png}
 import fs from 'fs/promises';
@@ -34,6 +36,20 @@ const PRESETS = {
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const nf = n => Number(n || 0).toLocaleString('en-US');
 const kfmt = n => (n >= 1000 ? `${(n / 1000).toFixed(1).replace(/\.0$/, '')}k` : String(n ?? 0));
+
+// Selectable stat fields. `--stats studying,states,pages` picks the row; the
+// key is what you type, `label` is what prints, `pick` reads reach-stats.json.
+// Four fits comfortably at 1080 wide; five is tight; six will crowd.
+const FIELDS = {
+  uploads:   { label: 'UPLOADS',   pick: s => nf(s.totalUploads) },
+  protocols: { label: 'PROTOCOLS', pick: s => nf(s.distinctProtocols) },
+  studying:  { label: 'STUDYING',  pick: s => nf(s.activeStudiers) },
+  medics:    { label: 'MEDICS',    pick: s => nf(s.activeStudiers) },
+  states:    { label: 'STATES',    pick: s => nf(s.statesRepresented) },
+  countries: { label: 'COUNTRIES', pick: s => nf(s.countriesRepresented) },
+  pages:     { label: 'PAGES',     pick: s => kfmt(s.pagesProcessed) },
+};
+const DEFAULT_STATS = 'uploads,states,protocols,pages';
 
 // State outlines come from the live page, so the creative can never drift from
 // the map on protoquiz.com.
@@ -78,7 +94,7 @@ function placeLabels(locales) {
   return placed;
 }
 
-function buildHTML({ stats, states, labels, logo, preset }) {
+function buildHTML({ stats, states, labels, logo, preset, fields }) {
   const P = PRESETS[preset];
   const byState = stats.byState || {};
   const maxSt = Math.max(1, ...Object.values(byState));
@@ -106,12 +122,9 @@ function buildHTML({ stats, states, labels, logo, preset }) {
     .map(l => `<g class="locale"><circle class="halo" cx="${l.x}" cy="${l.y}" r="7"/>`
              + `<circle class="core" cx="${l.x}" cy="${l.y}" r="2.6"/></g>`).join('');
 
-  const S = [
-    [nf(stats.totalUploads), 'UPLOADS'],
-    [nf(stats.statesRepresented), 'STATES'],
-    [nf(stats.distinctProtocols), 'PROTOCOLS'],
-    [kfmt(stats.pagesProcessed), 'PAGES'],
-  ].map(([b, i]) => `<div><b>${esc(b)}</b><i>${esc(i)}</i></div>`).join('');
+  const S = fields
+    .map(k => `<div><b>${esc(FIELDS[k].pick(stats))}</b><i>${esc(FIELDS[k].label)}</i></div>`)
+    .join('');
 
   return `<!doctype html><html><head><meta charset=utf8><style>
 :root{--amber:#ffb000;--bg:#06050a;--ink:#f4f1ea;--ink-soft:#b4afa4;--muted:#8a8478}
@@ -128,8 +141,8 @@ function buildHTML({ stats, states, labels, logo, preset }) {
 .rl-warm{font-size:15px;font-weight:800;fill:var(--ink)}
 .rl-hot{font-size:17px;font-weight:800;fill:var(--ink)}
 .rl .rl-n{fill:var(--amber);font-weight:800}
-.stats{position:absolute;bottom:64px;left:560px;right:60px;display:flex;justify-content:space-between;text-align:center}
-.stats b{color:var(--amber);font-size:50px;font-weight:800;display:block;line-height:1}
+.stats{position:absolute;bottom:64px;left:${fields.length >= 5 ? 430 : 560}px;right:60px;display:flex;justify-content:space-between;text-align:center}
+.stats b{color:var(--amber);font-size:${fields.length >= 5 ? 40 : 50}px;font-weight:800;display:block;line-height:1}
 .stats i{color:var(--muted);font-size:16px;letter-spacing:.12em;font-style:normal;font-weight:700}
 .brand{position:absolute;bottom:52px;left:60px;display:flex;align-items:center;gap:20px}
 .brand img{width:150px;height:150px}.brand .wm{font-weight:800;font-size:44px;letter-spacing:2px}
@@ -150,6 +163,15 @@ const main = async () => {
   const arg = (n, d) => { const i = argv.indexOf(`--${n}`); return i < 0 ? d : argv[i + 1]; };
   const presets = arg('preset', null) ? [arg('preset', null)] : ['square'];
 
+  const fields = arg('stats', DEFAULT_STATS).split(',').map(f => f.trim()).filter(Boolean);
+  const unknown = fields.filter(f => !FIELDS[f]);
+  if (unknown.length) {
+    throw new Error(`unknown stat field(s): ${unknown.join(', ')}\n` +
+                    `available: ${Object.keys(FIELDS).join(', ')}`);
+  }
+  if (!fields.length) throw new Error('--stats needs at least one field');
+  if (fields.length > 6) throw new Error('--stats takes at most 6 fields (4 reads best)');
+
   const stats = JSON.parse(await fs.readFile(STATS, 'utf8'));
   const [states, logo] = await Promise.all([readStates(), logoDataURI()]);
   const labels = placeLabels(stats.locales);
@@ -159,7 +181,7 @@ const main = async () => {
     if (!PRESETS[preset]) throw new Error(`unknown preset "${preset}"`);
     const { w, h } = PRESETS[preset];
     const base = path.join(OUTDIR, `creative-reach-${preset}`);
-    await fs.writeFile(`${base}.html`, buildHTML({ stats, states, labels, logo, preset }));
+    await fs.writeFile(`${base}.html`, buildHTML({ stats, states, labels, logo, preset, fields }));
 
     if (!argv.includes('--html-only')) {
       await run(CHROME, [
@@ -168,7 +190,7 @@ const main = async () => {
         '--default-background-color=00000000', `file://${base}.html`,
       ]).catch(e => { if (!/^$/.test(e.stderr || '')) return; throw e; });
     }
-    console.log(`${path.relative(ROOT, base)}.png  ${w}x${h}  ${labels.length} labels`);
+    console.log(`${path.relative(ROOT, base)}.png  ${w}x${h}  ${labels.length} labels  [${fields.join(" ")}]`);
   }
   console.log(`\n${nf(stats.totalUploads)} uploads / ${stats.statesRepresented} states / ${nf(stats.activeStudiers)} studying`);
   console.log(`stats generated ${stats.generatedAt}`);
