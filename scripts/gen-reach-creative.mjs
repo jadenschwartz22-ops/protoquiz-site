@@ -12,6 +12,8 @@
 //   node scripts/gen-reach-creative.mjs --preset portrait
 //   node scripts/gen-reach-creative.mjs --html-only      # skip the PNG render
 //   node scripts/gen-reach-creative.mjs --stats studying,states,pages
+//   node scripts/gen-reach-creative.mjs --headline country|none|...
+//   node scripts/gen-reach-creative.mjs --headline-text "Line one|Line two|Hook"
 //        fields: uploads protocols studying medics states countries pages
 //
 // Out: share/creative-reach-<preset>.{html,png}
@@ -50,6 +52,25 @@ const FIELDS = {
   pages:     { label: 'PAGES',     pick: s => kfmt(s.pagesProcessed) },
 };
 const DEFAULT_STATS = 'uploads,states,protocols,pages';
+
+// Headline presets. The last line renders amber (the hook); `--headline none`
+// drops the block entirely and gives the map the whole canvas.
+// Tokens {studying} {uploads} {states} {protocols} {pages} {countries} resolve
+// against live stats, so a saved headline never goes stale.
+const HEADLINES = {
+  studying:  ['{studying} medics are studying', 'their EMS protocols.', 'Are you?'],
+  country:   ['Medics all over the country', 'are studying their protocols.', 'Are you?'],
+  states:    ['Medics in {states} states are', 'studying their own protocols.', 'Are you?'],
+  uploads:   ['{uploads} protocol documents.', 'Turned into real training.', 'Try yours free.'],
+  agency:    ['Your protocols. Your quizzes.', 'Not generic EMS trivia.', 'Built by a medic.'],
+  none:      null,
+};
+const DEFAULT_HEADLINE = 'studying';
+
+// Substitutes {token} against the live numbers. An unknown token is left as-is
+// rather than silently blanked -- a visible "{studers}" is a typo you can see.
+const fillTokens = (line, stats) => line.replace(/\{(\w+)\}/g, (m, k) =>
+  FIELDS[k] ? FIELDS[k].pick(stats) : m);
 
 // State outlines come from the live page, so the creative can never drift from
 // the map on protoquiz.com.
@@ -94,7 +115,7 @@ function placeLabels(locales) {
   return placed;
 }
 
-function buildHTML({ stats, states, labels, logo, preset, fields }) {
+function buildHTML({ stats, states, labels, logo, preset, fields, headline }) {
   const P = PRESETS[preset];
   const byState = stats.byState || {};
   const maxSt = Math.max(1, ...Object.values(byState));
@@ -122,6 +143,15 @@ function buildHTML({ stats, states, labels, logo, preset, fields }) {
     .map(l => `<g class="locale"><circle class="halo" cx="${l.x}" cy="${l.y}" r="7"/>`
              + `<circle class="core" cx="${l.x}" cy="${l.y}" r="2.6"/></g>`).join('');
 
+  // No headline means the map owns the canvas -- shift it up into that space
+  // rather than leaving a dead band where the copy used to be.
+  const headBlock = headline
+    ? `<div class="head">` + headline.map((l, i) =>
+        i === headline.length - 1
+          ? `<div><span class=hl>${esc(fillTokens(l, stats))}</span></div>`
+          : `<div>${esc(fillTokens(l, stats))}</div>`).join('') + `</div>`
+    : '';
+
   const S = fields
     .map(k => `<div><b>${esc(FIELDS[k].pick(stats))}</b><i>${esc(FIELDS[k].label)}</i></div>`)
     .join('');
@@ -131,7 +161,7 @@ function buildHTML({ stats, states, labels, logo, preset, fields }) {
 *{margin:0;box-sizing:border-box}html,body{width:${P.w}px;height:${P.h}px;overflow:hidden}
 .ad{width:${P.w}px;height:${P.h}px;background:var(--bg);position:relative;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:var(--ink)}
 .head{position:absolute;top:42px;left:60px;right:60px;font-weight:800;font-size:${P.headSize}px;line-height:1.16}.head .hl{color:var(--amber)}
-.map{position:absolute;left:12px;right:12px;top:${P.mapTop}px;height:${P.mapH}px;width:${P.w - 24}px}
+.map{position:absolute;left:12px;right:12px;top:${headline ? P.mapTop : 60}px;height:${headline ? P.mapH : P.mapH + 130}px;width:${P.w - 24}px}
 .state{fill:transparent;stroke:#4a453c;stroke-width:1.1;vector-effect:non-scaling-stroke}
 .state.lit{fill:rgba(255,176,0,.08);stroke:rgba(255,176,0,.55);stroke-width:1.4}
 .state.lit.warm{fill:rgba(255,176,0,.15);stroke:rgba(255,176,0,.8);stroke-width:1.6}
@@ -147,7 +177,7 @@ function buildHTML({ stats, states, labels, logo, preset, fields }) {
 .brand{position:absolute;bottom:52px;left:60px;display:flex;align-items:center;gap:20px}
 .brand img{width:150px;height:150px}.brand .wm{font-weight:800;font-size:44px;letter-spacing:2px}
 </style></head><body><div class="ad">
-<div class="head"><div>${nf(stats.activeStudiers)} medics are studying</div><div>their EMS protocols.</div><div><span class=hl>Are you?</span></div></div>
+${headBlock}
 <svg viewBox="0 0 959 593" preserveAspectRatio="xMidYMid meet" class="map">
 <g class="states">${statePaths}</g>
 <g class="dots">${bare}${dots}</g>
@@ -172,6 +202,21 @@ const main = async () => {
   if (!fields.length) throw new Error('--stats needs at least one field');
   if (fields.length > 6) throw new Error('--stats takes at most 6 fields (4 reads best)');
 
+  // --headline <preset|none>, or --headline-text "line one|line two|hook"
+  const custom = arg('headline-text', null);
+  let headline;
+  if (custom !== null) {
+    headline = custom.split('|').map(l => l.trim()).filter(Boolean);
+    if (!headline.length) throw new Error('--headline-text needs at least one line');
+    if (headline.length > 4) throw new Error('--headline-text takes at most 4 lines');
+  } else {
+    const key = arg('headline', DEFAULT_HEADLINE);
+    if (!(key in HEADLINES)) {
+      throw new Error(`unknown headline "${key}"\navailable: ${Object.keys(HEADLINES).join(', ')}`);
+    }
+    headline = HEADLINES[key];
+  }
+
   const stats = JSON.parse(await fs.readFile(STATS, 'utf8'));
   const [states, logo] = await Promise.all([readStates(), logoDataURI()]);
   const labels = placeLabels(stats.locales);
@@ -181,7 +226,7 @@ const main = async () => {
     if (!PRESETS[preset]) throw new Error(`unknown preset "${preset}"`);
     const { w, h } = PRESETS[preset];
     const base = path.join(OUTDIR, `creative-reach-${preset}`);
-    await fs.writeFile(`${base}.html`, buildHTML({ stats, states, labels, logo, preset, fields }));
+    await fs.writeFile(`${base}.html`, buildHTML({ stats, states, labels, logo, preset, fields, headline }));
 
     if (!argv.includes('--html-only')) {
       await run(CHROME, [
@@ -191,6 +236,7 @@ const main = async () => {
       ]).catch(e => { if (!/^$/.test(e.stderr || '')) return; throw e; });
     }
     console.log(`${path.relative(ROOT, base)}.png  ${w}x${h}  ${labels.length} labels  [${fields.join(" ")}]`);
+    console.log(headline ? `  headline: ${headline.map(l => fillTokens(l, stats)).join(" / ")}` : "  headline: (none)");
   }
   console.log(`\n${nf(stats.totalUploads)} uploads / ${stats.statesRepresented} states / ${nf(stats.activeStudiers)} studying`);
   console.log(`stats generated ${stats.generatedAt}`);

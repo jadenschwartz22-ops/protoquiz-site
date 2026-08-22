@@ -12,11 +12,34 @@ Chrome. The browser doing real layout and font hinting is why this matches and a
 hand-computed SVG did not.
 
 ```bash
-node scripts/gen-reach-creative.mjs                              # default row
+node scripts/gen-reach-creative.mjs                              # defaults
 node scripts/gen-reach-creative.mjs --stats uploads,states,studying,pages
+node scripts/gen-reach-creative.mjs --headline country
+node scripts/gen-reach-creative.mjs --headline none              # map only
+node scripts/gen-reach-creative.mjs --headline-text "Line one|Line two|Hook"
 node scripts/gen-reach-creative.mjs --preset portrait
 node scripts/gen-reach-creative.mjs --html-only                  # no PNG
 ```
+
+### Choosing the headline
+
+`--headline <preset>` picks a saved one. The LAST line always renders amber.
+
+| preset | reads |
+|---|---|
+| `studying` *(default)* | {studying} medics are studying / their EMS protocols. / Are you? |
+| `country` | Medics all over the country / are studying their protocols. / Are you? |
+| `states` | Medics in {states} states are / studying their own protocols. / Are you? |
+| `uploads` | {uploads} protocol documents. / Turned into real training. / Try yours free. |
+| `agency` | Your protocols. Your quizzes. / Not generic EMS trivia. / Built by a medic. |
+| `none` | no headline — the map takes the whole canvas |
+
+`--headline-text "a|b|hook"` writes one inline (max 4 lines, pipe-separated).
+
+Any headline can carry `{token}` placeholders — `{studying}` `{uploads}`
+`{states}` `{protocols}` `{pages}` `{countries}` — filled from live stats, so a
+saved headline never goes stale. An unknown token renders literally (a visible
+`{typo}` beats a silent blank).
 
 ### Choosing the stat row
 
