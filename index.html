@@ -1456,7 +1456,8 @@
 
     .compete-grid{
       display:grid;
-      grid-template-columns:1fr 1fr;
+      grid-template-columns:minmax(0,760px);
+      justify-content:center;
       gap:60px;
       align-items:center;
     }
@@ -2447,13 +2448,6 @@
                rel="noopener"
                class="btn btn-primary"
                data-track="CompeteCTA">↓ Download to play</a>
-          </div>
-          <div class="compete-photo">
-            <picture>
-              <source srcset="compete-mode.webp" type="image/webp">
-              <img src="compete-mode.jpg" alt="Two EMS partners in the front of an ambulance, both holding their phones running ProtoQuiz Compete Mode" loading="lazy" width="1400" height="934">
-            </picture>
-            <div class="compete-photo-stamp">UNIT 1 &middot; 14:27</div>
           </div>
         </div>
       </div>
