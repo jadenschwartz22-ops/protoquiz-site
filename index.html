@@ -1427,32 +1427,73 @@
       color:var(--ink-soft);
     }
 
-    .app-shots{
+    .shot-tabs{
+      display:flex;
+      border-bottom:1px solid var(--line-2);
+      margin-bottom:44px;
+      overflow-x:auto;
+      scrollbar-width:none;
+    }
+    .shot-tabs::-webkit-scrollbar{display:none;}
+    .shot-tab{
+      font-family:var(--mono);
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      padding:14px 20px;
+      color:var(--muted);
+      cursor:pointer;
+      background:none;
+      border:none;
+      border-bottom:2px solid transparent;
+      margin-bottom:-1px;
+      white-space:nowrap;
+      transition:color .2s, border-color .2s;
+    }
+    .shot-tab:hover{color:var(--ink-soft);}
+    .shot-tab[aria-selected="true"]{color:var(--amber); border-bottom-color:var(--amber);}
+    .shot-tab:focus-visible{outline:2px solid var(--amber); outline-offset:-2px;}
+    .shot-stage{
       display:grid;
-      grid-template-columns:repeat(6, 1fr);
-      gap:18px;
+      grid-template-columns:300px minmax(0,520px);
+      gap:64px;
+      align-items:center;
+      justify-content:center;
     }
-    .shot-cell{position:relative; margin:0;}
-    .shot-frame{
+    .shot-device{
       position:relative;
-      aspect-ratio: 9/19.5;
-      background:var(--bg);
-      border:1px solid var(--line-2);
+      border-radius:26px;
+      padding:6px;
+      background:linear-gradient(160deg,#3a352c,#141118 42%,#0a0810);
+      box-shadow:0 1px 0 rgba(255,255,255,.10) inset, 0 18px 40px -18px rgba(0,0,0,.9);
+    }
+    .shot-device::after{
+      content:"";
+      position:absolute; left:50%; transform:translateX(-50%); top:6px;
+      width:26%; height:15px; background:#000;
+      border-radius:0 0 11px 11px; z-index:2;
+    }
+    .shot-screen{
+      position:relative;
+      border-radius:20px;
       overflow:hidden;
-      transition:border-color .25s, transform .25s;
+      background:#000;
+      aspect-ratio:9/19.5;
+      border:1px solid rgba(0,0,0,.85);
     }
-    .shot-cell:hover .shot-frame{
-      border-color:var(--amber);
-      transform:translateY(-3px);
+    .shot-screen img{display:block; width:100%; height:auto;}
+    .shot-screen::after{
+      content:"";
+      position:absolute; inset:0; z-index:3; pointer-events:none;
+      background:linear-gradient(115deg, rgba(255,255,255,.10) 0%, rgba(255,255,255,.03) 16%, transparent 42%);
     }
-    .shot-frame img{
-      display:block; width:100%; height:100%;
-      object-fit:cover;
-      object-position:center top;
-      filter:brightness(.82) saturate(.85) sepia(.08);
+    .shot-copy .shot-kicker{
+      font-family:var(--mono); font-size:11px; letter-spacing:.14em;
+      color:var(--amber); text-transform:uppercase;
+      display:block; margin-bottom:16px;
     }
-    .shot-cell:not(:first-child):not(:last-child):nth-child(odd) .shot-frame{transform:translateY(12px);}
-    .shot-cell:not(:first-child):not(:last-child):nth-child(odd):hover .shot-frame{transform:translateY(9px);}
+    .shot-copy h3{font-size:26px; margin:0 0 14px; letter-spacing:-.01em;}
+    .shot-copy p{color:var(--ink-soft); font-size:16px; line-height:1.65; margin:0; max-width:52ch;}
 
     .compete-grid{
       display:grid;
@@ -2068,7 +2109,10 @@
       .section-tag{padding-top:0;}
       .wedge-list{grid-template-columns:1fr; border-top:1px solid var(--line-2);}
       .wedge-item{border-right:none;}
-      .app-shots{grid-template-columns:repeat(3, 1fr); gap:14px;}
+      .shot-stage{grid-template-columns:1fr; gap:34px; justify-items:center;}
+      .shot-device{max-width:280px;}
+      .shot-copy{text-align:center;}
+      .shot-copy p{margin:0 auto;}
       .compete-grid{grid-template-columns:1fr; gap:32px;}
       .founder{padding:96px 0;}
       .final{padding:96px 0;}
@@ -2077,8 +2121,7 @@
       h1{font-size:32px;}
       .hero-cta{flex-direction:column; align-items:stretch;}
       .hero-cta .btn{justify-content:center;}
-      .app-shots{grid-template-columns:repeat(2, 1fr); gap:12px;}
-      .shot-cell .shot-frame{transform:none !important;}
+      .shot-tab{padding:12px 14px; font-size:11px;}
       footer .wrap{flex-direction:column; align-items:center; text-align:center;}
     }
   </style>
@@ -2418,13 +2461,26 @@
           </div>
         </div>
 
-        <div class="app-shots">
-          <figure class="shot-cell" data-screen-slot="app-1"><div class="shot-frame"><img src="app-shots/app-1.png" alt="Learn hub showing Pharmacology, Algorithms, and Scenarios study cards" width="600" height="1303" loading="lazy"></div></figure>
-          <figure class="shot-cell" data-screen-slot="app-2"><div class="shot-frame"><img src="app-shots/app-2.png" alt="Pharmacology drug menu with medication categories" width="600" height="1303" loading="lazy"></div></figure>
-          <figure class="shot-cell" data-screen-slot="app-3"><div class="shot-frame"><img src="app-shots/app-3.png" alt="Algorithm Quiz Builder with topic selection and question count" width="600" height="1303" loading="lazy"></div></figure>
-          <figure class="shot-cell" data-screen-slot="app-4"><div class="shot-frame"><img src="app-shots/app-4.png" alt="DISPATCH siren screen with scenario call details" width="600" height="1303" loading="lazy"></div></figure>
-          <figure class="shot-cell" data-screen-slot="app-5"><div class="shot-frame"><img src="app-shots/app-5.png" alt="Compete mode with challenge room and leaderboard" width="600" height="1303" loading="lazy"></div></figure>
-          <figure class="shot-cell" data-screen-slot="app-6"><div class="shot-frame"><img src="app-shots/app-6.png" alt="Reach map showing protocol coverage across US agencies" width="600" height="1303" loading="lazy"></div></figure>
+        <div class="shot-tabs" role="tablist" aria-label="App screens">
+          <button class="shot-tab" role="tab" aria-selected="true" aria-controls="shotPanel" data-i="0">Learn</button>
+          <button class="shot-tab" role="tab" aria-selected="false" aria-controls="shotPanel" data-i="1">Pharmacology</button>
+          <button class="shot-tab" role="tab" aria-selected="false" aria-controls="shotPanel" data-i="2">Quiz builder</button>
+          <button class="shot-tab" role="tab" aria-selected="false" aria-controls="shotPanel" data-i="3">Scenarios</button>
+          <button class="shot-tab" role="tab" aria-selected="false" aria-controls="shotPanel" data-i="4">Compete</button>
+          <button class="shot-tab" role="tab" aria-selected="false" aria-controls="shotPanel" data-i="5">Protocols</button>
+        </div>
+
+        <div class="shot-stage" id="shotPanel" role="tabpanel">
+          <div class="shot-device">
+            <div class="shot-screen">
+              <img id="shotImg" src="app-shots/app-1.png" alt="Learn hub showing Pharmacology, Algorithms, and Scenarios study cards" width="600" height="1303" loading="lazy">
+            </div>
+          </div>
+          <div class="shot-copy">
+            <span class="shot-kicker" id="shotKicker">01 / Learn hub</span>
+            <h3 id="shotTitle">Pick what to study.</h3>
+            <p id="shotBody">Pharmacology, algorithms, and scenarios &mdash; every question built from the protocols your agency actually runs.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -3750,6 +3806,48 @@
     document.querySelector('.reach-zoom-in')?.addEventListener('click', () => activeZoom()?.zoomIn());
     document.querySelector('.reach-zoom-out')?.addEventListener('click', () => activeZoom()?.zoomOut());
     document.querySelector('.reach-zoom-reset')?.addEventListener('click', () => activeZoom()?.reset());
+
+    // App section: tabbed screenshot showcase
+    (function(){
+      const SHOTS = [
+        ['01 / Learn hub','Pick what to study.','Pharmacology, algorithms, and scenarios \u2014 every question built from the protocols your agency actually runs.','Learn hub showing Pharmacology, Algorithms, and Scenarios study cards'],
+        ['02 / Pharmacology','Every drug you carry.','Doses, indications, and contraindications pulled from your own formulary \u2014 not a generic drug reference.','Pharmacology drug menu with medication categories'],
+        ['03 / Quiz builder','Build the test you need.','Pick a topic and a question count. Questions are generated from the algorithms in your protocol set.','Algorithm Quiz Builder with topic selection and question count'],
+        ['04 / Scenarios','Toned out for a call.','Scenarios open the way a real call does \u2014 dispatch information first, then decisions under time pressure.','DISPATCH siren screen with scenario call details'],
+        ['05 / Compete','Challenge your partner.','Go head-to-head on pharmacology, algorithms, or scenarios. Worldwide leaderboard.','Compete mode with challenge room and leaderboard'],
+        ['06 / Protocols','496 uploads. 42 states.','Every dot is an area a protocol covers. Upload your own and it joins the map.','Protocols usage map showing protocol coverage across 42 states']
+      ];
+      const tabs = [...document.querySelectorAll('.shot-tab')];
+      const img = document.getElementById('shotImg');
+      const kicker = document.getElementById('shotKicker');
+      const title = document.getElementById('shotTitle');
+      const body = document.getElementById('shotBody');
+      if (!tabs.length || !img) return;
+
+      function select(i){
+        tabs.forEach((t,n) => {
+          t.setAttribute('aria-selected', n === i ? 'true' : 'false');
+          t.tabIndex = n === i ? 0 : -1;
+        });
+        img.src = 'app-shots/app-' + (i+1) + '.png';
+        img.alt = SHOTS[i][3];
+        kicker.textContent = SHOTS[i][0];
+        title.textContent = SHOTS[i][1];
+        body.textContent = SHOTS[i][2];
+      }
+
+      tabs.forEach((t,i) => {
+        t.tabIndex = i === 0 ? 0 : -1;
+        t.addEventListener('click', () => select(i));
+        t.addEventListener('keydown', e => {
+          if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+          e.preventDefault();
+          const next = (i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length;
+          tabs[next].focus();
+          select(next);
+        });
+      });
+    })();
   </script>
 </body>
 </html>
