@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-08-22T00:08:31.028Z",
-  "totalUploads": 495,
-  "distinctProtocols": 352,
-  "activeStudiers": 336,
-  "pagesProcessed": 80931,
+  "generatedAt": "2026-08-22T06:08:38.157Z",
+  "totalUploads": 496,
+  "distinctProtocols": 353,
+  "activeStudiers": 337,
+  "pagesProcessed": 80935,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 4,
   "byState": {
     "MI": 35,
     "CO": 31,
-    "CA": 27,
+    "CA": 28,
     "TX": 23,
     "PA": 23,
     "NY": 20,
@@ -1343,6 +1343,20 @@
       "topProtocols": [
         {
           "title": "Iowa Paramount Adult Protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "CA",
+      "city": "San Francisco",
+      "x": 30,
+      "y": 246,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "1.01 PATIENT ASSESSMENT—PRIMARY SURVEY +2 more",
           "count": 1
         }
       ]
