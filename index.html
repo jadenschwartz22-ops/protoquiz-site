@@ -2464,10 +2464,11 @@
         <div class="shot-tabs" role="tablist" aria-label="App screens">
           <button class="shot-tab" role="tab" aria-selected="true" aria-controls="shotPanel" data-i="0">Learn</button>
           <button class="shot-tab" role="tab" aria-selected="false" aria-controls="shotPanel" data-i="1">Pharmacology</button>
-          <button class="shot-tab" role="tab" aria-selected="false" aria-controls="shotPanel" data-i="2">Quiz builder</button>
-          <button class="shot-tab" role="tab" aria-selected="false" aria-controls="shotPanel" data-i="3">Scenarios</button>
-          <button class="shot-tab" role="tab" aria-selected="false" aria-controls="shotPanel" data-i="4">Compete</button>
-          <button class="shot-tab" role="tab" aria-selected="false" aria-controls="shotPanel" data-i="5">Protocols</button>
+          <button class="shot-tab" role="tab" aria-selected="false" aria-controls="shotPanel" data-i="2">Medicine</button>
+          <button class="shot-tab" role="tab" aria-selected="false" aria-controls="shotPanel" data-i="3">Quiz builder</button>
+          <button class="shot-tab" role="tab" aria-selected="false" aria-controls="shotPanel" data-i="4">Scenarios</button>
+          <button class="shot-tab" role="tab" aria-selected="false" aria-controls="shotPanel" data-i="5">Compete</button>
+          <button class="shot-tab" role="tab" aria-selected="false" aria-controls="shotPanel" data-i="6">Protocols</button>
         </div>
 
         <div class="shot-stage" id="shotPanel" role="tabpanel">
@@ -3809,13 +3810,15 @@
 
     // App section: tabbed screenshot showcase
     (function(){
+      // [kicker, title, body, alt, imageFile]
       const SHOTS = [
-        ['01 / Learn hub','Pick what to study.','Pharmacology, algorithms, and scenarios \u2014 every question built from the protocols your agency actually runs.','Learn hub showing Pharmacology, Algorithms, and Scenarios study cards'],
-        ['02 / Pharmacology','Every drug you carry.','Doses, indications, and contraindications pulled from your own formulary \u2014 not a generic drug reference.','Pharmacology drug menu with medication categories'],
-        ['03 / Quiz builder','Build the test you need.','Pick a topic and a question count. Questions are generated from the algorithms in your protocol set.','Algorithm Quiz Builder with topic selection and question count'],
-        ['04 / Scenarios','Toned out for a call.','Scenarios open the way a real call does \u2014 dispatch information first, then decisions under time pressure.','DISPATCH siren screen with scenario call details'],
-        ['05 / Compete','Challenge your partner.','Go head-to-head on pharmacology, algorithms, or scenarios. Worldwide leaderboard.','Compete mode with challenge room and leaderboard'],
-        ['06 / Protocols','496 uploads. 42 states.','Every dot is an area a protocol covers. Upload your own and it joins the map.','Protocols usage map showing protocol coverage across 42 states']
+        ['01 / Learn hub','Pick what to study.','Pharmacology, algorithms, and scenarios \u2014 every question built from the protocols your agency actually runs.','Learn hub showing Pharmacology, Algorithms, and Scenarios study cards','app-1'],
+        ['02 / Pharmacology','Every drug you carry.','Doses, indications, and contraindications pulled from your own formulary \u2014 not a generic drug reference.','Pharmacology drug menu with medication categories','app-2'],
+        ['03 / Medicine','The why behind the call.','742 conditions, each one a case that opens up layer by layer \u2014 the mechanism, the evidence, and what happened to the patient.','Medicine mode showing a cardiac case with revealed explanation layers and cited evidence','app-7'],
+        ['04 / Quiz builder','Build the test you need.','Pick a topic and a question count. Questions are generated from the algorithms in your protocol set.','Algorithm Quiz Builder with topic selection and question count','app-3'],
+        ['05 / Scenarios','Toned out for a call.','Scenarios open the way a real call does \u2014 dispatch information first, then decisions under time pressure.','DISPATCH siren screen with scenario call details','app-4'],
+        ['06 / Compete','Challenge your partner.','Go head-to-head on pharmacology, algorithms, or scenarios. Worldwide leaderboard.','Compete mode with challenge room and leaderboard','app-5'],
+        ['07 / Protocols','496 uploads. 42 states.','Every dot is an area a protocol covers. Upload your own and it joins the map.','Protocols usage map showing protocol coverage across 42 states','app-6']
       ];
       const tabs = [...document.querySelectorAll('.shot-tab')];
       const img = document.getElementById('shotImg');
@@ -3829,7 +3832,7 @@
           t.setAttribute('aria-selected', n === i ? 'true' : 'false');
           t.tabIndex = n === i ? 0 : -1;
         });
-        img.src = 'app-shots/app-' + (i+1) + '.png';
+        img.src = 'app-shots/' + SHOTS[i][4] + '.png';
         img.alt = SHOTS[i][3];
         kicker.textContent = SHOTS[i][0];
         title.textContent = SHOTS[i][1];
