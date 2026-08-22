@@ -28,7 +28,6 @@
   .cdot { position:absolute; top:10px; width:2px; height:8px; margin-left:-1px; background:rgba(237,239,242,.25); }
   .cdot.past { background:var(--blue2); }
   .cknob { position:absolute; top:10px; width:8px; height:8px; margin-left:-4px; background:var(--blue); }
-  .ctime { font-family:var(--mono); font-size:11px; letter-spacing:.12em; color:var(--mut); white-space:nowrap; font-variant-numeric:tabular-nums; }
   #stage.jump, #stage.jump * { transition:none !important; animation:none !important; }
 
   @media (max-width:640px){
@@ -36,7 +35,6 @@
     .pq-caption { font-size:8px; letter-spacing:.1em; }
     .pq-caption span { white-space:nowrap; }
     .pq-ctrl { gap:8px; padding:8px; }
-    .ctime { font-size:9px; letter-spacing:.06em; }
   }
   .static [data-r], .static .seal .br, .static .qcard .c, .static .scoreBig,
   .static .cell, .static .codeBig, .static .brandbig, .static .mcell, .static .uchip,
@@ -55,7 +53,6 @@
   #capwrap.off { opacity:0; transform:translateY(12px); }
   #capIdx { font-size:16px; color:var(--blue); }
   #capTx { font-size:27px; font-weight:600; color:var(--ink); }
-  #prog { position:absolute; left:0; bottom:0; height:3px; width:0; background:var(--blue); z-index:6; }
 
   /* beats — each beat exits along its own axis, so the tour has spatial logic */
   .beat { position:absolute; inset:72px 0 90px; display:flex; flex-direction:column; align-items:center; justify-content:center; opacity:0; visibility:hidden; transition:opacity .5s var(--ease), transform .8s var(--ease), filter .6s var(--ease); }
@@ -267,6 +264,7 @@
   #b0.on .introBrand img { transform:none; opacity:1; }
   .slogan { font-size:68px; font-weight:700; letter-spacing:-.015em; margin-top:48px; }
   .slogan b { color:var(--blue2); font-weight:700; }
+  .endSlogan { font-size:44px; margin-top:34px; }
   .introGap { font-family:var(--mono); font-size:17px; letter-spacing:.2em; color:var(--mut); margin-top:36px; }
   .introGap b { color:var(--ink); }
 
@@ -354,7 +352,6 @@
   <section class="beat" id="b0">
     <div class="ey blue" data-r>FOR EMS AGENCIES &middot; FIRE &middot; PRIVATE &middot; HOSPITAL-BASED</div>
     <div class="introBrand"><img src="pq-logo.png" alt=""><span>PROTO<b>QUIZ</b><sup>&trade;</sup></span></div>
-    <div class="slogan" data-r style="--d:700ms">Train how you <b>fight</b>.</div>
     <div class="introGap" data-r style="--d:1150ms">THE ONLY TRAINING TOOL THAT TEACHES PROVIDERS <b>THEIR OWN LOCAL PROTOCOLS</b>.</div>
   </section>
 
@@ -551,21 +548,20 @@
     <img class="b8logo" src="pq-logo.png" alt="" data-r>
     <div class="brandbig" data-r style="--d:100ms">PROTO<b>QUIZ</b><sup>&trade;</sup></div>
     <div class="ey b1ey" data-r style="--d:600ms">A QUIZ EVERY SHIFT &middot; ADMIN INSIGHT &middot; QA/QI &middot; CE DOCUMENTATION</div>
-    <div class="url" data-r style="--d:950ms">protoquiz.com</div>
+    <div class="slogan endSlogan" data-r style="--d:950ms">Train how you <b>fight</b>.</div>
+    <div class="url" data-r style="--d:1300ms">protoquiz.com</div>
   </section>
 
   <div class="capstrip"><div id="capwrap"><span id="capIdx"></span><span id="capTx"></span></div></div>
-  <div id="prog"></div>
 </div></div>
 <div class="pq-ctrl">
   <button class="cbtn" id="cPrev" aria-label="Previous chapter"><svg viewBox="0 0 12 12"><path d="M2 1h1.7v10H2zM11 1.4v9.2L4.4 6z" fill="currentColor"/></svg></button>
   <button class="cbtn" id="cPlay" aria-label="Play or pause"><svg id="icPlay" viewBox="0 0 12 12"><path d="M3 1.3 10.6 6 3 10.7z" fill="currentColor"/></svg><svg id="icPause" viewBox="0 0 12 12" style="display:none"><path d="M2.6 1.5h2.3v9H2.6zM7.1 1.5h2.3v9H7.1z" fill="currentColor"/></svg></button>
   <button class="cbtn" id="cNext" aria-label="Next chapter"><svg viewBox="0 0 12 12"><path d="M8.3 1H10v10H8.3zM1 1.4v9.2L7.6 6z" fill="currentColor"/></svg></button>
   <div class="ctrack" id="cTrack"><div class="cfill" id="cFill"></div><div class="cknob" id="cKnob"></div></div>
-  <div class="ctime" id="cTime">0:00 / 0:54 &middot; 01/09</div>
 </div>
 </div>
-<div class="pq-caption"><span>PROTO<b>QUIZ</b> &middot; PRODUCT TOUR</span><span>ONE QUIZ A SHIFT &middot; ABOUT A MINUTE</span></div>
+<div class="pq-caption"><span>PROTO<b>QUIZ</b> &middot; PRODUCT TOUR</span></div>
 </section>
 
 <script>
@@ -620,7 +616,7 @@
   // enterprise arc: the gap, your book in, the daily system, the compounding payoff, the admin stack. 9 beats, 54s.
   var BEATS = [0, 5500, 12800, 18200, 24800, 29800, 36000, 43500, 49500];
   var EVENTS = [
-    [0,     function(){ go('b0'); cap('01 / 09','TRAIN HOW YOU FIGHT'); }],
+    [0,     function(){ go('b0'); cap('01 / 09','THEIR OWN LOCAL PROTOCOLS'); }],
     [5500,  function(){ go('bU'); cap('02 / 09','YOUR PROTOCOLS IN, QUIZZES OUT'); }],
     [6200,  function(){ cnt('#pgN', 438, 1500); }],
     [12800, function(){ go('b2'); cap('03 / 09','ONE PROTOCOL, EVERY SHIFT'); }],
@@ -663,7 +659,7 @@
 
   // ---- transport ----
   var track = document.getElementById('cTrack'), fill = document.getElementById('cFill'),
-      knob = document.getElementById('cKnob'), timeEl = document.getElementById('cTime'),
+      knob = document.getElementById('cKnob'),
       bPlay = document.getElementById('cPlay'), bPrev = document.getElementById('cPrev'), bNext = document.getElementById('cNext'),
       icPlay = document.getElementById('icPlay'), icPause = document.getElementById('icPause');
 
@@ -676,12 +672,9 @@
   var dots = track.querySelectorAll('.cdot');
 
   function beatIndex(){ var i = 0; while (i + 1 < BEATS.length && BEATS[i + 1] <= cur) i++; return i; }
-  function fmt(ms){ var s = Math.floor(ms / 1000); return Math.floor(s / 60) + ':' + ('0' + s % 60).slice(-2); }
   function paint(){
     var pc = cur / LOOP * 100;
     fill.style.width = pc + '%'; knob.style.left = pc + '%';
-    var p = q('#prog'); if (p) p.style.width = pc + '%';
-    timeEl.textContent = fmt(cur) + ' / ' + fmt(LOOP) + ' · 0' + (beatIndex() + 1) + '/0' + BEATS.length;
     icPlay.style.display = playing ? 'none' : 'block';
     icPause.style.display = playing ? 'block' : 'none';
     for (var i = 0; i < dots.length; i++) dots[i].classList.toggle('past', BEATS[i + 1] <= cur);
