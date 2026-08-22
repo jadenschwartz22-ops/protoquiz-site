@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-08-21T18:08:34.907Z",
-  "totalUploads": 493,
-  "distinctProtocols": 351,
-  "activeStudiers": 334,
-  "pagesProcessed": 80372,
+  "generatedAt": "2026-08-22T00:08:31.028Z",
+  "totalUploads": 495,
+  "distinctProtocols": 352,
+  "activeStudiers": 336,
+  "pagesProcessed": 80931,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 4,
   "byState": {
-    "MI": 34,
+    "MI": 35,
     "CO": 31,
-    "CA": 26,
+    "CA": 27,
     "TX": 23,
     "PA": 23,
     "NY": 20,
@@ -62,7 +62,7 @@
       "city": "Detroit",
       "x": 690,
       "y": 194,
-      "count": 34,
+      "count": 35,
       "tier": "hot",
       "topProtocols": [
         {
@@ -556,6 +556,20 @@
       ]
     },
     {
+      "state": "CA",
+      "city": "San Diego",
+      "x": 93,
+      "y": 378,
+      "count": 4,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "2026 2027 Protocol Packet",
+          "count": 4
+        }
+      ]
+    },
+    {
       "state": "NE",
       "city": "Omaha",
       "x": 482,
@@ -668,20 +682,6 @@
         {
           "title": "Aurora South WI EMS 2026 Pre Hospital Guidelines 4.1.26",
           "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CA",
-      "city": "San Diego",
-      "x": 93,
-      "y": 378,
-      "count": 3,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "2026 2027 Protocol Packet",
-          "count": 3
         }
       ]
     },
