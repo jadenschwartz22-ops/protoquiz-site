@@ -85,7 +85,7 @@
   .brandbig b { color:var(--blue); font-weight:700; }
   .brandbig sup { font-size:22px; color:var(--mut); font-weight:400; margin-left:8px; }
   .b1ey { margin-top:26px; }
-  .url { font-family:var(--mono); font-size:22px; color:var(--blue2); font-weight:700; letter-spacing:.08em; margin-top:30px; }
+  .url { font-family:var(--mono); font-size:29px; color:var(--blue2); font-weight:700; letter-spacing:.08em; margin-top:48px; }
 
   /* B2 daily card — the code lands like a readout: seal brackets draw, digits snap in tight */
   .codeBig { font-family:var(--mono); font-size:178px; font-weight:700; font-variant-numeric:tabular-nums; line-height:1; letter-spacing:.34em; opacity:.001; transition:letter-spacing 1.05s var(--ease) .18s, opacity .5s linear .18s; }
@@ -178,6 +178,9 @@
   .aeyebrow { display:flex; align-items:center; gap:14px; font-family:var(--mono); font-size:13px; letter-spacing:.2em; color:var(--mut); }
   .crest { width:34px; height:38px; flex:none; }
   .aeyebrow .org { color:var(--ink); font-weight:700; padding-right:14px; border-right:1px solid var(--line2); }
+  .consoleHero { font-family:-apple-system,sans-serif; font-size:31px; font-weight:700; letter-spacing:-.01em;
+                 color:var(--ink); text-transform:none; }
+  .consoleSub { font-size:12px; letter-spacing:.18em; color:var(--mut); }
   .todayRow { display:flex; align-items:baseline; gap:20px; margin-top:12px; }
   .acode { font-family:var(--mono); font-size:58px; font-weight:700; color:var(--blue); letter-spacing:-1px; }
   .aptitle { font-size:28px; font-weight:600; letter-spacing:-.2px; }
@@ -213,7 +216,7 @@
   .nudge .why { font-family:var(--mono); font-size:11.5px; color:var(--mut); }
 
   /* B6 CE paper — the sheet is laid onto the desk: slight tilt, settles flat, shadow deepens */
-  .paper { position:relative; background:#f4f2ec; color:#1c1e21; width:980px; padding:0 0 42px; font-family:Georgia,"Times New Roman",serif;
+  .paper { position:relative; background:#f4f2ec; color:#1c1e21; width:1180px; padding:0 0 42px; font-family:Georgia,"Times New Roman",serif;
            box-shadow:0 10px 30px rgba(0,0,0,.3); }
   .pFile { font-family:var(--mono); font-size:12px; letter-spacing:.08em; color:#5a5d63; background:#e9e6de; border-bottom:1px solid #d8d5cc; padding:12px 28px; display:flex; justify-content:space-between; }
   .pFile b { color:#1c1e21; font-weight:700; }
@@ -226,18 +229,18 @@
   .stamp .s1 { font-size:16px; font-weight:700; }
   .stamp .s2 { font-size:9.5px; margin-top:5px; letter-spacing:.12em; }
   .signed .stamp { transition:transform .28s cubic-bezier(.2,1.3,.4,1) 2.1s, opacity .2s linear 2.1s; transform:rotate(-7deg) scale(1); opacity:.88; }
-  #b6 .paper[data-r] { transform:perspective(1400px) rotateX(7deg) translateY(30px) scale(.97); transform-origin:50% 100%;
+  #b6 .paper[data-r] { transform:translateY(20px) scale(.99); transform-origin:50% 100%;
                        transition:opacity .6s var(--ease), transform 1.05s var(--ease), box-shadow 1.05s var(--ease); }
   #b6.on .paper { box-shadow:0 34px 74px rgba(0,0,0,.52); }
   .pHead { display:flex; justify-content:space-between; align-items:flex-start; border-bottom:2px solid #1c1e21; padding-bottom:14px; }
-  .pHead .org { font-size:25px; font-weight:700; font-family:-apple-system,sans-serif; }
+  .pHead .org { font-size:28px; font-weight:700; font-family:-apple-system,sans-serif; }
   .pHead .psub { font-size:13.5px; color:#5a5d63; margin-top:3px; font-family:-apple-system,sans-serif; }
   .pHead .pid { font-family:var(--mono); font-size:9px; letter-spacing:.12em; color:#5a5d63; text-align:right; line-height:1.9; }
-  .pTitle { font-family:var(--mono); font-size:12px; letter-spacing:.24em; margin:22px 0 14px; }
+  .pTitle { font-family:var(--mono); font-size:13px; letter-spacing:.24em; margin:22px 0 14px; }
   .paper table { width:100%; border-collapse:collapse; font-family:var(--mono); }
-  .paper th { font-size:10.5px; letter-spacing:.12em; text-align:left; color:#5a5d63; font-weight:400; padding:9px 8px; border-bottom:1px solid #1c1e21; }
+  .paper th { font-size:11.5px; letter-spacing:.12em; text-align:left; color:#5a5d63; font-weight:400; padding:9px 8px; border-bottom:1px solid #1c1e21; }
   .paper th.n, .paper td.n { text-align:right; }
-  .paper td { font-size:14px; padding:10px 8px; border-bottom:1px solid #d8d5cc; font-variant-numeric:tabular-nums; }
+  .paper td { font-size:15.5px; padding:11px 9px; border-bottom:1px solid #d8d5cc; font-variant-numeric:tabular-nums; }
   .pTotals { display:flex; gap:36px; margin:18px 0 4px; font-family:var(--mono); font-size:12.5px; letter-spacing:.06em; }
   .pTotals b { font-size:15.5px; }
   .attest { font-size:12.5px; color:#3c3f45; line-height:1.6; margin:16px 0 22px; font-family:-apple-system,sans-serif; }
@@ -259,17 +262,18 @@
   .introBrand { display:flex; align-items:center; gap:30px; font-family:var(--mono); font-size:104px; font-weight:700; letter-spacing:.14em; line-height:1; margin-top:42px; opacity:.001; transition:letter-spacing 1.1s var(--ease) .15s, opacity .55s linear .15s; }
   #b0.on .introBrand { letter-spacing:-.01em; opacity:1; }
   .introBrand b { color:var(--blue); }
-  .introBrand sup { font-size:20px; color:var(--mut); font-weight:400; margin-left:8px; align-self:flex-start; margin-top:10px; }
+  .introBrand sup { font-size:30px; color:var(--mut); font-weight:400; margin-left:8px; align-self:flex-start; margin-top:10px; }
   .introBrand img { width:92px; height:92px; transform:scale(.55); opacity:0; transition:transform .8s var(--ease) .35s, opacity .5s var(--ease) .35s; }
   #b0.on .introBrand img { transform:none; opacity:1; }
   .slogan { font-size:68px; font-weight:700; letter-spacing:-.015em; margin-top:48px; }
   .slogan b { color:var(--blue2); font-weight:700; }
   .endSlogan { font-size:44px; margin-top:34px; }
-  .introGap { font-family:var(--mono); font-size:17px; letter-spacing:.2em; color:var(--mut); margin-top:36px; }
+  .introGap { font-family:var(--mono); font-size:22px; letter-spacing:.18em; color:var(--mut); margin-top:62px; }
   .introGap b { color:var(--ink); }
 
   /* BU upload — your book in, a training system out */
-  .urow { display:flex; align-items:center; gap:58px; margin-top:42px; }
+  .bUey { font-size:26px; margin-top:-26px; }
+  .urow { display:flex; align-items:center; gap:62px; margin-top:34px; }
   /* the book is a STACK — hundreds of pages, not a sheet */
   .ustack { position:relative; }
   .sheet { position:absolute; inset:0; border:1px solid #cfccc3; box-shadow:0 10px 28px rgba(0,0,0,.35); }
@@ -281,7 +285,7 @@
   .upain { position:absolute; left:50%; transform:translateX(-50%); bottom:-58px; white-space:nowrap; font-family:var(--mono); font-size:13px; letter-spacing:.16em; color:var(--mut); }
   .upain b { color:var(--amber); font-weight:700; font-size:19px; letter-spacing:.06em; font-variant-numeric:tabular-nums; }
   /* the ream: stepped solid shadows = visible sheet edges, so the thing reads as a 2-inch slab */
-  .udoc { position:relative; width:310px; background:#f4f2ec; color:#1c1e21; padding:28px 26px 22px; overflow:hidden;
+  .udoc { position:relative; width:348px; background:#f4f2ec; color:#1c1e21; padding:28px 26px 22px; overflow:hidden;
           box-shadow:0 2px 0 #e2dfd6, 0 4px 0 #cfccc3, 0 6px 0 #e2dfd6, 0 8px 0 #c5c2b9, 0 10px 0 #dcd9d0,
                      0 12px 0 #bfbcb3, 0 14px 0 #d6d3ca, 0 16px 0 #b8b5ac, 0 18px 0 #cfccc3, 0 20px 0 #aeaba2,
                      0 34px 60px rgba(0,0,0,.5); }
@@ -292,23 +296,23 @@
   #bU.on .fly.f3 { animation:flyoff 1s cubic-bezier(.4,.1,.6,1) 1.95s forwards; }
   #bU.on .fly.f4 { animation:flyoff 1s cubic-bezier(.4,.1,.6,1) 2.4s forwards; }
   @keyframes flyoff { 0%{opacity:0; transform:none} 14%{opacity:1} 100%{opacity:0; transform:translate(330px,-46px) rotate(16deg) scale(.55)} }
-  .udocT { font-weight:700; font-size:17.5px; }
-  .udocS { font-family:var(--mono); font-size:10px; letter-spacing:.16em; color:#8a8d93; margin:4px 0 18px; }
+  .udocT { font-weight:700; font-size:20px; }
+  .udocS { font-family:var(--mono); font-size:11.5px; letter-spacing:.16em; color:#8a8d93; margin:4px 0 18px; }
   .uline { display:block; height:8px; background:#dcd9d0; margin-bottom:10px; }
-  .udocF { font-family:var(--mono); font-size:10px; letter-spacing:.14em; color:#8a8d93; margin-top:18px; display:flex; justify-content:space-between; white-space:nowrap; gap:10px; }
+  .udocF { font-family:var(--mono); font-size:11.5px; letter-spacing:.14em; color:#8a8d93; margin-top:18px; display:flex; justify-content:space-between; white-space:nowrap; gap:10px; }
   .uscan { position:absolute; left:0; right:0; top:-14%; height:12%; background:rgba(74,134,240,.16); border-bottom:2px solid var(--blue); opacity:0; }
   #bU.on .uscan { animation:scan 1.7s cubic-bezier(.4,0,.4,1) .9s 1 forwards; }
   @keyframes scan { 0%{opacity:1; transform:translateY(0)} 88%{opacity:1} 100%{opacity:0; transform:translateY(940%)} }
   .umid { display:flex; flex-direction:column; align-items:center; gap:16px; }
   .uproc { font-family:var(--mono); font-size:13px; letter-spacing:.22em; color:var(--blue2); }
-  .uchips { display:grid; grid-template-columns:repeat(2, 272px); gap:13px; }
+  .uchips { display:grid; grid-template-columns:repeat(2, 296px); gap:14px; }
   .uchip { border:1px solid var(--line2); padding:15px 18px; display:flex; gap:13px; align-items:baseline; opacity:0; transform:translateX(28px); transition:opacity .5s var(--ease), transform .55s var(--ease); transition-delay:var(--d); }
   #bU.on .uchip { opacity:1; transform:none; }
-  .uchip .cc { font-family:var(--mono); color:var(--blue); font-weight:700; font-size:17px; }
-  .uchip .cn { font-size:15px; color:var(--sec); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-  .uchipF { grid-column:1/-1; font-family:var(--mono); font-size:11.5px; letter-spacing:.16em; color:var(--mut); margin-top:5px; opacity:0; transition:opacity .6s var(--ease) 1.6s; }
+  .uchip .cc { font-family:var(--mono); color:var(--blue); font-weight:700; font-size:19px; }
+  .uchip .cn { font-size:17px; color:var(--sec); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .uchipF { grid-column:1/-1; font-family:var(--mono); font-size:13px; letter-spacing:.16em; color:var(--mut); margin-top:5px; opacity:0; transition:opacity .6s var(--ease) 1.6s; }
   #bU.on .uchipF { opacity:1; }
-  .usub { margin-top:84px; font-size:27px; color:var(--sec); }
+  .usub { margin-top:104px; font-size:29px; color:var(--sec); }
   .usub b { color:var(--ink); font-weight:600; }
 
   /* BM mastery — the compounding claim */
@@ -316,8 +320,9 @@
   #bM.on .mhero { letter-spacing:.02em; opacity:1; }
   .mhero b { color:var(--blue); }
   .mgrid { display:grid; grid-template-columns:repeat(8, 118px); gap:10px; margin-top:40px; }
-  .mcell { border:1px solid var(--line2); font-family:var(--mono); font-size:14px; letter-spacing:.04em; color:var(--mut); padding:12px 0; text-align:center; opacity:0; transform:scale(.85); transition:.45s var(--ease); transition-delay:calc(var(--i) * 52ms); }
+  .mcell { border:1px solid var(--line2); font-family:var(--mono); font-size:14px; letter-spacing:.04em; color:var(--mut); padding:12px 0; text-align:center; opacity:0; transform:scale(.85); transition:.45s var(--ease); transition-delay:calc(var(--i) * 118ms); }
   #bM.on .mcell { opacity:1; transform:none; background:rgba(74,134,240,.10); border-color:rgba(74,134,240,.5); color:var(--blue2); }
+  #bM.on .mcell-open { background:none; border-color:var(--line2); color:#3d434c; transition-delay:.35s; }
   .mmonths { display:flex; justify-content:space-between; width:1014px; margin-top:13px; font-family:var(--mono); font-size:11.5px; letter-spacing:.2em; color:#4a505a; }
   .mline { margin-top:36px; font-size:27px; color:var(--sec); }
   .mline b { color:var(--ink); font-weight:600; }
@@ -346,7 +351,6 @@
 <section class="pq-promo"><div class="pq-frame"><div class="pq-view" id="pqview"><div id="stage">
   <div class="chrome">
     <span class="l"><img class="clogo" src="pq-logo.png" alt=""><span>PROTO<b>QUIZ</b>&trade;</span></span>
-    <span class="r">PRODUCT TOUR &middot; PROTOCOL TRAINING, EVERY SHIFT</span>
   </div>
 
   <section class="beat" id="b0">
@@ -356,7 +360,7 @@
   </section>
 
   <section class="beat" id="bU">
-    <div class="ey blue" data-r>STEP ONE &middot; SEND US YOUR PROTOCOL SET</div>
+    <div class="ey blue bUey" data-r>STEP ONE &middot; SEND US YOUR PROTOCOL SET</div>
     <div class="urow">
       <div class="ustack" data-r style="--d:200ms">
         <i class="sheet s1"></i><i class="sheet s2"></i><i class="sheet s3"></i>
@@ -445,7 +449,7 @@
   </section>
 
   <section class="beat" id="bM">
-    <div class="ey blue" data-r>THE MATH DOES THE WORK</div>
+    <div class="ey blue" data-r>CONSISTENCY OVER TIME</div>
     <div class="mhero"><b>6</b> MONTHS</div>
     <div class="mgrid" id="mgrid"></div>
     <div class="mmonths"><span>FEB</span><span>MAR</span><span>APR</span><span>MAY</span><span>JUN</span><span>JUL</span></div>
@@ -456,7 +460,7 @@
     <div class="acol">
       <div class="apanel" data-r>
         <i class="c c1"></i><i class="c c2"></i><i class="c c3"></i><i class="c c4"></i>
-        <div class="aeyebrow"><svg class="crest" viewBox="0 0 40 44"><path d="M20 2 36 8v12c0 12-7 18-16 22C11 38 4 32 4 20V8z" fill="none" stroke="#6a97f2" stroke-width="2.4"/><text x="20" y="27" text-anchor="middle" font-size="12.5" font-weight="700" fill="#6a97f2" font-family="SF Mono,Menlo,monospace">CR</text></svg><span class="org">CEDAR RIDGE FIRE</span><span>TRAINING OFFICER CONSOLE &middot; QA/QI READY &middot; RUNS ITSELF</span></div>
+        <div class="aeyebrow"><svg class="crest" viewBox="0 0 40 44"><path d="M20 2 36 8v12c0 12-7 18-16 22C11 38 4 32 4 20V8z" fill="none" stroke="#6a97f2" stroke-width="2.4"/><text x="20" y="27" text-anchor="middle" font-size="12.5" font-weight="700" fill="#6a97f2" font-family="SF Mono,Menlo,monospace">CR</text></svg><span class="org">CEDAR RIDGE FIRE</span><span class="consoleHero">TRAINING OFFICER CONSOLE</span><span class="consoleSub">QA/QI READY &middot; RUNS ITSELF</span></div>
         <div class="todayRow"><span class="acode">[3040]</span><span class="aptitle">Tachyarrhythmia with Poor Perfusion Protocol</span></div>
         <div class="strip">
           <div class="cell"><div class="v b"><span id="c1">0</span><small> / 7</small></div><div class="l">TOOK IT THIS SHIFT</div></div>
@@ -547,7 +551,7 @@
   <section class="beat" id="b8">
     <img class="b8logo" src="pq-logo.png" alt="" data-r>
     <div class="brandbig" data-r style="--d:100ms">PROTO<b>QUIZ</b><sup>&trade;</sup></div>
-    <div class="ey b1ey" data-r style="--d:600ms">A QUIZ EVERY SHIFT &middot; ADMIN INSIGHT &middot; QA/QI &middot; CE DOCUMENTATION</div>
+    <div class="ey b1ey" data-r style="--d:600ms">ONE QUIZ A SHIFT &middot; ADMIN INSIGHT &middot; QA/QI &middot; CE DOCUMENTATION</div>
     <div class="slogan endSlogan" data-r style="--d:950ms">Train how you <b>fight</b>.</div>
     <div class="url" data-r style="--d:1300ms">protoquiz.com</div>
   </section>
@@ -571,9 +575,26 @@
   ['1010','1050','2020','2040','3040','3050','0417','4020','4100','5010','5030','6060','6080','7030','7050','8010','8030','9020','9040','2210','3210','4210','5210','6210','7210','8210','9210','1310','2310','3310','4310','5310']
     .forEach(function(c, i){
       var d = document.createElement('div');
-      d.className = 'mcell'; d.style.setProperty('--i', i); d.textContent = c;
+      d.className = 'mcell'; d.textContent = c;
       MG.appendChild(d);
     });
+  // coverage builds up scattered across the 6 months, not left-to-right, and a
+  // few protocols are still outstanding at the end — the crew is never "done".
+  (function(){
+    var cells = MG.children, n = cells.length, ord = [];
+    for (var i = 0; i < n; i++) ord.push(i);
+    var seed = 20260822;                        // fixed seed: same scatter every replay
+    var rnd = function(){ seed = (seed * 1103515245 + 12345) & 0x7fffffff; return seed / 0x7fffffff; };
+    for (var i = n - 1; i > 0; i--){            // Fisher-Yates
+      var j = Math.floor(rnd() * (i + 1)), t = ord[i]; ord[i] = ord[j]; ord[j] = t;
+    }
+    var covered = Math.round(n * 0.75);
+    ord.forEach(function(cellIdx, step){
+      var el = cells[cellIdx];
+      if (step < covered) el.style.setProperty('--i', step);
+      else el.classList.add('mcell-open');
+    });
+  })();
   var INIT = stage.innerHTML;
   var LOOP = 54000;
   var q = function(s){ return stage.querySelector(s); };
@@ -616,15 +637,15 @@
   // enterprise arc: the gap, your book in, the daily system, the compounding payoff, the admin stack. 9 beats, 54s.
   var BEATS = [0, 5500, 12800, 18200, 24800, 29800, 36000, 43500, 49500];
   var EVENTS = [
-    [0,     function(){ go('b0'); cap('01 / 09','THEIR OWN LOCAL PROTOCOLS'); }],
-    [5500,  function(){ go('bU'); cap('02 / 09','YOUR PROTOCOLS IN, QUIZZES OUT'); }],
+    [0,     function(){ go('b0'); cap('',''); }],
+    [5500,  function(){ go('bU'); cap('',''); }],
     [6200,  function(){ cnt('#pgN', 438, 1500); }],
     [12800, function(){ go('b2'); cap('03 / 09','ONE PROTOCOL, EVERY SHIFT'); }],
     [14400, function(){ q('#ticks').classList.add('go'); }],
-    [18200, function(){ go('b3'); cap('04 / 09','FIVE MINUTES, FIRST TRY'); }],
+    [18200, function(){ go('b3'); cap('04 / 09','FIVE MINUTES. ONE TOPIC'); }],
     [20400, function(){ q('#pick').classList.add('picked'); q('#qfill').style.width = '70%'; }],
     [21200, function(){ q('.qcard').classList.add('locked'); q('#qlock').classList.add('vis'); }],
-    [24800, function(){ go('b4'); cap('05 / 09','SCORED AND ON THE BOARD'); }],
+    [24800, function(){ go('b4'); cap('05 / 09','SCORED'); }],
     [25400, function(){ cnt('#scoreN', 90, 1100); }],
     [29800, function(){ go('bM'); cap('06 / 09','ONE QUIZ A SHIFT COMPOUNDS'); }],
     [36000, function(){ go('b5'); cap('07 / 09','THE WHOLE CREW, GETTING BETTER'); }],
@@ -632,7 +653,7 @@
     [37200, function(){ q('#wpane').classList.add('drawn'); q('#tpane').classList.add('drawn'); }],
     [43500, function(){ go('b6'); cap('08 / 09','CE AND COMPLIANCE, DOCUMENTED'); }],
     [45100, function(){ q('#b6').classList.add('signed'); }],
-    [49500, function(){ go('b8'); cap('09 / 09','PROTOQUIZ.COM'); }]
+    [49500, function(){ go('b8'); cap('',''); }]
   ];
 
   // ---- master clock: state is a function of the playhead, so seeking is just a rebuild ----
