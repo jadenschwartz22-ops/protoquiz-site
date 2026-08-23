@@ -722,7 +722,10 @@
       scanAfter(SCAN.scan, function(){          // full page read — only now does it leave
         head.style.opacity = '0';
         var next = (i + 1 < SCAN.pages) ? scanPage(i + 1) : null;
-        if (next) doc.insertBefore(next, cur);
+        // the last sheet stays put: ejecting it would leave the doc blank,
+        // and an empty page reads as "no content" at the end of the beat
+        if (!next){ lit.style.transition = 'none'; lit.style.height = '0%'; return; }
+        doc.insertBefore(next, cur);
         var gone = cur;
         gone.style.transition = 'transform ' + SCAN.eject + 'ms ease-in, opacity ' + SCAN.eject + 'ms ease-in';
         gone.style.transform = 'translateX(112%) rotate(3deg)';
@@ -731,7 +734,7 @@
           if (gone === cover) gone.style.zIndex = '0';   // parked: markup, so keep it
           else gone.remove();
           lit.style.transition = 'none'; lit.style.height = '0%';
-          if (next){ cur = next; i++; scanAfter(SCAN.gap, step); }
+          cur = next; i++; scanAfter(SCAN.gap, step);
         });
       });
     }
