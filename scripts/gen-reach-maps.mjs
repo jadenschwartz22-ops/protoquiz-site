@@ -49,10 +49,13 @@ const page = (css, body) => `<!doctype html><meta charset="utf-8">
 .dots{mix-blend-mode:plus-lighter}
 ${css}</style><div class="stage">${body}<div class="grain"></div></div>`;
 
+// The logo kit is the source of truth. Its README is explicit: for an ad or
+// social post on a dark background, use standard/png/logo-2000-transparent.png.
+// It ships unmodified -- the blue #025EB0 is a documented brand color, not an
+// artifact to be recolored away.
 async function loadMark(size) {
-  const raw = await fs.readFile(path.join(ROOT, 'logo-mark.svg'), 'utf8');
-  return raw.replace('<svg ', '<svg style="display:block" ')
-            .replace(/width="1024" height="1024"/, `width="${size}" height="${size}"`);
+  const b = await fs.readFile(path.join(ROOT, 'share/logo-2000-transparent.png'));
+  return `<img src="data:image/png;base64,${b.toString('base64')}" width="${size}" height="${size}" style="display:block">`;
 }
 async function loadStates() {
   const idx = await fs.readFile(path.join(ROOT, 'index.html'), 'utf8');
@@ -316,8 +319,8 @@ const only = (() => { const i = argv.indexOf('--only'); return i >= 0 && argv[i 
 const main = async () => {
   const stats = JSON.parse(await fs.readFile(path.join(ROOT, 'data/reach-stats.json'), 'utf8'));
   const states = await loadStates();
-  const markLg = await loadMark(84);
-  const markXL = await loadMark(148);
+  const markLg = await loadMark(104);
+  const markXL = await loadMark(190);
   await fs.mkdir(OUTDIR, { recursive: true });
 
   const names = only || Object.keys(LOOKS);
