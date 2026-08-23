@@ -171,11 +171,11 @@ function buildHTML({ stats, states, labels, logo, preset, fields, headline }) {
 .rl-warm{font-size:15px;font-weight:800;fill:var(--ink)}
 .rl-hot{font-size:17px;font-weight:800;fill:var(--ink)}
 .rl .rl-n{fill:var(--amber);font-weight:800}
-.stats{position:absolute;bottom:64px;left:${fields.length >= 5 ? 430 : 560}px;right:60px;display:flex;justify-content:space-between;text-align:center}
-.stats b{color:var(--amber);font-size:${fields.length >= 5 ? 40 : 50}px;font-weight:800;display:block;line-height:1}
-.stats i{color:var(--muted);font-size:16px;letter-spacing:.12em;font-style:normal;font-weight:700}
+.stats{position:absolute;bottom:64px;left:${fields.length >= 5 ? 500 : 560}px;right:60px;display:flex;justify-content:space-between;text-align:center}
+.stats b{color:var(--amber);font-size:${fields.length >= 5 ? 38 : 50}px;font-weight:800;display:block;line-height:1}
+.stats i{color:var(--muted);font-size:${fields.length >= 5 ? 13 : 16}px;letter-spacing:.12em;font-style:normal;font-weight:700}
 .brand{position:absolute;bottom:52px;left:60px;display:flex;align-items:center;gap:20px}
-.brand img{width:150px;height:150px}.brand .wm{font-weight:800;font-size:44px;letter-spacing:2px}
+.brand img{width:${fields.length >= 5 ? 120 : 150}px;height:${fields.length >= 5 ? 120 : 150}px}.brand .wm{font-weight:800;font-size:${fields.length >= 5 ? 34 : 44}px;letter-spacing:2px}
 </style></head><body><div class="ad">
 ${headBlock}
 <svg viewBox="0 0 959 593" preserveAspectRatio="xMidYMid meet" class="map">

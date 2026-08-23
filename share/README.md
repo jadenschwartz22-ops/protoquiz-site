@@ -58,8 +58,18 @@ five shrinks the type; six will crowd.
 
 An unknown key fails loudly and lists what's available.
 
-Refresh `data/reach-stats.json` first if the numbers should be current — the
-generator only reads it, it does not update it.
+### Refresh the numbers first
+
+The generator only READS `data/reach-stats.json`; it never updates it. Pull
+fresh numbers before generating, or you will publish whatever was last written:
+
+```bash
+node scripts/pull-firestore-stats.mjs      # rewrites data/reach-stats.json
+node scripts/gen-reach-creative.mjs --headline none --stats uploads,states,studying,protocols,pages
+```
+
+Every run prints the `generatedAt` of the stats it used — check that line before
+posting.
 
 ## Legacy
 
