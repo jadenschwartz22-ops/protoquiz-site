@@ -126,9 +126,17 @@ function buildHTML({ stats, states, labels, logo, preset, fields, headline }) {
     return `<path class="${cls}" d="${d}"/>`;
   }).join('');
 
+  // Light sources, biggest cities brightest. Drawn UNDER the states so the
+  // outlines stay crisp and the glow reads as light through the map, not haze
+  // on top of it.
+  const glows = stats.locales
+    .filter(l => l.count >= 3)
+    .map(l => `<circle cx="${l.x}" cy="${l.y}" r="${Math.min(46, 13 + l.count * 1.15)}" fill="url(#glow)"/>`)
+    .join('');
+
   const dots = labels.map(l => {
-    const r = l.count >= 20 ? 5 : l.count >= 5 ? 4 : 3;
-    const halo = l.count >= 20 ? 10 : 8;
+    const r = l.count >= 20 ? 6.5 : l.count >= 5 ? 4.6 : 3;
+    const halo = l.count >= 20 ? 13 : l.count >= 5 ? 9.5 : 7;
     const lx = l.right ? l.tx - 2 : l.tx + 2;
     return `<g class="locale"><circle class="halo" cx="${l.x}" cy="${l.y}" r="${halo}"/>`
          + `<circle class="core" cx="${l.x}" cy="${l.y}" r="${r}"/>`
@@ -160,8 +168,10 @@ function buildHTML({ stats, states, labels, logo, preset, fields, headline }) {
 :root{--amber:#ffb000;--bg:#06050a;--ink:#f4f1ea;--ink-soft:#b4afa4;--muted:#8a8478}
 *{margin:0;box-sizing:border-box}html,body{width:${P.w}px;height:${P.h}px;overflow:hidden}
 .ad{width:${P.w}px;height:${P.h}px;background:var(--bg);position:relative;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:var(--ink)}
+.vig{position:absolute;inset:0;background:radial-gradient(ellipse 78% 62% at 50% 44%,transparent 40%,rgba(0,0,0,.55) 100%);pointer-events:none;z-index:1}
+.map{z-index:0}.head,.brand,.stats,.footrule{z-index:2}
 .head{position:absolute;top:42px;left:60px;right:60px;font-weight:800;font-size:${P.headSize}px;line-height:1.16}.head .hl{color:var(--amber)}
-.map{position:absolute;left:12px;right:12px;top:${headline ? P.mapTop : 60}px;height:${headline ? P.mapH : P.mapH + 130}px;width:${P.w - 24}px}
+.map{position:absolute;left:0;right:0;top:${headline ? P.mapTop : 56}px;height:${headline ? P.mapH : P.mapH + 105}px;width:${P.w}px}
 .state{fill:transparent;stroke:#4a453c;stroke-width:1.1;vector-effect:non-scaling-stroke}
 .state.lit{fill:rgba(255,176,0,.08);stroke:rgba(255,176,0,.55);stroke-width:1.4}
 .state.lit.warm{fill:rgba(255,176,0,.15);stroke:rgba(255,176,0,.8);stroke-width:1.6}
@@ -171,17 +181,24 @@ function buildHTML({ stats, states, labels, logo, preset, fields, headline }) {
 .rl-warm{font-size:15px;font-weight:800;fill:var(--ink)}
 .rl-hot{font-size:17px;font-weight:800;fill:var(--ink)}
 .rl .rl-n{fill:var(--amber);font-weight:800}
-.stats{position:absolute;bottom:64px;left:${fields.length >= 5 ? 500 : 560}px;right:60px;display:flex;justify-content:space-between;text-align:center}
-.stats b{color:var(--amber);font-size:${fields.length >= 5 ? 38 : 50}px;font-weight:800;display:block;line-height:1}
+.stats{position:absolute;bottom:56px;left:${fields.length >= 5 ? 500 : 560}px;right:60px;display:flex;justify-content:space-between;text-align:center}
+.stats b{color:var(--amber);text-shadow:0 0 24px rgba(255,176,0,.35);font-size:${fields.length >= 5 ? 38 : 50}px;font-weight:800;display:block;line-height:1}
 .stats i{color:var(--muted);font-size:${fields.length >= 5 ? 13 : 16}px;letter-spacing:.12em;font-style:normal;font-weight:700}
+.footrule{position:absolute;left:60px;right:60px;bottom:${fields.length >= 5 ? 186 : 190}px;height:1px;background:linear-gradient(90deg,rgba(255,176,0,.45),rgba(255,176,0,.06))}
 .brand{position:absolute;bottom:52px;left:60px;display:flex;align-items:center;gap:20px}
 .brand img{width:${fields.length >= 5 ? 120 : 150}px;height:${fields.length >= 5 ? 120 : 150}px}.brand .wm{font-weight:800;font-size:${fields.length >= 5 ? 34 : 44}px;letter-spacing:2px}
-</style></head><body><div class="ad">
+</style></head><body><div class="ad"><div class="vig"></div>
 ${headBlock}
 <svg viewBox="0 0 959 593" preserveAspectRatio="xMidYMid meet" class="map">
+<defs>
+<radialGradient id="glow"><stop offset="0" stop-color="#ffb000" stop-opacity=".38"/><stop offset="55%" stop-color="#ff7a00" stop-opacity=".10"/><stop offset="100%" stop-color="#ffb000" stop-opacity="0"/></radialGradient>
+<filter id="soft" x="-70%" y="-70%" width="240%" height="240%"><feGaussianBlur stdDeviation="1.1"/></filter>
+</defs>
+<g class="glows">${glows}</g>
 <g class="states">${statePaths}</g>
 <g class="dots">${bare}${dots}</g>
 </svg>
+<div class="footrule"></div>
 <div class="brand"><img src="${logo}"><span class="wm">PROTOQUIZ</span></div>
 <div class="stats">${S}</div>
 </div></body></html>
