@@ -673,7 +673,7 @@
   // The head reads a full page top-to-bottom, THEN the sheet ejects right and
   // the next comes up. Timers are tracked so a seek can cancel a run in flight;
   // stage.innerHTML is replaced on rebuild, so anything pending must be dropped.
-  var SCAN = { scan:360, eject:210, gap:30, pages:5, timers:[], run:0 };
+  var SCAN = { hold:1500, scan:360, eject:210, gap:30, pages:5, timers:[], run:0 };
   function scanStop(){
     SCAN.timers.forEach(clearTimeout); SCAN.timers = []; SCAN.run++;
   }
@@ -707,7 +707,11 @@
     cover.style.opacity = '1'; cover.style.zIndex = '';
     var i = 0, cur = cover;
 
-    (function step(){
+    // the cover sits still long enough to be read before the head moves
+    head.style.transition = 'none'; head.style.opacity = '0';
+    lit.style.transition = 'none'; lit.style.height = '0%';
+
+    function step(){
       head.style.transition = 'none'; lit.style.transition = 'none';
       head.style.top = '0%'; lit.style.height = '0%'; head.style.opacity = '1';
       void head.offsetWidth;
@@ -730,7 +734,8 @@
           if (next){ cur = next; i++; scanAfter(SCAN.gap, step); }
         });
       });
-    })();
+    }
+    scanAfter(SCAN.hold, step);
   }
 
   function cnt(sel, to, dur){
