@@ -132,11 +132,19 @@
   .ch .k { font-family:var(--mono); font-size:13.5px; color:var(--mut); letter-spacing:.1em; transition:color .4s var(--ease); }
   .ch .ok { margin-left:auto; font-family:var(--mono); font-size:11px; letter-spacing:.14em; color:var(--green); opacity:0; transform:translateX(-8px);
             transition:opacity .35s var(--ease) .12s, transform .35s var(--ease) .12s; }
-  .ch.picked { border-color:var(--blue); background:rgba(74,134,240,.08); transform:translateX(6px); }
+  .ch.picked { border-color:var(--blue); background:rgba(74,134,240,.10); transform:translateX(6px); box-shadow:0 0 0 1px rgba(74,134,240,.35), 0 8px 26px rgba(74,134,240,.10); }
   .ch.picked .k { color:var(--blue2); }
   .ch.picked .ok { opacity:1; transform:none; }
   /* unchosen answers dim once the lock happens — the eye goes where the answer is */
   .qcard.locked .ch:not(.picked) { opacity:.34; }
+  .qtimer { display:flex; align-items:center; gap:7px; font-family:var(--mono); font-size:13px;
+            letter-spacing:.14em; color:var(--mut); font-variant-numeric:tabular-nums; }
+  .qdot { width:6px; height:6px; border-radius:50%; background:var(--blue); animation:qpulse 1s ease-in-out infinite; }
+  @keyframes qpulse { 0%,100%{opacity:1} 50%{opacity:.25} }
+  .qcard.locked .qdot { animation:none; opacity:.2; }
+  .qcard.locked .qtimer { color:#4a505a; }
+  /* a considered pass over a wrong answer before committing */
+  .ch.hover { border-color:rgba(237,239,242,.22); background:rgba(255,255,255,.02); }
   .qlock { font-family:var(--mono); font-size:10.5px; letter-spacing:.16em; color:#4a505a; margin-top:20px; opacity:0; transition:opacity .6s var(--ease); }
   .qlock.vis { opacity:1; }
 
@@ -258,12 +266,22 @@
   .ceHead { font-family:var(--mono); font-size:18px; letter-spacing:.18em; color:var(--blue2); margin-top:32px; }
 
   /* B0 intro — the positioning claim */
-  .introBrand { display:flex; align-items:center; gap:30px; font-family:var(--mono); font-size:104px; font-weight:700; letter-spacing:.14em; line-height:1; margin-top:42px; opacity:.001; transition:letter-spacing 1.1s var(--ease) .15s, opacity .55s linear .15s; }
+  .introBrand { display:flex; align-items:center; gap:34px; font-family:var(--mono); font-size:116px; font-weight:700; letter-spacing:.14em; line-height:1; margin-top:42px; opacity:.001; transition:letter-spacing 1.1s var(--ease) .15s, opacity .55s linear .15s; }
   #b0.on .introBrand { letter-spacing:-.01em; opacity:1; }
   .introBrand b { color:var(--blue); }
   .introBrand sup { font-size:30px; color:var(--mut); font-weight:400; margin-left:8px; align-self:flex-start; margin-top:10px; }
-  .introBrand img { width:92px; height:92px; transform:scale(.55); opacity:0; transition:transform .8s var(--ease) .35s, opacity .5s var(--ease) .35s; }
-  #b0.on .introBrand img { transform:none; opacity:1; }
+  .introBrand img { width:132px; height:132px; opacity:0; transform:scale(.02,.002); }
+  #b0.on .introBrand img { animation:crtOn 1.05s cubic-bezier(.16,.9,.3,1) .3s both; }
+  @keyframes crtOn {
+    0%   { opacity:0;  transform:scale(.02,.002); filter:brightness(6) saturate(0); }
+    12%  { opacity:1;  transform:scale(.62,.004); filter:brightness(7) saturate(0); }
+    26%  { opacity:1;  transform:scale(1.06,.012); filter:brightness(5.5) saturate(.2); }
+    46%  { opacity:1;  transform:scale(1.04,.42);  filter:brightness(2.6) saturate(.7); }
+    68%  { opacity:1;  transform:scale(1.01,1.06); filter:brightness(1.5) saturate(1); }
+    84%  { opacity:1;  transform:scale(1,.985);    filter:brightness(1.12) saturate(1); }
+    100% { opacity:1;  transform:none;             filter:none; }
+  }
+  .static .introBrand img { animation:none !important; opacity:1 !important; transform:none !important; }
   .slogan { font-size:68px; font-weight:700; letter-spacing:-.015em; margin-top:48px; }
   .slogan b { color:var(--blue2); font-weight:700; }
   .endSlogan { font-size:44px; margin-top:34px; }
@@ -289,19 +307,30 @@
                      0 12px 0 #bfbcb3, 0 14px 0 #d6d3ca, 0 16px 0 #b8b5ac, 0 18px 0 #cfccc3, 0 20px 0 #aeaba2,
                      0 34px 60px rgba(0,0,0,.5); }
   /* pages peel off the stack and fly into the parser while the count runs */
-  .fly { position:absolute; inset:0; background:#f8f6f0; border:1px solid #d8d5cc; opacity:0; pointer-events:none; }
-  #bU.on .fly.f1 { animation:flyoff 1s cubic-bezier(.4,.1,.6,1) 1.05s forwards; }
-  #bU.on .fly.f2 { animation:flyoff 1s cubic-bezier(.4,.1,.6,1) 1.5s forwards; }
-  #bU.on .fly.f3 { animation:flyoff 1s cubic-bezier(.4,.1,.6,1) 1.95s forwards; }
-  #bU.on .fly.f4 { animation:flyoff 1s cubic-bezier(.4,.1,.6,1) 2.4s forwards; }
-  @keyframes flyoff { 0%{opacity:0; transform:none} 14%{opacity:1} 100%{opacity:0; transform:translate(330px,-46px) rotate(16deg) scale(.55)} }
+  .fly { position:absolute; inset:0; background:#f8f6f0; border:1px solid #d8d5cc; opacity:0; pointer-events:none;
+         padding:26px 24px; overflow:hidden; }
+  .fly .flc { font-family:var(--mono); font-size:12px; font-weight:700; letter-spacing:.1em; color:#4a86f0; }
+  .fly .flt { display:block; font-size:15px; font-weight:700; color:#1c1e21; margin:3px 0 14px; }
+  .fly .fl { display:block; height:7px; background:#dcd9d0; margin-bottom:9px; }
+  /* each sheet is scanned by its own pass, then leaves — so the ream reads
+     as many different pages going through, not one page re-scanned */
+  #bU.on .fly { animation:flyoff .92s cubic-bezier(.4,.1,.6,1) both; }
+  #bU.on .fly.f1 { animation-delay:.95s }  #bU.on .fly.f2 { animation-delay:1.28s }
+  #bU.on .fly.f3 { animation-delay:1.61s } #bU.on .fly.f4 { animation-delay:1.94s }
+  #bU.on .fly.f5 { animation-delay:2.27s } #bU.on .fly.f6 { animation-delay:2.6s }
+  @keyframes flyoff {
+    0%   { opacity:0; transform:none }
+    10%  { opacity:1; transform:none }
+    34%  { opacity:1; transform:translate(6px,-4px) rotate(1.5deg) }
+    100% { opacity:0; transform:translate(330px,-46px) rotate(16deg) scale(.55) }
+  }
   .udocT { font-weight:700; font-size:20px; }
   .udocS { font-family:var(--mono); font-size:11.5px; letter-spacing:.16em; color:#8a8d93; margin:4px 0 18px; }
   .uline { display:block; height:8px; background:#dcd9d0; margin-bottom:10px; }
   .udocF { font-family:var(--mono); font-size:11.5px; letter-spacing:.14em; color:#8a8d93; margin-top:18px; display:flex; justify-content:space-between; white-space:nowrap; gap:10px; }
   .uscan { position:absolute; left:0; right:0; top:-14%; height:12%; background:rgba(74,134,240,.16); border-bottom:2px solid var(--blue); opacity:0; }
-  #bU.on .uscan { animation:scan 1.7s cubic-bezier(.4,0,.4,1) .9s 1 forwards; }
-  @keyframes scan { 0%{opacity:1; transform:translateY(0)} 88%{opacity:1} 100%{opacity:0; transform:translateY(940%)} }
+  #bU.on .uscan { animation:scan .33s linear .95s 6 both; }
+  @keyframes scan { 0%{opacity:0; transform:translateY(0)} 8%{opacity:1} 82%{opacity:1} 100%{opacity:0; transform:translateY(940%)} }
   .umid { display:flex; flex-direction:column; align-items:center; gap:16px; }
   .uproc { font-family:var(--mono); font-size:13px; letter-spacing:.22em; color:var(--blue2); }
   .uchips { display:grid; grid-template-columns:repeat(2, 296px); gap:14px; }
@@ -371,7 +400,7 @@
           <i class="uline" style="width:92%"></i><i class="uline" style="width:100%"></i><i class="uline" style="width:78%"></i><i class="uline" style="width:96%"></i><i class="uline" style="width:60%"></i><i class="uline" style="width:88%"></i><i class="uline" style="width:70%"></i>
           <div class="udocF"><span>PDF &middot; 438 PAGES</span><span>SENT AS-IS</span></div>
         </div>
-        <i class="fly f1"></i><i class="fly f2"></i><i class="fly f3"></i><i class="fly f4"></i>
+        <div class="fly f1"><span class="flc">[0417]</span><span class="flt">Bradycardia</span><i class="fl" style="width:88%"></i><i class="fl" style="width:96%"></i><i class="fl" style="width:62%"></i><i class="fl" style="width:92%"></i><i class="fl" style="width:74%"></i><i class="fl" style="width:84%"></i></div><div class="fly f2"><span class="flc">[3040]</span><span class="flt">Tachyarrhythmia</span><i class="fl" style="width:94%"></i><i class="fl" style="width:70%"></i><i class="fl" style="width:88%"></i><i class="fl" style="width:98%"></i><i class="fl" style="width:66%"></i><i class="fl" style="width:90%"></i></div><div class="fly f3"><span class="flc">[6060]</span><span class="flt">Pediatric Respiratory</span><i class="fl" style="width:72%"></i><i class="fl" style="width:92%"></i><i class="fl" style="width:84%"></i><i class="fl" style="width:60%"></i><i class="fl" style="width:96%"></i><i class="fl" style="width:78%"></i></div><div class="fly f4"><span class="flc">[7030]</span><span class="flt">Obstetric Emergencies</span><i class="fl" style="width:90%"></i><i class="fl" style="width:64%"></i><i class="fl" style="width:94%"></i><i class="fl" style="width:80%"></i><i class="fl" style="width:88%"></i><i class="fl" style="width:68%"></i></div><div class="fly f5"><span class="flc">[4020]</span><span class="flt">Crush Injury</span><i class="fl" style="width:82%"></i><i class="fl" style="width:98%"></i><i class="fl" style="width:70%"></i><i class="fl" style="width:86%"></i><i class="fl" style="width:92%"></i><i class="fl" style="width:62%"></i></div><div class="fly f6"><span class="flc">[8010]</span><span class="flt">Behavioral Emergencies</span><i class="fl" style="width:96%"></i><i class="fl" style="width:76%"></i><i class="fl" style="width:90%"></i><i class="fl" style="width:68%"></i><i class="fl" style="width:84%"></i><i class="fl" style="width:94%"></i></div>
         <div class="upain"><b><span id="pgN">438</span> PAGES</b> &middot; NOBODY STUDIES IT COVER TO COVER</div>
       </div>
       <div class="umid" data-r style="--d:550ms">
@@ -416,9 +445,9 @@
       <i class="c c1"></i><i class="c c2"></i><i class="c c3"></i><i class="c c4"></i>
       <div class="qbar"><i id="qfill"></i></div>
       <div class="qin">
-        <div class="qhead"><span>QUESTION 07 OF 10</span><span class="b">[3040] &middot; FIRST TRY COUNTS</span></div>
+        <div class="qhead"><span>QUESTION 07 OF 10</span><span class="qtimer" id="qtimer"><i class="qdot"></i><span id="qsec">0:18</span></span><span class="b">[3040] &middot; FIRST TRY COUNTS</span></div>
         <div class="qtext">Unstable SVT with poor perfusion. IV access is established. What is the first-line intervention?</div>
-        <div class="ch" data-r style="--d:250ms"><span class="k">A</span><span>Adenosine 6 mg rapid IV push</span></div>
+        <div class="ch" id="hoverA" data-r style="--d:250ms"><span class="k">A</span><span>Adenosine 6 mg rapid IV push</span></div>
         <div class="ch" id="pick" data-r style="--d:380ms"><span class="k">B</span><span>Synchronized cardioversion</span><span class="ok">LOCKED &#10003;</span></div>
         <div class="ch" data-r style="--d:510ms"><span class="k">C</span><span>Amiodarone infusion over 10 min</span></div>
         <div class="ch" data-r style="--d:640ms"><span class="k">D</span><span>Vagal maneuvers, then reassess</span></div>
@@ -621,6 +650,19 @@
     }
     q('#'+id).classList.add('on');
   }
+  // mm:ss ticker for the quiz clock — like cnt(), it snaps when seeking
+  function ticker(sel, from, to, dur){
+    var el = q(sel); if(!el) return;
+    var fmt = function(v){ return Math.floor(v / 60) + ':' + ('0' + (v % 60)).slice(-2); };
+    if (jumping){ el.textContent = fmt(to); return; }
+    var t0 = performance.now();
+    (function step(n){
+      if (!el.isConnected) return;
+      var p = Math.min(1, (n - t0) / dur);
+      el.textContent = fmt(Math.round(from + (to - from) * p));
+      if(p < 1) requestAnimationFrame(step);
+    })(t0);
+  }
   function cnt(sel, to, dur){
     var el = q(sel); if(!el) return;
     if (jumping){ el.textContent = to; return; }
@@ -641,9 +683,11 @@
     [6200,  function(){ cnt('#pgN', 438, 1500); }],
     [12800, function(){ go('b2'); cap('03 / 09','ONE PROTOCOL, EVERY SHIFT'); }],
     [14400, function(){ q('#ticks').classList.add('go'); }],
-    [18200, function(){ go('b3'); cap('04 / 09','FIVE MINUTES. ONE TOPIC'); }],
-    [20400, function(){ q('#pick').classList.add('picked'); q('#qfill').style.width = '70%'; }],
-    [21200, function(){ q('.qcard').classList.add('locked'); q('#qlock').classList.add('vis'); }],
+    [18200, function(){ go('b3'); cap('04 / 09','FIVE MINUTES. ONE TOPIC'); ticker('#qsec', 18, 26, 4600); }],
+    [19500, function(){ var h = q('#hoverA'); if(h) h.classList.add('hover'); }],
+    [20300, function(){ var h = q('#hoverA'); if(h) h.classList.remove('hover'); }],
+    [20900, function(){ q('#pick').classList.add('picked'); q('#qfill').style.width = '70%'; }],
+    [21700, function(){ q('.qcard').classList.add('locked'); q('#qlock').classList.add('vis'); }],
     [24800, function(){ go('b4'); cap('05 / 09','SCORED AND ON THE BOARD'); }],
     [25400, function(){ cnt('#scoreN', 90, 1100); }],
     [29800, function(){ go('bM'); cap('06 / 09','ONE QUIZ A SHIFT COMPOUNDS'); }],
