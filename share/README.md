@@ -21,6 +21,21 @@ node scripts/gen-reach-creative.mjs --preset portrait
 node scripts/gen-reach-creative.mjs --html-only                  # no PNG
 ```
 
+### The hero number
+
+`--hero <field>` promotes one stat to display size in the upper left, with a
+caption that says what it MEANS ("MEDICS STUDYING THEIR OWN PROTOCOLS", not
+"STUDYING"). The remaining `--stats` fields sit in the footer row. `--hero none`
+falls back to a flat row of equal-weight numbers.
+
+This is the main layout decision in the piece: with a hero, the map is texture
+behind a claim; without one, the map has to carry the whole frame by itself.
+
+`--min-label N` (default 8) sets how many uploads a city needs before it gets
+NAMED. Every locale still gets a dot regardless — density comes from dots,
+hierarchy comes from labels. Labeling every "1" was what made earlier versions
+read as noise.
+
 ### Choosing the headline
 
 `--headline <preset>` picks a saved one. The LAST line always renders amber.
