@@ -111,7 +111,9 @@
   /* B3 quiz — the card arrives as a plane, corners register after it settles */
   .qcard { position:relative; width:960px; border:1px solid var(--line); background:var(--panel); padding:0 0 36px; }
   #b3 .qcard[data-r] { transform:translateY(40px) scale(.975); transition:opacity .55s var(--ease) .12s, transform .9s var(--ease) .12s; }
-  .qcard .c { position:absolute; width:15px; height:15px; border-color:var(--blue); border-style:solid; opacity:0; transition:opacity .5s var(--ease); }
+  .qcard .c { position:absolute; width:15px; height:15px; border-color:var(--blue); border-style:solid; opacity:0;
+              transition:opacity .5s var(--ease), border-color .45s var(--ease); }
+  .qcard.answered .c { border-color:var(--green); }
   #b3.on .qcard .c { opacity:1; }
   #b3.on .qcard .c1 { transition-delay:.42s } #b3.on .qcard .c2 { transition-delay:.50s }
   #b3.on .qcard .c3 { transition-delay:.58s } #b3.on .qcard .c4 { transition-delay:.66s }
@@ -120,7 +122,8 @@
   .qcard .c3 { bottom:-1px; left:-1px; border-width:0 0 2px 2px; }
   .qcard .c4 { bottom:-1px; right:-1px; border-width:0 2px 2px 0; }
   .qbar { height:3px; background:rgba(237,239,242,.08); }
-  .qbar i { display:block; height:100%; width:60%; background:var(--blue); transition:width .8s var(--ease); }
+  .qbar i { display:block; height:100%; width:60%; background:var(--blue); transition:width .8s var(--ease), background .45s var(--ease); }
+  .qcard.answered .qbar i { background:var(--green); }
   .qin { padding:30px 44px 0; }
   .qhead { display:flex; justify-content:space-between; font-family:var(--mono); font-size:13px; letter-spacing:.18em; color:var(--mut); }
   .qhead .b { color:var(--blue); }
@@ -132,21 +135,27 @@
   .ch .k { font-family:var(--mono); font-size:13.5px; color:var(--mut); letter-spacing:.1em; transition:color .4s var(--ease); }
   .ch .ok { margin-left:auto; font-family:var(--mono); font-size:11px; letter-spacing:.14em; color:var(--green); opacity:0; transform:translateX(-8px);
             transition:opacity .35s var(--ease) .12s, transform .35s var(--ease) .12s; }
-  .ch.picked { border-color:var(--blue); background:rgba(74,134,240,.10); transform:translateX(6px); box-shadow:0 0 0 1px rgba(74,134,240,.35), 0 8px 26px rgba(74,134,240,.10); }
-  .ch.picked .k { color:var(--blue2); }
+  .ch.picked { border-color:var(--green); background:rgba(78,168,122,.12); transform:translateX(6px);
+               box-shadow:0 0 0 1px rgba(78,168,122,.45), 0 8px 26px rgba(78,168,122,.14); }
+  .ch.picked .k { color:var(--green); }
   .ch.picked .ok { opacity:1; transform:none; }
   /* unchosen answers dim once the lock happens — the eye goes where the answer is */
-  .qcard.locked .ch:not(.picked) { opacity:.34; }
+  .qcard.answered .ch:not(.picked) { opacity:.34; }
   .qtimer { display:flex; align-items:center; gap:7px; font-family:var(--mono); font-size:13px;
             letter-spacing:.14em; color:var(--mut); font-variant-numeric:tabular-nums; }
   .qdot { width:6px; height:6px; border-radius:50%; background:var(--blue); animation:qpulse 1s ease-in-out infinite; }
   @keyframes qpulse { 0%,100%{opacity:1} 50%{opacity:.25} }
-  .qcard.locked .qdot { animation:none; opacity:.2; }
-  .qcard.locked .qtimer { color:#4a505a; }
+  .qcard.answered .qdot { animation:none; opacity:.2; }
+  .qcard.answered .qtimer { color:#4a505a; }
   /* a considered pass over a wrong answer before committing */
   .ch.hover { border-color:rgba(237,239,242,.22); background:rgba(255,255,255,.02); }
-  .qlock { font-family:var(--mono); font-size:10.5px; letter-spacing:.16em; color:#4a505a; margin-top:20px; opacity:0; transition:opacity .6s var(--ease); }
-  .qlock.vis { opacity:1; }
+  .qsrc { display:flex; align-items:center; gap:16px; margin-top:22px; padding:15px 20px;
+          border:1px solid var(--line2); font-family:var(--mono); font-size:12px; letter-spacing:.12em;
+          opacity:0; transform:translateY(8px); transition:opacity .5s var(--ease), transform .5s var(--ease); }
+  .qsrc.vis { opacity:1; transform:none; }
+  .qsrcL { color:var(--mut); }
+  .qsrcT { color:var(--sec); letter-spacing:.06em; }
+  .qsrcB { margin-left:auto; color:var(--blue2); font-weight:700; white-space:nowrap; }
 
   /* B4 score — the number drops in under its own weight while the seal expands around it */
   .scoreBig { font-family:var(--mono); font-size:200px; font-weight:700; color:var(--green); line-height:1; font-variant-numeric:tabular-nums;
@@ -454,10 +463,10 @@
         <div class="qhead"><span>QUESTION 07 OF 10</span><span class="qtimer" id="qtimer"><i class="qdot"></i><span id="qsec">0:18</span></span><span class="b">[3040] &middot; FIRST TRY COUNTS</span></div>
         <div class="qtext">Unstable SVT with poor perfusion. IV access is established. What is the first-line intervention?</div>
         <div class="ch" id="hoverA" data-r style="--d:250ms"><span class="k">A</span><span>Adenosine 6 mg rapid IV push</span></div>
-        <div class="ch" id="pick" data-r style="--d:380ms"><span class="k">B</span><span>Synchronized cardioversion</span><span class="ok">LOCKED &#10003;</span></div>
+        <div class="ch" id="pick" data-r style="--d:380ms"><span class="k">B</span><span>Synchronized cardioversion</span><span class="ok">CORRECT &#10003;</span></div>
         <div class="ch" data-r style="--d:510ms"><span class="k">C</span><span>Amiodarone infusion over 10 min</span></div>
         <div class="ch" data-r style="--d:640ms"><span class="k">D</span><span>Vagal maneuvers, then reassess</span></div>
-        <div class="qlock" id="qlock">ANSWER LOCKED &middot; FIRST ATTEMPT COUNTS &middot; PAGE REFERENCE ON THE DEBRIEF</div>
+        <div class="qsrc" id="qlock"><span class="qsrcL">SOURCE</span><span class="qsrcT">[3040] Tachyarrhythmia with Poor Perfusion &middot; p. 214</span><span class="qsrcB">OPEN PROTOCOL &rarr;</span></div>
       </div>
     </div>
   </section>
@@ -765,7 +774,7 @@
     [19500, function(){ var h = q('#hoverA'); if(h) h.classList.add('hover'); }],
     [20300, function(){ var h = q('#hoverA'); if(h) h.classList.remove('hover'); }],
     [20900, function(){ q('#pick').classList.add('picked'); q('#qfill').style.width = '70%'; }],
-    [21700, function(){ q('.qcard').classList.add('locked'); q('#qlock').classList.add('vis'); }],
+    [21700, function(){ q('.qcard').classList.add('answered'); q('#qlock').classList.add('vis'); }],
     [24800, function(){ go('b4'); cap('05 / 09','SCORED AND ON THE BOARD'); }],
     [25400, function(){ cnt('#scoreN', 90, 1100); }],
     [29800, function(){ go('bM'); cap('06 / 09','ONE QUIZ A SHIFT COMPOUNDS'); }],
