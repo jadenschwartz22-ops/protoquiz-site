@@ -110,7 +110,7 @@
 
   /* B3 quiz — the card arrives as a plane, corners register after it settles */
   .qcard { position:relative; width:960px; border:1px solid var(--line); background:var(--panel); padding:0 0 36px; }
-  #b3 .qcard[data-r] { transform:translateY(22px) scale(.985); transition:opacity .7s var(--ease), transform .85s var(--ease); }
+  #b3 .qcard[data-r] { transform:translateY(40px) scale(.975); transition:opacity .55s var(--ease) .12s, transform .9s var(--ease) .12s; }
   .qcard .c { position:absolute; width:15px; height:15px; border-color:var(--blue); border-style:solid; opacity:0; transition:opacity .5s var(--ease); }
   #b3.on .qcard .c { opacity:1; }
   #b3.on .qcard .c1 { transition-delay:.42s } #b3.on .qcard .c2 { transition-delay:.50s }
@@ -530,13 +530,13 @@
       <div class="sigRow">
         <div class="sig">
           <div class="line"></div>
-          <svg viewBox="0 0 220 40" preserveAspectRatio="none"><path d="M8,31 C10,18 16,6 24,9 C31,12 27,25 20,29 C13,33 10,26 14,20 C20,11 32,14 36,24 C39,31 45,31 48,24 C51,17 56,16 58,23 C60,30 66,30 69,23 C72,15 78,17 79,25 C80,31 86,32 90,26 C95,18 101,12 108,15 C114,18 110,27 104,29 C99,31 97,25 101,21 C108,14 122,17 128,25 C132,30 138,30 141,24 C144,17 150,18 152,25 C154,31 160,30 164,24 C169,16 176,13 183,17 C189,20 186,28 180,29 M120,33 C142,29 168,25 196,19"/></svg>
+          <svg viewBox="0 0 220 40" preserveAspectRatio="none"><path d="M10,30 C10,16 18,4 28,7 C37,10 34,23 24,28 C17,31 14,27 18,23 C26,17 36,22 40,28 C44,22 50,20 54,25 C57,29 60,28 62,23 C66,17 73,17 76,23 C79,29 83,29 86,24 C90,18 97,18 100,24 C103,29 107,29 110,25 C116,18 124,12 133,14 C141,16 140,25 132,28 C144,27 156,23 168,19 C176,16 184,15 192,17"/></svg>
           <span class="dt">08 / 02 / 26</span>
           <div class="who">TRAINING OFFICER &middot; DATE</div>
         </div>
         <div class="sig md">
           <div class="line"></div>
-          <svg viewBox="0 0 220 40" preserveAspectRatio="none"><path d="M6,33 C6,22 11,3 19,5 C26,7 24,17 17,24 C11,30 8,26 12,19 C18,9 26,20 30,27 C33,32 37,29 39,21 C41,11 47,7 51,13 C55,19 51,28 45,30 C52,29 57,22 60,14 C62,8 67,7 68,15 C69,24 73,29 78,25 C84,20 88,10 95,8 C102,6 104,15 99,22 C94,29 88,27 90,20 C93,11 105,9 112,16 C118,22 116,30 110,31 C118,30 126,24 131,16 C135,9 141,8 142,16 C143,25 148,29 154,24 C161,18 166,7 174,8 C181,9 180,19 173,24 C167,28 163,24 167,18 M96,36 C126,33 160,28 200,15"/></svg>
+          <svg viewBox="0 0 220 40" preserveAspectRatio="none"><path d="M4,32 L16,6 L20,30 L30,8 C33,3 38,4 38,11 C38,20 32,28 26,30 C22,31 21,27 25,24 C33,18 44,24 48,30 L56,10 L60,28 L68,12 C70,7 75,8 75,14 C75,22 70,29 65,30 C74,29 82,24 88,17 L92,28 L100,9 L104,27 C106,32 112,31 115,26 C120,17 128,10 136,12 C143,14 141,24 133,28 C129,30 127,26 131,23 C139,17 152,22 158,28 L166,8 L170,26 C172,31 178,30 182,24 C186,18 192,16 196,19 M60,37 C96,35 140,31 188,22"/></svg>
           <span class="dt">08 / 02 / 26</span>
           <div class="who">MEDICAL DIRECTOR &middot; DATE</div>
         </div>
@@ -608,7 +608,7 @@
     }, 300);
   }
   // each beat leaves along the axis its successor arrives on, so cuts read as movement not crossfade
-  var EXIT = { b0:'xUp', bU:'xLeft', b2:'xUp', b3:'xLeft', b4:'xSink', bM:'xUp', b5:'xSink', b6:'xFall' };
+  var EXIT = { b0:'xUp', bU:'xLeft', b2:'xFall', b3:'xLeft', b4:'xSink', bM:'xUp', b5:'xSink', b6:'xFall' };
   function go(id){
     var cur = stage.querySelector('.beat.on:not(.out)');
     if(cur){
