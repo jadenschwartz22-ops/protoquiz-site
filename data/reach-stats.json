@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-08-23T00:08:23.861Z",
-  "totalUploads": 497,
-  "distinctProtocols": 354,
-  "activeStudiers": 338,
-  "pagesProcessed": 81318,
+  "generatedAt": "2026-08-23T06:08:14.066Z",
+  "totalUploads": 499,
+  "distinctProtocols": 356,
+  "activeStudiers": 340,
+  "pagesProcessed": 81684,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 4,
   "byState": {
     "MI": 35,
     "CO": 31,
-    "CA": 28,
+    "CA": 29,
     "TX": 23,
     "PA": 23,
     "NY": 21,
@@ -23,8 +23,8 @@
     "MA": 11,
     "WY": 10,
     "WA": 8,
+    "IL": 8,
     "MD": 8,
-    "IL": 7,
     "FL": 7,
     "AZ": 7,
     "TN": 6,
@@ -686,6 +686,28 @@
       ]
     },
     {
+      "state": "CA",
+      "city": "Sacramento",
+      "x": 50,
+      "y": 233,
+      "count": 3,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "2002.02 Naloxone Leave Behind",
+          "count": 1
+        },
+        {
+          "title": "8001.21 Allergic Reaction Anaphylaxis",
+          "count": 1
+        },
+        {
+          "title": "PP 8001 Allergic Reaction Anaphylaxis 1",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "TX",
       "city": "Austin",
       "x": 448,
@@ -953,24 +975,6 @@
         },
         {
           "title": "ADA COUNTY Boise",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CA",
-      "city": "Sacramento",
-      "x": 50,
-      "y": 233,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "8001.21 Allergic Reaction Anaphylaxis",
-          "count": 1
-        },
-        {
-          "title": "PP 8001 Allergic Reaction Anaphylaxis 1",
           "count": 1
         }
       ]
@@ -1609,6 +1613,20 @@
       "topProtocols": [
         {
           "title": "yrmc ems guidelines 2",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "IL",
+      "city": "Alton",
+      "x": 580,
+      "y": 281,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "DRAFT Region 4 SOG Final Dec 1 2022 small compressed",
           "count": 1
         }
       ]
