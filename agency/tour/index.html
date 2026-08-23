@@ -306,31 +306,25 @@
           box-shadow:0 2px 0 #e2dfd6, 0 4px 0 #cfccc3, 0 6px 0 #e2dfd6, 0 8px 0 #c5c2b9, 0 10px 0 #dcd9d0,
                      0 12px 0 #bfbcb3, 0 14px 0 #d6d3ca, 0 16px 0 #b8b5ac, 0 18px 0 #cfccc3, 0 20px 0 #aeaba2,
                      0 34px 60px rgba(0,0,0,.5); }
-  /* pages peel off the stack and fly into the parser while the count runs */
-  .fly { position:absolute; inset:0; background:#f8f6f0; border:1px solid #d8d5cc; opacity:0; pointer-events:none;
-         padding:26px 24px; overflow:hidden; }
-  .fly .flc { font-family:var(--mono); font-size:12px; font-weight:700; letter-spacing:.1em; color:#4a86f0; }
-  .fly .flt { display:block; font-size:15px; font-weight:700; color:#1c1e21; margin:3px 0 14px; }
-  .fly .fl { display:block; height:7px; background:#dcd9d0; margin-bottom:9px; }
-  /* each sheet is scanned by its own pass, then leaves — so the ream reads
-     as many different pages going through, not one page re-scanned */
-  #bU.on .fly { animation:flyoff .92s cubic-bezier(.4,.1,.6,1) both; }
-  #bU.on .fly.f1 { animation-delay:.95s }  #bU.on .fly.f2 { animation-delay:1.28s }
-  #bU.on .fly.f3 { animation-delay:1.61s } #bU.on .fly.f4 { animation-delay:1.94s }
-  #bU.on .fly.f5 { animation-delay:2.27s } #bU.on .fly.f6 { animation-delay:2.6s }
-  @keyframes flyoff {
-    0%   { opacity:0; transform:none }
-    10%  { opacity:1; transform:none }
-    34%  { opacity:1; transform:translate(6px,-4px) rotate(1.5deg) }
-    100% { opacity:0; transform:translate(330px,-46px) rotate(16deg) scale(.55) }
-  }
+  /* sheet feeder: the head reads a full page, THEN that sheet ejects right and
+     the next comes up. Sequenced in JS (scanCycle) so nothing ever overlaps. */
+  .fly { position:absolute; inset:0; z-index:7; background:#f8f6f0; padding:26px 24px; overflow:hidden;
+         transform-origin:left center; will-change:transform,opacity; }
+  .fly .fh  { height:13px; background:#b9b6ad; margin-bottom:6px; }
+  .fly .fh2 { height:7px;  background:#d2cfc6; margin-bottom:13px; }
+  .fly .fcols { display:flex; gap:13px; }
+  .fly .fcol { flex:1; }
+  .fly .fl { display:block; height:4px; background:#dcd9d0; margin-bottom:6px; }
+  .fly .fbox { height:38px; border:1px solid #d8d5cc; background:#efece5; margin:9px 0; }
   .udocT { font-weight:700; font-size:20px; }
   .udocS { font-family:var(--mono); font-size:11.5px; letter-spacing:.16em; color:#8a8d93; margin:4px 0 18px; }
   .uline { display:block; height:8px; background:#dcd9d0; margin-bottom:10px; }
   .udocF { font-family:var(--mono); font-size:11.5px; letter-spacing:.14em; color:#8a8d93; margin-top:18px; display:flex; justify-content:space-between; white-space:nowrap; gap:10px; }
-  .uscan { position:absolute; left:0; right:0; top:-14%; height:12%; background:rgba(74,134,240,.16); border-bottom:2px solid var(--blue); opacity:0; }
-  #bU.on .uscan { animation:scan .33s linear .95s 6 both; }
-  @keyframes scan { 0%{opacity:0; transform:translateY(0)} 8%{opacity:1} 82%{opacity:1} 100%{opacity:0; transform:translateY(940%)} }
+  .uscan { position:absolute; left:0; right:0; top:0; height:13%; z-index:9; opacity:0;
+           background:linear-gradient(rgba(74,134,240,.03), rgba(74,134,240,.20));
+           border-bottom:2px solid var(--blue); pointer-events:none; }
+  .ulit { position:absolute; left:0; right:0; top:0; height:0; z-index:8;
+          background:rgba(74,134,240,.07); pointer-events:none; }
   .umid { display:flex; flex-direction:column; align-items:center; gap:16px; }
   .uproc { font-family:var(--mono); font-size:13px; letter-spacing:.22em; color:var(--blue2); }
   .uchips { display:grid; grid-template-columns:repeat(2, 296px); gap:14px; }
@@ -393,14 +387,14 @@
     <div class="urow">
       <div class="ustack" data-r style="--d:200ms">
         <i class="sheet s1"></i><i class="sheet s2"></i><i class="sheet s3"></i>
-        <div class="udoc">
+        <div class="udoc" id="uDoc">
+          <div class="ulit"></div>
           <div class="uscan"></div>
           <div class="udocT">Cedar Ridge Fire Protection District</div>
           <div class="udocS">EMS FIELD PROTOCOLS &middot; 2026 EDITION</div>
           <i class="uline" style="width:92%"></i><i class="uline" style="width:100%"></i><i class="uline" style="width:78%"></i><i class="uline" style="width:96%"></i><i class="uline" style="width:60%"></i><i class="uline" style="width:88%"></i><i class="uline" style="width:70%"></i>
           <div class="udocF"><span>PDF &middot; 438 PAGES</span><span>SENT AS-IS</span></div>
         </div>
-        <div class="fly f1"><span class="flc">[0417]</span><span class="flt">Bradycardia</span><i class="fl" style="width:88%"></i><i class="fl" style="width:96%"></i><i class="fl" style="width:62%"></i><i class="fl" style="width:92%"></i><i class="fl" style="width:74%"></i><i class="fl" style="width:84%"></i></div><div class="fly f2"><span class="flc">[3040]</span><span class="flt">Tachyarrhythmia</span><i class="fl" style="width:94%"></i><i class="fl" style="width:70%"></i><i class="fl" style="width:88%"></i><i class="fl" style="width:98%"></i><i class="fl" style="width:66%"></i><i class="fl" style="width:90%"></i></div><div class="fly f3"><span class="flc">[6060]</span><span class="flt">Pediatric Respiratory</span><i class="fl" style="width:72%"></i><i class="fl" style="width:92%"></i><i class="fl" style="width:84%"></i><i class="fl" style="width:60%"></i><i class="fl" style="width:96%"></i><i class="fl" style="width:78%"></i></div><div class="fly f4"><span class="flc">[7030]</span><span class="flt">Obstetric Emergencies</span><i class="fl" style="width:90%"></i><i class="fl" style="width:64%"></i><i class="fl" style="width:94%"></i><i class="fl" style="width:80%"></i><i class="fl" style="width:88%"></i><i class="fl" style="width:68%"></i></div><div class="fly f5"><span class="flc">[4020]</span><span class="flt">Crush Injury</span><i class="fl" style="width:82%"></i><i class="fl" style="width:98%"></i><i class="fl" style="width:70%"></i><i class="fl" style="width:86%"></i><i class="fl" style="width:92%"></i><i class="fl" style="width:62%"></i></div><div class="fly f6"><span class="flc">[8010]</span><span class="flt">Behavioral Emergencies</span><i class="fl" style="width:96%"></i><i class="fl" style="width:76%"></i><i class="fl" style="width:90%"></i><i class="fl" style="width:68%"></i><i class="fl" style="width:84%"></i><i class="fl" style="width:94%"></i></div>
         <div class="upain"><b><span id="pgN">438</span> PAGES</b> &middot; NOBODY STUDIES IT COVER TO COVER</div>
       </div>
       <div class="umid" data-r style="--d:550ms">
@@ -663,6 +657,66 @@
       if(p < 1) requestAnimationFrame(step);
     })(t0);
   }
+  // ---- slide 02 sheet feeder (F3) -------------------------------------------
+  // The head reads a full page top-to-bottom, THEN the sheet ejects right and
+  // the next comes up. Timers are tracked so a seek can cancel a run in flight;
+  // stage.innerHTML is replaced on rebuild, so anything pending must be dropped.
+  var SCAN = { scan:360, eject:240, gap:40, pages:10, timers:[], run:0 };
+  function scanStop(){
+    SCAN.timers.forEach(clearTimeout); SCAN.timers = []; SCAN.run++;
+  }
+  function scanAfter(ms, fn){
+    var gen = SCAN.run;
+    SCAN.timers.push(setTimeout(function(){ if (gen === SCAN.run) fn(); }, ms));
+  }
+  function scanPage(i){
+    var r = function(x){ x = Math.sin(x) * 10000; return x - Math.floor(x); };
+    var a = '', b = '', j;
+    for (j = 0; j < 7 + Math.floor(r(i*3.1)*4); j++) a += '<i class="fl" style="width:' + (60+Math.floor(r(i*11+j)*40)) + '%"></i>';
+    for (j = 0; j < 7 + Math.floor(r(i*7.7)*4); j++) b += '<i class="fl" style="width:' + (60+Math.floor(r(i*13+j)*40)) + '%"></i>';
+    var el = document.createElement('div');
+    el.className = 'fly';
+    el.innerHTML = '<div class="fh" style="width:' + (42+Math.floor(r(i)*26)) + '%"></div>' +
+                   '<div class="fh2" style="width:' + (26+Math.floor(r(i*2)*22)) + '%"></div>' +
+                   (r(i*5.3) > .55 ? '<div class="fbox"></div>' : '') +
+                   '<div class="fcols"><div class="fcol">' + a + '</div><div class="fcol">' + b + '</div></div>';
+    return el;
+  }
+  function scanCycle(){
+    scanStop();
+    var doc = q('#uDoc'); if (!doc) return;
+    var head = doc.querySelector('.uscan'), lit = doc.querySelector('.ulit');
+    doc.querySelectorAll('.fly').forEach(function(el){ el.remove(); });
+    if (jumping){ head.style.opacity = '0'; lit.style.height = '0'; return; }
+
+    var i = 0, cur = scanPage(0);
+    doc.insertBefore(cur, lit);
+
+    (function step(){
+      head.style.transition = 'none'; lit.style.transition = 'none';
+      head.style.top = '0%'; lit.style.height = '0%'; head.style.opacity = '1';
+      void head.offsetWidth;
+      head.style.transition = 'top ' + SCAN.scan + 'ms linear';
+      lit.style.transition  = 'height ' + SCAN.scan + 'ms linear';
+      head.style.top = '87%'; lit.style.height = '100%';
+
+      scanAfter(SCAN.scan, function(){          // full page read — only now does it leave
+        head.style.opacity = '0';
+        var next = (i + 1 < SCAN.pages) ? scanPage(i + 1) : null;
+        if (next) doc.insertBefore(next, cur);
+        var gone = cur;
+        gone.style.transition = 'transform ' + SCAN.eject + 'ms ease-in, opacity ' + SCAN.eject + 'ms ease-in';
+        gone.style.transform = 'translateX(112%) rotate(3deg)';
+        gone.style.opacity = '0';
+        scanAfter(SCAN.eject, function(){
+          gone.remove();
+          lit.style.transition = 'none'; lit.style.height = '0%';
+          if (next){ cur = next; i++; scanAfter(SCAN.gap, step); }
+        });
+      });
+    })();
+  }
+
   function cnt(sel, to, dur){
     var el = q(sel); if(!el) return;
     if (jumping){ el.textContent = to; return; }
@@ -679,9 +733,9 @@
   var BEATS = [0, 5500, 12800, 18200, 24800, 29800, 36000, 43500, 49500];
   var EVENTS = [
     [0,     function(){ go('b0'); cap('01 / 09','YOUR EMS PROTOCOLS'); }],
-    [5500,  function(){ go('bU'); cap('02 / 09','YOUR PROTOCOLS IN, QUIZZES OUT'); }],
+    [5500,  function(){ go('bU'); cap('02 / 09','YOUR PROTOCOLS IN, QUIZZES OUT'); scanCycle(); }],
     [6200,  function(){ cnt('#pgN', 438, 1500); }],
-    [12800, function(){ go('b2'); cap('03 / 09','ONE PROTOCOL, EVERY SHIFT'); }],
+    [12800, function(){ go('b2'); cap('03 / 09','ONE PROTOCOL, EVERY SHIFT'); scanStop(); }],
     [14400, function(){ q('#ticks').classList.add('go'); }],
     [18200, function(){ go('b3'); cap('04 / 09','FIVE MINUTES. ONE TOPIC'); ticker('#qsec', 18, 26, 4600); }],
     [19500, function(){ var h = q('#hoverA'); if(h) h.classList.add('hover'); }],
@@ -706,6 +760,7 @@
     while (lastFired + 1 < EVENTS.length && EVENTS[lastFired + 1][0] <= t){ lastFired++; EVENTS[lastFired][1](); }
   }
   function rebuild(t){
+    scanStop();
     jumping = true;
     stage.classList.add('jump');
     stage.innerHTML = INIT;
