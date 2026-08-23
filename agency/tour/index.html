@@ -319,6 +319,7 @@
      the next comes up. Sequenced in JS (scanCycle) so nothing ever overlaps. */
   .fly { position:absolute; inset:0; z-index:7; background:#f8f6f0; padding:26px 24px; overflow:hidden;
          transform-origin:left center; will-change:transform,opacity; }
+  .fly.cover { background:#f4f2ec; padding:28px 26px 22px; }
   .fly .fh  { height:13px; background:#b9b6ad; margin-bottom:6px; }
   .fly .fh2 { height:7px;  background:#d2cfc6; margin-bottom:13px; }
   .fly .fcols { display:flex; gap:13px; }
@@ -397,12 +398,14 @@
       <div class="ustack" data-r style="--d:200ms">
         <i class="sheet s1"></i><i class="sheet s2"></i><i class="sheet s3"></i>
         <div class="udoc" id="uDoc">
+          <div class="fly cover" id="uCover">
+            <div class="udocT">Cedar Ridge Fire Protection District</div>
+            <div class="udocS">EMS FIELD PROTOCOLS &middot; 2026 EDITION</div>
+            <i class="uline" style="width:92%"></i><i class="uline" style="width:100%"></i><i class="uline" style="width:78%"></i><i class="uline" style="width:96%"></i><i class="uline" style="width:60%"></i><i class="uline" style="width:88%"></i><i class="uline" style="width:70%"></i>
+            <div class="udocF"><span>PDF &middot; 438 PAGES</span><span>SENT AS-IS</span></div>
+          </div>
           <div class="ulit"></div>
           <div class="uscan"></div>
-          <div class="udocT">Cedar Ridge Fire Protection District</div>
-          <div class="udocS">EMS FIELD PROTOCOLS &middot; 2026 EDITION</div>
-          <i class="uline" style="width:92%"></i><i class="uline" style="width:100%"></i><i class="uline" style="width:78%"></i><i class="uline" style="width:96%"></i><i class="uline" style="width:60%"></i><i class="uline" style="width:88%"></i><i class="uline" style="width:70%"></i>
-          <div class="udocF"><span>PDF &middot; 438 PAGES</span><span>SENT AS-IS</span></div>
         </div>
         <div class="upain"><b><span id="pgN">438</span> PAGES</b> &middot; NOBODY STUDIES IT COVER TO COVER</div>
       </div>
@@ -670,7 +673,7 @@
   // The head reads a full page top-to-bottom, THEN the sheet ejects right and
   // the next comes up. Timers are tracked so a seek can cancel a run in flight;
   // stage.innerHTML is replaced on rebuild, so anything pending must be dropped.
-  var SCAN = { scan:360, eject:240, gap:40, pages:7, timers:[], run:0 };
+  var SCAN = { scan:360, eject:210, gap:30, pages:5, timers:[], run:0 };
   function scanStop(){
     SCAN.timers.forEach(clearTimeout); SCAN.timers = []; SCAN.run++;
   }
@@ -695,11 +698,14 @@
     scanStop();
     var doc = q('#uDoc'); if (!doc) return;
     var head = doc.querySelector('.uscan'), lit = doc.querySelector('.ulit');
-    doc.querySelectorAll('.fly').forEach(function(el){ el.remove(); });
+    doc.querySelectorAll('.fly:not(.cover)').forEach(function(el){ el.remove(); });
     if (jumping){ head.style.opacity = '0'; lit.style.height = '0'; return; }
 
-    var i = 0, cur = scanPage(0);
-    doc.insertBefore(cur, lit);
+    var cover = doc.querySelector('#uCover');
+    // reset the cover in case a previous run ejected it
+    cover.style.transition = 'none'; cover.style.transform = 'none';
+    cover.style.opacity = '1'; cover.style.zIndex = '';
+    var i = 0, cur = cover;
 
     (function step(){
       head.style.transition = 'none'; lit.style.transition = 'none';
@@ -718,7 +724,8 @@
         gone.style.transform = 'translateX(112%) rotate(3deg)';
         gone.style.opacity = '0';
         scanAfter(SCAN.eject, function(){
-          gone.remove();
+          if (gone === cover) gone.style.zIndex = '0';   // parked: markup, so keep it
+          else gone.remove();
           lit.style.transition = 'none'; lit.style.height = '0%';
           if (next){ cur = next; i++; scanAfter(SCAN.gap, step); }
         });
