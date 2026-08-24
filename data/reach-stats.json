@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-24T00:08:15.138Z",
-  "totalUploads": 502,
-  "distinctProtocols": 359,
-  "activeStudiers": 342,
-  "pagesProcessed": 82214,
+  "generatedAt": "2026-08-24T06:08:12.446Z",
+  "totalUploads": 503,
+  "distinctProtocols": 360,
+  "activeStudiers": 343,
+  "pagesProcessed": 82419,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 4,
@@ -22,8 +22,8 @@
     "NV": 11,
     "MA": 11,
     "WY": 10,
+    "WA": 9,
     "IL": 9,
-    "WA": 8,
     "MD": 8,
     "FL": 7,
     "AZ": 7,
@@ -556,6 +556,28 @@
       ]
     },
     {
+      "state": "WA",
+      "city": "Seattle",
+      "x": 91,
+      "y": 38,
+      "count": 4,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "Pend Oreille County Protocols 2022",
+          "count": 1
+        },
+        {
+          "title": "EMS Stephen’s County Protocols",
+          "count": 1
+        },
+        {
+          "title": "EMS",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "CA",
       "city": "San Diego",
       "x": 93,
@@ -615,28 +637,6 @@
         },
         {
           "title": "ODEMSA Protocols",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "WA",
-      "city": "Seattle",
-      "x": 91,
-      "y": 38,
-      "count": 3,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "Pend Oreille County Protocols 2022",
-          "count": 1
-        },
-        {
-          "title": "EMS Stephen’s County Protocols",
-          "count": 1
-        },
-        {
-          "title": "ABFY County Protocols 2025",
           "count": 1
         }
       ]
