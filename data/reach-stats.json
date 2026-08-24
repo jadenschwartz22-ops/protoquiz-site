@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-08-23T18:08:11.995Z",
-  "totalUploads": 500,
-  "distinctProtocols": 357,
-  "activeStudiers": 341,
-  "pagesProcessed": 81684,
+  "generatedAt": "2026-08-24T00:08:15.138Z",
+  "totalUploads": 502,
+  "distinctProtocols": 359,
+  "activeStudiers": 342,
+  "pagesProcessed": 82214,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 4,
   "byState": {
-    "MI": 35,
+    "MI": 36,
     "CO": 32,
     "CA": 29,
     "TX": 23,
@@ -22,8 +22,8 @@
     "NV": 11,
     "MA": 11,
     "WY": 10,
+    "IL": 9,
     "WA": 8,
-    "IL": 8,
     "MD": 8,
     "FL": 7,
     "AZ": 7,
@@ -62,7 +62,7 @@
       "city": "Detroit",
       "x": 690,
       "y": 194,
-      "count": 35,
+      "count": 36,
       "tier": "hot",
       "topProtocols": [
         {
@@ -388,6 +388,28 @@
       ]
     },
     {
+      "state": "IL",
+      "city": "Chicago",
+      "x": 617,
+      "y": 212,
+      "count": 6,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "region x sop",
+          "count": 1
+        },
+        {
+          "title": "CCT Protocols 2024",
+          "count": 1
+        },
+        {
+          "title": "short.bls",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "CO",
       "city": "Boulder",
       "x": 326,
@@ -463,28 +485,6 @@
         },
         {
           "title": "alco fm 2025 draft 07 31 2024",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "IL",
-      "city": "Chicago",
-      "x": 617,
-      "y": 212,
-      "count": 5,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "region x sop",
-          "count": 1
-        },
-        {
-          "title": "CCT Protocols 2024",
-          "count": 1
-        },
-        {
-          "title": "short.bls",
           "count": 1
         }
       ]
