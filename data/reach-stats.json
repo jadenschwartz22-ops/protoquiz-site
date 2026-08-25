@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-25T00:08:13.716Z",
-  "totalUploads": 505,
-  "distinctProtocols": 362,
-  "activeStudiers": 344,
-  "pagesProcessed": 82595,
+  "generatedAt": "2026-08-25T06:08:14.004Z",
+  "totalUploads": 507,
+  "distinctProtocols": 363,
+  "activeStudiers": 346,
+  "pagesProcessed": 83290,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 4,
@@ -16,7 +16,7 @@
     "NY": 21,
     "GA": 19,
     "VA": 16,
-    "NC": 14,
+    "NC": 15,
     "OR": 13,
     "CT": 12,
     "NV": 11,
@@ -38,6 +38,7 @@
     "OK": 3,
     "NE": 3,
     "DE": 3,
+    "MO": 2,
     "MN": 2,
     "VT": 2,
     "OH": 2,
@@ -48,7 +49,6 @@
     "IA": 2,
     "DC": 2,
     "WV": 2,
-    "MO": 1,
     "RI": 1
   },
   "byCountry": {
@@ -216,12 +216,12 @@
       "city": "Charlotte",
       "x": 751,
       "y": 344,
-      "count": 11,
+      "count": 12,
       "tier": "warm",
       "topProtocols": [
         {
           "title": "Haywood County EMS 2026 Protocols Policies and Procedures",
-          "count": 3
+          "count": 4
         },
         {
           "title": "MEDIC ALS",
@@ -1641,6 +1641,20 @@
       "topProtocols": [
         {
           "title": "WASHCO Meds",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "MO",
+      "city": "Springfield",
+      "x": 528,
+      "y": 321,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "July2026protocols",
           "count": 1
         }
       ]
