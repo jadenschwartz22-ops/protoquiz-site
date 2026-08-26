@@ -102,7 +102,7 @@
       <ul>
         <li><strong>Device and app diagnostics</strong> such as crash reports, error logs, app version, operating system version, device model, and approximate timestamps to help us diagnose issues and improve reliability.</li>
         <li><strong>Basic usage analytics</strong>, if enabled, such as aggregate counts of feature use and screen opens. We do not collect precise location, contact lists, photos, or microphone data unless you choose a feature that requires it.</li>
-        <li><strong>Advertising data</strong> — if you choose to watch a rewarded ad, our ad partner collects data as described in the "Advertising" section below. We do not use advertising identifiers.</li>
+        <li><strong>Advertising data</strong> — if you choose to watch a rewarded ad, our ad partner collects data as described in the "Advertising" section below. We do not read your advertising identifier ourselves, though the ad partner's SDK may access it; see that section for details.</li>
         <li><strong>Install source</strong> — when you install from an app store, we read the install referrer once to understand which marketing campaign brought you to the App.</li>
       </ul>
 
@@ -168,8 +168,10 @@
       </ul>
       <p>This data is collected and processed by Unity under its own privacy policy. See <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy">Unity's Game Player and App User Privacy Policy</a>.</p>
 
-      <h3>We do not use advertising identifiers</h3>
-      <p>The App does <strong>not</strong> request or access your device's advertising identifier — no IDFA on iOS, no Android Advertising ID (AAID). We do not use Google AdMob or any other ad network, and we do not track you across other companies' apps or websites. Because the App performs no cross-app tracking, iOS does not show an App Tracking Transparency prompt.</p>
+      <h3>Advertising identifiers</h3>
+      <p><strong>We do not read your advertising identifier ourselves.</strong> Nothing we have written requests the IDFA on iOS or the Android Advertising ID (AAID), and no advertising identifier is sent to our servers or stored against your account.</p>
+      <p>The Unity Ads SDK, however, may access the Android Advertising ID on its own in order to serve and measure ads. Including that SDK adds the corresponding Android permission to the app, so we disclose it in our Google Play Data safety section rather than claim it is absent. On Android you can reset or delete this identifier at any time in <strong>Settings &rsaquo; Google &rsaquo; Ads</strong>; deleting it stops apps from receiving it at all.</p>
+      <p>We do not use Google AdMob or any other ad network, we do not build advertising profiles about you, and we do not track you across other companies' apps or websites. Because we perform no cross-app tracking of our own, iOS does not show an App Tracking Transparency prompt.</p>
 
       <h3>Remove ads</h3>
       <p>A Premium subscription removes rewarded ads. Ads are the free-tier alternative to a subscription: on the free tier you can reach these generation features by watching a short video instead of paying.</p>
@@ -178,7 +180,7 @@
       <ul>
         <li><strong>Educational use only.</strong> The App is not a medical device and must not be used for patient care or real-time clinical decisions.</li>
         <li><strong>Account deletion.</strong> The App creates an anonymous account automatically — you never enter an email or password. You can delete it at any time from the Profile screen, which erases your data from our servers and removes the anonymous account. An active subscription must be cancelled separately in the App Store or Play Store; the App links you there.</li>
-        <li>The App shows rewarded video ads through Unity Ads on the free tier (see the Advertising section above). It does not use advertising identifiers and performs no cross-app tracking, so no iOS App Tracking Transparency prompt is shown.</li>
+        <li>The App shows rewarded video ads through Unity Ads on the free tier (see the Advertising section above). We do not read advertising identifiers ourselves and perform no cross-app tracking, so no iOS App Tracking Transparency prompt is shown; the Unity Ads SDK may access the Android Advertising ID to serve ads, as disclosed in our Play Data safety section.</li>
       </ul>
 
       <h2>Changes to this Policy</h2>
