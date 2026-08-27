@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-27T01:29:32.806Z",
-  "totalUploads": 510,
-  "distinctProtocols": 364,
-  "activeStudiers": 349,
-  "pagesProcessed": 84185,
+  "generatedAt": "2026-08-27T06:08:14.346Z",
+  "totalUploads": 512,
+  "distinctProtocols": 366,
+  "activeStudiers": 351,
+  "pagesProcessed": 84195,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 4,
@@ -17,8 +17,8 @@
     "GA": 19,
     "VA": 16,
     "NC": 15,
+    "OR": 14,
     "CT": 13,
-    "OR": 13,
     "NV": 11,
     "MA": 11,
     "WY": 10,
@@ -278,6 +278,28 @@
       ]
     },
     {
+      "state": "OR",
+      "city": "Portland",
+      "x": 73,
+      "y": 80,
+      "count": 11,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "New",
+          "count": 1
+        },
+        {
+          "title": "WASHCO Treatment",
+          "count": 1
+        },
+        {
+          "title": "httpss3.amazonaws.comtsresources.targetsolutions.com197A1159…",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "WY",
       "city": "Jackson",
       "x": 246,
@@ -295,28 +317,6 @@
         },
         {
           "title": "17 17 Dextrose",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "OR",
-      "city": "Portland",
-      "x": 73,
-      "y": 80,
-      "count": 10,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "New",
-          "count": 1
-        },
-        {
-          "title": "WASHCO Treatment",
-          "count": 1
-        },
-        {
-          "title": "httpss3.amazonaws.comtsresources.targetsolutions.com197A1159…",
           "count": 1
         }
       ]
