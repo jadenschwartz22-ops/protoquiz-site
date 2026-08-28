@@ -9,6 +9,13 @@ on:
       - "blog/feed.xml"
       - "llms.txt"
       - "robots.txt"
+      # The census build pushes generated pages nightly; they have their own
+      # diff-based submitter (scripts/census-indexnow.mjs), so this workflow —
+      # which resubmits the whole hand-maintained sitemap — must not fire on
+      # them. GitHub rejects paths + paths-ignore on one event, so this is a
+      # negative pattern, and it must stay LAST: patterns are evaluated in
+      # order and a later positive would re-include what it excluded.
+      - "!census/**"
 
 jobs:
   ping:

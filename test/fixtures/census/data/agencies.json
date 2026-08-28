@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "rows": [
+    {
+      "agencyKey": "boulder-county-ems",
+      "name": "Boulder County EMS",
+      "state": "CO",
+      "country": "US",
+      "city": "Boulder",
+      "jurisdiction": "county",
+      "currentHash": "bbb1",
+      "currentEffectiveDate": "2023-02-01",
+      "documentCount": 1,
+      "doseCount": 5,
+      "pendingReview": null,
+      "mayBeOutdated": true
+    },
+    {
+      "agencyKey": "denver-health",
+      "name": "Denver Health Paramedic Division",
+      "state": "CO",
+      "country": "US",
+      "city": "Denver",
+      "jurisdiction": "city",
+      "currentHash": "aaa1",
+      "currentEffectiveDate": "2026-01-15",
+      "documentCount": 2,
+      "doseCount": 9,
+      "pendingReview": {
+        "effectiveDate": "2026-06-01"
+      },
+      "mayBeOutdated": false
+    },
+    {
+      "agencyKey": "stateless-ems",
+      "name": "Stateless EMS",
+      "state": null,
+      "country": "US",
+      "city": null,
+      "jurisdiction": "regional",
+      "currentHash": "ddd1",
+      "currentEffectiveDate": "2026-02-01",
+      "documentCount": 1,
+      "doseCount": 4,
+      "pendingReview": null,
+      "mayBeOutdated": false
+    },
+    {
+      "agencyKey": "thin-agency",
+      "name": "Thin Agency EMS",
+      "state": "CO",
+      "country": "US",
+      "city": null,
+      "jurisdiction": "county",
+      "currentHash": "ccc1",
+      "currentEffectiveDate": "2026-03-01",
+      "documentCount": 1,
+      "doseCount": 2,
+      "pendingReview": null,
+      "mayBeOutdated": false
+    }
+  ]
+}
