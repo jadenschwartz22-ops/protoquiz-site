@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-28T06:08:16.407Z",
+  "generatedAt": "2026-08-28T12:08:16.854Z",
   "totalUploads": 515,
   "distinctProtocols": 367,
   "activeStudiers": 352,
@@ -84,7 +84,7 @@
       "city": "Denver",
       "x": 330,
       "y": 258,
-      "count": 27,
+      "count": 28,
       "tier": "warm",
       "topProtocols": [
         {
@@ -410,28 +410,6 @@
       ]
     },
     {
-      "state": "CO",
-      "city": "Boulder",
-      "x": 326,
-      "y": 252,
-      "count": 6,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "BoCo Protocols Oct 2025",
-          "count": 2
-        },
-        {
-          "title": "BoCo Protocols Apr 2026",
-          "count": 1
-        },
-        {
-          "title": "BoCo Protocols Apr 2026",
-          "count": 1
-        }
-      ]
-    },
-    {
       "state": "AZ",
       "city": "Phoenix",
       "x": 188,
@@ -485,6 +463,28 @@
         },
         {
           "title": "alco fm 2025 draft 07 31 2024",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "CO",
+      "city": "Boulder",
+      "x": 326,
+      "y": 252,
+      "count": 5,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "BoCo Protocols Oct 2025",
+          "count": 1
+        },
+        {
+          "title": "BoCo Protocols Apr 2026",
+          "count": 1
+        },
+        {
+          "title": "BoCo Protocols Apr 2026",
           "count": 1
         }
       ]
