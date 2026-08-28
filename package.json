@@ -7,7 +7,12 @@
     "blog:generate": "node scripts/generate-blog-post.mjs",
     "blog:stats": "node scripts/pull-firestore-stats.mjs",
     "blog:rss": "node scripts/generate-rss-feed.mjs",
-    "blog:full": "npm run blog:stats && npm run blog:generate && npm run blog:rss"
+    "blog:full": "npm run blog:stats && npm run blog:generate && npm run blog:rss",
+    "census:pages": "node scripts/census-pages.mjs",
+    "census:indexnow": "node scripts/census-indexnow.mjs",
+    "test:census-pages": "node scripts/test-census-pages.mjs",
+    "test:census-indexnow": "node scripts/test-census-indexnow.mjs",
+    "test": "npm run test:census-pages && npm run test:census-indexnow"
   },
   "keywords": [
     "EMS",
