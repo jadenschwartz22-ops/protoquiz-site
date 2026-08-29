@@ -1,20 +1,23 @@
-/* Shared styles for legal pages — matches index.html CAD console aesthetic */
+/* Shared styles for legal pages — light document theme.
+   These are the contract pages procurement reads, forwards and prints, so they
+   read as paper rather than as the CAD-console marketing site. Accent stays
+   ProtoQuiz amber, darkened to --accent for AA contrast on white. */
 :root {
-  --bg:#06050a;
-  --bg-2:#0c0a07;
-  --panel:#100d08;
-  --ink:#f4f1ea;
-  --ink-soft:#a8a399;
-  --muted:#8a8478;
-  --line:#1c1a14;
-  --line-2:#2a2620;
-  --amber:#ffb000;
-  --amber-deep:#cc8a00;
-  --amber-warm:#ff7a00;
-  --amber-dim:#7a5a00;
-  --amber-soft:#3a2a08;
-  --green:#00d27a;
-  --siren:#ff3b30;
+  --bg:#ffffff;
+  --bg-2:#f7f6f3;
+  --panel:#faf9f6;
+  --ink:#14120e;
+  --ink-soft:#3d3a33;
+  --muted:#6b6659;
+  --line:#e4e1d9;
+  --line-2:#d6d2c8;
+  --amber:#8a5c00;
+  --amber-deep:#6b4700;
+  --amber-warm:#a35a00;
+  --amber-dim:#b8a878;
+  --amber-soft:#fdf6e3;
+  --green:#00734a;
+  --siren:#b3261e;
   --mono:'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
   --sans:'Inter', system-ui, -apple-system, sans-serif;
   --max:920px;
@@ -33,20 +36,17 @@ html,body{
 }
 
 body{
-  background:
-    repeating-linear-gradient(0deg, rgba(255,176,0,0) 0, rgba(255,176,0,0) 2px, rgba(255,176,0,.018) 2px, rgba(255,176,0,.018) 3px),
-    radial-gradient(ellipse 100% 80% at 50% 50%, transparent 50%, rgba(0,0,0,.4)),
-    var(--bg);
+  background:var(--bg);
   min-height:100vh;
 }
 
-a{color:var(--amber);text-decoration:none;border-bottom:1px solid rgba(255,176,0,.25);transition:color .15s, border-color .15s;}
+a{color:var(--amber);text-decoration:none;border-bottom:1px solid rgba(138,92,0,.3);transition:color .15s, border-color .15s;}
 a:hover{color:var(--ink);border-bottom-color:var(--ink);}
 
 /* Top status bar — matches main site */
 .statusbar{
   position:sticky;top:0;z-index:10;
-  background:rgba(6,5,10,.96);
+  background:rgba(255,255,255,.94);
   backdrop-filter:saturate(140%) blur(8px);
   -webkit-backdrop-filter:saturate(140%) blur(8px);
   border-bottom:1px solid var(--line);
@@ -194,4 +194,14 @@ footer a:hover{color:var(--amber);}
   .doc-title { font-size: 28px; }
   h2 { font-size: 19px; }
   .statusbar { padding: 8px 16px; font-size: 11px; gap: 10px; }
+}
+
+/* Print — a contract that gets forwarded to procurement gets printed. */
+@media print {
+  .statusbar, footer a { display:none; }
+  main { max-width:none; padding:0; }
+  a { color:var(--ink); border-bottom:none; }
+  a[href^="http"]::after { content:" (" attr(href) ")"; font-size:10px; color:var(--muted); }
+  h2, h3 { break-after:avoid; }
+  .callout, .toc, dl, li { break-inside:avoid; }
 }
