@@ -1,23 +1,29 @@
 /* Shared styles for legal pages — light document theme.
    These are the contract pages procurement reads, forwards and prints, so they
-   read as paper rather than as the CAD-console marketing site. Accent stays
-   ProtoQuiz amber, darkened to --accent for AA contrast on white. */
+   read as paper rather than as the CAD-console marketing site.
+
+   Cool neutrals, not the marketing site's warm cream: a contract should feel
+   calm and unbranded, and a saturated ground fatigues over 10,000 words. Ink is
+   a soft near-black (#1a1f36) rather than pure #000 for the same reason. The
+   accent is ProtoQuiz blue at a darkness that clears AA on white — the old
+   brown-amber read heavy and dated at this scale. Amber survives as a NAMED
+   token only so the eight pages using it keep working; it is blue now. */
 :root {
   --bg:#ffffff;
-  --bg-2:#f7f6f3;
-  --panel:#faf9f6;
-  --ink:#14120e;
-  --ink-soft:#3d3a33;
-  --muted:#6b6659;
-  --line:#e4e1d9;
-  --line-2:#d6d2c8;
-  --amber:#8a5c00;
-  --amber-deep:#6b4700;
-  --amber-warm:#a35a00;
-  --amber-dim:#b8a878;
-  --amber-soft:#fdf6e3;
-  --green:#00734a;
-  --siren:#b3261e;
+  --bg-2:#f7f9fc;
+  --panel:#f7f9fc;
+  --ink:#1a1f36;
+  --ink-soft:#3c4257;
+  --muted:#697386;
+  --line:#e6e9ef;
+  --line-2:#d5dae3;
+  --amber:#1c4f8f;
+  --amber-deep:#123a6d;
+  --amber-warm:#1c4f8f;
+  --amber-dim:#8792a8;
+  --amber-soft:#f2f6fc;
+  --green:#0b6b45;
+  --siren:#a12622;
   --mono:'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
   --sans:'Inter', system-ui, -apple-system, sans-serif;
   --max:920px;
@@ -40,7 +46,7 @@ body{
   min-height:100vh;
 }
 
-a{color:var(--amber);text-decoration:none;border-bottom:1px solid rgba(138,92,0,.3);transition:color .15s, border-color .15s;}
+a{color:var(--amber);text-decoration:none;border-bottom:1px solid rgba(28,79,143,.28);transition:color .15s, border-color .15s;}
 a:hover{color:var(--ink);border-bottom-color:var(--ink);}
 
 /* Top status bar — matches main site */
@@ -87,8 +93,8 @@ main{
 }
 .doc-title{
   font-family:var(--sans);
-  font-size:36px;
-  font-weight:800;
+  font-size:32px;
+  font-weight:700;
   letter-spacing:-0.6px;
   line-height:1.15;
   color:var(--ink);
