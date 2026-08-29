@@ -9,7 +9,7 @@ import { mkdtempSync, rmSync, readFileSync, readdirSync, statSync, writeFileSync
 import { join, dirname, relative } from 'node:path';
 import { tmpdir } from 'node:os';
 import { fileURLToPath } from 'node:url';
-import { generate, buildPages, MIN_AGENCY_DRUGS, MIN_INDICATION_ROWS } from './census-pages.mjs';
+import { generate, buildPages, MIN_AGENCY_DRUGS, MIN_INDICATION_ROWS, ACCEPTED_SCHEMA_VERSIONS, pageManifest } from './census-pages.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const FIXTURES = join(here, '..', 'test', 'fixtures', 'census', 'data');
@@ -221,6 +221,97 @@ test('the hand-maintained sitemap.xml is never rewritten', () => {
 });
 
 console.log('\ncontract');
+// A SET, not a single version. L3 bumped documents.json to 2 (effectiveDateApproximate
+// removed, capturedDate + effectiveDateSource + origin added), and this reader must accept
+// both while published artifacts are mixed. P4: this lands BEFORE the first v2 build, because
+// the abort below is by design — a v2 build published to a v1-only reader takes the census
+// offline rather than degrading it.
+test('the accepted schema set is exactly {1, 2}', () => {
+  assert.ok(ACCEPTED_SCHEMA_VERSIONS instanceof Set, 'must be a Set, not a scalar');
+  assert.deepStrictEqual([...ACCEPTED_SCHEMA_VERSIONS].sort(), [1, 2]);
+});
+
+// Write one fixture dir per version so both are exercised end to end, not just at the check.
+const V2_DOCS = FIXTURES;
+const asVersion = (version, patchDoc) => {
+  const dir = tmp();
+  for (const f of readdirSync(FIXTURES)) cpSync(join(FIXTURES, f), join(dir, f));
+  for (const f of ['documents.json', 'agencies.json', 'dose_latest.json', 'ledger.json', 'manifest.json']) {
+    const j = JSON.parse(readFileSync(join(dir, f), 'utf8'));
+    j.schemaVersion = version;
+    if (f === 'documents.json' && patchDoc) j.rows = j.rows.map(patchDoc);
+    writeFileSync(join(dir, f), JSON.stringify(j));
+  }
+  return dir;
+};
+
+test('a v1 payload still renders (the reader accepts both versions)', () => {
+  // v1 rows carry effectiveDateApproximate and NONE of the three new fields.
+  const dir = asVersion(1, ({ capturedDate, effectiveDateSource, origin, ...r }) => ({ ...r, effectiveDateApproximate: false }));
+  const out = tmp();
+  const r = generate({ dataDir: dir, outDir: out });
+  assert.ok(r.files.some(f => f.path === '/census/agencies/denver-health/'), 'v1 data must still build agency pages');
+  rmSync(dir, { recursive: true, force: true });
+  rmSync(out, { recursive: true, force: true });
+});
+test('a v2 payload renders', () => {
+  const dir = asVersion(2);
+  const out = tmp();
+  const r = generate({ dataDir: dir, outDir: out });
+  assert.ok(r.files.some(f => f.path === '/census/agencies/denver-health/'), 'v2 data must build agency pages');
+  rmSync(dir, { recursive: true, force: true });
+  rmSync(out, { recursive: true, force: true });
+});
+test('pageManifest stamps the INPUT manifest version, not a constant', () => {
+  const m = data().manifest;
+  assert.strictEqual(pageManifest(a.files, { ...m, schemaVersion: 1 }).schemaVersion, 1, 'a v1 input stamps 1');
+  assert.strictEqual(pageManifest(a.files, { ...m, schemaVersion: 2 }).schemaVersion, 2, 'a v2 input stamps 2');
+});
+
+console.log('\ncaptured vs printed dates');
+// effectiveDate is what the AGENCY printed; capturedDate only proves the file existed by then.
+// Rendering a capture as an effective date is the exact confusion schemaVersion 2 exists to
+// end, so the page must say "on or before" and never print a bare date for a captured doc.
+const capturedData = () => {
+  const d = data();
+  d.documents = d.documents.map(r => r.hash === 'aaa1'
+    ? { ...r, effectiveDate: null, capturedDate: '2026-03-04', effectiveDateSource: 'captured' }
+    : r);
+  d.agencies = d.agencies.map(a2 => a2.agencyKey === 'denver-health'
+    ? { ...a2, currentEffectiveDate: null }
+    : a2);
+  return d;
+};
+test('a captured document renders "on or before <capturedDate>"', () => {
+  const p = buildPages(capturedData()).files.find(f => f.path === '/census/agencies/denver-health/').html;
+  assert.ok(p.includes('on or before 2026-03-04'), 'expected the on-or-before wording with the capture date');
+});
+test('a captured date is never printed as an effective date', () => {
+  const p = buildPages(capturedData()).files.find(f => f.path === '/census/agencies/denver-health/').html;
+  assert.ok(!/effective\s+2026-03-04/i.test(p), 'the capture date must not be labelled "effective"');
+});
+test('a printed date still renders as effective, unchanged', () => {
+  const p = html['/census/agencies/denver-health/'];
+  assert.ok(/effective 2026-01-15/.test(p), 'a printed date must keep the plain effective wording');
+  assert.ok(!p.includes('on or before'), 'a printed date must NOT get the on-or-before hedge');
+});
+test('a document with no date at all still says "not captured", never a hedge', () => {
+  const d = data();
+  d.documents = d.documents.map(r => r.hash === 'aaa1' ? { ...r, effectiveDate: null, capturedDate: null, effectiveDateSource: 'none' } : r);
+  d.agencies = d.agencies.map(a2 => a2.agencyKey === 'denver-health' ? { ...a2, currentEffectiveDate: null } : a2);
+  const p = buildPages(d).files.find(f => f.path === '/census/agencies/denver-health/').html;
+  assert.ok(!p.includes('on or before'), 'no capture means no on-or-before claim');
+  assert.ok(p.includes('not captured'), 'an absent date reads as not captured');
+});
+test('a v1 row with no effectiveDateSource is treated as printed', () => {
+  // Back-compat: absent source + a date means printed; absent source + no date means none.
+  const d = data();
+  d.documents = d.documents.map(({ effectiveDateSource, capturedDate, ...r }) => r);
+  const p = buildPages(d).files.find(f => f.path === '/census/agencies/denver-health/').html;
+  assert.ok(!p.includes('on or before'), 'a v1 row must not be hedged as captured');
+  assert.ok(/effective 2026-01-15/.test(p), 'a v1 row keeps its effective date');
+});
+
 test('an unknown schemaVersion aborts rather than rendering', () => {
   const dir = tmp();
   for (const f of readdirSync(FIXTURES)) cpSync(join(FIXTURES, f), join(dir, f));
