@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-28T18:08:19.269Z",
-  "totalUploads": 515,
-  "distinctProtocols": 367,
-  "activeStudiers": 352,
-  "pagesProcessed": 84589,
+  "generatedAt": "2026-08-29T00:08:25.567Z",
+  "totalUploads": 516,
+  "distinctProtocols": 368,
+  "activeStudiers": 353,
+  "pagesProcessed": 84660,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 4,
@@ -15,12 +15,12 @@
     "PA": 23,
     "NY": 21,
     "GA": 19,
+    "NC": 16,
     "VA": 16,
-    "NC": 15,
     "CT": 14,
     "OR": 14,
+    "MA": 12,
     "NV": 11,
-    "MA": 11,
     "WY": 10,
     "WA": 9,
     "IL": 9,
@@ -216,7 +216,7 @@
       "city": "Charlotte",
       "x": 751,
       "y": 344,
-      "count": 12,
+      "count": 13,
       "tier": "warm",
       "topProtocols": [
         {
@@ -229,6 +229,28 @@
         },
         {
           "title": "BCEMS Protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "MA",
+      "city": "Boston",
+      "x": 881,
+      "y": 155,
+      "count": 12,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "download",
+          "count": 6
+        },
+        {
+          "title": "download",
+          "count": 2
+        },
+        {
+          "title": "2026 MA state protocols",
           "count": 1
         }
       ]
@@ -251,28 +273,6 @@
         },
         {
           "title": "emc protocols",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "MA",
-      "city": "Boston",
-      "x": 881,
-      "y": 155,
-      "count": 11,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "download",
-          "count": 5
-        },
-        {
-          "title": "download",
-          "count": 2
-        },
-        {
-          "title": "2026 MA state protocols",
           "count": 1
         }
       ]
