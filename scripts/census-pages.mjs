@@ -18,7 +18,13 @@ import { createHash } from 'node:crypto';
 
 const hash = s => createHash('sha256').update(s).digest('hex').slice(0, 16);
 
-export const SCHEMA_VERSION = 1;
+// A SET, not a single version. L3 bumped documents.json to 2 (effectiveDateApproximate
+// removed in favour of capturedDate + effectiveDateSource, plus origin), and published
+// artifacts are mixed while that rolls out — so this reader accepts both and keeps 1 until
+// every file it reads is v2. Accepting the set must land BEFORE the first v2 build: the abort
+// in readContract is by design, so a v2 payload reaching a v1-only reader would take the
+// census offline rather than degrade it (binding protocol P4).
+export const ACCEPTED_SCHEMA_VERSIONS = new Set([1, 2]);
 const ORIGIN = 'https://protoquiz.com';
 const APP_ID = '6753611139';
 const GA_ID = 'G-LNSS9BMEP8';
@@ -106,14 +112,14 @@ function readContract(dataDir) {
     // An unknown schemaVersion aborts rather than rendering partial data
     // (CONTRACT.md "Stability"): a silently half-rendered census is worse
     // than a failed build, which the §12 gate turns into one alert.
-    if (j.schemaVersion !== SCHEMA_VERSION) {
-      throw new Error(`${name}: schemaVersion ${j.schemaVersion}, this generator understands ${SCHEMA_VERSION}`);
+    if (!ACCEPTED_SCHEMA_VERSIONS.has(j.schemaVersion)) {
+      throw new Error(`${name}: schemaVersion ${j.schemaVersion}, this generator understands ${[...ACCEPTED_SCHEMA_VERSIONS].join(', ')}`);
     }
     return j;
   };
   const manifest = JSON.parse(readFileSync(join(dataDir, 'manifest.json'), 'utf8'));
-  if (manifest.schemaVersion !== SCHEMA_VERSION) {
-    throw new Error(`manifest.json: schemaVersion ${manifest.schemaVersion}, this generator understands ${SCHEMA_VERSION}`);
+  if (!ACCEPTED_SCHEMA_VERSIONS.has(manifest.schemaVersion)) {
+    throw new Error(`manifest.json: schemaVersion ${manifest.schemaVersion}, this generator understands ${[...ACCEPTED_SCHEMA_VERSIONS].join(', ')}`);
   }
   return {
     documents: read('documents.json').rows,
@@ -221,6 +227,37 @@ ${body}
 ${footer}`;
 
 // ------------------------------------------------------------- page bodies
+
+// How a document's date reads, from schemaVersion 2's effectiveDateSource.
+//
+// `effectiveDate` is what the AGENCY printed. `capturedDate` only proves the file
+// existed by then — an Archive or watch run saw it — so it is rendered "on or
+// before <date>" and NEVER as an effective date. Collapsing the two is exactly
+// what the v1 `effectiveDateApproximate` boolean did, and why it was replaced.
+//
+// A v1 row carries neither field: treat it as `printed` when it has a date, else
+// `none`, matching what L3 derives (lib/census/CONTRACT.md).
+const dateSourceOf = doc =>
+  doc?.effectiveDateSource || (doc?.effectiveDate ? 'printed' : doc?.capturedDate ? 'captured' : 'none');
+
+// Returns the phrase, or null when there is no date to state at all.
+const documentDatePhrase = doc => {
+  switch (dateSourceOf(doc)) {
+    case 'printed': return doc.effectiveDate ? `effective ${doc.effectiveDate}` : null;
+    case 'captured': return doc.capturedDate ? `on or before ${doc.capturedDate}` : null;
+    default: return null;
+  }
+};
+
+// The value for a stats cell: the bare date where printed, the hedge where
+// captured, "not captured" where neither. Never a blank and never a 0.
+const documentDateCell = doc => {
+  switch (dateSourceOf(doc)) {
+    case 'printed': return doc.effectiveDate ?? NOT_CAPTURED;
+    case 'captured': return doc.capturedDate ? `on or before ${doc.capturedDate}` : NOT_CAPTURED;
+    default: return NOT_CAPTURED;
+  }
+};
 
 // Attribution is required on every named row (spec 11). sourceUrl lives on the
 // DOCUMENT, keyed by the dose row's hash — never on the agency.
@@ -347,15 +384,20 @@ ${inner}
 
   const where = [agency.city, agency.state].filter(Boolean).join(', ');
   const title = `${agency.name} EMS protocols - drugs, doses, and routes`;
+  // The date and its provenance both come from the CURRENT document, not the agency row —
+  // agencies.json carries only currentEffectiveDate, which by design is null for a document
+  // whose only date is a capture.
+  const currentDoc = docByHash.get(agency.currentHash);
+  const datePhrase = documentDatePhrase(currentDoc);
   const body = `      <span class="badge">${esc(agency.jurisdiction)}</span>
       <h1>${esc(agency.name)}</h1>
-      <p class="lede">${esc(agency.name)}${where ? ` (${esc(where)})` : ''} carries ${num(drugs.size)} drugs across ${num(doses.length)} dose entries in its current published protocol${agency.currentEffectiveDate ? `, effective ${esc(agency.currentEffectiveDate)}` : ''}.</p>
+      <p class="lede">${esc(agency.name)}${where ? ` (${esc(where)})` : ''} carries ${num(drugs.size)} drugs across ${num(doses.length)} dose entries in its current published protocol${datePhrase ? `, ${esc(datePhrase)}` : ''}.</p>
 ${pending}${outdated}${stats([
     ['drugs', num(drugs.size)],
     ['dose entries', num(doses.length)],
     ['machine-parsed', `${pct(parsed, doses.length)} of ${num(doses.length)}`],
     ['documents', num(agency.documentCount)],
-    ['effective', agency.currentEffectiveDate ?? NOT_CAPTURED],
+    ['effective', documentDateCell(currentDoc)],
   ])}
       <section id="doses">
         <h2>Drugs and doses</h2>
@@ -655,7 +697,9 @@ export function buildPages({ documents, agencies, doses, ledger, manifest }) {
 // The page manifest census-indexnow.mjs diffs against: path -> content hash.
 export function pageManifest(files, manifest) {
   return {
-    schemaVersion: SCHEMA_VERSION,
+    // The version of the DATA these pages were built from, not a constant — the indexnow diff
+    // needs to know which contract produced them, and this reader accepts more than one.
+    schemaVersion: manifest.schemaVersion,
     asOf: manifest.asOf,
     buildVersion: manifest.buildVersion,
     pages: Object.fromEntries(files.map(f => [f.path, hash(f.html)])),
