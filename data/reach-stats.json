@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-08-29T12:08:18.166Z",
-  "totalUploads": 516,
-  "distinctProtocols": 368,
-  "activeStudiers": 353,
-  "pagesProcessed": 84660,
+  "generatedAt": "2026-08-29T18:08:22.726Z",
+  "totalUploads": 519,
+  "distinctProtocols": 369,
+  "activeStudiers": 356,
+  "pagesProcessed": 85165,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 4,
   "byState": {
     "MI": 36,
     "CO": 34,
-    "CA": 31,
+    "CA": 32,
     "TX": 23,
     "PA": 23,
     "NY": 21,
@@ -18,8 +18,8 @@
     "NC": 16,
     "VA": 16,
     "CT": 14,
+    "MA": 14,
     "OR": 14,
-    "MA": 12,
     "NV": 11,
     "WY": 10,
     "WA": 9,
@@ -212,6 +212,28 @@
       ]
     },
     {
+      "state": "MA",
+      "city": "Boston",
+      "x": 881,
+      "y": 155,
+      "count": 14,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "download",
+          "count": 6
+        },
+        {
+          "title": "download",
+          "count": 3
+        },
+        {
+          "title": "2026 MA state protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "NC",
       "city": "Charlotte",
       "x": 751,
@@ -229,28 +251,6 @@
         },
         {
           "title": "BCEMS Protocols",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "MA",
-      "city": "Boston",
-      "x": 881,
-      "y": 155,
-      "count": 12,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "download",
-          "count": 6
-        },
-        {
-          "title": "download",
-          "count": 2
-        },
-        {
-          "title": "2026 MA state protocols",
           "count": 1
         }
       ]
@@ -468,6 +468,20 @@
       ]
     },
     {
+      "state": "CA",
+      "city": "San Diego",
+      "x": 93,
+      "y": 378,
+      "count": 5,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "2026 2027 Protocol Packet",
+          "count": 5
+        }
+      ]
+    },
+    {
       "state": "CO",
       "city": "Boulder",
       "x": 326,
@@ -574,20 +588,6 @@
         {
           "title": "EMS",
           "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CA",
-      "city": "San Diego",
-      "x": 93,
-      "y": 378,
-      "count": 4,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "2026 2027 Protocol Packet",
-          "count": 4
         }
       ]
     },
