@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-29T18:08:22.726Z",
-  "totalUploads": 519,
-  "distinctProtocols": 369,
-  "activeStudiers": 356,
-  "pagesProcessed": 85165,
+  "generatedAt": "2026-08-30T00:08:20.277Z",
+  "totalUploads": 520,
+  "distinctProtocols": 370,
+  "activeStudiers": 357,
+  "pagesProcessed": 85689,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 4,
@@ -21,8 +21,8 @@
     "MA": 14,
     "OR": 14,
     "NV": 11,
+    "WA": 10,
     "WY": 10,
-    "WA": 9,
     "IL": 9,
     "MD": 8,
     "FL": 7,
@@ -1697,6 +1697,20 @@
       "topProtocols": [
         {
           "title": "BCESD4 SMOPS Complete",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "WA",
+      "city": "Spokane",
+      "x": 162,
+      "y": 55,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "SCEMS Protocols 2026",
           "count": 1
         }
       ]
