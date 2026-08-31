@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-08-31T06:08:18.447Z",
-  "totalUploads": 522,
+  "generatedAt": "2026-08-31T12:08:36.916Z",
+  "totalUploads": 523,
   "distinctProtocols": 371,
-  "activeStudiers": 359,
-  "pagesProcessed": 85911,
+  "activeStudiers": 360,
+  "pagesProcessed": 86089,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 4,
   "byState": {
     "MI": 36,
     "CO": 35,
-    "CA": 33,
+    "CA": 34,
     "TX": 23,
     "PA": 23,
     "NY": 21,
@@ -388,6 +388,24 @@
       ]
     },
     {
+      "state": "CA",
+      "city": "San Leandro",
+      "x": 34,
+      "y": 249,
+      "count": 6,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "2026 Alameda County EMS Field Manual Rev3",
+          "count": 5
+        },
+        {
+          "title": "alco fm 2025 draft 07 31 2024",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "IL",
       "city": "Chicago",
       "x": 617,
@@ -445,24 +463,6 @@
         },
         {
           "title": "master.alabama.protocols.11th.edition.07012025",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CA",
-      "city": "San Leandro",
-      "x": 34,
-      "y": 249,
-      "count": 5,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "2026 Alameda County EMS Field Manual Rev3",
-          "count": 4
-        },
-        {
-          "title": "alco fm 2025 draft 07 31 2024",
           "count": 1
         }
       ]
