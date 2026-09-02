@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-09-02T00:08:23.284Z",
-  "totalUploads": 532,
-  "distinctProtocols": 376,
-  "activeStudiers": 364,
-  "pagesProcessed": 87350,
+  "generatedAt": "2026-09-02T06:08:23.317Z",
+  "totalUploads": 536,
+  "distinctProtocols": 379,
+  "activeStudiers": 366,
+  "pagesProcessed": 88045,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 4,
   "byState": {
-    "CA": 37,
+    "CA": 39,
     "MI": 36,
     "CO": 35,
     "TX": 23,
     "PA": 23,
+    "GA": 22,
     "NY": 21,
-    "GA": 21,
+    "VA": 17,
     "NC": 16,
     "CT": 16,
-    "VA": 16,
     "MA": 15,
     "OR": 14,
     "NV": 11,
@@ -150,12 +150,12 @@
       "city": "Atlanta",
       "x": 692,
       "y": 386,
-      "count": 20,
+      "count": 21,
       "tier": "warm",
       "topProtocols": [
         {
           "title": "National EMS Patient Care Guidelines Sept 2024 Revision 01.66…",
-          "count": 16
+          "count": 17
         },
         {
           "title": "Whole Protocol V 3807012026150232 (1)",
@@ -392,7 +392,7 @@
       "city": "San Leandro",
       "x": 34,
       "y": 249,
-      "count": 6,
+      "count": 7,
       "tier": "warm",
       "topProtocols": [
         {
@@ -401,6 +401,10 @@
         },
         {
           "title": "alco fm 2025 draft 07 31 2024",
+          "count": 1
+        },
+        {
+          "title": "Alco Field Manual",
           "count": 1
         }
       ]
@@ -1753,6 +1757,34 @@
       "topProtocols": [
         {
           "title": "639165915900430000",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "CA",
+      "city": "Alameda",
+      "x": 33,
+      "y": 247,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "2026 ICO Protocol Overview 8.21.26",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "VA",
+      "city": "Charlottesville",
+      "x": 781,
+      "y": 276,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "2025 CCT Guidelines",
           "count": 1
         }
       ]
