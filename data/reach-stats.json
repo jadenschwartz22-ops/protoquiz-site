@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-09-01T18:08:21.347Z",
-  "totalUploads": 530,
-  "distinctProtocols": 374,
-  "activeStudiers": 363,
-  "pagesProcessed": 87075,
+  "generatedAt": "2026-09-02T00:08:23.284Z",
+  "totalUploads": 532,
+  "distinctProtocols": 376,
+  "activeStudiers": 364,
+  "pagesProcessed": 87350,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 4,
   "byState": {
+    "CA": 37,
     "MI": 36,
-    "CA": 36,
     "CO": 35,
     "TX": 23,
     "PA": 23,
@@ -1739,6 +1739,20 @@
       "topProtocols": [
         {
           "title": "Marion county protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "CA",
+      "city": "Modesto",
+      "x": 53,
+      "y": 256,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "639165915900430000",
           "count": 1
         }
       ]
