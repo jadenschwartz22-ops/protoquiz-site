@@ -2120,7 +2120,7 @@
     padding:36px 40px 32px;
     box-shadow:0 1px 2px rgba(15,18,25,.04), 0 12px 36px rgba(15,18,25,.06);
   }
-  /* rate row: struck $100 -> $50 pilot */
+  /* rate row: struck quarterly total -> annual prepay */
   /* slider */
   .px-slider-wrap{
     background:var(--surface2);
@@ -2780,7 +2780,7 @@
   .price-unit{font-size:13px; color:var(--muted); margin-bottom:20px;}
   .price-foot{font-size:11px; color:var(--muted); line-height:1.6;}
 
-  /* ============ PRICING V2 (flat $100 + pilot offer) ============ */
+  /* ============ PRICING V2 (legacy; superseded by the PRICING FRAME below) ============ */
   /* ============ PRICING V3 (6 months free hero) ============ */
   .pcv3-hero{
     text-align:center; padding:44px 40px 36px;
@@ -3052,7 +3052,7 @@
      Ported from the consumer site's statusbar drawer (/index.html) so both
      pages behave identically, re-skinned to the manila/indigo palette.
      Before this, <=700px hid the primary nav with NO replacement: How it
-     works / Pricing / Trust / Pilot, the demo link and the route back to the
+     works / Pricing / Trust / Contact, the demo link and the route back to the
      consumer site were all unreachable on a phone. The brand mark points at
      #hero, so it scrolled instead of escaping. */
   .nav-toggle{
@@ -3213,7 +3213,7 @@
     border-radius:14px;
   }
 
-  /* === Pilot urgency panel: amber/burnt accent, scarcity messaging === */
+  /* === Billing choice panel: amber/burnt accent, annual-prepay savings === */
   .px-pilot{
     max-width:880px; margin:0 auto 24px;
     background:linear-gradient(180deg, rgba(138,74,31,.10), rgba(138,74,31,.04));
@@ -3265,8 +3265,13 @@
   .px-pilot-perk-text{
     font-size:14.5px; color:var(--muted); line-height:1.35;
   }
-  .px-pilot-perk-urgent .px-pilot-perk-num{color:var(--red);}
-  .px-pilot-perk-urgent .px-pilot-perk-text{color:var(--ink); font-weight:600;}
+  /* Closed-pilot note: quiet, factual, sits under the billing panel */
+  .px-pilot-closed{
+    max-width:880px; margin:-8px auto 24px;
+    text-align:center;
+    font-size:.9rem; line-height:1.5;
+    color:var(--muted);
+  }
   @media (max-width:680px){
     .px-pilot{padding:16px 18px 18px;}
     .px-pilot-perks{grid-template-columns:1fr; gap:10px; margin-top:12px; padding-top:12px;}
@@ -4531,7 +4536,7 @@
       <a href="#hero" class="brand"><img src="/logo-256.png" alt="EMS ProtoQuiz logo">ProtoQuiz&trade;</a>
       <a href="/" class="back-to-consumer" aria-label="Back to ProtoQuiz consumer app">&larr; Consumer app</a>
     </div>
-    <nav aria-label="Primary"><a href="#walkthrough">How it works</a><a href="#pricing-section">Pricing</a><a href="/trust/">Trust</a><a href="#contact">Pilot</a></nav>
+    <nav aria-label="Primary"><a href="#walkthrough">How it works</a><a href="#pricing-section">Pricing</a><a href="/trust/">Trust</a><a href="#contact">Contact</a></nav>
     <div class="header-cta-group">
       <a href="https://demo.protoquiz.com" target="_blank" rel="noopener" class="cta cta-ghost">Try the demo</a>
       <a href="#" class="cta" id="openContact">Contact us</a>
@@ -4549,7 +4554,7 @@
     <a href="#walkthrough" data-nav-close>How it works</a>
     <a href="#pricing-section" data-nav-close>Pricing</a>
     <a href="/trust/" data-nav-close>Trust</a>
-    <a href="#contact" data-nav-close>Start a pilot</a>
+    <a href="#contact" data-nav-close>Get started</a>
     <a href="https://demo.protoquiz.com" target="_blank" rel="noopener" data-nav-close>Try the demo</a>
     <a href="/" class="drawer-exit" data-nav-close>ProtoQuiz consumer app</a>
   </div>
@@ -4602,7 +4607,7 @@
     <div class="tour-embed">
       <iframe src="/agency/tour/?v=17" title="ProtoQuiz agency product tour" loading="lazy" allowfullscreen></iframe>
       <div style="text-align:center;margin-top:26px">
-        <a href="#contact" class="btn btn-primary">Start your pilot &rarr;</a>
+        <a href="#contact" class="btn btn-primary">Get started &rarr;</a>
       </div>
     </div>
   </section>
@@ -5537,13 +5542,13 @@
     </div>
   </section>
 
-  <!-- ============ PRICING (standard rate first, then pilot urgency panel) ============ -->
+  <!-- ============ PRICING (quarterly rate first, then annual-prepay panel) ============ -->
   <section class="section reveal" id="pricing-section">
     <div class="wrap wrap-wide">
       <div class="px-frame-head">
         <div class="px-frame-eyebrow">Pricing</div>
-        <h2 class="px-frame-title">$100 per provider, per year.</h2>
-        <p class="px-frame-sub">Flat. No setup fees, no add-ons, no per-seat tiers. Drag to size your agency.</p>
+        <h2 class="px-frame-title">$25 per seat, per quarter.</h2>
+        <p class="px-frame-sub">Flat. No setup fees, no add-ons, no tiers. Prepay the year and save 20%. Drag to size your agency.</p>
       </div>
 
       <!-- Slider, centered, drives every number on the frame -->
@@ -5566,35 +5571,34 @@
       </div>
 
       <!-- =========================================================
-           PILOT URGENCY PANEL (the actual sales lever)
-           Sits between the standard rate above and the math below.
+           BILLING CHOICE PANEL (annual prepay vs quarterly)
+           Sits between the rate above and the math below.
            ========================================================= -->
       <div class="px-pilot">
-        <div class="px-pilot-tag">Pilot &middot; 0 slots left</div>
+        <div class="px-pilot-tag">Save 20% &middot; Annual prepay</div>
         <div class="px-pilot-body">
           <div class="px-pilot-headline">
-            Pilot agencies pay <strong><span data-px-val="cost-pilot-strong">$15,000</span>/yr</strong> instead of <span class="px-stat-strike" data-px-val="cost-std">$30,000</span>.
+            Prepay the year at <strong><span data-px-val="cost-annual-strong">$24,000</span>/yr</strong> instead of <span class="px-stat-strike" data-px-val="cost-std">$30,000</span> billed quarterly.
           </div>
-          <p class="px-pilot-sub"><strong>First 6 months free.</strong> After that, <strong>$50/provider/yr locked for life</strong> &mdash; not just for the pilot period. Cancel anytime before you pay; no commitment.</p>
+          <p class="px-pilot-sub"><strong>That&rsquo;s <span data-px-val="cost-saved">$6,000</span> back</strong> for paying once instead of four times. Quarterly stays available at $25/seat/quarter if you&rsquo;d rather spread it out.</p>
         </div>
         <div class="px-pilot-perks">
-          <div class="px-pilot-perk"><span class="px-pilot-perk-num">6</span><span class="px-pilot-perk-text">months free first</span></div>
-          <div class="px-pilot-perk"><span class="px-pilot-perk-num">$50</span><span class="px-pilot-perk-text">/provider/yr after, locked for life</span></div>
-          <div class="px-pilot-perk px-pilot-perk-urgent">
-            <span class="px-pilot-perk-num">0</span>
-            <span class="px-pilot-perk-text">pilot slots left</span>
-          </div>
+          <div class="px-pilot-perk"><span class="px-pilot-perk-num">20%</span><span class="px-pilot-perk-text">off when you prepay the year</span></div>
+          <div class="px-pilot-perk"><span class="px-pilot-perk-num">$25</span><span class="px-pilot-perk-text">/seat/quarter, billed quarterly</span></div>
+          <div class="px-pilot-perk"><span class="px-pilot-perk-num">$0</span><span class="px-pilot-perk-text">setup fees, ever</span></div>
         </div>
       </div>
+
+      <p class="px-pilot-closed">Our free six-month pilot program is closed &mdash; every slot is filled. Standard pricing applies to new agencies.</p>
 
       <!-- Two columns: LEFT pay/get -- RIGHT save/why -->
       <div class="px-frame-grid">
         <!-- LEFT: cost + what you get -->
         <div class="px-frame-col px-frame-pay">
-          <div class="px-frame-eyebrow-sm">What you pay (pilot)</div>
-          <div class="px-frame-num"><span class="px-frame-dollar">$</span><span data-px-val="cost-pilot">15,000</span><span class="px-frame-unit">/yr</span></div>
+          <div class="px-frame-eyebrow-sm">What you pay (annual prepay)</div>
+          <div class="px-frame-num"><span class="px-frame-dollar">$</span><span data-px-val="cost-annual">24,000</span><span class="px-frame-unit">/yr</span></div>
           <div class="px-frame-strike-row">
-            <span class="px-stat-strike" data-px-val="cost-std">$30,000</span> standard
+            <span class="px-stat-strike" data-px-val="cost-std">$30,000</span> billed quarterly
           </div>
           <ul class="px-frame-list">
             <li>One PDF, one tenant, one login link to your crews</li>
@@ -5654,7 +5658,7 @@
       <div class="px-frame-net">
         <div class="px-frame-net-cell">
           <span class="px-frame-net-label">You pay</span>
-          <span class="px-frame-net-num">$<span data-px-val="cost-pilot">15,000</span>/yr</span>
+          <span class="px-frame-net-num">$<span data-px-val="cost-annual">24,000</span>/yr</span>
         </div>
         
         <div class="px-frame-net-cell">
@@ -5719,9 +5723,9 @@
       </div>
       <div class="faq-list">
         <div class="faq-item"><div class="faq-q">How does setup work?</div><p class="faq-a">Send us your protocol PDF. We build out the question bank, scoped per certification level, with every question verified against your document and cited to the page it came from. You review the bank and tell us what to change before it goes out to your crews. We host on a custom subdomain (e.g. <code>youragency.protoquiz.com</code>), and your crews access by link in any browser. Typical turnaround from PDF to live tenant: about a week.</p></div>
-        <div class="faq-item"><div class="faq-q">What if our protocols change mid-pilot?</div><p class="faq-a">Send the new PDF. We update the content against the new document, you review the changes, and your crews see the new questions on their next session.</p></div>
+        <div class="faq-item"><div class="faq-q">What if our protocols change mid-term?</div><p class="faq-a">Send the new PDF. We update the content against the new document, you review the changes, and your crews see the new questions on their next session.</p></div>
         <div class="faq-item"><div class="faq-q">How much IT lift is this?</div><p class="faq-a">None. We host on a custom subdomain. Crews access by link in any browser. No install, no SSO setup required (we support it if you want it).</p></div>
-        <div class="faq-item"><div class="faq-q">What does the pilot offer actually include?</div><p class="faq-a">Six months free. After the free months end, the rate is <strong>$50/provider/year, locked for life</strong> &mdash; not just for the pilot period, permanently for pilot agencies. The pilot program is now closed. Standard pricing applies for new agencies.</p></div>
+        <div class="faq-item"><div class="faq-q">How does billing work?</div><p class="faq-a">$25 per seat, per quarter. Prepay the year and you save 20% &mdash; $80 per provider per year instead of $100. No setup fees, no add-ons, no tiers. Our free six-month pilot program is closed; every slot is filled, and standard pricing applies to new agencies.</p></div>
       </div>
       <p style="text-align:center;margin:26px 0 0;font-size:.95rem;">
         More detail: <a href="/agency/faq/">the full agency FAQ</a> &middot;
@@ -5736,7 +5740,7 @@
       <h2>See what it looks like for your organization.</h2>
       <p>If it doesn't help your crews, walk away. We start with one email and your protocol PDF.</p>
       <div class="cta-actions">
-        <a href="#" class="btn btn-primary" id="openContact3">Start your pilot &rarr;</a>
+        <a href="#" class="btn btn-primary" id="openContact3">Get started &rarr;</a>
         <a href="https://demo.protoquiz.com" target="_blank" rel="noopener" class="btn btn-ghost">Try the live demo</a>
       </div>
     </div>
@@ -6487,7 +6491,9 @@
       const RATE_FTO = 200, RATE_TRAINING = 50;
       // Legacy fields kept zero so existing math chain keeps working
       const RATE_LAWSUIT = 0, RATE_REM = 0, RATE_LEGAL = 0, RATE_CE = 0;
-      const RATE_PILOT = 50, RATE_STD = 100;
+      // $25/seat/quarter = $100/provider/yr billed quarterly; annual prepay takes 20% off.
+      const RATE_QUARTER = 25, RATE_STD = RATE_QUARTER * 4, ANNUAL_DISCOUNT = 0.20;
+      const RATE_ANNUAL = RATE_STD * (1 - ANNUAL_DISCOUNT);
       const DIY_BASE = 14000, DIY_PER_PROVIDER = 204;
       const LMS_PER = 73, CE_PER = 80, COMPLIANCE_PER = 60;
 
@@ -6514,21 +6520,22 @@
         const legal = p * RATE_LEGAL;
         const ce = p * RATE_CE;
         const total = fto + training + lawsuit + rem + legal + ce;
-        const pqPilot = p * RATE_PILOT;
+        const pqAnnual = p * RATE_ANNUAL;
         const pqStd = p * RATE_STD;
         const diyY1 = DIY_BASE + p * DIY_PER_PROVIDER;
         const tier = tierFor(p);
         const hires = Math.max(2, Math.round(p / 10));
-        const pqPilotStr = pqPilot.toLocaleString('en-US');
+        const pqAnnualStr = pqAnnual.toLocaleString('en-US');
         return {
           providers: p,
           tier: tier.key,
           label: tier.label.toLowerCase(),
           'tier-pill': tier.label,
-          'cost-pilot': pqPilotStr,
-          'cost-pilot-strong': '$' + pqPilotStr,
+          'cost-annual': pqAnnualStr,
+          'cost-annual-strong': '$' + pqAnnualStr,
+          'cost-quarter': '$' + (pqStd / 4).toLocaleString('en-US'),
           'cost-std': '$' + pqStd.toLocaleString('en-US'),
-          'cost-saved': '$' + (pqStd - pqPilot).toLocaleString('en-US'),
+          'cost-saved': '$' + (pqStd - pqAnnual).toLocaleString('en-US'),
           'save-fto': '~' + money(fto),
           'save-training': '~' + money(training),
           'save-upside': '~' + money(p * 45),  /* upside footer: legal $25 + CE/audit $20 per §8a */
@@ -6537,15 +6544,15 @@
           'save-legal': '~' + money(legal),
           'save-ce': '~' + money(ce),
           'save-total': money(total, {round500:true}),
-          'save-net': '~' + money(total - pqPilot, {round500:true}),
+          'save-net': '~' + money(total - pqAnnual, {round500:true}),
           'hires-est': '~' + hires,
           'cv-lms': moneyShort(p * LMS_PER) + '/yr',
           'cv-ce': moneyShort(p * CE_PER) + '/yr',
           'cv-compliance': moneyShort(p * COMPLIANCE_PER) + '/yr',
-          'cv-pq': moneyShort(pqPilot) + '/yr',
+          'cv-pq': moneyShort(pqAnnual) + '/yr',
           'diy-y1': money(diyY1),
           'diy-y1-total': money(diyY1),
-          'cv-savings': '~' + money(diyY1 - pqPilot, {round500:true}),
+          'cv-savings': '~' + money(diyY1 - pqAnnual, {round500:true}),
         };
       }
 
@@ -6567,7 +6574,7 @@
         try{ localStorage.setItem('protoquiz_agency_providers', String(p)); }catch(_){}
         // Update slider aria-valuetext for screen readers (slider drives every number)
         slider.setAttribute('aria-valuetext',
-          data.providers + ' providers, ' + data.label + ' agency, $' + data['cost-pilot'] + ' per year');
+          data.providers + ' providers, ' + data.label + ' agency, $' + data['cost-annual'] + ' per year with annual prepay');
       }
 
       slider.addEventListener('input', e => apply(parseInt(e.target.value, 10) || 300));
