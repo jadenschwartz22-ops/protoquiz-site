@@ -116,8 +116,15 @@ If a buyer asks "why ProtoQuiz instead of [tool we already use]?" — the answer
 - **Billed quarterly:** $25/seat/quarter = **$100 per provider per year**.
 - **Annual prepay:** **20% off** = **$80 per provider per year**. Paid once up front instead of four times.
 - **The discount is the lever.** Quarterly is not penalized; annual prepay is rewarded. A 300-provider agency pays $24,000/yr prepaid vs $30,000/yr quarterly — $6,000 back.
-- **Pilot program is CLOSED.** All free six-month pilot slots are filled. Standard pricing applies to every new agency. Do not offer a pilot, a free trial period, or the old $50/yr locked-for-life rate to anyone new.
+- **Pilot program is CLOSED.** All free six-month pilot slots are filled. Standard pricing applies to every new agency. Do not offer the pilot, six free months, or the old $50/yr locked-for-life rate to anyone new. (A short discretionary trial is still possible — see the next-but-one bullet. It is not the pilot.)
 - **Existing pilot agencies keep what they were promised.** The $50/provider/yr locked-for-life rate remains honored for agencies that signed during the pilot. It is a closed cohort, not an available offer.
+- **Discretionary 10-day trial (INTERNAL — do not publish).** A free 10-day trial may be offered
+  agency-by-agency during a sales conversation. It is a lever you raise when a buyer needs to see
+  it working before signing — not a program, not a listed feature, and never a number quoted in
+  advance. Keep it off the website, out of directory listings and answer-engine copy, and out of
+  cold outreach. If a prospect asks whether there is a free trial, the public answer is the live
+  demo. Ten days, not six months: it is long enough for crews to do real reps, short enough that
+  it never reads as a free quarter or reopens the pilot by another name.
 - **Per-agency math IS shown on the site.** Interactive slider (25 to 750 providers) drives the headline price (their actual yearly cost) and a sourced savings breakdown. At the annual rate an agency saves roughly **3.7x what they pay** ($295/yr per provider in defensible savings vs $80/yr cost); quarterly saves ~3x.
 
 ### Sourced savings model (per provider per year)
@@ -201,7 +208,7 @@ When one of these ships, move it out of this section into §7 (supporting value 
 
 **Writing landing-page copy?** Lead with the wedge (§2 + §6). Use voice from §9. Steal phrases from §11.
 
-**Writing a sales email?** Open with §11 shorthand. Body draws from §3 (buyer pain) and §6 (differentiation). Close with the demo and the annual-prepay discount (§8a) — never a pilot; that program is closed.
+**Writing a sales email?** Open with §11 shorthand. Body draws from §3 (buyer pain) and §6 (differentiation). Close with the demo and the annual-prepay discount (§8a) — never a pilot; that program is closed. Do not put a free trial in writing: the 10-day trial is a live-conversation lever, not outreach copy.
 
 **Writing an ad?** One line from §11. One CTA. Don't try to fit the whole story.
 

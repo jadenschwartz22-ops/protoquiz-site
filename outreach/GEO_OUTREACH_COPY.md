@@ -132,7 +132,9 @@ protocol to live. Built by a working paramedic.
 ## E. Before sending — quick checks
 
 - Pricing quoted matches the live `/agency/` page (it changes). Currently $25/seat/quarter,
-  20% off annual prepay. The free six-month pilot is CLOSED — never offer it.
+  20% off annual prepay. The free six-month pilot is CLOSED — never offer it, and never put any
+  free-trial offer in outreach or directory copy. (A short discretionary trial exists as a
+  founder-only sales lever; see VALUE_PROP.md §8a. It is never advertised.)
 - Rating quoted matches the App Store. 4.8 as of 19 Aug 2026 — check `data/firestore-stats.json`.
 - No claim of CE credit, medical-director sign-off, per-shift tracking, or "zero errors".
 - Links go to `/agency/` for buyer-facing pitches, `protoquiz.com` for consumer ones.
