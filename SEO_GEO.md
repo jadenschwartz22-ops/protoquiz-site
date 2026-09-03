@@ -80,8 +80,6 @@ Three agency reference surfaces now exist for retrieval:
 - `/agency/faq/` — 20 evaluation questions, answers in VISIBLE HTML.
 - `/agency/compare/` — registry prep vs LMS vs in-house vs protocol platform, with an honest
   "where ours breaks down" section. Comparison pages get cited heavily by AI search.
-- `blog/posts/2026-08-18-how-to-document-ems-protocol-training.html` — problem-first guide that
-  answers a real training-officer query and only mentions us at the end.
 
 **Claim discipline (non-negotiable).** Only publish agency claims that survive a prospect testing
 them. We removed "your medical director reviews and signs off" from the agency page, a blog post,
