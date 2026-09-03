@@ -1,22 +1,22 @@
 {
-  "generatedAt": "2026-09-03T00:08:57.125Z",
-  "totalUploads": 538,
-  "distinctProtocols": 380,
-  "activeStudiers": 367,
-  "pagesProcessed": 88445,
+  "generatedAt": "2026-09-03T06:08:54.368Z",
+  "totalUploads": 541,
+  "distinctProtocols": 382,
+  "activeStudiers": 369,
+  "pagesProcessed": 88679,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 4,
   "byState": {
-    "CA": 41,
+    "CA": 43,
     "MI": 36,
     "CO": 35,
     "TX": 23,
     "PA": 23,
     "GA": 22,
     "NY": 21,
+    "NC": 17,
     "VA": 17,
-    "NC": 16,
     "CT": 16,
     "MA": 15,
     "OR": 14,
@@ -238,7 +238,7 @@
       "city": "Charlotte",
       "x": 751,
       "y": 344,
-      "count": 13,
+      "count": 14,
       "tier": "warm",
       "topProtocols": [
         {
@@ -685,6 +685,28 @@
         },
         {
           "title": "Aurora South WI EMS 2026 Pre Hospital Guidelines 4.1.26",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "CA",
+      "city": "Riverside",
+      "x": 95,
+      "y": 350,
+      "count": 3,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "104 Ready to Print Policy Manual 4000 Series",
+          "count": 1
+        },
+        {
+          "title": "rivcoready.org protocols (2 PDFs)",
+          "count": 1
+        },
+        {
+          "title": "4105 ALS Drug Index",
           "count": 1
         }
       ]
@@ -1225,20 +1247,6 @@
       "topProtocols": [
         {
           "title": "2025 UH EMS Protocol R11",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CA",
-      "city": "Riverside",
-      "x": 95,
-      "y": 350,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "104 Ready to Print Policy Manual 4000 Series",
           "count": 1
         }
       ]
