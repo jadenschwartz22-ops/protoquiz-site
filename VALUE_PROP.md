@@ -103,21 +103,22 @@ If a buyer asks "why ProtoQuiz instead of [tool we already use]?" — the answer
 ## 8. Proof points
 
 - Built by a working paramedic — not a vendor guessing at the field.
-- Pilot pricing: 50% off **for life** for early agency partners. Pilot rate stays locked even after the pilot period ends.
+- Annual prepay saves 20% off the quarterly rate. Flat per-seat pricing with no setup fees, no tiers, no add-ons.
 - Page-cited content — every question traceable to the source PDF.
 - Medical director approval gate — nothing goes live without sign-off; agency keeps control.
 - B2C product (App Store) running on the same engine — not vaporware.
 
-## 8a. Pricing (current model, as of 2026-05-05)
+## 8a. Pricing (current model, as of 2026-09-03)
 
 > Sales-team note: always reference this section directly. Do not guess pricing from older copy elsewhere. If founder updates pricing, update this section first, then propagate.
 
-- **Standard:** $100 per provider per year. Flat (no tiers, no setup fees, no add-ons).
-- **Pilot rate:** $50 per provider per year, **locked for life**. 50% off the standard rate, permanent for early agency partners.
-- **Pilot perk:** the first 6 months are free for pilot agencies. After the free months, the locked $50/yr rate kicks in.
-- **Pilot scarcity:** only 1 pilot slot remaining. Closes August 1, 2026, or when the last slot is filled, whichever comes first.
-- **Per-agency math IS shown on the site.** Interactive slider (25 to 750 providers) drives the headline price (their actual yearly cost) and a sourced 4-row savings breakdown. Pilot agency saves roughly **5.9x what they pay** ($295/yr per provider in defensible savings vs $50/yr cost); standard saves ~3x.
-- Pilot rate is permanent for pilot agencies (locked for life). Not a temporary promo.
+- **Headline rate:** **$25 per seat, per quarter.** Flat (no tiers, no setup fees, no add-ons).
+- **Billed quarterly:** $25/seat/quarter = **$100 per provider per year**.
+- **Annual prepay:** **20% off** = **$80 per provider per year**. Paid once up front instead of four times.
+- **The discount is the lever.** Quarterly is not penalized; annual prepay is rewarded. A 300-provider agency pays $24,000/yr prepaid vs $30,000/yr quarterly — $6,000 back.
+- **Pilot program is CLOSED.** All free six-month pilot slots are filled. Standard pricing applies to every new agency. Do not offer a pilot, a free trial period, or the old $50/yr locked-for-life rate to anyone new.
+- **Existing pilot agencies keep what they were promised.** The $50/provider/yr locked-for-life rate remains honored for agencies that signed during the pilot. It is a closed cohort, not an available offer.
+- **Per-agency math IS shown on the site.** Interactive slider (25 to 750 providers) drives the headline price (their actual yearly cost) and a sourced savings breakdown. At the annual rate an agency saves roughly **3.7x what they pay** ($295/yr per provider in defensible savings vs $80/yr cost); quarterly saves ~3x.
 
 ### Sourced savings model (per provider per year)
 
@@ -161,7 +162,7 @@ We sound like a paramedic who's seen the gap and is doing something about it. No
 - shift, on the job, every shift, every call
 - protocol fluency, scoped to their level
 - highest-frequency, every single day
-- pilot, sign-off, stand up, rollout
+- sign-off, stand up, rollout
 
 **Avoid:**
 - learners, students, end-users (we're talking to working professionals)
@@ -200,7 +201,7 @@ When one of these ships, move it out of this section into §7 (supporting value 
 
 **Writing landing-page copy?** Lead with the wedge (§2 + §6). Use voice from §9. Steal phrases from §11.
 
-**Writing a sales email?** Open with §11 shorthand. Body draws from §3 (buyer pain) and §6 (differentiation). Close with the pilot offer (§8).
+**Writing a sales email?** Open with §11 shorthand. Body draws from §3 (buyer pain) and §6 (differentiation). Close with the demo and the annual-prepay discount (§8a) — never a pilot; that program is closed.
 
 **Writing an ad?** One line from §11. One CTA. Don't try to fit the whole story.
 

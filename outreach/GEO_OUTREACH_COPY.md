@@ -14,8 +14,8 @@ Jaden sends everything here. Nothing below is auto-postable by Claude.
 **Vendor:** Teach Me to Live LLC, d/b/a ProtoQuiz
 **Category:** EMS training / public safety training / healthcare education
 **Website:** https://protoquiz.com/agency/
-**Free version:** Yes (consumer iOS app) · **Free trial:** Yes (agency pilot)
-**Pricing:** Flat per-provider, per-year. No setup fees, no per-seat tiers.
+**Free version:** Yes (consumer iOS app) · **Free trial:** No (live demo available)
+**Pricing:** $25 per seat, per quarter. Save 20% with annual prepay. No setup fees, no tiers.
 
 ### Short description (≤160 chars)
 Drill EMS crews on your own agency's protocols, then see exactly who's weak on what. Page-cited
@@ -124,14 +124,15 @@ ProtoQuiz turns an EMS agency's own protocol set into daily, per-provider traini
 sends its protocol document; ProtoQuiz builds the question bank from it, page-cited to the
 source and scoped by certification level. Crews train a few minutes a shift on a phone;
 training officers get named weak-point data and dated records that export for audits or medical
-direction. Flat per-provider annual pricing, browser-based, roughly a week from protocol to
-live. Built by a working paramedic.
+direction. Flat per-seat pricing billed quarterly or annually, browser-based, roughly a week from
+protocol to live. Built by a working paramedic.
 
 ---
 
 ## E. Before sending — quick checks
 
-- Pricing quoted matches the live `/agency/` page (it changes).
+- Pricing quoted matches the live `/agency/` page (it changes). Currently $25/seat/quarter,
+  20% off annual prepay. The free six-month pilot is CLOSED — never offer it.
 - Rating quoted matches the App Store. 4.8 as of 19 Aug 2026 — check `data/firestore-stats.json`.
 - No claim of CE credit, medical-director sign-off, per-shift tracking, or "zero errors".
 - Links go to `/agency/` for buyer-facing pitches, `protoquiz.com` for consumer ones.

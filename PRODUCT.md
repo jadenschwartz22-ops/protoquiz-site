@@ -18,7 +18,7 @@ The /agency page is a settled editorial direction: warm cream/parchment ground, 
 ## Anti-references
 - Generic SaaS landing pages (gradient heroes, icon card grids, fake testimonial walls).
 - NREMT-prep / exam-cram framing (wrong audience for /agency).
-- Anything claiming CE credit, "prevents lawsuits", or unsourced savings numbers — pricing/savings claims must match VALUE_PROP.md §8a exactly (pilot $50/provider/yr locked for life, standard $100, pilot closes Aug 1 2026 or when the last slot fills).
+- Anything claiming CE credit, "prevents lawsuits", or unsourced savings numbers — pricing/savings claims must match VALUE_PROP.md §8a exactly ($25/seat/quarter = $100/provider/yr billed quarterly; 20% off for annual prepay = $80/provider/yr; pilot program closed, all slots filled).
 
 ## Strategic principles
 - Lead with the wedge: "your actual protocols", page-cited, scoped to cert level, medical-director sign-off.
