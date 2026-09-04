@@ -792,7 +792,14 @@ function drugPageV3(drugKey, { summary, groups, indicationPaths, pageAgencies, m
   // Sorted here rather than trusted from the file, for the same reason every other
   // list in this generator is: determinism must not depend on the writer's ordering.
   const indications = [...summary.indications].sort((a, b) => a.indicationKey.localeCompare(b.indicationKey));
-  const named = namedAgencyList(new Set(groups.flatMap(g => g.agencyKeys ?? [])), pageAgencies);
+  const groupAgencies = new Set(groups.flatMap(g => g.agencyKeys ?? []));
+  const named = namedAgencyList(groupAgencies, pageAgencies);
+  // The withheld count must come from the same population the list above is built
+  // from (groupAgencies), not summary.n.agencies: that rollup counts every agency
+  // with a row for this drug, raw-only rows included, so an agency whose page
+  // exists but whose rows here are all raw would inflate `n.agencies - named.count`
+  // even though it has no pageless agency to disclose.
+  const pageless = [...groupAgencies].filter(k => !pageAgencies.has(k)).length;
   // An indication can appear in drugs[].indications (every admitted row, raw included)
   // with no entry at all in `groups` (a comparable group needs a parsed value) — every
   // row under it was raw. Its n= then counts "sources with rows", not "sources in a
@@ -832,8 +839,8 @@ ${dists.length ? `      <section id="distributions">
           <tbody>${dists.map(g => `<tr><td>${esc(indicationLabel(g.key.indicationKey))}</td><td>${esc(groupLabel(g.key))}</td><td>${num(g.n.sources)}</td><td>${esc(fmtNum(g.dist.median))}</td><td>${esc(fmtNum(g.dist.p25))}&ndash;${esc(fmtNum(g.dist.p75))}</td><td>${esc(unitLabel(g.key))}</td></tr>`).join('')}</tbody>
         </table></div>
       </section>` : ''}
-${named.html}${summary.n.agencies > named.count
-    ? `      <p class="honest">${withheldSentence(summary.n.agencies - named.count).trim()}</p>\n`
+${named.html}${pageless > 0
+    ? `      <p class="honest">${withheldSentence(pageless).trim()}</p>\n`
     : ''}
       <section id="cite">
         <h2>Citation</h2>
