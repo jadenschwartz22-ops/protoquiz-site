@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// "State of EMS Protocols" — one edition page rendered from compare.json.
+// "State of US EMS Protocols" — one edition page rendered from compare.json.
 //
 //   node scripts/census-report.mjs --edition 2026-09 --out <dir> [--data <dir>]
 //   node scripts/census-report.mjs --candidates [--data <dir>]
@@ -142,7 +142,7 @@ const editionLabel = (edition) => {
 
 export function reportPage({ edition, floor, findings, compare, manifest }) {
   const path = `/census/report/${edition}/`;
-  const title = `State of EMS Protocols, ${editionLabel(edition)}`;
+  const title = `State of US EMS Protocols, ${editionLabel(edition)}`;
   const description = `Where United States EMS protocols agree on a dose and where they do not: ${findings.length} distributions from published protocols, each with its n and its source count.`;
 
   const body = `      <span class="badge">Report</span>
@@ -287,7 +287,7 @@ ${body}
 export function linkedinDraft({ edition, floor, findings, compare, manifest }) {
   const lead = findings[0];
   const lines = [
-    `# State of EMS Protocols, ${editionLabel(edition)} — LinkedIn draft`,
+    `# State of US EMS Protocols, ${editionLabel(edition)} — LinkedIn draft`,
     '',
     `Post from the ProtoQuiz Page. Aggregate only — no agency named, no accuracy claim.`,
     `Link: ${ORIGIN}/census/report/${edition}/`,
@@ -296,7 +296,7 @@ export function linkedinDraft({ edition, floor, findings, compare, manifest }) {
     '',
     `We read ${num(manifest.namedAgencies)} US EMS agencies' published protocols and asked a simple question: where do they actually disagree about a dose?`,
     '',
-    `${editionLabel(edition)}'s State of EMS Protocols is out. ${num(findings.length)} distributions, every one of them from at least ${num(floor)} published protocols, no agency named.`,
+    `${editionLabel(edition)}'s State of US EMS Protocols is out. ${num(findings.length)} distributions, every one of them from at least ${num(floor)} published protocols, no agency named.`,
     '',
     lead ? `The one that surprised me: ${findingSentence(lead).replace(/^Across /, 'across ')}` : '',
     '',
