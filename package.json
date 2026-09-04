@@ -9,10 +9,12 @@
     "blog:rss": "node scripts/generate-rss-feed.mjs",
     "blog:full": "npm run blog:stats && npm run blog:generate && npm run blog:rss",
     "census:pages": "node scripts/census-pages.mjs",
+    "census:report": "node scripts/census-report.mjs",
     "census:indexnow": "node scripts/census-indexnow.mjs",
     "test:census-pages": "node scripts/test-census-pages.mjs",
+    "test:census-report": "node scripts/test-census-report.mjs",
     "test:census-indexnow": "node scripts/test-census-indexnow.mjs",
-    "test": "npm run test:census-pages && npm run test:census-indexnow"
+    "test": "npm run test:census-pages && npm run test:census-report && npm run test:census-indexnow"
   },
   "keywords": [
     "EMS",

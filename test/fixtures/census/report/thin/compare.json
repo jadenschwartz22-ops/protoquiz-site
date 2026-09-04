@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 3,
+  "asOf": "2026-09-04",
+  "groups": [
+    {
+      "schemaVersion": 3,
+      "asOf": "2026-09-04",
+      "key": {
+        "drugKey": "CALCIUM_CHLORIDE",
+        "indicationKey": "HYPERKALEMIA",
+        "population": "adult",
+        "perKg": false,
+        "unit": "mg"
+      },
+      "n": {
+        "sources": 11,
+        "agencies": 10,
+        "states": 3,
+        "rows": 13,
+        "rowsRaw": 1
+      },
+      "agencyKeys": [
+        "agency-01",
+        "agency-02",
+        "agency-03",
+        "agency-04",
+        "agency-05",
+        "agency-06",
+        "agency-07",
+        "agency-08",
+        "agency-09",
+        "agency-10"
+      ],
+      "dist": {
+        "min": 100,
+        "p25": 550,
+        "median": 1000,
+        "p75": 1450,
+        "max": 1900
+      },
+      "routes": [
+        {
+          "route": "IV",
+          "share": 1
+        }
+      ],
+      "adoption": 0.275,
+      "freshness": {
+        "oldestEffectiveDate": "2022-01-01",
+        "newestEffectiveDate": "2026-06-01"
+      },
+      "cite": "ProtoQuiz EMS Census, n=11 protocols from 10 named agencies / 3 states, updated Sep 2026"
+    },
+    {
+      "schemaVersion": 3,
+      "asOf": "2026-09-04",
+      "key": {
+        "drugKey": "MAGNESIUM_SULFATE",
+        "indicationKey": "ECLAMPSIA",
+        "population": "adult",
+        "perKg": false,
+        "unit": "g"
+      },
+      "n": {
+        "sources": 9,
+        "agencies": 8,
+        "states": 3,
+        "rows": 11,
+        "rowsRaw": 1
+      },
+      "agencyKeys": [
+        "agency-01",
+        "agency-02",
+        "agency-03",
+        "agency-04",
+        "agency-05",
+        "agency-06",
+        "agency-07",
+        "agency-08"
+      ],
+      "dist": {
+        "min": 0.8,
+        "p25": 2.4,
+        "median": 4,
+        "p75": 5.6,
+        "max": 7.2
+      },
+      "routes": [
+        {
+          "route": "IV",
+          "share": 1
+        }
+      ],
+      "adoption": 0.225,
+      "freshness": {
+        "oldestEffectiveDate": "2022-01-01",
+        "newestEffectiveDate": "2026-06-01"
+      },
+      "cite": "ProtoQuiz EMS Census, n=9 protocols from 8 named agencies / 3 states, updated Sep 2026"
+    },
+    {
+      "schemaVersion": 3,
+      "asOf": "2026-09-04",
+      "key": {
+        "drugKey": "THIN_DRUG",
+        "indicationKey": "THIN",
+        "population": "adult",
+        "perKg": false,
+        "unit": "mg"
+      },
+      "n": {
+        "sources": 3,
+        "agencies": 2,
+        "states": 3,
+        "rows": 5,
+        "rowsRaw": 1
+      },
+      "agencyKeys": [
+        "agency-01",
+        "agency-02"
+      ],
+      "dist": null,
+      "routes": [
+        {
+          "route": "IV",
+          "share": 1
+        }
+      ],
+      "adoption": 0.075,
+      "freshness": {
+        "oldestEffectiveDate": "2022-01-01",
+        "newestEffectiveDate": "2026-06-01"
+      },
+      "cite": "ProtoQuiz EMS Census, n=3 protocols from 2 named agencies / 3 states, updated Sep 2026"
+    }
+  ],
+  "drugs": []
+}

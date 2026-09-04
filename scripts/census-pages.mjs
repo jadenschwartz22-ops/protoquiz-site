@@ -1218,6 +1218,12 @@ export function buildPages({ documents, agencies, doses, ledger, manifest, compa
   const sitemapNames = chunks.map((_, i) => (chunks.length === 1 ? 'sitemap-census.xml' : `sitemap-census-${i + 1}.xml`));
 
   const extra = chunks.map((c, i) => ({ path: `/${sitemapNames[i]}`, html: sitemapUrls(c, manifest.asOf) }));
+  // The generator ALWAYS writes a sitemap-index naming the census sitemap. The copy
+  // committed at the repo root deliberately omits it and says so in a comment — that
+  // omission is correct only while the census pages are unpublished, and it ends the
+  // night item 9 first rsyncs this file to the repo root under CENSUS_PUBLISH=1.
+  // Nothing here changes then; the committed file is simply overwritten by this one.
+  // Until then this write lands in --out (a temp dir or pages-out), never the repo.
   extra.push({ path: '/sitemap-index.xml', html: sitemapIndex(['sitemap.xml', ...sitemapNames], manifest.asOf) });
 
   return { files, sitemaps: extra, urls };

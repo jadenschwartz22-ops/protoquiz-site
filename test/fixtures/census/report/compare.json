@@ -1,0 +1,1002 @@
+{
+  "schemaVersion": 3,
+  "asOf": "2026-09-04",
+  "groups": [
+    {
+      "schemaVersion": 3,
+      "asOf": "2026-09-04",
+      "key": {
+        "drugKey": "ADENOSINE",
+        "indicationKey": "SVT",
+        "population": "adult",
+        "perKg": false,
+        "unit": "mg"
+      },
+      "n": {
+        "sources": 20,
+        "agencies": 19,
+        "states": 3,
+        "rows": 22,
+        "rowsRaw": 1
+      },
+      "agencyKeys": [
+        "agency-01",
+        "agency-02",
+        "agency-03",
+        "agency-04",
+        "agency-05",
+        "agency-06",
+        "agency-07",
+        "agency-08",
+        "agency-09",
+        "agency-10",
+        "agency-11",
+        "agency-12",
+        "agency-13",
+        "agency-14",
+        "agency-15",
+        "agency-16",
+        "agency-17",
+        "agency-18",
+        "agency-19"
+      ],
+      "dist": {
+        "min": 5.7,
+        "p25": 5.85,
+        "median": 6,
+        "p75": 6.15,
+        "max": 6.3
+      },
+      "routes": [
+        {
+          "route": "IV",
+          "share": 1
+        }
+      ],
+      "adoption": 0.5,
+      "freshness": {
+        "oldestEffectiveDate": "2022-01-01",
+        "newestEffectiveDate": "2026-06-01"
+      },
+      "cite": "ProtoQuiz EMS Census, n=20 protocols from 19 named agencies / 3 states, updated Sep 2026"
+    },
+    {
+      "schemaVersion": 3,
+      "asOf": "2026-09-04",
+      "key": {
+        "drugKey": "ATROPINE",
+        "indicationKey": "BRADYCARDIA",
+        "population": "adult",
+        "perKg": false,
+        "unit": "mg"
+      },
+      "n": {
+        "sources": 18,
+        "agencies": 17,
+        "states": 3,
+        "rows": 20,
+        "rowsRaw": 1
+      },
+      "agencyKeys": [
+        "agency-01",
+        "agency-02",
+        "agency-03",
+        "agency-04",
+        "agency-05",
+        "agency-06",
+        "agency-07",
+        "agency-08",
+        "agency-09",
+        "agency-10",
+        "agency-11",
+        "agency-12",
+        "agency-13",
+        "agency-14",
+        "agency-15",
+        "agency-16",
+        "agency-17"
+      ],
+      "dist": {
+        "min": 0.92,
+        "p25": 0.96,
+        "median": 1,
+        "p75": 1.04,
+        "max": 1.08
+      },
+      "routes": [
+        {
+          "route": "IV",
+          "share": 1
+        }
+      ],
+      "adoption": 0.45,
+      "freshness": {
+        "oldestEffectiveDate": "2022-01-01",
+        "newestEffectiveDate": "2026-06-01"
+      },
+      "cite": "ProtoQuiz EMS Census, n=18 protocols from 17 named agencies / 3 states, updated Sep 2026"
+    },
+    {
+      "schemaVersion": 3,
+      "asOf": "2026-09-04",
+      "key": {
+        "drugKey": "CALCIUM_CHLORIDE",
+        "indicationKey": "HYPERKALEMIA",
+        "population": "adult",
+        "perKg": false,
+        "unit": "mg"
+      },
+      "n": {
+        "sources": 11,
+        "agencies": 10,
+        "states": 3,
+        "rows": 13,
+        "rowsRaw": 1
+      },
+      "agencyKeys": [
+        "agency-01",
+        "agency-02",
+        "agency-03",
+        "agency-04",
+        "agency-05",
+        "agency-06",
+        "agency-07",
+        "agency-08",
+        "agency-09",
+        "agency-10"
+      ],
+      "dist": {
+        "min": 100,
+        "p25": 550,
+        "median": 1000,
+        "p75": 1450,
+        "max": 1900
+      },
+      "routes": [
+        {
+          "route": "IV",
+          "share": 1
+        }
+      ],
+      "adoption": 0.275,
+      "freshness": {
+        "oldestEffectiveDate": "2022-01-01",
+        "newestEffectiveDate": "2026-06-01"
+      },
+      "cite": "ProtoQuiz EMS Census, n=11 protocols from 10 named agencies / 3 states, updated Sep 2026"
+    },
+    {
+      "schemaVersion": 3,
+      "asOf": "2026-09-04",
+      "key": {
+        "drugKey": "DEXTROSE",
+        "indicationKey": "HYPOGLYCEMIA",
+        "population": "adult",
+        "perKg": false,
+        "unit": "g"
+      },
+      "n": {
+        "sources": 21,
+        "agencies": 20,
+        "states": 3,
+        "rows": 23,
+        "rowsRaw": 1
+      },
+      "agencyKeys": [
+        "agency-01",
+        "agency-02",
+        "agency-03",
+        "agency-04",
+        "agency-05",
+        "agency-06",
+        "agency-07",
+        "agency-08",
+        "agency-09",
+        "agency-10",
+        "agency-11",
+        "agency-12",
+        "agency-13",
+        "agency-14",
+        "agency-15",
+        "agency-16",
+        "agency-17",
+        "agency-18",
+        "agency-19",
+        "agency-20"
+      ],
+      "dist": {
+        "min": 22.5,
+        "p25": 23.75,
+        "median": 25,
+        "p75": 26.25,
+        "max": 27.5
+      },
+      "routes": [
+        {
+          "route": "IV",
+          "share": 1
+        }
+      ],
+      "adoption": 0.525,
+      "freshness": {
+        "oldestEffectiveDate": "2022-01-01",
+        "newestEffectiveDate": "2026-06-01"
+      },
+      "cite": "ProtoQuiz EMS Census, n=21 protocols from 20 named agencies / 3 states, updated Sep 2026"
+    },
+    {
+      "schemaVersion": 3,
+      "asOf": "2026-09-04",
+      "key": {
+        "drugKey": "FENTANYL",
+        "indicationKey": "PAIN_SEVERE",
+        "population": "adult",
+        "perKg": false,
+        "unit": "mcg"
+      },
+      "n": {
+        "sources": 22,
+        "agencies": 21,
+        "states": 3,
+        "rows": 24,
+        "rowsRaw": 1
+      },
+      "agencyKeys": [
+        "agency-01",
+        "agency-02",
+        "agency-03",
+        "agency-04",
+        "agency-05",
+        "agency-06",
+        "agency-07",
+        "agency-08",
+        "agency-09",
+        "agency-10",
+        "agency-11",
+        "agency-12",
+        "agency-13",
+        "agency-14",
+        "agency-15",
+        "agency-16",
+        "agency-17",
+        "agency-18",
+        "agency-19",
+        "agency-20",
+        "agency-21"
+      ],
+      "dist": {
+        "min": 40,
+        "p25": 70,
+        "median": 100,
+        "p75": 130,
+        "max": 160
+      },
+      "routes": [
+        {
+          "route": "IV",
+          "share": 1
+        }
+      ],
+      "adoption": 0.55,
+      "freshness": {
+        "oldestEffectiveDate": "2022-01-01",
+        "newestEffectiveDate": "2026-06-01"
+      },
+      "cite": "ProtoQuiz EMS Census, n=22 protocols from 21 named agencies / 3 states, updated Sep 2026"
+    },
+    {
+      "schemaVersion": 3,
+      "asOf": "2026-09-04",
+      "key": {
+        "drugKey": "GLUCAGON",
+        "indicationKey": "HYPOGLYCEMIA",
+        "population": "adult",
+        "perKg": false,
+        "unit": "mg"
+      },
+      "n": {
+        "sources": 16,
+        "agencies": 15,
+        "states": 3,
+        "rows": 18,
+        "rowsRaw": 1
+      },
+      "agencyKeys": [
+        "agency-01",
+        "agency-02",
+        "agency-03",
+        "agency-04",
+        "agency-05",
+        "agency-06",
+        "agency-07",
+        "agency-08",
+        "agency-09",
+        "agency-10",
+        "agency-11",
+        "agency-12",
+        "agency-13",
+        "agency-14",
+        "agency-15"
+      ],
+      "dist": {
+        "min": 0.98,
+        "p25": 0.99,
+        "median": 1,
+        "p75": 1.01,
+        "max": 1.02
+      },
+      "routes": [
+        {
+          "route": "IV",
+          "share": 1
+        }
+      ],
+      "adoption": 0.4,
+      "freshness": {
+        "oldestEffectiveDate": "2022-01-01",
+        "newestEffectiveDate": "2026-06-01"
+      },
+      "cite": "ProtoQuiz EMS Census, n=16 protocols from 15 named agencies / 3 states, updated Sep 2026"
+    },
+    {
+      "schemaVersion": 3,
+      "asOf": "2026-09-04",
+      "key": {
+        "drugKey": "KETAMINE",
+        "indicationKey": "AGITATION",
+        "population": "adult",
+        "perKg": true,
+        "unit": "mg"
+      },
+      "n": {
+        "sources": 19,
+        "agencies": 18,
+        "states": 3,
+        "rows": 21,
+        "rowsRaw": 1
+      },
+      "agencyKeys": [
+        "agency-01",
+        "agency-02",
+        "agency-03",
+        "agency-04",
+        "agency-05",
+        "agency-06",
+        "agency-07",
+        "agency-08",
+        "agency-09",
+        "agency-10",
+        "agency-11",
+        "agency-12",
+        "agency-13",
+        "agency-14",
+        "agency-15",
+        "agency-16",
+        "agency-17",
+        "agency-18"
+      ],
+      "dist": {
+        "min": 2,
+        "p25": 3,
+        "median": 4,
+        "p75": 5,
+        "max": 6
+      },
+      "routes": [
+        {
+          "route": "IV",
+          "share": 1
+        }
+      ],
+      "adoption": 0.475,
+      "freshness": {
+        "oldestEffectiveDate": "2022-01-01",
+        "newestEffectiveDate": "2026-06-01"
+      },
+      "cite": "ProtoQuiz EMS Census, n=19 protocols from 18 named agencies / 3 states, updated Sep 2026"
+    },
+    {
+      "schemaVersion": 3,
+      "asOf": "2026-09-04",
+      "key": {
+        "drugKey": "MAGNESIUM_SULFATE",
+        "indicationKey": "ECLAMPSIA",
+        "population": "adult",
+        "perKg": false,
+        "unit": "g"
+      },
+      "n": {
+        "sources": 9,
+        "agencies": 8,
+        "states": 3,
+        "rows": 11,
+        "rowsRaw": 1
+      },
+      "agencyKeys": [
+        "agency-01",
+        "agency-02",
+        "agency-03",
+        "agency-04",
+        "agency-05",
+        "agency-06",
+        "agency-07",
+        "agency-08"
+      ],
+      "dist": {
+        "min": 0.8,
+        "p25": 2.4,
+        "median": 4,
+        "p75": 5.6,
+        "max": 7.2
+      },
+      "routes": [
+        {
+          "route": "IV",
+          "share": 1
+        }
+      ],
+      "adoption": 0.225,
+      "freshness": {
+        "oldestEffectiveDate": "2022-01-01",
+        "newestEffectiveDate": "2026-06-01"
+      },
+      "cite": "ProtoQuiz EMS Census, n=9 protocols from 8 named agencies / 3 states, updated Sep 2026"
+    },
+    {
+      "schemaVersion": 3,
+      "asOf": "2026-09-04",
+      "key": {
+        "drugKey": "MIDAZOLAM",
+        "indicationKey": "SEIZURE",
+        "population": "adult",
+        "perKg": false,
+        "unit": "mg"
+      },
+      "n": {
+        "sources": 24,
+        "agencies": 23,
+        "states": 3,
+        "rows": 26,
+        "rowsRaw": 1
+      },
+      "agencyKeys": [
+        "agency-01",
+        "agency-02",
+        "agency-03",
+        "agency-04",
+        "agency-05",
+        "agency-06",
+        "agency-07",
+        "agency-08",
+        "agency-09",
+        "agency-10",
+        "agency-11",
+        "agency-12",
+        "agency-13",
+        "agency-14",
+        "agency-15",
+        "agency-16",
+        "agency-17",
+        "agency-18",
+        "agency-19",
+        "agency-20",
+        "agency-21",
+        "agency-22",
+        "agency-23"
+      ],
+      "dist": {
+        "min": 3,
+        "p25": 4,
+        "median": 5,
+        "p75": 6,
+        "max": 7
+      },
+      "routes": [
+        {
+          "route": "IV",
+          "share": 1
+        }
+      ],
+      "adoption": 0.6,
+      "freshness": {
+        "oldestEffectiveDate": "2022-01-01",
+        "newestEffectiveDate": "2026-06-01"
+      },
+      "cite": "ProtoQuiz EMS Census, n=24 protocols from 23 named agencies / 3 states, updated Sep 2026"
+    },
+    {
+      "schemaVersion": 3,
+      "asOf": "2026-09-04",
+      "key": {
+        "drugKey": "MORPHINE",
+        "indicationKey": "PAIN_SEVERE",
+        "population": "adult",
+        "perKg": false,
+        "unit": "mg"
+      },
+      "n": {
+        "sources": 17,
+        "agencies": 16,
+        "states": 3,
+        "rows": 19,
+        "rowsRaw": 1
+      },
+      "agencyKeys": [
+        "agency-01",
+        "agency-02",
+        "agency-03",
+        "agency-04",
+        "agency-05",
+        "agency-06",
+        "agency-07",
+        "agency-08",
+        "agency-09",
+        "agency-10",
+        "agency-11",
+        "agency-12",
+        "agency-13",
+        "agency-14",
+        "agency-15",
+        "agency-16"
+      ],
+      "dist": {
+        "min": 2.8,
+        "p25": 3.4,
+        "median": 4,
+        "p75": 4.6,
+        "max": 5.2
+      },
+      "routes": [
+        {
+          "route": "IV",
+          "share": 1
+        }
+      ],
+      "adoption": 0.425,
+      "freshness": {
+        "oldestEffectiveDate": "2022-01-01",
+        "newestEffectiveDate": "2026-06-01"
+      },
+      "cite": "ProtoQuiz EMS Census, n=17 protocols from 16 named agencies / 3 states, updated Sep 2026"
+    },
+    {
+      "schemaVersion": 3,
+      "asOf": "2026-09-04",
+      "key": {
+        "drugKey": "ONDANSETRON",
+        "indicationKey": "NAUSEA_VOMITING",
+        "population": "adult",
+        "perKg": false,
+        "unit": "mg"
+      },
+      "n": {
+        "sources": 26,
+        "agencies": 25,
+        "states": 3,
+        "rows": 28,
+        "rowsRaw": 1
+      },
+      "agencyKeys": [
+        "agency-01",
+        "agency-02",
+        "agency-03",
+        "agency-04",
+        "agency-05",
+        "agency-06",
+        "agency-07",
+        "agency-08",
+        "agency-09",
+        "agency-10",
+        "agency-11",
+        "agency-12",
+        "agency-13",
+        "agency-14",
+        "agency-15",
+        "agency-16",
+        "agency-17",
+        "agency-18",
+        "agency-19",
+        "agency-20",
+        "agency-21",
+        "agency-22",
+        "agency-23",
+        "agency-24",
+        "agency-25"
+      ],
+      "dist": {
+        "min": 3.2,
+        "p25": 3.6,
+        "median": 4,
+        "p75": 4.4,
+        "max": 4.8
+      },
+      "routes": [
+        {
+          "route": "IV",
+          "share": 1
+        }
+      ],
+      "adoption": 0.65,
+      "freshness": {
+        "oldestEffectiveDate": "2022-01-01",
+        "newestEffectiveDate": "2026-06-01"
+      },
+      "cite": "ProtoQuiz EMS Census, n=26 protocols from 25 named agencies / 3 states, updated Sep 2026"
+    },
+    {
+      "schemaVersion": 3,
+      "asOf": "2026-09-04",
+      "key": {
+        "drugKey": "SODIUM_BICARBONATE",
+        "indicationKey": "HYPERKALEMIA",
+        "population": "adult",
+        "perKg": false,
+        "unit": "mEq"
+      },
+      "n": {
+        "sources": 8,
+        "agencies": 7,
+        "states": 3,
+        "rows": 10,
+        "rowsRaw": 1
+      },
+      "agencyKeys": [
+        "agency-01",
+        "agency-02",
+        "agency-03",
+        "agency-04",
+        "agency-05",
+        "agency-06",
+        "agency-07"
+      ],
+      "dist": {
+        "min": 15,
+        "p25": 32.5,
+        "median": 50,
+        "p75": 67.5,
+        "max": 85
+      },
+      "routes": [
+        {
+          "route": "IV",
+          "share": 1
+        }
+      ],
+      "adoption": 0.2,
+      "freshness": {
+        "oldestEffectiveDate": "2022-01-01",
+        "newestEffectiveDate": "2026-06-01"
+      },
+      "cite": "ProtoQuiz EMS Census, n=8 protocols from 7 named agencies / 3 states, updated Sep 2026"
+    },
+    {
+      "schemaVersion": 3,
+      "asOf": "2026-09-04",
+      "key": {
+        "drugKey": "THIN_DRUG",
+        "indicationKey": "THIN",
+        "population": "adult",
+        "perKg": false,
+        "unit": "mg"
+      },
+      "n": {
+        "sources": 3,
+        "agencies": 2,
+        "states": 3,
+        "rows": 5,
+        "rowsRaw": 1
+      },
+      "agencyKeys": [
+        "agency-01",
+        "agency-02"
+      ],
+      "dist": null,
+      "routes": [
+        {
+          "route": "IV",
+          "share": 1
+        }
+      ],
+      "adoption": 0.075,
+      "freshness": {
+        "oldestEffectiveDate": "2022-01-01",
+        "newestEffectiveDate": "2026-06-01"
+      },
+      "cite": "ProtoQuiz EMS Census, n=3 protocols from 2 named agencies / 3 states, updated Sep 2026"
+    },
+    {
+      "schemaVersion": 3,
+      "asOf": "2026-09-04",
+      "key": {
+        "drugKey": "ZERO_MEDIAN_DRUG",
+        "indicationKey": "NOWHERE",
+        "population": "adult",
+        "perKg": false,
+        "unit": "mg"
+      },
+      "n": {
+        "sources": 30,
+        "agencies": 29,
+        "states": 3,
+        "rows": 32,
+        "rowsRaw": 1
+      },
+      "agencyKeys": [
+        "agency-01",
+        "agency-02",
+        "agency-03",
+        "agency-04",
+        "agency-05",
+        "agency-06",
+        "agency-07",
+        "agency-08",
+        "agency-09",
+        "agency-10",
+        "agency-11",
+        "agency-12",
+        "agency-13",
+        "agency-14",
+        "agency-15",
+        "agency-16",
+        "agency-17",
+        "agency-18",
+        "agency-19",
+        "agency-20",
+        "agency-21",
+        "agency-22",
+        "agency-23",
+        "agency-24",
+        "agency-25",
+        "agency-26",
+        "agency-27",
+        "agency-28",
+        "agency-29"
+      ],
+      "dist": {
+        "min": 0,
+        "p25": 0,
+        "median": 0,
+        "p75": 0,
+        "max": 0
+      },
+      "routes": [
+        {
+          "route": "IV",
+          "share": 1
+        }
+      ],
+      "adoption": 0.75,
+      "freshness": {
+        "oldestEffectiveDate": "2022-01-01",
+        "newestEffectiveDate": "2026-06-01"
+      },
+      "cite": "ProtoQuiz EMS Census, n=30 protocols from 29 named agencies / 3 states, updated Sep 2026"
+    }
+  ],
+  "drugs": [
+    {
+      "drugKey": "ADENOSINE",
+      "n": {
+        "agencies": 19,
+        "sources": 20,
+        "states": 3,
+        "rows": 22
+      },
+      "parsedShare": 0.9,
+      "indications": [
+        {
+          "indicationKey": "SVT",
+          "sources": 20
+        }
+      ]
+    },
+    {
+      "drugKey": "ATROPINE",
+      "n": {
+        "agencies": 17,
+        "sources": 18,
+        "states": 3,
+        "rows": 20
+      },
+      "parsedShare": 0.9,
+      "indications": [
+        {
+          "indicationKey": "BRADYCARDIA",
+          "sources": 18
+        }
+      ]
+    },
+    {
+      "drugKey": "CALCIUM_CHLORIDE",
+      "n": {
+        "agencies": 10,
+        "sources": 11,
+        "states": 3,
+        "rows": 13
+      },
+      "parsedShare": 0.9,
+      "indications": [
+        {
+          "indicationKey": "HYPERKALEMIA",
+          "sources": 11
+        }
+      ]
+    },
+    {
+      "drugKey": "DEXTROSE",
+      "n": {
+        "agencies": 20,
+        "sources": 21,
+        "states": 3,
+        "rows": 23
+      },
+      "parsedShare": 0.9,
+      "indications": [
+        {
+          "indicationKey": "HYPOGLYCEMIA",
+          "sources": 21
+        }
+      ]
+    },
+    {
+      "drugKey": "FENTANYL",
+      "n": {
+        "agencies": 21,
+        "sources": 22,
+        "states": 3,
+        "rows": 24
+      },
+      "parsedShare": 0.9,
+      "indications": [
+        {
+          "indicationKey": "PAIN_SEVERE",
+          "sources": 22
+        }
+      ]
+    },
+    {
+      "drugKey": "GLUCAGON",
+      "n": {
+        "agencies": 15,
+        "sources": 16,
+        "states": 3,
+        "rows": 18
+      },
+      "parsedShare": 0.9,
+      "indications": [
+        {
+          "indicationKey": "HYPOGLYCEMIA",
+          "sources": 16
+        }
+      ]
+    },
+    {
+      "drugKey": "KETAMINE",
+      "n": {
+        "agencies": 18,
+        "sources": 19,
+        "states": 3,
+        "rows": 21
+      },
+      "parsedShare": 0.9,
+      "indications": [
+        {
+          "indicationKey": "AGITATION",
+          "sources": 19
+        }
+      ]
+    },
+    {
+      "drugKey": "MAGNESIUM_SULFATE",
+      "n": {
+        "agencies": 8,
+        "sources": 9,
+        "states": 3,
+        "rows": 11
+      },
+      "parsedShare": 0.9,
+      "indications": [
+        {
+          "indicationKey": "ECLAMPSIA",
+          "sources": 9
+        }
+      ]
+    },
+    {
+      "drugKey": "MIDAZOLAM",
+      "n": {
+        "agencies": 23,
+        "sources": 24,
+        "states": 3,
+        "rows": 26
+      },
+      "parsedShare": 0.9,
+      "indications": [
+        {
+          "indicationKey": "SEIZURE",
+          "sources": 24
+        }
+      ]
+    },
+    {
+      "drugKey": "MORPHINE",
+      "n": {
+        "agencies": 16,
+        "sources": 17,
+        "states": 3,
+        "rows": 19
+      },
+      "parsedShare": 0.9,
+      "indications": [
+        {
+          "indicationKey": "PAIN_SEVERE",
+          "sources": 17
+        }
+      ]
+    },
+    {
+      "drugKey": "ONDANSETRON",
+      "n": {
+        "agencies": 25,
+        "sources": 26,
+        "states": 3,
+        "rows": 28
+      },
+      "parsedShare": 0.9,
+      "indications": [
+        {
+          "indicationKey": "NAUSEA_VOMITING",
+          "sources": 26
+        }
+      ]
+    },
+    {
+      "drugKey": "SODIUM_BICARBONATE",
+      "n": {
+        "agencies": 7,
+        "sources": 8,
+        "states": 3,
+        "rows": 10
+      },
+      "parsedShare": 0.9,
+      "indications": [
+        {
+          "indicationKey": "HYPERKALEMIA",
+          "sources": 8
+        }
+      ]
+    },
+    {
+      "drugKey": "THIN_DRUG",
+      "n": {
+        "agencies": 2,
+        "sources": 3,
+        "states": 3,
+        "rows": 5
+      },
+      "parsedShare": 0.9,
+      "indications": [
+        {
+          "indicationKey": "THIN",
+          "sources": 3
+        }
+      ]
+    },
+    {
+      "drugKey": "ZERO_MEDIAN_DRUG",
+      "n": {
+        "agencies": 29,
+        "sources": 30,
+        "states": 3,
+        "rows": 32
+      },
+      "parsedShare": 0.9,
+      "indications": [
+        {
+          "indicationKey": "NOWHERE",
+          "sources": 30
+        }
+      ]
+    }
+  ]
+}
