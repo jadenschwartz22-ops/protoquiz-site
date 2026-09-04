@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 3,
+  "rows": [
+    {
+      "agencyKey": "aurora-fire-rescue",
+      "name": "Aurora Fire Rescue",
+      "state": "CO",
+      "country": "US",
+      "city": "Aurora",
+      "jurisdiction": "city",
+      "currentHash": "ggg1",
+      "currentEffectiveDate": "2026-02-10",
+      "documentCount": 1,
+      "doseCount": 5,
+      "pendingReview": null,
+      "mayBeOutdated": false
+    },
+    {
+      "agencyKey": "boulder-county-ems",
+      "name": "Boulder County EMS",
+      "state": "CO",
+      "country": "US",
+      "city": "Boulder",
+      "jurisdiction": "county",
+      "currentHash": "bbb1",
+      "currentEffectiveDate": "2023-02-01",
+      "documentCount": 1,
+      "doseCount": 6,
+      "pendingReview": null,
+      "mayBeOutdated": true
+    },
+    {
+      "agencyKey": "denver-health",
+      "name": "Denver Health Paramedic Division",
+      "state": "CO",
+      "country": "US",
+      "city": "Denver",
+      "jurisdiction": "city",
+      "currentHash": "aaa1",
+      "currentEffectiveDate": "2026-01-15",
+      "documentCount": 2,
+      "doseCount": 9,
+      "pendingReview": {
+        "effectiveDate": "2026-06-01"
+      },
+      "mayBeOutdated": false
+    },
+    {
+      "agencyKey": "jeffco-ems",
+      "name": "Jefferson County EMS",
+      "state": "CO",
+      "country": "US",
+      "city": "Golden",
+      "jurisdiction": "county",
+      "currentHash": "hhh1",
+      "currentEffectiveDate": "2026-01-20",
+      "documentCount": 1,
+      "doseCount": 5,
+      "pendingReview": null,
+      "mayBeOutdated": false
+    },
+    {
+      "agencyKey": "king-county-medic",
+      "name": "King County Medic One",
+      "state": "WA",
+      "country": "US",
+      "city": "Seattle",
+      "jurisdiction": "county",
+      "currentHash": "jjj1",
+      "currentEffectiveDate": "2026-02-20",
+      "documentCount": 1,
+      "doseCount": 5,
+      "pendingReview": null,
+      "mayBeOutdated": false
+    },
+    {
+      "agencyKey": "stateless-ems",
+      "name": "Stateless EMS",
+      "state": null,
+      "country": "US",
+      "city": null,
+      "jurisdiction": "regional",
+      "currentHash": "ddd1",
+      "currentEffectiveDate": "2026-02-01",
+      "documentCount": 1,
+      "doseCount": 4,
+      "pendingReview": null,
+      "mayBeOutdated": false
+    },
+    {
+      "agencyKey": "thin-agency",
+      "name": "Thin Agency EMS",
+      "state": "CO",
+      "country": "US",
+      "city": null,
+      "jurisdiction": "county",
+      "currentHash": "ccc1",
+      "currentEffectiveDate": "2026-03-01",
+      "documentCount": 1,
+      "doseCount": 2,
+      "pendingReview": null,
+      "mayBeOutdated": false
+    },
+    {
+      "agencyKey": "travis-county-ems",
+      "name": "Travis County EMS",
+      "state": "TX",
+      "country": "US",
+      "city": "Austin",
+      "jurisdiction": "county",
+      "currentHash": "iii1",
+      "currentEffectiveDate": "2026-03-01",
+      "documentCount": 1,
+      "doseCount": 5,
+      "pendingReview": null,
+      "mayBeOutdated": false
+    }
+  ]
+}

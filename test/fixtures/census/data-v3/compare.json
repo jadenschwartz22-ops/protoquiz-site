@@ -1,0 +1,285 @@
+{
+  "schemaVersion": 3,
+  "asOf": "2026-09-04",
+  "groups": [
+    {
+      "schemaVersion": 3,
+      "asOf": "2026-09-04",
+      "key": {
+        "drugKey": "AMIODARONE",
+        "indicationKey": "VENTRICULAR_FIBRILLATION",
+        "population": "adult",
+        "perKg": false,
+        "unit": "mg"
+      },
+      "n": {
+        "sources": 7,
+        "agencies": 7,
+        "states": 2,
+        "rows": 7,
+        "rowsRaw": 0
+      },
+      "agencyKeys": [
+        "aurora-fire-rescue",
+        "boulder-county-ems",
+        "denver-health",
+        "jeffco-ems",
+        "stateless-ems",
+        "thin-agency",
+        "travis-county-ems"
+      ],
+      "dist": {
+        "min": 150,
+        "p25": 300,
+        "median": 300,
+        "p75": 300,
+        "max": 300
+      },
+      "routes": [
+        {
+          "route": "IV",
+          "share": 0.8571428571428571
+        },
+        {
+          "route": null,
+          "share": 0.14285714285714285
+        }
+      ],
+      "adoption": 0.7777777777777778,
+      "freshness": {
+        "oldestEffectiveDate": "2023-02-01",
+        "newestEffectiveDate": "2026-03-01"
+      },
+      "cite": "ProtoQuiz EMS Census, n=7 protocols from 7 named agencies / 2 states, updated Sep 2026"
+    },
+    {
+      "schemaVersion": 3,
+      "asOf": "2026-09-04",
+      "key": {
+        "drugKey": "EPINEPHRINE",
+        "indicationKey": "CARDIAC_ARREST",
+        "population": "adult",
+        "perKg": false,
+        "unit": "mg"
+      },
+      "n": {
+        "sources": 7,
+        "agencies": 6,
+        "states": 3,
+        "rows": 8,
+        "rowsRaw": 1
+      },
+      "agencyKeys": [
+        "aurora-fire-rescue",
+        "boulder-county-ems",
+        "denver-health",
+        "jeffco-ems",
+        "king-county-medic",
+        "travis-county-ems"
+      ],
+      "dist": {
+        "min": 1,
+        "p25": 1,
+        "median": 1,
+        "p75": 1,
+        "max": 2
+      },
+      "routes": [
+        {
+          "route": "IV/IO",
+          "share": 1
+        }
+      ],
+      "adoption": 0.7777777777777778,
+      "freshness": {
+        "oldestEffectiveDate": "2023-02-01",
+        "newestEffectiveDate": "2026-03-01"
+      },
+      "cite": "ProtoQuiz EMS Census, n=7 protocols from 6 named agencies / 3 states, updated Sep 2026"
+    },
+    {
+      "schemaVersion": 3,
+      "asOf": "2026-09-04",
+      "key": {
+        "drugKey": "EPINEPHRINE",
+        "indicationKey": "CARDIAC_ARREST",
+        "population": "peds",
+        "perKg": true,
+        "unit": "mg"
+      },
+      "n": {
+        "sources": 5,
+        "agencies": 5,
+        "states": 2,
+        "rows": 5,
+        "rowsRaw": 0
+      },
+      "agencyKeys": [
+        "aurora-fire-rescue",
+        "boulder-county-ems",
+        "denver-health",
+        "jeffco-ems",
+        "travis-county-ems"
+      ],
+      "dist": {
+        "min": 0.01,
+        "p25": 0.01,
+        "median": 0.01,
+        "p75": 0.01,
+        "max": 0.02
+      },
+      "routes": [
+        {
+          "route": "IV/IO",
+          "share": 1
+        }
+      ],
+      "adoption": 0.7777777777777778,
+      "freshness": {
+        "oldestEffectiveDate": "2023-02-01",
+        "newestEffectiveDate": "2026-03-01"
+      },
+      "cite": "ProtoQuiz EMS Census, n=5 protocols from 5 named agencies / 2 states, updated Sep 2026"
+    },
+    {
+      "schemaVersion": 3,
+      "asOf": "2026-09-04",
+      "key": {
+        "drugKey": "EPINEPHRINE",
+        "indicationKey": "HYPOTENSION_PUSH_DOSE",
+        "population": "adult",
+        "perKg": false,
+        "unit": "mg"
+      },
+      "n": {
+        "sources": 2,
+        "agencies": 2,
+        "states": 1,
+        "rows": 2,
+        "rowsRaw": 0
+      },
+      "agencyKeys": [
+        "boulder-county-ems",
+        "denver-health"
+      ],
+      "dist": null,
+      "routes": [
+        {
+          "route": "IV",
+          "share": 1
+        }
+      ],
+      "adoption": 0.7777777777777778,
+      "freshness": {
+        "oldestEffectiveDate": "2023-02-01",
+        "newestEffectiveDate": "2026-01-15"
+      },
+      "cite": "ProtoQuiz EMS Census, n=2 protocols from 2 named agencies / 1 states, updated Sep 2026"
+    },
+    {
+      "schemaVersion": 3,
+      "asOf": "2026-09-04",
+      "key": {
+        "drugKey": "NALOXONE",
+        "indicationKey": "OPIOID_OVERDOSE",
+        "population": "adult",
+        "perKg": false,
+        "unit": "mg"
+      },
+      "n": {
+        "sources": 8,
+        "agencies": 8,
+        "states": 3,
+        "rows": 9,
+        "rowsRaw": 0
+      },
+      "agencyKeys": [
+        "aurora-fire-rescue",
+        "boulder-county-ems",
+        "denver-health",
+        "jeffco-ems",
+        "king-county-medic",
+        "stateless-ems",
+        "thin-agency",
+        "travis-county-ems"
+      ],
+      "dist": {
+        "min": 1.2000000000000002,
+        "p25": 2,
+        "median": 2,
+        "p75": 2,
+        "max": 4
+      },
+      "routes": [
+        {
+          "route": "IN",
+          "share": 0.8888888888888888
+        },
+        {
+          "route": "IV",
+          "share": 0.1111111111111111
+        }
+      ],
+      "adoption": 0.8888888888888888,
+      "freshness": {
+        "oldestEffectiveDate": "2023-02-01",
+        "newestEffectiveDate": "2026-03-01"
+      },
+      "cite": "ProtoQuiz EMS Census, n=8 protocols from 8 named agencies / 3 states, updated Sep 2026"
+    }
+  ],
+  "drugs": [
+    {
+      "drugKey": "AMIODARONE",
+      "n": {
+        "agencies": 7,
+        "sources": 7,
+        "states": 2,
+        "rows": 7
+      },
+      "parsedShare": 1,
+      "indications": [
+        {
+          "indicationKey": "VENTRICULAR_FIBRILLATION",
+          "sources": 7
+        }
+      ]
+    },
+    {
+      "drugKey": "EPINEPHRINE",
+      "n": {
+        "agencies": 6,
+        "sources": 7,
+        "states": 3,
+        "rows": 16
+      },
+      "parsedShare": 0.9375,
+      "indications": [
+        {
+          "indicationKey": "CARDIAC_ARREST",
+          "sources": 7
+        },
+        {
+          "indicationKey": "HYPOTENSION_PUSH_DOSE",
+          "sources": 2
+        }
+      ]
+    },
+    {
+      "drugKey": "NALOXONE",
+      "n": {
+        "agencies": 8,
+        "sources": 8,
+        "states": 3,
+        "rows": 9
+      },
+      "parsedShare": 1,
+      "indications": [
+        {
+          "indicationKey": "OPIOID_OVERDOSE",
+          "sources": 8
+        }
+      ]
+    }
+  ]
+}

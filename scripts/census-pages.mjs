@@ -2,10 +2,16 @@
 // Generates the /census/ page tree from the JSON contract (lib/census/CONTRACT.md,
 // backend repo). Reads data/census/*.json, writes HTML + sitemaps to --out.
 //
-//   node scripts/census-pages.mjs [--data <dir>] [--out <dir>] [--quiet]
+//   node scripts/census-pages.mjs [--data <dir>] [--rows <dir>] [--out <dir>] [--quiet]
 //
 // --out defaults to a fresh temp dir: this script never writes into the repo
 // unless a caller names a directory, and it never publishes.
+//
+// --rows is REQUIRED for contract v3 and meaningless below it. v3 moves the dose
+// rows off the site (phase 2 "rows private, summaries public"): the public set is
+// documents/agencies/compare/ledger/manifest, and the per-agency rows the agency
+// tables need live in a PRIVATE directory on the Pi, outside both repos. Only
+// agency pages read them; drug and indication pages render `compare.json` alone.
 //
 // Determinism is a hard requirement (test:census-rebuild-noop): every input is
 // sorted before it is rendered, nothing reads the clock, and `asOf` comes from
@@ -24,7 +30,20 @@ const hash = s => createHash('sha256').update(s).digest('hex').slice(0, 16);
 // every file it reads is v2. Accepting the set must land BEFORE the first v2 build: the abort
 // in readContract is by design, so a v2 payload reaching a v1-only reader would take the
 // census offline rather than degrade it (binding protocol P4).
-export const ACCEPTED_SCHEMA_VERSIONS = new Set([1, 2]);
+export const ACCEPTED_SCHEMA_VERSIONS = new Set([1, 2, 3]);
+
+// The file set, by contract version. v<=2 published the rows themselves; v3 replaces
+// dose_latest.json with compare.json (engine output) and moves the rows to --rows.
+// pages-manifest.json is deliberately absent from both sets: it is THIS script's own
+// output, rsynced back into --data by the nightly, and its schemaVersion mirrors the
+// data by design. Checking an expected set rather than scanning the directory is the
+// point — the build owns --out and deletes strays, so a scan would only re-check what
+// the build already enforces.
+export const FILE_SETS = {
+  2: ['documents.json', 'agencies.json', 'dose_latest.json', 'ledger.json', 'manifest.json'],
+  3: ['documents.json', 'agencies.json', 'compare.json', 'ledger.json', 'manifest.json'],
+};
+
 const ORIGIN = 'https://protoquiz.com';
 const APP_ID = '6753611139';
 const GA_ID = 'G-LNSS9BMEP8';
@@ -33,6 +52,15 @@ const SITEMAP_SPLIT = 10_000;
 // Thin-page rules (spec 9): below these a page is NOT generated — no file, no
 // noindex. A page with nothing to say is worse than no page.
 export const MIN_AGENCY_DRUGS = 3;
+
+// MIN_INDICATION_ROWS is RETIRED at v3. It counted rows, which let one verbose
+// document manufacture a page on its own; the engine counts SOURCES instead, and
+// MIN_SOURCES gates both the published distribution and the outlier rule, so every
+// group that publishes a `dist` was checked. Mirrored from lib/census/compare.mjs
+// (backend repo) rather than imported: the site build must not depend on the backend
+// checkout at runtime. If MIN_SOURCES moves there, move it here in the same change.
+export const MIN_SOURCES = 5;
+// v<=2 only. Kept so a v2 payload still renders exactly as it did.
 export const MIN_INDICATION_ROWS = 5;
 
 const DISCLAIMER = 'Training reference compiled from published protocols. Not a clinical order. Verify with your agency and medical director.';
@@ -105,27 +133,83 @@ const indicationLabel = k => titleCase(String(k).replace(/_/g, ' '));
 
 // ------------------------------------------------------------------ reading
 
-function readContract(dataDir) {
-  const read = name => {
-    const raw = readFileSync(join(dataDir, name), 'utf8');
-    const j = JSON.parse(raw);
+// The named error a missing --rows on v3 raises. Named so the failure reads as
+// "the operator forgot the private directory", not as a bare ENOENT on a path
+// nobody recognizes — the nightly cards the message.
+export const MISSING_ROWS_ERROR = 'census-pages: contract v3 needs --rows <private-dir> holding rows_private.json (the dose rows left the site at v3; agency tables read them from there)';
+
+function readContract(dataDir, rowsDir) {
+  const readJson = (dir, name) => JSON.parse(readFileSync(join(dir, name), 'utf8'));
+  const checkVersion = (name, version) => {
     // An unknown schemaVersion aborts rather than rendering partial data
     // (CONTRACT.md "Stability"): a silently half-rendered census is worse
     // than a failed build, which the §12 gate turns into one alert.
-    if (!ACCEPTED_SCHEMA_VERSIONS.has(j.schemaVersion)) {
-      throw new Error(`${name}: schemaVersion ${j.schemaVersion}, this generator understands ${[...ACCEPTED_SCHEMA_VERSIONS].join(', ')}`);
+    if (!ACCEPTED_SCHEMA_VERSIONS.has(version)) {
+      throw new Error(`${name}: schemaVersion ${version}, this generator understands ${[...ACCEPTED_SCHEMA_VERSIONS].join(', ')}`);
     }
-    return j;
   };
-  const manifest = JSON.parse(readFileSync(join(dataDir, 'manifest.json'), 'utf8'));
-  if (!ACCEPTED_SCHEMA_VERSIONS.has(manifest.schemaVersion)) {
-    throw new Error(`manifest.json: schemaVersion ${manifest.schemaVersion}, this generator understands ${[...ACCEPTED_SCHEMA_VERSIONS].join(', ')}`);
+
+  // The manifest names the version of the whole set; every other file must agree
+  // with it. The old reader checked each file against the accepted SET, which let a
+  // v2 documents.json render beside a v3 compare.json — two contracts, one page.
+  const manifest = readJson(dataDir, 'manifest.json');
+  checkVersion('manifest.json', manifest.schemaVersion);
+  const version = manifest.schemaVersion;
+  const expected = FILE_SETS[version] || FILE_SETS[2];
+
+  const set = {};
+  for (const name of expected) {
+    if (name === 'manifest.json') continue;
+    const j = readJson(dataDir, name);
+    checkVersion(name, j.schemaVersion);
+    if (j.schemaVersion !== version) {
+      throw new Error(`${name}: schemaVersion ${j.schemaVersion} but manifest.json says ${version} — the file set must share one version, not a mix`);
+    }
+    set[name] = j;
   }
+
+  if (version < 3) {
+    return {
+      schemaVersion: version,
+      documents: set['documents.json'].rows,
+      agencies: set['agencies.json'].rows,
+      doses: set['dose_latest.json'].rows,
+      compare: null,
+      ledger: set['ledger.json'].rows,
+      manifest,
+    };
+  }
+
+  // v3: dose_latest.json must be GONE from --data. The build deletes any top-level
+  // *.json outside the v3 set, so a surviving one means the delete failed or a file
+  // was placed by hand — either way the rows are on the site, which is the exact
+  // thing v3 exists to prevent. Abort rather than publish it.
+  let stale = false;
+  try { readFileSync(join(dataDir, 'dose_latest.json')); stale = true; } catch { /* absent, as required */ }
+  if (stale) {
+    throw new Error('dose_latest.json is still in --data on a v3 build: rows are private at v3 and must not sit in the site tree');
+  }
+
+  if (!rowsDir) throw new Error(MISSING_ROWS_ERROR);
+  let rowsFile;
+  try {
+    rowsFile = readJson(rowsDir, 'rows_private.json');
+  } catch (e) {
+    if (e.code === 'ENOENT') throw new Error(`${MISSING_ROWS_ERROR} (not found under ${rowsDir})`);
+    throw e;
+  }
+  checkVersion('rows_private.json', rowsFile.schemaVersion);
+  if (rowsFile.schemaVersion !== version) {
+    throw new Error(`rows_private.json: schemaVersion ${rowsFile.schemaVersion} but manifest.json says ${version} — the file set must share one version, not a mix`);
+  }
+
   return {
-    documents: read('documents.json').rows,
-    agencies: read('agencies.json').rows,
-    doses: read('dose_latest.json').rows,
-    ledger: read('ledger.json').rows,
+    schemaVersion: version,
+    documents: set['documents.json'].rows,
+    agencies: set['agencies.json'].rows,
+    doses: rowsFile.rows,
+    compare: set['compare.json'],
+    ledger: set['ledger.json'].rows,
     manifest,
   };
 }
@@ -193,7 +277,7 @@ const nav = `  <header>
 const footer = `  <footer>
     <div class="wrap">
       <p class="disclaimer">${DISCLAIMER}</p>
-      <p>&copy; 2026 Teach Me to Live LLC, d/b/a ProtoQuiz&trade;. &middot; <a href="/census/">EMS Census</a> &middot; <a href="/agency/">For Agencies</a> &middot; <a href="/blog/">Blog</a></p>
+      <p>&copy; 2026 Teach Me to Live LLC, d/b/a ProtoQuiz&trade;. &middot; <a href="/census/">EMS Census</a> &middot; <a href="/census/methodology/">Methodology</a> &middot; <a href="/census/data-license/">Data license</a> &middot; <a href="/agency/">For Agencies</a> &middot; <a href="/blog/">Blog</a></p>
     </div>
   </footer>
 </body>
@@ -274,6 +358,60 @@ const sourceLine = (r, docByHash) => {
 // absence of the flag is not evidence of the negative (CONTRACT.md).
 const standingLabel = v => (v === true ? 'standing' : v === false ? 'requires contact' : NOT_CAPTURED);
 
+// ----------------------------------------------------------------- forms
+//
+// A plain <form> plus ~20 lines of inline JS. No CSRF token, no nonce, no
+// timestamp: the endpoint is public and unauthenticated, so a token would protect
+// nothing — and every one of those is a value that changes per build, which would
+// break the byte-identical rebuild the nightly depends on. The only spam control in
+// the markup is a honeypot field named `website`, which a person never sees and never
+// fills; the endpoint answers 200 and drops it, so a bot learns nothing from the reply.
+
+const SUBMIT_ENDPOINT = 'https://api.protoquiz.com/api/monitor?type=censusSubmit';
+
+const submitForm = ({ id, kind, agencyKey = null, urlLabel, submitLabel }) => `        <form class="submit-form" id="${id}" novalidate>
+          <label for="${id}-url">${esc(urlLabel)}</label>
+          <input type="url" id="${id}-url" name="url" required placeholder="https://" autocomplete="url" />
+          <label for="${id}-email">Your email <span class="muted">(optional &mdash; only so we can tell you when it is done)</span></label>
+          <input type="email" id="${id}-email" name="email" placeholder="you@agency.gov" autocomplete="email" />
+          <p class="hp" aria-hidden="true"><label for="${id}-website">Leave this field empty</label><input type="text" id="${id}-website" name="website" tabindex="-1" autocomplete="off" /></p>
+          <button type="submit">${esc(submitLabel)}</button>
+          <p class="form-msg" id="${id}-msg" role="status"></p>
+        </form>
+        <script>
+          (function () {
+            var f = document.getElementById('${id}');
+            var msg = document.getElementById('${id}-msg');
+            f.addEventListener('submit', function (e) {
+              e.preventDefault();
+              var url = f.elements.url.value.trim();
+              if (!url) { msg.textContent = 'A public URL for the document is needed.'; return; }
+              var btn = f.querySelector('button');
+              btn.disabled = true;
+              msg.textContent = 'Sending...';
+              fetch(${JSON.stringify(SUBMIT_ENDPOINT)}, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  url: url,
+                  email: f.elements.email.value.trim() || undefined,
+                  agency: ${agencyKey ? JSON.stringify(agencyKey) : 'undefined'},
+                  kind: ${JSON.stringify(kind)},
+                  website: f.elements.website.value
+                })
+              }).then(function (r) {
+                if (!r.ok) throw new Error(String(r.status));
+                f.reset();
+                msg.textContent = 'Got it. We read every one of these by hand.';
+                track('census_submit', { kind: ${JSON.stringify(kind)} });
+              }).catch(function () {
+                btn.disabled = false;
+                msg.textContent = 'That did not send. Email jaden@protoquiz.com and it gets handled the same way.';
+              });
+            });
+          })();
+        </script>`;
+
 function doseCell(r) {
   if (r.value == null) return `<span class="raw">${esc(r.doseRaw)}</span>`;
   const range = r.valueMax != null ? `${fmtNum(r.value)}&ndash;${fmtNum(r.valueMax)}` : fmtNum(r.value);
@@ -311,7 +449,12 @@ ${drugs.length ? `      <section id="drugs">
       </section>
       <section id="list">
         <h2>List your agency</h2>
-        <p>If your agency's protocols are a public record and you would like them in the census, or you want an existing listing corrected or removed, send the document's public URL and we will handle it.</p>
+        <p>If your agency's protocols are a public record and you would like them in the census, or you want an existing listing corrected or removed, send the document's public URL and we will handle it. Removal is same-day, no reason needed.</p>
+${submitForm({ id: 'list-form', kind: 'listing', urlLabel: 'Public URL of the protocol document', submitLabel: 'Send it' })}
+      </section>
+      <section id="how">
+        <h2>How this is built</h2>
+        <p><a href="/census/methodology/">Methodology</a> &mdash; where documents come from, what is read out of them, what is not captured, and why no dose-level accuracy number is published. <a href="/census/data-license/">Data license</a> &mdash; summaries are CC BY 4.0; row-level data is not published.</p>
       </section>
       <section id="cite">
         <h2>Citation</h2>
@@ -331,7 +474,10 @@ ${drugs.length ? `      <section id="drugs">
         name: 'ProtoQuiz EMS Protocol Census',
         description: 'Dose, route, and indication facts extracted from published United States EMS protocol documents.',
         url: `${ORIGIN}/census/`,
-        license: `${ORIGIN}/terms/`,
+        // Points at the page that actually STATES a license (CC BY 4.0 on summaries,
+        // rows unpublished). /terms/ governs the site and now carries the census
+        // sub-paragraph, but it is not the dataset's license text.
+        license: `${ORIGIN}/census/data-license/`,
         creator: { '@type': 'Organization', name: 'ProtoQuiz', url: ORIGIN },
         dateModified: manifest.asOf,
         isAccessibleForFree: true,
@@ -407,6 +553,8 @@ ${history}
       <section id="correct">
         <h2>Outdated or wrong?</h2>
         <p>Send the current document's public URL and the listing is rebuilt from it. To have this agency removed from the census entirely, say so and it comes down the same day.</p>
+${submitForm({ id: 'correct-form', kind: 'correction', agencyKey: agency.agencyKey, urlLabel: 'Public URL of the current document', submitLabel: 'Send the correction' })}
+        <p class="muted"><a href="/census/methodology/">How this page was built</a> &middot; <a href="/census/data-license/">Data license</a></p>
       </section>`;
 
   return {
@@ -484,6 +632,186 @@ ${stats([
     }),
   };
 }
+
+// ------------------------------------------------- v3 drug + indication pages
+//
+// At v3 these pages read ONLY compare.json. Nothing here touches --rows: a
+// cross-agency row table is the private row file as markup, which is the one thing
+// "rows private" forbids. Named agencies still appear — as NAMES linking to their
+// own pages, never beside a value.
+
+const popLabel = p => (p === 'peds' ? 'Pediatric' : 'Adult');
+const unitLabel = k => `${k.unit ?? ''}${k.perKg ? '/kg' : ''}`;
+const groupLabel = k => `${popLabel(k.population)}${k.perKg ? ', weight-based' : ''}`;
+
+// A five-number bar: min | p25 | median | p75 | max, drawn as one track with the
+// middle half filled. No library, matching the rest of the generator's CSS bars.
+function fiveNumberBar(dist, unit) {
+  const span = dist.max - dist.min;
+  const at = v => (span > 0 ? ((v - dist.min) / span) * 100 : 50);
+  const left = at(dist.p25);
+  const width = Math.max(at(dist.p75) - left, 0.5);
+  return `        <div class="five">
+          <div class="five-track"><span class="five-iqr" style="left:${left.toFixed(2)}%;width:${width.toFixed(2)}%"></span><span class="five-med" style="left:${at(dist.median).toFixed(2)}%"></span></div>
+          <table class="five-nums">
+            <thead><tr><th>min</th><th>p25</th><th>median</th><th>p75</th><th>max</th></tr></thead>
+            <tbody><tr>${[dist.min, dist.p25, dist.median, dist.p75, dist.max].map(v => `<td>${esc(fmtNum(v))}</td>`).join('')}</tr></tbody>
+          </table>
+          <p class="muted">Values in ${esc(unit)}. One value per source (that source's median), so a document listing a drug five times still gets one vote.</p>
+        </div>`;
+}
+
+// The named-agency list: names only, linked to their own pages. `pageAgencies` is the
+// agencies that actually GOT a page — naming one without a page ships a dead link to a
+// file that deliberately does not exist (spec 9).
+//
+// The keys come from `Comparison.agencyKeys`, which the BUILD must emit on every group
+// (the engine's `n.agencies` is a count and a count cannot be linked). It is names only
+// and never values, so it is not the row file in disguise. A group that omits the field
+// renders no list rather than reaching for --rows: an absent list is honest, a page that
+// silently starts reading the private rows is the leak v3 exists to prevent.
+function namedAgencyList(agencyKeys, pageAgencies) {
+  const named = [...agencyKeys].filter(k => pageAgencies.has(k)).sort();
+  if (!named.length) return { count: 0, html: '' };
+  return {
+    count: named.length,
+    html: `      <section id="agencies">
+        <h2>Named agencies</h2>
+        <p class="muted">Agencies whose protocols are a public record are named here. Their own doses are on their own pages; this list carries no values.</p>
+        <ul class="cols">${named.map(k => `<li><a href="/census/agencies/${esc(k)}/">${esc(pageAgencies.get(k).name)}</a></li>`).join('')}</ul>
+      </section>`,
+  };
+}
+
+// "n rows under review" — the count of suppressed rows, build-wide, from the manifest.
+// It is deliberately NOT per-group: the build counts flags before removal and publishes
+// one number, so a page cannot imply a per-group figure it does not have.
+const underReview = manifest => (manifest.flaggedRows
+  ? `      <p class="honest">${num(manifest.flaggedRows)} ${manifest.flaggedRows === 1 ? 'row is' : 'rows are'} under review across the census and excluded from every number on this page. <a href="/census/methodology/">How that works</a>.</p>\n`
+  : '');
+
+function drugPageV3(drugKey, { summary, groups, indicationPaths, pageAgencies, manifest }) {
+  const dists = groups.filter(g => g.dist);
+  // Sorted here rather than trusted from the file, for the same reason every other
+  // list in this generator is: determinism must not depend on the writer's ordering.
+  const indications = [...summary.indications].sort((a, b) => a.indicationKey.localeCompare(b.indicationKey));
+  const named = namedAgencyList(new Set(groups.flatMap(g => g.agencyKeys ?? [])), pageAgencies);
+  const body = `      <span class="badge">Drug</span>
+      <h1>${esc(drugLabel(drugKey))} in US EMS protocols</h1>
+      <p class="lede">${num(summary.n.sources)} published ${summary.n.sources === 1 ? 'protocol carries' : 'protocols carry'} ${esc(drugLabel(drugKey))} across ${num(indications.length)} ${indications.length === 1 ? 'indication' : 'indications'}, from ${num(summary.n.agencies)} named ${summary.n.agencies === 1 ? 'agency' : 'agencies'} in ${num(summary.n.states)} ${summary.n.states === 1 ? 'state' : 'states'}.</p>
+${stats([
+    ['protocols', num(summary.n.sources)],
+    ['named agencies', num(summary.n.agencies)],
+    ['states', num(summary.n.states)],
+    ['indications', num(indications.length)],
+    ['dose entries', num(summary.n.rows)],
+    ['machine-parsed', `${pct(Math.round(summary.parsedShare * summary.n.rows), summary.n.rows)} of ${num(summary.n.rows)}`],
+  ])}
+${underReview(manifest)}      <section id="indications">
+        <h2>Indications</h2>
+        <ul class="cols">${indications.map(({ indicationKey, sources }) => {
+    const p = indicationPaths.get(`${drugKey}/${indicationKey}`);
+    const label = `${esc(indicationLabel(indicationKey))} <span class="muted">n=${num(sources)}</span>`;
+    return `<li>${p ? `<a href="${p}">${label}</a>` : label}</li>`;
+  }).join('')}</ul>
+      </section>
+${dists.length ? `      <section id="distributions">
+        <h2>Published distributions</h2>
+        <p class="muted">Only groups with at least ${MIN_SOURCES} sources publish a distribution; thinner groups show their count alone.</p>
+        <div class="scroll"><table>
+          <thead><tr><th>Indication</th><th>Population</th><th>Sources</th><th>Median</th><th>Middle half</th><th>Unit</th></tr></thead>
+          <tbody>${dists.map(g => `<tr><td>${esc(indicationLabel(g.key.indicationKey))}</td><td>${esc(groupLabel(g.key))}</td><td>${num(g.n.sources)}</td><td>${esc(fmtNum(g.dist.median))}</td><td>${esc(fmtNum(g.dist.p25))}&ndash;${esc(fmtNum(g.dist.p75))}</td><td>${esc(unitLabel(g.key))}</td></tr>`).join('')}</tbody>
+        </table></div>
+      </section>` : ''}
+${named.html}
+      <section id="cite">
+        <h2>Citation</h2>
+        <p class="cite">${esc(`ProtoQuiz EMS Census, ${drugLabel(drugKey)}: n=${summary.n.sources} protocols from ${summary.n.agencies} named agencies / ${summary.n.states} states, as of ${manifest.asOf}`)}</p>
+        <p class="muted">Each distribution above carries its own n &mdash; a per-indication figure is narrower than this drug-wide one, and the group's own citation line is the one to quote for it.</p>
+      </section>`;
+
+  return {
+    path: `/census/drugs/${slug(drugKey)}/`,
+    html: page({
+      title: `${drugLabel(drugKey)} EMS dose by protocol - indications and routes`,
+      description: `How ${num(summary.n.sources)} US EMS protocols dose ${drugLabel(drugKey)}: indications, routes, and adult vs pediatric distributions from published protocols.`,
+      path: `/census/drugs/${slug(drugKey)}/`,
+      trail: [['Home', '/'], ['EMS Census', '/census/'], [drugLabel(drugKey), `/census/drugs/${slug(drugKey)}/`]],
+      body,
+    }),
+  };
+}
+
+function indicationPageV3(drugKey, indicationKey, groups, { pageAgencies, manifest }) {
+  // Groups here differ only by (population, perKg, unit) — a weight-based dose and a
+  // flat dose are different quantities and never share a distribution.
+  const ordered = [...groups].sort((a, b) => b.n.sources - a.n.sources
+    || groupLabel(a.key).localeCompare(groupLabel(b.key))
+    || String(a.key.unit).localeCompare(String(b.key.unit)));
+  const lead = ordered.find(g => g.dist) || null;
+  const totals = ordered.reduce((acc, g) => ({
+    sources: Math.max(acc.sources, g.n.sources),
+    agencies: Math.max(acc.agencies, g.n.agencies),
+    states: Math.max(acc.states, g.n.states),
+    rows: acc.rows + g.n.rows,
+  }), { sources: 0, agencies: 0, states: 0, rows: 0 });
+
+  const lede = lead
+    ? `${groupLabel(lead.key).replace(', weight-based', ' weight-based')} dosing has a median of ${esc(fmtNum(lead.dist.median))} ${esc(unitLabel(lead.key))} across ${num(lead.n.sources)} published ${lead.n.sources === 1 ? 'protocol' : 'protocols'}, with the middle half between ${esc(fmtNum(lead.dist.p25))} and ${esc(fmtNum(lead.dist.p75))}.`
+    : `No group under this indication has reached ${MIN_SOURCES} sources, so no distribution is published. The counts below are what the census holds today.`;
+
+  const named = namedAgencyList(new Set(ordered.flatMap(g => g.agencyKeys ?? [])), pageAgencies);
+
+  const distSections = ordered.map(g => {
+    const routes = g.routes.filter(r => r.route);
+    return `      <section id="g-${slug(`${g.key.population}-${g.key.perKg ? 'perkg' : 'flat'}-${g.key.unit}`)}">
+        <h2>${esc(groupLabel(g.key))} &mdash; ${esc(unitLabel(g.key))}</h2>
+${stats([
+    ['sources', num(g.n.sources)],
+    ['named agencies', num(g.n.agencies)],
+    ['states', num(g.n.states)],
+    ['entries', num(g.n.rows)],
+    ['kept as written', num(g.n.rowsRaw)],
+  ])}
+${g.dist
+    ? fiveNumberBar(g.dist, unitLabel(g.key))
+    : `        <p class="honest">Below ${MIN_SOURCES} sources, so no distribution is published for this group &mdash; only the counts above.</p>`}
+${routes.length ? `        <h3>Routes</h3>
+        <ul class="inline">${routes.map(r => `<li>${esc(r.route)} <span class="muted">${pct(Math.round(r.share * 1000), 1000)}</span></li>`).join('')}</ul>` : ''}
+        <p class="cite">${esc(g.cite)}</p>
+      </section>`;
+  }).join('\n');
+
+  const body = `      <span class="badge">Indication</span>
+      <h1>${esc(drugLabel(drugKey))} for ${esc(indicationLabel(indicationKey))}</h1>
+      <p class="lede">${lede}</p>
+${stats([
+    ['sources', num(totals.sources)],
+    ['named agencies', num(totals.agencies)],
+    ['states', num(totals.states)],
+    ['entries', num(totals.rows)],
+    ['named here', num(named.count)],
+  ])}
+${underReview(manifest)}${distSections}
+${named.html}`;
+
+  const path = `/census/drugs/${slug(drugKey)}/${slug(indicationKey)}/`;
+  return {
+    path,
+    html: page({
+      title: `${drugLabel(drugKey)} dose for ${indicationLabel(indicationKey)} - US EMS protocols`,
+      description: `Published ${drugLabel(drugKey)} doses for ${indicationLabel(indicationKey)} across US EMS protocols: median, quartiles, routes, and adult vs pediatric, with the agencies that carry it.`,
+      path,
+      trail: [['Home', '/'], ['EMS Census', '/census/'], [drugLabel(drugKey), `/census/drugs/${slug(drugKey)}/`], [indicationLabel(indicationKey), path]],
+      body,
+    }),
+  };
+}
+
+// ------------------------------------------------- v<=2 drug + indication pages
+//
+// Unchanged from the row-published contract, kept so a v2 payload still renders
+// exactly as it did while the v3 build rolls out (binding protocol P4).
 
 // pageAgencies is the agencies that actually GOT a page, not everything in
 // agencies.json: an agency below a thin-page threshold is counted in the stats
@@ -594,6 +922,169 @@ ${routes.length ? `      <section id="routes">
   };
 }
 
+// -------------------------------------------------------------- methodology
+//
+// EVERY number on this page comes from a manifest field. The site test greps the
+// rendered digits and asserts each one matches a manifest value, so a hand-typed
+// figure — the way a methodology page rots — fails the build rather than shipping.
+// There is NO accuracy number here: none is measured at dose level, and the page
+// says so in those words rather than borrowing the extraction-success or
+// sweep-agreement figures, which measure something else and would read as accuracy.
+
+const shareOf = (n, d) => (d ? `${num(n)} of ${num(d)} (${pct(n, d)})` : NOT_CAPTURED);
+
+function methodologyPage(manifest) {
+  const m = manifest;
+  const body = `      <span class="badge">Methodology</span>
+      <h1>How the EMS Census is built</h1>
+      <p class="lede">Everything on the census comes from protocol documents agencies themselves published. This page says where each document came from, what was read out of it, what was not, and which numbers are therefore safe to quote. As of ${esc(m.asOf)}.</p>
+${stats([
+    ['documents', num(m.documents)],
+    ['named agencies', num(m.namedAgencies)],
+    ['dose entries', num(m.doseRows)],
+    ['machine-parsed', shareOf(m.dosesParsed, m.doseRows)],
+    ['comparable groups', num(m.compareGroups)],
+    ['as of', m.asOf],
+  ])}
+
+      <section id="origin">
+        <h2>How a document reaches us</h2>
+        <p>Each document carries an <strong>origin</strong>, one of six values, derived at build time and never guessed: <strong>app</strong> (a medic uploaded their own agency's protocol), <strong>seed</strong> (we collected a published document directly), <strong>watch</strong> (a scheduled re-check of a page an agency publishes to), <strong>wayback</strong> (an Internet Archive capture), <strong>device</strong> (recovered from an app corpus), and <strong>unknown</strong>. A document minted before origin was recorded reads <strong>unknown</strong> rather than claiming a provenance it cannot prove.</p>
+        <p>Nothing here is a copy of an agency's PDF. The census links to the agency's own source where one is known, and hosts no protocol documents.</p>
+      </section>
+
+      <section id="identity">
+        <h2>Document identity is a content hash</h2>
+        <p>A document is identified by the hash of its contents, not by its filename, its URL, or the agency's name for it. Two agencies posting byte-identical files are one document; the same protocol re-posted at a new URL is still the same document; a revision is a new one. That is what makes a version history possible at all, and it is why a re-upload of a file we already hold adds nothing.</p>
+      </section>
+
+      <section id="classification">
+        <h2>Classification and what stays unpublished</h2>
+        <p>A model reads each document to find the agency, the state, and the jurisdiction, and records a <strong>confidence</strong> of high, medium, low, or user (a value a person supplied). A document whose identity is not settled goes to <strong>pending review</strong> instead of being listed &mdash; the reasons are a name that collided with an existing agency, a merge chain that could not be resolved, a document with no readable agency, and a version whose date could not be placed. Of ${num(m.documents)} documents, ${num(m.pendingReview)} ${m.pendingReview === 1 ? 'is' : 'are'} in that state and ${m.pendingReview === 1 ? 'does' : 'do'} not appear anywhere on the census.</p>
+        <p>An agency is named only where its protocols are a public record &mdash; statewide, regional, county, city, or fire-district. Everything else contributes to counts and distributions as an unnamed source and never gets a page. ${num(m.listedNamed)} ${m.listedNamed === 1 ? 'document is' : 'documents are'} listed with a name; ${num(m.listedAggregate)} ${m.listedAggregate === 1 ? 'contributes' : 'contribute'} to aggregates only.</p>
+      </section>
+
+      <section id="extraction">
+        <h2>What is read out of a document, and what is not</h2>
+        <p>Extraction pulls drug, indication, population, dose, route, repeat interval, and standing-order status. It does not read a protocol's narrative, its flowcharts as flowcharts, or anything a human reader would infer from layout.</p>
+        <p>Two corpus shapes feed the census, and their limits are different. One carries page numbers; the other carries none, so <strong>page not captured</strong> is the majority case and is not a defect. The second shape also carries no standing-order flag, so <strong>standing</strong> is absent rather than false on those entries &mdash; the census never renders an absent flag as "not a standing order", because absence of a flag is not evidence of the negative. Pediatric age bands were lost upstream on the second shape entirely: ${num(m.rowsPedsExcluded)} of ${num(m.doseRows)} entries (${pct(m.rowsPedsExcluded, m.doseRows)}) ${m.rowsPedsExcluded === 1 ? 'is a pediatric entry' : 'are pediatric entries'} with no age band, and ${m.rowsPedsExcluded === 1 ? 'it is' : 'they are'} excluded from every distribution and every outlier check on this site. ${m.rowsPedsExcluded === 1 ? 'It is' : 'They are'} still counted, and ${m.rowsPedsExcluded === 1 ? 'it still appears' : 'they still appear'} on their agency's own page as written.</p>
+      </section>
+
+      <section id="parse">
+        <h2>Parsed, partial, and raw</h2>
+        <p>A dose string is either parsed to a number with a unit and a route, parsed partially (a number and a unit but no route), or kept raw &mdash; a string like "per medical control" that carries no number at all. Today: ${shareOf(m.dosesParsed, m.doseRows)} parsed, ${shareOf(m.dosesPartial, m.doseRows)} partial, ${shareOf(m.dosesRaw, m.doseRows)} raw.</p>
+        <p><strong>A raw entry never enters a distribution.</strong> It is real data and it is shown as written on its agency's page, and it is counted in the entry totals &mdash; but it has no number, so putting it in a median would mean inventing one. Every distribution on this site says how many entries under it carry a machine-readable number.</p>
+      </section>
+
+      <section id="units">
+        <h2>Units, per-kilogram doses, and ranges</h2>
+        <p>Mass units are canonicalized to milligrams: micrograms and grams convert, so 300 mcg and 0.3 mg are the same value in the same group. <strong>Nothing else converts.</strong> Millilitres need a concentration the documents do not carry, and units, milliequivalents and joules are not doses of a mass at all &mdash; each is its own group and is never folded into another.</p>
+        <p>A weight-based dose and a flat dose are separate groups for the same reason: 0.01 mg/kg and 1 mg are not the same quantity and never share a median.</p>
+        <p><strong>A range contributes its low end only.</strong> "0.3&ndash;0.5 mg" enters a distribution as 0.3. The high end is kept and shown on the agency page, but it never enters a distribution or an outlier check &mdash; counting both ends would let one entry vote twice, and picking the high end would overstate every range in the census.</p>
+      </section>
+
+      <section id="sources">
+        <h2>Sources and named agencies are two different counts</h2>
+        <p>A <strong>source</strong> is one protocol document. A <strong>named agency</strong> is a source whose agency is a public record and is identified on the census. Every distribution is built one value per source &mdash; a document that lists a drug five times gets one vote, its own median, not five &mdash; so a verbose document cannot decide a median for everyone.</p>
+        <p>Both counts appear on every published number, in the form "n=&lt;sources&gt; protocols from &lt;agencies&gt; named agencies / &lt;states&gt; states". Sources are always the larger number, and quoting one for the other is the mistake the two-part citation exists to prevent.</p>
+        <p>A group publishes a distribution only at <strong>${MIN_SOURCES} or more sources</strong>. Below that the census shows the count and nothing else: five documents is thin, and four is not a distribution.</p>
+      </section>
+
+      <section id="outliers">
+        <h2>Outlier review</h2>
+        <p>Every night, each group's entries are checked against a reference built from all of that group's parsed entries &mdash; one value per source, and the median of those values. An entry more than three times that median, or less than a third of it, is <strong>flagged</strong>, in groups of at least ${MIN_SOURCES} sources. Flagging is one pass with no feedback: clearing or removing an entry changes nothing about the reference or about any other entry's flag, so the same documents produce the same flags every night.</p>
+        <p>A flagged entry is suppressed everywhere &mdash; every page, every distribution, every count of published rows &mdash; until a person reviews it and either clears it (it returns) or rejects it (it stays out). It is counted before it is removed, so the size of the review queue is visible: ${num(m.flaggedRows)} of ${num(m.doseRows)} entries (${pct(m.flaggedRows, m.doseRows)}) ${m.flaggedRows === 1 ? 'is' : 'are'} under review right now, ${num(m.rejectedRows)} ${m.rejectedRows === 1 ? 'has' : 'have'} been reviewed and rejected, and ${num(m.publishedRows)} ${m.publishedRows === 1 ? 'is' : 'are'} published.</p>
+        <p>The two distributions are named on purpose. Flags are judged against the reference built <em>before</em> any suppression; the numbers this site publishes are computed <em>after</em> it. A flag is a claim about one entry against its peers, not a claim about the published median.</p>
+      </section>
+
+      <section id="accuracy">
+        <h2>Accuracy: not yet measured</h2>
+        <p><strong>We do not publish a dose-level accuracy number, because we have not measured one.</strong> What exists today is a hand-labelled comparison of drug names, indication text, contraindications and adverse effects &mdash; no dose value in it is ever compared against a document. Publishing an extraction-success rate or a model-agreement figure in place of accuracy would be quoting a measurement of a different thing, and it would read as the number this section does not have.</p>
+        <p>What is measured, and lives on this page because it comes from the build itself: the share of entries that parse to a number (${pct(m.dosesParsed, m.doseRows)}), the share under outlier review (${pct(m.flaggedRows, m.doseRows)}), and the share of pediatric entries excluded for having no age band (${pct(m.rowsPedsExcluded, m.doseRows)}).</p>
+        <p>Every page here carries the same warning, and it is the honest one: this is a training reference compiled from published protocols, not a clinical order. Verify against your own agency's document and your medical director.</p>
+      </section>
+
+      <section id="corrections">
+        <h2>Corrections and removal</h2>
+        <p>If a listing is wrong, send the current document's public URL from the agency page's correction form and the listing is rebuilt from it. If an agency wants its listing removed, it comes down the same day &mdash; no argument about whether the document is a public record.</p>
+      </section>
+
+      <section id="freshness">
+        <h2>Freshness</h2>
+        <p>A document more than 24 months old is flagged as possibly outdated on its agency's page, and a newer version awaiting review is disclosed with its date. The build itself refuses to publish when the number of named agencies drops sharply against the last published build &mdash; a collapse in coverage is a broken build, and shipping it would quietly replace the census with a smaller one.</p>
+        <p>The as-of date on every page is the date the data changed, not the date the page was generated. A page that did not change is not rewritten.</p>
+      </section>
+
+      <section id="cite">
+        <h2>Citation</h2>
+        <p class="cite">ProtoQuiz EMS Protocol Census, as of ${esc(m.asOf)}. ${ORIGIN}/census/ &middot; <a href="/census/data-license/">Data license</a></p>
+      </section>`;
+
+  return {
+    path: '/census/methodology/',
+    html: page({
+      title: 'How the EMS Protocol Census is built - methodology',
+      description: 'Where census documents come from, what is read out of them, what is not captured, how doses are compared, how outliers are reviewed, and why no dose-level accuracy number is published.',
+      path: '/census/methodology/',
+      trail: [['Home', '/'], ['EMS Census', '/census/'], ['Methodology', '/census/methodology/']],
+      body,
+    }),
+  };
+}
+
+// ------------------------------------------------------------- data license
+//
+// Static: it states a license, and a license that changed with the data would not be
+// one. No manifest number appears on it, so nothing here can drift.
+
+function dataLicensePage() {
+  const body = `      <span class="badge">License</span>
+      <h1>Census data license</h1>
+      <p class="lede">What you may do with the numbers on this site, what is not published, and how to have a listing corrected or removed.</p>
+
+      <section id="summaries">
+        <h2>Summaries and comparisons: CC BY 4.0</h2>
+        <p>The aggregate figures published on this site &mdash; the distributions, counts, route shares, and the <code>compare.json</code> file behind them &mdash; are licensed under the <a href="https://creativecommons.org/licenses/by/4.0/" rel="nofollow noopener">Creative Commons Attribution 4.0 International license</a>. Use them, republish them, build on them commercially. The one condition is attribution.</p>
+        <h3>How to cite</h3>
+        <p>Every number the census publishes carries its own citation line, and that line is the attribution:</p>
+        <p class="cite">ProtoQuiz EMS Census, n=&lt;sources&gt; protocols from &lt;agencies&gt; named agencies / &lt;states&gt; states, updated &lt;month year&gt;</p>
+        <p>Quote it as printed on the page you took the number from. The n and the as-of date are part of the number, not decoration: a distribution over 6 protocols and one over 60 are different claims, and a figure from a year ago is a different claim again.</p>
+      </section>
+
+      <section id="rows">
+        <h2>Row-level data is not published</h2>
+        <p>The underlying dose rows &mdash; every entry, per agency, per document, with its source pages and version history &mdash; are <strong>not published</strong> and are not covered by the license above. There is no bulk download and no row-level API on this site. The per-agency tables on agency pages are the public record for that agency, published as pages, not as a dataset.</p>
+        <p>Row-level access is available by license request for research, journalism, and commercial use. Terms are not yet set; ask and we will work them out. Write to <a href="mailto:jaden@protoquiz.com">jaden@protoquiz.com</a> with what you need and what it is for.</p>
+      </section>
+
+      <section id="documents">
+        <h2>The documents themselves</h2>
+        <p>The census hosts no protocol PDFs. Each listing links to the agency's own published source where one is known. The documents belong to the agencies that wrote them, and nothing here grants a license to them.</p>
+      </section>
+
+      <section id="takedown">
+        <h2>Corrections, opt-out, and takedown</h2>
+        <p>An agency that wants its listing corrected, or removed from the census entirely, gets it the same day. Send the request from the correction form on the agency's page, or write to <a href="mailto:jaden@protoquiz.com">jaden@protoquiz.com</a>. We do not require a reason and we do not argue about whether a document is a public record &mdash; if an agency asks, it comes down.</p>
+        <p>Removal takes the agency's name, its page, and its entries out of the census. Aggregate figures published before the removal are not retracted, but the agency is not named in anything published after it.</p>
+      </section>
+
+      <section id="terms">
+        <h2>Full terms</h2>
+        <p>This page states the license for census data. The site's full <a href="/terms/">Terms of Service</a> govern everything else, including what an agency's protocol document may be used for when it is submitted through the app. See <a href="/census/methodology/">how the census is built</a> for what the numbers mean.</p>
+      </section>`;
+
+  return {
+    path: '/census/data-license/',
+    html: page({
+      title: 'EMS Census data license - CC BY 4.0 summaries, licensed rows',
+      description: 'Census summaries and compare.json are CC BY 4.0 with attribution. Row-level data is not published and is available by license request. Corrections and removals are handled the same day.',
+      path: '/census/data-license/',
+      trail: [['Home', '/'], ['EMS Census', '/census/'], ['Data license', '/census/data-license/']],
+      body,
+    }),
+  };
+}
+
 // ------------------------------------------------------------------ sitemaps
 
 const sitemapUrls = (urls, lastmod) => `<?xml version="1.0" encoding="UTF-8"?>
@@ -610,7 +1101,7 @@ ${files.map(f => `  <sitemap>\n    <loc>${ORIGIN}/${f}</loc>\n    <lastmod>${las
 
 // -------------------------------------------------------------------- build
 
-export function buildPages({ documents, agencies, doses, ledger, manifest }) {
+export function buildPages({ documents, agencies, doses, ledger, manifest, compare = null }) {
   const agencyByKey = new Map(agencies.map(a => [a.agencyKey, a]));
   const docByHash = new Map(documents.map(d => [d.hash, d]));
   const files = [];
@@ -657,26 +1148,64 @@ export function buildPages({ documents, agencies, doses, ledger, manifest }) {
 
   let drugKeys = [];
   if (manifest.indicationMapReviewed) {
-    const byDrug = groupBy(doses, r => r.drugKey);
-    // Two passes: indication pages first, so drug pages only link to ones that exist.
+    // Two passes in both branches: indication pages first, so drug pages only link
+    // to ones that exist.
     const indicationPaths = new Map();
     const indicationPages = [];
-    for (const [drugKey, rows] of byDrug) {
-      for (const [indKey, rs] of groupBy(rows, r => r.indicationKey)) {
-        if (rs.length < MIN_INDICATION_ROWS) continue;
-        const p = indicationPage(drugKey, indKey, rs, pageAgencies, docByHash);
-        indicationPaths.set(`${drugKey}/${indKey}`, p.path);
-        indicationPages.push(p);
+
+    if (compare) {
+      // --- v3: everything here comes from compare.json. `doses` (the private rows)
+      // is deliberately NOT in scope for these pages; a site test asserts no
+      // per-agency dose value reaches them.
+      // Sorted by the key tuple before grouping: the engine emits sorted, but the
+      // generator must not inherit determinism from its writer (the same rule the
+      // row path follows with doseOrder).
+      const sortedGroups = [...compare.groups].sort((x, y) =>
+        `${x.key.drugKey} ${x.key.indicationKey} ${x.key.population} ${x.key.perKg ? 1 : 0} ${x.key.unit}`
+          .localeCompare(`${y.key.drugKey} ${y.key.indicationKey} ${y.key.population} ${y.key.perKg ? 1 : 0} ${y.key.unit}`));
+      const byDrugGroups = groupBy(sortedGroups, g => g.key.drugKey);
+      const summaryByDrug = new Map(compare.drugs.map(d => [d.drugKey, d]));
+
+      for (const [drugKey, gs] of byDrugGroups) {
+        for (const [indKey, rs] of groupBy(gs, g => g.key.indicationKey)) {
+          // The one threshold: a group publishes a page when any of its (population,
+          // per-kg, unit) groups reached MIN_SOURCES. Sub-threshold groups still
+          // render on that page, as counts with no distribution.
+          if (!rs.some(g => g.n.sources >= MIN_SOURCES)) continue;
+          const p = indicationPageV3(drugKey, indKey, rs, { pageAgencies, manifest });
+          indicationPaths.set(`${drugKey}/${indKey}`, p.path);
+          indicationPages.push(p);
+        }
       }
-    }
-    for (const [drugKey, rows] of byDrug) {
-      files.push(drugPage(drugKey, { rows, indicationPaths }));
-      drugKeys.push(drugKey);
+      for (const [drugKey, gs] of byDrugGroups) {
+        const summary = summaryByDrug.get(drugKey);
+        // A drug with groups but no rollup is a build bug, not something to paper
+        // over with a page whose stats are invented.
+        if (!summary) continue;
+        files.push(drugPageV3(drugKey, { summary, groups: gs, indicationPaths, pageAgencies, manifest }));
+        drugKeys.push(drugKey);
+      }
+    } else {
+      const byDrug = groupBy(doses, r => r.drugKey);
+      for (const [drugKey, rows] of byDrug) {
+        for (const [indKey, rs] of groupBy(rows, r => r.indicationKey)) {
+          if (rs.length < MIN_INDICATION_ROWS) continue;
+          const p = indicationPage(drugKey, indKey, rs, pageAgencies, docByHash);
+          indicationPaths.set(`${drugKey}/${indKey}`, p.path);
+          indicationPages.push(p);
+        }
+      }
+      for (const [drugKey, rows] of byDrug) {
+        files.push(drugPage(drugKey, { rows, indicationPaths }));
+        drugKeys.push(drugKey);
+      }
     }
     files.push(...indicationPages);
   }
 
   files.push(landingPage({ manifest, states: statesWithPages, drugs: drugKeys, agencyPageCount: agencyPages.length }));
+  files.push(methodologyPage(manifest));
+  files.push(dataLicensePage());
   files.push({ path: '/census/census.css', html: CSS });
 
   // Sorted by path: the file list, the sitemap, and the manifest are all
@@ -749,6 +1278,21 @@ ul.inline{list-style:none;padding:0;margin:8px 0;display:flex;flex-wrap:wrap;gap
 ul.inline li{background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:5px 13px;font-size:.85rem}
 footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:.82rem}
 .disclaimer{border-left:2px solid var(--accent);padding-left:12px;margin:0 0 12px}
+.five{margin:12px 0 4px}
+.five-track{position:relative;height:14px;background:var(--panel);border:1px solid var(--line);border-radius:7px;margin:10px 0 6px}
+.five-iqr{position:absolute;top:2px;bottom:2px;background:var(--accent);opacity:.42;border-radius:5px}
+.five-med{position:absolute;top:-2px;bottom:-2px;width:2px;background:var(--accent)}
+.five-nums{font-size:.82rem}
+.five-nums th{font-weight:600;text-transform:uppercase;letter-spacing:.05em;font-size:.68rem}
+.five-nums td{font-family:ui-monospace,SFMono-Regular,monospace}
+.submit-form{display:flex;flex-direction:column;gap:6px;max-width:520px;margin:14px 0 4px}
+.submit-form label{font-size:.78rem;color:var(--muted)}
+.submit-form input{background:var(--panel);border:1px solid var(--line);border-radius:8px;color:var(--ink);padding:9px 12px;font:inherit;font-size:.9rem}
+.submit-form input:focus{outline:2px solid var(--accent);outline-offset:1px}
+.submit-form button{align-self:flex-start;margin-top:6px;background:var(--accent);color:#08111c;border:0;border-radius:8px;padding:9px 18px;font:inherit;font-weight:700;font-size:.88rem;cursor:pointer}
+.submit-form button[disabled]{opacity:.55;cursor:default}
+.submit-form .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form-msg{font-size:.82rem;color:var(--muted);min-height:1.2em;margin:6px 0 0}
 @media(max-width:640px){ul.cols{columns:1}h1{font-size:1.6rem}}
 `;
 
@@ -763,8 +1307,8 @@ function write(outDir, files) {
   }
 }
 
-export function generate({ dataDir, outDir }) {
-  const data = readContract(dataDir);
+export function generate({ dataDir, outDir, rowsDir = null }) {
+  const data = readContract(dataDir, rowsDir);
   const { files, sitemaps, urls } = buildPages(data);
   const all = [...files, ...sitemaps];
   const pm = pageManifest(all, data.manifest);
@@ -781,9 +1325,10 @@ if (isMain) {
     return i > -1 && process.argv[i + 1] ? process.argv[i + 1] : fallback;
   };
   const dataDir = arg('data', 'data/census');
+  const rowsDir = arg('rows', null);
   const outDir = arg('out', mkdtempSync(join(tmpdir(), 'census-pages-')));
   const quiet = process.argv.includes('--quiet');
-  const { files, urls } = generate({ dataDir, outDir });
+  const { files, urls } = generate({ dataDir, outDir, rowsDir });
   if (!quiet) {
     console.log(`census-pages: ${files.length} files, ${urls.length} URLs -> ${outDir}`);
   }
