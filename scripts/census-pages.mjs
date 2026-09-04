@@ -257,7 +257,7 @@ ${jsonLd.map(j => `  <script type="application/ld+json">\n${jsonLdText(j)}\n  </
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/census/census.css">
 </head>`;
 
@@ -307,7 +307,7 @@ const CENSUS_SECTIONS = [
 
 const productBar = path => `  <div class="pbar">
     <div class="wrap">
-      <a class="pbar-mark" href="/census/">EMS Protocol Census</a>
+      <a class="pbar-mark" href="/census/">US EMS Protocol Census</a>
       <nav class="pbar-nav" aria-label="Census sections">${CENSUS_SECTIONS.map(([label, prefix, href]) =>
     `<a href="${href}"${(prefix === null ? path === href : path.startsWith(prefix)) ? ' class="on" aria-current="page"' : ''}>${label}</a>`).join('')}</nav>
     </div>
@@ -393,7 +393,11 @@ const railLinks = (heading, items) => (items.length
 // `railLeft` puts the rail first in the source and on the left: the landing page is a
 // search-results screen, where the facets belong beside the results they filter, and a
 // detail page is a document, where the citation belongs to the right of what it cites.
-const page = ({ title, description, path, trail, jsonLd = [], body, rail = '', railLeft = false }) => {
+// `lead` renders ABOVE the layout grid, at the wrap's full width, before the rail
+// exists. Only the landing passes one: its hero is an argument, and an argument
+// squeezed into the results column beside a facet rail reads as a wide sidebar
+// rather than a statement. Detail pages pass nothing and are byte-identical.
+const page = ({ title, description, path, trail, jsonLd = [], body, rail = '', railLeft = false, lead = '' }) => {
   const railHtml = rail ? `        <aside class="rail">\n${rail}\n        </aside>` : '';
   const col = `        <div class="col">\n${body}\n        </div>`;
   return `${head({ title, description, path, jsonLd: [breadcrumbs(trail), ...jsonLd] })}
@@ -403,7 +407,7 @@ ${productBar(path)}
   <main>
     <div class="wrap">
 ${crumbHtml(trail)}
-      <div class="layout${rail ? (railLeft ? ' facets' : '') : ' solo'}">
+${lead ? `${lead}\n` : ''}      <div class="layout${rail ? (railLeft ? ' facets' : '') : ' solo'}">
 ${railLeft ? `${railHtml}\n${col}` : `${col}${railHtml ? `\n${railHtml}` : ''}`}
       </div>
     </div>
@@ -527,6 +531,64 @@ function doseCell(r) {
   return `${range} ${esc(r.unit ?? '')}${r.perKg ? '/kg' : ''}${max}`;
 }
 
+// ------------------------------------------------------------- the tile map
+//
+// The landing hero's one visual: a fixed-grid tile map of the 50 states plus DC.
+// Hand-placed [column, row] coordinates, not a projection and not a library — the
+// point is that every state is the same size, so the eye reads COVERAGE rather than
+// land area, and Rhode Island is as legible as Texas. The layout is the conventional
+// US tile grid: geography survives well enough to orient, and no tile overlaps.
+//
+// This is a CONSTANT. It never reads the clock, never randomizes, and the render
+// walks it in a sorted order, so the SVG is byte-identical across rebuilds — the
+// same determinism rule the rest of this file lives under.
+export const STATE_TILES = {
+  AK: [0, 0], ME: [11, 0],
+  WA: [1, 1], ID: [2, 1], MT: [3, 1], ND: [4, 1], MN: [5, 1], WI: [6, 1], MI: [8, 1], NY: [9, 1], VT: [10, 1], NH: [11, 1],
+  OR: [1, 2], NV: [2, 2], WY: [3, 2], SD: [4, 2], IA: [5, 2], IL: [6, 2], IN: [7, 2], OH: [8, 2], PA: [9, 2], NJ: [10, 2], MA: [11, 2],
+  CA: [1, 3], UT: [2, 3], CO: [3, 3], NE: [4, 3], MO: [5, 3], KY: [6, 3], WV: [7, 3], VA: [8, 3], MD: [9, 3], DE: [10, 3], CT: [11, 3],
+  AZ: [2, 4], NM: [3, 4], KS: [4, 4], AR: [5, 4], TN: [6, 4], NC: [7, 4], DC: [9, 4], RI: [11, 4],
+  OK: [4, 5], LA: [5, 5], MS: [6, 5], AL: [7, 5], SC: [8, 5],
+  HI: [0, 6], TX: [4, 6], GA: [8, 6],
+  FL: [9, 7],
+};
+
+const TILE_COLS = 12;
+const TILE_ROWS = 8;
+const TILE_SIZE = 30;
+const TILE_GAP = 4;
+
+// Three states a tile can be in, and each is a claim the data can back:
+//   named   — the census has a named agency page in that state (the red signal)
+//   doc     — at least one document, but no agency page yet (ink)
+//   none    — nothing yet (hairline outline)
+// Everything comes from documents.json / agencies.json, which the landing already
+// holds; no new input, and no number is typed.
+function tileMap({ documents, pageStates }) {
+  const withDocs = new Set(documents.filter(d => d.state).map(d => String(d.state).toUpperCase()));
+  const named = new Set(pageStates.map(s => String(s).toUpperCase()));
+
+  const w = TILE_COLS * (TILE_SIZE + TILE_GAP) - TILE_GAP;
+  const h = TILE_ROWS * (TILE_SIZE + TILE_GAP) - TILE_GAP;
+
+  // Sorted by code so the element order never depends on object-key order.
+  const tiles = Object.keys(STATE_TILES).sort().map((code, i) => {
+    const [c, r] = STATE_TILES[code];
+    const cls = named.has(code) ? 'named' : withDocs.has(code) ? 'doc' : 'none';
+    const x = c * (TILE_SIZE + TILE_GAP);
+    const y = r * (TILE_SIZE + TILE_GAP);
+    // The stagger is an index on a sorted list, so it is the same every build. The
+    // CSS turns it off wholesale under prefers-reduced-motion.
+    return `<g class="tile t-${cls}" style="--i:${i}"><rect x="${x}" y="${y}" width="${TILE_SIZE}" height="${TILE_SIZE}" rx="3"/>`
+      + `<text x="${x + TILE_SIZE / 2}" y="${y + TILE_SIZE / 2}" dy="0.35em">${esc(code)}</text></g>`;
+  }).join('');
+
+  const nNamed = Object.keys(STATE_TILES).filter(s => named.has(s)).length;
+  const nDocs = Object.keys(STATE_TILES).filter(s => withDocs.has(s) && !named.has(s)).length;
+
+  return { svg: `<svg class="tilemap" viewBox="0 0 ${w} ${h}" role="img" aria-label="Map of US states covered by the census: ${num(nNamed)} with a named agency page, ${num(nDocs)} with documents only.">${tiles}</svg>`, nNamed, nDocs };
+}
+
 // Per-state coverage counts for the landing table (spec 8): agencies with a
 // current protocol, agencies without, and whether the state has a statewide
 // baseline document. Built from the same `linkableAgencies` + `documents` the
@@ -575,12 +637,42 @@ function landingPage({ manifest, states, drugs, agencyPageCount, agencies = [], 
     `as of <span class="n">${esc(manifest.asOf)}</span>`,
   ].join('<span class="sep" aria-hidden="true"></span>')}</p>`;
 
-  const body = `${docHeader({
-    kind: 'Public record',
-    title: 'The EMS Protocol Census',
-    lede: `A free, versioned record of what United States EMS agencies actually carry, built from published protocol documents. ${num(manifest.doseRows)} dose entries from ${num(manifest.namedAgencies)} named agencies, as of ${esc(manifest.asOf)}.`,
-  })}
-${summaryLine}
+  // The hero is the one place on the census that argues rather than reports: it is
+  // the landing, and the landing is the brand. Everything below it, and every detail
+  // page, stays in the research register the rest of this file is written in.
+  const map = tileMap({ documents, pageStates: states });
+  // The map's own caption, in the same honest-counts shape every other number here
+  // uses: what is filled, what is outlined, and the n behind each. Derived from the
+  // tile classes themselves, so the sentence can never disagree with the picture.
+  const mapCounts = [
+    `<span class="n">${num(map.nNamed)}</span> states with a named agency page`,
+    `<span class="n">${num(map.nDocs)}</span> more with documents and no page yet`,
+    `<span class="n">${num(Object.keys(STATE_TILES).length - map.nNamed - map.nDocs)}</span> still blank`,
+  ].join(', ');
+
+  const lead = `      <section class="hero">
+        <div class="hero-say">
+          <span class="badge">Public record</span>
+          <h1>Prehospital care varies from agency to agency, and nobody could see how.</h1>
+          <p class="dek">Protocols live in thousands of separate PDFs, so the differences between them have never been readable in one place. The United States EMS Protocol Census reads what agencies publish and turns it into a versioned public record of the drugs, doses and routes they carry, so you can compare agencies across the country. It rebuilds itself every night from the agencies' own documents.</p>
+        </div>
+        <figure class="hero-map">
+          ${map.svg}
+          <figcaption>${mapCounts}. Filled in red where an agency has a page, in ink where the census holds documents only.</figcaption>
+        </figure>
+      </section>
+      <section class="why">
+        <h2>Why it matters</h2>
+        <ul class="claims">
+          <li><strong>A medic who changes agencies relearns every dose.</strong> The drug is the same and the number is different, and until now there was no way to see which agencies differ or by how much.</li>
+          <li><strong>A medical director revising a protocol has no benchmark.</strong> Writing the next version means guessing at what everyone else does. The census shows what the rest of the country actually carries, with the documents behind it.</li>
+          <li><strong>Researchers have never had the dataset.</strong> There has been no denominator for prehospital medicine, so questions about how care varies could not be asked, let alone answered.</li>
+          <li><strong>Arguing for EMS pay, training and staffing takes evidence.</strong> Anecdote loses those arguments. Numbers that anyone can check and cite do better.</li>
+          <li><strong>It updates every night, and agencies decide whether they are in it.</strong> New documents are read and revisions become new versions with the old one kept in the history. Send a public URL to be listed, or ask to be removed and it comes down the same day, no reason needed.</li>
+        </ul>
+      </section>`;
+
+  const body = `${summaryLine}
       <p class="honest">${num(manifest.dosesParsed)} entries parsed to a number and route, ${num(manifest.dosesPartial)} partially, ${num(manifest.dosesRaw)} kept as written. Raw entries are counted and shown as written, never dropped.${withheldSentence(withheld)}</p>
 ${drugs.length ? `      <section id="drugs">
         <h2>Drugs<span class="count">${num(drugs.length)}</span></h2>
@@ -622,14 +714,15 @@ ${submitForm({ id: 'list-form', kind: 'listing', urlLabel: 'Public URL of the pr
     html: page({
       rail,
       railLeft: true,
-      title: 'EMS Protocol Census - what US EMS agencies actually carry',
+      lead,
+      title: 'United States EMS Protocol Census - what US EMS agencies actually carry',
       description: `A free, versioned record of United States EMS protocols: ${num(manifest.doseRows)} dose entries from ${num(manifest.namedAgencies)} named agencies, as of ${manifest.asOf}.`,
       path: '/census/',
       trail: [['Home', '/'], ['EMS Census', '/census/']],
       jsonLd: [{
         '@context': 'https://schema.org',
         '@type': 'Dataset',
-        name: 'ProtoQuiz EMS Protocol Census',
+        name: 'United States EMS Protocol Census',
         description: 'Dose, route, and indication facts extracted from published United States EMS protocol documents.',
         url: `${ORIGIN}/census/`,
         // Points at the page that actually STATES a license (CC BY 4.0 on summaries,
@@ -1730,6 +1823,42 @@ h1{font-size:1.8125rem;line-height:1.25;margin:0 0 8px;font-weight:600;letter-sp
 .sig-review{color:oklch(0.48 0.13 75);border-color:color-mix(in oklch,var(--sig-review) 50%,var(--rule))}
 .sig-superseded{color:var(--muted)}
 
+/* ---------------------------------------------------------------- the hero
+   The landing is the brand register; every detail page stays in the research
+   register above. The scale jump is the whole move: a 700-weight statement at
+   ~3.5x the body, tightened, against a 400-weight dek. One family, one accent. */
+.hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:center;margin:4px 0 clamp(40px,6vw,64px);padding-bottom:clamp(36px,5vw,56px);border-bottom:1px solid var(--rule)}
+.hero-say{min-width:0}
+.hero .badge{margin:0 0 14px}
+.hero h1{font-size:clamp(2.125rem,4.4vw,3.9rem);line-height:1.05;letter-spacing:-.035em;font-weight:700;margin:0 0 22px;max-width:15ch;text-wrap:balance}
+.hero .dek{font-size:clamp(1rem,1.2vw,1.0625rem);line-height:1.62;color:var(--muted);margin:0;max-width:54ch}
+
+/* the tile map: equal-area states, so the eye reads coverage and not acreage */
+.hero-map{margin:0;min-width:0}
+.tilemap{display:block;width:100%;height:auto}
+.tilemap .tile rect{fill:none;stroke:var(--rule);stroke-width:1}
+.tilemap .tile text{font-family:var(--mono);font-size:11px;font-weight:500;text-anchor:middle;fill:var(--muted)}
+.tilemap .t-doc rect{fill:var(--ink);stroke:var(--ink)}
+.tilemap .t-doc text{fill:var(--ground)}
+.tilemap .t-named rect{fill:var(--accent);stroke:var(--accent)}
+.tilemap .t-named text{fill:oklch(0.99 0.003 250)}
+.hero-map figcaption{margin:16px 0 0;font-size:.8125rem;line-height:1.55;color:var(--muted);max-width:46ch}
+.hero-map figcaption .n{font-family:var(--mono);font-weight:500;color:var(--ink);font-variant-numeric:tabular-nums}
+
+/* the one orchestrated page-load moment: the tiles arrive, nothing else moves */
+@media(prefers-reduced-motion:no-preference){
+  .tilemap .tile{opacity:0;animation:tile-in .4s cubic-bezier(.22,1,.36,1) forwards;animation-delay:calc(var(--i)*8ms)}
+}
+@keyframes tile-in{from{opacity:0}to{opacity:1}}
+
+/* why it matters: a flowing list of statements, not a grid of cards */
+.why{margin:0 0 clamp(36px,5vw,52px)}
+.why h2{margin-top:0}
+ul.claims{list-style:none;padding:0;margin:0;max-width:68ch}
+ul.claims li{padding:14px 0;border-bottom:1px solid var(--rule);font-size:1rem;line-height:1.6;color:var(--muted)}
+ul.claims li:first-child{border-top:1px solid var(--rule)}
+ul.claims strong{font-weight:600;color:var(--ink)}
+
 h2{font-size:1.25rem;line-height:1.35;margin:44px 0 12px;font-weight:600;letter-spacing:-.01em;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
 h3{font-size:1.05rem;margin:28px 0 8px;font-weight:600;color:var(--ink)}
 h2 .count{font-family:var(--mono);font-size:.8125rem;font-weight:400;color:var(--muted);background:var(--panel);border:1px solid var(--rule);border-radius:999px;padding:0 8px;font-variant-numeric:tabular-nums}
@@ -1845,10 +1974,15 @@ footer p{max-width:none}
   .layout,.layout.facets{grid-template-columns:minmax(0,1fr);gap:32px}
   .rail,.toc{position:static}
   ul.cols{columns:2}
+  /* hero and map stack; the map keeps its aspect via viewBox and simply gets wider */
+  .hero{grid-template-columns:minmax(0,1fr);gap:32px}
+  .hero h1{max-width:20ch}
+  .hero-map figcaption{max-width:none}
 }
 @media(max-width:640px){
   ul.cols{columns:1}
   h1{font-size:1.5rem}
+  .hero h1{font-size:2rem;letter-spacing:-.028em;max-width:none}
   .stat{flex:1 1 100%;border-right:0;border-bottom:1px solid var(--rule)}
   .stat:last-child{border-bottom:0}
 }
