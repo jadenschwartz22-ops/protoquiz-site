@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 3,
+  "rows": [
+    {
+      "at": "2026-08-01T00:00:00Z",
+      "hash": "aaa1",
+      "agencyKey": "denver-health",
+      "change": "added",
+      "from": null,
+      "to": "listed_named",
+      "by": "build",
+      "reason": null
+    },
+    {
+      "at": "2026-08-02T00:00:00Z",
+      "hash": "aaa2",
+      "agencyKey": "denver-health",
+      "change": "superseded",
+      "from": "current",
+      "to": "superseded",
+      "by": "build",
+      "reason": null
+    },
+    {
+      "at": "2026-08-03T00:00:00Z",
+      "hash": "bbb1",
+      "agencyKey": "boulder-county-ems",
+      "change": "state_changed",
+      "from": "pending_review",
+      "to": "listed_named",
+      "by": "jaden",
+      "reason": "verified public record"
+    }
+  ]
+}
