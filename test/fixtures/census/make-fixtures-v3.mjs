@@ -59,6 +59,10 @@ const documents = [
   // Aggregate: every named field stays null by contract. Counted, never on a named page.
   doc({ hash: 'eee1', publicationState: 'listed_aggregate', confidence: 'low', pageCount: 120, doseCount: 5, hashSource: 'corpus_only', origin: 'device' }),
   doc({ hash: 'fff1', publicationState: 'delisted', status: null, pageCount: 55, doseCount: 0, origin: 'wayback' }),
+  // Statewide baseline (ruling R1): a floor every CO agency inherits, never counted
+  // as any one agency's own coverage. Not `named()` — a statewide document has no
+  // one agency to attach to; it carries the state's own name for the page's list.
+  doc({ hash: 'kkk1', agencyName: 'Colorado Statewide EMS Protocols', state: 'CO', jurisdiction: 'statewide', publicRecord: true, effectiveDate: '2026-01-01', effectiveDateSource: 'printed', origin: 'seed', pageCount: 90, sourceUrl: 'https://example.gov/co-statewide.pdf', doseCount: 0 }),
 ];
 
 // ------------------------------------------------------------------- agencies
@@ -69,11 +73,18 @@ const agency = (o) => ({
   pendingReview: null, mayBeOutdated: false, ...o,
 });
 
+// coverage (spec 8) is deliberately present on CO agencies only, and TRUE/FALSE
+// mixed within CO — this fixture exercises both the split-list rendering AND the
+// "some rows carry it, some don't" case a real mid-rollout build produces. TX and
+// WA carry no `coverage` field at all, same as a v2 row or a v3 build before the
+// field lands: state pages for those must render as the single unsplit list.
+const coverage = (hasProtocol) => ({ coverage: { hasProtocol, jurisdiction: 'county' } });
+
 const agencies = [
-  agency({ agencyKey: 'aurora-fire-rescue', name: 'Aurora Fire Rescue', state: 'CO', city: 'Aurora', jurisdiction: 'city', currentHash: 'ggg1', currentEffectiveDate: '2026-02-10', doseCount: 5 }),
-  agency({ agencyKey: 'boulder-county-ems', name: 'Boulder County EMS', state: 'CO', city: 'Boulder', jurisdiction: 'county', currentHash: 'bbb1', currentEffectiveDate: '2023-02-01', doseCount: 6, mayBeOutdated: true }),
-  agency({ agencyKey: 'denver-health', name: 'Denver Health Paramedic Division', state: 'CO', city: 'Denver', jurisdiction: 'city', currentHash: 'aaa1', currentEffectiveDate: '2026-01-15', documentCount: 2, doseCount: 9, pendingReview: { effectiveDate: '2026-06-01' } }),
-  agency({ agencyKey: 'jeffco-ems', name: 'Jefferson County EMS', state: 'CO', city: 'Golden', jurisdiction: 'county', currentHash: 'hhh1', currentEffectiveDate: '2026-01-20', doseCount: 5 }),
+  agency({ agencyKey: 'aurora-fire-rescue', name: 'Aurora Fire Rescue', state: 'CO', city: 'Aurora', jurisdiction: 'city', currentHash: 'ggg1', currentEffectiveDate: '2026-02-10', doseCount: 5, coverage: { hasProtocol: false, jurisdiction: 'city' } }),
+  agency({ agencyKey: 'boulder-county-ems', name: 'Boulder County EMS', state: 'CO', city: 'Boulder', jurisdiction: 'county', currentHash: 'bbb1', currentEffectiveDate: '2023-02-01', doseCount: 6, mayBeOutdated: true, ...coverage(true) }),
+  agency({ agencyKey: 'denver-health', name: 'Denver Health Paramedic Division', state: 'CO', city: 'Denver', jurisdiction: 'city', currentHash: 'aaa1', currentEffectiveDate: '2026-01-15', documentCount: 2, doseCount: 9, pendingReview: { effectiveDate: '2026-06-01' }, coverage: { hasProtocol: true, jurisdiction: 'city' } }),
+  agency({ agencyKey: 'jeffco-ems', name: 'Jefferson County EMS', state: 'CO', city: 'Golden', jurisdiction: 'county', currentHash: 'hhh1', currentEffectiveDate: '2026-01-20', doseCount: 5, ...coverage(false) }),
   agency({ agencyKey: 'king-county-medic', name: 'King County Medic One', state: 'WA', city: 'Seattle', jurisdiction: 'county', currentHash: 'jjj1', currentEffectiveDate: '2026-02-20', doseCount: 5 }),
   agency({ agencyKey: 'stateless-ems', name: 'Stateless EMS', jurisdiction: 'regional', currentHash: 'ddd1', currentEffectiveDate: '2026-02-01', doseCount: 4 }),
   agency({ agencyKey: 'thin-agency', name: 'Thin Agency EMS', state: 'CO', jurisdiction: 'county', currentHash: 'ccc1', currentEffectiveDate: '2026-03-01', doseCount: 2 }),

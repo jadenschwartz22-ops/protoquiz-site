@@ -430,11 +430,39 @@ function doseCell(r) {
   return `${range} ${esc(r.unit ?? '')}${r.perKg ? '/kg' : ''}${max}`;
 }
 
-function landingPage({ manifest, states, drugs, agencyPageCount }) {
+// Per-state coverage counts for the landing table (spec 8): agencies with a
+// current protocol, agencies without, and whether the state has a statewide
+// baseline document. Built from the same `linkableAgencies` + `documents` the
+// state pages themselves render from, so the table can never disagree with the
+// pages it summarizes.
+function coverageByState(states, agencies, documents) {
+  const statewideStates = new Set(
+    documents.filter(d => d.jurisdiction === 'statewide' && d.status === 'current' && d.state).map(d => d.state),
+  );
+  return states.map(st => {
+    // Only agencies that actually carry `coverage` count here — an agency with no
+    // coverage data makes no claim, not a silent "without". A state whose agencies
+    // are all coverage-less still gets a row (0/0), which is honest: it says the same
+    // "not yet known" the state page's own fallback list says, not "zero coverage".
+    const withCoverage = agencies.filter(a => a.state === st && a.coverage);
+    return {
+      state: st,
+      withProtocol: withCoverage.filter(a => a.coverage.hasProtocol).length,
+      withoutProtocol: withCoverage.filter(a => !a.coverage.hasProtocol).length,
+      statewideBaseline: statewideStates.has(st),
+    };
+  });
+}
+
+function landingPage({ manifest, states, drugs, agencyPageCount, agencies = [], documents = [] }) {
   // Two different numbers, both true: how many agencies the census holds, and
   // how many have a page (the rest are below a thin-page threshold). Printing
   // only the first would promise pages that are deliberately not generated.
   const withheld = manifest.namedAgencies - agencyPageCount;
+  // coverage is optional (v2 payloads, or a v3 build before the field lands):
+  // the table renders only when at least one agency row carries it, and is
+  // omitted entirely otherwise — never a table of blanks, never a throw.
+  const coverageRows = agencies.some(a => a.coverage) ? coverageByState(states, agencies, documents) : [];
   const body = `      <span class="badge">Public record</span>
       <h1>The EMS Protocol Census</h1>
       <p class="lede">A free, versioned record of what United States EMS agencies actually carry, built from published protocol documents. ${num(manifest.doseRows)} dose entries from ${num(manifest.namedAgencies)} named agencies, as of ${esc(manifest.asOf)}.</p>
@@ -457,6 +485,10 @@ ${drugs.length ? `      <section id="drugs">
       <section id="states">
         <h2>By state</h2>
         <ul class="cols">${states.map(s => `<li><a href="/census/states/${slug(s)}/">${esc(stateLabel(s))}</a></li>`).join('')}</ul>
+${coverageRows.length ? `        <div class="scroll"><table>
+          <thead><tr><th>State</th><th>With a protocol</th><th>Without</th><th>Statewide baseline</th></tr></thead>
+          <tbody>${coverageRows.map(r => `<tr><td><a href="/census/states/${slug(r.state)}/">${esc(stateLabel(r.state))}</a></td><td>${num(r.withProtocol)}</td><td>${num(r.withoutProtocol)}</td><td>${r.statewideBaseline ? 'Yes' : 'No'}</td></tr>`).join('')}</tbody>
+        </table></div>` : ''}
       </section>
       <section id="list">
         <h2>List your agency</h2>
@@ -580,10 +612,61 @@ ${submitForm({ id: 'correct-form', kind: 'correction', agencyKey: agency.agencyK
   };
 }
 
-function statePage(state, { agencies, doses }) {
+// One <li>, shared by every list below so the coverage split and the plain
+// list render identically for an agency that appears in both.
+const agencyLi = a => `<li><a href="/census/agencies/${esc(a.agencyKey)}/">${esc(a.name)}</a>${a.currentEffectiveDate ? ` <span class="muted">${esc(a.currentEffectiveDate)}</span>` : ''}</li>`;
+
+function statePage(state, { agencies, doses, documents = [] }) {
   const listed = agencies.filter(a => a.state === state).sort((a, b) => a.agencyKey.localeCompare(b.agencyKey));
   const drugs = groupBy(doses, r => r.drugKey);
   const name = stateLabel(state);
+  // coverage is a v3 addition (spec 8) and optional: a v2 payload, or a v3 build
+  // before the field lands, carries no `coverage` on any row. Rendering must be
+  // byte-identical to the pre-coverage single list in that case — never throw,
+  // never invent a split from data that was never asked for.
+  const hasCoverage = listed.some(a => a.coverage);
+  // Statewide baseline documents (ruling R1): a statewide PDF is a floor every
+  // agency in the state inherits, never a claim that any one agency has its own
+  // current protocol. Named separately from the agency split so it can never be
+  // read as coverage. `status: 'current'` matches the same "current" the agency
+  // coverage check uses — a superseded statewide baseline is not a live floor.
+  const statewideBaselines = hasCoverage
+    ? documents.filter(d => d.state === state && d.jurisdiction === 'statewide' && d.status === 'current')
+      .sort((x, y) => String(x.hash).localeCompare(String(y.hash)))
+    : [];
+  const agenciesSection = hasCoverage
+    ? (() => {
+      // Split only agencies that actually carry `coverage`; one without it makes
+      // no claim, never folded silently into "without" (that would fabricate a
+      // negative from missing data — the same rule the landing table follows).
+      const withProtocol = listed.filter(a => a.coverage?.hasProtocol);
+      const withoutProtocol = listed.filter(a => a.coverage && !a.coverage.hasProtocol);
+      const unknown = listed.filter(a => !a.coverage);
+      return `      <section id="agencies">
+        <h2>Agencies</h2>
+        <h3>With a current protocol</h3>
+        ${withProtocol.length
+        ? `<ul class="cols">${withProtocol.map(agencyLi).join('')}</ul>`
+        : '<p class="muted">None yet.</p>'}
+        <h3>Without a current protocol</h3>
+        ${withoutProtocol.length
+        ? `<ul class="cols">${withoutProtocol.map(agencyLi).join('')}</ul>`
+        : '<p class="muted">None.</p>'}
+${unknown.length ? `        <h3>Not yet assessed</h3>
+        <ul class="cols">${unknown.map(agencyLi).join('')}</ul>` : ''}
+      </section>
+${statewideBaselines.length ? `      <section id="statewide-baseline">
+        <h2>Statewide baseline</h2>
+        <p class="muted">A statewide document sets a floor every agency in ${esc(name)} inherits. It is not counted as any one agency's own coverage above.</p>
+        <ul class="cols">${statewideBaselines.map(d => `<li>${esc(d.agencyName ?? name)}${d.sourceUrl ? ` <a href="${esc(d.sourceUrl)}" rel="nofollow noopener">source</a>` : ''}</li>`).join('')}</ul>
+      </section>` : ''}`;
+    })()
+    : `      <section id="agencies">
+        <h2>Agencies</h2>
+        ${listed.length
+      ? `<ul class="cols">${listed.map(agencyLi).join('')}</ul>`
+      : '<p>No agency in this state has a page yet.</p>'}
+      </section>`;
   const body = `      <span class="badge">State</span>
       <h1>EMS protocols in ${esc(name)}</h1>
       <p class="lede">${num(listed.length)} named ${listed.length === 1 ? 'agency' : 'agencies'} in ${esc(name)} ${listed.length === 1 ? 'has' : 'have'} published protocols in the census, with ${num(doses.length)} dose entries across ${num(drugs.size)} ${drugs.size === 1 ? 'drug' : 'drugs'}.</p>
@@ -592,12 +675,7 @@ ${stats([
     ['dose entries', num(doses.length)],
     ['drugs', num(drugs.size)],
   ])}
-      <section id="agencies">
-        <h2>Agencies</h2>
-        ${listed.length
-    ? `<ul class="cols">${listed.map(a => `<li><a href="/census/agencies/${esc(a.agencyKey)}/">${esc(a.name)}</a>${a.currentEffectiveDate ? ` <span class="muted">${esc(a.currentEffectiveDate)}</span>` : ''}</li>`).join('')}</ul>`
-    : '<p>No agency in this state has a page yet.</p>'}
-      </section>`;
+${agenciesSection}`;
 
   return {
     path: `/census/states/${slug(state)}/`,
@@ -1148,6 +1226,7 @@ export function buildPages({ documents, agencies, doses, ledger, manifest, compa
     files.push(statePage(st, {
       agencies: linkableAgencies,
       doses: namedDoses.filter(r => agencyByKey.get(r.agencyKey)?.state === st),
+      documents,
     }));
   }
 
@@ -1214,7 +1293,10 @@ export function buildPages({ documents, agencies, doses, ledger, manifest, compa
     files.push(...indicationPages);
   }
 
-  files.push(landingPage({ manifest, states: statesWithPages, drugs: drugKeys, agencyPageCount: agencyPages.length }));
+  files.push(landingPage({
+    manifest, states: statesWithPages, drugs: drugKeys, agencyPageCount: agencyPages.length,
+    agencies: linkableAgencies, documents,
+  }));
   files.push(methodologyPage(manifest));
   files.push(dataLicensePage());
   files.push({ path: '/census/census.css', html: CSS });

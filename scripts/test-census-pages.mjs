@@ -565,6 +565,96 @@ test('shape-B pediatric rows never move a published number', () => {
   assert.ok(!peds.agencyKeys.includes('king-county-medic'), 'a dropped shape-B row must not name its agency');
 });
 
+console.log('\nv3: coverage map data (spec 8)');
+// coverage is optional on an agencies.json row: `{hasProtocol, jurisdiction}`.
+// The v3 fixture carries it on CO agencies only (mixed true/false) and omits it
+// on TX/WA, so both the split-rendering and the byte-identical-fallback paths
+// are exercised from the same build.
+const coState = v3html['/census/states/co/'];
+const txState = v3html['/census/states/tx/'];
+const coLanding = v3html['/census/'];
+
+test('a state page with coverage splits named agencies with/without a current protocol', () => {
+  assert.ok(coState.includes('With a current protocol'), 'missing the "with" heading');
+  assert.ok(coState.includes('Without a current protocol'), 'missing the "without" heading');
+  const withIdx = coState.indexOf('With a current protocol');
+  const withoutIdx = coState.indexOf('Without a current protocol');
+  const dhIdx = coState.indexOf('Denver Health Paramedic Division');
+  const bcIdx = coState.indexOf('Boulder County EMS');
+  const afIdx = coState.indexOf('Aurora Fire Rescue');
+  const jcIdx = coState.indexOf('Jefferson County EMS');
+  // denver-health and boulder-county-ems carry hasProtocol:true in the fixture.
+  assert.ok(dhIdx > withIdx && dhIdx < withoutIdx, 'Denver Health must be in the WITH list');
+  assert.ok(bcIdx > withIdx && bcIdx < withoutIdx, 'Boulder County EMS must be in the WITH list');
+  // aurora-fire-rescue and jeffco-ems carry hasProtocol:false.
+  assert.ok(afIdx > withoutIdx, 'Aurora Fire Rescue must be in the WITHOUT list');
+  assert.ok(jcIdx > withoutIdx, 'Jefferson County EMS must be in the WITHOUT list');
+});
+test('a statewide baseline document is listed separately and never counted as agency coverage', () => {
+  assert.ok(coState.includes('Statewide baseline'), 'missing the statewide baseline section');
+  assert.ok(coState.includes('Colorado Statewide EMS Protocols'), 'the statewide document must be named');
+  // It must sit in its own section, not inside either coverage list.
+  const baselineIdx = coState.indexOf('Statewide baseline');
+  const agenciesIdx = coState.indexOf('<section id="agencies">');
+  assert.ok(baselineIdx > agenciesIdx, 'the baseline section must follow the agencies section');
+  const agenciesSection = coState.slice(agenciesIdx, baselineIdx);
+  assert.ok(!agenciesSection.includes('Colorado Statewide EMS Protocols'), 'the statewide doc must not appear inside the agency split');
+});
+test('a state page with no coverage on any of its agencies renders the plain unsplit list, unchanged', () => {
+  assert.ok(!txState.includes('With a current protocol'), 'TX must not render the coverage split');
+  assert.ok(!txState.includes('Without a current protocol'), 'TX must not render the coverage split');
+  assert.ok(!txState.includes('Statewide baseline'), 'TX has no statewide document and must not render that section');
+  assert.ok(txState.includes('Travis County EMS'), 'the plain list must still name its agency');
+  assert.ok(/<ul class="cols"><li><a href="\/census\/agencies\/travis-county-ems\/"/.test(txState), 'TX must render the single plain list, byte-identical in shape to a v2/no-coverage build');
+});
+test('the landing page prints a per-state coverage table only when at least one agency row carries coverage', () => {
+  assert.ok(coLanding.includes('<th>State</th><th>With a protocol</th><th>Without</th><th>Statewide baseline</th>'), 'missing the coverage table header');
+  // CO: 2 with, 2 without (denver-health, boulder-county-ems / aurora-fire-rescue, jeffco-ems), statewide yes.
+  assert.ok(/<td><a href="\/census\/states\/co\/">Colorado<\/a><\/td><td>2<\/td><td>2<\/td><td>Yes<\/td>/.test(coLanding),
+    'CO row must read 2 with / 2 without / statewide Yes');
+  // TX and WA carry no coverage on any agency, so they read 0/0 and are still listed
+  // (coverage is per-state math from linkableAgencies, not an opt-out per state) —
+  // but must never claim a statewide baseline they don't have.
+  assert.ok(/<td><a href="\/census\/states\/tx\/">Texas<\/a><\/td><td>0<\/td><td>0<\/td><td>No<\/td>/.test(coLanding),
+    'TX row must read 0/0/No, never fabricated counts');
+});
+test('a v3 build with coverage on NO agency omits the landing table entirely, and a v2 build never renders it', () => {
+  const d = v3data();
+  d.agencies = d.agencies.map(a => { const { coverage, ...rest } = a; return rest; });
+  const out = buildPages(d);
+  const landing = out.files.find(f => f.path === '/census/').html;
+  assert.ok(!landing.includes('<th>State</th><th>With a protocol</th>'), 'no agency carries coverage, so no table may render');
+  assert.ok(!html['/census/'].includes('<th>State</th><th>With a protocol</th>'), 'a v2 build must never render the coverage table');
+});
+test('an agency in a coverage state with no coverage of its own is never fabricated into with/without', () => {
+  // A mixed-rollout state: some agencies migrated to carrying `coverage`, one has
+  // not yet. That one must land in "Not yet assessed", never silently counted as
+  // "without a current protocol" — a missing fact is not a negative fact.
+  const d = v3data();
+  d.agencies = d.agencies.map(a => a.agencyKey === 'jeffco-ems' ? (() => { const { coverage, ...rest } = a; return rest; })() : a);
+  const out = buildPages(d);
+  const co = out.files.find(f => f.path === '/census/states/co/').html;
+  assert.ok(co.includes('Not yet assessed'), 'missing the "not yet assessed" bucket');
+  const unknownIdx = co.indexOf('Not yet assessed');
+  const withoutIdx = co.indexOf('Without a current protocol');
+  const jcIdx = co.indexOf('Jefferson County EMS');
+  assert.ok(jcIdx > unknownIdx, 'jeffco-ems must appear in the "not yet assessed" bucket');
+  const withoutSection = co.slice(withoutIdx, unknownIdx);
+  assert.ok(!withoutSection.includes('Jefferson County EMS'), 'jeffco-ems must not be counted as "without" merely for lacking coverage data');
+});
+test('a coverage-free rebuild of every CO state page matches the no-coverage fixture format exactly', () => {
+  // Strip coverage from the v3 fixture entirely and confirm the state page falls back
+  // to the exact plain-list markup a v2/no-coverage build already produces — the
+  // contract says "render exactly as today", not "render something similar".
+  const d = v3data();
+  d.agencies = d.agencies.map(a => { const { coverage, ...rest } = a; return rest; });
+  const out = buildPages(d);
+  const co = out.files.find(f => f.path === '/census/states/co/').html;
+  assert.ok(!co.includes('With a current protocol'), 'stripped-coverage CO must not split');
+  assert.ok(!co.includes('Statewide baseline'), 'stripped-coverage CO must not show the baseline section');
+  assert.ok(/<section id="agencies">\s*<h2>Agencies<\/h2>\s*<ul class="cols">/.test(co), 'must fall back to the exact plain-list shape');
+});
+
 console.log('\nmethodology page');
 const methodology = v3html['/census/methodology/'];
 test('the methodology page is generated and linked from the landing and the footer', () => {
