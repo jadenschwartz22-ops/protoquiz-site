@@ -700,15 +700,44 @@ test('a drug page states the withheld-agency count when it differs from the name
   assert.ok(/1 named agency has too little published detail for a page of its own and is counted here only\./.test(h),
     'the drug page must state the withheld count using the landing sentence, when it differs from the named list');
 });
-test('a drug page states nothing extra when the named-agencies count already matches the list', () => {
+test('a drug page states nothing extra when every named agency in a group already has a page', () => {
   const d = v3data();
-  // Force EPINEPHRINE's n.agencies down to the linked named-agency count (5): the
-  // two numbers now agree, so the mismatch sentence must not appear.
-  const linked = new Set(d.compare.groups.filter(g => g.key.drugKey === 'EPINEPHRINE').flatMap(g => g.agencyKeys ?? []));
-  const namedCount = [...linked].filter(k => k !== 'king-county-medic').length;
-  d.compare.drugs = d.compare.drugs.map(x => x.drugKey === 'EPINEPHRINE' ? { ...x, n: { ...x.n, agencies: namedCount } } : x);
+  // Drop the one pageless agency (king-county-medic) out of every EPINEPHRINE
+  // group's agencyKeys, so the withheld set is genuinely empty — the sentence must
+  // key off group membership, not off n.agencies matching named.count (n.agencies
+  // is a drug-wide, raw-included rollup and must never gate this sentence).
+  d.compare.groups = d.compare.groups.map(g => g.key.drugKey === 'EPINEPHRINE'
+    ? { ...g, agencyKeys: (g.agencyKeys ?? []).filter(k => k !== 'king-county-medic') }
+    : g);
   const h = buildPages(d).files.find(f => f.path === '/census/drugs/epinephrine/').html;
-  assert.ok(!/too little published detail for a page of its own/.test(h), 'no withheld sentence when the counts already match');
+  assert.ok(!/too little published detail for a page of its own/.test(h), 'no withheld sentence when no group holds a pageless agency');
+});
+
+// Regression: drugs[].n.agencies counts every agency with a row for the drug,
+// raw-only rows included, while a group's agencyKeys only ever holds agencies in
+// a comparable (parsed) group. An agency that has its own page (it clears
+// MIN_AGENCY_DRUGS on other drugs) but whose EPINEPHRINE rows are all raw is
+// counted in n.agencies and has no page of its own for THIS drug, yet is absent
+// from every EPINEPHRINE group's agencyKeys — so the old
+// `n.agencies - named.count` arithmetic folded it into the withheld count and
+// the page falsely claimed it "has too little published detail for a page of
+// its own" (travis-county-ems has a page; it links right below the sentence).
+test('a raw-only agency with its own page does not inflate the withheld-agency count', () => {
+  const d = v3data();
+  // Drop travis-county-ems from every EPINEPHRINE group (raw-only for this drug),
+  // but count it in the drug-wide rollup, the way an all-raw agency really would be.
+  d.compare.groups = d.compare.groups.map(g => g.key.drugKey === 'EPINEPHRINE'
+    ? { ...g, agencyKeys: (g.agencyKeys ?? []).filter(k => k !== 'travis-county-ems') }
+    : g);
+  d.compare.drugs = d.compare.drugs.map(x => x.drugKey === 'EPINEPHRINE' ? { ...x, n: { ...x.n, agencies: x.n.agencies + 1 } } : x);
+  const h = buildPages(d).files.find(f => f.path === '/census/drugs/epinephrine/').html;
+  // travis-county-ems keeps its own page (unaffected drugs still clear MIN_AGENCY_DRUGS)
+  // and must not be swept into the withheld sentence.
+  assert.ok(!/2 named agencies have too little published detail/.test(h),
+    'a pageful agency that is merely raw-only for this drug must not inflate the withheld count');
+  // The genuinely pageless one (king-county-medic) must still trigger the sentence.
+  assert.ok(/1 named agency has too little published detail for a page of its own and is counted here only\./.test(h),
+    'a genuinely pageless agency must still trigger the withheld sentence');
 });
 
 console.log('\nv3: coverage map data (spec 8)');
