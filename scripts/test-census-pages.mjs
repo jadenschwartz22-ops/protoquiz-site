@@ -197,6 +197,18 @@ test('GA4 fires on every page', () => {
 });
 
 console.log('\nescaping');
+test('an agency KEY is escaped everywhere it becomes a URL', () => {
+  // The key reaches canonical, og:url, the crumb trail, the state page's links, and
+  // the inline form JS. Names were escaped; keys were not, on the assumption that a
+  // slug is already safe — which is the assumption every injection starts from.
+  const evil = 'dh</script><script>alert(1)</script>';
+  const d = data();
+  d.agencies = d.agencies.map(x => x.agencyKey === 'denver-health' ? { ...x, agencyKey: evil } : x);
+  d.doses = d.doses.map(r => r.agencyKey === 'denver-health' ? { ...r, agencyKey: evil } : r);
+  for (const f of buildPages(d).files) {
+    assert.ok(!/<script>alert\(1\)<\/script>/.test(f.html), `unescaped agency key reached ${f.path} as markup`);
+  }
+});
 test('agency names are HTML-escaped', () => {
   const d = data();
   d.agencies = d.agencies.map(x => x.agencyKey === 'denver-health' ? { ...x, name: 'A & B <script>alert(1)</script>' } : x);

@@ -225,12 +225,12 @@ const head = ({ title, description, path, jsonLd }) => `<!doctype html>
   <meta name="description" content="${esc(description)}" />
 
   <meta name="apple-itunes-app" content="app-id=${APP_ID}" />
-  <link rel="canonical" href="${ORIGIN}${path}">
+  <link rel="canonical" href="${esc(ORIGIN + path)}">
   <meta name="robots" content="index,follow" />
   <meta property="og:title" content="${esc(title)}" />
   <meta property="og:description" content="${esc(description)}" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="${ORIGIN}${path}" />
+  <meta property="og:url" content="${esc(ORIGIN + path)}" />
   <meta property="og:image" content="${ORIGIN}/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -290,8 +290,12 @@ const breadcrumbs = trail => ({
   itemListElement: trail.map(([name, item], i) => ({ '@type': 'ListItem', position: i + 1, name, item: ORIGIN + item })),
 });
 
+// Every href here is built from data (an agencyKey, a drugKey), so it is escaped
+// like any other value that lands in an attribute. The same rule as jsonLdText and
+// jsInline: JSON and slugs are not HTML, and "the producer already sanitized it" is
+// the assumption every injection starts from.
 const crumbHtml = trail => `      <nav class="crumbs">${trail.map(([n, p], i) =>
-  i === trail.length - 1 ? `<span>${esc(n)}</span>` : `<a href="${p}">${esc(n)}</a>`).join(' <span class="sep">/</span> ')}</nav>`;
+  i === trail.length - 1 ? `<span>${esc(n)}</span>` : `<a href="${esc(p)}">${esc(n)}</a>`).join(' <span class="sep">/</span> ')}</nav>`;
 
 // Every page carries the same honest-counts block: n, the parseable subset, and
 // the as-of date. A stat without them does not ship (ADR-6).
@@ -369,6 +373,13 @@ const standingLabel = v => (v === true ? 'standing' : v === false ? 'requires co
 
 const SUBMIT_ENDPOINT = 'https://api.protoquiz.com/api/monitor?type=censusSubmit';
 
+// JSON.stringify escapes JSON, not HTML. A value containing "</script>" would close the
+// tag and put the rest of it into the document as markup — the same hole jsonLdText
+// closes for JSON-LD, and it must be closed here for exactly the same reason. agencyKey
+// is a slug today, but this file does not own the producer that mints it, and "the
+// input is already safe" is the assumption every injection starts from.
+const jsInline = v => JSON.stringify(v).replace(/</g, '\\u003c').replace(/>/g, '\\u003e').replace(/&/g, '\\u0026');
+
 const submitForm = ({ id, kind, agencyKey = null, urlLabel, submitLabel }) => `        <form class="submit-form" id="${id}" novalidate>
           <label for="${id}-url">${esc(urlLabel)}</label>
           <input type="url" id="${id}-url" name="url" required placeholder="https://" autocomplete="url" />
@@ -389,21 +400,21 @@ const submitForm = ({ id, kind, agencyKey = null, urlLabel, submitLabel }) => ` 
               var btn = f.querySelector('button');
               btn.disabled = true;
               msg.textContent = 'Sending...';
-              fetch(${JSON.stringify(SUBMIT_ENDPOINT)}, {
+              fetch(${jsInline(SUBMIT_ENDPOINT)}, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                   url: url,
                   email: f.elements.email.value.trim() || undefined,
-                  agency: ${agencyKey ? JSON.stringify(agencyKey) : 'undefined'},
-                  kind: ${JSON.stringify(kind)},
+                  agency: ${agencyKey ? jsInline(agencyKey) : 'undefined'},
+                  kind: ${jsInline(kind)},
                   website: f.elements.website.value
                 })
               }).then(function (r) {
                 if (!r.ok) throw new Error(String(r.status));
                 f.reset();
                 msg.textContent = 'Got it. We read every one of these by hand.';
-                track('census_submit', { kind: ${JSON.stringify(kind)} });
+                track('census_submit', { kind: ${jsInline(kind)} });
               }).catch(function () {
                 btn.disabled = false;
                 msg.textContent = 'That did not send. Email jaden@protoquiz.com and it gets handled the same way.';
@@ -584,7 +595,7 @@ ${stats([
       <section id="agencies">
         <h2>Agencies</h2>
         ${listed.length
-    ? `<ul class="cols">${listed.map(a => `<li><a href="/census/agencies/${a.agencyKey}/">${esc(a.name)}</a>${a.currentEffectiveDate ? ` <span class="muted">${esc(a.currentEffectiveDate)}</span>` : ''}</li>`).join('')}</ul>`
+    ? `<ul class="cols">${listed.map(a => `<li><a href="/census/agencies/${esc(a.agencyKey)}/">${esc(a.name)}</a>${a.currentEffectiveDate ? ` <span class="muted">${esc(a.currentEffectiveDate)}</span>` : ''}</li>`).join('')}</ul>`
     : '<p>No agency in this state has a page yet.</p>'}
       </section>`;
 
