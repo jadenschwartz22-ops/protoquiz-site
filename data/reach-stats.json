@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-09-03T18:08:29.490Z",
-  "totalUploads": 542,
-  "distinctProtocols": 382,
-  "activeStudiers": 370,
-  "pagesProcessed": 88872,
+  "generatedAt": "2026-09-04T00:08:28.120Z",
+  "totalUploads": 545,
+  "distinctProtocols": 384,
+  "activeStudiers": 372,
+  "pagesProcessed": 89141,
   "statesRepresented": 42,
   "countriesRepresented": 3,
-  "internationalUploads": 4,
+  "internationalUploads": 5,
   "byState": {
     "CA": 43,
-    "CO": 36,
+    "CO": 38,
     "MI": 36,
     "TX": 23,
     "PA": 23,
@@ -53,7 +53,7 @@
   },
   "byCountry": {
     "CA": 2,
-    "AU": 1,
+    "AU": 2,
     "NZ": 1
   },
   "locales": [
@@ -84,7 +84,7 @@
       "city": "Denver",
       "x": 330,
       "y": 258,
-      "count": 30,
+      "count": 32,
       "tier": "hot",
       "topProtocols": [
         {
@@ -1810,6 +1810,21 @@
       "topProtocols": [
         {
           "title": "BCEHS clinical practice guidelines",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "country": "AU",
+      "countryName": "Australia",
+      "city": "Sydney, NSW",
+      "x": 861,
+      "y": 456,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "QAS Drug Therapy Protocols 2026",
           "count": 1
         }
       ]
