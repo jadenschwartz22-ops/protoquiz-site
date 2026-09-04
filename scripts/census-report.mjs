@@ -365,7 +365,16 @@ if (isMain) {
     return i > -1 && process.argv[i + 1] && !process.argv[i + 1].startsWith('--') ? process.argv[i + 1] : fallback;
   };
   const dataDir = arg('data', 'data/census');
-  const { compare, manifest } = readCompare(dataDir);
+  let compare, manifest;
+  try {
+    ({ compare, manifest } = readCompare(dataDir));
+  } catch (e) {
+    // A version mismatch is an operator-legible sentence and the message is what an
+    // operator (or a card) reads; a stack trace on top of it is noise.
+    console.error(`census-report: ${e.message}`);
+    if (!/schemaVersion/.test(e.message)) console.error(e.stack);
+    process.exit(2);
+  }
   const groups = compare.groups || [];
 
   if (process.argv.includes('--candidates')) {

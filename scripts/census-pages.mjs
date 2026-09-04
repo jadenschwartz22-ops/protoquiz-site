@@ -136,7 +136,7 @@ const indicationLabel = k => titleCase(String(k).replace(/_/g, ' '));
 // The named error a missing --rows on v3 raises. Named so the failure reads as
 // "the operator forgot the private directory", not as a bare ENOENT on a path
 // nobody recognizes — the nightly cards the message.
-export const MISSING_ROWS_ERROR = 'census-pages: contract v3 needs --rows <private-dir> holding rows_private.json (the dose rows left the site at v3; agency tables read them from there)';
+export const MISSING_ROWS_ERROR = 'contract v3 needs --rows <private-dir> holding rows_private.json (the dose rows left the site at v3; agency tables read them from there)';
 
 function readContract(dataDir, rowsDir) {
   const readJson = (dir, name) => JSON.parse(readFileSync(join(dir, name), 'utf8'));
@@ -1345,8 +1345,20 @@ if (isMain) {
   const rowsDir = arg('rows', null);
   const outDir = arg('out', mkdtempSync(join(tmpdir(), 'census-pages-')));
   const quiet = process.argv.includes('--quiet');
-  const { files, urls } = generate({ dataDir, outDir, rowsDir });
+  let result;
+  try {
+    result = generate({ dataDir, outDir, rowsDir });
+  } catch (e) {
+    // The contract aborts (unknown version, mixed set, missing --rows, a stale
+    // dose_latest.json) are all operator-legible SENTENCES. The nightly cards what
+    // this prints, and a stack trace is a worse card than the sentence that names
+    // what to do — so the message goes to stderr on its own and the stack only
+    // follows for a genuinely unexpected failure.
+    console.error(`census-pages: ${e.message}`);
+    if (!/schemaVersion|share one version|--rows|dose_latest\.json is still/.test(e.message)) console.error(e.stack);
+    process.exit(1);
+  }
   if (!quiet) {
-    console.log(`census-pages: ${files.length} files, ${urls.length} URLs -> ${outDir}`);
+    console.log(`census-pages: ${result.files.length} files, ${result.urls.length} URLs -> ${outDir}`);
   }
 }
