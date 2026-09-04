@@ -565,6 +565,152 @@ test('shape-B pediatric rows never move a published number', () => {
   assert.ok(!peds.agencyKeys.includes('king-county-medic'), 'a dropped shape-B row must not name its agency');
 });
 
+console.log('\nv3: code-review fixes');
+
+// Finding 1: an indication page's sources/agencies/states totals must be the UNION
+// across a drug's (population, unit) groups, not a Math.max — a max silently
+// understates whenever two groups have disjoint sets.
+test('an indication page totals sources/agencies/states as a union, not a max, across disjoint groups', () => {
+  const d = v3data();
+  const template = d.compare.groups.find(g => g.key.drugKey === 'EPINEPHRINE' && g.key.indicationKey === 'CARDIAC_ARREST' && g.key.population === 'adult');
+  // Five adult-only agencies/sources/states and five entirely disjoint peds-only
+  // ones: Math.max reads 5, the true union is 10 — the exact case the finding names.
+  const adultOnly = { ...template, key: { ...template.key, population: 'adult' },
+    n: { ...template.n, sources: 5, agencies: 5, states: 5 },
+    agencyKeys: ['a1', 'a2', 'a3', 'a4', 'a5'], sourceKeys: ['a1', 'a2', 'a3', 'a4', 'a5'], states: ['AA', 'BB', 'CC', 'DD', 'EE'],
+    dist: null };
+  const pedsOnly = { ...template, key: { ...template.key, population: 'peds', perKg: true },
+    n: { ...template.n, sources: 5, agencies: 5, states: 5 },
+    agencyKeys: ['p1', 'p2', 'p3', 'p4', 'p5'], sourceKeys: ['p1', 'p2', 'p3', 'p4', 'p5'], states: ['FF', 'GG', 'HH', 'II', 'JJ'],
+    dist: null };
+  d.compare.groups = d.compare.groups
+    .filter(g => !(g.key.drugKey === 'EPINEPHRINE' && g.key.indicationKey === 'CARDIAC_ARREST'))
+    .concat([adultOnly, pedsOnly]);
+  const h = buildPages(d).files.find(f => f.path === '/census/drugs/epinephrine/cardiac-arrest/').html;
+  assert.ok(h.includes('<span class="v">10</span><span class="l">sources</span>'), 'sources must be the 10-way union, not a 5-way max');
+  assert.ok(h.includes('<span class="v">10</span><span class="l">states</span>'), 'states must be the 10-way union, not a 5-way max');
+  assert.ok(h.includes('<span class="v">10</span><span class="l">named agencies</span>'), 'named agencies must be the 10-way union (agencyKeys was already unioned)');
+});
+test('when sourceKeys/states are absent (an older compare.json), the totals render as an explicit floor, never a max labelled a total', () => {
+  const d = v3data();
+  d.compare.groups = d.compare.groups.map(g => {
+    if (g.key.drugKey !== 'EPINEPHRINE' || g.key.indicationKey !== 'CARDIAC_ARREST') return g;
+    const { sourceKeys, states, ...rest } = g;
+    return rest;
+  });
+  const h = buildPages(d).files.find(f => f.path === '/census/drugs/epinephrine/cardiac-arrest/').html;
+  assert.ok(/at least \d+<\/span><span class="l">sources<\/span>/.test(h), 'sources must render as "at least N" when sourceKeys is absent');
+  assert.ok(/at least \d+<\/span><span class="l">states<\/span>/.test(h), 'states must render as "at least N" when states is absent');
+});
+
+// Finding 2: route shares must be sorted by share desc then route name at read time,
+// not trusted from file order — matching the sibling sort at indication summaries.
+test('route shares render sorted by share desc then route name, regardless of file order', () => {
+  const d = v3data();
+  const g = d.compare.groups.find(x => x.key.drugKey === 'EPINEPHRINE' && x.key.indicationKey === 'CARDIAC_ARREST' && x.key.population === 'adult');
+  g.routes = [
+    { route: 'IM', share: 0.2 },
+    { route: 'IO', share: 0.5 },
+    { route: 'IV', share: 0.5 },
+  ];
+  const forward = buildPages(d).files.find(f => f.path === '/census/drugs/epinephrine/cardiac-arrest/').html;
+  const reversed = { ...d, compare: { ...d.compare, groups: d.compare.groups.map(x => x === g ? { ...g, routes: [...g.routes].reverse() } : x) } };
+  const backward = buildPages(reversed).files.find(f => f.path === '/census/drugs/epinephrine/cardiac-arrest/').html;
+  assert.strictEqual(forward, backward, 'reversing the routes array in the input must not change the rendered page');
+  const ioIdx = forward.indexOf('>IO '), ivIdx = forward.indexOf('>IV '), imIdx = forward.indexOf('>IM ');
+  assert.ok(ioIdx > -1 && ivIdx > -1 && imIdx > -1, 'all three routes must render');
+  assert.ok(ioIdx < imIdx && ivIdx < imIdx, 'the two 50% routes (IO, IV) must both sort before the 20% route (IM)');
+  assert.ok(ioIdx < ivIdx, 'tied shares break by route name: IO before IV');
+});
+
+// Finding 3: "machine-parsed" must use the real numerator (n.parsed) when the build
+// supplies it, never reconstruct one from the float parsedShare — a reconstructed
+// numerator (Math.round(parsedShare * rows)) can disagree with the true count.
+test('drug page machine-parsed uses the real numerator n.parsed when present, even when it disagrees with a reconstruction from parsedShare', () => {
+  const d = v3data();
+  d.compare.drugs = d.compare.drugs.map(x => x.drugKey === 'EPINEPHRINE'
+    // A stale/rounded parsedShare that would reconstruct to a DIFFERENT numerator
+    // (round(0.5 * 16) = 8) than the true n.parsed (15) — the true one must win.
+    ? { ...x, n: { ...x.n, parsed: 15, rows: 16 }, parsedShare: 0.5 }
+    : x);
+  const h = buildPages(d).files.find(f => f.path === '/census/drugs/epinephrine/').html;
+  assert.ok(h.includes('<span class="v">94% of 16</span><span class="l">machine-parsed</span>'), 'expected the true n.parsed/n.rows ratio (94%), not the stale parsedShare (50%)');
+  assert.ok(!h.includes('50% of 16'), 'must not render the fabricated reconstruction from parsedShare');
+});
+test('drug page machine-parsed falls back to the bare share, with no fabricated numerator, when n.parsed is absent', () => {
+  const d = v3data();
+  d.compare.drugs = d.compare.drugs.map(x => {
+    if (x.drugKey !== 'EPINEPHRINE') return x;
+    const { n: { parsed, ...n }, ...rest } = x;
+    return { ...rest, n };
+  });
+  const h = buildPages(d).files.find(f => f.path === '/census/drugs/epinephrine/').html;
+  const epi = d.compare.drugs.find(x => x.drugKey === 'EPINEPHRINE');
+  const pct = Math.round(epi.parsedShare * 100);
+  assert.ok(h.includes(`<span class="v">${pct}%</span><span class="l">machine-parsed</span>`), 'must render the bare percentage with no numerator claimed');
+  assert.ok(!new RegExp(`\\d+ of \\d+</span><span class="l">machine-parsed`).test(h), 'must not fabricate a numerator from the float share');
+});
+
+// Finding 4: a raw-only indication (in drugs[].indications, absent from groups) must
+// be labelled distinctly — its n= counts "sources with rows", not "sources in a
+// comparable group" like every sibling on the list.
+test('a raw-only indication is labelled distinctly on the drug page', () => {
+  const d = v3data();
+  const epi = d.compare.drugs.find(x => x.drugKey === 'EPINEPHRINE');
+  epi.indications = [...epi.indications, { indicationKey: 'RAW_ONLY_INDICATION', sources: 2 }];
+  const h = buildPages(d).files.find(f => f.path === '/census/drugs/epinephrine/').html;
+  assert.ok(h.includes('Raw Only Indication'), 'the raw-only indication must still be listed');
+  assert.ok(/Raw Only Indication <span class="muted">n=2, raw only<\/span>/.test(h), 'a raw-only indication must be labelled distinctly from a comparable-group n=');
+  // Its siblings (present in groups) must NOT carry the raw-only label.
+  assert.ok(/Cardiac Arrest <span class="muted">n=7<\/span>/.test(h), 'a sibling backed by a comparable group must keep the plain n= label');
+  assert.ok(!/Cardiac Arrest <span class="muted">n=7, raw only<\/span>/.test(h), 'a comparable-group indication must not be mislabelled raw only');
+});
+
+// Finding 5: two keys that slug identically must abort the build, not silently let
+// the second write win.
+test('two keys that slug identically abort the build with an operator-legible sentence', () => {
+  const d = v3data();
+  d.compare.drugs = d.compare.drugs.map(x => x.drugKey === 'NALOXONE' ? { ...x, drugKey: 'CARDIAC-ARREST' } : x);
+  d.compare.groups = d.compare.groups.map(g => g.key.drugKey === 'NALOXONE'
+    ? { ...g, key: { ...g.key, drugKey: 'CARDIAC-ARREST' } } : g);
+  // Collide it against the existing EPINEPHRINE/CARDIAC_ARREST indication page path:
+  // both CARDIAC-ARREST (as a drug) and CARDIAC_ARREST (as an indication under
+  // EPINEPHRINE) must never collide directly, so instead collide two DRUG pages —
+  // give AMIODARONE the same slug as the renamed NALOXONE-turned-CARDIAC-ARREST.
+  d.compare.drugs = d.compare.drugs.map(x => x.drugKey === 'AMIODARONE' ? { ...x, drugKey: 'CARDIAC_ARREST' } : x);
+  d.compare.groups = d.compare.groups.map(g => g.key.drugKey === 'AMIODARONE'
+    ? { ...g, key: { ...g.key, drugKey: 'CARDIAC_ARREST' } } : g);
+  assert.throws(() => buildPages(d), e => {
+    assert.match(e.message, /same page path/, 'must name the collision, not throw an unrelated error');
+    assert.match(e.message, /\/census\/drugs\/cardiac-arrest\//, 'must name the colliding path');
+    return true;
+  });
+});
+
+// Finding 6: the drug page's "named agencies" stat counts every agency, while the
+// list below shows only agencies with a page — when they differ, say so. The
+// baseline v3 fixture already exercises this: king-county-medic sits in
+// compare.json's agencyKeys for EPINEPHRINE but is under MIN_AGENCY_DRUGS, so it
+// is counted in summary.n.agencies (6) but absent from the linked named-agency
+// list (5) — the same shape the landing page's "with a page" vs "named agencies"
+// split already discloses.
+test('a drug page states the withheld-agency count when it differs from the named-agencies list', () => {
+  const h = v3html['/census/drugs/epinephrine/'];
+  assert.ok(!h.includes('King County Medic One'), 'a pageless agency must never be named');
+  assert.ok(/1 named agency has too little published detail for a page of its own and is counted here only\./.test(h),
+    'the drug page must state the withheld count using the landing sentence, when it differs from the named list');
+});
+test('a drug page states nothing extra when the named-agencies count already matches the list', () => {
+  const d = v3data();
+  // Force EPINEPHRINE's n.agencies down to the linked named-agency count (5): the
+  // two numbers now agree, so the mismatch sentence must not appear.
+  const linked = new Set(d.compare.groups.filter(g => g.key.drugKey === 'EPINEPHRINE').flatMap(g => g.agencyKeys ?? []));
+  const namedCount = [...linked].filter(k => k !== 'king-county-medic').length;
+  d.compare.drugs = d.compare.drugs.map(x => x.drugKey === 'EPINEPHRINE' ? { ...x, n: { ...x.n, agencies: namedCount } } : x);
+  const h = buildPages(d).files.find(f => f.path === '/census/drugs/epinephrine/').html;
+  assert.ok(!/too little published detail for a page of its own/.test(h), 'no withheld sentence when the counts already match');
+});
+
 console.log('\nv3: coverage map data (spec 8)');
 // coverage is optional on an agencies.json row: `{hasProtocol, jurisdiction}`.
 // The v3 fixture carries it on CO agencies only (mixed true/false) and omits it

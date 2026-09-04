@@ -28,6 +28,19 @@
         "thin-agency",
         "travis-county-ems"
       ],
+      "sourceKeys": [
+        "aurora-fire-rescue",
+        "boulder-county-ems",
+        "denver-health",
+        "jeffco-ems",
+        "stateless-ems",
+        "thin-agency",
+        "travis-county-ems"
+      ],
+      "states": [
+        "CO",
+        "TX"
+      ],
       "dist": {
         "min": 150,
         "p25": 300,
@@ -77,6 +90,20 @@
         "king-county-medic",
         "travis-county-ems"
       ],
+      "sourceKeys": [
+        "aurora-fire-rescue",
+        "boulder-county-ems",
+        "denver-health",
+        "eee1",
+        "jeffco-ems",
+        "king-county-medic",
+        "travis-county-ems"
+      ],
+      "states": [
+        "CO",
+        "TX",
+        "WA"
+      ],
       "dist": {
         "min": 1,
         "p25": 1,
@@ -121,6 +148,17 @@
         "jeffco-ems",
         "travis-county-ems"
       ],
+      "sourceKeys": [
+        "aurora-fire-rescue",
+        "boulder-county-ems",
+        "denver-health",
+        "jeffco-ems",
+        "travis-county-ems"
+      ],
+      "states": [
+        "CO",
+        "TX"
+      ],
       "dist": {
         "min": 0.01,
         "p25": 0.01,
@@ -161,6 +199,13 @@
       "agencyKeys": [
         "boulder-county-ems",
         "denver-health"
+      ],
+      "sourceKeys": [
+        "boulder-county-ems",
+        "denver-health"
+      ],
+      "states": [
+        "CO"
       ],
       "dist": null,
       "routes": [
@@ -203,6 +248,21 @@
         "thin-agency",
         "travis-county-ems"
       ],
+      "sourceKeys": [
+        "aurora-fire-rescue",
+        "boulder-county-ems",
+        "denver-health",
+        "jeffco-ems",
+        "king-county-medic",
+        "stateless-ems",
+        "thin-agency",
+        "travis-county-ems"
+      ],
+      "states": [
+        "CO",
+        "TX",
+        "WA"
+      ],
       "dist": {
         "min": 1.2000000000000002,
         "p25": 2,
@@ -235,7 +295,8 @@
         "agencies": 7,
         "sources": 7,
         "states": 2,
-        "rows": 7
+        "rows": 7,
+        "parsed": 7
       },
       "parsedShare": 1,
       "indications": [
@@ -251,7 +312,8 @@
         "agencies": 6,
         "sources": 7,
         "states": 3,
-        "rows": 16
+        "rows": 16,
+        "parsed": 15
       },
       "parsedShare": 0.9375,
       "indications": [
@@ -271,7 +333,8 @@
         "agencies": 8,
         "sources": 8,
         "states": 3,
-        "rows": 9
+        "rows": 9,
+        "parsed": 9
       },
       "parsedShare": 1,
       "indications": [

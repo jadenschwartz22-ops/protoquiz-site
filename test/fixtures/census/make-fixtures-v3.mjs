@@ -287,6 +287,11 @@ function buildGroups() {
       // agencyKeys is a v3 REQUIREMENT of compare.json, not an engine field today:
       // n.agencies is a count and a count cannot be linked. Names only, no values.
       agencyKeys: [...agencySet].sort(),
+      // sourceKeys/states: same sorted-distinct shape as agencyKeys, so the indication
+      // page can UNION them across (population, unit) groups instead of taking a
+      // Math.max that understates whenever two groups have disjoint sets.
+      sourceKeys: [...bySource.keys()].sort(),
+      states: [...stateSet].sort(),
       dist: n.sources < MIN_SOURCES || !sorted.length ? null : {
         min: sorted[0], p25: quantile(sorted, 0.25), median: median(sorted),
         p75: quantile(sorted, 0.75), max: sorted[sorted.length - 1],
@@ -320,7 +325,7 @@ function buildDrugs() {
   }
   return [...byDrug.values()].map(d => ({
     drugKey: d.drugKey,
-    n: { agencies: d.agencies.size, sources: d.sources.size, states: d.states.size, rows: d.rows },
+    n: { agencies: d.agencies.size, sources: d.sources.size, states: d.states.size, rows: d.rows, parsed: d.parsed },
     parsedShare: d.rows ? d.parsed / d.rows : 0,
     indications: [...d.indications.entries()]
       .map(([indicationKey, s]) => ({ indicationKey, sources: s.size }))

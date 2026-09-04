@@ -474,7 +474,7 @@ ${stats([
     ['machine-parsed', `${pct(manifest.dosesParsed, manifest.doseRows)} of ${num(manifest.doseRows)}`],
     ['as of', manifest.asOf],
   ])}
-      <p class="honest">${num(manifest.dosesParsed)} entries parsed to a number and route, ${num(manifest.dosesPartial)} partially, ${num(manifest.dosesRaw)} kept as written. Raw entries are counted and shown as written, never dropped.${withheld > 0 ? ` ${num(withheld)} named ${withheld === 1 ? 'agency has' : 'agencies have'} too little published detail for a page of ${withheld === 1 ? 'its' : 'their'} own and ${withheld === 1 ? 'is' : 'are'} counted here only.` : ''}</p>
+      <p class="honest">${num(manifest.dosesParsed)} entries parsed to a number and route, ${num(manifest.dosesPartial)} partially, ${num(manifest.dosesRaw)} kept as written. Raw entries are counted and shown as written, never dropped.${withheldSentence(withheld)}</p>
 ${drugs.length ? `      <section id="drugs">
         <h2>By drug</h2>
         <ul class="cols">${drugs.map(d => `<li><a href="/census/drugs/${slug(d)}/">${esc(drugLabel(d))}</a></li>`).join('')}</ul>
@@ -772,6 +772,14 @@ function namedAgencyList(agencyKeys, pageAgencies) {
   };
 }
 
+// The one sentence for "N named agencies exist but have no page of their own" —
+// shared so the landing page and any other page stating the same fact (a drug
+// page's named-agency count vs its linked list) say it identically rather than
+// drifting into two different claims about the same withheld set.
+const withheldSentence = n => n > 0
+  ? ` ${num(n)} named ${n === 1 ? 'agency has' : 'agencies have'} too little published detail for a page of ${n === 1 ? 'its' : 'their'} own and ${n === 1 ? 'is' : 'are'} counted here only.`
+  : '';
+
 // "n rows under review" — the count of suppressed rows, build-wide, from the manifest.
 // It is deliberately NOT per-group: the build counts flags before removal and publishes
 // one number, so a page cannot imply a per-group figure it does not have.
@@ -785,6 +793,12 @@ function drugPageV3(drugKey, { summary, groups, indicationPaths, pageAgencies, m
   // list in this generator is: determinism must not depend on the writer's ordering.
   const indications = [...summary.indications].sort((a, b) => a.indicationKey.localeCompare(b.indicationKey));
   const named = namedAgencyList(new Set(groups.flatMap(g => g.agencyKeys ?? [])), pageAgencies);
+  // An indication can appear in drugs[].indications (every admitted row, raw included)
+  // with no entry at all in `groups` (a comparable group needs a parsed value) — every
+  // row under it was raw. Its n= then counts "sources with rows", not "sources in a
+  // comparable group" like every sibling on this list, so it is labelled distinctly
+  // rather than left to read as the same claim.
+  const groupIndications = new Set(groups.map(g => g.key.indicationKey));
   const body = `      <span class="badge">Drug</span>
       <h1>${esc(drugLabel(drugKey))} in US EMS protocols</h1>
       <p class="lede">${num(summary.n.sources)} published ${summary.n.sources === 1 ? 'protocol carries' : 'protocols carry'} ${esc(drugLabel(drugKey))} across ${num(indications.length)} ${indications.length === 1 ? 'indication' : 'indications'}, from ${num(summary.n.agencies)} named ${summary.n.agencies === 1 ? 'agency' : 'agencies'} in ${num(summary.n.states)} ${summary.n.states === 1 ? 'state' : 'states'}.</p>
@@ -794,13 +808,19 @@ ${stats([
     ['states', num(summary.n.states)],
     ['indications', num(indications.length)],
     ['dose entries', num(summary.n.rows)],
-    ['machine-parsed', `${pct(Math.round(summary.parsedShare * summary.n.rows), summary.n.rows)} of ${num(summary.n.rows)}`],
+    // n.parsed is the real numerator when the build supplies it. Reconstructing one
+    // from parsedShare (a float) fabricates a count that can be off by a row — the
+    // fallback below renders the share alone, with no numerator claimed.
+    ['machine-parsed', summary.n.parsed != null
+      ? `${pct(summary.n.parsed, summary.n.rows)} of ${num(summary.n.rows)}`
+      : `${Math.round(summary.parsedShare * 100)}%`],
   ])}
 ${underReview(manifest)}      <section id="indications">
         <h2>Indications</h2>
         <ul class="cols">${indications.map(({ indicationKey, sources }) => {
     const p = indicationPaths.get(`${drugKey}/${indicationKey}`);
-    const label = `${esc(indicationLabel(indicationKey))} <span class="muted">n=${num(sources)}</span>`;
+    const rawOnly = !groupIndications.has(indicationKey);
+    const label = `${esc(indicationLabel(indicationKey))} <span class="muted">n=${num(sources)}${rawOnly ? ', raw only' : ''}</span>`;
     return `<li>${p ? `<a href="${p}">${label}</a>` : label}</li>`;
   }).join('')}</ul>
       </section>
@@ -812,7 +832,9 @@ ${dists.length ? `      <section id="distributions">
           <tbody>${dists.map(g => `<tr><td>${esc(indicationLabel(g.key.indicationKey))}</td><td>${esc(groupLabel(g.key))}</td><td>${num(g.n.sources)}</td><td>${esc(fmtNum(g.dist.median))}</td><td>${esc(fmtNum(g.dist.p25))}&ndash;${esc(fmtNum(g.dist.p75))}</td><td>${esc(unitLabel(g.key))}</td></tr>`).join('')}</tbody>
         </table></div>
       </section>` : ''}
-${named.html}
+${named.html}${summary.n.agencies > named.count
+    ? `      <p class="honest">${withheldSentence(summary.n.agencies - named.count).trim()}</p>\n`
+    : ''}
       <section id="cite">
         <h2>Citation</h2>
         <p class="cite">${esc(`ProtoQuiz EMS Census, ${drugLabel(drugKey)}: n=${summary.n.sources} protocols from ${summary.n.agencies} named agencies / ${summary.n.states} states, as of ${manifest.asOf}`)}</p>
@@ -838,12 +860,28 @@ function indicationPageV3(drugKey, indicationKey, groups, { pageAgencies, manife
     || groupLabel(a.key).localeCompare(groupLabel(b.key))
     || String(a.key.unit).localeCompare(String(b.key.unit)));
   const lead = ordered.find(g => g.dist) || null;
-  const totals = ordered.reduce((acc, g) => ({
-    sources: Math.max(acc.sources, g.n.sources),
-    agencies: Math.max(acc.agencies, g.n.agencies),
-    states: Math.max(acc.states, g.n.states),
-    rows: acc.rows + g.n.rows,
-  }), { sources: 0, agencies: 0, states: 0, rows: 0 });
+
+  // agencyKeys has always been a build requirement (namedAgencyList above already
+  // unions it), so the agency total is always an exact union. sourceKeys/states are
+  // newer v3 additions with the same sorted-distinct shape; when a group carries
+  // them, union them the same way. When it does not (an older compare.json), fall
+  // back to Math.max across groups — but that max UNDERSTATES whenever two groups
+  // have disjoint sets (five adult-only and five peds-only sources reads "5", not
+  // the true 10), so it is rendered as an explicit floor ("at least N"), never a
+  // max labelled as a total.
+  const agencyUnion = new Set(ordered.flatMap(g => g.agencyKeys ?? [])).size;
+  const sourcesFloor = !ordered.every(g => g.sourceKeys);
+  const statesFloor = !ordered.every(g => g.states);
+  const totals = {
+    sources: sourcesFloor
+      ? ordered.reduce((n, g) => Math.max(n, g.n.sources), 0)
+      : new Set(ordered.flatMap(g => g.sourceKeys)).size,
+    agencies: agencyUnion,
+    states: statesFloor
+      ? ordered.reduce((n, g) => Math.max(n, g.n.states), 0)
+      : new Set(ordered.flatMap(g => g.states)).size,
+    rows: ordered.reduce((n, g) => n + g.n.rows, 0),
+  };
 
   const lede = lead
     ? `${groupLabel(lead.key).replace(', weight-based', ' weight-based')} dosing has a median of ${esc(fmtNum(lead.dist.median))} ${esc(unitLabel(lead.key))} across ${num(lead.n.sources)} published ${lead.n.sources === 1 ? 'protocol' : 'protocols'}, with the middle half between ${esc(fmtNum(lead.dist.p25))} and ${esc(fmtNum(lead.dist.p75))}.`
@@ -852,7 +890,10 @@ function indicationPageV3(drugKey, indicationKey, groups, { pageAgencies, manife
   const named = namedAgencyList(new Set(ordered.flatMap(g => g.agencyKeys ?? [])), pageAgencies);
 
   const distSections = ordered.map(g => {
-    const routes = g.routes.filter(r => r.route);
+    // Sorted here rather than trusted from the file (the same rule every other list
+    // in this generator follows): share desc, then route name, matching the v2
+    // sibling's route sort so file order can never flip which route reads first.
+    const routes = g.routes.filter(r => r.route).sort((x, y) => y.share - x.share || x.route.localeCompare(y.route));
     return `      <section id="g-${slug(`${g.key.population}-${g.key.perKg ? 'perkg' : 'flat'}-${g.key.unit}`)}">
         <h2>${esc(groupLabel(g.key))} &mdash; ${esc(unitLabel(g.key))}</h2>
 ${stats([
@@ -875,9 +916,9 @@ ${routes.length ? `        <h3>Routes</h3>
       <h1>${esc(drugLabel(drugKey))} for ${esc(indicationLabel(indicationKey))}</h1>
       <p class="lede">${lede}</p>
 ${stats([
-    ['sources', num(totals.sources)],
+    ['sources', sourcesFloor ? `at least ${num(totals.sources)}` : num(totals.sources)],
     ['named agencies', num(totals.agencies)],
-    ['states', num(totals.states)],
+    ['states', statesFloor ? `at least ${num(totals.states)}` : num(totals.states)],
     ['entries', num(totals.rows)],
     ['named here', num(named.count)],
   ])}
@@ -1305,6 +1346,19 @@ export function buildPages({ documents, agencies, doses, ledger, manifest, compa
   // order-independent of how the JSON happened to arrive.
   files.sort((a, b) => a.path.localeCompare(b.path));
 
+  // Two keys that slug identically (CARDIAC-ARREST and CARDIAC_ARREST both slug to
+  // "cardiac-arrest") collide on one path, and the second write silently wins — a
+  // page vanishes with no build failure to say so. Abort with the same operator-legible
+  // sentence the other contract aborts use, rather than publishing a page for one key
+  // and calling it done.
+  const seenPaths = new Set();
+  for (const f of files) {
+    if (seenPaths.has(f.path)) {
+      throw new Error(`two different keys produced the same page path ${f.path} — one page silently overwrote the other; check for keys that slug identically (e.g. CARDIAC-ARREST vs CARDIAC_ARREST)`);
+    }
+    seenPaths.add(f.path);
+  }
+
   const urls = files.filter(f => f.path.endsWith('/')).map(f => f.path).sort();
   const chunks = [];
   for (let i = 0; i < urls.length; i += SITEMAP_SPLIT) chunks.push(urls.slice(i, i + SITEMAP_SPLIT));
@@ -1432,12 +1486,12 @@ if (isMain) {
     result = generate({ dataDir, outDir, rowsDir });
   } catch (e) {
     // The contract aborts (unknown version, mixed set, missing --rows, a stale
-    // dose_latest.json) are all operator-legible SENTENCES. The nightly cards what
-    // this prints, and a stack trace is a worse card than the sentence that names
-    // what to do — so the message goes to stderr on its own and the stack only
-    // follows for a genuinely unexpected failure.
+    // dose_latest.json, a slug collision) are all operator-legible SENTENCES. The
+    // nightly cards what this prints, and a stack trace is a worse card than the
+    // sentence that names what to do — so the message goes to stderr on its own and
+    // the stack only follows for a genuinely unexpected failure.
     console.error(`census-pages: ${e.message}`);
-    if (!/schemaVersion|share one version|--rows|dose_latest\.json is still/.test(e.message)) console.error(e.stack);
+    if (!/schemaVersion|share one version|--rows|dose_latest\.json is still|same page path/.test(e.message)) console.error(e.stack);
     process.exit(1);
   }
   if (!quiet) {
