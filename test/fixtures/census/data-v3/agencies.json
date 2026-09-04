@@ -13,7 +13,11 @@
       "documentCount": 1,
       "doseCount": 5,
       "pendingReview": null,
-      "mayBeOutdated": false
+      "mayBeOutdated": false,
+      "coverage": {
+        "hasProtocol": false,
+        "jurisdiction": "city"
+      }
     },
     {
       "agencyKey": "boulder-county-ems",
@@ -27,7 +31,11 @@
       "documentCount": 1,
       "doseCount": 6,
       "pendingReview": null,
-      "mayBeOutdated": true
+      "mayBeOutdated": true,
+      "coverage": {
+        "hasProtocol": true,
+        "jurisdiction": "county"
+      }
     },
     {
       "agencyKey": "denver-health",
@@ -43,7 +51,11 @@
       "pendingReview": {
         "effectiveDate": "2026-06-01"
       },
-      "mayBeOutdated": false
+      "mayBeOutdated": false,
+      "coverage": {
+        "hasProtocol": true,
+        "jurisdiction": "city"
+      }
     },
     {
       "agencyKey": "jeffco-ems",
@@ -57,7 +69,11 @@
       "documentCount": 1,
       "doseCount": 5,
       "pendingReview": null,
-      "mayBeOutdated": false
+      "mayBeOutdated": false,
+      "coverage": {
+        "hasProtocol": false,
+        "jurisdiction": "county"
+      }
     },
     {
       "agencyKey": "king-county-medic",
