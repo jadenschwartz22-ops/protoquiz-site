@@ -11,12 +11,16 @@ original used — CSS, leader-line labels, layout all lifted from
 Chrome. The browser doing real layout and font hinting is why this matches and a
 hand-computed SVG did not.
 
+A bare run reproduces the creative that actually runs as the Reddit ad: the
+`country` headline over the full-density map, no hero number.
+
 ```bash
-node scripts/gen-reach-creative.mjs                              # defaults
+node scripts/gen-reach-creative.mjs                              # = the live ad
 node scripts/gen-reach-creative.mjs --stats uploads,states,studying,pages
-node scripts/gen-reach-creative.mjs --headline country
+node scripts/gen-reach-creative.mjs --headline studying
 node scripts/gen-reach-creative.mjs --headline none              # map only
 node scripts/gen-reach-creative.mjs --headline-text "Line one|Line two|Hook"
+node scripts/gen-reach-creative.mjs --hero studying              # big number
 node scripts/gen-reach-creative.mjs --preset portrait
 node scripts/gen-reach-creative.mjs --html-only                  # no PNG
 ```
@@ -25,16 +29,20 @@ node scripts/gen-reach-creative.mjs --html-only                  # no PNG
 
 `--hero <field>` promotes one stat to display size in the upper left, with a
 caption that says what it MEANS ("MEDICS STUDYING THEIR OWN PROTOCOLS", not
-"STUDYING"). The remaining `--stats` fields sit in the footer row. `--hero none`
-falls back to a flat row of equal-weight numbers.
+"STUDYING"). The remaining `--stats` fields sit in the footer row.
+
+Hero and headline both own the top-left, so asking for a hero drops the headline
+unless you name one explicitly (`--hero uploads --headline agency`). Default is
+`--hero none`: the headline treatment, which is what the live ad uses.
 
 This is the main layout decision in the piece: with a hero, the map is texture
 behind a claim; without one, the map has to carry the whole frame by itself.
 
-`--min-label N` (default 8) sets how many uploads a city needs before it gets
-NAMED. Every locale still gets a dot regardless — density comes from dots,
-hierarchy comes from labels. Labeling every "1" was what made earlier versions
-read as noise.
+`--min-label N` (default 1) sets how many uploads a city needs before it gets
+NAMED. At 1 every city that FITS is named — matching the map on protoquiz.com,
+where the packed look is the message. Labels that cannot fit without overlapping
+another label or another city's dot are dropped, and their dot stays; expect
+~77 of ~104 named at 1080x1080. Raise it (`--min-label 8`) for a sparser look.
 
 ### Choosing the headline
 
@@ -42,8 +50,8 @@ read as noise.
 
 | preset | reads |
 |---|---|
-| `studying` *(default)* | {studying} medics are studying / their EMS protocols. / Are you? |
-| `country` | Medics all over the country / are studying their protocols. / Are you? |
+| `studying` | {studying} medics are studying / their EMS protocols. / Are you? |
+| `country` *(default)* | Medics all over the country / are studying their protocols. / Are you? |
 | `states` | Medics in {states} states are / studying their own protocols. / Are you? |
 | `uploads` | {uploads} protocol documents. / Turned into real training. / Try yours free. |
 | `agency` | Your protocols. Your quizzes. / Not generic EMS trivia. / Built by a medic. |
@@ -55,6 +63,16 @@ Any headline can carry `{token}` placeholders — `{studying}` `{uploads}`
 `{states}` `{protocols}` `{pages}` `{countries}` — filled from live stats, so a
 saved headline never goes stale. An unknown token renders literally (a visible
 `{typo}` beats a silent blank).
+
+`country` is the default because it carries no number at all: only the footer
+stats can age, and a regen fixes those. A headline that bakes in a count is how
+an ad ended up running "337 medics" for 13 days while the real number was 373.
+
+**What the ad copy test said (Reddit, Aug 22 – Sep 4, 2026):** the winner was
+not a preset from this table — it was the ad-level headline "How well do you
+actually know your EMS protocols?" at 2.76% CTR / $0.53 CPC, against "Quiz
+yourself on your own EMS protocols" (1.48% / $1.15) on the same creative. The
+question format won. Since 2026-09-04 that is the only copy running.
 
 ### Choosing the stat row
 

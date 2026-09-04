@@ -8,13 +8,26 @@
 // text positions into raw SVG and never matched, because real browser layout and
 // font hinting are doing most of the work.
 //
-//   node scripts/gen-reach-creative.mjs                  # square 1080
+// Bare run = the creative that runs as the Reddit ad: the "Medics all over the
+// country" headline over the full-density map (every city that fits is named).
+//
+//   node scripts/gen-reach-creative.mjs                  # square 1080, ad default
 //   node scripts/gen-reach-creative.mjs --preset portrait
 //   node scripts/gen-reach-creative.mjs --html-only      # skip the PNG render
 //   node scripts/gen-reach-creative.mjs --stats studying,states,pages
-//   node scripts/gen-reach-creative.mjs --headline country|none|...
-//   node scripts/gen-reach-creative.mjs --headline-text "Line one|Line two|Hook"
-//        fields: uploads protocols studying medics states countries pages
+//
+// Change or drop the copy:
+//   --headline country|studying|states|uploads|agency   # swap the preset
+//   --headline none                                     # no copy, map only
+//   --headline-text "Line one|Line two|Hook"            # your own words
+//   --hero studying                                     # big number instead
+//   --hero uploads --headline agency                    # both, deliberately
+//        headline tokens/hero/stats fields: uploads protocols studying medics
+//        states countries pages
+//
+// Map density:
+//   --min-label 1   # default: name every city that fits (matches the site)
+//   --min-label 8   # only the big ones, sparser look
 //
 // Out: share/creative-reach-<preset>.{html,png}
 import fs from 'fs/promises';
@@ -65,7 +78,9 @@ const HEADLINES = {
   agency:    ['Your protocols. Your quizzes.', 'Not generic EMS trivia.', 'Built by a medic.'],
   none:      null,
 };
-const DEFAULT_HEADLINE = 'studying';
+// 'country' carries no count in the headline, so the copy cannot go stale --
+// only the footer stats do, and a regen fixes those.
+const DEFAULT_HEADLINE = 'country';
 
 // A hero number needs a caption that says what it MEANS. "STUDYING" is a column
 // header; "MEDICS STUDYING THEIR OWN PROTOCOLS" is the claim.
@@ -103,30 +118,56 @@ async function logoDataURI() {
 // biggest numbers always win their space; a label that cannot fit is dropped but
 // its dot stays, so no data point is ever lost to crowding.
 function placeLabels(locales, minLabel = 8, heroZone = null) {
-  const CH = 7.3, LH = 15;           // measured advance/leading at 12.5px mono
+  const CH = 8.09, LH = 15;   // measured advance/leading for the base .rl tier
   const placed = [], boxes = [];
+  // A label that lands on top of another city's dot reads as a collision, so
+  // every dot is an obstacle the placer has to route around.
+  const dots = locales.map(l => ({
+    cx: l.x, cy: l.y,
+    x0: l.x - 5, x1: l.x + 5, y0: l.y - 5, y1: l.y + 5,
+  }));
   for (const l of [...locales].sort((a, b) => b.count - a.count)) {
     if (l.count < minLabel) continue;
     // The hero block owns the top-left; a label bleeding under its scrim reads
     // as a rendering fault, so those cities keep their dot and lose their name.
     if (heroZone && l.x < heroZone.x && l.y < heroZone.y) continue;
     const hot = l.count >= 20, warm = l.count >= 5;
-    const ch = hot || warm ? 8.6 : CH;
+    // Small cities keep their name at a quieter size (the site's rl-tiny tier)
+    // instead of being dropped -- the packed look is the message.
+    const tiny = l.count < 3;
+    // Per-tier advance widths, measured in headless Chrome against the real
+    // font/size/weight/letter-spacing of each tier -- a single shared constant
+    // under-measured .rl-hot by ~34% and ran the big east-coast labels off-canvas.
+    const ch = hot ? 11.56 : warm ? 9.33 : tiny ? 6.84 : CH;
     const text = `${l.city.toUpperCase()} ${l.count}`;
     const w = text.length * ch;
-    // Prefer the side with more room; east-coast density means most go left.
-    const right = l.x < 520;
-    const gap = 9;
-    const tx = right ? l.x + gap : l.x - gap;
-    const y = l.y + 3.5;
-    const box = {
-      x0: (right ? tx : tx - w) - 2, x1: (right ? tx + w : tx) + 2,
-      y0: y - LH * 0.72, y1: y + LH * 0.28,
-    };
-    if (box.x0 < -70 || box.x1 > 1030) continue;
-    if (boxes.some(b => !(box.x1 < b.x0 || box.x0 > b.x1 || box.y1 < b.y0 || box.y0 > b.y1))) continue;
-    boxes.push(box);
-    placed.push({ ...l, tx, ty: y, anchor: right ? 'start' : 'end', right, cls: hot ? 'rl-hot' : warm ? 'rl-warm' : '' });
+    const gap = tiny ? 6 : 9;
+    const lh = tiny ? LH * 0.8 : LH;
+    // Try several slots per city instead of one. The site packs labels densely
+    // because a crowded-out name retries the other side and the rows above and
+    // below; one attempt per city is what used to drop most of the small ones.
+    const dy = lh * 0.92;
+    const cands = [];
+    for (const oy of [3.5, 3.5 - dy, 3.5 + dy, 3.5 - dy * 2, 3.5 + dy * 2]) {
+      for (const ox of [gap, -gap]) {
+        const right = ox > 0, tx = l.x + ox, y = l.y + oy;
+        cands.push({ right, tx, y,
+          box: { x0: (right ? tx : tx - w) - 2, x1: (right ? tx + w : tx) + 2,
+                 y0: y - lh * 0.72, y1: y + lh * 0.28 } });
+      }
+    }
+    // Preferred side first, stable within a row: cities on the right half want
+    // their label to the left (and vice versa) so it stays over the canvas.
+    const wantRight = l.x < 520;
+    cands.sort((a, b) => (a.right === b.right ? 0 : a.right === wantRight ? -1 : 1));
+    const fit = cands.find(c =>
+      c.box.x0 >= 4 && c.box.x1 <= 955 &&
+      !boxes.some(b => !(c.box.x1 < b.x0 || c.box.x0 > b.x1 || c.box.y1 < b.y0 || c.box.y0 > b.y1)) &&
+      !dots.some(b => b.cx !== l.x && b.cy !== l.y &&
+        !(c.box.x1 < b.x0 || c.box.x0 > b.x1 || c.box.y1 < b.y0 || c.box.y0 > b.y1)));
+    if (!fit) continue;
+    boxes.push(fit.box);
+    placed.push({ ...l, tx: fit.tx, ty: fit.y, anchor: fit.right ? 'start' : 'end', right: fit.right, cls: hot ? 'rl-hot' : warm ? 'rl-warm' : tiny ? 'rl-tiny' : '' });
   }
   return placed;
 }
@@ -164,8 +205,8 @@ function buildHTML({ stats, states, labels, logo, preset, fields, headline, hero
   // Locales that lost their label still get a dot — density is the message.
   const labeled = new Set(labels.map(l => `${l.x},${l.y}`));
   const bare = stats.locales.filter(l => !labeled.has(`${l.x},${l.y}`))
-    .map(l => `<g class="locale"><circle class="halo" cx="${l.x}" cy="${l.y}" r="7"/>`
-             + `<circle class="core" cx="${l.x}" cy="${l.y}" r="2.6"/></g>`).join('');
+    .map(l => `<g class="locale"><circle class="halo" cx="${l.x}" cy="${l.y}" r="8.5"/>`
+             + `<circle class="core" cx="${l.x}" cy="${l.y}" r="3.6"/></g>`).join('');
 
   // No headline means the map owns the canvas -- shift it up into that space
   // rather than leaving a dead band where the copy used to be.
@@ -197,11 +238,12 @@ function buildHTML({ stats, states, labels, logo, preset, fields, headline, hero
 .head{position:absolute;top:42px;left:60px;right:60px;font-weight:800;font-size:${P.headSize}px;line-height:1.16}.head .hl{color:var(--amber)}
 .map{position:absolute;left:0;right:0;top:${headline ? P.mapTop : (hero ? 132 : 56)}px;height:${headline ? P.mapH : (hero ? P.mapH + 75 : P.mapH + 105)}px;width:${P.w}px}
 .state{fill:#0d0c11;stroke:#1e1c24;stroke-width:1;vector-effect:non-scaling-stroke}
-.state.lit{fill:#14120f;stroke:rgba(255,176,0,.22);stroke-width:1}
-.state.lit.warm{fill:#1b1710;stroke:rgba(255,176,0,.38);stroke-width:1.2}
-.locale circle.core{fill:var(--amber)}.locale circle.halo{fill:none;stroke:var(--amber);stroke-width:1.2;opacity:.45}
+.state.lit{fill:#181409;stroke:rgba(255,176,0,.55);stroke-width:1.15}
+.state.lit.warm{fill:#241c0d;stroke:rgba(255,176,0,.78);stroke-width:1.35}
+.locale circle.core{fill:var(--amber)}.locale circle.halo{fill:none;stroke:var(--amber);stroke-width:1.2;opacity:.7}
 .lead{stroke:#6e675a;stroke-width:.8}
 .rl{font-family:ui-monospace,Menlo,monospace;font-size:13px;letter-spacing:.02em;fill:#6f6a60;text-transform:uppercase;font-weight:600;paint-order:stroke fill;stroke:var(--bg);stroke-width:5px;stroke-linejoin:round}
+.rl-tiny{font-size:11px;font-weight:600;fill:#8a8478;stroke-width:4px}
 .rl-warm{font-size:15px;font-weight:700;fill:#cdc7bb}
 .rl-hot{font-size:18px;font-weight:800;fill:#fff;letter-spacing:.04em}
 .rl .rl-n{fill:var(--amber);font-weight:800}
@@ -239,7 +281,10 @@ const main = async () => {
   const arg = (n, d) => { const i = argv.indexOf(`--${n}`); return i < 0 ? d : argv[i + 1]; };
   const presets = arg('preset', null) ? [arg('preset', null)] : ['square'];
 
-  const hero = (h => h === 'none' ? null : h)(arg('hero', 'studying'));
+  // Defaults reproduce the creative that actually runs as the Reddit ad: the
+  // headline treatment (no hero number) over the full-density map. Pass
+  // --hero <field> to get the big-number variant instead.
+  const hero = (h => h === 'none' ? null : h)(arg('hero', 'none'));
   if (hero && !FIELDS[hero]) {
     throw new Error(`unknown --hero "${hero}"\navailable: ${Object.keys(FIELDS).join(', ')}, none`);
   }
@@ -261,7 +306,10 @@ const main = async () => {
     if (!headline.length) throw new Error('--headline-text needs at least one line');
     if (headline.length > 4) throw new Error('--headline-text takes at most 4 lines');
   } else {
-    const key = arg('headline', DEFAULT_HEADLINE);
+    // A hero number and a headline both own the top-left, so rendering both
+    // stacks one on the other. Asking for a hero therefore drops the headline
+    // unless you name one explicitly (--hero uploads --headline agency).
+    const key = arg('headline', hero ? 'none' : DEFAULT_HEADLINE);
     if (!(key in HEADLINES)) {
       throw new Error(`unknown headline "${key}"\navailable: ${Object.keys(HEADLINES).join(', ')}`);
     }
@@ -270,7 +318,7 @@ const main = async () => {
 
   const stats = JSON.parse(await fs.readFile(STATS, 'utf8'));
   const [states, logo] = await Promise.all([readStates(), logoDataURI()]);
-  const labels = placeLabels(stats.locales, Number(arg('min-label', 8)),
+  const labels = placeLabels(stats.locales, Number(arg('min-label', 1)),
     hero ? { x: 300, y: 120 } : null);   // map units, matches the scrim
   await fs.mkdir(OUTDIR, { recursive: true });
 
