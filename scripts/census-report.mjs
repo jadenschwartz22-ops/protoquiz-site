@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // "State of US EMS Protocols" — one edition page rendered from compare.json.
 //
-//   node scripts/census-report.mjs --edition 2026-09 --out <dir> [--data <dir>]
+//   node scripts/census-report.mjs --edition 2026-q3 --out <dir> [--data <dir>]
 //   node scripts/census-report.mjs --candidates [--data <dir>]
 //
 // AGGREGATE-FIRST (decided 2026-09-04): edition #1 shows distributions with their n
@@ -24,8 +24,8 @@
 // sitemap-index.xml also deliberately omits the census sitemap entirely — that omission
 // is correct only while the census is unpublished and ends the night item 9 first
 // rsyncs the generated sitemap-index to the repo root under CENSUS_PUBLISH=1. Adding
-// report editions to a sitemap is an item-9 decision (they are a handful of URLs a
-// month and are linked from the census landing), deliberately not made here.
+// report editions to a sitemap is an item-9 decision (they are four URLs a year and
+// are linked from the census landing), deliberately not made here.
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 
@@ -134,10 +134,11 @@ function chart(g) {
 
 // ------------------------------------------------------------------------- page
 
+// Editions are QUARTERLY (Jaden, 2026-09-05: protocols change about twice a year, so a
+// monthly drop would mostly repeat itself). `2026-q3` -> "Q3 2026".
 const editionLabel = (edition) => {
-  const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-  const m = String(edition).match(/^(\d{4})-(\d{2})$/);
-  return m ? `${MONTHS[Number(m[2]) - 1]} ${m[1]}` : String(edition);
+  const m = String(edition).match(/^(\d{4})-q([1-4])$/);
+  return m ? `Q${m[2]} ${m[1]}` : String(edition);
 };
 
 export function reportPage({ edition, floor, findings, compare, manifest }) {
@@ -392,8 +393,8 @@ if (isMain) {
   }
 
   const edition = arg('edition', null);
-  if (!edition || !/^\d{4}-\d{2}$/.test(edition)) {
-    console.error('census-report: --edition YYYY-MM is required');
+  if (!edition || !/^\d{4}-q[1-4]$/.test(edition)) {
+    console.error('census-report: --edition YYYY-qN is required (e.g. 2026-q3)');
     process.exit(2);
   }
   const outDir = arg('out', null);

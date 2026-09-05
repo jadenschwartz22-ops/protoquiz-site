@@ -24,7 +24,7 @@ const test = (name, fn) => {
 };
 
 const { compare, manifest } = readCompare(FIXTURE);
-const r = buildReport({ edition: '2026-09', compare, manifest });
+const r = buildReport({ edition: '2026-q3', compare, manifest });
 const html = r.page.html;
 
 console.log('selection');
@@ -81,7 +81,7 @@ test('selection is deterministic across two runs', () => {
 
 console.log('\nthe edition that does not ship');
 const thin = readCompare(THIN);
-const thinReport = buildReport({ edition: '2026-09', compare: thin.compare, manifest: thin.manifest });
+const thinReport = buildReport({ edition: '2026-q3', compare: thin.compare, manifest: thin.manifest });
 test('below the lowest floor the report renders NOTHING', () => {
   assert.strictEqual(thinReport.ok, false);
   assert.strictEqual(thinReport.floor, null);
@@ -157,7 +157,7 @@ test('the report links to the methodology and license pages', () => {
   assert.ok(html.includes('href="/census/data-license/"'));
 });
 test('two builds are byte-identical', () => {
-  const b = buildReport({ edition: '2026-09', compare, manifest });
+  const b = buildReport({ edition: '2026-q3', compare, manifest });
   assert.strictEqual(b.page.html, html, 'the report must not read the clock or a nonce');
 });
 test('nothing in the report reads the clock', () => {
@@ -178,7 +178,7 @@ test('a compare.json on the wrong version aborts', () => {
 });
 
 console.log('\nLinkedIn draft');
-const draft = linkedinDraft({ edition: '2026-09', floor: r.floor, findings: r.findings, compare, manifest });
+const draft = linkedinDraft({ edition: '2026-q3', floor: r.floor, findings: r.findings, compare, manifest });
 test('the draft is aggregate only', () => {
   const keys = new Set(compare.groups.flatMap(g => g.agencyKeys || []));
   for (const k of keys) assert.ok(!draft.includes(k), `the draft names the agency key ${k}`);
@@ -193,7 +193,7 @@ test('the draft carries the fallback coverage post for a non-shipping edition', 
   assert.ok(draft.includes(String(manifest.namedAgencies)), 'the fallback must carry the coverage numbers');
 });
 test('the draft is deterministic', () => {
-  assert.strictEqual(linkedinDraft({ edition: '2026-09', floor: r.floor, findings: r.findings, compare, manifest }), draft);
+  assert.strictEqual(linkedinDraft({ edition: '2026-q3', floor: r.floor, findings: r.findings, compare, manifest }), draft);
 });
 
 if (process.exitCode) console.error('\nFAILED');
