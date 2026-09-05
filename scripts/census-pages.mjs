@@ -553,62 +553,40 @@ function doseCell(r) {
   return `${range} ${esc(r.unit ?? '')}${r.perKg ? '/kg' : ''}${max}`;
 }
 
-// ------------------------------------------------------------- the tile map
+// ---------------------------------------------------------------- the US map
 //
-// The landing hero's one visual: a fixed-grid tile map of the 50 states plus DC.
-// Hand-placed [column, row] coordinates, not a projection and not a library — the
-// point is that every state is the same size, so the eye reads COVERAGE rather than
-// land area, and Rhode Island is as legible as Texas. The layout is the conventional
-// US tile grid: geography survives well enough to orient, and no tile overlaps.
-//
-// This is a CONSTANT. It never reads the clock, never randomizes, and the render
-// walks it in a sorted order, so the SVG is byte-identical across rebuilds — the
-// same determinism rule the rest of this file lives under.
-export const STATE_TILES = {
-  AK: [0, 0], ME: [11, 0],
-  WA: [1, 1], ID: [2, 1], MT: [3, 1], ND: [4, 1], MN: [5, 1], WI: [6, 1], MI: [8, 1], NY: [9, 1], VT: [10, 1], NH: [11, 1],
-  OR: [1, 2], NV: [2, 2], WY: [3, 2], SD: [4, 2], IA: [5, 2], IL: [6, 2], IN: [7, 2], OH: [8, 2], PA: [9, 2], NJ: [10, 2], MA: [11, 2],
-  CA: [1, 3], UT: [2, 3], CO: [3, 3], NE: [4, 3], MO: [5, 3], KY: [6, 3], WV: [7, 3], VA: [8, 3], MD: [9, 3], DE: [10, 3], CT: [11, 3],
-  AZ: [2, 4], NM: [3, 4], KS: [4, 4], AR: [5, 4], TN: [6, 4], NC: [7, 4], DC: [9, 4], RI: [11, 4],
-  OK: [4, 5], LA: [5, 5], MS: [6, 5], AL: [7, 5], SC: [8, 5],
-  HI: [0, 6], TX: [4, 6], GA: [8, 6],
-  FL: [9, 7],
-};
+// The landing hero's one visual: the 50 states plus DC, shaded by how many documents
+// the census holds in each, outlined in ink where the state has a named agency page.
+// Geometry is a committed, pre-projected file (scripts/data/us-states-paths.json,
+// us-atlas, Albers USA), so the render needs no library and, walked in sorted order,
+// the SVG is byte-identical across rebuilds.
+const US_STATES = JSON.parse(readFileSync(new URL('./data/us-states-paths.json', import.meta.url), 'utf8'));
 
-const TILE_COLS = 12;
-const TILE_ROWS = 8;
-const TILE_SIZE = 30;
-const TILE_GAP = 4;
+// Document-count bands, lowest first. Each band is a CSS class (r0..r5) so the colors
+// live with the rest of the theme, and the legend prints from this same list.
+export const MAP_BANDS = [[0, 'none'], [1, '1'], [2, '2 to 5'], [6, '6 to 20'], [21, '21 to 60'], [61, '61 or more']];
+const bandOf = n => MAP_BANDS.reduce((b, [min], i) => (n >= min ? i : b), 0);
+// Too small to carry a count label at this scale; the tooltip still has the number.
+const SMALL_STATES = new Set(['RI', 'DE', 'DC', 'CT', 'NJ', 'MD', 'MA', 'NH', 'VT']);
 
-// Three states a tile can be in, and each is a claim the data can back:
-//   named   — the census has a named agency page in that state (the red signal)
-//   doc     — at least one document, but no agency page yet (ink)
-//   none    — nothing yet (hairline outline)
-// Everything comes from documents.json / agencies.json, which the landing already
-// holds; no new input, and no number is typed.
-function tileMap({ documents, pageStates }) {
-  const withDocs = new Set(documents.filter(d => d.state).map(d => String(d.state).toUpperCase()));
+function usMap({ documents, pageStates }) {
+  const docsIn = {};
+  for (const d of documents) if (d.state) { const c = String(d.state).toUpperCase(); docsIn[c] = (docsIn[c] || 0) + 1; }
   const named = new Set(pageStates.map(s => String(s).toUpperCase()));
-
-  const w = TILE_COLS * (TILE_SIZE + TILE_GAP) - TILE_GAP;
-  const h = TILE_ROWS * (TILE_SIZE + TILE_GAP) - TILE_GAP;
-
-  // Sorted by code so the element order never depends on object-key order.
-  const tiles = Object.keys(STATE_TILES).sort().map((code, i) => {
-    const [c, r] = STATE_TILES[code];
-    const cls = named.has(code) ? 'named' : withDocs.has(code) ? 'doc' : 'none';
-    const x = c * (TILE_SIZE + TILE_GAP);
-    const y = r * (TILE_SIZE + TILE_GAP);
-    // The stagger is an index on a sorted list, so it is the same every build. The
-    // CSS turns it off wholesale under prefers-reduced-motion.
-    return `<g class="tile t-${cls}" style="--i:${i}"><rect x="${x}" y="${y}" width="${TILE_SIZE}" height="${TILE_SIZE}" rx="3"/>`
-      + `<text x="${x + TILE_SIZE / 2}" y="${y + TILE_SIZE / 2}" dy="0.35em">${esc(code)}</text></g>`;
+  const codes = Object.keys(US_STATES.states).sort();
+  const st = c => US_STATES.states[c];
+  const fills = codes.map(c => {
+    const n = docsIn[c] || 0;
+    return `<path class="s r${bandOf(n)}" d="${st(c).d}"><title>${esc(stateLabel(c))}: ${num(n)} document${n === 1 ? '' : 's'}${named.has(c) ? ', agency page' : ''}</title></path>`;
   }).join('');
-
-  const nNamed = Object.keys(STATE_TILES).filter(s => named.has(s)).length;
-  const nDocs = Object.keys(STATE_TILES).filter(s => withDocs.has(s) && !named.has(s)).length;
-
-  return { svg: `<svg class="tilemap" viewBox="0 0 ${w} ${h}" role="img" aria-label="Map of US states covered by the census: ${num(nNamed)} with a named agency page, ${num(nDocs)} with documents only.">${tiles}</svg>`, nNamed, nDocs };
+  const outlines = codes.filter(c => named.has(c)).map(c => `<path class="named" d="${st(c).d}"/>`).join('');
+  const labels = codes.filter(c => (docsIn[c] || 0) >= MAP_BANDS[4][0] && !SMALL_STATES.has(c))
+    .map(c => `<text x="${st(c).cx}" y="${st(c).cy}" dy="0.35em">${num(docsIn[c])}</text>`).join('');
+  const nNamed = codes.filter(c => named.has(c)).length;
+  const nDocs = codes.filter(c => docsIn[c] && !named.has(c)).length;
+  const svg = `<svg class="usmap" viewBox="${esc(US_STATES.viewBox)}" role="img" aria-label="Map of US states shaded by documents in the census: ${num(nNamed)} with a named agency page, ${num(nDocs)} with documents only.">${fills}${outlines}${labels}</svg>`;
+  const legend = `<div class="legend" aria-hidden="true">${MAP_BANDS.map(([, label], i) => `<span><i class="r${i}"></i>${label}</span>`).join('')}<span><i class="named"></i>agency page</span></div>`;
+  return { svg, legend, nNamed, nDocs, nBlank: codes.length - nNamed - nDocs };
 }
 
 // Per-state coverage counts for the landing table (spec 8): agencies with a
@@ -656,28 +634,33 @@ function landingPage({ manifest, states, drugs, agencyPageCount, agencies = [], 
   // got a page) so a facet can never promise more rows than the state page lists.
   const facetCounts = new Map(states.map(s => [s, agencies.filter(a => a.state === s).length]));
 
-  // The headline counts, as one dense summary line rather than a row of tiles. Every
-  // number still carries its label and its denominator; only the shape changed.
-  const summaryLine = `      <p class="summary">${[
+  // The scale line, directly under the hero: how much the census holds, in one dense
+  // row. Every number carries its label; the v3-only counts (published, awaiting
+  // review, comparison groups) print only when the manifest has them.
+  const published = manifest.listedNamed == null ? null : manifest.listedNamed + (manifest.listedAggregate || 0);
+  const scaleLine = `      <p class="summary scale">${[
+    `<span class="n">${num(manifest.documents)}</span> protocol documents collected`,
+    published == null ? null : `<span class="n">${num(published)}</span> published`,
+    manifest.pendingReview == null ? null : `<span class="n">${num(manifest.pendingReview)}</span> awaiting review`,
     `<span class="n">${num(manifest.namedAgencies)}</span> named agencies`,
     `<span class="n">${num(agencyPageCount)}</span> with a page`,
-    `<span class="n">${num(manifest.documents)}</span> documents`,
+    manifest.compareGroups == null ? null : `<span class="n">${num(manifest.compareGroups)}</span> comparison groups`,
     `<span class="n">${num(manifest.doseRows)}</span> dose entries`,
-    `<span class="n">${esc(pct(manifest.dosesParsed, manifest.doseRows))}</span> machine-parsed of ${num(manifest.doseRows)}`,
+    `<span class="n">${esc(pct(manifest.dosesParsed, manifest.doseRows))}</span> machine-parsed`,
     `as of <span class="n">${esc(manifest.asOf)}</span>`,
-  ].join('<span class="sep" aria-hidden="true"></span>')}</p>`;
+  ].filter(Boolean).join('<span class="sep" aria-hidden="true"></span>')}</p>`;
 
   // The hero is the one place on the census that argues rather than reports: it is
   // the landing, and the landing is the brand. Everything below it, and every detail
   // page, stays in the research register the rest of this file is written in.
-  const map = tileMap({ documents, pageStates: states });
+  const map = usMap({ documents, pageStates: states });
   // The map's own caption, in the same honest-counts shape every other number here
-  // uses: what is filled, what is outlined, and the n behind each. Derived from the
-  // tile classes themselves, so the sentence can never disagree with the picture.
+  // uses: what is shaded, what is outlined, and the n behind each. Derived from the
+  // same counts as the paths, so the sentence can never disagree with the picture.
   const mapCounts = [
     `<span class="n">${num(map.nNamed)}</span> states with a named agency page`,
     `<span class="n">${num(map.nDocs)}</span> more with documents and no page yet`,
-    `<span class="n">${num(Object.keys(STATE_TILES).length - map.nNamed - map.nDocs)}</span> still blank`,
+    `<span class="n">${num(map.nBlank)}</span> still blank`,
   ].join(', ');
 
   const lead = `      <section class="hero">
@@ -688,9 +671,11 @@ function landingPage({ manifest, states, drugs, agencyPageCount, agencies = [], 
         </div>
         <figure class="hero-map">
           ${map.svg}
-          <figcaption>${mapCounts}. Filled in red where an agency has a page, in ink where the census holds documents only.</figcaption>
+          ${map.legend}
+          <figcaption>${mapCounts}. Shaded by documents held per state, outlined in ink where an agency has a page.</figcaption>
         </figure>
       </section>
+${scaleLine}
       <section class="why">
         <h2>Why it matters</h2>
         <ul class="claims">
@@ -702,18 +687,18 @@ function landingPage({ manifest, states, drugs, agencyPageCount, agencies = [], 
         </ul>
       </section>`;
 
-  const body = `${summaryLine}
-      <p class="honest">${num(manifest.dosesParsed)} entries parsed to a number and route, ${num(manifest.dosesPartial)} partially, ${num(manifest.dosesRaw)} kept as written. Raw entries are counted and shown as written, never dropped.${withheldSentence(withheld)}</p>
+  const body = `      <p class="honest">${num(manifest.dosesParsed)} entries parsed to a number and route, ${num(manifest.dosesPartial)} partially, ${num(manifest.dosesRaw)} kept as written. Raw entries are counted and shown as written, never dropped.${withheldSentence(withheld)}</p>
 ${drugs.length ? `      <section id="drugs">
         <h2>Drugs<span class="count">${num(drugs.length)}</span></h2>
-        <ul class="results">${drugs.map(d => `<li><a href="/census/drugs/${slug(d)}/">${esc(drugLabel(d))}</a><span class="muted">Doses, indications and routes</span></li>`).join('')}</ul>
+        <p class="muted">Doses, indications and routes for each, across every agency that carries it.</p>
+        <ul class="cols four">${[...drugs].sort((x, y) => drugLabel(x).localeCompare(drugLabel(y))).map(d => `<li><a href="/census/drugs/${slug(d)}/">${esc(drugLabel(d))}</a></li>`).join('')}</ul>
       </section>` : `      <section id="drugs">
         <h2>Drugs</h2>
         <p>Drug and indication pages are not published for this build: the indication map has not been reviewed since it last changed.</p>
       </section>`}
       <section id="states">
         <h2>States<span class="count">${num(states.length)}</span></h2>
-        <ul class="results">${states.map(s => `<li><a href="/census/states/${slug(s)}/">${esc(stateLabel(s))}</a><span class="muted">${num(facetCounts.get(s) ?? 0)} named ${(facetCounts.get(s) ?? 0) === 1 ? 'agency' : 'agencies'}</span></li>`).join('')}</ul>
+        <ul class="stategrid">${states.map(s => `<li><a href="/census/states/${slug(s)}/">${esc(stateLabel(s))}</a><span class="count">${num(facetCounts.get(s) ?? 0)} named ${(facetCounts.get(s) ?? 0) === 1 ? 'agency' : 'agencies'}</span></li>`).join('')}</ul>
 ${coverageRows.length ? `        <h3>Coverage by state</h3>
         <div class="scroll"><table class="coverage">
           <thead><tr><th>State</th><th>With a protocol</th><th>Without</th><th>Statewide baseline</th></tr></thead>
@@ -724,27 +709,19 @@ ${coverageRows.length ? `        <h3>Coverage by state</h3>
         <h2>How this is built</h2>
         <p><a href="/census/methodology/">Methodology</a>: where documents come from, what is read out of them, what is not captured, and why no dose-level accuracy number is published. <a href="/census/data-license/">Data license</a>: summaries are CC BY 4.0; row-level data is not published.</p>${latestReport ? `
         <p><a href="/census/report/${latestReport}/">State of US EMS Protocols, ${reportLabel(latestReport)}</a>: the quarterly edition, the groups where published protocols disagree most, aggregate only.</p>` : ''}
-      </section>`;
-
-  const rail = `          <section class="panel" id="facet-states">
-            <h2>States</h2>
-            <ul class="facets">${states.map(s => `<li><a href="/census/states/${slug(s)}/">${esc(stateLabel(s))}</a><span class="count">${num(facetCounts.get(s) ?? 0)}</span></li>`).join('')}</ul>
-          </section>
-${drugs.length ? `          <section class="panel" id="facet-drugs">
-            <h2>Drugs A to Z</h2>
-            <ul class="facets">${[...drugs].sort((x, y) => drugLabel(x).localeCompare(drugLabel(y))).map(d => `<li><a href="/census/drugs/${slug(d)}/">${esc(drugLabel(d))}</a></li>`).join('')}</ul>
-          </section>\n` : ''}${citePanel('cite', [`United States EMS Protocol Census, as of ${esc(manifest.asOf)}. ${ORIGIN}/census/`])}
+      </section>
+      <div class="landing-foot">
           <section class="panel" id="list">
             <h2>List your agency</h2>
             <p>If your agency's protocols are a public record and you would like them in the census, or you want an existing listing corrected or removed, send the document's public URL and we will handle it. Removal is same-day, no reason needed.</p>
 ${submitForm({ id: 'list-form', kind: 'listing', urlLabel: 'Public URL of the protocol document', submitLabel: 'Send it' })}
-          </section>`;
+          </section>
+${citePanel('cite', [`United States EMS Protocol Census, as of ${esc(manifest.asOf)}. ${ORIGIN}/census/`])}
+      </div>`;
 
   return {
     path: '/census/',
     html: page({
-      rail,
-      railLeft: true,
       lead,
       title: 'United States EMS Protocol Census - what US EMS agencies actually carry',
       description: `A free, versioned record of United States EMS protocols: ${num(manifest.doseRows)} dose entries from ${num(manifest.namedAgencies)} named agencies, as of ${manifest.asOf}.`,
@@ -1858,29 +1835,35 @@ h1{font-size:1.8125rem;line-height:1.25;margin:0 0 8px;font-weight:600;letter-sp
    The landing is the brand register; every detail page stays in the research
    register above. The scale jump is the whole move: a 700-weight statement at
    ~3.5x the body, tightened, against a 400-weight dek. One family, one accent. */
-.hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:center;margin:4px 0 clamp(40px,6vw,64px);padding-bottom:clamp(36px,5vw,56px);border-bottom:1px solid var(--rule)}
+.hero{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,5vw,72px);align-items:center;margin:4px 0 clamp(40px,6vw,64px);padding-bottom:clamp(36px,5vw,56px);border-bottom:1px solid var(--rule)}
 .hero-say{min-width:0}
 .hero .badge{margin:0 0 14px}
 .hero h1{font-size:clamp(2.125rem,4.4vw,3.9rem);line-height:1.05;letter-spacing:-.035em;font-weight:700;margin:0 0 22px;max-width:15ch;text-wrap:balance}
 .hero .dek{font-size:clamp(1rem,1.2vw,1.0625rem);line-height:1.62;color:var(--muted);margin:0;max-width:54ch}
 
-/* the tile map: equal-area states, so the eye reads coverage and not acreage */
+/* the US map: states shaded by documents held, one hue, agency-page states outlined */
 .hero-map{margin:0;min-width:0}
-.tilemap{display:block;width:100%;height:auto}
-.tilemap .tile rect{fill:none;stroke:var(--rule);stroke-width:1}
-.tilemap .tile text{font-family:var(--mono);font-size:11px;font-weight:500;text-anchor:middle;fill:var(--muted)}
-.tilemap .t-doc rect{fill:var(--ink);stroke:var(--ink)}
-.tilemap .t-doc text{fill:var(--ground)}
-.tilemap .t-named rect{fill:var(--accent);stroke:var(--accent)}
-.tilemap .t-named text{fill:oklch(0.99 0.003 250)}
+.usmap{display:block;width:100%;height:auto}
+.usmap .s{stroke:var(--ground);stroke-width:.9}
+.usmap .r0,.legend .r0{fill:var(--panel);background:var(--panel)}
+.usmap .r1,.legend .r1{fill:oklch(0.92 0.03 27);background:oklch(0.92 0.03 27)}
+.usmap .r2,.legend .r2{fill:oklch(0.83 0.07 27);background:oklch(0.83 0.07 27)}
+.usmap .r3,.legend .r3{fill:oklch(0.70 0.13 27);background:oklch(0.70 0.13 27)}
+.usmap .r4,.legend .r4{fill:oklch(0.56 0.18 27);background:oklch(0.56 0.18 27)}
+.usmap .r5,.legend .r5{fill:oklch(0.40 0.15 27);background:oklch(0.40 0.15 27)}
+.usmap .named{fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linejoin:round;pointer-events:none}
+.legend .named{background:none;border:2px solid var(--ink)}
+.usmap text{font-family:var(--mono);font-size:10px;font-weight:500;text-anchor:middle;fill:var(--ground);pointer-events:none}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin:12px 0 0;font-size:.78rem;color:var(--muted)}
+.legend i{display:inline-block;width:13px;height:13px;border-radius:2px;margin-right:6px;vertical-align:-2px;border:1px solid var(--rule)}
 .hero-map figcaption{margin:16px 0 0;font-size:.8125rem;line-height:1.55;color:var(--muted);max-width:46ch}
 .hero-map figcaption .n{font-family:var(--mono);font-weight:500;color:var(--ink);font-variant-numeric:tabular-nums}
 
-/* the one orchestrated page-load moment: the tiles arrive, nothing else moves */
+/* the one page-load moment: the map fades up, nothing else moves */
 @media(prefers-reduced-motion:no-preference){
-  .tilemap .tile{opacity:0;animation:tile-in .4s cubic-bezier(.22,1,.36,1) forwards;animation-delay:calc(var(--i)*8ms)}
+  .usmap{opacity:0;animation:map-in .5s cubic-bezier(.22,1,.36,1) forwards}
 }
-@keyframes tile-in{from{opacity:0}to{opacity:1}}
+@keyframes map-in{from{opacity:0}to{opacity:1}}
 
 /* why it matters: a flowing list of statements, not a grid of cards */
 .why{margin:0 0 clamp(36px,5vw,52px)}
@@ -1900,6 +1883,9 @@ p{margin:0 0 12px;max-width:72ch}
 
 /* the headline counts, as one dense line rather than tiles */
 .summary{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;margin:0 0 16px;font-size:.9375rem;color:var(--muted);max-width:none}
+/* the scale line sits between the hero and the argument, so the size registers first */
+.summary.scale{margin:calc(-1 * clamp(24px,4vw,44px)) 0 clamp(36px,5vw,52px);font-size:1rem}
+.summary.scale .n{font-size:1.125rem}
 .summary .n{font-family:var(--mono);font-weight:500;color:var(--ink);font-variant-numeric:tabular-nums}
 .summary .sep{width:1px;align-self:stretch;background:var(--rule);margin:2px 4px}
 
@@ -1942,6 +1928,13 @@ ul.facets a:hover{text-decoration:underline}
 ul.facets .count{font-family:var(--mono);font-size:.8125rem;color:var(--muted);font-variant-numeric:tabular-nums}
 ul.cols{list-style:none;padding:0;margin:0 0 12px;columns:3;column-gap:24px}
 ul.cols li{break-inside:avoid;padding:3px 0;font-size:.9375rem}
+ul.cols.four{columns:4}
+/* states as a compact grid: name and its named-agency count on one line */
+ul.stategrid{list-style:none;padding:0;margin:0 0 12px;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:0 24px}
+ul.stategrid li{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:7px 2px;border-bottom:1px solid var(--rule);font-size:.9375rem}
+ul.stategrid a{font-weight:500}
+ul.stategrid .count{font-family:var(--mono);font-size:.78rem;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.landing-foot{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:start;margin:44px 0 0}
 ul.inline{list-style:none;padding:0;margin:0 0 12px;display:flex;flex-wrap:wrap;gap:6px}
 ul.inline li{background:var(--panel);border:1px solid var(--rule);border-radius:var(--r);padding:3px 10px;font-size:.875rem;font-variant-numeric:tabular-nums}
 
@@ -2004,14 +1997,16 @@ footer p{max-width:none}
 @media(max-width:960px){
   .layout,.layout.facets{grid-template-columns:minmax(0,1fr);gap:32px}
   .rail,.toc{position:static}
-  ul.cols{columns:2}
+  ul.cols,ul.cols.four{columns:2}
+  .landing-foot{grid-template-columns:minmax(0,1fr)}
   /* hero and map stack; the map keeps its aspect via viewBox and simply gets wider */
   .hero{grid-template-columns:minmax(0,1fr);gap:32px}
   .hero h1{max-width:20ch}
   .hero-map figcaption{max-width:none}
 }
 @media(max-width:640px){
-  ul.cols{columns:1}
+  ul.cols,ul.cols.four{columns:1}
+  .summary.scale{margin-top:-16px}
   h1{font-size:1.5rem}
   .hero h1{font-size:2rem;letter-spacing:-.028em;max-width:none}
   .stat{flex:1 1 100%;border-right:0;border-bottom:1px solid var(--rule)}
