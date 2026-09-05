@@ -555,36 +555,38 @@ function doseCell(r) {
 
 // ---------------------------------------------------------------- the US map
 //
-// The landing hero's one visual: the 50 states plus DC, shaded by how many documents
-// the census holds in each, outlined in ink where the state has a named agency page.
+// The landing hero's one visual: the 50 states plus DC, shaded by how many CURRENT
+// protocols the census holds in each (one per agency: the build marks one document
+// per agency current and the rest superseded, so 226 Denver Metro uploads shade
+// Colorado as one), outlined in ink where the state has a named agency page.
 // Geometry is a committed, pre-projected file (scripts/data/us-states-paths.json,
 // us-atlas, Albers USA), so the render needs no library and, walked in sorted order,
 // the SVG is byte-identical across rebuilds.
 const US_STATES = JSON.parse(readFileSync(new URL('./data/us-states-paths.json', import.meta.url), 'utf8'));
 
-// Document-count bands, lowest first. Each band is a CSS class (r0..r5) so the colors
+// Protocol-count bands, lowest first. Each band is a CSS class (r0..r4) so the colors
 // live with the rest of the theme, and the legend prints from this same list.
-export const MAP_BANDS = [[0, 'none'], [1, '1'], [2, '2 to 5'], [6, '6 to 20'], [21, '21 to 60'], [61, '61 or more']];
+export const MAP_BANDS = [[0, 'none'], [1, '1'], [2, '2 to 4'], [5, '5 to 9'], [10, '10 or more']];
 const bandOf = n => MAP_BANDS.reduce((b, [min], i) => (n >= min ? i : b), 0);
 // Too small to carry a count label at this scale; the tooltip still has the number.
 const SMALL_STATES = new Set(['RI', 'DE', 'DC', 'CT', 'NJ', 'MD', 'MA', 'NH', 'VT']);
 
 function usMap({ documents, pageStates }) {
   const docsIn = {};
-  for (const d of documents) if (d.state) { const c = String(d.state).toUpperCase(); docsIn[c] = (docsIn[c] || 0) + 1; }
+  for (const d of documents) if (d.state && d.status === 'current') { const c = String(d.state).toUpperCase(); docsIn[c] = (docsIn[c] || 0) + 1; }
   const named = new Set(pageStates.map(s => String(s).toUpperCase()));
   const codes = Object.keys(US_STATES.states).sort();
   const st = c => US_STATES.states[c];
   const fills = codes.map(c => {
     const n = docsIn[c] || 0;
-    return `<path class="s r${bandOf(n)}" d="${st(c).d}"><title>${esc(stateLabel(c))}: ${num(n)} document${n === 1 ? '' : 's'}${named.has(c) ? ', agency page' : ''}</title></path>`;
+    return `<path class="s r${bandOf(n)}" d="${st(c).d}"><title>${esc(stateLabel(c))}: ${num(n)} current protocol${n === 1 ? '' : 's'}${named.has(c) ? ', agency page' : ''}</title></path>`;
   }).join('');
   const outlines = codes.filter(c => named.has(c)).map(c => `<path class="named" d="${st(c).d}"/>`).join('');
-  const labels = codes.filter(c => (docsIn[c] || 0) >= MAP_BANDS[4][0] && !SMALL_STATES.has(c))
+  const labels = codes.filter(c => (docsIn[c] || 0) >= MAP_BANDS[3][0] && !SMALL_STATES.has(c))
     .map(c => `<text x="${st(c).cx}" y="${st(c).cy}" dy="0.35em">${num(docsIn[c])}</text>`).join('');
   const nNamed = codes.filter(c => named.has(c)).length;
   const nDocs = codes.filter(c => docsIn[c] && !named.has(c)).length;
-  const svg = `<svg class="usmap" viewBox="${esc(US_STATES.viewBox)}" role="img" aria-label="Map of US states shaded by documents in the census: ${num(nNamed)} with a named agency page, ${num(nDocs)} with documents only.">${fills}${outlines}${labels}</svg>`;
+  const svg = `<svg class="usmap" viewBox="${esc(US_STATES.viewBox)}" role="img" aria-label="Map of US states shaded by current protocols in the census: ${num(nNamed)} with a named agency page, ${num(nDocs)} with protocols only.">${fills}${outlines}${labels}</svg>`;
   const legend = `<div class="legend" aria-hidden="true">${MAP_BANDS.map(([, label], i) => `<span><i class="r${i}"></i>${label}</span>`).join('')}<span><i class="named"></i>agency page</span></div>`;
   return { svg, legend, nNamed, nDocs, nBlank: codes.length - nNamed - nDocs };
 }
@@ -637,10 +639,10 @@ function landingPage({ manifest, states, drugs, agencyPageCount, agencies = [], 
   // The scale line, directly under the hero: how much the census holds, in one dense
   // row. Every number carries its label; the v3-only counts (published, awaiting
   // review, comparison groups) print only when the manifest has them.
-  const published = manifest.listedNamed == null ? null : manifest.listedNamed + (manifest.listedAggregate || 0);
+  const currentProtocols = documents.filter(d => d.status === 'current').length;
   const scaleLine = `      <p class="summary scale">${[
-    `<span class="n">${num(manifest.documents)}</span> protocol documents collected`,
-    published == null ? null : `<span class="n">${num(published)}</span> published`,
+    `<span class="n">${num(manifest.documents)}</span> documents collected`,
+    currentProtocols ? `<span class="n">${num(currentProtocols)}</span> current protocols` : null,
     manifest.pendingReview == null ? null : `<span class="n">${num(manifest.pendingReview)}</span> awaiting review`,
     `<span class="n">${num(manifest.namedAgencies)}</span> named agencies`,
     `<span class="n">${num(agencyPageCount)}</span> with a page`,
@@ -659,7 +661,7 @@ function landingPage({ manifest, states, drugs, agencyPageCount, agencies = [], 
   // same counts as the paths, so the sentence can never disagree with the picture.
   const mapCounts = [
     `<span class="n">${num(map.nNamed)}</span> states with a named agency page`,
-    `<span class="n">${num(map.nDocs)}</span> more with documents and no page yet`,
+    `<span class="n">${num(map.nDocs)}</span> more with protocols and no page yet`,
     `<span class="n">${num(map.nBlank)}</span> still blank`,
   ].join(', ');
 
@@ -672,7 +674,7 @@ function landingPage({ manifest, states, drugs, agencyPageCount, agencies = [], 
         <figure class="hero-map">
           ${map.svg}
           ${map.legend}
-          <figcaption>${mapCounts}. Shaded by documents held per state, outlined in ink where an agency has a page.</figcaption>
+          <figcaption>${mapCounts}. Shaded by current protocols per state, one per agency with earlier versions folded in, outlined in ink where an agency has a page.</figcaption>
         </figure>
       </section>
 ${scaleLine}
@@ -1848,9 +1850,8 @@ h1{font-size:1.8125rem;line-height:1.25;margin:0 0 8px;font-weight:600;letter-sp
 .usmap .r0,.legend .r0{fill:var(--panel);background:var(--panel)}
 .usmap .r1,.legend .r1{fill:oklch(0.92 0.03 27);background:oklch(0.92 0.03 27)}
 .usmap .r2,.legend .r2{fill:oklch(0.83 0.07 27);background:oklch(0.83 0.07 27)}
-.usmap .r3,.legend .r3{fill:oklch(0.70 0.13 27);background:oklch(0.70 0.13 27)}
-.usmap .r4,.legend .r4{fill:oklch(0.56 0.18 27);background:oklch(0.56 0.18 27)}
-.usmap .r5,.legend .r5{fill:oklch(0.40 0.15 27);background:oklch(0.40 0.15 27)}
+.usmap .r3,.legend .r3{fill:oklch(0.66 0.15 27);background:oklch(0.66 0.15 27)}
+.usmap .r4,.legend .r4{fill:oklch(0.48 0.17 27);background:oklch(0.48 0.17 27)}
 .usmap .named{fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linejoin:round;pointer-events:none}
 .legend .named{background:none;border:2px solid var(--ink)}
 .usmap text{font-family:var(--mono);font-size:10px;font-weight:500;text-anchor:middle;fill:var(--ground);pointer-events:none}
