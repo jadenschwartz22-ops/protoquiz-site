@@ -327,7 +327,7 @@ const CENSUS_SECTIONS = [
   ['Methodology', '/census/methodology/', '/census/methodology/'],
 ];
 
-const productBar = path => `  <div class="pbar">
+export const productBar = path => `  <div class="pbar">
     <div class="wrap">
       <a class="pbar-mark" href="/census/">US EMS Protocol Census</a>
       <nav class="pbar-nav" aria-label="Census sections">${CENSUS_SECTIONS.map(([label, prefix, href]) =>
@@ -733,7 +733,7 @@ ${coverageRows.length ? `        <h3>Coverage by state</h3>
 ${drugs.length ? `          <section class="panel" id="facet-drugs">
             <h2>Drugs A to Z</h2>
             <ul class="facets">${[...drugs].sort((x, y) => drugLabel(x).localeCompare(drugLabel(y))).map(d => `<li><a href="/census/drugs/${slug(d)}/">${esc(drugLabel(d))}</a></li>`).join('')}</ul>
-          </section>\n` : ''}${citePanel('cite', [`ProtoQuiz EMS Protocol Census, as of ${esc(manifest.asOf)}. ${ORIGIN}/census/`])}
+          </section>\n` : ''}${citePanel('cite', [`United States EMS Protocol Census, as of ${esc(manifest.asOf)}. ${ORIGIN}/census/`])}
           <section class="panel" id="list">
             <h2>List your agency</h2>
             <p>If your agency's protocols are a public record and you would like them in the census, or you want an existing listing corrected or removed, send the document's public URL and we will handle it. Removal is same-day, no reason needed.</p>
@@ -846,7 +846,7 @@ ${rows}
 ${history}`;
 
   const rail = `${citePanel('cite', [
-    esc(`${agency.name}, EMS Protocol Census. ${num(doses.length)} dose entries, effective ${documentDateCell(currentDoc)}.`),
+    esc(`${agency.name}, United States EMS Protocol Census. ${num(doses.length)} dose entries, effective ${documentDateCell(currentDoc)}.`),
     `${ORIGIN}/census/agencies/${esc(agency.agencyKey)}/`,
   ])}
 ${railLinks('Related', [
@@ -943,7 +943,7 @@ ${statewideBaselines.length ? `      <section id="statewide-baseline">
 ${agenciesSection}`;
 
   const rail = `${citePanel('cite', [
-    esc(`EMS Protocol Census, ${name}: ${listed.length} named ${listed.length === 1 ? 'agency' : 'agencies'}, ${doses.length} dose entries across ${drugs.size} ${drugs.size === 1 ? 'drug' : 'drugs'}.`),
+    esc(`United States EMS Protocol Census, ${name}: ${listed.length} named ${listed.length === 1 ? 'agency' : 'agencies'}, ${doses.length} dose entries across ${drugs.size} ${drugs.size === 1 ? 'drug' : 'drugs'}.`),
     `${ORIGIN}/census/states/${slug(state)}/`,
   ])}
 ${railLinks('Agencies in this state', listed.map(a => [a.name, `/census/agencies/${a.agencyKey}/`]))}
@@ -1514,7 +1514,7 @@ ${stats([
 
       <section id="cite">
         <h2>Citation</h2>
-        <p class="cite">ProtoQuiz EMS Protocol Census, as of ${esc(m.asOf)}. ${ORIGIN}/census/ &middot; <a href="/census/data-license/">Data license</a></p>
+        <p class="cite">United States EMS Protocol Census, as of ${esc(m.asOf)}. ${ORIGIN}/census/ &middot; <a href="/census/data-license/">Data license</a></p>
       </section>`;
 
   const rail = `${contents([

@@ -28,7 +28,7 @@
 // are linked from the census landing), deliberately not made here.
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
-import { indicationLabel, reportLabel as editionLabel } from './census-pages.mjs';
+import { indicationLabel, reportLabel as editionLabel, productBar } from './census-pages.mjs';
 
 const ORIGIN = 'https://protoquiz.com';
 const APP_ID = '6753611139';
@@ -260,6 +260,7 @@ ${jsonLd.map(j => `  <script type="application/ld+json">\n${jsonLdText(j)}\n  </
       </nav>
     </div>
   </header>
+${productBar(path)}
   <main>
     <div class="wrap">
       <nav class="crumbs"><a href="/">Home</a> <span class="sep">/</span> <a href="/census/">EMS Census</a> <span class="sep">/</span> <span>${esc(title)}</span></nav>
