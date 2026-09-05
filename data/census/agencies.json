@@ -1,0 +1,2826 @@
+{
+ "schemaVersion": 3,
+ "rows": [
+  {
+   "agencyKey": "ada-county-city-emergency-services-system",
+   "name": "Ada County-City Emergency Services System",
+   "aliases": [
+    "Ada County-City Emergency Services System"
+   ],
+   "state": "ID",
+   "country": "US",
+   "city": "Boise",
+   "jurisdiction": "county",
+   "currentHash": "72bca9a994c3b1d1cfcb3deae96b71ea",
+   "currentEffectiveDate": "2026-02-01",
+   "documentCount": 2,
+   "doseCount": 0,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "alabama-department-of-public-health",
+   "name": "Alabama Department of Public Health",
+   "aliases": [
+    "Alabama Department of Public Health"
+   ],
+   "state": "AL",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "b176409b6363ce792a938d859b369bb1d906d09dce8caef1cff0cabc95b36749",
+   "currentEffectiveDate": "2020-01-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "alabama-department-of-public-health-adph-office-of-ems",
+   "name": "Alabama Department of Public Health (ADPH) Office of EMS",
+   "aliases": [
+    "Alabama Department of Public Health (ADPH) Office of EMS"
+   ],
+   "state": "AL",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "82ffaec11ef95ee997351be9c90fde0243034e1a038061c1d08a02844211f51d",
+   "currentEffectiveDate": "2020-01-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "alabama-department-of-public-health-adph-office-of-ems-oems",
+   "name": "Alabama Department of Public Health (ADPH) Office of EMS (OEMS)",
+   "aliases": [
+    "Alabama Department of Public Health (ADPH) Office of EMS (OEMS)"
+   ],
+   "state": "AL",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "1f8702b59cde16a1ea5adcfb730877daa15af3966d8efa482b37a1dbfb16134d",
+   "currentEffectiveDate": "2018-01-01",
+   "documentCount": 3,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "alabama-department-of-public-health-office-of-emergency-medical-services",
+   "name": "Alabama Department of Public Health Office of Emergency Medical Services",
+   "aliases": [
+    "Alabama Department of Public Health Office of Emergency Medical Services"
+   ],
+   "state": "AL",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "0438f748ba35d1cc06ce0278a72b34950d15fbdbba38cb9cb79f4332ea816479",
+   "currentEffectiveDate": "2025-07-01",
+   "documentCount": 7,
+   "doseCount": 213,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "alameda-county-emergency-medical-services",
+   "name": "Alameda County Emergency Medical Services",
+   "aliases": [
+    "Alameda County Emergency Medical Services"
+   ],
+   "state": "CA",
+   "country": "US",
+   "city": "San Leandro",
+   "jurisdiction": "county",
+   "currentHash": "eb3167077948bb2a01552fb1e79a7b39c2e53f21c303f848790ab68246f598a2",
+   "currentEffectiveDate": "2026-01-01",
+   "documentCount": 8,
+   "doseCount": 182,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "alameda-county-ems",
+   "name": "Alameda County EMS",
+   "aliases": [
+    "Alameda County EMS"
+   ],
+   "state": "CA",
+   "country": "US",
+   "city": "Alameda",
+   "jurisdiction": "county",
+   "currentHash": "972f5396c57f15d8fdb300134f209a8d9fbcca61fa3f4889973de94fa3ffb33d",
+   "currentEffectiveDate": "2026-01-01",
+   "documentCount": 1,
+   "doseCount": 31,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "alberta-health-services",
+   "name": "Alberta Health Services",
+   "aliases": [
+    "Alberta Health Services"
+   ],
+   "state": null,
+   "country": "CA",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "61113d42cd9d56ab3e89365ed4cc37b172c7ff8a06363a1bcf4a47191d9c814f",
+   "currentEffectiveDate": "2025-04-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "allegiance-mobile-health",
+   "name": "Allegiance Mobile Health",
+   "aliases": [
+    "Allegiance Mobile Health"
+   ],
+   "state": "TX",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "regional",
+   "currentHash": "6f1473175ea1a219c90cd5d7e1b99f00e65fdc13269a06e2f1ab8f3047057c69",
+   "currentEffectiveDate": "2026-04-28",
+   "documentCount": 2,
+   "doseCount": 0,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "aurora-medical-center-bay-area-mca",
+   "name": "Aurora Medical Center Bay Area MCA",
+   "aliases": [
+    "Aurora Medical Center Bay Area MCA"
+   ],
+   "state": "MI",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "regional",
+   "currentHash": "52f5cfcab2a169a7bdd2488bc160826b",
+   "currentEffectiveDate": "2024-07-01",
+   "documentCount": 2,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "berrien-county-medical-control-authority",
+   "name": "Berrien County Medical Control Authority",
+   "aliases": [
+    "Berrien County Medical Control Authority"
+   ],
+   "state": "MI",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "county",
+   "currentHash": "4371c13e48f9cbca173e2811dd3a5bb841be8f7627cb45580a4ea971a4287929",
+   "currentEffectiveDate": "2022-12-27",
+   "documentCount": 5,
+   "doseCount": 0,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "boulder-county-protocol-committee",
+   "name": "Boulder County Protocol Committee",
+   "aliases": [
+    "Boulder County Protocol Committee"
+   ],
+   "state": "CO",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "county",
+   "currentHash": "bec7c300536281b729f003c2594df76aee841d12e32a600de5895bbc9590190d",
+   "currentEffectiveDate": "2025-10-08",
+   "documentCount": 9,
+   "doseCount": 344,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "brilliant-fire-department",
+   "name": "Brilliant Fire Department",
+   "aliases": [
+    "Brilliant Fire Department"
+   ],
+   "state": "OH",
+   "country": "US",
+   "city": "Brilliant",
+   "jurisdiction": "fire-district",
+   "currentHash": "1e968cbce0e9e37e0bcc264a63e4ffe0",
+   "currentEffectiveDate": "2025-03-10",
+   "documentCount": 2,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "fire-district"
+   }
+  },
+  {
+   "agencyKey": "cabarrus-county-ems",
+   "name": "Cabarrus County EMS",
+   "aliases": [
+    "Cabarrus County EMS"
+   ],
+   "state": "NC",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "county",
+   "currentHash": "ce5a701bf811c1db9f7628716894e293e4b933a4a3ba8846fbe4d37ce3d76779",
+   "currentEffectiveDate": "2026-05-26",
+   "documentCount": 2,
+   "doseCount": 130,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "calhoun-county-ems-system",
+   "name": "Calhoun County EMS System",
+   "aliases": [
+    "Calhoun County EMS System"
+   ],
+   "state": "IA",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "county",
+   "currentHash": "5f9727312807bef69fd70a6659b6049b28a413cd08181b7d09718bc516b86b9c",
+   "currentEffectiveDate": "2023-01-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "central-arizona-regional-ems",
+   "name": "Central Arizona Regional EMS",
+   "aliases": [
+    "Central Arizona Regional EMS"
+   ],
+   "state": "AZ",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "regional",
+   "currentHash": "d13fee93784d48a0ac42dbb4cb210e8db0059a4a77d78b742d94decae634ef1d",
+   "currentEffectiveDate": "2026-01-12",
+   "documentCount": 2,
+   "doseCount": 129,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "central-california-emergency-medical-services",
+   "name": "Central California Emergency Medical Services",
+   "aliases": [
+    "Central California Emergency Medical Services"
+   ],
+   "state": "CA",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "regional",
+   "currentHash": "6a9fd5616236559c5ffefae186da9c72860893895869a0c1d3725c32d2e96b38",
+   "currentEffectiveDate": "2025-06-01",
+   "documentCount": 3,
+   "doseCount": 38,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "chelan-douglas-okanogan-grant-county",
+   "name": "Chelan/Douglas/Okanogan/Grant County",
+   "aliases": [
+    "Chelan/Douglas/Okanogan/Grant County"
+   ],
+   "state": "WA",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "regional",
+   "currentHash": "cf533589698e092bbf3412fabbacc01bda535158f691e9483303c8bd11d7d3db",
+   "currentEffectiveDate": "2025-05-01",
+   "documentCount": 2,
+   "doseCount": 148,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "city-of-austin-austin-travis-county-ems-system",
+   "name": "City of Austin / Austin-Travis County EMS System",
+   "aliases": [
+    "City of Austin / Austin-Travis County EMS System"
+   ],
+   "state": "TX",
+   "country": "US",
+   "city": "Austin",
+   "jurisdiction": "city",
+   "currentHash": "e9b41fd82c2285c046f434ff92b96c04632cbfdb566bc5169ebb7fcbfb275d90",
+   "currentEffectiveDate": "2024-12-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "city"
+   }
+  },
+  {
+   "agencyKey": "clark-county-ems-system",
+   "name": "Clark County EMS System",
+   "aliases": [
+    "Clark County EMS System"
+   ],
+   "state": "NV",
+   "country": "US",
+   "city": "Las Vegas",
+   "jurisdiction": "county",
+   "currentHash": "46190c373453fb18b1dad460f75d15df808bd30bae0e902ef34c137bca0bc431",
+   "currentEffectiveDate": "2026-07-01",
+   "documentCount": 9,
+   "doseCount": 0,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "coos-county-emergency-medical-services",
+   "name": "Coos County Emergency Medical Services",
+   "aliases": [
+    "Coos County Emergency Medical Services"
+   ],
+   "state": "OR",
+   "country": "US",
+   "city": "Coos Bay",
+   "jurisdiction": "county",
+   "currentHash": "9a2aa4289f33f2133327061c5b230014",
+   "currentEffectiveDate": "2025-01-01",
+   "documentCount": 2,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "county-of-marin-ems",
+   "name": "County of Marin EMS",
+   "aliases": [
+    "County of Marin EMS"
+   ],
+   "state": "CA",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "county",
+   "currentHash": "490bbef9d163fa1edf2381c9cd01413b220c64886213a70e64a4239e42d36c45",
+   "currentEffectiveDate": "2026-04-01",
+   "documentCount": 2,
+   "doseCount": 159,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "county-of-sacramento-emergency-medical-services-agency",
+   "name": "County of Sacramento Emergency Medical Services Agency",
+   "aliases": [
+    "County of Sacramento Emergency Medical Services Agency"
+   ],
+   "state": "CA",
+   "country": "US",
+   "city": "Sacramento",
+   "jurisdiction": "county",
+   "currentHash": "4a91b2ab2b6afbbff7643f0c67d8545b89f0a98ba656b2ed3d5d764384f6e27d",
+   "currentEffectiveDate": "2026-05-01",
+   "documentCount": 6,
+   "doseCount": 0,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "county-of-san-diego-emergency-medical-services",
+   "name": "County of San Diego Emergency Medical Services",
+   "aliases": [
+    "County of San Diego Emergency Medical Services"
+   ],
+   "state": "CA",
+   "country": "US",
+   "city": "San Diego",
+   "jurisdiction": "county",
+   "currentHash": "de1232ef19ee295612f7dcf3e0e4b4ee3734e8387eb79a237c946e52137b80d6",
+   "currentEffectiveDate": "2026-07-01",
+   "documentCount": 16,
+   "doseCount": 201,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "craven-jones-pamlico-counties-ems",
+   "name": "Craven, Jones, Pamlico Counties EMS",
+   "aliases": [
+    "Craven, Jones, Pamlico Counties EMS"
+   ],
+   "state": "NC",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "regional",
+   "currentHash": "addb275d3ac23c03f1d88d22b1fda660f9ce64eb684771997a3c9b29a1635c7b",
+   "currentEffectiveDate": "2026-06-08",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "crowley-fire-department",
+   "name": "Crowley Fire Department",
+   "aliases": [
+    "Crowley Fire Department"
+   ],
+   "state": "TX",
+   "country": "US",
+   "city": "Crowley",
+   "jurisdiction": "fire-district",
+   "currentHash": "a4db0059686f17fd37e72addf59edec4b198062b580171312c56d31360fbd7c8",
+   "currentEffectiveDate": "2025-02-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "fire-district"
+   }
+  },
+  {
+   "agencyKey": "dane-county-ems-system",
+   "name": "Dane County EMS System",
+   "aliases": [
+    "Dane County EMS System"
+   ],
+   "state": "WI",
+   "country": "US",
+   "city": "Madison",
+   "jurisdiction": "county",
+   "currentHash": "6e234ff8ca060ff312d692ec6d30d98d4f2ed052950340c35aaf8d8a4a18a217",
+   "currentEffectiveDate": "2022-04-15",
+   "documentCount": 2,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "davidson-county-emergency-services",
+   "name": "Davidson County Emergency Services",
+   "aliases": [
+    "Davidson County Emergency Services"
+   ],
+   "state": "NC",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "county",
+   "currentHash": "6ae1290c406712967db722faecc79720cd8f646734f3d00810a734995dedae53",
+   "currentEffectiveDate": "2025-08-15",
+   "documentCount": 15,
+   "doseCount": 122,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "dc-fire-and-ems",
+   "name": "DC Fire and EMS",
+   "aliases": [
+    "DC Fire and EMS"
+   ],
+   "state": "DC",
+   "country": "US",
+   "city": "Washington",
+   "jurisdiction": "city",
+   "currentHash": "72a82c30cd8a4b545628300c40126d0e76260d5c9276cceabf4b3c79fd0efe34",
+   "currentEffectiveDate": "2026-03-17",
+   "documentCount": 3,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "city"
+   }
+  },
+  {
+   "agencyKey": "delaware-office-of-emergency-medical-services",
+   "name": "Delaware Office of Emergency Medical Services",
+   "aliases": [
+    "Delaware Office of Emergency Medical Services"
+   ],
+   "state": "DE",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "b16334113b253972be62848534da50ee13b85875c0e2676f804a9d1c2c5701bc",
+   "currentEffectiveDate": "2024-11-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "denver-health-paramedic-division",
+   "name": "Denver Health Paramedic Division",
+   "aliases": [
+    "Denver Health Paramedic Division"
+   ],
+   "state": "CO",
+   "country": "US",
+   "city": "Denver",
+   "jurisdiction": "city",
+   "currentHash": "07cf7422a4d7eb2c374a6aee3ab773940ba963c14dc8d81b338aaf3a25997fe1",
+   "currentEffectiveDate": "2026-06-10",
+   "documentCount": 5,
+   "doseCount": 125,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "city"
+   }
+  },
+  {
+   "agencyKey": "denver-metro-ems-medical-directors",
+   "name": "Denver Metro EMS Medical Directors",
+   "aliases": [
+    "Denver Metro EMS Medical Directors"
+   ],
+   "state": "CO",
+   "country": "US",
+   "city": "Denver",
+   "jurisdiction": "regional",
+   "currentHash": "2de263119a0969287bad1390c8de3c10213393ac0e979ff5e6dd078401331fad",
+   "currentEffectiveDate": "2026-07-01",
+   "documentCount": 226,
+   "doseCount": 7157,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "department-of-health-services-county-of-los-angeles",
+   "name": "Department of Health Services, County of Los Angeles",
+   "aliases": [
+    "Department of Health Services, County of Los Angeles"
+   ],
+   "state": "CA",
+   "country": "US",
+   "city": "Los Angeles",
+   "jurisdiction": "county",
+   "currentHash": "3a3ab041e79beac3d2d47e5cd0cf6db849ecc3df3c03caa184494c55dade0a88",
+   "currentEffectiveDate": "2025-07-01",
+   "documentCount": 14,
+   "doseCount": 19,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "escambia-county-emergency-medical-services",
+   "name": "Escambia County Emergency Medical Services",
+   "aliases": [
+    "Escambia County Emergency Medical Services"
+   ],
+   "state": "FL",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "county",
+   "currentHash": "48ec7e1e2c6f20b692ca7ea924993f25",
+   "currentEffectiveDate": "2025-10-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "fairfax-county-fire-and-rescue-department",
+   "name": "Fairfax County Fire and Rescue Department",
+   "aliases": [
+    "Fairfax County Fire and Rescue Department"
+   ],
+   "state": "VA",
+   "country": "US",
+   "city": "Fairfax",
+   "jurisdiction": "county",
+   "currentHash": "80e6ffb4b6c43c1c60a763ccdb6558b35a1c99ba5d11d4dc027abb92b288b870",
+   "currentEffectiveDate": "2023-01-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "firsthealth-of-the-carolinas",
+   "name": "FirstHealth of the Carolinas",
+   "aliases": [
+    "FirstHealth of the Carolinas"
+   ],
+   "state": "NC",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "regional",
+   "currentHash": "5dfa771be52f652d5a148f3e98979f712c97e56194fcf8461472c6126fa7f99a",
+   "currentEffectiveDate": "2025-09-01",
+   "documentCount": 1,
+   "doseCount": 176,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "fort-lauderdale-fire-rescue",
+   "name": "Fort Lauderdale Fire Rescue",
+   "aliases": [
+    "Fort Lauderdale Fire Rescue"
+   ],
+   "state": "FL",
+   "country": "US",
+   "city": "Fort Lauderdale",
+   "jurisdiction": "city",
+   "currentHash": "2da40a8e21eff8b807493a2ebee1f89b6f86e31be2521fdb58bef8035513f47f",
+   "currentEffectiveDate": "2026-01-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "city"
+   }
+  },
+  {
+   "agencyKey": "greater-miami-valley-ems-council",
+   "name": "Greater Miami Valley EMS Council",
+   "aliases": [
+    "Greater Miami Valley EMS Council"
+   ],
+   "state": "OH",
+   "country": "US",
+   "city": "Dayton",
+   "jurisdiction": "regional",
+   "currentHash": "d6fb25ed6b7b61e23bf7dcc3f06a2731faea94c5a71cb40abb5dbfaa64e76035",
+   "currentEffectiveDate": "2026-07-01",
+   "documentCount": 3,
+   "doseCount": 332,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "haywood-county-ems-system",
+   "name": "Haywood County EMS System",
+   "aliases": [
+    "Haywood County EMS System"
+   ],
+   "state": "NC",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "county",
+   "currentHash": "b426abfda815af1265f75b39ce0c3f69",
+   "currentEffectiveDate": "2026-04-01",
+   "documentCount": 2,
+   "doseCount": 0,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "hems-inc-ww-dr",
+   "name": "HEMS, INC (WW/DR)",
+   "aliases": [
+    "HEMS, INC (WW/DR)"
+   ],
+   "state": "MI",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "regional",
+   "currentHash": "d08a3929193a10bd86a254be3f4968246749e6d9e91d12beb2b8c6cb345deb3d",
+   "currentEffectiveDate": "2025-04-30",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "idaho-ems-physician-commission",
+   "name": "Idaho EMS Physician Commission",
+   "aliases": [
+    "Idaho EMS Physician Commission"
+   ],
+   "state": "ID",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "4cdae295dfcb7bc8d732fdb620fd8af3322b62efc12f756fd11257868e582e29",
+   "currentEffectiveDate": "2025-01-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "illinois-region-viii-emergency-medical-services",
+   "name": "Illinois Region VIII Emergency Medical Services",
+   "aliases": [
+    "Illinois Region VIII Emergency Medical Services"
+   ],
+   "state": "IL",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "regional",
+   "currentHash": "97df11c01fac3c574be6902f475447c4a29006aee4a3b3fc5a75ab842d723a0b",
+   "currentEffectiveDate": "2025-01-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "indiana-ems-commission",
+   "name": "Indiana EMS Commission",
+   "aliases": [
+    "Indiana EMS Commission"
+   ],
+   "state": "IN",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "250b18f6ee00b4a677bc849f452d95fb",
+   "currentEffectiveDate": "2020-03-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "inland-counties-emergency-medical-agency",
+   "name": "Inland Counties Emergency Medical Agency",
+   "aliases": [
+    "Inland Counties Emergency Medical Agency"
+   ],
+   "state": "CA",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "regional",
+   "currentHash": "2039537fead000362b33bdb7ee194e07",
+   "currentEffectiveDate": "2025-07-01",
+   "documentCount": 2,
+   "doseCount": 0,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "intermountain-health-platte-valley-ambulance-service",
+   "name": "Intermountain Health – Platte Valley Ambulance Service",
+   "aliases": [
+    "Intermountain Health – Platte Valley Ambulance Service"
+   ],
+   "state": "CO",
+   "country": "US",
+   "city": "Denver",
+   "jurisdiction": "regional",
+   "currentHash": "ad78aa92a4bfc772d078584411a0066a",
+   "currentEffectiveDate": "2025-08-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "iowa-county-ambulance-service",
+   "name": "Iowa County Ambulance Service",
+   "aliases": [
+    "Iowa County Ambulance Service"
+   ],
+   "state": "IA",
+   "country": "US",
+   "city": "Marengo",
+   "jurisdiction": "county",
+   "currentHash": "cba0ff35bd678580a446d167893a3b261b9412edd2061fd15acbb6fd14f0f8b1",
+   "currentEffectiveDate": "2026-01-01",
+   "documentCount": 4,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "johnson-county-ems",
+   "name": "Johnson County EMS",
+   "aliases": [
+    "Johnson County EMS"
+   ],
+   "state": "KS",
+   "country": "US",
+   "city": "Olathe",
+   "jurisdiction": "county",
+   "currentHash": "d78ffb5102ffaf1aa8f7577253ee1e8b",
+   "currentEffectiveDate": "2023-01-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "kentucky-board-of-emergency-medical-services",
+   "name": "Kentucky Board of Emergency Medical Services",
+   "aliases": [
+    "Kentucky Board of Emergency Medical Services"
+   ],
+   "state": "KY",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "1da4fd7b443a9c8d8302c78a4d132f9e2e11ca8fda0741eb213588f6c169d08e",
+   "currentEffectiveDate": "2025-04-30",
+   "documentCount": 8,
+   "doseCount": 0,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "lincoln-county-ems",
+   "name": "Lincoln County EMS",
+   "aliases": [
+    "Lincoln County EMS"
+   ],
+   "state": "OR",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "county",
+   "currentHash": "f4732795b92fde720f3eaa8b359cc7a84106ae36de10ca69b5ba79bd5a2ebd6a",
+   "currentEffectiveDate": "2026-01-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "louisiana-department-of-health-bureau-of-emergency-medical-services",
+   "name": "Louisiana Department of Health, Bureau of Emergency Medical Services",
+   "aliases": [
+    "Louisiana Department of Health, Bureau of Emergency Medical Services"
+   ],
+   "state": "LA",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "b23079a23e5df1c8ec89561fa318435422c35f1650e6d529d92b52799a86af0f",
+   "currentEffectiveDate": "2024-10-31",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "lyon-county-city-of-emporia-emergency-medical-services",
+   "name": "Lyon County / City of Emporia Emergency Medical Services",
+   "aliases": [
+    "Lyon County / City of Emporia Emergency Medical Services"
+   ],
+   "state": "KS",
+   "country": "US",
+   "city": "Emporia",
+   "jurisdiction": "county",
+   "currentHash": "4aa390b1ae591b87e2f58e25a5ad077a029e4249fc142870a510c61295bf73e6",
+   "currentEffectiveDate": "2018-04-20",
+   "documentCount": 3,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "madison-fire-department",
+   "name": "Madison Fire Department",
+   "aliases": [
+    "Madison Fire Department"
+   ],
+   "state": "WI",
+   "country": "US",
+   "city": "Madison",
+   "jurisdiction": "city",
+   "currentHash": "26657d5054db6d5fc2c1258c018797f3",
+   "currentEffectiveDate": "2023-04-27",
+   "documentCount": 4,
+   "doseCount": 0,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "city"
+   }
+  },
+  {
+   "agencyKey": "madison-fire-department-emergency-services-national-academy",
+   "name": "Madison Fire Department Emergency Services National Academy",
+   "aliases": [
+    "Madison Fire Department Emergency Services National Academy"
+   ],
+   "state": "WI",
+   "country": "US",
+   "city": "Madison",
+   "jurisdiction": "fire-district",
+   "currentHash": "e890aa6e748b7c84a9c7926afdb585d924448868708faeeb20882b2ec3808107",
+   "currentEffectiveDate": "2023-04-27",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "fire-district"
+   }
+  },
+  {
+   "agencyKey": "maine-emergency-medical-services",
+   "name": "Maine Emergency Medical Services",
+   "aliases": [
+    "Maine Emergency Medical Services"
+   ],
+   "state": "ME",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "564fed74f777493f1f6d8ff54e6814d20c8f4d373ac01fc8f3c951b68cc0f2b5",
+   "currentEffectiveDate": "2025-12-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "marin-county-emergency-medical-services-agency",
+   "name": "Marin County Emergency Medical Services Agency",
+   "aliases": [
+    "Marin County Emergency Medical Services Agency"
+   ],
+   "state": "CA",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "county",
+   "currentHash": "2f4896e139008640a8fb17c293d144d41c26641fd9d3636e85d376c7bb8bf4dd",
+   "currentEffectiveDate": "2025-04-01",
+   "documentCount": 2,
+   "doseCount": 206,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "maryland-institute-for-emergency-medical-services-systems",
+   "name": "Maryland Institute for Emergency Medical Services Systems",
+   "aliases": [
+    "Maryland Institute for Emergency Medical Services Systems"
+   ],
+   "state": "MD",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "031b839bd9816b69c71f90cfdfec06c7",
+   "currentEffectiveDate": "2026-07-01",
+   "documentCount": 12,
+   "doseCount": 750,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "massachusetts-department-of-public-health-office-of-emergency-medical-services",
+   "name": "Massachusetts Department of Public Health, Office of Emergency Medical Services",
+   "aliases": [
+    "Massachusetts Department of Public Health, Office of Emergency Medical Services"
+   ],
+   "state": "MA",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "2549a975a7d77b05943bb978d816ad485935208cec7ae0a3fcd08b3a92893cc3",
+   "currentEffectiveDate": "2026-09-01",
+   "documentCount": 16,
+   "doseCount": 1937,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "massachusetts-office-of-emergency-medical-services",
+   "name": "Massachusetts Office of Emergency Medical Services",
+   "aliases": [
+    "Massachusetts Office of Emergency Medical Services"
+   ],
+   "state": "MA",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "111fa137f8891e01d9c25b2e5edcf18390a008e4b1cf65a9786d4927edf6f28b",
+   "currentEffectiveDate": "2026-09-01",
+   "documentCount": 6,
+   "doseCount": 383,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "mecklenburg-ems-agency",
+   "name": "Mecklenburg EMS Agency",
+   "aliases": [
+    "Mecklenburg EMS Agency"
+   ],
+   "state": "NC",
+   "country": "US",
+   "city": "Charlotte",
+   "jurisdiction": "county",
+   "currentHash": "0f8fc084bffb5ca368f4ac63d7f73bfc614b79ae8644ae0c34898c4bf43065b2",
+   "currentEffectiveDate": "2026-06-15",
+   "documentCount": 1,
+   "doseCount": 128,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "mep-medical-emergency-partnership-in-partnership-with-ssm-health",
+   "name": "MEP (Medical Emergency Partnership) in partnership with SSM Health",
+   "aliases": [
+    "MEP (Medical Emergency Partnership) in partnership with SSM Health"
+   ],
+   "state": "WI",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "regional",
+   "currentHash": "78df559be7c5570f44e5da65bc151447de7c4cf9098a0adcd9ac336512428eb3",
+   "currentEffectiveDate": "2026-04-01",
+   "documentCount": 1,
+   "doseCount": 217,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "metro-regional-ems",
+   "name": "Metro Regional EMS",
+   "aliases": [
+    "Metro Regional EMS"
+   ],
+   "state": "OR",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "regional",
+   "currentHash": "f36118b9bcb7dc3fc92ab78f7a25c4497a764c59e259b827ad4390bfbf367cc3",
+   "currentEffectiveDate": "2026-01-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": {
+    "effectiveDate": "2026-01-01"
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "michigan-department-of-health-and-human-services-mdhhs",
+   "name": "Michigan Department of Health and Human Services (MDHHS)",
+   "aliases": [
+    "Michigan Department of Health and Human Services (MDHHS)"
+   ],
+   "state": "MI",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "c112a473816bb39ba7ce47bef70add0ab5956bdb0f5107e4c432ab0b0a734b59",
+   "currentEffectiveDate": "2024-03-01",
+   "documentCount": 2,
+   "doseCount": 0,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "michigan-department-of-health-and-human-services-mdhhs-berrien-county",
+   "name": "Michigan Department of Health and Human Services (MDHHS) / Berrien County",
+   "aliases": [
+    "Michigan Department of Health and Human Services (MDHHS) / Berrien County"
+   ],
+   "state": "MI",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "county",
+   "currentHash": "17c3e08f6d59b24c295cfa460f27a8be5ec40456221dba7f032f88ac439a74fd",
+   "currentEffectiveDate": "2024-02-12",
+   "documentCount": 2,
+   "doseCount": 0,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "michigan-department-of-health-and-human-services-mdhhs-hems-inc",
+   "name": "Michigan Department of Health and Human Services (MDHHS) / HEMS, Inc.",
+   "aliases": [
+    "Michigan Department of Health and Human Services (MDHHS) / HEMS, Inc."
+   ],
+   "state": "MI",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "regional",
+   "currentHash": "0cfdd3405a0c95bfcddf114e1ccbf3def834930ba4643352c9f013536042f9ee",
+   "currentEffectiveDate": "2024-03-01",
+   "documentCount": 3,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "ministry-of-health",
+   "name": "Ministry of Health",
+   "aliases": [
+    "Ministry of Health"
+   ],
+   "state": "ON",
+   "country": "CA",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "6dd9442beaafaa01b6ffcafe7021b3fdb8adf71eb029c7f92f026b0ed916152f",
+   "currentEffectiveDate": "2025-06-02",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "ministry-of-health-emergency-health-regulatory-and-accountability-branch",
+   "name": "Ministry of Health, Emergency Health Regulatory and Accountability Branch",
+   "aliases": [
+    "Ministry of Health, Emergency Health Regulatory and Accountability Branch"
+   ],
+   "state": "ON",
+   "country": "CA",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "4bbb21dc527e1226b1d05c35f4ab40402f67def92dd14114bb4b18491b353d98",
+   "currentEffectiveDate": "2025-06-02",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "miramar-fire-rescue-department",
+   "name": "Miramar Fire Rescue Department",
+   "aliases": [
+    "Miramar Fire Rescue Department"
+   ],
+   "state": "FL",
+   "country": "US",
+   "city": "Miramar",
+   "jurisdiction": "city",
+   "currentHash": "33b458a6247e9dc5a77e862ab9d08417a7b778e30c347f3c90a910dba494a3f5",
+   "currentEffectiveDate": "2024-01-01",
+   "documentCount": 2,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "city"
+   }
+  },
+  {
+   "agencyKey": "mississippi-state-department-of-health-bureau-of-ems",
+   "name": "Mississippi State Department of Health Bureau of EMS",
+   "aliases": [
+    "Mississippi State Department of Health Bureau of EMS"
+   ],
+   "state": "MS",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "90b732afd42c518b72b82468aebc072440ef585cad63a053c6e94dee312b39a1",
+   "currentEffectiveDate": "2024-08-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "montana-board-of-medical-examiners",
+   "name": "Montana Board of Medical Examiners",
+   "aliases": [
+    "Montana Board of Medical Examiners"
+   ],
+   "state": "MT",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "50c062223c5730fd5fd1d82ce245b6ec22442f5cb89b9c06e9fa9002b43ec42b",
+   "currentEffectiveDate": "2020-11-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "morton-county-health-system",
+   "name": "Morton County Health System",
+   "aliases": [
+    "Morton County Health System"
+   ],
+   "state": "KS",
+   "country": "US",
+   "city": "Elkhart",
+   "jurisdiction": "county",
+   "currentHash": "64f89af2106cc78722e505a90f93aaba",
+   "currentEffectiveDate": "2024-01-25",
+   "documentCount": 3,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "mountain-west-ambulance",
+   "name": "Mountain West Ambulance",
+   "aliases": [
+    "Mountain West Ambulance"
+   ],
+   "state": "UT",
+   "country": "US",
+   "city": "Tooele",
+   "jurisdiction": "county",
+   "currentHash": "59fa842cd705656f1ba3a1de393cf73a",
+   "currentEffectiveDate": "2025-11-03",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "national-association-of-state-ems-officials-nasemso",
+   "name": "National Association of State EMS Officials (NASEMSO)",
+   "aliases": [
+    "National Association of State EMS Officials (NASEMSO)"
+   ],
+   "state": null,
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "2b8aa40827410e88fe4dd5dcc34f13e1",
+   "currentEffectiveDate": "2022-03-01",
+   "documentCount": 6,
+   "doseCount": 0,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "national-emergency-medical-services",
+   "name": "National Emergency Medical Services",
+   "aliases": [
+    "National Emergency Medical Services"
+   ],
+   "state": "GA",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "regional",
+   "currentHash": "2076fe4089a9f697151f603722449ccd7836b88ae878e637ee315125012f6f24",
+   "currentEffectiveDate": "2024-09-01",
+   "documentCount": 4,
+   "doseCount": 589,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "nebraska-board-of-emergency-medical-services",
+   "name": "Nebraska Board of Emergency Medical Services",
+   "aliases": [
+    "Nebraska Board of Emergency Medical Services"
+   ],
+   "state": "NE",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "30aa0997f4216f8b7cfe47ade46da6d71cf884162babad2c02e0c4f3886e3ef2",
+   "currentEffectiveDate": "2024-05-01",
+   "documentCount": 5,
+   "doseCount": 195,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "nebraska-medicine-division-of-prehospital-and-emergency-medical-services",
+   "name": "Nebraska Medicine Division of Prehospital and Emergency Medical Services",
+   "aliases": [
+    "Nebraska Medicine Division of Prehospital and Emergency Medical Services"
+   ],
+   "state": "NE",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "8d36ea3d4a1088202504198a82ac1eac09acccf32a4f00483054b9181f5ac839",
+   "currentEffectiveDate": "2026-05-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "nevada-ems-program",
+   "name": "Nevada EMS Program",
+   "aliases": [
+    "Nevada EMS Program"
+   ],
+   "state": "NV",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "631004331317eee9a2e400eb0664acbbba6efa9958b7c94d957fb8adb39d951d",
+   "currentEffectiveDate": "2026-02-10",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "new-hampshire-bureau-of-emergency-medical-services",
+   "name": "New Hampshire Bureau of Emergency Medical Services",
+   "aliases": [
+    "New Hampshire Bureau of Emergency Medical Services"
+   ],
+   "state": "NH",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "393377270884e73d55c7e14c513d51ca2103be6edb8efa57848e9732574def61",
+   "currentEffectiveDate": "2025-11-07",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "new-jersey-department-of-health",
+   "name": "New Jersey Department of Health",
+   "aliases": [
+    "New Jersey Department of Health"
+   ],
+   "state": "NJ",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "a742d5a6538c3dc01c0d8363bd723918b8172d302235d68a9cffdca1fac4d149",
+   "currentEffectiveDate": "2025-08-21",
+   "documentCount": 6,
+   "doseCount": 196,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "new-mexico-ems-bureau",
+   "name": "New Mexico EMS Bureau",
+   "aliases": [
+    "New Mexico EMS Bureau"
+   ],
+   "state": "NM",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "72f55554c5d9730f55f667bfe6b277fa8356dcefa9ff7f333383216cccd6b1a3",
+   "currentEffectiveDate": "2022-09-20",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "new-york-department-of-health-bureau-of-emergency-medical-services-and-trauma-systems",
+   "name": "New York Department of Health, Bureau of Emergency Medical Services and Trauma Systems",
+   "aliases": [
+    "New York Department of Health, Bureau of Emergency Medical Services and Trauma Systems"
+   ],
+   "state": "NY",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "0fcb420f709bb2a30cc30b4468d31255c3acae3eec005a97899581274709d574",
+   "currentEffectiveDate": "2025-07-01",
+   "documentCount": 3,
+   "doseCount": 22,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "new-york-state-department-of-health-bureau-of-emergency-medical-services-and-trauma-systems",
+   "name": "New York State Department of Health Bureau of Emergency Medical Services and Trauma Systems",
+   "aliases": [
+    "New York State Department of Health Bureau of Emergency Medical Services and Trauma Systems"
+   ],
+   "state": "NY",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "0a3fa30882564df6a9ada2d8cfa2efce",
+   "currentEffectiveDate": "2025-07-01",
+   "documentCount": 8,
+   "doseCount": 206,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "new-york-state-department-of-health-division-of-state-ems",
+   "name": "New York State Department of Health Division of State EMS",
+   "aliases": [
+    "New York State Department of Health Division of State EMS"
+   ],
+   "state": "NY",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "201ccbba21365fdc8c7346e21277ad79ba97072f1983071c3dcb47524b70d45f",
+   "currentEffectiveDate": "2026-09-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "north-carolina-chapter-of-emergency-physicians",
+   "name": "North Carolina Chapter of Emergency Physicians",
+   "aliases": [
+    "North Carolina Chapter of Emergency Physicians"
+   ],
+   "state": "NC",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "935cced84510075d46bf890fbce27832752d47696d9f745dd5849539af647895",
+   "currentEffectiveDate": "2017-01-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "north-carolina-office-of-emergency-medical-services",
+   "name": "North Carolina Office of Emergency Medical Services",
+   "aliases": [
+    "North Carolina Office of Emergency Medical Services"
+   ],
+   "state": "NC",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "54f56cce46fc29d73a80184c496d8438",
+   "currentEffectiveDate": "2021-10-15",
+   "documentCount": 2,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "north-carolina-office-of-emergency-medical-services-ncoems",
+   "name": "North Carolina Office of Emergency Medical Services (NCOEMS)",
+   "aliases": [
+    "North Carolina Office of Emergency Medical Services (NCOEMS)"
+   ],
+   "state": "NC",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "34a93f502a1cff0ab91a80832fc51c4ad80e5c31510f107ac8fa71d6a624566b",
+   "currentEffectiveDate": "2021-10-15",
+   "documentCount": 2,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "northeast-ohio-regional-ems-protocol-committee",
+   "name": "Northeast Ohio Regional EMS Protocol Committee",
+   "aliases": [
+    "Northeast Ohio Regional EMS Protocol Committee"
+   ],
+   "state": "OH",
+   "country": "US",
+   "city": "Cleveland",
+   "jurisdiction": "regional",
+   "currentHash": "4130228f9522fd1c910fffed262b3372db61ab66d526af7b74d1013d9abdc88c",
+   "currentEffectiveDate": "2024-01-01",
+   "documentCount": 3,
+   "doseCount": 0,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "northwest-community-ems-system",
+   "name": "Northwest Community EMS System",
+   "aliases": [
+    "Northwest Community EMS System"
+   ],
+   "state": "IL",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "regional",
+   "currentHash": "18611696c64f0aaaac4ac27409eba9fe",
+   "currentEffectiveDate": "2024-08-05",
+   "documentCount": 11,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "northwest-region-emergency-medical-services-trauma-care-council",
+   "name": "Northwest Region Emergency Medical Services & Trauma Care Council",
+   "aliases": [
+    "Northwest Region Emergency Medical Services & Trauma Care Council"
+   ],
+   "state": "WA",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "regional",
+   "currentHash": "9f69a8634ed4737bb168f18fca3aa9c24ee336d79d51463ff17a01c54be5d1ec",
+   "currentEffectiveDate": "2020-03-02",
+   "documentCount": 1,
+   "doseCount": 224,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "oklahoma-state-department-of-health",
+   "name": "Oklahoma State Department of Health",
+   "aliases": [
+    "Oklahoma State Department of Health"
+   ],
+   "state": "OK",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "0b07d6b9e44d6536d55f4f13fff51fa7866d3427fed646db9695e3ecd64ea28e",
+   "currentEffectiveDate": "2018-01-01",
+   "documentCount": 7,
+   "doseCount": 0,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "old-dominion-emergency-medical-services-alliance-odemsa",
+   "name": "Old Dominion Emergency Medical Services Alliance (ODEMSA)",
+   "aliases": [
+    "Old Dominion Emergency Medical Services Alliance (ODEMSA)"
+   ],
+   "state": "VA",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "regional",
+   "currentHash": "dda49ae6c959547bc01caf31a8be1c5c32cd309502f03633cf8e713838dc97a5",
+   "currentEffectiveDate": "2022-12-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "old-dominion-ems-alliance",
+   "name": "Old Dominion EMS Alliance",
+   "aliases": [
+    "Old Dominion EMS Alliance"
+   ],
+   "state": "VA",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "regional",
+   "currentHash": "4b5f143a93371e259b149aced4f244770b71ba46997ee8428b72b5f0c0b7d530",
+   "currentEffectiveDate": "2015-06-01",
+   "documentCount": 2,
+   "doseCount": 0,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "orange-county-emergency-medical-services",
+   "name": "Orange County Emergency Medical Services",
+   "aliases": [
+    "Orange County Emergency Medical Services"
+   ],
+   "state": "CA",
+   "country": "US",
+   "city": "Orange",
+   "jurisdiction": "county",
+   "currentHash": "9f78cb33d5025675abeee3fd2193b5ab78120517ef2398126588949679c73202",
+   "currentEffectiveDate": "2025-06-19",
+   "documentCount": 11,
+   "doseCount": 82,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "pennsylvania-department-of-health",
+   "name": "Pennsylvania Department of Health",
+   "aliases": [
+    "Pennsylvania Department of Health"
+   ],
+   "state": "PA",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "126616dbbfad1ae0ce5c6369f8ede40bed112c5f93e10e51b2c166d92639dfe5",
+   "currentEffectiveDate": "2024-03-31",
+   "documentCount": 2,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "pennsylvania-department-of-health-bureau-of-emergency-medical-services",
+   "name": "Pennsylvania Department of Health, Bureau of Emergency Medical Services",
+   "aliases": [
+    "Pennsylvania Department of Health, Bureau of Emergency Medical Services"
+   ],
+   "state": "PA",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "051206a2f585a6a4fad274a749e25aa8bf5ae85f8c88db94733ddcdb0895fb6e",
+   "currentEffectiveDate": "2024-03-31",
+   "documentCount": 11,
+   "doseCount": 192,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "pinellas-county-emergency-medical-services",
+   "name": "Pinellas County Emergency Medical Services",
+   "aliases": [
+    "Pinellas County Emergency Medical Services"
+   ],
+   "state": "FL",
+   "country": "US",
+   "city": "Largo",
+   "jurisdiction": "county",
+   "currentHash": "0dfb6850744ccc8b2bf81512df4e3afec46510c0a097ef06f44f3a22b4fdfdc1",
+   "currentEffectiveDate": "2026-02-01",
+   "documentCount": 1,
+   "doseCount": 11,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "platte-valley-ambulance-service",
+   "name": "Platte Valley Ambulance Service",
+   "aliases": [
+    "Platte Valley Ambulance Service"
+   ],
+   "state": "CO",
+   "country": "US",
+   "city": "Denver",
+   "jurisdiction": "regional",
+   "currentHash": "33b7bc0835e3bcf7bd92d8aa3e2ea353",
+   "currentEffectiveDate": "2025-08-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "portland-metro-five-county-emergency-medical-system",
+   "name": "Portland Metro Five County Emergency Medical System",
+   "aliases": [
+    "Portland Metro Five County Emergency Medical System"
+   ],
+   "state": "OR",
+   "country": "US",
+   "city": "Portland",
+   "jurisdiction": "regional",
+   "currentHash": "82c0de3ec1eebbf1801a9006583d647fed5fcc9df4af9cc548d8caca39acfe5a",
+   "currentEffectiveDate": "2024-09-11",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "queensland-ambulance-service",
+   "name": "Queensland Ambulance Service",
+   "aliases": [
+    "Queensland Ambulance Service"
+   ],
+   "state": "QLD",
+   "country": "AU",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "2681b840570212fe17ac05ddf6ca5766870af38500ebcc3000330612f5a8df3c",
+   "currentEffectiveDate": "2026-06-01",
+   "documentCount": 2,
+   "doseCount": 260,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "region-4-ems",
+   "name": "Region 4 EMS",
+   "aliases": [
+    "Region 4 EMS"
+   ],
+   "state": "IL",
+   "country": "US",
+   "city": "Alton",
+   "jurisdiction": "regional",
+   "currentHash": "57853f300c158d5d3429c28c6810515b7ce43620aaa530a0ecc8756ec6f0f7c2",
+   "currentEffectiveDate": "2023-01-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "regional-emergency-medical-advisory-committee-of-new-york-city",
+   "name": "Regional Emergency Medical Advisory Committee of New York City",
+   "aliases": [
+    "Regional Emergency Medical Advisory Committee of New York City"
+   ],
+   "state": "NY",
+   "country": "US",
+   "city": "New York City",
+   "jurisdiction": "regional",
+   "currentHash": "0a4c1ec434ad1fff63b7d6cfde11f1d58a5fd352877ced06c294ba42b7240f80",
+   "currentEffectiveDate": "2025-04-08",
+   "documentCount": 6,
+   "doseCount": 131,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "regional-emergency-medical-advisory-committee-remac-of-new-york-city",
+   "name": "Regional Emergency Medical Advisory Committee (REMAC) of New York City",
+   "aliases": [
+    "Regional Emergency Medical Advisory Committee (REMAC) of New York City"
+   ],
+   "state": "NY",
+   "country": "US",
+   "city": "New York City",
+   "jurisdiction": "regional",
+   "currentHash": "dfafcb6b639f04d9aa35819f5cacddad47c10bd0df79c368e94c531c75259bc8",
+   "currentEffectiveDate": "2025-04-08",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "remsa-sioux-falls",
+   "name": "REMSA Sioux Falls",
+   "aliases": [
+    "REMSA Sioux Falls"
+   ],
+   "state": "SD",
+   "country": "US",
+   "city": "Sioux Falls",
+   "jurisdiction": "regional",
+   "currentHash": "f418b32ef43aee35827e91b380b0ec15",
+   "currentEffectiveDate": "2025-04-28",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "rhode-island-department-of-health-center-for-emergency-medical-services",
+   "name": "Rhode Island Department of Health – Center for Emergency Medical Services",
+   "aliases": [
+    "Rhode Island Department of Health – Center for Emergency Medical Services"
+   ],
+   "state": "RI",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "b59cce67fb7057a27060e3b8aedeff0f7389571139c30abce65e79e3d996daae",
+   "currentEffectiveDate": "2026-06-01",
+   "documentCount": 4,
+   "doseCount": 0,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "riverside-county-emergency-medical-services-agency",
+   "name": "Riverside County Emergency Medical Services Agency",
+   "aliases": [
+    "Riverside County Emergency Medical Services Agency"
+   ],
+   "state": "CA",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "county",
+   "currentHash": "5bf1463669973ad79da74b74e28c983b",
+   "currentEffectiveDate": "2025-07-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "riverside-county-ems-agency",
+   "name": "Riverside County EMS Agency",
+   "aliases": [
+    "Riverside County EMS Agency"
+   ],
+   "state": "CA",
+   "country": "US",
+   "city": "Riverside",
+   "jurisdiction": "county",
+   "currentHash": "4acd4aec96192fb6b06af3ac36fc50b05e8ddcbf50b75f2c0ec6359cc5eda5c6",
+   "currentEffectiveDate": "2026-07-01",
+   "documentCount": 4,
+   "doseCount": 141,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "san-diego-county-emergency-medical-services-office",
+   "name": "San Diego County Emergency Medical Services Office",
+   "aliases": [
+    "San Diego County Emergency Medical Services Office"
+   ],
+   "state": "CA",
+   "country": "US",
+   "city": "San Diego",
+   "jurisdiction": "county",
+   "currentHash": "4f963ac4cb70ea77d394322687cba390",
+   "currentEffectiveDate": "2025-07-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "seattle-and-king-county-ems",
+   "name": "Seattle and King County EMS",
+   "aliases": [
+    "Seattle and King County EMS"
+   ],
+   "state": "WA",
+   "country": "US",
+   "city": "Seattle",
+   "jurisdiction": "regional",
+   "currentHash": "448e661da7c44cb7e9b3cebdd6874d31",
+   "currentEffectiveDate": "2023-01-01",
+   "documentCount": 2,
+   "doseCount": 0,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "sierra-sacramento-valley-ems-agency",
+   "name": "Sierra-Sacramento Valley EMS Agency",
+   "aliases": [
+    "Sierra-Sacramento Valley EMS Agency"
+   ],
+   "state": "CA",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "regional",
+   "currentHash": "d2bd4d9c86103cbadc50cbc2efca1229",
+   "currentEffectiveDate": "2025-10-01",
+   "documentCount": 2,
+   "doseCount": 0,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "south-carolina-department-of-public-health-dph-division-of-ems",
+   "name": "South Carolina Department of Public Health (DPH) Division of EMS",
+   "aliases": [
+    "South Carolina Department of Public Health (DPH) Division of EMS"
+   ],
+   "state": "SC",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "cb571bca837ba0a10614cb5f493d6920c7d709f6ab5a2c0c22c395246ba47879",
+   "currentEffectiveDate": "2025-01-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "south-dakota-board-of-medical-osteopathic-examiners",
+   "name": "South Dakota Board of Medical & Osteopathic Examiners",
+   "aliases": [
+    "South Dakota Board of Medical & Osteopathic Examiners"
+   ],
+   "state": "SD",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "607f908cbad9c154454f3f5b7e3fe00a9ee0bc354748c60dd18e4f855114f33d",
+   "currentEffectiveDate": "2024-06-20",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "southern-nevada-health-district-office-of-emergency-medical-services-trauma-system",
+   "name": "Southern Nevada Health District Office of Emergency Medical Services & Trauma System",
+   "aliases": [
+    "Southern Nevada Health District Office of Emergency Medical Services & Trauma System"
+   ],
+   "state": "NV",
+   "country": "US",
+   "city": "Las Vegas",
+   "jurisdiction": "regional",
+   "currentHash": "dca912c85fc606cc0146b7b8d094de6ea6f0ce889e1f115e1cad5f24dee87e4e",
+   "currentEffectiveDate": "2026-06-30",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "stars",
+   "name": "STARS",
+   "aliases": [
+    "STARS"
+   ],
+   "state": null,
+   "country": "CA",
+   "city": null,
+   "jurisdiction": "regional",
+   "currentHash": "98530643cc70777644f317e0715839bbf192f53372276782ffb97f49227b19c4",
+   "currentEffectiveDate": "2025-04-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "stars-shock-trauma-air-rescue-service",
+   "name": "STARS (Shock Trauma Air Rescue Service)",
+   "aliases": [
+    "STARS (Shock Trauma Air Rescue Service)"
+   ],
+   "state": null,
+   "country": "CA",
+   "city": null,
+   "jurisdiction": "regional",
+   "currentHash": "6de7b119061e954b26b9088a0759531bd8e3beb183acf1617cb008b79c858656",
+   "currentEffectiveDate": "2025-04-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "state-board-of-emergency-medical-fire-and-transportation-services",
+   "name": "State Board of Emergency Medical, Fire, and Transportation Services",
+   "aliases": [
+    "State Board of Emergency Medical, Fire, and Transportation Services"
+   ],
+   "state": "OH",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "4e04a1884d5a46b54800fb6706b4168a266fefb68ff347b86a3a0e1f82b25773",
+   "currentEffectiveDate": "2026-06-17",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "state-board-of-emergency-medical-fire-and-transportation-services-emfts-board",
+   "name": "State Board of Emergency Medical, Fire, and Transportation Services (EMFTS Board)",
+   "aliases": [
+    "State Board of Emergency Medical, Fire, and Transportation Services (EMFTS Board)"
+   ],
+   "state": "OH",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "4e2dfa2d992716cad48a55e6aaad2359c1e4c62608bf79bd217e82c42bdfbbbb",
+   "currentEffectiveDate": "2024-12-11",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "state-of-hawai-i-department-of-health-emergency-medical-services-injury-prevention-system-branch",
+   "name": "State of Hawaiʻi Department of Health, Emergency Medical Services & Injury Prevention System Branch",
+   "aliases": [
+    "State of Hawaiʻi Department of Health, Emergency Medical Services & Injury Prevention System Branch"
+   ],
+   "state": "HI",
+   "country": "US",
+   "city": "Honolulu",
+   "jurisdiction": "statewide",
+   "currentHash": "bc8896e06c4feba2846f9031472d1229c8b1f686594a0161572b8753e4a22f36",
+   "currentEffectiveDate": "2025-06-10",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "tennessee-emergency-medical-services",
+   "name": "Tennessee Emergency Medical Services",
+   "aliases": [
+    "Tennessee Emergency Medical Services"
+   ],
+   "state": "TN",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "05d1fd871daa557d3630c50ed67284a45d6ee324074523af20efe4a36cc6a8c5",
+   "currentEffectiveDate": "2024-01-01",
+   "documentCount": 1,
+   "doseCount": 151,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "the-williamson-county-ems-system",
+   "name": "The Williamson County EMS System",
+   "aliases": [
+    "The Williamson County EMS System"
+   ],
+   "state": "TX",
+   "country": "US",
+   "city": "Georgetown",
+   "jurisdiction": "county",
+   "currentHash": "26dd9915957ddcb2b6dd0d3499301121dbeef3be14d2ff15329e082c902818c5",
+   "currentEffectiveDate": "2026-01-01",
+   "documentCount": 1,
+   "doseCount": 137,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "thurston-county-medic-one",
+   "name": "Thurston County Medic One",
+   "aliases": [
+    "Thurston County Medic One"
+   ],
+   "state": "WA",
+   "country": "US",
+   "city": "Olympia",
+   "jurisdiction": "county",
+   "currentHash": "322e07e219b1b056336ad589169d5cea07d7c8dc4ae3a1af60c7ba6cc086b611",
+   "currentEffectiveDate": "2025-03-01",
+   "documentCount": 3,
+   "doseCount": 0,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "tidewater-emergency-medical-services-council-inc",
+   "name": "Tidewater Emergency Medical Services Council, Inc.",
+   "aliases": [
+    "Tidewater Emergency Medical Services Council, Inc."
+   ],
+   "state": "VA",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "regional",
+   "currentHash": "7bbc40308b1c446ddaed4cbaa1d4c1a6a15242d7ad88fb4d794188c6854e6bff",
+   "currentEffectiveDate": "2025-07-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "tri-county-emergency-medical-services-inc",
+   "name": "Tri County Emergency Medical Services, Inc.",
+   "aliases": [
+    "Tri County Emergency Medical Services, Inc."
+   ],
+   "state": "TX",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "regional",
+   "currentHash": "3c08021d606f2a04e142be06c5fc82a2",
+   "currentEffectiveDate": "2023-09-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "united-states-departments-of-the-army-and-air-force",
+   "name": "United States Departments of the Army and Air Force",
+   "aliases": [
+    "United States Departments of the Army and Air Force"
+   ],
+   "state": null,
+   "country": "US",
+   "city": null,
+   "jurisdiction": "regional",
+   "currentHash": "73b2c01ad78740113a29c01087f4b0dafac262035c5c4e84b4d0c653add5ee27",
+   "currentEffectiveDate": "2024-10-01",
+   "documentCount": 1,
+   "doseCount": 163,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "utah-department-of-public-safety-bureau-of-emergency-medical-services",
+   "name": "Utah Department of Public Safety, Bureau of Emergency Medical Services",
+   "aliases": [
+    "Utah Department of Public Safety, Bureau of Emergency Medical Services"
+   ],
+   "state": "UT",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "8721a95cd58508d193c373e5cc689d03",
+   "currentEffectiveDate": "2025-09-01",
+   "documentCount": 2,
+   "doseCount": 0,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "vermont-department-of-health",
+   "name": "Vermont Department of Health",
+   "aliases": [
+    "Vermont Department of Health"
+   ],
+   "state": "VT",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "33aa4e7abd3d5e3663b2485d5513950f8374304dca469ac3acb48ee7b9e15051",
+   "currentEffectiveDate": "2025-01-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "virgin-islands-fire-emergency-medical-services",
+   "name": "Virgin Islands Fire & Emergency Medical Services",
+   "aliases": [
+    "Virgin Islands Fire & Emergency Medical Services"
+   ],
+   "state": "VI",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "b30e20b7b7c51c18b560891ed0ea6a68",
+   "currentEffectiveDate": "2024-06-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "washington-county-ems",
+   "name": "Washington County EMS",
+   "aliases": [
+    "Washington County EMS"
+   ],
+   "state": "OR",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "county",
+   "currentHash": "22a01e6b90ef4e591bdbb7dda0ad1e390f9ab2f181656385439eb7fe342afbf4",
+   "currentEffectiveDate": "2026-08-07",
+   "documentCount": 4,
+   "doseCount": 160,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "washington-state-department-of-health",
+   "name": "Washington State Department of Health",
+   "aliases": [
+    "Washington State Department of Health"
+   ],
+   "state": "WA",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "11cc3d73b37ebbe4e8b5f2219df0952a86e600fd9619c0a0c8417b8503e57786",
+   "currentEffectiveDate": "2024-08-01",
+   "documentCount": 2,
+   "doseCount": 60,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "west-virginia-department-of-health-office-of-emergency-medical-services",
+   "name": "West Virginia Department of Health, Office of Emergency Medical Services",
+   "aliases": [
+    "West Virginia Department of Health, Office of Emergency Medical Services"
+   ],
+   "state": "WV",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "6c6a3db5051f8593d3c909bc1e66093fca0b2c36b44b20791f501d436f0b0dac",
+   "currentEffectiveDate": "2026-04-01",
+   "documentCount": 4,
+   "doseCount": 280,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "wilson-county-esd-4",
+   "name": "Wilson County ESD #4",
+   "aliases": [
+    "Wilson County ESD #4"
+   ],
+   "state": "TX",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "fire-district",
+   "currentHash": "81d7d76ae4d7117f8226abb8018e3582782f4ff81b8f12d5955539debc73cf90",
+   "currentEffectiveDate": "2026-04-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "fire-district"
+   }
+  }
+ ]
+}

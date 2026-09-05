@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How the EMS Protocol Census is built - methodology</title>
+  <meta name="description" content="Where census documents come from, what is read out of them, what is not captured, how doses are compared, how outliers are reviewed, and why no dose-level accuracy number is published." />
+
+  <meta name="apple-itunes-app" content="app-id=6753611139" />
+  <link rel="canonical" href="https://protoquiz.com/census/methodology/">
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="How the EMS Protocol Census is built - methodology" />
+  <meta property="og:description" content="Where census documents come from, what is read out of them, what is not captured, how doses are compared, how outliers are reviewed, and why no dose-level accuracy number is published." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://protoquiz.com/census/methodology/" />
+  <meta property="og:image" content="https://protoquiz.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How the EMS Protocol Census is built - methodology" />
+  <meta name="twitter:description" content="Where census documents come from, what is read out of them, what is not captured, how doses are compared, how outliers are reviewed, and why no dose-level accuracy number is published." />
+  <meta name="twitter:image" content="https://protoquiz.com/og-image.png" />
+  <meta name="theme-color" content="#05080c" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=4" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=4" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=4" />
+
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://protoquiz.com/"},{"@type":"ListItem","position":2,"name":"EMS Census","item":"https://protoquiz.com/census/"},{"@type":"ListItem","position":3,"name":"Methodology","item":"https://protoquiz.com/census/methodology/"}]}
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LNSS9BMEP8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-LNSS9BMEP8');
+    function track(name, props){ try { gtag('event', name, props || {}); } catch(e){} }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/census/census.css">
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav class="navbar">
+        <a href="/" class="brand-link"><img src="/logo-128.png" alt="ProtoQuiz logo" width="34" height="34"><span>ProtoQuiz</span></a>
+        <div class="nav-links">
+          <a href="/census/" class="nav-btn">Census</a>
+          <a href="/agency/" class="nav-btn">For Agencies</a>
+          <a href="/blog/" class="nav-btn">Blog</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <div class="pbar">
+    <div class="wrap">
+      <a class="pbar-mark" href="/census/">US EMS Protocol Census</a>
+      <nav class="pbar-nav" aria-label="Census sections"><a href="/census/">Overview</a><a href="/census/">Drugs</a><a href="/census/">States</a><a href="/census/">Agencies</a><a href="/census/methodology/" class="on" aria-current="page">Methodology</a></nav>
+    </div>
+  </div>
+  <main>
+    <div class="wrap">
+      <nav class="crumbs"><a href="/">Home</a> <span class="sep">/</span> <a href="/census/">EMS Census</a> <span class="sep">/</span> <span>Methodology</span></nav>
+      <div class="layout">
+        <div class="col">
+      <div class="dochead">
+        <span class="badge">Methodology</span>
+        <h1>How the EMS Census is built</h1>
+        <div class="meta"><span class="chip">1,556 documents</span><span class="chip">129 named agencies</span><span class="chip">6,587 dose entries</span><span class="chip">as of 2026-09-05</span></div>
+        <p class="lede">Everything on the census comes from protocol documents agencies themselves published. This page says where each document came from, what was read out of it, what was not, and which numbers are therefore safe to quote. As of 2026-09-05.</p>
+      </div>
+      <div class="stats"><div class="stat"><span class="v">1,556</span><span class="l">documents</span></div><div class="stat"><span class="v">129</span><span class="l">named agencies</span></div><div class="stat"><span class="v">6,587</span><span class="l">dose entries</span></div><div class="stat"><span class="v">6,252 of 6,587 (95%)</span><span class="l">machine-parsed</span></div><div class="stat"><span class="v">1,212</span><span class="l">comparable groups</span></div><div class="stat"><span class="v">2026-09-05</span><span class="l">as of</span></div></div>
+
+      <section id="origin">
+        <h2>How a document reaches us</h2>
+        <p>Each document carries an <strong>origin</strong>, one of six values, derived at build time and never guessed: <strong>app</strong> (a medic uploaded their own agency's protocol), <strong>seed</strong> (we collected a published document directly), <strong>watch</strong> (a scheduled re-check of a page an agency publishes to), <strong>wayback</strong> (an Internet Archive capture), <strong>device</strong> (recovered from an app corpus), and <strong>unknown</strong>. A document minted before origin was recorded reads <strong>unknown</strong> rather than claiming a provenance it cannot prove.</p>
+        <p>Nothing here is a copy of an agency's PDF. The census links to the agency's own source where one is known, and hosts no protocol documents.</p>
+      </section>
+
+      <section id="identity">
+        <h2>Document identity is a content hash</h2>
+        <p>A document is identified by the hash of its contents, not by its filename, its URL, or the agency's name for it. Two agencies posting byte-identical files are one document; the same protocol re-posted at a new URL is still the same document; a revision is a new one. That is what makes a version history possible at all, and it is why a re-upload of a file we already hold adds nothing.</p>
+      </section>
+
+      <section id="classification">
+        <h2>Classification and what stays unpublished</h2>
+        <p>A model reads each document to find the agency, the state, and the jurisdiction, and records a <strong>confidence</strong> of high, medium, low, or user (a value a person supplied). A document whose identity is not settled goes to <strong>pending review</strong> instead of being listed &mdash; the reasons are a name that collided with an existing agency, a merge chain that could not be resolved, a document with no readable agency, and a version whose date could not be placed. Of 1,556 documents, 720 are in that state and do not appear anywhere on the census.</p>
+        <p>An agency is named only where its protocols are a public record &mdash; statewide, regional, county, city, or fire-district. Everything else contributes to counts and distributions as an unnamed source and never gets a page. 605 documents are listed with a name; 63 contribute to aggregates only.</p>
+      </section>
+
+      <section id="extraction">
+        <h2>What is read out of a document, and what is not</h2>
+        <p>Extraction pulls drug, indication, population, dose, route, repeat interval, and standing-order status. It does not read a protocol's narrative, its flowcharts as flowcharts, or anything a human reader would infer from layout.</p>
+        <p>Two corpus shapes feed the census, and their limits are different. One carries page numbers; the other carries none, so <strong>page not captured</strong> is the majority case and is not a defect. The second shape also carries no standing-order flag, so <strong>standing</strong> is absent rather than false on those entries &mdash; the census never renders an absent flag as "not a standing order", because absence of a flag is not evidence of the negative. Pediatric age bands were lost upstream on the second shape entirely: 221 of 6,587 entries (3%) are pediatric entries with no age band, and they are excluded from every distribution and every outlier check on this site. They are still counted, and they still appear on their agency's own page as written.</p>
+      </section>
+
+      <section id="parse">
+        <h2>Parsed, partial, and raw</h2>
+        <p>A dose string is either parsed to a number with a unit and a route, parsed partially (a number and a unit but no route), or kept raw &mdash; a string like "per medical control" that carries no number at all. Today: 6,252 of 6,587 (95%) parsed, 107 of 6,587 (2%) partial, 228 of 6,587 (3%) raw.</p>
+        <p><strong>A raw entry never enters a distribution.</strong> It is real data and it is shown as written on its agency's page, and it is counted in the entry totals &mdash; but it has no number, so putting it in a median would mean inventing one. Every distribution on this site says how many entries under it carry a machine-readable number.</p>
+      </section>
+
+      <section id="units">
+        <h2>Units, per-kilogram doses, and ranges</h2>
+        <p>Mass units are canonicalized to milligrams: micrograms and grams convert, so 300 mcg and 0.3 mg are the same value in the same group. <strong>Nothing else converts.</strong> Millilitres need a concentration the documents do not carry, and units, milliequivalents and joules are not doses of a mass at all &mdash; each is its own group and is never folded into another.</p>
+        <p>A weight-based dose and a flat dose are separate groups for the same reason: 0.01 mg/kg and 1 mg are not the same quantity and never share a median.</p>
+        <p><strong>A range contributes its low end only.</strong> "0.3&ndash;0.5 mg" enters a distribution as 0.3. The high end is kept and shown on the agency page, but it never enters a distribution or an outlier check &mdash; counting both ends would let one entry vote twice, and picking the high end would overstate every range in the census.</p>
+      </section>
+
+      <section id="sources">
+        <h2>Sources and named agencies are two different counts</h2>
+        <p>A <strong>source</strong> is one protocol document. A <strong>named agency</strong> is a source whose agency is a public record and is identified on the census. Every distribution is built one value per source &mdash; a document that lists a drug five times gets one vote, its own median, not five &mdash; so a verbose document cannot decide a median for everyone.</p>
+        <p>Both counts appear on every published number, in the form "n=&lt;sources&gt; protocols from &lt;agencies&gt; named agencies / &lt;states&gt; states". Sources are always the larger number, and quoting one for the other is the mistake the two-part citation exists to prevent.</p>
+        <p>A group publishes a distribution only at <strong>5 or more sources</strong>. Below that the census shows the count and nothing else: five documents is thin, and four is not a distribution.</p>
+      </section>
+
+      <section id="outliers">
+        <h2>Outlier review</h2>
+        <p>Every night, each group's entries are checked against a reference built from all of that group's parsed entries &mdash; one value per source, and the median of those values. An entry more than three times that median, or less than a third of it, is <strong>flagged</strong>, in groups of at least 5 sources. Flagging is one pass with no feedback: clearing or removing an entry changes nothing about the reference or about any other entry's flag, so the same documents produce the same flags every night.</p>
+        <p>A flagged entry is suppressed everywhere &mdash; every page, every distribution, every count of published rows &mdash; until a person reviews it and either clears it (it returns) or rejects it (it stays out). It is counted before it is removed, so the size of the review queue is visible: 240 of 6,587 entries (4%) are under review right now, 0 have been reviewed and rejected, and 6,347 are published.</p>
+        <p>The two distributions are named on purpose. Flags are judged against the reference built <em>before</em> any suppression; the numbers this site publishes are computed <em>after</em> it. A flag is a claim about one entry against its peers, not a claim about the published median.</p>
+      </section>
+
+      <section id="accuracy">
+        <h2>Accuracy: not yet measured</h2>
+        <p><strong>We do not publish a dose-level accuracy number, because we have not measured one.</strong> What exists today is a hand-labelled comparison of drug names, indication text, contraindications and adverse effects &mdash; no dose value in it is ever compared against a document. Publishing an extraction-success rate or a model-agreement figure in place of accuracy would be quoting a measurement of a different thing, and it would read as the number this section does not have.</p>
+        <p>What is measured, and lives on this page because it comes from the build itself: the share of entries that parse to a number (95%), the share under outlier review (4%), and the share of pediatric entries excluded for having no age band (3%).</p>
+        <p>Every page here carries the same warning, and it is the honest one: this is a training reference compiled from published protocols, not a clinical order. Verify against your own agency's document and your medical director.</p>
+      </section>
+
+      <section id="corrections">
+        <h2>Corrections and removal</h2>
+        <p>If a listing is wrong, send the current document's public URL from the agency page's correction form and the listing is rebuilt from it. If an agency wants its listing removed, it comes down the same day &mdash; no argument about whether the document is a public record.</p>
+      </section>
+
+      <section id="freshness">
+        <h2>Freshness</h2>
+        <p>A document more than 24 months old is flagged as possibly outdated on its agency's page, and a newer version awaiting review is disclosed with its date. The build itself refuses to publish when the number of named agencies drops sharply against the last published build &mdash; a collapse in coverage is a broken build, and shipping it would quietly replace the census with a smaller one.</p>
+        <p>The as-of date on every page is the date the data changed, not the date the page was generated. A page that did not change is not rewritten.</p>
+      </section>
+
+      <section id="cite">
+        <h2>Citation</h2>
+        <p class="cite">United States EMS Protocol Census, as of 2026-09-05. https://protoquiz.com/census/ &middot; <a href="/census/data-license/">Data license</a></p>
+      </section>
+        </div>
+        <aside class="rail">
+          <nav class="panel toc" aria-label="On this page">
+            <h2>On this page</h2>
+            <ul><li><a href="#origin">How a document reaches us</a></li><li><a href="#identity">Document identity is a content hash</a></li><li><a href="#classification">Classification and what stays unpublished</a></li><li><a href="#extraction">What is read out of a document</a></li><li><a href="#parse">Parsed, partial, and raw</a></li><li><a href="#units">Units, per-kilogram doses, and ranges</a></li><li><a href="#sources">Sources and named agencies</a></li><li><a href="#outliers">Outlier review</a></li><li><a href="#accuracy">Accuracy: not yet measured</a></li><li><a href="#corrections">Corrections and removal</a></li><li><a href="#freshness">Freshness</a></li><li><a href="#cite">Citation</a></li></ul>
+          </nav>
+          <section class="panel">
+            <h2>Related</h2>
+            <ul class="railnav"><li><a href="/census/data-license/">Data license</a></li><li><a href="/census/">All drugs and states</a></li></ul>
+          </section>
+        </aside>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="wrap">
+      <p class="disclaimer">Training reference compiled from published protocols. Not a clinical order. Verify with your agency and medical director.</p>
+      <p>&copy; 2026 Teach Me to Live LLC, d/b/a ProtoQuiz&trade;. &middot; <a href="/census/">EMS Census</a> &middot; <a href="/census/methodology/">Methodology</a> &middot; <a href="/census/data-license/">Data license</a> &middot; <a href="/agency/">For Agencies</a> &middot; <a href="/blog/">Blog</a></p>
+    </div>
+  </footer>
+</body>
+</html>

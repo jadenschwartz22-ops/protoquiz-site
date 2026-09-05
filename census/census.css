@@ -1,0 +1,226 @@
+:root{
+  --ground:oklch(0.99 0.003 250);
+  --panel:oklch(0.965 0.006 250);
+  --ink:oklch(0.22 0.015 260);
+  --muted:oklch(0.47 0.02 260);
+  --rule:oklch(0.87 0.008 260);
+  --accent:oklch(0.52 0.19 27);
+  --link:oklch(0.42 0.11 255);
+  --sig-current:oklch(0.52 0.13 150);
+  --sig-review:oklch(0.66 0.15 75);
+  --r:6px;
+  --sans:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:1rem;line-height:1.65;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:var(--link);text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* the shared site header keeps its own dark chrome; only its own rules live here */
+header{background:oklch(0.19 0.015 260);border-bottom:1px solid oklch(0.30 0.02 260)}
+.navbar{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:16px;flex-wrap:wrap}
+.brand-link{display:flex;align-items:center;gap:8px;color:oklch(0.97 0.004 250);text-decoration:none;font-weight:600;font-size:1.05rem}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-btn{padding:6px 12px;border:1px solid oklch(0.34 0.02 260);border-radius:var(--r);text-decoration:none;font-size:.875rem;font-weight:500;color:oklch(0.90 0.006 250)}
+.nav-btn:hover{background:oklch(0.26 0.018 260);text-decoration:none}
+
+/* census product bar: the one loud element besides the document header */
+.pbar{background:var(--ground);border-bottom:1px solid var(--rule)}
+.pbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.pbar-mark{padding:14px 0;font-weight:600;font-size:1.05rem;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+.pbar-mark:hover{color:var(--accent)}
+.pbar-nav{display:flex;gap:20px;flex-wrap:wrap;align-self:stretch;align-items:stretch}
+.pbar-nav a{display:flex;align-items:center;padding:14px 0;font-size:.875rem;font-weight:500;color:var(--muted);text-decoration:none;border-bottom:2px solid transparent;margin-bottom:-1px}
+.pbar-nav a:hover{color:var(--ink)}
+.pbar-nav a.on{color:var(--ink);font-weight:600;border-bottom-color:var(--accent)}
+
+main{padding:24px 0 72px}
+.crumbs{font-size:.8125rem;color:var(--muted);margin:0 0 20px}
+.crumbs a{color:var(--muted);text-decoration:none}
+.crumbs a:hover{color:var(--link);text-decoration:underline}
+.crumbs .sep{margin:0 6px;opacity:.6}
+
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 316px;gap:56px;align-items:start}
+.layout.facets{grid-template-columns:264px minmax(0,1fr)}
+.layout.solo{grid-template-columns:minmax(0,1fr)}
+.col{min-width:0}
+.rail{min-width:0;display:flex;flex-direction:column;gap:16px;position:sticky;top:16px}
+
+/* document header bar */
+.dochead{border-bottom:1px solid var(--rule);padding-bottom:20px;margin-bottom:28px}
+.badge{display:block;font-size:.8125rem;font-weight:500;color:var(--muted);margin:0 0 4px}
+h1{font-size:1.8125rem;line-height:1.25;margin:0 0 8px;font-weight:600;letter-spacing:-.015em}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 0}
+.chip,.pill{display:inline-block;border:1px solid var(--rule);border-radius:var(--r);padding:2px 8px;font-size:.8125rem;line-height:1.5;color:var(--muted);background:var(--panel);font-variant-numeric:tabular-nums}
+.pill{font-weight:500;background:transparent}
+.sig-current{color:var(--sig-current);border-color:color-mix(in oklch,var(--sig-current) 40%,var(--rule))}
+.sig-review{color:oklch(0.48 0.13 75);border-color:color-mix(in oklch,var(--sig-review) 50%,var(--rule))}
+.sig-superseded{color:var(--muted)}
+
+/* ---------------------------------------------------------------- the hero
+   The landing is the brand register; every detail page stays in the research
+   register above. The scale jump is the whole move: a 700-weight statement at
+   ~3.5x the body, tightened, against a 400-weight dek. One family, one accent. */
+.hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:center;margin:4px 0 clamp(40px,6vw,64px);padding-bottom:clamp(36px,5vw,56px);border-bottom:1px solid var(--rule)}
+.hero-say{min-width:0}
+.hero .badge{margin:0 0 14px}
+.hero h1{font-size:clamp(2.125rem,4.4vw,3.9rem);line-height:1.05;letter-spacing:-.035em;font-weight:700;margin:0 0 22px;max-width:15ch;text-wrap:balance}
+.hero .dek{font-size:clamp(1rem,1.2vw,1.0625rem);line-height:1.62;color:var(--muted);margin:0;max-width:54ch}
+
+/* the tile map: equal-area states, so the eye reads coverage and not acreage */
+.hero-map{margin:0;min-width:0}
+.tilemap{display:block;width:100%;height:auto}
+.tilemap .tile rect{fill:none;stroke:var(--rule);stroke-width:1}
+.tilemap .tile text{font-family:var(--mono);font-size:11px;font-weight:500;text-anchor:middle;fill:var(--muted)}
+.tilemap .t-doc rect{fill:var(--ink);stroke:var(--ink)}
+.tilemap .t-doc text{fill:var(--ground)}
+.tilemap .t-named rect{fill:var(--accent);stroke:var(--accent)}
+.tilemap .t-named text{fill:oklch(0.99 0.003 250)}
+.hero-map figcaption{margin:16px 0 0;font-size:.8125rem;line-height:1.55;color:var(--muted);max-width:46ch}
+.hero-map figcaption .n{font-family:var(--mono);font-weight:500;color:var(--ink);font-variant-numeric:tabular-nums}
+
+/* the one orchestrated page-load moment: the tiles arrive, nothing else moves */
+@media(prefers-reduced-motion:no-preference){
+  .tilemap .tile{opacity:0;animation:tile-in .4s cubic-bezier(.22,1,.36,1) forwards;animation-delay:calc(var(--i)*8ms)}
+}
+@keyframes tile-in{from{opacity:0}to{opacity:1}}
+
+/* why it matters: a flowing list of statements, not a grid of cards */
+.why{margin:0 0 clamp(36px,5vw,52px)}
+.why h2{margin-top:0}
+ul.claims{list-style:none;padding:0;margin:0;max-width:68ch}
+ul.claims li{padding:14px 0;border-bottom:1px solid var(--rule);font-size:1rem;line-height:1.6;color:var(--muted)}
+ul.claims li:first-child{border-top:1px solid var(--rule)}
+ul.claims strong{font-weight:600;color:var(--ink)}
+
+h2{font-size:1.25rem;line-height:1.35;margin:44px 0 12px;font-weight:600;letter-spacing:-.01em;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+h3{font-size:1.05rem;margin:28px 0 8px;font-weight:600;color:var(--ink)}
+h2 .count{font-family:var(--mono);font-size:.8125rem;font-weight:400;color:var(--muted);background:var(--panel);border:1px solid var(--rule);border-radius:999px;padding:0 8px;font-variant-numeric:tabular-nums}
+h2 .unit{font-family:var(--mono);font-size:.875rem;font-weight:400;color:var(--muted)}
+p{margin:0 0 12px;max-width:72ch}
+.lede{font-size:1.05rem;color:var(--muted);margin:8px 0 0;max-width:72ch}
+.honest,.cite{font-size:.875rem;color:var(--muted)}
+
+/* the headline counts, as one dense line rather than tiles */
+.summary{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;margin:0 0 16px;font-size:.9375rem;color:var(--muted);max-width:none}
+.summary .n{font-family:var(--mono);font-weight:500;color:var(--ink);font-variant-numeric:tabular-nums}
+.summary .sep{width:1px;align-self:stretch;background:var(--rule);margin:2px 4px}
+
+/* stats keep their markup (asserted by the page tests); only the look changed */
+.stats{display:flex;flex-wrap:wrap;gap:0;margin:0 0 20px;border:1px solid var(--rule);border-radius:var(--r);background:var(--panel);overflow:hidden}
+.stat{flex:1 1 132px;padding:10px 14px;border-right:1px solid var(--rule)}
+.stat:last-child{border-right:0}
+.stat .v{display:block;font-family:var(--mono);font-size:1.05rem;font-weight:500;font-variant-numeric:tabular-nums;line-height:1.4}
+.stat .l{display:block;font-size:.8125rem;color:var(--muted);line-height:1.4}
+
+.warn{background:oklch(0.975 0.035 85);border:1px solid oklch(0.86 0.075 80);border-radius:var(--r);padding:10px 14px;font-size:.9375rem;margin:0 0 16px;max-width:72ch}
+
+/* dense hairline tables, mono numerals, no zebra, hover a panel tint */
+.scroll{overflow-x:auto;overscroll-behavior-x:contain;border:1px solid var(--rule);border-radius:var(--r);margin:0 0 16px}
+/* min-width:100% rather than width:100%: a table with more columns than fit takes its
+   natural width and scrolls inside .scroll, instead of crushing its last column to one
+   character per line. A table that does fit still fills the panel. */
+table{min-width:100%;border-collapse:collapse;font-size:.875rem;font-variant-numeric:tabular-nums}
+th{text-align:left;font-weight:600;color:var(--muted);background:var(--panel);border-bottom:1px solid var(--rule);padding:8px 12px;white-space:nowrap;font-size:.8125rem}
+td{padding:8px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover{background:var(--panel)}
+table.dose td:nth-child(n+3),table.coverage td:nth-child(n+2){font-family:var(--mono)}
+table.dose td:nth-child(3){white-space:nowrap}
+/* the source cell is prose, not a number: it wraps inside its own column instead of
+   forcing the table wider than the panel it sits in */
+td.src{font-family:var(--sans);white-space:nowrap}
+.src,.muted{color:var(--muted);font-size:.8125rem}
+.raw{font-family:var(--mono);font-size:.8125rem}
+
+/* landing results rows and facet rail */
+ul.results{list-style:none;padding:0;margin:0;border-top:1px solid var(--rule)}
+ul.results li{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:9px 4px;border-bottom:1px solid var(--rule)}
+ul.results li:hover{background:var(--panel)}
+ul.results li>a{font-weight:500}
+ul.facets{list-style:none;padding:0;margin:0;font-size:.875rem}
+ul.facets li{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:4px 0}
+ul.facets a{text-decoration:none;color:var(--link)}
+ul.facets a:hover{text-decoration:underline}
+ul.facets .count{font-family:var(--mono);font-size:.8125rem;color:var(--muted);font-variant-numeric:tabular-nums}
+ul.cols{list-style:none;padding:0;margin:0 0 12px;columns:3;column-gap:24px}
+ul.cols li{break-inside:avoid;padding:3px 0;font-size:.9375rem}
+ul.inline{list-style:none;padding:0;margin:0 0 12px;display:flex;flex-wrap:wrap;gap:6px}
+ul.inline li{background:var(--panel);border:1px solid var(--rule);border-radius:var(--r);padding:3px 10px;font-size:.875rem;font-variant-numeric:tabular-nums}
+
+/* rail panels */
+.panel{border:1px solid var(--rule);border-radius:var(--r);padding:14px 16px;background:var(--ground)}
+.panel h2{font-size:.9375rem;margin:0 0 10px;font-weight:600}
+.panel p{font-size:.875rem;margin:0 0 10px;max-width:none}
+.railnote{font-size:.8125rem;margin:0;padding:0 2px}
+ul.railnav{list-style:none;padding:0;margin:0;font-size:.875rem}
+ul.railnav li{padding:4px 0;border-bottom:1px solid var(--rule)}
+ul.railnav li:last-child{border-bottom:0}
+ul.railnav a{text-decoration:none}
+ul.railnav a:hover{text-decoration:underline}
+.toc{position:sticky;top:16px}
+.toc ul{list-style:none;padding:0;margin:0;font-size:.875rem}
+.toc li{padding:3px 0}
+.toc a{text-decoration:none;color:var(--muted)}
+.toc a:hover{color:var(--link);text-decoration:underline}
+
+/* cite this */
+.citebox{border:1px solid var(--rule);border-radius:var(--r);background:var(--panel);padding:10px 12px;margin:0 0 10px}
+.citebox .cite{font-family:var(--mono);font-size:.8125rem;line-height:1.55;color:var(--ink);margin:0;word-break:break-word}
+.citebox .cite+.cite{margin-top:6px}
+.copybtn{font:inherit;font-size:.875rem;font-weight:500;color:var(--ink);background:var(--panel);border:1px solid var(--rule);border-radius:var(--r);padding:5px 12px;cursor:pointer}
+.copybtn:hover{background:oklch(0.94 0.008 250)}
+.copybtn.ok{color:var(--sig-current);border-color:color-mix(in oklch,var(--sig-current) 45%,var(--rule))}
+
+/* the five-number range bar: min to max track, middle half filled, median tick */
+.five{margin:0 0 16px}
+.five-track{position:relative;height:10px;background:var(--panel);border:1px solid var(--rule);border-radius:var(--r);margin:14px 0 4px}
+.five-iqr{position:absolute;top:-1px;bottom:-1px;background:color-mix(in oklch,var(--accent) 22%,var(--ground));border:1px solid color-mix(in oklch,var(--accent) 55%,var(--rule));border-radius:3px}
+.five-med{position:absolute;top:-5px;bottom:-5px;width:2px;background:var(--accent);border-radius:1px}
+.five-ends{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.75rem;color:var(--muted);font-variant-numeric:tabular-nums;margin:0 0 10px}
+.five-nums{min-width:0;width:auto;font-size:.8125rem}
+.five-nums th{background:transparent;border-bottom:1px solid var(--rule);padding:4px 16px 4px 0;font-weight:500}
+.five-nums td{font-family:var(--mono);padding:4px 16px 4px 0;border-bottom:0}
+.five-nums tbody tr:hover{background:transparent}
+.hist{min-width:0}
+.hist th{width:160px;font-family:var(--mono);color:var(--ink);background:transparent;border:0;padding:4px 12px 4px 0;font-weight:400}
+.hist td{border:0;padding:4px 0}
+.hist .n{width:56px;text-align:right;color:var(--muted);font-family:var(--mono)}
+.hist tbody tr:hover{background:transparent}
+.bar{display:block;height:10px;background:var(--accent);border-radius:2px;min-width:2px}
+
+/* forms, as a compact rail panel */
+.submit-form{display:flex;flex-direction:column;gap:4px;margin:0}
+.submit-form label{font-size:.8125rem;color:var(--muted)}
+.submit-form input{background:var(--ground);border:1px solid var(--rule);border-radius:var(--r);color:var(--ink);padding:6px 10px;font:inherit;font-size:.875rem;width:100%}
+.submit-form input:focus-visible{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+.submit-form button{align-self:flex-start;margin-top:8px;background:var(--accent);color:oklch(0.99 0.003 250);border:1px solid var(--accent);border-radius:var(--r);padding:6px 14px;font:inherit;font-weight:500;font-size:.875rem;cursor:pointer}
+.submit-form button:hover{background:oklch(0.46 0.19 27)}
+.submit-form button[disabled]{opacity:.5;cursor:default}
+.submit-form .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form-msg{font-size:.8125rem;color:var(--muted);min-height:1.2em;margin:8px 0 0}
+
+footer{border-top:1px solid var(--rule);padding:24px 0 32px;color:var(--muted);font-size:.8125rem;background:var(--panel);margin-top:24px}
+footer p{max-width:none}
+.disclaimer{border:1px solid var(--rule);border-radius:var(--r);background:var(--ground);padding:10px 14px;margin:0 0 12px;max-width:72ch}
+
+@media(max-width:960px){
+  .layout,.layout.facets{grid-template-columns:minmax(0,1fr);gap:32px}
+  .rail,.toc{position:static}
+  ul.cols{columns:2}
+  /* hero and map stack; the map keeps its aspect via viewBox and simply gets wider */
+  .hero{grid-template-columns:minmax(0,1fr);gap:32px}
+  .hero h1{max-width:20ch}
+  .hero-map figcaption{max-width:none}
+}
+@media(max-width:640px){
+  ul.cols{columns:1}
+  h1{font-size:1.5rem}
+  .hero h1{font-size:2rem;letter-spacing:-.028em;max-width:none}
+  .stat{flex:1 1 100%;border-right:0;border-bottom:1px solid var(--rule)}
+  .stat:last-child{border-bottom:0}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
