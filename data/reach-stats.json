@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-09-05T00:08:26.935Z",
-  "totalUploads": 551,
+  "generatedAt": "2026-09-05T06:08:25.958Z",
+  "totalUploads": 553,
   "distinctProtocols": 387,
-  "activeStudiers": 377,
-  "pagesProcessed": 90201,
+  "activeStudiers": 379,
+  "pagesProcessed": 90553,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 5,
@@ -14,8 +14,8 @@
     "TX": 23,
     "PA": 23,
     "GA": 23,
+    "MA": 22,
     "NY": 21,
-    "MA": 20,
     "NC": 17,
     "VA": 17,
     "CT": 16,
@@ -124,6 +124,28 @@
       ]
     },
     {
+      "state": "MA",
+      "city": "Boston",
+      "x": 881,
+      "y": 155,
+      "count": 22,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "download",
+          "count": 7
+        },
+        {
+          "title": "download",
+          "count": 4
+        },
+        {
+          "title": "statewide treatment protocols 2026 2",
+          "count": 4
+        }
+      ]
+    },
+    {
       "state": "GA",
       "city": "Atlanta",
       "x": 692,
@@ -164,28 +186,6 @@
         {
           "title": "ny collaborative protocols",
           "count": 3
-        }
-      ]
-    },
-    {
-      "state": "MA",
-      "city": "Boston",
-      "x": 881,
-      "y": 155,
-      "count": 20,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "download",
-          "count": 7
-        },
-        {
-          "title": "download",
-          "count": 4
-        },
-        {
-          "title": "statewide treatment protocols 2026 2",
-          "count": 2
         }
       ]
     },
