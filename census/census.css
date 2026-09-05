@@ -64,29 +64,35 @@ h1{font-size:1.8125rem;line-height:1.25;margin:0 0 8px;font-weight:600;letter-sp
    The landing is the brand register; every detail page stays in the research
    register above. The scale jump is the whole move: a 700-weight statement at
    ~3.5x the body, tightened, against a 400-weight dek. One family, one accent. */
-.hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:center;margin:4px 0 clamp(40px,6vw,64px);padding-bottom:clamp(36px,5vw,56px);border-bottom:1px solid var(--rule)}
+.hero{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,5vw,72px);align-items:center;margin:4px 0 clamp(40px,6vw,64px);padding-bottom:clamp(36px,5vw,56px);border-bottom:1px solid var(--rule)}
 .hero-say{min-width:0}
 .hero .badge{margin:0 0 14px}
 .hero h1{font-size:clamp(2.125rem,4.4vw,3.9rem);line-height:1.05;letter-spacing:-.035em;font-weight:700;margin:0 0 22px;max-width:15ch;text-wrap:balance}
 .hero .dek{font-size:clamp(1rem,1.2vw,1.0625rem);line-height:1.62;color:var(--muted);margin:0;max-width:54ch}
 
-/* the tile map: equal-area states, so the eye reads coverage and not acreage */
+/* the US map: states shaded by documents held, one hue, agency-page states outlined */
 .hero-map{margin:0;min-width:0}
-.tilemap{display:block;width:100%;height:auto}
-.tilemap .tile rect{fill:none;stroke:var(--rule);stroke-width:1}
-.tilemap .tile text{font-family:var(--mono);font-size:11px;font-weight:500;text-anchor:middle;fill:var(--muted)}
-.tilemap .t-doc rect{fill:var(--ink);stroke:var(--ink)}
-.tilemap .t-doc text{fill:var(--ground)}
-.tilemap .t-named rect{fill:var(--accent);stroke:var(--accent)}
-.tilemap .t-named text{fill:oklch(0.99 0.003 250)}
+.usmap{display:block;width:100%;height:auto}
+.usmap .s{stroke:var(--ground);stroke-width:.9}
+.usmap .r0,.legend .r0{fill:var(--panel);background:var(--panel)}
+.usmap .r1,.legend .r1{fill:oklch(0.92 0.03 27);background:oklch(0.92 0.03 27)}
+.usmap .r2,.legend .r2{fill:oklch(0.83 0.07 27);background:oklch(0.83 0.07 27)}
+.usmap .r3,.legend .r3{fill:oklch(0.70 0.13 27);background:oklch(0.70 0.13 27)}
+.usmap .r4,.legend .r4{fill:oklch(0.56 0.18 27);background:oklch(0.56 0.18 27)}
+.usmap .r5,.legend .r5{fill:oklch(0.40 0.15 27);background:oklch(0.40 0.15 27)}
+.usmap .named{fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linejoin:round;pointer-events:none}
+.legend .named{background:none;border:2px solid var(--ink)}
+.usmap text{font-family:var(--mono);font-size:10px;font-weight:500;text-anchor:middle;fill:var(--ground);pointer-events:none}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin:12px 0 0;font-size:.78rem;color:var(--muted)}
+.legend i{display:inline-block;width:13px;height:13px;border-radius:2px;margin-right:6px;vertical-align:-2px;border:1px solid var(--rule)}
 .hero-map figcaption{margin:16px 0 0;font-size:.8125rem;line-height:1.55;color:var(--muted);max-width:46ch}
 .hero-map figcaption .n{font-family:var(--mono);font-weight:500;color:var(--ink);font-variant-numeric:tabular-nums}
 
-/* the one orchestrated page-load moment: the tiles arrive, nothing else moves */
+/* the one page-load moment: the map fades up, nothing else moves */
 @media(prefers-reduced-motion:no-preference){
-  .tilemap .tile{opacity:0;animation:tile-in .4s cubic-bezier(.22,1,.36,1) forwards;animation-delay:calc(var(--i)*8ms)}
+  .usmap{opacity:0;animation:map-in .5s cubic-bezier(.22,1,.36,1) forwards}
 }
-@keyframes tile-in{from{opacity:0}to{opacity:1}}
+@keyframes map-in{from{opacity:0}to{opacity:1}}
 
 /* why it matters: a flowing list of statements, not a grid of cards */
 .why{margin:0 0 clamp(36px,5vw,52px)}
@@ -106,6 +112,9 @@ p{margin:0 0 12px;max-width:72ch}
 
 /* the headline counts, as one dense line rather than tiles */
 .summary{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;margin:0 0 16px;font-size:.9375rem;color:var(--muted);max-width:none}
+/* the scale line sits between the hero and the argument, so the size registers first */
+.summary.scale{margin:calc(-1 * clamp(24px,4vw,44px)) 0 clamp(36px,5vw,52px);font-size:1rem}
+.summary.scale .n{font-size:1.125rem}
 .summary .n{font-family:var(--mono);font-weight:500;color:var(--ink);font-variant-numeric:tabular-nums}
 .summary .sep{width:1px;align-self:stretch;background:var(--rule);margin:2px 4px}
 
@@ -148,6 +157,13 @@ ul.facets a:hover{text-decoration:underline}
 ul.facets .count{font-family:var(--mono);font-size:.8125rem;color:var(--muted);font-variant-numeric:tabular-nums}
 ul.cols{list-style:none;padding:0;margin:0 0 12px;columns:3;column-gap:24px}
 ul.cols li{break-inside:avoid;padding:3px 0;font-size:.9375rem}
+ul.cols.four{columns:4}
+/* states as a compact grid: name and its named-agency count on one line */
+ul.stategrid{list-style:none;padding:0;margin:0 0 12px;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:0 24px}
+ul.stategrid li{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:7px 2px;border-bottom:1px solid var(--rule);font-size:.9375rem}
+ul.stategrid a{font-weight:500}
+ul.stategrid .count{font-family:var(--mono);font-size:.78rem;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.landing-foot{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:start;margin:44px 0 0}
 ul.inline{list-style:none;padding:0;margin:0 0 12px;display:flex;flex-wrap:wrap;gap:6px}
 ul.inline li{background:var(--panel);border:1px solid var(--rule);border-radius:var(--r);padding:3px 10px;font-size:.875rem;font-variant-numeric:tabular-nums}
 
@@ -210,14 +226,16 @@ footer p{max-width:none}
 @media(max-width:960px){
   .layout,.layout.facets{grid-template-columns:minmax(0,1fr);gap:32px}
   .rail,.toc{position:static}
-  ul.cols{columns:2}
+  ul.cols,ul.cols.four{columns:2}
+  .landing-foot{grid-template-columns:minmax(0,1fr)}
   /* hero and map stack; the map keeps its aspect via viewBox and simply gets wider */
   .hero{grid-template-columns:minmax(0,1fr);gap:32px}
   .hero h1{max-width:20ch}
   .hero-map figcaption{max-width:none}
 }
 @media(max-width:640px){
-  ul.cols{columns:1}
+  ul.cols,ul.cols.four{columns:1}
+  .summary.scale{margin-top:-16px}
   h1{font-size:1.5rem}
   .hero h1{font-size:2rem;letter-spacing:-.028em;max-width:none}
   .stat{flex:1 1 100%;border-right:0;border-bottom:1px solid var(--rule)}
