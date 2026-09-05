@@ -5,7 +5,7 @@
 // pages, so a rebuild from unchanged data must produce byte-identical bytes or
 // every night is a diff and the repo grows without the data changing.
 import assert from 'node:assert';
-import { mkdtempSync, rmSync, readFileSync, readdirSync, statSync, writeFileSync, mkdirSync, cpSync } from 'node:fs';
+import { mkdtempSync, rmSync, readFileSync, readdirSync, statSync, writeFileSync, mkdirSync, cpSync, existsSync } from 'node:fs';
 import { join, dirname, relative } from 'node:path';
 import { tmpdir } from 'node:os';
 import { fileURLToPath } from 'node:url';
@@ -100,11 +100,14 @@ test('agencies that clear the bar do get pages', () => {
 });
 
 console.log('\nlinks and leaks');
+// Report editions are hand-published into the repo (census/report/<edition>/), never
+// generated; the landing links the newest one only when its index.html is on disk.
+const reportOnDisk = l => /^\/census\/report\/\d{4}-q[1-4]\/$/.test(l) && existsSync(join(l.slice(1), 'index.html'));
 test('every internal /census/ link resolves to a generated page', () => {
   const linked = new Set([...allHtml.matchAll(/href="(\/census\/[^"]*)"/g)].map(m => m[1]));
   for (const l of linked) {
     if (l.endsWith('.css')) { assert.ok(paths.has(l), `${l} not generated`); continue; }
-    assert.ok(paths.has(l), `dead link: ${l}`);
+    assert.ok(paths.has(l) || reportOnDisk(l), `dead link: ${l}`);
   }
 });
 test('an agency without a page is never named or linked', () => {
@@ -504,7 +507,7 @@ test('agency pages DO keep their per-agency dose tables', () => {
 });
 test('every internal /census/ link resolves in a v3 build', () => {
   const linked = new Set([...v3all.matchAll(/href="(\/census\/[^"]*)"/g)].map(m => m[1]));
-  for (const l of linked) assert.ok(v3paths.has(l), `dead link: ${l}`);
+  for (const l of linked) assert.ok(v3paths.has(l) || reportOnDisk(l), `dead link: ${l}`);
 });
 
 console.log('\nv3: compare-driven pages');
@@ -541,7 +544,7 @@ test(`a group under ${MIN_SOURCES} sources publishes no distribution and no page
   // HYPOTENSION_PUSH_DOSE has 2 sources in the fixture.
   assert.ok(!v3paths.has('/census/drugs/epinephrine/hypotension-push-dose/'), 'a thin group must get no indication page');
   const drug = v3html['/census/drugs/epinephrine/'];
-  assert.ok(/Hypotension Push Dose <span class="muted">n=2<\/span>/.test(drug), 'a thin group still shows its count on the drug page');
+  assert.ok(/Hypotension \/ shock <span class="muted">n=2<\/span>/.test(drug), 'a thin group still shows its count on the drug page');
   assert.ok(!/href="[^"]*hypotension-push-dose[^"]*"/.test(drug), 'a thin group must not be linked');
 });
 test('a drug page reports the rollup, not a sum of its groups', () => {
@@ -662,7 +665,7 @@ test('a raw-only indication is labelled distinctly on the drug page', () => {
   assert.ok(h.includes('Raw Only Indication'), 'the raw-only indication must still be listed');
   assert.ok(/Raw Only Indication <span class="muted">n=2, raw only<\/span>/.test(h), 'a raw-only indication must be labelled distinctly from a comparable-group n=');
   // Its siblings (present in groups) must NOT carry the raw-only label.
-  assert.ok(/Cardiac Arrest <span class="muted">n=7<\/span>/.test(h), 'a sibling backed by a comparable group must keep the plain n= label');
+  assert.ok(/Cardiac arrest <span class="muted">n=7<\/span>/.test(h), 'a sibling backed by a comparable group must keep the plain n= label');
   assert.ok(!/Cardiac Arrest <span class="muted">n=7, raw only<\/span>/.test(h), 'a comparable-group indication must not be mislabelled raw only');
 });
 
@@ -890,7 +893,7 @@ console.log('\ndata license page');
 const license = v3html['/census/data-license/'];
 test('the data license page states CC BY 4.0 on summaries and the citation format', () => {
   assert.ok(/Creative Commons Attribution 4\.0/.test(license), 'missing the CC BY 4.0 name');
-  assert.ok(license.includes('ProtoQuiz EMS Census, n='), 'missing the engine cite format');
+  assert.ok(license.includes('United States EMS Protocol Census, n='), 'missing the engine cite format');
 });
 test('the data license page says row-level data is NOT published', () => {
   assert.ok(/not published/.test(license), 'must say rows are not published');

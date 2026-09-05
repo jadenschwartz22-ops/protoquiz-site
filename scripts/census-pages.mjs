@@ -17,7 +17,7 @@
 // sorted before it is rendered, nothing reads the clock, and `asOf` comes from
 // the manifest rather than today's date. Two runs over the same fixture produce
 // byte-identical bytes, so a nightly build that changed nothing commits nothing.
-import { readFileSync, writeFileSync, mkdirSync, mkdtempSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, mkdtempSync, readdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { tmpdir } from 'node:os';
 import { createHash } from 'node:crypto';
@@ -129,7 +129,29 @@ const STATE_NAMES = {
 // have not enumerated is still a real listing.
 const stateLabel = code => STATE_NAMES[String(code).toUpperCase()] || String(code);
 const drugLabel = k => titleCase(String(k).replace(/_/g, ' '));
-const indicationLabel = k => titleCase(String(k).replace(/_/g, ' '));
+// Human labels for the indication vocabulary (ems-router lib/census/indications.json keys).
+// ONE home: census-report.mjs imports this. A key missing here falls back to title case.
+export const INDICATION_LABELS = {
+  CARDIAC_ARREST: 'Cardiac arrest', VF_PVT: 'VF / pulseless VT', ASYSTOLE_PEA: 'Asystole / PEA', POST_ROSC: 'Post-ROSC care',
+  BRADYCARDIA: 'Bradycardia', TACHYCARDIA_NARROW: 'Narrow-complex tachycardia', TACHYCARDIA_WIDE: 'Wide-complex tachycardia',
+  SVT: 'SVT', AFIB_RVR: 'Atrial fibrillation with RVR', ACS_CHEST_PAIN: 'ACS / chest pain', STEMI: 'STEMI',
+  CHF_PULMONARY_EDEMA: 'CHF / pulmonary edema', CARDIOGENIC_SHOCK: 'Cardiogenic shock', HYPOTENSION_PUSH_DOSE: 'Hypotension / shock',
+  HYPOTENSION_INFUSION: 'Hypotension, infusion', SEPSIS: 'Sepsis', ANAPHYLAXIS: 'Anaphylaxis', ALLERGIC_REACTION: 'Allergic reaction',
+  ASTHMA_BRONCHOSPASM: 'Asthma / bronchospasm', COPD: 'COPD', CROUP: 'Croup', STRIDOR: 'Stridor', RESPIRATORY_DISTRESS: 'Respiratory distress',
+  RSI_INDUCTION: 'RSI induction', RSI_PARALYSIS: 'RSI paralysis', POST_INTUBATION_SEDATION: 'Post-intubation sedation',
+  PROCEDURAL_SEDATION: 'Procedural sedation', AGITATION: 'Agitation', EXCITED_DELIRIUM: 'Hyperactive delirium', SEIZURE: 'Seizure',
+  STATUS_EPILEPTICUS: 'Status epilepticus', STROKE: 'Stroke', HYPOGLYCEMIA: 'Hypoglycemia', HYPERGLYCEMIA_DKA: 'Hyperglycemia / DKA',
+  HYPERKALEMIA: 'Hyperkalemia', OPIOID_OVERDOSE: 'Opioid overdose', BENZO_OVERDOSE: 'Benzodiazepine overdose',
+  ORGANOPHOSPHATE: 'Organophosphate poisoning', CYANIDE: 'Cyanide poisoning', CARBON_MONOXIDE: 'Carbon monoxide poisoning',
+  TCA_OVERDOSE: 'Tricyclic overdose', BETA_BLOCKER_CCB_OVERDOSE: 'Beta-blocker / calcium-channel-blocker overdose',
+  NAUSEA_VOMITING: 'Nausea / vomiting', PAIN_MILD_MODERATE: 'Mild to moderate pain', PAIN_SEVERE: 'Severe pain',
+  TRAUMA_HEMORRHAGE: 'Trauma / hemorrhage', TRAUMATIC_ARREST: 'Traumatic arrest', HEAD_INJURY_TBI: 'Head injury / TBI', BURNS: 'Burns',
+  CRUSH_INJURY: 'Crush injury', OBSTETRIC_HEMORRHAGE: 'Obstetric hemorrhage', ECLAMPSIA: 'Eclampsia / pre-eclampsia',
+  PRETERM_LABOR: 'Preterm labor', NEONATAL_RESUSCITATION: 'Neonatal resuscitation', FEVER: 'Fever', PEDIATRIC_FEVER: 'Pediatric fever',
+  HYPERTHERMIA: 'Hyperthermia', HYPOTHERMIA: 'Hypothermia', DYSTONIC_REACTION: 'Dystonic reaction', ADRENAL_CRISIS: 'Adrenal crisis',
+  ALCOHOL_WITHDRAWAL: 'Alcohol withdrawal', NERVE_AGENT: 'Nerve agent exposure', OTHER: 'Other',
+};
+export const indicationLabel = k => INDICATION_LABELS[k] ?? titleCase(String(k).replace(/_/g, ' '));
 
 // ------------------------------------------------------------------ reading
 
@@ -613,7 +635,15 @@ function coverageByState(states, agencies, documents) {
   });
 }
 
+// Report editions are hand-published into the site repo (census/report/<yyyy>-q<n>/,
+// scripts/census-report.mjs); the generator never writes them and only links the newest.
+const latestReportEdition = () => {
+  try { return readdirSync('census/report').filter(d => /^\d{4}-q[1-4]$/.test(d)).sort().at(-1) ?? null; } catch { return null; }
+};
+export const reportLabel = e => /^\d{4}-q[1-4]$/.test(e) ? `Q${e.slice(6)} ${e.slice(0, 4)}` : String(e);
+
 function landingPage({ manifest, states, drugs, agencyPageCount, agencies = [], documents = [] }) {
+  const latestReport = latestReportEdition();
   // Two different numbers, both true: how many agencies the census holds, and
   // how many have a page (the rest are below a thin-page threshold). Printing
   // only the first would promise pages that are deliberately not generated.
@@ -692,7 +722,8 @@ ${coverageRows.length ? `        <h3>Coverage by state</h3>
       </section>
       <section id="how">
         <h2>How this is built</h2>
-        <p><a href="/census/methodology/">Methodology</a>: where documents come from, what is read out of them, what is not captured, and why no dose-level accuracy number is published. <a href="/census/data-license/">Data license</a>: summaries are CC BY 4.0; row-level data is not published.</p>
+        <p><a href="/census/methodology/">Methodology</a>: where documents come from, what is read out of them, what is not captured, and why no dose-level accuracy number is published. <a href="/census/data-license/">Data license</a>: summaries are CC BY 4.0; row-level data is not published.</p>${latestReport ? `
+        <p><a href="/census/report/${latestReport}/">State of US EMS Protocols, ${reportLabel(latestReport)}</a>: the quarterly edition, the groups where published protocols disagree most, aggregate only.</p>` : ''}
       </section>`;
 
   const rail = `          <section class="panel" id="facet-states">
@@ -927,7 +958,7 @@ ${railLinks('Related', [
     html: page({
       rail,
       title: `${name} EMS protocols - agencies, drugs, and doses`,
-      description: `${listed.length} named EMS agencies in ${name} with published protocol doses in the ProtoQuiz EMS Census.`,
+      description: `${listed.length} named EMS agencies in ${name} with published protocol doses in the United States EMS Protocol Census.`,
       path: `/census/states/${slug(state)}/`,
       trail: [['Home', '/'], ['EMS Census', '/census/'], [name, `/census/states/${slug(state)}/`]],
       body,
@@ -1118,7 +1149,7 @@ ${named.html}${pageless > 0
     : ''}`;
 
   const rail = `${citePanel('cite', [
-    esc(`ProtoQuiz EMS Census, ${drugLabel(drugKey)}: n=${summary.n.sources} protocols from ${summary.n.agencies} named agencies / ${summary.n.states} states, as of ${manifest.asOf}`),
+    esc(`United States EMS Protocol Census, ${drugLabel(drugKey)}: n=${summary.n.sources} protocols from ${summary.n.agencies} named agencies / ${summary.n.states} states, as of ${manifest.asOf}`),
   ])}
           <p class="muted railnote">Each distribution on this page carries its own n. A per-indication figure is narrower than this drug-wide one, and the group's own citation line is the one to quote for it.</p>
 ${railLinks('Indications', indications
@@ -1228,7 +1259,7 @@ ${named.html}`;
   // One cite panel per page, carrying the LEAD group's citation line — the one a
   // reader is most likely to be quoting. Each group still prints its own line beside
   // its own numbers, because a per-group n is a different claim from this one.
-  const rail = `${citePanel('cite', [esc(lead ? lead.cite : `ProtoQuiz EMS Census, ${drugLabel(drugKey)} for ${indicationLabel(indicationKey)}, as of ${manifest.asOf}`)])}
+  const rail = `${citePanel('cite', [esc(lead ? lead.cite : `United States EMS Protocol Census, ${drugLabel(drugKey)} for ${indicationLabel(indicationKey)}, as of ${manifest.asOf}`)])}
 ${railLinks('Related', [
     [`All ${drugLabel(drugKey)} indications`, `/census/drugs/${slug(drugKey)}/`],
     ['All drugs and states', '/census/'],
@@ -1536,7 +1567,7 @@ function dataLicensePage() {
         <p>The aggregate figures published on this site &mdash; the distributions, counts, route shares, and the <code>compare.json</code> file behind them &mdash; are licensed under the <a href="https://creativecommons.org/licenses/by/4.0/" rel="nofollow noopener">Creative Commons Attribution 4.0 International license</a>. Use them, republish them, build on them commercially. The one condition is attribution.</p>
         <h3>How to cite</h3>
         <p>Every number the census publishes carries its own citation line, and that line is the attribution:</p>
-        <p class="cite">ProtoQuiz EMS Census, n=&lt;sources&gt; protocols from &lt;agencies&gt; named agencies / &lt;states&gt; states, updated &lt;month year&gt;</p>
+        <p class="cite">United States EMS Protocol Census, n=&lt;sources&gt; protocols from &lt;agencies&gt; named agencies / &lt;states&gt; states, updated &lt;month year&gt;</p>
         <p>Quote it as printed on the page you took the number from. The n and the as-of date are part of the number, not decoration: a distribution over 6 protocols and one over 60 are different claims, and a figure from a year ago is a different claim again.</p>
       </section>
 

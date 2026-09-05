@@ -28,6 +28,7 @@
 // are linked from the census landing), deliberately not made here.
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
+import { indicationLabel, reportLabel as editionLabel } from './census-pages.mjs';
 
 const ORIGIN = 'https://protoquiz.com';
 const APP_ID = '6753611139';
@@ -47,7 +48,6 @@ const num = n => Number(n).toLocaleString('en-US');
 const fmtNum = v => (v == null ? 'not captured' : String(Number(v.toFixed(4))));
 const titleCase = s => String(s ?? '').toLowerCase().replace(/\b[a-z]/g, c => c.toUpperCase());
 const drugLabel = k => titleCase(String(k).replace(/_/g, ' '));
-const indicationLabel = k => titleCase(String(k).replace(/_/g, ' '));
 const popLabel = p => (p === 'peds' ? 'pediatric' : 'adult');
 const unitLabel = k => `${k.unit ?? ''}${k.perKg ? '/kg' : ''}`;
 
@@ -62,7 +62,9 @@ const unitLabel = k => `${k.unit ?? ''}${k.perKg ? '/kg' : ''}`;
  */
 export const spreadOf = g => (g.dist && g.dist.median ? (g.dist.p75 - g.dist.p25) / g.dist.median : null);
 
-const eligible = (groups, floor) => groups.filter(g => g.dist && g.n.sources >= floor && spreadOf(g) !== null);
+// OTHER is the map's catch-all for strings nobody has vocabulary for; "midazolam for
+// Other" is not a finding, so those groups never rank.
+const eligible = (groups, floor) => groups.filter(g => g.dist && g.key.indicationKey !== 'OTHER' && g.n.sources >= floor && spreadOf(g) !== null);
 
 /** Ranked by spread, then by sources, then by the key — so ties never depend on input order. */
 const rank = gs => [...gs].sort((a, b) => (spreadOf(b) - spreadOf(a))
@@ -135,11 +137,8 @@ function chart(g) {
 // ------------------------------------------------------------------------- page
 
 // Editions are QUARTERLY (Jaden, 2026-09-05: protocols change about twice a year, so a
-// monthly drop would mostly repeat itself). `2026-q3` -> "Q3 2026".
-const editionLabel = (edition) => {
-  const m = String(edition).match(/^(\d{4})-q([1-4])$/);
-  return m ? `Q${m[2]} ${m[1]}` : String(edition);
-};
+// monthly drop would mostly repeat itself). `2026-q3` -> "Q3 2026"; the label lives in
+// census-pages.mjs (reportLabel), which also links the newest edition from the landing.
 
 export function reportPage({ edition, floor, findings, compare, manifest }) {
   const path = `/census/report/${edition}/`;
@@ -171,7 +170,7 @@ ${chart(g)}
 
       <section id="cite">
         <h2>Citation</h2>
-        <p class="cite">ProtoQuiz EMS Census, ${esc(title)}, as of ${esc(compare.asOf)}. ${ORIGIN}${path}</p>
+        <p class="cite">United States EMS Protocol Census, ${esc(title)}, as of ${esc(compare.asOf)}. ${ORIGIN}${path}</p>
         <p class="muted">Summaries are published under <a href="/census/data-license/">CC BY 4.0</a>. Quote a finding with the citation line printed beneath it &mdash; the n is part of the number.</p>
       </section>`;
 
@@ -200,7 +199,7 @@ ${chart(g)}
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>${esc(title)} - ProtoQuiz EMS Census</title>
+  <title>${esc(title)} - United States EMS Protocol Census</title>
   <meta name="description" content="${esc(description)}" />
 
   <meta name="apple-itunes-app" content="app-id=${APP_ID}" />
