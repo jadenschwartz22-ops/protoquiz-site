@@ -104,7 +104,7 @@ console.log('\nlinks and leaks');
 // generated; the landing links the newest one only when its index.html is on disk.
 const reportOnDisk = l => /^\/census\/report\/\d{4}-q[1-4]\/$/.test(l) && existsSync(join(l.slice(1), 'index.html'));
 test('every internal /census/ link resolves to a generated page', () => {
-  const linked = new Set([...allHtml.matchAll(/href="(\/census\/[^"]*)"/g)].map(m => m[1].split("?")[0]));
+  const linked = new Set([...allHtml.matchAll(/href="(\/census\/[^"]*)"/g)].map(m => m[1].split('?')[0].split('#')[0]));
   for (const l of linked) {
     if (l.endsWith('.css')) { assert.ok(paths.has(l), `${l} not generated`); continue; }
     assert.ok(paths.has(l) || reportOnDisk(l), `dead link: ${l}`);
@@ -506,7 +506,7 @@ test('agency pages DO keep their per-agency dose tables', () => {
   assert.ok(dh.includes('pages 42, 43'), 'source pages must still print on the agency page');
 });
 test('every internal /census/ link resolves in a v3 build', () => {
-  const linked = new Set([...v3all.matchAll(/href="(\/census\/[^"]*)"/g)].map(m => m[1].split("?")[0]));
+  const linked = new Set([...v3all.matchAll(/href="(\/census\/[^"]*)"/g)].map(m => m[1].split('?')[0].split('#')[0]));
   for (const l of linked) assert.ok(v3paths.has(l) || reportOnDisk(l), `dead link: ${l}`);
 });
 
@@ -983,9 +983,10 @@ test('a changed page changes only its own hash', () => {
     const prev = a.files.find(x => x.path === f.path);
     return prev && prev.html !== f.html;
   }).map(f => f.path).sort();
-  // The agency page, the state page that lists it, and the indication pages
-  // that name it — nothing else.
+  // The landing (its agencies index names it), the agency page, the state page
+  // that lists it, and the indication pages that name it — nothing else.
   assert.deepStrictEqual(changed, [
+    '/census/',
     '/census/agencies/boulder-county-ems/',
     '/census/drugs/epinephrine/cardiac-arrest/',
     '/census/drugs/naloxone/opioid-overdose/',

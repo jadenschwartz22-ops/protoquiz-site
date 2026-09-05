@@ -321,9 +321,9 @@ const footer = `  <footer>
 // starts with /census/, so a prefix test would light Overview on every page.
 const CENSUS_SECTIONS = [
   ['Overview', null, '/census/'],
-  ['Drugs', '/census/drugs/', '/census/'],
-  ['States', '/census/states/', '/census/'],
-  ['Agencies', '/census/agencies/', '/census/'],
+  ['Drugs', '/census/drugs/', '/census/#drugs'],
+  ['States', '/census/states/', '/census/#states'],
+  ['Agencies', '/census/agencies/', '/census/#agencies'],
   ['Methodology', '/census/methodology/', '/census/methodology/'],
 ];
 
@@ -706,6 +706,11 @@ ${coverageRows.length ? `        <h3>Coverage by state</h3>
           <thead><tr><th>State</th><th>With a protocol</th><th>Without</th><th>Statewide baseline</th></tr></thead>
           <tbody>${coverageRows.map(r => `<tr><td><a href="/census/states/${slug(r.state)}/">${esc(stateLabel(r.state))}</a></td><td>${num(r.withProtocol)}</td><td>${num(r.withoutProtocol)}</td><td>${r.statewideBaseline ? 'Yes' : 'No'}</td></tr>`).join('')}</tbody>
         </table></div>` : ''}
+      </section>
+      <section id="agencies">
+        <h2>Agencies<span class="count">${num(agencies.length)}</span></h2>
+        <p class="muted">Named agencies with a page of their own. Each page carries the agency's current protocol, its version history and every dose it publishes.${withheldSentence(withheld)}</p>
+        <ul class="cols">${[...agencies].sort((x, y) => x.name.localeCompare(y.name)).map(a => `<li><a href="/census/agencies/${esc(a.agencyKey)}/">${esc(a.name)}</a> <span class="muted">${esc(stateLabel(a.state))}</span></li>`).join('')}</ul>
       </section>
       <section id="how">
         <h2>How this is built</h2>
