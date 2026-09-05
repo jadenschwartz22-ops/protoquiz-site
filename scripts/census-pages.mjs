@@ -280,7 +280,7 @@ ${jsonLd.map(j => `  <script type="application/ld+json">\n${jsonLdText(j)}\n  </
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/census/census.css">
+  <link rel="stylesheet" href="/census/census.css?v=${CSS_V}">
 </head>`;
 
 const nav = `  <header>
@@ -2014,6 +2014,10 @@ footer p{max-width:none}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 `;
+
+// A content hash on the stylesheet link: browsers cache census.css for four hours
+// (GitHub Pages max-age), and a CSS-only change must never show as an unstyled page.
+const CSS_V = createHash('sha256').update(CSS).digest('hex').slice(0, 8);
 
 // --------------------------------------------------------------------- main
 
