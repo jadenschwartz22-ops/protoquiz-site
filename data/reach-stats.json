@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-09-04T18:08:34.015Z",
-  "totalUploads": 546,
-  "distinctProtocols": 384,
-  "activeStudiers": 373,
-  "pagesProcessed": 89317,
+  "generatedAt": "2026-09-05T00:08:26.935Z",
+  "totalUploads": 551,
+  "distinctProtocols": 387,
+  "activeStudiers": 377,
+  "pagesProcessed": 90201,
   "statesRepresented": 42,
   "countriesRepresented": 3,
   "internationalUploads": 5,
@@ -13,12 +13,12 @@
     "MI": 36,
     "TX": 23,
     "PA": 23,
-    "GA": 22,
+    "GA": 23,
     "NY": 21,
+    "MA": 20,
     "NC": 17,
     "VA": 17,
     "CT": 16,
-    "MA": 16,
     "OR": 14,
     "NV": 11,
     "WA": 10,
@@ -124,6 +124,28 @@
       ]
     },
     {
+      "state": "GA",
+      "city": "Atlanta",
+      "x": 692,
+      "y": 386,
+      "count": 22,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "National EMS Patient Care Guidelines Sept 2024 Revision 01.66…",
+          "count": 18
+        },
+        {
+          "title": "Whole Protocol V 3807012026150232 (1)",
+          "count": 1
+        },
+        {
+          "title": "2024 Scope of Practice 260123",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "NY",
       "city": "New York",
       "x": 843,
@@ -146,24 +168,24 @@
       ]
     },
     {
-      "state": "GA",
-      "city": "Atlanta",
-      "x": 692,
-      "y": 386,
-      "count": 21,
+      "state": "MA",
+      "city": "Boston",
+      "x": 881,
+      "y": 155,
+      "count": 20,
       "tier": "warm",
       "topProtocols": [
         {
-          "title": "National EMS Patient Care Guidelines Sept 2024 Revision 01.66…",
-          "count": 17
+          "title": "download",
+          "count": 7
         },
         {
-          "title": "Whole Protocol V 3807012026150232 (1)",
-          "count": 1
+          "title": "download",
+          "count": 4
         },
         {
-          "title": "2024 Scope of Practice 260123",
-          "count": 1
+          "title": "statewide treatment protocols 2026 2",
+          "count": 2
         }
       ]
     },
@@ -207,28 +229,6 @@
         },
         {
           "title": "v20251 ctemsstatewideprotocolsfinal",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "MA",
-      "city": "Boston",
-      "x": 881,
-      "y": 155,
-      "count": 16,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "download",
-          "count": 7
-        },
-        {
-          "title": "download",
-          "count": 4
-        },
-        {
-          "title": "2026 MA state protocols",
           "count": 1
         }
       ]
