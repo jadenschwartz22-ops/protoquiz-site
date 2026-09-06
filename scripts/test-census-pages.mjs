@@ -159,7 +159,7 @@ test('page numbers print where captured and say so where not', () => {
 });
 test('the landing page does not promise pages it did not generate', () => {
   const l = html['/census/'];
-  assert.ok(l.includes('with a page'), 'landing must report the page count, not only the corpus count');
+  assert.ok(l.includes('agency pages'), 'landing must report the page count, not only the corpus count');
   assert.ok(/too little published detail/.test(l), 'landing must explain the withheld agencies');
 });
 test('an outdated agency is flagged', () => {
@@ -700,7 +700,7 @@ test('two keys that slug identically abort the build with an operator-legible se
 test('a drug page states the withheld-agency count when it differs from the named-agencies list', () => {
   const h = v3html['/census/drugs/epinephrine/'];
   assert.ok(!h.includes('King County Medic One'), 'a pageless agency must never be named');
-  assert.ok(/1 named agency has too little published detail for a page of its own and is counted here only\./.test(h),
+  assert.ok(/1 more agency is counted but has too little published detail for a page yet\./.test(h),
     'the drug page must state the withheld count using the landing sentence, when it differs from the named list');
 });
 test('a drug page states nothing extra when every named agency in a group already has a page', () => {
@@ -713,7 +713,7 @@ test('a drug page states nothing extra when every named agency in a group alread
     ? { ...g, agencyKeys: (g.agencyKeys ?? []).filter(k => k !== 'king-county-medic') }
     : g);
   const h = buildPages(d).files.find(f => f.path === '/census/drugs/epinephrine/').html;
-  assert.ok(!/too little published detail for a page of its own/.test(h), 'no withheld sentence when no group holds a pageless agency');
+  assert.ok(!/too little published detail for a page yet/.test(h), 'no withheld sentence when no group holds a pageless agency');
 });
 
 // Regression: drugs[].n.agencies counts every agency with a row for the drug,
@@ -736,10 +736,10 @@ test('a raw-only agency with its own page does not inflate the withheld-agency c
   const h = buildPages(d).files.find(f => f.path === '/census/drugs/epinephrine/').html;
   // travis-county-ems keeps its own page (unaffected drugs still clear MIN_AGENCY_DRUGS)
   // and must not be swept into the withheld sentence.
-  assert.ok(!/2 named agencies have too little published detail/.test(h),
+  assert.ok(!/2 more agencies are counted but have too little published detail/.test(h),
     'a pageful agency that is merely raw-only for this drug must not inflate the withheld count');
   // The genuinely pageless one (king-county-medic) must still trigger the sentence.
-  assert.ok(/1 named agency has too little published detail for a page of its own and is counted here only\./.test(h),
+  assert.ok(/1 more agency is counted but has too little published detail for a page yet\./.test(h),
     'a genuinely pageless agency must still trigger the withheld sentence');
 });
 
@@ -753,10 +753,10 @@ const txState = v3html['/census/states/tx/'];
 const coLanding = v3html['/census/'];
 
 test('a state page with coverage splits named agencies with/without a current protocol', () => {
-  assert.ok(coState.includes('With a current protocol'), 'missing the "with" heading');
-  assert.ok(coState.includes('Without a current protocol'), 'missing the "without" heading');
-  const withIdx = coState.indexOf('With a current protocol');
-  const withoutIdx = coState.indexOf('Without a current protocol');
+  assert.ok(coState.includes('<h3>With a protocol</h3>'), 'missing the "with" heading');
+  assert.ok(coState.includes('<h3>Without a protocol</h3>'), 'missing the "without" heading');
+  const withIdx = coState.indexOf('<h3>With a protocol</h3>');
+  const withoutIdx = coState.indexOf('<h3>Without a protocol</h3>');
   const dhIdx = coState.indexOf('Denver Health Paramedic Division');
   const bcIdx = coState.indexOf('Boulder County EMS');
   const afIdx = coState.indexOf('Aurora Fire Rescue');
@@ -769,24 +769,24 @@ test('a state page with coverage splits named agencies with/without a current pr
   assert.ok(jcIdx > withoutIdx, 'Jefferson County EMS must be in the WITHOUT list');
 });
 test('a statewide baseline document is listed separately and never counted as agency coverage', () => {
-  assert.ok(coState.includes('Statewide baseline'), 'missing the statewide baseline section');
+  assert.ok(coState.includes('Statewide protocol'), 'missing the statewide baseline section');
   assert.ok(coState.includes('Colorado Statewide EMS Protocols'), 'the statewide document must be named');
   // It must sit in its own section, not inside either coverage list.
-  const baselineIdx = coState.indexOf('Statewide baseline');
+  const baselineIdx = coState.indexOf('Statewide protocol');
   const agenciesIdx = coState.indexOf('<section id="agencies">');
   assert.ok(baselineIdx > agenciesIdx, 'the baseline section must follow the agencies section');
   const agenciesSection = coState.slice(agenciesIdx, baselineIdx);
   assert.ok(!agenciesSection.includes('Colorado Statewide EMS Protocols'), 'the statewide doc must not appear inside the agency split');
 });
 test('a state page with no coverage on any of its agencies renders the plain unsplit list, unchanged', () => {
-  assert.ok(!txState.includes('With a current protocol'), 'TX must not render the coverage split');
-  assert.ok(!txState.includes('Without a current protocol'), 'TX must not render the coverage split');
-  assert.ok(!txState.includes('Statewide baseline'), 'TX has no statewide document and must not render that section');
+  assert.ok(!txState.includes('<h3>With a protocol</h3>'), 'TX must not render the coverage split');
+  assert.ok(!txState.includes('<h3>Without a protocol</h3>'), 'TX must not render the coverage split');
+  assert.ok(!txState.includes('Statewide protocol'), 'TX has no statewide document and must not render that section');
   assert.ok(txState.includes('Travis County EMS'), 'the plain list must still name its agency');
   assert.ok(/<ul class="cols"><li><a href="\/census\/agencies\/travis-county-ems\/"/.test(txState), 'TX must render the single plain list, byte-identical in shape to a v2/no-coverage build');
 });
 test('the landing page prints a per-state coverage table only when at least one agency row carries coverage', () => {
-  assert.ok(coLanding.includes('<th>State</th><th>With a protocol</th><th>Without</th><th>Statewide baseline</th>'), 'missing the coverage table header');
+  assert.ok(coLanding.includes('<th>State</th><th>Agencies with a protocol</th><th>Agencies without</th><th>Statewide protocol</th>'), 'missing the coverage table header');
   // CO: 2 with, 2 without (denver-health, boulder-county-ems / aurora-fire-rescue, jeffco-ems), statewide yes.
   assert.ok(/<td><a href="\/census\/states\/co\/">Colorado<\/a><\/td><td>2<\/td><td>2<\/td><td>Yes<\/td>/.test(coLanding),
     'CO row must read 2 with / 2 without / statewide Yes');
@@ -814,7 +814,7 @@ test('an agency in a coverage state with no coverage of its own is never fabrica
   const co = out.files.find(f => f.path === '/census/states/co/').html;
   assert.ok(co.includes('Not yet assessed'), 'missing the "not yet assessed" bucket');
   const unknownIdx = co.indexOf('Not yet assessed');
-  const withoutIdx = co.indexOf('Without a current protocol');
+  const withoutIdx = co.indexOf('<h3>Without a protocol</h3>');
   const jcIdx = co.indexOf('Jefferson County EMS');
   assert.ok(jcIdx > unknownIdx, 'jeffco-ems must appear in the "not yet assessed" bucket');
   const withoutSection = co.slice(withoutIdx, unknownIdx);
@@ -828,8 +828,8 @@ test('a coverage-free rebuild of every CO state page matches the no-coverage fix
   d.agencies = d.agencies.map(a => { const { coverage, ...rest } = a; return rest; });
   const out = buildPages(d);
   const co = out.files.find(f => f.path === '/census/states/co/').html;
-  assert.ok(!co.includes('With a current protocol'), 'stripped-coverage CO must not split');
-  assert.ok(!co.includes('Statewide baseline'), 'stripped-coverage CO must not show the baseline section');
+  assert.ok(!co.includes('<h3>With a protocol</h3>'), 'stripped-coverage CO must not split');
+  assert.ok(!co.includes('Statewide protocol'), 'stripped-coverage CO must not show the baseline section');
   assert.ok(/<section id="agencies">\s*<h2>Agencies<\/h2>\s*<ul class="cols">/.test(co), 'must fall back to the exact plain-list shape');
 });
 

@@ -579,15 +579,15 @@ function usMap({ documents, pageStates }) {
   const st = c => US_STATES.states[c];
   const fills = codes.map(c => {
     const n = docsIn[c] || 0;
-    return `<path class="s r${bandOf(n)}" d="${st(c).d}"><title>${esc(stateLabel(c))}: ${num(n)} current protocol${n === 1 ? '' : 's'}${named.has(c) ? ', agency page' : ''}</title></path>`;
+    return `<path class="s r${bandOf(n)}" d="${st(c).d}"><title>${esc(stateLabel(c))}: ${num(n)} current protocol${n === 1 ? '' : 's'}${named.has(c) ? ', has an agency page' : ''}</title></path>`;
   }).join('');
   const outlines = codes.filter(c => named.has(c)).map(c => `<path class="named" d="${st(c).d}"/>`).join('');
   const labels = codes.filter(c => (docsIn[c] || 0) >= MAP_BANDS[3][0] && !SMALL_STATES.has(c))
     .map(c => `<text x="${st(c).cx}" y="${st(c).cy}" dy="0.35em">${num(docsIn[c])}</text>`).join('');
   const nNamed = codes.filter(c => named.has(c)).length;
   const nDocs = codes.filter(c => docsIn[c] && !named.has(c)).length;
-  const svg = `<svg class="usmap" viewBox="${esc(US_STATES.viewBox)}" role="img" aria-label="Map of US states shaded by current protocols in the census: ${num(nNamed)} with a named agency page, ${num(nDocs)} with protocols only.">${fills}${outlines}${labels}</svg>`;
-  const legend = `<div class="legend" aria-hidden="true">${MAP_BANDS.map(([, label], i) => `<span><i class="r${i}"></i>${label}</span>`).join('')}<span><i class="named"></i>agency page</span></div>`;
+  const svg = `<svg class="usmap" viewBox="${esc(US_STATES.viewBox)}" role="img" aria-label="Map of US states shaded by protocols in the census: ${num(nNamed)} with an agency page, ${num(nDocs)} with protocols only.">${fills}${outlines}${labels}</svg>`;
+  const legend = `<div class="legend" aria-hidden="true">${MAP_BANDS.map(([, label], i) => `<span><i class="r${i}"></i>${label}</span>`).join('')}<span><i class="named"></i>has an agency page</span></div>`;
   return { svg, legend, nNamed, nDocs, nBlank: codes.length - nNamed - nDocs };
 }
 
@@ -641,14 +641,12 @@ function landingPage({ manifest, states, drugs, agencyPageCount, agencies = [], 
   // review, comparison groups) print only when the manifest has them.
   const currentProtocols = documents.filter(d => d.status === 'current').length;
   const scaleLine = `      <p class="summary scale">${[
-    `<span class="n">${num(manifest.documents)}</span> documents collected`,
-    currentProtocols ? `<span class="n">${num(currentProtocols)}</span> current protocols` : null,
-    manifest.pendingReview == null ? null : `<span class="n">${num(manifest.pendingReview)}</span> awaiting review`,
-    `<span class="n">${num(manifest.namedAgencies)}</span> named agencies`,
-    `<span class="n">${num(agencyPageCount)}</span> with a page`,
-    manifest.compareGroups == null ? null : `<span class="n">${num(manifest.compareGroups)}</span> comparison groups`,
-    `<span class="n">${num(manifest.doseRows)}</span> dose entries`,
-    `<span class="n">${esc(pct(manifest.dosesParsed, manifest.doseRows))}</span> machine-parsed`,
+    currentProtocols ? `<span class="n">${num(currentProtocols)}</span> protocols` : null,
+    `<span class="n">${num(manifest.namedAgencies)}</span> agencies`,
+    `<span class="n">${num(agencyPageCount)}</span> agency pages`,
+    `<span class="n">${num(manifest.documents)}</span> documents read`,
+    manifest.pendingReview == null ? null : `<span class="n">${num(manifest.pendingReview)}</span> waiting to be matched to an agency`,
+    `<span class="n">${num(manifest.doseRows)}</span> doses`,
     `as of <span class="n">${esc(manifest.asOf)}</span>`,
   ].filter(Boolean).join('<span class="sep" aria-hidden="true"></span>')}</p>`;
 
@@ -660,21 +658,21 @@ function landingPage({ manifest, states, drugs, agencyPageCount, agencies = [], 
   // uses: what is shaded, what is outlined, and the n behind each. Derived from the
   // same counts as the paths, so the sentence can never disagree with the picture.
   const mapCounts = [
-    `<span class="n">${num(map.nNamed)}</span> states with a named agency page`,
-    `<span class="n">${num(map.nDocs)}</span> more with protocols and no page yet`,
-    `<span class="n">${num(map.nBlank)}</span> still blank`,
+    `<span class="n">${num(map.nNamed)}</span> states with an agency page`,
+    `<span class="n">${num(map.nDocs)}</span> more with protocols but no page yet`,
+    `<span class="n">${num(map.nBlank)}</span> not yet covered`,
   ].join(', ');
 
   const lead = `      <section class="hero">
         <div class="hero-say">
-          <span class="badge">Public record</span>
+          <span class="badge">Early release. Data building nightly.</span>
           <h1>Prehospital care varies from agency to agency, and nobody could see how.</h1>
           <p class="dek">Protocols live in thousands of separate PDFs, so the differences between them have never been readable in one place. The United States EMS Protocol Census reads what agencies publish and turns it into a versioned public record of the drugs, doses and routes they carry, so you can compare agencies across the country. It rebuilds itself every night from the agencies' own documents.</p>
         </div>
         <figure class="hero-map">
           ${map.svg}
           ${map.legend}
-          <figcaption>${mapCounts}. Shaded by current protocols per state, one per agency with earlier versions folded in, outlined in ink where an agency has a page.</figcaption>
+          <figcaption>${mapCounts}. Shaded by protocols per state, one per agency, outlined where an agency has its own page. Coverage grows every night.</figcaption>
         </figure>
       </section>
 ${scaleLine}
@@ -700,16 +698,16 @@ ${drugs.length ? `      <section id="drugs">
       </section>`}
       <section id="states">
         <h2>States<span class="count">${num(states.length)}</span></h2>
-        <ul class="stategrid">${states.map(s => `<li><a href="/census/states/${slug(s)}/">${esc(stateLabel(s))}</a><span class="count">${num(facetCounts.get(s) ?? 0)} named ${(facetCounts.get(s) ?? 0) === 1 ? 'agency' : 'agencies'}</span></li>`).join('')}</ul>
+        <ul class="stategrid">${states.map(s => `<li><a href="/census/states/${slug(s)}/">${esc(stateLabel(s))}</a><span class="count">${num(facetCounts.get(s) ?? 0)} ${(facetCounts.get(s) ?? 0) === 1 ? 'agency' : 'agencies'}</span></li>`).join('')}</ul>
 ${coverageRows.length ? `        <h3>Coverage by state</h3>
         <div class="scroll"><table class="coverage">
-          <thead><tr><th>State</th><th>With a protocol</th><th>Without</th><th>Statewide baseline</th></tr></thead>
+          <thead><tr><th>State</th><th>Agencies with a protocol</th><th>Agencies without</th><th>Statewide protocol</th></tr></thead>
           <tbody>${coverageRows.map(r => `<tr><td><a href="/census/states/${slug(r.state)}/">${esc(stateLabel(r.state))}</a></td><td>${num(r.withProtocol)}</td><td>${num(r.withoutProtocol)}</td><td>${r.statewideBaseline ? 'Yes' : 'No'}</td></tr>`).join('')}</tbody>
         </table></div>` : ''}
       </section>
       <section id="agencies">
         <h2>Agencies<span class="count">${num(agencies.length)}</span></h2>
-        <p class="muted">Named agencies with a page of their own. Each page carries the agency's current protocol, its version history and every dose it publishes.${withheldSentence(withheld)}</p>
+        <p class="muted">Each agency page holds that agency's protocol, its earlier versions and every dose it publishes.${withheldSentence(withheld)}</p>
         <ul class="cols">${[...agencies].sort((x, y) => x.name.localeCompare(y.name)).map(a => `<li><a href="/census/agencies/${esc(a.agencyKey)}/">${esc(a.name)}</a> <span class="muted">${esc(stateLabel(a.state))}</span></li>`).join('')}</ul>
       </section>
       <section id="how">
@@ -890,11 +888,11 @@ function statePage(state, { agencies, doses, documents = [] }) {
       const unknown = listed.filter(a => !a.coverage);
       return `      <section id="agencies">
         <h2>Agencies</h2>
-        <h3>With a current protocol</h3>
+        <h3>With a protocol</h3>
         ${withProtocol.length
         ? `<ul class="cols">${withProtocol.map(agencyLi).join('')}</ul>`
         : '<p class="muted">None yet.</p>'}
-        <h3>Without a current protocol</h3>
+        <h3>Without a protocol</h3>
         ${withoutProtocol.length
         ? `<ul class="cols">${withoutProtocol.map(agencyLi).join('')}</ul>`
         : '<p class="muted">None.</p>'}
@@ -902,8 +900,8 @@ ${unknown.length ? `        <h3>Not yet assessed</h3>
         <ul class="cols">${unknown.map(agencyLi).join('')}</ul>` : ''}
       </section>
 ${statewideBaselines.length ? `      <section id="statewide-baseline">
-        <h2>Statewide baseline</h2>
-        <p class="muted">A statewide document sets a floor every agency in ${esc(name)} inherits. It is not counted as any one agency's own coverage above.</p>
+        <h2>Statewide protocol</h2>
+        <p class="muted">A protocol published by the state itself. Every agency in ${esc(name)} follows it unless the agency publishes its own, so it is listed once here rather than under each agency.</p>
         <ul class="cols">${statewideBaselines.map(d => `<li>${esc(d.agencyName ?? name)}${d.sourceUrl ? ` <a href="${esc(d.sourceUrl)}" rel="nofollow noopener">source</a>` : ''}</li>`).join('')}</ul>
       </section>` : ''}`;
     })()
@@ -920,7 +918,7 @@ ${statewideBaselines.length ? `      <section id="statewide-baseline">
       `${num(listed.length)} named ${listed.length === 1 ? 'agency' : 'agencies'}`,
       `${num(doses.length)} dose entries`,
       `${num(drugs.size)} ${drugs.size === 1 ? 'drug' : 'drugs'}`,
-      ...(statewideBaselines.length ? ['statewide baseline'] : []),
+      ...(statewideBaselines.length ? ['statewide protocol'] : []),
     ],
     lede: `${num(listed.length)} named ${listed.length === 1 ? 'agency' : 'agencies'} in ${esc(name)} ${listed.length === 1 ? 'has' : 'have'} published protocols in the census, with ${num(doses.length)} dose entries across ${num(drugs.size)} ${drugs.size === 1 ? 'drug' : 'drugs'}.`,
   })}
@@ -1057,7 +1055,7 @@ function namedAgencyList(agencyKeys, pageAgencies) {
 // page's named-agency count vs its linked list) say it identically rather than
 // drifting into two different claims about the same withheld set.
 const withheldSentence = n => n > 0
-  ? ` ${num(n)} named ${n === 1 ? 'agency has' : 'agencies have'} too little published detail for a page of ${n === 1 ? 'its' : 'their'} own and ${n === 1 ? 'is' : 'are'} counted here only.`
+  ? ` ${num(n)} more ${n === 1 ? 'agency is' : 'agencies are'} counted but ${n === 1 ? 'has' : 'have'} too little published detail for a page yet.`
   : '';
 
 // "n rows under review" — the count of suppressed rows, build-wide, from the manifest.
