@@ -1,27 +1,27 @@
 {
-  "generatedAt": "2026-09-05T18:08:34.729Z",
-  "totalUploads": 553,
-  "distinctProtocols": 387,
-  "activeStudiers": 379,
-  "pagesProcessed": 90553,
+  "generatedAt": "2026-09-06T00:08:39.170Z",
+  "totalUploads": 557,
+  "distinctProtocols": 390,
+  "activeStudiers": 383,
+  "pagesProcessed": 90872,
   "statesRepresented": 42,
-  "countriesRepresented": 3,
-  "internationalUploads": 5,
+  "countriesRepresented": 4,
+  "internationalUploads": 6,
   "byState": {
     "CA": 43,
-    "CO": 38,
+    "CO": 39,
     "MI": 36,
     "TX": 23,
     "PA": 23,
+    "MA": 23,
     "GA": 23,
-    "MA": 22,
     "NY": 21,
     "NC": 17,
     "VA": 17,
     "CT": 16,
     "OR": 14,
+    "WA": 11,
     "NV": 11,
-    "WA": 10,
     "WY": 10,
     "IL": 9,
     "MD": 8,
@@ -54,6 +54,7 @@
   "byCountry": {
     "CA": 2,
     "AU": 2,
+    "FR": 1,
     "NZ": 1
   },
   "locales": [
@@ -84,7 +85,7 @@
       "city": "Denver",
       "x": 330,
       "y": 258,
-      "count": 32,
+      "count": 33,
       "tier": "hot",
       "topProtocols": [
         {
@@ -128,7 +129,7 @@
       "city": "Boston",
       "x": 881,
       "y": 155,
-      "count": 22,
+      "count": 23,
       "tier": "warm",
       "topProtocols": [
         {
@@ -454,6 +455,28 @@
       ]
     },
     {
+      "state": "WA",
+      "city": "Seattle",
+      "x": 91,
+      "y": 38,
+      "count": 5,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "Pend Oreille County Protocols 2022",
+          "count": 1
+        },
+        {
+          "title": "EMS Stephen’s County Protocols",
+          "count": 1
+        },
+        {
+          "title": "EMS",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "AL",
       "city": "Birmingham",
       "x": 649,
@@ -569,28 +592,6 @@
         },
         {
           "title": "WEMA Protocols POCKET GUIDE AMBULANCE V3 9 23 15",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "WA",
-      "city": "Seattle",
-      "x": 91,
-      "y": 38,
-      "count": 4,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "Pend Oreille County Protocols 2022",
-          "count": 1
-        },
-        {
-          "title": "EMS Stephen’s County Protocols",
-          "count": 1
-        },
-        {
-          "title": "EMS",
           "count": 1
         }
       ]
@@ -1810,6 +1811,21 @@
       "topProtocols": [
         {
           "title": "BCEHS clinical practice guidelines",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "country": "FR",
+      "countryName": "France",
+      "city": "Paris",
+      "x": 467,
+      "y": 159,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "Conditions de tbwgzxdfiv beam référencement déréférencem…",
           "count": 1
         }
       ]
