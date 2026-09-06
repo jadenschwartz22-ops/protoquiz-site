@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-09-06T12:08:44.047Z",
-  "totalUploads": 562,
-  "distinctProtocols": 391,
-  "activeStudiers": 388,
-  "pagesProcessed": 91838,
+  "generatedAt": "2026-09-06T18:08:10.216Z",
+  "totalUploads": 565,
+  "distinctProtocols": 392,
+  "activeStudiers": 391,
+  "pagesProcessed": 91840,
   "statesRepresented": 42,
   "countriesRepresented": 4,
   "internationalUploads": 6,
   "byState": {
+    "CO": 43,
     "CA": 43,
-    "CO": 41,
     "MI": 36,
     "TX": 23,
     "PA": 23,
@@ -59,6 +59,28 @@
   },
   "locales": [
     {
+      "state": "CO",
+      "city": "Denver",
+      "x": 330,
+      "y": 258,
+      "count": 37,
+      "tier": "hot",
+      "topProtocols": [
+        {
+          "title": "DMEMSMD Protocols January 2026 FINAL 2025 02 02",
+          "count": 8
+        },
+        {
+          "title": "DMEMS Protocols January 2026 (Example)",
+          "count": 7
+        },
+        {
+          "title": "dmemsmd protocols july 2025 final 2025 07 14",
+          "count": 7
+        }
+      ]
+    },
+    {
       "state": "MI",
       "city": "Detroit",
       "x": 690,
@@ -77,28 +99,6 @@
         {
           "title": "1.9 Opioid Overdose Treatment and Prevention",
           "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CO",
-      "city": "Denver",
-      "x": 330,
-      "y": 258,
-      "count": 35,
-      "tier": "hot",
-      "topProtocols": [
-        {
-          "title": "DMEMSMD Protocols January 2026 FINAL 2025 02 02",
-          "count": 8
-        },
-        {
-          "title": "dmemsmd protocols july 2025 final 2025 07 14",
-          "count": 7
-        },
-        {
-          "title": "DMEMS Protocols January 2026 (Example)",
-          "count": 5
         }
       ]
     },
@@ -1007,6 +1007,20 @@
       ]
     },
     {
+      "state": "ID",
+      "city": "Ada County",
+      "x": 160,
+      "y": 150,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "ADAP",
+          "count": 2
+        }
+      ]
+    },
+    {
       "state": "WV",
       "city": "Charleston",
       "x": 726,
@@ -1039,20 +1053,6 @@
         {
           "title": "palmbeachgardensfirerescuepatientcareprotocols2025 bf30c8b884…",
           "count": 1
-        }
-      ]
-    },
-    {
-      "state": "ID",
-      "city": "Ada County",
-      "x": 160,
-      "y": 150,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "ADAP",
-          "count": 2
         }
       ]
     },
@@ -1337,6 +1337,20 @@
       ]
     },
     {
+      "state": "IL",
+      "city": "Alton",
+      "x": 580,
+      "y": 281,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "DRAFT Region 4 SOG Final Dec 1 2022 small compressed",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "IN",
       "city": "Indianapolis",
       "x": 646,
@@ -1360,6 +1374,20 @@
       "topProtocols": [
         {
           "title": "Iowa Paramount Adult Protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "OR",
+      "city": "Washington County",
+      "x": 68,
+      "y": 78,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "WASHCO Meds",
           "count": 1
         }
       ]
@@ -1421,6 +1449,20 @@
       ]
     },
     {
+      "state": "MO",
+      "city": "Springfield",
+      "x": 528,
+      "y": 321,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "July2026protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "NC",
       "city": "Rowan",
       "x": 799,
@@ -1430,6 +1472,48 @@
       "topProtocols": [
         {
           "title": "EMS Protocols 2025",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "IN",
+      "city": "Fort Wayne",
+      "x": 660,
+      "y": 226,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "7.1.2026 Protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "VA",
+      "city": "Fairfax",
+      "x": 797,
+      "y": 254,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "2024emsmanual1 16 2024 d1857f3401fae1e5c50fe",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "TX",
+      "city": "Boerne",
+      "x": 428,
+      "y": 485,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "BCESD4 SMOPS Complete",
           "count": 1
         }
       ]
@@ -1449,6 +1533,34 @@
       ]
     },
     {
+      "state": "WA",
+      "city": "Spokane",
+      "x": 162,
+      "y": 55,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "SCEMS Protocols 2026",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "OR",
+      "city": "Hillsboro",
+      "x": 69,
+      "y": 79,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "WASHSO Meds",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "TX",
       "city": "Galveston",
       "x": 504,
@@ -1458,6 +1570,62 @@
       "topProtocols": [
         {
           "title": "2025 Protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "FL",
+      "city": "Ocala",
+      "x": 747,
+      "y": 480,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "Marion county protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "CA",
+      "city": "Modesto",
+      "x": 53,
+      "y": 256,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "639165915900430000",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "CA",
+      "city": "Alameda",
+      "x": 33,
+      "y": 247,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "2026 ICO Protocol Overview 8.21.26",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "VA",
+      "city": "Charlottesville",
+      "x": 781,
+      "y": 276,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "2025 CCT Guidelines",
           "count": 1
         }
       ]
@@ -1626,174 +1794,6 @@
       "topProtocols": [
         {
           "title": "yrmc ems guidelines 2",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "IL",
-      "city": "Alton",
-      "x": 580,
-      "y": 281,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "DRAFT Region 4 SOG Final Dec 1 2022 small compressed",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "OR",
-      "city": "Washington County",
-      "x": 68,
-      "y": 78,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "WASHCO Meds",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "MO",
-      "city": "Springfield",
-      "x": 528,
-      "y": 321,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "July2026protocols",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "IN",
-      "city": "Fort Wayne",
-      "x": 660,
-      "y": 226,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "7.1.2026 Protocols",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "VA",
-      "city": "Fairfax",
-      "x": 797,
-      "y": 254,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "2024emsmanual1 16 2024 d1857f3401fae1e5c50fe",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "TX",
-      "city": "Boerne",
-      "x": 428,
-      "y": 485,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "BCESD4 SMOPS Complete",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "WA",
-      "city": "Spokane",
-      "x": 162,
-      "y": 55,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "SCEMS Protocols 2026",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "OR",
-      "city": "Hillsboro",
-      "x": 69,
-      "y": 79,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "WASHSO Meds",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "FL",
-      "city": "Ocala",
-      "x": 747,
-      "y": 480,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "Marion county protocols",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CA",
-      "city": "Modesto",
-      "x": 53,
-      "y": 256,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "639165915900430000",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CA",
-      "city": "Alameda",
-      "x": 33,
-      "y": 247,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "2026 ICO Protocol Overview 8.21.26",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "VA",
-      "city": "Charlottesville",
-      "x": 781,
-      "y": 276,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "2025 CCT Guidelines",
           "count": 1
         }
       ]
