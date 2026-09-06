@@ -25,6 +25,29 @@
    }
   },
   {
+   "agencyKey": "adams-benton-franklin-yakima-counties",
+   "name": "Adams, Benton, Franklin, Yakima Counties",
+   "aliases": [
+    "Adams, Benton, Franklin, Yakima Counties"
+   ],
+   "state": "WA",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "regional",
+   "currentHash": "3b42e65e4b1a71ed708028e9208f8605106e7cdd810a53276592912bc726341c",
+   "currentEffectiveDate": "2025-01-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": {
+    "effectiveDate": null
+   },
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
    "agencyKey": "alabama-department-of-public-health",
    "name": "Alabama Department of Public Health",
    "aliases": [
@@ -79,7 +102,7 @@
    "currentHash": "1f8702b59cde16a1ea5adcfb730877daa15af3966d8efa482b37a1dbfb16134d",
    "currentEffectiveDate": "2018-01-01",
    "documentCount": 3,
-   "doseCount": 0,
+   "doseCount": 217,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -280,7 +303,7 @@
    "currentHash": "1e968cbce0e9e37e0bcc264a63e4ffe0",
    "currentEffectiveDate": "2025-03-10",
    "documentCount": 2,
-   "doseCount": 0,
+   "doseCount": 140,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -699,7 +722,7 @@
    "currentHash": "2de263119a0969287bad1390c8de3c10213393ac0e979ff5e6dd078401331fad",
    "currentEffectiveDate": "2026-07-01",
    "documentCount": 226,
-   "doseCount": 7157,
+   "doseCount": 8200,
    "pendingReview": {
     "effectiveDate": null
    },
@@ -713,6 +736,7 @@
    "agencyKey": "department-of-health-services-county-of-los-angeles",
    "name": "Department of Health Services, County of Los Angeles",
    "aliases": [
+    "Department of Health Services County of Los Angeles",
     "Department of Health Services, County of Los Angeles"
    ],
    "state": "CA",
@@ -721,8 +745,8 @@
    "jurisdiction": "county",
    "currentHash": "3a3ab041e79beac3d2d47e5cd0cf6db849ecc3df3c03caa184494c55dade0a88",
    "currentEffectiveDate": "2025-07-01",
-   "documentCount": 14,
-   "doseCount": 19,
+   "documentCount": 17,
+   "doseCount": 185,
    "pendingReview": {
     "effectiveDate": null
    },
@@ -1051,7 +1075,7 @@
    "currentHash": "1da4fd7b443a9c8d8302c78a4d132f9e2e11ca8fda0741eb213588f6c169d08e",
    "currentEffectiveDate": "2025-04-30",
    "documentCount": 8,
-   "doseCount": 0,
+   "doseCount": 208,
    "pendingReview": {
     "effectiveDate": null
    },
@@ -1247,8 +1271,8 @@
    "jurisdiction": "statewide",
    "currentHash": "2549a975a7d77b05943bb978d816ad485935208cec7ae0a3fcd08b3a92893cc3",
    "currentEffectiveDate": "2026-09-01",
-   "documentCount": 16,
-   "doseCount": 1937,
+   "documentCount": 17,
+   "doseCount": 2142,
    "pendingReview": {
     "effectiveDate": null
    },
@@ -1384,7 +1408,7 @@
    "currentHash": "17c3e08f6d59b24c295cfa460f27a8be5ec40456221dba7f032f88ac439a74fd",
    "currentEffectiveDate": "2024-02-12",
    "documentCount": 2,
-   "doseCount": 0,
+   "doseCount": 132,
    "pendingReview": {
     "effectiveDate": null
    },
@@ -1739,62 +1763,26 @@
    }
   },
   {
-   "agencyKey": "new-york-department-of-health-bureau-of-emergency-medical-services-and-trauma-systems",
-   "name": "New York Department of Health, Bureau of Emergency Medical Services and Trauma Systems",
-   "aliases": [
-    "New York Department of Health, Bureau of Emergency Medical Services and Trauma Systems"
-   ],
-   "state": "NY",
-   "country": "US",
-   "city": null,
-   "jurisdiction": "statewide",
-   "currentHash": "0fcb420f709bb2a30cc30b4468d31255c3acae3eec005a97899581274709d574",
-   "currentEffectiveDate": "2025-07-01",
-   "documentCount": 3,
-   "doseCount": 22,
-   "pendingReview": null,
-   "mayBeOutdated": false,
-   "coverage": {
-    "hasProtocol": false,
-    "jurisdiction": "statewide"
-   }
-  },
-  {
    "agencyKey": "new-york-state-department-of-health-bureau-of-emergency-medical-services-and-trauma-systems",
-   "name": "New York State Department of Health Bureau of Emergency Medical Services and Trauma Systems",
+   "name": "New York State Department of Health, Bureau of Emergency Medical Services and Trauma Systems",
    "aliases": [
-    "New York State Department of Health Bureau of Emergency Medical Services and Trauma Systems"
+    "New York Department of Health, Bureau of Emergency Medical Services and Trauma Systems",
+    "New York State Department of Health Bureau of Emergency Medical Services and Trauma Systems",
+    "New York State Department of Health Division of State EMS",
+    "New York State Department of Health, Bureau of Emergency Medical Services and Trauma Systems",
+    "New York State Department of Health, Division of State EMS"
    ],
    "state": "NY",
    "country": "US",
    "city": null,
    "jurisdiction": "statewide",
-   "currentHash": "0a3fa30882564df6a9ada2d8cfa2efce",
-   "currentEffectiveDate": "2025-07-01",
-   "documentCount": 8,
-   "doseCount": 206,
-   "pendingReview": null,
-   "mayBeOutdated": false,
-   "coverage": {
-    "hasProtocol": false,
-    "jurisdiction": "statewide"
-   }
-  },
-  {
-   "agencyKey": "new-york-state-department-of-health-division-of-state-ems",
-   "name": "New York State Department of Health Division of State EMS",
-   "aliases": [
-    "New York State Department of Health Division of State EMS"
-   ],
-   "state": "NY",
-   "country": "US",
-   "city": null,
-   "jurisdiction": "statewide",
-   "currentHash": "201ccbba21365fdc8c7346e21277ad79ba97072f1983071c3dcb47524b70d45f",
+   "currentHash": "93b9a19ea151a49be84f23a92b52dacef7323bd2273361fa4a3206b093739861",
    "currentEffectiveDate": "2026-09-01",
-   "documentCount": 1,
-   "doseCount": 0,
-   "pendingReview": null,
+   "documentCount": 23,
+   "doseCount": 568,
+   "pendingReview": {
+    "effectiveDate": null
+   },
    "mayBeOutdated": false,
    "coverage": {
     "hasProtocol": false,
@@ -1900,7 +1888,7 @@
    "currentHash": "18611696c64f0aaaac4ac27409eba9fe",
    "currentEffectiveDate": "2024-08-05",
    "documentCount": 11,
-   "doseCount": 0,
+   "doseCount": 252,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -2172,6 +2160,7 @@
    "agencyKey": "regional-emergency-medical-advisory-committee-of-new-york-city",
    "name": "Regional Emergency Medical Advisory Committee of New York City",
    "aliases": [
+    "Regional Emergency Medical Advisory Committee (REMAC) of New York City",
     "Regional Emergency Medical Advisory Committee of New York City"
    ],
    "state": "NY",
@@ -2180,32 +2169,11 @@
    "jurisdiction": "regional",
    "currentHash": "0a4c1ec434ad1fff63b7d6cfde11f1d58a5fd352877ced06c294ba42b7240f80",
    "currentEffectiveDate": "2025-04-08",
-   "documentCount": 6,
+   "documentCount": 7,
    "doseCount": 131,
    "pendingReview": {
     "effectiveDate": null
    },
-   "mayBeOutdated": false,
-   "coverage": {
-    "hasProtocol": true,
-    "jurisdiction": "regional"
-   }
-  },
-  {
-   "agencyKey": "regional-emergency-medical-advisory-committee-remac-of-new-york-city",
-   "name": "Regional Emergency Medical Advisory Committee (REMAC) of New York City",
-   "aliases": [
-    "Regional Emergency Medical Advisory Committee (REMAC) of New York City"
-   ],
-   "state": "NY",
-   "country": "US",
-   "city": "New York City",
-   "jurisdiction": "regional",
-   "currentHash": "dfafcb6b639f04d9aa35819f5cacddad47c10bd0df79c368e94c531c75259bc8",
-   "currentEffectiveDate": "2025-04-08",
-   "documentCount": 1,
-   "doseCount": 0,
-   "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
     "hasProtocol": true,
@@ -2246,7 +2214,7 @@
    "currentHash": "b59cce67fb7057a27060e3b8aedeff0f7389571139c30abce65e79e3d996daae",
    "currentEffectiveDate": "2026-06-01",
    "documentCount": 4,
-   "doseCount": 0,
+   "doseCount": 229,
    "pendingReview": {
     "effectiveDate": null
    },
@@ -2346,18 +2314,21 @@
   },
   {
    "agencyKey": "sierra-sacramento-valley-ems-agency",
-   "name": "Sierra-Sacramento Valley EMS Agency",
+   "name": "Sierra – Sacramento Valley EMS Agency",
    "aliases": [
+    "Sierra - Sacramento Valley EMS Agency",
+    "Sierra Sacramento Valley EMS Agency",
+    "Sierra – Sacramento Valley EMS Agency",
     "Sierra-Sacramento Valley EMS Agency"
    ],
    "state": "CA",
    "country": "US",
    "city": null,
    "jurisdiction": "regional",
-   "currentHash": "d2bd4d9c86103cbadc50cbc2efca1229",
+   "currentHash": "c068b7beb5b148b54c4034d87a5d999ff4aa99f78324eaa783a7a914e98e4979",
    "currentEffectiveDate": "2025-10-01",
-   "documentCount": 2,
-   "doseCount": 0,
+   "documentCount": 5,
+   "doseCount": 3,
    "pendingReview": {
     "effectiveDate": null
    },
