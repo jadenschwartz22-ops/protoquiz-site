@@ -1053,7 +1053,7 @@
    "origin": "unknown",
    "versionLabel": "2024-02",
    "publicationState": "listed_named",
-   "status": "current",
+   "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "2024-02-remac-unified-prehospital-treatment-protocols-07-09-25",
@@ -2065,7 +2065,7 @@
    "origin": "seed",
    "versionLabel": "2024",
    "publicationState": "listed_named",
-   "status": "current",
+   "status": "superseded",
    "pageCount": null,
    "sourceUrl": "https://doh.wa.gov/sites/default/files/2024-08/530-281-BLS-ILSProtocolGuidance.pdf",
    "corpusDocId": "census-11cc3d73b37ebbe4e8b5f2219df0952a86e600fd9619c0a0c8417b8503e57786",
@@ -2962,7 +2962,7 @@
    "origin": "app",
    "versionLabel": "2022",
    "publicationState": "listed_named",
-   "status": "current",
+   "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "census-18611696c64f0aaaac4ac27409eba9fe",
@@ -3105,6 +3105,29 @@
    "sourceUrl": null,
    "corpusDocId": "ceff0f0138340d6342520efcde9bc881f80637f8f08dafb3ea851e85da68278d",
    "doseCount": 213
+  },
+  {
+   "hash": "1a200641e6b65dd4d56280c069b1c317f7bc62620282a1626f25c9bcf4f45232",
+   "hashSource": "pdf_hash",
+   "agencyKey": "nebraska-medicine-division-of-prehospital-and-emergency-medical-services",
+   "agencyName": "Nebraska Medicine Division of Prehospital and Emergency Medical Services",
+   "state": "NE",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "publicRecord": true,
+   "confidence": "high",
+   "effectiveDate": "2026-05-01",
+   "capturedDate": null,
+   "effectiveDateSource": "printed",
+   "origin": "app",
+   "versionLabel": "V1.0",
+   "publicationState": "listed_named",
+   "status": "current",
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": "ems-model-protocols",
+   "doseCount": 179
   },
   {
    "hash": "1a9bc9e9e06e44b1d551864e17622b4c",
@@ -3260,7 +3283,7 @@
    "effectiveDateSource": "none",
    "origin": "app",
    "versionLabel": null,
-   "publicationState": "pending_review",
+   "publicationState": "excluded",
    "status": null,
    "pageCount": null,
    "sourceUrl": null,
@@ -3513,7 +3536,7 @@
    "effectiveDateSource": "printed",
    "origin": "app",
    "versionLabel": null,
-   "publicationState": "pending_review",
+   "publicationState": "excluded",
    "status": null,
    "pageCount": null,
    "sourceUrl": null,
@@ -3634,6 +3657,29 @@
    "sourceUrl": "http://www.alabamapublichealth.gov/ems/assets/8thEditionProtocols030816.pdf",
    "corpusDocId": "census-1e31ee323b1497fed240eba7619ff1c155d0035ba74da641746443b8a3366d48",
    "doseCount": 112
+  },
+  {
+   "hash": "1e3dcf025001ba81c802359b3df3f334f0a038ffd8249f4b5f79d58a9943bc49",
+   "hashSource": "pdf_hash",
+   "agencyKey": "northwest-region-emergency-medical-services-trauma-care-council",
+   "agencyName": "Northwest Region Emergency Medical Services & Trauma Care Council",
+   "state": "WA",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "regional",
+   "publicRecord": true,
+   "confidence": "high",
+   "effectiveDate": "2020-03-02",
+   "capturedDate": null,
+   "effectiveDateSource": "printed",
+   "origin": "app",
+   "versionLabel": "2020",
+   "publicationState": "listed_named",
+   "status": "superseded",
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": "protocol",
+   "doseCount": 210
   },
   {
    "hash": "1e3f098396cd74ae4f8cb4c937c4f1a035a801e43ef0a1bd20e1ea403a658ee2",
@@ -4069,8 +4115,8 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-20349a8bbc668c8133077a2834fe18e9",
+   "doseCount": 154
   },
   {
    "hash": "2039537fead000362b33bdb7ee194e07",
@@ -4092,8 +4138,8 @@
    "status": "current",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-2039537fead000362b33bdb7ee194e07",
+   "doseCount": 93
   },
   {
    "hash": "206262f355ca25312b83add3af9437d0b38ace63deadc801b2a7459f1a122795",
@@ -4115,8 +4161,8 @@
    "status": null,
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-206262f355ca25312b83add3af9437d0b38ace63deadc801b2a7459f1a122795",
+   "doseCount": 140
   },
   {
    "hash": "207137c173300b3361cd7bc1b9279a4a",
@@ -4138,8 +4184,8 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-207137c173300b3361cd7bc1b9279a4a",
+   "doseCount": 144
   },
   {
    "hash": "2076fe4089a9f697151f603722449ccd7836b88ae878e637ee315125012f6f24",
@@ -4230,8 +4276,8 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-21326630e95513e32c612b915505431d",
+   "doseCount": 155
   },
   {
    "hash": "2172c0dde8fecfbae9e2b8fa2d8ef9635b52bb9c3cd4c20f5ae76554cb792413",
@@ -4276,8 +4322,8 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-21910e7a47911e58ea614082301f80f1",
+   "doseCount": 8
   },
   {
    "hash": "21a78488b033726e5b340a51681a81e496f5c6882ca54d27703080d9cb0402b3",
@@ -4322,8 +4368,8 @@
    "status": "current",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-21bad645337e53ad1df5aa824717e5c8",
+   "doseCount": 174
   },
   {
    "hash": "21bf1711382de034d139750a1fa1c5c467c0d5e857e3e0a4f7e98c91197a3bea",
@@ -4414,8 +4460,8 @@
    "status": null,
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-21f7c0a51db8da31f8437ad76ca3651d",
+   "doseCount": 48
   },
   {
    "hash": "220f1fee5e0730c625b0b2f9e1964b49",
@@ -4460,8 +4506,8 @@
    "status": null,
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-2242553836338e2afad83d7bbde84d17",
+   "doseCount": 42
   },
   {
    "hash": "22502f952503957d6c6f3150f81cafba150e4b20ef951b11a1a254eac7590e35",
@@ -4483,8 +4529,8 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-22502f952503957d6c6f3150f81cafba150e4b20ef951b11a1a254eac7590e35",
+   "doseCount": 22
   },
   {
    "hash": "2255ea55190b6532934c58989587b589dfd95ceff57ca58d4a1c5b67e055c8e6",
@@ -4506,8 +4552,8 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-2255ea55190b6532934c58989587b589dfd95ceff57ca58d4a1c5b67e055c8e6",
+   "doseCount": 196
   },
   {
    "hash": "2256791bd47a28032ae7957d85e341cfbbad252c7c5172554b0e4208e251a092",
@@ -4667,8 +4713,8 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-23b6e65f5b59fcc1bbdee1157d6b5018",
+   "doseCount": 103
   },
   {
    "hash": "23de5e63c40dc40aa4d2643b387fde08",
@@ -4690,8 +4736,8 @@
    "status": null,
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-23de5e63c40dc40aa4d2643b387fde08",
+   "doseCount": 43
   },
   {
    "hash": "2428c3fdaad0e879e1ee3909ebb30553d04e0773622be3cb7a4c656e785e9502",
@@ -4736,8 +4782,8 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-242af726f355d21c48530d7135f6c4cf",
+   "doseCount": 150
   },
   {
    "hash": "24ec34798c2380b3bb31c78d3e2e6141",
@@ -4756,11 +4802,11 @@
    "origin": "app",
    "versionLabel": "2024",
    "publicationState": "listed_named",
-   "status": "superseded",
+   "status": "current",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-24ec34798c2380b3bb31c78d3e2e6141",
+   "doseCount": 67
   },
   {
    "hash": "250b18f6ee00b4a677bc849f452d95fb",
@@ -4782,8 +4828,8 @@
    "status": "current",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-250b18f6ee00b4a677bc849f452d95fb",
+   "doseCount": 1
   },
   {
    "hash": "2549a975a7d77b05943bb978d816ad485935208cec7ae0a3fcd08b3a92893cc3",
@@ -4920,8 +4966,8 @@
    "status": "current",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-26657d5054db6d5fc2c1258c018797f3",
+   "doseCount": 133
   },
   {
    "hash": "2681b840570212fe17ac05ddf6ca5766870af38500ebcc3000330612f5a8df3c",
@@ -5012,8 +5058,8 @@
    "status": null,
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-26e0951e5617768dc039d73d5297b082",
+   "doseCount": 47
   },
   {
    "hash": "26f5758494203239f98946907e949632",
@@ -5035,8 +5081,8 @@
    "status": null,
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-26f5758494203239f98946907e949632",
+   "doseCount": 41
   },
   {
    "hash": "27389968b5789131df02de5699a14f2a069b892da283ce04173b4d07aa69fa81",
@@ -5058,8 +5104,8 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-27389968b5789131df02de5699a14f2a069b892da283ce04173b4d07aa69fa81",
+   "doseCount": 161
   },
   {
    "hash": "274bb880fa97a31f25118f5a766534225b2f4448962b8b873b8d0928ac91ffc0",
@@ -5081,8 +5127,8 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": "https://dhhs.ne.gov/OEHS%20Program%20Documents/EMS%20Model%20Protocols.pdf",
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-274bb880fa97a31f25118f5a766534225b2f4448962b8b873b8d0928ac91ffc0",
+   "doseCount": 214
   },
   {
    "hash": "27df19131090ea433b966cd4ade66a4b0b9f463f19195a83d639b38647a3ca0e",
@@ -5169,7 +5215,7 @@
    "effectiveDateSource": "none",
    "origin": "app",
    "versionLabel": null,
-   "publicationState": "pending_review",
+   "publicationState": "excluded",
    "status": null,
    "pageCount": null,
    "sourceUrl": null,
@@ -5311,8 +5357,8 @@
    "status": null,
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-286b34480d1ef41364cdf0eb8fdb972a",
+   "doseCount": 47
   },
   {
    "hash": "2894637b2fea8732d1ccd04f07e97b75fca3119e956ca352b50570f917bd4b67",
@@ -5357,8 +5403,8 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-28d1bf3b63c1a2c52a42e66f48fedbc2604c6c7520f44b49eaacb5ede8aeea41",
+   "doseCount": 144
   },
   {
    "hash": "290a1ed0e0eadca4a63c9f49a9de1e26686fc7dd38f5c3d433d0cd47d79f222a",
@@ -5380,8 +5426,8 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-290a1ed0e0eadca4a63c9f49a9de1e26686fc7dd38f5c3d433d0cd47d79f222a",
+   "doseCount": 133
   },
   {
    "hash": "2959eb6800ae2d6186de68ecef185bcfc6e06665fb0290ee2491dcfdd44de796",
@@ -5426,8 +5472,8 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-29b21ab63a6a597979c6cb205fababc4fa1403763e12d4c67787cf90aadfbad4",
+   "doseCount": 147
   },
   {
    "hash": "2a0a4a74b80cbc5584eb2cd982902d99",
@@ -5518,8 +5564,8 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-2aee74877a0142539163bc28bf2c970e",
+   "doseCount": 145
   },
   {
    "hash": "2afdfdd8b68a6e2b90d69fe8f1f24b0f12186c476e26ec5a7d062e474c5cf496",
@@ -5564,8 +5610,8 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": "http://www2.columbusco.org:80/emergency/EMSProtocols.pdf",
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-2b27033f82a1ef18a52adaa92d63805475953503b9b8e56bf783f1a3fb1c7b13",
+   "doseCount": 148
   },
   {
    "hash": "2b2967ddb0271f5b2a5f38d5c25c95e379f9b8cd629cc9259ec2e37db63c3831",
@@ -5610,8 +5656,8 @@
    "status": null,
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-2b831922e2bcfafe6793dc9ff3acf1bb",
+   "doseCount": 46
   },
   {
    "hash": "2b8aa40827410e88fe4dd5dcc34f13e1",
@@ -5633,8 +5679,8 @@
    "status": "current",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-2b8aa40827410e88fe4dd5dcc34f13e1",
+   "doseCount": 215
   },
   {
    "hash": "2bb10dc5078a25eb7cc00e1fade99a8b276095eb39e6236f617d60d80e682fa1",
@@ -5679,17 +5725,17 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-2bb25e9b027404604bae989ca9fa7c50",
+   "doseCount": 154
   },
   {
    "hash": "2bba034eaec27cab5a7bcd766d42e5c2",
    "hashSource": "md5",
-   "agencyKey": "riverside-county-ems-agency",
-   "agencyName": "Riverside County EMS Agency",
+   "agencyKey": null,
+   "agencyName": null,
    "state": "CA",
    "country": "US",
-   "city": "Riverside",
+   "city": null,
    "jurisdiction": "county",
    "publicRecord": true,
    "confidence": "high",
@@ -5698,8 +5744,8 @@
    "effectiveDateSource": "printed",
    "origin": "app",
    "versionLabel": null,
-   "publicationState": "listed_named",
-   "status": "superseded",
+   "publicationState": "excluded",
+   "status": null,
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": null,
@@ -5725,8 +5771,8 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-2bc18a2f7e5211bb4c2ea851648130e8",
+   "doseCount": 137
   },
   {
    "hash": "2bea2ec933351af1f8b53602c6d80d49452ba53436baafb666f34baec62b072a",
@@ -5794,8 +5840,8 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-2c322a2457fb8f82933093aac9277966a77e002db6f8fbc4fc8a92f2b5258d02",
+   "doseCount": 153
   },
   {
    "hash": "2c3cad226f9654616759f3763bcab1e7",
@@ -5817,8 +5863,8 @@
    "status": null,
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-2c3cad226f9654616759f3763bcab1e7",
+   "doseCount": 135
   },
   {
    "hash": "2c4db2bae21867bd89a96517f684aaf4",
@@ -5840,8 +5886,8 @@
    "status": null,
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-2c4db2bae21867bd89a96517f684aaf4",
+   "doseCount": 42
   },
   {
    "hash": "2c852d06ff9f7b18cd768eaea1e49c8a",
@@ -5863,8 +5909,8 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-2c852d06ff9f7b18cd768eaea1e49c8a",
+   "doseCount": 158
   },
   {
    "hash": "2ccf7447e42a4524a786318efa7cfcc77e1cedee08886196a4faa2886f30309d",
@@ -5955,8 +6001,8 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-2d2ca4a7e4a39a729f8da9e36ba698a4",
+   "doseCount": 151
   },
   {
    "hash": "2d6f99ff53ef575273c4a9806da2d4d88a98dacd4c155986d5b0d1e2cd51c0e8",
@@ -6001,8 +6047,8 @@
    "status": "current",
    "pageCount": null,
    "sourceUrl": "https://flfremsprotocols.org/wp-content/uploads/2026/01/EMS-Protocols-Version-26-1.pdf",
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-2da40a8e21eff8b807493a2ebee1f89b6f86e31be2521fdb58bef8035513f47f",
+   "doseCount": 174
   },
   {
    "hash": "2de263119a0969287bad1390c8de3c10213393ac0e979ff5e6dd078401331fad",
@@ -6113,11 +6159,11 @@
    "origin": "seed",
    "versionLabel": "3.0",
    "publicationState": "listed_named",
-   "status": "superseded",
+   "status": "current",
    "pageCount": null,
    "sourceUrl": "https://aems.org/images/pdf/redbook/red-book-chapter-3-2026.pdf",
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-2e6360d1d7360eac75eaafe18cacdc3c75fbe0426e36255651e274160e62847d",
+   "doseCount": 131
   },
   {
    "hash": "2ed07964602093935c50e8bb9658828b",
@@ -6139,8 +6185,8 @@
    "status": null,
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-2ed07964602093935c50e8bb9658828b",
+   "doseCount": 42
   },
   {
    "hash": "2f076b2726137b1f26281ded7983ca55",
@@ -6162,8 +6208,8 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-2f076b2726137b1f26281ded7983ca55",
+   "doseCount": 303
   },
   {
    "hash": "2f183b9555472cfb72e791751a837f1c",
@@ -6185,8 +6231,8 @@
    "status": null,
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-2f183b9555472cfb72e791751a837f1c",
+   "doseCount": 44
   },
   {
    "hash": "2f29a1900e1b7aaf99af66964ff88ce95ee9eda20cd21c0856d52f43e97a9b12",
@@ -6231,8 +6277,8 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-2f2be00fa52d11475a50f79313b53613",
+   "doseCount": 101
   },
   {
    "hash": "2f2db947103c48da13d30c15925f75e0fbd37e4a99ecbd3868e89bde19afdc90",
@@ -6277,8 +6323,8 @@
    "status": null,
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-2f46970bba5a1c6de0efff37c4d505a0",
+   "doseCount": 46
   },
   {
    "hash": "2f4896e139008640a8fb17c293d144d41c26641fd9d3636e85d376c7bb8bf4dd",
@@ -6346,8 +6392,8 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-2fc12fab82a25dbaf24bc5cc60e91f60",
+   "doseCount": 184
   },
   {
    "hash": "302e6f579b3d14a106ba40366faaf689c0976ca3891d58895c0f7152d461e6fa",
@@ -6366,11 +6412,11 @@
    "origin": "unknown",
    "versionLabel": null,
    "publicationState": "listed_named",
-   "status": "superseded",
+   "status": "current",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-302e6f579b3d14a106ba40366faaf689c0976ca3891d58895c0f7152d461e6fa",
+   "doseCount": 190
   },
   {
    "hash": "306bdf9cbecdb16e854af97faff5a62127e717c1816a11a73c192d02b4f0c34c",
@@ -6438,8 +6484,8 @@
    "status": "current",
    "pageCount": null,
    "sourceUrl": "https://dhhs.ne.gov/OEHS%20Program%20Documents/EMS%20Model%20Protocols.pdf",
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-30aa0997f4216f8b7cfe47ade46da6d71cf884162babad2c02e0c4f3886e3ef2",
+   "doseCount": 200
   },
   {
    "hash": "30f70e2ec190aa8aeab5bc9cee8522559005a5cbe44a64c813946241a6082b25",
@@ -6645,8 +6691,8 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-329f3850a1a659405ec4ec21df49ad27",
+   "doseCount": 16
   },
   {
    "hash": "32b2c32a86f443dc444df4bac76dd0396fb51f344e46be528592873120aee1f1",
@@ -6665,11 +6711,11 @@
    "origin": "app",
    "versionLabel": "2024-02",
    "publicationState": "listed_named",
-   "status": "superseded",
+   "status": "current",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-32b2c32a86f443dc444df4bac76dd0396fb51f344e46be528592873120aee1f1",
+   "doseCount": 137
   },
   {
    "hash": "32ba9bfaf218a7c055a4ac0f6385cfbd",
@@ -6806,8 +6852,8 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-333b0219534a657974e9c3eb45d47c85",
+   "doseCount": 158
   },
   {
    "hash": "338eed42ce59faec3cdb6b7b73c8879d5cb833e0e94b4da2b920f3add3fa3057",
@@ -6852,8 +6898,8 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-339b21cb9c65288fd62259d221682064",
+   "doseCount": 158
   },
   {
    "hash": "33aa4e7abd3d5e3663b2485d5513950f8374304dca469ac3acb48ee7b9e15051",
@@ -6875,8 +6921,8 @@
    "status": "current",
    "pageCount": null,
    "sourceUrl": "https://www.healthvermont.gov/sites/default/files/document/eprip-2025-EMS-Protocols_0.pdf",
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-33aa4e7abd3d5e3663b2485d5513950f8374304dca469ac3acb48ee7b9e15051",
+   "doseCount": 233
   },
   {
    "hash": "33b458a6247e9dc5a77e862ab9d08417a7b778e30c347f3c90a910dba494a3f5",
@@ -6921,8 +6967,8 @@
    "status": "current",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-33b7bc0835e3bcf7bd92d8aa3e2ea353",
+   "doseCount": 172
   },
   {
    "hash": "349762f382fe2d105c801d006e9d7968",
@@ -6944,8 +6990,8 @@
    "status": null,
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-349762f382fe2d105c801d006e9d7968",
+   "doseCount": 42
   },
   {
    "hash": "34a93f502a1cff0ab91a80832fc51c4ad80e5c31510f107ac8fa71d6a624566b",
@@ -6967,8 +7013,8 @@
    "status": "current",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-34a93f502a1cff0ab91a80832fc51c4ad80e5c31510f107ac8fa71d6a624566b",
+   "doseCount": 146
   },
   {
    "hash": "34b67ed0a0b94f022ab9b28622736e0e",
@@ -7036,8 +7082,8 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-34cc2afcf8d351bb758fd5c388fb7f7a566c55948fd41745a86b036261a3fd50",
+   "doseCount": 156
   },
   {
    "hash": "34cca61bbcfbdb7a211f69b614894b12822988ae897fd6d416cb7dfbd7eab564",
@@ -7056,11 +7102,11 @@
    "origin": "app",
    "versionLabel": "2022",
    "publicationState": "listed_named",
-   "status": "superseded",
+   "status": "current",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-34cca61bbcfbdb7a211f69b614894b12822988ae897fd6d416cb7dfbd7eab564",
+   "doseCount": 163
   },
   {
    "hash": "34d947a9a587fc43895b88436c25524949a688c92691b3c350e61003ddb7f0ab",
@@ -7082,8 +7128,8 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": "https://em.danecounty.gov/documents/pdf/ems/2021-2022-Protocol-Update/Dane-Co-EMS-Protocols--4.11.22.pdf",
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-34d947a9a587fc43895b88436c25524949a688c92691b3c350e61003ddb7f0ab",
+   "doseCount": 172
   },
   {
    "hash": "351d0fc3d784e29732615664bbe58ed51ac71826369534a375cdf83c25ef0d80",
@@ -7128,8 +7174,8 @@
    "status": null,
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-352b9836c9ef87f32b7455a26aa9060c",
+   "doseCount": 44
   },
   {
    "hash": "356d7057e381787d1565d1bf189bedc58047f49c0d82cbe6cdb8ccea46b50b97",
@@ -7174,8 +7220,8 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-35aff3178dcb2724265f82b03b44125f",
+   "doseCount": 146
   },
   {
    "hash": "360e21b93a6d0a34412cb931723d9706a54ce880889bffd2fe480d22a77196dd",
@@ -7220,8 +7266,8 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-36139df2668aabed18972febb98c8448",
+   "doseCount": 156
   },
   {
    "hash": "3626685d8536bcd153cd7eb3895295edb4f71584548429adab8965ee1d76e911",
@@ -7381,8 +7427,8 @@
    "status": null,
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-37a95be395dbbb380e781d279bc38d83",
+   "doseCount": 158
   },
   {
    "hash": "37cac98a1d413dac2ce2266f880c2d6170b6f4f0ebbc3116efac47d253596ce2",
@@ -7427,8 +7473,8 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-37d66188d23f72e98d3e6d06bc6694f9",
+   "doseCount": 171
   },
   {
    "hash": "37d7348cc4b198dbb921f168238f9025",
@@ -7496,8 +7542,8 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-380770ebab63fcc93d06079de2a64139",
+   "doseCount": 180
   },
   {
    "hash": "38542184c1dd95afcd8cfe61f5ced3a0",
@@ -7516,11 +7562,11 @@
    "origin": "app",
    "versionLabel": null,
    "publicationState": "listed_named",
-   "status": "superseded",
+   "status": "current",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-38542184c1dd95afcd8cfe61f5ced3a0",
+   "doseCount": 145
   },
   {
    "hash": "386fd709e843127488a05380e72803001bbe3950214d0faa4f68ade0daf8e5b2",
@@ -7542,8 +7588,8 @@
    "status": null,
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-386fd709e843127488a05380e72803001bbe3950214d0faa4f68ade0daf8e5b2",
+   "doseCount": 237
   },
   {
    "hash": "38704da751263e1a1832513b884a6895e467deeee1e513c057298de9a1d761d8",
@@ -7611,8 +7657,8 @@
    "status": null,
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-38e4bb5ea236785768eb8c7b138d5dd8",
+   "doseCount": 208
   },
   {
    "hash": "38f6c2ec15c735a913a27a6f2773328d109ed1b3ed7f9de7ff6a48a1a05f507d",
@@ -7657,8 +7703,8 @@
    "status": "current",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-393377270884e73d55c7e14c513d51ca2103be6edb8efa57848e9732574def61",
+   "doseCount": 251
   },
   {
    "hash": "3963aab7a7ab6209f028455cd76bb88f",
@@ -7680,8 +7726,8 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-3963aab7a7ab6209f028455cd76bb88f",
+   "doseCount": 145
   },
   {
    "hash": "39835db9714f5b105ea1084044ca5e98",
@@ -7703,8 +7749,8 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-39835db9714f5b105ea1084044ca5e98",
+   "doseCount": 165
   },
   {
    "hash": "399589b5ba7c0ec5f7453a169957fad1",
@@ -11450,9 +11496,9 @@
    "versionLabel": null,
    "publicationState": "pending_review",
    "status": null,
-   "pageCount": null,
+   "pageCount": 270,
    "sourceUrl": null,
-   "corpusDocId": "ems-model-protocols",
+   "corpusDocId": "1217c3b91b9905ce4b438f6c5e4f9f2d9489c974d3d4427ecd1bf75ad898a710",
    "doseCount": 187
   },
   {
@@ -15612,7 +15658,7 @@
    "origin": "app",
    "versionLabel": null,
    "publicationState": "listed_named",
-   "status": "current",
+   "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "2025-dcems-protocols-9-5-2025",
@@ -20902,7 +20948,7 @@
    "origin": "seed",
    "versionLabel": "V1.0",
    "publicationState": "listed_named",
-   "status": "current",
+   "status": "superseded",
    "pageCount": null,
    "sourceUrl": "https://dhhs.ne.gov/OEHS%20Program%20Documents/EMS%20Model%20Protocols.pdf",
    "corpusDocId": null,
@@ -27411,7 +27457,7 @@
    "origin": "app",
    "versionLabel": null,
    "publicationState": "listed_named",
-   "status": "current",
+   "status": "superseded",
    "pageCount": 200,
    "sourceUrl": null,
    "corpusDocId": "ae74ce6d8dd56b83ef44dcca9cda1f4a33ba5f30ec6f3a07e6a75a10795f2c68",
@@ -28198,6 +28244,29 @@
    "sourceUrl": null,
    "corpusDocId": "a0a64fec1faef5c8287dbe639c37dd67825f1525bff4309c787f8d004b479fff",
    "doseCount": 11
+  },
+  {
+   "hash": "c631077bbf51ededa0f03ef64cbdf84535bd619188674097a4062b8819f3b28d",
+   "hashSource": "pdf_hash",
+   "agencyKey": null,
+   "agencyName": null,
+   "state": null,
+   "country": "GR",
+   "city": null,
+   "jurisdiction": "education",
+   "publicRecord": false,
+   "confidence": "high",
+   "effectiveDate": null,
+   "capturedDate": null,
+   "effectiveDateSource": "none",
+   "origin": "app",
+   "versionLabel": null,
+   "publicationState": "excluded",
+   "status": null,
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": null,
+   "doseCount": 0
   },
   {
    "hash": "c63a33d9cfb593d243fde9f51c3edd7e",
@@ -30171,7 +30240,7 @@
    "origin": "app",
    "versionLabel": "3.0",
    "publicationState": "listed_named",
-   "status": "current",
+   "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "red-book-chapter-3-2026",
