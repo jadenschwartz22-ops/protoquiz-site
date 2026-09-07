@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-09-06T18:08:10.216Z",
-  "totalUploads": 565,
+  "generatedAt": "2026-09-07T00:08:06.598Z",
+  "totalUploads": 567,
   "distinctProtocols": 392,
-  "activeStudiers": 391,
-  "pagesProcessed": 91840,
+  "activeStudiers": 393,
+  "pagesProcessed": 92110,
   "statesRepresented": 42,
   "countriesRepresented": 4,
   "internationalUploads": 6,
   "byState": {
-    "CO": 43,
+    "CO": 44,
     "CA": 43,
     "MI": 36,
     "TX": 23,
@@ -34,9 +34,9 @@
     "WI": 5,
     "KY": 4,
     "SC": 4,
+    "NE": 4,
     "ID": 4,
     "OK": 3,
-    "NE": 3,
     "DE": 3,
     "MO": 2,
     "MN": 2,
@@ -63,7 +63,7 @@
       "city": "Denver",
       "x": 330,
       "y": 258,
-      "count": 37,
+      "count": 38,
       "tier": "hot",
       "topProtocols": [
         {
@@ -72,7 +72,7 @@
         },
         {
           "title": "DMEMS Protocols January 2026 (Example)",
-          "count": 7
+          "count": 8
         },
         {
           "title": "dmemsmd protocols july 2025 final 2025 07 14",
@@ -575,6 +575,24 @@
       ]
     },
     {
+      "state": "NE",
+      "city": "Omaha",
+      "x": 482,
+      "y": 232,
+      "count": 4,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "EMS Model Protocols",
+          "count": 3
+        },
+        {
+          "title": "EMS Model Protocols 2024",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "TN",
       "city": "Nashville",
       "x": 643,
@@ -592,24 +610,6 @@
         },
         {
           "title": "WEMA Protocols POCKET GUIDE AMBULANCE V3 9 23 15",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "NE",
-      "city": "Omaha",
-      "x": 482,
-      "y": 232,
-      "count": 3,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "EMS Model Protocols",
-          "count": 2
-        },
-        {
-          "title": "EMS Model Protocols 2024",
           "count": 1
         }
       ]
