@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-09-07T12:08:06.229Z",
-  "totalUploads": 568,
-  "distinctProtocols": 392,
-  "activeStudiers": 394,
-  "pagesProcessed": 92110,
+  "generatedAt": "2026-09-07T18:08:19.181Z",
+  "totalUploads": 570,
+  "distinctProtocols": 394,
+  "activeStudiers": 396,
+  "pagesProcessed": 92458,
   "statesRepresented": 42,
   "countriesRepresented": 4,
   "internationalUploads": 6,
   "byState": {
-    "CO": 45,
+    "CO": 47,
     "CA": 43,
     "MI": 36,
-    "TX": 23,
+    "TX": 24,
     "PA": 23,
     "MA": 23,
     "GA": 23,
-    "NY": 21,
+    "NY": 22,
     "CT": 18,
     "NC": 17,
     "VA": 17,
@@ -32,6 +32,7 @@
     "AL": 5,
     "IN": 5,
     "WI": 5,
+    "LA": 5,
     "KY": 4,
     "SC": 4,
     "NE": 4,
@@ -45,7 +46,6 @@
     "AR": 2,
     "NH": 2,
     "NJ": 2,
-    "LA": 2,
     "IA": 2,
     "DC": 2,
     "WV": 2,
@@ -63,7 +63,7 @@
       "city": "Denver",
       "x": 330,
       "y": 258,
-      "count": 39,
+      "count": 41,
       "tier": "hot",
       "topProtocols": [
         {
@@ -147,6 +147,28 @@
       ]
     },
     {
+      "state": "NY",
+      "city": "New York",
+      "x": 843,
+      "y": 202,
+      "count": 22,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "ny collaborative protocols",
+          "count": 5
+        },
+        {
+          "title": "bls protocols V.26.0",
+          "count": 4
+        },
+        {
+          "title": "ny collaborative protocols",
+          "count": 3
+        }
+      ]
+    },
+    {
       "state": "GA",
       "city": "Atlanta",
       "x": 692,
@@ -169,50 +191,6 @@
       ]
     },
     {
-      "state": "NY",
-      "city": "New York",
-      "x": 843,
-      "y": 202,
-      "count": 21,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "ny collaborative protocols",
-          "count": 5
-        },
-        {
-          "title": "bls protocols V.26.0",
-          "count": 4
-        },
-        {
-          "title": "ny collaborative protocols",
-          "count": 3
-        }
-      ]
-    },
-    {
-      "state": "CA",
-      "city": "Los Angeles",
-      "x": 80,
-      "y": 345,
-      "count": 19,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "1075386 LACountyTreatmentProtocols",
-          "count": 2
-        },
-        {
-          "title": "Field Manual 79",
-          "count": 2
-        },
-        {
-          "title": "PCM 2025 for posting",
-          "count": 2
-        }
-      ]
-    },
-    {
       "state": "CT",
       "city": "Hartford",
       "x": 858,
@@ -231,6 +209,28 @@
         {
           "title": "v20251 ctemsstatewideprotocolsfinal",
           "count": 1
+        }
+      ]
+    },
+    {
+      "state": "CA",
+      "city": "Los Angeles",
+      "x": 80,
+      "y": 345,
+      "count": 16,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "1075386 LACountyTreatmentProtocols",
+          "count": 2
+        },
+        {
+          "title": "Field Manual 79",
+          "count": 2
+        },
+        {
+          "title": "PCM 2025 for posting",
+          "count": 2
         }
       ]
     },
@@ -345,28 +345,6 @@
       ]
     },
     {
-      "state": "VA",
-      "city": "Richmond",
-      "x": 801,
-      "y": 283,
-      "count": 9,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "Section 7 Toxicological",
-          "count": 1
-        },
-        {
-          "title": "Section 9 Peds Medical Revised Racemic Epi",
-          "count": 1
-        },
-        {
-          "title": "Section 8 Pediatric Cardiac",
-          "count": 1
-        }
-      ]
-    },
-    {
       "state": "MD",
       "city": "Baltimore",
       "x": 807,
@@ -389,11 +367,33 @@
       ]
     },
     {
+      "state": "VA",
+      "city": "Richmond",
+      "x": 801,
+      "y": 283,
+      "count": 8,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "Section 7 Toxicological",
+          "count": 1
+        },
+        {
+          "title": "Section 9 Peds Medical Revised Racemic Epi",
+          "count": 1
+        },
+        {
+          "title": "Section 8 Pediatric Cardiac",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "CA",
       "city": "San Leandro",
       "x": 34,
       "y": 249,
-      "count": 7,
+      "count": 8,
       "tier": "warm",
       "topProtocols": [
         {
@@ -477,6 +477,28 @@
       ]
     },
     {
+      "state": "TN",
+      "city": "Nashville",
+      "x": 643,
+      "y": 337,
+      "count": 5,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "CCEMS Protocols 1.2",
+          "count": 2
+        },
+        {
+          "title": "2026 COG",
+          "count": 1
+        },
+        {
+          "title": "gilescountyambulance 07cd0506e8aa0cfb8cfec",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "AL",
       "city": "Birmingham",
       "x": 649,
@@ -490,6 +512,28 @@
         },
         {
           "title": "master.alabama.protocols.11th.edition.07012025",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "LA",
+      "city": "New Orleans",
+      "x": 594,
+      "y": 479,
+      "count": 5,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "rope 2024 final 05 02 24",
+          "count": 2
+        },
+        {
+          "title": "Acadian 2026 Protocols",
+          "count": 2
+        },
+        {
+          "title": "Acadian 2026 Protocols Searchable OCR",
           "count": 1
         }
       ]
@@ -593,23 +637,23 @@
       ]
     },
     {
-      "state": "TN",
-      "city": "Nashville",
-      "x": 643,
-      "y": 337,
+      "state": "ID",
+      "city": "Boise",
+      "x": 162,
+      "y": 146,
       "count": 4,
       "tier": "on",
       "topProtocols": [
         {
-          "title": "CCEMS Protocols 1.2",
+          "title": "ADAP",
           "count": 2
         },
         {
-          "title": "2026 COG",
+          "title": "EMSPC Statewide Protocols 2024 1.1",
           "count": 1
         },
         {
-          "title": "WEMA Protocols POCKET GUIDE AMBULANCE V3 9 23 15",
+          "title": "ADA COUNTY Boise",
           "count": 1
         }
       ]
@@ -939,20 +983,6 @@
       ]
     },
     {
-      "state": "LA",
-      "city": "New Orleans",
-      "x": 594,
-      "y": 479,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "rope 2024 final 05 02 24",
-          "count": 2
-        }
-      ]
-    },
-    {
       "state": "CA",
       "city": "Rocklin",
       "x": 55,
@@ -989,38 +1019,6 @@
       ]
     },
     {
-      "state": "ID",
-      "city": "Boise",
-      "x": 162,
-      "y": 146,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "EMSPC Statewide Protocols 2024 1.1",
-          "count": 1
-        },
-        {
-          "title": "ADA COUNTY Boise",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "ID",
-      "city": "Ada County",
-      "x": 160,
-      "y": 150,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "ADAP",
-          "count": 2
-        }
-      ]
-    },
-    {
       "state": "WV",
       "city": "Charleston",
       "x": 726,
@@ -1052,20 +1050,6 @@
         },
         {
           "title": "palmbeachgardensfirerescuepatientcareprotocols2025 bf30c8b884…",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "TX",
-      "city": "Lake Dallas",
-      "x": 462,
-      "y": 412,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "2024 Lake Cities Protocols",
           "count": 1
         }
       ]
@@ -1156,9 +1140,9 @@
     },
     {
       "state": "OH",
-      "city": "Miami Valley",
-      "x": 684,
-      "y": 251,
+      "city": "Dayton",
+      "x": 679,
+      "y": 253,
       "count": 1,
       "tier": "tiny",
       "topProtocols": [
@@ -1192,20 +1176,6 @@
       "topProtocols": [
         {
           "title": "RAS Protocols",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "TN",
-      "city": "Pulaski",
-      "x": 641,
-      "y": 359,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "gilescountyambulance 5269aed19ab810ba6bd02",
           "count": 1
         }
       ]
@@ -1296,9 +1266,9 @@
     },
     {
       "state": "WA",
-      "city": "Vancouver",
-      "x": 74,
-      "y": 78,
+      "city": "Las Vegas",
+      "x": 91,
+      "y": 24,
       "count": 1,
       "tier": "tiny",
       "topProtocols": [
@@ -1794,6 +1764,76 @@
       "topProtocols": [
         {
           "title": "yrmc ems guidelines 2",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "TX",
+      "city": "Hickory Creek",
+      "x": 462,
+      "y": 412,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "2024 Lake Cities Protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "VA",
+      "city": "Pulaski",
+      "x": 745,
+      "y": 304,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "gilescountyambulance 5269aed19ab810ba6bd02",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "CA",
+      "city": "Fresno",
+      "x": 68,
+      "y": 280,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "530.02 general procedures h +19 more",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "TX",
+      "city": "Mount Pleasant",
+      "x": 500,
+      "y": 412,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "2025 Revised Protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "CA",
+      "city": "Marin County",
+      "x": 28,
+      "y": 240,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "MC protocols",
           "count": 1
         }
       ]
