@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-09-08T18:08:22.128Z",
-  "totalUploads": 573,
-  "distinctProtocols": 396,
-  "activeStudiers": 399,
-  "pagesProcessed": 92822,
+  "generatedAt": "2026-09-09T00:08:19.259Z",
+  "totalUploads": 585,
+  "distinctProtocols": 406,
+  "activeStudiers": 401,
+  "pagesProcessed": 93713,
   "statesRepresented": 42,
   "countriesRepresented": 4,
   "internationalUploads": 6,
   "byState": {
     "CO": 47,
+    "MI": 47,
     "CA": 43,
-    "MI": 37,
     "MA": 25,
     "TX": 24,
-    "PA": 23,
+    "PA": 24,
     "GA": 23,
     "NY": 22,
     "CT": 18,
@@ -49,7 +49,7 @@
     "IA": 2,
     "DC": 2,
     "WV": 2,
-    "RI": 1
+    "RI": 2
   },
   "byCountry": {
     "CA": 2,
@@ -58,6 +58,28 @@
     "NZ": 1
   },
   "locales": [
+    {
+      "state": "MI",
+      "city": "Detroit",
+      "x": 690,
+      "y": 194,
+      "count": 47,
+      "tier": "hot",
+      "topProtocols": [
+        {
+          "title": "HEMS State Protocol Suite may 2026",
+          "count": 2
+        },
+        {
+          "title": "260109 Section 1 General Treatment",
+          "count": 2
+        },
+        {
+          "title": "1.5 Shock",
+          "count": 1
+        }
+      ]
+    },
     {
       "state": "CO",
       "city": "Denver",
@@ -77,28 +99,6 @@
         {
           "title": "dmemsmd protocols july 2025 final 2025 07 14",
           "count": 7
-        }
-      ]
-    },
-    {
-      "state": "MI",
-      "city": "Detroit",
-      "x": 690,
-      "y": 194,
-      "count": 37,
-      "tier": "hot",
-      "topProtocols": [
-        {
-          "title": "HEMS State Protocol Suite may 2026",
-          "count": 2
-        },
-        {
-          "title": "1.5 Shock",
-          "count": 1
-        },
-        {
-          "title": "1.9 Opioid Overdose Treatment and Prevention",
-          "count": 1
         }
       ]
     },
@@ -129,12 +129,12 @@
       "city": "Philadelphia",
       "x": 828,
       "y": 223,
-      "count": 23,
+      "count": 24,
       "tier": "warm",
       "topProtocols": [
         {
           "title": "2023v1 2 PA ALS Protocols",
-          "count": 8
+          "count": 9
         },
         {
           "title": "2023v1 2 PA BLS Protocols",
@@ -1037,6 +1037,24 @@
       ]
     },
     {
+      "state": "RI",
+      "city": "Providence",
+      "x": 878,
+      "y": 168,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "StatewideEmergencyMedicalServices",
+          "count": 1
+        },
+        {
+          "title": "StatewideEmergencyMedicalServices 2024",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "FL",
       "city": "Palm Beach Gardens",
       "x": 794,
@@ -1694,20 +1712,6 @@
       "topProtocols": [
         {
           "title": "Signed 2026 EMS Protocol",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "RI",
-      "city": "Providence",
-      "x": 878,
-      "y": 168,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "StatewideEmergencyMedicalServices 2024",
           "count": 1
         }
       ]
