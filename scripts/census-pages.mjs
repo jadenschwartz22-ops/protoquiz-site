@@ -21,6 +21,8 @@ import { readFileSync, writeFileSync, mkdirSync, mkdtempSync, readdirSync } from
 import { join, dirname } from 'node:path';
 import { tmpdir } from 'node:os';
 import { createHash } from 'node:crypto';
+import { pathToFileURL } from 'node:url';
+import { navFor, FOOTER_HTML, CHROME_HEAD } from './shared-chrome.mjs';
 
 const hash = s => createHash('sha256').update(s).digest('hex').slice(0, 16);
 
@@ -280,28 +282,20 @@ ${jsonLd.map(j => `  <script type="application/ld+json">\n${jsonLdText(j)}\n  </
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+${CHROME_HEAD}
   <link rel="stylesheet" href="/census/census.css?v=${CSS_V}">
 </head>`;
 
-const nav = `  <header>
-    <div class="wrap">
-      <nav class="navbar">
-        <a href="/" class="brand-link"><img src="/logo-128.png" alt="ProtoQuiz logo" width="34" height="34"><span>ProtoQuiz</span></a>
-        <div class="nav-links">
-          <a href="/census/" class="nav-btn">Census</a>
-          <a href="/agency/" class="nav-btn">For Agencies</a>
-          <a href="/blog/" class="nav-btn">Blog</a>
-        </div>
-      </nav>
-    </div>
-  </header>`;
+// Nav and footer live in scripts/shared-chrome.mjs so every page on the site renders
+// the same chrome. Census pages are always in the census section.
+const nav = navFor('/census/');
 
-const footer = `  <footer>
-    <div class="wrap">
-      <p class="disclaimer">${DISCLAIMER}</p>
-      <p>&copy; 2026 Teach Me to Live LLC, d/b/a ProtoQuiz&trade;. &middot; <a href="/census/">EMS Census</a> &middot; <a href="/census/methodology/">Methodology</a> &middot; <a href="/census/data-license/">Data license</a> &middot; <a href="/agency/">For Agencies</a> &middot; <a href="/blog/">Blog</a></p>
-    </div>
-  </footer>
+// The disclaimer rides above the shared footer rather than inside it: it is specific
+// to published-protocol data and would be a false promise on /app or /agency.
+const footer = `  <div class="census-disclaimer">
+    <div class="wrap"><p class="disclaimer">${DISCLAIMER}</p></div>
+  </div>
+${FOOTER_HTML}
 </body>
 </html>
 `;
@@ -1795,13 +1789,9 @@ a:hover{text-decoration-thickness:2px}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
 
-/* the shared site header keeps its own dark chrome; only its own rules live here */
-header{background:oklch(0.19 0.015 260);border-bottom:1px solid oklch(0.30 0.02 260)}
-.navbar{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:16px;flex-wrap:wrap}
-.brand-link{display:flex;align-items:center;gap:8px;color:oklch(0.97 0.004 250);text-decoration:none;font-weight:600;font-size:1.05rem}
-.nav-links{display:flex;gap:4px;flex-wrap:wrap}
-.nav-btn{padding:6px 12px;border:1px solid oklch(0.34 0.02 260);border-radius:var(--r);text-decoration:none;font-size:.875rem;font-weight:500;color:oklch(0.90 0.006 250)}
-.nav-btn:hover{background:oklch(0.26 0.018 260);text-decoration:none}
+/* The site header is shared chrome now (assets/chrome.css). Census must not restyle
+   header, .nav-links or .brand: doing so is what made the site look like four
+   different companies. Census owns everything BELOW the header, starting at .pbar. */
 
 /* census product bar: the one loud element besides the document header */
 .pbar{background:var(--ground);border-bottom:1px solid var(--rule)}
@@ -1994,9 +1984,11 @@ ul.railnav a:hover{text-decoration:underline}
 .submit-form .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .form-msg{font-size:.8125rem;color:var(--muted);min-height:1.2em;margin:8px 0 0}
 
-footer{border-top:1px solid var(--rule);padding:24px 0 32px;color:var(--muted);font-size:.8125rem;background:var(--panel);margin-top:24px}
-footer p{max-width:none}
-.disclaimer{border:1px solid var(--rule);border-radius:var(--r);background:var(--ground);padding:10px 14px;margin:0 0 12px;max-width:72ch}
+/* The site footer is shared chrome (assets/chrome.css); census only styles the
+   disclaimer band that sits above it. */
+.census-disclaimer{border-top:1px solid var(--rule);padding:24px 0;background:var(--panel);margin-top:24px}
+.census-disclaimer p{max-width:none}
+.disclaimer{border:1px solid var(--rule);border-radius:var(--r);background:var(--ground);padding:10px 14px;margin:0;max-width:72ch;color:var(--muted);font-size:.8125rem}
 
 @media(max-width:960px){
   .layout,.layout.facets{grid-template-columns:minmax(0,1fr);gap:32px}
@@ -2045,7 +2037,10 @@ export function generate({ dataDir, outDir, rowsDir = null }) {
   return { files: all, urls, manifest: pm };
 }
 
-const isMain = import.meta.url === `file://${process.argv[1]}`;
+// pathToFileURL, not `file://${argv[1]}`: the repo path contains a space, which
+// import.meta.url percent-encodes and a naive concat does not. That mismatch made
+// this script a silent no-op when run directly (exit 0, zero files written).
+const isMain = process.argv[1] ? import.meta.url === pathToFileURL(process.argv[1]).href : false;
 if (isMain) {
   const arg = (name, fallback) => {
     const i = process.argv.indexOf(`--${name}`);

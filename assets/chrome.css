@@ -51,6 +51,23 @@ a:hover { color: var(--accent-hover); }
 
 /* ---------------------------------------------------------------- nav */
 
+/* The chrome is self-contained on purpose. Pages that define their own --accent or
+   blanket `a { }` rules (census styles every link underlined and red) must not reach
+   inside it, so these rules name their own colors and reset decoration explicitly. */
+.site-header, .site-footer {
+  --accent: oklch(50% 0.196 265);
+  --accent-hover: oklch(43% 0.19 265);
+  --ink:    oklch(21% 0.017 265);
+  --ink-2:  oklch(44% 0.014 265);
+  --ink-3:  oklch(60% 0.011 265);
+  --line:   oklch(91.5% 0.007 265);
+  --paper:  oklch(99.4% 0.002 265);
+  --ground: oklch(97.6% 0.004 265);
+  font-family: 'Sora', system-ui, -apple-system, sans-serif;
+}
+.site-header a, .site-footer a { text-decoration: none; }
+.site-header a:hover, .site-footer a:hover { text-decoration: none; }
+
 .site-header { border-bottom: 1px solid var(--line); background: var(--paper); }
 
 .site-nav {
