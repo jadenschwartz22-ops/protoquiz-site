@@ -22,9 +22,13 @@ const test = (name, fn) => {
 const PAGES = [
   'index.html', 'app/index.html', 'about/index.html', 'trust/index.html',
   'agency/index.html', 'agency/compare/index.html', 'agency/faq/index.html',
-  'agency/tour/index.html', 'blog/index.html', 'privacy/index.html',
+  'blog/index.html', 'privacy/index.html',
   'terms/index.html', 'delete-account/index.html',
 ];
+
+// agency/tour is a full-screen product demo with no chrome by design, the same way the
+// census demo has none. Giving it a site nav would break the demo, not fix it.
+const CHROMELESS = ['agency/tour/index.html'];
 
 const NAV_LABELS = ['App', 'For agencies', 'EMS Census', 'About'];
 
@@ -74,6 +78,16 @@ test('every page renders the canonical footer verbatim', () => {
     if (!existsSync(f)) continue;
     const html = readFileSync(f, 'utf8');
     assert.ok(html.includes(FOOTER_HTML), `${rel} footer has drifted from shared-chrome.mjs`);
+  }
+});
+
+test('the chromeless demo stays chromeless', () => {
+  for (const rel of CHROMELESS) {
+    const f = join(root, rel);
+    if (!existsSync(f)) continue;
+    const html = readFileSync(f, 'utf8');
+    assert.ok(!html.includes('<!-- shared-chrome:nav -->'),
+      `${rel} is a full-screen demo and must not carry site chrome`);
   }
 });
 

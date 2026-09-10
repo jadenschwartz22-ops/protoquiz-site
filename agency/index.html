@@ -39,6 +39,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+  <link rel="stylesheet" href="/assets/chrome.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
@@ -90,7 +94,7 @@
   .wrap{max-width:1140px; margin:0 auto; padding:0 32px;}
 
   /* ============ HEADER ============ */
-  .site-header{
+  .agency-header{
     position:fixed; top:0; left:0; right:0;
     display:flex; align-items:center; justify-content:space-between;
     padding:18px 36px; z-index:100;
@@ -100,38 +104,28 @@
     backdrop-filter:blur(20px) saturate(120%); -webkit-backdrop-filter:blur(20px) saturate(120%);
     box-shadow:0 6px 14px -10px rgba(17,20,27,.18);
   }
-  .site-header .header-left{display:flex; align-items:center; gap:18px;}
-  .site-header .back-to-consumer{
-    font-family:'JetBrains Mono', ui-monospace, monospace;
-    font-size:11.5px; letter-spacing:.10em; text-transform:uppercase;
-    color:var(--muted); text-decoration:none; font-weight:600;
-    padding:6px 11px; border-radius:6px;
-    border:1px solid rgba(17,20,27,.12);
-    transition:color .18s ease, border-color .18s ease, background .18s ease;
-  }
-  .site-header .back-to-consumer:hover{color:var(--ink); border-color:rgba(17,20,27,.30); background:rgba(17,20,27,.04);}
-  .site-header .brand{display:flex; align-items:center; gap:14px; font-size:19px; font-weight:800; color:var(--ink); letter-spacing:-.01em; text-decoration:none;}
-  .site-header .brand img{
+  .agency-header .header-left{display:flex; align-items:center; gap:18px;}
+  .agency-header .brand{display:flex; align-items:center; gap:14px; font-size:19px; font-weight:800; color:var(--ink); letter-spacing:-.01em; text-decoration:none;}
+  .agency-header .brand img{
     width:56px; height:56px;
   }
   @media (max-width:600px){
-    .site-header .brand{font-size:16px; gap:11px;}
-    .site-header .brand img{width:44px; height:44px;}
-    .site-header .back-to-consumer{display:none;}
+    .agency-header .brand{font-size:16px; gap:11px;}
+    .agency-header .brand img{width:44px; height:44px;}
   }
-  .site-header nav{display:flex; gap:28px; font-size:14px; color:var(--muted); font-weight:500;}
-  .site-header nav a{color:inherit; text-decoration:none; transition:color .18s ease;}
-  .site-header nav a:hover{color:var(--ink);}
-  .site-header .cta{background:var(--ink); color:#fff; padding:10px 18px; border-radius:7px; font-size:14px; font-weight:700; text-decoration:none; transition:background .18s ease, color .18s ease, border-color .18s ease;}
-  .site-header .cta:hover{background:#1f2330;}
-  .site-header .header-cta-group{display:flex; align-items:center; gap:10px;}
-  .site-header .cta-ghost{
+  .agency-header nav{display:flex; gap:28px; font-size:14px; color:var(--muted); font-weight:500;}
+  .agency-header nav a{color:inherit; text-decoration:none; transition:color .18s ease;}
+  .agency-header nav a:hover{color:var(--ink);}
+  .agency-header .cta{background:var(--ink); color:#fff; padding:10px 18px; border-radius:7px; font-size:14px; font-weight:700; text-decoration:none; transition:background .18s ease, color .18s ease, border-color .18s ease;}
+  .agency-header .cta:hover{background:#1f2330;}
+  .agency-header .header-cta-group{display:flex; align-items:center; gap:10px;}
+  .agency-header .cta-ghost{
     background:transparent; color:var(--ink);
     border:1px solid var(--line);
   }
-  .site-header .cta-ghost:hover{background:var(--surface2); color:var(--ink); border-color:rgba(15,18,25,.20);}
+  .agency-header .cta-ghost:hover{background:var(--surface2); color:var(--ink); border-color:rgba(15,18,25,.20);}
   @media (max-width:600px){
-    .site-header .cta-ghost{display:none;}
+    .agency-header .cta-ghost{display:none;}
   }
 
   /* ============ HERO (founder voice, static) ============ */
@@ -3040,11 +3034,11 @@
   }
   /* Tablet (700-900): tighten nav gap so it stays inline next to CTAs. */
   @media (max-width:900px) and (min-width:701px){
-    .site-header nav{gap:18px; font-size:13px;}
+    .agency-header nav{gap:18px; font-size:13px;}
   }
   @media (max-width:700px){
-    .site-header{padding:14px 18px;}
-    .site-header nav{display:none;}
+    .agency-header{padding:14px 18px;}
+    .agency-header nav{display:none;}
     .card{padding:80px 24px 110px;}
     .section{padding:80px 0;}
   }
@@ -3096,11 +3090,6 @@
   .nav-drawer a:hover{color:var(--accent);}
   .nav-drawer a::after{content:"→"; color:var(--accent); font-weight:400; opacity:.6;}
   /* Leaving the B2B page is a different action than jumping within it. */
-  .nav-drawer .drawer-exit{
-    margin-top:26px; border-bottom:none;
-    font-size:11.5px; color:var(--muted);
-  }
-  .nav-drawer .drawer-exit::after{content:"↗";}
 
   @media (max-width:700px){
     .nav-toggle{display:inline-flex;}
@@ -3525,8 +3514,8 @@
   .scroll-cue:focus-visible,
   .math-row:focus-visible,
   .costviz-bar-fill:focus-visible,
-  .site-header nav a:focus-visible,
-  .site-header .brand:focus-visible,
+  .agency-header nav a:focus-visible,
+  .agency-header .brand:focus-visible,
   .src-modal-close:focus-visible,
   .src-modal-link:focus-visible,
   .rollout-blurb a:focus-visible,
@@ -4531,21 +4520,25 @@
 
   <a href="#main-content" class="skip-link">Skip to content</a>
 
+  <!-- shared-chrome:nav -->
   <header class="site-header">
-    <div class="header-left">
-      <a href="#hero" class="brand"><img src="/logo-256.png" alt="EMS ProtoQuiz logo">ProtoQuiz&trade;</a>
-      <a href="/" class="back-to-consumer" aria-label="Back to ProtoQuiz consumer app">&larr; Consumer app</a>
-    </div>
-    <nav aria-label="Primary"><a href="#walkthrough">How it works</a><a href="#pricing-section">Pricing</a><a href="/trust/">Trust</a><a href="#contact">Contact</a></nav>
-    <div class="header-cta-group">
-      <a href="https://demo.protoquiz.com" target="_blank" rel="noopener" class="cta cta-ghost">Try the demo</a>
-      <a href="#" class="cta" id="openContact">Contact us</a>
-      <button type="button" class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="navDrawer">
-        <span class="nav-toggle-menu">Menu +</span>
-        <span class="nav-toggle-x">Close &times;</span>
-      </button>
-    </div>
+    <nav class="site-nav" aria-label="Primary">
+      <div class="nav-left">
+        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="30" height="30"><span>ProtoQuiz</span></a>
+        <div class="nav-links">
+          <a href="/app/" class="nav-link">App</a>
+          <a href="/agency/" class="nav-link on" aria-current="page">For agencies</a>
+          <a href="/census/" class="nav-link">EMS Census</a>
+          <a href="/about/" class="nav-link">About</a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="https://demo.protoquiz.com" class="nav-link">Sign in</a>
+        <a href="/agency/#contact" class="nav-cta">Contact sales</a>
+      </div>
+    </nav>
   </header>
+  <!-- /shared-chrome:nav -->
 
   <!-- Mobile-only nav. Mirrors the desktop primary nav plus the two links
        that 600px and below hide (demo, consumer app), so nothing is
@@ -4556,7 +4549,6 @@
     <a href="/trust/" data-nav-close>Trust</a>
     <a href="#contact" data-nav-close>Get started</a>
     <a href="https://demo.protoquiz.com" target="_blank" rel="noopener" data-nav-close>Try the demo</a>
-    <a href="/" class="drawer-exit" data-nav-close>ProtoQuiz consumer app</a>
   </div>
 
   <main id="main-content">
@@ -5759,43 +5751,48 @@
     </div>
   </dialog>
 
-  <footer style="border-top:1px solid rgba(15,18,25,.10); padding:48px 24px 36px; font-family:JetBrains Mono, ui-monospace, monospace; font-size:12px; color:rgba(15,18,25,.55); letter-spacing:.02em; line-height:1.6;">
-    <div style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); gap:30px 24px;">
-      <div>
-        <div style="font-size:10px; letter-spacing:.18em; color:rgba(15,18,25,.45); text-transform:uppercase; margin-bottom:10px;">Product</div>
-        <div><a href="/" style="color:rgba(15,18,25,.75); text-decoration:none;">Home</a></div>
-        <div><a href="/agency/#walkthrough" style="color:rgba(15,18,25,.75); text-decoration:none;">How it works</a></div>
-        <div><a href="/agency/#pricing-section" style="color:rgba(15,18,25,.75); text-decoration:none;">Pricing</a></div>
-        <div><a href="/blog/" style="color:rgba(15,18,25,.75); text-decoration:none;">Blog</a></div>
+  <!-- shared-chrome:footer -->
+  <footer class="site-footer">
+    <div class="foot-cols">
+      <div class="foot-brand">
+        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="24" height="24"><span>ProtoQuiz</span></a>
+        <p>Protocol training for EMS. Built by a working paramedic.</p>
       </div>
-      <div>
-        <div style="font-size:10px; letter-spacing:.18em; color:rgba(15,18,25,.45); text-transform:uppercase; margin-bottom:10px;">Trust</div>
-        <div><a href="/trust/" style="color:rgba(15,18,25,.75); text-decoration:none;">Trust &amp; Security</a></div>
-        <div><a href="https://status.protoquiz.com" style="color:rgba(15,18,25,.75); text-decoration:none;">System Status</a></div>
-        <div><a href="/legal/dpa.html" style="color:rgba(15,18,25,.75); text-decoration:none;">Data Processing Addendum</a></div>
-        <div><a href="/b2b/privacy/" style="color:rgba(15,18,25,.75); text-decoration:none;">B2B Privacy Policy</a></div>
-        <div><a href="/b2b/terms/" style="color:rgba(15,18,25,.75); text-decoration:none;">B2B Terms of Service</a></div>
+      <div class="foot-col">
+        <h2>Product</h2>
+        <a href="/app/">iOS app</a>
+        <a href="/app/">Android app</a>
+        <a href="/agency/">For agencies</a>
+        <a href="/agency/#pricing-section">Pricing</a>
       </div>
-      <div>
-        <div style="font-size:10px; letter-spacing:.18em; color:rgba(15,18,25,.45); text-transform:uppercase; margin-bottom:10px;">Contracts</div>
-        <div><a href="/legal/msa.html" style="color:rgba(15,18,25,.75); text-decoration:none;">Master Services Agreement</a></div>
-        <div><a href="/legal/order-form.html" style="color:rgba(15,18,25,.75); text-decoration:none;">Order Form</a></div>
-        <div><a href="/legal/ach-authorization.html" style="color:rgba(15,18,25,.75); text-decoration:none;">ACH Authorization</a></div>
-        <div><a href="/legal/w9-info.html" style="color:rgba(15,18,25,.75); text-decoration:none;">W-9 / Vendor Info</a></div>
+      <div class="foot-col">
+        <h2>Census</h2>
+        <a href="/census/">Overview</a>
+        <a href="/census/#states">By state</a>
+        <a href="/census/#drugs">By drug</a>
+        <a href="/census/methodology/">Methodology</a>
       </div>
-      <div>
-        <div style="font-size:10px; letter-spacing:.18em; color:rgba(15,18,25,.45); text-transform:uppercase; margin-bottom:10px;">Contact</div>
-        <div><a href="mailto:sales@protoquiz.com" style="color:rgba(15,18,25,.75); text-decoration:none;">sales@protoquiz.com</a></div>
-        <div><a href="mailto:support@protoquiz.com" style="color:rgba(15,18,25,.75); text-decoration:none;">support@protoquiz.com</a></div>
-        <div><a href="mailto:legal@protoquiz.com" style="color:rgba(15,18,25,.75); text-decoration:none;">legal@protoquiz.com</a></div>
-        <div><a href="mailto:billing@protoquiz.com" style="color:rgba(15,18,25,.75); text-decoration:none;">billing@protoquiz.com</a></div>
+      <div class="foot-col">
+        <h2>Company</h2>
+        <a href="/about/">About</a>
+        <a href="/blog/">Blog</a>
+        <a href="/trust/">Trust</a>
+        <a href="https://status.protoquiz.com">Status</a>
+      </div>
+      <div class="foot-col">
+        <h2>Legal</h2>
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+        <a href="/trust/">Security</a>
+        <a href="/census/data-license/">Data license</a>
       </div>
     </div>
-    <div style="max-width:1100px; margin:36px auto 0; padding-top:24px; border-top:1px solid rgba(15,18,25,.08); display:flex; flex-wrap:wrap; justify-content:space-between; gap:14px; font-size:11px; color:rgba(15,18,25,.45);">
-      <div>&copy; 2026 Teach Me to Live LLC, d/b/a ProtoQuiz&trade;. All rights reserved.</div>
-      <div>1500 N Grant St #10764, Denver, CO 80203 &middot; EIN 39-2573937</div>
+    <div class="foot-base">
+      <span>&copy; 2026 Teach Me To Live LLC, d/b/a ProtoQuiz&trade;.</span>
+      <span>Denver, CO &middot; Atlanta, GA</span>
     </div>
   </footer>
+  <!-- /shared-chrome:footer -->
 
   <!-- Source citation modal: opens when user clicks a 'What you save' row -->
   <div class="src-modal" id="src-modal" role="dialog" aria-modal="true" aria-labelledby="src-modal-title" hidden>

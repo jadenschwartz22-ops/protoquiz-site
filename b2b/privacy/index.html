@@ -8,6 +8,10 @@
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://protoquiz.com/b2b/privacy/" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=4" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+  <link rel="stylesheet" href="/assets/chrome.css">
   <link rel="stylesheet" href="/legal/_shared.css" />
 </head>
 <body>
@@ -24,16 +28,25 @@
 </div>
 
 <main>
-  <header class="doc-header">
-    <div class="doc-kicker">LEGAL // PRIVACY POLICY</div>
-    <h1 class="doc-title">Privacy Policy</h1>
-    <div class="doc-meta">
-      <span><strong>Effective:</strong> 2026-05-20</span>
-      <span><strong>Updated:</strong> 2026-08-21</span>
-      <span><strong>Version:</strong> 1.1</span>
-      <span><strong>Owner:</strong> Teach Me to Live LLC, d/b/a ProtoQuiz</span>
-    </div>
+  <!-- shared-chrome:nav -->
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary">
+      <div class="nav-left">
+        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="30" height="30"><span>ProtoQuiz</span></a>
+        <div class="nav-links">
+          <a href="/app/" class="nav-link">App</a>
+          <a href="/agency/" class="nav-link">For agencies</a>
+          <a href="/census/" class="nav-link">EMS Census</a>
+          <a href="/about/" class="nav-link">About</a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="https://demo.protoquiz.com" class="nav-link">Sign in</a>
+        <a href="/agency/#contact" class="nav-cta">Contact sales</a>
+      </div>
+    </nav>
   </header>
+  <!-- /shared-chrome:nav -->
 
   <div class="callout">
     This Privacy Policy describes how Teach Me to Live LLC ("<strong>ProtoQuiz</strong>", "<strong>we</strong>", "<strong>us</strong>") collects, uses, and protects information in connection with the ProtoQuiz B2B platform offered to organizational Customers under a Master Services Agreement or these Terms (including the B2B subdomains of <code>protoquiz.com</code>). The standalone consumer iOS application is covered by a separate consumer privacy policy. This Policy is a disclosure of our practices; the contractual relationship between Customer and ProtoQuiz is governed by the MSA or B2B Terms of Service.
@@ -213,10 +226,48 @@
   </section>
 </main>
 
-<footer>
-  &copy; 2026 Teach Me to Live LLC, d/b/a ProtoQuiz&trade;. All rights reserved.<br/>
-  <a href="/">Home</a> · <a href="/b2b/privacy/">Privacy</a> · <a href="/b2b/terms/">Terms</a> · <a href="/legal/msa.html">MSA</a> · <a href="/legal/dpa.html">DPA</a>
-</footer>
+  <!-- shared-chrome:footer -->
+  <footer class="site-footer">
+    <div class="foot-cols">
+      <div class="foot-brand">
+        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="24" height="24"><span>ProtoQuiz</span></a>
+        <p>Protocol training for EMS. Built by a working paramedic.</p>
+      </div>
+      <div class="foot-col">
+        <h2>Product</h2>
+        <a href="/app/">iOS app</a>
+        <a href="/app/">Android app</a>
+        <a href="/agency/">For agencies</a>
+        <a href="/agency/#pricing-section">Pricing</a>
+      </div>
+      <div class="foot-col">
+        <h2>Census</h2>
+        <a href="/census/">Overview</a>
+        <a href="/census/#states">By state</a>
+        <a href="/census/#drugs">By drug</a>
+        <a href="/census/methodology/">Methodology</a>
+      </div>
+      <div class="foot-col">
+        <h2>Company</h2>
+        <a href="/about/">About</a>
+        <a href="/blog/">Blog</a>
+        <a href="/trust/">Trust</a>
+        <a href="https://status.protoquiz.com">Status</a>
+      </div>
+      <div class="foot-col">
+        <h2>Legal</h2>
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+        <a href="/trust/">Security</a>
+        <a href="/census/data-license/">Data license</a>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>&copy; 2026 Teach Me To Live LLC, d/b/a ProtoQuiz&trade;.</span>
+      <span>Denver, CO &middot; Atlanta, GA</span>
+    </div>
+  </footer>
+  <!-- /shared-chrome:footer -->
 
 </body>
 </html>

@@ -53,6 +53,10 @@
     gtag('config', 'G-LNSS9BMEP8');
   </script>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+  <link rel="stylesheet" href="/assets/chrome.css">
   <style>
     :root{--bg:#06050a;--ink:#eae6dd;--ink-soft:#c9c4b8;--muted:#8a857a;--amber:#ffb000;--line:rgba(234,230,221,.12);--mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;--sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;}
     *{box-sizing:border-box;margin:0;}
@@ -85,17 +89,25 @@
   </style>
 </head>
 <body>
-  <header>
-    <div class="wrap">
-      <a href="/" class="brand"><img src="/logo-256.png" alt="ProtoQuiz logo">ProtoQuiz</a>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/blog/">Blog</a>
-        <a href="/agency/">For Agencies</a>
-        <a href="https://apps.apple.com/app/id6753611139">Download</a>
-      </nav>
-    </div>
+  <!-- shared-chrome:nav -->
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary">
+      <div class="nav-left">
+        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="30" height="30"><span>ProtoQuiz</span></a>
+        <div class="nav-links">
+          <a href="/app/" class="nav-link">App</a>
+          <a href="/agency/" class="nav-link">For agencies</a>
+          <a href="/census/" class="nav-link">EMS Census</a>
+          <a href="/about/" class="nav-link on" aria-current="page">About</a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="https://demo.protoquiz.com" class="nav-link">Sign in</a>
+        <a href="/agency/#contact" class="nav-cta">Contact sales</a>
+      </div>
+    </nav>
   </header>
+  <!-- /shared-chrome:nav -->
 
   <main>
     <div class="wrap">
@@ -121,11 +133,47 @@
     </div>
   </main>
 
-  <footer>
-    <div class="wrap">
-      <div>© 2026 <a href="/">PROTOQUIZ™</a></div>
-      <div><a href="/agency/">FOR AGENCIES</a> · <a href="/blog/">BLOG</a> · <a href="/privacy/">PRIVACY</a> · <a href="/terms/">TERMS</a></div>
+  <!-- shared-chrome:footer -->
+  <footer class="site-footer">
+    <div class="foot-cols">
+      <div class="foot-brand">
+        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="24" height="24"><span>ProtoQuiz</span></a>
+        <p>Protocol training for EMS. Built by a working paramedic.</p>
+      </div>
+      <div class="foot-col">
+        <h2>Product</h2>
+        <a href="/app/">iOS app</a>
+        <a href="/app/">Android app</a>
+        <a href="/agency/">For agencies</a>
+        <a href="/agency/#pricing-section">Pricing</a>
+      </div>
+      <div class="foot-col">
+        <h2>Census</h2>
+        <a href="/census/">Overview</a>
+        <a href="/census/#states">By state</a>
+        <a href="/census/#drugs">By drug</a>
+        <a href="/census/methodology/">Methodology</a>
+      </div>
+      <div class="foot-col">
+        <h2>Company</h2>
+        <a href="/about/">About</a>
+        <a href="/blog/">Blog</a>
+        <a href="/trust/">Trust</a>
+        <a href="https://status.protoquiz.com">Status</a>
+      </div>
+      <div class="foot-col">
+        <h2>Legal</h2>
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+        <a href="/trust/">Security</a>
+        <a href="/census/data-license/">Data license</a>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>&copy; 2026 Teach Me To Live LLC, d/b/a ProtoQuiz&trade;.</span>
+      <span>Denver, CO &middot; Atlanta, GA</span>
     </div>
   </footer>
+  <!-- /shared-chrome:footer -->
 </body>
 </html>
