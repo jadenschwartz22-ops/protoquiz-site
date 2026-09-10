@@ -7,7 +7,7 @@
 // CHROME_HEAD before the page's own stylesheet, and leaves the body alone. Bodies are
 // deliberately not redesigned: /agency keeps its cream editorial look.
 import { readFileSync, writeFileSync } from 'node:fs';
-import { navFor, FOOTER_HTML, CHROME_HEAD } from './shared-chrome.mjs';
+import { navFor, FOOTER_HTML, CHROME_HEAD, assetHash } from './shared-chrome.mjs';
 
 const [file, section = null] = process.argv.slice(2);
 if (!file) { console.error('usage: apply-chrome.mjs <file> [section]'); process.exit(1); }
@@ -18,6 +18,12 @@ const NAV = navFor(section);
 
 // 1. head: chrome.css must load BEFORE the page's own stylesheet so the page still
 //    wins the cascade for its own body.
+// An existing chrome.css link is re-stamped with the current content hash. Without this
+// a token change ships to returning visitors as a stale file, and tokens failing to
+// resolve is not a degraded page, it is an unusable one.
+html = html.replace(/href="\/assets\/chrome\.css(\?v=[a-f0-9]+)?"/g,
+  `href="/assets/chrome.css?v=${assetHash('assets/chrome.css')}"`);
+
 if (!html.includes('/assets/chrome.css')) {
   const firstCss = html.search(/<link[^>]+rel="stylesheet"/);
   const styleTag = html.search(/<style[\s>]/);

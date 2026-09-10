@@ -7,10 +7,28 @@
 // hand-written pages paste it between the marker comments, and test-shared-chrome.mjs
 // fails the build if one drifts.
 
+// chrome.css carries the design tokens, so a stale copy does not degrade a page, it
+// breaks it: every colour on the homepage resolves through --lane-*, and an old cached
+// file leaves them undefined (invisible icons, transparent buttons). The query string is
+// derived from the file's own bytes, so it changes exactly when the file does.
+import { readFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
+export const assetHash = rel => {
+  try {
+    return createHash('sha256').update(readFileSync(join(ROOT, rel))).digest('hex').slice(0, 8);
+  } catch {
+    return '0';
+  }
+};
+
 export const CHROME_HEAD = `  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
-  <link rel="stylesheet" href="/assets/chrome.css">`;
+  <link rel="stylesheet" href="/assets/chrome.css?v=${assetHash('assets/chrome.css')}">`;
 
 const SECTIONS = [
   ['App', '/app/'],

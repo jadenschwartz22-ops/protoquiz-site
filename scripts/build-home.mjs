@@ -1,24 +1,24 @@
 import { writeFileSync } from 'node:fs';
-import { NAV_HTML, FOOTER_HTML, CHROME_HEAD } from './shared-chrome.mjs';
+import { NAV_HTML, FOOTER_HTML, CHROME_HEAD, assetHash } from './shared-chrome.mjs';
 
 const check = c => `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="${c}" stroke-width="2.6" stroke-linecap="round"><path d="M4 12.5l5 5L20 6.5"/></svg>`;
 
 const LANES = [
-  { cls: 'lane', num: '01', title: 'For providers',
+  { cls: 'lane lane-1', num: '01', title: 'For providers',
     icon: '<rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18.5h2"/>',
-    stroke: 'var(--accent)',
+    stroke: 'var(--lane)',
     body: "Upload your agency's protocol PDF and study what you'll actually be held to on shift, not a national average.",
     points: ['Page-cited answers', 'Scoped to your cert level', 'Free to start'],
     note: 'iOS &amp; Android', cta: 'Get the app', href: '/app/', ghost: false },
-  { cls: 'lane', num: '02', title: 'For agencies',
+  { cls: 'lane lane-2', num: '02', title: 'For agencies',
     icon: '<path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M9.5 21v-6h5v6"/>',
-    stroke: 'var(--accent)',
+    stroke: 'var(--lane)',
     body: 'Load your protocols once. Every crew member trains on the current version, and you see who’s behind before QA does.',
     points: ['Medical-director sign-off', 'Compliance dashboard', 'Your own subdomain'],
     note: '$100 / provider / yr', cta: 'See how it works', href: '/agency/', ghost: false },
-  { cls: 'lane lane-census', num: '03', title: 'EMS Census',
+  { cls: 'lane lane-3', num: '03', title: 'EMS Census',
     icon: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/>',
-    stroke: 'var(--census-red)',
+    stroke: 'var(--lane)',
     body: 'A public, versioned record of what American EMS agencies carry, rebuilt nightly from the documents they publish themselves.',
     points: ['Compare agencies side by side', 'Sourced to the original PDF', 'Open for research and press'],
     note: 'Free &amp; open', cta: 'Explore the data', href: '/census/', ghost: true },
@@ -75,7 +75,7 @@ const html = `<!doctype html>
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 ${CHROME_HEAD}
-  <link rel="stylesheet" href="/assets/home.css?v=ae5576eb">
+  <link rel="stylesheet" href="/assets/home.css?v=${assetHash('assets/home.css')}">
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
