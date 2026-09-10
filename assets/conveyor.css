@@ -75,9 +75,21 @@
 .doc.s6 {width:142px;height:178px;}
 .doc.s7 {width:122px;height:196px;}
 .doc.s8 {width:152px;height:182px;}
-.track {animation:none;}
-.conveyor-eyebrow .dot {animation:none;}
-@keyframes tickerSlide{
-      0%{transform:translateX(0);}
-      100%{transform:translateX(-50%);}
-    }
+/* The belt scrolls. My first extraction lifted a prefers-reduced-motion override
+   (animation:none) WITHOUT its media query, which froze it permanently. */
+.track { animation: tickerSlide 48s linear infinite; }
+.conveyor:hover .track { animation-play-state: paused; }
+
+@keyframes tickerSlide {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes cvPulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: .35; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track { animation: none; }
+  .conveyor-eyebrow .dot { animation: none; }
+}

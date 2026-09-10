@@ -233,3 +233,32 @@ html { transition: none; }
   .track { animation: none !important; }
   [data-shift] body, [data-shift] .app-hero { transition: none; }
 }
+
+/* ── reach map ───────────────────────────────────────────────────────────
+   Static rebuild of the homepage's interactive map. Tokens, so it flips
+   with [data-shift] like everything else. */
+.reach-wrap {
+  padding: clamp(44px, 5vw, 64px) clamp(16px, 5vw, 72px);
+  background: var(--ground); border-top: 1px solid var(--line);
+}
+.reach-inner { max-width: 1180px; margin: 0 auto; }
+.reach-map { width: 100%; height: auto; display: block; max-width: 900px; margin: 0 auto; }
+.reach-map .state {
+  fill: var(--paper); stroke: var(--line); stroke-width: 1;
+}
+[data-shift="night"] .reach-map .state { fill: oklch(20% 0.014 280); stroke: oklch(30% 0.016 280); }
+.reach-dot { fill: var(--accent); opacity: .82; }
+.reach-dot.t-hot  { opacity: .95; }
+.reach-dot.t-tiny { opacity: .6; }
+[data-shift="night"] .reach-dot { fill: var(--amber); }
+.reach-stats {
+  display: flex; gap: clamp(20px, 4vw, 44px); flex-wrap: wrap;
+  justify-content: center; margin-top: 26px;
+  border-top: 1px solid var(--line); padding-top: 22px;
+}
+.reach-stats .stat-n { font-size: clamp(20px, 2vw, 26px); font-weight: 600; letter-spacing: -0.028em; }
+.reach-stats .stat-l {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 10.5px; letter-spacing: 1.4px; text-transform: uppercase;
+  color: var(--ink-3); margin-left: 7px;
+}
