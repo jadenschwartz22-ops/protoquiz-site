@@ -172,6 +172,31 @@ test('a pending review is disclosed with its date', () => {
 
 console.log('\nSEO_GEO rules');
 test('no aggregateRating anywhere', () => assert.ok(!allHtml.includes('aggregateRating')));
+// A United States census must not count a non-US jurisdiction as a state. "QLD"
+// used to render beside Alabama in the coverage table, inflating the US total and
+// reading as a data error. Non-US listings stay published, in their own section.
+test('a non-US jurisdiction is listed but never counted as a US state', () => {
+  const mk = (agencyKey, name, state) => ({ agencyKey, name, state, coverage: { hasProtocol: true } });
+  const doses = [];
+  for (const [agencyKey, state] of [['qas-qld', 'QLD'], ['denver', 'CO']]) {
+    for (const drugKey of ['epinephrine', 'midazolam', 'fentanyl']) {
+      doses.push({ agencyKey, drugKey, indicationKey: 'cardiac_arrest', population: 'adult',
+        parseStatus: 'parsed', route: 'IV', standing: true, repeatRaw: null, docHash: 'h1', state });
+    }
+  }
+  const built = buildPages({
+    documents: [{ hash: 'h1', effectiveDate: '2026-01-01', agencyKey: 'qas-qld' }],
+    agencies: [mk('qas-qld', 'Queensland Ambulance Service', 'QLD'), mk('denver', 'Denver Health', 'CO')],
+    doses, ledger: [],
+    manifest: { asOf: '2026-09-07', dosesParsed: 6, dosesPartial: 0, dosesRaw: 0, namedAgencies: 2, doseRows: 6 },
+  });
+  const h = built.files.find(f => f.path === '/census/').html;
+  const table = (h.match(/<table class="coverage">[\s\S]*?<\/table>/) || [''])[0];
+  assert.ok(!/QLD|Queensland/.test(table), 'a non-US jurisdiction reached the US coverage table');
+  assert.ok(h.includes('Outside the United States'), 'non-US listing was dropped instead of sectioned');
+  assert.ok(h.includes('Queensland, Australia'), 'a non-US code must render with its country');
+});
+
 test('no meta keywords anywhere', () => assert.ok(!/name="keywords"/.test(allHtml)));
 test('no FAQPage or HowTo schema', () => {
   assert.ok(!allHtml.includes('"FAQPage"'));
