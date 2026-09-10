@@ -75,7 +75,7 @@ const html = `<!doctype html>
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 ${CHROME_HEAD}
-  <link rel="stylesheet" href="/assets/home.css?v=047b5300">
+  <link rel="stylesheet" href="/assets/home.css?v=ae5576eb">
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to content</a>

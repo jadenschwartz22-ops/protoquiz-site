@@ -7,6 +7,7 @@ import { writeFileSync, mkdirSync, readFileSync } from 'node:fs';
 import { navFor, FOOTER_HTML, CHROME_HEAD } from './shared-chrome.mjs';
 
 const stats = JSON.parse(readFileSync('data/firestore-stats.json', 'utf8')).raw;
+const MAP = readFileSync('assets/reach-map.html', 'utf8');
 const reach = JSON.parse(readFileSync('data/reach-stats.json', 'utf8'));
 
 const APPLE = `<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.7c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.8-.9-3-.8-1.5 0-2.9.9-3.7 2.2-1.6 2.8-.4 6.9 1.1 9.1.8 1.1 1.7 2.3 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.9-2.2.9-1.3 1.3-2.5 1.3-2.6 0 0-2.5-1-2.6-3.6zM14.2 5.9c.6-.8 1-1.9.9-3-.9 0-2.1.6-2.7 1.4-.6.7-1.1 1.8-1 2.9 1 .1 2.1-.5 2.8-1.3z"/></svg>`;
@@ -70,7 +71,7 @@ const html = `<!doctype html>
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 ${CHROME_HEAD}
   <link rel="stylesheet" href="/assets/conveyor.css">
-  <link rel="stylesheet" href="/assets/app.css?v=f763f9c3">
+  <link rel="stylesheet" href="/assets/app.css?v=6651072d">
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
@@ -163,6 +164,13 @@ ${navFor('/app/')}
       <div class="doc c5 s4"><div class="doc-eyebrow">DC FEMS</div><div class="doc-title">DC Fire EMS Protocols</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2026</span><span class="pg">278p</span></div></div>
       <div class="doc s2"><div class="doc-eyebrow">Thurston Co WA</div><div class="doc-title">Thurston County Field</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">192p</span></div></div>
       <div class="doc c2 s3"><div class="doc-eyebrow">Clark County</div><div class="doc-title">Clark Co Office of EMS</div><div class="doc-lines"><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">289p</span></div></div>
+      </div>
+    </section>
+
+    <section class="reach-wrap">
+      <div class="reach-inner">
+        <div class="section-eyebrow" style="text-align:center">Real EMTs and paramedics, from across the country</div>
+${MAP}
       </div>
     </section>
 

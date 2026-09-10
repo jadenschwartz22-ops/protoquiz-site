@@ -19,6 +19,14 @@ const SECTIONS = [
   ['About', '/about/'],
 ];
 
+// The CTA is the obvious NEXT STEP for whoever is on this page. A provider reading
+// /app wants the app, not a sales call; someone on /census wants their agency listed.
+const CTA = {
+  '/app/':    ['Download app',    'https://apps.apple.com/app/id6753611139'],
+  '/census/': ['Add your agency', '/census/#list-your-agency'],
+};
+const CTA_DEFAULT = ['Contact sales', '/agency/#contact'];
+
 const navLinks = current => SECTIONS.map(([label, href]) => {
   const on = current && current.startsWith(href);
   return `          <a href="${href}"${on ? ' class="nav-link on" aria-current="page"' : ' class="nav-link"'}>${label}</a>`;
@@ -27,7 +35,9 @@ const navLinks = current => SECTIONS.map(([label, href]) => {
 // `current` is a path like '/agency/'. The active link is DERIVED from it rather than
 // passed in as a flag, so a page can never forget to say where it is and two pages in
 // the same section can never disagree.
-export const navFor = (current = null) => `  <!-- shared-chrome:nav -->
+export const navFor = (current = null) => {
+  const cta = (current && CTA[current]) || CTA_DEFAULT;
+  return `  <!-- shared-chrome:nav -->
   <header class="site-header">
     <nav class="site-nav" aria-label="Primary">
       <div class="nav-left">
@@ -38,11 +48,12 @@ ${navLinks(current)}
       </div>
       <div class="nav-right">
         <a href="https://demo.protoquiz.com" class="nav-link">Sign in</a>
-        <a href="/agency/#contact" class="nav-cta">Contact sales</a>
+        <a href="${cta[1]}" class="nav-cta">${cta[0]}</a>
       </div>
     </nav>
   </header>
   <!-- /shared-chrome:nav -->`;
+};
 
 export const NAV_HTML = navFor(null);
 
