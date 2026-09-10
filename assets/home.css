@@ -44,12 +44,18 @@
 }
 .lane:last-child { border-right: 0; }
 
+/* Each lane carries its own hue via --lane / --lane-soft. Everything inside the lane --
+   icon tile, checkmarks, CTA -- reads from those two, so a lane's colour is stated once
+   and its parts cannot drift out of agreement. */
+.lane-1 { --lane: var(--lane-1); --lane-soft: var(--lane-1-soft); }
+.lane-2 { --lane: var(--lane-2); --lane-soft: var(--lane-2-soft); }
+.lane-3 { --lane: var(--lane-3); --lane-soft: var(--lane-3-soft); }
+
 .lane-icon {
   width: 30px; height: 30px; border-radius: 7px;
   display: flex; align-items: center; justify-content: center;
-  margin-bottom: 13px; background: var(--accent-soft);
+  margin-bottom: 13px; background: var(--lane-soft);
 }
-.lane-census .lane-icon { background: var(--census-soft); }
 
 .lane-num {
   font-family: 'IBM Plex Mono', ui-monospace, monospace;
@@ -80,11 +86,17 @@
 
 .lane-cta {
   font-size: 13.5px; font-weight: 500; padding: 10px 16px; border-radius: 7px;
-  text-align: center; background: var(--accent); color: var(--paper);
+  text-align: center; background: var(--lane); color: var(--paper);
+  /* Transparent border, not none: the ghost variant has a real 1px border, and without
+     this the solid buttons sit 2px shorter and the row of three stops lining up. */
+  border: 1px solid transparent;
+  transition: filter 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.lane-cta:hover { background: var(--accent-hover); color: var(--paper); }
-.lane-cta.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
-.lane-cta.ghost:hover { background: var(--ground); color: var(--ink); }
+.lane-cta:hover { filter: brightness(0.88); color: var(--paper); }
+/* The census lane is free and public, not a purchase, so its CTA stays ghosted: the
+   paid/free distinction is carried by weight, the three doors by hue. */
+.lane-cta.ghost { background: transparent; color: var(--ink); border: 1px solid var(--lane); }
+.lane-cta.ghost:hover { background: var(--lane-soft); color: var(--ink); filter: none; }
 
 @media (max-width: 900px) {
   .lanes { grid-template-columns: 1fr; }

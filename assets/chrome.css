@@ -17,8 +17,17 @@
   --accent: oklch(50% 0.196 265);
   --accent-hover: oklch(43% 0.19 265);
   --accent-soft: oklch(95.5% 0.024 265);
-  --census-red:  oklch(50% 0.15 27);
-  --census-soft: oklch(95.5% 0.02 27);
+  /* One hue per door. The three lanes are three different KINDS of thing, so each gets
+     its own hue -- but all at the same lightness and near-equal chroma, so they read as
+     a set of peers rather than a hierarchy with one alarm in it. Red is deliberately not
+     among them: on the web red means error, which is not what a free public dataset is.
+     Every base clears WCAG AA on paper (6.24 / 6.57 / 5.65). */
+  --lane-1:      oklch(50% 0.18 265);
+  --lane-1-soft: oklch(95.5% 0.021 265);
+  --lane-2:      oklch(50% 0.18 305);
+  --lane-2-soft: oklch(95.5% 0.021 305);
+  --lane-3:      oklch(50% 0.13 150);
+  --lane-3-soft: oklch(95.5% 0.021 150);
   --night:       oklch(13% 0.012 280);
   --night-2:     oklch(17% 0.014 280);
   --night-line:  oklch(28% 0.016 280);
