@@ -33,6 +33,13 @@
   display: flex; align-items: center; gap: 11px;
 }
 .store:hover { background: oklch(28% 0.02 265); color: var(--paper); }
+/* Android is built but not through Play review, so the badge states that instead of
+   linking. It is a <span>, not an <a>: nothing to click, no 404 to land on. */
+.store.soon {
+  background: transparent; color: var(--ink-2);
+  border: 1px dashed var(--line); cursor: default;
+}
+.store.soon svg { opacity: 0.55; }
 .store-sm {
   font-family: 'IBM Plex Mono', ui-monospace, monospace;
   font-size: 8.5px; letter-spacing: 1.2px; text-transform: uppercase; opacity: 0.72;
@@ -72,6 +79,32 @@
 .shot-caption {
   font-family: 'IBM Plex Mono', ui-monospace, monospace;
   font-size: 9.5px; letter-spacing: 1.3px; text-transform: uppercase; color: var(--ink-3);
+}
+
+/* Five screens, five dots. They are the only affordance saying the phone is a carousel
+   and not a static image, so they carry real hit area under a small painted target. */
+.shot-dots { display: flex; gap: 7px; }
+.shot-dot {
+  width: 18px; height: 18px; padding: 0; border: 0; background: transparent;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+.shot-dot::after {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--line);
+  transition: background 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.shot-dot:hover::after { background: var(--ink-3); }
+.shot-dot.on::after { background: var(--accent); }
+.shot-dot:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; border-radius: 50%; }
+
+/* A shift with no screenshots yet reads as pending, not broken. */
+.toggle button.unavailable { opacity: 0.4; cursor: default; }
+.toggle button.unavailable:hover { background: transparent; }
+
+/* The image itself crossfades rather than cutting, but only for people who want motion. */
+.phone img { transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+@media (prefers-reduced-motion: reduce) {
+  .phone img, .shot-dot::after { transition: none; }
 }
 
 /* sections */
