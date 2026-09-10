@@ -69,6 +69,7 @@ const html = `<!doctype html>
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png?v=4">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 ${CHROME_HEAD}
+  <link rel="stylesheet" href="/assets/conveyor.css">
   <link rel="stylesheet" href="/assets/app.css">
 </head>
 <body>
@@ -102,15 +103,66 @@ ${navFor('/app/')}
               <button type="button" data-set="platform:android" aria-pressed="false"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.6 9.5l1.4-2.4a.3.3 0 00-.5-.3L17 9.2a9.6 9.6 0 00-8.1 0L7.4 6.8a.3.3 0 00-.5.3l1.4 2.4A8.3 8.3 0 004 16h16a8.3 8.3 0 00-2.4-6.5zM8.5 13.4a.8.8 0 110-1.6.8.8 0 010 1.6zm7 0a.8.8 0 110-1.6.8.8 0 010 1.6z"/></svg><span>Android</span></button>
             </div>
             <div class="toggle" role="group" aria-label="Theme">
-              <button type="button" class="night" data-set="theme:night" aria-pressed="true"><span class="dot dot-night"></span><span>Night</span></button>
-              <button type="button" data-set="theme:day" aria-pressed="false"><span class="dot dot-day"></span><span>Day</span></button>
+              <button type="button" data-set="shift:night" aria-pressed="false"><span class="dot dot-night"></span><span>Night</span></button>
+              <button type="button" data-set="shift:day" aria-pressed="true"><span class="dot dot-day"></span><span>Day</span></button>
             </div>
           </div>
           <div class="phone" data-phone>
-            <img data-shot src="/app-shots/night-ios.png" alt="ProtoQuiz on iPhone in Night Shift" width="250" height="543">
+            <img data-shot src="/app-shots/day-ios.png" alt="ProtoQuiz on iPhone in Day Shift" width="250" height="543">
           </div>
-          <div class="shot-caption" data-shot-caption>iPhone &middot; Night Shift</div>
+          <div class="shot-caption" data-shot-caption>iPhone &middot; Day Shift</div>
         </div>
+      </div>
+    </section>
+
+    <section class="belt-wrap">
+      <div class="conveyor">
+      <p class="conveyor-eyebrow">
+      <span class="green-dot" aria-hidden="true"></span><span class="live">LIVE</span>
+      <span class="dot" aria-hidden="true"></span><span>indexing protocols across the US &amp; the world</span>
+      </p>
+      <div class="belt" aria-hidden="true">
+      <div class="track">
+      <div class="doc s1"><div class="doc-eyebrow">Los Angeles Co</div><div class="doc-title">LA County Treatment Protocols</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">412p</span></div></div>
+      <div class="doc c2 s4"><div class="doc-eyebrow">New York State</div><div class="doc-title">REMAC Unified Protocols</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>v26.1</span><span class="pg">356p</span></div></div>
+      <div class="doc c3 s2"><div class="doc-eyebrow">Massachusetts</div><div class="doc-title">MA OEMS Statewide</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2026</span><span class="pg">284p</span></div></div>
+      <div class="doc s3"><div class="doc-eyebrow">New Jersey</div><div class="doc-title">NJ EMS Clinical Practice</div><div class="doc-lines"><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">241p</span></div></div>
+      <div class="doc c4 s5"><div class="doc-eyebrow">Washington</div><div class="doc-title">EMT WA Protocol Set</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2026</span><span class="pg">198p</span></div></div>
+      <div class="doc c5 s6"><div class="doc-eyebrow">Maryland</div><div class="doc-title">MD Medical Protocols</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2026</span><span class="pg">327p</span></div></div>
+      <div class="doc s7"><div class="doc-eyebrow">Utah</div><div class="doc-title">Utah EMS Guidelines</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2026</span><span class="pg">219p</span></div></div>
+      <div class="doc c2 s8"><div class="doc-eyebrow">Pennsylvania</div><div class="doc-title">PA BLS Protocols v23.1</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2026</span><span class="pg">176p</span></div></div>
+      <div class="doc c3 s1"><div class="doc-eyebrow">San Diego Co</div><div class="doc-title">SD Protocol Packet</div><div class="doc-lines"><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>25-26</span><span class="pg">381p</span></div></div>
+      <div class="doc s4"><div class="doc-eyebrow">West Virginia</div><div class="doc-title">WV State Protocols</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2026</span><span class="pg">304p</span></div></div>
+      <div class="doc c4 s2"><div class="doc-eyebrow">Alabama</div><div class="doc-title">AL Master Protocols 11e</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2026</span><span class="pg">422p</span></div></div>
+      <div class="doc c5 s3"><div class="doc-eyebrow">Indiana</div><div class="doc-title">IN EMS Scope of Practice</div><div class="doc-lines"><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2026</span><span class="pg">167p</span></div></div>
+      <div class="doc s5"><div class="doc-eyebrow">Santa Cruz Co</div><div class="doc-title">Santa Cruz EMS Policies</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2026</span><span class="pg">289p</span></div></div>
+      <div class="doc c2 s6"><div class="doc-eyebrow">Greater Miami</div><div class="doc-title">Miami-Dade Fire Rescue</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2026</span><span class="pg">344p</span></div></div>
+      <div class="doc c3 s7"><div class="doc-eyebrow">Snohomish Co</div><div class="doc-title">Snohomish Co Protocols</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">213p</span></div></div>
+      <div class="doc s8"><div class="doc-eyebrow">Mayo Clinic</div><div class="doc-title">Mayo Clinic Ambulance PCG</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2026</span><span class="pg">156p</span></div></div>
+      <div class="doc c4 s1"><div class="doc-eyebrow">Aurora South WI</div><div class="doc-title">Aurora EMS Pre-Hospital</div><div class="doc-lines"><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2026</span><span class="pg">223p</span></div></div>
+      <div class="doc c5 s4"><div class="doc-eyebrow">DC FEMS</div><div class="doc-title">DC Fire EMS Protocols</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2026</span><span class="pg">278p</span></div></div>
+      <div class="doc s2"><div class="doc-eyebrow">Thurston Co WA</div><div class="doc-title">Thurston County Field</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">192p</span></div></div>
+      <div class="doc c2 s3"><div class="doc-eyebrow">Clark County</div><div class="doc-title">Clark Co Office of EMS</div><div class="doc-lines"><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">289p</span></div></div>
+      <div class="doc s1"><div class="doc-eyebrow">Los Angeles Co</div><div class="doc-title">LA County Treatment Protocols</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">412p</span></div></div>
+      <div class="doc c2 s4"><div class="doc-eyebrow">New York State</div><div class="doc-title">REMAC Unified Protocols</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>v26.1</span><span class="pg">356p</span></div></div>
+      <div class="doc c3 s2"><div class="doc-eyebrow">Massachusetts</div><div class="doc-title">MA OEMS Statewide</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2026</span><span class="pg">284p</span></div></div>
+      <div class="doc s3"><div class="doc-eyebrow">New Jersey</div><div class="doc-title">NJ EMS Clinical Practice</div><div class="doc-lines"><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">241p</span></div></div>
+      <div class="doc c4 s5"><div class="doc-eyebrow">Washington</div><div class="doc-title">EMT WA Protocol Set</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2026</span><span class="pg">198p</span></div></div>
+      <div class="doc c5 s6"><div class="doc-eyebrow">Maryland</div><div class="doc-title">MD Medical Protocols</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2026</span><span class="pg">327p</span></div></div>
+      <div class="doc s7"><div class="doc-eyebrow">Utah</div><div class="doc-title">Utah EMS Guidelines</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2026</span><span class="pg">219p</span></div></div>
+      <div class="doc c2 s8"><div class="doc-eyebrow">Pennsylvania</div><div class="doc-title">PA BLS Protocols v23.1</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2026</span><span class="pg">176p</span></div></div>
+      <div class="doc c3 s1"><div class="doc-eyebrow">San Diego Co</div><div class="doc-title">SD Protocol Packet</div><div class="doc-lines"><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>25-26</span><span class="pg">381p</span></div></div>
+      <div class="doc s4"><div class="doc-eyebrow">West Virginia</div><div class="doc-title">WV State Protocols</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2026</span><span class="pg">304p</span></div></div>
+      <div class="doc c4 s2"><div class="doc-eyebrow">Alabama</div><div class="doc-title">AL Master Protocols 11e</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2026</span><span class="pg">422p</span></div></div>
+      <div class="doc c5 s3"><div class="doc-eyebrow">Indiana</div><div class="doc-title">IN EMS Scope of Practice</div><div class="doc-lines"><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2026</span><span class="pg">167p</span></div></div>
+      <div class="doc s5"><div class="doc-eyebrow">Santa Cruz Co</div><div class="doc-title">Santa Cruz EMS Policies</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2026</span><span class="pg">289p</span></div></div>
+      <div class="doc c2 s6"><div class="doc-eyebrow">Greater Miami</div><div class="doc-title">Miami-Dade Fire Rescue</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2026</span><span class="pg">344p</span></div></div>
+      <div class="doc c3 s7"><div class="doc-eyebrow">Snohomish Co</div><div class="doc-title">Snohomish Co Protocols</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">213p</span></div></div>
+      <div class="doc s8"><div class="doc-eyebrow">Mayo Clinic</div><div class="doc-title">Mayo Clinic Ambulance PCG</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2026</span><span class="pg">156p</span></div></div>
+      <div class="doc c4 s1"><div class="doc-eyebrow">Aurora South WI</div><div class="doc-title">Aurora EMS Pre-Hospital</div><div class="doc-lines"><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2026</span><span class="pg">223p</span></div></div>
+      <div class="doc c5 s4"><div class="doc-eyebrow">DC FEMS</div><div class="doc-title">DC Fire EMS Protocols</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2026</span><span class="pg">278p</span></div></div>
+      <div class="doc s2"><div class="doc-eyebrow">Thurston Co WA</div><div class="doc-title">Thurston County Field</div><div class="doc-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">192p</span></div></div>
+      <div class="doc c2 s3"><div class="doc-eyebrow">Clark County</div><div class="doc-title">Clark Co Office of EMS</div><div class="doc-lines"><i></i><i></i><i></i><i></i></div><div class="doc-pages"><span>2025</span><span class="pg">289p</span></div></div>
       </div>
     </section>
 
