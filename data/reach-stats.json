@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-09-10T12:08:18.563Z",
-  "totalUploads": 588,
-  "distinctProtocols": 407,
+  "generatedAt": "2026-09-10T18:08:20.957Z",
+  "totalUploads": 589,
+  "distinctProtocols": 408,
   "activeStudiers": 403,
-  "pagesProcessed": 94498,
+  "pagesProcessed": 94889,
   "statesRepresented": 42,
   "countriesRepresented": 4,
   "internationalUploads": 6,
@@ -25,7 +25,7 @@
     "WY": 10,
     "IL": 9,
     "MD": 8,
-    "FL": 7,
+    "FL": 8,
     "AZ": 7,
     "TN": 6,
     "UT": 5,
@@ -1041,6 +1041,24 @@
       ]
     },
     {
+      "state": "FL",
+      "city": "Ocala",
+      "x": 747,
+      "y": 480,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "Marion county protocols",
+          "count": 1
+        },
+        {
+          "title": "Protocols FINAL Effective July 2025",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "RI",
       "city": "Providence",
       "x": 878,
@@ -1562,20 +1580,6 @@
       "topProtocols": [
         {
           "title": "2025 Protocols",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "FL",
-      "city": "Ocala",
-      "x": 747,
-      "y": 480,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "Marion county protocols",
           "count": 1
         }
       ]
