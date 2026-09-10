@@ -70,7 +70,7 @@ const html = `<!doctype html>
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 ${CHROME_HEAD}
   <link rel="stylesheet" href="/assets/conveyor.css">
-  <link rel="stylesheet" href="/assets/app.css">
+  <link rel="stylesheet" href="/assets/app.css?v=f763f9c3">
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to content</a>

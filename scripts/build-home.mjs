@@ -75,7 +75,7 @@ const html = `<!doctype html>
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 ${CHROME_HEAD}
-  <link rel="stylesheet" href="/assets/home.css">
+  <link rel="stylesheet" href="/assets/home.css?v=047b5300">
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
@@ -83,9 +83,12 @@ ${NAV_HTML}
 
   <main id="main">
     <section class="hero">
-      <div class="hero-eyebrow">Protocol training for EMS</div>
-      <h1>Welcome to ProtoQuiz.</h1>
-      <p>An app for individual providers, a platform for agencies, and a public record of what American EMS agencies carry.</p>
+      <img class="hero-mark" src="/logo-256.png" alt="" width="72" height="72">
+      <div>
+        <div class="hero-eyebrow">Protocol training for EMS</div>
+        <h1>Welcome to ProtoQuiz.</h1>
+        <p>An app for individual providers, a platform for agencies, and a public record of what American EMS agencies carry.</p>
+      </div>
     </section>
 
     <section class="lanes">
