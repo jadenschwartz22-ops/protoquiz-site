@@ -831,6 +831,11 @@ ${railLinks('Related', [
     ['How this page was built', '/census/methodology/'],
     ['Data license', '/census/data-license/'],
   ])}
+          <section class="panel" id="study">
+            <h2>Work here?</h2>
+            <p>This page lists what ${esc(agency.name)} carries. The app quizzes you on it &mdash; upload the protocol document and every answer cites the page it came from.</p>
+            <p class="panel-cta"><a href="/app/">Study these protocols</a></p>
+          </section>
           <section class="panel" id="correct">
             <h2>Outdated or wrong?</h2>
             <p>Send the current document's public URL and the listing is rebuilt from it. To have this agency removed from the census entirely, say so and it comes down the same day.</p>
@@ -844,6 +849,21 @@ ${submitForm({ id: 'correct-form', kind: 'correction', agencyKey: agency.agencyK
       title,
       description: `Drugs, doses, routes, and revision history published by ${agency.name}${where ? ` (${where})` : ''}, from its own protocol document.`,
       path: `/census/agencies/${agency.agencyKey}/`,
+      // Each agency page IS a dataset -- one agency's dose facts, sourced to one
+      // document -- so it says so, the same way the census landing page does. The
+      // landing page's Dataset covers the whole census; this covers this slice.
+      jsonLd: [{
+        '@context': 'https://schema.org',
+        '@type': 'Dataset',
+        name: `${agency.name} EMS protocol doses`,
+        description: `Drug, dose, route and indication facts extracted from the EMS protocol document published by ${agency.name}.`,
+        url: `${ORIGIN}/census/agencies/${agency.agencyKey}/`,
+        license: `${ORIGIN}/census/data-license/`,
+        creator: { '@type': 'Organization', name: 'ProtoQuiz', url: ORIGIN },
+        isAccessibleForFree: true,
+        isPartOf: { '@type': 'Dataset', name: 'United States EMS Protocol Census', url: `${ORIGIN}/census/` },
+        ...(agency.state ? { spatialCoverage: stateLabel(agency.state) } : {}),
+      }],
       trail: [['Home', '/'], ['EMS Census', '/census/'], ...(agency.state ? [[stateLabel(agency.state), `/census/states/${slug(agency.state)}/`]] : []), [agency.name, `/census/agencies/${agency.agencyKey}/`]],
       body,
     }),
@@ -1135,7 +1155,12 @@ ${railLinks('Related', [
     ['All drugs and states', '/census/'],
     ['Methodology', '/census/methodology/'],
     ['Data license', '/census/data-license/'],
-  ])}`;
+  ])}
+          <section class="panel" id="study">
+            <h2>Know your own numbers</h2>
+            <p>This page is the national spread. What you are held to is your agency's document &mdash; upload it and the app quizzes you on ${esc(drugLabel(drugKey))} the way YOUR protocol writes it, every answer cited to its page.</p>
+            <p class="panel-cta"><a href="/app/">Study your protocols</a></p>
+          </section>`;
 
   return {
     path: `/census/drugs/${slug(drugKey)}/`,
@@ -1935,6 +1960,10 @@ ul.inline li{background:var(--panel);border:1px solid var(--rule);border-radius:
 /* rail panels */
 .panel{border:1px solid var(--rule);border-radius:var(--r);padding:14px 16px;background:var(--ground)}
 .panel h2{font-size:.9375rem;margin:0 0 10px;font-weight:600}
+/* The one outbound product link on a census page. Census is a public record and
+   stays one: this is a single quiet line, not a banner over the data. */
+.panel-cta{margin:10px 0 0}
+.panel-cta a{font-weight:600}
 .panel p{font-size:.875rem;margin:0 0 10px;max-width:none}
 .railnote{font-size:.8125rem;margin:0;padding:0 2px}
 ul.railnav{list-style:none;padding:0;margin:0;font-size:.875rem}

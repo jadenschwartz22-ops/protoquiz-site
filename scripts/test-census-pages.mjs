@@ -184,9 +184,25 @@ test('every page has canonical, BreadcrumbList and the Smart App Banner', () => 
     assert.ok(h.includes('apple-itunes-app'), `${p} missing Smart App Banner`);
   }
 });
-test('Dataset JSON-LD is on the landing page only', () => {
+// Dataset belongs on a page that IS one agency's record from one source document,
+// and nowhere else. The landing page carries the census as a whole; each agency page
+// carries its own slice, marked isPartOf the parent so the two are one collection
+// rather than competing claims to the same data.
+//
+// Drug and indication pages are deliberately excluded: they are a distribution ACROSS
+// many agencies, not a dataset published by anyone, and marking them up would be the
+// schema-spam this rule was written to prevent.
+test('Dataset JSON-LD is on the landing and agency pages, never drug or indication pages', () => {
   const withDataset = Object.entries(html).filter(([, h]) => h.includes('"Dataset"')).map(([p]) => p);
-  assert.deepStrictEqual(withDataset, ['/census/']);
+  const stray = withDataset.filter(p => p !== '/census/' && !p.startsWith('/census/agencies/'));
+  assert.deepStrictEqual(stray, [], `Dataset on a page that is not an agency record: ${stray}`);
+  assert.ok(withDataset.includes('/census/'), 'landing page lost its Dataset');
+  // Every agency page states it, and states which collection it belongs to.
+  for (const [p, h] of Object.entries(html)) {
+    if (!p.startsWith('/census/agencies/')) continue;
+    assert.ok(h.includes('"Dataset"'), `${p} missing Dataset`);
+    assert.ok(h.includes('"isPartOf"'), `${p} Dataset does not declare isPartOf`);
+  }
 });
 test('every JSON-LD block parses', () => {
   for (const [p, h] of Object.entries(html)) {

@@ -1,6 +1,10 @@
 import { writeFileSync } from 'node:fs';
 import { NAV_HTML, FOOTER_HTML, CHROME_HEAD, assetHash } from './shared-chrome.mjs';
 
+// Two-space-indented JSON-LD, matching the census generator's output so the two
+// families of page look the same to a validator.
+const jsonLd = obj => JSON.stringify(obj, null, 2).split('\n').map(l => '  ' + l).join('\n');
+
 const check = c => `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="${c}" stroke-width="2.6" stroke-linecap="round"><path d="M4 12.5l5 5L20 6.5"/></svg>`;
 
 const LANES = [
@@ -76,6 +80,27 @@ const html = `<!doctype html>
   <link rel="manifest" href="/site.webmanifest">
 ${CHROME_HEAD}
   <link rel="stylesheet" href="/assets/home.css?v=${assetHash('assets/home.css')}">
+  <script type="application/ld+json">
+${jsonLd({
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'ProtoQuiz',
+  url: 'https://protoquiz.com',
+  logo: 'https://protoquiz.com/logo-256.png',
+  description: 'Protocol training for EMS. Built by a working paramedic.',
+  parentOrganization: { '@type': 'Organization', name: 'Teach Me To Live LLC' },
+  sameAs: ['https://apps.apple.com/app/id6753611139'],
+})}
+  </script>
+  <script type="application/ld+json">
+${jsonLd({
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'ProtoQuiz',
+  url: 'https://protoquiz.com',
+  publisher: { '@type': 'Organization', name: 'ProtoQuiz', url: 'https://protoquiz.com' },
+})}
+  </script>
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
