@@ -1,0 +1,83 @@
+/* assets/conveyor.css — the protocol ingestion belt, lifted from the old homepage.
+ *
+ * The markup was already token-driven (var(--amber), var(--ink)), which is why it can
+ * flip themes at all. Those tokens are redefined per shift by [data-shift] in app.css,
+ * exactly the way BrandKit does it in the app: PQ.amber means "the brand accent", not
+ * a hue, so it resolves amber at night and blue by day.
+ */
+
+.conveyor {position:relative;width:100%;padding:18px 0;margin-top:8px;}
+.conveyor-eyebrow {
+      text-align:center;margin:0 auto 16px;max-width:920px;padding:0 16px;
+      font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+      color:var(--ink-soft);font-weight:600;
+      display:flex;justify-content:center;align-items:center;gap:6px;flex-wrap:wrap;
+    }
+.conveyor-eyebrow strong {color:var(--ink);font-weight:700;}
+.conveyor-eyebrow .live {color:var(--green);font-weight:700;}
+.conveyor-eyebrow .green-dot {display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green);margin-right:6px;box-shadow:0 0 8px var(--green);}
+.conveyor-eyebrow .dot {display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--amber);margin:0 6px;animation:cvPulse 2s ease-in-out infinite;box-shadow:0 0 8px var(--amber);will-change:opacity;transform:translateZ(0);}
+.belt {
+      position:relative;width:100%;overflow:hidden;
+      mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 94%,transparent 100%);
+      -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 94%,transparent 100%);
+      padding:14px 0;
+      transform:translateZ(0);
+      contain:layout paint;
+    }
+.belt::before, .belt::after {
+      content:"";position:absolute;left:0;right:0;height:1px;
+      background:linear-gradient(90deg,transparent,var(--line-2) 12%,var(--line-2) 88%,transparent);
+      pointer-events:none;
+    }
+.belt::before {top:0;}
+.belt::after {bottom:0;}
+.track {
+      display:flex;gap:14px;width:max-content;align-items:flex-end;padding:8px 0;
+      will-change:transform;
+      backface-visibility:hidden;
+      transform:translate3d(0,0,0);
+    }
+.doc {
+      flex-shrink:0;background:var(--panel);border:1px solid var(--line);border-radius:3px;
+      padding:14px 14px 12px;
+      box-shadow:0 1px 0 rgba(255,176,0,.04),0 14px 32px rgba(0,0,0,.55);
+      display:flex;flex-direction:column;justify-content:space-between;
+      position:relative;font-family:var(--mono);
+    }
+.doc::before {content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--amber);border-radius:3px 3px 0 0;}
+.doc.c2::before {background:var(--green);}
+.doc.c3::before {background:var(--amber-deep);}
+.doc.c4::before {background:var(--amber-warm);}
+.doc.c5::before {background:var(--amber-dim);}
+.doc-eyebrow {font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:7px;font-weight:700;}
+.doc-title {font-size:12px;line-height:1.25;color:var(--ink);font-weight:700;margin-bottom:10px;text-transform:uppercase;letter-spacing:.02em;}
+.doc-lines {display:flex;flex-direction:column;gap:3px;flex:1;margin-bottom:8px;}
+.doc-lines i {display:block;height:1px;border-radius:1px;background:var(--line);}
+.doc-lines i:nth-child(odd) {width:88%;background:rgba(168,163,153,.18);}
+.doc-lines i:nth-child(even) {width:70%;}
+.doc-lines i:nth-child(3n) {width:55%;}
+.doc-pages {font-size:9px;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:6px;display:flex;justify-content:space-between;letter-spacing:.04em;}
+.doc-pages .pg {color:var(--amber);font-weight:700;}
+.doc.s1 {width:158px;height:210px;}
+.doc.s2 {width:170px;height:240px;}
+.doc.s3 {width:148px;height:198px;}
+.doc.s4 {width:184px;height:228px;}
+.doc.s5 {width:162px;height:258px;}
+.doc.s6 {width:176px;height:218px;}
+.doc.s7 {width:152px;height:240px;}
+.doc.s8 {width:190px;height:222px;}
+.doc.s1 {width:128px;height:172px;}
+.doc.s2 {width:138px;height:198px;}
+.doc.s3 {width:120px;height:160px;}
+.doc.s4 {width:148px;height:184px;}
+.doc.s5 {width:130px;height:212px;}
+.doc.s6 {width:142px;height:178px;}
+.doc.s7 {width:122px;height:196px;}
+.doc.s8 {width:152px;height:182px;}
+.track {animation:none;}
+.conveyor-eyebrow .dot {animation:none;}
+@keyframes tickerSlide{
+      0%{transform:translateX(0);}
+      100%{transform:translateX(-50%);}
+    }
