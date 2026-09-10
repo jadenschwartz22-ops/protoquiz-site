@@ -5,38 +5,45 @@
  * card grid, because cards would make the three products look interchangeable and they
  * are not: two are paid products and one is a free public dataset. */
 
+/* Restraint is the point. An oversized headline on an empty field reads as a
+   consumer splash screen; a company front door states itself once, small and
+   confident, and lets the three doors below carry the weight. */
 .hero {
-  background: var(--ground);
+  background: var(--paper);
   border-bottom: 1px solid var(--line);
-  padding: clamp(56px, 8vw, 96px) clamp(16px, 5vw, 72px) clamp(52px, 7vw, 88px);
-  display: flex; flex-direction: column; align-items: center; text-align: center;
+  padding: clamp(52px, 7vw, 88px) clamp(16px, 5vw, 72px) clamp(44px, 6vw, 64px);
+  max-width: 1180px; margin: 0 auto;
 }
-.hero img {
-  width: clamp(88px, 12vw, 132px); height: auto; display: block; margin-bottom: 32px;
+.hero-eyebrow {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 11px; letter-spacing: 2.2px; text-transform: uppercase;
+  color: var(--ink-3); margin-bottom: 20px;
 }
 .hero h1 {
-  font-size: clamp(38px, 6vw, 82px); line-height: 0.96; letter-spacing: -0.052em;
-  font-weight: 800; margin: 0 0 24px; text-wrap: balance;
+  font-size: clamp(30px, 3.4vw, 44px); line-height: 1.12; letter-spacing: -0.032em;
+  font-weight: 600; margin: 0 0 16px; max-width: 20ch; text-wrap: balance;
 }
 .hero p {
-  font-family: 'Source Serif 4', Georgia, serif;
-  font-size: clamp(17px, 2vw, 23px); line-height: 1.45;
-  color: var(--ink-2); margin: 0; max-width: 600px;
+  font-size: clamp(16px, 1.5vw, 18px); line-height: 1.6;
+  color: var(--ink-2); margin: 0; max-width: 52ch;
 }
 
-.lanes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.lanes {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 1180px; margin: 0 auto; border-bottom: 1px solid var(--line);
+}
 
 .lane {
-  padding: 52px clamp(20px, 3vw, 44px) 48px;
+  padding: 44px clamp(20px, 2.4vw, 36px) 44px;
   display: flex; flex-direction: column;
   border-right: 1px solid var(--line);
 }
 .lane:last-child { border-right: 0; }
 
 .lane-icon {
-  width: 48px; height: 48px; border-radius: 10px;
+  width: 34px; height: 34px; border-radius: 8px;
   display: flex; align-items: center; justify-content: center;
-  margin-bottom: 26px; background: var(--accent-soft);
+  margin-bottom: 20px; background: var(--accent-soft);
 }
 .lane-census .lane-icon { background: var(--census-soft); }
 
@@ -46,17 +53,17 @@
 }
 
 .lane h2 {
-  font-size: clamp(22px, 2.4vw, 30px); font-weight: 600; letter-spacing: -0.03em;
-  line-height: 1.1; margin: 0 0 16px;
+  font-size: clamp(19px, 1.8vw, 22px); font-weight: 600; letter-spacing: -0.024em;
+  line-height: 1.2; margin: 0 0 14px;
 }
 
-.lane > p { font-size: 15.5px; line-height: 1.68; color: var(--ink-2); margin: 0 0 26px; }
+.lane > p { font-size: 14.5px; line-height: 1.65; color: var(--ink-2); margin: 0 0 22px; }
 
 .lane ul {
   list-style: none; padding: 0; margin: 0 0 26px;
   display: flex; flex-direction: column; gap: 11px;
 }
-.lane li { display: flex; align-items: center; gap: 11px; font-size: 14.5px; color: var(--ink-2); }
+.lane li { display: flex; align-items: center; gap: 10px; font-size: 13.5px; color: var(--ink-2); }
 .lane li svg { flex-shrink: 0; }
 
 .lane-spacer { flex-grow: 1; }
@@ -68,7 +75,7 @@
 }
 
 .lane-cta {
-  font-size: 15px; font-weight: 500; padding: 13px 20px; border-radius: 7px;
+  font-size: 14px; font-weight: 500; padding: 11px 18px; border-radius: 7px;
   text-align: center; background: var(--accent); color: var(--paper);
 }
 .lane-cta:hover { background: var(--accent-hover); color: var(--paper); }

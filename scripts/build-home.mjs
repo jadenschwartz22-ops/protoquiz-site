@@ -83,9 +83,9 @@ ${NAV_HTML}
 
   <main id="main">
     <section class="hero">
-      <img src="/logo-256.png" alt="" width="132" height="132">
+      <div class="hero-eyebrow">Protocol training for EMS</div>
       <h1>Welcome to ProtoQuiz.</h1>
-      <p>Protocol training for EMS.</p>
+      <p>An app for individual providers, a platform for agencies, and a public record of what American EMS agencies carry.</p>
     </section>
 
     <section class="lanes">
