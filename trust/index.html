@@ -18,7 +18,10 @@
     .badge{background:var(--panel);border:1px solid var(--line-2);border-left:3px solid var(--amber);padding:14px 18px;}
     .badge-title{font-family:var(--mono);font-size:10px;color:var(--amber);letter-spacing:1.4px;text-transform:uppercase;margin-bottom:6px;}
     .badge-body{font-size:13px;color:var(--ink-soft);line-height:1.5;}
-    .sub-table{width:100%;border-collapse:collapse;margin:18px 0;font-size:13px;}
+    /* The table is wider than a phone; it scrolls in its own box rather than
+       pushing the whole page sideways. */
+    .sub-table{width:100%;border-collapse:collapse;margin:18px 0;font-size:13px;display:block;overflow-x:auto;}
+    @media(min-width:640px){.sub-table{display:table;overflow-x:visible;}}
     .sub-table th,.sub-table td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;}
     .sub-table th{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--amber);text-transform:uppercase;border-bottom:1px solid var(--line-2);}
     .sub-table td:first-child{color:var(--ink);font-weight:600;white-space:nowrap;}
