@@ -42,9 +42,17 @@ test('nav has no back-to-consumer exit', () => {
   assert.ok(!/back-to-consumer|Consumer app/i.test(NAV_HTML + FOOTER_HTML));
 });
 
-test('footer reaches both app stores', () => {
+// Both platforms stay reachable from the footer. Android is not on Play yet, so its
+// entry points at the FAQ that says so rather than naming an app you cannot download.
+test('footer reaches both platforms', () => {
   assert.match(FOOTER_HTML, /iOS app/);
-  assert.match(FOOTER_HTML, /Android app/);
+  assert.match(FOOTER_HTML, />Android</);
+});
+
+// Nothing anywhere in the chrome may link to the Play listing until it is live; the
+// previous link 404'd in public for the length of the withdrawal.
+test('chrome never links to an unpublished Play listing', () => {
+  assert.ok(!/play\.google\.com/.test(NAV_HTML + FOOTER_HTML));
 });
 
 test('navFor marks exactly one link current', () => {
