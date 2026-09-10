@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-09-10T00:08:20.232Z",
-  "totalUploads": 586,
-  "distinctProtocols": 406,
-  "activeStudiers": 402,
-  "pagesProcessed": 93889,
+  "generatedAt": "2026-09-10T06:08:20.480Z",
+  "totalUploads": 587,
+  "distinctProtocols": 407,
+  "activeStudiers": 403,
+  "pagesProcessed": 94318,
   "statesRepresented": 42,
   "countriesRepresented": 4,
   "internationalUploads": 6,
@@ -12,7 +12,7 @@
     "MI": 47,
     "CA": 43,
     "MA": 26,
-    "TX": 24,
+    "TX": 25,
     "PA": 24,
     "GA": 23,
     "NY": 22,
@@ -660,6 +660,28 @@
     },
     {
       "state": "TX",
+      "city": "Austin",
+      "x": 448,
+      "y": 475,
+      "count": 3,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "02 06 2026 COG Master Document",
+          "count": 1
+        },
+        {
+          "title": "12 01 2024 COG Master Document",
+          "count": 1
+        },
+        {
+          "title": "MASTER COG",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "TX",
       "city": "Crowley",
       "x": 456,
       "y": 424,
@@ -774,24 +796,6 @@
         },
         {
           "title": "PP 8001 Allergic Reaction Anaphylaxis 1",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "TX",
-      "city": "Austin",
-      "x": 448,
-      "y": 475,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "02 06 2026 COG Master Document",
-          "count": 1
-        },
-        {
-          "title": "MASTER COG",
           "count": 1
         }
       ]
