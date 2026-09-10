@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-09-10T06:08:20.480Z",
-  "totalUploads": 587,
+  "generatedAt": "2026-09-10T12:08:18.563Z",
+  "totalUploads": 588,
   "distinctProtocols": 407,
   "activeStudiers": 403,
-  "pagesProcessed": 94318,
+  "pagesProcessed": 94498,
   "statesRepresented": 42,
   "countriesRepresented": 4,
   "internationalUploads": 6,
@@ -14,7 +14,7 @@
     "MA": 26,
     "TX": 25,
     "PA": 24,
-    "GA": 23,
+    "GA": 24,
     "NY": 22,
     "CT": 18,
     "NC": 17,
@@ -147,6 +147,28 @@
       ]
     },
     {
+      "state": "GA",
+      "city": "Atlanta",
+      "x": 692,
+      "y": 386,
+      "count": 23,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "National EMS Patient Care Guidelines Sept 2024 Revision 01.66…",
+          "count": 19
+        },
+        {
+          "title": "Whole Protocol V 3807012026150232 (1)",
+          "count": 1
+        },
+        {
+          "title": "2024 Scope of Practice 260123",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "NY",
       "city": "New York",
       "x": 843,
@@ -165,28 +187,6 @@
         {
           "title": "ny collaborative protocols",
           "count": 3
-        }
-      ]
-    },
-    {
-      "state": "GA",
-      "city": "Atlanta",
-      "x": 692,
-      "y": 386,
-      "count": 22,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "National EMS Patient Care Guidelines Sept 2024 Revision 01.66…",
-          "count": 18
-        },
-        {
-          "title": "Whole Protocol V 3807012026150232 (1)",
-          "count": 1
-        },
-        {
-          "title": "2024 Scope of Practice 260123",
-          "count": 1
         }
       ]
     },
