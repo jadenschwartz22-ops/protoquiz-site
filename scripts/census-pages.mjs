@@ -127,9 +127,34 @@ const STATE_NAMES = {
   SD: 'South Dakota', TN: 'Tennessee', TX: 'Texas', UT: 'Utah', VT: 'Vermont', VA: 'Virginia',
   WA: 'Washington', WV: 'West Virginia', WI: 'Wisconsin', WY: 'Wyoming',
 };
+// Codes outside the US. The census is titled a UNITED STATES census, and an
+// Australian state listed beside Alabama in a US coverage table is simply wrong:
+// it inflates the US count and reads as a data error. These are real listings and
+// are still published, but as their own jurisdiction, never inside the US totals.
+const NON_US = {
+  QLD: { label: 'Queensland', country: 'Australia' },
+  NSW: { label: 'New South Wales', country: 'Australia' },
+  VIC: { label: 'Victoria', country: 'Australia' },
+  WA_AU: { label: 'Western Australia', country: 'Australia' },
+  SA_AU: { label: 'South Australia', country: 'Australia' },
+  TAS: { label: 'Tasmania', country: 'Australia' },
+  NT: { label: 'Northern Territory', country: 'Australia' },
+  ACT: { label: 'Australian Capital Territory', country: 'Australia' },
+  ON: { label: 'Ontario', country: 'Canada' },
+  BC: { label: 'British Columbia', country: 'Canada' },
+  AB: { label: 'Alberta', country: 'Canada' },
+};
+const isUS = code => Object.prototype.hasOwnProperty.call(STATE_NAMES, String(code).toUpperCase());
+const isNonUS = code => Object.prototype.hasOwnProperty.call(NON_US, String(code).toUpperCase());
 // An unrecognized code renders as itself rather than being dropped — a state we
-// have not enumerated is still a real listing.
-const stateLabel = code => STATE_NAMES[String(code).toUpperCase()] || String(code);
+// have not enumerated is still a real listing. A known non-US code gets its real
+// name plus its country, so it can never be mistaken for a US state.
+const stateLabel = code => {
+  const c = String(code).toUpperCase();
+  if (STATE_NAMES[c]) return STATE_NAMES[c];
+  if (NON_US[c]) return `${NON_US[c].label}, ${NON_US[c].country}`;
+  return String(code);
+};
 const drugLabel = k => titleCase(String(k).replace(/_/g, ' '));
 // Human labels for the indication vocabulary (ems-router lib/census/indications.json keys).
 // ONE home: census-report.mjs imports this. A key missing here falls back to title case.
@@ -626,6 +651,12 @@ function landingPage({ manifest, states, drugs, agencyPageCount, agencies = [], 
   // the table renders only when at least one agency row carries it, and is
   // omitted entirely otherwise — never a table of blanks, never a throw.
   const coverageRows = agencies.some(a => a.coverage) ? coverageByState(states, agencies, documents) : [];
+  // The US figures on this page count US jurisdictions only. Anything else is real and
+  // still listed, in its own section, so a reader is never told that a US census covers
+  // a number of states that includes Queensland.
+  const usStates = states.filter(c => !isNonUS(c));
+  const otherStates = states.filter(isNonUS);
+  const usCoverageRows = coverageRows.filter(r => !isNonUS(r.state));
   // Per-state agency counts for the facet rail. Built from `agencies` (the ones that
   // got a page) so a facet can never promise more rows than the state page lists.
   const facetCounts = new Map(states.map(s => [s, agencies.filter(a => a.state === s).length]));
@@ -691,14 +722,22 @@ ${drugs.length ? `      <section id="drugs">
         <p>Drug and indication pages are not published for this build: the indication map has not been reviewed since it last changed.</p>
       </section>`}
       <section id="states">
-        <h2>States<span class="count">${num(states.length)}</span></h2>
-        <ul class="stategrid">${states.map(s => `<li><a href="/census/states/${slug(s)}/">${esc(stateLabel(s))}</a><span class="count">${num(facetCounts.get(s) ?? 0)} ${(facetCounts.get(s) ?? 0) === 1 ? 'agency' : 'agencies'}</span></li>`).join('')}</ul>
-${coverageRows.length ? `        <h3>Coverage by state</h3>
+        <h2>States<span class="count">${num(usStates.length)}</span></h2>
+        <ul class="stategrid">${usStates.map(s => `<li><a href="/census/states/${slug(s)}/">${esc(stateLabel(s))}</a><span class="count">${num(facetCounts.get(s) ?? 0)} ${(facetCounts.get(s) ?? 0) === 1 ? 'agency' : 'agencies'}</span></li>`).join('')}</ul>
+${usCoverageRows.length ? `        <h3>Coverage by state</h3>
         <div class="scroll"><table class="coverage">
           <thead><tr><th>State</th><th>Agencies with a protocol</th><th>Agencies without</th><th>Statewide protocol</th></tr></thead>
-          <tbody>${coverageRows.map(r => `<tr><td><a href="/census/states/${slug(r.state)}/">${esc(stateLabel(r.state))}</a></td><td>${num(r.withProtocol)}</td><td>${num(r.withoutProtocol)}</td><td>${r.statewideBaseline ? 'Yes' : 'No'}</td></tr>`).join('')}</tbody>
+          <tbody>${usCoverageRows.map(r => `<tr><td><a href="/census/states/${slug(r.state)}/">${esc(stateLabel(r.state))}</a></td><td>${num(r.withProtocol)}</td><td>${num(r.withoutProtocol)}</td><td>${r.statewideBaseline ? 'Yes' : 'No'}</td></tr>`).join('')}</tbody>
         </table></div>` : ''}
       </section>
+${otherStates.length ? `      <!-- Listed, but never inside the US counts above. This is a United States census;
+           an Australian state in the US coverage table inflates the US number and reads
+           as a data error. -->
+      <section id="international">
+        <h2>Outside the United States<span class="count">${num(otherStates.length)}</span></h2>
+        <p class="muted">Protocols the census has read from outside the US. They are held to the same sourcing rules, and are kept out of every United States figure on this page.</p>
+        <ul class="stategrid">${otherStates.map(s => `<li><a href="/census/states/${slug(s)}/">${esc(stateLabel(s))}</a><span class="count">${num(facetCounts.get(s) ?? 0)} ${(facetCounts.get(s) ?? 0) === 1 ? 'agency' : 'agencies'}</span></li>`).join('')}</ul>
+      </section>` : ''}
       <section id="agencies">
         <h2>Agencies<span class="count">${num(agencies.length)}</span></h2>
         <p class="muted">Each agency page holds that agency's protocol, its earlier versions and every dose it publishes.${withheldSentence(withheld)}</p>
@@ -1649,10 +1688,17 @@ export function buildPages({ documents, agencies, doses, ledger, manifest, compa
 
   // --- agency pages: >= 3 drugs and a known state (spec 9 thin-page rule)
   const agencyPages = [];
+  const skipped = { thin: 0, noState: [] };
   for (const a of [...agencies].sort((x, y) => x.agencyKey.localeCompare(y.agencyKey))) {
     const rows = dosesByAgency.get(a.agencyKey) || [];
     const drugCount = new Set(rows.map(r => r.drugKey)).size;
-    if (drugCount < MIN_AGENCY_DRUGS || !a.state) continue;
+    // Two different reasons to skip, and they are not the same kind of thing.
+    // Too few drugs is an EDITORIAL rule: a two-drug page is thin and should not
+    // exist. A missing state is a DATA GAP: the agency qualifies on content and
+    // loses its page over one empty field. The second is counted and reported so
+    // it stops being invisible.
+    if (drugCount < MIN_AGENCY_DRUGS) { skipped.thin++; continue; }
+    if (!a.state) { skipped.noState.push({ key: a.agencyKey, name: a.name, drugs: drugCount }); continue; }
     agencyPages.push(agencyPage(a, {
       doses: rows,
       docByHash,
@@ -1660,6 +1706,12 @@ export function buildPages({ documents, agencies, doses, ledger, manifest, compa
     }));
   }
   files.push(...agencyPages);
+  // Reported, not swallowed: an agency that clears the drug bar and loses its page to
+  // an empty state field is a page you already paid to extract and are not publishing.
+  if (skipped.noState.length) {
+    const names = skipped.noState.map(a => `${a.name} (${a.drugs} drugs)`).join(', ');
+    console.warn(`census-pages: ${skipped.noState.length} agencies qualify on content but have NO STATE, so no page: ${names}`);
+  }
   const agencyPathSet = new Set(agencyPages.map(p => p.path));
 
   // --- state pages: link only to agency pages that exist (spec 9)
