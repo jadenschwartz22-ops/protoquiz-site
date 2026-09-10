@@ -3301,9 +3301,30 @@
   .px-frame-num-cyan{color:var(--accent2);}
   .px-frame-dollar{font-size:.55em; font-weight:600; opacity:.7;}
   .px-frame-unit{font-size:.28em; color:var(--muted); font-weight:600; margin-left:5px;}
+  /* "/provider/yr" is four times the length of "/yr"; without this the unit forces
+     the rate to wrap on narrow columns. */
+  .px-frame-pay .px-frame-unit, .px-frame-save .px-frame-unit{font-size:.22em; white-space:nowrap;}
   .px-frame-num-cyan .px-frame-unit{color:var(--accent2); opacity:.6;}
   .px-frame-strike-row{
     font-size:16px; color:var(--muted); margin-bottom:20px; line-height:1.5;
+  }
+  /* The annual total, one step below the per-provider rate. Present and honest, but no
+     longer the biggest thing on the page: it scales with agency size and the price does
+     not, so leading with it made a flat rate look like a large bill. */
+  .px-frame-rate-note{
+    font-size:15px; color:var(--muted); margin-bottom:10px; line-height:1.5;
+  }
+  .px-frame-rate-note strong{ color:var(--success, var(--ink)); font-weight:600; }
+  .px-frame-rate-note .px-stat-strike{
+    text-decoration:line-through; text-decoration-color:rgba(15,18,25,.30);
+  }
+  .px-frame-total-row{
+    font-size:17px; color:var(--muted); margin-bottom:20px; line-height:1.55;
+  }
+  .px-frame-total-row strong{ color:var(--ink); font-weight:600; }
+  .px-frame-total-row .px-stat-strike{
+    color:var(--muted); text-decoration:line-through;
+    text-decoration-color:rgba(15,18,25,.30);
   }
   .px-frame-strike-row .px-stat-strike{
     color:var(--muted); text-decoration:line-through;
@@ -4178,6 +4199,7 @@
     .px-frame-col{padding:22px 18px;}
     .px-frame-num{font-size:38px;}
     .px-frame-strike-row{font-size:14px;}
+    .px-frame-total-row{font-size:14.5px;}
     .px-frame-list{font-size:15.5px;}
     .px-frame-math-label{font-size:15px;}
     .px-frame-math-source{font-size:12.5px;}
@@ -5531,8 +5553,8 @@
     <div class="wrap wrap-wide">
       <div class="px-frame-head">
         <div class="px-frame-eyebrow">Pricing</div>
-        <h2 class="px-frame-title">$25 per seat, per quarter.</h2>
-        <p class="px-frame-sub">Flat. No setup fees, no add-ons, no tiers. Prepay the year and save 20%. Drag to size your agency.</p>
+        <h2 class="px-frame-title">$80 per provider, per year.</h2>
+        <p class="px-frame-sub">Flat. No setup fees, no add-ons, no tiers. That&rsquo;s the annual prepay rate &mdash; a 20% discount on the standard $25 per seat, per quarter. Drag to size your agency.</p>
       </div>
 
       <!-- Slider, centered, drives every number on the frame -->
@@ -5540,15 +5562,15 @@
         <div class="px-slider-head">
           <div class="px-slider-label">Your agency size</div>
           <div class="px-slider-readout">
-            <span class="px-slider-num"><span data-px-val="providers">300</span></span>
+            <span class="px-slider-num"><span data-px-val="providers">75</span></span>
             <span class="px-slider-unit">providers</span>
-            <span class="px-slider-tier" data-px-val="tier-pill" data-tier="medium">Medium</span>
+            <span class="px-slider-tier" data-px-val="tier-pill" data-tier="small">Small</span>
           </div>
         </div>
         <input type="range" id="px-slider" class="px-slider"
-               min="25" max="750" step="5" value="300"
+               min="25" max="750" step="5" value="75"
                aria-label="Number of providers in your agency"
-               aria-valuetext="300 providers, medium agency" />
+               aria-valuetext="75 providers, small agency" />
         <div class="px-slider-ticks">
           <span>25</span><span>200</span><span>400</span><span>600</span><span>750</span>
         </div>
@@ -5562,9 +5584,9 @@
         <div class="px-pilot-tag">Save 20% &middot; Annual prepay</div>
         <div class="px-pilot-body">
           <div class="px-pilot-headline">
-            Prepay the year at <strong><span data-px-val="cost-annual-strong">$24,000</span>/yr</strong> instead of <span class="px-stat-strike" data-px-val="cost-std">$30,000</span> billed quarterly.
+            Prepay the year at <strong><span data-px-val="cost-annual-strong">$6,000</span>/yr</strong> instead of <span class="px-stat-strike" data-px-val="cost-std">$7,500</span> billed quarterly.
           </div>
-          <p class="px-pilot-sub"><strong>That&rsquo;s <span data-px-val="cost-saved">$6,000</span> back</strong> for paying once instead of four times. Quarterly stays available at $25/seat/quarter if you&rsquo;d rather spread it out.</p>
+          <p class="px-pilot-sub"><strong>That&rsquo;s <span data-px-val="cost-saved">$1,500</span> back</strong> for paying once instead of four times. Quarterly stays available at $25/seat/quarter if you&rsquo;d rather spread it out.</p>
         </div>
         <div class="px-pilot-perks">
           <div class="px-pilot-perk"><span class="px-pilot-perk-num">20%</span><span class="px-pilot-perk-text">off when you prepay the year</span></div>
@@ -5580,9 +5602,18 @@
         <!-- LEFT: cost + what you get -->
         <div class="px-frame-col px-frame-pay">
           <div class="px-frame-eyebrow-sm">What you pay (annual prepay)</div>
-          <div class="px-frame-num"><span class="px-frame-dollar">$</span><span data-px-val="cost-annual">24,000</span><span class="px-frame-unit">/yr</span></div>
-          <div class="px-frame-strike-row">
-            <span class="px-stat-strike" data-px-val="cost-std">$30,000</span> billed quarterly
+          <!-- The per-provider rate is the hero because it is the actual price and it does
+               not move with agency size. The annual total is real and stays on the page,
+               one step down, so a small service is not met by a five-figure number first. -->
+          <div class="px-frame-num"><span class="px-frame-dollar">$</span><span data-px-val="rate-annual-bare">80</span><span class="px-frame-unit">/provider/yr</span></div>
+          <!-- $80 is the DISCOUNTED rate. Shown beside the struck $100 standard rate so the
+               20% is legible at the number itself, not only in the prose above. -->
+          <div class="px-frame-rate-note">
+            <span class="px-stat-strike" data-px-val="rate-std">$100</span> standard &middot; <strong>save 20%</strong> prepaying the year
+          </div>
+          <div class="px-frame-total-row">
+            <span data-px-val="providers">75</span> providers &middot; <strong data-px-val="cost-annual-strong">$6,000</strong>/yr
+            &middot; <span class="px-stat-strike" data-px-val="cost-std">$7,500</span> billed quarterly
           </div>
           <ul class="px-frame-list">
             <li>One PDF, one tenant, one login link to your crews</li>
@@ -5598,9 +5629,15 @@
         <!-- RIGHT: savings + math -->
         <div class="px-frame-col px-frame-save">
           <div class="px-frame-eyebrow-sm px-frame-eyebrow-cyan">What it saves your organization</div>
-          <div class="px-frame-num px-frame-num-cyan"><span data-px-val="save-total">$75,000</span><span class="px-frame-unit">/yr</span></div>
-          <div class="px-frame-strike-row">
-            Tap any row for the source, math, and our estimates.
+          <!-- Same unit as the cost column. A per-provider cost beside an org-wide savings
+               total put $80 next to $19,000 at the same size, which compares two different
+               things. Both columns now lead per-provider; both totals sit one step down. -->
+          <div class="px-frame-num px-frame-num-cyan"><span class="px-frame-dollar">$</span><span data-px-val="save-rate-bare">250</span><span class="px-frame-unit">/provider/yr</span></div>
+          <div class="px-frame-rate-note">
+            Est. against $80 spent &middot; <strong>~3x</strong> the cost
+          </div>
+          <div class="px-frame-total-row">
+            <span data-px-val="providers">75</span> providers &middot; <strong data-px-val="save-total">$19,000</strong>/yr estimated
           </div>
           <ul class="px-frame-math">
             <li>
@@ -5609,7 +5646,7 @@
                   <span class="px-frame-math-label">Faster, better onboarding</span>
                   <span class="px-frame-math-source">~$200/provider/yr &middot; AAA 2022 EMS turnover survey ($9K+/replacement, ~30% annual turnover) + 10% ramp reduction<svg class="px-frame-math-ext" viewBox="0 0 14 14" aria-hidden="true"><path d="M5 2H2v10h10V9M9 2h3v3M11.5 2.5L7 7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                 </div>
-                <span class="px-frame-math-num" data-px-val="save-fto">~$60,000</span>
+                <span class="px-frame-math-num" data-px-val="save-fto">~$15,000</span>
               </button>
             </li>
             <li>
@@ -5618,7 +5655,7 @@
                   <span class="px-frame-math-label">Fewer remediations</span>
                   <span class="px-frame-math-source">~$50/provider/yr &middot; PMC peer-reviewed prehospital med-error data (up to 12.76% rate); supervisor + FTO time at burdened labor<svg class="px-frame-math-ext" viewBox="0 0 14 14" aria-hidden="true"><path d="M5 2H2v10h10V9M9 2h3v3M11.5 2.5L7 7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                 </div>
-                <span class="px-frame-math-num" data-px-val="save-training">~$15,000</span>
+                <span class="px-frame-math-num" data-px-val="save-training">~$3,800</span>
               </button>
             </li>
           </ul>
@@ -5642,19 +5679,19 @@
       <div class="px-frame-net">
         <div class="px-frame-net-cell">
           <span class="px-frame-net-label">You pay</span>
-          <span class="px-frame-net-num">$<span data-px-val="cost-annual">24,000</span>/yr</span>
+          <span class="px-frame-net-num">$<span data-px-val="cost-annual">6,000</span>/yr</span>
         </div>
         
         <div class="px-frame-net-cell">
           <span class="px-frame-net-label">You save</span>
-          <span class="px-frame-net-num px-frame-net-num-cyan"><span data-px-val="save-total">$75,000</span>/yr</span>
+          <span class="px-frame-net-num px-frame-net-num-cyan"><span data-px-val="save-total">$19,000</span>/yr</span>
         </div>
 
         <div class="px-frame-net-cell px-frame-net-cell-final">
           <span class="px-frame-net-label">Net positive</span>
-          <span class="px-frame-net-num px-frame-net-num-final"><span data-px-val="save-net">~$60,000</span>/yr</span>
+          <span class="px-frame-net-num px-frame-net-num-final"><span data-px-val="save-net">~$13,000</span>/yr</span>
         </div>
-        <div class="px-frame-net-foot">Plus another <strong><span data-px-val="save-upside">~$13,500</span>/yr</strong> in defensible legal &amp; audit upside, kept out of the headline total.</div>
+        <div class="px-frame-net-foot">Plus another <strong><span data-px-val="save-upside">~$3,400</span>/yr</strong> in defensible legal &amp; audit upside, kept out of the headline total.</div>
       </div>
     </div>
   </section>
@@ -6450,6 +6487,10 @@
       const RATE_LAWSUIT = 0, RATE_REM = 0, RATE_LEGAL = 0, RATE_CE = 0;
       // $25/seat/quarter = $100/provider/yr billed quarterly; annual prepay takes 20% off.
       const RATE_QUARTER = 25, RATE_STD = RATE_QUARTER * 4, ANNUAL_DISCOUNT = 0.20;
+      // The default sizes the page for a typical agency, not a large one. At 300 the
+      // first number a visitor saw was a five-figure annual total, which reads as the
+      // price even though the price is per provider and does not change with size.
+      const DEFAULT_PROVIDERS = 75;
       const RATE_ANNUAL = RATE_STD * (1 - ANNUAL_DISCOUNT);
       const DIY_BASE = 14000, DIY_PER_PROVIDER = 204;
       const LMS_PER = 73, CE_PER = 80, COMPLIANCE_PER = 60;
@@ -6488,6 +6529,10 @@
           tier: tier.key,
           label: tier.label.toLowerCase(),
           'tier-pill': tier.label,
+          'rate-annual': '$' + RATE_ANNUAL,
+          'rate-annual-bare': String(RATE_ANNUAL),
+          'save-rate-bare': String(RATE_FTO + RATE_TRAINING),
+          'rate-std': '$' + RATE_STD,
           'cost-annual': pqAnnualStr,
           'cost-annual-strong': '$' + pqAnnualStr,
           'cost-quarter': '$' + (pqStd / 4).toLocaleString('en-US'),
@@ -6534,8 +6579,8 @@
           data.providers + ' providers, ' + data.label + ' agency, $' + data['cost-annual'] + ' per year with annual prepay');
       }
 
-      slider.addEventListener('input', e => apply(parseInt(e.target.value, 10) || 300));
-      let saved = 300;
+      slider.addEventListener('input', e => apply(parseInt(e.target.value, 10) || DEFAULT_PROVIDERS));
+      let saved = DEFAULT_PROVIDERS;
       try{
         const v = parseInt(localStorage.getItem('protoquiz_agency_providers') || '', 10);
         if(!isNaN(v) && v >= 25 && v <= 750) saved = v;
