@@ -109,7 +109,7 @@ ${navFor('/app/')}
             </div>
           </div>
           <div class="phone" data-phone>
-            <img data-shot src="/app-shots/day-ios.png" alt="ProtoQuiz on iPhone in Day Shift" width="250" height="543">
+            <img data-shot src="/app-shots/day-study-hub.png" alt="The ProtoQuiz study hub in Day Shift" width="250" height="543">
           </div>
           <div class="shot-caption" data-shot-caption>iPhone &middot; Day Shift</div>
         </div>
