@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-09-11T12:08:41.742Z",
-  "totalUploads": 594,
-  "distinctProtocols": 410,
-  "activeStudiers": 407,
-  "pagesProcessed": 96003,
+  "generatedAt": "2026-09-11T18:08:23.104Z",
+  "totalUploads": 596,
+  "distinctProtocols": 411,
+  "activeStudiers": 409,
+  "pagesProcessed": 96460,
   "statesRepresented": 42,
   "countriesRepresented": 4,
   "internationalUploads": 6,
@@ -17,8 +17,8 @@
     "GA": 24,
     "NY": 22,
     "CT": 18,
+    "VA": 18,
     "NC": 17,
-    "VA": 17,
     "OR": 15,
     "WA": 12,
     "NV": 11,
@@ -345,6 +345,28 @@
       ]
     },
     {
+      "state": "VA",
+      "city": "Richmond",
+      "x": 801,
+      "y": 283,
+      "count": 9,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "6a3c362727e100463b039339 20250701L Protocols compressed",
+          "count": 2
+        },
+        {
+          "title": "Section 7 Toxicological",
+          "count": 1
+        },
+        {
+          "title": "Section 9 Peds Medical Revised Racemic Epi",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "MD",
       "city": "Baltimore",
       "x": 807,
@@ -363,28 +385,6 @@
         {
           "title": "MD Medical Protocols 2026 Print",
           "count": 2
-        }
-      ]
-    },
-    {
-      "state": "VA",
-      "city": "Richmond",
-      "x": 801,
-      "y": 283,
-      "count": 8,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "Section 7 Toxicological",
-          "count": 1
-        },
-        {
-          "title": "Section 9 Peds Medical Revised Racemic Epi",
-          "count": 1
-        },
-        {
-          "title": "Section 8 Pediatric Cardiac",
-          "count": 1
         }
       ]
     },
