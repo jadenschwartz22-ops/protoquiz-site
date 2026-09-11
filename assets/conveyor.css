@@ -78,7 +78,6 @@
 /* The belt scrolls. My first extraction lifted a prefers-reduced-motion override
    (animation:none) WITHOUT its media query, which froze it permanently. */
 .track { animation: tickerSlide 48s linear infinite; }
-.conveyor:hover .track { animation-play-state: paused; }
 
 @keyframes tickerSlide {
   0%   { transform: translateX(0); }
