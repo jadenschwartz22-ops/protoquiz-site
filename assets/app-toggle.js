@@ -9,7 +9,8 @@
 // night are the SAME eight in the same order, which is what makes the shift toggle
 // honest: you are comparing one screen against itself, not two unrelated ones.
 //
-// Day is the default so a cold visit matches the rest of the site. The choice is
+// Night is the default: it is the app's own default and the look the live site
+// carries. The choice is
 // remembered, wrapped in try/catch because private windows throw on localStorage.
 (() => {
   const KEY = 'pq-shift';
@@ -33,7 +34,7 @@
   const buttons = [...document.querySelectorAll('[data-set]')];
   if (!shot) return;
 
-  const state = { platform: 'ios', shift: 'day', i: 0 };
+  const state = { platform: 'ios', shift: 'night', i: 0 };
   const label = { ios: 'iPhone', android: 'Android', night: 'Night Shift', day: 'Day Shift' };
 
   try {
@@ -156,7 +157,7 @@
 
   // A remembered night preference must not survive into a build with no night shots.
   (async () => {
-    if (!(await shiftHasShots(state.shift))) state.shift = 'day';
+    if (!(await shiftHasShots(state.shift))) state.shift = state.shift === 'night' ? 'day' : 'night';
     await applyShift();
     await gateShift();
     rearm();
