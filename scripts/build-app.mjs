@@ -83,7 +83,7 @@ ${navFor('/app/')}
         <div>
           <div class="eyebrow">For providers</div>
           <h1>Master your EMS protocols.</h1>
-          <p class="lede">Upload your agency's protocol PDF. Quizzes, adaptive scenarios and drug lookups built from that document, every answer cited to its page.</p>
+          <p class="lede">Upload your agency's protocol PDF. Study what you need to do your job.</p>
           <div class="stores">
             <a class="store" href="https://apps.apple.com/app/id6753611139">
               ${APPLE}
@@ -94,7 +94,7 @@ ${navFor('/app/')}
               <span><span class="store-sm">Get it on</span><br><span class="store-lg">Google Play</span></span>
             </a>
           </div>
-          <div class="stores-note">Free to start &middot; no card required</div>
+          <div class="stores-note">Free to use</div>
         </div>
 
         <div class="shot-col">
