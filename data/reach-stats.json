@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-09-11T00:08:24.231Z",
-  "totalUploads": 591,
-  "distinctProtocols": 408,
-  "activeStudiers": 404,
-  "pagesProcessed": 95275,
+  "generatedAt": "2026-09-11T06:08:23.687Z",
+  "totalUploads": 594,
+  "distinctProtocols": 410,
+  "activeStudiers": 407,
+  "pagesProcessed": 96003,
   "statesRepresented": 42,
   "countriesRepresented": 4,
   "internationalUploads": 6,
@@ -19,7 +19,7 @@
     "CT": 18,
     "NC": 17,
     "VA": 17,
-    "OR": 14,
+    "OR": 15,
     "WA": 12,
     "NV": 11,
     "WY": 10,
@@ -38,8 +38,9 @@
     "NE": 4,
     "ID": 4,
     "OK": 3,
+    "MO": 3,
     "DE": 3,
-    "MO": 2,
+    "WV": 3,
     "MN": 2,
     "VT": 2,
     "OH": 2,
@@ -48,7 +49,6 @@
     "NJ": 2,
     "IA": 2,
     "DC": 2,
-    "WV": 2,
     "RI": 2
   },
   "byCountry": {
@@ -257,6 +257,28 @@
       ]
     },
     {
+      "state": "OR",
+      "city": "Portland",
+      "x": 73,
+      "y": 80,
+      "count": 12,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "New",
+          "count": 1
+        },
+        {
+          "title": "WASHCO Treatment",
+          "count": 1
+        },
+        {
+          "title": "httpss3.amazonaws.comtsresources.targetsolutions.com197A1159…",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "NV",
       "city": "Las Vegas",
       "x": 145,
@@ -274,28 +296,6 @@
         },
         {
           "title": "emc protocols",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "OR",
-      "city": "Portland",
-      "x": 73,
-      "y": 80,
-      "count": 11,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "New",
-          "count": 1
-        },
-        {
-          "title": "WASHCO Treatment",
-          "count": 1
-        },
-        {
-          "title": "httpss3.amazonaws.comtsresources.targetsolutions.com197A1159…",
           "count": 1
         }
       ]
@@ -801,6 +801,24 @@
       ]
     },
     {
+      "state": "WV",
+      "city": "Charleston",
+      "x": 726,
+      "y": 278,
+      "count": 3,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "2026 Protocol Booklet Final April 2026 INTERACTIVE",
+          "count": 2
+        },
+        {
+          "title": "WV Protocols 2025",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "OK",
       "city": "Oklahoma City",
       "x": 454,
@@ -1018,24 +1036,6 @@
         },
         {
           "title": "2026 DHS EMS Protocols w: Hyperlinks",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "WV",
-      "city": "Charleston",
-      "x": 726,
-      "y": 278,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "2026 Protocol Booklet Final April 2026 INTERACTIVE",
-          "count": 1
-        },
-        {
-          "title": "WV Protocols 2025",
           "count": 1
         }
       ]
@@ -1622,6 +1622,20 @@
       "topProtocols": [
         {
           "title": "2025 CCT Guidelines",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "MO",
+      "city": "Kansas City",
+      "x": 505,
+      "y": 280,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "KCFD EMS PROTOCOLS 2026",
           "count": 1
         }
       ]
