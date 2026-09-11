@@ -6,7 +6,7 @@
 
 .app-hero {
   background: var(--ground); border-bottom: 1px solid var(--line);
-  padding: clamp(48px, 6vw, 76px) clamp(16px, 5vw, 72px) clamp(44px, 6vw, 68px);
+  padding: clamp(28px, 3.5vw, 44px) clamp(16px, 5vw, 72px) clamp(24px, 3.5vw, 36px);
 }
 .app-hero-grid {
   display: grid; grid-template-columns: 1.05fr 0.95fr;
@@ -15,15 +15,15 @@
 .eyebrow {
   font-family: 'IBM Plex Mono', ui-monospace, monospace;
   font-size: 11px; letter-spacing: 2.4px; text-transform: uppercase;
-  color: var(--accent); margin-bottom: 26px;
+  color: var(--accent); margin-bottom: 16px;
 }
 .app-hero h1 {
   font-size: clamp(34px, 4.6vw, 58px); line-height: 1.02; letter-spacing: -0.042em;
-  font-weight: 700; margin: 0 0 22px; text-wrap: balance;
+  font-weight: 700; margin: 0 0 16px; text-wrap: balance;
 }
 .app-hero .lede {
   font-size: clamp(16px, 1.6vw, 18px); line-height: 1.6; color: var(--ink-2);
-  margin: 0 0 32px; max-width: 480px;
+  margin: 0 0 24px; max-width: 480px;
 }
 
 /* store buttons */
@@ -75,7 +75,7 @@
   transition: background 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .phone.night { background: var(--night-2); border-color: var(--night-line); }
-.phone img { width: 250px; max-width: 100%; display: block; border-radius: 19px; }
+.phone img { width: 216px; height: auto; max-width: 100%; display: block; border-radius: 17px; }
 .shot-caption {
   font-family: 'IBM Plex Mono', ui-monospace, monospace;
   font-size: 9.5px; letter-spacing: 1.3px; text-transform: uppercase; color: var(--ink-3);
@@ -257,7 +257,7 @@ html { transition: none; }
 }
 
 /* conveyor sits under the hero */
-.belt-wrap { padding: 0 0 clamp(28px, 4vw, 44px); background: var(--ground); border-bottom: 1px solid var(--line); }
+.belt-wrap { padding: 0 0 clamp(16px, 2.5vw, 28px); background: var(--ground); border-bottom: 1px solid var(--line); }
 [data-shift="night"] .belt-wrap { background: var(--ground); }
 
 @media (prefers-reduced-motion: reduce) {
@@ -269,11 +269,11 @@ html { transition: none; }
    Static rebuild of the homepage's interactive map. Tokens, so it flips
    with [data-shift] like everything else. */
 .reach-wrap {
-  padding: clamp(44px, 5vw, 64px) clamp(16px, 5vw, 72px);
+  padding: clamp(32px, 4vw, 48px) clamp(16px, 5vw, 72px);
   background: var(--ground); border-top: 1px solid var(--line);
 }
 .reach-inner { max-width: 1180px; margin: 0 auto; }
-.reach-map { width: 100%; height: auto; display: block; max-width: 1080px; margin: 0 auto; }
+.reach-map { width: 100%; height: auto; display: block; max-width: 880px; margin: 0 auto; }
 .reach-map .state {
   fill: transparent; stroke: var(--line); stroke-width: 1.1; vector-effect: non-scaling-stroke;
 }
