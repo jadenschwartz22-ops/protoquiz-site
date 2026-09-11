@@ -273,15 +273,27 @@ html { transition: none; }
   background: var(--ground); border-top: 1px solid var(--line);
 }
 .reach-inner { max-width: 1180px; margin: 0 auto; }
-.reach-map { width: 100%; height: auto; display: block; max-width: 900px; margin: 0 auto; }
+.reach-map { width: 100%; height: auto; display: block; max-width: 1080px; margin: 0 auto; }
 .reach-map .state {
-  fill: var(--paper); stroke: var(--line); stroke-width: 1;
+  fill: transparent; stroke: var(--line); stroke-width: 1.1; vector-effect: non-scaling-stroke;
 }
-[data-shift="night"] .reach-map .state { fill: oklch(20% 0.014 280); stroke: oklch(30% 0.016 280); }
-.reach-dot { fill: var(--accent); opacity: .82; }
-.reach-dot.t-hot  { opacity: .95; }
-.reach-dot.t-tiny { opacity: .6; }
-[data-shift="night"] .reach-dot { fill: var(--amber); }
+[data-shift="night"] .reach-map .state { stroke: oklch(32% 0.018 280); }
+.reach-map .state[data-b="on"]   { stroke: var(--accent); stroke-opacity: .35; }
+.reach-map .state[data-b="warm"] { stroke: var(--accent); stroke-opacity: .6; }
+.reach-map .state[data-b="hot"]  { stroke: var(--accent); stroke-opacity: .9; }
+.reach-map .core { fill: var(--accent); }
+.reach-map .halo { fill: none; stroke: var(--accent); stroke-width: 1.2; opacity: .3; }
+.reach-map .lc.hot .halo { opacity: .55; stroke-width: 1.6; }
+.reach-map .lead { stroke: var(--ink-3); stroke-width: .7; opacity: .55; }
+.reach-map .lbl {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace; font-weight: 600; letter-spacing: .05em;
+  fill: var(--ink-2); paint-order: stroke fill; stroke: var(--ground); stroke-width: 4px; stroke-linejoin: round;
+}
+.reach-map .lbl .n { fill: var(--accent); font-weight: 700; }
+.reach-map .lbl.hot  { font-size: 16px; font-weight: 700; fill: var(--ink); }
+.reach-map .lbl.warm { font-size: 13px; fill: var(--ink); }
+.reach-map .lbl.on   { font-size: 10.5px; }
+.reach-map .lbl.tiny { font-size: 8.5px; fill: var(--ink-3); font-weight: 500; }
 .reach-stats {
   display: flex; gap: clamp(20px, 4vw, 44px); flex-wrap: wrap;
   justify-content: center; margin-top: 26px;
