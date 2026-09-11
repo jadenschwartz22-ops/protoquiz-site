@@ -204,6 +204,11 @@
   --ink-soft: var(--ink-3);
   --green: oklch(58% 0.15 155);
   /* Day Shift: the brand accent IS blue. */
+  --paper:  #f6f7f9;
+  --ground: #ffffff;
+  --ink:    #26282e;
+  --accent: #1d4ed8;
+  --accent-hover: #1a44be;
   --amber: var(--accent);
   --page: var(--paper);
   --panel: var(--ground);
@@ -211,9 +216,9 @@
 }
 
 [data-shift="night"] {
-  /* Night Shift matches the app and the live homepage: warm near-black, not a
-     blue-grey dark mode. Values are the homepage's own tokens. */
-  --ground: #0c0a07;
+  /* Night Shift matches the app and the live homepage: the app's two surfaces,
+     #06050a page and #100d08 panels, sampled from the screenshots. */
+  --ground: #06050a;
   --paper:  #06050a;
   --ink:    #f4f1ea;
   --ink-2:  #a8a399;
@@ -233,7 +238,7 @@
   --page: #06050a;
   --panel: #100d08;
   --hairline: #1c1a14;
-  --night: #06050a; --night-2: #0c0a07; --night-line: #2a2620;
+  --night: #06050a; --night-2: #100d08; --night-line: #2a2620;
 }
 
 [data-shift="night"] body { background: var(--paper); color: var(--ink); }
@@ -242,7 +247,7 @@
 [data-shift="night"] .store-sm { opacity: .8; }
 [data-shift="night"] .review-card,
 [data-shift="night"] .phone,
-[data-shift="night"] .toggle { background: var(--ground); border-color: var(--line); }
+[data-shift="night"] .toggle { background: var(--panel); border-color: var(--line); }
 [data-shift="night"] .toggle button.on { background: var(--accent); color: #0c0a07; }
 [data-shift="night"] .toggle button.on.night { background: var(--accent); color: #0c0a07; }
 [data-shift="night"] .step { border-top-color: var(--ink); }
@@ -252,7 +257,7 @@
 [data-shift="night"] .site-header,
 [data-shift="night"] .site-footer {
   --ink: #f4f1ea; --ink-2: #a8a399; --ink-3: #8a8478;
-  --line: #1c1a14; --paper: #06050a; --ground: #0c0a07;
+  --line: #1c1a14; --paper: #06050a; --ground: #06050a;
   --accent: #ffb000; --accent-hover: #ffc233;
 }
 [data-shift="night"] .site-header { background: var(--paper); border-bottom-color: var(--line); }
