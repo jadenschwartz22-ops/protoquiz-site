@@ -211,45 +211,53 @@
 }
 
 [data-shift="night"] {
-  --ground: oklch(17% 0.014 280);
-  --paper:  oklch(13% 0.012 280);
-  --ink:    oklch(95% 0.006 80);
-  --ink-2:  oklch(78% 0.010 80);
-  --ink-3:  oklch(62% 0.012 80);
-  --ink-soft: oklch(62% 0.012 80);
-  --line:   oklch(28% 0.016 280);
-  --accent: oklch(79% 0.16 78);
-  --accent-hover: oklch(86% 0.15 78);
-  --accent-soft: oklch(24% 0.05 78);
-  --amber:  oklch(79% 0.16 78);
-  --green:  oklch(72% 0.16 155);
-  --page: oklch(13% 0.012 280);
-  --panel: oklch(17% 0.014 280);
-  --hairline: oklch(28% 0.016 280);
+  /* Night Shift matches the app and the live homepage: warm near-black, not a
+     blue-grey dark mode. Values are the homepage's own tokens. */
+  --ground: #0c0a07;
+  --paper:  #06050a;
+  --ink:    #f4f1ea;
+  --ink-2:  #a8a399;
+  --ink-3:  #8a8478;
+  --ink-soft: #a8a399;
+  --muted:  #8a8478;
+  --line:   #1c1a14;
+  --line-2: #2a2620;
+  --accent: #ffb000;
+  --accent-hover: #ffc233;
+  --accent-soft: #3a2a08;
+  --amber:  #ffb000;
+  --amber-warm: #ff7a00;
+  --amber-deep: #cc8a00;
+  --amber-dim: #7a5a00;
+  --green:  #00d27a;
+  --page: #06050a;
+  --panel: #100d08;
+  --hairline: #1c1a14;
+  --night: #06050a; --night-2: #0c0a07; --night-line: #2a2620;
 }
 
 [data-shift="night"] body { background: var(--paper); color: var(--ink); }
 [data-shift="night"] .app-hero { background: var(--ground); }
-[data-shift="night"] .store { background: var(--accent); color: oklch(17% 0.014 280); }
+[data-shift="night"] .store { background: var(--accent); color: #0c0a07; }
 [data-shift="night"] .store-sm { opacity: .8; }
 [data-shift="night"] .review-card,
 [data-shift="night"] .phone,
 [data-shift="night"] .toggle { background: var(--ground); border-color: var(--line); }
-[data-shift="night"] .toggle button.on { background: var(--accent); color: oklch(17% 0.012 280); }
-[data-shift="night"] .toggle button.on.night { background: var(--accent); color: oklch(17% 0.012 280); }
+[data-shift="night"] .toggle button.on { background: var(--accent); color: #0c0a07; }
+[data-shift="night"] .toggle button.on.night { background: var(--accent); color: #0c0a07; }
 [data-shift="night"] .step { border-top-color: var(--ink); }
 [data-shift="night"] .faq details { border-bottom-color: var(--line); }
 
 /* The page chrome follows the shift too, so the seam never shows. */
 [data-shift="night"] .site-header,
 [data-shift="night"] .site-footer {
-  --ink: oklch(95% 0.006 80); --ink-2: oklch(78% 0.010 80); --ink-3: oklch(62% 0.012 80);
-  --line: oklch(28% 0.016 280); --paper: oklch(13% 0.012 280); --ground: oklch(17% 0.014 280);
-  --accent: oklch(79% 0.16 78); --accent-hover: oklch(86% 0.15 78);
+  --ink: #f4f1ea; --ink-2: #a8a399; --ink-3: #8a8478;
+  --line: #1c1a14; --paper: #06050a; --ground: #0c0a07;
+  --accent: #ffb000; --accent-hover: #ffc233;
 }
 [data-shift="night"] .site-header { background: var(--paper); border-bottom-color: var(--line); }
 [data-shift="night"] .site-footer { background: var(--ground); border-top-color: var(--line); }
-[data-shift="night"] .site-header .nav-cta { color: oklch(17% 0.012 280); }
+[data-shift="night"] .site-header .nav-cta { color: #0c0a07; }
 
 html { transition: none; }
 [data-shift] body, [data-shift] .app-hero, [data-shift] .site-header, [data-shift] .site-footer {
@@ -277,7 +285,7 @@ html { transition: none; }
 .reach-map .state {
   fill: transparent; stroke: var(--line); stroke-width: 1.1; vector-effect: non-scaling-stroke;
 }
-[data-shift="night"] .reach-map .state { stroke: oklch(32% 0.018 280); }
+[data-shift="night"] .reach-map .state { stroke: #2a2620; }
 .reach-map .state[data-b="on"]   { stroke: var(--accent); stroke-opacity: .35; }
 .reach-map .state[data-b="warm"] { stroke: var(--accent); stroke-opacity: .6; }
 .reach-map .state[data-b="hot"]  { stroke: var(--accent); stroke-opacity: .9; }

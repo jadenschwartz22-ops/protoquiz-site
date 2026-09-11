@@ -45,16 +45,25 @@
   // A shot that 404s is never shown: the frame keeps the last good image rather than
   // flashing a broken icon. That is what lets night shots land file-by-file.
   const missing = new Set();
-  const src = (shift, key) => `/app-shots/${shift}-${key}.png`;
+  // iOS shots are `{shift}-{key}.png`; Android shots carry a `-android-` infix and
+  // fall back to the iOS capture of the same screen, so the platform toggle never
+  // stalls on a screen Android has not been captured for yet.
+  const candidates = (shift, key) => state.platform === 'android'
+    ? [`/app-shots/${shift}-android-${key}.png`, `/app-shots/${shift}-${key}.png`]
+    : [`/app-shots/${shift}-${key}.png`];
 
-  const preload = (shift, key) => new Promise(resolve => {
-    const url = src(shift, key);
+  const loadable = url => new Promise(resolve => {
     if (missing.has(url)) return resolve(false);
     const img = new Image();
     img.onload = () => resolve(true);
     img.onerror = () => { missing.add(url); resolve(false); };
     img.src = url;
   });
+  // Resolves to the first URL that loads, or null.
+  const preload = async (shift, key) => {
+    for (const url of candidates(shift, key)) if (await loadable(url)) return url;
+    return null;
+  };
 
   const dots = SCREENS.map(([key, name], i) => {
     if (!dotWrap) return null;
@@ -76,11 +85,12 @@
 
   async function show(i) {
     const [key, name] = SCREENS[i];
-    if (!(await preload(state.shift, key))) return false;
+    const url = await preload(state.shift, key);
+    if (!url) return false;
     state.i = i;
-    shot.src = src(state.shift, key);
-    shot.alt = `${name} in ${label[state.shift]}`;
-    if (caption) caption.textContent = `${name} · ${label[state.shift]}`;
+    shot.src = url;
+    shot.alt = `${name} on ${label[state.platform]} in ${label[state.shift]}`;
+    if (caption) caption.textContent = `${name} · ${label[state.platform]} · ${label[state.shift]}`;
     syncDots();
     return true;
   }
@@ -150,6 +160,7 @@
       if (axis === 'shift') {
         try { localStorage.setItem(KEY, value); } catch (e) { /* ignore */ }
       }
+      // Both axes repaint the frame: a platform change swaps the capture in place.
       await applyShift();
       rearm();
     });
