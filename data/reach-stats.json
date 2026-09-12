@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-09-12T06:08:22.752Z",
-  "totalUploads": 596,
-  "distinctProtocols": 411,
-  "activeStudiers": 409,
-  "pagesProcessed": 96460,
+  "generatedAt": "2026-09-12T12:08:26.888Z",
+  "totalUploads": 597,
+  "distinctProtocols": 412,
+  "activeStudiers": 410,
+  "pagesProcessed": 96769,
   "statesRepresented": 42,
   "countriesRepresented": 4,
   "internationalUploads": 6,
@@ -22,8 +22,8 @@
     "OR": 15,
     "WA": 12,
     "NV": 11,
+    "IL": 10,
     "WY": 10,
-    "IL": 9,
     "MD": 8,
     "FL": 8,
     "AZ": 7,
@@ -1832,6 +1832,20 @@
       "topProtocols": [
         {
           "title": "530.02 general procedures h +19 more",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "IL",
+      "city": "Springfield",
+      "x": 588,
+      "y": 261,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "SAMIC Protocols",
           "count": 1
         }
       ]
