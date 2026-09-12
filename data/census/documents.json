@@ -1307,10 +1307,10 @@
    "versionLabel": null,
    "publicationState": "listed_named",
    "status": "superseded",
-   "pageCount": 193,
+   "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": "ce844ce7cffb0ff40cee77ad17fa136b7ffda041975eea330d3daf3e1a02922b",
-   "doseCount": 154
+   "corpusDocId": "census-0c077fae3c12458fffa6603f297912a53c185c1e7c1dc3add509216d8b2b3fd8",
+   "doseCount": 144
   },
   {
    "hash": "0c0fd3da7d20e57870d217c21f4588e8",
@@ -2917,10 +2917,10 @@
    "versionLabel": "2025.2",
    "publicationState": "pending_review",
    "status": null,
-   "pageCount": 284,
+   "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": "bebdef80bd37be0ddd0b16e5a9171eb5afbb3fa5bf74478dca7be81660251648",
-   "doseCount": 235
+   "corpusDocId": "census-17ecc0e72759b399c78a1bdb3e8c8f46f830c1a5c30c0e09339c37cdbfda4af6",
+   "doseCount": 241
   },
   {
    "hash": "18074bd951f231e9fec04f5fc865c9a450ced71a98c66b200390b1b7eb606878",
@@ -3101,10 +3101,10 @@
    "versionLabel": "2026",
    "publicationState": "listed_named",
    "status": "superseded",
-   "pageCount": 514,
+   "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": "357e623241029a8f5310a999f8643e88d65bb3278c2524636871126cd0d2b790",
-   "doseCount": 217
+   "corpusDocId": "census-18e265e2ece3e38b13e62b695b2627b944625a4ad43b87a7e4c7776ee2a1f652",
+   "doseCount": 278
   },
   {
    "hash": "19d91fe6a8807db9e0d2d6fb1ac5f776",
@@ -3147,10 +3147,10 @@
    "versionLabel": "2025.2",
    "publicationState": "pending_review",
    "status": null,
-   "pageCount": 284,
+   "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": "ceff0f0138340d6342520efcde9bc881f80637f8f08dafb3ea851e85da68278d",
-   "doseCount": 213
+   "corpusDocId": "census-1a1e75ca13a0ced150be9be1c09250bf53b2c92e472ce3e14af5eaff7e1f756a",
+   "doseCount": 251
   },
   {
    "hash": "1a200641e6b65dd4d56280c069b1c317f7bc62620282a1626f25c9bcf4f45232",
@@ -3239,10 +3239,10 @@
    "versionLabel": "1.2",
    "publicationState": "listed_named",
    "status": "superseded",
-   "pageCount": 234,
+   "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": "99e00555d0bde5dface5a8ddace5a38b8353967c0a47e35cc923b071b8e8582b",
-   "doseCount": 186
+   "corpusDocId": "census-1ac6983e514ad25fe4d856e5b2e3da3b15b1b31c80e793481aad7668b2821a09",
+   "doseCount": 179
   },
   {
    "hash": "1af65bd74369542c94c45381274371e3",
@@ -3285,10 +3285,10 @@
    "versionLabel": null,
    "publicationState": "listed_named",
    "status": "superseded",
-   "pageCount": 193,
+   "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": "afa05e913664c61807a6825e4a72c221e56ea9cb8ff2686e37e792ab13bb7ccc",
-   "doseCount": 145
+   "corpusDocId": "census-1b2b7a2398d9628dd4f3d5ccacd74dfaa33487c4ee2b84ba75f26187e798ae7f",
+   "doseCount": 149
   },
   {
    "hash": "1b4a7e50dfa912f8769b4aa49ee199ed",
@@ -5867,6 +5867,29 @@
    "doseCount": 137
   },
   {
+   "hash": "2be77422e4e4171ee9d19eec422e7775",
+   "hashSource": "md5",
+   "agencyKey": null,
+   "agencyName": null,
+   "state": null,
+   "country": null,
+   "city": null,
+   "jurisdiction": null,
+   "publicRecord": false,
+   "confidence": null,
+   "effectiveDate": null,
+   "capturedDate": null,
+   "effectiveDateSource": "none",
+   "origin": "unknown",
+   "versionLabel": null,
+   "publicationState": "pending_review",
+   "status": null,
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": null,
+   "doseCount": 0
+  },
+  {
    "hash": "2bea2ec933351af1f8b53602c6d80d49452ba53436baafb666f34baec62b072a",
    "hashSource": "pdf_hash",
    "agencyKey": "muskogee-county-ems",
@@ -7314,6 +7337,29 @@
    "sourceUrl": null,
    "corpusDocId": "census-352b9836c9ef87f32b7455a26aa9060c",
    "doseCount": 44
+  },
+  {
+   "hash": "355902750d74719184c8d8eb38c0a6a780f1f100be5ac1ec20ce23c5e468c50f",
+   "hashSource": "pdf_hash",
+   "agencyKey": "t-c-sagl-k-bakanl-g-republic-of-turkiye-ministry-of-health",
+   "agencyName": "T.C. Sağlık Bakanlığı (Republic of Türkiye Ministry of Health)",
+   "state": null,
+   "country": "TR",
+   "city": null,
+   "jurisdiction": "statewide",
+   "publicRecord": true,
+   "confidence": "high",
+   "effectiveDate": "2026-08-25",
+   "capturedDate": null,
+   "effectiveDateSource": "printed",
+   "origin": "app",
+   "versionLabel": null,
+   "publicationState": "listed_named",
+   "status": "current",
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": "2026algori-tmalar",
+   "doseCount": 99
   },
   {
    "hash": "356d7057e381787d1565d1bf189bedc58047f49c0d82cbe6cdb8ccea46b50b97",
@@ -9016,6 +9062,29 @@
    "sourceUrl": null,
    "corpusDocId": "ddf84a22e34ffe4b431c7b8da69e60504c97e6ef69f0a418f78e1f177de151b5",
    "doseCount": 244
+  },
+  {
+   "hash": "3fa5c23d6c0f02f1fc026c22176cda0e1d307dbee6fff718c43cda5f5802bdad",
+   "hashSource": "pdf_hash",
+   "agencyKey": "confederated-tribes-of-grand-ronde-department-of-emergency-services",
+   "agencyName": "Confederated Tribes of Grand Ronde Department of Emergency Services",
+   "state": "OR",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "regional",
+   "publicRecord": true,
+   "confidence": "high",
+   "effectiveDate": "2025-01-06",
+   "capturedDate": null,
+   "effectiveDateSource": "printed",
+   "origin": "app",
+   "versionLabel": "2025",
+   "publicationState": "listed_named",
+   "status": "current",
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": "2026-ctgr-protocols",
+   "doseCount": 229
   },
   {
    "hash": "3fd9ecf1715d8cbdc7bbb3f8ed5d0160ec56d7d4ea78cc699a0f59b6ca4d37a5",
@@ -14998,6 +15067,29 @@
    "doseCount": 0
   },
   {
+   "hash": "645732f9fbf42d0c077dda46fcfcaaff",
+   "hashSource": "md5",
+   "agencyKey": null,
+   "agencyName": null,
+   "state": null,
+   "country": null,
+   "city": null,
+   "jurisdiction": null,
+   "publicRecord": false,
+   "confidence": null,
+   "effectiveDate": null,
+   "capturedDate": null,
+   "effectiveDateSource": "none",
+   "origin": "unknown",
+   "versionLabel": null,
+   "publicationState": "pending_review",
+   "status": null,
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": null,
+   "doseCount": 0
+  },
+  {
    "hash": "6466ceb5b539db2a3cc8aa43f2c66ff7570f8b03b74172816b3f8baff1884f41",
    "hashSource": "pdf_hash",
    "agencyKey": "new-york-state-department-of-health-bureau-of-emergency-medical-services-and-trauma-systems",
@@ -17963,6 +18055,29 @@
    "sourceUrl": null,
    "corpusDocId": null,
    "doseCount": 0
+  },
+  {
+   "hash": "74d55fe81a2af329697f4e04aa0eaa622fb121ec7d3a3a10bda6838908748ea1",
+   "hashSource": "pdf_hash",
+   "agencyKey": "west-virginia-department-of-health-office-of-emergency-medical-services",
+   "agencyName": "West Virginia Department of Health, Office of Emergency Medical Services",
+   "state": "WV",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "publicRecord": true,
+   "confidence": "high",
+   "effectiveDate": "2026-04-01",
+   "capturedDate": null,
+   "effectiveDateSource": "printed",
+   "origin": "app",
+   "versionLabel": "2026 EDITION",
+   "publicationState": "listed_named",
+   "status": "superseded",
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": "2026-protocol-booklet-final-april-2026--interactive",
+   "doseCount": 139
   },
   {
    "hash": "74f7bbd4db013285e43007e53bf13156b53607a2cdc56c7a1eeed3219206b465",
@@ -23828,6 +23943,29 @@
    "sourceUrl": null,
    "corpusDocId": "ems",
    "doseCount": 224
+  },
+  {
+   "hash": "9f72e849c5a49ccd48e72216a2f9986e357ceae004b9b4b1f43a61e81cb81638",
+   "hashSource": "pdf_hash",
+   "agencyKey": "office-of-the-ems-medical-director-for-kansas-city-missouri",
+   "agencyName": "Office of the EMS Medical Director for Kansas City, Missouri",
+   "state": "MO",
+   "country": "US",
+   "city": "Kansas City",
+   "jurisdiction": "city",
+   "publicRecord": true,
+   "confidence": "high",
+   "effectiveDate": "2026-04-01",
+   "capturedDate": null,
+   "effectiveDateSource": "printed",
+   "origin": "app",
+   "versionLabel": null,
+   "publicationState": "listed_named",
+   "status": "current",
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": "kcfd-ems-protocols-2026",
+   "doseCount": 73
   },
   {
    "hash": "9f78cb33d5025675abeee3fd2193b5ab78120517ef2398126588949679c73202",
@@ -30201,6 +30339,29 @@
    "doseCount": 0
   },
   {
+   "hash": "cd72bd0e50fb35077ee7fdfb6b50cb2ebd4b3182e53eaa95e2253c2a08f371c4",
+   "hashSource": "pdf_hash",
+   "agencyKey": "tidewater-emergency-medical-services-council-inc",
+   "agencyName": "Tidewater Emergency Medical Services Council, Inc.",
+   "state": "VA",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "regional",
+   "publicRecord": true,
+   "confidence": "high",
+   "effectiveDate": "2025-07-01",
+   "capturedDate": null,
+   "effectiveDateSource": "printed",
+   "origin": "app",
+   "versionLabel": "July 1, 2025",
+   "publicationState": "listed_named",
+   "status": "superseded",
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": "6a3c362727e100463b039339_20250701l-protocols-compressed",
+   "doseCount": 136
+  },
+  {
    "hash": "cd92a458e2fce10a4e12232945c5bd00f40108bae54e27cc38274e8acd81f0d0",
    "hashSource": "pdf_hash",
    "agencyKey": null,
@@ -32702,9 +32863,9 @@
    "versionLabel": "July 1, 2025",
    "publicationState": "listed_named",
    "status": "superseded",
-   "pageCount": null,
+   "pageCount": 309,
    "sourceUrl": null,
-   "corpusDocId": "6a3c362727e100463b039339_20250701l-protocols-compressed",
+   "corpusDocId": "582a3f45f5d0073410399ccf4fd285cbdce1241131fcef6c9ce0d14ca2dbf152",
    "doseCount": 131
   },
   {

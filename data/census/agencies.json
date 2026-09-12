@@ -581,7 +581,7 @@
    "currentHash": "731eed9ce70ee1957398daadee0bcb7955fa03836987bb71239c3fd890eb50a2",
    "currentEffectiveDate": "2025-05-27",
    "documentCount": 2,
-   "doseCount": 396,
+   "doseCount": 389,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -778,6 +778,27 @@
     "effectiveDate": "2022-01-01"
    },
    "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "confederated-tribes-of-grand-ronde-department-of-emergency-services",
+   "name": "Confederated Tribes of Grand Ronde Department of Emergency Services",
+   "aliases": [
+    "Confederated Tribes of Grand Ronde Department of Emergency Services"
+   ],
+   "state": "OR",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "regional",
+   "currentHash": "3fa5c23d6c0f02f1fc026c22176cda0e1d307dbee6fff718c43cda5f5802bdad",
+   "currentEffectiveDate": "2025-01-06",
+   "documentCount": 1,
+   "doseCount": 229,
+   "pendingReview": null,
+   "mayBeOutdated": false,
    "coverage": {
     "hasProtocol": true,
     "jurisdiction": "regional"
@@ -1090,7 +1111,7 @@
    "currentHash": "ae8d7d93add64001d56b69a1427c6a6c85ebb803204d506ec17fa6a4c91955c1",
    "currentEffectiveDate": "2026-07-01",
    "documentCount": 263,
-   "doseCount": 18841,
+   "doseCount": 18835,
    "pendingReview": {
     "effectiveDate": "2025-01-01"
    },
@@ -1997,7 +2018,7 @@
    "currentHash": "c1fa8b8af1b730f3e54e2c0b3dbc824b0bc26c297c0337740a22acad899df61b",
    "currentEffectiveDate": "2026-07-01",
    "documentCount": 19,
-   "doseCount": 2760,
+   "doseCount": 2821,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -2901,6 +2922,27 @@
    }
   },
   {
+   "agencyKey": "office-of-the-ems-medical-director-for-kansas-city-missouri",
+   "name": "Office of the EMS Medical Director for Kansas City, Missouri",
+   "aliases": [
+    "Office of the EMS Medical Director for Kansas City, Missouri"
+   ],
+   "state": "MO",
+   "country": "US",
+   "city": "Kansas City",
+   "jurisdiction": "city",
+   "currentHash": "9f72e849c5a49ccd48e72216a2f9986e357ceae004b9b4b1f43a61e81cb81638",
+   "currentEffectiveDate": "2026-04-01",
+   "documentCount": 1,
+   "doseCount": 73,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "city"
+   }
+  },
+  {
    "agencyKey": "oklahoma-state-department-of-health",
    "name": "Oklahoma State Department of Health",
    "aliases": [
@@ -3211,7 +3253,7 @@
    "documentCount": 1,
    "doseCount": 0,
    "pendingReview": null,
-   "mayBeOutdated": false,
+   "mayBeOutdated": true,
    "coverage": {
     "hasProtocol": true,
     "jurisdiction": "regional"
@@ -3900,6 +3942,27 @@
    }
   },
   {
+   "agencyKey": "t-c-sagl-k-bakanl-g-republic-of-turkiye-ministry-of-health",
+   "name": "T.C. Sağlık Bakanlığı (Republic of Türkiye Ministry of Health)",
+   "aliases": [
+    "T.C. Sağlık Bakanlığı (Republic of Türkiye Ministry of Health)"
+   ],
+   "state": null,
+   "country": "TR",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "355902750d74719184c8d8eb38c0a6a780f1f100be5ac1ec20ce23c5e468c50f",
+   "currentEffectiveDate": "2026-08-25",
+   "documentCount": 1,
+   "doseCount": 99,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
    "agencyKey": "tennessee-emergency-medical-services",
    "name": "Tennessee Emergency Medical Services",
    "aliases": [
@@ -3995,8 +4058,8 @@
    "jurisdiction": "regional",
    "currentHash": "5bb90e301302909e860e5069cbf971e64b0c4353551a8ff758738c9177c548bb",
    "currentEffectiveDate": "2025-07-01",
-   "documentCount": 3,
-   "doseCount": 288,
+   "documentCount": 4,
+   "doseCount": 424,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -4209,8 +4272,8 @@
    "jurisdiction": "statewide",
    "currentHash": "63581c860c9ed1bf708af365077f2f650b3f6ee8c3ad5309fa50b07f3f7767ce",
    "currentEffectiveDate": "2026-04-01",
-   "documentCount": 12,
-   "doseCount": 1364,
+   "documentCount": 13,
+   "doseCount": 1503,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
