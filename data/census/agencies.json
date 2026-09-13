@@ -729,7 +729,7 @@
    "currentHash": "7f21d4b2b9a43183e68fc249725ac65998cbecbe47beca6f3f035c75b94367ad",
    "currentEffectiveDate": "2026-07-01",
    "documentCount": 21,
-   "doseCount": 1982,
+   "doseCount": 1965,
    "pendingReview": {
     "effectiveDate": null
    },
@@ -1460,6 +1460,48 @@
    }
   },
   {
+   "agencyKey": "health-professions-council-of-south-africa",
+   "name": "Health Professions Council of South Africa",
+   "aliases": [
+    "Health Professions Council of South Africa"
+   ],
+   "state": null,
+   "country": "ZA",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "d501dfb6360aea159498add6dbd91422697c680e0bcb7fdf34f9ff13e0e5e66d",
+   "currentEffectiveDate": "2018-07-01",
+   "documentCount": 1,
+   "doseCount": 143,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "health-professions-council-of-south-africa-hpcsa",
+   "name": "Health Professions Council of South Africa (HPCSA)",
+   "aliases": [
+    "Health Professions Council of South Africa (HPCSA)"
+   ],
+   "state": null,
+   "country": "ZA",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "9e8b4da4d2b8b7beaf1e36d99af6812548da5f06a7302066c021e30d3dcffdfd",
+   "currentEffectiveDate": "2018-07-01",
+   "documentCount": 2,
+   "doseCount": 105,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
    "agencyKey": "hems-inc",
    "name": "HEMS, Inc",
    "aliases": [
@@ -1910,10 +1952,10 @@
    "country": "US",
    "city": "Madison",
    "jurisdiction": "fire-district",
-   "currentHash": "26657d5054db6d5fc2c1258c018797f3",
+   "currentHash": "2256791bd47a28032ae7957d85e341cfbbad252c7c5172554b0e4208e251a092",
    "currentEffectiveDate": "2023-04-27",
    "documentCount": 5,
-   "doseCount": 236,
+   "doseCount": 287,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -2590,7 +2632,7 @@
    "currentHash": "fb97503e20d7d94efd22a04f0043b2dbe6cace9f937b1f3510e05601568e31e1",
    "currentEffectiveDate": "2024-09-01",
    "documentCount": 23,
-   "doseCount": 2956,
+   "doseCount": 2943,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -3257,6 +3299,27 @@
    "coverage": {
     "hasProtocol": true,
     "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "professional-board-for-emergency-care-pbec-of-the-health-professions-council-of-south-africa",
+   "name": "Professional Board for Emergency Care (PBEC) of the Health Professions Council of South Africa",
+   "aliases": [
+    "Professional Board for Emergency Care (PBEC) of the Health Professions Council of South Africa"
+   ],
+   "state": null,
+   "country": "ZA",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "d9404c06ea4114e5f61b2a6ca2acc67a46701ed3e0591afbe1aa6d2b6e901c31",
+   "currentEffectiveDate": "2025-10-01",
+   "documentCount": 1,
+   "doseCount": 142,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
    }
   },
   {
