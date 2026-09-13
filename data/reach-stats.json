@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-09-13T12:09:12.576Z",
-  "totalUploads": 601,
-  "distinctProtocols": 415,
+  "generatedAt": "2026-09-13T18:09:14.104Z",
+  "totalUploads": 602,
+  "distinctProtocols": 416,
   "activeStudiers": 411,
-  "pagesProcessed": 97616,
+  "pagesProcessed": 98033,
   "statesRepresented": 42,
   "countriesRepresented": 5,
   "internationalUploads": 10,
@@ -28,11 +28,11 @@
     "FL": 8,
     "AZ": 7,
     "TN": 6,
+    "LA": 6,
     "UT": 5,
     "AL": 5,
     "IN": 5,
     "WI": 5,
-    "LA": 5,
     "KY": 4,
     "SC": 4,
     "NE": 4,
@@ -456,6 +456,28 @@
       ]
     },
     {
+      "state": "LA",
+      "city": "New Orleans",
+      "x": 594,
+      "y": 479,
+      "count": 6,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "rope 2024 final 05 02 24",
+          "count": 2
+        },
+        {
+          "title": "Acadian 2026 Protocols",
+          "count": 2
+        },
+        {
+          "title": "Acadian 2026 Protocols Searchable OCR",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "AZ",
       "city": "Phoenix",
       "x": 188,
@@ -513,28 +535,6 @@
         },
         {
           "title": "master.alabama.protocols.11th.edition.07012025",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "LA",
-      "city": "New Orleans",
-      "x": 594,
-      "y": 479,
-      "count": 5,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "rope 2024 final 05 02 24",
-          "count": 2
-        },
-        {
-          "title": "Acadian 2026 Protocols",
-          "count": 2
-        },
-        {
-          "title": "Acadian 2026 Protocols Searchable OCR",
           "count": 1
         }
       ]
