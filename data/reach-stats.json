@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-09-14T06:08:49.318Z",
-  "totalUploads": 602,
+  "generatedAt": "2026-09-14T12:08:51.462Z",
+  "totalUploads": 603,
   "distinctProtocols": 416,
-  "activeStudiers": 411,
-  "pagesProcessed": 98033,
+  "activeStudiers": 412,
+  "pagesProcessed": 98186,
   "statesRepresented": 42,
   "countriesRepresented": 5,
   "internationalUploads": 10,
   "byState": {
     "CO": 49,
     "MI": 47,
-    "CA": 43,
+    "CA": 44,
     "MA": 26,
     "TX": 25,
     "PA": 24,
@@ -478,6 +478,20 @@
       ]
     },
     {
+      "state": "CA",
+      "city": "San Diego",
+      "x": 93,
+      "y": 378,
+      "count": 6,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "2026 2027 Protocol Packet",
+          "count": 6
+        }
+      ]
+    },
+    {
       "state": "AZ",
       "city": "Phoenix",
       "x": 188,
@@ -536,20 +550,6 @@
         {
           "title": "master.alabama.protocols.11th.edition.07012025",
           "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CA",
-      "city": "San Diego",
-      "x": 93,
-      "y": 378,
-      "count": 5,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "2026 2027 Protocol Packet",
-          "count": 5
         }
       ]
     },
