@@ -2,8 +2,8 @@
  "schemaVersion": 3,
  "rows": [
   {
-   "at": "2026-09-14T00:00:00Z",
-   "hash": "3d2ec5f7f97e819fcbc2552741a703e3",
+   "at": "2026-09-15T00:00:00Z",
+   "hash": "0af52a3e390c7695fb94b3b33f86402e",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -12,8 +12,8 @@
    "reason": null
   },
   {
-   "at": "2026-09-14T00:00:00Z",
-   "hash": "65ced57b6ab2fcc86e24351ce2383807",
+   "at": "2026-09-15T00:00:00Z",
+   "hash": "13b4e713b89c45ccf59400c4a28221b8",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -22,8 +22,8 @@
    "reason": null
   },
   {
-   "at": "2026-09-14T00:00:00Z",
-   "hash": "d2d72b5132e40746f8d8b402bc9fc3af",
+   "at": "2026-09-15T00:00:00Z",
+   "hash": "3c7850b31bd07e64f11436f1b2fb09cb",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -32,12 +32,82 @@
    "reason": null
   },
   {
-   "at": "2026-09-14T00:00:00Z",
-   "hash": "fd794ee370434ebbb3c527026ff5c793c984878f2ed67ef7c1675e9ac3912358",
+   "at": "2026-09-15T00:00:00Z",
+   "hash": "4666adb5f10dbce2675bd2682c8aaf2b30c93a694bb551fe09416befa01c0831",
    "agencyKey": null,
    "change": "added",
    "from": null,
-   "to": "listed_aggregate",
+   "to": "excluded",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-09-15T00:00:00Z",
+   "hash": "482b676ea9e788963e3f7398e1f371533198cdeb037f28108dc259210a333797",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "excluded",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-09-15T00:00:00Z",
+   "hash": "4cc80abb403aede07f988403abf81a64",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "excluded",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-09-15T00:00:00Z",
+   "hash": "6142c211cde1bf2f15f586f87135787026bae1ddefcd6710f5f0709247e9540f",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "excluded",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-09-15T00:00:00Z",
+   "hash": "691c46246fafaafe2fae6f75cb4c099d",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-09-15T00:00:00Z",
+   "hash": "a30b7a5501ec19d642c2b4cdb88bb03a",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-09-15T00:00:00Z",
+   "hash": "e40a5d8b8bad2d59707204a35aa74da3",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-09-15T00:00:00Z",
+   "hash": "f7b6a00aca8955ea35888a5b946bd7124396d4e518a07d04203c9849834b0c3d",
+   "agencyKey": "county-of-san-diego-emergency-medical-services",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
    "by": "build",
    "reason": null
   }
