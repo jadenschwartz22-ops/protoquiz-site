@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-09-15T00:13:10.699Z",
-  "totalUploads": 604,
-  "distinctProtocols": 417,
-  "activeStudiers": 412,
-  "pagesProcessed": 98389,
+  "generatedAt": "2026-09-15T06:08:30.153Z",
+  "totalUploads": 605,
+  "distinctProtocols": 418,
+  "activeStudiers": 413,
+  "pagesProcessed": 98651,
   "statesRepresented": 42,
   "countriesRepresented": 5,
   "internationalUploads": 10,
@@ -30,11 +30,11 @@
     "TN": 6,
     "LA": 6,
     "UT": 5,
+    "SC": 5,
     "AL": 5,
     "IN": 5,
     "WI": 5,
     "KY": 4,
-    "SC": 4,
     "NE": 4,
     "ID": 4,
     "OK": 3,
@@ -514,6 +514,28 @@
       ]
     },
     {
+      "state": "SC",
+      "city": "Columbia",
+      "x": 752,
+      "y": 372,
+      "count": 5,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "2025 Patient Care Guidelines PDF",
+          "count": 1
+        },
+        {
+          "title": "DCEMS 2025 Guidelines Rev 4",
+          "count": 1
+        },
+        {
+          "title": "612",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "TN",
       "city": "Nashville",
       "x": 643,
@@ -593,28 +615,6 @@
         },
         {
           "title": "2026 SL Co EMS Protocols 7.1.2026",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "SC",
-      "city": "Columbia",
-      "x": 752,
-      "y": 372,
-      "count": 4,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "2025 Patient Care Guidelines PDF",
-          "count": 1
-        },
-        {
-          "title": "DCEMS 2025 Guidelines Rev 4",
-          "count": 1
-        },
-        {
-          "title": "612",
           "count": 1
         }
       ]
