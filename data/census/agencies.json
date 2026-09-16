@@ -137,10 +137,10 @@
    "country": "US",
    "city": null,
    "jurisdiction": "statewide",
-   "currentHash": "3d68aa58d1e217b834531864ef7bed5229f772a838cb7ec7ed2e4a5f70f1e8b0",
+   "currentHash": "6a61fcd432352184850e9031fef283df7dd078b874d3dca4a5c8a9755f219620",
    "currentEffectiveDate": "2025-07-01",
    "documentCount": 13,
-   "doseCount": 1506,
+   "doseCount": 1446,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -1110,8 +1110,8 @@
    "jurisdiction": "regional",
    "currentHash": "ae8d7d93add64001d56b69a1427c6a6c85ebb803204d506ec17fa6a4c91955c1",
    "currentEffectiveDate": "2026-07-01",
-   "documentCount": 263,
-   "doseCount": 18832,
+   "documentCount": 264,
+   "doseCount": 18983,
    "pendingReview": {
     "effectiveDate": "2025-01-01"
    },
@@ -1180,6 +1180,27 @@
    "doseCount": 159,
    "pendingReview": null,
    "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "el-dorado-county-ems-agency",
+   "name": "EL DORADO COUNTY EMS AGENCY",
+   "aliases": [
+    "EL DORADO COUNTY EMS AGENCY"
+   ],
+   "state": "CA",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "county",
+   "currentHash": "3b6d112f375a62d2676c4f26eff85a56d03dc1a5545e929fe3c5918584e5e759",
+   "currentEffectiveDate": "2009-07-01",
+   "documentCount": 1,
+   "doseCount": 2,
+   "pendingReview": null,
+   "mayBeOutdated": true,
    "coverage": {
     "hasProtocol": true,
     "jurisdiction": "county"
@@ -2081,7 +2102,7 @@
    "currentHash": "2549a975a7d77b05943bb978d816ad485935208cec7ae0a3fcd08b3a92893cc3",
    "currentEffectiveDate": "2026-09-01",
    "documentCount": 25,
-   "doseCount": 3994,
+   "doseCount": 3999,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -2629,10 +2650,10 @@
    "country": "US",
    "city": null,
    "jurisdiction": "regional",
-   "currentHash": "fb97503e20d7d94efd22a04f0043b2dbe6cace9f937b1f3510e05601568e31e1",
+   "currentHash": "3e317226c07b2d94da5a0a65ebf62d9117445817b96fbf716616294ce045ad76",
    "currentEffectiveDate": "2024-09-01",
    "documentCount": 23,
-   "doseCount": 3080,
+   "doseCount": 3075,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -3166,8 +3187,8 @@
    "jurisdiction": "statewide",
    "currentHash": "f28142e13ce8b735c1882229809c506f62d2be124ee193c0d87ae6bab71e4f9f",
    "currentEffectiveDate": "2024-03-31",
-   "documentCount": 38,
-   "doseCount": 3190,
+   "documentCount": 39,
+   "doseCount": 3345,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -3762,10 +3783,10 @@
    "country": "US",
    "city": null,
    "jurisdiction": "statewide",
-   "currentHash": "cb571bca837ba0a10614cb5f493d6920c7d709f6ab5a2c0c22c395246ba47879",
+   "currentHash": "b8e07c12e8e5c4cd1e8e63e5a824193785d9022254bf760d3550eb36c8aa47cd",
    "currentEffectiveDate": "2025-01-01",
-   "documentCount": 1,
-   "doseCount": 0,
+   "documentCount": 2,
+   "doseCount": 75,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
