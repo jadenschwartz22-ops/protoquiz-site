@@ -57,7 +57,7 @@ const VOLUMES = [
   {
     thumb: THUMBS.census,
     thumbNote: THUMBS.censusNote,
-    thumbCap: 'The five medications whose published dose varies most, min to max, median marked.',
+    thumbCap: 'Share of agencies carrying each medication, of those the census has read.',
     eyebrow: 'Volume one',
     title: 'US EMS Protocol Census',
     href: '/census/',

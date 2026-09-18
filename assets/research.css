@@ -255,3 +255,10 @@ main{padding-bottom:64px;}
 .thumb-doses .t-iqr{fill:#0072B2;fill-opacity:.32;}
 .thumb-doses .t-med{stroke:#0072B2;stroke-width:2.5;stroke-linecap:round;}
 .thumb-doses .t-x{font:700 11px/1 var(--mono,ui-monospace,monospace);fill:var(--accent);}
+
+/* Carriage chart: share of agencies carrying each medication. A plain bar, because the
+   question ("do you carry it?") is a proportion and nothing else. */
+.thumb-carry .t-drug{font:600 12px/1 var(--sans,system-ui);fill:var(--ink);}
+.thumb-carry .t-bg{fill:var(--rule);fill-opacity:.5;}
+.thumb-carry .t-bar{fill:#0072B2;}
+.thumb-carry .t-x{font:700 11px/1 var(--mono,ui-monospace,monospace);fill:var(--muted);}

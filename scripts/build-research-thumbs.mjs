@@ -56,58 +56,54 @@ const registry = `<svg viewBox="0 0 975 610" class="thumb-svg" role="img" aria-l
   + Object.values(geo.states).map(d => round(d)).join('')
   + `"/></svg>`;
 
-// ── census: the widest dose spreads it can actually evidence ─────────────────────────
-// Sorted by max/min, floored at 15 sources so a two-agency outlier cannot lead. Each row
-// is one published distribution; the bar is min..max with the median marked, log-scaled
-// because an 8x spread and a 1.5x spread cannot share a linear axis legibly.
+// ── census: WHAT IS CARRIED, not how it is dosed ────────────────────────────────────
+// The question a medic actually asks of another agency's protocol is "do you carry
+// that?", not "what is your p75". Carriage is also the more honest thing for this
+// dataset to lead with: it needs one mention of a medication per agency, where a dose
+// distribution needs a parsed number from 15+ sources before it can say anything.
 const cmp = JSON.parse(readFileSync('data/census/compare.json', 'utf8'));
-const MIN_SOURCES = 15, ROWS = 5;
-const title = k => `${k.drugKey.charAt(0) + k.drugKey.slice(1).toLowerCase()}`;
-const ind = k => String(k.indicationKey || '').toLowerCase().replace(/_/g, ' ');
-
-const picked = cmp.groups
-  .filter(g => g.dist && g.dist.min > 0 && g.n.sources >= MIN_SOURCES && g.key.indicationKey !== 'OTHER')
-  .map(g => ({ g, ratio: g.dist.max / g.dist.min }))
-  .sort((a, b) => b.ratio - a.ratio);
-
-// One row per medication: five ketamine indications in a row of five is one finding shown
-// five times, and reads as if the census only knows about ketamine.
-const seen = new Set();
-const top = [];
-for (const p of picked) {
-  if (seen.has(p.g.key.drugKey)) continue;
-  seen.add(p.g.key.drugKey);
-  top.push(p);
-  if (top.length === ROWS) break;
+const carriers = new Map();
+for (const g of cmp.groups) {
+  const k = g.key.drugKey;
+  if (!carriers.has(k)) carriers.set(k, new Set());
+  for (const a of g.agencyKeys || []) carriers.get(k).add(a);
 }
+const TOTAL = new Set([...carriers.values()].flatMap(s => [...s])).size;
 
-const W = 440, RH = 46, PAD = 8, LABEL_W = 150, BAR_X = LABEL_W + 10, BAR_W = W - BAR_X - 34;
+// Turkish-spelled duplicates (ADENOZİN, ADRENALİN, AMİODARON) are extraction failures,
+// not medications. A dotted capital I cannot appear in an English drug name.
+const BAD = /[İığşçö]/;
+const pretty = k => k.charAt(0) + k.slice(1).toLowerCase();
+
+const ranked = [...carriers]
+  .filter(([k]) => !BAD.test(k))
+  .map(([k, set]) => ({ k, n: set.size, pct: set.size / TOTAL }))
+  .sort((a, b) => b.n - a.n);
+
+const ROWS = 8;
+const top = ranked.slice(0, ROWS);
+const near = ranked.filter(r => r.pct >= 0.75).length;
+const rare = ranked.filter(r => r.pct < 0.10).length;
+
+const W = 440, RH = 27, PAD = 10, LAB = 132, BAR_X = LAB + 8, BAR_W = W - BAR_X - 46;
 const H = PAD * 2 + top.length * RH;
-const lg = v => Math.log10(v);
-
-const rows = top.map(({ g, ratio }, i) => {
-  const d = g.dist, y = PAD + i * RH;
-  const lo = lg(d.min), hi = lg(d.max), span = hi - lo || 1;
-  const at = v => BAR_X + ((lg(v) - lo) / span) * BAR_W;
-  const medX = at(d.median);
+const bars = top.map((r, i) => {
+  const y = PAD + i * RH;
   return `<g>
-    <text x="0" y="${y + 15}" class="t-drug">${title(g.key)}</text>
-    <text x="0" y="${y + 29}" class="t-ind">${ind(g.key)}</text>
-    <line x1="${BAR_X}" y1="${y + 22}" x2="${BAR_X + BAR_W}" y2="${y + 22}" class="t-track"/>
-    <rect x="${at(d.p25)}" y="${y + 16}" width="${Math.max(at(d.p75) - at(d.p25), 2)}" height="12" rx="2" class="t-iqr"/>
-    <line x1="${medX}" y1="${y + 13}" x2="${medX}" y2="${y + 31}" class="t-med"/>
-    <text x="${BAR_X + BAR_W + 6}" y="${y + 26}" class="t-x">${ratio < 10 ? ratio.toFixed(0) : Math.round(ratio)}&#215;</text>
+    <text x="0" y="${y + 15}" class="t-drug">${pretty(r.k)}</text>
+    <rect x="${BAR_X}" y="${y + 5}" width="${BAR_W}" height="13" rx="2" class="t-bg"/>
+    <rect x="${BAR_X}" y="${y + 5}" width="${(BAR_W * r.pct).toFixed(1)}" height="13" rx="2" class="t-bar"/>
+    <text x="${BAR_X + BAR_W + 6}" y="${y + 15}" class="t-x">${Math.round(r.pct * 100)}%</text>
   </g>`;
 }).join('');
 
-const census = `<svg viewBox="0 0 ${W} ${H}" class="thumb-svg thumb-doses" role="img" aria-label="Thumbnail of dose variation: the five medications with the widest published dose spread across US EMS protocols">${rows}</svg>`;
+const census = `<svg viewBox="0 0 ${W} ${H}" class="thumb-svg thumb-carry" role="img" aria-label="Thumbnail: the medications most widely carried across US EMS protocols, as a share of agencies">${bars}</svg>`;
+const censusNote = `${near} medications are carried almost everywhere. ${rare} are carried by fewer than one agency in ten &mdash; that gap is the finding.`;
 
 writeFileSync(OUT, JSON.stringify({
   registry,
   census,
   // Stated beside the chart so the claim it makes is checkable.
-  censusNote: top.length
-    ? `${title(top[0].g.key)} for ${ind(top[0].g.key)} runs ${top[0].g.dist.min}&ndash;${top[0].g.dist.max}&nbsp;${top[0].g.key.unit} across ${top[0].g.n.sources} protocols.`
-    : '',
+  censusNote,
 }, null, 0));
 console.log(`wrote ${OUT} — registry ${(registry.length / 1024).toFixed(0)} KB, census chart ${top.length} rows`);
