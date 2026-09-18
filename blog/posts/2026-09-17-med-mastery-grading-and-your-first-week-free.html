@@ -239,6 +239,37 @@
       font-style: italic;
     }
 
+    /* App screenshots — same shape as the 2.0 post's .screenshot-* blocks,
+       narrowed because these are single phone screens rather than a grid. */
+    .screenshot-section {
+      margin: 40px 0;
+      max-width: 340px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .screenshot-item {
+      border-radius: 12px;
+      overflow: hidden;
+      background: #000;
+      border: 1px solid var(--line);
+    }
+
+    .screenshot-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .screenshot-caption {
+      padding: 12px 16px;
+      background: rgba(27,22,16,.85);
+      font-size: 13px;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.5;
+    }
+
     .stats-callout {
       background: linear-gradient(135deg, rgba(255,176,0,.05), rgba(204,138,0,.05));
       border: 1px solid rgba(255,176,0,.2);
@@ -398,6 +429,13 @@
 
           <p>Med Mastery has two difficulty settings. Easy is multiple choice, and it is a good on-ramp when a drug is new to you. Hard mode drops the options entirely: you type the indications, the doses and the routes from memory, and the AI grades what you actually wrote against your own protocol document. No list of four to work backwards from, no pattern to match, no process of elimination. Hard mode is free on every tier, because recall is the skill and recognition is the on-ramp.</p>
 
+          <div class="screenshot-section">
+            <div class="screenshot-item">
+              <img src="../images/2.6.2-med-mastery-easy-hard.png" alt="The Med Mastery Mode screen showing a mastery ring at 0 percent, counts for mastered, covered, in progress and not started, a Doses selector set to Adult, and the How You Answer setting with Easy for multiple choice and Hard for type the answer, with Hard selected" width="660" height="1434" loading="lazy">
+              <div class="screenshot-caption">Easy is multiple choice. Hard drops the options and asks you to type it.</div>
+            </div>
+          </div>
+
           <p>One question asks for indications, doses and routes together, because that is how the fact lives on the page. A dose without its indication is not a fact: the same drug carries a small dose for one presentation and a much larger one for another. The answer comes back as one labelled line per indication, so you see which number belongs to which patient. If a session is scoped to adults or pediatrics, the stem says so.</p>
 
           <h3>How the Grading Works</h3>
@@ -407,6 +445,13 @@
           <p>Wording is graded generously, because clinical shorthand is still correct. Abbreviations, synonyms and spellings all count. Numbers and routes are exact. Half the correct dose is not partially right.</p>
 
           <p>When the grader genuinely cannot tell, you get the point and both answers are shown side by side. It fails toward giving you the credit, every time.</p>
+
+          <div class="screenshot-section">
+            <div class="screenshot-item">
+              <img src="../images/2.6.2-med-mastery-hard-mode.png" alt="Med Mastery hard mode grading a typed answer about Epinephrine as Partially Right, showing the typed answer under You Said, the protocol answer Anaphylaxis under Protocol Says, a note explaining that a cardiac arrest dose was given but the primary protocol indication of anaphylaxis was omitted, the missed item Anaphylaxis with its 0.3 mg IM dose, and a citation to protocol page 2" width="660" height="1434" loading="lazy">
+              <div class="screenshot-caption">A typed answer graded partial: what you said, what the protocol says, and exactly which indication you still owe.</div>
+            </div>
+          </div>
 
           <div class="stats-callout">
             <h3>What Is New in 2.6.2</h3>
@@ -421,6 +466,13 @@
 
           <p>Algorithm quizzes now weight toward your certification level instead of sitting at the level everyone shares. A paramedic gets drilled on paramedic decisions, fundamentals stay in the mix because they are the ones you use at three in the morning, and nothing lands above your scope.</p>
 
+          <div class="screenshot-section">
+            <div class="screenshot-item">
+              <img src="../images/2.6.2-algorithm-quiz.png" alt="An algorithm quiz question asking which of the following is an ALS indicator for a patient with chest discomfort, tagged with the topic cardiac emergencies, with four answer options and a Protocol tab beside the Question tab" width="660" height="1434" loading="lazy">
+              <div class="screenshot-caption">An algorithm quiz question drawn from the protocol, with the Protocol tab one tap away.</div>
+            </div>
+          </div>
+
           <p>They also cite the right protocol page far more often, so when you check an answer against the document, it sends you to the page the answer came from. The question holds its place on screen when you submit, so your eyes are already where the feedback appears.</p>
 
           <h2>Scenarios Feel Like Real Calls</h2>
@@ -430,6 +482,13 @@
           <h2>You Pick the Meds Before You Start</h2>
 
           <p>The Formulary is every medication pulled out of your protocol, with a switch on each one, and it decides what Med Mastery drills you on. It is a good screen, and now it is a screen you will actually find.</p>
+
+          <div class="screenshot-section">
+            <div class="screenshot-item">
+              <img src="../images/2.6.2-formulary.png" alt="The Formulary screen listing medications from the protocol, each with a toggle circle turned on, plus a hint explaining that only meds turned on get quizzed and a control for setting your certification level" width="660" height="1434" loading="lazy">
+              <div class="screenshot-caption">Every medication from your protocol, with a switch on each one.</div>
+            </div>
+          </div>
 
           <p>It opens by itself once, before your first Med Mastery session, with a line explaining what it is. Turn off what you do not carry, and continue. It is not a gate: close it or swipe it away and your session starts either way. It comes back once more if you reset your Med Mastery progress, since that is the other moment your deck is worth a second look.</p>
 
