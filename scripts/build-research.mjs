@@ -1,4 +1,4 @@
-// scripts/build-research.mjs — /research/registry, the 911 coverage volume.
+// scripts/build-research.mjs — /research/atlas, the 911 coverage volume.
 //
 // This is ONE VOLUME of ProtoQuiz Research, not the arm itself: /research is the
 // umbrella (build-research-home.mjs) and links here and to the protocol census.
@@ -50,9 +50,9 @@ const html = `<!doctype html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Who answers 911 - ProtoQuiz Research</title>
+  <title>The American EMS Atlas - who answers 911, by county</title>
   <meta name="description" content="A state-by-state record of who provides 911 EMS in the United States: fire departments, private ambulance companies, county third services or hospitals. Built from state licensing rosters.">
-  <link rel="canonical" href="https://protoquiz.com/research/registry/">
+  <link rel="canonical" href="https://protoquiz.com/research/atlas/">
   <meta name="robots" content="index,follow">
   <meta property="og:title" content="Who runs American EMS">
   <meta property="og:description" content="A state-by-state record of who provides 911 EMS in the United States, built from state licensing rosters.">
@@ -68,7 +68,7 @@ ${CHROME_HEAD}
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
 ${navFor('/research/')}
-${researchBar('/research/registry/')}
+${researchBar('/research/atlas/')}
 
   <main id="main">
     <section class="res-hero">
@@ -237,7 +237,7 @@ ${excluded.map(stateRow).join('\n')}
               body: JSON.stringify({
                 email: f.elements.email.value.trim() || undefined,
                 message: 'REGISTRY CORRECTION\n\nCounty: ' + where + '\n\n' + what + (src ? '\n\nSource: ' + src : ''),
-                source: 'research-registry-correction'
+                source: 'research-atlas-correction'
               })
             }).then(function (r) {
               if (!r.ok) throw new Error('bad status');
@@ -258,6 +258,6 @@ ${FOOTER_HTML}
 </html>
 `;
 
-mkdirSync('research/registry', { recursive: true });
-writeFileSync('research/registry/index.html', html);
-console.log(`wrote research/registry/index.html — ${ranked.length} ranked + ${excluded.length} not-comparable states, ${html.length} bytes`);
+mkdirSync('research/atlas', { recursive: true });
+writeFileSync('research/atlas/index.html', html);
+console.log(`wrote research/atlas/index.html — ${ranked.length} ranked + ${excluded.length} not-comparable states, ${html.length} bytes`);

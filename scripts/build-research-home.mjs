@@ -81,9 +81,9 @@ const VOLUMES = [
     thumb: THUMBS.registry,
     thumbCap: 'Every county, colored by who owns its 911 provider. Fainter is weaker evidence.',
     eyebrow: 'Volume two',
-    title: 'The 911 coverage registry',
-    href: '/research/registry/',
-    cta: 'Open the registry',
+    title: 'The American EMS Atlas',
+    href: '/research/atlas/',
+    cta: 'Open the atlas',
     q: 'Who answers the call, and who owns them?',
     body: `Every county in the country, mapped to the agency that answers the 911 call and
       who owns it. No public national record of this exists, so we are building one.`,
@@ -163,7 +163,7 @@ const ABOUT = `        <p>There is a broad national foundation for EMS education
         EMS.</p>`;
 
 const card = v => `        <article class="vol">
-${v.thumb ? `          <figure class="vol-thumb">${v.thumb}<figcaption>${v.thumbCap}</figcaption></figure>` : ''}
+${v.thumb ? `          <figure class="vol-thumb"><a href="${v.href}" aria-label="${v.title}">${v.thumb}</a><figcaption>${v.thumbCap}</figcaption></figure>` : ''}
           <div class="vol-eyebrow">${v.eyebrow}</div>
           <h2><a href="${v.href}">${v.title}</a></h2>
           <p class="vol-q">${v.q}</p>

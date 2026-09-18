@@ -65,7 +65,7 @@ const navLinks = current => SECTIONS.map(([label, href]) => {
 const RESEARCH_VOLUMES = [
   ['Overview', '/research/', p => p === '/research/'],
   ['Protocol census', '/census/', p => p.startsWith('/census/')],
-  ['911 coverage', '/research/registry/', p => p.startsWith('/research/registry/')],
+  ['911 coverage', '/research/atlas/', p => p.startsWith('/research/atlas/')],
 ];
 
 export const researchBar = (current = null) => `  <div class="rbar">
@@ -121,7 +121,7 @@ export const FOOTER_HTML = `  <!-- shared-chrome:footer -->
         <a href="/census/">Protocol census</a>
         <a href="/census/#states">By state</a>
         <a href="/census/#drugs">By medication</a>
-        <a href="/research/registry/">911 coverage</a>
+        <a href="/research/atlas/">911 coverage</a>
         <a href="/census/methodology/">Methodology</a>
       </div>
       <div class="foot-col">

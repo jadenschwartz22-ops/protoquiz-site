@@ -237,10 +237,17 @@ main{padding-bottom:64px;}
 /* The thumbs are the page's two big objects. Each is CROPPED to its own content rather
    than scaled down to fit -- scaling shrinks the chart's labels below reading size and
    letterboxes the map. The ceiling is a backstop for a wide viewport only. */
+.vol-thumb a{display:block;border-radius:var(--r);}
 .vol-thumb .thumb-svg{
   display:block;width:100%;height:auto;max-height:280px;
   background:#fdfcfa;border:1px solid var(--rule);border-radius:var(--r);
+  transition:border-color .15s;
 }
+/* The picture IS the link to its volume -- a reader who clicks a chart of the data expects
+   the data. The hover cue is on the border rather than a filter so the colours, which
+   encode ownership and evidence, never shift under the cursor. */
+.vol-thumb a:hover .thumb-svg{border-color:var(--link);}
+.vol-thumb a:focus-visible{outline:2px solid var(--link);outline-offset:3px;}
 .vol-thumb figcaption{
   margin-top:6px;font-size:.71875rem;line-height:1.45;color:var(--muted);
 }

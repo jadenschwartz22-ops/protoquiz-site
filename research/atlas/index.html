@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Who answers 911 - ProtoQuiz Research</title>
+  <title>The American EMS Atlas - who answers 911, by county</title>
   <meta name="description" content="A state-by-state record of who provides 911 EMS in the United States: fire departments, private ambulance companies, county third services or hospitals. Built from state licensing rosters.">
-  <link rel="canonical" href="https://protoquiz.com/research/registry/">
+  <link rel="canonical" href="https://protoquiz.com/research/atlas/">
   <meta name="robots" content="index,follow">
   <meta property="og:title" content="Who runs American EMS">
   <meta property="og:description" content="A state-by-state record of who provides 911 EMS in the United States, built from state licensing rosters.">
@@ -45,7 +45,7 @@
   <div class="rbar">
     <div class="rbar-in">
       <a class="rbar-mark" href="/research/">ProtoQuiz Research</a>
-      <nav class="rbar-nav" aria-label="Research volumes"><a href="/research/">Overview</a><a href="/census/">Protocol census</a><a href="/research/registry/" class="on" aria-current="page">911 coverage</a></nav>
+      <nav class="rbar-nav" aria-label="Research volumes"><a href="/research/">Overview</a><a href="/census/">Protocol census</a><a href="/research/atlas/" class="on" aria-current="page">911 coverage</a></nav>
     </div>
   </div>
 
@@ -3780,7 +3780,7 @@ County: ' + where + '
 ' + what + (src ? '
 
 Source: ' + src : ''),
-                source: 'research-registry-correction'
+                source: 'research-atlas-correction'
               })
             }).then(function (r) {
               if (!r.ok) throw new Error('bad status');
@@ -3816,7 +3816,7 @@ Source: ' + src : ''),
         <a href="/census/">Protocol census</a>
         <a href="/census/#states">By state</a>
         <a href="/census/#drugs">By medication</a>
-        <a href="/research/registry/">911 coverage</a>
+        <a href="/research/atlas/">911 coverage</a>
         <a href="/census/methodology/">Methodology</a>
       </div>
       <div class="foot-col">
