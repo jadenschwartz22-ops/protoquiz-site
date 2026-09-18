@@ -1,4 +1,7 @@
-// scripts/build-research.mjs — /research, the EMS services page.
+// scripts/build-research.mjs — /research/registry, the 911 coverage volume.
+//
+// This is ONE VOLUME of ProtoQuiz Research, not the arm itself: /research is the
+// umbrella (build-research-home.mjs) and links here and to the protocol census.
 //
 // Same discipline as the census: say what each word means, show where the data is
 // thin, and never let a sourcing artifact read as a finding. Three of the states
@@ -32,16 +35,24 @@ ${MODELS.map(m => `          <td class="num">${d.pct[m] ? Math.round(d.pct[m]) +
         </tr>`;
 };
 
-const ranked = Object.entries(R.states).sort((a, b) => b[1].pct['fire-based'] - a[1].pct['fire-based']);
+// VOCABULARY.md: "Neither group may stand beside a real roster state." A station-list
+// state reads 90-97% fire-based because its SOURCE is a fire-station layer (96.8% fire
+// stations, no ownership field), not because its EMS is fire-based. Ranking those rows
+// against real rosters puts the artifact at the top of the table and reads as a finding,
+// so they are split into a second table that is not sorted by a share at all.
+const byFire = (a, b) => b[1].pct['fire-based'] - a[1].pct['fire-based'];
+const entries = Object.entries(R.states);
+const ranked = entries.filter(([, d]) => !d.tag).sort(byFire);
+const excluded = entries.filter(([, d]) => d.tag).sort((a, b) => a[0].localeCompare(b[0]));
 
 const html = `<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Who runs American EMS - ProtoQuiz Research</title>
+  <title>Who answers 911 - ProtoQuiz Research</title>
   <meta name="description" content="A state-by-state record of who provides 911 EMS in the United States: fire departments, private ambulance companies, county third services or hospitals. Built from state licensing rosters.">
-  <link rel="canonical" href="https://protoquiz.com/research/">
+  <link rel="canonical" href="https://protoquiz.com/research/registry/">
   <meta name="robots" content="index,follow">
   <meta property="og:title" content="Who runs American EMS">
   <meta property="og:description" content="A state-by-state record of who provides 911 EMS in the United States, built from state licensing rosters.">
@@ -105,6 +116,24 @@ ${ranked.map(stateRow).join('\n')}
         </tbody>
       </table>
       </div>
+
+      <h3 class="res-sub">Not comparable: ${excluded.length} states whose source is a fire-station list</h3>
+      <p class="res-subnote">These states publish no usable EMS roster, so the rows below come from a
+      fire-station layer that is 96.8% fire stations and carries no ownership field. Their fire share is
+      an artifact of that source &mdash; a ceiling, not a measurement &mdash; so they are listed
+      alphabetically, never ranked, and are excluded from every national figure on this page.</p>
+      <div class="table-scroll">
+      <table class="res-table res-table-excluded">
+        <thead>
+          <tr><th scope="col">State</th><th scope="col" class="num">Rows in source</th>
+${MODELS.map(m => `            <th scope="col" class="num">${MODEL_LABEL[m]}</th>`).join('\n')}
+          </tr>
+        </thead>
+        <tbody>
+${excluded.map(stateRow).join('\n')}
+        </tbody>
+      </table>
+      </div>
     </section>
 
     <section class="res-method">
@@ -141,6 +170,6 @@ ${FOOTER_HTML}
 </html>
 `;
 
-mkdirSync('research', { recursive: true });
-writeFileSync('research/index.html', html);
-console.log(`wrote research/index.html — ${ranked.length} states, ${html.length} bytes`);
+mkdirSync('research/registry', { recursive: true });
+writeFileSync('research/registry/index.html', html);
+console.log(`wrote research/registry/index.html — ${ranked.length} ranked + ${excluded.length} not-comparable states, ${html.length} bytes`);
