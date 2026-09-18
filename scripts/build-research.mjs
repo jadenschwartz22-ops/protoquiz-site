@@ -69,9 +69,12 @@ ${navFor('/research/')}
 
     <section class="res-map-wrap">
 ${MAP}
-      <p class="map-note">Shaded by the share of agencies that are fire-based. Five states publish
-      no EMS roster and are drawn from a fire-station list instead; they are marked in the table
-      and excluded from the national figures.</p>
+      <p class="map-note">The model changes at county lines, not state lines, which is why this is
+      drawn by county. The averages below come from a different source &mdash; state licensing
+      rosters, which say what kind of agency each one is &mdash; so they answer &ldquo;what share of
+      agencies are fire-based&rdquo; rather than &ldquo;who shows up in this county&rdquo;. Five states
+      publish no EMS roster and are drawn from a fire-station list instead; they are marked in the
+      table and excluded from the national figures.</p>
     </section>
 
     <section class="res-headline">

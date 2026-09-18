@@ -1,88 +1,84 @@
-// scripts/build-research-map.mjs — the research map: who runs 911 EMS, by state.
+// scripts/build-research-map.mjs — the research map: who answers 911, by COUNTY.
 //
 // Writes assets/research-map.html, the inline SVG that build-research.mjs embeds.
-// This asset was missing (it lived in a scratch dir that is gone), which is why
-// build-research.mjs could not run; generating it from research.json means it can
-// never go missing again without the data going missing too.
 //
-// Shaded by the state's DOMINANT model, not by a value ramp: "mostly fire-based"
-// is the finding, and a gradient would invent precision the roster data does not
-// have. A state whose only source is a fire-station list is hatched rather than
-// filled, because its fire share is a ceiling, not a measurement -- the same rule
-// the table below the map already applies with its "station list only" flag.
-import { readFileSync, writeFileSync } from 'node:fs';
+// PER-COUNTY, NOT PER-STATE, and that is the point. A state fill says "Texas is
+// private", which is false: Texas is fire, private and county services county by
+// county. Colouring a state by its most common model makes a claim the data does not
+// support and hides the actual finding, which is that the model changes at county
+// lines.
+//
+// CONFIDENCE IS DRAWN, NOT FOOTNOTED. Per RESUME_911_MAP.md only tier A counties have
+// a source naming the county; B/C/D are inference and are "wrong by construction" (an
+// agency placed at its billing address; IFT and air carriers mixed in with 911
+// responders). Opacity carries the tier exactly as build_map.py already does it, so a
+// guess renders visibly faint and no county is published as known when it is not.
+import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 
-const R = JSON.parse(readFileSync('scratch/ems-services/research.json', 'utf8'));
-// Same normalization build-map.mjs does: the source lines end with `">`, not `/>`,
-// and carry their own fill/style that would win over ours.
-const paths = readFileSync('data/us-state-paths.txt', 'utf8')
-  .split('\n').filter(Boolean)
-  .map(p => p.replace(/\sfill="[^"]*"/g, '').replace(/\sstyle="[^"]*"/g, ''))
-  .map(p => (p.endsWith('/>') ? p : p.replace(/>$/, '/>')));
+const GEO = 'data/county-paths.json';
+const CNTY = 'data/county-911.json';
+for (const f of [GEO, CNTY]) {
+  if (!existsSync(f)) { console.error(`missing ${f}`); process.exit(1); }
+}
+const geo = JSON.parse(readFileSync(GEO, 'utf8'));
+const S = JSON.parse(readFileSync(CNTY, 'utf8'));
 
-// Okabe-Ito, the palette the donut in build_page.py already uses, so the two
-// artifacts agree on what each model looks like.
-const FILL = {
-  'fire-based':    '#d55e00',
-  private:         '#0072b2',
-  'third-service': '#009e73',
-  hospital:        '#cc79a7',
-  tribal:          '#e69f00',
+// Okabe-Ito, matching build_map.py's county map and the ownership donut, so a model
+// means one thing in every artifact.
+const COL = {
+  public: '#0072B2', private: '#D55E00', hospital: '#009E73',
+  mixed: '#8C6BB1', unknown: '#c9c6bf',
 };
+const OPACITY = { A: 1, B: 0.85, C: 0.62, D: 0.38 };
 const LABEL = {
-  'fire-based': 'Fire-based', private: 'Private',
-  'third-service': 'Third service', hospital: 'Hospital', tribal: 'Tribal',
+  public: 'Public', private: 'Private', hospital: 'Hospital',
+  mixed: 'Mixed', unknown: 'Unknown',
 };
 
-const esc = t => String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const esc = t => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const n = x => x.toLocaleString('en-US');
 
-const dominant = pct => Object.entries(pct)
-  .filter(([, v]) => v > 0)
-  .sort((a, b) => b[1] - a[1])[0]?.[0] ?? null;
-
-const shaded = paths.map(p => {
-  const m = p.match(/class="state s-([a-z]{2})"/);
-  if (!m) return p;
-  const st = R.states[m[1].toUpperCase()];
-  if (!st) return p.replace('<path ', '<path fill="var(--map-blank,#e8e6e0)" ');
-  const top = dominant(st.pct);
-  const fill = FILL[top] ?? '#e8e6e0';
-  // A floor state's fill is the ceiling of its fire share, so it reads as
-  // provisional: hatched over the colour, never a flat confident block.
-  const thin = st.tag === 'floor' || st.tag === 'station';
-  const title = `${m[1].toUpperCase()}: mostly ${LABEL[top] ?? 'unclassified'}`
-    + ` (${Math.round(st.pct[top] ?? 0)}% of ${st.n.toLocaleString('en-US')} agencies)`
-    + (thin ? ' — station-list source, treat as a ceiling' : '');
-  // Close on the FINAL `/>`: path `d` data contains `/` characters, so replacing the
-  // first occurrence rewrites the geometry instead of the tag and the state vanishes.
-  const open = p.replace('<path ', `<path fill="${fill}"${thin ? ' mask="url(#thin-mask)"' : ''} `);
-  return open.replace(/\/>\s*$/, `><title>${esc(title)}</title></path>`);
+let drawn = 0;
+const paths = Object.entries(geo.counties).map(([fips, d]) => {
+  const c = S[fips];
+  if (!c) return `<path d="${d}" fill="#eeece6"/>`;
+  drawn++;
+  const blank = c.tier === '-';
+  const own = blank ? 'unknown' : c.ownership;
+  const op = blank ? 0.22 : (OPACITY[c.tier] ?? 0.4);
+  const tierWord = blank ? 'no usable source'
+    : c.tier === 'A' ? 'named by a state record'
+    : `tier ${c.tier}, inferred`;
+  return `<path d="${d}" fill="${COL[own] ?? COL.unknown}" fill-opacity="${op}" class="cty">`
+    + `<title>${esc(c.name)}, ${c.st}: ${LABEL[own] ?? own} — ${tierWord}</title></path>`;
 });
 
-const legend = Object.entries(LABEL)
-  .filter(([k]) => Object.values(R.states).some(s => dominant(s.pct) === k))
-  .map(([k, l]) => `      <span class="rm-key"><i style="background:${FILL[k]}"></i>${l}</span>`)
+const states = Object.values(geo.states).map(d => `<path d="${d}" class="stl"/>`).join('');
+
+// Population share is the honest denominator for coverage: the counties with no
+// answer are mostly small, so a raw county count overstates the gap.
+const tot = Object.values(S).reduce((a, c) => a + (c.pop || 0), 0);
+const popA = Object.values(S).filter(c => c.tier === 'A').reduce((a, c) => a + (c.pop || 0), 0);
+const nA = Object.values(S).filter(c => c.tier === 'A').length;
+const answered = Object.values(S).filter(c => c.tier !== '-').length;
+
+const legend = ['public', 'private', 'hospital', 'mixed']
+  .map(k => `      <span class="rm-key"><i style="background:${COL[k]}"></i>${LABEL[k]}</span>`)
   .join('\n');
 
 const html = `<figure class="research-map">
-  <svg viewBox="0 0 959 593" role="img" aria-label="US states shaded by the dominant 911 EMS provider model" class="rm-svg">
-    <defs>
-      <pattern id="thin-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-        <rect width="6" height="6" fill="#fff"/>
-        <rect width="3" height="6" fill="#000"/>
-      </pattern>
-      <mask id="thin-mask"><rect width="959" height="593" fill="url(#thin-hatch)"/></mask>
-    </defs>
-${shaded.map(p => '    ' + p).join('\n')}
+  <svg viewBox="0 0 975 610" role="img" aria-label="Every US county coloured by who owns the agency that answers the 911 call" class="rm-svg">
+${paths.map(p => '    ' + p).join('\n')}
+    ${states}
   </svg>
   <figcaption class="rm-cap">
     <span class="rm-keys">
 ${legend}
-      <span class="rm-key"><i class="rm-hatch"></i>station-list source only</span>
+      <span class="rm-key"><i class="rm-fade"></i>fainter &#61; weaker evidence</span>
     </span>
-    Each state takes the colour of its most common model among licensed agencies, ${R.realStates} states classified as of ${R.asOf}. Hatched states are sourced from a fire-station list, so their fire share is a ceiling rather than a count.
+    Every county in the country, coloured by who owns the agency that answers the 911 call. <strong>${n(answered)}</strong> of ${n(Object.keys(S).length)} counties have an answer, and <strong>${n(nA)}</strong> of those &mdash; ${Math.round((popA / tot) * 100)}% of the population &mdash; are named directly by a state or agency record. The rest are inferred from licensing rosters and Medicare billing, and are drawn fainter: an inferred county is a lead, not a fact.
   </figcaption>
 </figure>`;
 
 writeFileSync('assets/research-map.html', html);
-console.log(`wrote assets/research-map.html (${Object.keys(R.states).length} states, ${(html.length / 1024).toFixed(0)} KB)`);
+console.log(`wrote assets/research-map.html (${drawn} counties, ${(html.length / 1024).toFixed(0)} KB)`);

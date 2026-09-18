@@ -42,6 +42,8 @@ main{padding-bottom:64px;}
 .res-map-wrap{padding-top:40px;padding-bottom:8px;}
 .research-map{margin:0;}
 .rm-svg{display:block;width:100%;max-width:860px;height:auto;margin:0 auto;}
+.rm-svg .cty{stroke:#fff;stroke-width:.3;vector-effect:non-scaling-stroke;}
+.rm-svg .stl{fill:none;stroke:#6b6b6b;stroke-width:.8;vector-effect:non-scaling-stroke;pointer-events:none;}
 .rm-svg .state{stroke:var(--ground);stroke-width:1;}
 .rm-cap{
   margin:18px auto 0;max-width:70ch;
@@ -54,6 +56,8 @@ main{padding-bottom:64px;}
   background:repeating-linear-gradient(45deg,var(--muted) 0 2px,transparent 2px 4px);
   border:1px solid var(--rule);
 }
+/* The tier ramp in the legend: same colour, stepped down, the way the map draws it. */
+.rm-fade{background:linear-gradient(90deg,#0072B2 0%,rgba(0,114,178,.38) 100%);}
 
 /* Table. A 50-row table is the reference half of the page; it scrolls on its own
    rather than forcing the page sideways on a phone. */
