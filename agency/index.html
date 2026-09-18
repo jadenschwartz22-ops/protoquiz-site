@@ -3212,32 +3212,6 @@
     position:relative;
     box-shadow:0 1px 2px rgba(138,74,31,.10), 0 6px 18px rgba(138,74,31,.10);
   }
-  .px-pilot-tag{
-    display:inline-block;
-    font-family:'JetBrains Mono', ui-monospace, monospace;
-    font-size:12.5px; font-weight:700;
-    letter-spacing:.16em; text-transform:uppercase;
-    color:#fff;
-    background:var(--accent2);
-    padding:5px 12px; border-radius:999px;
-    margin-bottom:12px;
-  }
-  .px-pilot-body{margin-bottom:14px;}
-  .px-pilot-headline{
-    font-family:Georgia, serif;
-    font-size:clamp(20px, 2.4vw, 26px); line-height:1.3;
-    color:var(--ink); font-weight:500;
-    margin-bottom:8px; letter-spacing:-.012em;
-  }
-  .px-pilot-headline strong{color:var(--accent2); font-weight:700;}
-  .px-pilot-headline .px-stat-strike{
-    color:var(--muted); font-weight:600;
-    text-decoration:line-through; text-decoration-color:rgba(15,18,25,.30);
-  }
-  .px-pilot-sub{
-    font-size:15.5px; color:var(--muted); line-height:1.55; margin:0;
-  }
-  .px-pilot-sub strong{color:var(--ink); font-weight:700;}
   .px-pilot-perks{
     display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px;
     margin-top:16px; padding-top:14px;
@@ -3322,6 +3296,10 @@
     font-size:17px; color:var(--muted); margin-bottom:20px; line-height:1.55;
   }
   .px-frame-total-row strong{ color:var(--ink); font-weight:600; }
+  /* The org-wide savings estimate stays for a chief building a budget ask, but one step
+     quieter than the cost total: it is the only five-figure number left on the frame. */
+  .px-frame-save .px-frame-total-row{ font-size:14px; }
+  .px-frame-save .px-frame-total-row strong{ font-weight:500; }
   .px-frame-total-row .px-stat-strike{
     color:var(--muted); text-decoration:line-through;
     text-decoration-color:rgba(15,18,25,.30);
@@ -3411,9 +3389,13 @@
     color:currentColor;
     opacity:.7;
   }
+  /* Per-row figures are per-provider, matching the column's headline unit. They were
+     org-wide totals at 24px, so at a 470-provider agency the loudest things in the
+     savings column were ~$94,000 and ~$23,500 -- five-figure numbers sitting beside
+     the cost column, which reads as the bill. */
   .px-frame-math-num{
     font-family:Georgia, serif;
-    font-size:24px; color:var(--accent2); font-weight:700;
+    font-size:17px; color:var(--accent2); font-weight:700;
     white-space:nowrap;
     margin-top:2px;
   }
@@ -4130,6 +4112,11 @@
   }
   dialog#contactDialog .dlg-close:hover{background:var(--surface2);}
   dialog#contactDialog .dlg-body{padding:22px;}
+  dialog#contactDialog .dlg-offer{
+    margin:0 0 16px; padding:12px 14px;
+    background:rgba(15,18,25,.04); border-left:2px solid var(--accent2);
+    font-size:13.5px; line-height:1.55; color:var(--ink);
+  }
   dialog#contactDialog .field{margin-bottom:14px;}
   dialog#contactDialog .field label{
     display:block; margin-bottom:6px; font-weight:600; font-size:13px; color:var(--muted);
@@ -5553,8 +5540,8 @@
     <div class="wrap wrap-wide">
       <div class="px-frame-head">
         <div class="px-frame-eyebrow">Pricing</div>
-        <h2 class="px-frame-title">$80 per provider, per year.</h2>
-        <p class="px-frame-sub">Flat. No setup fees, no add-ons, no tiers. That&rsquo;s the annual prepay rate &mdash; a 20% discount on the standard $25 per seat, per quarter. Drag to size your agency.</p>
+        <h2 class="px-frame-title">$25 per seat, per quarter.</h2>
+        <p class="px-frame-sub">Flat. No setup fees, no add-ons, no tiers. Drag to size your agency.</p>
       </div>
 
       <!-- Slider, centered, drives every number on the frame -->
@@ -5577,19 +5564,13 @@
       </div>
 
       <!-- =========================================================
-           BILLING CHOICE PANEL (annual prepay vs quarterly)
-           Sits between the rate above and the math below.
+           TERMS PANEL. This was the annual-prepay pitch (headline, struck
+           quarterly total, "$1,500 back"). The page now quotes ONE price --
+           $25/seat/quarter -- and the 20% prepay discount is the better number
+           a visitor finds by contacting us, so it lives in the contact dialog.
+           The perks row stays: it answers "what's the catch", not "what's the price".
            ========================================================= -->
       <div class="px-pilot">
-        <div class="px-pilot-tag">Save 20% &middot; Annual prepay</div>
-        <div class="px-pilot-body">
-          <div class="px-pilot-headline">
-            Prepay the year at <strong><span data-px-val="cost-annual-strong">$6,000</span>/yr</strong> instead of <span class="px-stat-strike" data-px-val="cost-std">$7,500</span> billed quarterly.
-          </div>
-          <p class="px-pilot-sub"><strong>That&rsquo;s <span data-px-val="cost-saved">$1,500</span> back</strong> for paying once instead of four times. Prefer to spread it out? Quarterly billing stays available.</p>
-        </div>
-        <!-- The 20% and the quarterly rate are stated once each, above. A perk row
-             repeating them made the same discount look like three separate prices. -->
         <div class="px-pilot-perks">
           <div class="px-pilot-perk"><span class="px-pilot-perk-num">$0</span><span class="px-pilot-perk-text">setup fees, ever</span></div>
           <div class="px-pilot-perk"><span class="px-pilot-perk-num">$0</span><span class="px-pilot-perk-text">per-seat add-ons or tiers</span></div>
@@ -5603,17 +5584,17 @@
       <div class="px-frame-grid">
         <!-- LEFT: cost + what you get -->
         <div class="px-frame-col px-frame-pay">
-          <div class="px-frame-eyebrow-sm">What you pay (annual prepay)</div>
+          <div class="px-frame-eyebrow-sm">What you pay</div>
           <!-- The per-provider rate is the hero because it is the actual price and it does
                not move with agency size. The annual total is real and stays on the page,
                one step down, so a small service is not met by a five-figure number first. -->
-          <div class="px-frame-num"><span class="px-frame-dollar">$</span><span data-px-val="rate-annual-bare">80</span><span class="px-frame-unit">/provider/yr</span></div>
+          <div class="px-frame-num"><span class="px-frame-dollar">$</span><span data-px-val="rate-quarter-bare">25</span><span class="px-frame-unit">/seat/quarter</span></div>
           <!-- ONE supporting number. The struck $100, the 20%, and the quarterly figure
                are all stated in the prepay panel directly above this grid; repeating them
                here put four prices in six lines, and a reader who cannot tell which one
                applies assumes the largest. -->
           <div class="px-frame-total-row">
-            <span data-px-val="providers">75</span> providers &middot; <strong data-px-val="cost-annual-strong">$6,000</strong> a year
+            <span data-px-val="providers">75</span> providers &middot; <strong data-px-val="cost-quarter">$1,875</strong> a quarter
           </div>
           <ul class="px-frame-list">
             <li>One PDF, one tenant, one login link to your crews</li>
@@ -5641,7 +5622,7 @@
               <button type="button" class="px-frame-math-row" data-source="onboarding">
                 <div class="px-frame-math-text">
                   <span class="px-frame-math-label">Faster, better onboarding</span>
-                  <span class="px-frame-math-source">~$200/provider/yr &middot; AAA 2022 EMS turnover survey ($9K+/replacement, ~30% annual turnover) + 10% ramp reduction<svg class="px-frame-math-ext" viewBox="0 0 14 14" aria-hidden="true"><path d="M5 2H2v10h10V9M9 2h3v3M11.5 2.5L7 7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  <span class="px-frame-math-source">AAA 2022 EMS turnover survey ($9K+/replacement, ~30% annual turnover) + 10% ramp reduction<svg class="px-frame-math-ext" viewBox="0 0 14 14" aria-hidden="true"><path d="M5 2H2v10h10V9M9 2h3v3M11.5 2.5L7 7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                 </div>
                 <span class="px-frame-math-num" data-px-val="save-fto">~$15,000</span>
               </button>
@@ -5650,7 +5631,7 @@
               <button type="button" class="px-frame-math-row" data-source="training">
                 <div class="px-frame-math-text">
                   <span class="px-frame-math-label">Fewer remediations</span>
-                  <span class="px-frame-math-source">~$50/provider/yr &middot; PMC peer-reviewed prehospital med-error data (up to 12.76% rate); supervisor + FTO time at burdened labor<svg class="px-frame-math-ext" viewBox="0 0 14 14" aria-hidden="true"><path d="M5 2H2v10h10V9M9 2h3v3M11.5 2.5L7 7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  <span class="px-frame-math-source">PMC peer-reviewed prehospital med-error data (up to 12.76% rate); supervisor + FTO time at burdened labor<svg class="px-frame-math-ext" viewBox="0 0 14 14" aria-hidden="true"><path d="M5 2H2v10h10V9M9 2h3v3M11.5 2.5L7 7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                 </div>
                 <span class="px-frame-math-num" data-px-val="save-training">~$3,800</span>
               </button>
@@ -5711,7 +5692,7 @@
         <div class="faq-item"><div class="faq-q">How does setup work?</div><p class="faq-a">Send us your protocol PDF. We build out the question bank, scoped per certification level, with every question verified against your document and cited to the page it came from. You review the bank and tell us what to change before it goes out to your crews. We host on a custom subdomain (e.g. <code>youragency.protoquiz.com</code>), and your crews access by link in any browser. Typical turnaround from PDF to live tenant: about a week.</p></div>
         <div class="faq-item"><div class="faq-q">What if our protocols change mid-term?</div><p class="faq-a">Send the new PDF. We update the content against the new document, you review the changes, and your crews see the new questions on their next session.</p></div>
         <div class="faq-item"><div class="faq-q">How much IT lift is this?</div><p class="faq-a">None. We host on a custom subdomain. Crews access by link in any browser. No install, no SSO setup required (we support it if you want it).</p></div>
-        <div class="faq-item"><div class="faq-q">How does billing work?</div><p class="faq-a">$25 per seat, per quarter. Prepay the year and you save 20% &mdash; $80 per provider per year instead of $100. No setup fees, no add-ons, no tiers. Our free six-month pilot program is closed; every slot is filled, and standard pricing applies to new agencies.</p></div>
+        <div class="faq-item"><div class="faq-q">How does billing work?</div><p class="faq-a">$25 per seat, per quarter. No setup fees, no add-ons, no tiers. Annual prepay is available at a discount &mdash; ask us and we&rsquo;ll set it up. Our free six-month pilot program is closed; every slot is filled, and standard pricing applies to new agencies.</p></div>
       </div>
       <p style="text-align:center;margin:26px 0 0;font-size:.95rem;">
         More detail: <a href="/agency/faq/">the full agency FAQ</a> &middot;
@@ -5741,6 +5722,9 @@
       <form method="dialog" style="margin:0;"><button class="dlg-close" type="submit" aria-label="Close dialog">Close</button></form>
     </div>
     <div class="dlg-body">
+      <!-- The prepay discount lives here, not in the pricing block. The page quotes one
+           price ($25/seat/quarter); this is the better number a visitor finds by asking. -->
+      <p class="dlg-offer"><strong>Prepay the year and it&rsquo;s $80 per provider</strong> &mdash; a 20% discount. Ask and we&rsquo;ll set it up.</p>
       <form id="contactForm" action="https://api.protoquiz.com/api/monitor?type=contactForm" method="POST" novalidate>
         <input type="text" name="phone" tabindex="-1" autocomplete="off" style="position:absolute;left:-10000px" aria-hidden="true">
         <input type="hidden" name="source" value="agency-preview-v15">
@@ -6528,6 +6512,7 @@
           'tier-pill': tier.label,
           'rate-annual': '$' + RATE_ANNUAL,
           'rate-annual-bare': String(RATE_ANNUAL),
+          'rate-quarter-bare': String(RATE_QUARTER),
           'save-rate-bare': String(RATE_FTO + RATE_TRAINING),
           'rate-std': '$' + RATE_STD,
           'cost-annual': pqAnnualStr,
@@ -6535,8 +6520,9 @@
           'cost-quarter': '$' + (pqStd / 4).toLocaleString('en-US'),
           'cost-std': '$' + pqStd.toLocaleString('en-US'),
           'cost-saved': '$' + (pqStd - pqAnnual).toLocaleString('en-US'),
-          'save-fto': '~' + money(fto),
-          'save-training': '~' + money(training),
+          /* Per-provider, not org-wide: same unit as this column's headline rate. */
+          'save-fto': '~$' + RATE_FTO + '/provider/yr',
+          'save-training': '~$' + RATE_TRAINING + '/provider/yr',
           'save-upside': '~' + money(p * 45),  /* upside footer: legal $25 + CE/audit $20 per §8a */
           'save-lawsuit': '~' + money(lawsuit),
           'save-remediation': '~' + money(rem),
@@ -6573,7 +6559,7 @@
         try{ localStorage.setItem('protoquiz_agency_providers', String(p)); }catch(_){}
         // Update slider aria-valuetext for screen readers (slider drives every number)
         slider.setAttribute('aria-valuetext',
-          data.providers + ' providers, ' + data.label + ' agency, $' + data['cost-annual'] + ' per year with annual prepay');
+          data.providers + ' providers, ' + data.label + ' agency, ' + data['cost-quarter'] + ' per quarter');
       }
 
       slider.addEventListener('input', e => apply(parseInt(e.target.value, 10) || DEFAULT_PROVIDERS));
