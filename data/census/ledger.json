@@ -2,8 +2,8 @@
  "schemaVersion": 3,
  "rows": [
   {
-   "at": "2026-09-17T00:00:00Z",
-   "hash": "1a63a7ec31763efeeaf356a18b591844",
+   "at": "2026-09-18T00:00:00Z",
+   "hash": "321afabab176afdaa1058a4d0ec6d60b",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -12,8 +12,8 @@
    "reason": null
   },
   {
-   "at": "2026-09-17T00:00:00Z",
-   "hash": "3ead1fe9fef09ad0664a1bc12082715e",
+   "at": "2026-09-18T00:00:00Z",
+   "hash": "371e015589f1e1e8608bbf4175f8fcd6",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -22,8 +22,18 @@
    "reason": null
   },
   {
-   "at": "2026-09-17T00:00:00Z",
-   "hash": "6f24031c515fc90dd0b2eb1047edfc81",
+   "at": "2026-09-18T00:00:00Z",
+   "hash": "4411cd2bfba43438058013922763a75d35fe444d5484bed3189937ea42f87696",
+   "agencyKey": null,
+   "change": "superseded",
+   "from": "current",
+   "to": "superseded",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-09-18T00:00:00Z",
+   "hash": "70a3efe34caa3adb18dd2684fa11cf22",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -32,8 +42,48 @@
    "reason": null
   },
   {
-   "at": "2026-09-17T00:00:00Z",
-   "hash": "c04b739262c0c782021497675af0aff8",
+   "at": "2026-09-18T00:00:00Z",
+   "hash": "896f13a18a754ea18a8275c7e8246102d3c1c7bac75a05d780d3464e3903d19b",
+   "agencyKey": "arizona-department-of-health-services",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-09-18T00:00:00Z",
+   "hash": "8edb54f8745e03baedfe142827d90b4fc515c149fbb8ee4edd3a21625da8d580",
+   "agencyKey": "st-johns-county-fire-rescue",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-09-18T00:00:00Z",
+   "hash": "9175be6be3c17da6e75a6deba8016d93f6d7a91ceba1d5c98e41b3b0a81a2dfd",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-09-18T00:00:00Z",
+   "hash": "9f69a8634ed4737bb168f18fca3aa9c24ee336d79d51463ff17a01c54be5d1ec",
+   "agencyKey": "northwest-region-emergency-medical-services-trauma-care-council",
+   "change": "superseded",
+   "from": "current",
+   "to": "superseded",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-09-18T00:00:00Z",
+   "hash": "ceda08f914ab8fc1fd59c5e7f4f9b11c",
    "agencyKey": null,
    "change": "added",
    "from": null,

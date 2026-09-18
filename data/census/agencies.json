@@ -254,6 +254,27 @@
    }
   },
   {
+   "agencyKey": "arizona-department-of-health-services",
+   "name": "Arizona Department of Health Services",
+   "aliases": [
+    "Arizona Department of Health Services"
+   ],
+   "state": "AZ",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "896f13a18a754ea18a8275c7e8246102d3c1c7bac75a05d780d3464e3903d19b",
+   "currentEffectiveDate": "2026-01-22",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
    "agencyKey": "arlington-ems-system",
    "name": "Arlington EMS System",
    "aliases": [
@@ -922,7 +943,7 @@
    "currentHash": "449e04a09b5066618d410889e3d20cbc289b7dca8ecb5199e82a710642dbc0ef",
    "currentEffectiveDate": "2026-07-01",
    "documentCount": 21,
-   "doseCount": 959,
+   "doseCount": 941,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -1787,7 +1808,7 @@
    "currentHash": "1da4fd7b443a9c8d8302c78a4d132f9e2e11ca8fda0741eb213588f6c169d08e",
    "currentEffectiveDate": "2025-04-30",
    "documentCount": 10,
-   "doseCount": 763,
+   "doseCount": 965,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -2931,10 +2952,10 @@
    "country": "US",
    "city": null,
    "jurisdiction": "regional",
-   "currentHash": "9f69a8634ed4737bb168f18fca3aa9c24ee336d79d51463ff17a01c54be5d1ec",
+   "currentHash": "451050d80a92b20f1eaa52daf22366b30b6fe248251b3ec443cc8afdb7b744d4",
    "currentEffectiveDate": "2020-03-02",
    "documentCount": 3,
-   "doseCount": 635,
+   "doseCount": 673,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -3876,6 +3897,27 @@
    "coverage": {
     "hasProtocol": true,
     "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "st-johns-county-fire-rescue",
+   "name": "St. Johns County Fire Rescue",
+   "aliases": [
+    "St. Johns County Fire Rescue"
+   ],
+   "state": "FL",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "county",
+   "currentHash": "8edb54f8745e03baedfe142827d90b4fc515c149fbb8ee4edd3a21625da8d580",
+   "currentEffectiveDate": "2025-03-01",
+   "documentCount": 1,
+   "doseCount": 155,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
    }
   },
   {
