@@ -104,50 +104,63 @@ const VOLUMES = [
 // measure ourselves. Verified against the primary sources 2026-09-18: the NCSL page says
 // "At least 19 states and the District of Columbia" and is dated July 17 2026; the CDC page
 // was last reviewed 9 Oct 2024. A secondary summary claiming 21 states was wrong.
-const ABOUT = `        <p>There is a broad national foundation for EMS education and certification
-        through the NREMT, but no standard for how EMS is delivered in the field. States set
-        their own regulations and scopes of practice, while individual agencies operate under
-        their own protocols and medical direction. Protocols can vary substantially from one
-        agency to the next, even between neighboring communities. There is meaningful
-        overlap, but also significant differences in what clinicians are permitted or
-        expected to do, depending on where they work.</p>
+// The statement opens "EMS is highly fragmented across the United States." — which is now
+// the lede's first sentence, so it is not repeated here two inches below itself.
+const ABOUT = `        <p>There is a broad national foundation for EMS education and certification through
+        the NREMT, but there is no standard for how EMS is delivered in the field. States
+        establish their own regulations and scopes of practice, while individual EMS agencies
+        operate under their own protocols and medical direction. As a result, protocols can
+        vary substantially from one agency to another, even between neighboring communities.
+        There is meaningful overlap, but there can also be significant differences in what
+        clinicians are permitted or expected to do, depending on where they work.</p>
 
         <p>The fragmentation extends beyond clinical practice. There is no single model for
         who responds to a 911 medical call. Depending on the community, EMS may be provided
-        by a municipal or county service, a fire department, a hospital system, a private
-        company, a nonprofit, a volunteer service, or some combination. The agency
-        responding, the resources available, the equipment carried and the clinical care
-        provided all change depending on where a patient lives.</p>
+        by a municipal or county service, fire department, hospital system, private company,
+        nonprofit organization, volunteer service, or some combination of these. That means
+        the agency responding, the resources available, the equipment carried, and the
+        clinical care provided can all change depending on where a patient lives.</p>
 
-        <p>ProtoQuiz is building a way to make this fragmented system easier to understand.
-        We read the protocols and other information EMS agencies publish and turn them into a
-        structured, searchable record that can be independently reviewed. We track changes
-        over time and document how 911 EMS is organized and who provides emergency ambulance
-        services in communities across the country.</p>
+        <p>ProtoQuiz is building a way to make this fragmented system easier to understand.</p>
 
-        <p>The goal is an accurate picture of the state of EMS in the United States: where
-        systems are standardized, where they differ, how clinical practice varies, and how
-        EMS is organized from community to community. That can provide a foundation for
-        identifying opportunities for greater standardization &mdash; and greater consistency
-        in education, clinical practice and system design could improve the quality and
-        reliability of care while supporting a stronger, more sustainable profession.</p>
+        <p>We read the protocols and other information that EMS agencies publish and turn
+        them into a structured, searchable record that can be independently reviewed. We
+        track changes over time and document how 911 EMS is organized and who provides
+        emergency ambulance services in communities across the country.</p>
+
+        <p>The goal is to build an accurate picture of the state of EMS in the United States:
+        where systems are standardized, where they differ, how clinical practice varies, and
+        how EMS is organized from community to community.</p>
+
+        <p>That information can provide a foundation for identifying opportunities for
+        greater standardization. Greater consistency in EMS education, clinical practice, and
+        system design could help improve the quality and reliability of care while also
+        supporting a stronger, more sustainable profession.</p>
 
         <p>EMS is also unusual among emergency services in the United States because it has
         historically not been recognized as an essential public service. The CDC states that,
         unlike police and fire services, EMS is
         <a href="https://www.cdc.gov/ems-community-paramedicine/php/us/local-authority.html">rarely
-        classified and funded as an essential service</a>, and is primarily funded at the
-        local level &mdash; which itself contributes to the variation between communities.</p>
+        classified and funded as an essential service</a>.</p>
 
-        <p>That is beginning to change. As of July 2026 the National Conference of State
+        <p>EMS is primarily organized and funded at the local level, contributing to
+        substantial variation between communities.</p>
+
+        <p>That is beginning to change. As of July 2026, the National Conference of State
         Legislatures reported that
-        <a href="https://www.ncsl.org/health/state-policies-defining-ems-as-essential">at least
-        19 states and the District of Columbia</a> had enacted legislation explicitly using
-        the term &ldquo;essential&rdquo; to define EMS in statute. The laws differ
+        <a href="https://www.ncsl.org/health/state-policies-defining-ems-as-essential">at
+        least 19 states and the District of Columbia</a> had enacted legislation explicitly
+        using the term &ldquo;essential&rdquo; to define EMS in statute. The laws differ
         considerably in what they require and how EMS is funded.</p>
 
         <p>ProtoQuiz can help make that transition visible: not just what EMS is supposed to
-        be nationally, but what EMS actually looks like across the country.</p>`;
+        be nationally, but what EMS actually looks like across the country.</p>
+
+        <p>By improving our understanding of EMS and identifying where greater consistency is
+        possible, we can help improve the quality of care and strengthen the profession
+        itself. Better quality EMS means better pay for those who enter this profession,
+        better quality care for patients, and a more efficient, sustainable future for
+        EMS.</p>`;
 
 const card = v => `        <article class="vol">
 ${v.thumb ? `          <figure class="vol-thumb">${v.thumb}<figcaption>${v.thumbCap}</figcaption></figure>` : ''}
@@ -182,7 +195,7 @@ ${researchBar('/research/')}
     <section class="res-hero">
       <div class="res-eyebrow">ProtoQuiz Research</div>
       <h1>Open research on how American EMS actually works.</h1>
-      <p class="lede">EMS is fragmented across the country. In most places every
+      <p class="lede">EMS is highly fragmented across the United States. In most places every
       single agency has its own set of protocols, and there is no standard for who responds
       to a 911 EMS call &mdash; a fire department, a private company, a county or a hospital,
       depending on where you are. So what a crew carries, and even who shows up, changes at
