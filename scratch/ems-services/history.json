@@ -1,0 +1,100 @@
+{
+ "series": [
+  {
+   "date": "2026-09-11",
+   "label": "v14 +IRS/CoG sourced labels",
+   "states": 38,
+   "transporters": 8870,
+   "classified": 8286,
+   "raw": {
+    "public": 0.5949794834660874,
+    "private": 0.3262128892107169,
+    "hospital": 0.07108375573256094
+   },
+   "corrected": {
+    "median": 0.5747463359639233,
+    "lo": 0.5708004509582864,
+    "hi": 0.5785794813979707
+   },
+   "commercial_lo": 0.10668597634564325,
+   "commercial_hi": 0.17861453053342988,
+   "nonprofit": 0.147598358677287,
+   "grades": {
+    "A": 6,
+    "B": 5,
+    "C": 11,
+    "D": 16
+   }
+  },
+  {
+   "date": "2026-09-12",
+   "label": "v16 tiers + Medicare cross-check + CT NJ DC HI",
+   "states": 42,
+   "transporters": 9398,
+   "classified": 8781,
+   "raw": {
+    "public": 0.5772691037467259,
+    "private": 0.34813802528185855,
+    "hospital": 0.06707664275139506
+   },
+   "corrected": {
+    "median": 0.5510746967439881,
+    "lo": 0.547244094488189,
+    "hi": 0.5545860821451373
+   },
+   "commercial_lo": 0.12048741601184375,
+   "commercial_hi": 0.18824735223778613,
+   "nonprofit": 0.15989067304407242,
+   "grades": {
+    "A": 6,
+    "B": 5,
+    "C": 14,
+    "D": 17
+   }
+  }
+ ],
+ "state_deltas": [
+  {
+   "state": "CT",
+   "change": "added",
+   "n": 148
+  },
+  {
+   "state": "DC",
+   "change": "added",
+   "n": 2
+  },
+  {
+   "state": "HI",
+   "change": "added",
+   "n": 4
+  },
+  {
+   "state": "NJ",
+   "change": "added",
+   "n": 374
+  },
+  {
+   "state": "WI",
+   "change": "changed",
+   "n0": 366,
+   "n1": 366,
+   "p0": 0.6912280701754386,
+   "p1": 0.7065217391304348,
+   "g0": "D",
+   "g1": "D"
+  },
+  {
+   "state": "WY",
+   "change": "changed",
+   "n0": 114,
+   "n1": 114,
+   "p0": 0.4024390243902439,
+   "p1": 0.43243243243243246,
+   "g0": "D",
+   "g1": "D"
+  }
+ ],
+ "first": "2026-09-11",
+ "last": "2026-09-12"
+}
