@@ -698,8 +698,8 @@ function landingPage({ manifest, states, drugs, agencyPageCount, agencies = [], 
   const lead = `      <section class="hero">
         <div class="hero-say">
           <span class="badge">Early release. Data building nightly.</span>
-          <h1>EMS care varies across the country. From agency to agency, state to state, and even who provides EMS.</h1>
-          <p class="dek">The United States EMS Protocol Census is a standing research program built on public documents: it reads what agencies publish and turns it into a versioned record of the medications, doses and routes they carry, rebuilt every night from the agencies' own documents. A second line of work, in progress, maps who answers the 911 call in each county and whether that service is public, private, hospital-based or a fire department.</p>
+          <h1>What EMS can give you changes at the county line.</h1>
+          <p class="dek">Every agency writes its own protocols, so the medications a crew carries &mdash; and the doses and routes they are allowed to give &mdash; differ from one agency to the next. The United States EMS Protocol Census is a standing research program built on public documents: it reads what agencies publish and turns it into a versioned record of what they carry, rebuilt every night from the agencies' own documents.</p>
         </div>
         <figure class="hero-map">
           ${map.svg}
@@ -714,7 +714,6 @@ ${scaleLine}
           <li><strong>A medic who changes agencies relearns every dose.</strong> The medication is the same and the number is different, and until now there was no way to see which agencies differ or by how much.</li>
           <li><strong>A medical director revising a protocol has no benchmark.</strong> Writing the next version means guessing at what everyone else does. The census shows what the rest of the country actually carries, with the documents behind it.</li>
           <li><strong>Researchers have never had the dataset.</strong> There has been no denominator for prehospital medicine, so questions about how care varies could not be asked, let alone answered.</li>
-          <li><strong>Who answers the 911 call is its own unanswered question.</strong> Whether a county is served by a fire department, a county service, a hospital system or a private company shapes response, staffing and cost, and no public national record of it exists. Building one is underway here.</li>
           <li><strong>Arguing for EMS pay, training and staffing takes evidence.</strong> Anecdote loses those arguments. Numbers that anyone can check and cite do better.</li>
           <li><strong>It updates every night, and agencies decide whether they are in it.</strong> New documents are read and revisions become new versions with the old one kept in the history. Send a public URL to be listed, or ask to be removed and it comes down the same day, no reason needed.</li>
         </ul>
