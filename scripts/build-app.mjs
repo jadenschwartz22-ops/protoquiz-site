@@ -20,6 +20,20 @@ const STEPS = [
   ['03', 'Quiz, learn, compete', 'Pharmacology, algorithms, adaptive scenarios and spaced repetition on your own protocols.'],
 ];
 
+// What the app actually does, past the upload. The How-it-works steps say how your
+// protocols get in; this says what you get once they are. Each line names a surface a
+// provider opens by name, so the page stops reading as a quiz app with one trick.
+const FEATURES = [
+  ['Quizzes on your protocols',
+   'Pharmacology, algorithm tests from your flowcharts, and adaptive scenarios that respond to your decisions. Every answer cites the page it came from.'],
+  ['Medicine mode',
+   'A clinical reference you can read, not just be quizzed on: how a medication works, when it is indicated, and what to watch for.'],
+  ['NREMT prep',
+   'Registry-style practice for school and recert, alongside the agency protocols you actually run.'],
+  ['Learn mode',
+   'Spaced repetition on the medications you keep missing, so the ones you get wrong come back until they stick.'],
+];
+
 const REVIEWS = [
   ['Game changer', "Finally something that quizzes me on my own protocols instead of generic registry questions."],
   ['Super fun scenarios', 'The adaptive scenarios actually feel like running a call.'],
@@ -33,7 +47,7 @@ const FAQ = [
   ['What kinds of quizzes are there?',
    'Four kinds. Pharmacology quizzes cover adult and pediatric doses, indications, contraindications, routes, mechanisms and adverse effects. Algorithm tests are pulled from your protocol flowcharts. Adaptive patient scenarios respond to your decisions. Learn Mode runs spaced repetition on the meds you keep missing.'],
   ['What does it cost?',
-   'Free, ad-supported. An optional paid upgrade clears the ads. No features are paywalled behind premium.'],
+   'Free to use, with an optional paid upgrade. There are no ads.'],
   ['Is it on Android?',
    'Yes. ProtoQuiz runs on both iOS and Android, and both carry the same two themes: Night Shift and Day Shift.'],
 ];
@@ -179,6 +193,16 @@ ${MAP}
       <div class="steps">
 ${STEPS.map(([n, h, p]) => `        <div class="step">
           <div class="step-num">${n}</div>
+          <h3>${h}</h3>
+          <p>${p}</p>
+        </div>`).join('\n')}
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-eyebrow">What's inside</div>
+      <div class="features">
+${FEATURES.map(([h, p]) => `        <div class="feature">
           <h3>${h}</h3>
           <p>${p}</p>
         </div>`).join('\n')}

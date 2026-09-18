@@ -127,6 +127,15 @@
 .step h3 { font-size: 22px; font-weight: 600; letter-spacing: -0.024em; margin: 0 0 12px; }
 .step p { font-size: 15px; line-height: 1.68; color: var(--ink-2); margin: 0; }
 
+/* what's inside — 2x2 so it reads as a set of surfaces, not a numbered sequence
+   like .steps above it. Same type scale and rules, hairline instead of the
+   2px cap, so the two sections stay related without competing. */
+.features { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; }
+.feature { padding: 26px clamp(20px, 3vw, 44px) 26px 0; border-top: 1px solid var(--line); }
+.feature:nth-child(even) { padding-left: clamp(20px, 3vw, 44px); border-left: 1px solid var(--line); }
+.feature h3 { font-size: 19px; font-weight: 600; letter-spacing: -0.02em; margin: 0 0 10px; }
+.feature p { font-size: 15px; line-height: 1.68; color: var(--ink-2); margin: 0; }
+
 /* reviews */
 .reviews { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .review-card { border: 1px solid var(--line); border-radius: 10px; padding: 30px 32px; }
@@ -184,6 +193,8 @@
     padding: 24px 0 0; border-left: 0; border-top: 2px solid var(--ink); margin-top: 24px;
   }
   .step:first-child { margin-top: 0; }
+  .features { grid-template-columns: 1fr; }
+  .feature, .feature:nth-child(even) { padding: 22px 0; border-left: 0; }
   .reviews { grid-template-columns: 1fr; }
 }
 
