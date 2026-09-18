@@ -79,7 +79,7 @@ const VOLUMES = [
   },
   {
     thumb: THUMBS.registry,
-    thumbCap: 'Every county, coloured by who owns its 911 provider. Fainter is weaker evidence.',
+    thumbCap: 'Every county, colored by who owns its 911 provider. Fainter is weaker evidence.',
     eyebrow: 'Volume two',
     title: 'The 911 coverage registry',
     href: '/research/registry/',
@@ -94,6 +94,60 @@ const VOLUMES = [
       lead, not a fact.`,
   },
 ];
+
+// The full statement of why this research arm exists. It sits behind a disclosure rather
+// than in the lede because it is an argument, not a summary -- a reader who wants the data
+// gets to the volumes without scrolling past it, and a reader who wants the reasoning gets
+// all of it. <details> is native: no JS, open by default to a crawler, and printable.
+//
+// Both statistics are attributed BECAUSE they are the only claims on this page we did not
+// measure ourselves. Verified against the primary sources 2026-09-18: the NCSL page says
+// "At least 19 states and the District of Columbia" and is dated July 17 2026; the CDC page
+// was last reviewed 9 Oct 2024. A secondary summary claiming 21 states was wrong.
+const ABOUT = `        <p>There is a broad national foundation for EMS education and certification
+        through the NREMT, but no standard for how EMS is delivered in the field. States set
+        their own regulations and scopes of practice, while individual agencies operate under
+        their own protocols and medical direction. Protocols can vary substantially from one
+        agency to the next, even between neighboring communities. There is meaningful
+        overlap, but also significant differences in what clinicians are permitted or
+        expected to do, depending on where they work.</p>
+
+        <p>The fragmentation extends beyond clinical practice. There is no single model for
+        who responds to a 911 medical call. Depending on the community, EMS may be provided
+        by a municipal or county service, a fire department, a hospital system, a private
+        company, a nonprofit, a volunteer service, or some combination. The agency
+        responding, the resources available, the equipment carried and the clinical care
+        provided all change depending on where a patient lives.</p>
+
+        <p>ProtoQuiz is building a way to make this fragmented system easier to understand.
+        We read the protocols and other information EMS agencies publish and turn them into a
+        structured, searchable record that can be independently reviewed. We track changes
+        over time and document how 911 EMS is organized and who provides emergency ambulance
+        services in communities across the country.</p>
+
+        <p>The goal is an accurate picture of the state of EMS in the United States: where
+        systems are standardized, where they differ, how clinical practice varies, and how
+        EMS is organized from community to community. That can provide a foundation for
+        identifying opportunities for greater standardization &mdash; and greater consistency
+        in education, clinical practice and system design could improve the quality and
+        reliability of care while supporting a stronger, more sustainable profession.</p>
+
+        <p>EMS is also unusual among emergency services in the United States because it has
+        historically not been recognized as an essential public service. The CDC states that,
+        unlike police and fire services, EMS is
+        <a href="https://www.cdc.gov/ems-community-paramedicine/php/us/local-authority.html">rarely
+        classified and funded as an essential service</a>, and is primarily funded at the
+        local level &mdash; which itself contributes to the variation between communities.</p>
+
+        <p>That is beginning to change. As of July 2026 the National Conference of State
+        Legislatures reported that
+        <a href="https://www.ncsl.org/health/state-policies-defining-ems-as-essential">at least
+        19 states and the District of Columbia</a> had enacted legislation explicitly using
+        the term &ldquo;essential&rdquo; to define EMS in statute. The laws differ
+        considerably in what they require and how EMS is funded.</p>
+
+        <p>ProtoQuiz can help make that transition visible: not just what EMS is supposed to
+        be nationally, but what EMS actually looks like across the country.</p>`;
 
 const card = v => `        <article class="vol">
 ${v.thumb ? `          <figure class="vol-thumb">${v.thumb}<figcaption>${v.thumbCap}</figcaption></figure>` : ''}
@@ -129,11 +183,16 @@ ${researchBar('/research/')}
       <div class="res-eyebrow">ProtoQuiz Research</div>
       <h1>Open research on how American EMS actually works.</h1>
       <p class="lede">EMS is fragmented across the country. In most places every
-      single agency has its own set of protocols. There is also no standard for who responds
-      to a 911 EMS call: in some places it is a fire department, in some places a private
-      company, in some places a county or hospital-based service. So what a crew carries, and
-      even who shows up, changes at county lines. We read what agencies publish and turn it
-      into a record anyone can check.</p>
+      single agency has its own set of protocols, and there is no standard for who responds
+      to a 911 EMS call &mdash; a fire department, a private company, a county or a hospital,
+      depending on where you are. So what a crew carries, and even who shows up, changes at
+      county lines. We read what agencies publish and turn it into a record anyone can
+      check.</p>
+
+      <details class="res-about">
+        <summary>Why we are building this</summary>
+${ABOUT}
+      </details>
     </section>
 
     <section class="res-vols">

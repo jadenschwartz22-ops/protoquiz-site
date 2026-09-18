@@ -265,3 +265,25 @@ main{padding-bottom:64px;}
 .thumb-carry .t-bg{fill:var(--rule);fill-opacity:.5;}
 .thumb-carry .t-bar{fill:#0072B2;}
 .thumb-carry .t-x{font:700 11px/1 var(--mono,ui-monospace,monospace);fill:var(--muted);}
+
+/* "Why we are building this": the argument behind the arm, behind a native disclosure so
+   the volumes stay above the fold. <details> needs no JS, prints open, and is open to a
+   crawler regardless of state. The measure is narrower than the page: this is prose to be
+   read, not a band to be scanned. */
+.res-about{margin:14px 0 0;}
+.res-about summary{
+  display:inline-block;cursor:pointer;list-style:none;
+  font-family:var(--mono,"IBM Plex Mono",ui-monospace,monospace);
+  font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--link);padding:5px 0;
+}
+.res-about summary::-webkit-details-marker{display:none;}
+.res-about summary::after{content:" \203A";display:inline-block;transition:transform .15s;}
+.res-about[open] summary::after{transform:rotate(90deg);}
+.res-about summary:hover{text-decoration:underline;}
+.res-about > p{
+  font-size:.875rem;line-height:1.68;color:var(--muted);
+  max-width:72ch;margin:0 0 11px;
+}
+.res-about > p:first-of-type{margin-top:8px;}
+.res-about a{color:var(--link);}
