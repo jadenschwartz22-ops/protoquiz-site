@@ -128,7 +128,7 @@ ${researchBar('/research/')}
     <section class="res-hero">
       <div class="res-eyebrow">ProtoQuiz Research</div>
       <h1>Open research on how American EMS actually works.</h1>
-      <p class="lede">EMS is fragmented across the country, period. In most places every
+      <p class="lede">EMS is fragmented across the country. In most places every
       single agency has its own set of protocols. There is also no standard for who responds
       to a 911 EMS call: in some places it is a fire department, in some places a private
       company, in some places a county or hospital-based service. So what a crew carries, and
