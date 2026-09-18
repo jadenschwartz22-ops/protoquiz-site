@@ -1,7 +1,9 @@
 # 911 EMS Response Map: where we are and how to resume
 
 Written 2026-09-12 after Jaden graded Denver metro, Adams, Aurora and Larimer as correct.
-Read this first when county scraping resumes. Companion files: `SOURCES.md` (per-state
+Read this first when county scraping resumes. **When there are tokens to spend on
+verification, `VERIFY_PLAYBOOK.md` says what to check and in what order** (NC first: its
+roster already carries the 911 field). Companion files: `SOURCES.md` (per-state
 source ledger), `VOCABULARY.md` (public vocabulary, tiers), `RECORDS_REQUESTS.md` (21 drafted,
 none sent), `HUNT_BRIEF.md` (the original roster hunt brief), `states/CO_metro_911.README.md`
 (worked example of a graded metro).
