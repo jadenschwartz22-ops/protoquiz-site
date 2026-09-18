@@ -346,7 +346,7 @@ ${FOOTER_HTML}
 // starts with /census/, so a prefix test would light Overview on every page.
 const CENSUS_SECTIONS = [
   ['Overview', null, '/census/'],
-  ['Drugs', '/census/drugs/', '/census/#drugs'],
+  ['Medications', '/census/drugs/', '/census/#drugs'],
   ['States', '/census/states/', '/census/#states'],
   ['Agencies', '/census/agencies/', '/census/#agencies'],
   ['Methodology', '/census/methodology/', '/census/methodology/'],
@@ -697,8 +697,8 @@ function landingPage({ manifest, states, drugs, agencyPageCount, agencies = [], 
   const lead = `      <section class="hero">
         <div class="hero-say">
           <span class="badge">Early release. Data building nightly.</span>
-          <h1>Prehospital care varies from agency to agency, and nobody could see how.</h1>
-          <p class="dek">Protocols live in thousands of separate PDFs, so the differences between them have never been readable in one place. The United States EMS Protocol Census reads what agencies publish and turns it into a versioned public record of the drugs, doses and routes they carry, so you can compare agencies across the country. It rebuilds itself every night from the agencies' own documents.</p>
+          <h1>An open research record of how American EMS actually works.</h1>
+          <p class="dek">The United States EMS Protocol Census is a standing research program built on public documents. It reads what agencies publish and turns it into a versioned record of the medications, doses and routes they carry, so care can be compared across the country. A second line of work, in progress, maps who answers the 911 call in each county and whether that service is public, private, hospital-based or a fire department. It rebuilds itself every night from the agencies' own documents.</p>
         </div>
         <figure class="hero-map">
           ${map.svg}
@@ -710,9 +710,10 @@ ${scaleLine}
       <section class="why">
         <h2>Why it matters</h2>
         <ul class="claims">
-          <li><strong>A medic who changes agencies relearns every dose.</strong> The drug is the same and the number is different, and until now there was no way to see which agencies differ or by how much.</li>
+          <li><strong>A medic who changes agencies relearns every dose.</strong> The medication is the same and the number is different, and until now there was no way to see which agencies differ or by how much.</li>
           <li><strong>A medical director revising a protocol has no benchmark.</strong> Writing the next version means guessing at what everyone else does. The census shows what the rest of the country actually carries, with the documents behind it.</li>
           <li><strong>Researchers have never had the dataset.</strong> There has been no denominator for prehospital medicine, so questions about how care varies could not be asked, let alone answered.</li>
+          <li><strong>Who answers the 911 call is its own unanswered question.</strong> Whether a county is served by a fire department, a county service, a hospital system or a private company shapes response, staffing and cost, and no public national record of it exists. Building one is underway here.</li>
           <li><strong>Arguing for EMS pay, training and staffing takes evidence.</strong> Anecdote loses those arguments. Numbers that anyone can check and cite do better.</li>
           <li><strong>It updates every night, and agencies decide whether they are in it.</strong> New documents are read and revisions become new versions with the old one kept in the history. Send a public URL to be listed, or ask to be removed and it comes down the same day, no reason needed.</li>
         </ul>
@@ -720,12 +721,12 @@ ${scaleLine}
 
   const body = `      <p class="honest">${num(manifest.dosesParsed)} entries parsed to a number and route, ${num(manifest.dosesPartial)} partially, ${num(manifest.dosesRaw)} kept as written. Raw entries are counted and shown as written, never dropped.${withheldSentence(withheld)}</p>
 ${drugs.length ? `      <section id="drugs">
-        <h2>Drugs<span class="count">${num(drugs.length)}</span></h2>
+        <h2>Medications<span class="count">${num(drugs.length)}</span></h2>
         <p class="muted">Doses, indications and routes for each, across every agency that carries it.</p>
         <ul class="cols four">${[...drugs].sort((x, y) => drugLabel(x).localeCompare(drugLabel(y))).map(d => `<li><a href="/census/drugs/${slug(d)}/">${esc(drugLabel(d))}</a></li>`).join('')}</ul>
       </section>` : `      <section id="drugs">
-        <h2>Drugs</h2>
-        <p>Drug and indication pages are not published for this build: the indication map has not been reviewed since it last changed.</p>
+        <h2>Medications</h2>
+        <p>Medication and indication pages are not published for this build: the indication map has not been reviewed since it last changed.</p>
       </section>`}
       <section id="states">
         <h2>States<span class="count">${num(usStates.length)}</span></h2>
@@ -767,7 +768,7 @@ ${citePanel('cite', [`United States EMS Protocol Census, as of ${esc(manifest.as
     path: '/census/',
     html: page({
       lead,
-      title: 'United States EMS Protocol Census - what US EMS agencies actually carry',
+      title: 'United States EMS Protocol Census - open research on US EMS',
       description: `A free, versioned record of United States EMS protocols: ${num(manifest.doseRows)} dose entries from ${num(manifest.namedAgencies)} named agencies, as of ${manifest.asOf}.`,
       path: '/census/',
       trail: [['Home', '/'], ['EMS Census', '/census/']],
@@ -872,7 +873,7 @@ ${history}`;
   ])}
 ${railLinks('Related', [
     ...(agency.state ? [[`All ${stateLabel(agency.state)} agencies`, `/census/states/${slug(agency.state)}/`]] : []),
-    ['All drugs and states', '/census/'],
+    ['All medications and states', '/census/'],
     ['How this page was built', '/census/methodology/'],
     ['Data license', '/census/data-license/'],
   ])}
@@ -892,7 +893,7 @@ ${submitForm({ id: 'correct-form', kind: 'correction', agencyKey: agency.agencyK
     html: page({
       rail,
       title,
-      description: `Drugs, doses, routes, and revision history published by ${agency.name}${where ? ` (${where})` : ''}, from its own protocol document.`,
+      description: `Medications, doses, routes, and revision history published by ${agency.name}${where ? ` (${where})` : ''}, from its own protocol document.`,
       path: `/census/agencies/${agency.agencyKey}/`,
       // Each agency page IS a dataset -- one agency's dose facts, sourced to one
       // document -- so it says so, the same way the census landing page does. The
@@ -901,7 +902,7 @@ ${submitForm({ id: 'correct-form', kind: 'correction', agencyKey: agency.agencyK
         '@context': 'https://schema.org',
         '@type': 'Dataset',
         name: `${agency.name} EMS protocol doses`,
-        description: `Drug, dose, route and indication facts extracted from the EMS protocol document published by ${agency.name}.`,
+        description: `Medication, dose, route and indication facts extracted from the EMS protocol document published by ${agency.name}.`,
         url: `${ORIGIN}/census/agencies/${agency.agencyKey}/`,
         license: `${ORIGIN}/census/data-license/`,
         creator: { '@type': 'Organization', name: 'ProtoQuiz', url: ORIGIN },
@@ -989,7 +990,7 @@ ${agenciesSection}`;
   ])}
 ${railLinks('Agencies in this state', listed.map(a => [a.name, `/census/agencies/${a.agencyKey}/`]))}
 ${railLinks('Related', [
-    ['All drugs and states', '/census/'],
+    ['All medications and states', '/census/'],
     ['Methodology', '/census/methodology/'],
     ['Data license', '/census/data-license/'],
   ])}`;
@@ -1011,7 +1012,7 @@ function drugPage(drugKey, { rows, indicationPaths }) {
   const byInd = groupBy(rows, r => r.indicationKey);
   const agencies = new Set(rows.map(r => r.agencyKey).filter(Boolean));
   const body = `${docHeader({
-    kind: 'Drug',
+    kind: 'Medication',
     title: `${esc(drugLabel(drugKey))} in US EMS protocols`,
     chips: [
       `${num(agencies.size)} named agencies`,
@@ -1083,7 +1084,7 @@ function fiveNumberBar(dist, unit) {
             <thead><tr><th>min</th><th>p25</th><th>median</th><th>p75</th><th>max</th></tr></thead>
             <tbody><tr>${[dist.min, dist.p25, dist.median, dist.p75, dist.max].map(v => `<td>${esc(fmtNum(v))}</td>`).join('')}</tr></tbody>
           </table>
-          <p class="muted">Values in ${esc(unit)}. One value per source (that source's median), so a document listing a drug five times still gets one vote.</p>
+          <p class="muted">Values in ${esc(unit)}. One value per source (that source's median), so a document listing a medication five times still gets one vote.</p>
         </div>`;
 }
 
@@ -1144,7 +1145,7 @@ function drugPageV3(drugKey, { summary, groups, indicationPaths, pageAgencies, m
   // rather than left to read as the same claim.
   const groupIndications = new Set(groups.map(g => g.key.indicationKey));
   const body = `${docHeader({
-    kind: 'Drug',
+    kind: 'Medication',
     title: `${esc(drugLabel(drugKey))} in US EMS protocols`,
     signals: [manifest.flaggedRows ? signalPill('review', `${num(manifest.flaggedRows)} under review`) : signalPill('current', 'Current')],
     chips: [
@@ -1192,12 +1193,12 @@ ${named.html}${pageless > 0
   const rail = `${citePanel('cite', [
     esc(`United States EMS Protocol Census, ${drugLabel(drugKey)}: n=${summary.n.sources} protocols from ${summary.n.agencies} named agencies / ${summary.n.states} states, as of ${manifest.asOf}`),
   ])}
-          <p class="muted railnote">Each distribution on this page carries its own n. A per-indication figure is narrower than this drug-wide one, and the group's own citation line is the one to quote for it.</p>
+          <p class="muted railnote">Each distribution on this page carries its own n. A per-indication figure is narrower than this medication-wide one, and the group's own citation line is the one to quote for it.</p>
 ${railLinks('Indications', indications
     .filter(({ indicationKey }) => indicationPaths.has(`${drugKey}/${indicationKey}`))
     .map(({ indicationKey }) => [indicationLabel(indicationKey), indicationPaths.get(`${drugKey}/${indicationKey}`)]))}
 ${railLinks('Related', [
-    ['All drugs and states', '/census/'],
+    ['All medications and states', '/census/'],
     ['Methodology', '/census/methodology/'],
     ['Data license', '/census/data-license/'],
   ])}
@@ -1308,7 +1309,7 @@ ${named.html}`;
   const rail = `${citePanel('cite', [esc(lead ? lead.cite : `United States EMS Protocol Census, ${drugLabel(drugKey)} for ${indicationLabel(indicationKey)}, as of ${manifest.asOf}`)])}
 ${railLinks('Related', [
     [`All ${drugLabel(drugKey)} indications`, `/census/drugs/${slug(drugKey)}/`],
-    ['All drugs and states', '/census/'],
+    ['All medications and states', '/census/'],
     ['Methodology', '/census/methodology/'],
     ['Data license', '/census/data-license/'],
   ])}`;
@@ -1509,7 +1510,7 @@ ${stats([
 
       <section id="extraction">
         <h2>What is read out of a document, and what is not</h2>
-        <p>Extraction pulls drug, indication, population, dose, route, repeat interval, and standing-order status. It does not read a protocol's narrative, its flowcharts as flowcharts, or anything a human reader would infer from layout.</p>
+        <p>Extraction pulls medication, indication, population, dose, route, repeat interval, and standing-order status. It does not read a protocol's narrative, its flowcharts as flowcharts, or anything a human reader would infer from layout.</p>
         <p>Two corpus shapes feed the census, and their limits are different. One carries page numbers; the other carries none, so <strong>page not captured</strong> is the majority case and is not a defect. The second shape also carries no standing-order flag, so <strong>standing</strong> is absent rather than false on those entries &mdash; the census never renders an absent flag as "not a standing order", because absence of a flag is not evidence of the negative. Pediatric age bands were lost upstream on the second shape entirely: ${num(m.rowsPedsExcluded)} of ${num(m.doseRows)} entries (${pct(m.rowsPedsExcluded, m.doseRows)}) ${m.rowsPedsExcluded === 1 ? 'is a pediatric entry' : 'are pediatric entries'} with no age band, and ${m.rowsPedsExcluded === 1 ? 'it is' : 'they are'} excluded from every distribution and every outlier check on this site. ${m.rowsPedsExcluded === 1 ? 'It is' : 'They are'} still counted, and ${m.rowsPedsExcluded === 1 ? 'it still appears' : 'they still appear'} on their agency's own page as written.</p>
       </section>
 
@@ -1528,7 +1529,7 @@ ${stats([
 
       <section id="sources">
         <h2>Sources and named agencies are two different counts</h2>
-        <p>A <strong>source</strong> is one protocol document. A <strong>named agency</strong> is a source whose agency is a public record and is identified on the census. Every distribution is built one value per source &mdash; a document that lists a drug five times gets one vote, its own median, not five &mdash; so a verbose document cannot decide a median for everyone.</p>
+        <p>A <strong>source</strong> is one protocol document. A <strong>named agency</strong> is a source whose agency is a public record and is identified on the census. Every distribution is built one value per source &mdash; a document that lists a medication five times gets one vote, its own median, not five &mdash; so a verbose document cannot decide a median for everyone.</p>
         <p>Both counts appear on every published number, in the form "n=&lt;sources&gt; protocols from &lt;agencies&gt; named agencies / &lt;states&gt; states". Sources are always the larger number, and quoting one for the other is the mistake the two-part citation exists to prevent.</p>
         <p>A group publishes a distribution only at <strong>${MIN_SOURCES} or more sources</strong>. Below that the census shows the count and nothing else: five documents is thin, and four is not a distribution.</p>
       </section>
@@ -1542,7 +1543,7 @@ ${stats([
 
       <section id="accuracy">
         <h2>Accuracy: not yet measured</h2>
-        <p><strong>We do not publish a dose-level accuracy number, because we have not measured one.</strong> What exists today is a hand-labelled comparison of drug names, indication text, contraindications and adverse effects &mdash; no dose value in it is ever compared against a document. Publishing an extraction-success rate or a model-agreement figure in place of accuracy would be quoting a measurement of a different thing, and it would read as the number this section does not have.</p>
+        <p><strong>We do not publish a dose-level accuracy number, because we have not measured one.</strong> What exists today is a hand-labelled comparison of medication names, indication text, contraindications and adverse effects &mdash; no dose value in it is ever compared against a document. Publishing an extraction-success rate or a model-agreement figure in place of accuracy would be quoting a measurement of a different thing, and it would read as the number this section does not have.</p>
         <p>What is measured, and lives on this page because it comes from the build itself: the share of entries that parse to a number (${pct(m.dosesParsed, m.doseRows)}), the share under outlier review (${pct(m.flaggedRows, m.doseRows)}), and the share of pediatric entries excluded for having no age band (${pct(m.rowsPedsExcluded, m.doseRows)}).</p>
         <p>Every page here carries the same warning, and it is the honest one: this is a training reference compiled from published protocols, not a clinical order. Verify against your own agency's document and your medical director.</p>
       </section>
@@ -1579,7 +1580,7 @@ ${stats([
   ])}
 ${railLinks('Related', [
     ['Data license', '/census/data-license/'],
-    ['All drugs and states', '/census/'],
+    ['All medications and states', '/census/'],
   ])}`;
 
   return {
@@ -1648,7 +1649,7 @@ function dataLicensePage() {
   ])}
 ${railLinks('Related', [
     ['Methodology', '/census/methodology/'],
-    ['All drugs and states', '/census/'],
+    ['All medications and states', '/census/'],
   ])}`;
 
   return {
