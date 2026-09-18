@@ -1,0 +1,1402 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Agency mock 1</title><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<link rel="stylesheet" href="/assets/chrome.css?v=e6fd0c6d">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&display=swap" rel="stylesheet"><style>
+:root{--bg:#e6dfc8;--surface:#f1ebd6;--surface2:#d4cdb4;--ink:#11141b;--ink2:#4a4d57;--line:rgba(17,20,27,.18);--accent:#2d3a8c;--rust:#8a4a1f;
+--serif:'Source Serif 4',Georgia,serif;--mono:'IBM Plex Mono',ui-monospace,monospace;--sans:Inter,system-ui,sans-serif}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--sans)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(16px,5vw,64px)}
+.eyebrow{font:600 11px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--rust)}
+h1,h2{font-family:var(--serif);font-weight:600;letter-spacing:-.02em;line-height:1.02;margin:0}
+h1{font-size:clamp(40px,6.2vw,84px)} h2{font-size:clamp(26px,3.2vw,40px)}
+.lede{font-size:clamp(17px,1.5vw,21px);color:var(--ink2);max-width:56ch;margin:18px 0 0}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-block;padding:13px 22px;border-radius:8px;font-weight:600;text-decoration:none;border:1px solid var(--ink);color:var(--ink)}
+.btn.p{background:var(--ink);color:var(--bg)}
+.tour iframe{display:block;width:100%;aspect-ratio:16/11;border:0;border-radius:14px;background:#08090b}
+.fold{padding:clamp(48px,7vw,96px) 0;border-top:1px solid var(--line)}
+.fold.tight{padding:clamp(32px,4vw,56px) 0}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;margin-top:32px}
+.step .n{font:600 12px var(--mono);color:var(--rust);letter-spacing:.14em}
+.step h3{font:600 19px/1.25 var(--sans);margin:8px 0 6px} .step p{margin:0;color:var(--ink2)}
+.price{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(24px,5vw,72px);align-items:start}
+.big{font-family:var(--serif);font-size:clamp(56px,7vw,96px);line-height:1;letter-spacing:-.03em}
+.big small{font:600 12px var(--mono);letter-spacing:.12em;margin-left:8px;color:var(--ink2)}
+.slider{margin-top:24px} .slider label{display:flex;justify-content:space-between;font:600 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)}
+.slider input{width:100%;accent-color:var(--accent);margin-top:10px}
+.rows{border-top:1px solid var(--line)} .rows div{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line)}
+.rows b{font-family:var(--serif);font-size:20px;font-weight:600;white-space:nowrap} .rows span{color:var(--ink2)}
+.rows .net b{color:var(--rust)} .fine{font-size:13px;color:var(--ink2);margin-top:12px}
+details{border-bottom:1px solid var(--line);padding:16px 0} details summary{cursor:pointer;font-weight:600;font-size:17px;list-style:none;display:flex;justify-content:space-between}
+details summary::after{content:'+';font-weight:400;color:var(--ink2)} details[open] summary::after{content:'\2212'} details p{color:var(--ink2);margin:10px 0 0;max-width:70ch}
+.cta{background:var(--surface);text-align:center;padding:clamp(56px,8vw,110px) 0}
+.cta .btns{justify-content:center} .cta p{color:var(--ink2);margin:14px auto 0;max-width:52ch}
+.mock-tag{position:fixed;left:14px;bottom:14px;z-index:9;font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;background:var(--rust);color:var(--bg);padding:8px 11px;border-radius:3px}
+.hero{padding:clamp(56px,8vw,110px) 0 clamp(40px,5vw,72px)}
+.split{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(28px,5vw,64px);align-items:center}
+@media(max-width:820px){.price,.split{grid-template-columns:1fr}}
+.letter{max-width:62ch;margin:0 auto} .letter p{font-family:var(--serif);font-size:clamp(18px,1.7vw,22px);line-height:1.5;margin:0 0 1.3em}
+.letter p b{font-weight:600} .letter .sig{font:500 14px var(--sans);color:var(--ink2)}
+</style></head><body><header class="site-header">
+    <nav class="site-nav" aria-label="Primary">
+      <div class="nav-left">
+        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="30" height="30"><span>ProtoQuiz</span></a>
+        <div class="nav-links">
+          <a href="/app/" class="nav-link">App</a>
+          <a href="/agency/" class="nav-link on" aria-current="page">For agencies</a>
+          <a href="/census/" class="nav-link">EMS Census</a>
+          <a href="/about/" class="nav-link">About</a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="https://demo.protoquiz.com" class="nav-link">Sign in</a>
+        <a href="/agency/#contact" class="nav-cta">Contact sales</a>
+      </div>
+    </nav>
+  </header><main><section class="hero"><div class="wrap"><div class="eyebrow">For EMS agencies</div><h1 style="margin-top:16px">Their local protocols.</h1>
+<p class="lede">What do EMTs and paramedics use on every call but hardly train on? Their own book. ProtoQuiz turns your protocol PDF into a quiz a shift for your crews, with every answer cited to the page.</p>
+<div class="btns"><a class="btn p" href="mailto:sales@protoquiz.com">Get started &rarr;</a><a class="btn" href="https://demo.protoquiz.com">Try the live demo</a></div></div></section>
+<section class="fold tight"><div class="wrap"><div class="tour"><iframe src="/agency/tour/?v=17" title="ProtoQuiz agency product tour" loading="lazy" allowfullscreen></iframe></div></div></section>
+<section class="fold"><div class="wrap"><div class="price">
+  <div><div class="eyebrow">Pricing</div><h2 style="margin-top:14px">$80 per provider, per year.</h2>
+    <p class="lede">$25 per seat, per quarter. Prepay the year and save 20%. No setup fees, no add-ons, no tiers.</p>
+    <div class="slider"><label><span>Your agency</span><span><span id="count">75</span> providers</span></label><input id="n" type="range" min="25" max="750" step="25" value="75"></div></div>
+  <div><div class="rows">
+    <div><span>You pay, annual prepay</span><b id="pay"></b></div>
+    <div><span>Billed quarterly instead</span><b id="q"></b></div>
+    <div><span>Estimated savings, sourced</span><b id="save"></b></div>
+    <div class="net"><span>Net positive</span><b id="net"></b></div></div>
+    <p class="fine">Savings are $250 per provider per year: faster onboarding (AAA 2022 turnover survey) and fewer remediations (peer-reviewed prehospital med-error data). Legal and audit upside kept out of the total. <a href="/agency/compare/">Sources</a>.</p></div>
+</div></div></section>
+<section class="fold"><div class="wrap"><div class="eyebrow">Common questions</div><div style="margin-top:14px"><details><summary>How does setup work?</summary><p>Send us your protocol PDF. We build the question bank, scoped per certification level, every question verified against your document and cited to the page. You review it before it goes to your crews. We host on a custom subdomain; crews open a link in any browser. PDF to live tenant: about a week.</p></details>
+<details><summary>What if our protocols change mid-term?</summary><p>Send the new PDF. We update the content, you review the changes, and your crews see the new questions on their next session.</p></details>
+<details><summary>How much IT lift is this?</summary><p>None. No install, no SSO required (supported if you want it).</p></details>
+<details><summary>How does billing work?</summary><p>$25 per seat, per quarter. Prepay the year and it is $80 per provider instead of $100. No setup fees, no add-ons, no tiers. The free six-month pilot program is closed; standard pricing applies to new agencies.</p></details>
+<p class="fine">More detail: <a href="/agency/faq/">the full agency FAQ</a> &middot; <a href="/agency/compare/">how this compares to registry prep, an LMS, and in-house training</a></p></div></div></section><section class="cta"><div class="wrap"><h2>See what it looks like for your organization.</h2><p>We start with one email and your protocol PDF. Live within a week. If it doesn't help your crews, walk away.</p>
+<div class="btns"><a class="btn p" href="mailto:sales@protoquiz.com">Get started &rarr;</a><a class="btn" href="https://demo.protoquiz.com">Try the live demo</a></div></div></section></main><!-- shared-chrome:footer -->
+  <footer class="site-footer">
+    <div class="foot-cols">
+      <div class="foot-brand">
+        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="24" height="24"><span>ProtoQuiz</span></a>
+        <p>Protocol training for EMS. Built by a working paramedic.</p>
+      </div>
+      <div class="foot-col">
+        <h2>Product</h2>
+        <a href="/app/">iOS app</a>
+        <a href="/app/#faq">Android</a>
+        <a href="/agency/">For agencies</a>
+        <a href="/agency/#pricing-section">Pricing</a>
+      </div>
+      <div class="foot-col">
+        <h2>Census</h2>
+        <a href="/census/">Overview</a>
+        <a href="/census/#states">By state</a>
+        <a href="/census/#drugs">By drug</a>
+        <a href="/census/methodology/">Methodology</a>
+      </div>
+      <div class="foot-col">
+        <h2>Company</h2>
+        <a href="/about/">About</a>
+        <a href="/blog/">Blog</a>
+        <a href="/trust/">Trust</a>
+        <a href="https://status.protoquiz.com">Status</a>
+      </div>
+      <div class="foot-col">
+        <h2>Legal</h2>
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+        <a href="/trust/">Security</a>
+        <a href="/census/data-license/">Data license</a>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>&copy; 2026 Teach Me To Live LLC, d/b/a ProtoQuiz&trade;.</span>
+      <span>Denver, CO &middot; Atlanta, GA</span>
+    </div>
+  </footer>
+  <!-- /shared-chrome:footer -->
+
+  <!-- Source citation modal: opens when user clicks a 'What you save' row -->
+  <div class="src-modal" id="src-modal" role="dialog" aria-modal="true" aria-labelledby="src-modal-title" hidden>
+    <div class="src-modal-backdrop" data-src-close></div>
+    <div class="src-modal-card">
+      <button type="button" class="src-modal-close" data-src-close aria-label="Close">&times;</button>
+      <div class="src-modal-eyebrow" id="src-modal-eyebrow">Source</div>
+      <h3 class="src-modal-title" id="src-modal-title">Title</h3>
+      <div class="src-modal-claim" id="src-modal-claim">Claim</div>
+
+      <!-- TL;DR: bottom line in a sentence + bullet recap. Always visible. -->
+      <div class="src-modal-tldr" id="src-modal-tldr">TL;DR</div>
+
+      <!-- Drill-down: full math, sources, assumptions. Collapsed by default. -->
+      <details class="src-modal-details">
+        <summary class="src-modal-details-summary">
+          <span class="src-modal-details-label">Show the full math, sources, and assumptions</span>
+          <svg class="src-modal-details-chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 L6 7.5 L9 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <div class="src-modal-details-body">
+          <div class="src-modal-section">
+            <div class="src-modal-section-label">The math</div>
+            <div class="src-modal-math" id="src-modal-math">Math</div>
+          </div>
+
+          <div class="src-modal-section">
+            <div class="src-modal-section-label">From the source (verbatim)</div>
+            <blockquote class="src-modal-quote" id="src-modal-quote">Quote</blockquote>
+          </div>
+
+          <div class="src-modal-section" id="src-modal-assumption-wrap">
+            <div class="src-modal-section-label">Our estimate</div>
+            <p class="src-modal-assumption" id="src-modal-assumption">Assumption</p>
+          </div>
+
+          <div class="src-modal-section">
+            <div class="src-modal-section-label">Sources</div>
+            <ul class="src-modal-sources" id="src-modal-sources"></ul>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    /* Force scroll to top on refresh — Chrome restores scroll which skips the hero,
+       and any #hash (from clicking scroll-cue or nav links) makes the browser jump
+       past the hero on reload. Strip hash + scroll to top before paint. */
+    if('scrollRestoration' in history){ history.scrollRestoration = 'manual'; }
+    if(window.location.hash){
+      history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+    window.scrollTo(0, 0);
+    window.addEventListener('beforeunload', function(){ window.scrollTo(0, 0); });
+    window.addEventListener('load', function(){ window.scrollTo(0, 0); });
+
+    /* === HERO KINETIC REVEAL === */
+    (function heroReveal(){
+      const quote = document.getElementById('hero-quote');
+      if(!quote) return;
+      if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        // Same five-part sequence, but each part fades in as a whole block --
+        // no per-word stagger, no travel. ~2.4s total.
+        const RM_STEP = 800;
+        requestAnimationFrame(() => quote.classList.add('in'));
+        setTimeout(() => quote.classList.add('why-in'),   RM_STEP);
+        setTimeout(() => quote.classList.add('tag-in'),   RM_STEP * 2);
+        setTimeout(() => quote.classList.add('intro-in'), RM_STEP * 3);
+        return;
+      }
+      // Five-part hero reveal. Every timing constant lives here for easy tuning.
+      // Part 1 (lede):     "What is the thing..."     word-by-word
+      // Part 2 (cyan):     "Their local protocols."   all words at once
+      // Part 3 (body):     "In school, you learn..."  word-by-word
+      // Part 4 (tag):      "Until now."               all at once, short pause before
+      // Part 5 (intro):    "Introducing ProtoQuiz"    all at once, shortish pause before
+
+      // --- Part 1: lede word stagger ---
+      const ledeLine    = quote.querySelector('.hero-lede');
+      const ledeWords   = ledeLine.querySelectorAll('.w');
+      const LEDE_PER    = 165;          // ms between word starts
+      const LEDE_FADE   = 650;          // ms each word fades in
+      ledeWords.forEach((w, i) => {
+        w.style.transitionDelay = (i * LEDE_PER) + 'ms';
+        w.style.transitionDuration = LEDE_FADE + 'ms, ' + (LEDE_FADE + 100) + 'ms';
+      });
+      const ledeEnd = (ledeWords.length - 1) * LEDE_PER + LEDE_FADE;
+
+      // --- Part 2: cyan all-at-once ---
+      const cyanLine    = quote.querySelector('.hero-question');
+      const cyanWords   = cyanLine.querySelectorAll('.w');
+      const CYAN_PAUSE  = 500;          // pause after lede before cyan appears
+      const CYAN_FADE   = 900;          // single fade duration for the whole cyan line
+      const cyanStart   = ledeEnd + CYAN_PAUSE;
+      cyanWords.forEach(w => {
+        w.style.transitionDelay = cyanStart + 'ms';   // every word starts at the SAME time
+        w.style.transitionDuration = CYAN_FADE + 'ms, ' + (CYAN_FADE + 100) + 'ms';
+      });
+      const cyanEnd = cyanStart + CYAN_FADE;
+
+      // --- Part 3: body word stagger ---
+      // transitionDelay on .bw is RELATIVE to when .why-in is added (not absolute from page load).
+      // So we only stagger across body words, not from page-load.
+      const bodyWords   = quote.querySelectorAll('.hero-why-body .bw');
+      const BODY_PAUSE  = 500;          // pause after cyan before body starts
+      const BODY_PER    = 55;           // ms between body words -- fast enough to read normally
+      const BODY_FADE   = 600;
+      bodyWords.forEach((w, i) => {
+        w.style.transitionDelay = (i * BODY_PER) + 'ms';
+        w.style.transitionDuration = BODY_FADE + 'ms, ' + (BODY_FADE + 100) + 'ms';
+      });
+      const bodyStart    = cyanEnd + BODY_PAUSE;                                // absolute time when why-in fires
+      const bodyDuration = (bodyWords.length - 1) * BODY_PER + BODY_FADE;       // how long the chain takes
+      const bodyEnd      = bodyStart + bodyDuration;                            // absolute time body finishes
+
+      // --- Part 4 + Part 5 timing ---
+      const TAG_PAUSE   = 400;          // shortish pause after body
+      const INTRO_PAUSE = 450;          // shortish pause after "Until now."
+      const tagStart    = bodyEnd + TAG_PAUSE;
+      const introStart  = tagStart + 600 + INTRO_PAUSE;   // tag fade overlaps slightly
+
+      requestAnimationFrame(() => quote.classList.add('in'));
+      // why-in releases the body word chain (delays handle the stagger).
+      setTimeout(() => quote.classList.add('why-in'),   bodyStart);
+      setTimeout(() => quote.classList.add('tag-in'),   tagStart);
+      setTimeout(() => quote.classList.add('intro-in'), introStart);
+    })();
+
+    /* === MOVIE PLAYER === */
+    const stage = document.getElementById('stage');
+    const movie = document.getElementById('movie');
+    const cursor = document.getElementById('cursor');
+    const progressEl = document.getElementById('progress');
+    const beatNarrations = document.querySelectorAll('.beat');
+    const beatCurrentEl = document.getElementById('beat-current');
+    const beatTotalEl = document.getElementById('beat-total');
+    const playBtn = document.getElementById('play-btn');
+    const playIcon = document.getElementById('play-icon');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const autoplayState = document.getElementById('autoplay-state');
+
+    const PLAY_ICON_PAUSE = '<rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/>';
+    const PLAY_ICON_PLAY = '<polygon points="6 4 20 12 6 20 6 4"/>';
+
+    // Beat metadata: name, duration, click target, frame.
+    // First beat is 'duo' (phone+laptop side-by-side, both showing home).
+    // After that, no phone/laptop distinction in the player meta.
+    const TRACKS = {
+      provider: [
+        {name:'home',              dur:7500, click:null,               frame:'phone'},
+        // Multi-step: from home, walk through Protocol Quizzes -> Cardiac -> Paramedic -> Test 1
+        {name:'start-quiz',        dur:13000, frame:'phone', steps:[
+          {scene:'home',         click:'protocol-quizzes', dwell:2200},
+          {scene:'topics',       click:'cardiac',          dwell:2400},
+          {scene:'cert-picker',  click:'cert-paramedic',   dwell:2600},
+          {scene:'test-picker',  click:'test-1',           dwell:2400},
+        ]},
+        // Question prompt -> answer click -> green correct state -> ref click -> PDF
+        // readTime = pre-click question read; postClick = wait after click before next scene mounts.
+        // Cursor anim itself is ~1900ms.
+        {name:'answer-question',   dur:14000, frame:'phone', steps:[
+          {scene:'q-unanswered', click:'answer-d', readTime:5500, postClick:400},
+          {scene:'q-answered',   click:'ref-72',   readTime:3000, postClick:400},
+        ]},
+        {name:'pdf',               dur:10000, click:null,              frame:'phone'},
+        // Multi-step: back to home, Scenarios tile -> scenarios list -> Scenario 1 -> answer -> green correct -> Continue
+        {name:'start-scenario',    dur:23500, frame:'phone', steps:[
+          {scene:'home',                   click:'scenarios',  readTime:1500, postClick:400},
+          {scene:'scenarios-list',         click:'scenario-1', readTime:1500, postClick:400},
+          {scene:'scenario-intro',         click:'sc-answer',  readTime:7000, postClick:400},
+          {scene:'scenario-intro-correct', click:'sc-continue', readTime:3500, postClick:400},
+        ]},
+        // EKG: read the strip + question -> click D -> see correct (EKG visible) -> click Finish
+        {name:'scenario-ekg',      dur:15500, frame:'phone', steps:[
+          {scene:'scenario-ekg',         click:'sc-ekg-answer', readTime:6000, postClick:400},
+          {scene:'scenario-ekg-correct', click:'sc-finish',     readTime:3500, postClick:300},
+        ]},
+        // Scenario complete: score badge + Evidence Based Learning + Clinical Review
+        // dur covers startDelay (1400) + scrollDuration (7500) + tail (1600) = ~10500
+        {name:'scenario-complete', dur:10500, click:null,              frame:'phone',  onLoad:'scrollScenarioComplete'},
+        // Closing logo card. Punctuation, then the loop restarts.
+        {name:'outro',             dur:10000, click:null,              frame:'phone'},
+      ],
+      admin: [
+        {name:'admin-home',        dur:11500, click:'lap-admin-enter', frame:'laptop',  clickDelay:8500},
+        // Read the dashboard + see OB/Peds called out as weak, then click Assignments.
+        // Most rows are green now; only OB/Peds is amber. Lengthened so viewers have time to read.
+        {name:'admin-dash',        dur:11000, click:'lap-tab-assign',  frame:'laptop',  clickDelay:7400},
+        // Click "New Assignment" later so viewers can read the existing assignments first.
+        {name:'admin-assignments', dur:9500, click:'lap-new-assign',   frame:'laptop',  clickDelay:5500},
+        {name:'admin-new',         dur:10000, click:'lap-confirm',     frame:'laptop',  clickDelay:5500},
+        // After export click, show a loading spinner; runBeat for admin-export hides it.
+        {name:'admin-confirm',     dur:12500, click:'lap-export-btn',  frame:'laptop',  clickDelay:7500, onLoad:'showLapToast'},
+        {name:'admin-export',      dur:8500, click:null,               frame:'laptop'},
+        // Closing logo card. Punctuation, then the loop restarts.
+        {name:'outro',             dur:10000, click:null,              frame:'laptop'},
+      ],
+    };
+    let currentTrack = 'provider';
+    let beats = TRACKS[currentTrack];
+    let TOTAL = beats.length;
+    beatTotalEl.textContent = String(TOTAL).padStart(2, '0');
+    function rebuildProgressDots(){
+      // Continuous bar -- no spans needed. Just reset the fill.
+      progressEl.style.setProperty('--prog', '0');
+    }
+    rebuildProgressDots();
+
+    const isMobileLayout = () => window.matchMedia('(max-width:900px)').matches;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function setFrame(frame){
+      if(stage.dataset.frame === frame) return;
+      stage.dataset.frame = frame;
+      movie.classList.toggle('is-laptop', frame === 'laptop');
+    }
+
+    /* setActiveScene with a brief crossfade gap so the outgoing scene
+       has time to fade out before the incoming one starts fading in.
+       This eliminates the visual "snap" between beats with different frames. */
+
+
+    function setActiveScene(name){
+      document.querySelectorAll('.scene').forEach(s => s.classList.remove('active'));
+      const sceneEl = document.querySelector('[data-beat="' + name + '"]');
+      if(sceneEl) sceneEl.classList.add('active');
+      // Reset any leftover toast
+      const toast = document.getElementById('lap-toast');
+      if(toast) toast.classList.remove('show');
+    }
+
+    function setActiveNarration(name){
+      // Hard-snap any currently-live beat to invisible BEFORE the new one
+      // animates in, so rapid next-btn clicks don't stack two fading beats.
+      beatNarrations.forEach(b => {
+        if(b.classList.contains('live') && b.dataset.beatText !== name){
+          b.classList.add('was-live');
+        }
+        b.classList.toggle('live', b.dataset.beatText === name);
+      });
+      // Clear the snap class on the next frame so the old beat is fully out
+      // and ready to fade back in if needed later.
+      requestAnimationFrame(() => {
+        beatNarrations.forEach(b => b.classList.remove('was-live'));
+      });
+    }
+
+    let progressAnim = null;
+    function setProgress(i){
+      // Cancel any in-flight animation
+      if(progressAnim){ cancelAnimationFrame(progressAnim); progressAnim = null; }
+      const dur = (beats[i] && beats[i].dur) || 4000;
+      // Reset to 0 immediately; the rAF tick fills it across the beat duration.
+      progressEl.style.setProperty('--prog', '0');
+      const start = performance.now();
+      function tick(now){
+        if(!isPlaying){ return; }  // pause halts the fill where it is
+        const t = Math.min(1, (now - start) / dur);
+        progressEl.style.setProperty('--prog', t.toFixed(4));
+        if(t < 1){
+          progressAnim = requestAnimationFrame(tick);
+        } else {
+          progressAnim = null;
+        }
+      }
+      // Start on next frame so the reset paints first
+      requestAnimationFrame(() => {
+        if(isPlaying) progressAnim = requestAnimationFrame(tick);
+      });
+    }
+
+    function updateMeta(i){
+      beatCurrentEl.textContent = String(i + 1).padStart(2, '0');
+      const beatNumEl = document.getElementById('beat-num');
+      if(beatNumEl) beatNumEl.setAttribute('aria-label', `Beat ${i + 1} of ${TOTAL}`);
+    }
+
+    function maybeScrollIntoView(){
+      if(reducedMotion) return;
+      if(!isMobileLayout()) return;
+      const wt = document.getElementById('walkthrough-legacy');
+      if(!wt) return;
+      const wtR = wt.getBoundingClientRect();
+      if(wtR.bottom < 0 || wtR.top > window.innerHeight) return;
+      const live = document.querySelector('.beat.live');
+      if(!live) return;
+      const r = live.getBoundingClientRect();
+      const margin = 80;
+      if(r.top < margin || r.bottom > window.innerHeight - margin){
+        const target = window.scrollY + r.top - (window.innerHeight / 2 - r.height / 2);
+        window.scrollTo({top: target, behavior:'smooth'});
+      }
+    }
+
+    let cursorAnim = null, fadeAnim = null;
+    function easeOutQuint(t){ return 1 - Math.pow(1 - t, 5); }
+    function easeInOutCubic(t){ return t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2; }
+    function animateCursor({fromX, fromY, toX, toY, duration, ease, onDone}){
+      if(cursorAnim) cancelAnimationFrame(cursorAnim);
+      const start = performance.now();
+      function tick(now){
+        const t = Math.min(1, (now - start) / duration);
+        const k = ease(t);
+        cursor.style.left = (fromX + (toX - fromX) * k) + 'px';
+        cursor.style.top  = (fromY + (toY - fromY) * k) + 'px';
+        if(t < 1){ cursorAnim = requestAnimationFrame(tick); } else if(onDone){ onDone(); }
+      }
+      cursorAnim = requestAnimationFrame(tick);
+    }
+    function fadeCursor(to, duration){
+      if(fadeAnim) cancelAnimationFrame(fadeAnim);
+      const from = parseFloat(cursor.style.opacity || '0');
+      const start = performance.now();
+      function tick(now){
+        const t = Math.min(1, (now - start) / duration);
+        cursor.style.opacity = (from + (to - from) * t).toFixed(3);
+        if(t < 1) fadeAnim = requestAnimationFrame(tick);
+      }
+      fadeAnim = requestAnimationFrame(tick);
+    }
+    function targetCenter(el){
+      const movieRect = movie.getBoundingClientRect();
+      const r = el.getBoundingClientRect();
+      return {
+        x: r.left - movieRect.left + r.width / 2 - 2.25,
+        y: r.top  - movieRect.top  + r.height / 2 - 1.5,
+      };
+    }
+    let lastEntryIdx = -1;
+    function pickEntry(target){
+      const movieRect = movie.getBoundingClientRect();
+      const W = movieRect.width, H = movieRect.height;
+      const cx = targetCenter(target);
+      const edges = [
+        {x: W * 0.92, y: H * 0.92}, {x: W * 0.08, y: H * 0.20},
+        {x: W * 0.50, y: H * 0.95}, {x: W * 0.92, y: H * 0.50},
+        {x: W * 0.08, y: H * 0.92}, {x: W * 0.92, y: H * 0.18},
+        {x: W * 0.50, y: H * 0.05}, {x: W * 0.08, y: H * 0.50},
+      ];
+      const minDist = Math.min(W, H) * 0.45;
+      const candidates = [];
+      for(let i = 0; i < edges.length; i++){
+        if(i === lastEntryIdx) continue;
+        const c = edges[i];
+        if(Math.hypot(c.x - cx.x, c.y - cx.y) > minDist) candidates.push(i);
+      }
+      const pool = candidates.length ? candidates : edges.map((_, i) => i).filter(i => i !== lastEntryIdx);
+      const pick = pool[Math.floor(Math.random() * pool.length)];
+      lastEntryIdx = pick;
+      const c = edges[pick];
+      return {x: c.x + (Math.random()*30 - 15), y: c.y + (Math.random()*24 - 12)};
+    }
+    let clickGen = 0;
+    const pendingTimeouts = new Set();
+    function safeTimeout(fn, ms){
+      const id = setTimeout(() => { pendingTimeouts.delete(id); fn(); }, ms);
+      pendingTimeouts.add(id);
+      return id;
+    }
+    function clearAllPending(){
+      pendingTimeouts.forEach(id => clearTimeout(id));
+      pendingTimeouts.clear();
+    }
+
+    function performClickSequence(targetKey){
+      const target = document.querySelector('.scene.active [data-click="' + targetKey + '"]');
+      if(!target) return;
+      const myGen = ++clickGen;
+      const aborted = () => myGen !== clickGen;
+      const entry = pickEntry(target);
+      const cx = targetCenter(target);
+      const arcX = cx.x + (Math.random() * 24 - 12);
+      const arcY = cx.y - 14 - Math.random() * 12;
+      cursor.style.left = entry.x + 'px';
+      cursor.style.top  = entry.y + 'px';
+      cursor.style.opacity = 0;
+      requestAnimationFrame(() => {
+        if(aborted()) return;
+        fadeCursor(1, 280);
+        animateCursor({
+          fromX: entry.x, fromY: entry.y, toX: arcX, toY: arcY,
+          duration: 1300, ease: easeOutQuint,
+          onDone: () => {
+            if(aborted()) return;
+            safeTimeout(() => {
+              if(aborted()) return;
+              animateCursor({
+                fromX: arcX, fromY: arcY, toX: cx.x, toY: cx.y,
+                duration: 450, ease: easeInOutCubic,
+                onDone: () => {
+                  if(aborted()) return;
+                  safeTimeout(() => {
+                    if(aborted()) return;
+                    target.classList.add('clicked');
+                    fadeCursor(0, 220);
+                    safeTimeout(() => target.classList.remove('clicked'), 700);
+                    // Special: certain clicks show a loading overlay until the
+                    // next scene mounts. Hidden by runBeat on the next beat.
+                    const LOADERS = {
+                      'ref-72':         { text: 'Opening protocol · page 72' },
+                      'lap-export-btn': { text: 'Generating PDF report …' },
+                    };
+                    if(LOADERS[targetKey]){
+                      const loader = document.getElementById('movie-loader');
+                      const txt = document.querySelector('#movie-loader .movie-loader-text');
+                      if(loader && txt){
+                        txt.textContent = LOADERS[targetKey].text;
+                        safeTimeout(() => loader.classList.add('show'), 380);
+                      }
+                    }
+                  }, 180);
+                }
+              });
+            }, 250);
+          }
+        });
+      });
+    }
+
+    /* === Player state machine === */
+    let beatIdx = 0;
+    let isPlaying = true;
+    let advanceTimer = null;
+    let clickTimer = null;
+    let toastTimer = null;
+    let resumeTimer = null;
+    let trackSwitchTimer = null;  // Pending crossfade -> beat 0 after a track switch.
+    let chainGen = 0;  // Multi-step beat chain generation; survives clickGen bumps from inner clicks.
+
+    function clearTimers(){
+      if(advanceTimer){ clearTimeout(advanceTimer); advanceTimer = null; }
+      if(clickTimer){ clearTimeout(clickTimer); clickTimer = null; }
+      if(toastTimer){ clearTimeout(toastTimer); toastTimer = null; }
+      if(resumeTimer){ clearTimeout(resumeTimer); resumeTimer = null; }
+      if(trackSwitchTimer){ clearTimeout(trackSwitchTimer); trackSwitchTimer = null; }
+      if(progressAnim){ cancelAnimationFrame(progressAnim); progressAnim = null; }
+      clearAllPending();
+      clickGen++;
+      chainGen++;
+      if(cursorAnim){ cancelAnimationFrame(cursorAnim); cursorAnim = null; }
+      if(fadeAnim){ cancelAnimationFrame(fadeAnim); fadeAnim = null; }
+      cursor.style.opacity = 0;
+    }
+
+    function setPlayState(playing){
+      isPlaying = playing;
+      autoplayState.textContent = playing ? 'on' : 'off';
+      playIcon.innerHTML = playing ? PLAY_ICON_PAUSE : PLAY_ICON_PLAY;
+      playBtn.setAttribute('aria-label', playing ? 'Pause autoplay' : 'Play autoplay');
+      playBtn.setAttribute('aria-pressed', playing ? 'true' : 'false');
+    }
+
+    function showLapToast(){
+      const toast = document.getElementById('lap-toast');
+      if(!toast) return;
+      setTimeout(() => toast.classList.add('show'), 250);
+    }
+
+    function autoScrollScenarioComplete(){
+      // Find the .sc-complete-body inside the active scenario-complete scene
+      // and slow-scroll it from top to bottom over the beat duration so viewers
+      // see Evidence Based Learning + Clinical Review pearl without manual scroll.
+      const body = document.querySelector('.scene[data-beat="scenario-complete"] .sc-complete-body');
+      if(!body) return;
+      body.scrollTop = 0;
+      const totalScroll = Math.max(0, body.scrollHeight - body.clientHeight);
+      if(totalScroll < 10) return;
+      const startDelay = 1400;
+      const scrollDuration = 7500;
+      let raf;
+      const startTime = performance.now() + startDelay;
+      function tick(now){
+        if(now < startTime){ raf = requestAnimationFrame(tick); return; }
+        const t = Math.min(1, (now - startTime) / scrollDuration);
+        // ease-out-quart
+        const eased = 1 - Math.pow(1 - t, 4);
+        body.scrollTop = totalScroll * eased;
+        if(t < 1) raf = requestAnimationFrame(tick);
+      }
+      raf = requestAnimationFrame(tick);
+    }
+
+    function runBeat(i){
+      clearTimers();
+      beatIdx = ((i % TOTAL) + TOTAL) % TOTAL;
+      const beat = beats[beatIdx];
+      // Hide the loading overlay on every new beat mount. It's only shown
+      // transiently after specific clicks (ref-72, lap-export-btn). The text
+      // is set fresh by performClickSequence before the loader is shown.
+      const loader = document.getElementById('movie-loader');
+      if(loader) loader.classList.remove('show');
+      const prevFrame = stage.dataset.frame;
+      const frameChanged = prevFrame && prevFrame !== beat.frame;
+
+      function applyBeatBody(){
+        setActiveNarration(beat.name);
+        updateMeta(beatIdx);
+        setProgress(beatIdx);
+        maybeScrollIntoView();
+
+        if(beat.onLoad === 'showLapToast') showLapToast();
+        if(beat.onLoad === 'scrollScenarioComplete') autoScrollScenarioComplete();
+
+        if(beat.steps && beat.steps.length){
+          // Multi-step beat: walk through scenes + clicks within this single beat.
+          // chainGen survives the inner clickGen bumps caused by performClickSequence.
+          //
+          // Step timing model (preferred): { readTime, postClick }
+          //   - readTime: ms the scene is visible BEFORE cursor starts moving (read time)
+          //   - postClick: ms after click animation completes before moving to next step
+          //   - Cursor animation itself runs ~1900ms, in parallel
+          // Legacy: { dwell } -- treated as total step time, click fires at +320ms
+          //
+          // Gate the chain on isPlaying. If paused (user clicked prev/next), land on the
+          // first scene and STOP -- no cursor animation, no auto-step.
+          const myChain = ++chainGen;
+          const CURSOR_ANIM_MS = 2200;
+          let stepIdx = 0;
+          function nextStep(){
+            if(myChain !== chainGen) return;        // chain aborted (clearTimers / new beat)
+            if(!isPlaying) return;                  // paused -- stop the chain
+            if(stepIdx >= beat.steps.length) return;
+            const step = beat.steps[stepIdx];
+            stepIdx++;
+            // Switch scene if needed
+            const currentBeat = stage.dataset.scene || beat.steps[0].scene;
+            if(step.scene && step.scene !== currentBeat){
+              setActiveScene(step.scene);
+              stage.dataset.scene = step.scene;
+            }
+            // Determine pre-click read time and post-click wait
+            const useNewModel = (step.readTime !== undefined) || (step.postClick !== undefined);
+            const readTime = useNewModel ? (step.readTime !== undefined ? step.readTime : 320) : 320;
+            const postClick = useNewModel ? (step.postClick !== undefined ? step.postClick : 600) : null;
+            const legacyDwell = useNewModel ? null : (step.dwell || 2400);
+            clickTimer = setTimeout(() => {
+              if(myChain !== chainGen) return;
+              if(step.click) performClickSequence(step.click);
+              // Schedule the next step. New model: wait for cursor anim + postClick.
+              // Legacy: dwell directly.
+              const waitForNext = useNewModel
+                ? CURSOR_ANIM_MS + postClick
+                : legacyDwell;
+              clickTimer = setTimeout(nextStep, waitForNext);
+            }, readTime);
+          }
+          // Land on first scene before kicking off the chain
+          setActiveScene(beat.steps[0].scene);
+          stage.dataset.scene = beat.steps[0].scene;
+          // Only start the chain if the player is actively playing.
+          if(isPlaying) clickTimer = setTimeout(nextStep, 600);
+        } else if(beat.click && isPlaying){
+          // Legacy single-click beat
+          const fullSeq = 280 + 1300 + 250 + 450 + 180;
+          const fireAt = beat.clickDelay !== undefined ? beat.clickDelay : Math.max(400, beat.dur - fullSeq - 600);
+          clickTimer = setTimeout(() => performClickSequence(beat.click), fireAt);
+        }
+
+        if(isPlaying){
+          advanceTimer = setTimeout(() => runBeat(beatIdx + 1), beat.dur);
+        }
+      }
+
+      if(frameChanged){
+        // Choreographed swap: fade contents out, swap frame + width animates,
+        // fade contents back in.
+        stage.classList.add('is-frame-swapping');
+        clickTimer = setTimeout(() => {
+          setFrame(beat.frame);
+          // For multi-step beats, the first scene is steps[0].scene; for single beats it's beat.name
+          const firstScene = beat.steps ? beat.steps[0].scene : beat.name;
+          setActiveScene(firstScene);
+          stage.dataset.scene = firstScene;
+          requestAnimationFrame(() => {
+            stage.classList.remove('is-frame-swapping');
+          });
+          applyBeatBody();
+        }, 280);
+      } else {
+        // Same frame: simple scene swap, no fade choreography.
+        setFrame(beat.frame);
+        const firstScene = beat.steps ? beat.steps[0].scene : beat.name;
+        setActiveScene(firstScene);
+        stage.dataset.scene = firstScene;
+        applyBeatBody();
+      }
+    }
+
+    function jumpTo(newIdx){
+      // Just navigate. Don't toggle play state -- if it was playing it keeps playing,
+      // if it was paused it stays paused. The icon already reflects actual state.
+      runBeat(newIdx);
+    }
+
+    prevBtn.addEventListener('click', () => jumpTo(beatIdx - 1));
+    nextBtn.addEventListener('click', () => jumpTo(beatIdx + 1));
+    playBtn.addEventListener('click', () => {
+      if(isPlaying){
+        setPlayState(false);
+        clearTimers();
+      } else {
+        setPlayState(true);
+        runBeat(beatIdx);
+      }
+    });
+
+    if(reducedMotion){
+      // Freeze on a representative beat (admin dashboard) with static narration
+      const repIdx = beats.findIndex(b => b.name === 'admin-dash');
+      const useIdx = repIdx === -1 ? 0 : repIdx;
+      setFrame(beats[useIdx].frame);
+      setActiveScene(beats[useIdx].name);
+      setActiveNarration(beats[useIdx].name);
+      updateMeta(useIdx);
+      progressEl.style.display = 'none';
+      setPlayState(false);
+      // Disable autoplay; controls still work for manual nav
+      playBtn.addEventListener('click', () => {}, true);
+      prevBtn.addEventListener('click', (e) => {
+        e.stopImmediatePropagation();
+        const next = ((beatIdx - 1) % TOTAL + TOTAL) % TOTAL;
+        beatIdx = next;
+        setFrame(beats[next].frame);
+        setActiveScene(beats[next].name);
+        setActiveNarration(beats[next].name);
+        updateMeta(next);
+      }, true);
+      nextBtn.addEventListener('click', (e) => {
+        e.stopImmediatePropagation();
+        const next = (beatIdx + 1) % TOTAL;
+        beatIdx = next;
+        setFrame(beats[next].frame);
+        setActiveScene(beats[next].name);
+        setActiveNarration(beats[next].name);
+        updateMeta(next);
+      }, true);
+      return;
+    }
+
+    /* === Size slider for pricing + math sections === */
+    (function initPxSlider(){
+      const slider = document.getElementById('px-slider');
+      if(!slider) return;
+
+      // Per-provider yearly rates ($/provider/yr). Sourced model per VALUE_PROP.md §8a:
+      // onboarding $200 (AAA 2022 turnover + 10% ramp reduction),
+      // remediations $50 (PMC prehospital med-error data), legal $25 (NAEMT/CM&F),
+      // CE/audit $20 (NREMT recert handbook). Total $295/provider/yr.
+      // Visible row 1 = onboarding. Visible row 2 = remediations + TO time saved.
+      // Upside footer = legal $25 + CE/audit $20 = $45/yr.
+      const RATE_FTO = 200, RATE_TRAINING = 50;
+      // Legacy fields kept zero so existing math chain keeps working
+      const RATE_LAWSUIT = 0, RATE_REM = 0, RATE_LEGAL = 0, RATE_CE = 0;
+      // $25/seat/quarter = $100/provider/yr billed quarterly; annual prepay takes 20% off.
+      const RATE_QUARTER = 25, RATE_STD = RATE_QUARTER * 4, ANNUAL_DISCOUNT = 0.20;
+      // The default sizes the page for a typical agency, not a large one. At 300 the
+      // first number a visitor saw was a five-figure annual total, which reads as the
+      // price even though the price is per provider and does not change with size.
+      const DEFAULT_PROVIDERS = 75;
+      const RATE_ANNUAL = RATE_STD * (1 - ANNUAL_DISCOUNT);
+      const DIY_BASE = 14000, DIY_PER_PROVIDER = 204;
+      const LMS_PER = 73, CE_PER = 80, COMPLIANCE_PER = 60;
+
+      function money(n, opts){
+        opts = opts || {};
+        const rounded = opts.round500 ? Math.round(n / 500) * 500 : Math.round(n / 100) * 100;
+        return '$' + rounded.toLocaleString('en-US');
+      }
+      function moneyShort(n){
+        const rounded = Math.round(n / 1000) * 1000;
+        return '$' + rounded.toLocaleString('en-US');
+      }
+      function tierFor(p){
+        if(p < 150) return {key:'small', label:'Small'};
+        if(p < 400) return {key:'medium', label:'Medium'};
+        return {key:'large', label:'Large'};
+      }
+
+      function compute(p){
+        const fto = p * RATE_FTO;
+        const training = p * RATE_TRAINING;
+        const lawsuit = p * RATE_LAWSUIT;
+        const rem = p * RATE_REM;
+        const legal = p * RATE_LEGAL;
+        const ce = p * RATE_CE;
+        const total = fto + training + lawsuit + rem + legal + ce;
+        const pqAnnual = p * RATE_ANNUAL;
+        const pqStd = p * RATE_STD;
+        const diyY1 = DIY_BASE + p * DIY_PER_PROVIDER;
+        const tier = tierFor(p);
+        const hires = Math.max(2, Math.round(p / 10));
+        const pqAnnualStr = pqAnnual.toLocaleString('en-US');
+        return {
+          providers: p,
+          tier: tier.key,
+          label: tier.label.toLowerCase(),
+          'tier-pill': tier.label,
+          'rate-annual': '$' + RATE_ANNUAL,
+          'rate-annual-bare': String(RATE_ANNUAL),
+          'save-rate-bare': String(RATE_FTO + RATE_TRAINING),
+          'rate-std': '$' + RATE_STD,
+          'cost-annual': pqAnnualStr,
+          'cost-annual-strong': '$' + pqAnnualStr,
+          'cost-quarter': '$' + (pqStd / 4).toLocaleString('en-US'),
+          'cost-std': '$' + pqStd.toLocaleString('en-US'),
+          'cost-saved': '$' + (pqStd - pqAnnual).toLocaleString('en-US'),
+          'save-fto': '~' + money(fto),
+          'save-training': '~' + money(training),
+          'save-upside': '~' + money(p * 45),  /* upside footer: legal $25 + CE/audit $20 per §8a */
+          'save-lawsuit': '~' + money(lawsuit),
+          'save-remediation': '~' + money(rem),
+          'save-legal': '~' + money(legal),
+          'save-ce': '~' + money(ce),
+          'save-total': money(total, {round500:true}),
+          'save-net': '~' + money(total - pqAnnual, {round500:true}),
+          'hires-est': '~' + hires,
+          'cv-lms': moneyShort(p * LMS_PER) + '/yr',
+          'cv-ce': moneyShort(p * CE_PER) + '/yr',
+          'cv-compliance': moneyShort(p * COMPLIANCE_PER) + '/yr',
+          'cv-pq': moneyShort(pqAnnual) + '/yr',
+          'diy-y1': money(diyY1),
+          'diy-y1-total': money(diyY1),
+          'cv-savings': '~' + money(diyY1 - pqAnnual, {round500:true}),
+        };
+      }
+
+      const valEls  = document.querySelectorAll('[data-px-val]');
+      const textEls = document.querySelectorAll('[data-px-text]');
+
+      function apply(p){
+        const data = compute(p);
+        valEls.forEach(el => {
+          const k = el.dataset.pxVal;
+          if(data[k] !== undefined) el.textContent = data[k];
+        });
+        textEls.forEach(el => {
+          const k = el.dataset.pxText;
+          if(data[k] !== undefined) el.textContent = data[k];
+        });
+        // tier pill color
+        document.querySelectorAll('.px-slider-tier').forEach(p => p.setAttribute('data-tier', data.tier));
+        try{ localStorage.setItem('protoquiz_agency_providers', String(p)); }catch(_){}
+        // Update slider aria-valuetext for screen readers (slider drives every number)
+        slider.setAttribute('aria-valuetext',
+          data.providers + ' providers, ' + data.label + ' agency, $' + data['cost-annual'] + ' per year with annual prepay');
+      }
+
+      slider.addEventListener('input', e => apply(parseInt(e.target.value, 10) || DEFAULT_PROVIDERS));
+      let saved = DEFAULT_PROVIDERS;
+      try{
+        const v = parseInt(localStorage.getItem('protoquiz_agency_providers') || '', 10);
+        if(!isNaN(v) && v >= 25 && v <= 750) saved = v;
+      }catch(_){}
+      slider.value = saved;
+      apply(saved);
+    })();
+
+
+    // ===== Section reveal observer =====
+    (function(){
+      const reveals = document.querySelectorAll('.reveal');
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if(e.isIntersecting){
+            e.target.classList.add('visible');
+            obs.unobserve(e.target);
+          }
+        });
+      }, {threshold:0.08});
+      // Mark anything already in viewport as visible (fast-scroll/refresh handling).
+      reveals.forEach(el => {
+        const r = el.getBoundingClientRect();
+        if(r.top < window.innerHeight && r.bottom > 0){
+          el.classList.add('visible');
+        } else {
+          obs.observe(el);
+        }
+      });
+    })();
+
+    // ===== Benefit-viz inline-chart observer =====
+    (function(){
+      const vizes = document.querySelectorAll('.benefit-viz');
+      if(!vizes.length) return;
+      const fire = el => el.classList.add('in');
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if(e.isIntersecting){ fire(e.target); obs.unobserve(e.target); }
+        });
+      }, {threshold:0.25});
+      vizes.forEach(el => {
+        const r = el.getBoundingClientRect();
+        if(r.top < window.innerHeight && r.bottom > 0) fire(el);
+        else obs.observe(el);
+      });
+    })();
+
+    // ===== Stat-strip counters (single shared observer) =====
+    (function(){
+      const els = document.querySelectorAll('[data-counter]');
+      if(!els.length) return;
+      function animate(el){
+        const target = parseFloat(el.dataset.counter);
+        const start = performance.now();
+        const dur = 1500;
+        (function tick(t){
+          const p = Math.min(1, (t - start) / dur);
+          const eased = 1 - Math.pow(1 - p, 3);
+          const v = target * eased;
+          el.textContent = target % 1 === 0 ? Math.round(v) : v.toFixed(1);
+          if(p < 1) requestAnimationFrame(tick);
+        })(start);
+      }
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if(e.isIntersecting){ animate(e.target); obs.unobserve(e.target); }
+        });
+      }, {threshold:0.4});
+      els.forEach(el => obs.observe(el));
+    })();
+
+    // ===== Cost-stack reveal trigger =====
+    (function(){
+      const sec = document.querySelector('.stack-viz');
+      if(!sec) return;
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if(e.isIntersecting){ sec.classList.add('in'); obs.unobserve(sec); } });
+      }, {threshold:0.2});
+      const r = sec.getBoundingClientRect();
+      if(r.top < window.innerHeight && r.bottom > 0) sec.classList.add('in');
+      else obs.observe(sec);
+    })();
+
+    // ===== Live ticker =====
+    (function(){
+      const data = [
+        {topic:'Pediatric cardiac arrest', sub:'4 medics weak &middot; last drill: 47 days ago', pct:'42%', cls:'bad', action:'Assign drill'},
+        {topic:'Refractory VF / amiodarone', sub:'3 medics weak &middot; protocol v3.2 update', pct:'58%', cls:'warn', action:'Review'},
+        {topic:'Naloxone, peds &lt; 5kg', sub:'7 EMTs weak &middot; high-frequency call type', pct:'51%', cls:'bad', action:'Assign drill'},
+        {topic:'Adult RSI', sub:'2 medics weak &middot; new protocol section', pct:'63%', cls:'warn', action:'Review'},
+        {topic:'STEMI activation criteria', sub:'agency-wide &middot; trending up', pct:'89%', cls:'good', action:'On track'},
+        {topic:'Refusal documentation', sub:'5 medics weak &middot; legal exposure', pct:'48%', cls:'bad', action:'Assign drill'},
+        {topic:'Hypoglycemia, adult', sub:'agency-wide &middot; stable', pct:'92%', cls:'good', action:'On track'},
+      ];
+      const win = document.getElementById('tickerWindow');
+      if(!win) return;
+      let i = 0; let current = null; let timer = null;
+      function show(){
+        const d = data[i % data.length]; i++;
+        const row = document.createElement('div');
+        row.className = 'ticker-row';
+        row.innerHTML = '<div class="ticker-topic">' + d.topic + '<small>' + d.sub + '</small></div><div class="ticker-pct ' + d.cls + '">' + d.pct + '<small>fluency</small></div><div class="ticker-action">' + d.action + '</div>';
+        win.appendChild(row);
+        requestAnimationFrame(() => row.classList.add('is-show'));
+        if(current){
+          const out = current; out.classList.remove('is-show'); out.classList.add('is-out');
+          setTimeout(() => out.remove(), 600);
+        }
+        current = row;
+      }
+      // Only run when in viewport (saves CPU on long pages)
+      const shell = win.closest('.ticker-shell');
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if(e.isIntersecting && !timer){
+            show();
+            timer = setInterval(show, 2400);
+          } else if(!e.isIntersecting && timer){
+            clearInterval(timer); timer = null;
+          }
+        });
+      }, {threshold:0.1});
+      obs.observe(shell);
+    })();
+
+
+        // Gate the movie autoplay until the walkthrough section scrolls into view.
+    // Set everything up immediately so the player is ready, but don't tick beats
+    // until the user is actually looking at it.
+    function switchTrack(trackName){
+      if(!TRACKS[trackName] || trackName === currentTrack) return;
+      currentTrack = trackName;
+      beats = TRACKS[currentTrack];
+      TOTAL = beats.length;
+      beatTotalEl.textContent = String(TOTAL).padStart(2, '0');
+      rebuildProgressDots();
+      // Smooth crossfade instead of a hard reset (which read as a page
+      // "reload"). Let the current beat fade OUT gently via its natural 0.7s
+      // opacity transition, hold briefly so the swap doesn't snap, then build
+      // beat 0 of the new track — runBeat's own frame-swap choreography fades
+      // the new content back IN. Stagger keeps the two from stacking mid-fade.
+      clearTimers();
+      document.querySelectorAll('.beat.live').forEach(b => b.classList.remove('live'));
+      beatIdx = 0;
+      if(trackSwitchTimer) clearTimeout(trackSwitchTimer);
+      trackSwitchTimer = setTimeout(() => { runBeat(0); }, 260);
+    }
+
+    // Wire the tab buttons
+    document.querySelectorAll('.walk-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const track = btn.dataset.track;
+        if(!track) return;
+        // Visual active state
+        document.querySelectorAll('.walk-tab').forEach(b => {
+          const on = b === btn;
+          b.classList.toggle('is-active', on);
+          b.setAttribute('aria-selected', on ? 'true' : 'false');
+        });
+        switchTrack(track);
+      });
+    });
+
+    window.addEventListener('load', () => {
+      // Render beat 0 immediately (frame, scene, narration) but don't start ticking yet.
+      const wasPlaying = isPlaying;
+      isPlaying = false;
+      runBeat(0);
+      isPlaying = wasPlaying;
+
+      const wt = document.getElementById('walkthrough-legacy');
+      if(!wt) return;
+
+      // Two pause sources: user clicked pause, or section is offscreen.
+      // Track them separately so when one releases, the other can keep us paused.
+      let userPausedFlag = false;
+      let scrollPausedFlag = true;  // start paused-by-scroll until observer says we're visible
+      let started = false;
+
+      // Hook the play button to set/clear the user-paused flag.
+      const playBtn = document.getElementById('play-btn');
+      if(playBtn){
+        playBtn.addEventListener('click', () => {
+          // setPlayState already toggled isPlaying in the handler above us.
+          // We just mirror: if the player went from playing -> paused, that's user-initiated.
+          // After the click, isPlaying reflects the new state.
+          // Requestframe to read after the toggle has happened.
+          requestAnimationFrame(() => {
+            userPausedFlag = !isPlaying;
+          });
+        });
+      }
+
+      function shouldPlay(){
+        return !userPausedFlag && !scrollPausedFlag;
+      }
+      function syncPlayState(){
+        const want = shouldPlay();
+        if(want === isPlaying) return;
+        if(want){
+          // Resume: re-enter the current beat with timers active.
+          setPlayState(true);
+          runBeat(beatIdx);
+        } else {
+          // Pause: clear pending timers, freeze on current frame.
+          setPlayState(false);
+          clearTimers();
+        }
+      }
+
+      const movieObs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          // "On screen enough to watch" = 50% visible in the inset viewport.
+          const visible = e.isIntersecting && e.intersectionRatio >= 0.5;
+          scrollPausedFlag = !visible;
+          syncPlayState();
+          if(!started && visible){
+            started = true;  // first time we go visible, kick beat 0 cleanly.
+            runBeat(0);
+          }
+        });
+      }, {threshold: [0, 0.25, 0.5, 0.75, 1], rootMargin: '-10% 0px -10% 0px'});
+      movieObs.observe(wt);
+    });
+  
+    /* ================================================================
+       SOURCE CITATION MODAL
+       Opens when user clicks a "What you save" row. Shows the claim,
+       the math chain, the highlighted excerpt, and a link to the source.
+       ================================================================ */
+    (function srcModalInit(){
+      const modal = document.getElementById('src-modal');
+      if(!modal) return;
+      const titleEl   = document.getElementById('src-modal-title');
+      const claimEl      = document.getElementById('src-modal-claim');
+      const mathEl       = document.getElementById('src-modal-math');
+      const quoteEl      = document.getElementById('src-modal-quote');
+      const assumptionEl = document.getElementById('src-modal-assumption');
+      const assumpWrapEl = document.getElementById('src-modal-assumption-wrap');
+      const sourcesEl    = document.getElementById('src-modal-sources');
+      const eyebrowEl    = document.getElementById('src-modal-eyebrow');
+
+      // Citation policy: every quote here is verbatim from the linked source.
+      // Numeric claims that come from a different source are tagged with
+      // an inline link to THAT source, so nothing is unfalsifiable.
+      const SOURCES = {
+        onboarding: {
+          eyebrow: 'Sources: AAA / Newton 360 turnover + cost-per-replacement (via EMS1) + BLS Occupational Employment Statistics',
+          title: 'Faster, better onboarding.',
+          claim: 'Day-one protocol fluency means field-training time goes to actually using the protocols, not teaching them. We can put a real dollar on the training-related slice of replacement cost.',
+          tldr: '<p><strong>~$200/provider/yr</strong> &mdash; the slice of replacement cost that goes to teaching protocols, plus a 10% ramp reduction.</p>'
+              + '<ul>'
+              + '<li>~30% turnover &times; $9K+ to replace each hire (AAA 2022 EMS survey)</li>'
+              + '<li>~35% of that is training-related; ProtoQuiz cuts ~20% of that slice + 10% faster ramp</li>'
+              + '<li>= ~$200/provider/yr (matches VALUE_PROP.md §8a sourced model)</li>'
+              + '</ul>',
+          math: '<p>Three citable inputs:</p>'
+                + '<ol class="src-math-steps">'
+                + '<li class="src-math-step"><span class="src-math-step-n">A</span><span class="src-math-step-body"><strong>Turnover:</strong> <em>20–36%/yr</em> for EMTs and paramedics (AAA / Newton 360, via EMS1). Use 25% as a conservative midpoint.</span></li>'
+                + '<li class="src-math-step"><span class="src-math-step-n">B</span><span class="src-math-step-body"><strong>Cost per replacement:</strong> <em>$6,780/EMT</em>, <em>$9,113/paramedic</em> (AAA 2021, via EMS1). Use <em>$8,000</em> mid for a mixed crew.</span></li>'
+                + '<li class="src-math-step"><span class="src-math-step-n">C</span><span class="src-math-step-body"><strong>Wage:</strong> BLS paramedic median <em>$28/hr</em>, loaded ~$40/hr. (Already baked into AAA cost; cited for transparency.)</span></li>'
+                + '</ol>'
+                + '<p>Example, <strong>100 providers, 25% turnover</strong>:</p>'
+                + '<ol class="src-math-steps">'
+                + '<li class="src-math-step"><span class="src-math-step-n">1</span><span class="src-math-step-body">100 &times; 25% = <em>25 new hires/yr</em></span></li>'
+                + '<li class="src-math-step"><span class="src-math-step-n">2</span><span class="src-math-step-body">25 &times; $8,000 = <em>$200K/yr</em> total turnover cost</span></li>'
+                + '<li class="src-math-step"><span class="src-math-step-n">3</span><span class="src-math-step-body"><em>~35%</em> is training-related (academy, orientation, field training, protocol learning). Rest is recruitment + screening &mdash; ProtoQuiz doesn\'t touch that.</span></li>'
+                + '<li class="src-math-step"><span class="src-math-step-n">4</span><span class="src-math-step-body">$200K &times; 35% = <em>$70K/yr</em> training cost</span></li>'
+                + '<li class="src-math-step"><span class="src-math-step-n">5</span><span class="src-math-step-body">ProtoQuiz cuts the <strong>protocol-learning portion</strong>. Claim: <em>20% reduction</em>. Still need ride time and running calls &mdash; spend time training on <em>using</em> the protocols in the field, not learning them.</span></li>'
+                + '<li class="src-math-step"><span class="src-math-step-n">6</span><span class="src-math-step-body">$70K &times; 20% = <em>$14K/yr</em> in direct training-cost savings. Add ~$6K/yr in ramp-reduction value (10% earlier productive shift) &mdash; total <em>~$20K/yr</em>.</span></li>'
+                + '<li class="src-math-total">$20K &divide; 100 = <em>$200/provider/yr</em></li>'
+                + '</ol>'
+                + '<p class="src-math-note">The two estimates we own: <strong>~35% training-related</strong> portion of replacement cost (AAA reports the total, not the breakdown) and <strong>20% reduction</strong> credited to ProtoQuiz. Both at the conservative end. No step rounds up.</p>',
+          quote: 'EMS1 (citing AAA / Newton 360): the turnover rate is in the <span class="src-mark">20-36% range for EMTs and Paramedics, a 6% increase over the prior year</span>. Replacement cost (AAA 2021): <span class="src-mark">$6,780 to attract, screen, select, onboard and train a new EMT</span>; <span class="src-mark">$9,113 for a paramedic</span>.',
+          sources: [
+            {label: 'EMS1: AAA / Newton 360 turnover survey — 20-36% turnover quote', url: 'https://www.ems1.com/recruitment-and-retention/articles/flattening-the-turnover-curve-ERwaFmjlKOvSGKfr/'},
+            {label: 'EMS1: AAA cost-per-replacement ($6,780 EMT / $9,113 paramedic)', url: 'https://www.ems1.com/recruitment-and-retention/articles/turnover-we-have-measured-it-but-can-we-manage-it-JfFuhyrBEf5gqU2O/'},
+            {label: 'BLS Occupational Outlook Handbook — EMTs and Paramedics ($58,410 median annual / ~$28/hr)', url: 'https://www.bls.gov/ooh/healthcare/emts-and-paramedics.htm'},
+          ],
+          assumption: 'Two estimates, both at the conservative end: <strong>~35% of replacement cost is training-related</strong>, and <strong>20% reduction</strong> in the protocol-learning portion. Turnover (25%), replacement cost ($8K), and wage ($28) are directly citable.'
+        },
+        training: {
+          eyebrow: 'Sources: PMC peer-reviewed prehospital med-error data + BLS Occupational Employment Statistics',
+          title: 'Fewer remediations.',
+          claim: 'Continuous reps on the actual protocol set + a dashboard that surfaces weak topics by name = fewer downstream remediations. The dollar lever is supervisor and FTO time spent on preventable cleanup.',
+          tldr: '<p><strong>~$50/provider/yr</strong> &mdash; supervisor + FTO time saved on preventable remediation cycles, plus training-officer time on quiz building and weak-topic targeting.</p>'
+              + '<ul>'
+              + '<li>~2 hrs/week per agency on quiz building, grading, tracking who&rsquo;s done what</li>'
+              + '<li>Plus dashboard surfaces weak topics by name &rarr; in-service hours go to what actually needs work, not generic review</li>'
+              + '<li>Result: same training time produces better-trained crews + less remediation downstream</li>'
+              + '</ul>',
+          math: '<p><strong>The buyer pain (from training officers themselves):</strong></p>'
+                + '<ul class="src-modal-bullets">'
+                + '<li>Building quizzes and tests by hand (often unpaid hours)</li>'
+                + '<li>Grading tests, tracking completion, chasing missing scores</li>'
+                + '<li>Identifying which providers need reps on which topics</li>'
+                + '<li>Building remediation materials when QA flags a preventable mistake</li>'
+                + '</ul>'
+                + '<p>ProtoQuiz handles all of it. The dashboard tells you, by name and by topic, who needs more reps &mdash; before QA tells you the hard way.</p>'
+                + '<p>Example for a <strong>100-provider agency</strong>:</p>'
+                + '<ol class="src-math-steps">'
+                + '<li class="src-math-step"><span class="src-math-step-n">1</span><span class="src-math-step-body">Training-officer time on quiz building, manual tracking, weak-topic targeting: <em>~2 hrs/week</em> = <em>~100 hrs/yr</em></span></li>'
+                + '<li class="src-math-step"><span class="src-math-step-n">2</span><span class="src-math-step-body">100 hrs &times; <strong>$50/hr</strong> loaded training-officer labor = <em>$5,000/yr</em></span></li>'
+                + '<li class="src-math-total">$5,000 &divide; 100 providers = <em>$50/provider/yr</em></li>'
+                + '</ol>'
+                + '<p class="src-math-note">This is <strong>not</strong> "less training." It&rsquo;s the same training program with the rote work taken off the training officer&rsquo;s plate &mdash; freeing them to focus on advanced training beyond the bare minimum of knowing the protocols: running calls, managing scenes, judgment, and the gray-area decisions that actually need a human in the room.</p>',
+          quote: 'BLS paramedic median: <span class="src-mark">~$28/hr</span> ($58,410 annual median, May 2024). EMS training officers typically run <em>1.4&ndash;1.6&times;</em> the line-medic wage, landing loaded around <em>$50/hr</em>.',
+          sources: [
+            {label: 'BLS Occupational Outlook Handbook — EMTs and Paramedics ($58,410 median annual / ~$28/hr)', url: 'https://www.bls.gov/ooh/healthcare/emts-and-paramedics.htm'},
+          ],
+          assumption: 'Three internal estimates: <strong>~2 hrs/week</strong> of training-officer time on quiz building + manual tracking, <strong>$50/hr</strong> loaded training-officer labor (extrapolated from BLS line-medic data), and the <strong>100-provider agency</strong> baseline. Pulled from the buyer-pain pattern across early agency conversations. The BLS wage is directly citable.'
+        },
+        risk: {
+          eyebrow: 'Sources: NAEMT/CM&F malpractice math + NREMT audit policy + PMC peer-reviewed fluency study',
+          title: 'Legal defense &amp; audit-ready records.',
+          claim: 'License-defense expected value and CE documentation are the defensible per-provider numbers. Fluency reducing error is the principle &mdash; we don\'t claim a specific reduction percentage in litigation outcomes.',
+          tldr: '<p><strong>~$45/provider/yr</strong> &mdash; $25 legal defense + $20 CE/audit documentation. Kept out of the headline total to stay defensible.</p>'
+              + '<ul>'
+              + '<li><strong>The principle: fluency reduces error.</strong> Misasi &amp; Keebler (PMC 2018) showed structured fluency interventions cut prehospital medication errors up to 49%. We don\'t claim that number for ProtoQuiz &mdash; just the principle.</li>'
+              + '<li><strong>Defensible records when something does land.</strong> NREMT requires 36+ months of retained training docs and random-audits recerts. ProtoQuiz already has them, dated and signed.</li>'
+              + '<li><strong>Per-provider expected value: $25 legal + $20 audit.</strong> See math below for the actuarial chain. Real settlements cited at the bottom, but framed as illustrations, not promised savings.</li>'
+              + '</ul>',
+          math: '<p><strong>The chain.</strong> Three things follow when crews are fluent on the actual protocol set:</p>'
+                + '<ul class="src-modal-bullets">'
+                + '<li>Fewer mistakes on the call</li>'
+                + '<li>Fewer of those mistakes trigger a formal remediation cycle</li>'
+                + '<li>Fewer of the most serious mistakes escalate to a license complaint or lawsuit</li>'
+                + '</ul>'
+                + '<p><strong>Fluency &rarr; error: what the literature says.</strong></p>'
+                + '<ul class="src-modal-bullets">'
+                + '<li>Misasi &amp; Keebler (PMC, 2018): structured medication-verification intervention cut errors <strong>49% overall, 71% on fentanyl</strong>.</li>'
+                + '<li>Published prehospital error rates run from <em>0.169% per administration</em> (Sedgwick County) to <em>34.7% overall</em> (Michigan EMS) depending on methodology.</li>'
+                + '<li>ProtoQuiz is training, not real-time cross-check. We don\'t claim 49%. We claim the principle: fluency reduces error.</li>'
+                + '</ul>'
+                + '<p><strong>Example for the lawsuit lever (100-provider agency):</strong></p>'
+                + '<ol class="src-math-steps">'
+                + '<li class="src-math-step"><span class="src-math-step-n">1</span><span class="src-math-step-body">Published claim rate (Colwell et al., 10-yr study): <em>~1.1 lawsuits/yr</em> at one urban agency (11 lawsuits over 10 years), <em>35%</em> medical negligence</span></li>'
+                + '<li class="src-math-step"><span class="src-math-step-n">2</span><span class="src-math-step-body">Per-100-providers estimate: <em>~0.7 medical-negligence cases/yr</em> (Colwell\'s service was a single urban 911 system; the paper doesn\'t publish provider count, so we use 100 as a conservative order-of-magnitude baseline)</span></li>'
+                + '<li class="src-math-step"><span class="src-math-step-n">3</span><span class="src-math-step-body">Conservative ProtoQuiz reduction in protocol-driven cases: <em>~15%</em> (less than a third of the 49% literature finding)</span></li>'
+                + '<li class="src-math-step"><span class="src-math-step-n">4</span><span class="src-math-step-body">0.7 &times; 15% = <em>~0.11 cases avoided/yr</em></span></li>'
+                + '<li class="src-math-step"><span class="src-math-step-n">5</span><span class="src-math-step-body">0.11 &times; <strong>$900K</strong> avg settlement = <em>~$10K/yr</em> per 100 providers</span></li>'
+                + '<li class="src-math-total">Round conservatively to <em>~$100/provider/yr</em> in expected-value risk reduction</li>'
+                + '</ol>'
+                + '<p><strong>And when one does land:</strong> NREMT requires <em>36+ months</em> of retained training records and random-audits recerts. State EMS offices and license-defense complaints all want dated training records for the period in question. ProtoQuiz already has them &mdash; "we have it" beats "let me reconstruct."</p>'
+                + '<p class="src-math-note">Expected value is probability &times; cost. We\'re not claiming you\'ll avoid a $900K case this year. We\'re claiming that even a small reduction in protocol-driven cases &mdash; multiplied by real settlement size &mdash; is worth real money on the actuarial side. Not included in the total.</p>',
+          quote: 'Misasi &amp; Keebler 2018: a verification intervention produced <span class="src-mark">"a decrease in the average monthly error rate&hellip; for all medications administered (49.0%)"</span>. Colwell et al. (10-yr ambulance claim study): <span class="src-mark">"Eighty-two claims resulting in 11 lawsuits were filed"</span> over 10 years; <span class="src-mark">"medical negligence claims&hellip; 35% of the dollars lost"</span>. NREMT: <span class="src-mark">"Keep all recertification supporting documentation for at least three years"</span>; applications are <span class="src-mark">"randomly selected for audit"</span>.',
+          sources: [
+            {label: 'Misasi & Keebler — Medication safety in EMS (PMC6351968)', url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC6351968/'},
+            {label: 'Hoyle et al. 2023 — pediatric dosing errors (Michigan 34.7%)', url: 'https://pubmed.ncbi.nlm.nih.gov/36652452/'},
+            {label: 'Colwell et al. — Claims against a paramedic ambulance service, 10-yr experience (82 claims, 11 lawsuits, 35% medical-negligence dollars)', url: 'https://pubmed.ncbi.nlm.nih.gov/10595887/'},
+            {label: 'EMT negligence settlement ($1M)', url: 'https://www.lubinandmeyer.com/cases/emt-malpractice.html'},
+            {label: 'Paramedic wrongful-death settlement ($975K)', url: 'https://www.sommerspc.com/verdicts/975000-settlement-for-wrongful-death-due-to-emt-paramedics-gross-negligence-medical-malpractice/'},
+            {label: 'EMT negligence verdict ($825K)', url: 'https://www.robertshumanlaw.com/Verdicts-and-Settlements/Medical-Malpractice-EMT-Negligence-825-000.html'},
+            {label: 'NREMT Recertification (audit + retention policy)', url: 'https://www.nremt.org/Document/Recertification'},
+          ],
+          assumption: 'Three estimates we own: the <strong>15% reduction</strong> in protocol-driven cases credited to ProtoQuiz (literature shows 49% on a different intervention; we take less than a third), <strong>scaling Colwell\'s single urban ambulance service to a per-100-provider baseline</strong> (the paper doesn\'t publish provider count — we use 100 as an order-of-magnitude estimate for an urban 911 service), and <strong>$900K average settlement</strong> (midpoint of the three real settlements cited). Lawsuit count (11/10 yrs), 35% medical-negligence portion, and individual settlement amounts are all directly citable. Not included in the total.'
+        },
+      };
+
+      let lastTrigger = null;  // remember which row opened the modal so we can return focus there
+
+      const tldrEl = document.getElementById('src-modal-tldr');
+      const detailsEl = modal.querySelector('.src-modal-details');
+      function openSource(key, trigger){
+        const src = SOURCES[key];
+        if(!src) return;
+        lastTrigger = trigger || document.activeElement;
+        eyebrowEl.textContent = src.eyebrow;
+        titleEl.textContent = src.title;
+        claimEl.textContent = src.claim;
+        if(tldrEl){
+          if(src.tldr){
+            tldrEl.innerHTML = src.tldr;
+            tldrEl.style.display = '';
+          } else {
+            tldrEl.style.display = 'none';
+          }
+        }
+        // Always reset drill-down to collapsed when opening a new source
+        if(detailsEl) detailsEl.open = false;
+        mathEl.innerHTML = src.math;
+        quoteEl.innerHTML = src.quote;
+        if(src.assumption){
+          assumptionEl.innerHTML = src.assumption;
+          assumpWrapEl.style.display = '';
+        } else {
+          assumpWrapEl.style.display = 'none';
+        }
+        // Build the multi-source list — every source the modal cites, linked.
+        sourcesEl.innerHTML = '';
+        (src.sources || []).forEach(s => {
+          const li = document.createElement('li');
+          const a = document.createElement('a');
+          a.href = s.url; a.target = '_blank'; a.rel = 'noopener';
+          a.innerHTML = s.label + ' <svg class="src-ext" viewBox="0 0 14 14" aria-hidden="true" width="11" height="11"><path d="M5 2H2v10h10V9M9 2h3v3M11.5 2.5L7 7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+          li.appendChild(a);
+          sourcesEl.appendChild(li);
+        });
+        modal.hidden = false;
+        document.body.style.overflow = 'hidden';
+        // Focus the close button for keyboard users
+        const closeBtn = modal.querySelector('.src-modal-close');
+        if(closeBtn) setTimeout(() => closeBtn.focus(), 60);
+      }
+      function closeSource(){
+        modal.hidden = true;
+        document.body.style.overflow = '';
+        // Return focus to the row that opened the modal
+        if(lastTrigger && typeof lastTrigger.focus === 'function'){
+          lastTrigger.focus();
+        }
+      }
+
+      // Wire row clicks (pass the trigger so we can restore focus on close).
+      // Both the dollar rows and the upside pills route through the same modal.
+      document.querySelectorAll('.px-frame-math-row, .px-frame-qual-row').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const key = btn.dataset.source;
+          if(key) openSource(key, btn);
+        });
+      });
+
+      // Close on backdrop or close button
+      modal.querySelectorAll('[data-src-close]').forEach(el => {
+        el.addEventListener('click', closeSource);
+      });
+      // Close on Escape + focus trap when modal is open
+      document.addEventListener('keydown', (e) => {
+        if(modal.hidden) return;
+        if(e.key === 'Escape'){ closeSource(); return; }
+        if(e.key !== 'Tab') return;
+        // Trap tab cycle inside the modal
+        const focusables = modal.querySelectorAll('button, [href], [tabindex]:not([tabindex="-1"])');
+        if(!focusables.length) return;
+        const first = focusables[0];
+        const last  = focusables[focusables.length - 1];
+        if(e.shiftKey && document.activeElement === first){
+          e.preventDefault(); last.focus();
+        } else if(!e.shiftKey && document.activeElement === last){
+          e.preventDefault(); first.focus();
+        }
+      });
+    })();
+
+    /* === Mobile nav drawer ===
+       Ported from the consumer site. Body scroll locks while open so the page
+       behind doesn't slide under the fixed drawer. The desktop breakpoint also
+       force-hides the drawer in CSS, so a resize can't strand it open with the
+       toggle gone -- but we still clear the lock here, since CSS can't. */
+    (function navDrawer(){
+      const toggle = document.getElementById('navToggle');
+      const drawer = document.getElementById('navDrawer');
+      if(!toggle || !drawer) return;
+      function setOpen(open){
+        document.body.classList.toggle('nav-open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+        drawer.setAttribute('aria-hidden', String(!open));
+        document.body.style.overflow = open ? 'hidden' : '';
+      }
+      toggle.addEventListener('click', () =>
+        setOpen(!document.body.classList.contains('nav-open')));
+      drawer.querySelectorAll('[data-nav-close]')
+        .forEach(a => a.addEventListener('click', () => setOpen(false)));
+      document.addEventListener('keydown', e => { if(e.key === 'Escape') setOpen(false); });
+      // Header "Contact us" opens a <dialog>; leaving the drawer open would
+      // keep overflow:hidden after the modal closes and freeze the page.
+      document.getElementById('openContact')
+        ?.addEventListener('click', () => setOpen(false));
+      window.matchMedia('(min-width:701px)')
+        .addEventListener('change', e => { if(e.matches) setOpen(false); });
+    })();
+
+    /* === Contact dialog: same backend as agency/index.html === */
+    (function contactForm(){
+      const dialog = document.getElementById('contactDialog');
+      const form   = document.getElementById('contactForm');
+      if(!dialog || !form) return;
+      // Wire all open buttons (header + rollout + final CTA)
+      ['openContact','openContact2','openContact3','openContact4']
+        .map(id => document.getElementById(id))
+        .filter(Boolean)
+        .forEach(btn => btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          if(typeof dialog.showModal === 'function') dialog.showModal();
+          else dialog.setAttribute('open', '');
+        }));
+      // Submit handler — POSTs JSON to api.protoquiz.com (same as agency page)
+      const submitBtn = document.getElementById('cf-submit');
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const orig = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+        try{
+          const fd = new FormData(form); const body = {};
+          fd.forEach((v, k) => { if(v) body[k] = v; });
+          const r = await fetch(form.action, {
+            method:'POST',
+            body:JSON.stringify(body),
+            headers:{'Content-Type':'application/json','Accept':'application/json'}
+          });
+          if(!r.ok) throw new Error('http ' + r.status);
+          form.reset();
+          submitBtn.textContent = 'Sent!';
+          setTimeout(() => {
+            if(typeof dialog.close === 'function') dialog.close();
+            else dialog.removeAttribute('open');
+            submitBtn.textContent = orig;
+            submitBtn.disabled = false;
+          }, 1800);
+        }catch(err){
+          submitBtn.textContent = 'Error — try again';
+          submitBtn.disabled = false;
+          setTimeout(() => { submitBtn.textContent = orig; }, 3000);
+        }
+      });
+    })();
+
+})();
+  </script>
+
+
+</body>
+</html>
+<div class="mock-tag">Mock 1 &middot; Stacked</div><script>
+const r=document.querySelector('#n'),o={};['count','pay','save','net','q'].forEach(k=>o[k]=document.querySelector('#'+k));
+const f=n=>'$'+n.toLocaleString();
+function upd(){const n=+r.value;o.count.textContent=n;o.pay.textContent=f(n*80)+'/yr';o.q.textContent=f(n*100)+'/yr';o.save.textContent='~'+f(n*250)+'/yr';o.net.textContent='~'+f(n*170)+'/yr'}
+r&&(r.oninput=upd,upd());
+</script></body></html>

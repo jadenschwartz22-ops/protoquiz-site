@@ -80,12 +80,27 @@ const ranked = [...carriers]
   .map(([k, set]) => ({ k, n: set.size, pct: set.size / TOTAL }))
   .sort((a, b) => b.n - a.n);
 
+// The CONTESTED middle, not the top. Epinephrine at 94% tells a reader nothing they did
+// not already know -- every ALS truck carries epi. The interesting medications are the
+// ones roughly half of agencies carry and half do not, because each one is a live
+// disagreement about scope of practice: norepinephrine, ketamine, blood products. A
+// medic reading this wants to know what the agency one county over can give that they
+// cannot, and that answer only lives in this band.
+const LO = 0.2, HI = 0.8;
 const ROWS = 8;
-const top = ranked.slice(0, ROWS);
-const near = ranked.filter(r => r.pct >= 0.75).length;
+const contested = ranked.filter(r => r.pct >= LO && r.pct <= HI);
+// Spread the picks across the band instead of taking the top 8, which would be eight
+// medications all sitting at 75-80% and would look like the old chart again.
+const top = contested.length <= ROWS ? contested
+  : Array.from({ length: ROWS }, (_, i) =>
+      contested[Math.round(i * (contested.length - 1) / (ROWS - 1))]);
+const universal = ranked.filter(r => r.pct >= 0.9).length;
 const rare = ranked.filter(r => r.pct < 0.10).length;
 
-const W = 440, RH = 27, PAD = 10, LAB = 132, BAR_X = LAB + 8, BAR_W = W - BAR_X - 46;
+// RH is set so this card's rendered height matches the map's (both are 100% width, so
+// height follows the viewBox ratio): the two thumbs sit on one baseline and neither
+// volume looks like the other's subhead.
+const W = 440, RH = 32, PAD = 12, LAB = 148, BAR_X = LAB + 8, BAR_W = W - BAR_X - 46;
 const H = PAD * 2 + top.length * RH;
 const bars = top.map((r, i) => {
   const y = PAD + i * RH;
@@ -97,8 +112,8 @@ const bars = top.map((r, i) => {
   </g>`;
 }).join('');
 
-const census = `<svg viewBox="0 0 ${W} ${H}" class="thumb-svg thumb-carry" role="img" aria-label="Thumbnail: the medications most widely carried across US EMS protocols, as a share of agencies">${bars}</svg>`;
-const censusNote = `${near} medications are carried almost everywhere. ${rare} are carried by fewer than one agency in ten &mdash; that gap is the finding.`;
+const census = `<svg viewBox="0 0 ${W} ${H}" class="thumb-svg thumb-carry" role="img" aria-label="Thumbnail: medications that only some US EMS agencies carry, as a share of agencies">${bars}</svg>`;
+const censusNote = `Only ${universal} medications are carried by more than nine agencies in ten. These are the contested ones &mdash; each is a live disagreement about what a paramedic may give.`;
 
 writeFileSync(OUT, JSON.stringify({
   registry,

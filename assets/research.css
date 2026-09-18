@@ -25,16 +25,16 @@ main{padding-bottom:64px;}
   box-sizing:border-box;min-width:0;
 }
 
-.res-hero{padding-top:56px;padding-bottom:8px;}
+.res-hero{padding-top:34px;padding-bottom:4px;}
 .res-headline{padding-top:36px;}
 .res-eyebrow{
   font-family:var(--mono,"IBM Plex Mono",ui-monospace,monospace);
   font-size:11px;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--muted);margin:0 0 14px;
+  color:var(--muted);margin:0 0 10px;
 }
 .res-hero h1{
-  font-size:clamp(2rem,4.2vw,3.4rem);line-height:1.06;letter-spacing:-.035em;
-  font-weight:700;margin:0 0 20px;max-width:18ch;text-wrap:balance;
+  font-size:clamp(1.9rem,3.4vw,2.7rem);line-height:1.07;letter-spacing:-.032em;
+  font-weight:700;margin:0 0 14px;max-width:20ch;text-wrap:balance;
 }
 
 /* Map. The SVG is the page's one big object, so it gets a ceiling: unbounded it
@@ -87,7 +87,7 @@ main{padding-bottom:64px;}
 }
 .src-flag.floor{color:var(--accent);border-color:color-mix(in oklch,var(--accent) 35%,var(--rule));}
 
-.res-method{padding-top:40px;}
+.res-method{padding-top:30px;}
 .res-method h2{font-size:1.25rem;letter-spacing:-.015em;margin:0 0 12px;}
 .res-method p{font-size:.9375rem;line-height:1.7;color:var(--muted);max-width:72ch;margin:0 0 12px;}
 .res-method a{color:var(--link);}
@@ -107,7 +107,7 @@ main{padding-bottom:64px;}
 .m-third-service{--m:#009e73}
 .m-hospital{--m:#cc79a7}
 
-.lede{margin:0;font-size:1.0625rem;line-height:1.62;color:var(--muted);max-width:62ch;}
+.lede{margin:0;font-size:1.0313rem;line-height:1.56;color:var(--muted);max-width:66ch;}
 .lede .num{
   display:block;font-size:clamp(2.5rem,6vw,4rem);line-height:1;
   font-weight:700;letter-spacing:-.04em;color:var(--ink);
@@ -148,23 +148,23 @@ main{padding-bottom:64px;}
 /* Umbrella page: one card per volume. Two columns so they read as siblings of equal
    weight -- the census is further along, but the registry is not a footnote to it. */
 .res-vols{
-  max-width:1120px;margin:0 auto;padding:44px 24px 0;
+  max-width:1120px;margin:0 auto;padding:26px 24px 0;
   display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;
   box-sizing:border-box;
 }
-.vol{padding:30px clamp(20px,3vw,44px) 30px 0;border-top:2px solid var(--ink);min-width:0;}
+.vol{padding:22px clamp(20px,3vw,44px) 24px 0;border-top:2px solid var(--ink);min-width:0;}
 .vol + .vol{padding-left:clamp(20px,3vw,44px);padding-right:0;border-left:1px solid var(--rule);}
 .vol-eyebrow{
   font-family:var(--mono,"IBM Plex Mono",ui-monospace,monospace);
   font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
   margin-bottom:10px;
 }
-.vol h2{font-size:1.5rem;letter-spacing:-.022em;margin:0 0 10px;}
+.vol h2{font-size:1.375rem;letter-spacing:-.022em;margin:0 0 8px;}
 .vol h2 a{color:var(--ink);text-decoration:none;}
 .vol h2 a:hover{text-decoration:underline;}
-.vol-q{font-size:1.0625rem;line-height:1.5;color:var(--ink);margin:0 0 12px;font-weight:600;}
-.vol-body{font-size:.9375rem;line-height:1.68;color:var(--muted);margin:0 0 18px;}
-.vol-stats{display:flex;flex-wrap:wrap;gap:10px 26px;margin:0 0 18px;}
+.vol-q{font-size:1rem;line-height:1.45;color:var(--ink);margin:0 0 8px;font-weight:600;}
+.vol-body{font-size:.9063rem;line-height:1.6;color:var(--muted);margin:0 0 14px;}
+.vol-stats{display:flex;flex-wrap:wrap;gap:8px 26px;margin:0 0 14px;}
 .vol-stats div{min-width:0;}
 .vol-stats dt{
   font-size:1.375rem;font-weight:700;letter-spacing:-.02em;color:var(--ink);
@@ -173,8 +173,8 @@ main{padding-bottom:64px;}
 .vol-stats dd{margin:2px 0 0;font-size:.8125rem;color:var(--muted);line-height:1.35;}
 /* Standing is the honesty line; it is styled as a label, not as marketing. */
 .vol-standing{
-  font-size:.8125rem;line-height:1.6;color:var(--muted);margin:0 0 18px;
-  padding-top:12px;border-top:1px solid var(--rule);
+  font-size:.8125rem;line-height:1.55;color:var(--muted);margin:0 0 14px;
+  padding-top:10px;border-top:1px solid var(--rule);
 }
 .vol-standing span{
   font-family:var(--mono,"IBM Plex Mono",ui-monospace,monospace);
@@ -233,7 +233,7 @@ main{padding-bottom:64px;}
 
 /* Volume thumbnails. A card leads with a rendering of its own data, so the shape of the
    volume is legible before any of its numbers are read. */
-.vol-thumb{margin:0 0 18px;}
+.vol-thumb{margin:0 0 14px;}
 .vol-thumb .thumb-svg{
   display:block;width:100%;height:auto;
   background:#fdfcfa;border:1px solid var(--rule);border-radius:var(--r);
@@ -242,7 +242,7 @@ main{padding-bottom:64px;}
   margin-top:8px;font-size:.75rem;line-height:1.5;color:var(--muted);
 }
 .vol-thumbnote{
-  font-size:.8125rem;line-height:1.6;color:var(--ink);margin:0 0 14px;
+  font-size:.8125rem;line-height:1.55;color:var(--ink);margin:0 0 12px;
   padding-left:10px;border-left:2px solid var(--accent);
 }
 

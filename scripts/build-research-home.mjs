@@ -57,7 +57,7 @@ const VOLUMES = [
   {
     thumb: THUMBS.census,
     thumbNote: THUMBS.censusNote,
-    thumbCap: 'Share of agencies carrying each medication, of those the census has read.',
+    thumbCap: 'Medications only some agencies carry. Share of those the census has read.',
     eyebrow: 'Volume one',
     title: 'US EMS Protocol Census',
     href: '/census/',
@@ -129,10 +129,8 @@ ${researchBar('/research/')}
     <section class="res-hero">
       <div class="res-eyebrow">ProtoQuiz Research</div>
       <h1>Open research on how American EMS actually works.</h1>
-      <p class="lede">Prehospital care in the United States has no single description. What a
-      crew carries, and even who shows up, changes at county lines. We read what agencies and
-      states publish, turn it into a record anyone can check, and say plainly how solid each
-      part of it is.</p>
+      <p class="lede">What a crew carries, and even who shows up, changes at county lines.
+      We read what agencies publish and turn it into a record anyone can check.</p>
     </section>
 
     <section class="res-vols">
@@ -141,13 +139,10 @@ ${VOLUMES.map(card).join('\n')}
 
     <section class="res-method">
       <h2>How we handle uncertainty</h2>
-      <p>Both volumes are built from documents other people publish, which means the data is
-      only ever as good as its source. Rather than average that away, we show it: every figure
-      names what it was measured against, a value read from a weak source is drawn or labelled
-      as weak, and anything we could not source is left blank instead of filled with a guess.</p>
-      <p>Where a source cannot support a comparison at all, the rows are separated out rather
-      than ranked alongside real ones. A number that looks precise and is not is worse than no
-      number.</p>
+      <p>Both volumes are only as good as the documents behind them. Rather than average that
+      away, we show it: every figure names what it was measured against, a value from a weak
+      source is drawn as weak, and anything we could not source is left blank instead of
+      guessed. A number that looks precise and is not is worse than no number.</p>
       <p><a href="/census/methodology/">Census methodology</a> &middot;
       <a href="/census/data-license/">Data license</a></p>
     </section>
