@@ -171,3 +171,28 @@ a:hover { color: var(--accent-hover); }
   .site-footer .foot-cols { grid-template-columns: 1fr; gap: 28px; }
   .site-header .site-nav { height: 64px; }
 }
+
+/* Research volume bar. Sits under the site nav on every Research page, above the
+   census's own section bar: this says WHICH VOLUME, that says where inside one. */
+.rbar{border-bottom:1px solid var(--rule,#e3e1dc);background:var(--panel,#f7f6f3);}
+.rbar-in{
+  max-width:1120px;margin:0 auto;padding:0 24px;
+  display:flex;align-items:center;gap:26px;min-height:44px;flex-wrap:wrap;
+}
+.rbar-mark{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink,#22252c);text-decoration:none;font-weight:600;white-space:nowrap;
+}
+.rbar-nav{display:flex;gap:20px;flex-wrap:wrap;}
+.rbar-nav a{
+  font-size:13.5px;color:var(--muted,#6b6f77);text-decoration:none;
+  padding:11px 0;border-bottom:2px solid transparent;white-space:nowrap;
+}
+.rbar-nav a:hover{color:var(--ink,#22252c);}
+.rbar-nav a.on{color:var(--ink,#22252c);font-weight:600;border-bottom-color:var(--ink,#22252c);}
+@media (max-width:560px){
+  .rbar-in{gap:10px;padding:8px 16px;}
+  .rbar-nav{gap:14px;}
+  .rbar-nav a{padding:4px 0;font-size:13px;}
+}

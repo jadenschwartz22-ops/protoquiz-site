@@ -8,7 +8,7 @@
 // with the highest "fire-based" share are high because their only source is a fire
 // STATION list, and the page says so on the row rather than in a footnote.
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
-import { navFor, FOOTER_HTML, CHROME_HEAD } from './shared-chrome.mjs';
+import { navFor, researchBar, FOOTER_HTML, CHROME_HEAD } from './shared-chrome.mjs';
 
 // NOTE: this input lives in scratch/, which is gitignored, so a fresh clone cannot
 // build this page until research.json is regenerated from the ems-services pipeline.
@@ -68,6 +68,7 @@ ${CHROME_HEAD}
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
 ${navFor('/research/')}
+${researchBar('/research/registry/')}
 
   <main id="main">
     <section class="res-hero">

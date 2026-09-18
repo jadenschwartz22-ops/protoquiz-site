@@ -9,7 +9,7 @@
 // registry is 23% named-by-a-source and saying otherwise here would undo the care the
 // volume itself takes.
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
-import { navFor, FOOTER_HTML, CHROME_HEAD } from './shared-chrome.mjs';
+import { navFor, researchBar, FOOTER_HTML, CHROME_HEAD } from './shared-chrome.mjs';
 
 // Each card shows a rendering of its own volume, built by build-research-thumbs.mjs from
 // the same data the volume publishes -- never a stock illustration.
@@ -124,6 +124,7 @@ ${CHROME_HEAD}
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 ${navFor('/research/')}
+${researchBar('/research/')}
   <main id="main">
     <section class="res-hero">
       <div class="res-eyebrow">ProtoQuiz Research</div>

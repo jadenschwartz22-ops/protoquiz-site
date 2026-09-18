@@ -22,7 +22,7 @@ import { join, dirname } from 'node:path';
 import { tmpdir } from 'node:os';
 import { createHash } from 'node:crypto';
 import { pathToFileURL } from 'node:url';
-import { navFor, FOOTER_HTML, CHROME_HEAD } from './shared-chrome.mjs';
+import { navFor, researchBar, FOOTER_HTML, CHROME_HEAD } from './shared-chrome.mjs';
 
 // The census is UNPUBLISHED until the new research site launches (2026-09-20, Jaden).
 // Pages still build and still resolve, but they must not be indexed. Set
@@ -450,6 +450,7 @@ const page = ({ title, description, path, trail, jsonLd = [], body, rail = '', r
   return `${head({ title, description, path, jsonLd: [breadcrumbs(trail), ...jsonLd] })}
 <body>
 ${nav}
+${researchBar(path)}
 ${productBar(path)}
   <main>
     <div class="wrap">

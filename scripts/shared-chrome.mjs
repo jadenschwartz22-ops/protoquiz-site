@@ -58,6 +58,24 @@ const navLinks = current => SECTIONS.map(([label, href]) => {
   return `          <a href="${href}"${on ? ' class="nav-link on" aria-current="page"' : ' class="nav-link"'}>${label}</a>`;
 }).join('\n');
 
+// The Research arm's own bar: which VOLUME you are in, always visible inside any of
+// them. The census keeps its own section bar below this one -- that answers "where in
+// the census", this answers "which volume", and collapsing them would make a census
+// section look like a sibling of the whole 911 volume.
+const RESEARCH_VOLUMES = [
+  ['Overview', '/research/', p => p === '/research/'],
+  ['Protocol census', '/census/', p => p.startsWith('/census/')],
+  ['911 coverage', '/research/registry/', p => p.startsWith('/research/registry/')],
+];
+
+export const researchBar = (current = null) => `  <div class="rbar">
+    <div class="rbar-in">
+      <a class="rbar-mark" href="/research/">ProtoQuiz Research</a>
+      <nav class="rbar-nav" aria-label="Research volumes">${RESEARCH_VOLUMES.map(([label, href, on]) =>
+    `<a href="${href}"${current && on(current) ? ' class="on" aria-current="page"' : ''}>${label}</a>`).join('')}</nav>
+    </div>
+  </div>`;
+
 // `current` is a path like '/agency/'. The active link is DERIVED from it rather than
 // passed in as a flag, so a page can never forget to say where it is and two pages in
 // the same section can never disagree.
@@ -103,6 +121,7 @@ export const FOOTER_HTML = `  <!-- shared-chrome:footer -->
         <a href="/census/">Protocol census</a>
         <a href="/census/#states">By state</a>
         <a href="/census/#drugs">By medication</a>
+        <a href="/research/registry/">911 coverage</a>
         <a href="/census/methodology/">Methodology</a>
       </div>
       <div class="foot-col">
