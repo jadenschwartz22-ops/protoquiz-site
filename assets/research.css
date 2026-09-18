@@ -194,3 +194,39 @@ main{padding-bottom:64px;}
   .vol,.vol + .vol{padding:26px 0;border-left:0;}
   .vol + .vol{border-top:2px solid var(--ink);}
 }
+
+/* Tier legend in the methods section. The chip carries the SAME opacity the map uses,
+   so the definition and the drawing cannot drift apart. */
+.tierdl{margin:14px 0 18px;}
+.tierdl dt{
+  font-weight:600;font-size:.9375rem;color:var(--ink);margin-top:12px;
+  display:flex;align-items:center;gap:9px;
+}
+.tierdl dd{margin:4px 0 0 25px;font-size:.9375rem;line-height:1.68;color:var(--muted);max-width:72ch;}
+.tierchip{width:16px;height:16px;border-radius:3px;background:#0072B2;flex:none;border:1px solid rgba(0,0,0,.12);}
+.tierchip.t-a{opacity:1}
+.tierchip.t-b{opacity:.85}
+.tierchip.t-c{opacity:.62}
+.tierchip.t-d{opacity:.38}
+
+/* Correction form. Deliberately plain: this is a utility, not a conversion surface. */
+.fix-form{max-width:56ch;margin:16px 0 0;}
+.fix-form label{
+  display:block;margin:14px 0 5px;font-size:.8125rem;font-weight:600;color:var(--ink);
+}
+.fix-form label .muted{font-weight:400;color:var(--muted);}
+.fix-form input,.fix-form textarea{
+  width:100%;box-sizing:border-box;padding:9px 11px;
+  border:1px solid var(--rule);border-radius:var(--r);
+  font:inherit;font-size:.9375rem;color:var(--ink);background:#fff;
+}
+.fix-form textarea{resize:vertical;line-height:1.55;}
+.fix-form input:focus,.fix-form textarea:focus{outline:2px solid var(--link);outline-offset:1px;border-color:var(--link);}
+.fix-form button{
+  margin-top:16px;padding:10px 18px;border:0;border-radius:var(--r);
+  background:var(--ink);color:#fff;font:inherit;font-size:.9375rem;font-weight:600;cursor:pointer;
+}
+.fix-form button:hover{opacity:.88}
+.fix-form button:disabled{opacity:.5;cursor:default}
+.form-msg{margin:12px 0 0;font-size:.875rem;line-height:1.6;color:var(--muted);min-height:1.2em;}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
