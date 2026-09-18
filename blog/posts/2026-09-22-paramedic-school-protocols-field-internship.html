@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ProtoQuiz Is THE Tool for Paramedic Students - EMS ProtoQuiz Blog</title>
+  <meta name="description" content="During paramedic school you have to learn a full protocol set for the service you ride with - all the pharmacology, all the protocols - and it is always different from the NREMT material. ProtoQuiz drills that protocol: pharmacology, algorithms and scenarios, built from the document itself." />
+
+  <!-- SEO -->
+  <meta name="apple-itunes-app" content="app-id=6753611139" />
+  <link rel="canonical" href="https://protoquiz.com/blog/posts/2026-09-22-paramedic-school-protocols-field-internship.html">
+  <meta name="robots" content="index,follow" />
+
+  <!-- Social / Open Graph -->
+  <meta property="og:title" content="ProtoQuiz Is THE Tool for Paramedic Students" />
+  <meta property="og:description" content="During paramedic school you have to learn a full protocol set for the service you ride with - all the pharmacology, all the protocols - and it is always different from the NREMT material. ProtoQuiz drills that protocol: pharmacology, algorithms and scenarios, built from the document itself." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://protoquiz.com/blog/posts/2026-09-22-paramedic-school-protocols-field-internship.html" />
+  <meta property="og:image" content="https://protoquiz.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="article:published_time" content="2026-09-22" />
+  <meta property="article:author" content="Jaden" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ProtoQuiz Is THE Tool for Paramedic Students" />
+  <meta name="twitter:description" content="During paramedic school you have to learn a full protocol set for the service you ride with - all the pharmacology, all the protocols - and it is always different from the NREMT material. ProtoQuiz drills that protocol: pharmacology, algorithms and scenarios, built from the document itself." />
+  <meta name="twitter:image" content="https://protoquiz.com/og-image.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png?v=4" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16.png?v=4" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png?v=4" />
+
+  <!-- Structured Data - BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "ProtoQuiz Is THE Tool for Paramedic Students",
+    "description": "During paramedic school you have to learn a full protocol set for the service you ride with - all the pharmacology, all the protocols - and it is always different from the NREMT material. ProtoQuiz drills that protocol: pharmacology, algorithms and scenarios, built from the document itself.",
+    "author": {
+      "@type": "Person",
+      "name": "Jaden",
+      "url": "https://protoquiz.com/about/",
+      "jobTitle": "Paramedic & Developer"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ProtoQuiz",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://protoquiz.com/logo-256.png"
+      }
+    },
+    "datePublished": "2026-09-22",
+    "dateModified": "2026-09-22",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://protoquiz.com/blog/posts/2026-09-22-paramedic-school-protocols-field-internship.html"
+    }
+  }
+  </script>
+
+  <!-- Google tag (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LNSS9BMEP8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-LNSS9BMEP8');
+
+    function track(name, props){
+      try { gtag('event', name, props || {}); } catch(e){}
+    }
+    const PAGE = 'blog_post';
+    track('blog_post_view', { title: 'ProtoQuiz Is THE Tool for Paramedic Students' });
+
+    // Track view in Firestore
+    (async () => {
+      try {
+        const slug = window.location.pathname.split('/').pop().replace('.html', '');
+        const res = await fetch('https://api.protoquiz.com/api/blog-views', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ slug })
+        });
+        const data = await res.json();
+        if (typeof data.count === 'number') {
+          const meta = document.querySelector('.post-meta-info');
+          if (meta) {
+            const sep = document.createElement('span'); sep.innerHTML = '&bull;';
+            const v = document.createElement('span');
+            v.textContent = data.count.toLocaleString() + (data.count === 1 ? ' view' : ' views');
+            meta.appendChild(sep); meta.appendChild(v);
+          }
+        }
+      } catch (e) {
+        console.log('View tracking failed:', e);
+      }
+    })();
+  </script>
+
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../_shared-styles.css">
+
+  <style>
+    /* Post-specific styles */
+    .post-container {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .post-header {
+      margin-bottom: 40px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .post-category-badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 8px;
+      background: rgba(255,176,0,.12);
+      color: var(--cyan);
+      font-family: var(--mono);
+      font-weight: 700;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      margin-bottom: 20px;
+    }
+
+    .post-category-badge.updates {
+      background: rgba(204,138,0,.1);
+      color: var(--violet);
+    }
+
+    .post-category-badge.stories {
+      background: rgba(16,185,129,.1);
+      color: var(--success);
+    }
+
+    .post-header h1 {
+      font-family: var(--mono);
+      font-size: clamp(1.9rem, 3.8vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.22;
+      letter-spacing: -.02em;
+      margin-bottom: 20px;
+    }
+
+    .post-meta-info {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .post-meta-info .author {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .post-content {
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--ink);
+    }
+
+    .post-content h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin-top: 48px;
+      margin-bottom: 20px;
+      letter-spacing: -.02em;
+    }
+
+    .post-content h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-top: 36px;
+      margin-bottom: 16px;
+    }
+
+    .post-content p {
+      margin-bottom: 24px;
+    }
+
+    .post-content ul,
+    .post-content ol {
+      margin-bottom: 24px;
+      padding-left: 28px;
+    }
+
+    .post-content li {
+      margin-bottom: 12px;
+    }
+
+    .post-content a {
+      color: var(--cyan);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    .post-content a:hover {
+      color: var(--violet);
+    }
+
+    .post-content strong {
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .post-content code {
+      background: var(--panel);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.9em;
+      font-family: 'SF Mono', Monaco, monospace;
+      border: 1px solid var(--line);
+    }
+
+    .post-content blockquote {
+      border-left: 3px solid var(--cyan);
+      padding-left: 20px;
+      margin: 32px 0;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* App screenshots — same shape as the 2.0 post's .screenshot-* blocks,
+       narrowed because these are single phone screens rather than a grid. */
+    .screenshot-section {
+      margin: 40px 0;
+      max-width: 340px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .screenshot-item {
+      border-radius: 12px;
+      overflow: hidden;
+      background: #000;
+      border: 1px solid var(--line);
+    }
+
+    .screenshot-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .screenshot-caption {
+      padding: 12px 16px;
+      background: rgba(27,22,16,.85);
+      font-size: 13px;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .stats-callout {
+      background: linear-gradient(135deg, rgba(255,176,0,.05), rgba(204,138,0,.05));
+      border: 1px solid rgba(255,176,0,.2);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin: 40px 0;
+    }
+
+    .stats-callout h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+
+    .stats-callout p {
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+
+    .stats-callout strong {
+      color: var(--cyan);
+      font-weight: 800;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--cyan), var(--violet));
+      border-radius: var(--radius);
+      padding: 32px;
+      text-align: center;
+      margin: 48px 0;
+    }
+
+    .cta-box h3 {
+      color: #1b1610;
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .cta-box p {
+      color: rgba(27,22,16,.85);
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 14px 32px;
+      background: #1b1610;
+      color: var(--cyan);
+      font-weight: 700;
+      border-radius: 999px;
+      font-size: 16px;
+      transition: all .2s;
+      border: 2px solid #1b1610;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,.4);
+      opacity: 1;
+    }
+
+    /* Comments Section */
+    .comments-section {
+      margin-top: 80px;
+      padding-top: 40px;
+      border-top: 2px solid var(--line);
+    }
+
+    .comments-section h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin-bottom: 24px;
+    }
+
+    /* Back Link */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 32px;
+      transition: color .2s;
+    }
+
+    .back-link:hover {
+      color: var(--cyan);
+    }
+
+    .back-link::before {
+      content: "\2190";
+    }
+  </style>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://protoquiz.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://protoquiz.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "ProtoQuiz Is THE Tool for Paramedic Students", "item": "https://protoquiz.com/blog/posts/2026-09-22-paramedic-school-protocols-field-internship.html"}]}
+  </script>
+</head>
+<body>
+  <!-- Navigation -->
+  <header>
+    <div class="wrap">
+      <nav class="navbar">
+        <a href="../../" class="brand-link">
+          <img src="../../logo-128.png" alt="ProtoQuiz Logo" width="48" height="48">
+          <span>ProtoQuiz</span>
+        </a>
+        <div class="nav-links">
+          <a href="../../" class="nav-btn">Home</a>
+          <a href="../../about/" class="nav-btn">About</a>
+          <a href="../../agency/" class="nav-btn">For Agencies</a>
+          <a href="../" class="nav-btn">Blog</a>
+          <a href="https://apps.apple.com/app/id6753611139" class="nav-btn primary" onclick="track('download_app', {source: 'blog_post'})">
+            Download App
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="wrap">
+      <div class="post-container">
+        <a href="../" class="back-link">Back to Blog</a>
+
+        <!-- Post Header -->
+        <article class="post-header">
+          <span class="post-category-badge">Study Guide</span>
+          <h1>ProtoQuiz Is THE Tool for Paramedic Students</h1>
+          <div class="post-meta-info">
+            <span class="author">By Jaden</span>
+            <span>&bull;</span>
+            <time datetime="2026-09-22">September 22, 2026</time>
+          </div>
+        </article>
+
+        <!-- Post Content -->
+        <div class="post-content">
+          <p>During paramedic school you have to learn a full protocol set for the service you are doing your rides with. All of the pharmacology. All of the protocols. And it is always different from the NREMT material you are learning in class.</p>
+
+          <p>That is what your preceptor is grading you on, and most people do not have it memorized.</p>
+
+          <h2>What ProtoQuiz Does About It</h2>
+
+          <p>Upload the protocol you are being held to and the app builds your studying out of that document. Every answer cites the page it came from.</p>
+
+          <p><strong>Pharmacology.</strong> Med Mastery drills every drug in your protocol field by field: doses, routes, indications, contraindications, mechanism, adverse effects. Hard mode drops the multiple choice and makes you type it, then grades what you wrote against your protocol.</p>
+
+          <p><strong>Algorithms.</strong> Algorithm quizzes go at the decision points. When you do the thing, what criteria have to be met first, what comes next.</p>
+
+          <p><strong>Scenarios.</strong> Then you put it together. A call runs in stages and you decide what happens next, scoped to your certification level.</p>
+
+          <p><strong>Medicine Mode</strong> is the pathophysiology underneath it, and <strong>NREMT mode</strong> is there free for the registry exam once you get there.</p>
+
+          <p>It works the same for EMT and AEMT students scoped to their level, for medics whose service just revised a protocol, and for new hires anywhere. Paramedic school is what it was built for.</p>
+
+          <h2>Trying It</h2>
+
+          <p>New accounts get seven days of full Premium, no card. After that the free tier is still free: one protocol and three of each generated feature a day.</p>
+
+          <p>Upload the protocol set for wherever you are doing your rides and start with the drug list.</p>
+
+          <p>Your protocol and your preceptor always win. This is a study tool, not medical direction.</p>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-box">
+          <h3>Have It Memorized Before Your Next Ride</h3>
+          <p>Upload the protocol set for your rides and start drilling. Your first seven days are full Premium, no card required. After that the free tier is still free.</p>
+          <a href="https://apps.apple.com/app/id6753611139" class="cta-btn" onclick="track('download_app', {source: 'blog_post_cta'})">
+            Download ProtoQuiz
+          </a>
+        </div>
+
+        <!-- Comments Section -->
+        <div class="comments-section">
+          <h2>Comments</h2>
+          <script src="https://giscus.app/client.js"
+                  data-repo="jadenschwartz22-ops/protoquiz-site"
+                  data-repo-id="R_kgDOP_OVLw"
+                  data-category="Blog Comments"
+                  data-category-id="DIC_kwDOP_OVL84CyFhj"
+                  data-mapping="pathname"
+                  data-strict="0"
+                  data-reactions-enabled="1"
+                  data-emit-metadata="0"
+                  data-input-position="top"
+                  data-theme="dark"
+                  data-lang="en"
+                  crossorigin="anonymous"
+                  async>
+          </script>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Newsletter Signup -->
+  <section style="background: var(--panel); border-top: 1px solid var(--line); padding: 60px 0; margin-top: 80px;">
+    <div class="wrap" style="max-width: 600px; text-align: center;">
+      <h2 style="font-size: 1.75rem; margin-bottom: 12px;">Never Miss a Post</h2>
+      <p style="color: var(--muted); margin-bottom: 24px;">
+        Get new EMS study tips and app updates delivered straight to your inbox.
+      </p>
+
+      <!-- Email Signup Form (Follow.it) -->
+      <style>
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview {
+          display: flex !important;
+          flex-direction: column !important;
+          justify-content: center !important;
+          margin-top: 30px !important;
+          padding: clamp(17px, 5%, 40px) clamp(17px, 7%, 50px) !important;
+          max-width: none !important;
+          border-radius: 6px !important;
+          box-shadow: 0 5px 25px rgba(34, 60, 47, 0.25) !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview,
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview * {
+          box-sizing: border-box !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-heading {
+          width: 100% !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-heading h5 {
+          margin-top: 0 !important;
+          margin-bottom: 0 !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field {
+          margin-top: 20px !important;
+          width: 100% !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input {
+          width: 100% !important;
+          height: 40px !important;
+          border-radius: 6px !important;
+          border: 2px solid #e9e8e8 !important;
+          background-color: #fff;
+          outline: none !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input {
+          color: #000000 !important;
+          font-family: "Montserrat" !important;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 20px;
+          text-align: center;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input::placeholder {
+          color: #000000 !important;
+          opacity: 1 !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input:-ms-input-placeholder {
+          color: #000000 !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input::-ms-input-placeholder {
+          color: #000000 !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-submit-button {
+          margin-top: 10px !important;
+          width: 100% !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-submit-button button {
+          width: 100% !important;
+          height: 40px !important;
+          border: 0 !important;
+          border-radius: 6px !important;
+          line-height: 0px !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-submit-button button:hover {
+          cursor: pointer !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .powered-by-line {
+          color: #231f20 !important;
+          font-family: "Montserrat" !important;
+          font-size: 13px !important;
+          font-weight: 400 !important;
+          line-height: 25px !important;
+          text-align: center !important;
+          text-decoration: none !important;
+          display: flex !important;
+          width: 100% !important;
+          justify-content: center !important;
+          align-items: center !important;
+          margin-top: 10px !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .powered-by-line img {
+          margin-left: 10px !important;
+          height: 1.13em !important;
+          max-height: 1.13em !important;
+        }
+      </style>
+      <div class="followit--follow-form-container" attr-a attr-b attr-c attr-d attr-e attr-f>
+        <form data-v-e7d63655="" action="https://api.follow.it/subscription-form/NWJTVitFcEpGcGU0ajJvTmNST01hckl3ZFI0cTFHMmZkTmVBRlIwSUpnV0NOckQxVWdoNnljMnA2VCtEQU1Eb3VwdStGclRRZzRPZ05qbnpndU43NE90UlIyeC9RcDYxQ3pHYmFqeDl1aXBjcE5zc1F4dXhuR0dKN3ppVFdqdHl8cUl5dytUOE54R2h0TmFUUlppeEhIZXVkQ1k1blBuczY4Z3NQMmFlMGQ3QT0=/8" method="post">
+          <div data-v-e7d63655="" class="form-preview" style="background-color: rgb(255, 255, 255); border-style: solid; border-width: 1px; border-color: rgb(204, 204, 204); position: relative;">
+            <div data-v-e7d63655="" class="preview-heading">
+              <h5 data-v-e7d63655="" style="font-family: Arial; font-weight: bold; color: rgb(0, 0, 0); font-size: 16px; text-align: center; text-transform: none !important;">Get new posts by email:</h5>
+            </div>
+            <div data-v-e7d63655="" class="preview-input-field">
+              <input data-v-e7d63655="" type="email" name="email" required="" placeholder="Enter your email" spellcheck="false" style="font-family: Arial; font-weight: normal; color: rgb(0, 0, 0); font-size: 14px; text-align: center; background-color: rgb(255, 255, 255); text-transform: none !important;">
+            </div>
+            <div data-v-e7d63655="" class="preview-submit-button">
+              <button data-v-e7d63655="" type="submit" style="font-family: Arial; font-weight: bold; color: rgb(255, 255, 255); font-size: 16px; text-align: center; background-color: rgb(0, 0, 0); text-transform: none !important;">Subscribe</button>
+            </div>
+          </div>
+        </form>
+        <a href="https://follow.it" class="powered-by-line">Powered by <img src="https://follow.it/images/colored-logo.svg" alt="follow.it" height="17px"/></a>
+      </div>
+
+      <p style="font-size: 13px; color: var(--muted); margin-top: 16px;">
+        Or subscribe via <a href="../feed.xml" style="color: var(--cyan); text-decoration: underline;">RSS feed</a>
+      </p>
+      <p style="font-size: 12px; color: var(--muted); margin-top: 8px;">
+        No spam. Unsubscribe anytime. View our <a href="../../privacy/" style="color: var(--cyan);">Privacy Policy</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="../../">Home</a>
+          <a href="../">Blog</a>
+          <a href="../../about/">About</a>
+          <a href="../../agency/">For Agencies</a>
+          <a href="../../privacy/">Privacy</a>
+          <a href="../../terms/">Terms</a>
+          <a href="https://apps.apple.com/app/id6753611139">Download</a>
+        </div>
+        <p class="footer-copy">&copy; 2026 ProtoQuiz&trade;. Built by a Paramedic, for EMS.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
