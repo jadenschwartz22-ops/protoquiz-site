@@ -19,13 +19,13 @@ const LANES = [
     stroke: 'var(--lane)',
     body: 'Load your protocols once. Every crew member trains on the current version, and you see who’s behind before QA does.',
     points: ['Medical-director sign-off', 'Compliance dashboard', 'Your own subdomain'],
-    note: '$100 / provider / yr', cta: 'See how it works', href: '/agency/', ghost: false },
-  { cls: 'lane lane-3', num: '03', title: 'EMS Census',
+    note: '$25 / seat / quarter', cta: 'See how it works', href: '/agency/', ghost: false },
+  { cls: 'lane lane-3', num: '03', title: 'Research',
     icon: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/>',
     stroke: 'var(--lane)',
-    body: 'A public, versioned record of what American EMS agencies carry, rebuilt nightly from the documents they publish themselves.',
-    points: ['Compare agencies side by side', 'Sourced to the original PDF', 'Open for research and press'],
-    note: 'Free &amp; open', cta: 'Explore the data', href: '/census/', ghost: true },
+    body: 'A public record built from public documents: what agencies carry, and who answers the 911 call in each county.',
+    points: ['Compare agencies side by side', 'Sourced to the original document', 'Open for research and press'],
+    note: 'Free &amp; open', cta: 'Explore the research', href: '/research/', ghost: true },
 ];
 
 const lane = l => `      <div class="${l.cls}">

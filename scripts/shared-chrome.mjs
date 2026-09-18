@@ -98,10 +98,11 @@ export const FOOTER_HTML = `  <!-- shared-chrome:footer -->
         <a href="/agency/#pricing-section">Pricing</a>
       </div>
       <div class="foot-col">
-        <h2>Census</h2>
-        <a href="/census/">Overview</a>
+        <h2>Research</h2>
+        <a href="/research/">Overview</a>
+        <a href="/census/">Protocol census</a>
         <a href="/census/#states">By state</a>
-        <a href="/census/#drugs">By drug</a>
+        <a href="/census/#drugs">By medication</a>
         <a href="/census/methodology/">Methodology</a>
       </div>
       <div class="foot-col">
