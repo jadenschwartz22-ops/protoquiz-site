@@ -1,0 +1,142 @@
+/* assets/research.css — the research arm's own styles.
+ *
+ * build-research.mjs has always linked this file; it was never written (it lived in a
+ * scratch dir that is gone), so the page rendered unstyled and full-bleed. Tokens and
+ * measures are the census's, deliberately: the two volumes are one research arm and a
+ * reader moving between them should not feel a change of publisher.
+ */
+:root{
+  --ground:oklch(0.99 0.003 250);
+  --panel:oklch(0.965 0.006 250);
+  --ink:oklch(0.22 0.015 260);
+  --muted:oklch(0.47 0.02 260);
+  --rule:oklch(0.87 0.008 260);
+  --accent:oklch(0.52 0.19 27);
+  --link:oklch(0.42 0.11 255);
+  --r:6px;
+}
+
+body{background:var(--ground);color:var(--ink);margin:0;}
+main{padding-bottom:64px;}
+
+/* One measure for every band, matching .wrap in census.css. */
+.res-hero,.res-map-wrap,.res-headline,.res-table-wrap,.res-method{
+  max-width:1120px;margin:0 auto;padding:0 24px;
+  box-sizing:border-box;min-width:0;
+}
+
+.res-hero{padding-top:56px;padding-bottom:8px;}
+.res-headline{padding-top:36px;}
+.res-eyebrow{
+  font-family:var(--mono,"IBM Plex Mono",ui-monospace,monospace);
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--muted);margin:0 0 14px;
+}
+.res-hero h1{
+  font-size:clamp(2rem,4.2vw,3.4rem);line-height:1.06;letter-spacing:-.035em;
+  font-weight:700;margin:0 0 20px;max-width:18ch;text-wrap:balance;
+}
+
+/* Map. The SVG is the page's one big object, so it gets a ceiling: unbounded it
+   renders at its own 960x600 and pushes the table off the first screen. */
+.res-map-wrap{padding-top:40px;padding-bottom:8px;}
+.research-map{margin:0;}
+.rm-svg{display:block;width:100%;max-width:860px;height:auto;margin:0 auto;}
+.rm-svg .state{stroke:var(--ground);stroke-width:1;}
+.rm-cap{
+  margin:18px auto 0;max-width:70ch;
+  font-size:.8125rem;line-height:1.6;color:var(--muted);
+}
+.rm-keys{display:flex;flex-wrap:wrap;gap:8px 18px;margin-bottom:10px;}
+.rm-key{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;}
+.rm-key i{width:11px;height:11px;border-radius:2px;flex:none;}
+.rm-hatch{
+  background:repeating-linear-gradient(45deg,var(--muted) 0 2px,transparent 2px 4px);
+  border:1px solid var(--rule);
+}
+
+/* Table. A 50-row table is the reference half of the page; it scrolls on its own
+   rather than forcing the page sideways on a phone. */
+.res-table-wrap{padding-top:40px;}
+.res-table-wrap h2{font-size:1.5rem;letter-spacing:-.02em;margin:0 0 14px;}
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%;}
+.res-table{width:100%;border-collapse:collapse;font-size:.875rem;min-width:520px;}
+.res-table th,.res-table td{padding:9px 10px;border-bottom:1px solid var(--rule);text-align:left;}
+.res-table thead th{
+  font-family:var(--mono,"IBM Plex Mono",ui-monospace,monospace);
+  font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);font-weight:500;border-bottom:1.5px solid var(--ink);
+  position:sticky;top:0;background:var(--ground);
+}
+.res-table tbody th{font-weight:600;white-space:nowrap;}
+.res-table .num{text-align:right;font-variant-numeric:tabular-nums;}
+
+/* A thin row is one whose source cannot support a confident share. It is dimmed and
+   flagged in place -- never dropped, and never silently equal to a measured row. */
+.res-table tr.thin{color:var(--muted);}
+.src-flag{
+  display:inline-block;margin-left:8px;padding:1px 6px;border-radius:999px;
+  font-family:var(--mono,"IBM Plex Mono",ui-monospace,monospace);
+  font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--muted);background:var(--panel);border:1px solid var(--rule);
+  vertical-align:middle;white-space:nowrap;font-weight:500;
+}
+.src-flag.floor{color:var(--accent);border-color:color-mix(in oklch,var(--accent) 35%,var(--rule));}
+
+.res-method{padding-top:40px;}
+.res-method h2{font-size:1.25rem;letter-spacing:-.015em;margin:0 0 12px;}
+.res-method p{font-size:.9375rem;line-height:1.7;color:var(--muted);max-width:72ch;margin:0 0 12px;}
+.res-method a{color:var(--link);}
+
+@media (max-width:640px){
+  .res-hero{padding-top:36px;}
+  .res-headline{font-size:2rem;}
+  .rm-cap,.res-table{font-size:.8125rem;}
+}
+
+/* National breakdown. A proportional stacked bar, not a pie: the question is
+   part-to-whole across four models, and a bar compares segment lengths honestly
+   where a pie asks the eye to compare angles. Colours are the map's, so a model
+   means the same thing in both. */
+.m-fire-based{--m:#d55e00}
+.m-private{--m:#0072b2}
+.m-third-service{--m:#009e73}
+.m-hospital{--m:#cc79a7}
+
+.lede{margin:0;font-size:1.0625rem;line-height:1.62;color:var(--muted);max-width:62ch;}
+.lede .num{
+  display:block;font-size:clamp(2.5rem,6vw,4rem);line-height:1;
+  font-weight:700;letter-spacing:-.04em;color:var(--ink);
+}
+.map-note{
+  margin:14px 0 0;
+  font-size:.875rem;line-height:1.6;color:var(--muted);
+}
+
+.bar{
+  display:flex;margin:22px 0 0;
+  height:46px;border-radius:var(--r);overflow:hidden;
+  font-variant-numeric:tabular-nums;
+}
+.bar-seg{
+  background:var(--m);display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:.8125rem;font-weight:600;min-width:0;
+}
+/* Below ~6% a label cannot sit inside its own segment without overflowing it. */
+.bar-seg span{padding:0 6px;white-space:nowrap;}
+.bar-seg[style*="width:2"] span,.bar-seg[style*="width:3"] span{font-size:.6875rem;}
+
+.bar-key{
+  display:flex;flex-wrap:wrap;gap:8px 18px;
+  margin:12px 0 0;
+  font-size:.8125rem;color:var(--muted);
+}
+.key{display:inline-flex;align-items:center;gap:7px;}
+.key i{width:11px;height:11px;border-radius:2px;background:var(--m);flex:none;}
+
+.headline-note{
+  margin:14px 0 0;
+  font-size:.8125rem;line-height:1.6;color:var(--muted);
+}
+.skip-link{position:absolute;left:-9999px;}
+.skip-link:focus{left:8px;top:8px;background:var(--ink);color:#fff;padding:8px 12px;z-index:10;}

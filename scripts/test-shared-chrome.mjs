@@ -30,7 +30,7 @@ const PAGES = [
 // census demo has none. Giving it a site nav would break the demo, not fix it.
 const CHROMELESS = ['agency/tour/index.html'];
 
-const NAV_LABELS = ['App', 'For agencies', 'EMS Census', 'About'];
+const NAV_LABELS = ['App', 'For agencies', 'Research', 'About'];
 
 test('nav lists the four sections in order', () => {
   const idx = NAV_LABELS.map(l => NAV_HTML.indexOf(`>${l}<`));
@@ -56,7 +56,7 @@ test('chrome never links to an unpublished Play listing', () => {
 });
 
 test('navFor marks exactly one link current', () => {
-  for (const p of ['/app/', '/agency/', '/census/', '/about/']) {
+  for (const p of ['/app/', '/agency/', '/research/', '/about/']) {
     const html = navFor(p);
     assert.strictEqual((html.match(/aria-current="page"/g) || []).length, 1, `${p} did not mark one link`);
   }
@@ -65,7 +65,18 @@ test('navFor marks exactly one link current', () => {
 
 test('navFor marks the section a deep page belongs to', () => {
   assert.match(navFor('/agency/faq/'), /href="\/agency\/" class="nav-link on"/);
-  assert.match(navFor('/census/drugs/adenosine/'), /href="\/census\/" class="nav-link on"/);
+  assert.match(navFor('/census/drugs/adenosine/'), /href="\/research\/" class="nav-link on"/);
+});
+
+// The census lives at /census/ but belongs to Research: 769 indexed URLs made moving
+// it the wrong trade on a host with no 301s. Every census page must still light the
+// Research link, and exactly one link may be current.
+test('census pages belong to Research without moving', () => {
+  for (const p of ['/census/', '/census/states/colorado/', '/census/methodology/']) {
+    const nav = navFor(p);
+    assert.match(nav, /href="\/research\/" class="nav-link on"/, `${p} should mark Research`);
+    assert.strictEqual((nav.match(/nav-link on/g) || []).length, 1, `${p} marks exactly one`);
+  }
 });
 
 test('no page keeps a private nav', () => {

@@ -33,7 +33,7 @@ export const CHROME_HEAD = `  <link rel="preconnect" href="https://fonts.googlea
 const SECTIONS = [
   ['App', '/app/'],
   ['For agencies', '/agency/'],
-  ['EMS Census', '/census/'],
+  ['Research', '/research/'],
   ['About', '/about/'],
 ];
 
@@ -45,8 +45,16 @@ const CTA = {
 };
 const CTA_DEFAULT = ['Contact sales', '/agency/#contact'];
 
+// A section can own more than one path. Research is the umbrella over two volumes,
+// and the census keeps its own /census/ URLs -- 769 of them are indexed and a move
+// would need meta-refresh stubs, which GitHub Pages makes the only option and which
+// pass less signal than a real redirect. So the nav maps the extra prefix instead of
+// moving the pages.
+const ALSO = { '/research/': ['/census/'] };
+
 const navLinks = current => SECTIONS.map(([label, href]) => {
-  const on = current && current.startsWith(href);
+  const on = !!current && (current.startsWith(href)
+    || (ALSO[href] || []).some(p => current.startsWith(p)));
   return `          <a href="${href}"${on ? ' class="nav-link on" aria-current="page"' : ' class="nav-link"'}>${label}</a>`;
 }).join('\n');
 
