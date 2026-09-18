@@ -51,7 +51,7 @@ const countyPaths = [...buckets].map(([key, ds]) => {
   return `<path d="${ds.join('')}" fill="${COL[own] ?? COL.unknown}" fill-opacity="${OP[tier] ?? 0.4}"/>`;
 }).join('');
 
-const registry = `<svg viewBox="0 0 975 610" class="thumb-svg" role="img" aria-label="Thumbnail of the county map: every US county shaded by who owns its 911 provider">`
+const registry = `<svg viewBox="-145 46 1015 539" class="thumb-svg" role="img" aria-label="Thumbnail of the county map: every US county shaded by who owns its 911 provider">`
   + `${countyPaths}<path fill="none" stroke="#6b6b6b" stroke-width="1.4" d="`
   + Object.values(geo.states).map(d => round(d)).join('')
   + `"/></svg>`;
@@ -87,7 +87,7 @@ const ranked = [...carriers]
 // medic reading this wants to know what the agency one county over can give that they
 // cannot, and that answer only lives in this band.
 const LO = 0.2, HI = 0.8;
-const ROWS = 8;
+const ROWS = 6;
 const contested = ranked.filter(r => r.pct >= LO && r.pct <= HI);
 // Spread the picks across the band instead of taking the top 8, which would be eight
 // medications all sitting at 75-80% and would look like the old chart again.
@@ -97,10 +97,11 @@ const top = contested.length <= ROWS ? contested
 const universal = ranked.filter(r => r.pct >= 0.9).length;
 const rare = ranked.filter(r => r.pct < 0.10).length;
 
-// RH is set so this card's rendered height matches the map's (both are 100% width, so
-// height follows the viewBox ratio): the two thumbs sit on one baseline and neither
-// volume looks like the other's subhead.
-const W = 440, RH = 32, PAD = 12, LAB = 148, BAR_X = LAB + 8, BAR_W = W - BAR_X - 46;
+// Six rows at full text size, not eight scaled down: shrinking the SVG to fit a height
+// cap takes the labels with it, and a chart whose medication names need squinting at is
+// decoration. RH keeps this card's rendered height close to the map's so the two thumbs
+// sit on one baseline and neither volume looks like the other's subhead.
+const W = 440, RH = 35, PAD = 12, LAB = 148, BAR_X = LAB + 8, BAR_W = W - BAR_X - 46;
 const H = PAD * 2 + top.length * RH;
 const bars = top.map((r, i) => {
   const y = PAD + i * RH;
