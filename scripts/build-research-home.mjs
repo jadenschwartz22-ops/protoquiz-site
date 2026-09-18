@@ -11,6 +11,27 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { navFor, FOOTER_HTML, CHROME_HEAD } from './shared-chrome.mjs';
 
+// Each card shows a rendering of its own volume, built by build-research-thumbs.mjs from
+// the same data the volume publishes -- never a stock illustration.
+const THUMBS = existsSync('assets/research-thumbs.json')
+  ? JSON.parse(readFileSync('assets/research-thumbs.json', 'utf8'))
+  : { registry: '', census: '', censusNote: '' };
+
+// Current documents only: `manifest.documents` counts every revision ever read, so it
+// reads as coverage when it is mostly history of the same protocols.
+let curDocs = 0;
+if (existsSync('data/census/documents.json')) {
+  const dj = JSON.parse(readFileSync('data/census/documents.json', 'utf8'));
+  const drows = Array.isArray(dj) ? dj : dj.rows || [];
+  curDocs = drows.filter(r => r.status === 'current').length;
+}
+
+// The denominator for census coverage, from our OWN roster research rather than a
+// remembered round number: every licensed EMS agency the state rosters name.
+const NATIONAL_AGENCIES = existsSync('scratch/ems-services/research.json')
+  ? JSON.parse(readFileSync('scratch/ems-services/research.json', 'utf8')).named
+  : 26883;
+
 const cy = JSON.parse(readFileSync('data/county-911.json', 'utf8'));
 const nCounty = Object.keys(cy).length;
 const nA = Object.values(cy).filter(c => c.tier === 'A').length;
@@ -34,6 +55,9 @@ const n = x => Number(x).toLocaleString('en-US');
 
 const VOLUMES = [
   {
+    thumb: THUMBS.census,
+    thumbNote: THUMBS.censusNote,
+    thumbCap: 'The five medications whose published dose varies most, min to max, median marked.',
     eyebrow: 'Volume one',
     title: 'US EMS Protocol Census',
     href: '/census/',
@@ -44,11 +68,18 @@ const VOLUMES = [
       Every value is sourced to the page it came from.`,
     stats: census
       ? [[n(census.doseRows), 'dose entries'], [n(census.namedAgencies), 'named agencies'],
-         [n(census.documents), 'documents read']]
+         [n(curDocs || census.documents), 'current protocols']]
       : [],
-    standing: 'Live. Rebuilt nightly, with a full revision history behind every document.',
+    // 'documents read' was 1,710 and read as coverage; most of that is revision history
+    // of the same protocols. The honest coverage number is the count of CURRENT
+    // documents, and the standing line says outright that this is a sample.
+    standing: `Live and rebuilt nightly. Coverage is still thin: ${n(census.namedAgencies)} agencies
+      of the ${n(NATIONAL_AGENCIES)} our own roster research counts nationally, so this is a sample
+      of American EMS, not yet a census of it.`,
   },
   {
+    thumb: THUMBS.registry,
+    thumbCap: 'Every county, coloured by who owns its 911 provider. Fainter is weaker evidence.',
     eyebrow: 'Volume two',
     title: 'The 911 coverage registry',
     href: '/research/registry/',
@@ -66,6 +97,7 @@ const VOLUMES = [
 ];
 
 const card = v => `        <article class="vol">
+${v.thumb ? `          <figure class="vol-thumb">${v.thumb}<figcaption>${v.thumbCap}</figcaption></figure>` : ''}
           <div class="vol-eyebrow">${v.eyebrow}</div>
           <h2><a href="${v.href}">${v.title}</a></h2>
           <p class="vol-q">${v.q}</p>
@@ -73,6 +105,7 @@ const card = v => `        <article class="vol">
 ${v.stats.length ? `          <dl class="vol-stats">
 ${v.stats.map(([num, lab]) => `            <div><dt>${num}</dt><dd>${lab}</dd></div>`).join('\n')}
           </dl>` : ''}
+${v.thumbNote ? `          <p class="vol-thumbnote">${v.thumbNote}</p>` : ''}
           <p class="vol-standing"><span>Standing</span> ${v.standing}</p>
           <a class="vol-cta" href="${v.href}">${v.cta} &rarr;</a>
         </article>`;

@@ -230,3 +230,28 @@ main{padding-bottom:64px;}
 .fix-form button:disabled{opacity:.5;cursor:default}
 .form-msg{margin:12px 0 0;font-size:.875rem;line-height:1.6;color:var(--muted);min-height:1.2em;}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
+
+/* Volume thumbnails. A card leads with a rendering of its own data, so the shape of the
+   volume is legible before any of its numbers are read. */
+.vol-thumb{margin:0 0 18px;}
+.vol-thumb .thumb-svg{
+  display:block;width:100%;height:auto;
+  background:#fdfcfa;border:1px solid var(--rule);border-radius:var(--r);
+}
+.vol-thumb figcaption{
+  margin-top:8px;font-size:.75rem;line-height:1.5;color:var(--muted);
+}
+.vol-thumbnote{
+  font-size:.8125rem;line-height:1.6;color:var(--ink);margin:0 0 14px;
+  padding-left:10px;border-left:2px solid var(--accent);
+}
+
+/* Dose-variation chart. A log axis, because an 8x spread and a 2x spread cannot share a
+   linear one legibly; the multiplier at the right is the honest headline per row. */
+.thumb-doses{padding:2px 0;}
+.thumb-doses .t-drug{font:600 12px/1 var(--sans,system-ui);fill:var(--ink);}
+.thumb-doses .t-ind{font:400 10px/1 var(--sans,system-ui);fill:var(--muted);}
+.thumb-doses .t-track{stroke:var(--rule);stroke-width:1;}
+.thumb-doses .t-iqr{fill:#0072B2;fill-opacity:.32;}
+.thumb-doses .t-med{stroke:#0072B2;stroke-width:2.5;stroke-linecap:round;}
+.thumb-doses .t-x{font:700 11px/1 var(--mono,ui-monospace,monospace);fill:var(--accent);}
