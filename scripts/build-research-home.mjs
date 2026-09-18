@@ -129,8 +129,10 @@ ${researchBar('/research/')}
     <section class="res-hero">
       <div class="res-eyebrow">ProtoQuiz Research</div>
       <h1>Open research on how American EMS actually works.</h1>
-      <p class="lede">What a crew carries, and even who shows up, changes at county lines.
-      We read what agencies publish and turn it into a record anyone can check.</p>
+      <p class="lede">American EMS is fragmented by design: thousands of agencies write their
+      own protocols, and fire departments, counties, hospitals and private companies all
+      answer 911 somewhere. So what a crew carries, and even who shows up, changes at county
+      lines. We read what agencies publish and turn it into a record anyone can check.</p>
     </section>
 
     <section class="res-vols">
