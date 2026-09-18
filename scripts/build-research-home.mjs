@@ -86,8 +86,7 @@ const VOLUMES = [
     cta: 'Open the registry',
     q: 'Who answers the call, and who owns them?',
     body: `Every county in the country, mapped to the agency that answers the 911 call and
-      whether that service is public, private, hospital-based or a fire department. No
-      public national record of this exists, so we are building one.`,
+      who owns it. No public national record of this exists, so we are building one.`,
     stats: [[n(answered), 'counties with an answer'], [n(nA), 'named by a state record'],
             [n(nCounty), 'counties in scope']],
     standing: `Early. ${Math.round((nA / nCounty) * 100)}% of counties are named directly by a
@@ -129,10 +128,12 @@ ${researchBar('/research/')}
     <section class="res-hero">
       <div class="res-eyebrow">ProtoQuiz Research</div>
       <h1>Open research on how American EMS actually works.</h1>
-      <p class="lede">American EMS is fragmented by design: thousands of agencies write their
-      own protocols, and fire departments, counties, hospitals and private companies all
-      answer 911 somewhere. So what a crew carries, and even who shows up, changes at county
-      lines. We read what agencies publish and turn it into a record anyone can check.</p>
+      <p class="lede">EMS is fragmented across the country, period. In most places every
+      single agency has its own set of protocols. There is also no standard for who responds
+      to a 911 EMS call: in some places it is a fire department, in some places a private
+      company, in some places a county or hospital-based service. So what a crew carries, and
+      even who shows up, changes at county lines. We read what agencies publish and turn it
+      into a record anyone can check.</p>
     </section>
 
     <section class="res-vols">
