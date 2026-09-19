@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-09-19T06:08:34.227Z",
-  "totalUploads": 613,
-  "distinctProtocols": 423,
-  "activeStudiers": 420,
-  "pagesProcessed": 100279,
+  "generatedAt": "2026-09-19T12:08:32.674Z",
+  "totalUploads": 615,
+  "distinctProtocols": 424,
+  "activeStudiers": 421,
+  "pagesProcessed": 100824,
   "statesRepresented": 42,
   "countriesRepresented": 5,
   "internationalUploads": 10,
@@ -28,11 +28,11 @@
     "MD": 8,
     "AZ": 7,
     "TN": 6,
+    "IN": 6,
     "LA": 6,
     "UT": 5,
     "SC": 5,
     "AL": 5,
-    "IN": 5,
     "WI": 5,
     "KY": 4,
     "NE": 4,
@@ -40,10 +40,10 @@
     "OK": 3,
     "MO": 3,
     "DE": 3,
+    "OH": 3,
     "WV": 3,
     "MN": 2,
     "VT": 2,
-    "OH": 2,
     "AR": 2,
     "NH": 2,
     "NJ": 2,
@@ -942,6 +942,20 @@
       ]
     },
     {
+      "state": "OH",
+      "city": "Dayton",
+      "x": 679,
+      "y": 253,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "2026protocol",
+          "count": 2
+        }
+      ]
+    },
+    {
       "state": "AR",
       "city": "Little Rock",
       "x": 547,
@@ -1179,20 +1193,6 @@
       "topProtocols": [
         {
           "title": "mayoclinicambulanceservicepatientcareguidelines cb9878846fe31…",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "OH",
-      "city": "Dayton",
-      "x": 679,
-      "y": 253,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "2026protocol",
           "count": 1
         }
       ]
@@ -1837,6 +1837,20 @@
       "topProtocols": [
         {
           "title": "530.02 general procedures h +19 more",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "IN",
+      "city": "Richmond",
+      "x": 667,
+      "y": 253,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "Reid Protocol",
           "count": 1
         }
       ]
