@@ -1,15 +1,21 @@
 // scripts/build-research-home.mjs — /research, the umbrella over both volumes.
 //
 // ProtoQuiz Research is one research arm with two lines of work, and this page is the
-// parent that says so. It does not carry findings of its own: the protocol census owns
-// medication variation, the registry owns who answers 911. A reader landing here should
-// be able to tell in one screen which question each volume answers and how solid it is.
+// parent that says so: the protocol census owns what agencies carry, the registry owns
+// who answers 911. A reader landing here should be able to tell in one screen which
+// question each volume answers and how solid it is.
+//
+// Below the two volume cards sits a FINDINGS band. Those are results OF a volume, not
+// volumes, and they are set apart and narrower for exactly that reason -- promoting a
+// finding to a card would tell a reader there are four research programs when there
+// are two.
 //
 // Both cards state their own standing plainly, including the registry's, because the
 // registry is 23% named-by-a-source and saying otherwise here would undo the care the
 // volume itself takes.
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { navFor, researchBar, FOOTER_HTML, CHROME_HEAD } from './shared-chrome.mjs';
+import { DATA_DIR as PRACTICE_DIR } from './practice-data.mjs';
 
 // Each card shows a rendering of its own volume, built by build-research-thumbs.mjs from
 // the same data the volume publishes -- never a stock illustration.
@@ -162,6 +168,56 @@ const ABOUT = `        <p>There is a broad national foundation for EMS education
         better quality care for patients, and a more efficient, sustainable future for
         EMS.</p>`;
 
+// FINDINGS of volume one, not volumes of their own: the census answers "what is carried",
+// and these two answer the questions that follow it. They sit below the volume cards as a
+// narrower band so the two volumes keep the top of the page.
+//
+// Both counts are READ FROM THE EXTRACTS at build time. Neither is typed here, because the
+// extracts are rebuilt nightly and a number in this source would go stale silently while
+// still looking authoritative. If an extract is missing, the band renders without its
+// count rather than with a remembered one.
+const FINDINGS = [
+  {
+    href: '/research/practice/',
+    title: 'Who decides',
+    q: 'May the crew act, or must they call first?',
+    body: `The same procedure is a standing order in one system and needs a physician on the
+      phone in the next. We counted how far that reaches, and where two states disagree about
+      what one certification level may do at all.`,
+    count: (() => {
+      if (!existsSync(`${PRACTICE_DIR}/procedures_corpus_full.json`)) return null;
+      const p = JSON.parse(readFileSync(`${PRACTICE_DIR}/procedures_corpus_full.json`, 'utf8'));
+      return [n(new Set(p.rows.map(r => r.agencyKey)).size), 'agencies&rsquo; books read'];
+    })(),
+  },
+  {
+    href: '/research/changes/',
+    title: 'What changed',
+    q: 'What moved between two editions of the same book?',
+    body: `Agencies revise their protocols and the old edition disappears from the website.
+      We kept them, read the dated editions in sequence, and quote the page each change was
+      found on.`,
+    count: (() => {
+      if (!existsSync(`${PRACTICE_DIR}/timeline_v2.json`)) return null;
+      const t = JSON.parse(readFileSync(`${PRACTICE_DIR}/timeline_v2.json`, 'utf8'));
+      return [n((t.events || []).filter(e => e.confidence === 'verified').length),
+        'changes re-read on the page'];
+    })(),
+  },
+];
+
+const FINDINGS_HTML = `    <section class="res-findings">
+      <h2>Findings from the census</h2>
+      <div class="find-grid">
+${FINDINGS.map(f => `        <article class="find">
+          <h3><a href="${f.href}">${f.title}</a></h3>
+          <p class="find-q">${f.q}</p>
+          <p class="find-body">${f.body}</p>
+${f.count ? `          <p class="find-count"><strong>${f.count[0]}</strong> ${f.count[1]}</p>` : ''}
+        </article>`).join('\n')}
+      </div>
+    </section>`;
+
 const card = v => `        <article class="vol">
 ${v.thumb ? `          <figure class="vol-thumb"><a href="${v.href}" aria-label="${v.title}">${v.thumb}</a><figcaption>${v.thumbCap}</figcaption></figure>` : ''}
           <div class="vol-eyebrow">${v.eyebrow}</div>
@@ -182,7 +238,7 @@ const html = `<!doctype html>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ProtoQuiz Research - open research on American EMS</title>
-  <meta name="description" content="ProtoQuiz Research is an open research programme on American EMS, built from public documents: the US EMS Protocol Census on what agencies carry, and a county-level registry of who answers the 911 call.">
+  <meta name="description" content="ProtoQuiz Research is an open research program on American EMS, built from public documents: the US EMS Protocol Census on what agencies carry, and a county-level registry of who answers the 911 call.">
   <link rel="canonical" href="https://protoquiz.com/research/">
 ${CHROME_HEAD}
   <link rel="stylesheet" href="/assets/research.css">
@@ -211,6 +267,8 @@ ${ABOUT}
     <section class="res-vols">
 ${VOLUMES.map(card).join('\n')}
     </section>
+
+${FINDINGS_HTML}
 
     <section class="res-method">
       <h2>How we handle uncertainty</h2>

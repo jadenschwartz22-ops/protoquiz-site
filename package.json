@@ -14,8 +14,12 @@
     "test:census-pages": "node scripts/test-census-pages.mjs",
     "test:census-report": "node scripts/test-census-report.mjs",
     "test:census-indexnow": "node scripts/test-census-indexnow.mjs",
-    "test": "npm run test:census-pages && npm run test:census-report && npm run test:census-indexnow && npm run test:shared-chrome",
-    "test:shared-chrome": "node scripts/test-shared-chrome.mjs"
+    "test": "npm run test:census-pages && npm run test:census-report && npm run test:census-indexnow && npm run test:shared-chrome && npm run test:practice-pages",
+    "test:shared-chrome": "node scripts/test-shared-chrome.mjs",
+    "practice:charts": "node scripts/build-practice-charts.mjs",
+    "practice:pages": "node scripts/build-practice.mjs && node scripts/build-changes.mjs",
+    "practice:build": "npm run practice:charts && npm run practice:pages",
+    "test:practice-pages": "node scripts/test-practice-pages.mjs"
   },
   "keywords": [
     "EMS",

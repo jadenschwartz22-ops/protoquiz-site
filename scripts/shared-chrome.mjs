@@ -62,9 +62,16 @@ const navLinks = current => SECTIONS.map(([label, href]) => {
 // them. The census keeps its own section bar below this one -- that answers "where in
 // the census", this answers "which volume", and collapsing them would make a census
 // section look like a sibling of the whole 911 volume.
+// /research/practice and /research/changes are FINDINGS of the census volume, not
+// volumes of their own, so they sit next to it in this bar rather than beside the atlas.
+// They are named by the question each answers -- a reader scanning this bar is choosing
+// between "what is carried", "who decides" and "what changed", and a label like
+// "Procedures" would not tell them apart.
 const RESEARCH_VOLUMES = [
   ['Overview', '/research/', p => p === '/research/'],
   ['Protocol census', '/census/', p => p.startsWith('/census/')],
+  ['Who decides', '/research/practice/', p => p.startsWith('/research/practice/')],
+  ['What changed', '/research/changes/', p => p.startsWith('/research/changes/')],
   ['911 coverage', '/research/atlas/', p => p.startsWith('/research/atlas/')],
 ];
 
@@ -121,6 +128,8 @@ export const FOOTER_HTML = `  <!-- shared-chrome:footer -->
         <a href="/census/">Protocol census</a>
         <a href="/census/#states">By state</a>
         <a href="/census/#drugs">By medication</a>
+        <a href="/research/practice/">Who decides</a>
+        <a href="/research/changes/">What changed</a>
         <a href="/research/atlas/">911 coverage</a>
         <a href="/census/methodology/">Methodology</a>
       </div>
