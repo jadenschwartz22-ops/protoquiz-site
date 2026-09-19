@@ -698,8 +698,12 @@ function landingPage({ manifest, states, drugs, agencyPageCount, agencies = [], 
   const lead = `      <section class="hero">
         <div class="hero-say">
           <span class="badge">Early release. Data building nightly.</span>
-          <h1>What EMS can give you changes at the county line.</h1>
-          <p class="dek">Every agency writes its own protocols, so the medications a crew carries &mdash; and the doses and routes they are allowed to give &mdash; differ from one agency to the next. The United States EMS Protocol Census is a standing research program built on public documents: it reads what agencies publish and turns it into a versioned record of what they carry, rebuilt every night from the agencies' own documents.</p>
+          <h1>EMS clinical care changes depending on where you are.</h1>
+          <p class="dek">It shows up in the medications carried, the doses and routes crews are allowed to
+          give, and the procedures they are permitted to perform &mdash; and in whether a procedure is a
+          standing order or requires calling a physician first. The United States EMS Protocol Census is a
+          standing research program built on public documents: it reads what agencies publish and turns it
+          into a versioned record anyone can check, rebuilt every night from the agencies' own documents.</p>
         </div>
         <figure class="hero-map">
           ${map.svg}
