@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-09-20T00:08:34.270Z",
-  "totalUploads": 616,
-  "distinctProtocols": 425,
-  "activeStudiers": 422,
-  "pagesProcessed": 100911,
+  "generatedAt": "2026-09-20T06:08:34.615Z",
+  "totalUploads": 618,
+  "distinctProtocols": 426,
+  "activeStudiers": 424,
+  "pagesProcessed": 101348,
   "statesRepresented": 42,
   "countriesRepresented": 5,
   "internationalUploads": 10,
   "byState": {
-    "CO": 52,
+    "CO": 53,
     "MI": 47,
     "CA": 44,
     "MA": 27,
@@ -60,6 +60,28 @@
   },
   "locales": [
     {
+      "state": "CO",
+      "city": "Denver",
+      "x": 330,
+      "y": 258,
+      "count": 47,
+      "tier": "hot",
+      "topProtocols": [
+        {
+          "title": "DMEMS Protocols January 2026 (Example)",
+          "count": 10
+        },
+        {
+          "title": "DMEMSMD Protocols January 2026 FINAL 2025 02 02",
+          "count": 8
+        },
+        {
+          "title": "dmemsmd protocols july 2025 final 2025 07 14",
+          "count": 7
+        }
+      ]
+    },
+    {
       "state": "MI",
       "city": "Detroit",
       "x": 690,
@@ -78,28 +100,6 @@
         {
           "title": "1.5 Shock",
           "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CO",
-      "city": "Denver",
-      "x": 330,
-      "y": 258,
-      "count": 46,
-      "tier": "hot",
-      "topProtocols": [
-        {
-          "title": "DMEMS Protocols January 2026 (Example)",
-          "count": 10
-        },
-        {
-          "title": "DMEMSMD Protocols January 2026 FINAL 2025 02 02",
-          "count": 8
-        },
-        {
-          "title": "dmemsmd protocols july 2025 final 2025 07 14",
-          "count": 7
         }
       ]
     },
