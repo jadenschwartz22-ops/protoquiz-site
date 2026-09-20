@@ -434,7 +434,7 @@
    "currentHash": "a76003ddfc213bcacd7cbd344b69c3ad01233e3f5ffc6acaf3759280fd9eb3cf",
    "currentEffectiveDate": "2026-08-15",
    "documentCount": 12,
-   "doseCount": 388,
+   "doseCount": 389,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -517,8 +517,8 @@
    "jurisdiction": "county",
    "currentHash": "4db1779f15e798c4c6cf73bc9011ccc5152321178b66bf2c42046c55ae1dbd7e",
    "currentEffectiveDate": "2026-04-22",
-   "documentCount": 13,
-   "doseCount": 1492,
+   "documentCount": 14,
+   "doseCount": 1663,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -1218,7 +1218,7 @@
    "currentHash": "ae8d7d93add64001d56b69a1427c6a6c85ebb803204d506ec17fa6a4c91955c1",
    "currentEffectiveDate": "2026-07-01",
    "documentCount": 264,
-   "doseCount": 19129,
+   "doseCount": 19268,
    "pendingReview": {
     "effectiveDate": "2025-01-01"
    },
@@ -1535,8 +1535,8 @@
    "jurisdiction": "regional",
    "currentHash": "60adbd9627801f2bb5eb36a7ed1fb3297f119fda658a953999f8f4ff4727e7e0",
    "currentEffectiveDate": "2026-07-01",
-   "documentCount": 6,
-   "doseCount": 803,
+   "documentCount": 7,
+   "doseCount": 837,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -2634,7 +2634,7 @@
    "currentHash": "50c062223c5730fd5fd1d82ce245b6ec22442f5cb89b9c06e9fa9002b43ec42b",
    "currentEffectiveDate": "2020-11-01",
    "documentCount": 1,
-   "doseCount": 0,
+   "doseCount": 94,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -2823,7 +2823,7 @@
    "currentHash": "504313abe5d8163b385744af4f92232e5c63a5c7025f89db97e4b6b7933c06b2",
    "currentEffectiveDate": "2026-05-01",
    "documentCount": 5,
-   "doseCount": 715,
+   "doseCount": 724,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -3844,33 +3844,12 @@
    "currentHash": "4f963ac4cb70ea77d394322687cba390",
    "currentEffectiveDate": "2025-07-01",
    "documentCount": 1,
-   "doseCount": 0,
+   "doseCount": 101,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
     "hasProtocol": true,
     "jurisdiction": "county"
-   }
-  },
-  {
-   "agencyKey": "san-francisco-ems-agency",
-   "name": "San Francisco EMS Agency",
-   "aliases": [
-    "San Francisco EMS Agency"
-   ],
-   "state": "CA",
-   "country": "US",
-   "city": "San Francisco",
-   "jurisdiction": "city",
-   "currentHash": "4b4db32f742c15289b2e27a94b6117cd0e78b620111fc6cdb1e5c5eab87a51b9",
-   "currentEffectiveDate": "2025-10-01",
-   "documentCount": 1,
-   "doseCount": 0,
-   "pendingReview": null,
-   "mayBeOutdated": false,
-   "coverage": {
-    "hasProtocol": true,
-    "jurisdiction": "city"
    }
   },
   {
