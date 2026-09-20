@@ -22,6 +22,12 @@ import { join, dirname } from 'node:path';
 import { tmpdir } from 'node:os';
 import { createHash } from 'node:crypto';
 
+// The census is UNPUBLISHED until the new research site launches (2026-09-20, Jaden).
+// Pages still build and still resolve, but they must not be indexed. Set
+// CENSUS_ROBOTS=index,follow to re-publish; the DEFAULT is the safe state, so a
+// forgotten env var leaves the census hidden rather than silently public.
+const ROBOTS = process.env.CENSUS_ROBOTS || "noindex,nofollow";
+
 const hash = s => createHash('sha256').update(s).digest('hex').slice(0, 16);
 
 // A SET, not a single version. L3 bumped documents.json to 2 (effectiveDateApproximate
@@ -273,7 +279,7 @@ const head = ({ title, description, path, jsonLd }) => `<!doctype html>
 
   <meta name="apple-itunes-app" content="app-id=${APP_ID}" />
   <link rel="canonical" href="${esc(ORIGIN + path)}">
-  <meta name="robots" content="index,follow" />
+  <meta name="robots" content="${ROBOTS}" />
   <meta property="og:title" content="${esc(title)}" />
   <meta property="og:description" content="${esc(description)}" />
   <meta property="og:type" content="website" />

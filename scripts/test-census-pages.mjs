@@ -91,8 +91,22 @@ test('an agency with no state gets no page', () => {
 test(`an indication under ${MIN_INDICATION_ROWS} rows gets no page`, () => {
   assert.ok(!paths.has('/census/drugs/epinephrine/hypotension-push-dose/'), 'thin indication should have no page');
 });
+// The invariant is about the SKIP decision: a page that fails the content bar must not
+// exist at all, rather than be published and hidden behind a noindex. It is NOT a claim
+// that the census is always indexable — the whole section is unpublished until the new
+// research site launches, so every page currently carries noindex by design (ROBOTS in
+// census-pages.mjs). Asserting on the absent URLs keeps the real guard and survives the
+// site-wide setting; asserting on the string did not.
 test('a skipped page is absent, not noindexed', () => {
-  assert.ok(!allHtml.includes('noindex'), 'no page may carry noindex');
+  for (const p of ['/census/agencies/thin-agency/', '/census/agencies/stateless-ems/',
+                   '/census/drugs/epinephrine/hypotension-push-dose/']) {
+    assert.ok(!paths.has(p), `${p} must not be generated at all`);
+  }
+});
+test('the site-wide robots setting is applied to every page', () => {
+  const pages = [...allHtml.matchAll(/<meta name="robots" content="([^"]*)"/g)].map(m => m[1]);
+  assert.ok(pages.length > 0, 'pages carry a robots meta');
+  assert.ok(pages.every(v => v === pages[0]), 'every page agrees on one robots value');
 });
 test('agencies that clear the bar do get pages', () => {
   assert.ok(paths.has('/census/agencies/denver-health/'));

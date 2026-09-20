@@ -30,6 +30,12 @@ import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { indicationLabel, reportLabel as editionLabel, productBar } from './census-pages.mjs';
 
+// The census is UNPUBLISHED until the new research site launches (2026-09-20, Jaden).
+// Pages still build and still resolve, but they must not be indexed. Set
+// CENSUS_ROBOTS=index,follow to re-publish; the DEFAULT is the safe state, so a
+// forgotten env var leaves the census hidden rather than silently public.
+const ROBOTS = process.env.CENSUS_ROBOTS || "noindex,nofollow";
+
 const ORIGIN = 'https://protoquiz.com';
 const APP_ID = '6753611139';
 const GA_ID = 'G-LNSS9BMEP8';
@@ -204,7 +210,7 @@ ${chart(g)}
 
   <meta name="apple-itunes-app" content="app-id=${APP_ID}" />
   <link rel="canonical" href="${ORIGIN}${path}">
-  <meta name="robots" content="index,follow" />
+  <meta name="robots" content="${ROBOTS}" />
   <meta property="og:title" content="${esc(title)}" />
   <meta property="og:description" content="${esc(description)}" />
   <meta property="og:type" content="article" />
