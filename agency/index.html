@@ -42,7 +42,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
-  <link rel="stylesheet" href="/assets/chrome.css?v=c3e14a1e">
+  <link rel="stylesheet" href="/assets/chrome.css?v=ec5bed81">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
@@ -3018,7 +3018,6 @@
     .reveal{opacity:1 !important; transform:none !important; transition:none !important;}
   }
 
-    footer{padding:40px 32px; text-align:center; font-size:13px; color:var(--muted); border-top:1px solid var(--line);}
 
   @media (max-width:1180px){
     /* Below 1180px the laptop (max 700px) crowds the narration column and
@@ -3328,8 +3327,15 @@
   .px-frame-list li strong{color:var(--ink); font-weight:700;}
 
   /* RIGHT: math rows -- each row opens a source modal with highlighted excerpt */
+  /* Says in words what the chevron hints at. A savings figure a chief cannot audit is
+     a figure they cannot take to a board. */
+  /* margin-top:auto here, not on the list: the invite and the rows it introduces move
+     to the bottom of the column as ONE block, instead of the list floating away. */
+  .px-frame-math-invite{
+    margin:auto 0 6px; font-size:13px; line-height:1.45; color:var(--muted);
+  }
   .px-frame-math{
-    list-style:none; padding:0; margin:auto 0 0;
+    list-style:none; padding:0; margin:0;
     display:flex; flex-direction:column; gap:0;
   }
   .px-frame-math-row{
@@ -3356,18 +3362,21 @@
   .px-frame-math-row:focus-visible{
     outline:2px solid var(--accent2); outline-offset:2px;
   }
-  /* "click for source" hover affordance -- a faint chevron on the right */
+  /* "click for source" affordance. This used to be opacity:0 until hover, which meant
+     the sourced math -- the whole reason a chief believes the savings number -- looked
+     like plain text and was never opened. On touch there is no hover at all, so it was
+     invisible outright. It now shows at rest and only brightens on hover. */
   .px-frame-math-row::after{
     content:"\203A"; /* single right-pointing angle quote */
     position:absolute; right:14px; top:50%;
-    transform:translateY(-50%) translateX(-4px);
+    transform:translateY(-50%);
     color:var(--accent2); font-size:18px; font-weight:300;
-    opacity:0;
+    opacity:.45;
     transition:opacity .2s ease, transform .2s ease;
   }
   .px-frame-math-row:hover::after{
-    opacity:.7;
-    transform:translateY(-50%) translateX(0);
+    opacity:1;
+    transform:translateY(-50%) translateX(3px);
   }
   .px-frame-math-text{
     display:flex; flex-direction:column; gap:4px;
@@ -4542,8 +4551,7 @@
         </div>
       </div>
       <div class="nav-right">
-        <a href="https://demo.protoquiz.com" class="nav-link">Sign in</a>
-        <a href="/agency/#contact" class="nav-cta">Contact sales</a>
+        <a href="/agency/#contact" class="nav-cta" id="openContact">Contact sales</a>
       </div>
     </nav>
   </header>
@@ -5617,6 +5625,7 @@
           <div class="px-frame-total-row">
             <span data-px-val="providers">75</span> providers &middot; <strong data-px-val="save-total">$19,000</strong> a year, estimated
           </div>
+          <p class="px-frame-math-invite">Where this number comes from &mdash; open a line for the sources and the arithmetic:</p>
           <ul class="px-frame-math">
             <li>
               <button type="button" class="px-frame-math-row" data-source="onboarding">

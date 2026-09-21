@@ -264,21 +264,19 @@
 [data-shift="night"] .step { border-top-color: var(--ink); }
 [data-shift="night"] .faq details { border-bottom-color: var(--line); }
 
-/* The page chrome follows the shift too, so the seam never shows. */
-[data-shift="night"] .site-header,
-[data-shift="night"] .site-footer {
-  --ink: #f4f1ea; --ink-2: #a8a399; --ink-3: #8a8478;
-  --line: #1c1a14; --paper: #06050a; --ground: #06050a;
-  --accent: #ffb000; --accent-hover: #ffc233;
-}
-[data-shift="night"] .site-header { background: var(--paper); border-bottom-color: var(--line); }
-[data-shift="night"] .site-footer { background: var(--ground); border-top-color: var(--line); }
-[data-shift="night"] .site-header .nav-cta { color: #0c0a07; }
+/* The page chrome follows the shift too, so the seam never shows -- but the rules for
+   that now live in chrome.css, which matches [data-shift="night"] alongside its own
+   [data-chrome="night"]. The chrome owns its palette; this file only drives the toggle.
+   Keeping a copy here is what let the two drift, so there is deliberately none. */
 
 html { transition: none; }
 [data-shift] body, [data-shift] .app-hero, [data-shift] .site-header, [data-shift] .site-footer {
   transition: background-color .35s cubic-bezier(.16,1,.3,1), border-color .35s cubic-bezier(.16,1,.3,1);
 }
+/* First paint only: the inline head script sets this while it corrects the shift from
+   localStorage, so a restored choice appears instantly instead of fading in from the
+   markup default. Both rAFs later it is gone and the toggle animates normally. */
+html.no-anim, html.no-anim * { transition: none !important; animation: none !important; }
 
 /* conveyor sits under the hero */
 .belt-wrap { padding: 0 0 clamp(16px, 2.5vw, 28px); background: var(--ground); border-bottom: 1px solid var(--line); }

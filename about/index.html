@@ -20,7 +20,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="About the Founder - ProtoQuiz" />
   <meta name="twitter:image" content="https://protoquiz.com/og-image.png" />
-  <meta name="theme-color" content="#06050a" />
+  <meta name="theme-color" content="#ffffff">
 
   <link rel="icon" href="/favicon.ico?v=4" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=4" />
@@ -56,18 +56,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
-  <link rel="stylesheet" href="/assets/chrome.css?v=c3e14a1e">
+  <link rel="stylesheet" href="/assets/chrome.css?v=ec5bed81">
   <style>
-    :root{--bg:#06050a;--ink:#eae6dd;--ink-soft:#c9c4b8;--muted:#8a857a;--amber:#ffb000;--line:rgba(234,230,221,.12);--mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;--sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;}
+    /* The page is LIGHT, like the rest of the site. The local names below are aliases
+       onto the global tokens in chrome.css so the palette keeps one home; only the two
+       FONT stacks are this page's own, because the mono display face is what gives the
+       founder note its voice. `--amber` keeps its name but is now the brand accent:
+       amber on paper fails contrast, and the site has exactly one accent. */
+    :root{--bg:var(--paper);--ink-soft:var(--ink-2);--muted:var(--ink-3);--amber:var(--accent);--mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;--sans:'Sora',system-ui,-apple-system,sans-serif;}
     *{box-sizing:border-box;margin:0;}
     body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.65;}
     .wrap{max-width:720px;margin:0 auto;padding:0 24px;}
-    header{border-bottom:1px solid var(--line);padding:20px 0;}
-    header .wrap{display:flex;align-items:center;justify-content:space-between;}
-    .brand{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-weight:700;font-size:15px;letter-spacing:.06em;color:var(--ink);text-decoration:none;text-transform:uppercase;}
-    .brand img{width:36px;height:36px;}
-    header nav a{font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-decoration:none;margin-left:18px;}
-    header nav a:hover{color:var(--amber);}
     main{padding:72px 0 96px;}
     .tag{font-family:var(--mono);color:var(--amber);font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;margin-bottom:18px;}
     h1{font-family:var(--mono);font-size:clamp(30px,5vw,44px);letter-spacing:-.01em;text-transform:uppercase;line-height:1.1;margin-bottom:28px;}
@@ -82,10 +81,6 @@
     .btn-primary:hover{filter:brightness(1.08);}
     .btn-ghost{border:1px solid var(--amber);color:var(--amber);}
     .btn-ghost:hover{background:var(--amber);color:var(--bg);}
-    footer{border-top:1px solid var(--line);padding:32px 0;font-family:var(--mono);font-size:12.5px;color:var(--muted);}
-    footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
-    footer a{color:var(--muted);text-decoration:none;}
-    footer a:hover{color:var(--amber);}
   </style>
 </head>
 <body>
@@ -102,8 +97,7 @@
         </div>
       </div>
       <div class="nav-right">
-        <a href="https://demo.protoquiz.com" class="nav-link">Sign in</a>
-        <a href="/agency/#contact" class="nav-cta">Contact sales</a>
+        <a href="/agency/#contact" class="nav-cta" id="openContact">Contact sales</a>
       </div>
     </nav>
   </header>

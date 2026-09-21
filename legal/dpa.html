@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
-  <link rel="stylesheet" href="/assets/chrome.css?v=c3e14a1e">
+  <link rel="stylesheet" href="/assets/chrome.css?v=ec5bed81">
   <link rel="stylesheet" href="/legal/_shared.css" />
   <style>
     table.subprocessors{
@@ -46,19 +46,6 @@
   </style>
 </head>
 <body>
-
-<div class="statusbar">
-  <a href="/" class="brand">PROTOQUIZ</a>
-  <div class="right">
-    <a href="/agency/">Home</a>
-    <a href="/b2b/terms/">Terms</a>
-    <a href="/b2b/privacy/">Privacy</a>
-    <a href="/legal/msa.html">MSA</a>
-    <button class="print-btn" onclick="window.print()">PRINT / PDF</button>
-  </div>
-</div>
-
-<main>
   <!-- shared-chrome:nav -->
   <header class="site-header">
     <nav class="site-nav" aria-label="Primary">
@@ -72,12 +59,19 @@
         </div>
       </div>
       <div class="nav-right">
-        <a href="https://demo.protoquiz.com" class="nav-link">Sign in</a>
-        <a href="/agency/#contact" class="nav-cta">Contact sales</a>
+        <a href="/agency/#contact" class="nav-cta" id="openContact">Contact sales</a>
       </div>
     </nav>
   </header>
   <!-- /shared-chrome:nav -->
+
+
+<main>
+
+  <header class="doc-header">
+    <div class="doc-kicker">Legal</div>
+    <h1 class="doc-title">Data Processing Addendum</h1>
+  </header>
 
   <div class="callout">
     This Data Processing Addendum ("<strong>DPA</strong>") supplements the Master Services Agreement, Terms of Service, or other written agreement between Teach Me to Live LLC, d/b/a ProtoQuiz ("<strong>Provider</strong>") and the Customer (the "<strong>Principal Agreement</strong>"). In the event of conflict between this DPA and the Principal Agreement regarding data processing, this DPA controls.

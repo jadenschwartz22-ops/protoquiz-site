@@ -111,19 +111,18 @@ ${researchBar('/research/practice/')}
       <div class="res-eyebrow">Protocol census &middot; a finding</div>
       <h1>The same procedure. A different person deciding.</h1>
       <p class="lede">A paramedic decompresses a chest on their own authority in one county
-      and telephones a physician for permission in the next. Both crews trained to the same
-      national standard. We read ${n(agencies)} agencies&rsquo; protocol books across
-      ${states} states to see how far that reaches, and it reaches further than the
-      procedure list does.</p>
+      and telephones a physician for permission in the next. Same national standard, both
+      crews. We read ${n(agencies)} agencies&rsquo; protocol books across ${states} states to
+      see how far that reaches.</p>
     </section>
 
     <section class="res-map-wrap">
       <figure class="practice-fig">
 ${charts.contested || '<p class="rm-cap">Chart unavailable: the procedure extract was not readable at build time.</p>'}
-        <figcaption class="rm-cap">Procedures where at least ${MIN_PER_SIDE} agencies make it a
-        standing order and at least ${MIN_PER_SIDE} require contacting a physician first. Each
-        bar counts agencies, not pages: an agency whose book names a procedure on nine pages
-        is one practice, not nine votes.</figcaption>
+        <figcaption class="rm-cap">Procedures where at least ${MIN_PER_SIDE} agencies make it
+        a standing order and at least ${MIN_PER_SIDE} require calling first. Bars count
+        agencies, not pages &mdash; one book is one practice, however many times it says
+        so.</figcaption>
       </figure>
     </section>
 
@@ -142,20 +141,16 @@ ${charts.contested || '<p class="rm-cap">Chart unavailable: the procedure extrac
         <span class="key"><i class="a-seg-un"></i>Not stated in the book</span>
       </div>
       <p class="headline-note"><strong>&ldquo;Depends&rdquo; is a real answer, not a muddle.</strong>
-      Those books give BOTH answers for the same procedure &mdash; a standing order in one
-      presentation, a call to a physician in another, most often cardiac arrest against
-      everything else. Counting such an agency on both sides would make the columns add up to
-      more agencies than exist, and picking a side for it would invent a policy its book does
-      not have. So it is counted once, here. ${COPY.notStated}</p>
+      Those books give both answers for the same procedure &mdash; a standing order in one
+      presentation, a call in another, most often cardiac arrest against everything else.
+      Counted once, here. ${COPY.notStated}</p>
     </section>
 
     <section class="res-table-wrap">
       <h2>Where agencies disagree about who decides</h2>
-      <p class="res-subnote">${con.length} of ${procedures} procedures in the vocabulary are
-      contested: enough agencies commit to each single answer that neither is one
-      document&rsquo;s habit. Ordered by how many agencies took a side, so the best-evidenced
-      disagreements sit at the top. Every agency appears in exactly one column of a row, and
-      the four columns add up to the agencies naming that procedure.</p>
+      <p class="res-subnote">${con.length} of ${procedures} procedures are contested: enough
+      agencies commit to each answer that neither is one document&rsquo;s habit. Ordered by
+      how many took a side. Every agency appears in exactly one column.</p>
       <div class="table-scroll">
       <table class="res-table">
         <thead>
@@ -181,12 +176,11 @@ ${con.map(conRow).join('\n')}
 
 ${dis.length ? `    <section class="res-table-wrap">
       <h2>Where states disagree at the same certification level</h2>
-      <p class="res-subnote">This is the one comparison in the census where a
-      <em>no</em> is publishable. ${matrixStates.length} states publish a real competency
-      matrix &mdash; every skill against every certification level, each cell ticked or not
-      &mdash; and an unticked cell in an enumeration like that is the state saying no, not the
-      document being quiet. Below are the ${dis.length} skills where two of those states, at
-      the same level, give opposite answers.</p>
+      <p class="res-subnote">The one comparison here where a <em>no</em> is publishable:
+      ${matrixStates.length} states publish a full competency matrix, every skill against
+      every level, so an unticked cell is the state saying no rather than the document being
+      quiet. These ${dis.length} skills are where two of those states, at the same level,
+      give opposite answers.</p>
       <div class="table-scroll">
       <table class="res-table">
         <thead>
@@ -198,55 +192,45 @@ ${dis.map(disRow).join('\n')}
         </tbody>
       </table>
       </div>
-      <p class="headline-note">Skills are matched on the state&rsquo;s own wording, so this
-      table <strong>undercounts</strong>: one state&rsquo;s &ldquo;Cardiac Pacing&rdquo; and
-      another&rsquo;s &ldquo;Transcutaneous Pacing&rdquo; are the same skill and will not pair
-      here. An instrument that can only miss disagreements is the right way round for this
-      question.${sectionStates.length ? ` ${sectionStates.length} further states
-      (${sectionStates.join(', ')}) publish scope as prose rather than a matrix. Nothing they
-      leave out appears here as a <em>no</em>, because a list of what a level may do is not a
-      list of what it may not.` : ''}</p>
+      <p class="headline-note">Skills are matched on each state&rsquo;s own wording, so this
+      table <strong>undercounts</strong> &mdash; &ldquo;Cardiac Pacing&rdquo; and
+      &ldquo;Transcutaneous Pacing&rdquo; are one skill and will not pair. An instrument that
+      can only miss disagreements is the right way round.${sectionStates.length ? `
+      ${sectionStates.length} further states (${sectionStates.join(', ')}) publish scope as
+      prose, not a matrix, so nothing they omit appears here as a <em>no</em>.` : ''}</p>
     </section>` : ''}
 
     <section class="res-method">
       <h2>What a certification level is, and when we cannot tell you</h2>
       <p>${n(certStated)} of ${n(rows.length)} readings name the level that may perform the
-      procedure. The rest split into two groups that this page refuses to pool, because they
-      are not the same fact:</p>
+      procedure. The rest split into two groups, kept apart because they are not the same
+      fact:</p>
       <dl class="tierdl">
         <dt><span class="tierchip t-unk"></span>Not stated &mdash; ${n(certUnknown.length)} readings</dt>
         <dd>The page names the procedure and never names a level. We could not read the
-        answer, so we do not print one. This is an absence of evidence in our reading, not a
-        statement by the agency.</dd>
+        answer, so we do not print one &mdash; an absence in our reading, not a statement by
+        the agency.</dd>
 ${undeterminable.length ? `        <dt><span class="tierchip t-und"></span>Set elsewhere by design &mdash; ${n(undeterminable.length)} readings, ${undetAgencies.size} ${undetAgencies.size === 1 ? 'agency' : 'agencies'}${undetStates.length ? ` (${undetStates.join(', ')})` : ''}</dt>
-        <dd>${COPY.undeterminable} We hold this apart from &ldquo;not stated&rdquo; because the
-        document is not failing to answer &mdash; it is answering that the answer is local.
-        Rolling it into a missing-data bucket would erase one of the more interesting facts in
-        the corpus.</dd>` : `        <dt><span class="tierchip t-und"></span>Set elsewhere by design &mdash; none in this build</dt>
-        <dd>${COPY.undeterminable} No reading in the current extract carries that flag, so the
-        page shows none. It is kept here, and counted separately the moment one appears,
-        because the distinction is the point: a document that declines to set a tier has said
-        something, and folding it into &ldquo;not stated&rdquo; would throw it away.</dd>`}
+        <dd>${COPY.undeterminable} Held apart from &ldquo;not stated&rdquo;: the document is
+        not failing to answer, it is answering that the answer is local.</dd>` : `        <dt><span class="tierchip t-und"></span>Set elsewhere by design &mdash; none in this build</dt>
+        <dd>${COPY.undeterminable} None in the current extract. Counted separately the moment
+        one appears, because a document that declines to set a tier has said something.</dd>`}
       </dl>
 
       <h2>What this page will never tell you</h2>
       <p><strong>${COPY.presenceOnly}</strong></p>
-      <p>Nowhere on this page does an agency appear as not doing something. The census reads
-      what books say, and a protocol book is written to guide care, not to enumerate a scope of
-      practice: it can omit a procedure the crew performs daily under a separate policy, a
-      state rule or a medical director&rsquo;s standing memo. The only negatives we publish are
-      the state matrix cells above, and they are negatives because a matrix is an enumeration
-      &mdash; it lists every skill and every level and ticks the boxes, so an unticked box is
-      the document speaking.</p>
+      <p>No agency appears here as not doing something. A protocol book guides care; it does
+      not enumerate a scope of practice, so it can omit a procedure the crew performs daily
+      under a separate policy or a medical director&rsquo;s memo. The only negatives we
+      publish are the state matrix cells above, where an unticked box is the document
+      speaking.</p>
 
       <h2>How far this reaches</h2>
       <p>${n(agencies)} agencies across ${states} states, of roughly 26,883 licensed EMS
-      agencies our own roster research counts nationally. That is a sample, and a sample chosen
-      by which agencies publish their protocols in a readable form &mdash; which is not a random
-      slice of American EMS. Read every count here as &ldquo;of the books we have read&rdquo;,
-      never as &ldquo;of the country&rdquo;.</p>
-      <p>Every reading carries the document and the page it came from, and is rebuilt from the
-      source documents on each run rather than edited in place.</p>
+      agencies nationally &mdash; a sample chosen by who publishes readably, which is not a
+      random slice of American EMS. Read every count as &ldquo;of the books we have
+      read&rdquo;, never as &ldquo;of the country&rdquo;. Every reading carries its document
+      and page, and is rebuilt from source on each run.</p>
       <p><a href="/census/">Open the protocol census</a> &middot;
       <a href="/research/changes/">How these books change over time</a> &middot;
       <a href="/census/methodology/">Census methodology</a></p>

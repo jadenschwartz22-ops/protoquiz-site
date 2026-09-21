@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
-  <link rel="stylesheet" href="/assets/chrome.css?v=c3e14a1e">
+  <link rel="stylesheet" href="/assets/chrome.css?v=ec5bed81">
   <link rel="stylesheet" href="/legal/_shared.css" />
   <style>
     .field-row{display:flex;gap:24px;margin:18px 0;flex-wrap:wrap;}
@@ -41,19 +41,6 @@
   </style>
 </head>
 <body>
-
-<div class="statusbar">
-  <a href="/" class="brand">PROTOQUIZ</a>
-  <div class="right">
-    <a href="/agency/">Home</a>
-    <a href="/legal/msa.html">MSA</a>
-    <a href="/legal/dpa.html">DPA</a>
-    <a href="/b2b/terms/">Terms</a>
-    <button class="print-btn" onclick="window.print()">PRINT / PDF</button>
-  </div>
-</div>
-
-<main>
   <!-- shared-chrome:nav -->
   <header class="site-header">
     <nav class="site-nav" aria-label="Primary">
@@ -67,12 +54,19 @@
         </div>
       </div>
       <div class="nav-right">
-        <a href="https://demo.protoquiz.com" class="nav-link">Sign in</a>
-        <a href="/agency/#contact" class="nav-cta">Contact sales</a>
+        <a href="/agency/#contact" class="nav-cta" id="openContact">Contact sales</a>
       </div>
     </nav>
   </header>
   <!-- /shared-chrome:nav -->
+
+
+<main>
+
+  <header class="doc-header">
+    <div class="doc-kicker">Legal</div>
+    <h1 class="doc-title">Order Form</h1>
+  </header>
 
   <div class="callout">
     This Order Form is executed under the Master Services Agreement (MSA) between Teach Me to Live LLC, d/b/a ProtoQuiz ("<strong>Provider</strong>") and the Customer named below. It incorporates the MSA at <a href="https://protoquiz.com/legal/msa.html">protoquiz.com/legal/msa.html</a>, the DPA at <a href="https://protoquiz.com/legal/dpa.html">protoquiz.com/legal/dpa.html</a>, and the B2B Terms at <a href="https://protoquiz.com/b2b/terms/">protoquiz.com/b2b/terms</a> by reference. Capitalized terms have the meanings given in the MSA.

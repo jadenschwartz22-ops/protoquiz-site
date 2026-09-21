@@ -49,11 +49,49 @@ const paths = Object.entries(geo.counties).map(([fips, d]) => {
   const tierWord = blank ? 'no usable source'
     : c.tier === 'A' ? 'named by a state record'
     : `tier ${c.tier}, inferred`;
-  return `<path d="${d}" fill="${COL[own] ?? COL.unknown}" fill-opacity="${op}" class="cty">`
+  // data-f is the county FIPS. The detail panel joins on it rather than on the title
+  // text. "Name, ST" happens to be unique today (checked: 0 collisions across 3,144),
+  // but it is display copy -- 422 county names repeat across states, so the state
+  // suffix is the only thing keeping it unique, and an escaped ampersand or a renamed
+  // county would silently break the join. FIPS is the identifier; the title is words.
+  return `<path d="${d}" fill="${COL[own] ?? COL.unknown}" fill-opacity="${op}" class="cty" data-f="${fips}">`
     + `<title>${esc(c.name)}, ${c.st}: ${LABEL[own] ?? own} — ${tierWord}</title></path>`;
 });
 
 const states = Object.values(geo.states).map(d => `<path d="${d}" class="stl"/>`).join('');
+
+// The viewBox is MEASURED from the paths, not declared. The old fixed "0 0 975 610" held
+// 51px of nothing at the top and 30px at the bottom, and the projection reaches past it
+// on the right. Rendered into that box the slack became dead margin, which shrank the map
+// and with it every county's hit target.
+//
+// The left bound skips the ANTIMERIDIAN TAIL. Aleutians West trails to x=-140 because
+// the Aleutians cross 180 degrees longitude, and framing to it pushed the other 3,132
+// counties right by 140 units to keep a few specks of island in view. The tail is found
+// as a GAP in the distribution -- a run of empty space wider than any real coastline gap
+// -- rather than by a percentile (too close to real coastline to be safe at this scale)
+// or a hardcoded FIPS (a renumbered county would silently bring the margin back).
+const VIEWBOX = (() => {
+  const xs = [], ys = [];
+  for (const d of Object.values(geo.counties)) {
+    const re = /(-?\d+\.?\d*),(-?\d+\.?\d*)/g;
+    let m;
+    while ((m = re.exec(d))) { xs.push(+m[1]); ys.push(+m[2]); }
+  }
+  xs.sort((a, b) => a - b); ys.sort((a, b) => a - b);
+  // Measured on this projection: the antimeridian jump is 154 units wide and the largest
+  // gap anywhere else is 4.1, so GAP sits far above every real coastline gap and far
+  // below the tail. Only the leftmost 2% of points are searched -- a gap that size in
+  // the middle of the country would be a broken projection, not something to crop to.
+  const GAP = 40;
+  let i = 0;
+  const limit = Math.floor(xs.length * 0.02);
+  for (let k = 0; k < limit; k++) if (xs[k + 1] - xs[k] > GAP) i = k + 1;
+  const x0 = xs[i], x1 = xs[xs.length - 1], y0 = ys[0], y1 = ys[ys.length - 1];
+  const pad = 6;
+  const r = n => Math.round(n * 10) / 10;
+  return `${r(x0 - pad)} ${r(y0 - pad)} ${r(x1 - x0 + pad * 2)} ${r(y1 - y0 + pad * 2)}`;
+})();
 
 // Population share is the honest denominator for coverage: the counties with no
 // answer are mostly small, so a raw county count overstates the gap.
@@ -67,7 +105,7 @@ const legend = ['public', 'private', 'hospital', 'mixed']
   .join('\n');
 
 const html = `<figure class="research-map">
-  <svg viewBox="0 0 975 610" role="img" aria-label="Every US county coloured by who owns the agency that answers the 911 call" class="rm-svg">
+  <svg viewBox="${VIEWBOX}" role="img" aria-label="Every US county coloured by who owns the agency that answers the 911 call" class="rm-svg">
 ${paths.map(p => '    ' + p).join('\n')}
     ${states}
   </svg>
@@ -76,7 +114,7 @@ ${paths.map(p => '    ' + p).join('\n')}
 ${legend}
       <span class="rm-key"><i class="rm-fade"></i>fainter &#61; weaker evidence</span>
     </span>
-    Every county in the country, coloured by who owns the agency that answers the 911 call. <strong>${n(answered)}</strong> of ${n(Object.keys(S).length)} counties have an answer, and <strong>${n(nA)}</strong> of those &mdash; ${Math.round((popA / tot) * 100)}% of the population &mdash; are named directly by a state or agency record. The rest are inferred from licensing rosters and Medicare billing, and are drawn fainter: an inferred county is a lead, not a fact.
+    Every county, coloured by who owns the agency that answers the 911 call. <strong>${n(answered)}</strong> of ${n(Object.keys(S).length)} have an answer; <strong>${n(nA)}</strong> of those &mdash; ${Math.round((popA / tot) * 100)}% of the population &mdash; are named directly by a state or agency record. The rest are inferred and drawn fainter: a lead, not a fact.
   </figcaption>
 </figure>`;
 

@@ -16,17 +16,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
-  <link rel="stylesheet" href="/assets/chrome.css?v=c3e14a1e">
+  <link rel="stylesheet" href="/assets/chrome.css?v=ec5bed81">
   <style>
     :root{
-      --bg:#05080c; --panel:#0a0f15; --ink:#e6edf7; --muted:#9aa4b2; --line:#16202b;
-      --cyan:#22d3ee; --violet:#a855f7; --radius:18px; --max:1080px;
+      --bg:var(--paper); --panel:var(--ground); --muted:var(--ink-2);
+      --cyan:var(--accent); --violet:var(--accent); --radius:18px; --max:1080px;
     }
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
       margin:0; color:var(--ink);
-      font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+      font:16px/1.6 'Sora',system-ui,-apple-system,sans-serif;
       background:var(--bg);
       -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
     }
@@ -34,14 +34,6 @@
     a:hover{text-decoration:underline}
     :focus-visible{outline:2px solid var(--cyan); outline-offset:2px; border-radius:10px}
     .wrap{max-width:var(--max); margin:0 auto; padding:28px 20px}
-
-    /* Nav */
-    header.nav{background:linear-gradient(180deg, rgba(255,255,255,.03), transparent); border-bottom:1px solid var(--line); border-radius:0 0 14px 14px}
-    .navbar{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:16px 20px}
-    .brand-link{display:flex; align-items:center; gap:12px}
-    .brand-link img{width:48px; height:48px; border-radius:12px; display:block}
-    .brand-name{font-weight:800; letter-spacing:.2px; font-size:18px}
-    .chip{font-size:13px; padding:6px 10px; border-radius:999px; border:1px solid #243246; color:#cfd8e3; opacity:.9; background:rgba(255,255,255,.02)}
 
     /* Content */
     .content{max-width:800px; margin:0 auto}
@@ -74,8 +66,7 @@
         </div>
       </div>
       <div class="nav-right">
-        <a href="https://demo.protoquiz.com" class="nav-link">Sign in</a>
-        <a href="/agency/#contact" class="nav-cta">Contact sales</a>
+        <a href="/agency/#contact" class="nav-cta" id="openContact">Contact sales</a>
       </div>
     </nav>
   </header>

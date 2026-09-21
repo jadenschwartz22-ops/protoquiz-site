@@ -45,7 +45,7 @@ const CTA = {
 };
 const CTA_DEFAULT = ['Contact sales', '/agency/#contact'];
 
-// A section can own more than one path. Research is the umbrella over two volumes,
+// A section can own more than one path. Research is the umbrella over two lines of work,
 // and the census keeps its own /census/ URLs -- 769 of them are indexed and a move
 // would need meta-refresh stubs, which GitHub Pages makes the only option and which
 // pass less signal than a real redirect. So the nav maps the extra prefix instead of
@@ -58,16 +58,16 @@ const navLinks = current => SECTIONS.map(([label, href]) => {
   return `          <a href="${href}"${on ? ' class="nav-link on" aria-current="page"' : ' class="nav-link"'}>${label}</a>`;
 }).join('\n');
 
-// The Research arm's own bar: which VOLUME you are in, always visible inside any of
+// The Research arm's own bar: which AREA you are in, always visible inside any of
 // them. The census keeps its own section bar below this one -- that answers "where in
-// the census", this answers "which volume", and collapsing them would make a census
-// section look like a sibling of the whole 911 volume.
-// /research/practice and /research/changes are FINDINGS of the census volume, not
-// volumes of their own, so they sit next to it in this bar rather than beside the atlas.
+// the census", this answers "which area", and collapsing them would make a census
+// section look like a sibling of the whole 911 atlas.
+// /research/practice and /research/changes are FINDINGS of the census, not areas of
+// their own, so they sit next to it in this bar rather than beside the atlas.
 // They are named by the question each answers -- a reader scanning this bar is choosing
 // between "what is carried", "who decides" and "what changed", and a label like
 // "Procedures" would not tell them apart.
-const RESEARCH_VOLUMES = [
+const RESEARCH_AREAS = [
   ['Overview', '/research/', p => p === '/research/'],
   ['Protocol census', '/census/', p => p.startsWith('/census/')],
   ['Who decides', '/research/practice/', p => p.startsWith('/research/practice/')],
@@ -78,7 +78,7 @@ const RESEARCH_VOLUMES = [
 export const researchBar = (current = null) => `  <div class="rbar">
     <div class="rbar-in">
       <a class="rbar-mark" href="/research/">ProtoQuiz Research</a>
-      <nav class="rbar-nav" aria-label="Research volumes">${RESEARCH_VOLUMES.map(([label, href, on]) =>
+      <nav class="rbar-nav" aria-label="Research areas">${RESEARCH_AREAS.map(([label, href, on]) =>
     `<a href="${href}"${current && on(current) ? ' class="on" aria-current="page"' : ''}>${label}</a>`).join('')}</nav>
     </div>
   </div>`;
@@ -97,9 +97,19 @@ export const navFor = (current = null) => {
 ${navLinks(current)}
         </div>
       </div>
+      <!-- NO "SIGN IN" HERE, DELIBERATELY. There is nothing on protoquiz.com to sign
+           into: every agency gets its own subdomain (youragency.protoquiz.com) and its
+           crews arrive by a link the agency gives them. The nav used to point "Sign in"
+           at demo.protoquiz.com -- the DEMO org, which /agency itself labels "Try the
+           demo" -- so the link promised a door that does not exist and landed a provider
+           on someone else's tenant. If a real web login is ever built, it goes here. -->
+      <!-- id="openContact" is what /agency's contact <dialog> binds to. The nav used to
+           carry that id; the move into shared-chrome dropped it, so the JS bound nothing
+           and "Contact sales" silently did nothing on the one page with the form. On every
+           other page there is no dialog and the href is the whole behaviour: a normal link
+           to /agency/#contact. -->
       <div class="nav-right">
-        <a href="https://demo.protoquiz.com" class="nav-link">Sign in</a>
-        <a href="${cta[1]}" class="nav-cta">${cta[0]}</a>
+        <a href="${cta[1]}" class="nav-cta"${cta[1] === CTA_DEFAULT[1] ? ' id="openContact"' : ''}>${cta[0]}</a>
       </div>
     </nav>
   </header>

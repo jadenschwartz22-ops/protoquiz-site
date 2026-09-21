@@ -45,6 +45,110 @@ main{padding-bottom:64px;}
 .rm-svg .cty{stroke:#fff;stroke-width:.3;vector-effect:non-scaling-stroke;}
 .rm-svg .stl{fill:none;stroke:#6b6b6b;stroke-width:.8;vector-effect:non-scaling-stroke;pointer-events:none;}
 .rm-svg .state{stroke:var(--ground);stroke-width:1;}
+
+/* Pan and zoom. The viewport clips; the SVG inside it is what moves, so the caption
+   and the rest of the page stay put. touch-action:none stops the browser scrolling
+   the page when a drag starts on the map -- without it a touch drag does nothing. */
+/* The viewport takes the whole measure. It used to sit at 860px inside a 1072px column,
+   which made every county a ~12px target (many under 7px) in a box with dead margins --
+   the map read as decoration you could not actually use. */
+.rm-view{position:relative;width:100%;margin:0 auto;overflow:hidden;touch-action:none;cursor:grab;background:#f7f5f0;border-radius:10px;}
+.rm-view.is-panning{cursor:grabbing;}
+.rm-view .rm-svg{max-width:none;width:100%;transform-origin:0 0;will-change:transform;}
+/* The hit target is the county fill. Without this a county is only hoverable on its
+   0.3px border, because an SVG path with no explicit fill rule is hit-tested on its
+   painted area only -- and these are painted by the fill attribute. */
+.rm-svg .cty{pointer-events:all;}
+.rm-svg .cty.is-hot{stroke:#111;stroke-width:1.2;}
+
+.rm-tip{
+  position:absolute;z-index:5;pointer-events:none;opacity:0;
+  transform:translate(-50%,-100%);margin-top:-10px;
+  background:#111;color:#fff;padding:6px 9px;border-radius:6px;
+  font-size:.75rem;line-height:1.35;white-space:nowrap;
+  box-shadow:0 2px 10px rgba(0,0,0,.25);transition:opacity .08s;
+}
+.rm-tip.on{opacity:1;}
+
+/* County names, drawn over the map once it is zoomed in far enough that a county can
+   hold its own name. pointer-events:none throughout -- a label must never eat the
+   click meant for the county under it. */
+.rm-labels{position:absolute;inset:0;z-index:3;pointer-events:none;overflow:hidden;}
+.rm-label{
+  position:absolute;transform:translate(-50%,-50%);
+  font-size:10.5px;line-height:1;font-weight:600;letter-spacing:.01em;
+  color:#1b1b1b;white-space:nowrap;
+  text-shadow:0 0 3px #fff,0 0 3px #fff,0 0 2px #fff;
+}
+.rm-tip b{display:block;font-weight:600;}
+.rm-tip span{color:#c9c9c9;}
+
+.rm-ctl{position:absolute;top:12px;left:12px;z-index:4;display:flex;flex-direction:column;gap:5px;}
+.rm-ctl button{
+  width:32px;height:32px;padding:0;cursor:pointer;
+  background:rgba(255,255,255,.95);border:1px solid #c9c5bc;border-radius:6px;
+  font-size:17px;line-height:1;color:#222;font-family:inherit;
+  box-shadow:0 1px 3px rgba(0,0,0,.08);
+}
+.rm-ctl button:hover{background:#fff;border-color:#8a8a8a;}
+.rm-ctl button:disabled{opacity:.4;cursor:default;}
+.rm-ctl button:focus-visible{outline:2px solid var(--accent);outline-offset:1px;}
+/* The zoom level, so it is obvious the map IS zoomed and by how much. */
+.rm-zoomlvl{
+  margin-top:2px;text-align:center;font-size:.65rem;color:var(--muted);
+  background:rgba(255,255,255,.9);border-radius:4px;padding:2px 0;
+}
+.rm-hint{
+  position:absolute;left:50%;transform:translateX(-50%);bottom:10px;z-index:4;
+  margin:0;font-size:.72rem;color:#444;background:rgba(255,255,255,.92);
+  padding:5px 11px;border-radius:14px;border:1px solid #e2ded5;
+  transition:opacity .3s;
+}
+.rm-view.touched .rm-hint{opacity:0;pointer-events:none;}
+@media (prefers-reduced-motion:reduce){.rm-tip{transition:none;}}
+
+/* Detail panel. Anchored inside the map viewport rather than centred over the page:
+   the map is the context, and a full-screen modal would hide the county you just
+   clicked. On a narrow screen it becomes a bottom sheet, where there is no room to
+   sit beside the map. */
+.rm-panel{
+  position:absolute;right:12px;bottom:12px;z-index:6;width:min(310px,calc(100% - 24px));
+  background:#fff;border:1px solid var(--rule,#d9d5cc);border-radius:10px;
+  box-shadow:0 6px 24px rgba(0,0,0,.16);
+  opacity:0;visibility:hidden;transform:translateY(6px);
+  transition:opacity .12s,transform .12s,visibility .12s;
+}
+.rm-panel.on{opacity:1;visibility:visible;transform:none;}
+.rm-panel-hd{display:flex;align-items:flex-start;gap:8px;padding:12px 12px 8px;border-bottom:1px solid var(--rule,#eee);}
+.rm-panel-hd h3{margin:0;font-size:.95rem;line-height:1.25;font-weight:600;}
+.rm-panel-sub{margin:3px 0 0;font-size:.75rem;color:var(--muted);}
+.rm-panel-x{
+  margin-left:auto;flex:none;width:24px;height:24px;padding:0;cursor:pointer;
+  background:none;border:0;border-radius:5px;font-size:16px;line-height:1;color:var(--muted);
+}
+.rm-panel-x:hover{background:#f1f1f1;color:#111;}
+.rm-panel-bd{padding:10px 12px 12px;font-size:.8rem;line-height:1.5;}
+.rm-row{display:flex;justify-content:space-between;gap:12px;padding:3px 0;}
+.rm-row dt{color:var(--muted);margin:0;}
+.rm-row dd{margin:0;text-align:right;font-weight:500;}
+.rm-swatch{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:6px;vertical-align:baseline;}
+.rm-panel-note{margin:9px 0 0;padding-top:9px;border-top:1px solid var(--rule,#eee);font-size:.72rem;color:var(--muted);}
+/* A correction from someone who works there outranks every inference on the page, so
+   the way to send one sits next to the claim rather than only at the bottom. */
+.rm-report{
+  display:block;width:100%;margin:10px 0 0;padding:7px 10px;
+  font:inherit;font-size:.74rem;font-weight:500;cursor:pointer;
+  color:var(--ink);background:#f4f2ed;border:1px solid var(--rule,#ddd8cd);border-radius:6px;
+}
+.rm-report:hover{background:#ece9e1;border-color:#b9b2a4;}
+.rm-report:focus-visible{outline:2px solid var(--accent);outline-offset:1px;}
+/* Below this there is no room to sit beside the map, so the panel spans the width as a
+   bottom sheet. !important because the script sets left/right inline to dodge the
+   clicked county, which is meaningless once the panel is full width. */
+@media (max-width:640px){
+  .rm-panel{left:12px !important;right:12px !important;width:auto;}
+}
+@media (prefers-reduced-motion:reduce){.rm-panel{transition:none;}}
 .rm-cap{
   margin:18px auto 0;max-width:70ch;
   font-size:.8125rem;line-height:1.6;color:var(--muted);

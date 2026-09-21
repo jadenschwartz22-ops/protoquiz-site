@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
-  <link rel="stylesheet" href="/assets/chrome.css?v=c3e14a1e">
+  <link rel="stylesheet" href="/assets/chrome.css?v=ec5bed81">
   <link rel="stylesheet" href="/legal/_shared.css" />
   <style>
     .w9-block{
@@ -38,19 +38,6 @@
   </style>
 </head>
 <body>
-
-<div class="statusbar">
-  <a href="/" class="brand">PROTOQUIZ</a>
-  <div class="right">
-    <a href="/agency/">Home</a>
-    <a href="/b2b/terms/">Terms</a>
-    <a href="/b2b/privacy/">Privacy</a>
-    <a href="/legal/ach-authorization.html">ACH Form</a>
-    <button class="print-btn" onclick="window.print()">PRINT / PDF</button>
-  </div>
-</div>
-
-<main>
   <!-- shared-chrome:nav -->
   <header class="site-header">
     <nav class="site-nav" aria-label="Primary">
@@ -64,12 +51,19 @@
         </div>
       </div>
       <div class="nav-right">
-        <a href="https://demo.protoquiz.com" class="nav-link">Sign in</a>
-        <a href="/agency/#contact" class="nav-cta">Contact sales</a>
+        <a href="/agency/#contact" class="nav-cta" id="openContact">Contact sales</a>
       </div>
     </nav>
   </header>
   <!-- /shared-chrome:nav -->
+
+
+<main>
+
+  <header class="doc-header">
+    <div class="doc-kicker">Legal</div>
+    <h1 class="doc-title">Vendor Information (W-9)</h1>
+  </header>
 
   <p><strong>Need a signed W-9?</strong> Email <a href="mailto:billing@protoquiz.com">billing@protoquiz.com</a> and we will send a signed PDF the same business day. The values below are published so your vendor-onboarding forms can be completed before ours arrives.</p>
 

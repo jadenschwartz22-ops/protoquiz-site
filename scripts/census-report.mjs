@@ -29,6 +29,7 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { indicationLabel, reportLabel as editionLabel, productBar } from './census-pages.mjs';
+import { navFor, researchBar, FOOTER_HTML, CHROME_HEAD } from './shared-chrome.mjs';
 
 // The census is UNPUBLISHED until the new research site launches (2026-09-20, Jaden).
 // Pages still build and still resolve, but they must not be indexed. Set
@@ -238,9 +239,7 @@ ${jsonLd.map(j => `  <script type="application/ld+json">\n${jsonLdText(j)}\n  </
     gtag('config', '${GA_ID}');
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+${CHROME_HEAD}
   <link rel="stylesheet" href="/census/census.css">
   <style>
 .chart{margin:14px 0 6px;padding:0}
@@ -254,18 +253,8 @@ ${jsonLd.map(j => `  <script type="application/ld+json">\n${jsonLdText(j)}\n  </
   </style>
 </head>
 <body>
-  <header>
-    <div class="wrap">
-      <nav class="navbar">
-        <a href="/" class="brand-link"><img src="/logo-128.png" alt="ProtoQuiz logo" width="34" height="34"><span>ProtoQuiz</span></a>
-        <div class="nav-links">
-          <a href="/census/" class="nav-btn">Census</a>
-          <a href="/agency/" class="nav-btn">For Agencies</a>
-          <a href="/blog/" class="nav-btn">Blog</a>
-        </div>
-      </nav>
-    </div>
-  </header>
+${navFor('/census/')}
+${researchBar(path)}
 ${productBar(path)}
   <main>
     <div class="wrap">
@@ -273,12 +262,10 @@ ${productBar(path)}
 ${body}
     </div>
   </main>
-  <footer>
-    <div class="wrap">
-      <p class="disclaimer">${DISCLAIMER}</p>
-      <p>&copy; 2026 Teach Me to Live LLC, d/b/a ProtoQuiz&trade;. &middot; <a href="/census/">EMS Census</a> &middot; <a href="/census/methodology/">Methodology</a> &middot; <a href="/census/data-license/">Data license</a> &middot; <a href="/agency/">For Agencies</a> &middot; <a href="/blog/">Blog</a></p>
-    </div>
-  </footer>
+  <div class="census-disclaimer">
+    <div class="wrap"><p class="disclaimer">${DISCLAIMER}</p></div>
+  </div>
+${FOOTER_HTML}
 </body>
 </html>
 `;

@@ -1,29 +1,41 @@
-/* ProtoQuiz Blog Shared Styles v3 */
-/* Warm amber "lifted dark" identity, matched to the B2C main site (index.html).
-   Palette: warm charcoal bg + amber/green accents + JetBrains Mono headers.
-   --cyan/--violet are kept as aliases (= amber/amber-deep) so legacy refs recolor. */
+/* ProtoQuiz Blog Shared Styles v4 */
+/* LIGHT, matching the rest of the site. The blog used to carry a warm "lifted dark"
+   identity of its own; it now uses the site palette, because a reader arriving from the
+   footer should not cross a seam. Tokens alias onto chrome.css so the palette has ONE
+   home -- change a colour there and the blog follows.
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+   --cyan/--violet are kept as aliases so legacy refs in the 15 posts recolor without
+   each post being edited. --amber keeps its name for the same reason but is now the
+   brand accent: amber on paper fails contrast, and the site has exactly one accent. */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&display=swap');
 
 :root {
-  /* Warm "lifted dark" — B2C amber identity, one notch softer than index.html */
-  --bg: #14110b;
-  --bg-deep: #0c0a07;
-  --panel: #18140d;
-  --card: #1b1610;
-  --ink: #f4f1ea;
-  --muted: #a8a399;
-  --line: #2a2620;
-  /* Brand accents: amber primary, green secondary */
-  --amber: #ffb000;
-  --amber-deep: #cc8a00;
-  --green: #00d27a;
-  /* Legacy aliases so existing var(--cyan)/var(--violet) refs recolor automatically */
+  /* SELF-SUFFICIENT ON PURPOSE. The 15 posts load ONLY this file -- not chrome.css --
+     so these must be real values, not var() aliases onto a stylesheet that is not
+     there. They are the same colours chrome.css defines; if that palette moves, this
+     block moves with it. (The blog INDEX does load chrome.css, and these values are
+     identical, so the two agree.) */
+  --bg: oklch(99.4% 0.002 265);
+  --bg-deep: oklch(97.6% 0.004 265);
+  --panel: oklch(97.6% 0.004 265);
+  --card: oklch(99.4% 0.002 265);
+  --ink: oklch(21% 0.017 265);
+  --ink-2: oklch(44% 0.014 265);
+  --muted: oklch(44% 0.014 265);
+  --line: oklch(91.5% 0.007 265);
+  --paper: oklch(99.4% 0.002 265);
+  --accent: oklch(50% 0.196 265);
+  --accent-hover: oklch(43% 0.19 265);
+  /* Brand accent. --green stays a real green: it marks success, not brand. */
+  --amber: var(--accent);
+  --amber-deep: var(--accent-hover);
+  --green: oklch(58% 0.15 155);
   --cyan: var(--amber);
   --violet: var(--amber-deep);
-  --success: #00d27a;
-  --warning: #ffb000;
-  --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --success: var(--green);
+  --warning: var(--accent);
+  --mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
   --radius: 16px;
   --max: 1080px;
 }
@@ -33,7 +45,7 @@ html { scroll-behavior: smooth; }
 
 body {
   color: var(--ink);
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Sora', system-ui, -apple-system, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   background: var(--bg);
@@ -49,8 +61,8 @@ body::before {
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(ellipse 900px 500px at 25% 10%, rgba(255,176,0,.10), transparent),
-    radial-gradient(ellipse 700px 400px at 75% 30%, rgba(255,176,0,.05), transparent),
+    radial-gradient(ellipse 900px 500px at 25% 10%, oklch(50% 0.196 265 / .10), transparent),
+    radial-gradient(ellipse 700px 400px at 75% 30%, oklch(50% 0.196 265 / .05), transparent),
     radial-gradient(ellipse 600px 600px at 50% 85%, rgba(0,210,122,.05), transparent);
   pointer-events: none;
 }
@@ -86,15 +98,15 @@ header {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  background: rgba(20,17,11,.92);
+  background: oklch(99.4% 0.002 265 / .88);
   backdrop-filter: blur(20px) saturate(180%);
   border-bottom: 1px solid var(--line);
   transition: all .3s;
 }
 
 header.scrolled {
-  background: rgba(20,17,11,.97);
-  box-shadow: 0 4px 20px rgba(0,0,0,.4);
+  background: oklch(99.4% 0.002 265 / .96);
+  box-shadow: 0 4px 20px oklch(21% 0.017 265 / .08);
 }
 
 .navbar {
@@ -119,7 +131,7 @@ header.scrolled {
 .brand-link img {
   width: 40px; height: 40px;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(255,176,0,.2);
+  box-shadow: 0 4px 12px oklch(50% 0.196 265 / .2);
 }
 
 .nav-links {
@@ -142,7 +154,7 @@ header.scrolled {
 
 .nav-btn:hover {
   border-color: var(--line);
-  background: rgba(255,255,255,.03);
+  background: oklch(21% 0.017 265 / .03);
 }
 
 .nav-btn.active-page {
@@ -151,14 +163,14 @@ header.scrolled {
 
 .nav-btn.primary {
   background: linear-gradient(135deg, var(--cyan), var(--violet));
-  color: #1b1610;
+  color: var(--paper);
   border: none;
-  box-shadow: 0 4px 16px rgba(255,176,0,.25);
+  box-shadow: 0 4px 16px oklch(50% 0.196 265 / .25);
 }
 
 .nav-btn.primary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(255,176,0,.35);
+  box-shadow: 0 6px 20px oklch(50% 0.196 265 / .35);
   opacity: 1;
 }
 
@@ -179,8 +191,8 @@ main {
 .blog-hero::before {
   content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .03;
   background-image:
-    linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
+    linear-gradient(oklch(21% 0.017 265 / .10) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(21% 0.017 265 / .10) 1px, transparent 1px);
   background-size: 60px 60px;
   mask-image: radial-gradient(ellipse 60% 60% at 50% 40%, black, transparent);
   -webkit-mask-image: radial-gradient(ellipse 60% 60% at 50% 40%, black, transparent);
@@ -230,7 +242,7 @@ main {
 .search-wrap input {
   width: 100%;
   padding: 12px 16px 12px 44px;
-  background: rgba(255,255,255,.05);
+  background: oklch(21% 0.017 265 / .04);
   border: 1px solid var(--line);
   border-radius: 999px;
   color: var(--ink);
@@ -240,7 +252,7 @@ main {
 }
 
 .search-wrap input::placeholder { color: var(--muted); opacity: .7; }
-.search-wrap input:focus { outline: none; border-color: var(--cyan); background: rgba(255,255,255,.08); }
+.search-wrap input:focus { outline: none; border-color: var(--cyan); background: oklch(21% 0.017 265 / .07); }
 
 .search-wrap .search-icon {
   position: absolute;
@@ -257,7 +269,7 @@ main {
   position: sticky;
   top: 65px;
   z-index: 50;
-  background: rgba(20,17,11,.92);
+  background: oklch(99.4% 0.002 265 / .88);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--line);
   padding: 12px 0;
@@ -280,7 +292,7 @@ main {
   border-radius: 999px;
   font-size: 13px;
   font-weight: 600;
-  background: rgba(255,255,255,.04);
+  background: oklch(21% 0.017 265 / .04);
   border: 1px solid var(--line);
   color: var(--muted);
   cursor: pointer;
@@ -290,9 +302,9 @@ main {
 }
 
 .filter-btn:hover {
-  border-color: rgba(255,176,0,.3);
+  border-color: oklch(50% 0.196 265 / .3);
   color: var(--ink);
-  background: rgba(255,255,255,.06);
+  background: oklch(21% 0.017 265 / .06);
 }
 
 .filter-btn.active {
@@ -317,15 +329,15 @@ main {
 }
 
 .featured-card:hover {
-  border-color: rgba(255,176,0,.3);
-  box-shadow: 0 16px 48px rgba(0,0,0,.3), 0 0 40px rgba(255,176,0,.06);
+  border-color: oklch(50% 0.196 265 / .3);
+  box-shadow: 0 16px 48px oklch(21% 0.017 265 / .10);
   transform: translateY(-2px);
 }
 
 .featured-img {
   position: relative;
   min-height: 280px;
-  background: linear-gradient(135deg, rgba(255,176,0,.08), rgba(204,138,0,.08));
+  background: linear-gradient(135deg, oklch(50% 0.196 265 / .08), oklch(43% 0.19 265 / .08));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -404,7 +416,7 @@ main {
 .author-avatar {
   width: 36px; height: 36px;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(255,176,0,.2), rgba(204,138,0,.2));
+  background: linear-gradient(135deg, oklch(50% 0.196 265 / .2), oklch(43% 0.19 265 / .2));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -440,7 +452,7 @@ main {
 
 .read-btn:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(255,176,0,.3);
+  box-shadow: 0 6px 20px oklch(50% 0.196 265 / .3);
   opacity: 1;
 }
 
@@ -463,16 +475,16 @@ main {
 }
 
 .post-card:hover {
-  border-color: rgba(255,176,0,.3);
+  border-color: oklch(50% 0.196 265 / .3);
   transform: translateY(-3px);
-  box-shadow: 0 12px 36px rgba(0,0,0,.25), 0 0 30px rgba(255,176,0,.05);
+  box-shadow: 0 12px 36px oklch(21% 0.017 265 / .08);
 }
 
 .post-card-img {
   position: relative;
   width: 100%;
   height: 180px;
-  background: linear-gradient(135deg, rgba(255,176,0,.06), rgba(204,138,0,.06));
+  background: linear-gradient(135deg, oklch(50% 0.196 265 / .06), oklch(43% 0.19 265 / .06));
   overflow: hidden;
 }
 
@@ -497,10 +509,10 @@ main {
   letter-spacing: .03em;
 }
 
-.category-badge.updates { background: rgba(255,176,0,.9); color: var(--bg-deep); }
+.category-badge.updates { background: oklch(50% 0.196 265 / .9); color: var(--bg-deep); }
 .category-badge.blog { background: rgba(255,122,0,.9); color: var(--bg-deep); }
 .category-badge.study { background: rgba(0,210,122,.9); color: var(--bg-deep); }
-.category-badge.stories { background: rgba(255,176,0,.18); color: var(--amber); border: 1px solid rgba(255,176,0,.4); }
+.category-badge.stories { background: oklch(50% 0.196 265 / .18); color: var(--amber); border: 1px solid oklch(50% 0.196 265 / .4); }
 
 .post-card-body {
   padding: 18px;
@@ -547,7 +559,7 @@ main {
 .post-card-footer .author-sm .avatar-sm {
   width: 28px; height: 28px;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(255,176,0,.2), rgba(204,138,0,.2));
+  background: linear-gradient(135deg, oklch(50% 0.196 265 / .2), oklch(43% 0.19 265 / .2));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -591,8 +603,8 @@ main {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 400px 250px at 30% 50%, rgba(255,176,0,.06), transparent),
-    radial-gradient(ellipse 300px 200px at 70% 50%, rgba(204,138,0,.05), transparent);
+    radial-gradient(ellipse 400px 250px at 30% 50%, oklch(50% 0.196 265 / .06), transparent),
+    radial-gradient(ellipse 300px 200px at 70% 50%, oklch(43% 0.19 265 / .05), transparent);
   pointer-events: none;
 }
 
@@ -610,8 +622,8 @@ main {
   align-items: center;
   gap: 6px;
   padding: 5px 14px;
-  background: rgba(255,176,0,.1);
-  border: 1px solid rgba(255,176,0,.2);
+  background: oklch(50% 0.196 265 / .1);
+  border: 1px solid oklch(50% 0.196 265 / .2);
   border-radius: 999px;
   font-size: 11px;
   font-weight: 700;
@@ -657,7 +669,7 @@ main {
 .promo-features .check {
   width: 20px; height: 20px;
   border-radius: 50%;
-  background: rgba(255,176,0,.15);
+  background: oklch(50% 0.196 265 / .15);
   display: flex;
   align-items: center;
   justify-content: center;
