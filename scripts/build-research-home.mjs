@@ -1,24 +1,24 @@
-// scripts/build-research-home.mjs — /research, the umbrella over both volumes.
+// scripts/build-research-home.mjs — /research, the umbrella over both bodies of work.
 //
 // ProtoQuiz Research is one research arm with two lines of work, and this page is the
 // parent that says so: the protocol census owns what agencies carry, the registry owns
 // who answers 911. A reader landing here should be able to tell in one screen which
-// question each volume answers and how solid it is.
+// question each one answers and how solid it is.
 //
-// Below the two volume cards sits a FINDINGS band. Those are results OF a volume, not
-// volumes, and they are set apart and narrower for exactly that reason -- promoting a
+// Below the two cards sits a FINDINGS band. Those are results OF the research, not
+// bodies of work themselves, and they are set apart and narrower for that reason -- promoting a
 // finding to a card would tell a reader there are four research programs when there
 // are two.
 //
 // Both cards state their own standing plainly, including the registry's, because the
 // registry is 23% named-by-a-source and saying otherwise here would undo the care the
-// volume itself takes.
+// the work itself takes.
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { navFor, researchBar, FOOTER_HTML, CHROME_HEAD } from './shared-chrome.mjs';
 import { DATA_DIR as PRACTICE_DIR } from './practice-data.mjs';
 
-// Each card shows a rendering of its own volume, built by build-research-thumbs.mjs from
-// the same data the volume publishes -- never a stock illustration.
+// Each card shows a rendering of its own data, built by build-research-thumbs.mjs from
+// the same data it publishes -- never a stock illustration.
 const THUMBS = existsSync('assets/research-thumbs.json')
   ? JSON.parse(readFileSync('assets/research-thumbs.json', 'utf8'))
   : { registry: '', census: '', censusNote: '' };
@@ -59,12 +59,12 @@ if (existsSync('data/census/manifest.json')) {
 }
 const n = x => Number(x).toLocaleString('en-US');
 
-const VOLUMES = [
+const AREAS = [
   {
     thumb: THUMBS.census,
     thumbNote: THUMBS.censusNote,
     thumbCap: 'Medications only some agencies carry. Share of those the census has read.',
-    eyebrow: 'Volume one',
+    eyebrow: 'What agencies carry',
     title: 'US EMS Protocol Census',
     href: '/census/',
     cta: 'Open the census',
@@ -86,7 +86,7 @@ const VOLUMES = [
   {
     thumb: THUMBS.registry,
     thumbCap: 'Every county, colored by who owns its 911 provider. Fainter is weaker evidence.',
-    eyebrow: 'Volume two',
+    eyebrow: 'Who answers the call',
     title: 'The American EMS Atlas',
     href: '/research/atlas/',
     cta: 'Open the atlas',
@@ -103,7 +103,7 @@ const VOLUMES = [
 
 // The full statement of why this research arm exists. It sits behind a disclosure rather
 // than in the lede because it is an argument, not a summary -- a reader who wants the data
-// gets to the volumes without scrolling past it, and a reader who wants the reasoning gets
+// gets to the cards without scrolling past it, and a reader who wants the reasoning gets
 // all of it. <details> is native: no JS, open by default to a crawler, and printable.
 //
 // Both statistics are attributed BECAUSE they are the only claims on this page we did not
@@ -168,9 +168,9 @@ const ABOUT = `        <p>There is a broad national foundation for EMS education
         better quality care for patients, and a more efficient, sustainable future for
         EMS.</p>`;
 
-// FINDINGS of volume one, not volumes of their own: the census answers "what is carried",
-// and these two answer the questions that follow it. They sit below the volume cards as a
-// narrower band so the two volumes keep the top of the page.
+// FINDINGS of the census, not bodies of work of their own: the census answers "what is
+// carried", and these two answer the questions that follow it. They sit below the two
+// cards as a narrower band so those keep the top of the page.
 //
 // Both counts are READ FROM THE EXTRACTS at build time. Neither is typed here, because the
 // extracts are rebuilt nightly and a number in this source would go stale silently while
@@ -265,14 +265,14 @@ ${ABOUT}
     </section>
 
     <section class="res-vols">
-${VOLUMES.map(card).join('\n')}
+${AREAS.map(card).join('\n')}
     </section>
 
 ${FINDINGS_HTML}
 
     <section class="res-method">
       <h2>How we handle uncertainty</h2>
-      <p>Both volumes are only as good as the documents behind them. Rather than average that
+      <p>Both are only as good as the documents behind them. Rather than average that
       away, we show it: every figure names what it was measured against, a value from a weak
       source is drawn as weak, and anything we could not source is left blank instead of
       guessed. A number that looks precise and is not is worse than no number.</p>
@@ -287,4 +287,4 @@ ${FOOTER_HTML}
 
 mkdirSync('research', { recursive: true });
 writeFileSync('research/index.html', html);
-console.log(`wrote research/index.html — ${VOLUMES.length} volumes, ${html.length} bytes`);
+console.log(`wrote research/index.html — ${AREAS.length} areas, ${html.length} bytes`);
