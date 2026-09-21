@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-09-20T18:08:34.990Z",
-  "totalUploads": 620,
-  "distinctProtocols": 427,
-  "activeStudiers": 425,
-  "pagesProcessed": 101971,
+  "generatedAt": "2026-09-21T00:08:34.081Z",
+  "totalUploads": 623,
+  "distinctProtocols": 428,
+  "activeStudiers": 428,
+  "pagesProcessed": 102575,
   "statesRepresented": 42,
   "countriesRepresented": 5,
   "internationalUploads": 10,
   "byState": {
     "CO": 53,
-    "MI": 47,
+    "MI": 48,
     "CA": 44,
     "MA": 27,
+    "PA": 26,
     "TX": 25,
-    "PA": 25,
     "GA": 24,
     "NY": 22,
     "CT": 19,
@@ -60,6 +60,28 @@
   },
   "locales": [
     {
+      "state": "MI",
+      "city": "Detroit",
+      "x": 690,
+      "y": 194,
+      "count": 48,
+      "tier": "hot",
+      "topProtocols": [
+        {
+          "title": "HEMS State Protocol Suite may 2026",
+          "count": 2
+        },
+        {
+          "title": "260109 Section 1 General Treatment",
+          "count": 2
+        },
+        {
+          "title": "1.5 Shock",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "CO",
       "city": "Denver",
       "x": 330,
@@ -78,28 +100,6 @@
         {
           "title": "dmemsmd protocols july 2025 final 2025 07 14",
           "count": 7
-        }
-      ]
-    },
-    {
-      "state": "MI",
-      "city": "Detroit",
-      "x": 690,
-      "y": 194,
-      "count": 47,
-      "tier": "hot",
-      "topProtocols": [
-        {
-          "title": "HEMS State Protocol Suite may 2026",
-          "count": 2
-        },
-        {
-          "title": "260109 Section 1 General Treatment",
-          "count": 2
-        },
-        {
-          "title": "1.5 Shock",
-          "count": 1
         }
       ]
     },
@@ -130,7 +130,7 @@
       "city": "Philadelphia",
       "x": 828,
       "y": 223,
-      "count": 25,
+      "count": 26,
       "tier": "warm",
       "topProtocols": [
         {
