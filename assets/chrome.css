@@ -214,11 +214,6 @@ a:hover { color: var(--accent-hover); }
   max-width:1120px;margin:0 auto;padding:0 24px;
   display:flex;align-items:center;gap:26px;min-height:44px;flex-wrap:wrap;
 }
-.rbar-mark{
-  font-family:'IBM Plex Mono',ui-monospace,monospace;
-  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--ink,#22252c);text-decoration:none;font-weight:600;white-space:nowrap;
-}
 .rbar-nav{display:flex;gap:20px;flex-wrap:wrap;}
 .rbar-nav a{
   font-size:13.5px;color:var(--muted,#6b6f77);text-decoration:none;

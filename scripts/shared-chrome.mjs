@@ -64,20 +64,25 @@ const navLinks = current => SECTIONS.map(([label, href]) => {
 // section look like a sibling of the whole 911 atlas.
 // /research/practice and /research/changes are FINDINGS of the census, not areas of
 // their own, so they sit next to it in this bar rather than beside the atlas.
-// They are named by the question each answers -- a reader scanning this bar is choosing
-// between "what is carried", "who decides" and "what changed", and a label like
-// "Procedures" would not tell them apart.
+// Labels say what the page HOLDS, in the words a medic already uses. "Who decides" and
+// "What changed" were the old labels and neither survived contact with a reader: the
+// first page is about STANDING ORDERS vs base contact (it says "standing order" eight
+// times), the second is diffs between dated EDITIONS ("edition", 121 times). The nav was
+// hiding each page's own vocabulary behind a question. "Protocol census" stays because it
+// is the cite string on 769 indexed pages and a name worth owning.
 const RESEARCH_AREAS = [
   ['Overview', '/research/', p => p === '/research/'],
   ['Protocol census', '/census/', p => p.startsWith('/census/')],
-  ['Who decides', '/research/practice/', p => p.startsWith('/research/practice/')],
-  ['What changed', '/research/changes/', p => p.startsWith('/research/changes/')],
+  ['Standing orders', '/research/practice/', p => p.startsWith('/research/practice/')],
+  ['Protocol changes', '/research/changes/', p => p.startsWith('/research/changes/')],
   ['911 coverage', '/research/atlas/', p => p.startsWith('/research/atlas/')],
 ];
 
+// No "ProtoQuiz Research" mark on this bar: the main nav directly above already shows
+// Research as the active section, so the mark restated it and was most of the bar's
+// visual weight. The links are the part that earns the row.
 export const researchBar = (current = null) => `  <div class="rbar">
     <div class="rbar-in">
-      <a class="rbar-mark" href="/research/">ProtoQuiz Research</a>
       <nav class="rbar-nav" aria-label="Research areas">${RESEARCH_AREAS.map(([label, href, on]) =>
     `<a href="${href}"${current && on(current) ? ' class="on" aria-current="page"' : ''}>${label}</a>`).join('')}</nav>
     </div>
@@ -138,8 +143,8 @@ export const FOOTER_HTML = `  <!-- shared-chrome:footer -->
         <a href="/census/">Protocol census</a>
         <a href="/census/#states">By state</a>
         <a href="/census/#drugs">By medication</a>
-        <a href="/research/practice/">Who decides</a>
-        <a href="/research/changes/">What changed</a>
+        <a href="/research/practice/">Standing orders</a>
+        <a href="/research/changes/">Protocol changes</a>
         <a href="/research/atlas/">911 coverage</a>
         <a href="/census/methodology/">Methodology</a>
       </div>
