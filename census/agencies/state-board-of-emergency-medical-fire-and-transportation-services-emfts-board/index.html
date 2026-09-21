@@ -41,22 +41,46 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+  <link rel="stylesheet" href="/assets/chrome.css?v=ec5bed81">
   <link rel="stylesheet" href="/census/census.css?v=a3b5c03b">
 </head>
 <body>
-  <header>
-    <div class="wrap">
-      <nav class="navbar">
-        <a href="/" class="brand-link"><img src="/logo-128.png" alt="ProtoQuiz logo" width="34" height="34"><span>ProtoQuiz</span></a>
+  <!-- shared-chrome:nav -->
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary">
+      <div class="nav-left">
+        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="30" height="30"><span>ProtoQuiz</span></a>
         <div class="nav-links">
-          <a href="/census/" class="nav-btn">Census</a>
-          <a href="/agency/" class="nav-btn">For Agencies</a>
-          <a href="/blog/" class="nav-btn">Blog</a>
+          <a href="/app/" class="nav-link">App</a>
+          <a href="/agency/" class="nav-link">For agencies</a>
+          <a href="/research/" class="nav-link on" aria-current="page">Research</a>
+          <a href="/about/" class="nav-link">About</a>
         </div>
-      </nav>
-    </div>
+      </div>
+      <!-- NO "SIGN IN" HERE, DELIBERATELY. There is nothing on protoquiz.com to sign
+           into: every agency gets its own subdomain (youragency.protoquiz.com) and its
+           crews arrive by a link the agency gives them. The nav used to point "Sign in"
+           at demo.protoquiz.com -- the DEMO org, which /agency itself labels "Try the
+           demo" -- so the link promised a door that does not exist and landed a provider
+           on someone else's tenant. If a real web login is ever built, it goes here. -->
+      <!-- id="openContact" is what /agency's contact <dialog> binds to. The nav used to
+           carry that id; the move into shared-chrome dropped it, so the JS bound nothing
+           and "Contact sales" silently did nothing on the one page with the form. On every
+           other page there is no dialog and the href is the whole behaviour: a normal link
+           to /agency/#contact. -->
+      <div class="nav-right">
+        <a href="/census/#list-your-agency" class="nav-cta">Add your agency</a>
+      </div>
+    </nav>
   </header>
+  <!-- /shared-chrome:nav -->
+  <div class="rbar">
+    <div class="rbar-in">
+      <a class="rbar-mark" href="/research/">ProtoQuiz Research</a>
+      <nav class="rbar-nav" aria-label="Research areas"><a href="/research/">Overview</a><a href="/census/" class="on" aria-current="page">Protocol census</a><a href="/research/practice/">Who decides</a><a href="/research/changes/">What changed</a><a href="/research/atlas/">911 coverage</a></nav>
+    </div>
+  </div>
   <div class="pbar">
     <div class="wrap">
       <a class="pbar-mark" href="/census/">US EMS Protocol Census</a>
@@ -1338,11 +1362,50 @@
       </div>
     </div>
   </main>
-  <footer>
-    <div class="wrap">
-      <p class="disclaimer">Training reference compiled from published protocols. Not a clinical order. Verify with your agency and medical director.</p>
-      <p>&copy; 2026 Teach Me to Live LLC, d/b/a ProtoQuiz&trade;. &middot; <a href="/census/">EMS Census</a> &middot; <a href="/census/methodology/">Methodology</a> &middot; <a href="/census/data-license/">Data license</a> &middot; <a href="/agency/">For Agencies</a> &middot; <a href="/blog/">Blog</a></p>
+  <!-- shared-chrome:footer -->
+  <footer class="site-footer">
+    <div class="foot-cols">
+      <div class="foot-brand">
+        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="24" height="24"><span>ProtoQuiz</span></a>
+        <p>Protocol training for EMS. Built by a working paramedic.</p>
+      </div>
+      <div class="foot-col">
+        <h2>Product</h2>
+        <a href="/app/">iOS app</a>
+        <a href="/app/#faq">Android</a>
+        <a href="/agency/">For agencies</a>
+        <a href="/agency/#pricing-section">Pricing</a>
+      </div>
+      <div class="foot-col">
+        <h2>Research</h2>
+        <a href="/research/">Overview</a>
+        <a href="/census/">Protocol census</a>
+        <a href="/census/#states">By state</a>
+        <a href="/census/#drugs">By medication</a>
+        <a href="/research/practice/">Who decides</a>
+        <a href="/research/changes/">What changed</a>
+        <a href="/research/atlas/">911 coverage</a>
+        <a href="/census/methodology/">Methodology</a>
+      </div>
+      <div class="foot-col">
+        <h2>Company</h2>
+        <a href="/about/">About</a>
+        <a href="/blog/">Blog</a>
+        <a href="/trust/">Trust</a>
+        <a href="https://status.protoquiz.com">Status</a>
+      </div>
+      <div class="foot-col">
+        <h2>Legal</h2>
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+        <a href="/trust/">Security</a>
+        <a href="/census/data-license/">Data license</a>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>&copy; 2026 Teach Me To Live LLC, d/b/a ProtoQuiz&trade;.</span>
     </div>
   </footer>
+  <!-- /shared-chrome:footer -->
 </body>
 </html>
