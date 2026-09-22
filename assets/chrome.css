@@ -226,3 +226,24 @@ a:hover { color: var(--accent-hover); }
   .rbar-nav{gap:14px;}
   .rbar-nav a{padding:4px 0;font-size:13px;}
 }
+
+/* Listing strip — the add/remove (or correct) controls, high on a research page.
+   Sits directly under the page's own lede so both doors are visible without scrolling. */
+.lstrip{--lstrip-accent:oklch(50% 0.196 265);border:1px solid var(--rule);background:var(--panel);border-radius:10px;margin:22px 0;}
+.lstrip-in{
+  display:flex;align-items:center;gap:14px;padding:13px 16px;flex-wrap:wrap;
+}
+.lstrip-t{flex:1;min-width:240px;}
+.lstrip-lbl{font-size:14px;font-weight:600;color:var(--ink);margin:0 0 2px;}
+.lstrip-sub{font-size:12.5px;color:var(--ink-3);margin:0;line-height:1.45;}
+.lstrip-btn{
+  font-size:12.5px;font-weight:600;text-decoration:none;white-space:nowrap;
+  padding:8px 14px;border-radius:7px;border:1px solid transparent;
+}
+.lstrip-btn-p{background:var(--lstrip-accent,var(--accent));color:var(--paper);}
+.lstrip-btn-g{background:var(--paper);color:var(--ink);border-color:var(--rule);}
+.lstrip-btn:hover{opacity:.9;}
+@media (max-width:600px){
+  .lstrip-in{gap:10px;padding:12px 13px;}
+  .lstrip-btn{flex:1;text-align:center;}
+}

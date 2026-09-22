@@ -45,7 +45,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
-  <link rel="stylesheet" href="/assets/chrome.css?v=ec5bed81">
+  <link rel="stylesheet" href="/assets/chrome.css?v=ad6d4ac8">
   <link rel="stylesheet" href="/census/census.css?v=a3b5c03b">
 </head>
 <body>
@@ -73,7 +73,7 @@
            other page there is no dialog and the href is the whole behaviour: a normal link
            to /agency/#contact. -->
       <div class="nav-right">
-        <a href="/census/#list-your-agency" class="nav-cta">Add your agency</a>
+        <a href="/census/#list" class="nav-cta">Add your protocol</a>
       </div>
     </nav>
   </header>
@@ -105,7 +105,17 @@
         </figure>
       </section>
       <p class="summary scale"><span class="n">251</span> protocols<span class="sep" aria-hidden="true"></span><span class="n">223</span> agencies<span class="sep" aria-hidden="true"></span><span class="n">159</span> agency pages<span class="sep" aria-hidden="true"></span><span class="n">1,739</span> documents read<span class="sep" aria-hidden="true"></span><span class="n">241</span> waiting to be matched to an agency<span class="sep" aria-hidden="true"></span><span class="n">27,740</span> doses<span class="sep" aria-hidden="true"></span>as of <span class="n">2026-09-20</span></p>
-      <section class="why">
+  <div class="lstrip">
+    <div class="lstrip-in">
+      <div class="lstrip-t">
+        <p class="lstrip-lbl">Is your agency&rsquo;s protocol in the census?</p>
+        <p class="lstrip-sub">Add it, correct it, or have it removed &mdash; same day, no reason needed.</p>
+      </div>
+      <a class="lstrip-btn lstrip-btn-p" href="/census/#list">Add your protocol</a>
+      <a class="lstrip-btn lstrip-btn-g" href="/census/#list">Remove your protocol</a>
+    </div>
+  </div>
+101126      <section class="why">
         <h2>Why it matters</h2>
         <ul class="claims">
           <li><strong>A medic who changes agencies relearns every dose.</strong> The drug is the same and the number is different, and until now there was no way to see which agencies differ or by how much.</li>
@@ -152,8 +162,8 @@
       </section>
       <div class="landing-foot">
           <section class="panel" id="list">
-            <h2>List your agency</h2>
-            <p>If your agency's protocols are a public record and you would like them in the census, or you want an existing listing corrected or removed, send the document's public URL and we will handle it. Removal is same-day, no reason needed.</p>
+            <h2>Add or remove your protocol</h2>
+            <p>If your agency's protocols are a public record and you would like them in the census, or you want an existing listing corrected or removed, send the document's public URL and we will handle it. Removal is same-day, no reason needed &mdash; see <a href="/census/data-license/#takedown">corrections, opt-out and takedown</a>.</p>
         <form class="submit-form" id="list-form" novalidate>
           <label for="list-form-url">Public URL of the protocol document</label>
           <input type="url" id="list-form-url" name="url" required placeholder="https://" autocomplete="url" />

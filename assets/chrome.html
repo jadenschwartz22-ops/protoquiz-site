@@ -10,6 +10,17 @@
           <a href="/about/" class="nav-link">About</a>
         </div>
       </div>
+      <!-- NO "SIGN IN" HERE, DELIBERATELY. There is nothing on protoquiz.com to sign
+           into: every agency gets its own subdomain (youragency.protoquiz.com) and its
+           crews arrive by a link the agency gives them. The nav used to point "Sign in"
+           at demo.protoquiz.com -- the DEMO org, which /agency itself labels "Try the
+           demo" -- so the link promised a door that does not exist and landed a provider
+           on someone else's tenant. If a real web login is ever built, it goes here. -->
+      <!-- id="openContact" is what /agency's contact <dialog> binds to. The nav used to
+           carry that id; the move into shared-chrome dropped it, so the JS bound nothing
+           and "Contact sales" silently did nothing on the one page with the form. On every
+           other page there is no dialog and the href is the whole behaviour: a normal link
+           to /agency/#contact. -->
       <div class="nav-right">
         <a href="/agency/#contact" class="nav-cta" id="openContact">Contact sales</a>
       </div>

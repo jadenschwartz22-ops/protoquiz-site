@@ -38,10 +38,18 @@ const SECTIONS = [
 ];
 
 // The CTA is the obvious NEXT STEP for whoever is on this page. A provider reading
-// /app wants the app, not a sales call; someone on /census wants their agency listed.
+// /app wants the app, not a sales call; a chief on a census page wants their protocol
+// added or taken down; a medic on the atlas wants to fix their county. None of them are
+// sales leads, so "Contact sales" is only the fallback for the pages that do sell.
+// The census target was /census/#list-your-agency -- an anchor that does not exist on
+// the page. The section is id="list", so the button scrolled nowhere.
 const CTA = {
-  '/app/':    ['Download app',    'https://apps.apple.com/app/id6753611139'],
-  '/census/': ['Add your agency', '/census/#list-your-agency'],
+  '/app/':              ['Download app',       'https://apps.apple.com/app/id6753611139'],
+  '/census/':           ['Add your protocol',  '/census/#list'],
+  '/research/':         ['Add your protocol',  '/census/#list'],
+  '/research/practice/':['Add your protocol',  '/census/#list'],
+  '/research/changes/': ['Add your protocol',  '/census/#list'],
+  '/research/atlas/':   ['Correct this county','/research/atlas/#correct'],
 };
 const CTA_DEFAULT = ['Contact sales', '/agency/#contact'];
 
@@ -88,11 +96,53 @@ export const researchBar = (current = null) => `  <div class="rbar">
     </div>
   </div>`;
 
+// The listing strip. The census names real agencies from records they published
+// themselves, so the way OUT has to be as visible as the way in -- the policy already is
+// "same day, no reason needed, we do not argue" (see /census/data-license/#takedown), but
+// the page used to bury it: the form sat 57% down under a heading that only said "List
+// your agency", and the takedown terms were section 4 of 5 on a page three clicks away.
+// Read as "submit your agency, exit unadvertised", which is a worse offer than the real one.
+//
+// Wording differs by page because the thing being controlled differs. The census holds a
+// PROTOCOL DOCUMENT an agency sends; the atlas holds county coverage read from state
+// licensing rosters, where nobody submitted anything and the only useful action is fixing
+// a wrong answer.
+export const listingStrip = (kind = 'census') => kind === 'atlas' ? `  <div class="lstrip">
+    <div class="lstrip-in">
+      <div class="lstrip-t">
+        <p class="lstrip-lbl">Know your county better than a roster does?</p>
+        <p class="lstrip-sub">Your correction outranks every inference here.</p>
+      </div>
+      <a class="lstrip-btn lstrip-btn-p" href="#correct">Correct this county</a>
+    </div>
+  </div>` : `  <div class="lstrip">
+    <div class="lstrip-in">
+      <div class="lstrip-t">
+        <p class="lstrip-lbl">Is your agency&rsquo;s protocol in the census?</p>
+        <p class="lstrip-sub">Add it, correct it, or have it removed &mdash; same day, no reason needed.</p>
+      </div>
+      <a class="lstrip-btn lstrip-btn-p" href="/census/#list">Add your protocol</a>
+      <a class="lstrip-btn lstrip-btn-g" href="/census/#list">Remove your protocol</a>
+    </div>
+  </div>`;
+
 // `current` is a path like '/agency/'. The active link is DERIVED from it rather than
 // passed in as a flag, so a page can never forget to say where it is and two pages in
 // the same section can never disagree.
+// CTA lookup is by PREFIX, not exact path: /census/drugs/adenosine/ is a census page and
+// wants the census CTA, not the sales one. Longest prefix wins so /research/atlas/ keeps
+// its own county-correction CTA rather than inheriting /research/'s.
+const ctaFor = current => {
+  if (!current) return CTA_DEFAULT;
+  if (CTA[current]) return CTA[current];
+  const hit = Object.keys(CTA)
+    .filter(p => current.startsWith(p))
+    .sort((a, b) => b.length - a.length)[0];
+  return hit ? CTA[hit] : CTA_DEFAULT;
+};
+
 export const navFor = (current = null) => {
-  const cta = (current && CTA[current]) || CTA_DEFAULT;
+  const cta = ctaFor(current);
   return `  <!-- shared-chrome:nav -->
   <header class="site-header">
     <nav class="site-nav" aria-label="Primary">
