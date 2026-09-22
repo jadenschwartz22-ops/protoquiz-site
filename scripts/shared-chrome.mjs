@@ -70,8 +70,17 @@ const navLinks = current => SECTIONS.map(([label, href]) => {
 // them. The census keeps its own section bar below this one -- that answers "where in
 // the census", this answers "which area", and collapsing them would make a census
 // section look like a sibling of the whole 911 atlas.
-// /research/practice and /research/changes are FINDINGS of the census, not areas of
-// their own, so they sit next to it in this bar rather than beside the atlas.
+// UNLINKED 2026-09-22: /research/practice (standing orders) and /research/changes
+// (protocol changes) are built from procedures_corpus_full.json, an artifact that no
+// longer exists, was never promoted into the nightly pipeline, and came from an
+// extractor living on three divergent unmerged branches. Its numbers did not survive a
+// clinical read: supraglottic airway showed 73 agencies requiring a physician call, and
+// needle decompression 60 -- the latter contradicting the page's own headline, which
+// cites chest decompression as the example of a medic acting on their own authority.
+// scratch/ONE_READ_MANY_USES.md in ems-router documents the mechanism (stale cert
+// headings inherited across table-of-contents and equipment rows) and measures auth
+// attribution at 59.3%. The pages stay on disk; they are not presented as findings
+// until the corpus is rebuilt and audited. Restore these two lines to relink.
 // Labels say what the page HOLDS, in the words a medic already uses. "Who decides" and
 // "What changed" were the old labels and neither survived contact with a reader: the
 // first page is about STANDING ORDERS vs base contact (it says "standing order" eight
@@ -81,8 +90,6 @@ const navLinks = current => SECTIONS.map(([label, href]) => {
 const RESEARCH_AREAS = [
   ['Overview', '/research/', p => p === '/research/'],
   ['Protocol census', '/census/', p => p.startsWith('/census/')],
-  ['Standing orders', '/research/practice/', p => p.startsWith('/research/practice/')],
-  ['Protocol changes', '/research/changes/', p => p.startsWith('/research/changes/')],
   ['911 coverage', '/research/atlas/', p => p.startsWith('/research/atlas/')],
 ];
 
@@ -193,8 +200,6 @@ export const FOOTER_HTML = `  <!-- shared-chrome:footer -->
         <a href="/census/">Protocol census</a>
         <a href="/census/#states">By state</a>
         <a href="/census/#drugs">By medication</a>
-        <a href="/research/practice/">Standing orders</a>
-        <a href="/research/changes/">Protocol changes</a>
         <a href="/research/atlas/">911 coverage</a>
         <a href="/census/methodology/">Methodology</a>
       </div>

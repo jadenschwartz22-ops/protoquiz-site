@@ -176,7 +176,13 @@ const ABOUT = `        <p>There is a broad national foundation for EMS education
 // extracts are rebuilt nightly and a number in this source would go stale silently while
 // still looking authoritative. If an extract is missing, the band renders without its
 // count rather than with a remembered one.
-const FINDINGS = [
+// UNLINKED 2026-09-22: both findings are built from procedures_corpus_full.json, which
+// no longer exists and was never in the nightly pipeline. Their numbers failed a clinical
+// read (supraglottic airway at 73 agencies requiring a physician call). Emptying this list
+// drops the band; restore the entries once the corpus is rebuilt and audited. See
+// ems-router scratch/ONE_READ_MANY_USES.md.
+const FINDINGS = [];
+const FINDINGS_PARKED = [
   {
     href: '/research/practice/',
     title: 'Who decides',
@@ -206,7 +212,7 @@ const FINDINGS = [
   },
 ];
 
-const FINDINGS_HTML = `    <section class="res-findings">
+const FINDINGS_HTML = FINDINGS.length === 0 ? '' : `    <section class="res-findings">
       <h2>Findings from the census</h2>
       <div class="find-grid">
 ${FINDINGS.map(f => `        <article class="find">

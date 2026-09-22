@@ -68,7 +68,7 @@ function contestedChart(groups) {
   const svg = `<svg viewBox="0 0 ${W} ${H}" class="pc-svg pc-contested" role="img" aria-label="Contested procedures: for each, the number of agencies whose protocol makes it a standing order versus the number that require contacting a physician first.">
     <text x="${MID - 6}" y="14" class="pc-head" text-anchor="end">&#8592; Standing order</text>
     <text x="${MID + 6}" y="14" class="pc-head pc-head-cr">Contact required &#8594;</text>
-    <text x="${W - 46}" y="14" class="pc-head pc-head-cond" text-anchor="end">Depends</text>
+    <text x="${W - 62}" y="14" class="pc-head pc-head-cond" text-anchor="middle">Depends</text>
     <text x="${W - 4}" y="14" class="pc-head pc-head-unk" text-anchor="end">Not stated</text>
     <line x1="${MID}" y1="${PAD_T - 6}" x2="${MID}" y2="${H - PAD_B + 2}" class="pc-axis"/>
     ${bars}
