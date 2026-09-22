@@ -83,16 +83,21 @@
     d.setAttribute('aria-selected', String(i === state.i));
   });
 
-  async function show(i) {
-    const [key, name] = SCREENS[i];
-    const url = await preload(state.shift, key);
-    if (!url) return false;
+  // Preload first, paint second: paint() is synchronous so a shift change can swap the
+  // colours and the screenshot inside one view transition, with no half-switched frame.
+  function paint(i, url) {
+    const [, name] = SCREENS[i];
     state.i = i;
     shot.src = url;
     shot.alt = `${name} on ${label[state.platform]} in ${label[state.shift]}`;
     if (caption) caption.textContent = `${name} · ${label[state.platform]} · ${label[state.shift]}`;
     syncDots();
-    return true;
+  }
+
+  async function show(i) {
+    const url = await preload(state.shift, SCREENS[i][0]);
+    if (url) paint(i, url);
+    return !!url;
   }
 
   // Advance to the next screen that actually exists, so a half-delivered night set
@@ -144,12 +149,20 @@
     }
   };
 
+  // The whole page crossfades as one frame. Per-element CSS transitions could not do this:
+  // text, cards and the belt snapped while backgrounds faded and the shot swapped late.
   const applyShift = async () => {
-    root.setAttribute('data-shift', state.shift);
-    syncButtons();
     // Hold the current screen across a shift change: the point of the toggle is to see
     // ONE screen both ways. Only fall forward if this screen is missing in the new shift.
-    if (!(await show(state.i))) await advance();
+    const url = await preload(state.shift, SCREENS[state.i][0]);
+    const swap = () => {
+      root.setAttribute('data-shift', state.shift);
+      syncButtons();
+      if (url) paint(state.i, url);
+    };
+    if (document.startViewTransition && !still.matches) await document.startViewTransition(swap).finished;
+    else swap();
+    if (!url) await advance();
   };
 
   for (const b of buttons) {

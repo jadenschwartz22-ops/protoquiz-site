@@ -269,10 +269,8 @@
    [data-chrome="night"]. The chrome owns its palette; this file only drives the toggle.
    Keeping a copy here is what let the two drift, so there is deliberately none. */
 
-html { transition: none; }
-[data-shift] body, [data-shift] .app-hero, [data-shift] .site-header, [data-shift] .site-footer {
-  transition: background-color .35s cubic-bezier(.16,1,.3,1), border-color .35s cubic-bezier(.16,1,.3,1);
-}
+/* The shift toggle crossfades the whole page via a view transition (app-toggle.js). */
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .35s; animation-timing-function: cubic-bezier(.16,1,.3,1); }
 /* First paint only: the inline head script sets this while it corrects the shift from
    localStorage, so a restored choice appears instantly instead of fading in from the
    markup default. Both rAFs later it is gone and the toggle animates normally. */
@@ -284,7 +282,6 @@ html.no-anim, html.no-anim * { transition: none !important; animation: none !imp
 
 @media (prefers-reduced-motion: reduce) {
   .track { animation: none !important; }
-  [data-shift] body, [data-shift] .app-hero { transition: none; }
 }
 
 /* ── reach map ───────────────────────────────────────────────────────────
