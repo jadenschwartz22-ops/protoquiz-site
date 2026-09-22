@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-09-22T12:08:37.783Z",
-  "totalUploads": 629,
-  "distinctProtocols": 428,
-  "activeStudiers": 434,
-  "pagesProcessed": 102946,
+  "generatedAt": "2026-09-22T18:08:37.772Z",
+  "totalUploads": 630,
+  "distinctProtocols": 429,
+  "activeStudiers": 435,
+  "pagesProcessed": 103240,
   "statesRepresented": 42,
   "countriesRepresented": 5,
   "internationalUploads": 10,
@@ -21,7 +21,7 @@
     "NC": 17,
     "OR": 16,
     "WA": 12,
-    "NV": 11,
+    "NV": 12,
     "IL": 10,
     "WY": 10,
     "FL": 9,
@@ -1655,6 +1655,20 @@
       "topProtocols": [
         {
           "title": "KCFD EMS PROTOCOLS 2026",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "NV",
+      "city": "Tooele",
+      "x": 145,
+      "y": 297,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "Nevada MWA Protocols 8.22.26 +1 more",
           "count": 1
         }
       ]
