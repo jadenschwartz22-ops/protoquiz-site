@@ -321,6 +321,10 @@ ${CHROME_HEAD}
 // the same chrome. Census pages are always in the census section.
 const nav = navFor('/census/');
 
+// Said on the landing and every agency page so an agency never reads the census as
+// ProtoQuiz selling its data: it is not sold, licensed, or shared, and hosts nothing.
+const NOT_FOR_SALE = 'The census is free and not for sale. It is built only from documents agencies already publish, each linked to the agency&rsquo;s own copy and never hosted here.';
+
 // The disclaimer rides above the shared footer rather than inside it: it is specific
 // to published-protocol data and would be a false promise on /app or /agency.
 const footer = `  <div class="census-disclaimer">
@@ -704,6 +708,7 @@ function landingPage({ manifest, states, drugs, agencyPageCount, agencies = [], 
           standing order or requires calling a physician first. The United States EMS Protocol Census is a
           standing research program built on public documents: it reads what agencies publish and turns it
           into a versioned record anyone can check, rebuilt every night from the agencies' own documents.</p>
+          <p class="dek">${NOT_FOR_SALE}</p>
         </div>
         <figure class="hero-map">
           ${map.svg}
@@ -717,7 +722,7 @@ ${scaleLine}
         <ul class="claims">
           <li><strong>A medic who changes agencies relearns every dose.</strong> The medication is the same and the number is different, and until now there was no way to see which agencies differ or by how much.</li>
           <li><strong>A medical director revising a protocol has no benchmark.</strong> Writing the next version means guessing at what everyone else does. The census shows what the rest of the country actually carries, with the documents behind it.</li>
-          <li><strong>Researchers have never had the dataset.</strong> There has been no denominator for prehospital medicine, so questions about how care varies could not be asked, let alone answered.</li>
+          <li><strong>Researchers have never had a denominator.</strong> Nobody had counted what prehospital medicine carries, so questions about how care varies could not be asked, let alone answered.</li>
           <li><strong>Arguing for EMS pay, training and staffing takes evidence.</strong> Anecdote loses those arguments. Numbers that anyone can check and cite do better.</li>
           <li><strong>It updates every night, and agencies decide whether they are in it.</strong> New documents are read and revisions become new versions with the old one kept in the history. Send a public URL to be listed, or ask to be removed and it comes down the same day, no reason needed.</li>
         </ul>
@@ -756,7 +761,7 @@ ${otherStates.length ? `      <!-- Listed, but never inside the US counts above.
       </section>
       <section id="how">
         <h2>How this is built</h2>
-        <p><a href="/census/methodology/">Methodology</a>: where documents come from, what is read out of them, what is not captured, and why no dose-level accuracy number is published. <a href="/census/data-license/">Data license</a>: summaries are CC BY 4.0; row-level data is not published.</p>${latestReport ? `
+        <p><a href="/census/methodology/">Methodology</a>: where documents come from, what is read out of them, what is not captured, and why no dose-level accuracy number is published. <a href="/census/data-license/">Data license</a>: summaries are CC BY 4.0; row-level data is never published, sold, or shared.</p>${latestReport ? `
         <p><a href="/census/report/${latestReport}/">State of US EMS Protocols, ${reportLabel(latestReport)}</a>: the quarterly edition, the groups where published protocols disagree most, aggregate only.</p>` : ''}
       </section>
       <div class="landing-foot">
@@ -888,7 +893,7 @@ ${railLinks('Related', [
           </section>
           <section class="panel" id="correct">
             <h2>Outdated or wrong?</h2>
-            <p>Send the current document's public URL and the listing is rebuilt from it. To have this agency removed from the census entirely, say so and it comes down the same day.</p>
+            <p>${NOT_FOR_SALE} Send the current document's public URL and the listing is rebuilt from it. To have this agency removed from the census entirely, say so and it comes down the same day.</p>
 ${submitForm({ id: 'correct-form', kind: 'correction', agencyKey: agency.agencyKey, urlLabel: 'Public URL of the current document', submitLabel: 'Send the correction' })}
           </section>`;
 
@@ -1609,13 +1614,13 @@ function dataLicensePage() {
   const body = `${docHeader({
     kind: 'License',
     title: 'Census data license',
-    chips: ['Summaries CC BY 4.0', 'Rows unpublished', 'Same-day takedown'],
+    chips: ['Summaries CC BY 4.0', 'Not for sale', 'Same-day takedown'],
     lede: 'What you may do with the numbers on this site, what is not published, and how to have a listing corrected or removed.',
   })}
 
       <section id="summaries">
         <h2>Summaries and comparisons: CC BY 4.0</h2>
-        <p>The aggregate figures published on this site &mdash; the distributions, counts, route shares, and the <code>compare.json</code> file behind them &mdash; are licensed under the <a href="https://creativecommons.org/licenses/by/4.0/" rel="nofollow noopener">Creative Commons Attribution 4.0 International license</a>. Use them, republish them, build on them commercially. The one condition is attribution.</p>
+        <p>The aggregate figures published on this site &mdash; the distributions, counts, route shares, and the <code>compare.json</code> file behind them &mdash; are licensed under the <a href="https://creativecommons.org/licenses/by/4.0/" rel="nofollow noopener">Creative Commons Attribution 4.0 International license</a>. Use them and republish them. The one condition is attribution.</p>
         <h3>How to cite</h3>
         <p>Every number the census publishes carries its own citation line, and that line is the attribution:</p>
         <p class="cite">United States EMS Protocol Census, n=&lt;sources&gt; protocols from &lt;agencies&gt; named agencies / &lt;states&gt; states, updated &lt;month year&gt;</p>
@@ -1623,9 +1628,9 @@ function dataLicensePage() {
       </section>
 
       <section id="rows">
-        <h2>Row-level data is not published</h2>
+        <h2>Row-level data is not published, sold, or shared</h2>
         <p>The underlying dose rows &mdash; every entry, per agency, per document, with its source pages and version history &mdash; are <strong>not published</strong> and are not covered by the license above. There is no bulk download and no row-level API on this site. The per-agency tables on agency pages are the public record for that agency, published as pages, not as a dataset.</p>
-        <p>Row-level access is available by license request for research, journalism, and commercial use. Terms are not yet set; ask and we will work them out. Write to <a href="mailto:jaden@protoquiz.com">jaden@protoquiz.com</a> with what you need and what it is for.</p>
+        <p>The census is not for sale. Its data is never sold, licensed, or shared with anyone, at row level or in bulk. A researcher who wants one agency's data should ask that agency: it published the document, and it decides what to release.</p>
       </section>
 
       <section id="documents">
@@ -1641,12 +1646,12 @@ function dataLicensePage() {
 
       <section id="terms">
         <h2>Full terms</h2>
-        <p>This page states the license for census data. The site's full <a href="/terms/">Terms of Service</a> govern everything else, including what an agency's protocol document may be used for when it is submitted through the app. See <a href="/census/methodology/">how the census is built</a> for what the numbers mean.</p>
+        <p>This page states the license for census data. The site's full <a href="/terms/">Terms of Service</a> govern everything else. See <a href="/census/methodology/">how the census is built</a> for what the numbers mean.</p>
       </section>`;
 
   const rail = `${contents([
     ['Summaries and comparisons', 'summaries'],
-    ['Row-level data is not published', 'rows'],
+    ['Not published, sold, or shared', 'rows'],
     ['The documents themselves', 'documents'],
     ['Corrections, opt-out, and takedown', 'takedown'],
     ['Full terms', 'terms'],
@@ -1660,8 +1665,8 @@ ${railLinks('Related', [
     path: '/census/data-license/',
     html: page({
       rail,
-      title: 'EMS Census data license - CC BY 4.0 summaries, licensed rows',
-      description: 'Census summaries and compare.json are CC BY 4.0 with attribution. Row-level data is not published and is available by license request. Corrections and removals are handled the same day.',
+      title: 'EMS Census data license - CC BY 4.0 summaries, data not for sale',
+      description: 'Census summaries and compare.json are CC BY 4.0 with attribution. Row-level data is not published, sold, licensed, or shared. Corrections and removals are handled the same day.',
       path: '/census/data-license/',
       trail: [['Home', '/'], ['EMS Census', '/census/'], ['Data license', '/census/data-license/']],
       body,

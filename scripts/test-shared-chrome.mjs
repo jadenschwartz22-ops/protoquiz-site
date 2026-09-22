@@ -79,6 +79,11 @@ test('census pages belong to Research without moving', () => {
   }
 });
 
+test('census nav carries no sales link', () => {
+  for (const p of ['/census/', '/census/agencies/x/']) assert.ok(!navFor(p).includes('href="/agency/"'), p);
+  assert.ok(navFor('/research/').includes('href="/agency/"'), 'research keeps For agencies');
+});
+
 test('no page keeps a private nav', () => {
   for (const rel of PAGES) {
     const f = join(root, rel);

@@ -60,7 +60,13 @@ const CTA_DEFAULT = ['Contact sales', '/agency/#contact'];
 // moving the pages.
 const ALSO = { '/research/': ['/census/'] };
 
-const navLinks = current => SECTIONS.map(([label, href]) => {
+// The census is research, not a sales page: an agency reading its own listing should
+// not find the sales pitch one click away in the header, or read the census as a
+// product we sell. The footer still reaches /agency/.
+const hiddenOn = { '/agency/': ['/census/'] };
+
+const navLinks = current => SECTIONS.filter(([, href]) =>
+  !(current && (hiddenOn[href] || []).some(p => current.startsWith(p)))).map(([label, href]) => {
   const on = !!current && (current.startsWith(href)
     || (ALSO[href] || []).some(p => current.startsWith(p)));
   return `          <a href="${href}"${on ? ' class="nav-link on" aria-current="page"' : ' class="nav-link"'}>${label}</a>`;

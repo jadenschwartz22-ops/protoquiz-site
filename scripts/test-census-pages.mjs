@@ -952,8 +952,8 @@ test('the data license page states CC BY 4.0 on summaries and the citation forma
 });
 test('the data license page says row-level data is NOT published', () => {
   assert.ok(/not published/.test(license), 'must say rows are not published');
-  assert.ok(/license request/i.test(license), 'must offer the license-request path');
-  assert.ok(/[Tt]erms are not yet set/.test(license), 'must be honest that terms are TBD');
+  assert.ok(/never sold, licensed, or shared/.test(license), 'must promise the data is not sold or licensed');
+  assert.ok(!/license request|commercial/i.test(license), 'must not offer row-level licensing or commercial use');
 });
 test('the data license page states same-day takedown and opt-out', () => {
   assert.ok(/same day/i.test(license), 'missing same-day removal');
