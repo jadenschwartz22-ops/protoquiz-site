@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-09-22T00:08:42.357Z",
-  "totalUploads": 623,
+  "generatedAt": "2026-09-22T06:08:34.912Z",
+  "totalUploads": 626,
   "distinctProtocols": 428,
-  "activeStudiers": 428,
-  "pagesProcessed": 102575,
+  "activeStudiers": 431,
+  "pagesProcessed": 102946,
   "statesRepresented": 42,
   "countriesRepresented": 5,
   "internationalUploads": 10,
   "byState": {
-    "CO": 53,
+    "CO": 55,
     "MI": 48,
-    "CA": 44,
+    "CA": 45,
     "MA": 27,
     "PA": 26,
     "TX": 25,
@@ -60,6 +60,28 @@
   },
   "locales": [
     {
+      "state": "CO",
+      "city": "Denver",
+      "x": 330,
+      "y": 258,
+      "count": 49,
+      "tier": "hot",
+      "topProtocols": [
+        {
+          "title": "DMEMS Protocols January 2026 (Example)",
+          "count": 12
+        },
+        {
+          "title": "DMEMSMD Protocols January 2026 FINAL 2025 02 02",
+          "count": 8
+        },
+        {
+          "title": "dmemsmd protocols july 2025 final 2025 07 14",
+          "count": 7
+        }
+      ]
+    },
+    {
       "state": "MI",
       "city": "Detroit",
       "x": 690,
@@ -78,28 +100,6 @@
         {
           "title": "1.5 Shock",
           "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CO",
-      "city": "Denver",
-      "x": 330,
-      "y": 258,
-      "count": 47,
-      "tier": "hot",
-      "topProtocols": [
-        {
-          "title": "DMEMS Protocols January 2026 (Example)",
-          "count": 10
-        },
-        {
-          "title": "DMEMSMD Protocols January 2026 FINAL 2025 02 02",
-          "count": 8
-        },
-        {
-          "title": "dmemsmd protocols july 2025 final 2025 07 14",
-          "count": 7
         }
       ]
     },
@@ -368,6 +368,28 @@
       ]
     },
     {
+      "state": "CA",
+      "city": "San Leandro",
+      "x": 34,
+      "y": 249,
+      "count": 9,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "2026 Alameda County EMS Field Manual Rev3",
+          "count": 6
+        },
+        {
+          "title": "alco fm 2025 draft 07 31 2024",
+          "count": 1
+        },
+        {
+          "title": "Alco Field Manual",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "MD",
       "city": "Baltimore",
       "x": 807,
@@ -386,28 +408,6 @@
         {
           "title": "MD Medical Protocols 2026 Print",
           "count": 2
-        }
-      ]
-    },
-    {
-      "state": "CA",
-      "city": "San Leandro",
-      "x": 34,
-      "y": 249,
-      "count": 8,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "2026 Alameda County EMS Field Manual Rev3",
-          "count": 5
-        },
-        {
-          "title": "alco fm 2025 draft 07 31 2024",
-          "count": 1
-        },
-        {
-          "title": "Alco Field Manual",
-          "count": 1
         }
       ]
     },
