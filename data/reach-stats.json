@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-09-23T00:08:44.892Z",
-  "totalUploads": 632,
-  "distinctProtocols": 429,
-  "activeStudiers": 437,
-  "pagesProcessed": 103240,
+  "generatedAt": "2026-09-23T06:08:43.935Z",
+  "totalUploads": 633,
+  "distinctProtocols": 430,
+  "activeStudiers": 438,
+  "pagesProcessed": 103371,
   "statesRepresented": 42,
   "countriesRepresented": 5,
   "internationalUploads": 10,
@@ -15,7 +15,7 @@
     "PA": 26,
     "TX": 25,
     "GA": 24,
-    "NY": 22,
+    "NY": 23,
     "CT": 19,
     "VA": 18,
     "NC": 17,
@@ -148,6 +148,28 @@
       ]
     },
     {
+      "state": "NY",
+      "city": "New York",
+      "x": 843,
+      "y": 202,
+      "count": 23,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "ny collaborative protocols",
+          "count": 5
+        },
+        {
+          "title": "bls protocols V.26.0",
+          "count": 4
+        },
+        {
+          "title": "ny collaborative protocols",
+          "count": 3
+        }
+      ]
+    },
+    {
       "state": "GA",
       "city": "Atlanta",
       "x": 692,
@@ -166,28 +188,6 @@
         {
           "title": "2024 Scope of Practice 260123",
           "count": 1
-        }
-      ]
-    },
-    {
-      "state": "NY",
-      "city": "New York",
-      "x": 843,
-      "y": 202,
-      "count": 22,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "ny collaborative protocols",
-          "count": 5
-        },
-        {
-          "title": "bls protocols V.26.0",
-          "count": 4
-        },
-        {
-          "title": "ny collaborative protocols",
-          "count": 3
         }
       ]
     },
