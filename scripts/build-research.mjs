@@ -200,7 +200,7 @@ ${excluded.map(stateRow).join('\n')}
 
       <h3>Shading: how sure we are</h3>
       <dl class="tierdl">
-        <dt><span class="tierchip t-a"></span>Named</dt><dd>A state or agency record names the provider. The only tier we treat as known.</dd>
+        <dt><span class="tierchip t-a"></span>Named</dt><dd>A state or agency record names the provider for the county, or for its main towns. The only tier we treat as known.</dd>
         <dt><span class="tierchip t-b"></span>Confirmed biller</dt><dd>A licensed ambulance service in the county bills mostly emergency transports (Medicare).</dd>
         <dt><span class="tierchip t-c"></span>Located here</dt><dd>A licensed ambulance service is based in the county.</dd>
         <dt><span class="tierchip t-d"></span>Billing only</dt><dd>Only Medicare billing points to it. The weakest signal.</dd>
