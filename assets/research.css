@@ -734,15 +734,8 @@ main{padding-bottom:64px;}
 }
 .res-home main{padding-bottom:clamp(64px,8vw,112px);}
 .res-home .res-hero{padding-top:clamp(28px,3vw,48px);}
-@media (min-width:1024px){
-  .res-home .res-hero{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(32px,4vw,64px);align-items:start;}
-  .res-home .res-eyebrow{grid-column:1/-1;}
-  .res-home .res-hero h1{grid-row:2/4;margin-bottom:0;}
-  .res-home .res-hero .lede,.res-home .res-about{grid-column:2;}
-  .res-home .res-hero .lede{padding-top:.45em;}
-}
 .res-home .res-eyebrow{font-size:12px;margin-bottom:12px;}
-.res-home .res-hero h1{font-size:clamp(2rem,3.6vw,3.25rem);line-height:1.05;margin-bottom:16px;max-width:22ch;}
+.res-home .res-hero h1{font-size:clamp(2rem,3.6vw,3.25rem);line-height:1.05;margin-bottom:18px;max-width:28ch;}
 .res-home .lede{font-size:clamp(1rem,1.2vw,1.1875rem);line-height:1.55;max-width:68ch;}
 .res-home .res-about{margin-top:14px;}
 .res-home .res-about summary{font-size:12px;}
