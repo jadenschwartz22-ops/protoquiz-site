@@ -156,9 +156,9 @@ ${navFor('/app/')}
             </div>
           </div>
           <div class="phone" data-phone>
-            <img data-shot src="/app-shots/night-study-hub.png" alt="The ProtoQuiz study hub in Night Shift" width="250" height="543">
+            <img data-shot src="/app-shots/night-study-hub.png" alt="The ProtoQuiz study hub in Night Shift" width="250" height="543"><script>if(document.documentElement.dataset.shift==='day'){const i=document.currentScript.previousElementSibling;i.src='/app-shots/day-study-hub.png';i.alt='The ProtoQuiz study hub in Day Shift'}</script>
           </div>
-          <div class="shot-caption" data-shot-caption>iPhone &middot; Night Shift</div>
+          <div class="shot-caption" data-shot-caption>Study hub &middot; iPhone &middot; Night Shift</div>
         </div>
       </div>
     </section>

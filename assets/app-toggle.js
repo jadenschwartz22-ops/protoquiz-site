@@ -28,6 +28,7 @@
   ];
 
   const root = document.documentElement;
+  const still = matchMedia('(prefers-reduced-motion: reduce)');
   const shot = document.querySelector('[data-shot]');
   const caption = document.querySelector('[data-shot-caption]');
   const dotWrap = document.querySelector('.shot-dots');
@@ -88,16 +89,24 @@
   function paint(i, url) {
     const [, name] = SCREENS[i];
     state.i = i;
-    shot.src = url;
+    if (shot.getAttribute('src') !== url) shot.src = url;
     shot.alt = `${name} on ${label[state.platform]} in ${label[state.shift]}`;
     if (caption) caption.textContent = `${name} · ${label[state.platform]} · ${label[state.shift]}`;
     syncDots();
   }
 
+  // Screen changes fade out, swap, and fade back in once the new image is decoded.
+  const FADE = 280;
   async function show(i) {
     const url = await preload(state.shift, SCREENS[i][0]);
-    if (url) paint(i, url);
-    return !!url;
+    if (!url) return false;
+    if (still.matches) { paint(i, url); return true; }
+    shot.style.opacity = '0';
+    await new Promise(r => setTimeout(r, FADE));
+    paint(i, url);
+    await shot.decode?.().catch(() => {});
+    shot.style.opacity = '';
+    return true;
   }
 
   // Advance to the next screen that actually exists, so a half-delivered night set
@@ -109,7 +118,6 @@
   }
 
   let timer = null;
-  const still = matchMedia('(prefers-reduced-motion: reduce)');
   const rearm = () => {
     clearInterval(timer);
     if (!still.matches) timer = setInterval(advance, HOLD);
@@ -151,7 +159,7 @@
 
   // The whole page crossfades as one frame. Per-element CSS transitions could not do this:
   // text, cards and the belt snapped while backgrounds faded and the shot swapped late.
-  const applyShift = async () => {
+  const applyShift = async (animate = true) => {
     // Hold the current screen across a shift change: the point of the toggle is to see
     // ONE screen both ways. Only fall forward if this screen is missing in the new shift.
     const url = await preload(state.shift, SCREENS[state.i][0]);
@@ -160,7 +168,7 @@
       syncButtons();
       if (url) paint(state.i, url);
     };
-    if (document.startViewTransition && !still.matches) await document.startViewTransition(swap).finished;
+    if (animate && document.startViewTransition && !still.matches) await document.startViewTransition(swap).finished;
     else swap();
     if (!url) await advance();
   };
@@ -182,7 +190,9 @@
   // A remembered night preference must not survive into a build with no night shots.
   (async () => {
     if (!(await shiftHasShots(state.shift))) state.shift = state.shift === 'night' ? 'day' : 'night';
-    await applyShift();
+    // First load is instant: a view transition here froze the belt mid-scroll and
+    // snapped it forward, and re-set the screenshot the markup already shows.
+    await applyShift(false);
     await gateShift();
     rearm();
   })();
