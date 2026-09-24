@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-24T06:08:41.368Z",
-  "totalUploads": 641,
+  "generatedAt": "2026-09-24T12:09:41.036Z",
+  "totalUploads": 643,
   "distinctProtocols": 430,
-  "activeStudiers": 444,
-  "pagesProcessed": 103322,
+  "activeStudiers": 445,
+  "pagesProcessed": 103482,
   "statesRepresented": 42,
   "countriesRepresented": 5,
-  "internationalUploads": 10,
+  "internationalUploads": 12,
   "byState": {
     "CO": 68,
     "MI": 48,
@@ -52,7 +52,7 @@
     "RI": 2
   },
   "byCountry": {
-    "ZA": 4,
+    "ZA": 6,
     "CA": 2,
     "AU": 2,
     "FR": 1,
@@ -1933,19 +1933,19 @@
       "city": "Cape Town",
       "x": 509,
       "y": 456,
-      "count": 4,
-      "tier": "on",
+      "count": 6,
+      "tier": "warm",
       "topProtocols": [
+        {
+          "title": "1772013878593 Clinical Decision Support Tool (CDST) Emergency…",
+          "count": 3
+        },
         {
           "title": "1737022391007 CLINICAL PRACTICE GUIDELINES PROTOCOLS JULY 2018",
           "count": 2
         },
         {
           "title": "ilovepdf merged",
-          "count": 1
-        },
-        {
-          "title": "1772013878593 Clinical Decision Support Tool (CDST) Emergency…",
           "count": 1
         }
       ]
