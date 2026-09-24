@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-09-23T18:08:49.228Z",
-  "totalUploads": 636,
+  "generatedAt": "2026-09-24T00:08:40.465Z",
+  "totalUploads": 640,
   "distinctProtocols": 430,
-  "activeStudiers": 441,
-  "pagesProcessed": 103371,
+  "activeStudiers": 443,
+  "pagesProcessed": 103139,
   "statesRepresented": 42,
   "countriesRepresented": 5,
   "internationalUploads": 10,
   "byState": {
-    "CO": 63,
+    "CO": 68,
     "MI": 48,
     "CA": 45,
     "MA": 27,
+    "TX": 26,
     "PA": 26,
-    "TX": 25,
     "GA": 24,
     "NY": 23,
-    "CT": 19,
     "VA": 18,
+    "CT": 18,
     "NC": 17,
     "OR": 16,
     "WA": 12,
@@ -29,11 +29,11 @@
     "AZ": 8,
     "TN": 6,
     "IN": 6,
-    "LA": 6,
     "UT": 5,
     "SC": 5,
     "AL": 5,
     "WI": 5,
+    "LA": 5,
     "KY": 4,
     "NE": 4,
     "ID": 4,
@@ -64,12 +64,12 @@
       "city": "Denver",
       "x": 330,
       "y": 258,
-      "count": 57,
+      "count": 62,
       "tier": "hot",
       "topProtocols": [
         {
           "title": "DMEMS Protocols January 2026 (Example)",
-          "count": 19
+          "count": 24
         },
         {
           "title": "DMEMSMD Protocols January 2026 FINAL 2025 02 02",
@@ -196,12 +196,12 @@
       "city": "Hartford",
       "x": 858,
       "y": 174,
-      "count": 19,
+      "count": 18,
       "tier": "warm",
       "topProtocols": [
         {
           "title": "v2025 2 ctemsstatewideprotocolsFINALver1",
-          "count": 11
+          "count": 10
         },
         {
           "title": "v2025 2 ctemsstatewideprotocolsfinalver1",
@@ -302,6 +302,28 @@
       ]
     },
     {
+      "state": "TX",
+      "city": "Houston",
+      "x": 493,
+      "y": 487,
+      "count": 10,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "UTHETEMS Protocols (with Drugs)",
+          "count": 2
+        },
+        {
+          "title": "HCEMS Protocols 9 8 25 Reduced",
+          "count": 1
+        },
+        {
+          "title": "UTHETEMS Protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "WY",
       "city": "Jackson",
       "x": 246,
@@ -319,28 +341,6 @@
         },
         {
           "title": "17 17 Dextrose",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "TX",
-      "city": "Houston",
-      "x": 493,
-      "y": 487,
-      "count": 9,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "UTHETEMS Protocols (with Drugs)",
-          "count": 2
-        },
-        {
-          "title": "HCEMS Protocols 9 8 25 Reduced",
-          "count": 1
-        },
-        {
-          "title": "UTHETEMS Protocols",
           "count": 1
         }
       ]
@@ -456,28 +456,6 @@
       ]
     },
     {
-      "state": "LA",
-      "city": "New Orleans",
-      "x": 594,
-      "y": 479,
-      "count": 6,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "rope 2024 final 05 02 24",
-          "count": 2
-        },
-        {
-          "title": "Acadian 2026 Protocols",
-          "count": 2
-        },
-        {
-          "title": "Acadian 2026 Protocols Searchable OCR",
-          "count": 1
-        }
-      ]
-    },
-    {
       "state": "CA",
       "city": "San Diego",
       "x": 93,
@@ -571,6 +549,28 @@
         },
         {
           "title": "master.alabama.protocols.11th.edition.07012025",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "LA",
+      "city": "New Orleans",
+      "x": 594,
+      "y": 479,
+      "count": 5,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "rope 2024 final 05 02 24",
+          "count": 2
+        },
+        {
+          "title": "Acadian 2026 Protocols Searchable OCR",
+          "count": 1
+        },
+        {
+          "title": "Acadian 2026 Protocols",
           "count": 1
         }
       ]
