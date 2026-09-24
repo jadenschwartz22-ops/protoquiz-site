@@ -51,8 +51,8 @@ test('footer reaches both platforms', () => {
 
 // Nothing anywhere in the chrome may link to the Play listing until it is live; the
 // previous link 404'd in public for the length of the withdrawal.
-test('chrome never links to an unpublished Play listing', () => {
-  assert.ok(!/play\.google\.com/.test(NAV_HTML + FOOTER_HTML));
+test('footer Android link opens the Play listing', () => {
+  assert.ok(FOOTER_HTML.includes('play.google.com/store/apps/details?id=com.tmtl.emsprotoquiz">Android'));
 });
 
 test('navFor marks exactly one link current', () => {
