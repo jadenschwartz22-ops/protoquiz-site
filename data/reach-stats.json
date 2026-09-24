@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-24T12:26:59.014Z",
-  "totalUploads": 643,
-  "distinctProtocols": 430,
-  "activeStudiers": 445,
-  "pagesProcessed": 103482,
-  "statesRepresented": 42,
+  "generatedAt": "2026-09-24T18:08:48.425Z",
+  "totalUploads": 654,
+  "distinctProtocols": 431,
+  "activeStudiers": 446,
+  "pagesProcessed": 103662,
+  "statesRepresented": 43,
   "countriesRepresented": 5,
   "internationalUploads": 12,
   "byState": {
@@ -14,7 +14,7 @@
     "MA": 27,
     "TX": 26,
     "PA": 26,
-    "GA": 24,
+    "GA": 25,
     "NY": 23,
     "VA": 18,
     "CT": 18,
@@ -24,6 +24,7 @@
     "WA": 12,
     "IL": 10,
     "WY": 10,
+    "NM": 10,
     "FL": 9,
     "MD": 8,
     "AZ": 8,
@@ -148,6 +149,28 @@
       ]
     },
     {
+      "state": "GA",
+      "city": "Atlanta",
+      "x": 692,
+      "y": 386,
+      "count": 24,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "National EMS Patient Care Guidelines Sept 2024 Revision 01.66…",
+          "count": 20
+        },
+        {
+          "title": "Whole Protocol V 3807012026150232 (1)",
+          "count": 1
+        },
+        {
+          "title": "2024 Scope of Practice 260123",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "NY",
       "city": "New York",
       "x": 843,
@@ -166,28 +189,6 @@
         {
           "title": "ny collaborative protocols",
           "count": 3
-        }
-      ]
-    },
-    {
-      "state": "GA",
-      "city": "Atlanta",
-      "x": 692,
-      "y": 386,
-      "count": 23,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "National EMS Patient Care Guidelines Sept 2024 Revision 01.66…",
-          "count": 19
-        },
-        {
-          "title": "Whole Protocol V 3807012026150232 (1)",
-          "count": 1
-        },
-        {
-          "title": "2024 Scope of Practice 260123",
-          "count": 1
         }
       ]
     },
@@ -342,6 +343,20 @@
         {
           "title": "17 17 Dextrose",
           "count": 1
+        }
+      ]
+    },
+    {
+      "state": "NM",
+      "city": "Roswell",
+      "x": 325,
+      "y": 399,
+      "count": 10,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "beb995af bff0 4e74 886c 9f95054bff73 copy",
+          "count": 10
         }
       ]
     },
