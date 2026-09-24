@@ -160,7 +160,7 @@
         <h1>Protocol training for EMS agencies.</h1>
         <figure class="tour">
           <video id="tour" autoplay muted playsinline controls preload="metadata" poster="/agency/tour-poster.jpg" width="1920" height="1080" aria-label="A one-minute tour of ProtoQuiz for agencies">
-            <source src="/agency/tour.mp4?v=v18" type="video/mp4">
+            <source src="/agency/tour.mp4?v=v19" type="video/mp4">
           </video>
           <button type="button" class="replay" id="replay" hidden>&#8635; Replay</button>
           <script>if (matchMedia('(prefers-reduced-motion: reduce)').matches) document.getElementById('tour').removeAttribute('autoplay');</script>
@@ -336,7 +336,7 @@
     (function () {
       // Play while on screen, pause when scrolled away; never restart a video the viewer paused.
       var v = document.getElementById('tour'), replay = document.getElementById('replay'), ours = false;
-      // The video ends on its "Train how you fight" card and holds there with a replay button.
+      // The video ends on its "Master your protocols" card and holds there with a replay button.
       v.addEventListener('ended', function () { replay.hidden = false; });
       v.addEventListener('play', function () { replay.hidden = true; });
       replay.addEventListener('click', function () { v.currentTime = 0; v.play(); });
