@@ -723,3 +723,52 @@ main{padding-bottom:64px;}
 .st-bar i{background:var(--m);}
 @media (max-width:860px){.st-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
 @media (max-width:520px){.st-grid{grid-template-columns:1fr;}}
+
+/* ── /research/ hub at desktop width ─────────────────────────────────────────────────
+ * The hub is a front page, not a reading band: one wider measure (--hub) for the volume
+ * bar, hero, cards and method line so every left edge lines up, and type that scales with
+ * it. Scoped to body.res-home so the census and findings pages keep the 1120 measure. */
+.res-home{--hub:1320px;--hub-pad:clamp(16px,5vw,72px);}
+.res-home .rbar-in,.res-home .res-hero,.res-home .res-vols,.res-home .res-method{
+  max-width:calc(var(--hub) + 2 * var(--hub-pad));padding-inline:var(--hub-pad);
+}
+.res-home main{padding-bottom:clamp(64px,8vw,112px);}
+.res-home .res-hero{padding-top:clamp(28px,3vw,48px);}
+@media (min-width:1024px){
+  .res-home .res-hero{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(32px,4vw,64px);align-items:start;}
+  .res-home .res-eyebrow{grid-column:1/-1;}
+  .res-home .res-hero h1{grid-row:2/4;margin-bottom:0;}
+  .res-home .res-hero .lede,.res-home .res-about{grid-column:2;}
+  .res-home .res-hero .lede{padding-top:.45em;}
+}
+.res-home .res-eyebrow{font-size:12px;margin-bottom:12px;}
+.res-home .res-hero h1{font-size:clamp(2rem,3.6vw,3.25rem);line-height:1.05;margin-bottom:16px;max-width:22ch;}
+.res-home .lede{font-size:clamp(1rem,1.2vw,1.1875rem);line-height:1.55;max-width:68ch;}
+.res-home .res-about{margin-top:14px;}
+.res-home .res-about summary{font-size:12px;}
+.res-home .res-about > p{font-size:.9375rem;}
+.res-home .res-vols{
+  margin-bottom:0;padding-top:clamp(28px,3.5vw,56px);column-gap:clamp(32px,4vw,64px);
+}
+.res-home .res-vols .vol-thumb{padding:clamp(16px,1.6vw,24px) clamp(18px,1.8vw,28px) 14px;border-radius:14px;}
+.res-home .res-vols .vol-thumb figcaption{font-size:.84375rem;padding-top:12px;}
+.res-home .res-vols .slide-t{font-size:clamp(1.25rem,1.5vw,1.5rem);}
+.res-home .res-vols .slides-nav{top:clamp(12px,1.4vw,20px);right:clamp(14px,1.6vw,24px);}
+.res-home .vol-eyebrow{font-size:12px;margin:clamp(24px,2.4vw,36px) 0 10px;}
+.res-home .vol h2{font-size:clamp(1.625rem,2.6vw,2.5rem);margin-bottom:12px;}
+.res-home .vol-q{font-size:clamp(1.0625rem,1.3vw,1.25rem);margin-bottom:10px;}
+.res-home .vol-body{font-size:clamp(.9375rem,1.1vw,1.0625rem);margin-bottom:24px;}
+.res-home .vol-stats{padding-top:20px;margin-bottom:20px;gap:14px 24px;}
+.res-home .vol-stats dt{font-size:clamp(2rem,3.3vw,3rem);}
+.res-home .vol-stats dd{margin-top:8px;font-size:.875rem;}
+.res-home .vol-standing{font-size:.875rem;padding-top:12px;margin-bottom:18px;}
+.res-home .vol-cta{font-size:1rem;}
+.res-home .res-method{padding-top:clamp(40px,5vw,80px);}
+.res-home .res-method h2{font-size:1.25rem;}
+.res-home .res-method p{font-size:.9375rem;}
+@media (max-width:760px){
+  .res-home{--hub-pad:16px;}
+  .res-home .res-vols{padding-top:24px;}
+  .res-home .res-vols .vol-thumb{padding:12px 12px 10px;}
+  .res-home .res-vols .slides-nav{top:auto;right:auto;}
+}

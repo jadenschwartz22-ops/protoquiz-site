@@ -240,7 +240,7 @@ const html = `<!doctype html>
 ${CHROME_HEAD}
   <link rel="stylesheet" href="/assets/research.css?v=${assetHash('assets/research.css')}">
 </head>
-<body>
+<body class="res-home">
   <a class="skip-link" href="#main">Skip to content</a>
 ${navFor('/research/')}
 ${researchBar('/research/')}
