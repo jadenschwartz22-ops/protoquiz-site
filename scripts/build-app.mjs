@@ -61,8 +61,6 @@ const FAQ = [
    'Four kinds. Pharmacology quizzes cover adult and pediatric doses, indications, contraindications, routes, mechanisms and adverse effects. Algorithm tests are pulled from your protocol flowcharts. Adaptive patient scenarios respond to your decisions. Learn Mode runs spaced repetition on the meds you keep missing.'],
   ['What does it cost?',
    'Free to use, with an optional paid upgrade. There are no ads.'],
-  ['Is it on Android?',
-   'Yes. ProtoQuiz runs on both iOS and Android, and both carry the same two themes: Night Shift and Day Shift.'],
 ];
 
 const html = `<!doctype html>
