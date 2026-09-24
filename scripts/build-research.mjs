@@ -8,7 +8,7 @@
 // with the highest "fire-based" share are high because their only source is a fire
 // STATION list, and the page says so on the row rather than in a footnote.
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
-import { navFor, researchBar, FOOTER_HTML, CHROME_HEAD } from './shared-chrome.mjs';
+import { navFor, researchBar, listingStrip, FOOTER_HTML, CHROME_HEAD, assetHash } from './shared-chrome.mjs';
 
 // NOTE: this input lives in scratch/, which is gitignored, so a fresh clone cannot
 // build this page until research.json is regenerated from the ems-services pipeline.
@@ -47,7 +47,11 @@ const mapWithControls = map => map.replace(
     </div>
     <p class="rm-hint">Scroll to zoom &middot; drag to pan &middot; click a county</p>
     $1`,
-).replace('</svg>', '</svg>\n  </div>');
+).replace('</svg>', '</svg>\n  </div>')
+  // Each county's <title> becomes a data-t attribute at build time. Left as <title>,
+  // the browser draws its own slow native tooltip over ours, and stripping 3,133 of
+  // them in the page script cost a DOM pass on every load.
+  .replace(/><title>([^<]*)<\/title><\/path>/g, (_, t) => ` data-t="${t.replace(/"/g, '&quot;')}"></path>`);
 
 const MODEL_LABEL = {
   'fire-based': 'Fire-based', private: 'Private', 'third-service': 'Third service',
@@ -78,17 +82,38 @@ const entries = Object.entries(R.states);
 const ranked = entries.filter(([, d]) => !d.tag).sort(byFire);
 const excluded = entries.filter(([, d]) => d.tag).sort((a, b) => a[0].localeCompare(b[0]));
 
+// By-state groups, most confident source first. Each bar is a 100% stack in the national
+// bar's colours; the numbers live in its label and in the table fold below.
+const labelled = new Set(R.labelStates || []);
+const GROUPS = [
+  { name: 'State labels ownership', why: 'the roster carries the state\u2019s own ownership field', open: true,
+    states: ranked.filter(([c]) => labelled.has(c)) },
+  { name: 'Ownership read from agency names', why: 'roster exists, ownership inferred from names',
+    states: ranked.filter(([c]) => !labelled.has(c)) },
+  { name: 'Fire-station list, leans fire', why: 'no EMS roster, so fire share runs high',
+    states: excluded.filter(([, d]) => d.tag === 'station').sort(byFire) },
+  { name: 'Not ranked', why: 'station list only, overstates fire; left out of national figures', line: true,
+    states: excluded.filter(([, d]) => d.tag === 'floor') },
+];
+const stateBar = ([code, d]) => {
+  const label = `${code}, ${d.n.toLocaleString('en-US')} agencies: ` + MODELS.filter(m => d.pct[m])
+    .map(m => `${Math.round(d.pct[m])}% ${MODEL_LABEL[m].toLowerCase()}`).join(', ');
+  return `        <div class="st-item" title="${label}"><b>${code}</b><div class="st-bar" role="img" aria-label="${label}">`
+    + MODELS.filter(m => d.pct[m]).map(m => `<i class="m-${m}" style="width:${d.pct[m].toFixed(1)}%"></i>`).join('')
+    + '</div></div>';
+};
+
 const html = `<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The American EMS Atlas - who answers 911, by county</title>
-  <meta name="description" content="A state-by-state record of who provides 911 EMS in the United States: fire departments, private ambulance companies, county third services or hospitals. Built from state licensing rosters.">
+  <meta name="description" content="A state-by-state map of who provides 911 EMS in the United States: fire departments, private ambulance companies, county third services or hospitals. Built from state licensing rosters.">
   <link rel="canonical" href="https://protoquiz.com/research/atlas/">
   <meta name="robots" content="index,follow">
   <meta property="og:title" content="Who runs American EMS">
-  <meta property="og:description" content="A state-by-state record of who provides 911 EMS in the United States, built from state licensing rosters.">
+  <meta property="og:description" content="A state-by-state map of who provides 911 EMS in the United States, built from state licensing rosters.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://protoquiz.com/research/">
   <meta property="og:image" content="https://protoquiz.com/og-image.png">
@@ -96,11 +121,11 @@ const html = `<!doctype html>
   <link rel="icon" href="/favicon.ico?v=4" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=4">
 ${CHROME_HEAD}
-  <link rel="stylesheet" href="/assets/research.css">
+  <link rel="stylesheet" href="/assets/research.css?v=${assetHash('assets/research.css')}">
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
-${navFor('/research/')}
+${navFor('/research/atlas/')}
 ${researchBar('/research/atlas/')}
 
   <main id="main">
@@ -108,8 +133,7 @@ ${researchBar('/research/atlas/')}
       <div class="res-eyebrow">Early release &middot; ${R.asOf}</div>
       <h1>Who runs American EMS?</h1>
       <p class="lede">In some states a fire department answers the 911 call. In others it is a
-      private ambulance company, a county service, or a hospital. We are mapping it county by
-      county, from the states' own licensing rosters.</p>
+      private ambulance company, a county service, or a hospital. This map shows it county by county, from the states' own licensing rosters.</p>
     </section>
 
     <section class="res-map-wrap">
@@ -121,7 +145,7 @@ ${mapWithControls(MAP)}
     </section>
 
     <section class="res-headline">
-      <div class="res-eyebrow">Across ${R.realStates} states with a published EMS roster</div>
+      <div class="res-eyebrow">Across ${R.realStates} states ranked</div>
       <div class="bar">
 ${MODELS.map(m => `        <div class="bar-seg m-${m.replace(' ', '')}" style="width:${R.national[m].toFixed(1)}%"><span>${Math.round(R.national[m])}%</span></div>`).join('\n')}
       </div>
@@ -136,6 +160,17 @@ ${MODELS.map(m => `        <span class="key"><i class="m-${m.replace(' ', '')}">
 
     <section class="res-table-wrap">
       <h2>By state</h2>
+      <div class="bar-key">
+${MODELS.map(m => `        <span class="key"><i class="m-${m.replace(' ', '')}"></i>${MODEL_LABEL[m]}</span>`).join('\n')}
+      </div>
+${GROUPS.map(g => `      <details class="res-fold st-group"${g.open ? ' open' : ''}>
+      <summary><h3>${g.name}</h3><span>${g.states.length} states &middot; ${g.why}</span></summary>
+${g.line ? `      <p class="res-subnote">${g.states.map(([c]) => c).join(', ')}</p>` : `      <div class="st-grid">
+${g.states.map(stateBar).join('\n')}
+      </div>`}
+      </details>`).join('\n')}
+      <details class="res-fold">
+      <summary><h3>Show the numbers</h3><span>agency counts and shares, every state</span></summary>
       <div class="table-scroll">
       <table class="res-table">
         <thead>
@@ -145,91 +180,46 @@ ${MODELS.map(m => `            <th scope="col" class="num">${MODEL_LABEL[m]}</th
         </thead>
         <tbody>
 ${ranked.map(stateRow).join('\n')}
-        </tbody>
-      </table>
-      </div>
-
-      <h3 class="res-sub">Not comparable: ${excluded.length} states whose source is a fire-station list</h3>
-      <p class="res-subnote">These states publish no usable EMS roster, so the rows below come from a
-      fire-station layer that is 96.8% fire stations and carries no ownership field. Their fire share is
-      an artifact of that source &mdash; a ceiling, not a measurement &mdash; so they are listed
-      alphabetically, never ranked, and are excluded from every national figure on this page.</p>
-      <div class="table-scroll">
-      <table class="res-table res-table-excluded">
-        <thead>
-          <tr><th scope="col">State</th><th scope="col" class="num">Rows in source</th>
-${MODELS.map(m => `            <th scope="col" class="num">${MODEL_LABEL[m]}</th>`).join('\n')}
-          </tr>
-        </thead>
-        <tbody>
 ${excluded.map(stateRow).join('\n')}
         </tbody>
       </table>
       </div>
+      </details>
     </section>
 
     <section class="res-method">
-      <h2>What these words mean</h2>
+      <details class="res-fold">
+      <summary><h2>About this map</h2><span>what the colors and shading mean</span></summary>
+      <h3>Colors: who provides 911 EMS</h3>
       <dl>
-        <dt>Agency</dt><dd>One licensed EMS service as the state lists it. A department with six
-        stations is one agency.</dd>
-        <dt>Fire-based</dt><dd>A fire department or fire district provides the EMS, whether or not
-        it also transports.</dd>
-        <dt>Private</dt><dd>A standalone ambulance company or a volunteer ambulance corps.
-        For-profit and non-profit are counted together; states do not label them consistently.</dd>
+        <dt>Fire-based</dt><dd>A fire department or fire district.</dd>
+        <dt>Private</dt><dd>An ambulance company or volunteer ambulance corps.</dd>
         <dt>Third service</dt><dd>A county or city EMS agency that is not the fire department.</dd>
-        <dt>Hospital</dt><dd>Operated by a hospital or health system.</dd>
+        <dt>Hospital</dt><dd>A hospital or health system.</dd>
       </dl>
 
-      <h2>How a county gets its colour, and how sure we are</h2>
-      <p>Map and table answer different questions from different sources, and are never pooled.
-      The <strong>map</strong> asks who answers the 911 call in a county; the <strong>table</strong>
-      asks what share of a state's licensed agencies are fire-based, private, third-service or
-      hospital. Every county carries an evidence tier, drawn as opacity so a weak answer looks
-      weak:</p>
+      <h3>Shading: how sure we are</h3>
       <dl class="tierdl">
-        <dt><span class="tierchip t-a"></span>Named</dt>
-        <dd>A state or agency record names the provider for that county &mdash; a service area,
-        zone, contract or standards-of-cover document. This is the only tier we treat as known.</dd>
-        <dt><span class="tierchip t-b"></span>Confirmed biller</dt>
-        <dd>A licensed transporting agency is located in the county <em>and</em> Medicare 2024 shows
-        it bills mostly emergency transports, a proxy calibrated at 89% recall against
-        state-verified 911 transporters.</dd>
-        <dt><span class="tierchip t-c"></span>Located here</dt>
-        <dd>A licensed transporting agency is registered in the county, unconfirmed. A licence does
-        not say who gets dispatched.</dd>
-        <dt><span class="tierchip t-d"></span>Billing only</dt>
-        <dd>Only a Medicare emergency-majority biller is registered in the county. The weakest
-        signal we draw at all.</dd>
+        <dt><span class="tierchip t-a"></span>Named</dt><dd>A state or agency record names the provider. The only tier we treat as known.</dd>
+        <dt><span class="tierchip t-b"></span>Confirmed biller</dt><dd>A licensed ambulance service in the county bills mostly emergency transports (Medicare).</dd>
+        <dt><span class="tierchip t-c"></span>Located here</dt><dd>A licensed ambulance service is based in the county.</dd>
+        <dt><span class="tierchip t-d"></span>Billing only</dt><dd>Only Medicare billing points to it. The weakest signal.</dd>
       </dl>
-      <p><strong>Two known errors, stated rather than hidden.</strong> Below the named tier an
-      agency sits in the county of its licence address, so a system with one headquarters and
-      many counties is mislocated. And rosters include interfacility, air and critical-care
-      licences that never answer 911, while a volunteer squad billing no Medicare is invisible
-      to our only filter. Both are why anything below &ldquo;named&rdquo; is a lead, not a
-      fact.</p>
+      <p>Anything below Named is a lead, not a fact. Agencies are placed at their license address, so one covering many counties can be misplaced.</p>
 
-      <h2>Where this is thin</h2>
-      <p>Five states &mdash; ${R.floorStates.join(', ')} &mdash; publish no readable EMS roster.
-      Their rows come from a fire-station layer, so they read as far more fire-based than they
-      are. Marked <span class="src-flag floor">station list only</span> and left out of the
-      national figures. Six more &mdash; ${R.stationStates.join(', ')} &mdash; publish a real
-      list, but of fire <em>stations</em>, carrying the same bias more mildly:
-      <span class="src-flag">fire-station source</span>.</p>
-      <p><strong>The ownership column is the weakest thing here, and this is the size of
-      it.</strong> Only ${Math.round((R.official / R.classified) * 100)}%
-      (${R.official.toLocaleString('en-US')} of ${R.classified.toLocaleString('en-US')}) carry the
-      state's own ownership label. The rest are read from the agency's name, and against states
-      that publish a real label that guess agrees only <strong>${R.agreement}%</strong> of the
-      time. Treat a single derived row as a coin flip; the national shares hold up better,
-      because errors partly cancel, but are not precise either.</p>
-      <p>This describes who holds the licence &mdash; not which model is better, and not
-      response times or quality.</p>
+      <h3>Known gaps</h3>
+      <ul>
+        <li>${R.floorStates.join(', ')} publish no EMS roster. Their data comes from fire stations, so it overstates fire-based EMS. <span class="src-flag floor">station list only</span>, left out of national figures.</li>
+        <li>${R.stationStates.join(', ')} list fire stations, with the same bias, milder. <span class="src-flag">fire-station source</span></li>
+        <li>Ownership is mostly guessed from the agency name, right about ${R.agreement}% of the time. National totals are more reliable than any single row.</li>
+      </ul>
+      <p>This shows who holds the license, not quality or response times.</p>
 
-      <h2 id="correct">Tell us we got it wrong</h2>
-      <p>If you work in EMS you know your county better than any roster does, and your correction
-      outranks every inference here. Name the county and who actually answers the 911 call. A
-      link helps but is not required &mdash; we will find the record.</p>
+      </details>
+
+      <details class="res-fold" id="correct">
+      <summary><h2>See a mistake?</h2><span>tell us and we will fix it</span></summary>
+      <p>Name the county and who answers its 911 calls. A link helps but is not required.</p>
       <form class="fix-form" id="fix-form" novalidate>
         <label for="fix-where">County and state</label>
         <input type="text" id="fix-where" name="where" required placeholder="Kern County, CA" autocomplete="off" />
@@ -237,7 +227,7 @@ ${excluded.map(stateRow).join('\n')}
         <textarea id="fix-what" name="what" required rows="4" placeholder="The map shows a private company. The county runs its own EMS and has since 2019."></textarea>
         <label for="fix-src">Link to a source <span class="muted">(optional)</span></label>
         <input type="url" id="fix-src" name="src" placeholder="https://" autocomplete="url" />
-        <label for="fix-email">Your email <span class="muted">(optional &mdash; only so we can tell you when it is fixed)</span></label>
+        <label for="fix-email">Your email <span class="muted">(optional) so we can tell you when it is fixed</span></label>
         <input type="email" id="fix-email" name="email" placeholder="you@agency.gov" autocomplete="email" />
         <p class="hp" aria-hidden="true"><label for="fix-hp">Leave this field empty</label><input type="text" id="fix-hp" name="website" tabindex="-1" autocomplete="off" /></p>
         <button type="submit">Send the correction</button>
@@ -261,7 +251,7 @@ ${excluded.map(stateRow).join('\n')}
               method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
               body: JSON.stringify({
                 email: f.elements.email.value.trim() || undefined,
-                message: 'REGISTRY CORRECTION\n\nCounty: ' + where + '\n\n' + what + (src ? '\n\nSource: ' + src : ''),
+                message: 'REGISTRY CORRECTION\\n\\nCounty: ' + where + '\\n\\n' + what + (src ? '\\n\\nSource: ' + src : ''),
                 source: 'research-atlas-correction'
               })
             }).then(function (r) {
@@ -270,13 +260,25 @@ ${excluded.map(stateRow).join('\n')}
               msg.textContent = 'Thank you — this goes straight to a human, and a county we are told about gets checked first.';
             }).catch(function () {
               btn.disabled = false;
-              msg.textContent = 'That did not send. Email research@protoquiz.com instead and it will get the same treatment.';
+              msg.textContent = 'That did not send. Email support@protoquiz.com instead and it will get the same treatment.';
             });
           });
         })();
       </script>
+      </details>
     </section>
 
+    <script>
+      // The folds hold content that links point into (#correct, the county panel's
+      // report button). Open the fold before scrolling to anything inside it.
+      function openTo(id) {
+        var el = document.getElementById(id), d = el && el.closest('details');
+        if (d) d.open = true;
+        return el;
+      }
+      if (location.hash) openTo(location.hash.slice(1));
+      addEventListener('hashchange', function () { var el = openTo(location.hash.slice(1)); if (el) el.scrollIntoView(); });
+    </script>
     <script>
       (function () {
         var view = document.querySelector('.rm-view');
@@ -284,13 +286,27 @@ ${excluded.map(stateRow).join('\n')}
         var svg = view.querySelector('.rm-svg'), tip = view.querySelector('.rm-tip');
         var z = 1, x = 0, y = 0, hot = null;
 
-        // Each county's text already lives in its <title>. Read it once, then REMOVE the
-        // element: left in place the browser draws its own slow native tooltip on top of
-        // ours. The text is kept on the node so the map stays self-describing.
         var cty = svg.querySelectorAll('.cty');
-        for (var i = 0; i < cty.length; i++) {
-          var t = cty[i].querySelector('title');
-          if (t) { cty[i].setAttribute('data-t', t.textContent); t.remove(); }
+
+        // Geometry is cached, never re-measured per frame. Each county's box is read once
+        // in SVG units (getBBox), and the map's own offset and scale once per resize;
+        // after that a county's on-screen box is arithmetic on (x, y, z). The old code
+        // called getBoundingClientRect on all 3,133 paths on every zoom and every 90ms
+        // of a drag -- a forced layout each time, which is what made navigation crawl.
+        // ax/ay/az are the transform actually on the SVG, which is what a measurement
+        // sees -- x/y/z may already hold the next frame's values.
+        var vb = svg.viewBox.baseVal, geo = null, ax = 0, ay = 0, az = 1;
+        function measure() {
+          if (geo) return geo;
+          var vr = view.getBoundingClientRect(), sr = svg.getBoundingClientRect();
+          return (geo = { w: view.clientWidth, h: view.clientHeight, s: sr.width / (az * vb.width),
+            ox: sr.left - vr.left - ax, oy: sr.top - vr.top - ay });
+        }
+        if (window.ResizeObserver) new ResizeObserver(function () { geo = null; }).observe(view);
+        // A county's box in view coordinates: {l, t, w, h}.
+        function box(el) {
+          var b = el._b || (el._b = el.getBBox()), g = measure(), k = g.s * z;
+          return { l: g.ox + x + k * (b.x - vb.x), t: g.oy + y + k * (b.y - vb.y), w: k * b.width, h: k * b.height };
         }
 
         var lvl = view.querySelector('.rm-zoomlvl');
@@ -306,8 +322,12 @@ ${excluded.map(stateRow).join('\n')}
         }
 
         function draw() {
-          svg.style.transform = 'translate(' + x + 'px,' + y + 'px) scale(' + z + ')';
-          if (lvl) lvl.textContent = (z < 9.95 ? Math.round(z * 10) / 10 : Math.round(z)) + '×';
+          if (!geo) measure();  // before the transform is written, so it reads a clean layout
+          svg.style.transform = 'translate(' + (ax = x) + 'px,' + (ay = y) + 'px) scale(' + (az = z) + ')';
+          // Written only on change: a same-value write still dirties layout, which during
+          // a pan would turn every compositor-only frame into a full one.
+          var zl = (z < 9.95 ? Math.round(z * 10) / 10 : Math.round(z)) + '×';
+          if (lvl && lvl.textContent !== zl) lvl.textContent = zl;
           if (btnIn) btnIn.disabled = z >= 12;
           if (btnOut) btnOut.disabled = z <= 1;
           labels();
@@ -324,33 +344,30 @@ ${excluded.map(stateRow).join('\n')}
         layer.className = 'rm-labels';
         layer.setAttribute('aria-hidden', 'true');  // the names are in each path's data-t
         view.appendChild(layer);
-        // Painted synchronously on zoom, and only deferred WHILE DRAGGING, where the
-        // cost per frame matters. An earlier version deferred every paint to
-        // requestAnimationFrame, which never ran in a background tab or a headless
-        // render -- the labels simply never appeared.
-        var labelTimer = null;
+        // Painted synchronously on zoom. WHILE DRAGGING they are not re-laid out at all:
+        // a pan is a pure translation, so the painted layer is just shifted with the map
+        // and repainted once on pointerup. Rebuilding them per frame forced a full layout,
+        // and with non-scaling-stroke that re-lays out every county path -- the long
+        // tasks that made panning stutter. The svg transform alone stays compositor-only.
+        var lx = 0, ly = 0;
         function labels() {
-          if (down && moved) {
-            if (labelTimer) return;
-            labelTimer = setTimeout(function () { labelTimer = null; paintLabels(); }, 90);
-            return;
-          }
-          if (labelTimer) { clearTimeout(labelTimer); labelTimer = null; }
+          if (down && moved) { layer.style.transform = 'translate(' + (x - lx) + 'px,' + (y - ly) + 'px)'; return; }
           paintLabels();
         }
         function paintLabels() {
+          lx = x; ly = y; layer.style.transform = '';
           if (z < LABEL_Z) { if (layer.firstChild) layer.textContent = ''; return; }
-          var vr = view.getBoundingClientRect();
+          var g = measure();
           var out = [], placed = [], cand = [];
-          // One layout read per county, collected first, then sorted by area so the
-          // largest county wins any collision -- it is the one with room for the name.
+          // Collected first, then sorted by area so the largest county wins any
+          // collision -- it is the one with room for the name.
           for (var i = 0; i < cty.length; i++) {
             var el0 = cty[i];
-            var r0 = el0.getBoundingClientRect();
-            if (r0.width < MIN_BOX || r0.height < 16) continue;
-            var cx0 = r0.left + r0.width / 2 - vr.left, cy0 = r0.top + r0.height / 2 - vr.top;
-            if (cx0 < 0 || cy0 < 0 || cx0 > vr.width || cy0 > vr.height) continue;
-            cand.push({ el: el0, x: cx0, y: cy0, a: r0.width * r0.height });
+            var r0 = box(el0);
+            if (r0.w < MIN_BOX || r0.h < 16) continue;
+            var cx0 = r0.l + r0.w / 2, cy0 = r0.t + r0.h / 2;
+            if (cx0 < 0 || cy0 < 0 || cx0 > g.w || cy0 > g.h) continue;
+            cand.push({ el: el0, x: cx0, y: cy0, a: r0.w * r0.h });
           }
           cand.sort(function (a, b) { return b.a - a.a; });
           for (var i = 0; i < cand.length; i++) {
@@ -383,7 +400,7 @@ ${excluded.map(stateRow).join('\n')}
         // Clamp so the map can never be dragged off its own viewport. At z=1 there is no
         // slack and both bounds collapse to 0, which pins it exactly.
         function clamp() {
-          var w = view.clientWidth, h = view.clientHeight;
+          var g = measure(), w = g.w, h = g.h;
           var mx = w * (z - 1), my = h * (z - 1);
           if (x > 0) x = 0; if (x < -mx) x = -mx;
           if (y > 0) y = 0; if (y < -my) y = -my;
@@ -410,7 +427,8 @@ ${excluded.map(stateRow).join('\n')}
           var b = e.target.closest('button'); if (!b) return;
           var k = b.getAttribute('data-z');
           if (k === 'reset') { z = 1; x = 0; y = 0; draw(); return; }
-          zoomAt(k === 'in' ? z * 1.5 : z / 1.5, view.clientWidth / 2, view.clientHeight / 2);
+          var g = measure();
+          zoomAt(k === 'in' ? z * 1.5 : z / 1.5, g.w / 2, g.h / 2);
         });
 
         // Pointer events cover mouse, touch and pen in one path. The drag is only a pan
@@ -438,6 +456,7 @@ ${excluded.map(stateRow).join('\n')}
           }
           var el = up(e.target, 'cty');
           if (!el) { if (hot) { hot.classList.remove('is-hot'); hot = null; } tip.classList.remove('on'); return; }
+          var r = view.getBoundingClientRect();  // read before any write below: no forced layout
           if (el !== hot) {
             if (hot) hot.classList.remove('is-hot');
             hot = el; hot.classList.add('is-hot');
@@ -449,7 +468,6 @@ ${excluded.map(stateRow).join('\n')}
             tip.appendChild(b);
             if (i >= 0) { var sp = document.createElement('span'); sp.textContent = s.slice(i + 1).trim(); tip.appendChild(sp); }
           }
-          var r = view.getBoundingClientRect();
           tip.style.left = (e.clientX - r.left) + 'px';
           tip.style.top = (e.clientY - r.top) + 'px';
           tip.classList.add('on');
@@ -469,6 +487,8 @@ ${excluded.map(stateRow).join('\n')}
                     hospital: ['Hospital', '#009E73'], mixed: ['Mixed', '#8C6BB1'] };
         var TIER = { A: 'Named by a state record', B: 'Inferred, strong sourcing',
                      C: 'Inferred', D: 'Inferred, weak sourcing' };
+        // Tier A says which kind of record named the county: a state layer or a local page.
+        function tierText(c) { return c.tier === 'A' && c.source === 'local' ? 'Named by a county or agency source' : (TIER[c.tier] || 'Tier ' + c.tier); }
 
         function closePanel() { panel.classList.remove('on'); panel.hidden = true; openF = null; }
         panel.querySelector('.rm-panel-x').addEventListener('click', closePanel);
@@ -491,20 +511,19 @@ ${excluded.map(stateRow).join('\n')}
           // are NOT the same as the 299 with no source at all, and neither is the
           // county lacking a service -- both are gaps in our reading.
           pSub.textContent = blank ? 'No usable source'
-            : own ? own[0] + ' · ' + (TIER[c.tier] || 'tier ' + c.tier).toLowerCase()
-            : 'Model not established · ' + (TIER[c.tier] || 'tier ' + c.tier).toLowerCase();
+            : (own ? own[0] : 'Model not established') + ' · ' + tierText(c).toLowerCase();
           var h = '';
           h += row('Ownership model', own
             ? '<span class="rm-swatch" style="background:' + own[1] + '"></span>' + own[0]
             : 'Not established');
-          h += row('Evidence', blank ? 'No usable source' : (TIER[c.tier] || 'Tier ' + c.tier));
+          h += row('Evidence', blank ? 'No usable source' : tierText(c));
           if (typeof c.pop === 'number') h += row('Population', c.pop.toLocaleString('en-US'));
           h += '<p class="rm-panel-note">' + (blank
             ? 'We could not find a source good enough to say who answers here. That is a gap in our reading, not a finding about the county.'
             : !own
               ? 'We found records for this county but could not tell what kind of agency runs the service. The gap is ours, not the county’s.'
               : c.tier === 'A'
-                ? 'Named directly by a state or agency record.'
+                ? (c.source === 'local' ? 'Named directly by a county or agency source.' : 'Named directly by a state record.')
                 : 'Inferred from licensing rosters and Medicare billing. An inferred county is a lead, not a fact.')
             + '</p>';
           // The correction form is the one that already exists further down the page --
@@ -524,7 +543,7 @@ ${excluded.map(stateRow).join('\n')}
           var what = document.getElementById('fix-what');
           if (!where || !what) { location.hash = '#correct'; return; }
           where.value = c ? c.name + ', ' + c.st : '';
-          var sec = document.getElementById('correct') || where;
+          var sec = openTo('correct') || where;
           if (sec.scrollIntoView) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
           // Focus after the scroll settles, or the browser jumps to the field instantly
           // and the smooth scroll never happens.
@@ -540,19 +559,23 @@ ${excluded.map(stateRow).join('\n')}
           // Sit on whichever side the county is NOT, so the panel never covers what was
           // just clicked. Anchored bottom-left or bottom-right rather than chasing the
           // cursor, so it does not jitter as you move between neighbouring counties.
-          var vr = view.getBoundingClientRect(), cr = el.getBoundingClientRect();
-          var onLeft = (cr.left + cr.width / 2) - vr.left < vr.width / 2;
+          var cr = box(el);
+          var onLeft = cr.l + cr.w / 2 < measure().w / 2;
           panel.style.left = onLeft ? 'auto' : '12px';
           panel.style.right = onLeft ? '12px' : 'auto';
           var t = (el.getAttribute('data-t') || '').split(':')[0];
           render(f, t);
-          if (COUNTIES || loading) { if (loading) loading.then(function () { if (openF === f) render(f, t); }); return; }
-          loading = fetch('/data/county-911.json')
+          if (!COUNTIES) load().then(function () { if (openF === f) render(f, t); });
+        }
+        // The county file (~270KB) is fetched the moment a pointer reaches the map, not
+        // on the first click, so the first panel opens filled instead of on "Loading...".
+        function load() {
+          return loading || (loading = fetch('/data/county-911.json')
             .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
             .then(function (j) { COUNTIES = j; })
-            .catch(function () { COUNTIES = {}; });
-          loading.then(function () { if (openF === f) render(f, t); });
+            .catch(function () { COUNTIES = {}; }));
         }
+        view.addEventListener('pointerenter', load, { once: true });
 
         // A click only counts when the pointer did not travel: otherwise the end of
         // every pan would pop a panel open over the county you dragged to.
@@ -566,8 +589,8 @@ ${excluded.map(stateRow).join('\n')}
           if (moved) return;
           var el = up(e.target, 'cty');
           if (!el) { if (!up(e.target, 'rm-panel') && !up(e.target, 'rm-ctl')) closePanel(); return; }
-          var r = el.getBoundingClientRect();
-          if (Math.max(r.width, r.height) < 22 && z < 12) {
+          var r = box(el);
+          if (Math.max(r.w, r.h) < 22 && z < 12) {
             var vr = view.getBoundingClientRect();
             zoomAt(z * 2.2, e.clientX - vr.left, e.clientY - vr.top);
           }
@@ -575,7 +598,9 @@ ${excluded.map(stateRow).join('\n')}
         });
 
         function end(e) {
+          var wasDrag = down && moved;
           down = null;
+          if (wasDrag) labels();  // the final, synchronous label paint for this pan
           view.classList.remove('is-panning');
           if (e && e.pointerId != null) {
             try { if (view.hasPointerCapture && view.hasPointerCapture(e.pointerId)) view.releasePointerCapture(e.pointerId); }

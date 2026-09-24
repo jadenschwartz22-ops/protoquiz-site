@@ -30,7 +30,7 @@ const PAGES = [
 // census demo has none. Giving it a site nav would break the demo, not fix it.
 const CHROMELESS = ['agency/tour/index.html'];
 
-const NAV_LABELS = ['App', 'For agencies', 'Research', 'About'];
+const NAV_LABELS = ['App', 'For agencies', 'Research', 'Blog', 'About'];
 
 test('nav lists the four sections in order', () => {
   const idx = NAV_LABELS.map(l => NAV_HTML.indexOf(`>${l}<`));
@@ -56,7 +56,7 @@ test('chrome never links to an unpublished Play listing', () => {
 });
 
 test('navFor marks exactly one link current', () => {
-  for (const p of ['/app/', '/agency/', '/research/', '/about/']) {
+  for (const p of ['/app/', '/agency/', '/research/', '/blog/', '/about/']) {
     const html = navFor(p);
     assert.strictEqual((html.match(/aria-current="page"/g) || []).length, 1, `${p} did not mark one link`);
   }

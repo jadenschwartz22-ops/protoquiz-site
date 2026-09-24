@@ -47,7 +47,7 @@ const paths = Object.entries(geo.counties).map(([fips, d]) => {
   const own = blank ? 'unknown' : c.ownership;
   const op = blank ? 0.22 : (OPACITY[c.tier] ?? 0.4);
   const tierWord = blank ? 'no usable source'
-    : c.tier === 'A' ? 'named by a state record'
+    : c.tier === 'A' ? (c.source === 'local' ? 'named by a county or agency source' : 'named by a state record')
     : `tier ${c.tier}, inferred`;
   // data-f is the county FIPS. The detail panel joins on it rather than on the title
   // text. "Name, ST" happens to be unique today (checked: 0 collisions across 3,144),

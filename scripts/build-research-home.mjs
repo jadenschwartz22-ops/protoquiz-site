@@ -14,14 +14,13 @@
 // registry is 23% named-by-a-source and saying otherwise here would undo the care the
 // the work itself takes.
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
-import { navFor, researchBar, FOOTER_HTML, CHROME_HEAD } from './shared-chrome.mjs';
+import { navFor, researchBar, FOOTER_HTML, CHROME_HEAD, assetHash } from './shared-chrome.mjs';
 import { DATA_DIR as PRACTICE_DIR } from './practice-data.mjs';
+import { loadThumbs, censusSlides, slideshow, SLIDES_JS } from './research-slides.mjs';
 
 // Each card shows a rendering of its own data, built by build-research-thumbs.mjs from
 // the same data it publishes -- never a stock illustration.
-const THUMBS = existsSync('assets/research-thumbs.json')
-  ? JSON.parse(readFileSync('assets/research-thumbs.json', 'utf8'))
-  : { registry: '', census: '', censusNote: '' };
+const THUMBS = loadThumbs() ?? { registry: '', census: '' };
 
 // Current documents only: `manifest.documents` counts every revision ever read, so it
 // reads as coverage when it is mostly history of the same protocols.
@@ -58,46 +57,41 @@ if (existsSync('data/census/manifest.json')) {
   else console.warn(`census manifest is ${Math.round(ageDays)} days old (asOf ${m.asOf}) — omitting its counts`);
 }
 const n = x => Number(x).toLocaleString('en-US');
+// Compared to a US denominator, so only US agencies count; the census lists a few elsewhere.
+const usAgencies = existsSync('data/census/agencies.json')
+  ? JSON.parse(readFileSync('data/census/agencies.json', 'utf8')).rows.filter(r => (r.country || 'US') === 'US').length
+  : null;
 
 const AREAS = [
   {
-    thumb: THUMBS.census,
-    thumbNote: THUMBS.censusNote,
-    thumbCap: 'Medications only some agencies carry. Share of those the census has read.',
-    eyebrow: 'What agencies carry',
+    slides: censusSlides(THUMBS),
+    eyebrow: 'Protocols',
     title: 'US EMS Protocol Census',
     href: '/census/',
     cta: 'Open the census',
-    q: 'What does each agency actually carry?',
-    body: `A versioned public record of the medications, doses and routes US EMS agencies
-      publish, read from the agencies' own protocol documents and rebuilt every night.
-      Every value is sourced to the page it came from.`,
+    q: 'How does EMS differ from place to place?',
+    body: `What agencies carry, how they dose it, and how their protocols compare. Only public agencies are named. Every value cites its page.`,
     stats: census
-      ? [[n(census.doseRows), 'dose entries'], [n(census.namedAgencies), 'named agencies'],
-         [n(curDocs || census.documents), 'current protocols']]
+      ? [[n(curDocs || census.documents), 'current protocols'], [n(census.namedAgencies), 'named agencies'],
+         [n(census.documents), 'documents']]
       : [],
     // 'documents read' was 1,710 and read as coverage; most of that is revision history
     // of the same protocols. The honest coverage number is the count of CURRENT
     // documents, and the standing line says outright that this is a sample.
-    standing: `Live and rebuilt nightly. Coverage is still thin: ${n(census.namedAgencies)} agencies
-      of the ${n(NATIONAL_AGENCIES)} our own roster research counts nationally, so this is a sample
-      of American EMS, not yet a census of it.`,
+    standing: census && usAgencies ? `Early: ${n(usAgencies)} of ${n(NATIONAL_AGENCIES)} US agencies so far.` : "Early: a sample of US agencies so far.",
   },
   {
     thumb: THUMBS.registry,
-    thumbCap: 'Every county, colored by who owns its 911 provider. Fainter is weaker evidence.',
-    eyebrow: 'Who answers the call',
+    thumbCap: 'Each county, colored by who runs 911 EMS. Fainter is less certain.',
+    eyebrow: '911 coverage',
     title: 'The American EMS Atlas',
     href: '/research/atlas/',
     cta: 'Open the atlas',
-    q: 'Who answers the call, and who owns them?',
-    body: `Every county in the country, mapped to the agency that answers the 911 call and
-      who owns it. No public national record of this exists, so we are building one.`,
-    stats: [[n(answered), 'counties with an answer'], [n(nA), 'named by a state record'],
+    q: 'Who does 911 EMS across the country?',
+    body: `Every US county, mapped to who runs its 911 ambulance.`,
+    stats: [[n(answered), 'counties with an answer'], [n(nA), 'named by a state or agency record'],
             [n(nCounty), 'counties in scope']],
-    standing: `Early. ${Math.round((nA / nCounty) * 100)}% of counties are named directly by a
-      source; the rest are inferred and drawn fainter on the map. An inferred county is a
-      lead, not a fact.`,
+    standing: `Early: ${Math.round((nA / nCounty) * 100)}% of counties confirmed by a source. The rest are estimates.`,
   },
 ];
 
@@ -129,10 +123,7 @@ const ABOUT = `        <p>There is a broad national foundation for EMS education
 
         <p>ProtoQuiz is building a way to make this fragmented system easier to understand.</p>
 
-        <p>We read the protocols and other information that EMS agencies publish and turn
-        them into a structured, searchable record that can be independently reviewed. We
-        track changes over time and document how 911 EMS is organized and who provides
-        emergency ambulance services in communities across the country.</p>
+        <p>We organize public agencies' protocols and other public information into a free reference that is easy to search and compare. We also map how 911 EMS is organized and who provides emergency ambulance services in communities across the country.</p>
 
         <p>The goal is to build an accurate picture of the state of EMS in the United States:
         where systems are standardized, where they differ, how clinical practice varies, and
@@ -225,7 +216,7 @@ ${f.count ? `          <p class="find-count"><strong>${f.count[0]}</strong> ${f.
     </section>`;
 
 const card = v => `        <article class="vol">
-${v.thumb ? `          <figure class="vol-thumb"><a href="${v.href}" aria-label="${v.title}">${v.thumb}</a><figcaption>${v.thumbCap}</figcaption></figure>` : ''}
+${v.slides ? slideshow(v.slides) : v.thumb ? `          <figure class="vol-thumb"><a href="${v.href}" aria-label="${v.title}">${v.thumb}</a><figcaption>${v.thumbCap}</figcaption></figure>` : ''}
           <div class="vol-eyebrow">${v.eyebrow}</div>
           <h2><a href="${v.href}">${v.title}</a></h2>
           <p class="vol-q">${v.q}</p>
@@ -244,10 +235,10 @@ const html = `<!doctype html>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ProtoQuiz Research - open research on American EMS</title>
-  <meta name="description" content="ProtoQuiz Research is an open research program on American EMS, built from public documents: the US EMS Protocol Census on what agencies carry, and a county-level registry of who answers the 911 call.">
+  <meta name="description" content="ProtoQuiz Research is a free, open reference on American EMS: the US EMS Protocol Census, which compares EMS protocols across agencies, and a county-level map of who answers the 911 call.">
   <link rel="canonical" href="https://protoquiz.com/research/">
 ${CHROME_HEAD}
-  <link rel="stylesheet" href="/assets/research.css">
+  <link rel="stylesheet" href="/assets/research.css?v=${assetHash('assets/research.css')}">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -257,12 +248,9 @@ ${researchBar('/research/')}
     <section class="res-hero">
       <div class="res-eyebrow">ProtoQuiz Research</div>
       <h1>Open research on how American EMS actually works.</h1>
-      <p class="lede">EMS is highly fragmented across the United States. In most places every
-      single agency has its own set of protocols, and there is no standard for who responds
-      to a 911 EMS call &mdash; a fire department, a private company, a county or a hospital,
-      depending on where you are. So what a crew carries, and even who shows up, changes at
-      county lines. We read what agencies publish and turn it into a record anyone can
-      check.</p>
+      <p class="lede">EMS changes at county lines: different protocols, different doses, different
+      people answering 911. ProtoQuiz Research is a free reference that shows those differences,
+      built from EMS protocols and public records. Only public agencies are named.</p>
 
       <details class="res-about">
         <summary>Why we are building this</summary>
@@ -278,15 +266,14 @@ ${FINDINGS_HTML}
 
     <section class="res-method">
       <h2>How we handle uncertainty</h2>
-      <p>Both are only as good as the documents behind them. Rather than average that
-      away, we show it: every figure names what it was measured against, a value from a weak
-      source is drawn as weak, and anything we could not source is left blank instead of
-      guessed. A number that looks precise and is not is worse than no number.</p>
+      <p>Every figure names its source. Weak sources are drawn weak, and anything we could not source is left blank.</p>
       <p><a href="/census/methodology/">Census methodology</a> &middot;
-      <a href="/census/data-license/">Data license</a></p>
+      <a href="/census/data-license/">Data license</a> &middot;
+      <a href="/research/request/">Add, fix, or remove a listing</a></p>
     </section>
   </main>
 ${FOOTER_HTML}
+${SLIDES_JS}
 </body>
 </html>
 `;

@@ -8,7 +8,7 @@
 
   <meta name="apple-itunes-app" content="app-id=6753611139" />
   <link rel="canonical" href="https://protoquiz.com/census/states/ne/">
-  <meta name="robots" content="noindex,nofollow" />
+  <meta name="robots" content="index,follow" />
   <meta property="og:title" content="Nebraska EMS protocols - agencies, drugs, and doses" />
   <meta property="og:description" content="2 named EMS agencies in Nebraska with published protocol doses in the United States EMS Protocol Census." />
   <meta property="og:type" content="website" />
@@ -41,19 +41,23 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
-  <link rel="stylesheet" href="/assets/chrome.css?v=ad6d4ac8">
-  <link rel="stylesheet" href="/census/census.css?v=a3b5c03b">
+  <link rel="stylesheet" href="/assets/chrome.css?v=c575909f">
+  <link rel="stylesheet" href="/census/census.css?v=4a5b3dc3">
 </head>
 <body>
   <!-- shared-chrome:nav -->
   <header class="site-header">
     <nav class="site-nav" aria-label="Primary">
       <div class="nav-left">
-        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="30" height="30"><span>ProtoQuiz</span></a>
+        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="30" height="30"><span>Proto<b>Quiz</b><sup>&trade;</sup></span></a>
         <div class="nav-links">
           <a href="/app/" class="nav-link">App</a>
           <a href="/research/" class="nav-link on" aria-current="page">Research</a>
+          <a href="/blog/" class="nav-link">Blog</a>
           <a href="/about/" class="nav-link">About</a>
         </div>
       </div>
@@ -69,27 +73,25 @@
            other page there is no dialog and the href is the whole behaviour: a normal link
            to /agency/#contact. -->
       <div class="nav-right">
-        <a href="/census/#list" class="nav-cta">Add your protocol</a>
+        <a href="/research/request/?type=add" class="nav-cta">Add your protocol</a>
       </div>
     </nav>
   </header>
   <!-- /shared-chrome:nav -->
-  <div class="pbar">
-    <div class="wrap">
-      <a class="pbar-mark" href="/census/">US EMS Protocol Census</a>
-      <nav class="pbar-nav" aria-label="Census sections"><a href="/census/">Overview</a><a href="/census/#drugs">Drugs</a><a href="/census/#states" class="on" aria-current="page">States</a><a href="/census/#agencies">Agencies</a><a href="/census/methodology/">Methodology</a></nav>
+  <div class="rbar">
+    <div class="rbar-in">
+      <nav class="rbar-nav" aria-label="Research areas"><a href="/research/">Overview</a><a href="/census/" class="on" aria-current="page">Protocol census</a><a href="/research/atlas/">911 coverage</a></nav>
     </div>
   </div>
   <main>
     <div class="wrap">
-      <nav class="crumbs"><a href="/">Home</a> <span class="sep">/</span> <a href="/census/">EMS Census</a> <span class="sep">/</span> <span>Nebraska</span></nav>
-      <div class="layout">
+      <nav class="crumbs"><a href="/census/">EMS Census</a> <span class="sep">/</span> <span>Nebraska</span></nav>
+      <div class="layout solo">
         <div class="col">
       <div class="dochead">
         <span class="badge">State</span>
         <h1>EMS protocols in Nebraska</h1>
         <div class="meta"><span class="chip">2 named agencies</span><span class="chip">381 dose entries</span><span class="chip">68 drugs</span><span class="chip">statewide protocol</span></div>
-        <p class="lede">2 named agencies in Nebraska have published protocols in the census, with 381 dose entries across 68 drugs.</p>
       </div>
       <section id="agencies">
         <h2>Agencies</h2>
@@ -104,13 +106,10 @@
         <p class="muted">A protocol published by the state itself. Every agency in Nebraska follows it unless the agency publishes its own, so it is listed once here rather than under each agency.</p>
         <ul class="cols"><li>Nebraska Board of Emergency Medical Services <a href="https://dhhs.ne.gov/OEHS%20Program%20Documents/EMS%20Model%20Protocols.pdf" rel="nofollow noopener">source</a></li><li>Nebraska Medicine Division of Prehospital and Emergency Medical Services</li></ul>
       </section>
-        </div>
-        <aside class="rail">
-          <section class="panel" id="cite">
-            <h2>Cite this</h2>
+      <div class="actions"><details class="fold" id="cite"><summary>Cite this</summary>
             <div class="citebox" id="cite-text"><p class="cite">United States EMS Protocol Census, Nebraska: 2 named agencies, 381 dose entries across 68 drugs.</p><p class="cite">https://protoquiz.com/census/states/ne/</p></div>
             <button type="button" class="copybtn" id="cite-btn">Copy citation</button>
-          </section>
+          </details>
           <script>
             (function () {
               var b = document.getElementById('cite-btn'), t = document.getElementById('cite-text');
@@ -124,24 +123,25 @@
                 document.body.removeChild(a);
               });
             })();
-          </script>
-          <section class="panel">
-            <h2>Agencies in this state</h2>
-            <ul class="railnav"><li><a href="/census/agencies/nebraska-board-of-emergency-medical-services/">Nebraska Board of Emergency Medical Services</a></li><li><a href="/census/agencies/nebraska-medicine-division-of-prehospital-and-emergency-medical-services/">Nebraska Medicine Division of Prehospital and Emergency Medical Services</a></li></ul>
-          </section>
-          <section class="panel">
-            <h2>Related</h2>
-            <ul class="railnav"><li><a href="/census/">All drugs and states</a></li><li><a href="/census/methodology/">Methodology</a></li><li><a href="/census/data-license/">Data license</a></li></ul>
-          </section>
-        </aside>
+          </script><a href="/census/#states">All states</a><a href="/census/methodology/">Methodology</a><a href="/census/data-license/">Data license</a></div>
+        </div>
       </div>
     </div>
   </main>
+  <div class="census-disclaimer">
+    <div class="wrap"><p class="disclaimer">Training reference compiled from published protocols. Not a clinical order. Verify with your agency and medical director.</p></div>
+  </div>
+  <script>
+    (function () {
+      var open = function () { for (var e = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1))); e; e = e.parentElement) if (e.tagName === 'DETAILS') e.open = true; };
+      open(); addEventListener('hashchange', open);
+    })();
+  </script>
   <!-- shared-chrome:footer -->
   <footer class="site-footer">
     <div class="foot-cols">
       <div class="foot-brand">
-        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="24" height="24"><span>ProtoQuiz</span></a>
+        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="24" height="24"><span>Proto<b>Quiz</b><sup>&trade;</sup></span></a>
         <p>Protocol training for EMS. Built by a working paramedic.</p>
       </div>
       <div class="foot-col">

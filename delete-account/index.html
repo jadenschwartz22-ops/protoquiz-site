@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
-  <link rel="stylesheet" href="/assets/chrome.css?v=ad6d4ac8">
+  <link rel="stylesheet" href="/assets/chrome.css?v=c575909f">
   <style>
     :root{
       --bg:var(--paper); --panel:var(--ground); --muted:var(--ink-2);
@@ -57,11 +57,12 @@
   <header class="site-header">
     <nav class="site-nav" aria-label="Primary">
       <div class="nav-left">
-        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="30" height="30"><span>ProtoQuiz</span></a>
+        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="30" height="30"><span>Proto<b>Quiz</b><sup>&trade;</sup></span></a>
         <div class="nav-links">
           <a href="/app/" class="nav-link">App</a>
           <a href="/agency/" class="nav-link">For agencies</a>
           <a href="/research/" class="nav-link">Research</a>
+          <a href="/blog/" class="nav-link">Blog</a>
           <a href="/about/" class="nav-link">About</a>
         </div>
       </div>
@@ -86,7 +87,7 @@
   <main class="wrap">
     <article class="content">
       <h1>Delete Your Account and Data</h1>
-      <p class="updated"><strong>Applies to:</strong> ProtoQuiz (EMS ProtoQuiz) for iOS and Android, published by Teach Me to Live LLC &middot; <strong>Last updated:</strong> August 26, 2026</p>
+      <p class="updated"><strong>Applies to:</strong> ProtoQuiz (EMS ProtoQuiz) for iOS and Android, published by Teach Me to Live LLC &middot; <strong>Last updated:</strong> September 23, 2026</p>
 
       <div class="callout">
         <p><strong>ProtoQuiz has no sign-up.</strong> The app creates an anonymous account for you automatically on first launch &mdash; you never provide a name, email address, or password. Deleting that anonymous account removes the data tied to it.</p>
@@ -100,7 +101,7 @@
         <li>Scroll to <strong>Delete Account &amp; Data</strong>.</li>
         <li>Confirm when prompted.</li>
       </ol>
-      <p>Deletion begins immediately. Your anonymous account is removed and you are signed out; the app returns to its first-launch state.</p>
+      <p>The app signs you out, removes your anonymous sign-in, clears its data on your device and sends us a deletion request. We then delete the server data listed below. The app returns to its first-launch state.</p>
 
       <h3>If you can no longer open the app</h3>
       <p>Deleting the app from your device does <strong>not</strong> delete your data from our servers. If you have already uninstalled ProtoQuiz, the simplest route is to reinstall it and use the Profile screen &mdash; your anonymous account is restored on the same device, so the delete option will remove the right record.</p>
@@ -120,6 +121,8 @@
       <table>
         <tr><th>Data</th><th>Retention</th></tr>
         <tr><td>Crash reports and server logs (not linked to your identity)</td><td>Up to 90 days, then deleted automatically</td></tr>
+        <tr><td>Database backups</td><td>Up to 30 days, then overwritten</td></tr>
+        <tr><td>Census facts drawn from a protocol you uploaded (never linked to you)</td><td>Kept as part of the <a href="/census/">EMS Protocol Census</a>; see the <a href="/privacy/">Privacy Policy</a></td></tr>
         <tr><td>Aggregate, anonymised usage counts that cannot identify you or your device</td><td>Retained indefinitely</td></tr>
         <tr><td>Purchase and transaction records</td><td>Retained as required by tax and accounting law</td></tr>
       </table>
@@ -142,7 +145,7 @@
   <footer class="site-footer">
     <div class="foot-cols">
       <div class="foot-brand">
-        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="24" height="24"><span>ProtoQuiz</span></a>
+        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="24" height="24"><span>Proto<b>Quiz</b><sup>&trade;</sup></span></a>
         <p>Protocol training for EMS. Built by a working paramedic.</p>
       </div>
       <div class="foot-col">

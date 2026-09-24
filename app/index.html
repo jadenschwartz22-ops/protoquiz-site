@@ -32,9 +32,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
-  <link rel="stylesheet" href="/assets/chrome.css?v=ad6d4ac8">
+  <link rel="stylesheet" href="/assets/chrome.css?v=c575909f">
   <link rel="stylesheet" href="/assets/conveyor.css">
-  <link rel="stylesheet" href="/assets/app.css?v=6aa55cb2">
+  <link rel="stylesheet" href="/assets/app.css?v=6651072d">
   <script>
     /* THE SHIFT IS RESOLVED BEFORE THE FIRST PAINT. app-toggle.js is deferred, so it
        runs after the page has already painted: a visitor who chose Day Shift saw the
@@ -64,11 +64,12 @@
   <header class="site-header">
     <nav class="site-nav" aria-label="Primary">
       <div class="nav-left">
-        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="30" height="30"><span>ProtoQuiz</span></a>
+        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="30" height="30"><span>Proto<b>Quiz</b><sup>&trade;</sup></span></a>
         <div class="nav-links">
           <a href="/app/" class="nav-link on" aria-current="page">App</a>
           <a href="/agency/" class="nav-link">For agencies</a>
           <a href="/research/" class="nav-link">Research</a>
+          <a href="/blog/" class="nav-link">Blog</a>
           <a href="/about/" class="nav-link">About</a>
         </div>
       </div>
@@ -444,11 +445,13 @@
       <line class="lead" x1="781" y1="276" x2="845" y2="313"/><text class="lbl tiny" x="845" y="318" text-anchor="start">CHARLOTTESVILLE <tspan class="n">1</tspan></text>
   </svg>
     <div class="reach-stats">
-      <div><span class="stat-n">562</span><span class="stat-l">uploads</span></div>
-      <div><span class="stat-n">42</span><span class="stat-l">states</span></div>
-      <div><span class="stat-n">391</span><span class="stat-l">protocol sets</span></div>
-      <div><span class="stat-n">91,838</span><span class="stat-l">pages read</span></div>
+      <div><span class="stat-n" data-stat="uploads">618</span><span class="stat-l">uploads</span></div>
+      <div><span class="stat-n" data-stat="states">42</span><span class="stat-l">states</span></div>
+      <div><span class="stat-n" data-stat="protocols">426</span><span class="stat-l">different protocols</span></div>
+      <div><span class="stat-n" data-stat="studiers">424</span><span class="stat-l">active studiers</span></div>
+      <div><span class="stat-n" data-stat="pages">101,348</span><span class="stat-l">pages processed</span></div>
     </div>
+    <p class="reach-foot" id="reachUpdated">Live from ProtoQuiz uploads.</p>
 
       </div>
     </section>
@@ -505,7 +508,7 @@
             <span class="rating">
               <span class="stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="oklch(74% 0.16 78)" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="oklch(74% 0.16 78)" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="oklch(74% 0.16 78)" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="oklch(74% 0.16 78)" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="oklch(74% 0.16 78)" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></span>
               <span class="rating-n">4.8</span>
-              <span class="rating-count">&middot; 16 ratings</span>
+              <span class="rating-count">&middot; 18 ratings</span>
             </span>
           </div>
           <div class="review">
@@ -520,7 +523,7 @@
         <div class="review-card pending">
           <div class="review-head"><span class="store-name"><svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 2.3c-.3.3-.4.7-.4 1.3v16.8c0 .6.1 1 .4 1.3l.1.1 9.4-9.4v-.2L3.7 2.2l-.1.1z" fill="oklch(72% 0.16 155)"/><path d="M16.3 15.6l-3.2-3.2v-.2l3.2-3.2.1.1 3.7 2.1c1.1.6 1.1 1.6 0 2.2l-3.8 2.2z" fill="oklch(80% 0.15 85)"/><path d="M16.4 15.5L13.1 12.3 3.6 21.8c.4.4 1 .4 1.7.1l11.1-6.4" fill="oklch(62% 0.19 25)"/><path d="M16.4 9.1L5.3 2.8c-.7-.4-1.3-.3-1.7.1l9.5 9.4 3.3-3.2z" fill="oklch(72% 0.15 200)"/></svg>Google Play</span></div>
           <div class="pending-body">
-            <h3>Reviews coming soon</h3>
+            <h3>New on Google Play</h3>
             <p>The Android app is newly released. Ratings will show here once Play has collected enough of them.</p>
           </div>
         </div>
@@ -529,9 +532,9 @@
 
     <section class="section">
       <div class="stats">
-        <div><span class="stat-n">2,013</span><span class="stat-l">providers</span></div>
-        <div><span class="stat-n">42</span><span class="stat-l">states</span></div>
-        <div><span class="stat-n">91,838</span><span class="stat-l">pages read</span></div>
+        <div><span class="stat-n" data-stat="downloads">2,140</span><span class="stat-l">App Store downloads</span></div>
+        <div><span class="stat-n" data-stat="states">42</span><span class="stat-l">states</span></div>
+        <div><span class="stat-n" data-stat="pages">101,348</span><span class="stat-l">pages read</span></div>
         <div><span class="stat-n">4.8</span><span class="stat-l">App Store rating</span></div>
       </div>
     </section>
@@ -545,7 +548,7 @@
         </details>
         <details>
           <summary>Is it accurate?</summary>
-          <p>Every answer cites the exact page in your PDF. One tap and you are at the source. Nothing is generated outside the document you uploaded. In our testing it runs about 90% accuracy across the board on any EMS protocol, which is why you can edit any extraction and data yourself to fix errors.</p>
+          <p>Every answer cites the exact page in your PDF. One tap and you are at the source. Protocol quizzes come only from the document you uploaded. In our testing it runs about 90% accuracy across the board on any EMS protocol, which is why you can edit any extraction and data yourself to fix errors.</p>
         </details>
         <details>
           <summary>What kinds of quizzes are there?</summary>
@@ -567,7 +570,7 @@
   <footer class="site-footer">
     <div class="foot-cols">
       <div class="foot-brand">
-        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="24" height="24"><span>ProtoQuiz</span></a>
+        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="24" height="24"><span>Proto<b>Quiz</b><sup>&trade;</sup></span></a>
         <p>Protocol training for EMS. Built by a working paramedic.</p>
       </div>
       <div class="foot-col">
@@ -606,6 +609,22 @@
     </div>
   </footer>
   <!-- /shared-chrome:footer -->
-  <script src="/assets/app-toggle.js?v=04748fbf" defer></script>
+  <script src="/assets/app-toggle.js?v=2f2faaf1" defer></script>
+  <script>
+    // Same daily files the home page reads; if they fail, the build-time numbers stay.
+    (async () => {
+      const get = u => fetch(u, { cache: 'no-cache' }).then(r => r.json()).catch(() => null);
+      const [r, f] = await Promise.all([get('/data/reach-stats.json'), get('/data/firestore-stats.json')]);
+      const set = (k, v) => v != null && document.querySelectorAll('[data-stat="' + k + '"]').forEach(el => { el.textContent = Number(v).toLocaleString('en-US'); });
+      if (r) {
+        set('uploads', r.totalUploads); set('states', r.statesRepresented); set('protocols', r.distinctProtocols);
+        set('studiers', r.activeStudiers); set('pages', r.pagesProcessed);
+        const d = new Date(r.generatedAt), el = document.getElementById('reachUpdated');
+        if (el && !isNaN(d)) el.textContent = 'Live from ProtoQuiz uploads. ' + ((Date.now() - d) / 864e5 <= 2 ? 'Updates every day. ' : '') + 'Last update ' + d.toLocaleDateString('en-US', { month: 'long', day: 'numeric' }) + '.';
+      }
+      if (f?.raw) set('downloads', f.raw.appStoreDownloads);
+    })();
+  </script>
+<script>if(/android/i.test(navigator.userAgent))for(const a of document.querySelectorAll('a[href="https://apps.apple.com/app/id6753611139"]:not(.store)'))a.href="https://play.google.com/store/apps/details?id=com.tmtl.emsprotoquiz"</script>
 </body>
 </html>

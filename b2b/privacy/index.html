@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
-  <link rel="stylesheet" href="/assets/chrome.css?v=ad6d4ac8">
+  <link rel="stylesheet" href="/assets/chrome.css?v=c575909f">
   <link rel="stylesheet" href="/legal/_shared.css" />
 </head>
 <body>
@@ -19,11 +19,12 @@
   <header class="site-header">
     <nav class="site-nav" aria-label="Primary">
       <div class="nav-left">
-        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="30" height="30"><span>ProtoQuiz</span></a>
+        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="30" height="30"><span>Proto<b>Quiz</b><sup>&trade;</sup></span></a>
         <div class="nav-links">
           <a href="/app/" class="nav-link">App</a>
           <a href="/agency/" class="nav-link">For agencies</a>
           <a href="/research/" class="nav-link">Research</a>
+          <a href="/blog/" class="nav-link">Blog</a>
           <a href="/about/" class="nav-link">About</a>
         </div>
       </div>
@@ -51,10 +52,11 @@
   <header class="doc-header">
     <div class="doc-kicker">Legal</div>
     <h1 class="doc-title">Privacy Policy</h1>
+    <p style="color:var(--muted);font-size:13px;margin-top:8px">Last updated: September 24, 2026</p>
   </header>
 
   <div class="callout">
-    This Privacy Policy describes how Teach Me to Live LLC ("<strong>ProtoQuiz</strong>", "<strong>we</strong>", "<strong>us</strong>") collects, uses, and protects information in connection with the ProtoQuiz B2B platform offered to organizational Customers under a Master Services Agreement or these Terms (including the B2B subdomains of <code>protoquiz.com</code>). The standalone consumer iOS application is covered by a separate consumer privacy policy. This Policy is a disclosure of our practices; the contractual relationship between Customer and ProtoQuiz is governed by the MSA or B2B Terms of Service.
+    This Privacy Policy describes how Teach Me to Live LLC ("<strong>ProtoQuiz</strong>", "<strong>we</strong>", "<strong>us</strong>") collects, uses, and protects information in connection with the ProtoQuiz B2B platform offered to organizational Customers under a Master Services Agreement or these Terms (including the B2B subdomains of <code>protoquiz.com</code>). The consumer EMS ProtoQuiz app (iOS and Android), the website and the EMS Protocol Census are covered by the <a href="/privacy/">main Privacy Policy</a>. This Policy is a disclosure of our practices; the contractual relationship between Customer and ProtoQuiz is governed by the MSA or B2B Terms of Service.
   </div>
 
   <div class="toc">
@@ -78,10 +80,10 @@
     <h2><span class="num">1.</span> Information We Collect</h2>
 
     <h3>Account &amp; Authentication Information</h3>
-    <p>The Platform supports two sign-in methods. When you sign in with an emailed one-time code, we store your email address and display name; sign-in codes are short-lived, stored only in salted-hashed form, and there is no password to store. When you sign in via Google OAuth, we receive: your email address, display name, profile photo URL, and a unique Google user identifier. We do not receive or store your Google password.</p>
+    <p>Users sign in with a one-time code sent by email or, if they add a phone number, by text message. We store each User's name, email address and, if provided, phone number. There are no passwords. Email codes are short-lived and stored only in hashed form; text-message codes are sent and checked by Twilio.</p>
 
     <h3>Organization &amp; Role Information</h3>
-    <p>For each user, we store the organization identifier (e.g., <code>highland</code>), assigned role (user, supervisor, training officer, admin, developer), certification level (e.g., EMT, Paramedic), and access status (pending, approved, rejected).</p>
+    <p>For each user, we store the organization identifier (e.g., <code>youragency</code>), assigned role (user, supervisor, training officer, admin, developer), certification level (e.g., EMT, Paramedic), and access status (pending, approved, rejected). We also keep training assignments, completion history and continuing-education (CE) records, including CE hours and certificates.</p>
 
     <h3>Usage &amp; Performance Data</h3>
     <p>Quiz attempts, scenario responses, leaderboard scores, flashcard progress, page visits, and time spent in various parts of the Platform. This data is tagged with your organization identifier and user identifier to enable per-org leaderboards and analytics.</p>
@@ -90,13 +92,14 @@
     <p>Browser type, device type, IP address (recorded transiently for security and abuse prevention; not used for tracking across sites), and crash/error reports. Page-view pings and error reports are sent to our observability backend (<code>api.protoquiz.com</code>) and may include a session identifier, the visited URL, browser user agent, and the organization identifier.</p>
 
     <h3>Customer-Provided Content</h3>
-    <p>Protocol PDFs and other materials an Organization provides to us (or its administrators upload) for its tenant. We treat this content as the property of that Organization and use it only to provide the Platform to that Organization.</p>
+    <p>Protocol PDFs and other materials an Organization provides to us (or its administrators upload) for its tenant. We treat this content as the property of that Organization and use it only to provide the Platform to that Organization. Customer Content is not used for the public EMS Protocol Census.</p>
 
     <h3>What We Do NOT Collect</h3>
     <ul>
       <li><strong>Patient information.</strong> ProtoQuiz is a training tool, not a clinical documentation system. Do not upload patient charts, protected health information (PHI), or any patient-identifying clinical data.</li>
       <li><strong>Payment card data.</strong> Billing is handled by Stripe; we never see your card or bank account numbers.</li>
       <li><strong>Location.</strong> We do not collect GPS or precise location data.</li>
+<li><strong>License numbers.</strong> We do not ask for state license or NREMT numbers.</li>
       <li><strong>Microphone, camera, or contacts.</strong> The Platform does not request these permissions.</li>
     </ul>
   </section>
@@ -141,11 +144,14 @@
       <dt>Stripe, Inc.</dt>
       <dd>Payment processing, invoicing, and ACH bank-transfer collection. Region: United States. Purpose: handling fees from Organizations. Stripe is PCI-DSS Level 1 certified.</dd>
 
+      <dt>Twilio Inc.</dt>
+      <dd>Text-message sign-in codes for Users who add a phone number. Processes the phone number. Region: United States.</dd>
+
       <dt>Brevo (Sendinblue)</dt>
-      <dd>Transactional email delivery (sign-in codes, invitations, assignment reminders, system notifications). Region: European Union with US data residency option.</dd>
+      <dd>Email delivery (sign-in codes, invitations, assignment reminders, training summaries and system notifications). Region: European Union / United States.</dd>
 
       <dt>Discord, Inc.</dt>
-      <dd>Internal operational alerts sent via webhook from our backend. Discord receives summarized event data (e.g., "new sign-up at south-metro"); user-identifying information is minimized.</dd>
+      <dd>Internal operational alerts sent via webhook from our backend. Discord receives summarized event data (e.g., "new sign-up at youragency"); user-identifying information is minimized.</dd>
 
       <dt>Anthropic, PBC (Claude)</dt>
       <dd>Large-language-model drafting of quiz questions, scenarios, and related study content from protocol documents provided by the Organization, verified against the document before delivery. Region: United States. Commercial API offering whose applicable terms provide that customer content is not used to train Anthropic's models.</dd>
@@ -184,7 +190,7 @@
       <li>Strict access controls on production systems for ProtoQuiz personnel;</li>
       <li>Automated error monitoring and security alerting.</li>
     </ul>
-    <p>No system is perfectly secure. If you discover a security vulnerability, please email <a href="mailto:support@protoquiz.com">support@protoquiz.com</a> and we will respond promptly.</p>
+    <p>No system is perfectly secure. If you discover a security vulnerability, please email <a href="mailto:security@protoquiz.com">security@protoquiz.com</a>.</p>
   </section>
 
   <section id="your-rights">
@@ -197,7 +203,7 @@
       <li><strong>Portability:</strong> Receive your data in a machine-readable format.</li>
       <li><strong>Opt-out:</strong> Of marketing communications (transactional emails like invoices and security alerts cannot be opted out of without canceling the subscription).</li>
     </ul>
-    <p>To exercise these rights, contact <a href="mailto:support@protoquiz.com">support@protoquiz.com</a>. We will respond within thirty (30) days. For Users associated with an Organization, requests may need to be coordinated with your Organization's administrator since they control access to the tenant.</p>
+    <p>To exercise these rights, contact <a href="mailto:support@protoquiz.com">support@protoquiz.com</a>. We will respond within the time the law requires. For Users associated with an Organization, requests may need to be coordinated with your Organization's administrator since they control access to the tenant.</p>
   </section>
 
   <section id="hipaa">
@@ -210,7 +216,7 @@
 
   <section id="children">
     <h2><span class="num">9.</span> Children's Privacy</h2>
-    <p>The Platform is intended for use by licensed or aspiring emergency medical professionals and is not directed to children under 13. We do not knowingly collect personal information from children under 13. If we learn that we have collected such information, we will delete it promptly.</p>
+    <p>The Platform is intended for use by licensed or aspiring emergency medical professionals and is not directed to children under 16. We do not knowingly collect personal information from children under 16. If we learn that we have collected such information, we will delete it promptly.</p>
   </section>
 
   <section id="changes">
@@ -235,7 +241,7 @@
   <footer class="site-footer">
     <div class="foot-cols">
       <div class="foot-brand">
-        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="24" height="24"><span>ProtoQuiz</span></a>
+        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="24" height="24"><span>Proto<b>Quiz</b><sup>&trade;</sup></span></a>
         <p>Protocol training for EMS. Built by a working paramedic.</p>
       </div>
       <div class="foot-col">

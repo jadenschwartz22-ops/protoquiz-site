@@ -34,6 +34,7 @@ const SECTIONS = [
   ['App', '/app/'],
   ['For agencies', '/agency/'],
   ['Research', '/research/'],
+  ['Blog', '/blog/'],
   ['About', '/about/'],
 ];
 
@@ -41,14 +42,13 @@ const SECTIONS = [
 // /app wants the app, not a sales call; a chief on a census page wants their protocol
 // added or taken down; a medic on the atlas wants to fix their county. None of them are
 // sales leads, so "Contact sales" is only the fallback for the pages that do sell.
-// The census target was /census/#list-your-agency -- an anchor that does not exist on
-// the page. The section is id="list", so the button scrolled nowhere.
+// Census and research CTAs open the one request form (/research/request/), preset to add.
 const CTA = {
   '/app/':              ['Download app',       'https://apps.apple.com/app/id6753611139'],
-  '/census/':           ['Add your protocol',  '/census/#list'],
-  '/research/':         ['Add your protocol',  '/census/#list'],
-  '/research/practice/':['Add your protocol',  '/census/#list'],
-  '/research/changes/': ['Add your protocol',  '/census/#list'],
+  '/census/':           ['Add your protocol',  '/research/request/?type=add'],
+  '/research/':         ['Add your protocol',  '/research/request/?type=add'],
+  '/research/practice/':['Add your protocol',  '/research/request/?type=add'],
+  '/research/changes/': ['Add your protocol',  '/research/request/?type=add'],
   '/research/atlas/':   ['Correct this county','/research/atlas/#correct'],
 };
 const CTA_DEFAULT = ['Contact sales', '/agency/#contact'];
@@ -123,10 +123,10 @@ export const researchBar = (current = null) => `  <div class="rbar">
 export const listingStrip = (kind = 'census') => kind === 'atlas' ? `  <div class="lstrip">
     <div class="lstrip-in">
       <div class="lstrip-t">
-        <p class="lstrip-lbl">Know your county better than a roster does?</p>
-        <p class="lstrip-sub">Your correction outranks every inference here.</p>
+        <p class="lstrip-lbl">See a mistake?</p>
+        <p class="lstrip-sub">Tell us and we will fix it.</p>
       </div>
-      <a class="lstrip-btn lstrip-btn-p" href="#correct">Correct this county</a>
+      <a class="lstrip-btn lstrip-btn-p" href="/research/request/?type=county">Fix a county</a>
     </div>
   </div>` : `  <div class="lstrip">
     <div class="lstrip-in">
@@ -134,8 +134,8 @@ export const listingStrip = (kind = 'census') => kind === 'atlas' ? `  <div clas
         <p class="lstrip-lbl">Is your agency&rsquo;s protocol in the census?</p>
         <p class="lstrip-sub">Add it, correct it, or have it removed &mdash; same day, no reason needed.</p>
       </div>
-      <a class="lstrip-btn lstrip-btn-p" href="/census/#list">Add your protocol</a>
-      <a class="lstrip-btn lstrip-btn-g" href="/census/#list">Remove your protocol</a>
+      <a class="lstrip-btn lstrip-btn-p" href="/research/request/?type=add">Add your protocol</a>
+      <a class="lstrip-btn lstrip-btn-g" href="/research/request/?type=remove">Remove your protocol</a>
     </div>
   </div>`;
 
@@ -160,7 +160,7 @@ export const navFor = (current = null) => {
   <header class="site-header">
     <nav class="site-nav" aria-label="Primary">
       <div class="nav-left">
-        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="30" height="30"><span>ProtoQuiz</span></a>
+        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="30" height="30"><span>Proto<b>Quiz</b><sup>&trade;</sup></span></a>
         <div class="nav-links">
 ${navLinks(current)}
         </div>
@@ -190,7 +190,7 @@ export const FOOTER_HTML = `  <!-- shared-chrome:footer -->
   <footer class="site-footer">
     <div class="foot-cols">
       <div class="foot-brand">
-        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="24" height="24"><span>ProtoQuiz</span></a>
+        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="24" height="24"><span>Proto<b>Quiz</b><sup>&trade;</sup></span></a>
         <p>Protocol training for EMS. Built by a working paramedic.</p>
       </div>
       <div class="foot-col">

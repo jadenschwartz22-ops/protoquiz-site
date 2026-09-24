@@ -17,7 +17,6 @@
   max-width: 1180px; margin: 0 auto;
   display: flex; align-items: center; gap: clamp(16px, 2vw, 24px);
 }
-.hero-mark { width: clamp(46px, 4.4vw, 60px); height: auto; display: block; flex-shrink: 0; }
 .hero-eyebrow {
   font-family: 'IBM Plex Mono', ui-monospace, monospace;
   font-size: 10.5px; letter-spacing: 2.2px; text-transform: uppercase;

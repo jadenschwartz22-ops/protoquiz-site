@@ -22,7 +22,8 @@ import { join, dirname } from 'node:path';
 import { tmpdir } from 'node:os';
 import { createHash } from 'node:crypto';
 import { pathToFileURL } from 'node:url';
-import { navFor, researchBar, FOOTER_HTML, CHROME_HEAD } from './shared-chrome.mjs';
+import { navFor, researchBar, FOOTER_HTML, CHROME_HEAD, assetHash } from './shared-chrome.mjs';
+import { loadThumbs, censusSlides, slideshow, SLIDES_JS } from './research-slides.mjs';
 
 // The census is UNPUBLISHED until the new research site launches (2026-09-20, Jaden).
 // Pages still build and still resolve, but they must not be indexed. Set
@@ -70,6 +71,10 @@ export const MIN_AGENCY_DRUGS = 3;
 export const MIN_SOURCES = 5;
 // v<=2 only. Kept so a v2 payload still renders exactly as it did.
 export const MIN_INDICATION_ROWS = 5;
+
+// The findings carousel the /research hub shows, reused on the landing. Empty when
+// assets/research-thumbs.json was never built (the Pi nightly): the landing skips it.
+const SLIDES = censusSlides(loadThumbs());
 
 const DISCLAIMER = 'Training reference compiled from published protocols. Not a clinical order. Verify with your agency and medical director.';
 const NOT_CAPTURED = 'not captured';
@@ -133,34 +138,32 @@ const STATE_NAMES = {
   SD: 'South Dakota', TN: 'Tennessee', TX: 'Texas', UT: 'Utah', VT: 'Vermont', VA: 'Virginia',
   WA: 'Washington', WV: 'West Virginia', WI: 'Wisconsin', WY: 'Wyoming',
 };
-// Codes outside the US. The census is titled a UNITED STATES census, and an
-// Australian state listed beside Alabama in a US coverage table is simply wrong:
-// it inflates the US count and reads as a data error. These are real listings and
-// are still published, but as their own jurisdiction, never inside the US totals.
-const NON_US = {
-  QLD: { label: 'Queensland', country: 'Australia' },
-  NSW: { label: 'New South Wales', country: 'Australia' },
-  VIC: { label: 'Victoria', country: 'Australia' },
-  WA_AU: { label: 'Western Australia', country: 'Australia' },
-  SA_AU: { label: 'South Australia', country: 'Australia' },
-  TAS: { label: 'Tasmania', country: 'Australia' },
-  NT: { label: 'Northern Territory', country: 'Australia' },
-  ACT: { label: 'Australian Capital Territory', country: 'Australia' },
-  ON: { label: 'Ontario', country: 'Canada' },
-  BC: { label: 'British Columbia', country: 'Canada' },
-  AB: { label: 'Alberta', country: 'Canada' },
+// The census focuses on the US. Agencies outside it are real listings and are still
+// published, but counted and listed apart, never inside the US totals. The agency's own
+// `country` (ISO-2) is the truth for where it is, never a guess from its region code:
+// region codes are only unique within a country (WA is Washington and Western Australia).
+// A new country needs only a line here; an unknown ISO code renders as the code.
+export const COUNTRIES = {
+  US: 'United States', CA: 'Canada', AU: 'Australia', ZA: 'South Africa', TR: 'Türkiye',
+  GB: 'United Kingdom', NZ: 'New Zealand', IE: 'Ireland',
 };
-const isUS = code => Object.prototype.hasOwnProperty.call(STATE_NAMES, String(code).toUpperCase());
-const isNonUS = code => Object.prototype.hasOwnProperty.call(NON_US, String(code).toUpperCase());
-// An unrecognized code renders as itself rather than being dropped — a state we
-// have not enumerated is still a real listing. A known non-US code gets its real
-// name plus its country, so it can never be mistaken for a US state.
-const stateLabel = code => {
-  const c = String(code).toUpperCase();
-  if (STATE_NAMES[c]) return STATE_NAMES[c];
-  if (NON_US[c]) return `${NON_US[c].label}, ${NON_US[c].country}`;
-  return String(code);
+const REGIONS = {
+  US: STATE_NAMES,
+  AU: { QLD: 'Queensland', NSW: 'New South Wales', VIC: 'Victoria', WA: 'Western Australia', SA: 'South Australia', TAS: 'Tasmania', NT: 'Northern Territory', ACT: 'Australian Capital Territory' },
+  CA: { ON: 'Ontario', BC: 'British Columbia', AB: 'Alberta', QC: 'Quebec', MB: 'Manitoba', SK: 'Saskatchewan', NS: 'Nova Scotia', NB: 'New Brunswick' },
 };
+const countryOf = a => a?.country || 'US';
+const countryName = c => COUNTRIES[c] ?? String(c);
+// A US code renders as its state name; a region elsewhere as "Region, Country"; an
+// unrecognized code as itself rather than being dropped.
+const stateLabel = (code, country = 'US') => {
+  const name = REGIONS[country]?.[String(code).toUpperCase()] ?? String(code);
+  return country === 'US' ? name : `${name}, ${countryName(country)}`;
+};
+// "Includes N agencies outside the US." -- the comparisons pool every agency, so a page
+// whose numbers include non-US agencies says so in one line. Empty when all are US.
+const abroadCount = (keys, agencyByKey) => [...keys].filter(k => countryOf(agencyByKey.get(k)) !== 'US').length;
+const abroadNote = n => (n ? `      <p class="muted">Includes ${num(n)} ${n === 1 ? 'agency' : 'agencies'} outside the US.</p>\n` : '');
 const drugLabel = k => titleCase(String(k).replace(/_/g, ' '));
 // Human labels for the indication vocabulary (ems-router lib/census/indications.json keys).
 // ONE home: census-report.mjs imports this. A key missing here falls back to title case.
@@ -266,7 +269,18 @@ function readContract(dataDir, rowsDir) {
     compare: set['compare.json'],
     ledger: set['ledger.json'].rows,
     manifest,
+    guidelines: readGuidelines(dataDir),
   };
+}
+
+// Curated national-guideline doses (reference/guidelines.json), hand-kept and quoted from
+// the primary source. A subdirectory, because the nightly build deletes stray top-level
+// *.json in --data. Absent means no guideline tags, never an invented one.
+function readGuidelines(dataDir) {
+  try { return JSON.parse(readFileSync(join(dataDir, 'reference', 'guidelines.json'), 'utf8')).entries; } catch (e) {
+    if (e.code === 'ENOENT') return [];
+    throw e;
+  }
 }
 
 // ------------------------------------------------------------------ chrome
@@ -314,7 +328,7 @@ ${jsonLd.map(j => `  <script type="application/ld+json">\n${jsonLdText(j)}\n  </
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 ${CHROME_HEAD}
-  <link rel="stylesheet" href="/census/census.css?v=${CSS_V}">
+${path === '/census/' && SLIDES.length ? `  <link rel="stylesheet" href="/assets/research.css?v=${assetHash('assets/research.css')}">\n` : ''}  <link rel="stylesheet" href="/census/census.css?v=${CSS_V}">
 </head>`;
 
 // Nav and footer live in scripts/shared-chrome.mjs so every page on the site renders
@@ -323,46 +337,25 @@ const nav = navFor('/census/');
 
 // Said on the landing and every agency page so an agency never reads the census as
 // ProtoQuiz selling its data: it is not sold, licensed, or shared, and hosts nothing.
-const NOT_FOR_SALE = 'The census is free and not for sale. It is built only from documents agencies already publish, each linked to the agency&rsquo;s own copy and never hosted here.';
+const NOT_FOR_SALE = 'The census is free and not for sale. Only public agencies are named.';
 
 // The disclaimer rides above the shared footer rather than inside it: it is specific
 // to published-protocol data and would be a false promise on /app or /agency.
+// The script opens any <details> a #fragment points into, so a link to #list or to
+// one drug on an agency page lands on an open panel rather than a closed one.
 const footer = `  <div class="census-disclaimer">
     <div class="wrap"><p class="disclaimer">${DISCLAIMER}</p></div>
   </div>
+  <script>
+    (function () {
+      var open = function () { for (var e = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1))); e; e = e.parentElement) if (e.tagName === 'DETAILS') e.open = true; };
+      open(); addEventListener('hashchange', open);
+    })();
+  </script>
 ${FOOTER_HTML}
 </body>
 </html>
 `;
-
-// The census product bar: a slim second bar under the shared site header, the way a
-// research product names itself below its publisher's chrome. The active section is
-// DERIVED from the page's own path rather than passed in, so a new page can never
-// forget to say where it is, and two pages in the same section can never disagree.
-//
-// Every href is a page this build actually writes. Drugs, states and agencies have no
-// index page of their own — the landing IS their index — so those three point at it
-// and the underline says which one you are inside. A fragment link (/census/#drugs)
-// would read better and is deliberately NOT used: the internal-link test resolves
-// every /census/ href against the generated path set, and a fragment resolves to
-// nothing, so it would be a dead link by that test's definition.
-// Overview is first and matches the landing EXACTLY, not by prefix: every census path
-// starts with /census/, so a prefix test would light Overview on every page.
-const CENSUS_SECTIONS = [
-  ['Overview', null, '/census/'],
-  ['Medications', '/census/drugs/', '/census/#drugs'],
-  ['States', '/census/states/', '/census/#states'],
-  ['Agencies', '/census/agencies/', '/census/#agencies'],
-  ['Methodology', '/census/methodology/', '/census/methodology/'],
-];
-
-export const productBar = path => `  <div class="pbar">
-    <div class="wrap">
-      <a class="pbar-mark" href="/census/">US EMS Protocol Census</a>
-      <nav class="pbar-nav" aria-label="Census sections">${CENSUS_SECTIONS.map(([label, prefix, href]) =>
-    `<a href="${href}"${(prefix === null ? path === href : path.startsWith(prefix)) ? ' class="on" aria-current="page"' : ''}>${label}</a>`).join('')}</nav>
-    </div>
-  </div>`;
 
 const breadcrumbs = trail => ({
   '@context': 'https://schema.org',
@@ -371,8 +364,8 @@ const breadcrumbs = trail => ({
 });
 
 // Every href here is built from data (an agencyKey, a drugKey), so it is escaped
-// like any other value that lands in an attribute. The same rule as jsonLdText and
-// jsInline: JSON and slugs are not HTML, and "the producer already sanitized it" is
+// like any other value that lands in an attribute. The same rule as jsonLdText:
+// JSON and slugs are not HTML, and "the producer already sanitized it" is
 // the assumption every injection starts from.
 const crumbHtml = trail => `      <nav class="crumbs">${trail.map(([n, p], i) =>
   i === trail.length - 1 ? `<span>${esc(n)}</span>` : `<a href="${esc(p)}">${esc(n)}</a>`).join(' <span class="sep">/</span> ')}</nav>`;
@@ -409,11 +402,10 @@ ${chips.length || signals.length ? `        <div class="meta">${signals.join('')
 //
 // The id is derived from the caller, not generated, because a generated one would
 // change per build and break the byte-identical rebuild.
-const citePanel = (id, lines) => `          <section class="panel" id="${id}">
-            <h2>Cite this</h2>
+const citePanel = (id, lines) => `<details class="fold" id="${id}"><summary>Cite this</summary>
             <div class="citebox" id="${id}-text">${lines.map(l => `<p class="cite">${l}</p>`).join('')}</div>
             <button type="button" class="copybtn" id="${id}-btn">Copy citation</button>
-          </section>
+          </details>
           <script>
             (function () {
               var b = document.getElementById('${id}-btn'), t = document.getElementById('${id}-text');
@@ -438,34 +430,25 @@ const railLinks = (heading, items) => (items.length
           </section>`
   : '');
 
-// `rail` is the right-hand column: "Cite this", related links, the submission panel.
-// A page that passes none renders one column, so nothing here forces a rail onto a
-// page that has nothing to put in it.
-// `railLeft` puts the rail first in the source and on the left: the landing page is a
-// search-results screen, where the facets belong beside the results they filter, and a
-// detail page is a document, where the citation belongs to the right of what it cites.
-// `lead` renders ABOVE the layout grid, at the wrap's full width, before the rail
-// exists. Only the landing passes one: its hero is an argument, and an argument
-// squeezed into the results column beside a facet rail reads as a wide sidebar
-// rather than a statement. Detail pages pass nothing and are byte-identical.
-const page = ({ title, description, path, trail, jsonLd = [], body, rail = '', railLeft = false, lead = '' }) => {
-  const railHtml = rail ? `        <aside class="rail">\n${rail}\n        </aside>` : '';
-  const col = `        <div class="col">\n${body}\n        </div>`;
-  return `${head({ title, description, path, jsonLd: [breadcrumbs(trail), ...jsonLd] })}
+// `rail` is the right-hand column (methodology and license contents, indication cites).
+// A page that passes none renders one column. The research bar shows on the census
+// landing only: detail pages already carry the census bar, and three stacked bars
+// pushed the data below the fold.
+const page = ({ title, description, path, trail, jsonLd = [], body, rail = '' }) => `${head({ title, description, path, jsonLd: [breadcrumbs(trail), ...jsonLd] })}
 <body>
 ${nav}
 ${researchBar(path)}
-${productBar(path)}
   <main>
     <div class="wrap">
-${crumbHtml(trail)}
-${lead ? `${lead}\n` : ''}      <div class="layout${rail ? (railLeft ? ' facets' : '') : ' solo'}">
-${railLeft ? `${railHtml}\n${col}` : `${col}${railHtml ? `\n${railHtml}` : ''}`}
+${trail.length > 2 ? crumbHtml(trail.slice(1)) : ''}
+      <div class="layout${rail ? '' : ' solo'}">
+        <div class="col">
+${body}
+        </div>${rail ? `\n        <aside class="rail">\n${rail}\n        </aside>` : ''}
       </div>
     </div>
   </main>
 ${footer}`;
-};
 
 // ------------------------------------------------------------- page bodies
 
@@ -480,15 +463,6 @@ ${footer}`;
 // `none`, matching what L3 derives (lib/census/CONTRACT.md).
 const dateSourceOf = doc =>
   doc?.effectiveDateSource || (doc?.effectiveDate ? 'printed' : doc?.capturedDate ? 'captured' : 'none');
-
-// Returns the phrase, or null when there is no date to state at all.
-const documentDatePhrase = doc => {
-  switch (dateSourceOf(doc)) {
-    case 'printed': return doc.effectiveDate ? `effective ${doc.effectiveDate}` : null;
-    case 'captured': return doc.capturedDate ? `on or before ${doc.capturedDate}` : null;
-    default: return null;
-  }
-};
 
 // The value for a stats cell: the bare date where printed, the hedge where
 // captured, "not captured" where neither. Never a blank and never a 0.
@@ -515,66 +489,12 @@ const sourceLine = (r, docByHash) => {
 // absence of the flag is not evidence of the negative (CONTRACT.md).
 const standingLabel = v => (v === true ? 'standing' : v === false ? 'requires contact' : NOT_CAPTURED);
 
-// ----------------------------------------------------------------- forms
+// ------------------------------------------------------------- requests
 //
-// A plain <form> plus ~20 lines of inline JS. No CSRF token, no nonce, no
-// timestamp: the endpoint is public and unauthenticated, so a token would protect
-// nothing — and every one of those is a value that changes per build, which would
-// break the byte-identical rebuild the nightly depends on. The only spam control in
-// the markup is a honeypot field named `website`, which a person never sees and never
-// fills; the endpoint answers 200 and drops it, so a bot learns nothing from the reply.
-
-const SUBMIT_ENDPOINT = 'https://api.protoquiz.com/api/monitor?type=censusSubmit';
-
-// JSON.stringify escapes JSON, not HTML. A value containing "</script>" would close the
-// tag and put the rest of it into the document as markup — the same hole jsonLdText
-// closes for JSON-LD, and it must be closed here for exactly the same reason. agencyKey
-// is a slug today, but this file does not own the producer that mints it, and "the
-// input is already safe" is the assumption every injection starts from.
-const jsInline = v => JSON.stringify(v).replace(/</g, '\\u003c').replace(/>/g, '\\u003e').replace(/&/g, '\\u0026');
-
-const submitForm = ({ id, kind, agencyKey = null, urlLabel, submitLabel }) => `        <form class="submit-form" id="${id}" novalidate>
-          <label for="${id}-url">${esc(urlLabel)}</label>
-          <input type="url" id="${id}-url" name="url" required placeholder="https://" autocomplete="url" />
-          <label for="${id}-email">Your email <span class="muted">(optional &mdash; only so we can tell you when it is done)</span></label>
-          <input type="email" id="${id}-email" name="email" placeholder="you@agency.gov" autocomplete="email" />
-          <p class="hp" aria-hidden="true"><label for="${id}-website">Leave this field empty</label><input type="text" id="${id}-website" name="website" tabindex="-1" autocomplete="off" /></p>
-          <button type="submit">${esc(submitLabel)}</button>
-          <p class="form-msg" id="${id}-msg" role="status"></p>
-        </form>
-        <script>
-          (function () {
-            var f = document.getElementById('${id}');
-            var msg = document.getElementById('${id}-msg');
-            f.addEventListener('submit', function (e) {
-              e.preventDefault();
-              var url = f.elements.url.value.trim();
-              if (!url) { msg.textContent = 'A public URL for the document is needed.'; return; }
-              var btn = f.querySelector('button');
-              btn.disabled = true;
-              msg.textContent = 'Sending...';
-              fetch(${jsInline(SUBMIT_ENDPOINT)}, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                  url: url,
-                  email: f.elements.email.value.trim() || undefined,
-                  agency: ${agencyKey ? jsInline(agencyKey) : 'undefined'},
-                  kind: ${jsInline(kind)},
-                  website: f.elements.website.value
-                })
-              }).then(function (r) {
-                if (!r.ok) throw new Error(String(r.status));
-                f.reset();
-                msg.textContent = 'Got it. We read every one of these by hand.';
-                track('census_submit', { kind: ${jsInline(kind)} });
-              }).catch(function () {
-                btn.disabled = false;
-                msg.textContent = 'That did not send. Email jaden@protoquiz.com and it gets handled the same way.';
-              });
-            });
-          })();
-        </script>`;
+// One form serves the whole site: /research/request/ (scripts/build-research-request.mjs).
+// Census pages only link to it, preset by ?type= and &agency=, so there is one form to keep.
+const CONTACT = 'support@protoquiz.com';
+const requestUrl = (type, agency = '', link = '') => `/research/request/?type=${type}${agency ? `&agency=${encodeURIComponent(agency)}` : ''}${link ? `&link=${encodeURIComponent(link)}` : ''}`;
 
 function doseCell(r) {
   if (r.value == null) return `<span class="raw">${esc(r.doseRaw)}</span>`;
@@ -583,42 +503,76 @@ function doseCell(r) {
   return `${range} ${esc(r.unit ?? '')}${r.perKg ? '/kg' : ''}${max}`;
 }
 
-// ---------------------------------------------------------------- the US map
+// ------------------------------------------------------------ compact parts
 //
-// The landing hero's one visual: the 50 states plus DC, shaded by how many CURRENT
-// protocols the census holds in each (one per agency: the build marks one document
-// per agency current and the rest superseded, so 226 Denver Metro uploads shade
-// Colorado as one), outlined in ink where the state has a named agency page.
-// Geometry is a committed, pre-projected file (scripts/data/us-states-paths.json,
-// us-atlas, Albers USA), so the render needs no library and, walked in sorted order,
-// the SVG is byte-identical across rebuilds.
-const US_STATES = JSON.parse(readFileSync(new URL('./data/us-states-paths.json', import.meta.url), 'utf8'));
+// Every census page is a tool first: a summary line, the data, and a row of small
+// links at the bottom. Long panels (cite, forms, named lists) fold into <details> so
+// they cost one line until someone opens them. The script in the footer opens any
+// fold a #fragment points into, so /census/#list and /agencies/x/#midazolam still land.
 
-// Protocol-count bands, lowest first. Each band is a CSS class (r0..r4) so the colors
-// live with the rest of the theme, and the legend prints from this same list.
-export const MAP_BANDS = [[0, 'none'], [1, '1'], [2, '2 to 4'], [5, '5 to 9'], [10, '10 or more']];
+const fold = (id, label, inner) => `<details class="fold"${id ? ` id="${id}"` : ''}><summary>${label}</summary>
+${inner}
+</details>`;
+
+// The bottom row: folds first (they open full-width), then plain links.
+const footRow = (folds, links) => `      <div class="actions">${folds.join('')}${links.map(([l, h]) => `<a href="${esc(h)}">${esc(l)}</a>`).join('')}</div>`;
+
+// A filter box for the lists on a page. Without JS it is inert and every list is
+// already fully visible, so nothing is lost.
+const filterBox = (id, label) => `<input type="search" class="filter" id="${id}" placeholder="${esc(label)}" aria-label="${esc(label)}" autocomplete="off" />`;
+
+// One home for the drug, state and agency link lists: the landing tabs and the
+// drugs index render the same <li>s.
+// Keys spelled with non-English letters (ADENOZİN, AMİODARON) are extraction variants of
+// drugs already listed; their pages stay, the browse lists skip them.
+const browseDrugs = drugs => drugs.filter(d => !/[^\x00-\x7F]/.test(d));
+const drugLis = drugs => browseDrugs([...drugs]).sort((x, y) => drugLabel(x).localeCompare(drugLabel(y)))
+  .map(d => `<li><a href="/census/drugs/${slug(d)}/">${esc(drugLabel(d))}</a></li>`).join('');
+const stateLis = (states, counts, label = stateLabel) => states.map(s => `<li><a href="/census/states/${slug(s)}/">${esc(label(s))}</a><span class="count">${num(counts.get(s) ?? 0)}</span></li>`).join('');
+
+// Filters every <li> under `root` by the box; groups (sections or details) with no
+// hit hide, and Enter follows the first visible link.
+const filterScript = (boxId, root, group) => `        <script>
+          (function () {
+            var q = document.getElementById('${boxId}'), root = document.querySelector('${root}');
+            q.addEventListener('input', function () {
+              var s = q.value.trim().toLowerCase();
+              root.classList.toggle('searching', !!s);
+              root.querySelectorAll('${group}').forEach(function (g) {
+                var n = 0;
+                g.querySelectorAll('li, .drug').forEach(function (li) { var hit = !s || li.textContent.toLowerCase().indexOf(s) > -1; li.hidden = !hit; n += hit; });
+                g.hidden = !!s && !n;
+                if (g.tagName === 'DETAILS') g.open = !!s && n > 0;
+              });
+            });
+            q.addEventListener('keydown', function (e) {
+              var a = q.value.trim() && root.querySelector('li:not([hidden]) a');
+              if (e.key === 'Enter' && a) location.href = a.href;
+            });
+          })();
+        </script>`;
+
+// The US map on the States tab: states shaded by how many CURRENT protocols the census
+// holds there (one per agency), outlined and linked where the state has a page. Geometry
+// is a committed, pre-projected file (Albers USA), so the SVG needs no library and is
+// byte-identical across rebuilds.
+const US_STATES = JSON.parse(readFileSync(new URL('./data/us-states-paths.json', import.meta.url), 'utf8'));
+const MAP_BANDS = [[0, 'none'], [1, '1'], [2, '2 to 4'], [5, '5 to 9'], [10, '10 or more']];
 const bandOf = n => MAP_BANDS.reduce((b, [min], i) => (n >= min ? i : b), 0);
-// Too small to carry a count label at this scale; the tooltip still has the number.
-const SMALL_STATES = new Set(['RI', 'DE', 'DC', 'CT', 'NJ', 'MD', 'MA', 'NH', 'VT']);
 
 function usMap({ documents, pageStates }) {
   const docsIn = {};
   for (const d of documents) if (d.state && d.status === 'current') { const c = String(d.state).toUpperCase(); docsIn[c] = (docsIn[c] || 0) + 1; }
   const named = new Set(pageStates.map(s => String(s).toUpperCase()));
-  const codes = Object.keys(US_STATES.states).sort();
-  const st = c => US_STATES.states[c];
-  const fills = codes.map(c => {
+  // Linked states draw last so their outline sits on top of every neighbour's edge.
+  const codes = Object.keys(US_STATES.states).sort((a, b) => named.has(a) - named.has(b) || a.localeCompare(b));
+  const shapes = codes.map(c => {
     const n = docsIn[c] || 0;
-    return `<path class="s r${bandOf(n)}" d="${st(c).d}"><title>${esc(stateLabel(c))}: ${num(n)} current protocol${n === 1 ? '' : 's'}${named.has(c) ? ', has an agency page' : ''}</title></path>`;
+    const path = `<path class="s r${bandOf(n)}${named.has(c) ? ' named' : ''}" d="${US_STATES.states[c].d}"><title>${esc(stateLabel(c))}: ${num(n)} current protocol${n === 1 ? '' : 's'}</title></path>`;
+    return named.has(c) ? `<a href="/census/states/${slug(c)}/">${path}</a>` : path;
   }).join('');
-  const outlines = codes.filter(c => named.has(c)).map(c => `<path class="named" d="${st(c).d}"/>`).join('');
-  const labels = codes.filter(c => (docsIn[c] || 0) >= MAP_BANDS[3][0] && !SMALL_STATES.has(c))
-    .map(c => `<text x="${st(c).cx}" y="${st(c).cy}" dy="0.35em">${num(docsIn[c])}</text>`).join('');
-  const nNamed = codes.filter(c => named.has(c)).length;
-  const nDocs = codes.filter(c => docsIn[c] && !named.has(c)).length;
-  const svg = `<svg class="usmap" viewBox="${esc(US_STATES.viewBox)}" role="img" aria-label="Map of US states shaded by protocols in the census: ${num(nNamed)} with an agency page, ${num(nDocs)} with protocols only.">${fills}${outlines}${labels}</svg>`;
-  const legend = `<div class="legend" aria-hidden="true">${MAP_BANDS.map(([, label], i) => `<span><i class="r${i}"></i>${label}</span>`).join('')}<span><i class="named"></i>has an agency page</span></div>`;
-  return { svg, legend, nNamed, nDocs, nBlank: codes.length - nNamed - nDocs };
+  return `<figure class="usmap-fig"><svg class="usmap" viewBox="${esc(US_STATES.viewBox)}" role="img" aria-label="Map of US states shaded by current protocols in the census; outlined states have a page.">${shapes}</svg>
+          <figcaption class="legend">${MAP_BANDS.map(([, label], i) => `<span><i class="r${i}"></i>${label}</span>`).join('')}<span><i class="named"></i>has a page</span></figcaption></figure>`;
 }
 
 // Per-state coverage counts for the landing table (spec 8): agencies with a
@@ -652,7 +606,8 @@ const latestReportEdition = () => {
 };
 export const reportLabel = e => /^\d{4}-q[1-4]$/.test(e) ? `Q${e.slice(6)} ${e.slice(0, 4)}` : String(e);
 
-function landingPage({ manifest, states, drugs, agencyPageCount, agencies = [], documents = [] }) {
+function landingPage({ manifest, states, drugs, agencyPageCount, agencies = [], allAgencies = agencies, documents = [], popular = [] }) {
+  const drugCount = browseDrugs(drugs).length;
   const latestReport = latestReportEdition();
   // Two different numbers, both true: how many agencies the census holds, and
   // how many have a page (the rest are below a thin-page threshold). Printing
@@ -662,130 +617,122 @@ function landingPage({ manifest, states, drugs, agencyPageCount, agencies = [], 
   // the table renders only when at least one agency row carries it, and is
   // omitted entirely otherwise — never a table of blanks, never a throw.
   const coverageRows = agencies.some(a => a.coverage) ? coverageByState(states, agencies, documents) : [];
-  // The US figures on this page count US jurisdictions only. Anything else is real and
-  // still listed, in its own section, so a reader is never told that a US census covers
+  // The US figures on this page count US jurisdictions only. Agencies outside the US are
+  // real and still listed, by country, so a reader is never told that a US census covers
   // a number of states that includes Queensland.
-  const usStates = states.filter(c => !isNonUS(c));
-  const otherStates = states.filter(isNonUS);
-  const usCoverageRows = coverageRows.filter(r => !isNonUS(r.state));
-  // Per-state agency counts for the facet rail. Built from `agencies` (the ones that
-  // got a page) so a facet can never promise more rows than the state page lists.
+  const stateCountry = new Map(agencies.map(a => [a.state, countryOf(a)]));
+  const inUS = s => (stateCountry.get(s) ?? 'US') === 'US';
+  const usStates = states.filter(inUS);
+  const usCoverageRows = coverageRows.filter(r => inUS(r.state));
+  // Every named agency outside the US, page or not, grouped by country, most first.
+  const abroad = [...groupBy(allAgencies.filter(a => countryOf(a) !== 'US'), countryOf)]
+    .sort((x, y) => y[1].length - x[1].length || x[0].localeCompare(y[0]));
+  const abroadTotal = abroad.reduce((n, [, as]) => n + as.length, 0);
+  const splitLine = abroadTotal
+    ? `        <p class="muted">${num(allAgencies.length)} named agencies: ${num(allAgencies.length - abroadTotal)} in the US, plus ${num(abroadTotal)} outside it (${abroad.map(([c]) => esc(countryName(c))).join(', ')}).</p>\n`
+    : '';
+  // Per-state agency counts. Built from `agencies` (the ones that got a page) so a
+  // count can never promise more rows than the state page lists.
   const facetCounts = new Map(states.map(s => [s, agencies.filter(a => a.state === s).length]));
 
-  // The scale line, directly under the hero: how much the census holds, in one dense
-  // row. Every number carries its label; the v3-only counts (published, awaiting
-  // review, comparison groups) print only when the manifest has them.
+  // The scale line: how much the census holds, in one row. Every number carries its label.
   const currentProtocols = documents.filter(d => d.status === 'current').length;
-  const scaleLine = `      <p class="summary scale">${[
+  const scaleLine = `      <p class="summary">${[
     currentProtocols ? `<span class="n">${num(currentProtocols)}</span> protocols` : null,
     `<span class="n">${num(manifest.namedAgencies)}</span> agencies`,
     `<span class="n">${num(agencyPageCount)}</span> agency pages`,
-    `<span class="n">${num(manifest.documents)}</span> documents read`,
-    manifest.pendingReview == null ? null : `<span class="n">${num(manifest.pendingReview)}</span> waiting to be matched to an agency`,
+    `<span class="n">${num(manifest.documents)}</span> documents`,
     `<span class="n">${num(manifest.doseRows)}</span> doses`,
     `as of <span class="n">${esc(manifest.asOf)}</span>`,
   ].filter(Boolean).join('<span class="sep" aria-hidden="true"></span>')}</p>`;
 
-  // The hero is the one place on the census that argues rather than reports: it is
-  // the landing, and the landing is the brand. Everything below it, and every detail
-  // page, stays in the research register the rest of this file is written in.
-  const map = usMap({ documents, pageStates: states });
-  // The map's own caption, in the same honest-counts shape every other number here
-  // uses: what is shaded, what is outlined, and the n behind each. Derived from the
-  // same counts as the paths, so the sentence can never disagree with the picture.
-  const mapCounts = [
-    `<span class="n">${num(map.nNamed)}</span> states with an agency page`,
-    `<span class="n">${num(map.nDocs)}</span> more with protocols but no page yet`,
-    `<span class="n">${num(map.nBlank)}</span> not yet covered`,
-  ].join(', ');
-
-  const lead = `      <section class="hero">
-        <div class="hero-say">
-          <span class="badge">Early release. Data building nightly.</span>
-          <h1>EMS clinical care changes depending on where you are.</h1>
-          <p class="dek">It shows up in the medications carried, the doses and routes crews are allowed to
-          give, and the procedures they are permitted to perform &mdash; and in whether a procedure is a
-          standing order or requires calling a physician first. The United States EMS Protocol Census is a
-          standing research program built on public documents: it reads what agencies publish and turns it
-          into a versioned record anyone can check, rebuilt every night from the agencies' own documents.</p>
-          <p class="dek">${NOT_FOR_SALE}</p>
-        </div>
-        <figure class="hero-map">
-          ${map.svg}
-          ${map.legend}
-          <figcaption>${mapCounts}. Shaded by protocols per state, one per agency, outlined where an agency has its own page. Coverage grows every night.</figcaption>
-        </figure>
-      </section>
+  // Tabs are anchors: without JS, :target shows the section a link names (Drugs by
+  // default), so /census/#states from any other page still opens States. The script
+  // only stops the jump-scroll and marks the active tab.
+  const tabs = [['drugs', 'Drugs', drugCount], ['states', 'States', usStates.length], ['agencies', 'Agencies', agencies.length]];
+  // A long list shows its first rows and a "Show all" button; without JS it shows all.
+  const more = (n, shown) => (n > shown ? `<button type="button" class="more">Show all ${num(n)}</button>` : '');
+  const body = `      <div class="tool${SLIDES.length ? ' has-slides' : ''}">
+        <div class="tool-say">
+        <h1>US EMS Protocol Census</h1>
 ${scaleLine}
-      <section class="why">
-        <h2>Why it matters</h2>
-        <ul class="claims">
-          <li><strong>A medic who changes agencies relearns every dose.</strong> The medication is the same and the number is different, and until now there was no way to see which agencies differ or by how much.</li>
-          <li><strong>A medical director revising a protocol has no benchmark.</strong> Writing the next version means guessing at what everyone else does. The census shows what the rest of the country actually carries, with the documents behind it.</li>
-          <li><strong>Researchers have never had a denominator.</strong> Nobody had counted what prehospital medicine carries, so questions about how care varies could not be asked, let alone answered.</li>
-          <li><strong>Arguing for EMS pay, training and staffing takes evidence.</strong> Anecdote loses those arguments. Numbers that anyone can check and cite do better.</li>
-          <li><strong>It updates every night, and agencies decide whether they are in it.</strong> New documents are read and revisions become new versions with the old one kept in the history. Send a public URL to be listed, or ask to be removed and it comes down the same day, no reason needed.</li>
-        </ul>
-      </section>`;
-
-  const body = `      <p class="honest">${num(manifest.dosesParsed)} entries parsed to a number and route, ${num(manifest.dosesPartial)} partially, ${num(manifest.dosesRaw)} kept as written. Raw entries are counted and shown as written, never dropped.${withheldSentence(withheld)}</p>
+${splitLine}        ${filterBox('q', 'Search a drug, state or agency')}
+        <p class="request" id="list"><a class="bigbtn" href="${requestUrl('add')}">Add, fix, or remove a listing</a> <span class="muted">Handled the same day.</span></p>
+${popular.length ? `        <p class="chips"><span class="muted">Most carried</span>${popular.map(d => `<a href="/census/drugs/${slug(d)}/">${esc(drugLabel(d))}</a>`).join('')}</p>` : ''}
+        </div>
+${SLIDES.length ? slideshow(SLIDES) : ''}
+      </div>
+      <div class="tabs">
+        <nav class="tabnav" aria-label="Browse">${tabs.map(([id, label, n]) => `<a href="#${id}">${label}<span class="count">${num(n)}</span></a>`).join('')}</nav>
 ${drugs.length ? `      <section id="drugs">
-        <h2>Medications<span class="count">${num(drugs.length)}</span></h2>
-        <p class="muted">Doses, indications and routes for each, across every agency that carries it.</p>
-        <ul class="cols four">${[...drugs].sort((x, y) => drugLabel(x).localeCompare(drugLabel(y))).map(d => `<li><a href="/census/drugs/${slug(d)}/">${esc(drugLabel(d))}</a></li>`).join('')}</ul>
+        <h2>Drugs<span class="count">${num(drugCount)}</span></h2>
+        <ul class="cols six clip">${drugLis(drugs)}</ul>
+        ${more(drugCount, 60)}
       </section>` : `      <section id="drugs">
-        <h2>Medications</h2>
-        <p>Medication and indication pages are not published for this build: the indication map has not been reviewed since it last changed.</p>
+        <h2>Drugs</h2>
+        <p>Drug and indication pages are not published for this build: the indication map has not been reviewed since it last changed.</p>
       </section>`}
       <section id="states">
         <h2>States<span class="count">${num(usStates.length)}</span></h2>
-        <ul class="stategrid">${usStates.map(s => `<li><a href="/census/states/${slug(s)}/">${esc(stateLabel(s))}</a><span class="count">${num(facetCounts.get(s) ?? 0)} ${(facetCounts.get(s) ?? 0) === 1 ? 'agency' : 'agencies'}</span></li>`).join('')}</ul>
-${usCoverageRows.length ? `        <h3>Coverage by state</h3>
-        <div class="scroll"><table class="coverage">
+        <div class="statemap">
+          ${usMap({ documents, pageStates: states })}
+          <div>
+        <ul class="cols stategrid">${stateLis(usStates, facetCounts)}</ul>
+${abroad.length ? `        <!-- Listed, but never inside the US counts above. -->
+        <h3 id="international">Outside the US</h3>
+${abroad.map(([c, as]) => {
+    const regions = states.filter(s => stateCountry.get(s) === c);
+    return `        <h4>${esc(countryName(c))}<span class="count">${num(as.length)}</span></h4>
+        ${regions.length ? `<ul class="cols stategrid">${stateLis(regions, facetCounts, s => REGIONS[c]?.[s] ?? s)}</ul>` : '<p class="muted">No agency page yet.</p>'}`;
+  }).join('\n')}` : ''}
+          </div>
+        </div>
+${usCoverageRows.length ? `        ${fold('', 'Coverage by state', `        <div class="scroll"><table class="coverage">
           <thead><tr><th>State</th><th>Agencies with a protocol</th><th>Agencies without</th><th>Statewide protocol</th></tr></thead>
           <tbody>${usCoverageRows.map(r => `<tr><td><a href="/census/states/${slug(r.state)}/">${esc(stateLabel(r.state))}</a></td><td>${num(r.withProtocol)}</td><td>${num(r.withoutProtocol)}</td><td>${r.statewideBaseline ? 'Yes' : 'No'}</td></tr>`).join('')}</tbody>
-        </table></div>` : ''}
+        </table></div>`)}` : ''}
       </section>
-${otherStates.length ? `      <!-- Listed, but never inside the US counts above. This is a United States census;
-           an Australian state in the US coverage table inflates the US number and reads
-           as a data error. -->
-      <section id="international">
-        <h2>Outside the United States<span class="count">${num(otherStates.length)}</span></h2>
-        <p class="muted">Protocols the census has read from outside the US. They are held to the same sourcing rules, and are kept out of every United States figure on this page.</p>
-        <ul class="stategrid">${otherStates.map(s => `<li><a href="/census/states/${slug(s)}/">${esc(stateLabel(s))}</a><span class="count">${num(facetCounts.get(s) ?? 0)} ${(facetCounts.get(s) ?? 0) === 1 ? 'agency' : 'agencies'}</span></li>`).join('')}</ul>
-      </section>` : ''}
       <section id="agencies">
         <h2>Agencies<span class="count">${num(agencies.length)}</span></h2>
-        <p class="muted">Each agency page holds that agency's protocol, its earlier versions and every dose it publishes.${withheldSentence(withheld)}</p>
-        <ul class="cols">${[...agencies].sort((x, y) => x.name.localeCompare(y.name)).map(a => `<li><a href="/census/agencies/${esc(a.agencyKey)}/">${esc(a.name)}</a> <span class="muted">${esc(stateLabel(a.state))}</span></li>`).join('')}</ul>
+        <ul class="cols four clip">${[...agencies].sort((x, y) => x.name.localeCompare(y.name)).map(a => `<li><a href="/census/agencies/${esc(a.agencyKey)}/" title="${esc(a.name)}">${esc(a.name)}</a> <span class="muted">${esc(a.state)}</span></li>`).join('')}</ul>
+        ${more(agencies.length, 40)}
+${withheld > 0 ? `        <p class="muted">${withheldSentence(withheld).trim()}</p>` : ''}
       </section>
-      <section id="how">
-        <h2>How this is built</h2>
-        <p><a href="/census/methodology/">Methodology</a>: where documents come from, what is read out of them, what is not captured, and why no dose-level accuracy number is published. <a href="/census/data-license/">Data license</a>: summaries are CC BY 4.0; row-level data is never published, sold, or shared.</p>${latestReport ? `
-        <p><a href="/census/report/${latestReport}/">State of US EMS Protocols, ${reportLabel(latestReport)}</a>: the quarterly edition, the groups where published protocols disagree most, aggregate only.</p>` : ''}
-      </section>
-      <div class="landing-foot">
-          <section class="panel" id="list">
-            <h2>List your agency</h2>
-            <p>If your agency's protocols are a public record and you would like them in the census, or you want an existing listing corrected or removed, send the document's public URL and we will handle it. Removal is same-day, no reason needed.</p>
-${submitForm({ id: 'list-form', kind: 'listing', urlLabel: 'Public URL of the protocol document', submitLabel: 'Send it' })}
-          </section>
-${citePanel('cite', [`United States EMS Protocol Census, as of ${esc(manifest.asOf)}. ${ORIGIN}/census/`])}
-      </div>`;
+      </div>
+        <script>
+          (function () {
+            var t = document.querySelector('.tabs'), links = t.querySelectorAll('.tabnav a');
+            var show = function (id) { t.dataset.tab = id; links.forEach(function (a) { a.setAttribute('aria-selected', a.hash === '#' + id); }); };
+            t.classList.add('js');
+            var fromHash = function () { show(/^#(drugs|states|agencies)$/.test(location.hash) ? location.hash.slice(1) : 'drugs'); };
+            fromHash(); addEventListener('hashchange', fromHash);
+            links.forEach(function (a) { a.addEventListener('click', function (e) { e.preventDefault(); show(a.hash.slice(1)); history.replaceState(null, '', a.hash); }); });
+            t.querySelectorAll('.more').forEach(function (b) { b.addEventListener('click', function () { b.previousElementSibling.classList.add('all'); b.remove(); }); });
+          })();
+        </script>
+${SLIDES.length ? SLIDES_JS : ''}
+${filterScript('q', '.tabs', 'section')}
+${footRow([
+    citePanel('cite', [`United States EMS Protocol Census, as of ${esc(manifest.asOf)}. ${ORIGIN}/census/`]),
+  ], [
+    ['Methodology', '/census/methodology/'],
+    ['Data license', '/census/data-license/'],
+    ...(latestReport ? [[`${reportLabel(latestReport)} report`, `/census/report/${latestReport}/`]] : []),
+  ])}
+      <p class="muted">${NOT_FOR_SALE}</p>`;
 
   return {
     path: '/census/',
     html: page({
-      lead,
       title: 'United States EMS Protocol Census - open research on US EMS',
-      description: `A free, versioned record of United States EMS protocols: ${num(manifest.doseRows)} dose entries from ${num(manifest.namedAgencies)} named agencies, as of ${manifest.asOf}.`,
+      description: `A free reference comparing United States EMS protocols: ${num(manifest.doseRows)} dose entries from ${num(manifest.namedAgencies)} named agencies, as of ${manifest.asOf}.`,
       path: '/census/',
       trail: [['Home', '/'], ['EMS Census', '/census/']],
       jsonLd: [{
         '@context': 'https://schema.org',
         '@type': 'Dataset',
         name: 'United States EMS Protocol Census',
-        description: 'Dose, route, and indication facts extracted from published United States EMS protocol documents.',
+        description: 'Dose, route, and indication information from the protocols of public United States EMS agencies.',
         url: `${ORIGIN}/census/`,
         // Points at the page that actually STATES a license (CC BY 4.0 on summaries,
         // rows unpublished). /terms/ governs the site and now carries the census
@@ -800,6 +747,33 @@ ${citePanel('cite', [`United States EMS Protocol Census, as of ${esc(manifest.as
   };
 }
 
+// The drugs index: the landing's Drugs tab as its own page, so /census/drugs/ is a
+// page rather than a 404.
+function drugsIndexPage(drugs) {
+  const body = `      <div class="tool">
+        <h1>Drugs in US EMS protocols</h1>
+        <p class="summary"><span class="n">${num(drugs.length)}</span> drugs, each with its doses across every agency that carries it.</p>
+        ${filterBox('q', 'Filter drugs')}
+      </div>
+      <section id="drugs" class="list">
+        <ul class="cols six">${drugLis(drugs)}</ul>
+      </section>
+${filterScript('q', '.list', 'ul')}`;
+  return {
+    path: '/census/drugs/',
+    html: page({
+      title: 'Drugs in US EMS protocols - EMS Protocol Census',
+      description: `${num(drugs.length)} drugs in published US EMS protocols, each with its doses, indications and routes across agencies.`,
+      path: '/census/drugs/',
+      trail: [['Home', '/'], ['EMS Census', '/census/'], ['Drugs', '/census/drugs/']],
+      body,
+    }),
+  };
+}
+
+// First-letter folds for an agency's drug list (see agencyPage).
+const LETTER_GROUPS = ['ABC', 'DEF', 'GHIJKL', 'MNO', 'PQR', 'STUVWXYZ'];
+
 function agencyPage(agency, { doses, ledger, docByHash }) {
   const drugs = groupBy(doses, r => r.drugKey);
   const parsed = doses.filter(r => r.parseStatus === 'parsed').length;
@@ -812,7 +786,7 @@ function agencyPage(agency, { doses, ledger, docByHash }) {
         : 'An undated version is under review.'} The figures below are from the current listed document.</p>\n`
     : '';
 
-  const rows = [...drugs].map(([drugKey, rs]) => {
+  const drugBlock = ([drugKey, rs]) => {
     const inner = [...rs].sort(doseOrder).map(r => `<tr>
               <td>${esc(indicationLabel(r.indicationKey))}</td>
               <td>${esc(r.population)}</td>
@@ -822,32 +796,33 @@ function agencyPage(agency, { doses, ledger, docByHash }) {
               <td>${esc(standingLabel(r.standing))}</td>
               <td class="src">${sourceLine(r, docByHash)}</td>
             </tr>`).join('\n');
-    return `        <h3 id="${slug(drugKey)}">${esc(drugLabel(drugKey))}</h3>
+    return `        <div class="drug"><h3 id="${slug(drugKey)}">${esc(drugLabel(drugKey))}</h3>
         <div class="scroll"><table class="dose">
           <thead><tr><th>Indication</th><th>Population</th><th>Dose</th><th>Route</th><th>Repeat</th><th>Standing</th><th>Source</th></tr></thead>
           <tbody>
 ${inner}
           </tbody>
-        </table></div>`;
-  }).join('\n');
+        </table></div></div>`;
+  };
+  // No drug-class field exists in the data, so drugs fold by first letter: the one
+  // grouping that is honest about what it is and lets a reader find a name fast.
+  const groups = groupBy([...drugs], ([k]) => LETTER_GROUPS.find(g => drugLabel(k)[0].toUpperCase() <= g.at(-1)) ?? LETTER_GROUPS.at(-1));
+  const rows = [...groups].map(([g, ds]) => fold('', `<b>${g[0]}&ndash;${g.at(-1)}</b> <span class="names">${ds.map(([k]) => esc(drugLabel(k))).join(', ')}</span><span class="count">${num(ds.length)}</span>`, ds.map(drugBlock).join('\n'))).join('\n');
 
   const history = ledger.length
-    ? `      <section id="ledger">
-        <h2>Change history</h2>
-        <div class="scroll"><table>
+    ? fold('ledger', `Change history<span class="count">${num(ledger.length)}</span>`, `        <div class="scroll"><table>
           <thead><tr><th>Recorded</th><th>Change</th><th>From</th><th>To</th></tr></thead>
           <tbody>${ledger.map(e => `<tr><td>${esc(String(e.at).slice(0, 10))}</td><td>${esc(e.change)}</td><td>${esc(e.from ?? NOT_CAPTURED)}</td><td>${esc(e.to ?? NOT_CAPTURED)}</td></tr>`).join('')}</tbody>
-        </table></div>
-      </section>`
+        </table></div>`)
     : '';
 
-  const where = [agency.city, agency.state].filter(Boolean).join(', ');
+  const place = agency.state ? stateLabel(agency.state, countryOf(agency)) : countryOf(agency) === 'US' ? null : countryName(countryOf(agency));
+  const where = [agency.city, countryOf(agency) === 'US' ? agency.state : place].filter(Boolean).join(', ');
   const title = `${agency.name} EMS protocols - drugs, doses, and routes`;
   // The date and its provenance both come from the CURRENT document, not the agency row —
   // agencies.json carries only currentEffectiveDate, which by design is null for a document
   // whose only date is a capture.
   const currentDoc = docByHash.get(agency.currentHash);
-  const datePhrase = documentDatePhrase(currentDoc);
   // One signal, from the same two flags the warn lines above state in full. `current`
   // is the claim the page makes when neither flag is set; it is never a guess, because
   // an agency page only exists for an agency with a current listed document.
@@ -868,39 +843,31 @@ ${inner}
       `effective ${documentDateCell(currentDoc)}`,
       `${pct(parsed, doses.length)} machine-parsed of ${num(doses.length)}`,
     ],
-    lede: `${esc(agency.name)}${where ? ` (${esc(where)})` : ''} carries ${num(drugs.size)} drugs across ${num(doses.length)} dose entries in its current published protocol${datePhrase ? `, ${esc(datePhrase)}` : ''}.`,
   })}
 ${pending}${outdated}      <section id="doses">
         <h2>Drugs and doses<span class="count">${num(drugs.size)}</span></h2>
+        ${filterBox('f', 'Filter drugs or indications')}
 ${rows}
       </section>
-${history}`;
-
-  const rail = `${citePanel('cite', [
-    esc(`${agency.name}, United States EMS Protocol Census. ${num(doses.length)} dose entries, effective ${documentDateCell(currentDoc)}.`),
-    `${ORIGIN}/census/agencies/${esc(agency.agencyKey)}/`,
-  ])}
-${railLinks('Related', [
-    ...(agency.state ? [[`All ${stateLabel(agency.state)} agencies`, `/census/states/${slug(agency.state)}/`]] : []),
-    ['All medications and states', '/census/'],
-    ['How this page was built', '/census/methodology/'],
+${filterScript('f', '#doses', 'details')}
+${footRow([
+    history,
+    citePanel('cite', [
+      esc(`${agency.name}, United States EMS Protocol Census. ${num(doses.length)} dose entries, effective ${documentDateCell(currentDoc)}.`),
+      `${ORIGIN}/census/agencies/${esc(agency.agencyKey)}/`,
+    ]),
+  ], [
+    ['Outdated or wrong? Fix or remove it', requestUrl('fix', agency.name, `${ORIGIN}/census/agencies/${agency.agencyKey}/`)],
+    ...(agency.state ? [[`All ${place} agencies`, `/census/states/${slug(agency.state)}/`]] : []),
+    ['Methodology', '/census/methodology/'],
     ['Data license', '/census/data-license/'],
+    ['Study these protocols in the app', '/app/'],
   ])}
-          <section class="panel" id="study">
-            <h2>Work here?</h2>
-            <p>This page lists what ${esc(agency.name)} carries. The app quizzes you on it &mdash; upload the protocol document and every answer cites the page it came from.</p>
-            <p class="panel-cta"><a href="/app/">Study these protocols</a></p>
-          </section>
-          <section class="panel" id="correct">
-            <h2>Outdated or wrong?</h2>
-            <p>${NOT_FOR_SALE} Send the current document's public URL and the listing is rebuilt from it. To have this agency removed from the census entirely, say so and it comes down the same day.</p>
-${submitForm({ id: 'correct-form', kind: 'correction', agencyKey: agency.agencyKey, urlLabel: 'Public URL of the current document', submitLabel: 'Send the correction' })}
-          </section>`;
+      <p class="muted">${NOT_FOR_SALE}</p>`;
 
   return {
     path: `/census/agencies/${agency.agencyKey}/`,
     html: page({
-      rail,
       title,
       description: `Medications, doses, routes, and revision history published by ${agency.name}${where ? ` (${where})` : ''}, from its own protocol document.`,
       path: `/census/agencies/${agency.agencyKey}/`,
@@ -911,15 +878,15 @@ ${submitForm({ id: 'correct-form', kind: 'correction', agencyKey: agency.agencyK
         '@context': 'https://schema.org',
         '@type': 'Dataset',
         name: `${agency.name} EMS protocol doses`,
-        description: `Medication, dose, route and indication facts extracted from the EMS protocol document published by ${agency.name}.`,
+        description: `Medication, dose, route and indication information from the EMS protocol document published by ${agency.name}.`,
         url: `${ORIGIN}/census/agencies/${agency.agencyKey}/`,
         license: `${ORIGIN}/census/data-license/`,
         creator: { '@type': 'Organization', name: 'ProtoQuiz', url: ORIGIN },
         isAccessibleForFree: true,
         isPartOf: { '@type': 'Dataset', name: 'United States EMS Protocol Census', url: `${ORIGIN}/census/` },
-        ...(agency.state ? { spatialCoverage: stateLabel(agency.state) } : {}),
+        ...(agency.state ? { spatialCoverage: place } : {}),
       }],
-      trail: [['Home', '/'], ['EMS Census', '/census/'], ...(agency.state ? [[stateLabel(agency.state), `/census/states/${slug(agency.state)}/`]] : []), [agency.name, `/census/agencies/${agency.agencyKey}/`]],
+      trail: [['Home', '/'], ['EMS Census', '/census/'], ...(agency.state ? [[place, `/census/states/${slug(agency.state)}/`]] : []), [agency.name, `/census/agencies/${agency.agencyKey}/`]],
       body,
     }),
   };
@@ -932,7 +899,7 @@ const agencyLi = a => `<li><a href="/census/agencies/${esc(a.agencyKey)}/">${esc
 function statePage(state, { agencies, doses, documents = [] }) {
   const listed = agencies.filter(a => a.state === state).sort((a, b) => a.agencyKey.localeCompare(b.agencyKey));
   const drugs = groupBy(doses, r => r.drugKey);
-  const name = stateLabel(state);
+  const name = stateLabel(state, countryOf(listed[0]));
   // coverage is a v3 addition (spec 8) and optional: a v2 payload, or a v3 build
   // before the field lands, carries no `coverage` on any row. Rendering must be
   // byte-identical to the pre-coverage single list in that case — never throw,
@@ -989,17 +956,13 @@ ${statewideBaselines.length ? `      <section id="statewide-baseline">
       `${num(drugs.size)} ${drugs.size === 1 ? 'drug' : 'drugs'}`,
       ...(statewideBaselines.length ? ['statewide protocol'] : []),
     ],
-    lede: `${num(listed.length)} named ${listed.length === 1 ? 'agency' : 'agencies'} in ${esc(name)} ${listed.length === 1 ? 'has' : 'have'} published protocols in the census, with ${num(doses.length)} dose entries across ${num(drugs.size)} ${drugs.size === 1 ? 'drug' : 'drugs'}.`,
   })}
-${agenciesSection}`;
-
-  const rail = `${citePanel('cite', [
+${agenciesSection}
+${footRow([citePanel('cite', [
     esc(`United States EMS Protocol Census, ${name}: ${listed.length} named ${listed.length === 1 ? 'agency' : 'agencies'}, ${doses.length} dose entries across ${drugs.size} ${drugs.size === 1 ? 'drug' : 'drugs'}.`),
     `${ORIGIN}/census/states/${slug(state)}/`,
-  ])}
-${railLinks('Agencies in this state', listed.map(a => [a.name, `/census/agencies/${a.agencyKey}/`]))}
-${railLinks('Related', [
-    ['All medications and states', '/census/'],
+  ])], [
+    ['All states', '/census/#states'],
     ['Methodology', '/census/methodology/'],
     ['Data license', '/census/data-license/'],
   ])}`;
@@ -1007,7 +970,6 @@ ${railLinks('Related', [
   return {
     path: `/census/states/${slug(state)}/`,
     html: page({
-      rail,
       title: `${name} EMS protocols - agencies, drugs, and doses`,
       description: `${listed.length} named EMS agencies in ${name} with published protocol doses in the United States EMS Protocol Census.`,
       path: `/census/states/${slug(state)}/`,
@@ -1017,9 +979,10 @@ ${railLinks('Related', [
   };
 }
 
-function drugPage(drugKey, { rows, indicationPaths }) {
+function drugPage(drugKey, { rows, indicationPaths, agencyByKey = new Map() }) {
   const byInd = groupBy(rows, r => r.indicationKey);
   const agencies = new Set(rows.map(r => r.agencyKey).filter(Boolean));
+  const abroad = abroadCount(agencies, agencyByKey);
   const body = `${docHeader({
     kind: 'Medication',
     title: `${esc(drugLabel(drugKey))} in US EMS protocols`,
@@ -1036,7 +999,7 @@ ${stats([
     ['dose entries', num(rows.length)],
     ['machine-parsed', `${pct(rows.filter(r => r.parseStatus === 'parsed').length, rows.length)} of ${num(rows.length)}`],
   ])}
-      <section id="indications">
+${abroadNote(abroad)}      <section id="indications">
         <h2>Indications<span class="count">${num(byInd.size)}</span></h2>
         <ul class="results">${[...byInd].map(([k, rs]) => {
     const p = indicationPaths.get(`${drugKey}/${k}`);
@@ -1049,7 +1012,7 @@ ${stats([
     path: `/census/drugs/${slug(drugKey)}/`,
     html: page({
       title: `${drugLabel(drugKey)} EMS dose by protocol - indications and routes`,
-      description: `How ${num(agencies.size)} US EMS agencies dose ${drugLabel(drugKey)}: indications, routes, and adult vs pediatric entries from published protocols.`,
+      description: `How ${num(agencies.size)} ${abroad ? '' : 'US '}EMS agencies dose ${drugLabel(drugKey)}: indications, routes, and adult vs pediatric entries from published protocols.`,
       path: `/census/drugs/${slug(drugKey)}/`,
       trail: [['Home', '/'], ['EMS Census', '/census/'], [drugLabel(drugKey), `/census/drugs/${slug(drugKey)}/`]],
       body,
@@ -1097,6 +1060,30 @@ function fiveNumberBar(dist, unit) {
         </div>`;
 }
 
+// One row's spread, the same mark /research draws: whiskers min to max with end caps,
+// the box p25 to p75 and the median as a dark line; when the middle half is one value, a dot marks the dose most protocols agree on. Each row on its own scale; the digits
+// beside it are the claim, the box is the glance.
+const boxSvg = (d, unit) => {
+  const at = v => (d.max === d.min ? 50 : +(3 + ((v - d.min) / (d.max - d.min)) * 94).toFixed(1));
+  return `<svg viewBox="0 0 100 14" class="box" role="img" aria-label="min ${esc(fmtNum(d.min))}, p25 ${esc(fmtNum(d.p25))}, median ${esc(fmtNum(d.median))}, p75 ${esc(fmtNum(d.p75))}, max ${esc(fmtNum(d.max))} ${esc(unit)}"><path d="M${at(d.min)} 7H${at(d.max)}M${at(d.min)} 3v8M${at(d.max)} 3v8" class="w"/>${d.p75 === d.p25
+    ? `<circle cx="${at(d.p25)}" cy="7" r="5" class="agree"/>`
+    : `<rect x="${at(d.p25)}" y="2.5" width="${(at(d.p75) - at(d.p25)).toFixed(1)}" height="9"/><path d="M${at(d.median)} 1.5v11" class="m"/>`}</svg>`;
+};
+const rangeText = (d, unit) => `${d.min === d.max ? fmtNum(d.min) : `${fmtNum(d.min)} to ${fmtNum(d.max)}`} ${unit}`;
+// The cell beside the box: when the middle half agrees on one value, that agreement is the headline.
+// `gls` is the group's guideline entries (reference/guidelines.json, NASEMSO first). The agreed
+// value, else the median, gets a "matches" link when it equals an entry's dose or sits in its
+// [dose, max] range. The link names the first matching body; the tooltip names every one.
+// A value that differs gets nothing: the census reports, it does not grade protocols.
+const groupKeyOf = k => `${k.drugKey}|${k.indicationKey}|${k.population}|${k.perKg ? 1 : 0}|${k.unit}`;
+const glTag = (gls = [], v, what) => {
+  const hit = gls.filter(gl => v >= gl.dose * (1 - 1e-9) && v <= (gl.max ?? gl.dose) * (1 + 1e-9));
+  return hit.length ? ` <a class="gl" href="${esc(hit[0].url)}" rel="noopener" title="${esc([...new Map(hit.map(gl => [gl.body, `${gl.body}, ${gl.title}`])).values()].join('; '))}">${what}matches ${esc(hit[0].body)}</a>` : '';
+};
+const rangeCell = (d, unit, n, gls) => d.p25 === d.p75
+  ? `<strong>${d.min === d.max ? 'All' : 'Most'} use ${esc(fmtNum(d.p25))} ${esc(unit)}</strong>${glTag(gls, d.p25, '')} <span class="muted">${d.min === d.max ? '' : `range ${esc(rangeText(d, unit))}, `}n=${num(n)}</span>`
+  : `${esc(rangeText(d, unit))} <span class="muted">median ${esc(fmtNum(d.median))}, n=${num(n)}</span>${glTag(gls, d.median, 'median ')}`;
+
 // The named-agency list: names only, linked to their own pages. `pageAgencies` is the
 // agencies that actually GOT a page — naming one without a page ships a dead link to a
 // file that deliberately does not exist (spec 9).
@@ -1111,11 +1098,8 @@ function namedAgencyList(agencyKeys, pageAgencies) {
   if (!named.length) return { count: 0, html: '' };
   return {
     count: named.length,
-    html: `      <section id="agencies">
-        <h2>Named agencies</h2>
-        <p class="muted">Agencies whose protocols are a public record are named here. Their own doses are on their own pages; this list carries no values.</p>
-        <ul class="cols">${named.map(k => `<li><a href="/census/agencies/${esc(k)}/">${esc(pageAgencies.get(k).name)}</a></li>`).join('')}</ul>
-      </section>`,
+    html: fold('agencies', `Named agencies with a page<span class="count">${num(named.length)}</span>`, `        <p class="muted">Agencies whose protocols are a public record are named here. Their own doses are on their own pages; this list carries no values.</p>
+        <ul class="cols">${named.map(k => `<li><a href="/census/agencies/${esc(k)}/">${esc(pageAgencies.get(k).name)}</a></li>`).join('')}</ul>`),
   };
 }
 
@@ -1131,44 +1115,41 @@ const withheldSentence = n => n > 0
 // It is deliberately NOT per-group: the build counts flags before removal and publishes
 // one number, so a page cannot imply a per-group figure it does not have.
 const underReview = manifest => (manifest.flaggedRows
-  ? `      <p class="honest">${num(manifest.flaggedRows)} ${manifest.flaggedRows === 1 ? 'row is' : 'rows are'} under review across the census and excluded from every number on this page. <a href="/census/methodology/">How that works</a>.</p>\n`
+  ? `      <p class="honest">Doses far off from what other protocols give are likely misreads, so they are left out until checked. <a href="/census/methodology/#outliers">How that works</a>.</p>\n`
   : '');
 
-function drugPageV3(drugKey, { summary, groups, indicationPaths, pageAgencies, manifest }) {
+function drugPageV3(drugKey, { summary, groups, indicationPaths, pageAgencies, manifest, guidelineByKey = new Map(), agencyByKey = new Map() }) {
   const dists = groups.filter(g => g.dist);
   // Sorted here rather than trusted from the file, for the same reason every other
   // list in this generator is: determinism must not depend on the writer's ordering.
   const indications = [...summary.indications].sort((a, b) => a.indicationKey.localeCompare(b.indicationKey));
   const groupAgencies = new Set(groups.flatMap(g => g.agencyKeys ?? []));
   const named = namedAgencyList(groupAgencies, pageAgencies);
-  // The withheld count must come from the same population the list above is built
-  // from (groupAgencies), not summary.n.agencies: that rollup counts every agency
-  // with a row for this drug, raw-only rows included, so an agency whose page
-  // exists but whose rows here are all raw would inflate `n.agencies - named.count`
-  // even though it has no pageless agency to disclose.
-  const pageless = [...groupAgencies].filter(k => !pageAgencies.has(k)).length;
+  const abroad = abroadCount(groupAgencies, agencyByKey);
   // An indication can appear in drugs[].indications (every admitted row, raw included)
   // with no entry at all in `groups` (a comparable group needs a parsed value) — every
   // row under it was raw. Its n= then counts "sources with rows", not "sources in a
   // comparable group" like every sibling on this list, so it is labelled distinctly
   // rather than left to read as the same claim.
   const groupIndications = new Set(groups.map(g => g.key.indicationKey));
+  // One row per published distribution, grouped under its indication. Indications
+  // with no distribution (under MIN_SOURCES, or raw only) share one line below, so the
+  // page stays one screen of rows rather than a list plus a table saying it twice.
+  const distInd = new Set(dists.map(g => g.key.indicationKey));
+  const indLink = k => {
+    const p = indicationPaths.get(`${drugKey}/${k}`);
+    return p ? `<a href="${p}">${esc(indicationLabel(k))}</a>` : esc(indicationLabel(k));
+  };
+  const rowsHtml = [...groupBy(dists, g => g.key.indicationKey)].map(([k, gs]) => gs.map((g, i) => `<tr${i ? ' class="cont"' : ''}><th scope="row">${i ? '' : indLink(k)} <span class="muted">${esc(groupLabel(g.key))}</span></th><td>${boxSvg(g.dist, unitLabel(g.key))}</td><td class="rng">${rangeCell(g.dist, unitLabel(g.key), g.n.sources, guidelineByKey.get(groupKeyOf(g.key)))}</td></tr>`).join('')).join('');
+  const rest = indications.filter(({ indicationKey }) => !distInd.has(indicationKey));
   const body = `${docHeader({
     kind: 'Medication',
     title: `${esc(drugLabel(drugKey))} in US EMS protocols`,
-    signals: [manifest.flaggedRows ? signalPill('review', `${num(manifest.flaggedRows)} under review`) : signalPill('current', 'Current')],
-    chips: [
-      `${num(summary.n.sources)} sources`,
-      `${num(summary.n.agencies)} named agencies`,
-      `${num(summary.n.states)} states`,
-      `as of ${manifest.asOf}`,
-    ],
-    lede: `${num(summary.n.sources)} published ${summary.n.sources === 1 ? 'protocol carries' : 'protocols carry'} ${esc(drugLabel(drugKey))} across ${num(indications.length)} ${indications.length === 1 ? 'indication' : 'indications'}, from ${num(summary.n.agencies)} named ${summary.n.agencies === 1 ? 'agency' : 'agencies'} in ${num(summary.n.states)} ${summary.n.states === 1 ? 'state' : 'states'}.`,
   })}
 ${stats([
     ['protocols', num(summary.n.sources)],
     ['named agencies', num(summary.n.agencies)],
-    ['states', num(summary.n.states)],
+    [abroad ? 'states and regions' : 'states', num(summary.n.states)],
     ['indications', num(indications.length)],
     ['dose entries', num(summary.n.rows)],
     // n.parsed is the real numerator when the build supplies it. Reconstructing one
@@ -1178,51 +1159,30 @@ ${stats([
       ? `${pct(summary.n.parsed, summary.n.rows)} of ${num(summary.n.rows)}`
       : `${Math.round(summary.parsedShare * 100)}%`],
   ])}
-${underReview(manifest)}      <section id="indications">
-        <h2>Indications<span class="count">${num(indications.length)}</span></h2>
-        <ul class="results">${indications.map(({ indicationKey, sources }) => {
-    const p = indicationPaths.get(`${drugKey}/${indicationKey}`);
-    const rawOnly = !groupIndications.has(indicationKey);
-    const label = `${esc(indicationLabel(indicationKey))} <span class="muted">n=${num(sources)}${rawOnly ? ', raw only' : ''}</span>`;
-    return `<li>${p ? `<a href="${p}">${label}</a>` : label}</li>`;
-  }).join('')}</ul>
-      </section>
-${dists.length ? `      <section id="distributions">
-        <h2>Published distributions<span class="count">${num(dists.length)}</span></h2>
-        <p class="muted">Only groups with at least ${MIN_SOURCES} sources publish a distribution; thinner groups show their count alone.</p>
-        <div class="scroll"><table class="dose">
-          <thead><tr><th>Indication</th><th>Population</th><th>Sources</th><th>Median</th><th>Middle half</th><th>Unit</th></tr></thead>
-          <tbody>${dists.map(g => `<tr><td>${esc(indicationLabel(g.key.indicationKey))}</td><td>${esc(groupLabel(g.key))}</td><td>${num(g.n.sources)}</td><td>${esc(fmtNum(g.dist.median))}</td><td>${esc(fmtNum(g.dist.p25))}&ndash;${esc(fmtNum(g.dist.p75))}</td><td>${esc(unitLabel(g.key))}</td></tr>`).join('')}</tbody>
-        </table></div>
+${abroadNote(abroad)}${dists.length ? `      <section id="distributions">
+        <table class="spread">
+          <thead><tr><th>Indication</th><th>Spread: box is the middle half, dot means most agree</th><th>Range</th></tr></thead>
+          <tbody>${rowsHtml}</tbody>
+        </table>
       </section>` : ''}
-${named.html}${pageless > 0
-    ? `      <p class="honest">${withheldSentence(pageless).trim()}</p>\n`
-    : ''}`;
-
-  const rail = `${citePanel('cite', [
-    esc(`United States EMS Protocol Census, ${drugLabel(drugKey)}: n=${summary.n.sources} protocols from ${summary.n.agencies} named agencies / ${summary.n.states} states, as of ${manifest.asOf}`),
-  ])}
-          <p class="muted railnote">Each distribution on this page carries its own n. A per-indication figure is narrower than this medication-wide one, and the group's own citation line is the one to quote for it.</p>
-${railLinks('Indications', indications
-    .filter(({ indicationKey }) => indicationPaths.has(`${drugKey}/${indicationKey}`))
-    .map(({ indicationKey }) => [indicationLabel(indicationKey), indicationPaths.get(`${drugKey}/${indicationKey}`)]))}
-${railLinks('Related', [
-    ['All medications and states', '/census/'],
+${rest.length ? `      <p class="also" id="indications">${dists.length ? `Too few protocols to chart yet (protocols in brackets): ` : ''}${rest.map(({ indicationKey, sources }) =>
+    `${indLink(indicationKey)} <span class="muted">(${num(sources)}${groupIndications.has(indicationKey) ? '' : ', no numbers'})</span>`).join(', ')}</p>` : ''}
+${underReview(manifest)}${footRow([
+    named.html,
+    citePanel('cite', [
+      esc(`United States EMS Protocol Census, ${drugLabel(drugKey)}: n=${summary.n.sources} protocols from ${summary.n.agencies} named agencies / ${summary.n.states} states, as of ${manifest.asOf}`),
+    ]),
+  ], [
     ['Methodology', '/census/methodology/'],
     ['Data license', '/census/data-license/'],
-  ])}
-          <section class="panel" id="study">
-            <h2>Know your own numbers</h2>
-            <p>This page is the national spread. What you are held to is your agency's document &mdash; upload it and the app quizzes you on ${esc(drugLabel(drugKey))} the way YOUR protocol writes it, every answer cited to its page.</p>
-            <p class="panel-cta"><a href="/app/">Study your protocols</a></p>
-          </section>`;
+    ['Study your own protocol in the app', '/app/'],
+  ])}`;
 
   return {
     path: `/census/drugs/${slug(drugKey)}/`,
     html: page({
-      rail,
       title: `${drugLabel(drugKey)} EMS dose by protocol - indications and routes`,
-      description: `How ${num(summary.n.sources)} US EMS protocols dose ${drugLabel(drugKey)}: indications, routes, and adult vs pediatric distributions from published protocols.`,
+      description: `How ${num(summary.n.sources)} ${abroad ? '' : 'US '}EMS protocols dose ${drugLabel(drugKey)}: indications, routes, and adult vs pediatric distributions from published protocols.`,
       path: `/census/drugs/${slug(drugKey)}/`,
       trail: [['Home', '/'], ['EMS Census', '/census/'], [drugLabel(drugKey), `/census/drugs/${slug(drugKey)}/`]],
       body,
@@ -1230,7 +1190,7 @@ ${railLinks('Related', [
   };
 }
 
-function indicationPageV3(drugKey, indicationKey, groups, { pageAgencies, manifest }) {
+function indicationPageV3(drugKey, indicationKey, groups, { pageAgencies, manifest, agencyByKey = new Map() }) {
   // Groups here differ only by (population, perKg, unit) — a weight-based dose and a
   // flat dose are different quantities and never share a distribution.
   const ordered = [...groups].sort((a, b) => b.n.sources - a.n.sources
@@ -1293,7 +1253,6 @@ ${routes.length ? `        <h3>Routes</h3>
   const body = `${docHeader({
     kind: 'Indication',
     title: `${esc(drugLabel(drugKey))} for ${esc(indicationLabel(indicationKey))}`,
-    signals: [manifest.flaggedRows ? signalPill('review', `${num(manifest.flaggedRows)} under review`) : signalPill('current', 'Current')],
     chips: [
       `${sourcesFloor ? 'at least ' : ''}${num(totals.sources)} sources`,
       `${num(totals.agencies)} named agencies`,
@@ -1309,7 +1268,7 @@ ${stats([
     ['entries', num(totals.rows)],
     ['named here', num(named.count)],
   ])}
-${underReview(manifest)}${distSections}
+${abroadNote(abroadCount(new Set(ordered.flatMap(g => g.agencyKeys ?? [])), agencyByKey))}${underReview(manifest)}${distSections}
 ${named.html}`;
 
   // One cite panel per page, carrying the LEAD group's citation line — the one a
@@ -1480,92 +1439,56 @@ const contents = items => `          <nav class="panel toc" aria-label="On this 
 
 function methodologyPage(manifest) {
   const m = manifest;
+  const s = (n, one, many) => (n === 1 ? one : many);
   const body = `${docHeader({
     kind: 'Methodology',
     title: 'How the EMS Census is built',
-    chips: [
-      `${num(m.documents)} documents`,
-      `${num(m.namedAgencies)} named agencies`,
-      `${num(m.doseRows)} dose entries`,
-      `as of ${m.asOf}`,
-    ],
-    lede: `Everything on the census comes from protocol documents agencies themselves published. This page says where each document came from, what was read out of it, what was not, and which numbers are therefore safe to quote. As of ${esc(m.asOf)}.`,
+    chips: [],
+    lede: `Every number here comes from protocols agencies publish and protocols app users upload. As of ${esc(m.asOf)}.`,
   })}
 ${stats([
     ['documents', num(m.documents)],
     ['named agencies', num(m.namedAgencies)],
     ['dose entries', num(m.doseRows)],
     ['machine-parsed', shareOf(m.dosesParsed, m.doseRows)],
-    ['comparable groups', num(m.compareGroups)],
-    ['as of', m.asOf],
   ])}
 
       <section id="origin">
-        <h2>How a document reaches us</h2>
-        <p>Each document carries an <strong>origin</strong>, one of six values, derived at build time and never guessed: <strong>app</strong> (a medic uploaded their own agency's protocol), <strong>seed</strong> (we collected a published document directly), <strong>watch</strong> (a scheduled re-check of a page an agency publishes to), <strong>wayback</strong> (an Internet Archive capture), <strong>device</strong> (recovered from an app corpus), and <strong>unknown</strong>. A document minted before origin was recorded reads <strong>unknown</strong> rather than claiming a provenance it cannot prove.</p>
-        <p>Nothing here is a copy of an agency's PDF. The census links to the agency's own source where one is known, and hosts no protocol documents.</p>
+        <h2>Where documents come from</h2>
+        <p>Medics upload their own agency's protocol, or we add a published one. Each document keeps its <strong>origin</strong> and is identified by the hash of its contents, so a re-post is the same document and a revision is a new one. We host no PDFs; we link to the agency's own copy.</p>
+        <p>Only public agencies (state, regional, county, city, fire district) are named. Others count toward totals, unnamed. A document whose agency or date is unsettled waits in pending review: ${num(m.pendingReview)} of ${num(m.documents)} right now.</p>
       </section>
 
-      <section id="identity">
-        <h2>Document identity is a content hash</h2>
-        <p>A document is identified by the hash of its contents, not by its filename, its URL, or the agency's name for it. Two agencies posting byte-identical files are one document; the same protocol re-posted at a new URL is still the same document; a revision is a new one. That is what makes a version history possible at all, and it is why a re-upload of a file we already hold adds nothing.</p>
-      </section>
-
-      <section id="classification">
-        <h2>Classification and what stays unpublished</h2>
-        <p>A model reads each document to find the agency, the state, and the jurisdiction, and records a <strong>confidence</strong> of high, medium, low, or user (a value a person supplied). A document whose identity is not settled goes to <strong>pending review</strong> instead of being listed &mdash; the reasons are a name that collided with an existing agency, a merge chain that could not be resolved, a document with no readable agency, and a version whose date could not be placed. Of ${num(m.documents)} documents, ${num(m.pendingReview)} ${m.pendingReview === 1 ? 'is' : 'are'} in that state and ${m.pendingReview === 1 ? 'does' : 'do'} not appear anywhere on the census.</p>
-        <p>An agency is named only where its protocols are a public record &mdash; statewide, regional, county, city, or fire-district. Everything else contributes to counts and distributions as an unnamed source and never gets a page. ${num(m.listedNamed)} ${m.listedNamed === 1 ? 'document is' : 'documents are'} listed with a name; ${num(m.listedAggregate)} ${m.listedAggregate === 1 ? 'contributes' : 'contribute'} to aggregates only.</p>
-      </section>
-
-      <section id="extraction">
-        <h2>What is read out of a document, and what is not</h2>
-        <p>Extraction pulls medication, indication, population, dose, route, repeat interval, and standing-order status. It does not read a protocol's narrative, its flowcharts as flowcharts, or anything a human reader would infer from layout.</p>
-        <p>Two corpus shapes feed the census, and their limits are different. One carries page numbers; the other carries none, so <strong>page not captured</strong> is the majority case and is not a defect. The second shape also carries no standing-order flag, so <strong>standing</strong> is absent rather than false on those entries &mdash; the census never renders an absent flag as "not a standing order", because absence of a flag is not evidence of the negative. Pediatric age bands were lost upstream on the second shape entirely: ${num(m.rowsPedsExcluded)} of ${num(m.doseRows)} entries (${pct(m.rowsPedsExcluded, m.doseRows)}) ${m.rowsPedsExcluded === 1 ? 'is a pediatric entry' : 'are pediatric entries'} with no age band, and ${m.rowsPedsExcluded === 1 ? 'it is' : 'they are'} excluded from every distribution and every outlier check on this site. ${m.rowsPedsExcluded === 1 ? 'It is' : 'They are'} still counted, and ${m.rowsPedsExcluded === 1 ? 'it still appears' : 'they still appear'} on their agency's own page as written.</p>
-      </section>
-
-      <section id="parse">
-        <h2>Parsed, partial, and raw</h2>
-        <p>A dose string is either parsed to a number with a unit and a route, parsed partially (a number and a unit but no route), or kept raw &mdash; a string like "per medical control" that carries no number at all. Today: ${shareOf(m.dosesParsed, m.doseRows)} parsed, ${shareOf(m.dosesPartial, m.doseRows)} partial, ${shareOf(m.dosesRaw, m.doseRows)} raw.</p>
-        <p><strong>A raw entry never enters a distribution.</strong> It is real data and it is shown as written on its agency's page, and it is counted in the entry totals &mdash; but it has no number, so putting it in a median would mean inventing one. Every distribution on this site says how many entries under it carry a machine-readable number.</p>
-      </section>
-
-      <section id="units">
-        <h2>Units, per-kilogram doses, and ranges</h2>
-        <p>Mass units are canonicalized to milligrams: micrograms and grams convert, so 300 mcg and 0.3 mg are the same value in the same group. <strong>Nothing else converts.</strong> Millilitres need a concentration the documents do not carry, and units, milliequivalents and joules are not doses of a mass at all &mdash; each is its own group and is never folded into another.</p>
-        <p>A weight-based dose and a flat dose are separate groups for the same reason: 0.01 mg/kg and 1 mg are not the same quantity and never share a median.</p>
-        <p><strong>A range contributes its low end only.</strong> "0.3&ndash;0.5 mg" enters a distribution as 0.3. The high end is kept and shown on the agency page, but it never enters a distribution or an outlier check &mdash; counting both ends would let one entry vote twice, and picking the high end would overstate every range in the census.</p>
+      <section id="doses">
+        <h2>How doses are compared</h2>
+        <ul>
+          <li>Mass units are canonicalized to mg (300 mcg = 0.3 mg). Nothing else converts; mL, units and joules stay separate.</li>
+          <li>Weight-based and flat doses never share a median.</li>
+          <li>A range contributes its low end only: 0.3&ndash;0.5 mg counts as 0.3.</li>
+          <li>A raw entry never enters a distribution (for example "per medical control"). ${shareOf(m.dosesRaw, m.doseRows)} are raw.</li>
+          <li>One vote per protocol, and a distribution needs ${MIN_SOURCES} or more protocols.</li>
+          <li>When the agreed dose, or the median, equals the dose a national guideline states for that drug, indication and population, or falls inside the range it states, the row says so and links the guideline: NASEMSO's National Model EMS Clinical Guidelines, American Heart Association algorithms, or a national society's guidance. A dose that differs gets no tag.</li>
+        </ul>
       </section>
 
       <section id="sources">
         <h2>Sources and named agencies are two different counts</h2>
-        <p>A <strong>source</strong> is one protocol document. A <strong>named agency</strong> is a source whose agency is a public record and is identified on the census. Every distribution is built one value per source &mdash; a document that lists a medication five times gets one vote, its own median, not five &mdash; so a verbose document cannot decide a median for everyone.</p>
-        <p>Both counts appear on every published number, in the form "n=&lt;sources&gt; protocols from &lt;agencies&gt; named agencies / &lt;states&gt; states". Sources are always the larger number, and quoting one for the other is the mistake the two-part citation exists to prevent.</p>
-        <p>A group publishes a distribution only at <strong>${MIN_SOURCES} or more sources</strong>. Below that the census shows the count and nothing else: five documents is thin, and four is not a distribution.</p>
+        <p>A source is one protocol document; a named agency is a public one we identify. Sources are always the larger number.</p>
       </section>
 
       <section id="outliers">
         <h2>Outlier review</h2>
-        <p>Every night, each group's entries are checked against a reference built from all of that group's parsed entries &mdash; one value per source, and the median of those values. An entry more than three times that median, or less than a third of it, is <strong>flagged</strong>, in groups of at least ${MIN_SOURCES} sources. Flagging is one pass with no feedback: clearing or removing an entry changes nothing about the reference or about any other entry's flag, so the same documents produce the same flags every night.</p>
-        <p>A flagged entry is suppressed everywhere &mdash; every page, every distribution, every count of published rows &mdash; until a person reviews it and either clears it (it returns) or rejects it (it stays out). It is counted before it is removed, so the size of the review queue is visible: ${num(m.flaggedRows)} of ${num(m.doseRows)} entries (${pct(m.flaggedRows, m.doseRows)}) ${m.flaggedRows === 1 ? 'is' : 'are'} under review right now, ${num(m.rejectedRows)} ${m.rejectedRows === 1 ? 'has' : 'have'} been reviewed and rejected, and ${num(m.publishedRows)} ${m.publishedRows === 1 ? 'is' : 'are'} published.</p>
-        <p>The two distributions are named on purpose. Flags are judged against the reference built <em>before</em> any suppression; the numbers this site publishes are computed <em>after</em> it. A flag is a claim about one entry against its peers, not a claim about the published median.</p>
+        <p>Nightly, any dose over 3 times or under a third of its group's median is likely a misread, so it is left out of every number until checked. It is one pass with no feedback, so the same documents give the same flags. ${num(m.flaggedRows)} of ${num(m.doseRows)} entries (${pct(m.flaggedRows, m.doseRows)}) ${s(m.flaggedRows, 'is', 'are')} left out right now.</p>
       </section>
 
       <section id="accuracy">
-        <h2>Accuracy: not yet measured</h2>
-        <p><strong>We do not publish a dose-level accuracy number, because we have not measured one.</strong> What exists today is a hand-labelled comparison of medication names, indication text, contraindications and adverse effects &mdash; no dose value in it is ever compared against a document. Publishing an extraction-success rate or a model-agreement figure in place of accuracy would be quoting a measurement of a different thing, and it would read as the number this section does not have.</p>
-        <p>What is measured, and lives on this page because it comes from the build itself: the share of entries that parse to a number (${pct(m.dosesParsed, m.doseRows)}), the share under outlier review (${pct(m.flaggedRows, m.doseRows)}), and the share of pediatric entries excluded for having no age band (${pct(m.rowsPedsExcluded, m.doseRows)}).</p>
-        <p>Every page here carries the same warning, and it is the honest one: this is a training reference compiled from published protocols, not a clinical order. Verify against your own agency's document and your medical director.</p>
+        <h2>Accuracy</h2>
+        <p>We do not publish a dose-level accuracy number, because we have not measured one. This is a training reference, not a clinical order. Check your own protocol and medical director.</p>
       </section>
 
       <section id="corrections">
-        <h2>Corrections and removal</h2>
-        <p>If a listing is wrong, send the current document's public URL from the agency page's correction form and the listing is rebuilt from it. If an agency wants its listing removed, it comes down the same day &mdash; no argument about whether the document is a public record.</p>
-      </section>
-
-      <section id="freshness">
-        <h2>Freshness</h2>
-        <p>A document more than 24 months old is flagged as possibly outdated on its agency's page, and a newer version awaiting review is disclosed with its date. The build itself refuses to publish when the number of named agencies drops sharply against the last published build &mdash; a collapse in coverage is a broken build, and shipping it would quietly replace the census with a smaller one.</p>
-        <p>The as-of date on every page is the date the data changed, not the date the page was generated. A page that did not change is not rewritten.</p>
+        <h2>Corrections and freshness</h2>
+        <p>Send a newer public link and the listing is rebuilt. If an agency wants its listing removed, it comes down the same day. Documents over 24 months old are marked as possibly outdated, and the build refuses to publish when the number of named agencies drops sharply.</p>
       </section>
 
       <section id="cite">
@@ -1574,17 +1497,12 @@ ${stats([
       </section>`;
 
   const rail = `${contents([
-    ['How a document reaches us', 'origin'],
-    ['Document identity is a content hash', 'identity'],
-    ['Classification and what stays unpublished', 'classification'],
-    ['What is read out of a document', 'extraction'],
-    ['Parsed, partial, and raw', 'parse'],
-    ['Units, per-kilogram doses, and ranges', 'units'],
+    ['Where documents come from', 'origin'],
+    ['How doses are compared', 'doses'],
     ['Sources and named agencies', 'sources'],
     ['Outlier review', 'outliers'],
-    ['Accuracy: not yet measured', 'accuracy'],
-    ['Corrections and removal', 'corrections'],
-    ['Freshness', 'freshness'],
+    ['Accuracy', 'accuracy'],
+    ['Corrections and freshness', 'corrections'],
     ['Citation', 'cite'],
   ])}
 ${railLinks('Related', [
@@ -1597,7 +1515,7 @@ ${railLinks('Related', [
     html: page({
       rail,
       title: 'How the EMS Protocol Census is built - methodology',
-      description: 'Where census documents come from, what is read out of them, what is not captured, how doses are compared, how outliers are reviewed, and why no dose-level accuracy number is published.',
+      description: 'Where census documents come from, what is included and what is not, how doses are compared, how outliers are reviewed, and why no dose-level accuracy number is published.',
       path: '/census/methodology/',
       trail: [['Home', '/'], ['EMS Census', '/census/'], ['Methodology', '/census/methodology/']],
       body,
@@ -1615,56 +1533,35 @@ function dataLicensePage() {
     kind: 'License',
     title: 'Census data license',
     chips: ['Summaries CC BY 4.0', 'Not for sale', 'Same-day takedown'],
-    lede: 'What you may do with the numbers on this site, what is not published, and how to have a listing corrected or removed.',
   })}
 
+      <section id="takedown" class="contact">
+        <h2>Take it down or fix it</h2>
+        <p>Any agency can have its listing added, corrected or removed, the same day. No reason needed. Or email <a href="mailto:${CONTACT}">${CONTACT}</a>.</p>
+        <p><a class="bigbtn" href="${requestUrl('fix')}">Add, fix, or remove a listing</a></p>
+      </section>
+
+      <section id="sources">
+        <h2>Where the documents come from</h2>
+        <p>Protocols reach the census two ways: documents public agencies post, and protocols ProtoQuiz app users upload to study. Only public agencies are named. Some documents from private services, hospitals or training programs count toward anonymous totals; others, and any we cannot identify, are left out of the figures.</p>
+        <p>Uploaded files are never published, sold, or shared outside our service providers; census records do not store who uploaded a document, and uploaders are never named. Content from our agency platform is never used. The documents belong to the agencies that wrote them; nothing here licenses them. Figures are informational only, not clinical guidance, and provided without warranty.</p>
+      </section>
+
       <section id="summaries">
-        <h2>Summaries and comparisons: CC BY 4.0</h2>
-        <p>The aggregate figures published on this site &mdash; the distributions, counts, route shares, and the <code>compare.json</code> file behind them &mdash; are licensed under the <a href="https://creativecommons.org/licenses/by/4.0/" rel="nofollow noopener">Creative Commons Attribution 4.0 International license</a>. Use them and republish them. The one condition is attribution.</p>
-        <h3>How to cite</h3>
-        <p>Every number the census publishes carries its own citation line, and that line is the attribution:</p>
+        <h2>Summaries: CC BY 4.0</h2>
+        <p>The figures on this site, and the <code>compare.json</code> behind them, are licensed <a href="https://creativecommons.org/licenses/by/4.0/" rel="nofollow noopener">Creative Commons Attribution 4.0</a> (CC BY 4.0). Reuse them with attribution: quote the citation line printed beside the number, n and date included.</p>
         <p class="cite">United States EMS Protocol Census, n=&lt;sources&gt; protocols from &lt;agencies&gt; named agencies / &lt;states&gt; states, updated &lt;month year&gt;</p>
-        <p>Quote it as printed on the page you took the number from. The n and the as-of date are part of the number, not decoration: a distribution over 6 protocols and one over 60 are different claims, and a figure from a year ago is a different claim again.</p>
       </section>
 
       <section id="rows">
-        <h2>Row-level data is not published, sold, or shared</h2>
-        <p>The underlying dose rows &mdash; every entry, per agency, per document, with its source pages and version history &mdash; are <strong>not published</strong> and are not covered by the license above. There is no bulk download and no row-level API on this site. The per-agency tables on agency pages are the public record for that agency, published as pages, not as a dataset.</p>
-        <p>The census is not for sale. Its data is never sold, licensed, or shared with anyone, at row level or in bulk. A researcher who wants one agency's data should ask that agency: it published the document, and it decides what to release.</p>
-      </section>
-
-      <section id="documents">
-        <h2>The documents themselves</h2>
-        <p>The census hosts no protocol PDFs. Each listing links to the agency's own published source where one is known. The documents belong to the agencies that wrote them, and nothing here grants a license to them.</p>
-      </section>
-
-      <section id="takedown">
-        <h2>Corrections, opt-out, and takedown</h2>
-        <p>An agency that wants its listing corrected, or removed from the census entirely, gets it the same day. Send the request from the correction form on the agency's page, or write to <a href="mailto:jaden@protoquiz.com">jaden@protoquiz.com</a>. We do not require a reason and we do not argue about whether a document is a public record &mdash; if an agency asks, it comes down.</p>
-        <p>Removal takes the agency's name, its page, and its entries out of the census. Aggregate figures published before the removal are not retracted, but the agency is not named in anything published after it.</p>
-      </section>
-
-      <section id="terms">
-        <h2>Full terms</h2>
-        <p>This page states the license for census data. The site's full <a href="/terms/">Terms of Service</a> govern everything else. See <a href="/census/methodology/">how the census is built</a> for what the numbers mean.</p>
+        <h2>Not for sale</h2>
+        <p>Row-level data is not published, and is never sold, licensed, or shared. No bulk download, no API. Agency pages are for reading, not a dataset.</p>
+        <p>Full <a href="/terms/">Terms of Service</a> &middot; <a href="/census/methodology/">Methodology</a></p>
       </section>`;
-
-  const rail = `${contents([
-    ['Summaries and comparisons', 'summaries'],
-    ['Not published, sold, or shared', 'rows'],
-    ['The documents themselves', 'documents'],
-    ['Corrections, opt-out, and takedown', 'takedown'],
-    ['Full terms', 'terms'],
-  ])}
-${railLinks('Related', [
-    ['Methodology', '/census/methodology/'],
-    ['All medications and states', '/census/'],
-  ])}`;
 
   return {
     path: '/census/data-license/',
     html: page({
-      rail,
       title: 'EMS Census data license - CC BY 4.0 summaries, data not for sale',
       description: 'Census summaries and compare.json are CC BY 4.0 with attribution. Row-level data is not published, sold, licensed, or shared. Corrections and removals are handled the same day.',
       path: '/census/data-license/',
@@ -1690,7 +1587,12 @@ ${files.map(f => `  <sitemap>\n    <loc>${ORIGIN}/${f}</loc>\n    <lastmod>${las
 
 // -------------------------------------------------------------------- build
 
-export function buildPages({ documents, agencies, doses, ledger, manifest, compare = null }) {
+export function buildPages({ documents, agencies, doses, ledger, manifest, compare = null, guidelines = [] }) {
+  const guidelineByKey = new Map();
+  for (const g of [...guidelines].sort((a, b) => (b.body === 'NASEMSO') - (a.body === 'NASEMSO'))) {
+    const k = groupKeyOf(g.key);
+    guidelineByKey.set(k, [...(guidelineByKey.get(k) ?? []), g]);
+  }
   const agencyByKey = new Map(agencies.map(a => [a.agencyKey, a]));
   const docByHash = new Map(documents.map(d => [d.hash, d]));
   const files = [];
@@ -1750,6 +1652,8 @@ export function buildPages({ documents, agencies, doses, ledger, manifest, compa
   const pageAgencies = new Map(linkableAgencies.map(a => [a.agencyKey, a]));
 
   let drugKeys = [];
+  // The landing's chips: the drugs the most named agencies carry, from the engine rollup.
+  let popular = [];
   if (manifest.indicationMapReviewed) {
     // Two passes in both branches: indication pages first, so drug pages only link
     // to ones that exist.
@@ -1775,7 +1679,7 @@ export function buildPages({ documents, agencies, doses, ledger, manifest, compa
           // per-kg, unit) groups reached MIN_SOURCES. Sub-threshold groups still
           // render on that page, as counts with no distribution.
           if (!rs.some(g => g.n.sources >= MIN_SOURCES)) continue;
-          const p = indicationPageV3(drugKey, indKey, rs, { pageAgencies, manifest });
+          const p = indicationPageV3(drugKey, indKey, rs, { pageAgencies, manifest, agencyByKey });
           indicationPaths.set(`${drugKey}/${indKey}`, p.path);
           indicationPages.push(p);
         }
@@ -1785,9 +1689,14 @@ export function buildPages({ documents, agencies, doses, ledger, manifest, compa
         // A drug with groups but no rollup is a build bug, not something to paper
         // over with a page whose stats are invented.
         if (!summary) continue;
-        files.push(drugPageV3(drugKey, { summary, groups: gs, indicationPaths, pageAgencies, manifest }));
+        // The same bar as an indication page: under MIN_SOURCES protocols (or a
+        // non-English name from a foreign book) a drug page is one row and says nothing.
+        if (summary.n.sources < MIN_SOURCES || !browseDrugs([drugKey]).length) continue;
+        files.push(drugPageV3(drugKey, { summary, groups: gs, indicationPaths, pageAgencies, manifest, guidelineByKey, agencyByKey }));
         drugKeys.push(drugKey);
       }
+      popular = compare.drugs.filter(d => drugKeys.includes(d.drugKey) && browseDrugs([d.drugKey]).length)
+        .sort((a, b) => b.n.agencies - a.n.agencies || a.drugKey.localeCompare(b.drugKey)).slice(0, 6).map(d => d.drugKey);
     } else {
       const byDrug = groupBy(doses, r => r.drugKey);
       for (const [drugKey, rows] of byDrug) {
@@ -1799,16 +1708,17 @@ export function buildPages({ documents, agencies, doses, ledger, manifest, compa
         }
       }
       for (const [drugKey, rows] of byDrug) {
-        files.push(drugPage(drugKey, { rows, indicationPaths }));
+        files.push(drugPage(drugKey, { rows, indicationPaths, agencyByKey }));
         drugKeys.push(drugKey);
       }
     }
     files.push(...indicationPages);
   }
 
+  if (drugKeys.length) files.push(drugsIndexPage(drugKeys));
   files.push(landingPage({
     manifest, states: statesWithPages, drugs: drugKeys, agencyPageCount: agencyPages.length,
-    agencies: linkableAgencies, documents,
+    agencies: linkableAgencies, allAgencies: agencies, documents, popular,
   }));
   files.push(methodologyPage(manifest));
   files.push(dataLicensePage());
@@ -1876,164 +1786,175 @@ const CSS = `:root{
   --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,monospace;
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:1rem;line-height:1.65;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:1rem;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 a{color:var(--link);text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
 a:hover{text-decoration-thickness:2px}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+[hidden]{display:none!important}
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
 
-/* The site header is shared chrome now (assets/chrome.css). Census must not restyle
-   header, .nav-links or .brand: doing so is what made the site look like four
-   different companies. Census owns everything BELOW the header, starting at .pbar. */
+/* The site header is shared chrome (assets/chrome.css). Census owns everything BELOW
+   the header, starting at the research bar. */
 
-/* census product bar: the one loud element besides the document header */
-.pbar{background:var(--ground);border-bottom:1px solid var(--rule)}
-.pbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.pbar-mark{padding:14px 0;font-weight:600;font-size:1.05rem;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
-.pbar-mark:hover{color:var(--accent)}
-.pbar-nav{display:flex;gap:20px;flex-wrap:wrap;align-self:stretch;align-items:stretch}
-.pbar-nav a{display:flex;align-items:center;padding:14px 0;font-size:.875rem;font-weight:500;color:var(--muted);text-decoration:none;border-bottom:2px solid transparent;margin-bottom:-1px}
-.pbar-nav a:hover{color:var(--ink)}
-.pbar-nav a.on{color:var(--ink);font-weight:600;border-bottom-color:var(--accent)}
-
-main{padding:24px 0 72px}
-.crumbs{font-size:.8125rem;color:var(--muted);margin:0 0 20px}
+main{padding:14px 0 32px}
+.crumbs{font-size:.8125rem;color:var(--muted);margin:0 0 12px}
 .crumbs a{color:var(--muted);text-decoration:none}
 .crumbs a:hover{color:var(--link);text-decoration:underline}
 .crumbs .sep{margin:0 6px;opacity:.6}
 
-.layout{display:grid;grid-template-columns:minmax(0,1fr) 316px;gap:56px;align-items:start}
-.layout.facets{grid-template-columns:264px minmax(0,1fr)}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:48px;align-items:start}
 .layout.solo{grid-template-columns:minmax(0,1fr)}
 .col{min-width:0}
 .rail{min-width:0;display:flex;flex-direction:column;gap:16px;position:sticky;top:16px}
 
-/* document header bar */
-.dochead{border-bottom:1px solid var(--rule);padding-bottom:20px;margin-bottom:28px}
-.badge{display:block;font-size:.8125rem;font-weight:500;color:var(--muted);margin:0 0 4px}
-h1{font-size:1.8125rem;line-height:1.25;margin:0 0 8px;font-weight:600;letter-spacing:-.015em}
-.meta{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 0}
-.chip,.pill{display:inline-block;border:1px solid var(--rule);border-radius:var(--r);padding:2px 8px;font-size:.8125rem;line-height:1.5;color:var(--muted);background:var(--panel);font-variant-numeric:tabular-nums}
+/* document header */
+.dochead{border-bottom:1px solid var(--rule);padding-bottom:12px;margin-bottom:14px}
+.badge{display:block;font-size:.8125rem;font-weight:500;color:var(--muted);margin:0 0 2px}
+h1{font-size:1.625rem;line-height:1.25;margin:0 0 6px;font-weight:600;letter-spacing:-.015em}
+.meta{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 0}
+.chip,.pill{display:inline-block;border:1px solid var(--rule);border-radius:var(--r);padding:1px 8px;font-size:.8125rem;line-height:1.5;color:var(--muted);background:var(--panel);font-variant-numeric:tabular-nums}
 .pill{font-weight:500;background:transparent}
 .sig-current{color:var(--sig-current);border-color:color-mix(in oklch,var(--sig-current) 40%,var(--rule))}
 .sig-review{color:oklch(0.48 0.13 75);border-color:color-mix(in oklch,var(--sig-review) 50%,var(--rule))}
 .sig-superseded{color:var(--muted)}
 
-/* ---------------------------------------------------------------- the hero
-   The landing is the brand register; every detail page stays in the research
-   register above. The scale jump is the whole move: a 700-weight statement at
-   ~3.5x the body, tightened, against a 400-weight dek. One family, one accent. */
-.hero{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,5vw,72px);align-items:center;margin:4px 0 clamp(40px,6vw,64px);padding-bottom:clamp(36px,5vw,56px);border-bottom:1px solid var(--rule)}
-.hero-say{min-width:0}
-.hero .badge{margin:0 0 14px}
-.hero h1{font-size:clamp(2.125rem,4.4vw,3.9rem);line-height:1.05;letter-spacing:-.035em;font-weight:700;margin:0 0 22px;max-width:15ch;text-wrap:balance}
-.hero .dek{font-size:clamp(1rem,1.2vw,1.0625rem);line-height:1.62;color:var(--muted);margin:0;max-width:54ch}
+h2{font-size:1.125rem;line-height:1.35;margin:24px 0 10px;font-weight:600;letter-spacing:-.01em;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+h3{font-size:1rem;margin:18px 0 6px;font-weight:600;color:var(--ink)}
+h4{font-size:.875rem;margin:12px 0 4px;font-weight:600;color:var(--ink)}
+.count{font-family:var(--mono);font-size:.75rem;font-weight:400;color:var(--muted);background:var(--panel);border:1px solid var(--rule);border-radius:999px;padding:0 7px;margin-left:6px;font-variant-numeric:tabular-nums}
+h2 .unit{font-family:var(--mono);font-size:.875rem;font-weight:400;color:var(--muted)}
+p{margin:0 0 10px;max-width:72ch}
+.lede{font-size:1rem;color:var(--muted);margin:6px 0 0;max-width:72ch}
+.honest,.cite{font-size:.875rem;color:var(--muted)}
 
-/* the US map: states shaded by documents held, one hue, agency-page states outlined */
-.hero-map{margin:0;min-width:0}
+/* one dense line of counts: the landing scale line and the page stats */
+.summary{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px;margin:0 0 12px;font-size:.9375rem;color:var(--muted);max-width:none}
+.summary .n{font-family:var(--mono);font-weight:500;color:var(--ink);font-variant-numeric:tabular-nums}
+.summary .sep{width:1px;align-self:stretch;background:var(--rule);margin:2px 2px}
+.stats{display:flex;flex-wrap:wrap;gap:2px 16px;margin:0 0 14px;font-size:.875rem;color:var(--muted)}
+.stat .v{font-family:var(--mono);font-weight:500;color:var(--ink);font-variant-numeric:tabular-nums;margin-right:4px}
+
+.warn{background:oklch(0.975 0.035 85);border:1px solid oklch(0.86 0.075 80);border-radius:var(--r);padding:8px 12px;font-size:.9375rem;margin:0 0 12px;max-width:72ch}
+
+/* the landing tool: title, counts, one search box beside the findings carousel */
+.tool{margin:0 0 14px}
+.tool.has-slides{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,440px);gap:16px 48px;align-items:start}
+.tool .slides{margin:0}
+.tool .filter{margin-top:16px}
+.chips{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:0 0 8px}
+.chips .muted{margin-right:4px}
+.chips a{font-size:.8125rem;padding:4px 10px;border:1px solid var(--rule);border-radius:999px;background:var(--ground);color:var(--ink);text-decoration:none}
+.chips a:hover{border-color:var(--muted)}
+/* the States tab: the map beside the list */
+.statemap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:12px 32px;align-items:start}
+.statemap ul.stategrid{columns:2}
+.usmap-fig{margin:0}
 .usmap{display:block;width:100%;height:auto}
 .usmap .s{stroke:var(--ground);stroke-width:.9}
+.usmap a .s{cursor:pointer}
+.usmap a:hover .s{fill:var(--link)}
 .usmap .r0,.legend .r0{fill:var(--panel);background:var(--panel)}
 .usmap .r1,.legend .r1{fill:oklch(0.92 0.03 27);background:oklch(0.92 0.03 27)}
 .usmap .r2,.legend .r2{fill:oklch(0.83 0.07 27);background:oklch(0.83 0.07 27)}
 .usmap .r3,.legend .r3{fill:oklch(0.66 0.15 27);background:oklch(0.66 0.15 27)}
 .usmap .r4,.legend .r4{fill:oklch(0.48 0.17 27);background:oklch(0.48 0.17 27)}
-.usmap .named{fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linejoin:round;pointer-events:none}
+.usmap .named{stroke:var(--ink);stroke-width:1.6;stroke-linejoin:round}
+.legend{display:flex;flex-wrap:wrap;gap:4px 12px;margin:6px 0 0;font-size:.75rem;color:var(--muted)}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:2px;margin-right:5px;vertical-align:-1px;border:1px solid var(--rule)}
 .legend .named{background:none;border:2px solid var(--ink)}
-.usmap text{font-family:var(--mono);font-size:10px;font-weight:500;text-anchor:middle;fill:var(--ground);pointer-events:none}
-.legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin:12px 0 0;font-size:.78rem;color:var(--muted)}
-.legend i{display:inline-block;width:13px;height:13px;border-radius:2px;margin-right:6px;vertical-align:-2px;border:1px solid var(--rule)}
-.hero-map figcaption{margin:16px 0 0;font-size:.8125rem;line-height:1.55;color:var(--muted);max-width:46ch}
-.hero-map figcaption .n{font-family:var(--mono);font-weight:500;color:var(--ink);font-variant-numeric:tabular-nums}
+.tool h1{margin:0 0 4px}
+.filter{display:block;width:100%;max-width:560px;font:inherit;font-size:1rem;padding:9px 12px;border:1px solid var(--rule);border-radius:var(--r);background:var(--ground);color:var(--ink);margin:0 0 12px}
+.filter:focus-visible{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+.tabnav{display:flex;gap:20px;border-bottom:1px solid var(--rule);margin:0 0 12px;overflow-x:auto}
+.tabnav a{padding:6px 0;font-weight:500;font-size:.9375rem;color:var(--muted);text-decoration:none;border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap}
+.tabnav a[aria-selected=true]{color:var(--ink);border-bottom-color:var(--accent)}
+/* No JS: :target picks the tab, Drugs by default. JS: data-tab picks it, and a
+   search shows every tab that has a hit. */
+.tabs:not(.js) section{display:none}
+.tabs:not(.js) section:target,.tabs:not(.js):not(:has(section:target)) section:first-of-type{display:block}
+.tabs.js section{display:none}
+.tabs.js[data-tab=drugs] #drugs,.tabs.js[data-tab=states] #states,.tabs.js[data-tab=agencies] #agencies,.tabs.js.searching section{display:block}
+.tabs.js:not(.searching) section>h2{display:none}
+.tabs section>h2{margin-top:8px}
+.tabs.searching .tabnav{display:none}
 
-/* the one page-load moment: the map fades up, nothing else moves */
-@media(prefers-reduced-motion:no-preference){
-  .usmap{opacity:0;animation:map-in .5s cubic-bezier(.22,1,.36,1) forwards}
-}
-@keyframes map-in{from{opacity:0}to{opacity:1}}
+/* compact link columns; long names clip to one line and keep their title */
+ul.cols{list-style:none;padding:0;margin:0 0 10px;columns:3;column-gap:20px}
+ul.cols li{break-inside:avoid;padding:1px 0;font-size:.875rem;line-height:1.5}
+ul.cols.four{columns:4}
+ul.cols.six{columns:6}
+ul.cols.four li,ul.cols.six li{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+ul.cols a{text-decoration:none}
+ul.cols a:hover{text-decoration:underline}
+/* long landing lists show their first rows; "Show all" (JS only) opens the rest */
+.more{display:none;font:inherit;font-size:.875rem;font-weight:500;color:var(--link);background:var(--panel);border:1px solid var(--rule);border-radius:var(--r);padding:4px 12px;cursor:pointer;margin:2px 0 8px}
+.tabs.js:not(.searching) .more{display:inline-block}
+.tabs.js:not(.searching) ul.six.clip:not(.all)>li:nth-child(n+61),.tabs.js:not(.searching) ul.four.clip:not(.all)>li:nth-child(n+41){display:none}
+ul.stategrid{columns:5}
+ul.stategrid li{display:flex;justify-content:space-between;gap:8px}
+ul.stategrid .count{margin:0;border:0;background:none;padding:0}
+ul.inline{list-style:none;padding:0;margin:0 0 12px;display:flex;flex-wrap:wrap;gap:6px}
+ul.inline li{background:var(--panel);border:1px solid var(--rule);border-radius:var(--r);padding:2px 10px;font-size:.875rem;font-variant-numeric:tabular-nums}
+ul.results{list-style:none;padding:0;margin:0;border-top:1px solid var(--rule)}
+ul.results li{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:6px 4px;border-bottom:1px solid var(--rule)}
 
-/* why it matters: a flowing list of statements, not a grid of cards */
-.why{margin:0 0 clamp(36px,5vw,52px)}
-.why h2{margin-top:0}
-ul.claims{list-style:none;padding:0;margin:0;max-width:68ch}
-ul.claims li{padding:14px 0;border-bottom:1px solid var(--rule);font-size:1rem;line-height:1.6;color:var(--muted)}
-ul.claims li:first-child{border-top:1px solid var(--rule)}
-ul.claims strong{font-weight:600;color:var(--ink)}
+/* folds: one line until opened */
+details.fold{border-top:1px solid var(--rule)}
+details.fold>summary{cursor:pointer;padding:7px 2px;font-size:.9375rem;font-weight:500;display:flex;align-items:baseline;gap:8px;min-width:0}
+details.fold>summary{list-style:none}
+details.fold>summary::-webkit-details-marker{display:none}
+details.fold>summary::before{content:"\\25B8";color:var(--muted);transition:transform .15s}
+details.fold[open]>summary::before{transform:rotate(90deg)}
+.actions details.fold>summary::before{content:none}
+details.fold>summary .names{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:400;font-size:.8125rem;color:var(--muted)}
+details.fold[open]>summary{margin-bottom:6px}
+#doses details.fold:last-of-type{border-bottom:1px solid var(--rule)}
+.drug h3{margin:12px 0 4px}
 
-h2{font-size:1.25rem;line-height:1.35;margin:44px 0 12px;font-weight:600;letter-spacing:-.01em;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
-h3{font-size:1.05rem;margin:28px 0 8px;font-weight:600;color:var(--ink)}
-h2 .count{font-family:var(--mono);font-size:.8125rem;font-weight:400;color:var(--muted);background:var(--panel);border:1px solid var(--rule);border-radius:999px;padding:0 8px;font-variant-numeric:tabular-nums}
-h2 .unit{font-family:var(--mono);font-size:.875rem;font-weight:400;color:var(--muted)}
-p{margin:0 0 12px;max-width:72ch}
-.lede{font-size:1.05rem;color:var(--muted);margin:8px 0 0;max-width:72ch}
-.honest,.cite{font-size:.875rem;color:var(--muted)}
+/* the bottom row: small links, plus folds that open to full width */
+.actions{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 20px;margin:20px 0 8px;padding-top:10px;border-top:1px solid var(--rule);font-size:.875rem}
+.actions details.fold{border:0}
+.actions details.fold>summary{padding:0;font-size:.875rem;color:var(--link);font-weight:400}
+.actions details.fold[open]{flex-basis:100%;padding:8px 0}
+.actions details.fold[open]>summary{margin-bottom:8px}
+.actions>a{white-space:nowrap}
 
-/* the headline counts, as one dense line rather than tiles */
-.summary{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;margin:0 0 16px;font-size:.9375rem;color:var(--muted);max-width:none}
-/* the scale line sits between the hero and the argument, so the size registers first */
-.summary.scale{margin:calc(-1 * clamp(24px,4vw,44px)) 0 clamp(36px,5vw,52px);font-size:1rem}
-.summary.scale .n{font-size:1.125rem}
-.summary .n{font-family:var(--mono);font-weight:500;color:var(--ink);font-variant-numeric:tabular-nums}
-.summary .sep{width:1px;align-self:stretch;background:var(--rule);margin:2px 4px}
+/* the drug page: one row per distribution, a /research box plot beside the digits */
+table.spread{min-width:0;width:100%}
+table.spread th{white-space:normal}
+table.spread th[scope=row]{font-weight:500;background:none;white-space:normal;color:var(--ink);font-size:.875rem}
+table.spread tr.cont th,table.spread tr.cont td{border-top:0}
+table.spread th[scope=row],table.spread td{vertical-align:middle;padding:3px 10px;line-height:1.4}
+table.spread td:nth-child(2){width:140px}
+.rng{white-space:nowrap;font-family:var(--mono);font-size:.8125rem}
+.rng .muted{font-family:var(--sans);margin-left:6px}
+.rng .gl{font-family:var(--sans);font-size:.75rem;color:var(--muted);margin-left:6px;white-space:nowrap}
+.rng .gl:hover{color:var(--link)}
+.box{display:block;width:120px;height:15px;overflow:visible}
+.box .w{stroke:#0072B2;stroke-width:1.5;fill:none}
+.box rect{fill:#E69F00;stroke:#0072B2;stroke-width:1.5}
+.box .m{stroke:#0b2a4a;stroke-width:2.5}
+.box .agree{fill:#E69F00;stroke:#0b2a4a;stroke-width:1.5}
+.also{font-size:.875rem;color:var(--muted);max-width:none;margin:10px 0}
 
-/* stats keep their markup (asserted by the page tests); only the look changed */
-.stats{display:flex;flex-wrap:wrap;gap:0;margin:0 0 20px;border:1px solid var(--rule);border-radius:var(--r);background:var(--panel);overflow:hidden}
-.stat{flex:1 1 132px;padding:10px 14px;border-right:1px solid var(--rule)}
-.stat:last-child{border-right:0}
-.stat .v{display:block;font-family:var(--mono);font-size:1.05rem;font-weight:500;font-variant-numeric:tabular-nums;line-height:1.4}
-.stat .l{display:block;font-size:.8125rem;color:var(--muted);line-height:1.4}
-
-.warn{background:oklch(0.975 0.035 85);border:1px solid oklch(0.86 0.075 80);border-radius:var(--r);padding:10px 14px;font-size:.9375rem;margin:0 0 16px;max-width:72ch}
-
-/* dense hairline tables, mono numerals, no zebra, hover a panel tint */
-.scroll{overflow-x:auto;overscroll-behavior-x:contain;border:1px solid var(--rule);border-radius:var(--r);margin:0 0 16px}
-/* min-width:100% rather than width:100%: a table with more columns than fit takes its
-   natural width and scrolls inside .scroll, instead of crushing its last column to one
-   character per line. A table that does fit still fills the panel. */
+/* dense hairline tables, mono numerals */
+.scroll{overflow-x:auto;overscroll-behavior-x:contain;border:1px solid var(--rule);border-radius:var(--r);margin:0 0 10px}
 table{min-width:100%;border-collapse:collapse;font-size:.875rem;font-variant-numeric:tabular-nums}
-th{text-align:left;font-weight:600;color:var(--muted);background:var(--panel);border-bottom:1px solid var(--rule);padding:8px 12px;white-space:nowrap;font-size:.8125rem}
-td{padding:8px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
-tbody tr:last-child td{border-bottom:0}
+th{text-align:left;font-weight:600;color:var(--muted);background:var(--panel);border-bottom:1px solid var(--rule);padding:6px 10px;white-space:nowrap;font-size:.8125rem}
+td{padding:5px 10px;border-bottom:1px solid var(--rule);vertical-align:top}
+tbody th{border-bottom:1px solid var(--rule)}
+tbody tr:last-child td,tbody tr:last-child th{border-bottom:0}
 tbody tr:hover{background:var(--panel)}
 table.dose td:nth-child(n+3),table.coverage td:nth-child(n+2){font-family:var(--mono)}
 table.dose td:nth-child(3){white-space:nowrap}
-/* the source cell is prose, not a number: it wraps inside its own column instead of
-   forcing the table wider than the panel it sits in */
 td.src{font-family:var(--sans);white-space:nowrap}
 .src,.muted{color:var(--muted);font-size:.8125rem}
 .raw{font-family:var(--mono);font-size:.8125rem}
 
-/* landing results rows and facet rail */
-ul.results{list-style:none;padding:0;margin:0;border-top:1px solid var(--rule)}
-ul.results li{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:9px 4px;border-bottom:1px solid var(--rule)}
-ul.results li:hover{background:var(--panel)}
-ul.results li>a{font-weight:500}
-ul.facets{list-style:none;padding:0;margin:0;font-size:.875rem}
-ul.facets li{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:4px 0}
-ul.facets a{text-decoration:none;color:var(--link)}
-ul.facets a:hover{text-decoration:underline}
-ul.facets .count{font-family:var(--mono);font-size:.8125rem;color:var(--muted);font-variant-numeric:tabular-nums}
-ul.cols{list-style:none;padding:0;margin:0 0 12px;columns:3;column-gap:24px}
-ul.cols li{break-inside:avoid;padding:3px 0;font-size:.9375rem}
-ul.cols.four{columns:4}
-/* states as a compact grid: name and its named-agency count on one line */
-ul.stategrid{list-style:none;padding:0;margin:0 0 12px;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:0 24px}
-ul.stategrid li{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:7px 2px;border-bottom:1px solid var(--rule);font-size:.9375rem}
-ul.stategrid a{font-weight:500}
-ul.stategrid .count{font-family:var(--mono);font-size:.78rem;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
-.landing-foot{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:start;margin:44px 0 0}
-ul.inline{list-style:none;padding:0;margin:0 0 12px;display:flex;flex-wrap:wrap;gap:6px}
-ul.inline li{background:var(--panel);border:1px solid var(--rule);border-radius:var(--r);padding:3px 10px;font-size:.875rem;font-variant-numeric:tabular-nums}
-
-/* rail panels */
-.panel{border:1px solid var(--rule);border-radius:var(--r);padding:14px 16px;background:var(--ground)}
-.panel h2{font-size:.9375rem;margin:0 0 10px;font-weight:600}
-/* The one outbound product link on a census page. Census is a public record and
-   stays one: this is a single quiet line, not a banner over the data. */
-.panel-cta{margin:10px 0 0}
-.panel-cta a{font-weight:600}
+/* rail panels (methodology, license, indication pages) */
+.panel{border:1px solid var(--rule);border-radius:var(--r);padding:12px 14px;background:var(--ground)}
+.panel h2{font-size:.9375rem;margin:0 0 8px;font-weight:600}
 .panel p{font-size:.875rem;margin:0 0 10px;max-width:none}
-.railnote{font-size:.8125rem;margin:0;padding:0 2px}
 ul.railnav{list-style:none;padding:0;margin:0;font-size:.875rem}
 ul.railnav li{padding:4px 0;border-bottom:1px solid var(--rule)}
 ul.railnav li:last-child{border-bottom:0}
@@ -2044,21 +1965,22 @@ ul.railnav a:hover{text-decoration:underline}
 .toc li{padding:3px 0}
 .toc a{text-decoration:none;color:var(--muted)}
 .toc a:hover{color:var(--link);text-decoration:underline}
+.rail details.fold{border:1px solid var(--rule);border-radius:var(--r);padding:0 12px}
 
 /* cite this */
-.citebox{border:1px solid var(--rule);border-radius:var(--r);background:var(--panel);padding:10px 12px;margin:0 0 10px}
+.citebox{border:1px solid var(--rule);border-radius:var(--r);background:var(--panel);padding:8px 12px;margin:0 0 8px;max-width:72ch}
 .citebox .cite{font-family:var(--mono);font-size:.8125rem;line-height:1.55;color:var(--ink);margin:0;word-break:break-word}
 .citebox .cite+.cite{margin-top:6px}
-.copybtn{font:inherit;font-size:.875rem;font-weight:500;color:var(--ink);background:var(--panel);border:1px solid var(--rule);border-radius:var(--r);padding:5px 12px;cursor:pointer}
+.copybtn{font:inherit;font-size:.875rem;font-weight:500;color:var(--ink);background:var(--panel);border:1px solid var(--rule);border-radius:var(--r);padding:4px 12px;cursor:pointer}
 .copybtn:hover{background:oklch(0.94 0.008 250)}
 .copybtn.ok{color:var(--sig-current);border-color:color-mix(in oklch,var(--sig-current) 45%,var(--rule))}
 
-/* the five-number range bar: min to max track, middle half filled, median tick */
-.five{margin:0 0 16px}
-.five-track{position:relative;height:10px;background:var(--panel);border:1px solid var(--rule);border-radius:var(--r);margin:14px 0 4px}
+/* the five-number range bar on indication pages */
+.five{margin:0 0 14px}
+.five-track{position:relative;height:10px;background:var(--panel);border:1px solid var(--rule);border-radius:var(--r);margin:12px 0 4px}
 .five-iqr{position:absolute;top:-1px;bottom:-1px;background:color-mix(in oklch,var(--accent) 22%,var(--ground));border:1px solid color-mix(in oklch,var(--accent) 55%,var(--rule));border-radius:3px}
 .five-med{position:absolute;top:-5px;bottom:-5px;width:2px;background:var(--accent);border-radius:1px}
-.five-ends{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.75rem;color:var(--muted);font-variant-numeric:tabular-nums;margin:0 0 10px}
+.five-ends{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.75rem;color:var(--muted);font-variant-numeric:tabular-nums;margin:0 0 8px}
 .five-nums{min-width:0;width:auto;font-size:.8125rem}
 .five-nums th{background:transparent;border-bottom:1px solid var(--rule);padding:4px 16px 4px 0;font-weight:500}
 .five-nums td{font-family:var(--mono);padding:4px 16px 4px 0;border-bottom:0}
@@ -2070,40 +1992,39 @@ ul.railnav a:hover{text-decoration:underline}
 .hist tbody tr:hover{background:transparent}
 .bar{display:block;height:10px;background:var(--accent);border-radius:2px;min-width:2px}
 
-/* forms, as a compact rail panel */
-.submit-form{display:flex;flex-direction:column;gap:4px;margin:0}
-.submit-form label{font-size:.8125rem;color:var(--muted)}
-.submit-form input{background:var(--ground);border:1px solid var(--rule);border-radius:var(--r);color:var(--ink);padding:6px 10px;font:inherit;font-size:.875rem;width:100%}
-.submit-form input:focus-visible{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
-.submit-form button{align-self:flex-start;margin-top:8px;background:var(--accent);color:oklch(0.99 0.003 250);border:1px solid var(--accent);border-radius:var(--r);padding:6px 14px;font:inherit;font-weight:500;font-size:.875rem;cursor:pointer}
-.submit-form button:hover{background:oklch(0.46 0.19 27)}
-.submit-form button[disabled]{opacity:.5;cursor:default}
-.submit-form .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-.form-msg{font-size:.8125rem;color:var(--muted);min-height:1.2em;margin:8px 0 0}
+/* the one request link: a button to /research/request/ */
+.bigbtn{display:inline-block;font-weight:600;font-size:.9375rem;padding:8px 16px;border-radius:var(--r);background:#0072B2;color:#fff;text-decoration:none}
+.bigbtn:hover{background:#005f94;text-decoration:none}
+.request{margin:0 0 10px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px}
+.contact{border:1px solid var(--rule);border-radius:var(--r);padding:12px 16px;background:var(--panel);margin:0 0 8px}
+.contact h2{margin-top:0}
 
 /* The site footer is shared chrome (assets/chrome.css); census only styles the
-   disclaimer band that sits above it. */
-.census-disclaimer{border-top:1px solid var(--rule);padding:24px 0;background:var(--panel);margin-top:24px}
+   one-line disclaimer that sits above it. */
+.census-disclaimer{border-top:1px solid var(--rule);padding:10px 0;background:var(--panel)}
 .census-disclaimer p{max-width:none}
-.disclaimer{border:1px solid var(--rule);border-radius:var(--r);background:var(--ground);padding:10px 14px;margin:0;max-width:72ch;color:var(--muted);font-size:.8125rem}
+.disclaimer{margin:0;color:var(--muted);font-size:.8125rem}
 
 @media(max-width:960px){
-  .layout,.layout.facets{grid-template-columns:minmax(0,1fr);gap:32px}
+  .layout{grid-template-columns:minmax(0,1fr);gap:24px}
   .rail,.toc{position:static}
-  ul.cols,ul.cols.four{columns:2}
-  .landing-foot{grid-template-columns:minmax(0,1fr)}
-  /* hero and map stack; the map keeps its aspect via viewBox and simply gets wider */
-  .hero{grid-template-columns:minmax(0,1fr);gap:32px}
-  .hero h1{max-width:20ch}
-  .hero-map figcaption{max-width:none}
+  ul.cols{columns:2}
+  ul.cols.four{columns:2}
+  ul.cols.six,ul.stategrid{columns:3}
+  .tool.has-slides,.statemap{grid-template-columns:minmax(0,1fr)}
 }
 @media(max-width:640px){
+  .wrap{padding:0 16px}
   ul.cols,ul.cols.four{columns:1}
-  .summary.scale{margin-top:-16px}
-  h1{font-size:1.5rem}
-  .hero h1{font-size:2rem;letter-spacing:-.028em;max-width:none}
-  .stat{flex:1 1 100%;border-right:0;border-bottom:1px solid var(--rule)}
-  .stat:last-child{border-bottom:0}
+  ul.cols.six,ul.stategrid,.statemap ul.stategrid{columns:2}
+  .tabs.js:not(.searching) ul.six.clip:not(.all)>li:nth-child(n+31),.tabs.js:not(.searching) ul.four.clip:not(.all)>li:nth-child(n+21){display:none}
+  h1{font-size:1.375rem}
+  table.spread td:nth-child(2){width:84px}
+  table.spread th[scope=row],table.spread td{padding:3px 6px;overflow-wrap:anywhere}
+  .box{width:76px}
+  .rng{white-space:normal}
+  .rng .muted{display:block;margin:0}
+  .rng .muted+.gl{display:block;margin:0}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 `;

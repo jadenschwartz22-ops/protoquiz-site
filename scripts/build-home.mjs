@@ -11,20 +11,20 @@ const LANES = [
   { cls: 'lane lane-1', num: '01', title: 'For providers',
     icon: '<rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18.5h2"/>',
     stroke: 'var(--lane)',
-    body: "Upload your agency's protocol PDF and study what you'll actually be held to on shift, not a national average.",
-    points: ['Page-cited answers', 'Scoped to your cert level', 'Free to start'],
-    note: 'iOS &amp; Android', cta: 'Get the app', href: '/app/', ghost: false },
+    body: "Upload your agency's protocol PDF and study what you'll actually be held to on shift, not the NREMT.",
+    points: ['Algorithms and pharmacology', 'AI-generated scenarios', 'Learn the pathophysiology'],
+    note: 'Free to use &middot; iOS &amp; Android', cta: 'Get the app', href: '/app/', ghost: false },
   { cls: 'lane lane-2', num: '02', title: 'For agencies',
     icon: '<path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M9.5 21v-6h5v6"/>',
     stroke: 'var(--lane)',
-    body: 'Load your protocols once. Every crew member trains on the current version, and you see who’s behind before QA does.',
-    points: ['Medical-director sign-off', 'Compliance dashboard', 'Your own subdomain'],
+    body: 'An organization-wide training platform built on your protocols. Onboard faster, train consistently, address weak areas before QA/QI, and log the time for your CE record.',
+    points: ['Train on shift, time logged for CE', 'See which topics need work', 'Live 7 days after you send your protocol'],
     note: '$25 / seat / quarter', cta: 'See how it works', href: '/agency/', ghost: false },
   { cls: 'lane lane-3', num: '03', title: 'Research',
     icon: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/>',
     stroke: 'var(--lane)',
-    body: 'A public record built from public documents: what agencies carry, and who answers the 911 call in each county.',
-    points: ['Compare agencies side by side', 'Sourced to the original document', 'Open for research and press'],
+    body: "An open reference on how EMS differs across the US: EMS protocols, and who provides EMS in each county. The goal is more consistent EMS through open data.",
+    points: ['Compare protocols side by side', 'Sourced to the original document', 'Free, and not for sale'],
     note: 'Free &amp; open', cta: 'Explore the research', href: '/research/', ghost: true },
 ];
 
@@ -49,14 +49,14 @@ const html = `<!doctype html>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ProtoQuiz - Protocol training for EMS</title>
-  <meta name="description" content="Protocol training for EMS. An app for individual providers, a platform for agencies, and a public record of what American EMS agencies carry.">
+  <meta name="description" content="Protocol training for EMS. An app for individual providers, a platform for agencies, and an open reference comparing EMS protocols across the country.">
   <link rel="canonical" href="https://protoquiz.com/">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
   <link rel="alternate" hreflang="en" href="https://protoquiz.com/">
   <link rel="alternate" hreflang="x-default" href="https://protoquiz.com/">
   <meta name="robots" content="index,follow">
   <meta property="og:title" content="ProtoQuiz - Protocol training for EMS">
-  <meta property="og:description" content="An app for individual providers, a platform for agencies, and a public record of what American EMS agencies carry.">
+  <meta property="og:description" content="An app for individual providers, a platform for agencies, and an open reference comparing EMS protocols across the country.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://protoquiz.com/">
   <meta property="og:image" content="https://protoquiz.com/og-image.png">
@@ -68,7 +68,7 @@ const html = `<!doctype html>
   <meta name="theme-color" content="#f6f7f9">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="ProtoQuiz - Protocol training for EMS">
-  <meta name="twitter:description" content="An app for individual providers, a platform for agencies, and a public record of what American EMS agencies carry.">
+  <meta name="twitter:description" content="An app for individual providers, a platform for agencies, and an open reference comparing EMS protocols across the country.">
   <meta name="twitter:image" content="https://protoquiz.com/og-image.png">
   <meta name="twitter:image:alt" content="ProtoQuiz - protocol training for EMS.">
   <link rel="icon" href="/favicon.ico?v=4" sizes="any">
@@ -89,7 +89,7 @@ ${jsonLd({
   logo: 'https://protoquiz.com/logo-256.png',
   description: 'Protocol training for EMS. Built by a working paramedic.',
   parentOrganization: { '@type': 'Organization', name: 'Teach Me To Live LLC' },
-  sameAs: ['https://apps.apple.com/app/id6753611139'],
+  sameAs: ['https://apps.apple.com/app/id6753611139', 'https://play.google.com/store/apps/details?id=com.tmtl.emsprotoquiz'],
 })}
   </script>
   <script type="application/ld+json">
@@ -108,11 +108,10 @@ ${NAV_HTML}
 
   <main id="main">
     <section class="hero">
-      <img class="hero-mark" src="/logo-256.png" alt="" width="72" height="72">
       <div>
         <div class="hero-eyebrow">Protocol training for EMS</div>
         <h1>Welcome to ProtoQuiz.</h1>
-        <p>An app for individual providers, a platform for agencies, and a public record of what American EMS agencies carry.</p>
+        <p>An app for individual providers, a platform for agencies, and an open reference comparing EMS protocols across the country.</p>
       </div>
     </section>
 

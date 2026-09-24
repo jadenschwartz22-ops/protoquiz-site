@@ -26,7 +26,7 @@ main{padding-bottom:64px;}
 }
 
 .res-hero{padding-top:20px;padding-bottom:0;}
-.res-headline{padding-top:36px;}
+.res-headline{padding-top:20px;}
 .res-eyebrow{
   font-family:var(--mono,"IBM Plex Mono",ui-monospace,monospace);
   font-size:11px;letter-spacing:.18em;text-transform:uppercase;
@@ -34,12 +34,12 @@ main{padding-bottom:64px;}
 }
 .res-hero h1{
   font-size:clamp(1.6rem,2.6vw,2.1rem);line-height:1.1;letter-spacing:-.028em;
-  font-weight:700;margin:0 0 10px;max-width:26ch;text-wrap:balance;
+  font-weight:700;margin:0 0 8px;max-width:26ch;text-wrap:balance;
 }
 
 /* Map. The SVG is the page's one big object, so it gets a ceiling: unbounded it
    renders at its own 960x600 and pushes the table off the first screen. */
-.res-map-wrap{padding-top:40px;padding-bottom:8px;}
+.res-map-wrap{padding-top:20px;padding-bottom:8px;}
 .research-map{margin:0;}
 .rm-svg{display:block;width:100%;max-width:860px;height:auto;margin:0 auto;}
 .rm-svg .cty{stroke:#fff;stroke-width:.3;vector-effect:non-scaling-stroke;}
@@ -52,7 +52,10 @@ main{padding-bottom:64px;}
 /* The viewport takes the whole measure. It used to sit at 860px inside a 1072px column,
    which made every county a ~12px target (many under 7px) in a box with dead margins --
    the map read as decoration you could not actually use. */
-.rm-view{position:relative;width:100%;margin:0 auto;overflow:hidden;touch-action:none;cursor:grab;background:#f7f5f0;border-radius:10px;}
+.rm-view{position:relative;width:100%;margin:0 auto;overflow:hidden;touch-action:none;cursor:grab;background:#f7f5f0;border-radius:10px;-webkit-user-select:none;user-select:none;}
+/* user-select:none: without it every drag is also a text-selection drag, and Chrome
+   hit-tests all 3,133 county paths for the selection on each mousemove. */
+.rm-panel{-webkit-user-select:text;user-select:text;}
 .rm-view.is-panning{cursor:grabbing;}
 .rm-view .rm-svg{max-width:none;width:100%;transform-origin:0 0;will-change:transform;}
 /* The hit target is the county fill. Without this a county is only hoverable on its
@@ -73,7 +76,7 @@ main{padding-bottom:64px;}
 /* County names, drawn over the map once it is zoomed in far enough that a county can
    hold its own name. pointer-events:none throughout -- a label must never eat the
    click meant for the county under it. */
-.rm-labels{position:absolute;inset:0;z-index:3;pointer-events:none;overflow:hidden;}
+.rm-labels{position:absolute;inset:0;z-index:3;pointer-events:none;overflow:hidden;will-change:transform;}
 .rm-label{
   position:absolute;transform:translate(-50%,-50%);
   font-size:10.5px;line-height:1;font-weight:600;letter-spacing:.01em;
@@ -197,7 +200,7 @@ main{padding-bottom:64px;}
 .res-method a{color:var(--link);}
 
 @media (max-width:640px){
-  .res-hero{padding-top:36px;}
+  .res-hero{padding-top:20px;}
   .res-headline{font-size:2rem;}
   .rm-cap,.res-table{font-size:.8125rem;}
 }
@@ -249,55 +252,90 @@ main{padding-bottom:64px;}
 .skip-link{position:absolute;left:-9999px;}
 .skip-link:focus{left:8px;top:8px;background:var(--ink);color:#fff;padding:8px 12px;z-index:10;}
 
-/* Umbrella page: one card per volume. Two columns so they read as siblings of equal
-   weight -- the census is further along, but the registry is not a footnote to it. */
+/* Umbrella page: a diptych, one column per volume, so they read as siblings of equal
+   weight -- the census is further along, but the registry is not a footnote to it.
+   The pair runs wider than the text bands (out to the nav's edges) because the two
+   visuals are the page's heroes. Each .vol is a subgrid over the section's rows, so the
+   visuals share one top line and one height, and eyebrow, title, question, body, stats
+   and standing line up across the columns row by row. */
 .res-vols{
-  max-width:1120px;margin:0 auto;padding:18px 24px 0;
-  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;
-  box-sizing:border-box;
+  max-width:1218px;margin:0 auto 18px;padding:22px 24px 0;box-sizing:border-box;
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(24px,3.5vw,48px);
 }
-.vol{padding:16px clamp(20px,3vw,44px) 18px 0;border-top:2px solid var(--ink);min-width:0;}
-.vol + .vol{padding-left:clamp(20px,3vw,44px);padding-right:0;border-left:1px solid var(--rule);}
+.vol{display:grid;grid-template-rows:subgrid;grid-row:span 8;align-content:start;min-width:0;}
 .vol-eyebrow{
   font-family:var(--mono,"IBM Plex Mono",ui-monospace,monospace);
-  font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
-  margin-bottom:10px;
+  font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);
+  margin:22px 0 6px;
 }
-.vol h2{font-size:1.1875rem;letter-spacing:-.022em;margin:0 0 5px;}
+.vol h2{font-size:clamp(1.5rem,2.2vw,1.875rem);line-height:1.1;font-weight:800;letter-spacing:-.03em;margin:0 0 8px;}
 .vol h2 a{color:var(--ink);text-decoration:none;}
 .vol h2 a:hover{text-decoration:underline;}
-.vol-q{font-size:.9375rem;line-height:1.4;color:var(--ink);margin:0 0 6px;font-weight:600;}
-.vol-body{font-size:.875rem;line-height:1.55;color:var(--muted);margin:0 0 11px;}
-.vol-stats{display:flex;flex-wrap:wrap;gap:6px 22px;margin:0 0 11px;}
+.vol-q{font-size:1.0625rem;line-height:1.4;color:var(--ink);margin:0 0 6px;font-weight:600;}
+.vol-body{font-size:.9375rem;line-height:1.55;color:var(--muted);margin:0 0 16px;max-width:62ch;}
+.vol-stats{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 20px;margin:0 0 14px;
+  padding-top:14px;border-top:2px solid var(--ink);align-self:start;
+}
 .vol-stats div{min-width:0;}
 .vol-stats dt{
-  font-size:1.375rem;font-weight:700;letter-spacing:-.02em;color:var(--ink);
+  font-size:clamp(1.75rem,2.6vw,2.25rem);line-height:1;font-weight:800;letter-spacing:-.035em;color:var(--ink);
   font-variant-numeric:tabular-nums;
 }
-.vol-stats dd{margin:2px 0 0;font-size:.8125rem;color:var(--muted);line-height:1.35;}
+.vol-stats dd{margin:6px 0 0;font-size:.8125rem;color:var(--muted);line-height:1.35;}
 /* Standing is the honesty line; it is styled as a label, not as marketing. */
 .vol-standing{
-  font-size:.78125rem;line-height:1.5;color:var(--muted);margin:0 0 11px;
-  padding-top:8px;border-top:1px solid var(--rule);
+  font-size:.8125rem;line-height:1.5;color:var(--muted);margin:0 0 12px;
+  padding-top:9px;border-top:1px solid var(--rule);align-self:start;
 }
 .vol-standing span{
   font-family:var(--mono,"IBM Plex Mono",ui-monospace,monospace);
   font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);
   margin-right:8px;
 }
-.vol-cta{font-size:.875rem;font-weight:600;color:var(--link);text-decoration:none;}
+.vol-cta{font-size:.9375rem;font-weight:700;color:var(--link);text-decoration:none;align-self:start;}
 .vol-cta:hover{text-decoration:underline;}
+
+/* The two stages. Same frame, same top, same height (the subgrid row stretches both);
+   the census is a white chart card, the atlas a tinted map plate. Charts and map scale
+   with their viewBox, so labels grow with the frame instead of shrinking. */
+.res-vols .vol-thumb{
+  margin:0;display:flex;flex-direction:column;min-width:0;position:relative;box-sizing:border-box;
+  border:1.5px solid color-mix(in oklch,var(--ink) 22%,var(--rule));border-radius:12px;
+  background:#fff;box-shadow:0 1px 0 var(--rule),0 10px 28px -18px oklch(0.3 0.03 260 / .35);
+  padding:16px 18px 12px;
+}
+.res-vols figure.vol-thumb{background:var(--panel);}
+.res-vols .vol-thumb .thumb-svg{max-height:none;border:0;background:none;border-radius:0;}
+.res-vols figure.vol-thumb > a{flex:1;display:flex;min-height:0;}
+.res-vols figure.vol-thumb .thumb-svg{height:100%;}
+.res-vols .vol-thumb figcaption{margin-top:8px;font-size:.78125rem;}
+.res-vols figure.vol-thumb:has(a:hover){border-color:var(--link);}
+.res-vols .slides-track{flex:1;}
+.res-vols .slide{display:flex;flex-direction:column;}
+.res-vols .slide > a{display:block;margin:auto 0;}
+.res-vols .slide figcaption{margin-top:0;padding-top:8px;}
+.res-vols .slide-t{font-size:1.25rem;font-weight:800;letter-spacing:-.022em;margin:0 0 10px;padding-right:184px;min-height:2.6em;}
+.res-vols .slide-soon{flex:1;background:var(--panel);}
+.res-vols .slides-nav{position:absolute;top:10px;right:12px;margin:0;}
+
+@media (max-width:760px){
+  .res-vols{grid-template-columns:1fr;padding:14px 16px 0;}
+  .vol{grid-row:auto;display:block;}
+  .vol > :not(.vol-thumb){margin-inline:8px;}
+  .vol + .vol{margin-top:40px;}
+  .vol-eyebrow{margin-top:18px;}
+  .res-vols .vol-thumb{padding:12px 12px 10px;}
+  .res-vols .slide-t{padding-right:0;min-height:0;font-size:1.125rem;}
+  .res-vols .slides-nav{position:static;margin-top:6px;}
+  .vol-stats{gap:10px 14px;}
+}
 
 /* The not-comparable table: same grid, visibly set apart from the ranked one. */
 .res-sub{font-size:1.125rem;letter-spacing:-.015em;margin:38px 0 8px;}
 .res-subnote{font-size:.8125rem;line-height:1.65;color:var(--muted);margin:0 0 14px;max-width:72ch;}
 .res-table-excluded{opacity:.78;}
 
-@media (max-width:760px){
-  .res-vols{grid-template-columns:1fr;}
-  .vol,.vol + .vol{padding:26px 0;border-left:0;}
-  .vol + .vol{border-top:2px solid var(--ink);}
-}
 
 /* Tier legend in the methods section. The chip carries the SAME opacity the map uses,
    so the definition and the drawing cannot drift apart. */
@@ -368,20 +406,33 @@ main{padding-bottom:64px;}
 .thumb-doses .t-track{stroke:var(--rule);stroke-width:1;}
 .thumb-doses .t-iqr{fill:#0072B2;fill-opacity:.32;}
 .thumb-doses .t-med{stroke:#0072B2;stroke-width:2.5;stroke-linecap:round;}
-.thumb-doses .t-x{font:700 11px/1 var(--mono,ui-monospace,monospace);fill:var(--accent);}
+.thumb-doses .t-x{font:700 11px/1 var(--mono,ui-monospace,monospace);fill:var(--ink);}
+.thumb-doses .t-whisk{stroke:#0072B2;stroke-width:1.5;}
+.thumb-doses .t-box{fill:#E69F00;stroke:#0072B2;stroke-width:1.5;}
+.thumb-doses .t-med{stroke:#0b2a4a;stroke-width:2.5;}
+.thumb-doses .t-agree{fill:#E69F00;stroke:#0b2a4a;stroke-width:1.5;}
+.thumb-doses .t-agree-x{font:700 10px/1 var(--sans,system-ui);fill:var(--ink);}
 
-/* Carriage chart: share of agencies carrying each medication. A plain bar, because the
-   question ("do you carry it?") is a proportion and nothing else. */
+/* Carriage chart: where agencies split. One 0-100% axis, the 25-75% zone tinted, a dashed
+   line at half. The core kit is a strip of dots; each advanced drug is one dot. */
 .thumb-carry .t-drug{font:600 12px/1 var(--sans,system-ui);fill:var(--ink);}
-.thumb-carry .t-bg{fill:var(--rule);fill-opacity:.5;}
+.thumb-carry .t-ind{font:400 10px/1 var(--sans,system-ui);fill:var(--muted);}
 .thumb-carry .t-bar{fill:#0072B2;}
-.thumb-carry .t-x{font:700 11px/1 var(--mono,ui-monospace,monospace);fill:var(--muted);}
+.thumb-carry .t-x{font:700 11px/1 var(--mono,ui-monospace,monospace);fill:var(--ink);}
+.thumb-carry .t-track{stroke:var(--rule);stroke-width:1;}
+.thumb-carry .t-split{fill:#E69F00;fill-opacity:.13;}
+.thumb-carry .t-half{stroke:#0b2a4a;stroke-width:1;stroke-dasharray:3 3;}
+.thumb-carry .t-zone{font:600 9px/1 var(--mono,ui-monospace,monospace);letter-spacing:.08em;text-transform:uppercase;fill:var(--muted);}
+.thumb-carry .t-zone-hi{fill:#9a6700;}
+.thumb-carry .t-tick{font:400 9px/1 var(--mono,ui-monospace,monospace);fill:var(--muted);}
+.thumb-carry .t-core{fill:#0072B2;fill-opacity:.55;}
+.thumb-carry .t-dot{fill:#0072B2;stroke:#0b2a4a;stroke-width:1;}
 
 /* "Why we are building this": the argument behind the arm, behind a native disclosure so
    the volumes stay above the fold. <details> needs no JS, prints open, and is open to a
    crawler regardless of state. The measure is narrower than the page: this is prose to be
    read, not a band to be scanned. */
-.res-about{margin:14px 0 0;}
+.res-about{margin:8px 0 0;}
 .res-about summary{
   display:inline-block;cursor:pointer;list-style:none;
   font-family:var(--mono,"IBM Plex Mono",ui-monospace,monospace);
@@ -567,3 +618,108 @@ main{padding-bottom:64px;}
 .res-table .a-cd{color:#009E73;font-weight:600;}
 .pc-svg .pc-cond{font:600 11px/1 var(--mono,ui-monospace,monospace);fill:#009E73;}
 .pc-svg .pc-head-cond{fill:#009E73;}
+
+
+/* Census findings slideshow. Scroll-snap does the sliding and the swipe; the inline script
+   only wires the buttons and dots to it. */
+.slides-track{
+  display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;
+  overscroll-behavior-x:contain;border-radius:var(--r);
+}
+.slides-track::-webkit-scrollbar{display:none;}
+.slides-track:focus-visible{outline:2px solid var(--link);outline-offset:3px;}
+.slide{flex:0 0 100%;min-width:0;margin:0;scroll-snap-align:start;}
+.slide-t{margin:0 0 8px;font-size:1.0625rem;font-weight:700;letter-spacing:-.015em;color:var(--ink);}
+.slide-t span{display:block;margin-bottom:2px;font:500 10px/1.2 var(--mono,ui-monospace,monospace);letter-spacing:.14em;color:var(--muted);}
+.slide figcaption{margin-top:6px;font-size:.71875rem;line-height:1.45;color:var(--muted);}
+.slide-soon{
+  display:flex;align-items:center;justify-content:center;aspect-ratio:440/234;padding:20px;
+  box-sizing:border-box;text-align:center;font-size:.875rem;color:var(--muted);
+  flex-direction:column;gap:8px;
+  background:#fdfcfa;border:1px dashed var(--rule);border-radius:var(--r);
+}
+.slides-nav{display:flex;align-items:center;justify-content:center;gap:4px;margin-top:6px;}
+.slides-btn,.slides-dot{border:0;background:none;padding:0;cursor:pointer;font:inherit;color:var(--ink);}
+.slides-btn{width:32px;height:32px;border-radius:50%;font-size:22px;line-height:1;}
+.slides-btn:hover{background:var(--panel);}
+.slides-dot{width:24px;height:24px;display:grid;place-items:center;}
+.slides-dot::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--rule);}
+.slides-dot[aria-current]::before{background:var(--ink);}
+.slides-btn:focus-visible,.slides-dot:focus-visible{outline:2px solid var(--link);outline-offset:1px;}
+.thumb-form .t-axis{stroke:var(--muted);stroke-width:1;}
+.thumb-form .t-medline{stroke:var(--accent);stroke-width:1.5;stroke-dasharray:3 3;}
+.thumb-form .t-x{font-size:10px;fill:var(--muted);}
+
+/* /research/doses and /research/carry: chart on top, then a filtered, compact table.
+   Without JS the filter bar stays hidden and every row shows. */
+.fnd-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,440px);gap:12px 32px;align-items:center;}
+.fnd-fig{margin:0;max-width:560px;min-width:0;}
+.fnd-fig .thumb-svg{display:block;width:100%;height:auto;box-sizing:border-box;padding:8px 10px;background:#fdfcfa;border:1px solid var(--rule);border-radius:var(--r);}
+.fnd-fig figcaption{font-size:.8125rem;line-height:1.5;color:var(--muted);margin:0 0 8px;}
+.fnd-fig figcaption b{color:var(--ink);}
+.fnd-pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,440px);gap:12px 32px;align-items:center;}
+.fnd-pair h2{margin-top:0;}
+.fnd-note{font-size:.8125rem;line-height:1.5;color:var(--muted);margin:6px 0 0;}
+.fnd-rng strong{font-weight:700;color:var(--ink);}
+.fnd-of{color:var(--muted);}
+.fnd-hero + .res-table-wrap,.fnd-pair + .res-table-wrap{padding-top:24px;}
+.res-table-wrap h2 .fnd-sub{font-size:.8125rem;font-weight:400;letter-spacing:0;color:var(--muted);margin-left:6px;}
+.fnd-filter{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 10px;}
+.fnd-q{flex:0 1 220px;min-width:0;font:inherit;font-size:.875rem;padding:6px 10px;border:1px solid var(--rule);border-radius:var(--r);background:#fff;color:var(--ink);}
+.fnd-chips{display:flex;flex-wrap:wrap;gap:6px;}
+.fnd-chips button,.fnd-more button{font:inherit;font-size:.8125rem;padding:4px 10px;border:1px solid var(--rule);border-radius:999px;background:var(--ground);color:var(--ink);cursor:pointer;}
+.fnd-chips button[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:var(--ground);}
+.fnd-chips button:hover,.fnd-more button:hover{border-color:var(--muted);}
+.fnd-more{margin:10px 0 0;font-size:.8125rem;color:var(--muted);display:flex;gap:10px;align-items:center;}
+.fnd-table{min-width:0;}
+.fnd-table th,.fnd-table td{padding:5px 8px;}
+.fnd-table a{color:var(--link);}
+.fnd-table td.num{white-space:nowrap;}
+.fnd-drug{margin-left:8px;font-weight:400;font-size:.8125rem;color:var(--muted);}
+.fnd-rng{white-space:nowrap;font-variant-numeric:tabular-nums;}
+.fnd-box{width:110px;height:14px;vertical-align:middle;margin-right:10px;overflow:visible;}
+.fnd-box .w{stroke:#0072B2;stroke-width:1.5;fill:none;}
+.fnd-box rect{fill:#E69F00;stroke:#0072B2;stroke-width:1.5;}
+.fnd-box .m{stroke:#0b2a4a;stroke-width:2.5;}
+.fnd-box .agree{fill:#E69F00;stroke:#0b2a4a;stroke-width:1.5;}
+.fnd-bar{display:inline-block;width:120px;height:8px;margin-right:10px;border-radius:2px;background:color-mix(in oklch,var(--rule) 60%,transparent);vertical-align:middle;overflow:hidden;}
+.fnd-bar i{display:block;height:100%;background:#0072B2;}
+@media (max-width:760px){
+  .fnd-hero,.fnd-pair{grid-template-columns:minmax(0,1fr);}
+  .fnd-box{display:block;width:90px;margin:0 0 2px;}
+  .fnd-rng,.fnd-table tbody th{white-space:normal;}
+  .fnd-table thead th{letter-spacing:.04em;}
+  .fnd-chips{flex-wrap:nowrap;overflow-x:auto;width:100%;scrollbar-width:none;}
+  .fnd-chips button{flex:none;}
+  .fnd-q{flex:1 1 100%;}
+  .fnd-bar{width:70px;}
+  .fnd-drug{display:block;margin:0;}
+  .fnd-table th,.fnd-table td{padding:6px 5px;}
+  .fnd-rng span{font-size:.75rem;}
+}
+
+/* Folds on /research/atlas: long reference sections behind a native disclosure. */
+.res-fold{border-top:1px solid var(--rule);padding:4px 0;}
+.res-fold + .res-fold{border-top:1px solid var(--rule);}
+.res-fold summary{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;cursor:pointer;list-style:none;padding:10px 0;}
+.res-fold summary::-webkit-details-marker{display:none;}
+.res-fold summary::before{content:"\203A";display:inline-block;width:10px;color:var(--muted);transition:transform .15s;}
+.res-fold[open] summary::before{transform:rotate(90deg);}
+.res-fold summary h2{margin:0;font-size:1.0625rem;letter-spacing:-.015em;}
+.res-fold summary span{font-size:.8125rem;color:var(--muted);}
+.res-fold h3{font-size:.9375rem;letter-spacing:-.01em;margin:16px 0 6px;}
+.res-table-wrap:has(> .res-fold){padding-top:24px;}
+.res-method:has(> .res-fold){padding-top:0;}
+.slide-soon strong{font-size:1.375rem;letter-spacing:-.02em;color:var(--ink);}
+.slide-soon span{max-width:30ch;line-height:1.45;}
+.slide-soon .soon-badge{font:600 10px/1 var(--mono,ui-monospace,monospace);letter-spacing:.14em;text-transform:uppercase;color:#fff;background:#0072B2;padding:6px 9px;border-radius:999px;}
+
+/* By state: one thin 100% bar per state, grouped by how much the source can be trusted. */
+.res-fold summary h3{margin:0;font-size:.9375rem;letter-spacing:-.01em;}
+.st-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px 28px;padding:4px 0 14px;}
+.st-item{display:flex;align-items:center;gap:10px;min-width:0;}
+.st-item b{font-family:var(--mono,"IBM Plex Mono",ui-monospace,monospace);font-size:.75rem;font-weight:500;width:2.2em;flex:none;}
+.st-bar{display:flex;flex:1;height:12px;border-radius:2px;overflow:hidden;background:var(--panel);}
+.st-bar i{background:var(--m);}
+@media (max-width:860px){.st-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media (max-width:520px){.st-grid{grid-template-columns:1fr;}}

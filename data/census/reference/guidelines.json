@@ -1,0 +1,1162 @@
+{
+ "about": "Curated national-guideline first doses the census compares against: AHA/ILCOR algorithms, the NASEMSO National Model EMS Clinical Guidelines, and single-topic society guidance. Each entry quotes its source verbatim; dose (to max, when the guideline gives a range) is in the group unit. Several entries may share a key (two bodies, or one body naming two doses). Hand-maintained: edit only against the primary source.",
+ "verified": "2026-09-24",
+ "entries": [
+  {
+   "key": {
+    "drugKey": "ADENOSINE",
+    "indicationKey": "SVT",
+    "population": "adult",
+    "perKg": false,
+    "unit": "mg"
+   },
+   "dose": 6,
+   "body": "AHA 2025",
+   "title": "Adult Tachyarrhythmia With a Pulse Algorithm",
+   "url": "https://cpr.heart.org/-/media/CPR-Files/CPR-Guidelines-Files/2025-Accessible/Algorithm-ACLS-Tachyarrhythmia-LngDscrp-250726-Ed.pdf",
+   "quote": "Adenosine IV dose: First dose: 6 milligrams rapid IV push; follow with NS flush. Second dose: 12 milligrams if required."
+  },
+  {
+   "key": {
+    "drugKey": "ADENOSINE",
+    "indicationKey": "TACHYCARDIA_NARROW",
+    "population": "adult",
+    "perKg": false,
+    "unit": "mg"
+   },
+   "dose": 6,
+   "body": "AHA 2025",
+   "title": "Adult Tachyarrhythmia With a Pulse Algorithm",
+   "url": "https://cpr.heart.org/-/media/CPR-Files/CPR-Guidelines-Files/2025-Accessible/Algorithm-ACLS-Tachyarrhythmia-LngDscrp-250726-Ed.pdf",
+   "quote": "Adenosine IV dose: First dose: 6 milligrams rapid IV push; follow with NS flush. Second dose: 12 milligrams if required."
+  },
+  {
+   "key": {
+    "drugKey": "ADENOSINE",
+    "indicationKey": "SVT",
+    "population": "peds",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 0.1,
+   "body": "AHA 2025",
+   "title": "Pediatric Tachyarrhythmia With a Pulse Algorithm",
+   "url": "https://cpr.heart.org/-/media/CPR-Files/CPR-Guidelines-Files/2025-Accessible/Algorithm-PALS-Tachyarrhythmia-LngDscrp-250729-Ed.pdf",
+   "quote": "Adenosine IV/IO dose: 0.1 milligrams per kilogram (maximum of 6 milligrams) rapid push followed by IV flush"
+  },
+  {
+   "key": {
+    "drugKey": "ADENOSINE",
+    "indicationKey": "TACHYCARDIA_NARROW",
+    "population": "peds",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 0.1,
+   "body": "AHA 2025",
+   "title": "Pediatric Tachyarrhythmia With a Pulse Algorithm",
+   "url": "https://cpr.heart.org/-/media/CPR-Files/CPR-Guidelines-Files/2025-Accessible/Algorithm-PALS-Tachyarrhythmia-LngDscrp-250729-Ed.pdf",
+   "quote": "Adenosine IV/IO dose: 0.1 milligrams per kilogram (maximum of 6 milligrams) rapid push followed by IV flush"
+  },
+  {
+   "key": {
+    "drugKey": "AMIODARONE",
+    "indicationKey": "CARDIAC_ARREST",
+    "population": "adult",
+    "perKg": false,
+    "unit": "mg"
+   },
+   "dose": 300,
+   "body": "AHA 2025",
+   "title": "Adult Cardiac Arrest Algorithm",
+   "url": "https://cpr.heart.org/-/media/CPR-Files/CPR-Guidelines-Files/2025-Accessible/Algorithm-ACLS-CA-LngDscrp-250725-Ed.pdf",
+   "quote": "Amiodarone IV/IO dose : First dose: 300 milligram bolus. Second dose: 150 milligram."
+  },
+  {
+   "key": {
+    "drugKey": "AMIODARONE",
+    "indicationKey": "VF_PVT",
+    "population": "adult",
+    "perKg": false,
+    "unit": "mg"
+   },
+   "dose": 300,
+   "body": "AHA 2025",
+   "title": "Adult Cardiac Arrest Algorithm",
+   "url": "https://cpr.heart.org/-/media/CPR-Files/CPR-Guidelines-Files/2025-Accessible/Algorithm-ACLS-CA-LngDscrp-250725-Ed.pdf",
+   "quote": "Amiodarone IV/IO dose : First dose: 300 milligram bolus. Second dose: 150 milligram."
+  },
+  {
+   "key": {
+    "drugKey": "AMIODARONE",
+    "indicationKey": "CARDIAC_ARREST",
+    "population": "peds",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 5,
+   "body": "AHA 2025",
+   "title": "Pediatric Cardiac Arrest Algorithm",
+   "url": "https://cpr.heart.org/-/media/CPR-Files/CPR-Guidelines-Files/2025-Accessible/Algorithm-PALS-CA-LngDscrp-250729-Ed.pdf",
+   "quote": "Amiodarone IV or IO dose : 5 milligrams per kilogram bolus (maximum 300 milligrams). May repeat up to 3 doses (maximum 150 milligram for subsequent doses)."
+  },
+  {
+   "key": {
+    "drugKey": "AMIODARONE",
+    "indicationKey": "VF_PVT",
+    "population": "peds",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 5,
+   "body": "AHA 2025",
+   "title": "Pediatric Cardiac Arrest Algorithm",
+   "url": "https://cpr.heart.org/-/media/CPR-Files/CPR-Guidelines-Files/2025-Accessible/Algorithm-PALS-CA-LngDscrp-250729-Ed.pdf",
+   "quote": "Amiodarone IV or IO dose : 5 milligrams per kilogram bolus (maximum 300 milligrams). May repeat up to 3 doses (maximum 150 milligram for subsequent doses)."
+  },
+  {
+   "key": {
+    "drugKey": "ATROPINE",
+    "indicationKey": "BRADYCARDIA",
+    "population": "adult",
+    "perKg": false,
+    "unit": "mg"
+   },
+   "dose": 1,
+   "body": "AHA 2025",
+   "title": "Adult Bradycardia Algorithm",
+   "url": "https://cpr.heart.org/-/media/CPR-Files/CPR-Guidelines-Files/2025-Accessible/Algorithm-ACLS-Bradycardia-LngDscrp-250725-Ed.pdf",
+   "quote": "Atropine IV dose: First dose: 1 milligram bolus. Repeat every 3 to 5 minutes. Maximum total dose: 3 milligrams."
+  },
+  {
+   "key": {
+    "drugKey": "ATROPINE",
+    "indicationKey": "BRADYCARDIA",
+    "population": "peds",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 0.02,
+   "body": "AHA 2025",
+   "title": "Pediatric Bradycardia With a Pulse Algorithm",
+   "url": "https://cpr.heart.org/-/media/CPR-Files/CPR-Guidelines-Files/2025-Accessible/Algorithm-PALS-Bradycardia-LngDscrp-250729-Ed.pdf",
+   "quote": "Atropine IV/IO dose: 0.02 milligram per kilogram. May repeat once. Minimum dose is 0.1 milligram and maximum single dose is 0.5 milligram."
+  },
+  {
+   "key": {
+    "drugKey": "EPINEPHRINE",
+    "indicationKey": "CARDIAC_ARREST",
+    "population": "adult",
+    "perKg": false,
+    "unit": "mg"
+   },
+   "dose": 1,
+   "body": "AHA 2025",
+   "title": "Adult Cardiac Arrest Algorithm",
+   "url": "https://cpr.heart.org/-/media/CPR-Files/CPR-Guidelines-Files/2025-Accessible/Algorithm-ACLS-CA-LngDscrp-250725-Ed.pdf",
+   "quote": "Epinephrine IV/IO dose : 1 milligram every 3 to 5 minutes"
+  },
+  {
+   "key": {
+    "drugKey": "EPINEPHRINE",
+    "indicationKey": "ASYSTOLE_PEA",
+    "population": "adult",
+    "perKg": false,
+    "unit": "mg"
+   },
+   "dose": 1,
+   "body": "AHA 2025",
+   "title": "Adult Cardiac Arrest Algorithm",
+   "url": "https://cpr.heart.org/-/media/CPR-Files/CPR-Guidelines-Files/2025-Accessible/Algorithm-ACLS-CA-LngDscrp-250725-Ed.pdf",
+   "quote": "Epinephrine IV/IO dose : 1 milligram every 3 to 5 minutes"
+  },
+  {
+   "key": {
+    "drugKey": "EPINEPHRINE",
+    "indicationKey": "CARDIAC_ARREST",
+    "population": "peds",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 0.01,
+   "body": "AHA 2025",
+   "title": "Pediatric Cardiac Arrest Algorithm",
+   "url": "https://cpr.heart.org/-/media/CPR-Files/CPR-Guidelines-Files/2025-Accessible/Algorithm-PALS-CA-LngDscrp-250729-Ed.pdf",
+   "quote": "Epinephrine IV or IO dose : 0.01 milligrams per kilogram ( 0.1 milligram per milliliter concentration). Maximum dose: 1 milligram."
+  },
+  {
+   "key": {
+    "drugKey": "EPINEPHRINE",
+    "indicationKey": "BRADYCARDIA",
+    "population": "peds",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 0.01,
+   "body": "AHA 2025",
+   "title": "Pediatric Bradycardia With a Pulse Algorithm",
+   "url": "https://cpr.heart.org/-/media/CPR-Files/CPR-Guidelines-Files/2025-Accessible/Algorithm-PALS-Bradycardia-LngDscrp-250729-Ed.pdf",
+   "quote": "Epinephrine IV/IO dose: 0.01 milligram per kilogram (0.1 milligram per milliliter concentration. Maximum dose 1 milligram)."
+  },
+  {
+   "key": {
+    "drugKey": "LIDOCAINE",
+    "indicationKey": "CARDIAC_ARREST",
+    "population": "adult",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 1,
+   "max": 1.5,
+   "body": "AHA 2025",
+   "title": "Adult Cardiac Arrest Algorithm",
+   "url": "https://cpr.heart.org/-/media/CPR-Files/CPR-Guidelines-Files/2025-Accessible/Algorithm-ACLS-CA-LngDscrp-250725-Ed.pdf",
+   "quote": "Lidocaine IV/IO dose : First dose: 1 to 1.5 milligrams per kilogram. Second dose: 0.5 to 0.75 milligrams per kilogram."
+  },
+  {
+   "key": {
+    "drugKey": "LIDOCAINE",
+    "indicationKey": "VF_PVT",
+    "population": "adult",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 1,
+   "max": 1.5,
+   "body": "AHA 2025",
+   "title": "Adult Cardiac Arrest Algorithm",
+   "url": "https://cpr.heart.org/-/media/CPR-Files/CPR-Guidelines-Files/2025-Accessible/Algorithm-ACLS-CA-LngDscrp-250725-Ed.pdf",
+   "quote": "Lidocaine IV/IO dose : First dose: 1 to 1.5 milligrams per kilogram. Second dose: 0.5 to 0.75 milligrams per kilogram."
+  },
+  {
+   "key": {
+    "drugKey": "LIDOCAINE",
+    "indicationKey": "CARDIAC_ARREST",
+    "population": "peds",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 1,
+   "body": "AHA 2025",
+   "title": "Pediatric Cardiac Arrest Algorithm",
+   "url": "https://cpr.heart.org/-/media/CPR-Files/CPR-Guidelines-Files/2025-Accessible/Algorithm-PALS-CA-LngDscrp-250729-Ed.pdf",
+   "quote": "Lidocaine IV or IO dose: 1 milligram per kilogram"
+  },
+  {
+   "key": {
+    "drugKey": "LIDOCAINE",
+    "indicationKey": "VF_PVT",
+    "population": "peds",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 1,
+   "body": "AHA 2025",
+   "title": "Pediatric Cardiac Arrest Algorithm",
+   "url": "https://cpr.heart.org/-/media/CPR-Files/CPR-Guidelines-Files/2025-Accessible/Algorithm-PALS-CA-LngDscrp-250729-Ed.pdf",
+   "quote": "Lidocaine IV or IO dose: 1 milligram per kilogram"
+  },
+  {
+   "key": {
+    "drugKey": "NALOXONE",
+    "indicationKey": "OPIOID_OVERDOSE",
+    "population": "adult",
+    "perKg": false,
+    "unit": "mg"
+   },
+   "dose": 0.4,
+   "max": 2,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Opioid Poisoning/Overdose",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Adults: The typical initial adult dose ranges between 0.4–2 mg IV, IM, up to a dose of 4 mg IN or 5 mg ETT"
+  },
+  {
+   "key": {
+    "drugKey": "NALOXONE",
+    "indicationKey": "OPIOID_OVERDOSE",
+    "population": "peds",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 0.1,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Opioid Poisoning/Overdose",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Pediatrics: The pediatric dose of naloxone is 0.1 mg/kg IV, IM, IN, or ETT"
+  },
+  {
+   "key": {
+    "drugKey": "ASPIRIN",
+    "indicationKey": "ACS_CHEST_PAIN",
+    "population": "adult",
+    "perKg": false,
+    "unit": "mg"
+   },
+   "dose": 162,
+   "max": 325,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Chest Pain/ACS/STEMI",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Administer aspirin; chewable, non-enteric-coated aspirin preferred (162–325 mg)"
+  },
+  {
+   "key": {
+    "drugKey": "ASPIRIN",
+    "indicationKey": "STEMI",
+    "population": "adult",
+    "perKg": false,
+    "unit": "mg"
+   },
+   "dose": 162,
+   "max": 325,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Chest Pain/ACS/STEMI",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Administer aspirin; chewable, non-enteric-coated aspirin preferred (162–325 mg)"
+  },
+  {
+   "key": {
+    "drugKey": "NITROGLYCERIN",
+    "indicationKey": "ACS_CHEST_PAIN",
+    "population": "adult",
+    "perKg": false,
+    "unit": "mg"
+   },
+   "dose": 0.4,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Chest Pain/ACS/STEMI",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Nitroglycerin 0.4 mg sublingual (SL), can repeat q (quaque, every) 3–5 minutes if SBP greater than 100 mmHg"
+  },
+  {
+   "key": {
+    "drugKey": "EPINEPHRINE",
+    "indicationKey": "ANAPHYLAXIS",
+    "population": "adult",
+    "perKg": false,
+    "unit": "mg"
+   },
+   "dose": 0.3,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Anaphylaxis and Allergic Reaction",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Adult (25 kg or more) 0.3 mg IM in the anterolateral thigh"
+  },
+  {
+   "key": {
+    "drugKey": "EPINEPHRINE",
+    "indicationKey": "ANAPHYLAXIS",
+    "population": "peds",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 0.01,
+   "body": "WAO",
+   "title": "World Allergy Organization Anaphylaxis Guidance 2020",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7607509/",
+   "quote": "The dose recommended for use by healthcare professionals is 0.01 mg/kg of body weight, to a maximum total dose of 0.5 mg, given by the intramuscular route"
+  },
+  {
+   "key": {
+    "drugKey": "EPINEPHRINE",
+    "indicationKey": "ANAPHYLAXIS",
+    "population": "adult",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 0.01,
+   "body": "WAO",
+   "title": "World Allergy Organization Anaphylaxis Guidance 2020",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7607509/",
+   "quote": "The dose recommended for use by healthcare professionals is 0.01 mg/kg of body weight, to a maximum total dose of 0.5 mg, given by the intramuscular route"
+  },
+  {
+   "key": {
+    "drugKey": "DIPHENHYDRAMINE",
+    "indicationKey": "ALLERGIC_REACTION",
+    "population": "adult",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 1,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Anaphylaxis and Allergic Reaction",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "For urticaria or pruritus, administer a diphenhydramine 1 mg/kg, up to maximum dose of 50 mg IM, IV, or PO)"
+  },
+  {
+   "key": {
+    "drugKey": "DIPHENHYDRAMINE",
+    "indicationKey": "ALLERGIC_REACTION",
+    "population": "peds",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 1,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Anaphylaxis and Allergic Reaction",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "For urticaria or pruritus, administer a diphenhydramine 1 mg/kg, up to maximum dose of 50 mg IM, IV, or PO)"
+  },
+  {
+   "key": {
+    "drugKey": "DIPHENHYDRAMINE",
+    "indicationKey": "ANAPHYLAXIS",
+    "population": "adult",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 1,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Anaphylaxis and Allergic Reaction",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "For urticaria or pruritus, administer a diphenhydramine 1 mg/kg, up to maximum dose of 50 mg IM, IV, or PO)"
+  },
+  {
+   "key": {
+    "drugKey": "DIPHENHYDRAMINE",
+    "indicationKey": "ANAPHYLAXIS",
+    "population": "peds",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 1,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Anaphylaxis and Allergic Reaction",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "For urticaria or pruritus, administer a diphenhydramine 1 mg/kg, up to maximum dose of 50 mg IM, IV, or PO)"
+  },
+  {
+   "key": {
+    "drugKey": "DIPHENHYDRAMINE",
+    "indicationKey": "NAUSEA_VOMITING",
+    "population": "adult",
+    "perKg": false,
+    "unit": "mg"
+   },
+   "dose": 12.5,
+   "max": 25,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Nausea-Vomiting",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Diphenhydramine i. Adult: 12.5–25 mg IV/IM/PO"
+  },
+  {
+   "key": {
+    "drugKey": "DIPHENHYDRAMINE",
+    "indicationKey": "AGITATION",
+    "population": "adult",
+    "perKg": false,
+    "unit": "mg"
+   },
+   "dose": 25,
+   "max": 50,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Agitated or Violent Patient/Behavioral Emergency",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Diphenhydramine 1. Adults: 25–50 mg IM/IV/PO"
+  },
+  {
+   "key": {
+    "drugKey": "ORAL GLUCOSE",
+    "indicationKey": "HYPOGLYCEMIA",
+    "population": "adult",
+    "perKg": false,
+    "unit": "mg"
+   },
+   "dose": 25000,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Hypoglycemia",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Glucose, oral (in form of glucose tablets, glucose gel, tube of cake icing, etc.) 1. Adult Dosing: 25 g 2. Pediatric Dosing: 0.5–1 g/kg"
+  },
+  {
+   "key": {
+    "drugKey": "ORAL GLUCOSE",
+    "indicationKey": "HYPOGLYCEMIA",
+    "population": "peds",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 500,
+   "max": 1000,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Hypoglycemia",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Glucose, oral (in form of glucose tablets, glucose gel, tube of cake icing, etc.) 1. Adult Dosing: 25 g 2. Pediatric Dosing: 0.5–1 g/kg"
+  },
+  {
+   "key": {
+    "drugKey": "GLUCAGON",
+    "indicationKey": "HYPOGLYCEMIA",
+    "population": "adult",
+    "perKg": false,
+    "unit": "mg"
+   },
+   "dose": 1,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Hypoglycemia",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Adult dosing: 1 mg IM/IN (or prefilled 3 mg dry powder IN or prefilled IM autoinjector)"
+  },
+  {
+   "key": {
+    "drugKey": "ONDANSETRON",
+    "indicationKey": "NAUSEA_VOMITING",
+    "population": "adult",
+    "perKg": false,
+    "unit": "mg"
+   },
+   "dose": 4,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Nausea-Vomiting",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Ondansetron (contraindicated for suspected or known diagnosis of prolonged QT syndrome) i. Adult: 1. 4 mg IV/PO/SL"
+  },
+  {
+   "key": {
+    "drugKey": "ONDANSETRON",
+    "indicationKey": "NAUSEA_VOMITING",
+    "population": "peds",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 0.15,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Nausea-Vomiting",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "ii. Pediatric (6 months – 14 years old): 1. 0.15 mg/kg IV/PO (maximum dose of 4 mg)"
+  },
+  {
+   "key": {
+    "drugKey": "METOCLOPRAMIDE",
+    "indicationKey": "NAUSEA_VOMITING",
+    "population": "adult",
+    "perKg": false,
+    "unit": "mg"
+   },
+   "dose": 10,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Nausea-Vomiting",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Metoclopramide i. Adult: 10 mg IV/IM"
+  },
+  {
+   "key": {
+    "drugKey": "PROCHLORPERAZINE",
+    "indicationKey": "NAUSEA_VOMITING",
+    "population": "adult",
+    "perKg": false,
+    "unit": "mg"
+   },
+   "dose": 5,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Nausea-Vomiting",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Prochlorperazine i. Adult: 5 mg IV/IM ii. Pediatric (over 2 years old only and greater than 12 kg): 1. 0.1 mg/kg slow IV OR 2. 0.1 mg/kg deep IM (maximum 10 mg)"
+  },
+  {
+   "key": {
+    "drugKey": "PROCHLORPERAZINE",
+    "indicationKey": "NAUSEA_VOMITING",
+    "population": "peds",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 0.1,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Nausea-Vomiting",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Prochlorperazine i. Adult: 5 mg IV/IM ii. Pediatric (over 2 years old only and greater than 12 kg): 1. 0.1 mg/kg slow IV OR 2. 0.1 mg/kg deep IM (maximum 10 mg)"
+  },
+  {
+   "key": {
+    "drugKey": "DROPERIDOL",
+    "indicationKey": "NAUSEA_VOMITING",
+    "population": "adult",
+    "perKg": false,
+    "unit": "mg"
+   },
+   "dose": 1.25,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Nausea-Vomiting",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Droperidol i. Adult: 1.25 mg IV/IM"
+  },
+  {
+   "key": {
+    "drugKey": "DIAZEPAM",
+    "indicationKey": "SEIZURE",
+    "population": "adult",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 0.2,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Seizures",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Diazepam 0.2 mg/kg IV or IO, maximum 10 mg"
+  },
+  {
+   "key": {
+    "drugKey": "DIAZEPAM",
+    "indicationKey": "SEIZURE",
+    "population": "peds",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 0.2,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Seizures",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Diazepam 0.2 mg/kg IV or IO, maximum 10 mg"
+  },
+  {
+   "key": {
+    "drugKey": "LORAZEPAM",
+    "indicationKey": "SEIZURE",
+    "population": "adult",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 0.1,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Seizures",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Lorazepam 0.1 mg/kg IV or IO, maximum 4 mg"
+  },
+  {
+   "key": {
+    "drugKey": "LORAZEPAM",
+    "indicationKey": "SEIZURE",
+    "population": "peds",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 0.1,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Seizures",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Lorazepam 0.1 mg/kg IV or IO, maximum 4 mg"
+  },
+  {
+   "key": {
+    "drugKey": "ACETAMINOPHEN",
+    "indicationKey": "PAIN_MILD_MODERATE",
+    "population": "adult",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 15,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Pain Management",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Acetaminophen 15 mg/kg PO or IV (maximum dose 1 g)"
+  },
+  {
+   "key": {
+    "drugKey": "ACETAMINOPHEN",
+    "indicationKey": "PAIN_MILD_MODERATE",
+    "population": "peds",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 15,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Pain Management",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Acetaminophen 15 mg/kg PO or IV (maximum dose 1 g)"
+  },
+  {
+   "key": {
+    "drugKey": "ACETAMINOPHEN",
+    "indicationKey": "PAIN_SEVERE",
+    "population": "peds",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 15,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Pain Management",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Acetaminophen 15 mg/kg PO or IV (maximum dose 1 g)"
+  },
+  {
+   "key": {
+    "drugKey": "IBUPROFEN",
+    "indicationKey": "PAIN_MILD_MODERATE",
+    "population": "adult",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 10,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Pain Management",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Ibuprofen 10 mg/kg PO for patients greater than 6 months of age (maximum dose 800 mg)"
+  },
+  {
+   "key": {
+    "drugKey": "IBUPROFEN",
+    "indicationKey": "PAIN_MILD_MODERATE",
+    "population": "peds",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 10,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Pain Management",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Ibuprofen 10 mg/kg PO for patients greater than 6 months of age (maximum dose 800 mg)"
+  },
+  {
+   "key": {
+    "drugKey": "KETOROLAC",
+    "indicationKey": "PAIN_MILD_MODERATE",
+    "population": "peds",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 0.5,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Pain Management",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Ketorolac 1. Adult: 30 mg IM or 15 mg IV 2. Pediatric age 2–16 years old: 0.5 mg/kg (maximum dose of 30 mg IM or 15 mg IV)"
+  },
+  {
+   "key": {
+    "drugKey": "KETOROLAC",
+    "indicationKey": "PAIN_SEVERE",
+    "population": "peds",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 0.5,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Pain Management",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Ketorolac 1. Adult: 30 mg IM or 15 mg IV 2. Pediatric age 2–16 years old: 0.5 mg/kg (maximum dose of 30 mg IM or 15 mg IV)"
+  },
+  {
+   "key": {
+    "drugKey": "MORPHINE",
+    "indicationKey": "PAIN_SEVERE",
+    "population": "adult",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 0.1,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Pain Management",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Morphine sulfate: i. 0.1 mg/kg IM, IV or IO (maximum initial dose is 10 mg)"
+  },
+  {
+   "key": {
+    "drugKey": "MORPHINE",
+    "indicationKey": "PAIN_SEVERE",
+    "population": "peds",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 0.1,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Pain Management",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Morphine sulfate: i. 0.1 mg/kg IM, IV or IO (maximum initial dose is 10 mg)"
+  },
+  {
+   "key": {
+    "drugKey": "FENTANYL",
+    "indicationKey": "PAIN_SEVERE",
+    "population": "adult",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 0.001,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Pain Management",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Fentanyl: i. 1 mcg/kg IN, IM, IV or IO (maximum initial dose of 100 mcg)"
+  },
+  {
+   "key": {
+    "drugKey": "FENTANYL",
+    "indicationKey": "PAIN_SEVERE",
+    "population": "peds",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 0.001,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Pain Management",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Fentanyl: i. 1 mcg/kg IN, IM, IV or IO (maximum initial dose of 100 mcg)"
+  },
+  {
+   "key": {
+    "drugKey": "IPRATROPIUM",
+    "indicationKey": "ASTHMA_BRONCHOSPASM",
+    "population": "adult",
+    "perKg": false,
+    "unit": "mg"
+   },
+   "dose": 0.5,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Respiratory Distress",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Ipratropium 0.5 mg nebulized should be given up to 3 doses in conjunction with albuterol"
+  },
+  {
+   "key": {
+    "drugKey": "IPRATROPIUM",
+    "indicationKey": "ASTHMA_BRONCHOSPASM",
+    "population": "peds",
+    "perKg": false,
+    "unit": "mg"
+   },
+   "dose": 0.5,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Respiratory Distress",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Ipratropium 0.5 mg nebulized should be given up to 3 doses in conjunction with albuterol"
+  },
+  {
+   "key": {
+    "drugKey": "IPRATROPIUM",
+    "indicationKey": "COPD",
+    "population": "adult",
+    "perKg": false,
+    "unit": "mg"
+   },
+   "dose": 0.5,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Respiratory Distress",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Ipratropium 0.5 mg nebulized should be given up to 3 doses in conjunction with albuterol"
+  },
+  {
+   "key": {
+    "drugKey": "IPRATROPIUM",
+    "indicationKey": "RESPIRATORY_DISTRESS",
+    "population": "adult",
+    "perKg": false,
+    "unit": "mg"
+   },
+   "dose": 0.5,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Respiratory Distress",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Ipratropium 0.5 mg nebulized should be given up to 3 doses in conjunction with albuterol"
+  },
+  {
+   "key": {
+    "drugKey": "IPRATROPIUM",
+    "indicationKey": "RESPIRATORY_DISTRESS",
+    "population": "peds",
+    "perKg": false,
+    "unit": "mg"
+   },
+   "dose": 0.5,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Respiratory Distress",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Ipratropium 0.5 mg nebulized should be given up to 3 doses in conjunction with albuterol"
+  },
+  {
+   "key": {
+    "drugKey": "DEXAMETHASONE",
+    "indicationKey": "ASTHMA_BRONCHOSPASM",
+    "population": "peds",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 0.6,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Respiratory Distress",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Dexamethasone (0.6 mg/kg, maximum dose of 16 mg) PO solution or IV solution given PO"
+  },
+  {
+   "key": {
+    "drugKey": "DEXAMETHASONE",
+    "indicationKey": "RESPIRATORY_DISTRESS",
+    "population": "peds",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 0.6,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Respiratory Distress",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Dexamethasone (0.6 mg/kg, maximum dose of 16 mg) PO solution or IV solution given PO"
+  },
+  {
+   "key": {
+    "drugKey": "METHYLPREDNISOLONE",
+    "indicationKey": "ASTHMA_BRONCHOSPASM",
+    "population": "peds",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 2,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Respiratory Distress",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Methylprednisolone (2 mg/kg, maximum dose 125 mg) IV/IM"
+  },
+  {
+   "key": {
+    "drugKey": "METHYLPREDNISOLONE",
+    "indicationKey": "RESPIRATORY_DISTRESS",
+    "population": "peds",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 2,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Respiratory Distress",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Methylprednisolone (2 mg/kg, maximum dose 125 mg) IV/IM"
+  },
+  {
+   "key": {
+    "drugKey": "DEXAMETHASONE",
+    "indicationKey": "CROUP",
+    "population": "peds",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 0.6,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Pediatric Respiratory Distress (Croup)",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Dexamethasone 0.6 mg/kg oral, IV, or IM to maximum dose of 16 mg should be administered to patients with suspected croup"
+  },
+  {
+   "key": {
+    "drugKey": "HYDROXOCOBALAMIN",
+    "indicationKey": "CYANIDE",
+    "population": "adult",
+    "perKg": false,
+    "unit": "mg"
+   },
+   "dose": 5000,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Cyanide Exposure",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "i. Adult: Administer hydroxocobalamin 1. Initial dose is 5 g administered over 15 minutes slow IV"
+  },
+  {
+   "key": {
+    "drugKey": "HYDROXOCOBALAMIN",
+    "indicationKey": "CYANIDE",
+    "population": "peds",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 70,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Cyanide Exposure",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Pediatric: Administer hydroxocobalamin 70 mg/kg"
+  },
+  {
+   "key": {
+    "drugKey": "HYDROCORTISONE",
+    "indicationKey": "ADRENAL_CRISIS",
+    "population": "peds",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 2,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Shock",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Hydrocortisone succinate, 2 mg/kg (maximum 100 mg) IV/IM (preferred)"
+  },
+  {
+   "key": {
+    "drugKey": "METHYLPREDNISOLONE",
+    "indicationKey": "ADRENAL_CRISIS",
+    "population": "peds",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 2,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Shock",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Methylprednisolone 2 mg/kg IV (maximum 125 mg)"
+  },
+  {
+   "key": {
+    "drugKey": "DEXAMETHASONE",
+    "indicationKey": "ADRENAL_CRISIS",
+    "population": "peds",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 0.6,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Shock",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Dexamethasone 0.6 mg/kg IV/IM (maximum dose of 16 mg)"
+  },
+  {
+   "key": {
+    "drugKey": "DILTIAZEM",
+    "indicationKey": "TACHYCARDIA_NARROW",
+    "population": "adult",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 0.25,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Tachycardia with a Pulse",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Diltiazem 0.25 mg/kg slowly IV over 2 minutes"
+  },
+  {
+   "key": {
+    "drugKey": "DILTIAZEM",
+    "indicationKey": "AFIB_RVR",
+    "population": "adult",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 0.25,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Tachycardia with a Pulse",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Diltiazem 0.25 mg/kg slowly IV over 2 minutes"
+  },
+  {
+   "key": {
+    "drugKey": "DILTIAZEM",
+    "indicationKey": "SVT",
+    "population": "adult",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 0.25,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Tachycardia with a Pulse",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Diltiazem 0.25 mg/kg slowly IV over 2 minutes"
+  },
+  {
+   "key": {
+    "drugKey": "METOPROLOL",
+    "indicationKey": "TACHYCARDIA_NARROW",
+    "population": "adult",
+    "perKg": false,
+    "unit": "mg"
+   },
+   "dose": 5,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Tachycardia with a Pulse",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Metoprolol 5 mg IV given over 1–2 minutes. May repeat as needed q 5 minutes for a total of 3 doses"
+  },
+  {
+   "key": {
+    "drugKey": "METOPROLOL",
+    "indicationKey": "AFIB_RVR",
+    "population": "adult",
+    "perKg": false,
+    "unit": "mg"
+   },
+   "dose": 5,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Tachycardia with a Pulse",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Metoprolol 5 mg IV given over 1–2 minutes. May repeat as needed q 5 minutes for a total of 3 doses"
+  },
+  {
+   "key": {
+    "drugKey": "METOPROLOL",
+    "indicationKey": "SVT",
+    "population": "adult",
+    "perKg": false,
+    "unit": "mg"
+   },
+   "dose": 5,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Tachycardia with a Pulse",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Metoprolol 5 mg IV given over 1–2 minutes. May repeat as needed q 5 minutes for a total of 3 doses"
+  },
+  {
+   "key": {
+    "drugKey": "ATROPINE",
+    "indicationKey": "BRADYCARDIA",
+    "population": "adult",
+    "perKg": false,
+    "unit": "mg"
+   },
+   "dose": 1,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Bradycardia",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Atropine 1 mg IV q 3–5 minutes (maximum total dose of 3 mg)"
+  },
+  {
+   "key": {
+    "drugKey": "ADENOSINE",
+    "indicationKey": "SVT",
+    "population": "adult",
+    "perKg": false,
+    "unit": "mg"
+   },
+   "dose": 6,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Tachycardia with a Pulse",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Adenosine 6 mg IV (proximal site) followed by 10 mL fluid bolus"
+  },
+  {
+   "key": {
+    "drugKey": "ADENOSINE",
+    "indicationKey": "SVT",
+    "population": "peds",
+    "perKg": true,
+    "unit": "mg"
+   },
+   "dose": 0.1,
+   "body": "NASEMSO",
+   "title": "National Model EMS Clinical Guidelines v3.0, Tachycardia with a Pulse",
+   "url": "https://nasemso.org/docs.ashx?id=1444322",
+   "quote": "Adenosine 0.1 mg/kg (maximum of 6 mg)"
+  },
+  {
+   "key": {
+    "drugKey": "TRANEXAMIC ACID",
+    "indicationKey": "TRAUMA_HEMORRHAGE",
+    "population": "adult",
+    "perKg": false,
+    "unit": "mg"
+   },
+   "dose": 1000,
+   "body": "NAEMSP",
+   "title": "Tranexamic Acid in Trauma: joint position statement of NAEMSP, ACEP and ACS-COT (2025)",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12363306/",
+   "quote": "Current evidence suggests EMS agencies may administer either a 1-g intravenous/intraosseous dose (followed by a hospital-based 1-g infusion over 8 hours) or a 2-g intravenous/intraosseous dose as an infusion or slow push."
+  },
+  {
+   "key": {
+    "drugKey": "TRANEXAMIC ACID",
+    "indicationKey": "TRAUMA_HEMORRHAGE",
+    "population": "adult",
+    "perKg": false,
+    "unit": "mg"
+   },
+   "dose": 2000,
+   "body": "NAEMSP",
+   "title": "Tranexamic Acid in Trauma: joint position statement of NAEMSP, ACEP and ACS-COT (2025)",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12363306/",
+   "quote": "Current evidence suggests EMS agencies may administer either a 1-g intravenous/intraosseous dose (followed by a hospital-based 1-g infusion over 8 hours) or a 2-g intravenous/intraosseous dose as an infusion or slow push."
+  }
+ ]
+}

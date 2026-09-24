@@ -306,17 +306,7 @@
     }
 
     /* Comments Section */
-    .comments-section {
-      margin-top: 80px;
-      padding-top: 40px;
-      border-top: 2px solid var(--line);
-    }
 
-    .comments-section h2 {
-      font-size: 1.75rem;
-      font-weight: 800;
-      margin-bottom: 24px;
-    }
 
     /* Back Link */
     .back-link {
@@ -376,52 +366,24 @@
           <div class="post-meta-info">
             <span class="author">By Jaden</span>
             <span>•</span>
-            <time datetime="2025-12-10">December 9, 2025</time>
+            <time datetime="2025-12-10">December 10, 2025</time>
           </div>
         </article>
 
+        <img class="post-hero" src="../blog-month1.png" alt="ProtoQuiz First Month" style="display:block;width:100%;aspect-ratio:1200/640;object-fit:cover;border-radius:12px;margin:0 0 28px;box-sizing:border-box;">
+
         <!-- Post Content -->
         <div class="post-content">
-          <h2>First Month Down: More Than Just an App</h2>
-<p>It's been a wild ride since ProtoQuiz officially launched. Launching an app that aims to revolutionize protocol study is no easy feat, especially when dealing with the complexities of PDF parsing and algorithm extraction. From day one, we've been laser-focused on solving a problem many of you face: effectively learning and retaining <em>your</em> local EMS protocols, not just generic NREMT material.</p>
+          <p>ProtoQuiz has been live for a month. The goal hasn't changed: help you learn <em>your</em> local protocols, not just generic NREMT material. In that first month users generated 2,500+ quizzes, completed 600+ scenarios and took 100+ algorithm quizzes (numbers below).</p>
 
-<h2>The Technical Hurdles: PDF Parsing and Protocol Interpretation</h2>
-<p>The core of ProtoQuiz is its ability to ingest a PDF protocol and extract meaningful data. This is where things get complex. PDFs are notorious for their inconsistent formatting. One county might use tables, another uses bullet points, and yet another relies on free-flowing text. Our algorithms have to be flexible enough to handle these variations and accurately identify medications, dosages, algorithms, and other key elements.</p>
-<p><strong>Challenge:</strong> Initial uploads had an upload success rate around 50%. Meaning, half the PDFs either failed or didn't have all the information correctly parsed.</p>
-<p><strong>Solution:</strong> We've been iterating rapidly, improving our parsing engine with each new upload. We analyze failed uploads, identify patterns, and refine our algorithms to handle increasingly complex documents. While we are still working to improve, we're confident in saying that our upload success rate is trending up. </p>
-<h2>Quizzes, Scenarios, and Algorithm Mastery</h2>
-<p>Extracting data is only half the battle. ProtoQuiz then uses this information to generate quizzes, create realistic patient scenarios, and build algorithm tests. This goes beyond rote memorization; it forces you to apply your knowledge in dynamic, simulated situations.</p>
-<p>So far, ProtoQuiz users have generated over 2500 quizzes and completed 600+ scenarios. Even more impressive is the completion of 100+ algorithm quizzes. This highlights the demand for a tool that directly tests protocol knowledge.</p>
+<h2>Reading PDFs</h2>
+<p>Everything starts with pulling medications, doses and algorithms out of your protocol PDF, and PDFs are messy. One county uses tables, another bullet points, another free text.</p>
+<p>About half of launch uploads came through clean. We study every one that doesn't, fix the pattern in the parser, and the success rate keeps climbing.</p>
 
-<h2>Community Feedback: Shaping the Future of ProtoQuiz</h2>
-<p>Your feedback has been invaluable. We've been actively listening to your suggestions, bug reports, and feature requests. This input is directly influencing our development roadmap. We are working to address any extraction issues and build out the features you need most.</p>
+<h2>What's next</h2>
+<p>Your feedback and feature requests drive the roadmap. Near term: better extraction and more scenarios. Longer term, we're exploring a version for agencies so a whole department can stay sharp on its protocols.</p>
 
-<h2>What's Next: B2B and Beyond</h2>
-<p>While individual users are our priority, we are also exploring a B2B system for agencies. Imagine your entire department using ProtoQuiz to maintain protocol proficiency, ensuring consistent patient care across the board. This is a longer-term goal, but it's a vision that's driving us forward.</p>
-
-<p>In the immediate future, we're focused on refining our extraction algorithms, expanding our scenario library, and adding even more features based on your feedback. We are also looking to incorporate more real-world feedback into our current extraction tools.</p>
-
-<h2>By the Numbers</h2>
-
-<p>Here's a look at ProtoQuiz's activity so far:</p>
-<ul>
-  <li><strong>Total Downloads:</strong> 400+</li>
-  <li><strong>Protocols Uploaded:</strong> 500+</li>
-  <li><strong>Quizzes Generated:</strong> 2500+</li>
-  <li><strong>Scenarios Completed:</strong> 600+</li>
-  <li><strong>Algorithm Quizzes:</strong> 100+</li>
-</ul>
-
-<p><strong>Note:</strong> We are still working on correctly calculating the upload success rate. We are actively tracking our other metrics, and will be sure to include upload success rate in the next blog post.</p>
-
-<h2>Action Steps</h2>
-<ol>
-  <li><strong>Upload your local protocols:</strong> See how ProtoQuiz can transform your study habits.</li>
-  <li><strong>Generate quizzes and scenarios:</strong> Test your knowledge and identify areas for improvement.</li>
-  <li><strong>Join the ProtoQuiz community:</strong> Share your feedback and help shape the future of the app.</li>
-</ol>
-
-<p><a href="https://apps.apple.com/us/app/protoquiz-ems-protocols/id6464193323">Download ProtoQuiz and start mastering your protocols today!</a></p>
+<p>Upload your protocols, try a quiz or scenario, and tell us what to build next. <a href="https://apps.apple.com/app/id6753611139">Download ProtoQuiz</a>.</p>
         </div>
 
         <!-- Firestore Stats (if applicable) -->
@@ -449,24 +411,6 @@
         </div>
 
         <!-- Comments Section -->
-        <div class="comments-section">
-          <h2>Comments</h2>
-          <script src="https://giscus.app/client.js"
-                  data-repo="jadenschwartz22-ops/protoquiz-site"
-                  data-repo-id="R_kgDOP_OVLw"
-                  data-category="Blog Comments"
-                  data-category-id="DIC_kwDOP_OVL84CyFhj"
-                  data-mapping="pathname"
-                  data-strict="0"
-                  data-reactions-enabled="1"
-                  data-emit-metadata="0"
-                  data-input-position="top"
-                  data-theme="dark"
-                  data-lang="en"
-                  crossorigin="anonymous"
-                  async>
-          </script>
-        </div>
       </div>
     </div>
   </main>
@@ -609,5 +553,6 @@
       </div>
     </div>
   </footer>
+<script>if(/android/i.test(navigator.userAgent))for(const a of document.querySelectorAll('a[href="https://apps.apple.com/app/id6753611139"]:not(.store)'))a.href="https://play.google.com/store/apps/details?id=com.tmtl.emsprotoquiz"</script>
 </body>
 </html>

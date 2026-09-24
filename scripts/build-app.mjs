@@ -4,11 +4,24 @@
 // must be byte-identical to every other page on the site, and pasting them by hand is
 // how they drift. Live numbers come from data/, never from a doc.
 import { writeFileSync, mkdirSync, readFileSync } from 'node:fs';
-import { navFor, FOOTER_HTML, CHROME_HEAD } from './shared-chrome.mjs';
+import { navFor, FOOTER_HTML, CHROME_HEAD, assetHash } from './shared-chrome.mjs';
 
 const stats = JSON.parse(readFileSync('data/firestore-stats.json', 'utf8')).raw;
 const MAP = readFileSync('assets/reach-map.html', 'utf8');
 const reach = JSON.parse(readFileSync('data/reach-stats.json', 'utf8'));
+const fmt = n => Number(n).toLocaleString('en-US');
+// The map SVG is a snapshot; its stat row is not. Build-time numbers are the fallback,
+// and the page refreshes them from the same daily JSON the home page reads.
+const REACH_STATS = `    <div class="reach-stats">
+      <div><span class="stat-n" data-stat="uploads">${fmt(reach.totalUploads)}</span><span class="stat-l">uploads</span></div>
+      <div><span class="stat-n" data-stat="states">${reach.statesRepresented}</span><span class="stat-l">states</span></div>
+      <div><span class="stat-n" data-stat="protocols">${fmt(reach.distinctProtocols)}</span><span class="stat-l">different protocols</span></div>
+      <div><span class="stat-n" data-stat="studiers">${fmt(reach.activeStudiers)}</span><span class="stat-l">active studiers</span></div>
+      <div><span class="stat-n" data-stat="pages">${fmt(reach.pagesProcessed)}</span><span class="stat-l">pages processed</span></div>
+    </div>
+    <p class="reach-foot" id="reachUpdated">Live from ProtoQuiz uploads.</p>`;
+const MAP_LIVE = MAP.replace(/    <div class="reach-stats">[\s\S]*?<\/div>\n    <\/div>/, REACH_STATS);
+if (MAP_LIVE === MAP) throw new Error('reach-map.html: stat row not found');
 
 const APPLE = `<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.7c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.8-.9-3-.8-1.5 0-2.9.9-3.7 2.2-1.6 2.8-.4 6.9 1.1 9.1.8 1.1 1.7 2.3 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.9-2.2.9-1.3 1.3-2.5 1.3-2.6 0 0-2.5-1-2.6-3.6zM14.2 5.9c.6-.8 1-1.9.9-3-.9 0-2.1.6-2.7 1.4-.6.7-1.1 1.8-1 2.9 1 .1 2.1-.5 2.8-1.3z"/></svg>`;
 const PLAY = `<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 2.3c-.3.3-.4.7-.4 1.3v16.8c0 .6.1 1 .4 1.3l.1.1 9.4-9.4v-.2L3.7 2.2l-.1.1z" fill="oklch(72% 0.16 155)"/><path d="M16.3 15.6l-3.2-3.2v-.2l3.2-3.2.1.1 3.7 2.1c1.1.6 1.1 1.6 0 2.2l-3.8 2.2z" fill="oklch(80% 0.15 85)"/><path d="M16.4 15.5L13.1 12.3 3.6 21.8c.4.4 1 .4 1.7.1l11.1-6.4" fill="oklch(62% 0.19 25)"/><path d="M16.4 9.1L5.3 2.8c-.7-.4-1.3-.3-1.7.1l9.5 9.4 3.3-3.2z" fill="oklch(72% 0.15 200)"/></svg>`;
@@ -43,7 +56,7 @@ const FAQ = [
   ['What protocols does it work with?',
    "Any full-length protocol document: medication formulary, treatment protocols, algorithms, procedures. That's what powers the scenarios, pharmacology quizzes and algorithm tests. No preloaded NREMT filler. Your protocol set, exactly."],
   ['Is it accurate?',
-   'Every answer cites the exact page in your PDF. One tap and you are at the source. Nothing is generated outside the document you uploaded. In our testing it runs about 90% accuracy across the board on any EMS protocol, which is why you can edit any extraction and data yourself to fix errors.'],
+   'Every answer cites the exact page in your PDF. One tap and you are at the source. Protocol quizzes come only from the document you uploaded. In our testing it runs about 90% accuracy across the board on any EMS protocol, which is why you can edit any extraction and data yourself to fix errors.'],
   ['What kinds of quizzes are there?',
    'Four kinds. Pharmacology quizzes cover adult and pediatric doses, indications, contraindications, routes, mechanisms and adverse effects. Algorithm tests are pulled from your protocol flowcharts. Adaptive patient scenarios respond to your decisions. Learn Mode runs spaced repetition on the meds you keep missing.'],
   ['What does it cost?',
@@ -86,6 +99,28 @@ const html = `<!doctype html>
 ${CHROME_HEAD}
   <link rel="stylesheet" href="/assets/conveyor.css">
   <link rel="stylesheet" href="/assets/app.css?v=6651072d">
+  <script>
+    /* THE SHIFT IS RESOLVED BEFORE THE FIRST PAINT. app-toggle.js is deferred, so it
+       runs after the page has already painted: a visitor who chose Day Shift saw the
+       night markup render, then watched it fade to day. Reading the choice here, inline
+       and synchronous, means the page paints in the right shift once.
+
+       \`no-anim\` suppresses the .35s colour transition for this first frame, so a
+       corrected shift is an instant swap rather than an animated one. app-toggle.js
+       removes it on its first run; if that script never loads, the rAF below still
+       clears it, so the toggle can never be left permanently un-animated. */
+    (function () {
+      var r = document.documentElement;
+      try {
+        var s = localStorage.getItem('pq-shift');
+        if (s === 'night' || s === 'day') r.setAttribute('data-shift', s);
+      } catch (e) { /* private window: keep the markup default */ }
+      r.classList.add('no-anim');
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { r.classList.remove('no-anim'); });
+      });
+    })();
+  </script>
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
@@ -184,7 +219,7 @@ ${navFor('/app/')}
     <section class="reach-wrap">
       <div class="reach-inner">
         <div class="section-eyebrow" style="text-align:center">Real EMTs and paramedics, from across the country</div>
-${MAP}
+${MAP_LIVE}
       </div>
     </section>
 
@@ -229,7 +264,7 @@ ${REVIEWS.map(([t, b]) => `          <div class="review">
         <div class="review-card pending">
           <div class="review-head"><span class="store-name">${PLAY.replace('width="20" height="20"','width="17" height="17"')}Google Play</span></div>
           <div class="pending-body">
-            <h3>Reviews coming soon</h3>
+            <h3>New on Google Play</h3>
             <p>The Android app is newly released. Ratings will show here once Play has collected enough of them.</p>
           </div>
         </div>
@@ -238,9 +273,9 @@ ${REVIEWS.map(([t, b]) => `          <div class="review">
 
     <section class="section">
       <div class="stats">
-        <div><span class="stat-n">${stats.appStoreDownloads.toLocaleString('en-US')}</span><span class="stat-l">providers</span></div>
-        <div><span class="stat-n">${reach.statesRepresented}</span><span class="stat-l">states</span></div>
-        <div><span class="stat-n">${reach.pagesProcessed.toLocaleString('en-US')}</span><span class="stat-l">pages read</span></div>
+        <div><span class="stat-n" data-stat="downloads">${fmt(stats.appStoreDownloads)}</span><span class="stat-l">App Store downloads</span></div>
+        <div><span class="stat-n" data-stat="states">${reach.statesRepresented}</span><span class="stat-l">states</span></div>
+        <div><span class="stat-n" data-stat="pages">${fmt(reach.pagesProcessed)}</span><span class="stat-l">pages read</span></div>
         <div><span class="stat-n">${stats.appStoreRating}</span><span class="stat-l">App Store rating</span></div>
       </div>
     </section>
@@ -257,7 +292,23 @@ ${FAQ.map(([q, a]) => `        <details>
   </main>
 
 ${FOOTER_HTML}
-  <script src="/assets/app-toggle.js" defer></script>
+  <script src="/assets/app-toggle.js?v=${assetHash('assets/app-toggle.js')}" defer></script>
+  <script>
+    // Same daily files the home page reads; if they fail, the build-time numbers stay.
+    (async () => {
+      const get = u => fetch(u, { cache: 'no-cache' }).then(r => r.json()).catch(() => null);
+      const [r, f] = await Promise.all([get('/data/reach-stats.json'), get('/data/firestore-stats.json')]);
+      const set = (k, v) => v != null && document.querySelectorAll('[data-stat="' + k + '"]').forEach(el => { el.textContent = Number(v).toLocaleString('en-US'); });
+      if (r) {
+        set('uploads', r.totalUploads); set('states', r.statesRepresented); set('protocols', r.distinctProtocols);
+        set('studiers', r.activeStudiers); set('pages', r.pagesProcessed);
+        const d = new Date(r.generatedAt), el = document.getElementById('reachUpdated');
+        if (el && !isNaN(d)) el.textContent = 'Live from ProtoQuiz uploads. ' + ((Date.now() - d) / 864e5 <= 2 ? 'Updates every day. ' : '') + 'Last update ' + d.toLocaleDateString('en-US', { month: 'long', day: 'numeric' }) + '.';
+      }
+      if (f?.raw) set('downloads', f.raw.appStoreDownloads);
+    })();
+  </script>
+<script>if(/android/i.test(navigator.userAgent))for(const a of document.querySelectorAll('a[href="https://apps.apple.com/app/id6753611139"]:not(.store)'))a.href="https://play.google.com/store/apps/details?id=com.tmtl.emsprotoquiz"</script>
 </body>
 </html>
 `;

@@ -15,7 +15,7 @@
 // write a number in prose here, compute it instead.
 import { writeFileSync, mkdirSync, readFileSync, existsSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
-import { navFor, researchBar, FOOTER_HTML, CHROME_HEAD } from './shared-chrome.mjs';
+import { navFor, researchBar, FOOTER_HTML, CHROME_HEAD, assetHash } from './shared-chrome.mjs';
 import {
   readProcedures, readScope, byProcedure, contested, MIN_PER_SIDE,
   matrixOnly, scopeDisagreements, authOf,
@@ -87,11 +87,11 @@ export function render({ proc, scope, charts = {} }) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Who decides - authorization and certification across US EMS protocols</title>
-  <meta name="description" content="The same procedure is a standing order in one US EMS system and requires calling a physician in another. Read from ${n(agencies)} agencies' own protocol books, and from state competency matrices where a state enumerates what each certification level may do.">
+  <meta name="description" content="The same procedure is a standing order in one US EMS system and requires calling a physician in another. Drawn from ${n(agencies)} agencies' published protocol books, and from state competency matrices where a state enumerates what each certification level may do.">
   <link rel="canonical" href="https://protoquiz.com/research/practice/">
   <meta name="robots" content="index,follow">
   <meta property="og:title" content="Who decides: authorization and certification across US EMS">
-  <meta property="og:description" content="The same procedure is a standing order in one EMS system and requires a physician's permission in another. Read from the agencies' own protocol books.">
+  <meta property="og:description" content="The same procedure is a standing order in one EMS system and requires a physician's permission in another. Drawn from the agencies' published protocol books.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://protoquiz.com/research/practice/">
   <meta property="og:image" content="https://protoquiz.com/og-image.png">
@@ -99,7 +99,7 @@ export function render({ proc, scope, charts = {} }) {
   <link rel="icon" href="/favicon.ico?v=4" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=4">
 ${CHROME_HEAD}
-  <link rel="stylesheet" href="/assets/research.css">
+  <link rel="stylesheet" href="/assets/research.css?v=${assetHash('assets/research.css')}">
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
@@ -112,8 +112,7 @@ ${researchBar('/research/practice/')}
       <h1>The same procedure. A different person deciding.</h1>
       <p class="lede">A paramedic decompresses a chest on their own authority in one county
       and telephones a physician for permission in the next. Same national standard, both
-      crews. We read ${n(agencies)} agencies&rsquo; protocol books across ${states} states to
-      see how far that reaches.</p>
+      crews. Comparing ${n(agencies)} agencies&rsquo; protocol books across ${states} states shows how far that reaches.</p>
     </section>
 
     <section class="res-map-wrap">

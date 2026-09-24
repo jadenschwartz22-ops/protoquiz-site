@@ -6,9 +6,6 @@ Allow: /
 Disallow: /tmp/
 Disallow: /node_modules/
 Disallow: /legal/
-# Census is unpublished until the new research site launches (2026-09-20).
-# Pages still resolve for anyone holding a link; they carry noindex,nofollow.
-Disallow: /census/
 
 # Block search params on internal pages from being indexed
 Disallow: /*?utm_*
@@ -35,6 +32,5 @@ Allow: /
 Disallow: /tmp/
 Disallow: /node_modules/
 Disallow: /legal/
-Disallow: /census/
 
 Sitemap: https://protoquiz.com/sitemap-index.xml

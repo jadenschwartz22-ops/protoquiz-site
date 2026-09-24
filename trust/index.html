@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
-  <link rel="stylesheet" href="/assets/chrome.css?v=ad6d4ac8">
+  <link rel="stylesheet" href="/assets/chrome.css?v=c575909f">
   <link rel="stylesheet" href="/legal/_shared.css" />
   <style>
     .badge-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:24px 0;}
@@ -45,11 +45,12 @@
   <header class="site-header">
     <nav class="site-nav" aria-label="Primary">
       <div class="nav-left">
-        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="30" height="30"><span>ProtoQuiz</span></a>
+        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="30" height="30"><span>Proto<b>Quiz</b><sup>&trade;</sup></span></a>
         <div class="nav-links">
           <a href="/app/" class="nav-link">App</a>
           <a href="/agency/" class="nav-link">For agencies</a>
           <a href="/research/" class="nav-link">Research</a>
+          <a href="/blog/" class="nav-link">Blog</a>
           <a href="/about/" class="nav-link">About</a>
         </div>
       </div>
@@ -77,10 +78,11 @@
   <header class="doc-header">
     <div class="doc-kicker">Security</div>
     <h1 class="doc-title">Trust &amp; Security</h1>
+    <p style="color:var(--muted);font-size:13px;margin-top:8px">Last updated: September 23, 2026</p>
   </header>
 
   <div class="callout">
-    Short version: TLS in transit, AES-256 at rest, per-organization tenant isolation enforced at the database layer, daily backups, 72-hour breach notification commitment, and a published subprocessor list. Long version below. The contractual versions live in the <a href="/legal/dpa.html">Data Processing Addendum</a>.
+    Short version: TLS in transit, encryption at rest, per-organization tenant isolation enforced at the database layer, daily backups, a 72-hour breach notification commitment in our DPA, and a published subprocessor list. This page describes the agency platform; the consumer app is covered by the <a href="/privacy/">Privacy Policy</a>. Long version below. The contractual versions live in the <a href="/legal/dpa.html">Data Processing Addendum</a>.
   </div>
 
   <section>
@@ -88,11 +90,11 @@
     <div class="badge-grid">
       <div class="badge">
         <div class="badge-title">Encryption in transit</div>
-        <div class="badge-body">TLS 1.2 or higher for every connection. HSTS preloaded.</div>
+        <div class="badge-body">TLS 1.2 or higher for every connection. HSTS on the agency platform and API.</div>
       </div>
       <div class="badge">
         <div class="badge-title">Encryption at rest</div>
-        <div class="badge-body">AES-256 (or equivalent) via Google Cloud and Vercel storage.</div>
+        <div class="badge-body">Google Cloud encrypts all stored data by default (AES-256).</div>
       </div>
       <div class="badge">
         <div class="badge-title">Tenant isolation</div>
@@ -100,19 +102,19 @@
       </div>
       <div class="badge">
         <div class="badge-title">Access control</div>
-        <div class="badge-body">Role-based access for personnel. MFA required for production. Quarterly access reviews.</div>
+        <div class="badge-body">Role-based access inside each organization. Production access limited to named ProtoQuiz personnel.</div>
       </div>
       <div class="badge">
         <div class="badge-title">Backups</div>
-        <div class="badge-body">Daily automated backups, 30-day retention. Restoration tested annually.</div>
+        <div class="badge-body">Daily automated database backups, kept 30 days.</div>
       </div>
       <div class="badge">
         <div class="badge-title">Patching</div>
-        <div class="badge-body">Critical patches within 7 days; high-severity within 30 days.</div>
+        <div class="badge-body">Dependencies monitored for security advisories; fixes applied by severity.</div>
       </div>
       <div class="badge">
         <div class="badge-title">Audit logging</div>
-        <div class="badge-body">Administrative actions and security events retained at least 90 days.</div>
+        <div class="badge-body">Google Cloud audit logs record administrative actions on production systems.</div>
       </div>
       <div class="badge">
         <div class="badge-title">Network protection</div>
@@ -120,7 +122,7 @@
       </div>
       <div class="badge">
         <div class="badge-title">Service level</div>
-        <div class="badge-body">95.0% monthly uptime target with tiered service credits as contractual remedy. Live status: <a href="https://status.protoquiz.com" target="_blank">status.protoquiz.com</a>.</div>
+        <div class="badge-body">Uptime commitments are set in your signed agreement. Live status: <a href="https://status.protoquiz.com" target="_blank">status.protoquiz.com</a>.</div>
       </div>
     </div>
   </section>
@@ -129,15 +131,15 @@
     <h2><span class="num">2.</span> What we store, and what we don't</h2>
     <h3>We store</h3>
     <ul>
-      <li>Account info via Google OAuth (email, display name, photo URL, Google ID). No passwords.</li>
+      <li>Account info: name, email, and an optional phone number for sign-in codes by email or text. No passwords.</li>
       <li>Organization role, certification level, access status.</li>
       <li>Quiz attempts, scenario responses, leaderboard scores, progress.</li>
-      <li>Customer-uploaded protocol PDFs and generated study content.</li>
+      <li>Customer-provided protocol PDFs, generated study content, training assignments and CE records.</li>
       <li>Technical telemetry: browser type, IP (transient, security only), session ID.</li>
     </ul>
     <h3>We do not store</h3>
     <ul>
-      <li>Patient information or Protected Health Information (PHI). The Platform is not a HIPAA-covered service. Uploads are scanned for PHI markers and quarantined when detected.</li>
+      <li>Patient information or Protected Health Information (PHI). The Platform is not built to hold PHI, and we do not sign Business Associate Agreements unless agreed in writing. Never enter patient information.</li>
       <li>Payment card or bank account numbers. Stripe handles all card and ACH processing (PCI-DSS Level 1).</li>
       <li>GPS or precise location data.</li>
       <li>Microphone, camera, or contacts.</li>
@@ -146,19 +148,20 @@
 
   <section>
     <h2><span class="num">3.</span> Subprocessors</h2>
-    <p>We use the following third-party services to operate the Platform. Each is bound by a written agreement requiring at least the same data-protection posture stated here.</p>
+    <p>We use the following third-party services to operate the Platform. Each processes data under its own data-processing terms.</p>
     <table class="sub-table">
       <thead>
         <tr><th>Subprocessor</th><th>Purpose</th><th>Region</th></tr>
       </thead>
       <tbody>
         <tr><td>Google Cloud / Firebase</td><td>Auth, database (Firestore), file storage, hosting</td><td>United States</td></tr>
-        <tr><td>Vercel, Inc.</td><td>Backend APIs and billing infrastructure</td><td>United States</td></tr>
-        <tr><td>Cloudflare, Inc.</td><td>DNS, edge protection, email routing</td><td>Global</td></tr>
+                <tr><td>Cloudflare, Inc.</td><td>DNS, edge protection, email routing</td><td>Global</td></tr>
         <tr><td>Stripe, Inc.</td><td>Payment processing, invoicing, ACH collection (PCI-DSS Level 1)</td><td>United States</td></tr>
         <tr><td>Brevo (Sendinblue SAS)</td><td>Transactional email delivery</td><td>EU / US</td></tr>
         <tr><td>Discord, Inc.</td><td>Internal operational alerts (minimized event data)</td><td>United States</td></tr>
-        <tr><td>Google AI / Vertex AI (Gemini)</td><td>LLM content generation from Customer-uploaded protocols. No-training contract.</td><td>United States</td></tr>
+        <tr><td>Twilio Inc.</td><td>Text-message sign-in codes (phone number only)</td><td>United States</td></tr>
+<tr><td>Anthropic, PBC (Claude)</td><td>LLM drafting of study content from Customer-provided protocols. No-training terms.</td><td>United States</td></tr>
+<tr><td>Google AI / Vertex AI (Gemini)</td><td>LLM content generation from Customer-provided protocols. No-training terms.</td><td>United States</td></tr>
         <tr><td>Documenso, Inc.</td><td>Master Services Agreement and Order Form e-signature workflow. Customer signing-contact email + signature image processed.</td><td>United States</td></tr>
       </tbody>
     </table>
@@ -167,13 +170,13 @@
 
   <section>
     <h2><span class="num">4.</span> AI use</h2>
-    <p>ProtoQuiz uses third-party LLM services (currently Google Gemini / Vertex AI) to generate quiz questions, scenarios, and drug-comparison content from Customer-uploaded protocol PDFs. We send only the protocol content needed to generate the requested output. We do not send User personal information (email, name, photo) to LLM providers. The provider's terms prohibit training their foundation models on submitted Customer content.</p>
+    <p>ProtoQuiz uses third-party LLM services (currently Google Gemini and Anthropic Claude) to generate quiz questions, scenarios, and drug-comparison content from Customer-provided protocol PDFs. We send only the protocol content needed to generate the requested output. We do not send User personal information (email, name, photo) to LLM providers. The provider's terms prohibit training their foundation models on submitted Customer content.</p>
   </section>
 
   <section>
     <h2><span class="num">5.</span> Incident response</h2>
     <p>If we become aware of a confirmed Security Incident affecting Customer Personal Data, we will notify the affected Customer's designated contact <strong>within 72 hours</strong>, with the information then available: nature of the incident, affected data categories and approximate scope, likely consequences, and measures taken or proposed. We will continue to coordinate as the investigation progresses. This commitment is contractual under <a href="/legal/dpa.html">DPA §6</a>.</p>
-    <p>Vulnerability reports: send to <a href="mailto:security@protoquiz.com">security@protoquiz.com</a>. We respond promptly and do not pursue good-faith security researchers acting within standard responsible-disclosure norms.</p>
+    <p>Vulnerability reports: send to <a href="mailto:security@protoquiz.com">security@protoquiz.com</a>. We will not pursue good-faith security researchers acting within standard responsible-disclosure norms.</p>
   </section>
 
   <section>
@@ -183,7 +186,7 @@
 
   <section>
     <h2><span class="num">7.</span> Compliance posture</h2>
-    <p>We are early-stage and do not yet hold formal third-party certifications (SOC 2, ISO 27001). We are happy to share our completed Vendor Security Questionnaire (SIG Lite / CAIQ-Lite), discuss controls in detail, or work toward a security questionnaire your procurement team prefers. Contact <a href="mailto:security@protoquiz.com">security@protoquiz.com</a>.</p>
+    <p>We are early-stage and do not yet hold formal third-party certifications (SOC 2, ISO 27001). We are happy to complete your security questionnaire and discuss controls in detail. Contact <a href="mailto:security@protoquiz.com">security@protoquiz.com</a>.</p>
     <p>We are not a HIPAA Business Associate; the Platform is not designed to process PHI. CCPA, GDPR, and UK DPA-aligned commitments are in the DPA. Standard Contractual Clauses are available where required for cross-border transfers.</p>
   </section>
 
@@ -223,7 +226,7 @@
   <footer class="site-footer">
     <div class="foot-cols">
       <div class="foot-brand">
-        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="24" height="24"><span>ProtoQuiz</span></a>
+        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="24" height="24"><span>Proto<b>Quiz</b><sup>&trade;</sup></span></a>
         <p>Protocol training for EMS. Built by a working paramedic.</p>
       </div>
       <div class="foot-col">

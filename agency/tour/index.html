@@ -55,6 +55,27 @@
   #capTx { font-size:27px; font-weight:600; color:var(--ink); }
 
   /* beats — each beat exits along its own axis, so the tour has spatial logic */
+  /* hero beat: the /agency hero, same five-part word reveal, timed in hStagger() */
+  #bH .hq { width:1440px; text-align:left; }
+  #bH p { margin:0; }
+  #bH .w { display:inline-block; opacity:0; transform:translateY(14px); transition:opacity .65s var(--ease), transform .75s var(--ease); transition-delay:var(--d,0ms); }
+  #bH.on .w { opacity:1; transform:none; }
+  .hLede { font:400 60px/1.3 Georgia,'Times New Roman',serif; letter-spacing:-.012em; color:var(--sec); margin-bottom:26px !important; }
+  .hLede .em { color:var(--ink); font-weight:600; }
+  .hQ { font:500 148px/1.04 Georgia,'Times New Roman',serif; letter-spacing:-.022em; color:var(--amber); margin-bottom:44px !important; }
+  #bH .hq2 { transition-duration:.9s, 1s; }
+  .hBody { max-width:1080px; font:36px/1.5 Georgia,'Times New Roman',serif; color:var(--sec); }
+  #bH .hb { transform:translateY(8px); transition-duration:.6s, .7s; }
+  .hTag { font:italic 600 42px/1.5 Georgia,serif; color:var(--ink); margin-top:6px !important; }
+  #bH .ht { transform:translateY(8px); transition-duration:.9s; }
+  .hIntro { display:flex !important; align-items:center; gap:34px; margin-top:44px; transform:translateY(8px); transition-duration:.9s !important; }
+  .hIntro img { width:120px; height:120px; }
+  .hIntro small { display:block; font:600 20px var(--mono); letter-spacing:.22em; color:var(--mut); }
+  .hIntro strong { display:block; font:700 64px/1.1 var(--mono); letter-spacing:.02em; }
+  .hIntro strong b { color:var(--blue); }
+  .hIntro sup { font-size:22px; color:var(--mut); font-weight:400; }
+  .hIntro em { display:block; font:italic 26px Georgia,serif; color:var(--sec); margin-top:6px; }
+  .static #bH .w { opacity:1 !important; transform:none !important; }
   .beat { position:absolute; inset:72px 0 90px; display:flex; flex-direction:column; align-items:center; justify-content:center; opacity:0; visibility:hidden; transition:opacity .5s var(--ease), transform .8s var(--ease), filter .6s var(--ease); }
   .beat.on { opacity:1; visibility:visible; }
   .beat.on.out { opacity:0; }
@@ -100,6 +121,12 @@
   #b2 .pmeta[data-r] { transform:translateY(10px); }
   .ptitle { font-family:var(--mono); font-size:37px; font-weight:600; color:#c8ccd3; letter-spacing:-.01em; margin-top:12px; }
   .pmeta { font-family:var(--mono); font-size:17px; color:var(--mut); letter-spacing:.1em; margin-top:20px; }
+  /* scene 4 is a quiz launching: the start button is pressed and the card dives into the question */
+  .qstart { margin-top:54px; font-family:var(--mono); font-size:26px; font-weight:700; letter-spacing:.18em; color:#fff; background:var(--blue); padding:22px 46px; border-radius:12px; box-shadow:0 0 0 0 rgba(74,134,240,.5); }
+  .qstart span { display:inline-block; margin-left:10px; transition:transform .3s var(--ease); }
+  #qstart.pressed { transform:scale(.94) !important; box-shadow:0 0 0 18px rgba(74,134,240,0); transition:transform .12s ease-out, box-shadow .7s var(--ease) !important; }
+  #qstart.pressed span { transform:translateX(8px); }
+  .beat.on.out.xOpen { transform:scale(1.35); filter:blur(8px); transition:opacity .45s var(--ease), transform .7s cubic-bezier(.5,0,.2,1), filter .5s var(--ease); }
   .ticksWrap { margin-top:50px; display:flex; flex-direction:column; align-items:center; gap:15px; }
   .ticks { display:flex; gap:7px; }
   .ticks i { width:17px; height:40px; background:rgba(237,239,242,.09); transition:background .5s var(--ease); }
@@ -110,7 +137,7 @@
 
   /* B3 quiz — the card arrives as a plane, corners register after it settles */
   .qcard { position:relative; width:960px; border:1px solid var(--line); background:var(--panel); padding:0 0 36px; }
-  #b3 .qcard[data-r] { transform:translateY(40px) scale(.975); transition:opacity .55s var(--ease) .12s, transform .9s var(--ease) .12s; }
+  #b3 .qcard[data-r] { transform:scale(.82); transition:opacity .55s var(--ease) .12s, transform .9s var(--ease) .12s; }
   .qcard .c { position:absolute; width:15px; height:15px; border-color:var(--blue); border-style:solid; opacity:0;
               transition:opacity .5s var(--ease), border-color .45s var(--ease); }
   .qcard.answered .c { border-color:var(--green); }
@@ -395,6 +422,16 @@
     <span class="l"><img class="clogo" src="pq-logo.png" alt=""><span>PROTO<b>QUIZ</b>&trade;</span></span>
   </div>
 
+  <section class="beat" id="bH">
+    <div class="hq">
+      <p class="hLede"><span class="w">What</span> <span class="w">do</span> <span class="w em">EMTs</span> <span class="w em">and</span> <span class="w em">Paramedics</span> <span class="w">use</span> <span class="w">on</span> <span class="w">every</span> <span class="w">single</span> <span class="w">call,</span> <span class="w">but</span> <span class="w">hardly</span> <span class="w">train</span> <span class="w">on?</span></p>
+      <p class="hQ"><span class="w hq2">Their</span> <span class="w hq2">local</span> <span class="w hq2">protocols.</span></p>
+      <p class="hBody"><span class="w hb">In</span> <span class="w hb">school,</span> <span class="w hb">you</span> <span class="w hb">learn</span> <span class="w hb">the</span> <span class="w hb">NREMT.</span> <span class="w hb">Once</span> <span class="w hb">you</span> <span class="w hb">get</span> <span class="w hb">a</span> <span class="w hb">job,</span> <span class="w hb">you</span> <span class="w hb">need</span> <span class="w hb">to</span> <span class="w hb">learn</span> <span class="w hb">an</span> <span class="w hb">entirely</span> <span class="w hb">new</span> <span class="w hb">set</span> <span class="w hb">of</span> <span class="w hb">protocols.</span> <span class="w hb">They're</span> <span class="w hb">hundreds</span> <span class="w hb">of</span> <span class="w hb">pages</span> <span class="w hb">&mdash;</span> <span class="w hb">that's</span> <span class="w hb">no</span> <span class="w hb">small</span> <span class="w hb">task.</span> <span class="w hb">And</span> <span class="w hb">there's</span> <span class="w hb">no</span> <span class="w hb">good</span> <span class="w hb">way</span> <span class="w hb">to</span> <span class="w hb">study</span> <span class="w hb">or</span> <span class="w hb">learn</span> <span class="w hb">them.</span></p>
+      <p class="hTag"><span class="w ht">Until now.</span></p>
+      <div class="hIntro w hi"><img src="pq-logo.png" alt=""><div><small>INTRODUCING</small><strong>PROTO<b>QUIZ</b><sup>&trade;</sup></strong><em>Built by a paramedic</em></div></div>
+    </div>
+  </section>
+
   <section class="beat" id="b0">
     <div class="ey blue" data-r>FOR EMS AGENCIES &middot; FIRE &middot; PRIVATE &middot; HOSPITAL-BASED</div>
     <div class="introBrand"><img src="pq-logo.png" alt=""><span>PROTO<b>QUIZ</b><sup>&trade;</sup></span></div>
@@ -443,16 +480,7 @@
     </div>
     <div class="ptitle" data-r style="--d:450ms">Tachyarrhythmia with Poor Perfusion</div>
     <div class="pmeta" data-r style="--d:600ms">10 QUESTIONS &middot; ~4 MIN &middot; SAME FOR THE WHOLE CREW &middot; FIRST ATTEMPT COUNTS</div>
-    <div class="ticksWrap" data-r style="--d:800ms">
-      <div class="ticks" id="ticks">
-        <i class="f" style="--i:0"></i><i class="f" style="--i:1"></i><i class="f" style="--i:2"></i><i class="f" style="--i:3"></i>
-        <i></i>
-        <i class="f" style="--i:4"></i><i class="f" style="--i:5"></i><i class="f" style="--i:6"></i><i class="f" style="--i:7"></i>
-        <i></i>
-        <i class="f" style="--i:8"></i><i class="f" style="--i:9"></i><i class="f" style="--i:10"></i><i class="f" style="--i:11"></i>
-      </div>
-      <div class="tickLbl">AUGUST &middot; <b>12</b> OF 14 SHIFTS TRAINED</div>
-    </div>
+    <div class="qstart" data-r style="--d:900ms" id="qstart">START QUIZ <span>&rarr;</span></div>
   </section>
 
   <section class="beat" id="b3">
@@ -532,7 +560,7 @@
             <g fill="#8b98a9" font-size="9" font-family="SF Mono,Menlo,monospace" text-anchor="middle"><text x="16" y="48">76</text><text x="236" y="18">84</text></g>
           </svg>
           <div class="paneT" style="margin:16px 0 8px">NEEDS A NUDGE</div>
-          <div class="nudge"><span>R. Castellanos</span><span class="why">5 SHIFTS SINCE LAST QUIZ</span></div>
+          <div class="nudge"><span>R. Castellanos</span><span class="why">12 DAYS SINCE LAST QUIZ</span></div>
           <div class="nudge"><span>D. Whitfield</span><span class="why">MISSED TODAY</span></div>
         </div>
         <div class="pane" id="rpane" data-r style="--d:600ms">
@@ -569,7 +597,7 @@
         <tr><td>A. Brandt</td><td>EMT</td><td class="n">19</td><td class="n">2.2</td><td class="n">78%</td><td class="n">24 / 32</td><td class="n">2.2</td></tr>
         <tr><td colspan="2" style="color:#8a8d93">+ 3 more providers</td><td class="n">31</td><td class="n">3.7</td><td class="n">74%</td><td class="n">22 / 32</td><td class="n">3.7</td></tr>
       </table>
-      <div class="pTotals"><div>TOTAL TIME: <b>15.4 h</b></div><div>PROVIDERS: <b>7</b></div><div>CREW FIRST-TRY AVG: <b>81%</b></div></div>
+      <div class="pTotals"><div>TOTAL TIME: <b>15.4 h</b></div><div>PROVIDERS: <b>7</b></div><div>CREW FIRST-TRY AVG: <b>83%</b></div></div>
       <div class="attest">I certify that the training documented above was completed under this agency's continuing education program and is approved for continuing education credit under the authority of the undersigned.</div>
       <div class="sigRow">
         <div class="sig">
@@ -595,7 +623,7 @@
   <section class="beat" id="b8">
     <img class="b8logo" src="pq-logo.png" alt="" data-r>
     <div class="brandbig" data-r style="--d:100ms">PROTO<b>QUIZ</b><sup>&trade;</sup></div>
-    <div class="ey b1ey" data-r style="--d:600ms">ONE QUIZ A SHIFT &middot; ADMIN INSIGHT &middot; QA/QI &middot; CE DOCUMENTATION</div>
+    <div class="ey b1ey" data-r style="--d:600ms">ONE QUIZ PER SHIFT &middot; ADMIN INSIGHT &middot; QA/QI &middot; CE DOCUMENTATION</div>
     <div class="slogan endSlogan" data-r style="--d:950ms">Train how you <b>fight</b>.</div>
   </section>
 
@@ -638,8 +666,21 @@
       else el.classList.add('mcell-open');
     });
   })();
+  // hero beat timing, mirrors heroReveal() on /agency: lede word by word, the answer
+  // at once, body word by word, then "Until now." and the intro. Returns when it ends.
+  var HERO = (function(){
+    var t = 0, set = function(el, d){ el.style.setProperty('--d', Math.round(d) + 'ms'); };
+    var L = stage.querySelectorAll('#bH .hLede .w');
+    L.forEach(function(el, i){ set(el, i * 165); }); t = (L.length - 1) * 165 + 650 + 500;
+    stage.querySelectorAll('#bH .hq2').forEach(function(el){ set(el, t); }); t += 900 + 500;
+    var B = stage.querySelectorAll('#bH .hb');
+    B.forEach(function(el, i){ set(el, t + i * 55); }); t += (B.length - 1) * 55 + 600 + 400;
+    set(stage.querySelector('#bH .ht'), t); t += 600 + 450;
+    set(stage.querySelector('#bH .hi'), t);
+    return t + 900 + 2600;   // intro fade, then a hold long enough to read it
+  })();
   var INIT = stage.innerHTML;
-  var LOOP = 54000;
+  var LOOP;
   var q = function(s){ return stage.querySelector(s); };
   var jumping = false; // true while rebuilding state at a seek target — everything applies instantly
 
@@ -652,7 +693,7 @@
     }, 300);
   }
   // each beat leaves along the axis its successor arrives on, so cuts read as movement not crossfade
-  var EXIT = { b0:'xUp', bU:'xLeft', b2:'xFall', b3:'xLeft', b4:'xSink', bM:'xUp', b5:'xSink', b6:'xFall' };
+  var EXIT = { bH:'xUp', b0:'xUp', bU:'xLeft', b2:'xOpen', b3:'xLeft', b4:'xSink', bM:'xUp', b5:'xSink', b6:'xFall' };
   function go(id){
     var cur = stage.querySelector('.beat.on:not(.out)');
     if(cur){
@@ -663,7 +704,9 @@
         (function(el, a){ setTimeout(function(){ el.classList.remove('on','out',a); }, 820); })(cur, ax);
       }
     }
-    q('#'+id).classList.add('on');
+    var el = q('#'+id);
+    if (!jumping) void el.offsetWidth;   // draw the hidden state first, or a beat entered on frame one skips its reveal
+    el.classList.add('on');
   }
   // mm:ss ticker for the quiz clock — like cnt(), it snaps when seeking
   function ticker(sel, from, to, dur){
@@ -682,7 +725,7 @@
   // The head reads a full page top-to-bottom, THEN the sheet ejects right and
   // the next comes up. Timers are tracked so a seek can cancel a run in flight;
   // stage.innerHTML is replaced on rebuild, so anything pending must be dropped.
-  var SCAN = { hold:1500, scan:360, eject:210, gap:30, pages:5, timers:[], run:0 };
+  var SCAN = { hold:900, scan:200, eject:130, gap:15, pages:20, timers:[], run:0 };
   function scanStop(){
     SCAN.timers.forEach(clearTimeout); SCAN.timers = []; SCAN.run++;
   }
@@ -762,29 +805,33 @@
     })(t0);
   }
 
-  // enterprise arc: the gap, your book in, the daily system, the compounding payoff, the admin stack. 9 beats, 54s.
-  var BEATS = [0, 5500, 12800, 18200, 24800, 29800, 36000, 43500, 49500];
+  // enterprise arc: the gap, your book in, the daily system, the compounding payoff, the admin stack. 10 beats: the hero, then the 54s tour.
+  var BEATS = [0].concat([0, 5500, 14300, 19700, 26300, 31300, 37500, 45000, 51000].map(function(t){ return t + HERO; }));
   var EVENTS = [
-    [0,     function(){ go('b0'); cap('01 / 09','YOUR EMS PROTOCOLS'); }],
-    [5500,  function(){ go('bU'); cap('02 / 09','YOUR PROTOCOLS IN, QUIZZES OUT'); scanCycle(); }],
-    [6200,  function(){ cnt('#pgN', 438, 1500); }],
-    [12800, function(){ go('b2'); cap('03 / 09','ONE PROTOCOL, EVERY SHIFT'); scanStop(); }],
-    [14400, function(){ q('#ticks').classList.add('go'); }],
-    [18200, function(){ go('b3'); cap('04 / 09','FIVE MINUTES. ONE TOPIC'); ticker('#qsec', 18, 26, 4600); }],
-    [19500, function(){ var h = q('#hoverA'); if(h) h.classList.add('hover'); }],
-    [20300, function(){ var h = q('#hoverA'); if(h) h.classList.remove('hover'); }],
-    [20900, function(){ q('#pick').classList.add('picked'); q('#qfill').style.width = '70%'; }],
-    [21700, function(){ q('.qcard').classList.add('answered'); q('#qlock').classList.add('vis'); }],
-    [24800, function(){ go('b4'); cap('05 / 09','SCORED AND ON THE BOARD'); }],
-    [25400, function(){ cnt('#scoreN', 90, 1100); }],
-    [29800, function(){ go('bM'); cap('06 / 09','ONE QUIZ A SHIFT COMPOUNDS'); }],
-    [36000, function(){ go('b5'); cap('07 / 09','THE WHOLE CREW, GETTING BETTER'); }],
-    [36700, function(){ cnt('#c1',4,900); cnt('#c2',82,1100); cnt('#c3',6,1000); cnt('#c4',19,1100); }],
-    [37200, function(){ q('#wpane').classList.add('drawn'); q('#tpane').classList.add('drawn'); }],
-    [43500, function(){ go('b6'); cap('08 / 09','CE AND COMPLIANCE, DOCUMENTED'); }],
-    [45100, function(){ q('#b6').classList.add('signed'); }],
-    [49500, function(){ go('b8'); cap('09 / 09','PROTOQUIZ.COM'); }]
+    [0,     function(){ go('bH'); cap('01 / 10','THE GAP'); }],
+    [0,     function(){ go('b0'); cap('02 / 10','YOUR EMS PROTOCOLS'); }],
+    [5500,  function(){ go('bU'); cap('03 / 10','YOUR PROTOCOLS IN, QUIZZES OUT'); scanCycle(); }],
+    [6200,  function(){ cnt('#pgN', 438, 6500); }],
+    [14300, function(){ go('b2'); cap('04 / 10','ONE PROTOCOL, EVERY SHIFT'); scanStop(); }],
+    [19000, function(){ q('#qstart').classList.add('pressed'); }],
+    [19700, function(){ go('b3'); cap('05 / 10','FIVE MINUTES. ONE TOPIC'); ticker('#qsec', 18, 26, 4600); }],
+    [21000, function(){ var h = q('#hoverA'); if(h) h.classList.add('hover'); }],
+    [21800, function(){ var h = q('#hoverA'); if(h) h.classList.remove('hover'); }],
+    [22400, function(){ q('#pick').classList.add('picked'); q('#qfill').style.width = '70%'; }],
+    [23200, function(){ q('.qcard').classList.add('answered'); q('#qlock').classList.add('vis'); }],
+    [26300, function(){ go('b4'); cap('06 / 10','SCORED AND ON THE BOARD'); }],
+    [26900, function(){ cnt('#scoreN', 90, 1100); }],
+    [31300, function(){ go('bM'); cap('07 / 10','ONE QUIZ PER SHIFT COMPOUNDS'); }],
+    [37500, function(){ go('b5'); cap('08 / 10','THE WHOLE CREW, GETTING BETTER'); }],
+    [38200, function(){ cnt('#c1',4,900); cnt('#c2',82,1100); cnt('#c3',6,1000); cnt('#c4',19,1100); }],
+    [38700, function(){ q('#wpane').classList.add('drawn'); q('#tpane').classList.add('drawn'); }],
+    [45000, function(){ go('b6'); cap('09 / 10','CE AND COMPLIANCE, DOCUMENTED'); }],
+    [46600, function(){ q('#b6').classList.add('signed'); }],
+    [51000, function(){ go('b8'); cap('10 / 10','PROTOQUIZ.COM'); }]
   ];
+
+  EVENTS.forEach(function(e, i){ if (i) e[0] += HERO; });
+  LOOP = 55500 + HERO;
 
   // ---- master clock: state is a function of the playhead, so seeking is just a rebuild ----
   var cur = 0, playing = false, lastFired = -1, lastNow = null;
@@ -895,4 +942,11 @@
   requestAnimationFrame(tick);
 })();
 </script>
+<!-- dev label -->
+<script>/* dev only: names the version on localhost, never shows on protoquiz.com */
+if (/^(127\.0\.0\.1|localhost)$/.test(location.hostname)) document.addEventListener('DOMContentLoaded', function(){
+  var d = document.createElement('div'); d.textContent = 'V1 · CURRENT (agency/tour)';
+  d.style.cssText = 'font:600 13px ui-monospace,Menlo,monospace;letter-spacing:.14em;color:#f8fafc;background:#2f6fe0;padding:8px 14px;text-align:center';
+  document.body.insertBefore(d, document.body.firstChild);
+});</script>
 </body></html>

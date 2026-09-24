@@ -62,7 +62,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
-  <link rel="stylesheet" href="/assets/chrome.css?v=ad6d4ac8">
+  <link rel="stylesheet" href="/assets/chrome.css?v=c575909f">
   <link rel="stylesheet" href="_shared-styles.css">
   <style>main { padding-top: 0; padding-bottom: 0; min-height: auto; }</style>
 </head>
@@ -73,11 +73,12 @@
   <header class="site-header">
     <nav class="site-nav" aria-label="Primary">
       <div class="nav-left">
-        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="30" height="30"><span>ProtoQuiz</span></a>
+        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="30" height="30"><span>Proto<b>Quiz</b><sup>&trade;</sup></span></a>
         <div class="nav-links">
           <a href="/app/" class="nav-link">App</a>
           <a href="/agency/" class="nav-link">For agencies</a>
           <a href="/research/" class="nav-link">Research</a>
+          <a href="/blog/" class="nav-link on" aria-current="page">Blog</a>
           <a href="/about/" class="nav-link">About</a>
         </div>
       </div>
@@ -133,14 +134,14 @@
       <!-- Posts Grid -->
       <div class="posts-grid stagger" id="postsGrid">
 
-        <div class="post-card fade-up" data-category="study" onclick="window.location.href='posts/2026-09-22-paramedic-school-protocols-field-internship.html'; track('blog_post_click', {title: 'ProtoQuiz Is THE Tool for Paramedic Students'})">
+                <div class="post-card fade-up" data-category="study" onclick="window.location.href='posts/2026-09-22-paramedic-school-protocols-field-internship.html'; track('blog_post_click', {title: 'ProtoQuiz Is THE Tool for Paramedic Students'})">
           <div class="post-card-img">
-            <img src="images/blog-protocols-study.svg" alt="Studying a full EMS protocol set for paramedic field internship" style="width:100%; height:100%; object-fit:cover;">
+            <img src="images/cover-field-internship.jpg" alt="Studying a full EMS protocol set for paramedic field internship" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
             <span class="category-badge study">Study Guide</span>
           </div>
           <div class="post-card-body">
             <h3>ProtoQuiz Is THE Tool for Paramedic Students</h3>
-            <p class="excerpt">During paramedic school you have to learn a full protocol set for the service you ride with, and it is always different from the NREMT material you are learning in class. Most people do not have it memorized. That is the problem this app was built for.</p>
+            <p class="excerpt">In paramedic school you have to learn your ride service's full protocol, and it never matches the NREMT material. ProtoQuiz drills that protocol from the document itself.</p>
             <div class="post-card-footer">
               <div class="author-sm">
                 <div class="avatar-sm">J</div>
@@ -149,7 +150,7 @@
               <div class="meta-right">
                 <span>September 22, 2026</span>
                 <span class="dot"></span>
-                <span>3 min</span>
+                <span>2 min</span>
               </div>
             </div>
           </div>
@@ -157,12 +158,12 @@
 
         <div class="post-card fade-up" data-category="updates" onclick="window.location.href='posts/2026-09-17-med-mastery-grading-and-your-first-week-free.html'; track('blog_post_click', {title: 'Study Your Medications with AI'})">
           <div class="post-card-img">
-            <img src="images/blog-pharmacology.svg" alt="Med Mastery typed recall grading in ProtoQuiz" style="width:100%; height:100%; object-fit:cover;">
+            <img src="images/cover-med-mastery.jpg" alt="Med Mastery typed recall grading in ProtoQuiz" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
             <span class="category-badge updates">App Updates</span>
           </div>
           <div class="post-card-body">
             <h3>Study Your Medications with AI</h3>
-            <p class="excerpt">Your first seven days are full Premium with no card. Med Mastery hard mode grades typed answers against your own protocol, algorithm quizzes fit your certification level and cite the right page, and scenarios draw a genuinely different topic every time.</p>
+            <p class="excerpt">Version 2.6.2: seven days of Premium with no card, Med Mastery hard mode grades what you type against your own protocol, and algorithm quizzes fit your cert level.</p>
             <div class="post-card-footer">
               <div class="author-sm">
                 <div class="avatar-sm">J</div>
@@ -171,20 +172,20 @@
               <div class="meta-right">
                 <span>September 17, 2026</span>
                 <span class="dot"></span>
-                <span>4 min</span>
+                <span>3 min</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="post-card fade-up" data-category="updates" onclick="window.location.href='posts/2026-08-18-protoquiz-for-agencies-built-from-your-protocol.html'; track('blog_post_click', {title: 'ProtoQuiz for Agencies, Rebuilt: Your Protocol In, One Quiz a Day Out'})">
+        <div class="post-card fade-up" data-category="updates" onclick="window.location.href='posts/2026-08-18-protoquiz-for-agencies-built-from-your-protocol.html'; track('blog_post_click', {title: 'ProtoQuiz for Agencies, Rebuilt: Your Protocol In, One Quiz per Shift Out'})">
           <div class="post-card-img">
-            <img src="images/blog-agency-rebuilt.svg" alt="ProtoQuiz for EMS agencies, rebuilt" style="width:100%; height:100%; object-fit:cover;">
+            <img src="images/cover-agency-rebuilt.jpg" alt="ProtoQuiz for EMS agencies, rebuilt" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
             <span class="category-badge updates">For Agencies</span>
           </div>
           <div class="post-card-body">
-            <h3>ProtoQuiz for Agencies, Rebuilt: Your Protocol In, One Quiz a Day Out</h3>
-            <p class="excerpt">New look, new structure, and a written clinical standard behind every question. Your organization sends the protocol, we build and verify the bank from it, and your crews get one short quiz a day - page-cited and scoped by cert level.</p>
+            <h3>ProtoQuiz for Agencies, Rebuilt: Your Protocol In, One Quiz per Shift Out</h3>
+            <p class="excerpt">Your agency sends the protocol, we build and check the question bank from it, and crews get one short quiz per shift, cited to your pages and scoped by cert level.</p>
             <div class="post-card-footer">
               <div class="author-sm">
                 <div class="avatar-sm">J</div>
@@ -193,7 +194,7 @@
               <div class="meta-right">
                 <span>August 18, 2026</span>
                 <span class="dot"></span>
-                <span>5 min</span>
+                <span>3 min</span>
               </div>
             </div>
           </div>
@@ -201,12 +202,12 @@
 
         <div class="post-card fade-up" data-category="updates" onclick="window.location.href='posts/2026-08-05-medicine-mode-is-live-a-living-textbook-for-ems.html'; track('blog_post_click', {title: 'Medicine Mode Is Live: A Living Textbook for EMS'})">
           <div class="post-card-img">
-            <img src="images/blog-medicine-mode.svg" alt="Medicine Mode - a living textbook for EMS" style="width:100%; height:100%; object-fit:cover;">
+            <img src="images/cover-medicine-mode.jpg" alt="Medicine Mode - a living textbook for EMS" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
             <span class="category-badge updates">App Updates</span>
           </div>
           <div class="post-card-body">
             <h3>Medicine Mode Is Live: A Living Textbook for EMS</h3>
-            <p class="excerpt">742 evidence-cited topics covering the pathophysiology, the research, and the hospital course behind what we do on the truck. A living textbook - nothing else in EMS works like it.</p>
+            <p class="excerpt">742 evidence-cited topics on the pathophysiology and research behind what we do on the truck, following the patient from dispatch to the ICU.</p>
             <div class="post-card-footer">
               <div class="author-sm">
                 <div class="avatar-sm">J</div>
@@ -215,7 +216,7 @@
               <div class="meta-right">
                 <span>August 5, 2026</span>
                 <span class="dot"></span>
-                <span>6 min</span>
+                <span>3 min</span>
               </div>
             </div>
           </div>
@@ -223,12 +224,12 @@
 
         <div class="post-card fade-up" data-category="updates" onclick="window.location.href='posts/2026-06-24-nremt-prep-is-live-and-its-free.html'; track('blog_post_click', {title: 'ProtoQuiz Update: NREMT Prep Now Included'})">
           <div class="post-card-img">
-            <img src="images/blog-nremt.png" alt="NREMT prep is now included in ProtoQuiz" style="width:100%; height:100%; object-fit:cover;">
+            <img src="images/cover-nremt.jpg" alt="NREMT prep is now included in ProtoQuiz" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
             <span class="category-badge updates">App Updates</span>
           </div>
           <div class="post-card-body">
             <h3>ProtoQuiz Update: NREMT Prep Is Now Included - and It's Free</h3>
-            <p class="excerpt">1,700+ NREMT questions, full per-option rationales, a readiness dashboard, and an adaptive exam simulator. Everything the paid apps charge for - free. Plus a first look at Medicine Mode.</p>
+            <p class="excerpt">1,700+ NREMT questions with per-option rationales, a readiness dashboard, and an adaptive exam simulator that behaves like the real test.</p>
             <div class="post-card-footer">
               <div class="author-sm">
                 <div class="avatar-sm">J</div>
@@ -237,7 +238,7 @@
               <div class="meta-right">
                 <span>June 24, 2026</span>
                 <span class="dot"></span>
-                <span>6 min</span>
+                <span>3 min</span>
               </div>
             </div>
           </div>
@@ -250,7 +251,7 @@
           </div>
           <div class="post-card-body">
             <h3>We Compared 53 EMS Protocols From Across the Country. This Is What We Found.</h3>
-            <p class="excerpt">Real providers uploaded their agency's protocols to ProtoQuiz. We read all 53 page by page — here's how the same emergency gets treated differently depending on where you are.</p>
+            <p class="excerpt">Real providers uploaded 53 EMS protocols and we read every page. Starting doses, arrest rules, stroke scales and scope of practice vary more than you would think.</p>
             <div class="post-card-footer">
               <div class="author-sm">
                 <div class="avatar-sm">J</div>
@@ -259,7 +260,7 @@
               <div class="meta-right">
                 <span>June 14, 2026</span>
                 <span class="dot"></span>
-                <span>8 min</span>
+                <span>6 min</span>
               </div>
             </div>
           </div>
@@ -272,7 +273,7 @@
           </div>
           <div class="post-card-body">
             <h3>I Built ProtoQuiz for Paramedic School. It's Time to Run It at Your Agency.</h3>
-            <p class="excerpt">It started as the tool I needed in paramedic school — pharmacology, procedures, protocols. I've extended it for agencies. Pilot program now closed.</p>
+            <p class="excerpt">ProtoQuiz started as the tool I needed in paramedic school. Now there is a version for agencies: your protocols, your providers, your dashboard.</p>
             <div class="post-card-footer">
               <div class="author-sm">
                 <div class="avatar-sm">J</div>
@@ -281,7 +282,7 @@
               <div class="meta-right">
                 <span>May 16, 2026</span>
                 <span class="dot"></span>
-                <span>6 min</span>
+                <span>2 min</span>
               </div>
             </div>
           </div>
@@ -289,12 +290,12 @@
 
         <div class="post-card fade-up" data-category="updates" onclick="window.location.href='posts/2026-04-22-why-we-made-protoquiz-fully-free.html'; track('blog_post_click', {title: 'Why We Made ProtoQuiz Fully Free'})">
           <div class="post-card-img">
-            <img src="images/blog-free.svg" alt="Why ProtoQuiz is fully free" style="width:100%; height:100%; object-fit:cover;">
+            <img src="images/cover-free.jpg" alt="Why ProtoQuiz is fully free" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
             <span class="category-badge updates">App Updates</span>
           </div>
           <div class="post-card-body">
             <h3>Why We Made ProtoQuiz Fully Free</h3>
-            <p class="excerpt">Every feature is now free for everyone. No daily limits, no locked scenarios. Here's why ad-supported is the more sustainable model.</p>
+            <p class="excerpt">Why we dropped daily limits for an ad-supported model in April. Since then the ads are gone, and the free tier is 3 per day of each generated feature.</p>
             <div class="post-card-footer">
               <div class="author-sm">
                 <div class="avatar-sm">J</div>
@@ -303,7 +304,7 @@
               <div class="meta-right">
                 <span>Apr 22, 2026</span>
                 <span class="dot"></span>
-                <span>5 min</span>
+                <span>2 min</span>
               </div>
             </div>
           </div>
@@ -311,12 +312,12 @@
 
         <div class="post-card fade-up" data-category="study" onclick="window.location.href='posts/2026-03-24-how-to-study-ems-protocols-effectively.html'; track('blog_post_click', {title: 'How to Study EMS Protocols'})">
           <div class="post-card-img">
-            <img src="images/blog-protocols-study.svg" alt="How to study EMS protocols" style="width:100%; height:100%; object-fit:cover;">
+            <img src="images/cover-algorithms.jpg" alt="How to study EMS protocols" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
             <span class="category-badge study">Study Tips</span>
           </div>
           <div class="post-card-body">
             <h3>How to Study EMS Protocols: A Practical Guide for Medics</h3>
-            <p class="excerpt">Active recall, spaced repetition, and scenario-based practice -- the evidence-based methods that actually work for protocol retention.</p>
+            <p class="excerpt">Re-reading your protocol PDF feels productive but does not stick. Active recall, spaced repetition and scenarios do, in 2-3 hours a week.</p>
             <div class="post-card-footer">
               <div class="author-sm">
                 <div class="avatar-sm">J</div>
@@ -325,7 +326,7 @@
               <div class="meta-right">
                 <span>Mar 24, 2026</span>
                 <span class="dot"></span>
-                <span>7 min</span>
+                <span>4 min</span>
               </div>
             </div>
           </div>
@@ -333,12 +334,12 @@
 
         <div class="post-card fade-up" data-category="study" onclick="window.location.href='posts/2026-03-20-spaced-repetition-for-ems-providers.html'; track('blog_post_click', {title: 'Spaced Repetition for EMS'})">
           <div class="post-card-img">
-            <img src="images/blog-spaced-repetition.svg" alt="Spaced repetition forgetting curve" style="width:100%; height:100%; object-fit:cover;">
+            <img src="images/cover-spaced-repetition.jpg" alt="Spaced repetition forgetting curve" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
             <span class="category-badge study">Study Tips</span>
           </div>
           <div class="post-card-body">
             <h3>Spaced Repetition for EMS: How to Remember Protocols Long-Term</h3>
-            <p class="excerpt">The forgetting curve is real. Here's how spaced repetition and the SM-2 algorithm help you retain drug doses and treatment algorithms.</p>
+            <p class="excerpt">You learn the amiodarone dose Monday and it is fuzzy by Thursday. Here is how spaced repetition fixes that.</p>
             <div class="post-card-footer">
               <div class="author-sm">
                 <div class="avatar-sm">J</div>
@@ -347,7 +348,7 @@
               <div class="meta-right">
                 <span>Mar 20, 2026</span>
                 <span class="dot"></span>
-                <span>6 min</span>
+                <span>4 min</span>
               </div>
             </div>
           </div>
@@ -360,7 +361,7 @@
           </div>
           <div class="post-card-body">
             <h3>EMS Pharmacology Study Guide: How to Actually Remember Your Drug Box</h3>
-            <p class="excerpt">Organize by system, quiz yourself on contraindications first, and learn the 9 things you need to know about every EMS medication.</p>
+            <p class="excerpt">Group drugs by system, know 9 things about every one, and quiz yourself instead of re-reading.</p>
             <div class="post-card-footer">
               <div class="author-sm">
                 <div class="avatar-sm">J</div>
@@ -369,7 +370,7 @@
               <div class="meta-right">
                 <span>Mar 15, 2026</span>
                 <span class="dot"></span>
-                <span>8 min</span>
+                <span>3 min</span>
               </div>
             </div>
           </div>
@@ -382,7 +383,7 @@
           </div>
           <div class="post-card-body">
             <h3>EMS Training Compliance: What Training Officers Actually Need</h3>
-            <p class="excerpt">Spreadsheets and sign-in sheets don't prove competency. Here's what data-driven protocol training looks like for EMS agencies.</p>
+            <p class="excerpt">A sign-in sheet proves someone was in the room, not that they learned anything. Here is what defensible EMS training compliance actually needs.</p>
             <div class="post-card-footer">
               <div class="author-sm">
                 <div class="avatar-sm">J</div>
@@ -391,7 +392,7 @@
               <div class="meta-right">
                 <span>Mar 10, 2026</span>
                 <span class="dot"></span>
-                <span>6 min</span>
+                <span>3 min</span>
               </div>
             </div>
           </div>
@@ -399,12 +400,12 @@
 
         <div class="post-card fade-up" data-category="updates" onclick="window.location.href='posts/2026-02-24-protoquiz-2-0-significant-upgrades-across-the-board.html'; track('blog_post_click', {title: 'ProtoQuiz 2.0'})">
           <div class="post-card-img">
-            <img src="../crown-logo.png" alt="ProtoQuiz 2.0" style="width:100%; height:100%; object-fit:contain; padding:24px; background:#1b1610;">
+            <img src="images/cover-protoquiz-2.jpg" alt="ProtoQuiz 2.0" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
             <span class="category-badge updates">App Updates</span>
           </div>
           <div class="post-card-body">
             <h3>ProtoQuiz 2.0: Significant Upgrades Across the Board</h3>
-            <p class="excerpt">The biggest update since launch, with meaningful improvements to extraction quality, scenario generation, and overall reliability.</p>
+            <p class="excerpt">ProtoQuiz 2.0 rebuilt extraction from scratch: uploads dropped from 2-3 minutes to about 80 seconds, and scenarios got a dispatch screen.</p>
             <div class="post-card-footer">
               <div class="author-sm">
                 <div class="avatar-sm">J</div>
@@ -413,7 +414,7 @@
               <div class="meta-right">
                 <span>Feb 24, 2026</span>
                 <span class="dot"></span>
-                <span>8 min</span>
+                <span>2 min</span>
               </div>
             </div>
           </div>
@@ -426,16 +427,16 @@
           </div>
           <div class="post-card-body">
             <h3>ProtoQuiz's First Month: From Uploads to Algorithm Quizzes</h3>
-            <p class="excerpt">A look at ProtoQuiz's first month, the challenges faced, the progress made, and the valuable community feedback that's shaping its future.</p>
+            <p class="excerpt">A month in: 2,500+ quizzes generated, 600+ scenarios completed, and upload reliability climbing every week.</p>
             <div class="post-card-footer">
               <div class="author-sm">
                 <div class="avatar-sm">J</div>
                 <span>Jaden</span>
               </div>
               <div class="meta-right">
-                <span>Dec 9, 2025</span>
+                <span>Dec 10, 2025</span>
                 <span class="dot"></span>
-                <span>6 min</span>
+                <span>1 min</span>
               </div>
             </div>
           </div>
@@ -443,12 +444,12 @@
 
         <div class="post-card fade-up" data-category="updates" onclick="window.location.href='posts/2025-11-22-introducing-protoquiz.html'; track('blog_post_click', {title: 'Introducing ProtoQuiz'})">
           <div class="post-card-img">
-            <img src="../blog-protocols.png" alt="Introducing ProtoQuiz" style="width:100%; height:100%; object-fit:cover;">
+            <img src="images/cover-introducing.jpg" alt="Introducing ProtoQuiz" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
             <span class="category-badge updates">App Updates</span>
           </div>
           <div class="post-card-body">
             <h3>Master Your EMS Protocols with ProtoQuiz</h3>
-            <p class="excerpt">Juggling multiple EMS agencies? ProtoQuiz makes learning and retaining different protocols easy. Upload your PDF and start quizzing!</p>
+            <p class="excerpt">Every agency has its own protocol book. ProtoQuiz turns your protocol PDF into quizzes, scenarios and flashcards, with every question citing its page.</p>
             <div class="post-card-footer">
               <div class="author-sm">
                 <div class="avatar-sm">J</div>
@@ -457,7 +458,7 @@
               <div class="meta-right">
                 <span>Nov 22, 2025</span>
                 <span class="dot"></span>
-                <span>5 min</span>
+                <span>1 min</span>
               </div>
             </div>
           </div>
@@ -467,8 +468,8 @@
 
       <!-- Empty State -->
       <div class="empty-state" id="emptyState" style="display:none;">
-        <h3>Coming Soon</h3>
-        <p>We're working on new posts for this category. Check back soon!</p>
+        <h3>No posts here yet</h3>
+        <p>Try another category.</p>
       </div>
     </div>
   </main>
@@ -554,7 +555,7 @@
   <footer class="site-footer">
     <div class="foot-cols">
       <div class="foot-brand">
-        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="24" height="24"><span>ProtoQuiz</span></a>
+        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="24" height="24"><span>Proto<b>Quiz</b><sup>&trade;</sup></span></a>
         <p>Protocol training for EMS. Built by a working paramedic.</p>
       </div>
       <div class="foot-col">

@@ -56,70 +56,137 @@ const registry = `<svg viewBox="-145 46 1015 539" class="thumb-svg" role="img" a
   + Object.values(geo.states).map(d => round(d)).join('')
   + `"/></svg>`;
 
-// ── census: WHAT IS CARRIED, not how it is dosed ────────────────────────────────────
-// The question a medic actually asks of another agency's protocol is "do you carry
-// that?", not "what is your p75". Carriage is also the more honest thing for this
-// dataset to lead with: it needs one mention of a medication per agency, where a dose
-// distribution needs a parsed number from 15+ sources before it can say anything.
+// ── census: SAME CALL, DIFFERENT DOSE ──────────────────────────────────────────────
+// Common calls a medic runs every week, and the lowest to highest adult dose the census
+// finds across agencies. Hand-picked, not sorted by ratio: the widest ratios are rare
+// drugs and extraction noise, and the point is that ordinary calls vary. Each row reads
+// on its own ("2 to 10 mg"), so no shared axis is needed.
 const cmp = JSON.parse(readFileSync('data/census/compare.json', 'utf8'));
-const carriers = new Map();
-for (const g of cmp.groups) {
-  const k = g.key.drugKey;
-  if (!carriers.has(k)) carriers.set(k, new Set());
-  for (const a of g.agencyKeys || []) carriers.get(k).add(a);
-}
-const TOTAL = new Set([...carriers.values()].flatMap(s => [...s])).size;
+const CALLS = [
+  ['Seizure', 'MIDAZOLAM', 'SEIZURE'],
+  ['Opioid overdose', 'NALOXONE', 'OPIOID_OVERDOSE'],
+  ['SVT', 'ADENOSINE', 'SVT'],
+  ['Trauma bleeding', 'TRANEXAMIC ACID', 'TRAUMA_HEMORRHAGE'],
+  ['Allergic reaction', 'DIPHENHYDRAMINE', 'ALLERGIC_REACTION'],
+  ['Cardiac arrest', 'EPINEPHRINE', 'CARDIAC_ARREST'],
+];
+// A row reads in one unit: fentanyl is 25 to 100 mcg, not 25 mcg to 0.1 mg.
+const fmt = (v, lo = v) => lo >= 0.1 && v >= 1000 ? `${+(v / 1000).toFixed(1)} g` : lo < 0.1 ? `${+(v * 1000).toFixed(0)} mcg` : `${+v.toFixed(1)} mg`;
+const top = CALLS.map(([call, drug, indication]) => {
+  const g = cmp.groups.find(g => g.key.drugKey === drug && g.key.indicationKey === indication
+    && g.key.population === 'adult' && !g.key.perKg && g.key.unit === 'mg' && g.dist);
+  return g && { call, drug: drug.charAt(0) + drug.slice(1).toLowerCase(), d: g.dist, n: g.n.agencies };
+}).filter(Boolean);
 
-// Turkish-spelled duplicates (ADENOZİN, ADRENALİN, AMİODARON) are extraction failures,
-// not medications. A dotted capital I cannot appear in an English drug name.
-const BAD = /[İığşçö]/;
-const pretty = k => k.charAt(0) + k.slice(1).toLowerCase();
-
-const ranked = [...carriers]
-  .filter(([k]) => !BAD.test(k))
-  .map(([k, set]) => ({ k, n: set.size, pct: set.size / TOTAL }))
-  .sort((a, b) => b.n - a.n);
-
-// The CONTESTED middle, not the top. Epinephrine at 94% tells a reader nothing they did
-// not already know -- every ALS truck carries epi. The interesting medications are the
-// ones roughly half of agencies carry and half do not, because each one is a live
-// disagreement about scope of practice: norepinephrine, ketamine, blood products. A
-// medic reading this wants to know what the agency one county over can give that they
-// cannot, and that answer only lives in this band.
-const LO = 0.2, HI = 0.8;
-const ROWS = 6;
-const contested = ranked.filter(r => r.pct >= LO && r.pct <= HI);
-// Spread the picks across the band instead of taking the top 8, which would be eight
-// medications all sitting at 75-80% and would look like the old chart again.
-const top = contested.length <= ROWS ? contested
-  : Array.from({ length: ROWS }, (_, i) =>
-      contested[Math.round(i * (contested.length - 1) / (ROWS - 1))]);
-const universal = ranked.filter(r => r.pct >= 0.9).length;
-const rare = ranked.filter(r => r.pct < 0.10).length;
-
-// Six rows at full text size, not eight scaled down: shrinking the SVG to fit a height
-// cap takes the labels with it, and a chart whose medication names need squinting at is
-// decoration. RH keeps this card's rendered height close to the map's so the two thumbs
-// sit on one baseline and neither volume looks like the other's subhead.
-const W = 440, RH = 35, PAD = 12, LAB = 148, BAR_X = LAB + 8, BAR_W = W - BAR_X - 46;
+const W = 440, RH = 35, PAD = 12, LAB = 140, X0 = LAB + 44, X1 = W - 66;
 const H = PAD * 2 + top.length * RH;
-const bars = top.map((r, i) => {
-  const y = PAD + i * RH;
+const rows = top.map(({ call, drug, d }, i) => {
+  const y = PAD + i * RH, cy = y + 11;
+  const at = v => X0 + ((v - d.min) / ((d.max - d.min) || 1)) * (X1 - X0);
+  const box = at(d.p75) - at(d.p25), med = at(d.median);
   return `<g>
-    <text x="0" y="${y + 15}" class="t-drug">${pretty(r.k)}</text>
-    <rect x="${BAR_X}" y="${y + 5}" width="${BAR_W}" height="13" rx="2" class="t-bg"/>
-    <rect x="${BAR_X}" y="${y + 5}" width="${(BAR_W * r.pct).toFixed(1)}" height="13" rx="2" class="t-bar"/>
-    <text x="${BAR_X + BAR_W + 6}" y="${y + 15}" class="t-x">${Math.round(r.pct * 100)}%</text>
+    <text x="0" y="${y + 9}" class="t-drug">${call}</text>
+    <text x="0" y="${y + 23}" class="t-ind">${drug}</text>
+    <text x="${X0 - 10}" y="${cy + 4}" text-anchor="end" class="t-x">${fmt(d.min)}</text>
+    <line x1="${X0}" y1="${cy}" x2="${X1}" y2="${cy}" class="t-whisk"/>
+    <line x1="${X0}" y1="${cy - 6}" x2="${X0}" y2="${cy + 6}" class="t-whisk"/>
+    <line x1="${X1}" y1="${cy - 6}" x2="${X1}" y2="${cy + 6}" class="t-whisk"/>
+    ${box > 0 ? `<rect x="${at(d.p25)}" y="${cy - 8}" width="${box}" height="16" class="t-box"/>
+    <line x1="${med}" y1="${cy - 8}" x2="${med}" y2="${cy + 8}" class="t-med"/>`
+    // The middle half is one value: most agencies agree, so the agreed dose is the mark.
+    : `<circle cx="${med}" cy="${cy}" r="6" class="t-agree"/>
+    <text x="${med}" y="${cy + 20}" text-anchor="middle" class="t-agree-x">${d.min === d.max ? 'All' : 'Most'} use ${fmt(d.p25, d.min)}</text>`}
+    <text x="${X1 + 10}" y="${cy + 4}" class="t-x">${fmt(d.max, d.min)}</text>
   </g>`;
 }).join('');
 
-const census = `<svg viewBox="0 0 ${W} ${H}" class="thumb-svg thumb-carry" role="img" aria-label="Thumbnail: medications that only some US EMS agencies carry, as a share of agencies">${bars}</svg>`;
-const censusNote = `Only ${universal} medications are carried by more than nine agencies in ten. These are the contested ones &mdash; each is a live disagreement about what a paramedic may give.`;
+const census = `<svg viewBox="0 0 ${W} ${H}" class="thumb-svg thumb-doses" role="img" aria-label="Thumbnail: the lowest to highest adult dose across US EMS agencies for six common calls">${rows}</svg>`;
+
+// ── carry: WHERE AGENCIES SPLIT ─────────────────────────────────────────────────────
+// Share of agencies whose protocol lists each item as a medication with a dose. Three
+// zones: nearly all (75%+), split (25-75%), rare. The core kit is one strip of dots; the
+// rows are the advanced drugs people ask about. Groups are unions of spellings and forms
+// (any paralytic counts as RSI). Blood is left out: protocols write it as a procedure, not
+// a medication, so a medication count undercounts it. It comes with procedures.
+const BLOOD = new Set(['BLOOD PRODUCTS', 'LOW TITER O WHOLE BLOOD', 'WHOLE BLOOD', 'PLASMA']);
+const listed = new Map();
+for (const g of cmp.groups) for (const a of g.agencyKeys || []) {
+  if (!listed.has(g.key.drugKey)) listed.set(g.key.drugKey, new Set());
+  listed.get(g.key.drugKey).add(a);
+}
+const ALL = new Set([...listed.values()].flatMap(s => [...s])).size;
+const share = keys => new Set(keys.flatMap(k => [...(listed.get(k) || [])])).size / ALL;
+const meds = [...listed].filter(([k]) => !BLOOD.has(k)).map(([k, s]) => s.size / ALL);
+const pct = meds.map(p => Math.round(p * 100));
+const carryZones = { core: pct.filter(p => p >= 75).length, split: pct.filter(p => p >= 25 && p < 75).length };
+const CARRY = [
+  ['Ketamine', 'Pain, sedation, agitation', ['KETAMINE']],
+  ['Cyanide antidote', 'Smoke-inhalation poisoning', ['HYDROXOCOBALAMIN', 'HYDROXYCOBALAMIN']],
+  ['Norepinephrine', 'Blood pressure in shock', ['NOREPINEPHRINE']],
+  ['RSI paralytic', 'Paralysis for a breathing tube', ['ROCURONIUM', 'SUCCINYLCHOLINE', 'VECURONIUM', 'PANCURONIUM']],
+  ['Antibiotics', 'Sepsis, open fractures', ['CEFAZOLIN', 'CEFTRIAXONE', 'CEFEPIME', 'PIPERACILLIN-TAZOBACTAM', 'AMOXICILLIN-CLAVULANATE', 'CIPROFLOXACIN', 'CLINDAMYCIN', 'MOXIFLOXACIN', 'DOXYCYCLINE']],
+  ['Buprenorphine', 'Starts opioid-withdrawal care', ['BUPRENORPHINE', 'BUPRENORPHINE-NALOXONE']],
+].map(([label, use, keys]) => ({ label, use, pct: share(keys) }));
+const CW = 440, CR = 29, CL = 176, CX1 = 424, CT = 22;
+const cx = p => +(CL + p * (CX1 - CL)).toFixed(1);
+const CH = CT + (CARRY.length + 1) * CR + 16;
+const coreDots = meds.filter(p => p >= 0.75).map(p => `<circle cx="${cx(p)}" cy="${CT + 11}" r="3.5" class="t-core"/>`).join('');
+const carryRow = (y, label, sub, mark) => `<g><line x1="${CL}" y1="${y + 11}" x2="${CX1}" y2="${y + 11}" class="t-track"/><text x="0" y="${y + 9}" class="t-drug">${label}</text><text x="0" y="${y + 22}" class="t-ind">${sub}</text>${mark}</g>`;
+const carry = `<svg viewBox="0 0 ${CW} ${CH}" class="thumb-svg thumb-carry" role="img" aria-label="Share of ${ALL} US EMS agencies whose protocol lists each medication: ${carryZones.core} are on 75% or more, ${carryZones.split} on 25 to 75%. ${CARRY.map(r => `${r.label} ${Math.round(r.pct * 100)}%`).join(', ')}">`
+  + `<rect x="${cx(0.25)}" y="${CT - 6}" width="${cx(0.75) - cx(0.25)}" height="${CH - CT - 10}" class="t-split"/>`
+  + [['Rare', 0.125], ['Split', 0.5], ['Nearly all', 0.875]].map(([t, p]) => `<text x="${cx(p)}" y="11" text-anchor="middle" class="t-zone${t === 'Split' ? ' t-zone-hi' : ''}">${t}</text>`).join('')
+  + `<line x1="${cx(0.5)}" y1="${CT - 6}" x2="${cx(0.5)}" y2="${CH - 16}" class="t-half"/>`
+  + carryRow(CT, 'Core kit', `${carryZones.core} drugs, e.g. epinephrine`, coreDots)
+  + CARRY.map((r, i) => carryRow(CT + (i + 1) * CR, r.label, r.use,
+    `<circle cx="${cx(r.pct)}" cy="${CT + (i + 1) * CR + 11}" r="5" class="t-dot"/><text x="${cx(r.pct) + 9}" y="${CT + (i + 1) * CR + 15}" class="t-x">${Math.round(r.pct * 100)}%</text>`)).join('')
+  + [0, 0.25, 0.5, 0.75, 1].map(p => `<text x="${cx(p)}" y="${CH - 3}" text-anchor="middle" class="t-tick">${p * 100}%</text>`).join('')
+  + `</svg>`;
+
+// ── formulary: HOW MANY MEDICATIONS EACH AGENCY LISTS ─────────────────────────────
+// The same per-agency union as the carry chart, counted the other way round. Bins of 5.
+const per = new Map();
+for (const [k, s] of listed) if (!BLOOD.has(k)) for (const a of s) per.set(a, (per.get(a) || 0) + 1);
+const sizes = [...per.values()].sort((a, b) => a - b);
+const formularyStats = {
+  n: sizes.length, min: sizes[0], max: sizes.at(-1),
+  median: Math.round((sizes[(sizes.length - 1) >> 1] + sizes[sizes.length >> 1]) / 2),
+};
+const BIN = 5, bins = Array(Math.floor(formularyStats.max / BIN) + 1).fill(0);
+for (const v of sizes) bins[Math.floor(v / BIN)]++;
+const FW = 440, FH = 200, FB = 172, FX0 = 8, FX1 = FW - 8, peak = Math.max(...bins);
+const bw = (FX1 - FX0) / bins.length, fx = v => FX0 + (v / (bins.length * BIN)) * (FX1 - FX0);
+const formulary = `<svg viewBox="0 0 ${FW} ${FH}" class="thumb-svg thumb-carry thumb-form" role="img" aria-label="How many medications each agency's protocol lists: median ${formularyStats.median}, most ${formularyStats.max}, across ${formularyStats.n} agencies">${bins.map((c, i) => {
+  const h = (c / peak) * (FB - 34), x = FX0 + i * bw;
+  return `<rect x="${(x + 2).toFixed(1)}" y="${(FB - h).toFixed(1)}" width="${(bw - 4).toFixed(1)}" height="${h.toFixed(1)}" rx="2" class="t-bar"/>`
+    + (c ? `<text x="${(x + bw / 2).toFixed(1)}" y="${(FB - h - 5).toFixed(1)}" text-anchor="middle" class="t-x">${c}</text>` : '');
+}).join('')}<line x1="${FX0}" y1="${FB}" x2="${FX1}" y2="${FB}" class="t-axis"/>${
+  bins.map((_, i) => i % 2 ? '' : `<text x="${fx(i * BIN).toFixed(1)}" y="${FB + 16}" text-anchor="middle" class="t-x">${i * BIN}</text>`).join('')
+}<line x1="${fx(formularyStats.median + 0.5).toFixed(1)}" y1="14" x2="${fx(formularyStats.median + 0.5).toFixed(1)}" y2="${FB}" class="t-medline"/><text x="${(fx(formularyStats.median + 0.5) + 5).toFixed(1)}" y="20" class="t-drug">median ${formularyStats.median}</text></svg>`;
+
+// ── tables for /research/doses and /research/carry ──────────────────────────────────
+// A row reads in ONE unit, chosen by its lowest value: TXA is 500 to 2000 mg, not 500 mg to 2 g.
+const UNIT = { mL: 'mL', mEq: 'mEq', unit: 'units', drop: 'drops', spray: 'sprays', inch: 'in' };
+const rowFmt = (unit, lo) => unit !== 'mg' ? v => `${+v.toFixed(2)} ${UNIT[unit] ?? unit}`
+  : lo < 0.1 ? v => `${+(v * 1000).toFixed(1)} mcg` : lo >= 1000 ? v => `${+(v / 1000).toFixed(2)} g` : v => `${+v.toFixed(2)} mg`;
+// "Other" is a bucket of unrelated uses, so its spread is not a finding.
+const doseTable = cmp.groups
+  .filter(g => g.key.population === 'adult' && !g.key.perKg && g.dist && g.n.sources >= 15 && g.key.indicationKey !== 'OTHER')
+  .map(g => {
+    const f = rowFmt(g.key.unit, g.dist.min);
+    return { indicationKey: g.key.indicationKey, drugKey: g.key.drugKey, lo: f(g.dist.min), med: f(g.dist.median), hi: f(g.dist.max), n: g.n.agencies,
+      q: [g.dist.min, g.dist.p25, g.dist.median, g.dist.p75, g.dist.max] };
+  });
+const carryTable = [...listed].filter(([k]) => !BLOOD.has(k)).map(([drugKey, s]) => [drugKey, s.size]).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
 
 writeFileSync(OUT, JSON.stringify({
   registry,
   census,
-  // Stated beside the chart so the claim it makes is checkable.
-  censusNote,
+  carry,
+  carryN: ALL,
+  carryZones,
+  formulary,
+  formularyStats,
+  doseTable,
+  carryTable,
 }, null, 0));
 console.log(`wrote ${OUT} — registry ${(registry.length / 1024).toFixed(0)} KB, census chart ${top.length} rows`);

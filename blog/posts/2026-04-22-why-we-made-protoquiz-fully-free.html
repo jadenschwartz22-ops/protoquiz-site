@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Why We Made ProtoQuiz Fully Free - EMS ProtoQuiz Blog</title>
-  <meta name="description" content="Every feature in ProtoQuiz is now free for everyone. Here's why we switched to an ad-supported model — and why it's actually more sustainable for the long run." />
+  <meta name="description" content="Why we dropped daily limits in April. Since then the free tier has become 3 per day of each generated feature, with no ads." />
 
   <!-- SEO -->
   <meta name="apple-itunes-app" content="app-id=6753611139" />
@@ -13,10 +13,10 @@
 
   <!-- Social / Open Graph -->
   <meta property="og:title" content="Why We Made ProtoQuiz Fully Free" />
-  <meta property="og:description" content="Every feature in ProtoQuiz is now free for everyone. Here's why we switched to an ad-supported model — and why it's actually more sustainable for the long run." />
+  <meta property="og:description" content="Why we dropped daily limits in April. Since then the free tier has become 3 per day of each generated feature, with no ads." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://protoquiz.com/blog/posts/2026-04-22-why-we-made-protoquiz-fully-free.html" />
-  <meta property="og:image" content="https://protoquiz.com/og-image.png" />
+  <meta property="og:image" content="https://protoquiz.com/blog/images/cover-free.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="article:published_time" content="2026-04-22" />
@@ -25,8 +25,8 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Why We Made ProtoQuiz Fully Free" />
-  <meta name="twitter:description" content="Every feature in ProtoQuiz is now free for everyone. Here's why we switched to an ad-supported model — and why it's actually more sustainable for the long run." />
-  <meta name="twitter:image" content="https://protoquiz.com/og-image.png" />
+  <meta name="twitter:description" content="Why we dropped daily limits in April. Since then the free tier has become 3 per day of each generated feature, with no ads." />
+  <meta name="twitter:image" content="https://protoquiz.com/blog/images/cover-free.jpg" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png?v=4" />
@@ -39,7 +39,7 @@
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": "Why We Made ProtoQuiz Fully Free",
-    "description": "Every feature in ProtoQuiz is now free for everyone. Here's why we switched to an ad-supported model — and why it's actually more sustainable for the long run.",
+    "description": "Why we dropped daily limits in April. Since then the free tier has become 3 per day of each generated feature, with no ads.",
     "author": {
       "@type": "Person",
       "name": "Jaden",
@@ -306,17 +306,7 @@
     }
 
     /* Comments Section */
-    .comments-section {
-      margin-top: 80px;
-      padding-top: 40px;
-      border-top: 2px solid var(--line);
-    }
 
-    .comments-section h2 {
-      font-size: 1.75rem;
-      font-weight: 800;
-      margin-bottom: 24px;
-    }
 
     /* Back Link */
     .back-link {
@@ -380,64 +370,36 @@
           </div>
         </article>
 
+        <img class="post-hero" src="../images/cover-free.jpg" alt="Why ProtoQuiz is fully free" style="display:block;width:100%;aspect-ratio:1200/640;object-fit:cover;border-radius:12px;margin:0 0 28px;box-sizing:border-box;">
+
         <!-- Post Content -->
         <div class="post-content">
-          <p>Short version: every feature in ProtoQuiz is now free for everyone. No daily limits, no locked scenarios, no protocol caps. The optional subscription only does one thing — it removes ads.</p>
+          <p><em>Update, Sept 2026: ProtoQuiz no longer shows ads. The free tier now includes 3 per day of each generated feature.</em></p>
 
-          <p>Here's why we made the switch, and why it's actually the more sustainable model for an app like this.</p>
+          <p>Short version: every feature in ProtoQuiz is now free for everyone. No daily limits, no locked scenarios, no protocol caps.</p>
 
-          <h2>The Old Model Wasn't Working</h2>
+          <h2>Why We Changed</h2>
 
-          <p>For most of ProtoQuiz's life, we ran a classic freemium split: free users got pharmacology quizzes and a limited number of scenarios and algorithm quizzes per day. A paid premium tier unlocked everything else.</p>
-
-          <p>It made sense on paper. The features that cost the most to run — scenario generation, algorithm extraction — got gated behind the paid tier. People who got serious value would convert. Everyone else got a meaningful taste.</p>
-
-          <p>In practice, three things kept happening:</p>
+          <p>We ran classic freemium: pharmacology quizzes free, a limited number of scenarios and algorithm quizzes per day, everything else behind premium. The expensive features were gated. In practice, three things kept happening:</p>
 
           <ul>
-            <li><strong>Students hit the daily limit and bounced.</strong> A medic student studying for a shift the next morning would burn their one daily scenario in five minutes, hit a paywall, and close the app. The exact users I built this for were the ones getting walled off.</li>
-            <li><strong>The "free vs. premium" framing scared people away from downloading.</strong> Reviews and word-of-mouth kept describing ProtoQuiz as "the paid EMS app" — even though most of it was free. That's a brand problem.</li>
-            <li><strong>Conversion was low because gating-by-feature is a bad fit for studying.</strong> Studying isn't a thing you do in bursts. You either build a daily habit with the app or you don't. Daily limits actively kill the habit.</li>
+            <li><strong>Students hit the limit and left.</strong> A medic student prepping for a shift would burn their one daily scenario in five minutes, hit a paywall and close the app. The people I built this for were the ones getting walled off.</li>
+            <li><strong>People saw it as a paid app,</strong> even though most of it was free.</li>
+            <li><strong>Daily limits kill the habit.</strong> Studying works as a daily routine, and limits break it.</li>
           </ul>
 
-          <h2>Why Ads Are Actually More Sustainable</h2>
+          <p><strong>No friction.</strong> Download, upload your PDF, study. No trial countdown.</p>
 
-          <p>Counterintuitively, ad revenue scales better than subscription revenue for a tool like this. Here's the logic:</p>
-
-          <p><strong>Ads scale with usage. Subscriptions scale with conversion.</strong> A free user who studies 30 minutes a day for a month is now generating real ad revenue — without ever having to make a buying decision. Under the old model, that same user generated $0 because they never converted.</p>
-
-          <p><strong>Friction drops to zero.</strong> Download, upload your PDF, study. No "is this worth a monthly subscription?" gut-check. No 7-day trial countdown stressing people out. Just open the app and go.</p>
-
-          <p><strong>The "ad-free upgrade" is a real product.</strong> When premium isn't gating features, the ad-free subscription becomes a clean value proposition: "you like the app, you study a lot, the ads are getting in the way — pay to remove them." That's a much easier yes than "pay to unlock the thing you haven't tried yet."</p>
-
-          <h2>What Stays the Same</h2>
+          <h2>What Changes, What Doesn't</h2>
 
           <ul>
-            <li>Page citations on every answer. Still the core promise.</li>
-            <li>Your protocols stay yours. No content sold or shared.</li>
-            <li>Same extraction quality, same scenarios, same Learn Mode, same Compete Mode.</li>
-            <li>Existing premium subscribers keep their ad-free experience and continue to support development.</li>
+            <li>No daily limits: unlimited scenarios, algorithm quizzes and protocol uploads for everyone.</li>
+            <li>Still page citations on every answer. Your protocols stay yours, never sold or shared. Same extraction, scenarios, Learn Mode and Compete Mode.</li>
           </ul>
 
-          <h2>What Changes</h2>
+          <p>Gating features most users need pushes away the people I built this for.</p>
 
-          <ul>
-            <li><strong>No daily limits on anything.</strong> Unlimited scenarios, unlimited algorithm quizzes, unlimited protocol uploads — for everyone.</li>
-            <li><strong>Ads appear during natural breaks</strong> in the app (between quiz sessions, between scenarios). They're not in the middle of a question or interrupting a scenario branch. Studying stays uninterrupted.</li>
-            <li><strong>Optional ad-free subscription</strong> for anyone who'd rather study without ads. Same price as the old premium — but now it only removes ads. Every feature is already yours.</li>
-          </ul>
-
-          <h2>The Honest Tradeoff</h2>
-
-          <p>Ads aren't beautiful. I'd rather have a clean, ad-free app for everyone. But the alternative is gating features that most users genuinely need, and the data shows that approach pushes away the exact people I want to help.</p>
-
-          <p>If the ads bug you, the upgrade is right there. If they don't, study as much as you want, forever, for free. Either way, you're supporting the app — and that's the point.</p>
-
-          <h2>What's Next</h2>
-
-          <p>Now that everyone has full access, the focus shifts entirely to making the core experience better: faster extraction, better scenario quality, more protocol formats supported, and continued work on the agency (B2B) side. If you've been waiting to try ProtoQuiz because of the pricing, this is the time.</p>
-
-          <p>As always — file feedback in the app, drop a comment below, or shoot me an email. I read all of it.</p>
+          <p>Next up: faster extraction, better scenarios, more protocol formats, and more work on the agency side. Feedback in the app, a comment below, or an email all reach me. I read all of it.</p>
         </div>
 
         <!-- CTA -->
@@ -450,24 +412,6 @@
         </div>
 
         <!-- Comments Section -->
-        <div class="comments-section">
-          <h2>Comments</h2>
-          <script src="https://giscus.app/client.js"
-                  data-repo="jadenschwartz22-ops/protoquiz-site"
-                  data-repo-id="R_kgDOP_OVLw"
-                  data-category="Blog Comments"
-                  data-category-id="DIC_kwDOP_OVL84CyFhj"
-                  data-mapping="pathname"
-                  data-strict="0"
-                  data-reactions-enabled="1"
-                  data-emit-metadata="0"
-                  data-input-position="top"
-                  data-theme="dark"
-                  data-lang="en"
-                  crossorigin="anonymous"
-                  async>
-          </script>
-        </div>
       </div>
     </div>
   </main>
@@ -610,5 +554,6 @@
       </div>
     </div>
   </footer>
+<script>if(/android/i.test(navigator.userAgent))for(const a of document.querySelectorAll('a[href="https://apps.apple.com/app/id6753611139"]:not(.store)'))a.href="https://play.google.com/store/apps/details?id=com.tmtl.emsprotoquiz"</script>
 </body>
 </html>

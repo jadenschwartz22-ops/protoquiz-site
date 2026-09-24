@@ -23,7 +23,7 @@
 // on the page it was cited from. Candidates are counted, never shown.
 import { writeFileSync, mkdirSync, readFileSync, existsSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
-import { navFor, researchBar, FOOTER_HTML, CHROME_HEAD } from './shared-chrome.mjs';
+import { navFor, researchBar, FOOTER_HTML, CHROME_HEAD, assetHash } from './shared-chrome.mjs';
 import {
   readTimeline, verifiedEvents, CHANGE_LABEL, isAdd, isDrop,
   subjectOf, fmtMonth, n, escapeHtml,
@@ -203,11 +203,11 @@ ${a.events.map(evRow).join('\n')}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>What changed - US EMS protocols between dated editions</title>
-  <meta name="description" content="US EMS agencies revise their protocols quietly. We read ${n(editions)} dated editions from ${agencies.length} agencies and report what appeared and what stopped appearing between them, each change quoted from the page it was found on.">
+  <meta name="description" content="US EMS agencies revise their protocols between editions. Comparing ${n(editions)} dated editions from ${agencies.length} agencies shows what appeared and what stopped appearing between them, each change quoted from the page it was found on.">
   <link rel="canonical" href="https://protoquiz.com/research/changes/">
   <meta name="robots" content="index,follow">
   <meta property="og:title" content="What changed in US EMS protocols">
-  <meta property="og:description" content="Agencies revise their protocols quietly. We read the dated editions in sequence and report what appeared and what stopped appearing, quoted from the page.">
+  <meta property="og:description" content="Agencies revise their protocols between editions. Comparing the dated editions in sequence shows what appeared and what stopped appearing, quoted from the page.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://protoquiz.com/research/changes/">
   <meta property="og:image" content="https://protoquiz.com/og-image.png">
@@ -215,7 +215,7 @@ ${a.events.map(evRow).join('\n')}
   <link rel="icon" href="/favicon.ico?v=4" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=4">
 ${CHROME_HEAD}
-  <link rel="stylesheet" href="/assets/research.css">
+  <link rel="stylesheet" href="/assets/research.css?v=${assetHash('assets/research.css')}">
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
@@ -225,10 +225,9 @@ ${researchBar('/research/changes/')}
   <main id="main">
     <section class="res-hero">
       <div class="res-eyebrow">Protocol census &middot; a finding</div>
-      <h1>Protocols change. Almost nobody announces it.</h1>
-      <p class="lede">An agency publishes a new edition of its protocol book and the old one
-      disappears from the website. Nothing says what moved. We kept the old editions, read
-      ${n(editions)} dated books from ${agencies.length} agencies in sequence, and report what
+      <h1>Protocols change between editions.</h1>
+      <p class="lede">An agency publishes a new edition of its protocol book, and what moved is not always easy to see. This page compares
+      ${n(editions)} dated books from ${agencies.length} agencies in sequence and shows what
       appeared and what stopped appearing between them &mdash; each one quoted from the page it
       was found on.</p>
     </section>

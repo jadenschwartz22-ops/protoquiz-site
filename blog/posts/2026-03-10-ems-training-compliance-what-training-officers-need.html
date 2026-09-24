@@ -306,17 +306,7 @@
     }
 
     /* Comments Section */
-    .comments-section {
-      margin-top: 80px;
-      padding-top: 40px;
-      border-top: 2px solid var(--line);
-    }
 
-    .comments-section h2 {
-      font-size: 1.75rem;
-      font-weight: 800;
-      margin-bottom: 24px;
-    }
 
     /* Back Link */
     .back-link {
@@ -378,89 +368,49 @@
             <span>&bull;</span>
             <time datetime="2026-03-10">March 10, 2026</time>
             <span>&bull;</span>
-            <span>6 min read</span>
+            <span>3 min read</span>
           </div>
         </article>
 
+        <img class="post-hero" src="../images/blog-training-compliance.svg" alt="EMS training compliance dashboard" style="display:block;width:100%;aspect-ratio:1200/640;object-fit:cover;border-radius:12px;margin:0 0 28px;box-sizing:border-box;">
+
         <!-- Post Content -->
         <div class="post-content">
-          <p>If you are an EMS training officer, you already know the feeling. The state sends a records request. Your medical director asks for documentation on protocol competency. A new hire needs onboarding verification. And you are digging through a shared drive full of sign-in sheets, half-completed spreadsheets, and PDFs of PowerPoint slides that may or may not correspond to training that actually happened.</p>
+          <p>The state sends a records request. Your medical director asks for proof of protocol competency. And you are digging through sign-in sheets, half-finished spreadsheets and old slide decks that may or may not match training that actually happened.</p>
 
-          <p>The EMS industry has a training documentation problem. Not because training officers do not care -- they care deeply -- but because the tools available to most agencies were never designed for the job. This post breaks down what compliance actually requires, where most agencies fall short, and what a modern training infrastructure looks like.</p>
+          <p>That is not a training officer problem. It is a tools problem. Most agencies were never given anything built for the job.</p>
 
-          <h2>What Training Compliance Actually Requires</h2>
+          <h2>What Compliance Actually Requires</h2>
 
-          <p>State EMS offices and accreditation bodies do not just want proof that training occurred. They want evidence that training was effective. The difference matters. A sign-in sheet proves someone was in the room. It does not prove they absorbed the material, understood it, or can apply it on a call.</p>
-
-          <p>At a minimum, defensible training compliance requires four things:</p>
+          <p>A sign-in sheet proves someone was in the room. It does not prove they learned anything. Defensible compliance needs four things:</p>
 
           <ul>
-            <li><strong>Documented training events</strong>: What was taught, when, and to whom. This is the baseline that most agencies already handle, even if imperfectly.</li>
-            <li><strong>Measurable outcomes</strong>: Some form of assessment proving the provider understood the material. A quiz score, a skills evaluation, a scenario performance -- something beyond attendance.</li>
-            <li><strong>Individual provider tracking</strong>: Per-person records that show each provider's training history, assessment results, and areas of strength or weakness. Aggregate numbers are not enough when the question is whether a specific medic was competent in a specific protocol.</li>
-            <li><strong>Remediation paths</strong>: When a provider demonstrates a knowledge gap, there needs to be a documented process for addressing it. Identifying the gap is step one. Closing it and verifying the closure is what makes the compliance loop complete.</li>
+            <li><strong>Documented training events</strong>: what was taught, when, and to whom. Most agencies have this.</li>
+            <li><strong>Measurable outcomes</strong>: a quiz score, skills evaluation or scenario result. Something beyond attendance.</li>
+            <li><strong>Per-provider records</strong>: each medic's history, scores, strengths and gaps. Aggregate numbers cannot tell you whether one specific medic knows one specific protocol.</li>
+            <li><strong>Remediation</strong>: when a gap shows up, a documented way to close it and verify it closed.</li>
           </ul>
 
-          <p>Most EMS agencies have the first item covered. Many have pieces of the second. Very few have systematic solutions for the third and fourth.</p>
+          <p>Many agencies have pieces of the second. Very few have anything systematic for the third and fourth.</p>
 
-          <h2>The Gap Between Attendance and Competency</h2>
+          <h2>Attendance Is Not Competency</h2>
 
-          <p>Here is the uncomfortable truth that training officers already know: sitting through a PowerPoint does not mean a provider learned anything. Annual skills day is a necessary exercise, but it typically covers a narrow slice of the protocol book under conditions that do not resemble real clinical decision-making.</p>
+          <p>The usual cycle: schedule a training day, build a cardiac slide deck, two hours in a room, sign the sheet, file it. Box checked. Three months later a medic on nights needs a contraindication from that session, and nothing on file can tell you whether it stuck. When your system is built on attendance, attendance is all you can measure.</p>
 
-          <p>The traditional approach looks something like this. The agency schedules a training day. Someone prepares a slide deck on cardiac protocols. Providers sit in a room for two hours. They sign a sheet. The training officer files the sheet. Box checked.</p>
-
-          <p>But what happens three months later when a provider on a night shift needs to recall the contraindications for a medication they covered in that session? The sign-in sheet cannot answer that question. The slide deck, wherever it ended up, cannot answer it either. There is no mechanism to know whether the training actually stuck.</p>
-
-          <p>This is not a criticism of training officers. It is a criticism of the tools and systems available to them. When your entire compliance infrastructure is built on attendance records, attendance is all you can measure.</p>
-
-          <h2>What Training Officers Actually Need</h2>
-
-          <p>After talking to training officers and EMS supervisors at agencies of various sizes, a consistent set of needs emerges. These are not aspirational features. They are the minimum requirements for a training program that can demonstrate real compliance.</p>
-
-          <h3>Per-Provider Score Breakdowns by Category</h3>
-
-          <p>Training officers need to see how each provider performs across different protocol categories -- cardiac, respiratory, trauma, pharmacology, pediatrics, and so on. Aggregate pass rates are useful for identifying department-wide trends, but individual breakdowns are what matter when you need to answer the question: does this provider know this material?</p>
-
-          <p>This data should be available on demand, not assembled manually from scattered quiz results and spreadsheet tabs. A training officer should be able to pull up any provider and immediately see their strengths, weaknesses, and trajectory over time.</p>
-
-          <h3>Mandatory Assignments with Deadlines</h3>
-
-          <p>When a new protocol is adopted, or when a QA review identifies a systemic knowledge gap, the training officer needs to push mandatory training to specific providers or the entire department. That training needs a deadline, and the system needs to track who has completed it and who has not.</p>
-
-          <p>This is table stakes in every other industry with compliance requirements. Healthcare systems, aviation, law enforcement -- they all have mandatory assignment workflows. EMS has largely been doing this with email reminders and verbal follow-ups, which is neither scalable nor auditable.</p>
-
-          <h3>Audit-Ready Data Export</h3>
-
-          <p>When the state asks for records, the answer should be a CSV export, not a weekend spent compiling data from five different sources. Training records need to be exportable in a format that satisfies external reviewers: provider name, training topic, date completed, assessment score, remediation status if applicable.</p>
-
-          <p>If assembling this data takes more than a few minutes, the system is failing the training officer.</p>
-
-          <h3>Early Warning for Falling Behind</h3>
-
-          <p>The worst time to discover a knowledge gap is during a patient care incident review. Training officers need visibility into who is falling behind before it matters clinically. That means dashboards showing overdue assignments, declining quiz performance, and providers who have not engaged with training materials in an extended period.</p>
-
-          <p>Proactive identification is the difference between a training program that prevents problems and one that only reacts to them.</p>
-
-          <h2>How This Connects to QA/QI</h2>
-
-          <p>Quality assurance and quality improvement programs in EMS spend significant time reviewing patient care reports and identifying protocol deviations. When a deviation is found, the question is always: why did this happen?</p>
-
-          <p>The answers usually fall into a few categories. The provider did not know the protocol. The provider knew the protocol but could not recall it under pressure. The provider made a judgment call that diverged from the written guidance. Or the situation was genuinely ambiguous and the protocol did not clearly apply.</p>
-
-          <p>The first two categories -- knowledge gaps and recall failures -- are training problems. And they are preventable training problems, if you have the data to identify them before they manifest on a call. A QA/QI program that only reviews incidents after they happen is doing important work, but it is inherently reactive. Pairing it with a training system that continuously measures protocol knowledge turns QI from incident review into gap prevention.</p>
-
-          <p>When a chart review reveals that three providers in the last quarter deviated from the same cardiac protocol, the training officer should be able to cross-reference that with quiz and scenario data. If those providers also scored poorly on cardiac pharmacology assessments, the connection is clear and the remediation path is straightforward. Without that data, the QI committee is guessing at root causes.</p>
-
-          <h2>Traditional vs. Data-Driven Training</h2>
-
-          <p>The contrast between the traditional and modern approaches is stark:</p>
+          <h2>What Training Officers Need</h2>
 
           <ul>
-            <li><strong>Traditional</strong>: Annual skills day, sign-in sheets, occasional PowerPoints, no individual tracking, compliance verified by attendance records alone.</li>
-            <li><strong>Data-driven</strong>: Ongoing protocol quizzes tied to the agency's actual protocols, scenario-based practice throughout the year, <a href="2026-03-20-spaced-repetition-for-ems-providers.html">spaced repetition</a> for medication knowledge, real-time dashboards showing per-provider performance, mandatory assignments with tracked completion, exportable compliance data.</li>
+            <li><strong>Per-provider scores by category</strong> (cardiac, respiratory, trauma, pharmacology, pediatrics), on demand, not assembled by hand.</li>
+            <li><strong>Mandatory assignments with deadlines</strong> for new protocols or gaps QA finds, with tracked completion instead of email reminders.</li>
+            <li><strong>Audit-ready export</strong>: provider, topic, date, score, remediation status. If it takes more than a few minutes, the system is failing you.</li>
+            <li><strong>Early warning</strong>: overdue assignments, slipping scores and people who have gone quiet, before it shows up in a chart review.</li>
           </ul>
 
-          <p>The traditional approach is not wrong. It is incomplete. Annual training events still matter. Hands-on skills practice is irreplaceable. But without continuous measurement between those events, there is no way to know whether the training is working until something goes wrong on a call.</p>
+          <h2>Where QA/QI Fits</h2>
+
+          <p>When QA finds a protocol deviation, the cause is often a knowledge gap or a recall failure under pressure. Both are preventable training problems if you can see them early. If three providers deviated from the same cardiac protocol last quarter and also scored poorly on cardiac pharmacology, the fix is obvious. Without that data, the QI committee is guessing.</p>
+
+          <p>Annual skills day and hands-on practice still matter. They are just incomplete without continuous measurement in between: ongoing quizzes on your own protocols, scenario practice, and <a href="2026-03-20-spaced-repetition-for-ems-providers.html">spaced repetition</a> for medications.</p>
 
           <!-- Stats Callout -->
           <div class="stats-callout">
@@ -471,23 +421,13 @@
             <p>Mandatory assignments with deadlines, CSV export for audits, and admin dashboards for training officers.</p>
           </div>
 
-          <h2>Building the Infrastructure</h2>
+          <h2>What We Built</h2>
 
-          <p>This is the problem we are solving with the <a href="https://protoquiz.com/agency/">ProtoQuiz agency platform</a>. It takes the same protocol-to-quiz engine that individual providers use in the <a href="https://apps.apple.com/app/id6753611139">mobile app</a> and wraps it in the administrative tools that training officers need: an admin dashboard with per-provider analytics, mandatory assignment workflows with deadline tracking, CSV export for state audits, and real-time visibility into who is keeping up and who needs attention.</p>
+          <p>The <a href="https://protoquiz.com/agency/">ProtoQuiz agency platform</a> takes the same protocol-to-quiz engine behind the <a href="https://apps.apple.com/app/id6753611139">mobile app</a> and adds what training officers need: per-provider analytics, mandatory assignments with deadlines, CSV export for audits, and a live view of who is keeping up. Unlike a generic LMS, the quizzes, <a href="2026-03-24-how-to-study-ems-protocols-effectively.html">scenarios</a> and <a href="2026-03-15-ems-pharmacology-study-guide.html">pharmacology assessments</a> all come from your protocol PDF, with page citations.</p>
 
-          <p>The key difference from generic LMS platforms is that everything is generated directly from your agency's protocol PDF. The quizzes, the <a href="2026-03-24-how-to-study-ems-protocols-effectively.html">scenarios</a>, the <a href="2026-03-15-ems-pharmacology-study-guide.html">pharmacology assessments</a> -- all of it maps back to the specific protocols your providers are expected to follow, with page citations so there is never a question about the source.</p>
+          <p>A quick test for your current setup: can you show per-provider competency by category, prove a specific medic finished remediation, and export it in under five minutes? If not, you cannot prove your training works, even if it does.</p>
 
-          <p>You can see a live deployment at <a href="https://highland.protoquiz.com">highland.protoquiz.com</a>, which shows how this looks in practice for a real agency.</p>
-
-          <h2>What This Means for Your Agency</h2>
-
-          <p>If you are a training officer reading this, you do not need to overhaul everything at once. But consider what your current system can actually demonstrate if someone asks hard questions about training effectiveness. Can you show per-provider competency data by protocol category? Can you prove that a specific provider completed remediation after a knowledge gap was identified? Can you export that data in under five minutes?</p>
-
-          <p>If the answer to any of those is no, the gap between your training effort and your documentation of that effort is a liability. Not because your training is bad, but because you cannot prove it is good.</p>
-
-          <p>The agencies that figure this out early -- that move from attendance-based compliance to competency-based compliance -- will be better positioned for accreditation, better protected in litigation, and most importantly, better at ensuring their providers actually know the protocols that keep patients alive.</p>
-
-          <p>If you are interested in what this looks like for your agency, <a href="https://protoquiz.com/agency/">visit the agency page</a> or reach out directly. We are working with departments now and building the tools around real training officer needs.</p>
+          <p>Want to see it for your agency? <a href="https://protoquiz.com/agency/">Visit the agency page</a> or reach out directly.</p>
 
           <p><a href="../">Back to the blog</a> for more EMS training and study resources.</p>
         </div>
@@ -502,24 +442,6 @@
         </div>
 
         <!-- Comments Section -->
-        <div class="comments-section">
-          <h2>Comments</h2>
-          <script src="https://giscus.app/client.js"
-                  data-repo="jadenschwartz22-ops/protoquiz-site"
-                  data-repo-id="R_kgDOP_OVLw"
-                  data-category="Blog Comments"
-                  data-category-id="DIC_kwDOP_OVL84CyFhj"
-                  data-mapping="pathname"
-                  data-strict="0"
-                  data-reactions-enabled="1"
-                  data-emit-metadata="0"
-                  data-input-position="top"
-                  data-theme="dark"
-                  data-lang="en"
-                  crossorigin="anonymous"
-                  async>
-          </script>
-        </div>
       </div>
     </div>
   </main>
@@ -662,5 +584,6 @@
       </div>
     </div>
   </footer>
+<script>if(/android/i.test(navigator.userAgent))for(const a of document.querySelectorAll('a[href="https://apps.apple.com/app/id6753611139"]:not(.store)'))a.href="https://play.google.com/store/apps/details?id=com.tmtl.emsprotoquiz"</script>
 </body>
 </html>

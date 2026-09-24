@@ -186,11 +186,12 @@ test('a pending review is disclosed with its date', () => {
 
 console.log('\nSEO_GEO rules');
 test('no aggregateRating anywhere', () => assert.ok(!allHtml.includes('aggregateRating')));
-// A United States census must not count a non-US jurisdiction as a state. "QLD"
-// used to render beside Alabama in the coverage table, inflating the US total and
-// reading as a data error. Non-US listings stay published, in their own section.
-test('a non-US jurisdiction is listed but never counted as a US state', () => {
-  const mk = (agencyKey, name, state) => ({ agencyKey, name, state, coverage: { hasProtocol: true } });
+// A US census must not count a non-US jurisdiction as a state. "QLD" used to render
+// beside Alabama in the coverage table, inflating the US total and reading as a data
+// error. Non-US listings stay published, grouped under their country; the agency's
+// own `country` field decides, including for an agency with no region at all.
+const abroadBuild = () => {
+  const mk = (agencyKey, name, state, country) => ({ agencyKey, name, state, country, coverage: { hasProtocol: true } });
   const doses = [];
   for (const [agencyKey, state] of [['qas-qld', 'QLD'], ['denver', 'CO']]) {
     for (const drugKey of ['epinephrine', 'midazolam', 'fentanyl']) {
@@ -198,17 +199,25 @@ test('a non-US jurisdiction is listed but never counted as a US state', () => {
         parseStatus: 'parsed', route: 'IV', standing: true, repeatRaw: null, docHash: 'h1', state });
     }
   }
-  const built = buildPages({
+  return buildPages({
     documents: [{ hash: 'h1', effectiveDate: '2026-01-01', agencyKey: 'qas-qld' }],
-    agencies: [mk('qas-qld', 'Queensland Ambulance Service', 'QLD'), mk('denver', 'Denver Health', 'CO')],
+    agencies: [mk('qas-qld', 'Queensland Ambulance Service', 'QLD', 'AU'), mk('denver', 'Denver Health', 'CO', 'US'), mk('cape-town', 'Cape Town EMS', null, 'ZA')],
     doses, ledger: [],
-    manifest: { asOf: '2026-09-07', dosesParsed: 6, dosesPartial: 0, dosesRaw: 0, namedAgencies: 2, doseRows: 6 },
-  });
-  const h = built.files.find(f => f.path === '/census/').html;
+    manifest: { asOf: '2026-09-07', dosesParsed: 6, dosesPartial: 0, dosesRaw: 0, namedAgencies: 3, doseRows: 6 },
+  }).files.find(f => f.path === '/census/').html;
+};
+test('a non-US jurisdiction is listed but never counted as a US state', () => {
+  const h = abroadBuild();
   const table = (h.match(/<table class="coverage">[\s\S]*?<\/table>/) || [''])[0];
   assert.ok(!/QLD|Queensland/.test(table), 'a non-US jurisdiction reached the US coverage table');
-  assert.ok(h.includes('Outside the United States'), 'non-US listing was dropped instead of sectioned');
-  assert.ok(h.includes('Queensland, Australia'), 'a non-US code must render with its country');
+  assert.ok(h.includes('Outside the US'), 'non-US listing was dropped instead of sectioned');
+});
+test('the landing reports the country split and lists each non-US agency under its country', () => {
+  const h = abroadBuild();
+  assert.ok(h.includes('3 named agencies: 1 in the US, plus 2 outside it (Australia, South Africa).'), 'country split line missing or wrong');
+  const intl = h.slice(h.indexOf('id="international"'));
+  assert.ok(/<h4>South Africa<span class="count">1<\/span><\/h4>/.test(intl), 'a stateless non-US agency must count under its country');
+  assert.ok(/<h4>Australia<span class="count">1<\/span><\/h4>\s*<ul[^>]*><li><a href="\/census\/states\/qld\/">Queensland</.test(intl), 'a regional non-US agency must list under its country');
 });
 
 test('no meta keywords anywhere', () => assert.ok(!/name="keywords"/.test(allHtml)));
@@ -537,6 +546,18 @@ test('drug and indication pages carry no per-agency dose value', () => {
     }
   }
 });
+test('a drug row links the guideline only when its agreed dose equals it', () => {
+  const key = population => ({ drugKey: 'EPINEPHRINE', indicationKey: 'CARDIAC_ARREST', population, perKg: population === 'peds', unit: 'mg' });
+  const gl = (population, dose, body = 'AHA 2025') => ({ key: key(population), dose, body, title: 'Cardiac Arrest Algorithm', url: `https://example.org/${body}/${population}` });
+  const render = guidelines => buildPages({ ...v3data(), guidelines }).files.find(f => f.path === '/census/drugs/epinephrine/').html;
+  const html = render([gl('adult', 1), gl('peds', 0.02)]);
+  const row = (population, h = html) => h.split('<tr').find(r => r.includes(population === 'peds' ? 'Pediatric' : 'Adult<'));
+  assert.ok(row('adult').includes('<a class="gl" href="https://example.org/AHA 2025/adult"') && row('adult').includes('matches AHA 2025'), 'agreed 1 mg = guideline 1 mg must be tagged');
+  const two = row('adult', render([gl('adult', 1), gl('adult', 1, 'NASEMSO')]));
+  assert.ok(two.includes('matches NASEMSO') && /title="NASEMSO[^"]*; AHA 2025/.test(two), 'two agreeing bodies: NASEMSO named, both in the tooltip');
+  assert.ok(!row('peds').includes('class="gl"'), 'agreed 0.01 mg/kg differs from 0.02: no tag, no editorial');
+  assert.ok(!v3html['/census/drugs/epinephrine/'].includes('class="gl"'), 'no guideline file, no tag');
+});
 test('drug and indication pages name agencies without a value beside the name', () => {
   const ind = v3html['/census/drugs/epinephrine/cardiac-arrest/'];
   assert.ok(ind.includes('Denver Health Paramedic Division'), 'a named agency must still be named');
@@ -576,7 +597,7 @@ test('the five-number bar replaces the per-row histogram and per-row median', ()
 test('the cross-agency #agencies ROW TABLE is gone; a name list took its place', () => {
   const ind = v3html['/census/drugs/epinephrine/cardiac-arrest/'];
   assert.ok(!/<th>Agency<\/th><th>Population<\/th><th>Dose<\/th>/.test(ind), 'the cross-agency row table must be removed');
-  assert.ok(ind.includes('<h2>Named agencies</h2>'), 'the named-agency list must remain');
+  assert.ok(ind.includes('<summary>Named agencies'), 'the named-agency list must remain');
 });
 test('an indication page prints sources, named agencies and states', () => {
   const ind = v3html['/census/drugs/epinephrine/cardiac-arrest/'];
@@ -587,19 +608,18 @@ test('an indication page prints sources, named agencies and states', () => {
 test('an indication page prints route shares from the engine', () => {
   assert.ok(v3html['/census/drugs/epinephrine/cardiac-arrest/'].includes('<h3>Routes</h3>'), 'expected route shares');
 });
-test('"n rows under review" comes from manifest.flaggedRows', () => {
+test('the left-out dose count comes from manifest.flaggedRows', () => {
   const m = v3data().manifest;
   assert.ok(m.flaggedRows > 0, 'the fixture must exercise a non-zero review queue');
   for (const p of ['/census/drugs/epinephrine/', '/census/drugs/epinephrine/cardiac-arrest/']) {
-    assert.ok(v3html[p].includes(`${m.flaggedRows} rows are under review`)
-      || v3html[p].includes(`${m.flaggedRows} row is under review`), `${p} must print the review count`);
+    assert.ok(v3html[p].includes('likely misreads, so they are left out'), `${p} must say suspect doses are left out`);
   }
 });
 test(`a group under ${MIN_SOURCES} sources publishes no distribution and no page`, () => {
   // HYPOTENSION_PUSH_DOSE has 2 sources in the fixture.
   assert.ok(!v3paths.has('/census/drugs/epinephrine/hypotension-push-dose/'), 'a thin group must get no indication page');
   const drug = v3html['/census/drugs/epinephrine/'];
-  assert.ok(/Hypotension \/ shock <span class="muted">n=2<\/span>/.test(drug), 'a thin group still shows its count on the drug page');
+  assert.ok(/Hypotension \/ shock <span class="muted">\(2\)<\/span>/.test(drug), 'a thin group still shows its count on the drug page');
   assert.ok(!/href="[^"]*hypotension-push-dose[^"]*"/.test(drug), 'a thin group must not be linked');
 });
 test('a drug page reports the rollup, not a sum of its groups', () => {
@@ -718,9 +738,10 @@ test('a raw-only indication is labelled distinctly on the drug page', () => {
   epi.indications = [...epi.indications, { indicationKey: 'RAW_ONLY_INDICATION', sources: 2 }];
   const h = buildPages(d).files.find(f => f.path === '/census/drugs/epinephrine/').html;
   assert.ok(h.includes('Raw Only Indication'), 'the raw-only indication must still be listed');
-  assert.ok(/Raw Only Indication <span class="muted">n=2, raw only<\/span>/.test(h), 'a raw-only indication must be labelled distinctly from a comparable-group n=');
+  assert.ok(/Raw Only Indication <span class="muted">\(2, no numbers\)<\/span>/.test(h), 'a raw-only indication must be labelled distinctly from a comparable-group n=');
   // Its siblings (present in groups) must NOT carry the raw-only label.
-  assert.ok(/Cardiac arrest <span class="muted">n=7<\/span>/.test(h), 'a sibling backed by a comparable group must keep the plain n= label');
+  // A sibling with a distribution is a row in the spread table, never on the raw-only line.
+  assert.ok(/<table class="spread">[\s\S]*Cardiac arrest[\s\S]*<\/table>/.test(h), 'a sibling backed by a comparable group must render as a distribution row');
   assert.ok(!/Cardiac Arrest <span class="muted">n=7, raw only<\/span>/.test(h), 'a comparable-group indication must not be mislabelled raw only');
 });
 
@@ -745,57 +766,8 @@ test('two keys that slug identically abort the build with an operator-legible se
   });
 });
 
-// Finding 6: the drug page's "named agencies" stat counts every agency, while the
-// list below shows only agencies with a page — when they differ, say so. The
-// baseline v3 fixture already exercises this: king-county-medic sits in
-// compare.json's agencyKeys for EPINEPHRINE but is under MIN_AGENCY_DRUGS, so it
-// is counted in summary.n.agencies (6) but absent from the linked named-agency
-// list (5) — the same shape the landing page's "with a page" vs "named agencies"
-// split already discloses.
-test('a drug page states the withheld-agency count when it differs from the named-agencies list', () => {
-  const h = v3html['/census/drugs/epinephrine/'];
-  assert.ok(!h.includes('King County Medic One'), 'a pageless agency must never be named');
-  assert.ok(/1 more agency is counted but has too little published detail for a page yet\./.test(h),
-    'the drug page must state the withheld count using the landing sentence, when it differs from the named list');
-});
-test('a drug page states nothing extra when every named agency in a group already has a page', () => {
-  const d = v3data();
-  // Drop the one pageless agency (king-county-medic) out of every EPINEPHRINE
-  // group's agencyKeys, so the withheld set is genuinely empty — the sentence must
-  // key off group membership, not off n.agencies matching named.count (n.agencies
-  // is a drug-wide, raw-included rollup and must never gate this sentence).
-  d.compare.groups = d.compare.groups.map(g => g.key.drugKey === 'EPINEPHRINE'
-    ? { ...g, agencyKeys: (g.agencyKeys ?? []).filter(k => k !== 'king-county-medic') }
-    : g);
-  const h = buildPages(d).files.find(f => f.path === '/census/drugs/epinephrine/').html;
-  assert.ok(!/too little published detail for a page yet/.test(h), 'no withheld sentence when no group holds a pageless agency');
-});
-
-// Regression: drugs[].n.agencies counts every agency with a row for the drug,
-// raw-only rows included, while a group's agencyKeys only ever holds agencies in
-// a comparable (parsed) group. An agency that has its own page (it clears
-// MIN_AGENCY_DRUGS on other drugs) but whose EPINEPHRINE rows are all raw is
-// counted in n.agencies and has no page of its own for THIS drug, yet is absent
-// from every EPINEPHRINE group's agencyKeys — so the old
-// `n.agencies - named.count` arithmetic folded it into the withheld count and
-// the page falsely claimed it "has too little published detail for a page of
-// its own" (travis-county-ems has a page; it links right below the sentence).
-test('a raw-only agency with its own page does not inflate the withheld-agency count', () => {
-  const d = v3data();
-  // Drop travis-county-ems from every EPINEPHRINE group (raw-only for this drug),
-  // but count it in the drug-wide rollup, the way an all-raw agency really would be.
-  d.compare.groups = d.compare.groups.map(g => g.key.drugKey === 'EPINEPHRINE'
-    ? { ...g, agencyKeys: (g.agencyKeys ?? []).filter(k => k !== 'travis-county-ems') }
-    : g);
-  d.compare.drugs = d.compare.drugs.map(x => x.drugKey === 'EPINEPHRINE' ? { ...x, n: { ...x.n, agencies: x.n.agencies + 1 } } : x);
-  const h = buildPages(d).files.find(f => f.path === '/census/drugs/epinephrine/').html;
-  // travis-county-ems keeps its own page (unaffected drugs still clear MIN_AGENCY_DRUGS)
-  // and must not be swept into the withheld sentence.
-  assert.ok(!/2 more agencies are counted but have too little published detail/.test(h),
-    'a pageful agency that is merely raw-only for this drug must not inflate the withheld count');
-  // The genuinely pageless one (king-county-medic) must still trigger the sentence.
-  assert.ok(/1 more agency is counted but has too little published detail for a page yet\./.test(h),
-    'a genuinely pageless agency must still trigger the withheld sentence');
+test('a drug page does not repeat the withheld-agency sentence', () => {
+  assert.ok(!/too little published detail/.test(v3html['/census/drugs/epinephrine/']));
 });
 
 console.log('\nv3: coverage map data (spec 8)');
@@ -963,37 +935,19 @@ test('the Dataset JSON-LD license points at the page that states a license', () 
   assert.ok(l.includes('https://protoquiz.com/census/data-license/'), 'Dataset license must point at the license page');
 });
 
-console.log('\nsubmission forms');
-test('the landing #list section carries a real form, not just prose', () => {
+console.log('\nrequest links');
+// One form for the site lives at /research/request/; census pages link to it, preset.
+test('the landing links to the request form, preset to add, near the top', () => {
   const l = v3html['/census/'];
-  assert.ok(/<form class="submit-form" id="list-form"/.test(l), 'landing must carry a form');
-  assert.ok(l.includes('api.protoquiz.com/api/monitor?type=censusSubmit'), 'form must post to censusSubmit');
-  assert.ok(/"kind":"listing"/.test(l) || l.includes('"listing"'), 'landing form must send kind: listing');
+  assert.ok(l.includes('href="/research/request/?type=add"'), 'landing must link the request form');
+  assert.ok(l.indexOf('/research/request/') < l.indexOf('class="tabs"'), 'the link must sit above the lists');
 });
-test('the agency #correct section carries a form scoped to that agency', () => {
+test('an agency page links the request form preset with its agency', () => {
   const dh = v3html['/census/agencies/denver-health/'];
-  assert.ok(/<form class="submit-form" id="correct-form"/.test(dh), 'agency page must carry a form');
-  assert.ok(dh.includes('"denver-health"'), 'the correction form must carry its agency key');
-  assert.ok(dh.includes('"correction"'), 'agency form must send kind: correction');
+  assert.ok(/\/research\/request\/\?type=fix&amp;agency=Denver/.test(dh), 'agency link must carry type=fix and the agency name');
 });
-test('both forms carry a honeypot named website, left empty', () => {
-  for (const p of ['/census/', '/census/agencies/denver-health/']) {
-    const h = v3html[p];
-    assert.ok(/name="website"/.test(h), `${p} missing the honeypot field`);
-    assert.ok(/id="[a-z-]+-website"[^>]*\/>/.test(h), `${p} honeypot must ship empty (no value attribute)`);
-    assert.ok(!/name="website"[^>]*value=/.test(h), `${p} honeypot must not be prefilled`);
-  }
-});
-test('the forms carry no CSRF token, nonce or timestamp', () => {
-  // Any of those changes per build and would break the byte-identical rebuild the
-  // nightly depends on — and a public unauthenticated endpoint needs none of them.
-  for (const p of ['/census/', '/census/agencies/denver-health/']) {
-    assert.ok(!/csrf|nonce|_token|timestamp/i.test(v3html[p]), `${p} form carries a per-build value`);
-  }
-});
-test('a v2 build renders the forms too', () => {
-  assert.ok(html['/census/'].includes('id="list-form"'), 'the landing form must not be v3-only');
-  assert.ok(html['/census/agencies/denver-health/'].includes('id="correct-form"'), 'the correction form must not be v3-only');
+test('no census page carries its own form any more', () => {
+  for (const [p, h] of Object.entries(v3html)) assert.ok(!/<form class="submit-form"/.test(h), `${p} still has an inline form`);
 });
 
 console.log('\nterms');

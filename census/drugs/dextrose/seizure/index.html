@@ -8,7 +8,7 @@
 
   <meta name="apple-itunes-app" content="app-id=6753611139" />
   <link rel="canonical" href="https://protoquiz.com/census/drugs/dextrose/seizure/">
-  <meta name="robots" content="noindex,nofollow" />
+  <meta name="robots" content="index,follow" />
   <meta property="og:title" content="Dextrose dose for Seizure - US EMS protocols" />
   <meta property="og:description" content="Published Dextrose doses for Seizure across US EMS protocols: median, quartiles, routes, and adult vs pediatric, with the agencies that carry it." />
   <meta property="og:type" content="website" />
@@ -41,19 +41,23 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
-  <link rel="stylesheet" href="/assets/chrome.css?v=ad6d4ac8">
-  <link rel="stylesheet" href="/census/census.css?v=a3b5c03b">
+  <link rel="stylesheet" href="/assets/chrome.css?v=c575909f">
+  <link rel="stylesheet" href="/census/census.css?v=4a5b3dc3">
 </head>
 <body>
   <!-- shared-chrome:nav -->
   <header class="site-header">
     <nav class="site-nav" aria-label="Primary">
       <div class="nav-left">
-        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="30" height="30"><span>ProtoQuiz</span></a>
+        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="30" height="30"><span>Proto<b>Quiz</b><sup>&trade;</sup></span></a>
         <div class="nav-links">
           <a href="/app/" class="nav-link">App</a>
           <a href="/research/" class="nav-link on" aria-current="page">Research</a>
+          <a href="/blog/" class="nav-link">Blog</a>
           <a href="/about/" class="nav-link">About</a>
         </div>
       </div>
@@ -69,30 +73,29 @@
            other page there is no dialog and the href is the whole behaviour: a normal link
            to /agency/#contact. -->
       <div class="nav-right">
-        <a href="/census/#list" class="nav-cta">Add your protocol</a>
+        <a href="/research/request/?type=add" class="nav-cta">Add your protocol</a>
       </div>
     </nav>
   </header>
   <!-- /shared-chrome:nav -->
-  <div class="pbar">
-    <div class="wrap">
-      <a class="pbar-mark" href="/census/">US EMS Protocol Census</a>
-      <nav class="pbar-nav" aria-label="Census sections"><a href="/census/">Overview</a><a href="/census/#drugs" class="on" aria-current="page">Drugs</a><a href="/census/#states">States</a><a href="/census/#agencies">Agencies</a><a href="/census/methodology/">Methodology</a></nav>
+  <div class="rbar">
+    <div class="rbar-in">
+      <nav class="rbar-nav" aria-label="Research areas"><a href="/research/">Overview</a><a href="/census/" class="on" aria-current="page">Protocol census</a><a href="/research/atlas/">911 coverage</a></nav>
     </div>
   </div>
   <main>
     <div class="wrap">
-      <nav class="crumbs"><a href="/">Home</a> <span class="sep">/</span> <a href="/census/">EMS Census</a> <span class="sep">/</span> <a href="/census/drugs/dextrose/">Dextrose</a> <span class="sep">/</span> <span>Seizure</span></nav>
+      <nav class="crumbs"><a href="/census/">EMS Census</a> <span class="sep">/</span> <a href="/census/drugs/dextrose/">Dextrose</a> <span class="sep">/</span> <span>Seizure</span></nav>
       <div class="layout">
         <div class="col">
       <div class="dochead">
         <span class="badge">Indication</span>
         <h1>Dextrose for Seizure</h1>
-        <div class="meta"><span class="pill sig-review">1,335 under review</span><span class="chip">8 sources</span><span class="chip">8 named agencies</span><span class="chip">5 states</span><span class="chip">as of 2026-09-20</span></div>
+        <div class="meta"><span class="chip">8 sources</span><span class="chip">8 named agencies</span><span class="chip">5 states</span><span class="chip">as of 2026-09-20</span></div>
         <p class="lede">Adult dosing has a median of 25000 mg across 8 published protocols, with the middle half between 25000 and 25000.</p>
       </div>
       <div class="stats"><div class="stat"><span class="v">8</span><span class="l">sources</span></div><div class="stat"><span class="v">8</span><span class="l">named agencies</span></div><div class="stat"><span class="v">5</span><span class="l">states</span></div><div class="stat"><span class="v">16</span><span class="l">entries</span></div><div class="stat"><span class="v">8</span><span class="l">named here</span></div></div>
-      <p class="honest">1,335 rows are under review across the census and excluded from every number on this page. <a href="/census/methodology/">How that works</a>.</p>
+      <p class="honest">Doses far off from what other protocols give are likely misreads, so they are left out until checked. <a href="/census/methodology/#outliers">How that works</a>.</p>
       <section id="g-adult-flat-mg">
         <h2>Adult<span class="unit">mg</span></h2>
       <div class="stats"><div class="stat"><span class="v">8</span><span class="l">sources</span></div><div class="stat"><span class="v">8</span><span class="l">named agencies</span></div><div class="stat"><span class="v">5</span><span class="l">states</span></div><div class="stat"><span class="v">8</span><span class="l">entries</span></div><div class="stat"><span class="v">0</span><span class="l">kept as written</span></div></div>
@@ -103,7 +106,7 @@
             <thead><tr><th>min</th><th>p25</th><th>median</th><th>p75</th><th>max</th></tr></thead>
             <tbody><tr><td>25000</td><td>25000</td><td>25000</td><td>25000</td><td>25000</td></tr></tbody>
           </table>
-          <p class="muted">Values in mg. One value per source (that source's median), so a document listing a drug five times still gets one vote.</p>
+          <p class="muted">Values in mg. One value per source (that source's median), so a document listing a medication five times still gets one vote.</p>
         </div>
         <h3>Routes</h3>
         <ul class="inline"><li>IV <span class="muted">63%</span></li><li>IV/IO <span class="muted">38%</span></li></ul>
@@ -119,7 +122,7 @@
             <thead><tr><th>min</th><th>p25</th><th>median</th><th>p75</th><th>max</th></tr></thead>
             <tbody><tr><td>500</td><td>500</td><td>500</td><td>500</td><td>500</td></tr></tbody>
           </table>
-          <p class="muted">Values in mg/kg. One value per source (that source's median), so a document listing a drug five times still gets one vote.</p>
+          <p class="muted">Values in mg/kg. One value per source (that source's median), so a document listing a medication five times still gets one vote.</p>
         </div>
         <h3>Routes</h3>
         <ul class="inline"><li>IV <span class="muted">80%</span></li><li>IV/IO <span class="muted">20%</span></li></ul>
@@ -141,18 +144,16 @@
         <ul class="inline"><li>IV <span class="muted">100%</span></li></ul>
         <p class="cite">United States EMS Protocol Census, n=1 protocols from 1 named agencies / 1 states, updated Sep 2026</p>
       </section>
-      <section id="agencies">
-        <h2>Named agencies</h2>
+<details class="fold" id="agencies"><summary>Named agencies with a page<span class="count">8</span></summary>
         <p class="muted">Agencies whose protocols are a public record are named here. Their own doses are on their own pages; this list carries no values.</p>
         <ul class="cols"><li><a href="/census/agencies/berrien-county-medical-control-authority/">Berrien County Medical Control Authority</a></li><li><a href="/census/agencies/bureau-of-ems-trauma-preparedness/">Bureau of EMS, Trauma &amp; Preparedness</a></li><li><a href="/census/agencies/central-california-emergency-medical-services/">Central California Emergency Medical Services</a></li><li><a href="/census/agencies/delaware-office-of-emergency-medical-services/">Delaware Office of Emergency Medical Services</a></li><li><a href="/census/agencies/laurens-county-emergency-medical-services/">Laurens County Emergency Medical Services</a></li><li><a href="/census/agencies/michigan-department-of-health-and-human-services-mdhhs-berrien-county/">Michigan Department of Health and Human Services (MDHHS) / Berrien County</a></li><li><a href="/census/agencies/michigan-department-of-health-and-human-services-mdhhs-west-michigan-regional-mcc/">Michigan Department of Health and Human Services (MDHHS) / West Michigan Regional MCC</a></li><li><a href="/census/agencies/pennsylvania-department-of-health-bureau-of-emergency-medical-services/">Pennsylvania Department of Health, Bureau of Emergency Medical Services</a></li></ul>
-      </section>
+</details>
         </div>
         <aside class="rail">
-          <section class="panel" id="cite">
-            <h2>Cite this</h2>
+<details class="fold" id="cite"><summary>Cite this</summary>
             <div class="citebox" id="cite-text"><p class="cite">United States EMS Protocol Census, n=8 protocols from 8 named agencies / 5 states, updated Sep 2026</p></div>
             <button type="button" class="copybtn" id="cite-btn">Copy citation</button>
-          </section>
+          </details>
           <script>
             (function () {
               var b = document.getElementById('cite-btn'), t = document.getElementById('cite-text');
@@ -169,17 +170,26 @@
           </script>
           <section class="panel">
             <h2>Related</h2>
-            <ul class="railnav"><li><a href="/census/drugs/dextrose/">All Dextrose indications</a></li><li><a href="/census/">All drugs and states</a></li><li><a href="/census/methodology/">Methodology</a></li><li><a href="/census/data-license/">Data license</a></li></ul>
+            <ul class="railnav"><li><a href="/census/drugs/dextrose/">All Dextrose indications</a></li><li><a href="/census/">All medications and states</a></li><li><a href="/census/methodology/">Methodology</a></li><li><a href="/census/data-license/">Data license</a></li></ul>
           </section>
         </aside>
       </div>
     </div>
   </main>
+  <div class="census-disclaimer">
+    <div class="wrap"><p class="disclaimer">Training reference compiled from published protocols. Not a clinical order. Verify with your agency and medical director.</p></div>
+  </div>
+  <script>
+    (function () {
+      var open = function () { for (var e = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1))); e; e = e.parentElement) if (e.tagName === 'DETAILS') e.open = true; };
+      open(); addEventListener('hashchange', open);
+    })();
+  </script>
   <!-- shared-chrome:footer -->
   <footer class="site-footer">
     <div class="foot-cols">
       <div class="foot-brand">
-        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="24" height="24"><span>ProtoQuiz</span></a>
+        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="24" height="24"><span>Proto<b>Quiz</b><sup>&trade;</sup></span></a>
         <p>Protocol training for EMS. Built by a working paramedic.</p>
       </div>
       <div class="foot-col">

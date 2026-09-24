@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>September Update: No Ads, Home Meds, and What You Asked For - EMS ProtoQuiz Blog</title>
+  <meta name="description" content="ProtoQuiz has no ads: a free week of Premium, then a free tier. Home Meds arrives in 2.6.4. And what 33 of you told us about checking protocols on a call." />
+
+  <!-- SEO -->
+  <meta name="apple-itunes-app" content="app-id=6753611139" />
+  <link rel="canonical" href="https://protoquiz.com/blog/posts/2026-09-23-september-update-no-ads-home-meds.html">
+  <meta name="robots" content="index,follow" />
+
+  <!-- Social / Open Graph -->
+  <meta property="og:title" content="September Update: No Ads, Home Meds, and What You Asked For" />
+  <meta property="og:description" content="ProtoQuiz has no ads: a free week of Premium, then a free tier. Home Meds arrives in 2.6.4. And what 33 of you told us about checking protocols on a call." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://protoquiz.com/blog/posts/2026-09-23-september-update-no-ads-home-meds.html" />
+  <meta property="og:image" content="https://protoquiz.com/blog/images/cover-no-ads.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="640" />
+  <meta property="article:published_time" content="2026-09-23" />
+  <meta property="article:author" content="Jaden" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="September Update: No Ads, Home Meds, and What You Asked For" />
+  <meta name="twitter:description" content="ProtoQuiz has no ads: a free week of Premium, then a free tier. Home Meds arrives in 2.6.4. And what 33 of you told us about checking protocols on a call." />
+  <meta name="twitter:image" content="https://protoquiz.com/blog/images/cover-no-ads.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png?v=4" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16.png?v=4" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png?v=4" />
+
+  <!-- Structured Data - BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "September Update: No Ads, Home Meds, and What You Asked For",
+    "description": "ProtoQuiz has no ads: a free week of Premium, then a free tier. Home Meds arrives in 2.6.4. And what 33 of you told us about checking protocols on a call.",
+    "author": {
+      "@type": "Person",
+      "name": "Jaden",
+      "url": "https://protoquiz.com/about/",
+      "jobTitle": "Paramedic & Developer"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ProtoQuiz",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://protoquiz.com/logo-256.png"
+      }
+    },
+    "datePublished": "2026-09-23",
+    "dateModified": "2026-09-23",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://protoquiz.com/blog/posts/2026-09-23-september-update-no-ads-home-meds.html"
+    }
+  }
+  </script>
+
+  <!-- Google tag (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LNSS9BMEP8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-LNSS9BMEP8');
+
+    function track(name, props){
+      try { gtag('event', name, props || {}); } catch(e){}
+    }
+    const PAGE = 'blog_post';
+    track('blog_post_view', { title: 'September Update: No Ads, Home Meds, and What You Asked For' });
+
+    // Track view in Firestore
+    (async () => {
+      try {
+        const slug = window.location.pathname.split('/').pop().replace('.html', '');
+        const res = await fetch('https://api.protoquiz.com/api/blog-views', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ slug })
+        });
+        const data = await res.json();
+        if (typeof data.count === 'number') {
+          const meta = document.querySelector('.post-meta-info');
+          if (meta) {
+            const sep = document.createElement('span'); sep.innerHTML = '&bull;';
+            const v = document.createElement('span');
+            v.textContent = data.count.toLocaleString() + (data.count === 1 ? ' view' : ' views');
+            meta.appendChild(sep); meta.appendChild(v);
+          }
+        }
+      } catch (e) {
+        console.log('View tracking failed:', e);
+      }
+    })();
+  </script>
+
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../_shared-styles.css">
+
+  <style>
+    /* Post-specific styles */
+    .post-container {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .post-header {
+      margin-bottom: 40px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .post-category-badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 8px;
+      background: oklch(50% 0.196 265 / .12);
+      color: var(--cyan);
+      font-family: var(--mono);
+      font-weight: 700;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      margin-bottom: 20px;
+    }
+
+    .post-category-badge.updates {
+      background: oklch(43% 0.19 265 / .1);
+      color: var(--violet);
+    }
+
+    .post-category-badge.stories {
+      background: rgba(16,185,129,.1);
+      color: var(--success);
+    }
+
+    .post-header h1 {
+      font-family: var(--mono);
+      font-size: clamp(1.9rem, 3.8vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.22;
+      letter-spacing: -.02em;
+      margin-bottom: 20px;
+    }
+
+    .post-meta-info {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .post-meta-info .author {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .post-content {
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--ink);
+    }
+
+    .post-content h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin-top: 48px;
+      margin-bottom: 20px;
+      letter-spacing: -.02em;
+    }
+
+    .post-content h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-top: 36px;
+      margin-bottom: 16px;
+    }
+
+    .post-content p {
+      margin-bottom: 24px;
+    }
+
+    .post-content ul,
+    .post-content ol {
+      margin-bottom: 24px;
+      padding-left: 28px;
+    }
+
+    .post-content li {
+      margin-bottom: 12px;
+    }
+
+    .post-content a {
+      color: var(--cyan);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    .post-content a:hover {
+      color: var(--violet);
+    }
+
+    .post-content strong {
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .post-content code {
+      background: var(--panel);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.9em;
+      font-family: 'SF Mono', Monaco, monospace;
+      border: 1px solid var(--line);
+    }
+
+    .post-content blockquote {
+      border-left: 3px solid var(--cyan);
+      padding-left: 20px;
+      margin: 32px 0;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* App screenshots — same shape as the 2.0 post's .screenshot-* blocks,
+       narrowed because these are single phone screens rather than a grid. */
+    .screenshot-section {
+      margin: 40px 0;
+      max-width: 340px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .screenshot-item {
+      border-radius: 12px;
+      overflow: hidden;
+      background: #000;
+      border: 1px solid var(--line);
+    }
+
+    .screenshot-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .screenshot-caption {
+      padding: 12px 16px;
+      background: rgba(27,22,16,.85);
+      font-size: 13px;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .stats-callout {
+      background: linear-gradient(135deg, oklch(50% 0.196 265 / .05), oklch(43% 0.19 265 / .05));
+      border: 1px solid oklch(50% 0.196 265 / .2);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin: 40px 0;
+    }
+
+    .stats-callout h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+
+    .stats-callout p {
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+
+    .stats-callout strong {
+      color: var(--cyan);
+      font-weight: 800;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--cyan), var(--violet));
+      border-radius: var(--radius);
+      padding: 32px;
+      text-align: center;
+      margin: 48px 0;
+    }
+
+    .cta-box h3 {
+      color: var(--paper);
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .cta-box p {
+      color: oklch(99.4% 0.002 265 / .88);
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 14px 32px;
+      background: var(--paper);
+      color: var(--accent);
+      font-weight: 700;
+      border-radius: 999px;
+      font-size: 16px;
+      transition: all .2s;
+      border: 2px solid var(--paper);
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px oklch(21% 0.017 265 / .18);
+      opacity: 1;
+    }
+
+    /* Comments Section */
+
+
+    /* Back Link */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 32px;
+      transition: color .2s;
+    }
+
+    .back-link:hover {
+      color: var(--cyan);
+    }
+
+    .back-link::before {
+      content: "\2190";
+    }
+  </style>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://protoquiz.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://protoquiz.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "September Update: No Ads, Home Meds, and What You Asked For", "item": "https://protoquiz.com/blog/posts/2026-09-23-september-update-no-ads-home-meds.html"}]}
+  </script>
+</head>
+<body>
+  <!-- Navigation -->
+  <header>
+    <div class="wrap">
+      <nav class="navbar">
+        <a href="../../" class="brand-link">
+          <img src="../../logo-128.png" alt="ProtoQuiz Logo" width="48" height="48">
+          <span>ProtoQuiz</span>
+        </a>
+        <div class="nav-links">
+          <a href="../../" class="nav-btn">Home</a>
+          <a href="../../about/" class="nav-btn">About</a>
+          <a href="../../agency/" class="nav-btn">For Agencies</a>
+          <a href="../" class="nav-btn">Blog</a>
+          <a href="https://apps.apple.com/app/id6753611139" class="nav-btn primary" onclick="track('download_app', {source: 'blog_post'})">
+            Download App
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="wrap">
+      <div class="post-container">
+        <a href="../" class="back-link">Back to Blog</a>
+
+        <!-- Post Header -->
+        <article class="post-header">
+          <span class="post-category-badge updates">App Updates</span>
+          <h1>September Update: No Ads, Home Meds, and What You Asked For</h1>
+          <div class="post-meta-info">
+            <span class="author">By Jaden</span>
+            <span>&bull;</span>
+            <time datetime="2026-09-23">September 23, 2026</time>
+          </div>
+        </article>
+
+        <img class="post-hero" src="../images/cover-no-ads.jpg" alt="No ads: seven days of full Premium, then a free tier, or Premium with no limits" style="display:block;width:100%;aspect-ratio:1200/640;object-fit:cover;border-radius:12px;margin:0 0 28px;box-sizing:border-box;">
+
+        <!-- Post Content -->
+        <div class="post-content">
+          <h2>No More Ads</h2>
+
+          <ul>
+            <li><strong>Your first seven days are full Premium.</strong> No card, nothing to cancel.</li>
+            <li><strong>Then the free tier:</strong> one protocol and three a day of each generated feature.</li>
+            <li><strong>Premium removes the limits.</strong></li>
+          </ul>
+
+          <p>Ads got in the way of studying. A week of the real thing is a better way to see if drilling your own protocol works for you.</p>
+
+          <h2>Home Meds</h2>
+
+          <p>A new quiz in the Pharmacology hub, in version 2.6.4 on iPhone, with Android to follow. 41 common home medications across 17 classes, brand names included, because the bottle says Eliquis, not apixaban.</p>
+
+          <p>Most questions ask what the drug changes on scene. A patient on metoprolol may not get tachycardic when they bleed, so a heart rate in the 80s does not rule out shock. Every medication has been reviewed by a paramedic.</p>
+
+          <h2>What You Told Us</h2>
+
+          <p>We asked how you check a protocol on a call. 33 answered: 15 open the PDF on their phone, 13 use their agency's app, 3 grab the paper book, and 2 go from memory or look it up after. That is why every ProtoQuiz answer cites its page.</p>
+
+          <p>You asked for home meds and for typed answers instead of multiple choice. Both are built: Home Meds above, and <a href="2026-09-17-med-mastery-grading-and-your-first-week-free.html">Med Mastery hard mode</a>. EKGs and faster scenarios are on the list.</p>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-box">
+          <h3>Start Your Free Week</h3>
+          <p>Seven days of full Premium, no card required.</p>
+          <a href="https://apps.apple.com/app/id6753611139" class="cta-btn" onclick="track('download_app', {source: 'blog_post_cta'})">
+            Download ProtoQuiz
+          </a>
+        </div>
+
+        <!-- Comments Section -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Newsletter Signup -->
+  <section style="background: var(--panel); border-top: 1px solid var(--line); padding: 60px 0; margin-top: 80px;">
+    <div class="wrap" style="max-width: 600px; text-align: center;">
+      <h2 style="font-size: 1.75rem; margin-bottom: 12px;">Never Miss a Post</h2>
+      <p style="color: var(--muted); margin-bottom: 24px;">
+        Get new EMS study tips and app updates delivered straight to your inbox.
+      </p>
+
+      <!-- Email Signup Form (Follow.it) -->
+      <style>
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview {
+          display: flex !important;
+          flex-direction: column !important;
+          justify-content: center !important;
+          margin-top: 30px !important;
+          padding: clamp(17px, 5%, 40px) clamp(17px, 7%, 50px) !important;
+          max-width: none !important;
+          border-radius: 6px !important;
+          box-shadow: 0 5px 25px rgba(34, 60, 47, 0.25) !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview,
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview * {
+          box-sizing: border-box !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-heading {
+          width: 100% !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-heading h5 {
+          margin-top: 0 !important;
+          margin-bottom: 0 !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field {
+          margin-top: 20px !important;
+          width: 100% !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input {
+          width: 100% !important;
+          height: 40px !important;
+          border-radius: 6px !important;
+          border: 2px solid #e9e8e8 !important;
+          background-color: #fff;
+          outline: none !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input {
+          color: #000000 !important;
+          font-family: "Montserrat" !important;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 20px;
+          text-align: center;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input::placeholder {
+          color: #000000 !important;
+          opacity: 1 !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input:-ms-input-placeholder {
+          color: #000000 !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input::-ms-input-placeholder {
+          color: #000000 !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-submit-button {
+          margin-top: 10px !important;
+          width: 100% !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-submit-button button {
+          width: 100% !important;
+          height: 40px !important;
+          border: 0 !important;
+          border-radius: 6px !important;
+          line-height: 0px !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-submit-button button:hover {
+          cursor: pointer !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .powered-by-line {
+          color: #231f20 !important;
+          font-family: "Montserrat" !important;
+          font-size: 13px !important;
+          font-weight: 400 !important;
+          line-height: 25px !important;
+          text-align: center !important;
+          text-decoration: none !important;
+          display: flex !important;
+          width: 100% !important;
+          justify-content: center !important;
+          align-items: center !important;
+          margin-top: 10px !important;
+        }
+        .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .powered-by-line img {
+          margin-left: 10px !important;
+          height: 1.13em !important;
+          max-height: 1.13em !important;
+        }
+      </style>
+      <div class="followit--follow-form-container" attr-a attr-b attr-c attr-d attr-e attr-f>
+        <form data-v-e7d63655="" action="https://api.follow.it/subscription-form/NWJTVitFcEpGcGU0ajJvTmNST01hckl3ZFI0cTFHMmZkTmVBRlIwSUpnV0NOckQxVWdoNnljMnA2VCtEQU1Eb3VwdStGclRRZzRPZ05qbnpndU43NE90UlIyeC9RcDYxQ3pHYmFqeDl1aXBjcE5zc1F4dXhuR0dKN3ppVFdqdHl8cUl5dytUOE54R2h0TmFUUlppeEhIZXVkQ1k1blBuczY4Z3NQMmFlMGQ3QT0=/8" method="post">
+          <div data-v-e7d63655="" class="form-preview" style="background-color: rgb(255, 255, 255); border-style: solid; border-width: 1px; border-color: rgb(204, 204, 204); position: relative;">
+            <div data-v-e7d63655="" class="preview-heading">
+              <h5 data-v-e7d63655="" style="font-family: Arial; font-weight: bold; color: rgb(0, 0, 0); font-size: 16px; text-align: center; text-transform: none !important;">Get new posts by email:</h5>
+            </div>
+            <div data-v-e7d63655="" class="preview-input-field">
+              <input data-v-e7d63655="" type="email" name="email" required="" placeholder="Enter your email" spellcheck="false" style="font-family: Arial; font-weight: normal; color: rgb(0, 0, 0); font-size: 14px; text-align: center; background-color: rgb(255, 255, 255); text-transform: none !important;">
+            </div>
+            <div data-v-e7d63655="" class="preview-submit-button">
+              <button data-v-e7d63655="" type="submit" style="font-family: Arial; font-weight: bold; color: rgb(255, 255, 255); font-size: 16px; text-align: center; background-color: rgb(0, 0, 0); text-transform: none !important;">Subscribe</button>
+            </div>
+          </div>
+        </form>
+        <a href="https://follow.it" class="powered-by-line">Powered by <img src="https://follow.it/images/colored-logo.svg" alt="follow.it" height="17px"/></a>
+      </div>
+
+      <p style="font-size: 13px; color: var(--muted); margin-top: 16px;">
+        Or subscribe via <a href="../feed.xml" style="color: var(--cyan); text-decoration: underline;">RSS feed</a>
+      </p>
+      <p style="font-size: 12px; color: var(--muted); margin-top: 8px;">
+        No spam. Unsubscribe anytime. View our <a href="../../privacy/" style="color: var(--cyan);">Privacy Policy</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="../../">Home</a>
+          <a href="../">Blog</a>
+          <a href="../../about/">About</a>
+          <a href="../../agency/">For Agencies</a>
+          <a href="../../privacy/">Privacy</a>
+          <a href="../../terms/">Terms</a>
+          <a href="https://apps.apple.com/app/id6753611139">Download</a>
+        </div>
+        <p class="footer-copy">&copy; 2026 ProtoQuiz&trade;. Built by a Paramedic, for EMS.</p>
+      </div>
+    </div>
+  </footer>
+<script>if(/android/i.test(navigator.userAgent))for(const a of document.querySelectorAll('a[href="https://apps.apple.com/app/id6753611139"]:not(.store)'))a.href="https://play.google.com/store/apps/details?id=com.tmtl.emsprotoquiz"</script>
+</body>
+</html>

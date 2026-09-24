@@ -28,7 +28,7 @@
 // are linked from the census landing), deliberately not made here.
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
-import { indicationLabel, reportLabel as editionLabel, productBar } from './census-pages.mjs';
+import { indicationLabel, reportLabel as editionLabel } from './census-pages.mjs';
 import { navFor, researchBar, FOOTER_HTML, CHROME_HEAD } from './shared-chrome.mjs';
 
 // The census is UNPUBLISHED until the new research site launches (2026-09-20, Jaden).
@@ -154,12 +154,12 @@ export function reportPage({ edition, floor, findings, compare, manifest }) {
 
   const body = `      <span class="badge">Report</span>
       <h1>${esc(title)}</h1>
-      <p class="lede">${num(findings.length)} doses where US EMS protocols vary most, widest first &mdash; some spread far apart, some barely at all. Every figure is drawn from agencies' own published documents, one value per protocol, as of ${esc(compare.asOf)}.</p>
+      <p class="lede">${num(findings.length)} doses where US EMS protocols vary most, widest first &mdash; some spread far apart, some barely at all. Every figure is drawn from agencies' published protocols and app users' uploads, one value per protocol, as of ${esc(compare.asOf)}.</p>
 
       <section id="how">
         <h2>How these were chosen</h2>
         <p>Nothing here was picked by hand. Every comparable group in the census was ranked by <strong>spread</strong> &mdash; the width of the middle half of protocols, as a fraction of the median &mdash; among groups with at least <strong>${num(floor)} published protocols</strong>, and the top ${num(findings.length)} are below. The floor stepped down from ${FLOORS.map(f => num(f)).join(' to ')} until ${num(MIN_FINDINGS)} groups cleared it; this edition used <strong>${num(floor)}</strong>.</p>
-        <p>This edition names no agencies. The figures are aggregate distributions with their counts; individual agencies' protocols are published on <a href="/census/">their own census pages</a>. <a href="/census/methodology/">How the census is built</a> covers what is measured, what is not, and why no dose-level accuracy number is published.</p>
+        <p>This edition names no agencies. A few agencies outside the US are included. The figures are aggregate distributions with their counts; individual agencies' protocols are published on <a href="/census/">their own census pages</a>. <a href="/census/methodology/">How the census is built</a> covers what is measured, what is not, and why no dose-level accuracy number is published.</p>
       </section>
 
 ${findings.map((g, i) => `      <section id="f${i + 1}">
@@ -255,10 +255,9 @@ ${CHROME_HEAD}
 <body>
 ${navFor('/census/')}
 ${researchBar(path)}
-${productBar(path)}
   <main>
     <div class="wrap">
-      <nav class="crumbs"><a href="/">Home</a> <span class="sep">/</span> <a href="/census/">EMS Census</a> <span class="sep">/</span> <span>${esc(title)}</span></nav>
+      <nav class="crumbs"><a href="/census/">Census</a> <span class="sep">/</span> <span>${esc(title)}</span></nav>
 ${body}
     </div>
   </main>
@@ -288,7 +287,7 @@ export function linkedinDraft({ edition, floor, findings, compare, manifest }) {
     '',
     '---',
     '',
-    `We read ${num(manifest.namedAgencies)} US EMS agencies' published protocols and asked a simple question: where do they actually disagree about a dose?`,
+    `We read ${num(manifest.namedAgencies)} EMS agencies' published protocols and asked a simple question: where do they actually disagree about a dose?`,
     '',
     `${editionLabel(edition)}'s State of US EMS Protocols is out. ${num(findings.length)} distributions, every one of them from at least ${num(floor)} published protocols, no agency named.`,
     '',

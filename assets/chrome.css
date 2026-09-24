@@ -133,6 +133,10 @@ a:hover { color: var(--accent-hover); }
 .site-header .brand img { display: block; width: 30px; height: 30px; }
 .site-footer .brand { font-size: 15px; }
 .site-footer .brand img { display: block; width: 24px; height: 24px; }
+/* The wordmark as on the B2B product: QUIZ in the product blue, a small TM. */
+.site-header .brand b, .site-footer .brand b { font-weight: inherit; color: #2f6fe0; }
+[data-shift="night"] .site-header .brand b, [data-shift="night"] .site-footer .brand b { color: #4a86f0; }
+.site-header .brand sup, .site-footer .brand sup { font-size: .5em; font-weight: 400; color: var(--ink-3); margin-left: 1px; }
 
 .site-header .nav-links { display: flex; gap: 30px; }
 
