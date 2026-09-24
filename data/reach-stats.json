@@ -1,27 +1,27 @@
 {
-  "generatedAt": "2026-09-20T12:08:48.366Z",
-  "totalUploads": 618,
-  "distinctProtocols": 426,
-  "activeStudiers": 424,
-  "pagesProcessed": 101348,
+  "generatedAt": "2026-09-24T12:26:59.014Z",
+  "totalUploads": 643,
+  "distinctProtocols": 430,
+  "activeStudiers": 445,
+  "pagesProcessed": 103482,
   "statesRepresented": 42,
   "countriesRepresented": 5,
-  "internationalUploads": 10,
+  "internationalUploads": 12,
   "byState": {
-    "CO": 53,
-    "MI": 47,
-    "CA": 44,
+    "CO": 68,
+    "MI": 48,
+    "CA": 45,
     "MA": 27,
-    "TX": 25,
-    "PA": 25,
+    "TX": 26,
+    "PA": 26,
     "GA": 24,
-    "NY": 22,
-    "CT": 18,
+    "NY": 23,
     "VA": 18,
+    "CT": 18,
     "NC": 17,
     "OR": 16,
+    "NV": 13,
     "WA": 12,
-    "NV": 11,
     "IL": 10,
     "WY": 10,
     "FL": 9,
@@ -29,11 +29,11 @@
     "AZ": 8,
     "TN": 6,
     "IN": 6,
-    "LA": 6,
     "UT": 5,
     "SC": 5,
     "AL": 5,
     "WI": 5,
+    "LA": 5,
     "KY": 4,
     "NE": 4,
     "ID": 4,
@@ -52,7 +52,7 @@
     "RI": 2
   },
   "byCountry": {
-    "ZA": 4,
+    "ZA": 6,
     "CA": 2,
     "AU": 2,
     "FR": 1,
@@ -64,12 +64,12 @@
       "city": "Denver",
       "x": 330,
       "y": 258,
-      "count": 47,
+      "count": 62,
       "tier": "hot",
       "topProtocols": [
         {
           "title": "DMEMS Protocols January 2026 (Example)",
-          "count": 10
+          "count": 24
         },
         {
           "title": "DMEMSMD Protocols January 2026 FINAL 2025 02 02",
@@ -86,7 +86,7 @@
       "city": "Detroit",
       "x": 690,
       "y": 194,
-      "count": 47,
+      "count": 48,
       "tier": "hot",
       "topProtocols": [
         {
@@ -130,7 +130,7 @@
       "city": "Philadelphia",
       "x": 828,
       "y": 223,
-      "count": 25,
+      "count": 26,
       "tier": "warm",
       "topProtocols": [
         {
@@ -143,6 +143,28 @@
         },
         {
           "title": "2023v1 2 pa bls protocols",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "state": "NY",
+      "city": "New York",
+      "x": 843,
+      "y": 202,
+      "count": 23,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "ny collaborative protocols",
+          "count": 5
+        },
+        {
+          "title": "bls protocols V.26.0",
+          "count": 4
+        },
+        {
+          "title": "ny collaborative protocols",
           "count": 3
         }
       ]
@@ -166,28 +188,6 @@
         {
           "title": "2024 Scope of Practice 260123",
           "count": 1
-        }
-      ]
-    },
-    {
-      "state": "NY",
-      "city": "New York",
-      "x": 843,
-      "y": 202,
-      "count": 22,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "ny collaborative protocols",
-          "count": 5
-        },
-        {
-          "title": "bls protocols V.26.0",
-          "count": 4
-        },
-        {
-          "title": "ny collaborative protocols",
-          "count": 3
         }
       ]
     },
@@ -284,12 +284,12 @@
       "city": "Las Vegas",
       "x": 145,
       "y": 311,
-      "count": 11,
+      "count": 12,
       "tier": "warm",
       "topProtocols": [
         {
           "title": "ems protocol manual",
-          "count": 9
+          "count": 10
         },
         {
           "title": "2026 EMS Protocol Manual",
@@ -297,6 +297,28 @@
         },
         {
           "title": "emc protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "TX",
+      "city": "Houston",
+      "x": 493,
+      "y": 487,
+      "count": 10,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "UTHETEMS Protocols (with Drugs)",
+          "count": 2
+        },
+        {
+          "title": "HCEMS Protocols 9 8 25 Reduced",
+          "count": 1
+        },
+        {
+          "title": "UTHETEMS Protocols",
           "count": 1
         }
       ]
@@ -324,28 +346,6 @@
       ]
     },
     {
-      "state": "TX",
-      "city": "Houston",
-      "x": 493,
-      "y": 487,
-      "count": 9,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "UTHETEMS Protocols (with Drugs)",
-          "count": 2
-        },
-        {
-          "title": "HCEMS Protocols 9 8 25 Reduced",
-          "count": 1
-        },
-        {
-          "title": "UTHETEMS Protocols",
-          "count": 1
-        }
-      ]
-    },
-    {
       "state": "VA",
       "city": "Richmond",
       "x": 801,
@@ -363,6 +363,28 @@
         },
         {
           "title": "Section 9 Peds Medical Revised Racemic Epi",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "CA",
+      "city": "San Leandro",
+      "x": 34,
+      "y": 249,
+      "count": 9,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "2026 Alameda County EMS Field Manual Rev3",
+          "count": 6
+        },
+        {
+          "title": "alco fm 2025 draft 07 31 2024",
+          "count": 1
+        },
+        {
+          "title": "Alco Field Manual",
           "count": 1
         }
       ]
@@ -386,28 +408,6 @@
         {
           "title": "MD Medical Protocols 2026 Print",
           "count": 2
-        }
-      ]
-    },
-    {
-      "state": "CA",
-      "city": "San Leandro",
-      "x": 34,
-      "y": 249,
-      "count": 8,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "2026 Alameda County EMS Field Manual Rev3",
-          "count": 5
-        },
-        {
-          "title": "alco fm 2025 draft 07 31 2024",
-          "count": 1
-        },
-        {
-          "title": "Alco Field Manual",
-          "count": 1
         }
       ]
     },
@@ -451,28 +451,6 @@
         },
         {
           "title": "short.bls",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "LA",
-      "city": "New Orleans",
-      "x": 594,
-      "y": 479,
-      "count": 6,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "rope 2024 final 05 02 24",
-          "count": 2
-        },
-        {
-          "title": "Acadian 2026 Protocols",
-          "count": 2
-        },
-        {
-          "title": "Acadian 2026 Protocols Searchable OCR",
           "count": 1
         }
       ]
@@ -571,6 +549,28 @@
         },
         {
           "title": "master.alabama.protocols.11th.edition.07012025",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "LA",
+      "city": "New Orleans",
+      "x": 594,
+      "y": 479,
+      "count": 5,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "rope 2024 final 05 02 24",
+          "count": 2
+        },
+        {
+          "title": "Acadian 2026 Protocols Searchable OCR",
+          "count": 1
+        },
+        {
+          "title": "Acadian 2026 Protocols",
           "count": 1
         }
       ]
@@ -1660,6 +1660,20 @@
       ]
     },
     {
+      "state": "NV",
+      "city": "Tooele",
+      "x": 145,
+      "y": 297,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "Nevada MWA Protocols 8.22.26 +1 more",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "IA",
       "city": "Iowa City",
       "x": 554,
@@ -1919,19 +1933,19 @@
       "city": "Cape Town",
       "x": 509,
       "y": 456,
-      "count": 4,
-      "tier": "on",
+      "count": 6,
+      "tier": "warm",
       "topProtocols": [
+        {
+          "title": "1772013878593 Clinical Decision Support Tool (CDST) Emergency…",
+          "count": 3
+        },
         {
           "title": "1737022391007 CLINICAL PRACTICE GUIDELINES PROTOCOLS JULY 2018",
           "count": 2
         },
         {
           "title": "ilovepdf merged",
-          "count": 1
-        },
-        {
-          "title": "1772013878593 Clinical Decision Support Tool (CDST) Emergency…",
           "count": 1
         }
       ]
