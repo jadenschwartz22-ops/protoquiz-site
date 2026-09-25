@@ -292,11 +292,20 @@ html.no-anim, html.no-anim * { transition: none !important; animation: none !imp
   background: var(--ground); border-top: 1px solid var(--line);
 }
 .reach-inner { max-width: 1180px; margin: 0 auto; }
+.reach-title {
+  font-size: clamp(28px, 3.6vw, 46px); line-height: 1.08; letter-spacing: -0.035em;
+  font-weight: 700; text-align: center; text-wrap: balance; margin: 0 auto 18px; max-width: 22ch;
+}
+.map-toggle { width: max-content; margin: 0 auto 18px; }
+.map-toggle button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+[data-shift="night"] .map-toggle button[aria-pressed="true"] { background: var(--accent); color: #0c0a07; }
+.map-toggle button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 .reach-map { width: 100%; height: auto; display: block; max-width: 880px; margin: 0 auto; }
-.reach-map .state {
+.reach-map[hidden] { display: none; }
+.reach-map .state, .reach-map .land {
   fill: transparent; stroke: var(--line); stroke-width: 1.1; vector-effect: non-scaling-stroke;
 }
-[data-shift="night"] .reach-map .state { stroke: #2a2620; }
+[data-shift="night"] .reach-map :is(.state, .land) { stroke: #2a2620; }
 .reach-map .state[data-b="on"]   { stroke: var(--accent); stroke-opacity: .35; }
 .reach-map .state[data-b="warm"] { stroke: var(--accent); stroke-opacity: .6; }
 .reach-map .state[data-b="hot"]  { stroke: var(--accent); stroke-opacity: .9; }
@@ -313,6 +322,7 @@ html.no-anim, html.no-anim * { transition: none !important; animation: none !imp
 .reach-map .lbl.warm { font-size: 13px; fill: var(--ink); }
 .reach-map .lbl.on   { font-size: 10.5px; }
 .reach-map .lbl.tiny { font-size: 8.5px; fill: var(--ink-3); font-weight: 500; }
+.reach-map .lbl.w { font-size: 22px; font-weight: 700; fill: var(--ink); }
 .reach-stats {
   display: flex; gap: clamp(20px, 4vw, 44px); flex-wrap: wrap;
   justify-content: center; margin-top: 26px;

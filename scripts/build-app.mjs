@@ -96,7 +96,7 @@ const html = `<!doctype html>
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 ${CHROME_HEAD}
   <link rel="stylesheet" href="/assets/conveyor.css">
-  <link rel="stylesheet" href="/assets/app.css?v=6651072d">
+  <link rel="stylesheet" href="/assets/app.css?v=${assetHash('assets/app.css')}">
   <script>
     /* THE SHIFT IS RESOLVED BEFORE THE FIRST PAINT. app-toggle.js is deferred, so it
        runs after the page has already painted: a visitor who chose Day Shift saw the
@@ -216,7 +216,11 @@ ${navFor('/app/')}
 
     <section class="reach-wrap">
       <div class="reach-inner">
-        <div class="section-eyebrow" style="text-align:center">Real EMTs and paramedics, from across the country</div>
+        <h2 class="reach-title">Real EMTs and paramedics. Uploads from across the country.</h2>
+        <div class="toggle map-toggle" role="group" aria-label="Map view">
+          <button type="button" data-map-view="us" aria-pressed="true">US</button>
+          <button type="button" data-map-view="world" aria-pressed="false">World</button>
+        </div>
 ${MAP_LIVE}
       </div>
     </section>
@@ -292,6 +296,10 @@ ${FAQ.map(([q, a]) => `        <details>
 ${FOOTER_HTML}
   <script src="/assets/app-toggle.js?v=${assetHash('assets/app-toggle.js')}" defer></script>
   <script>
+    for (const b of document.querySelectorAll('[data-map-view]')) b.addEventListener('click', () => {
+      for (const x of document.querySelectorAll('[data-map-view]')) x.setAttribute('aria-pressed', x === b);
+      for (const m of document.querySelectorAll('.reach-map[data-view]')) m.toggleAttribute('hidden', m.dataset.view !== b.dataset.mapView);
+    });
     // Same daily files the home page reads; if they fail, the build-time numbers stay.
     (async () => {
       const get = u => fetch(u, { cache: 'no-cache' }).then(r => r.json()).catch(() => null);

@@ -268,7 +268,7 @@ function classifyCity(name) {
   return null;
 }
 
-// World map projection (index.html .reach-svg-world, viewBox 0 0 950 620,
+// World map projection (data/world-land-paths.txt, /app world view, viewBox 0 0 950 620,
 // Mercator). Constants fitted 2026-08-05 against the map's OWN landmass
 // polygons (contiguous-US bbox = lon [-125,-66.9] lat [49,24.5]); Mexico's
 // polygon independently confirms the fit to ~2px. NEVER hand-place world x/y —
