@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ProtoQuiz for EMS Agencies - Protocol training built from your protocols</title>
-  <meta name="description" content="Protocol training for EMS agencies, built from your own protocol PDF and cited to the page. $25 per seat, per quarter.">
+  <meta name="description" content="Protocol training for EMS agencies, built from your own protocol PDF and cited to the page. $25 per provider, per quarter.">
   <link rel="canonical" href="https://protoquiz.com/agency/">
   <meta name="robots" content="index,follow">
   <meta property="og:title" content="ProtoQuiz for EMS Agencies">
@@ -72,6 +72,14 @@
     .includes li { font-size: 15px; line-height: 1.5; color: var(--ink-2); padding: 10px 0; border-top: 1px solid var(--line); }
     .includes li:last-child { border-bottom: 1px solid var(--line); }
     .ask { margin: 14px 0 0; font-size: 14px; color: var(--ink-3); }
+    .setup { font-size: 17px; color: var(--ink-2); margin: -6px 0 16px; }
+    .early { border: 1px solid var(--accent); border-radius: 10px; padding: 16px 18px; margin: 0 0 18px; font-size: 15px; line-height: 1.6; color: var(--ink-2); }
+    .early b { color: var(--ink); }
+    .lede { max-width: 760px; font-size: clamp(17px, 1.6vw, 20px); line-height: 1.55; color: var(--ink-2); margin: -8px 0 clamp(22px, 3vw, 32px); }
+    .gets { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 clamp(24px, 5vw, 64px); margin: 0; padding: 0; list-style: none; }
+    .gets li { font-size: 15px; line-height: 1.55; color: var(--ink-2); padding: 12px 0; border-top: 1px solid var(--line); }
+    .gets b { color: var(--ink); }
+    .check { margin: 22px 0 0; font-size: 15px; line-height: 1.6; color: var(--ink-2); }
 
     .contact-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(24px, 5vw, 64px); align-items: start; }
     .contact-grid h2 { font-size: clamp(24px, 2.6vw, 32px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; margin: 0 0 12px; }
@@ -103,7 +111,7 @@
     .faq ol.math li { margin: 4px 0; }
 
     @media (max-width: 760px) {
-      .price-grid, .contact-grid, .form { grid-template-columns: 1fr; }
+      .price-grid, .contact-grid, .form, .gets { grid-template-columns: 1fr; }
     }
   </style>
 <script type="application/ld+json">
@@ -158,6 +166,7 @@
       <div class="wrap">
         <div class="eyebrow">For agencies</div>
         <h1>Protocol training for EMS agencies.</h1>
+        <p class="lede">Your protocols are what your providers are expected to know on every call, but most agencies hand crews a book hundreds of pages long and leave them to figure it out. ProtoQuiz turns your actual protocols into one short quiz a shift, and shows your training officers which topics their crews know and which need more reps.</p>
         <figure class="tour">
           <video id="tour" autoplay muted playsinline controls preload="metadata" poster="/agency/tour-poster.jpg" width="1920" height="1080" aria-label="A one-minute tour of ProtoQuiz for agencies">
             <source src="/agency/tour.mp4?v=v19" type="video/mp4">
@@ -168,20 +177,37 @@
       </div>
     </section>
 
+    <section class="section" id="why">
+      <div class="wrap">
+        <div class="section-eyebrow">What it does</div>
+        <ul class="gets">
+          <li><b>Faster onboarding.</b> New hires learn your protocols, not a generic textbook.</li>
+          <li><b>Less time off the truck.</b> Training comes to crews between calls, so you pull fewer people off shift to train.</li>
+          <li><b>Gaps caught early.</b> See weak topics before they become mistakes in the field.</li>
+          <li><b>Continuous improvement.</b> Training officers see where each crew needs more work.</li>
+          <li><b>CE documentation.</b> Training time is logged for your medical director to approve.</li>
+          <li><b>Your protocols only.</b> Every question cites the page of your own document.</li>
+        </ul>
+        <p class="check">Not sure yet? We will build a free protocol quiz you can send to your providers, so you can see how well they know your protocols before you buy. <a href="#contact">Ask for one</a>.</p>
+      </div>
+    </section>
+
     <section class="section" id="pricing-section">
       <div class="wrap">
         <div class="section-eyebrow">Pricing</div>
         <div class="price-grid">
           <div>
-            <p class="price">$25 per seat, per quarter.</p>
+            <p class="price">$25 per provider, per quarter.</p>
+            <p class="setup">Plus a one-time $500 setup fee.</p>
+            <p class="early"><b>Early adopters: sign up by October 15.</b> We waive the $500 setup fee and cut the price in half to $12.50 per provider, per quarter, through the end of 2026.</p>
             <ul class="terms">
-              <li>No setup fees.</li>
               <li>Live 7 days after we receive your protocol.</li>
+              <li>Full refund if you don't see results in the first 30 days.</li>
               <li>No add-ons or tiers.</li>
             </ul>
           </div>
           <div>
-            <div class="includes-h">Every seat includes</div>
+            <div class="includes-h">Every plan includes</div>
             <ul class="includes">
               <li>Training built on your own protocols</li>
               <li>Tools for your training officers</li>
@@ -281,7 +307,7 @@
           </details>
           <details>
             <summary>How does billing work?</summary>
-            <p>$25 per seat, per quarter. No setup fees, no add-ons, no tiers. Subscribe for a year and get a discount.</p>
+            <p>$25 per provider, per quarter, plus a one-time $500 setup fee. No add-ons, no tiers. Sign up by October 15 and we waive the setup fee and charge $12.50 per provider, per quarter, through the end of 2026. Full refund if you don't see results in the first 30 days.</p>
           </details>
         </div>
         <p class="faq-more">More detail in <a href="/agency/faq/">the full agency FAQ</a>.</p>
