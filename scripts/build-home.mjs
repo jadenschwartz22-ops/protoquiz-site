@@ -19,7 +19,7 @@ const LANES = [
     stroke: 'var(--lane)',
     body: 'An organization-wide training platform built on your protocols. Onboard faster, train consistently, address weak areas before QA/QI, and log the time for your CE record.',
     points: ['Train on shift, time logged for CE', 'See which topics need work', 'Live 7 days after you send your protocol'],
-    note: '$25 / provider / quarter', cta: 'See how it works', href: '/agency/', ghost: false },
+    note: 'Live 7 days after we get your protocol', cta: 'See how it works', href: '/agency/', ghost: false },
   { cls: 'lane lane-3', num: '03', title: 'Research',
     icon: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/>',
     stroke: 'var(--lane)',
