@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-shift="night">
+<html lang="en" data-shift="day">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -38,20 +38,6 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
   <link rel="stylesheet" href="/assets/chrome.css?v=c575909f">
   <link rel="stylesheet" href="/assets/app.css?v=92de0114">
-  <script>
-    /* Same shift handling as /app: the visitor's Day/Night choice, resolved before first paint. */
-    (function () {
-      var r = document.documentElement;
-      try {
-        var s = localStorage.getItem('pq-shift');
-        if (s === 'night' || s === 'day') r.setAttribute('data-shift', s);
-      } catch (e) {}
-      r.classList.add('no-anim');
-      requestAnimationFrame(function () {
-        requestAnimationFrame(function () { r.classList.remove('no-anim'); });
-      });
-    })();
-  </script>
   <style>
     /* /agency reuses app.css (tokens, sections, FAQ); only its own pieces live here. */
     .wrap { max-width: 1100px; margin: 0 auto; }
@@ -73,11 +59,10 @@
     .includes li:last-child { border-bottom: 1px solid var(--line); }
     .ask { margin: 14px 0 0; font-size: 14px; color: var(--ink-3); }
     .setup { font-size: 17px; color: var(--ink-2); margin: -6px 0 16px; }
-    .gets { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 clamp(24px, 5vw, 64px); margin: 0; padding: 0; list-style: none; }
-    .gets li { font-size: 15px; line-height: 1.55; color: var(--ink-2); padding: 12px 0; border-top: 1px solid var(--line); }
-    .gets b { color: var(--ink); }
-    .check { margin: 22px 0 0; font-size: 15px; line-height: 1.6; color: var(--ink-2); }
-    .check .btn { display: inline-block; margin-left: 10px; text-decoration: none; }
+    .baseline-cta { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; max-width: 680px; }
+    .baseline-cta h2 { font-size: clamp(28px, 3.4vw, 40px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; margin: 0; }
+    .baseline-cta .lede { font-size: 18px; line-height: 1.6; color: var(--ink-2); margin: 0; max-width: 560px; }
+    .baseline-cta .btn { display: inline-block; margin-top: 4px; text-decoration: none; padding: 15px 28px; }
 
     .contact-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(24px, 5vw, 64px); align-items: start; }
     .contact-grid h2 { font-size: clamp(24px, 2.6vw, 32px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; margin: 0 0 12px; }
@@ -109,7 +94,7 @@
     .faq ol.math li { margin: 4px 0; }
 
     @media (max-width: 760px) {
-      .price-grid, .contact-grid, .form, .gets { grid-template-columns: 1fr; }
+      .price-grid, .contact-grid, .form { grid-template-columns: 1fr; }
     }
   </style>
 <script type="application/ld+json">
@@ -175,17 +160,11 @@
     </section>
 
     <section class="section" id="why">
-      <div class="wrap">
-        <div class="section-eyebrow">What it does</div>
-        <ul class="gets">
-          <li><b>Faster onboarding.</b> New hires learn your protocols, not a generic textbook.</li>
-          <li><b>Less time off the truck.</b> Training comes to crews between calls, so you pull fewer people off shift to train.</li>
-          <li><b>Gaps caught early.</b> See weak topics before they become mistakes in the field.</li>
-          <li><b>Continuous improvement.</b> Training officers see where each crew needs more work.</li>
-          <li><b>CE documentation.</b> Training time is logged for your medical director to approve.</li>
-          <li><b>Your protocols only.</b> Every question cites the page of your own document.</li>
-        </ul>
-        <p class="check">Don't think you need training on your protocols? Get a free <b>Protocol Baseline</b> assessment: a custom quiz built from your own protocols that you send to your EMTs and Medics, and see how well they actually know their protocols. <a href="#contact" class="btn" id="baselineCta">See how well your EMTs and Medics actually know their protocols</a></p>
+      <div class="wrap baseline-cta">
+        <div class="section-eyebrow">Free Protocol Baseline</div>
+        <h2>Think your crews already know the protocols?</h2>
+        <p class="lede">We'll build a quiz from your own protocols and send it to your EMTs and Medics to see if there are any gaps. Yes, for free.</p>
+        <a href="#contact" class="btn" id="baselineCta">Get Your Free Protocol Baseline</a>
       </div>
     </section>
 
@@ -265,6 +244,15 @@
       <div class="wrap">
         <div class="section-eyebrow">FAQ</div>
         <div class="faq">
+          <details>
+            <summary>Why ProtoQuiz over generic training?</summary>
+            <p><strong>Faster onboarding.</strong> New hires learn your protocols, not a generic textbook.</p>
+            <p><strong>Less time off the truck.</strong> Training comes to crews between calls, so you pull fewer people off shift to train.</p>
+            <p><strong>Gaps caught early.</strong> See weak topics before they become mistakes in the field.</p>
+            <p><strong>Continuous improvement.</strong> Training officers see where each crew needs more work.</p>
+            <p><strong>CE documentation.</strong> Training time is logged for your medical director to approve.</p>
+            <p><strong>Your protocols only.</strong> Every question cites the page of your own document.</p>
+          </details>
           <details class="save">
             <summary>How much money does it save?</summary>
             <p><strong>At least $160 saved per provider a year.</strong> Over $16,000 a year for a 100-provider agency, before CE. Every input runs low.</p>
