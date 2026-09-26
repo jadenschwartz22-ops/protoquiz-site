@@ -91,14 +91,14 @@
       <div class="dochead">
         <span class="badge">Methodology</span>
         <h1>How the EMS Census is built</h1>
-        <p class="lede">Every number here comes from protocols agencies publish and protocols app users upload. As of 2026-09-20.</p>
+        <p class="lede">Every number here comes from protocols agencies publish and protocols app users upload. As of 2026-09-26.</p>
       </div>
-      <div class="stats"><div class="stat"><span class="v">1,739</span><span class="l">documents</span></div><div class="stat"><span class="v">223</span><span class="l">named agencies</span></div><div class="stat"><span class="v">27,740</span><span class="l">dose entries</span></div><div class="stat"><span class="v">26,551 of 27,740 (96%)</span><span class="l">machine-parsed</span></div></div>
+      <div class="stats"><div class="stat"><span class="v">2,417</span><span class="l">documents</span></div><div class="stat"><span class="v">210</span><span class="l">named agencies</span></div><div class="stat"><span class="v">27,529</span><span class="l">dose entries</span></div><div class="stat"><span class="v">26,330 of 27,529 (96%)</span><span class="l">machine-parsed</span></div></div>
 
       <section id="origin">
         <h2>Where documents come from</h2>
         <p>Medics upload their own agency's protocol, or we add a published one. Each document keeps its <strong>origin</strong> and is identified by the hash of its contents, so a re-post is the same document and a revision is a new one. We host no PDFs; we link to the agency's own copy.</p>
-        <p>Only public agencies (state, regional, county, city, fire district) are named. Others count toward totals, unnamed. A document whose agency or date is unsettled waits in pending review: 241 of 1,739 right now.</p>
+        <p>Only public agencies (state, regional, county, city, fire district) are named. Others count toward totals, unnamed. A document whose agency or date is unsettled waits in pending review: 1,734 of 2,417 right now.</p>
       </section>
 
       <section id="doses">
@@ -107,7 +107,7 @@
           <li>Mass units are canonicalized to mg (300 mcg = 0.3 mg). Nothing else converts; mL, units and joules stay separate.</li>
           <li>Weight-based and flat doses never share a median.</li>
           <li>A range contributes its low end only: 0.3&ndash;0.5 mg counts as 0.3.</li>
-          <li>A raw entry never enters a distribution (for example "per medical control"). 712 of 27,740 (3%) are raw.</li>
+          <li>A raw entry never enters a distribution (for example "per medical control"). 726 of 27,529 (3%) are raw.</li>
           <li>One vote per protocol, and a distribution needs 5 or more protocols.</li>
           <li>When the agreed dose, or the median, equals the dose a national guideline states for that drug, indication and population, or falls inside the range it states, the row says so and links the guideline: NASEMSO's National Model EMS Clinical Guidelines, American Heart Association algorithms, or a national society's guidance. A dose that differs gets no tag.</li>
         </ul>
@@ -120,7 +120,7 @@
 
       <section id="outliers">
         <h2>Outlier review</h2>
-        <p>Nightly, any dose over 3 times or under a third of its group's median is likely a misread, so it is left out of every number until checked. It is one pass with no feedback, so the same documents give the same flags. 1,335 of 27,740 entries (5%) are left out right now.</p>
+        <p>Nightly, any dose over 3 times or under a third of its group's median is likely a misread, so it is left out of every number until checked. It is one pass with no feedback, so the same documents give the same flags. 1,316 of 27,529 entries (5%) are left out right now.</p>
       </section>
 
       <section id="accuracy">
@@ -135,7 +135,7 @@
 
       <section id="cite">
         <h2>Citation</h2>
-        <p class="cite">United States EMS Protocol Census, as of 2026-09-20. https://protoquiz.com/census/ &middot; <a href="/census/data-license/">Data license</a></p>
+        <p class="cite">United States EMS Protocol Census, as of 2026-09-26. https://protoquiz.com/census/ &middot; <a href="/census/data-license/">Data license</a></p>
       </section>
         </div>
         <aside class="rail">

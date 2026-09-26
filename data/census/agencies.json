@@ -11,10 +11,10 @@
    "country": "US",
    "city": "Boise",
    "jurisdiction": "county",
-   "currentHash": "f14e0950eefeb58c4d2ef2c783954a13063d063d63beff251e08a0861356b120",
+   "currentHash": "01082b257761a0720e63d91878f8a02c384698b19ac5a0a3b624ebb5871e42d5",
    "currentEffectiveDate": "2026-02-01",
-   "documentCount": 17,
-   "doseCount": 3530,
+   "documentCount": 4,
+   "doseCount": 762,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -77,7 +77,7 @@
    "currentHash": "b176409b6363ce792a938d859b369bb1d906d09dce8caef1cff0cabc95b36749",
    "currentEffectiveDate": "2020-01-01",
    "documentCount": 1,
-   "doseCount": 0,
+   "doseCount": 107,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -119,7 +119,7 @@
    "currentHash": "1f8702b59cde16a1ea5adcfb730877daa15af3966d8efa482b37a1dbfb16134d",
    "currentEffectiveDate": "2018-01-01",
    "documentCount": 3,
-   "doseCount": 217,
+   "doseCount": 314,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -137,10 +137,10 @@
    "country": "US",
    "city": null,
    "jurisdiction": "statewide",
-   "currentHash": "6a61fcd432352184850e9031fef283df7dd078b874d3dca4a5c8a9755f219620",
+   "currentHash": "0438f748ba35d1cc06ce0278a72b34950d15fbdbba38cb9cb79f4332ea816479",
    "currentEffectiveDate": "2025-07-01",
-   "documentCount": 13,
-   "doseCount": 1446,
+   "documentCount": 7,
+   "doseCount": 624,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -158,10 +158,10 @@
    "country": "US",
    "city": "San Leandro",
    "jurisdiction": "county",
-   "currentHash": "e5cee91e5c5191f95524c1a4eb8ade966543a5bb6d5a186606f956beca13fc86",
+   "currentHash": "b9e114f9c942a13ca59e32b3f274aad84dd3dc2b13edaf325b2fedcee824c636",
    "currentEffectiveDate": "2026-01-01",
-   "documentCount": 20,
-   "doseCount": 1344,
+   "documentCount": 8,
+   "doseCount": 558,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -212,27 +212,6 @@
    }
   },
   {
-   "agencyKey": "allegiance-mobile-health",
-   "name": "Allegiance Mobile Health",
-   "aliases": [
-    "Allegiance Mobile Health"
-   ],
-   "state": "TX",
-   "country": "US",
-   "city": null,
-   "jurisdiction": "regional",
-   "currentHash": "6f1473175ea1a219c90cd5d7e1b99f00e65fdc13269a06e2f1ab8f3047057c69",
-   "currentEffectiveDate": "2026-04-28",
-   "documentCount": 2,
-   "doseCount": 0,
-   "pendingReview": null,
-   "mayBeOutdated": false,
-   "coverage": {
-    "hasProtocol": true,
-    "jurisdiction": "regional"
-   }
-  },
-  {
    "agencyKey": "ambulance-victoria",
    "name": "Ambulance Victoria",
    "aliases": [
@@ -242,10 +221,10 @@
    "country": "AU",
    "city": null,
    "jurisdiction": "statewide",
-   "currentHash": "6b29fed0ab6912eceaada9b28b95bf46",
+   "currentHash": "74a9bc797e880f9dcba8c52129461bb9",
    "currentEffectiveDate": "2025-09-22",
    "documentCount": 2,
-   "doseCount": 0,
+   "doseCount": 133,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -350,7 +329,7 @@
    "currentHash": "52f5cfcab2a169a7bdd2488bc160826b",
    "currentEffectiveDate": "2024-07-01",
    "documentCount": 2,
-   "doseCount": 0,
+   "doseCount": 2,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -431,10 +410,10 @@
    "country": "US",
    "city": null,
    "jurisdiction": "regional",
-   "currentHash": "a76003ddfc213bcacd7cbd344b69c3ad01233e3f5ffc6acaf3759280fd9eb3cf",
+   "currentHash": "ffdf5ce08afe7353fdb5932f0a9e44fed946f2a3befb54be4947243f3194e544",
    "currentEffectiveDate": "2026-08-15",
-   "documentCount": 12,
-   "doseCount": 389,
+   "documentCount": 8,
+   "doseCount": 463,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -486,39 +465,19 @@
   },
   {
    "agencyKey": "boulder-county-ems",
-   "name": "Boulder County EMS",
-   "aliases": [
-    "Boulder County EMS"
-   ],
-   "state": "CO",
-   "country": "US",
-   "city": "Boulder",
-   "jurisdiction": "county",
-   "currentHash": "ddf9aeb1f5e8b7c20f635d0797537c269152d5de3f6c3d496973ed77794ce830",
-   "currentEffectiveDate": "2025-10-08",
-   "documentCount": 2,
-   "doseCount": 222,
-   "pendingReview": null,
-   "mayBeOutdated": false,
-   "coverage": {
-    "hasProtocol": true,
-    "jurisdiction": "county"
-   }
-  },
-  {
-   "agencyKey": "boulder-county-protocol-committee",
    "name": "Boulder County Protocol Committee",
    "aliases": [
+    "Boulder County EMS",
     "Boulder County Protocol Committee"
    ],
    "state": "CO",
    "country": "US",
    "city": null,
    "jurisdiction": "county",
-   "currentHash": "4db1779f15e798c4c6cf73bc9011ccc5152321178b66bf2c42046c55ae1dbd7e",
+   "currentHash": "33f793a2f3e0fdeee2c4b3f2241411b17d68c87d714e335ae2a6a5d80def95fb",
    "currentEffectiveDate": "2026-04-22",
-   "documentCount": 14,
-   "doseCount": 1663,
+   "documentCount": 8,
+   "doseCount": 1225,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -538,8 +497,8 @@
    "jurisdiction": "county",
    "currentHash": "3f2778a297df723510e700c4309e83e95138456b88e69579ed784f343e91cb3a",
    "currentEffectiveDate": "2025-12-02",
-   "documentCount": 2,
-   "doseCount": 250,
+   "documentCount": 1,
+   "doseCount": 127,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -559,7 +518,7 @@
    "jurisdiction": "fire-district",
    "currentHash": "1e968cbce0e9e37e0bcc264a63e4ffe0",
    "currentEffectiveDate": "2025-03-10",
-   "documentCount": 2,
+   "documentCount": 1,
    "doseCount": 140,
    "pendingReview": null,
    "mayBeOutdated": false,
@@ -622,7 +581,7 @@
    "jurisdiction": "county",
    "currentHash": "ce5a701bf811c1db9f7628716894e293e4b933a4a3ba8846fbe4d37ce3d76779",
    "currentEffectiveDate": "2026-05-26",
-   "documentCount": 2,
+   "documentCount": 1,
    "doseCount": 130,
    "pendingReview": null,
    "mayBeOutdated": false,
@@ -644,7 +603,7 @@
    "currentHash": "5f9727312807bef69fd70a6659b6049b28a413cd08181b7d09718bc516b86b9c",
    "currentEffectiveDate": "2023-01-01",
    "documentCount": 1,
-   "doseCount": 0,
+   "doseCount": 150,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -662,10 +621,10 @@
    "country": "US",
    "city": null,
    "jurisdiction": "county",
-   "currentHash": "731eed9ce70ee1957398daadee0bcb7955fa03836987bb71239c3fd890eb50a2",
+   "currentHash": "1ac6983e514ad25fe4d856e5b2e3da3b15b1b31c80e793481aad7668b2821a09",
    "currentEffectiveDate": "2025-05-27",
-   "documentCount": 2,
-   "doseCount": 389,
+   "documentCount": 1,
+   "doseCount": 179,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -685,8 +644,8 @@
    "jurisdiction": "regional",
    "currentHash": "2e6360d1d7360eac75eaafe18cacdc3c75fbe0426e36255651e274160e62847d",
    "currentEffectiveDate": "2026-01-12",
-   "documentCount": 3,
-   "doseCount": 370,
+   "documentCount": 2,
+   "doseCount": 241,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -713,6 +672,27 @@
    "coverage": {
     "hasProtocol": true,
     "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "chaves-county-ems",
+   "name": "Chaves County EMS",
+   "aliases": [
+    "Chaves County EMS"
+   ],
+   "state": "NM",
+   "country": "US",
+   "city": "Roswell",
+   "jurisdiction": "county",
+   "currentHash": "15c11087c70498c01dd7e3eeb51959ff60725b17faa68db68dfec11607a1fa85",
+   "currentEffectiveDate": "2022-01-01",
+   "documentCount": 1,
+   "doseCount": 153,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
    }
   },
   {
@@ -793,7 +773,7 @@
    "currentHash": "c8c3a1f177209c41d4d7d130175615ffad4f25459896337a27b78012ebe9fb88",
    "currentEffectiveDate": "2024-12-01",
    "documentCount": 2,
-   "doseCount": 169,
+   "doseCount": 331,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -833,10 +813,31 @@
    "country": "US",
    "city": "Las Vegas",
    "jurisdiction": "county",
-   "currentHash": "7f21d4b2b9a43183e68fc249725ac65998cbecbe47beca6f3f035c75b94367ad",
+   "currentHash": "46190c373453fb18b1dad460f75d15df808bd30bae0e902ef34c137bca0bc431",
    "currentEffectiveDate": "2026-07-01",
-   "documentCount": 21,
-   "doseCount": 1994,
+   "documentCount": 7,
+   "doseCount": 817,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "clark-county-ems-washington",
+   "name": "Clark County EMS (Washington)",
+   "aliases": [
+    "Clark County EMS (Washington)"
+   ],
+   "state": "WA",
+   "country": "US",
+   "city": "Las Vegas",
+   "jurisdiction": "county",
+   "currentHash": "7b5a428f3277eeebd458c55d22c539943699231ebb0145d2a9ae92c40dab1f93",
+   "currentEffectiveDate": "2026-03-01",
+   "documentCount": 1,
+   "doseCount": 161,
    "pendingReview": {
     "effectiveDate": null
    },
@@ -923,7 +924,7 @@
    "jurisdiction": "county",
    "currentHash": "9a2aa4289f33f2133327061c5b230014",
    "currentEffectiveDate": "2025-01-01",
-   "documentCount": 2,
+   "documentCount": 1,
    "doseCount": 0,
    "pendingReview": null,
    "mayBeOutdated": false,
@@ -954,48 +955,6 @@
    }
   },
   {
-   "agencyKey": "county-of-riverside-emergency-medical-services-agency",
-   "name": "County of Riverside Emergency Medical Services Agency",
-   "aliases": [
-    "County of Riverside Emergency Medical Services Agency"
-   ],
-   "state": "CA",
-   "country": "US",
-   "city": null,
-   "jurisdiction": "county",
-   "currentHash": "3db372f18726283eaaff8b1843de2d5da146ce5658153a593385db4e8391dc9e",
-   "currentEffectiveDate": "2026-07-01",
-   "documentCount": 1,
-   "doseCount": 141,
-   "pendingReview": null,
-   "mayBeOutdated": false,
-   "coverage": {
-    "hasProtocol": true,
-    "jurisdiction": "county"
-   }
-  },
-  {
-   "agencyKey": "county-of-riverside-emergency-medical-services-ems-agency-remsa",
-   "name": "County of Riverside Emergency Medical Services (EMS) Agency (REMSA)",
-   "aliases": [
-    "County of Riverside Emergency Medical Services (EMS) Agency (REMSA)"
-   ],
-   "state": "CA",
-   "country": "US",
-   "city": "Riverside",
-   "jurisdiction": "county",
-   "currentHash": "fd8fe3b4089957deaf1ccf3a3d7850fe1ee1a51670b6aa8822290fa45677fc42",
-   "currentEffectiveDate": "2025-07-01",
-   "documentCount": 1,
-   "doseCount": 150,
-   "pendingReview": null,
-   "mayBeOutdated": false,
-   "coverage": {
-    "hasProtocol": true,
-    "jurisdiction": "county"
-   }
-  },
-  {
    "agencyKey": "county-of-sacramento-emergency-medical-services-agency",
    "name": "County of Sacramento Emergency Medical Services Agency",
    "aliases": [
@@ -1007,8 +966,8 @@
    "jurisdiction": "county",
    "currentHash": "a9a04253fd925ae5fd26452a9c6cacac17720b756599650eba563078d1111ce4",
    "currentEffectiveDate": "2026-05-01",
-   "documentCount": 9,
-   "doseCount": 18,
+   "documentCount": 8,
+   "doseCount": 22,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -1028,8 +987,8 @@
    "jurisdiction": "county",
    "currentHash": "449e04a09b5066618d410889e3d20cbc289b7dca8ecb5199e82a710642dbc0ef",
    "currentEffectiveDate": "2026-07-01",
-   "documentCount": 21,
-   "doseCount": 941,
+   "documentCount": 8,
+   "doseCount": 734,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -1047,10 +1006,10 @@
    "country": "US",
    "city": null,
    "jurisdiction": "county",
-   "currentHash": "fff089910b34fc912d03c9037617517687d4806aaf5e3e686e132d923c811f74",
+   "currentHash": "addb275d3ac23c03f1d88d22b1fda660f9ce64eb684771997a3c9b29a1635c7b",
    "currentEffectiveDate": "2026-06-08",
    "documentCount": 2,
-   "doseCount": 187,
+   "doseCount": 391,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -1108,12 +1067,12 @@
    ],
    "state": "NC",
    "country": "US",
-   "city": "Davidson County",
+   "city": null,
    "jurisdiction": "county",
-   "currentHash": "e05e76d351d75d90387b62834b3275cb0090bdd64408cb308b6797da12f6b145",
+   "currentHash": "49e41d34dcc1fe245d62b5f9985a47bbfd84a5a68856bfa9785293a07d1d496a",
    "currentEffectiveDate": "2025-08-15",
-   "documentCount": 20,
-   "doseCount": 1085,
+   "documentCount": 4,
+   "doseCount": 553,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -1154,7 +1113,7 @@
    "jurisdiction": "fire-district",
    "currentHash": "72a82c30cd8a4b545628300c40126d0e76260d5c9276cceabf4b3c79fd0efe34",
    "currentEffectiveDate": "2026-03-17",
-   "documentCount": 3,
+   "documentCount": 2,
    "doseCount": 0,
    "pendingReview": null,
    "mayBeOutdated": false,
@@ -1196,7 +1155,7 @@
    "jurisdiction": "city",
    "currentHash": "07cf7422a4d7eb2c374a6aee3ab773940ba963c14dc8d81b338aaf3a25997fe1",
    "currentEffectiveDate": "2026-06-10",
-   "documentCount": 6,
+   "documentCount": 3,
    "doseCount": 359,
    "pendingReview": null,
    "mayBeOutdated": false,
@@ -1215,10 +1174,10 @@
    "country": "US",
    "city": "Denver",
    "jurisdiction": "regional",
-   "currentHash": "ae8d7d93add64001d56b69a1427c6a6c85ebb803204d506ec17fa6a4c91955c1",
+   "currentHash": "f9815db79cfecb3bcc159d5a65ee2bcbd8806c3b0ce4f98704b01dd9f7f2197c",
    "currentEffectiveDate": "2026-07-01",
-   "documentCount": 264,
-   "doseCount": 19268,
+   "documentCount": 19,
+   "doseCount": 1818,
    "pendingReview": {
     "effectiveDate": "2025-01-01"
    },
@@ -1241,8 +1200,8 @@
    "jurisdiction": "county",
    "currentHash": "3a3ab041e79beac3d2d47e5cd0cf6db849ecc3df3c03caa184494c55dade0a88",
    "currentEffectiveDate": "2025-07-01",
-   "documentCount": 19,
-   "doseCount": 474,
+   "documentCount": 16,
+   "doseCount": 398,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -1367,7 +1326,7 @@
    "jurisdiction": "fire-district",
    "currentHash": "cf510b4300b52ffcbebf2d75c5a96b126c37ca68adf09e5964336d58bf2b8beb",
    "currentEffectiveDate": "2023-01-01",
-   "documentCount": 2,
+   "documentCount": 1,
    "doseCount": 129,
    "pendingReview": null,
    "mayBeOutdated": true,
@@ -1535,8 +1494,8 @@
    "jurisdiction": "regional",
    "currentHash": "60adbd9627801f2bb5eb36a7ed1fb3297f119fda658a953999f8f4ff4727e7e0",
    "currentEffectiveDate": "2026-07-01",
-   "documentCount": 7,
-   "doseCount": 837,
+   "documentCount": 6,
+   "doseCount": 706,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -1576,10 +1535,10 @@
    "country": "US",
    "city": null,
    "jurisdiction": "county",
-   "currentHash": "ea3986a6c32360f1325568cff2324a0735b60a43675be39becb5d14ece846cd2",
+   "currentHash": "924d017535e31fcae598b517553dd70f15dec15460d15cf6dda23486d6e9a1ea",
    "currentEffectiveDate": "2026-04-01",
-   "documentCount": 6,
-   "doseCount": 580,
+   "documentCount": 2,
+   "doseCount": 295,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -1588,10 +1547,11 @@
    }
   },
   {
-   "agencyKey": "health-professions-council-of-south-africa",
+   "agencyKey": "health-professions-council-of-south-africa-hpcsa",
    "name": "Health Professions Council of South Africa",
    "aliases": [
-    "Health Professions Council of South Africa"
+    "Health Professions Council of South Africa",
+    "Health Professions Council of South Africa (HPCSA)"
    ],
    "state": null,
    "country": "ZA",
@@ -1599,29 +1559,8 @@
    "jurisdiction": "statewide",
    "currentHash": "d501dfb6360aea159498add6dbd91422697c680e0bcb7fdf34f9ff13e0e5e66d",
    "currentEffectiveDate": "2018-07-01",
-   "documentCount": 1,
-   "doseCount": 143,
-   "pendingReview": null,
-   "mayBeOutdated": true,
-   "coverage": {
-    "hasProtocol": false,
-    "jurisdiction": "statewide"
-   }
-  },
-  {
-   "agencyKey": "health-professions-council-of-south-africa-hpcsa",
-   "name": "Health Professions Council of South Africa (HPCSA)",
-   "aliases": [
-    "Health Professions Council of South Africa (HPCSA)"
-   ],
-   "state": null,
-   "country": "ZA",
-   "city": null,
-   "jurisdiction": "statewide",
-   "currentHash": "9e8b4da4d2b8b7beaf1e36d99af6812548da5f06a7302066c021e30d3dcffdfd",
-   "currentEffectiveDate": "2018-07-01",
-   "documentCount": 2,
-   "doseCount": 105,
+   "documentCount": 3,
+   "doseCount": 248,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -1662,7 +1601,7 @@
    "jurisdiction": "regional",
    "currentHash": "db25e303e588e44119ee8379835c768bc5c19bce74934b0d886ef131ba6bc419",
    "currentEffectiveDate": "2025-04-30",
-   "documentCount": 2,
+   "documentCount": 1,
    "doseCount": 10,
    "pendingReview": null,
    "mayBeOutdated": false,
@@ -1788,34 +1727,13 @@
    "jurisdiction": "county",
    "currentHash": "04e435631e725f1decd877d66ba4648b549b266bdfdd970fda660d00eb7f5e13",
    "currentEffectiveDate": "2026-07-01",
-   "documentCount": 4,
-   "doseCount": 285,
+   "documentCount": 3,
+   "doseCount": 197,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
     "hasProtocol": true,
     "jurisdiction": "county"
-   }
-  },
-  {
-   "agencyKey": "intermountain-health-platte-valley-ambulance-service",
-   "name": "Intermountain Health – Platte Valley Ambulance Service",
-   "aliases": [
-    "Intermountain Health – Platte Valley Ambulance Service"
-   ],
-   "state": "CO",
-   "country": "US",
-   "city": "Denver",
-   "jurisdiction": "regional",
-   "currentHash": "ad78aa92a4bfc772d078584411a0066a",
-   "currentEffectiveDate": "2025-08-01",
-   "documentCount": 1,
-   "doseCount": 0,
-   "pendingReview": null,
-   "mayBeOutdated": false,
-   "coverage": {
-    "hasProtocol": true,
-    "jurisdiction": "regional"
    }
   },
   {
@@ -1831,9 +1749,32 @@
    "currentHash": "cba0ff35bd678580a446d167893a3b261b9412edd2061fd15acbb6fd14f0f8b1",
    "currentEffectiveDate": "2026-01-01",
    "documentCount": 4,
-   "doseCount": 0,
+   "doseCount": 99,
    "pendingReview": null,
    "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "jackson-county-ems",
+   "name": "Jackson County EMS",
+   "aliases": [
+    "Jackson County EMS"
+   ],
+   "state": null,
+   "country": "US",
+   "city": null,
+   "jurisdiction": "county",
+   "currentHash": "ae4dddaa73471e1e2c564efdc1e1322f5301153e4c4d5f7308195e098dee2c62",
+   "currentEffectiveDate": "2024-01-01",
+   "documentCount": 1,
+   "doseCount": 149,
+   "pendingReview": {
+    "effectiveDate": "2024-01-01"
+   },
+   "mayBeOutdated": true,
    "coverage": {
     "hasProtocol": true,
     "jurisdiction": "county"
@@ -1893,8 +1834,8 @@
    "jurisdiction": "statewide",
    "currentHash": "1da4fd7b443a9c8d8302c78a4d132f9e2e11ca8fda0741eb213588f6c169d08e",
    "currentEffectiveDate": "2025-04-30",
-   "documentCount": 10,
-   "doseCount": 965,
+   "documentCount": 5,
+   "doseCount": 763,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -1956,8 +1897,8 @@
    "jurisdiction": "fire-district",
    "currentHash": "f7654ec397afed596ecb7bdd97aa9db2e78ab7490fd479fbe8aef263c0283d99",
    "currentEffectiveDate": "2024-05-15",
-   "documentCount": 1,
-   "doseCount": 142,
+   "documentCount": 2,
+   "doseCount": 277,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -2061,55 +2002,13 @@
    "jurisdiction": "county",
    "currentHash": "4aa390b1ae591b87e2f58e25a5ad077a029e4249fc142870a510c61295bf73e6",
    "currentEffectiveDate": "2018-04-20",
-   "documentCount": 3,
+   "documentCount": 2,
    "doseCount": 2,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
     "hasProtocol": true,
     "jurisdiction": "county"
-   }
-  },
-  {
-   "agencyKey": "madison-fire-department",
-   "name": "Madison Fire Department",
-   "aliases": [
-    "Madison Fire Department"
-   ],
-   "state": "WI",
-   "country": "US",
-   "city": "Madison",
-   "jurisdiction": "fire-district",
-   "currentHash": "2256791bd47a28032ae7957d85e341cfbbad252c7c5172554b0e4208e251a092",
-   "currentEffectiveDate": "2023-04-27",
-   "documentCount": 5,
-   "doseCount": 287,
-   "pendingReview": null,
-   "mayBeOutdated": true,
-   "coverage": {
-    "hasProtocol": true,
-    "jurisdiction": "fire-district"
-   }
-  },
-  {
-   "agencyKey": "madison-fire-department-emergency-services-national-academy",
-   "name": "Madison Fire Department Emergency Services National Academy",
-   "aliases": [
-    "Madison Fire Department Emergency Services National Academy"
-   ],
-   "state": "WI",
-   "country": "US",
-   "city": "Madison",
-   "jurisdiction": "fire-district",
-   "currentHash": "e890aa6e748b7c84a9c7926afdb585d924448868708faeeb20882b2ec3808107",
-   "currentEffectiveDate": "2023-04-27",
-   "documentCount": 1,
-   "doseCount": 0,
-   "pendingReview": null,
-   "mayBeOutdated": true,
-   "coverage": {
-    "hasProtocol": true,
-    "jurisdiction": "fire-district"
    }
   },
   {
@@ -2125,7 +2024,7 @@
    "currentHash": "564fed74f777493f1f6d8ff54e6814d20c8f4d373ac01fc8f3c951b68cc0f2b5",
    "currentEffectiveDate": "2025-12-01",
    "documentCount": 1,
-   "doseCount": 0,
+   "doseCount": 136,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -2166,8 +2065,8 @@
    "jurisdiction": "county",
    "currentHash": "2f4896e139008640a8fb17c293d144d41c26641fd9d3636e85d376c7bb8bf4dd",
    "currentEffectiveDate": "2025-04-01",
-   "documentCount": 3,
-   "doseCount": 206,
+   "documentCount": 2,
+   "doseCount": 106,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -2187,8 +2086,8 @@
    "jurisdiction": "statewide",
    "currentHash": "c1fa8b8af1b730f3e54e2c0b3dbc824b0bc26c297c0337740a22acad899df61b",
    "currentEffectiveDate": "2026-07-01",
-   "documentCount": 19,
-   "doseCount": 2855,
+   "documentCount": 10,
+   "doseCount": 1960,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -2198,29 +2097,9 @@
   },
   {
    "agencyKey": "massachusetts-department-of-public-health-office-of-emergency-medical-services",
-   "name": "Massachusetts Department of Public Health, Office of Emergency Medical Services",
-   "aliases": [
-    "Massachusetts Department of Public Health, Office of Emergency Medical Services"
-   ],
-   "state": "MA",
-   "country": "US",
-   "city": null,
-   "jurisdiction": "statewide",
-   "currentHash": "2549a975a7d77b05943bb978d816ad485935208cec7ae0a3fcd08b3a92893cc3",
-   "currentEffectiveDate": "2026-09-01",
-   "documentCount": 26,
-   "doseCount": 4172,
-   "pendingReview": null,
-   "mayBeOutdated": false,
-   "coverage": {
-    "hasProtocol": false,
-    "jurisdiction": "statewide"
-   }
-  },
-  {
-   "agencyKey": "massachusetts-office-of-emergency-medical-services",
    "name": "Massachusetts Office of Emergency Medical Services",
    "aliases": [
+    "Massachusetts Department of Public Health, Office of Emergency Medical Services",
     "Massachusetts Office of Emergency Medical Services"
    ],
    "state": "MA",
@@ -2229,8 +2108,8 @@
    "jurisdiction": "statewide",
    "currentHash": "111fa137f8891e01d9c25b2e5edcf18390a008e4b1cf65a9786d4927edf6f28b",
    "currentEffectiveDate": "2026-09-01",
-   "documentCount": 12,
-   "doseCount": 1527,
+   "documentCount": 13,
+   "doseCount": 2125,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -2248,10 +2127,10 @@
    "country": "US",
    "city": "Charlotte",
    "jurisdiction": "county",
-   "currentHash": "c2ad9d013e6fb10b05d3ff39828559220fdc31c18c99efbf7acfafd7193e3e04",
+   "currentHash": "0f8fc084bffb5ca368f4ac63d7f73bfc614b79ae8644ae0c34898c4bf43065b2",
    "currentEffectiveDate": "2026-06-15",
-   "documentCount": 2,
-   "doseCount": 271,
+   "documentCount": 1,
+   "doseCount": 128,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -2261,29 +2140,9 @@
   },
   {
    "agencyKey": "mep-in-partnership-with-ssm-health",
-   "name": "MEP (In partnership with SSM Health)",
-   "aliases": [
-    "MEP (In partnership with SSM Health)"
-   ],
-   "state": "WI",
-   "country": "US",
-   "city": null,
-   "jurisdiction": "regional",
-   "currentHash": "ad913c57c83126f4939e2d1825ccc9c88a0a2bd4163af9310d649f6cb5619242",
-   "currentEffectiveDate": "2026-04-01",
-   "documentCount": 1,
-   "doseCount": 226,
-   "pendingReview": null,
-   "mayBeOutdated": false,
-   "coverage": {
-    "hasProtocol": true,
-    "jurisdiction": "regional"
-   }
-  },
-  {
-   "agencyKey": "mep-medical-emergency-partnership-in-partnership-with-ssm-health",
    "name": "MEP (Medical Emergency Partnership) in partnership with SSM Health",
    "aliases": [
+    "MEP (In partnership with SSM Health)",
     "MEP (Medical Emergency Partnership) in partnership with SSM Health"
    ],
    "state": "WI",
@@ -2311,10 +2170,10 @@
    "country": "US",
    "city": null,
    "jurisdiction": "regional",
-   "currentHash": "58f7dead368d76a5b4e6a06f5f8f7b8ab03f5963ae1d28bf76548095e7770f33",
-   "currentEffectiveDate": "2026-01-01",
-   "documentCount": 4,
-   "doseCount": 491,
+   "currentHash": "22a01e6b90ef4e591bdbb7dda0ad1e390f9ab2f181656385439eb7fe342afbf4",
+   "currentEffectiveDate": "2026-08-07",
+   "documentCount": 8,
+   "doseCount": 451,
    "pendingReview": {
     "effectiveDate": "2026-01-01"
    },
@@ -2377,10 +2236,10 @@
    "country": "US",
    "city": null,
    "jurisdiction": "statewide",
-   "currentHash": "e8773ce7063e26e75f2d12ccd4e86fd0f7f951d1abc669192f271346ff918431",
+   "currentHash": "a278f41102237fc2a2d448c7035c631f36d3e68ed7a1ba5381acdc9b504fcbde",
    "currentEffectiveDate": "2025-11-17",
-   "documentCount": 28,
-   "doseCount": 1036,
+   "documentCount": 23,
+   "doseCount": 734,
    "pendingReview": {
     "effectiveDate": null
    },
@@ -2402,8 +2261,8 @@
    "jurisdiction": "county",
    "currentHash": "012a3e2415d3b7915df46ecf269fd3a43f17dc3e7ad2de1cee9be183786c4c11",
    "currentEffectiveDate": "2024-02-12",
-   "documentCount": 3,
-   "doseCount": 272,
+   "documentCount": 1,
+   "doseCount": 140,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -2444,8 +2303,8 @@
    "jurisdiction": "statewide",
    "currentHash": "698feb593f8fca7472ed8a3c787d55c1691b907003c4a8662677c6c212ffba4f",
    "currentEffectiveDate": "2024-02-01",
-   "documentCount": 7,
-   "doseCount": 145,
+   "documentCount": 6,
+   "doseCount": 109,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -2465,13 +2324,34 @@
    "jurisdiction": "regional",
    "currentHash": "0cfdd3405a0c95bfcddf114e1ccbf3def834930ba4643352c9f013536042f9ee",
    "currentEffectiveDate": "2024-03-01",
-   "documentCount": 3,
+   "documentCount": 2,
    "doseCount": 0,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
     "hasProtocol": true,
     "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "michigan-department-of-health-and-human-services-mdhhs-macomb-county-medical-control-authority-mca",
+   "name": "Michigan Department of Health and Human Services (MDHHS) / Macomb County Medical Control Authority (MCA)",
+   "aliases": [
+    "Michigan Department of Health and Human Services (MDHHS) / Macomb County Medical Control Authority (MCA)"
+   ],
+   "state": "MI",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "county",
+   "currentHash": "03a68e334abe295170d6fd38ff934b1f30c29faffc620c3026dca8f0d8e8f4a4",
+   "currentEffectiveDate": "2024-03-31",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
    }
   },
   {
@@ -2538,27 +2418,6 @@
    }
   },
   {
-   "agencyKey": "ministry-of-health",
-   "name": "Ministry of Health",
-   "aliases": [
-    "Ministry of Health"
-   ],
-   "state": "ON",
-   "country": "CA",
-   "city": null,
-   "jurisdiction": "statewide",
-   "currentHash": "6dd9442beaafaa01b6ffcafe7021b3fdb8adf71eb029c7f92f026b0ed916152f",
-   "currentEffectiveDate": "2025-06-02",
-   "documentCount": 1,
-   "doseCount": 0,
-   "pendingReview": null,
-   "mayBeOutdated": false,
-   "coverage": {
-    "hasProtocol": false,
-    "jurisdiction": "statewide"
-   }
-  },
-  {
    "agencyKey": "ministry-of-health-emergency-health-regulatory-and-accountability-branch",
    "name": "Ministry of Health, Emergency Health Regulatory and Accountability Branch",
    "aliases": [
@@ -2591,7 +2450,7 @@
    "jurisdiction": "fire-district",
    "currentHash": "33b458a6247e9dc5a77e862ab9d08417a7b778e30c347f3c90a910dba494a3f5",
    "currentEffectiveDate": "2024-01-01",
-   "documentCount": 2,
+   "documentCount": 1,
    "doseCount": 162,
    "pendingReview": null,
    "mayBeOutdated": true,
@@ -2654,7 +2513,7 @@
    "jurisdiction": "county",
    "currentHash": "64f89af2106cc78722e505a90f93aaba",
    "currentEffectiveDate": "2024-01-25",
-   "documentCount": 3,
+   "documentCount": 1,
    "doseCount": 0,
    "pendingReview": null,
    "mayBeOutdated": true,
@@ -2669,14 +2528,14 @@
    "aliases": [
     "Mountain West Ambulance"
    ],
-   "state": "UT",
+   "state": "NV",
    "country": "US",
    "city": "Tooele",
    "jurisdiction": "county",
-   "currentHash": "59fa842cd705656f1ba3a1de393cf73a",
-   "currentEffectiveDate": "2025-11-03",
-   "documentCount": 1,
-   "doseCount": 0,
+   "currentHash": "4be447dd0deeb652cd3e4dd7b6b806de8658fec688631f768ed5d3ed48a1bba2",
+   "currentEffectiveDate": "2026-08-22",
+   "documentCount": 2,
+   "doseCount": 218,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -2759,8 +2618,8 @@
    "jurisdiction": "statewide",
    "currentHash": "2b8aa40827410e88fe4dd5dcc34f13e1",
    "currentEffectiveDate": "2022-03-01",
-   "documentCount": 7,
-   "doseCount": 342,
+   "documentCount": 2,
+   "doseCount": 430,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -2778,10 +2637,10 @@
    "country": "US",
    "city": null,
    "jurisdiction": "regional",
-   "currentHash": "3e317226c07b2d94da5a0a65ebf62d9117445817b96fbf716616294ce045ad76",
+   "currentHash": "3306d112a9ed6e516543593d4d998243f69b71d239e02f06a0244c32e96d03a2",
    "currentEffectiveDate": "2024-09-01",
-   "documentCount": 23,
-   "doseCount": 3067,
+   "documentCount": 3,
+   "doseCount": 449,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -2820,10 +2679,10 @@
    "country": "US",
    "city": null,
    "jurisdiction": "statewide",
-   "currentHash": "504313abe5d8163b385744af4f92232e5c63a5c7025f89db97e4b6b7933c06b2",
+   "currentHash": "1a200641e6b65dd4d56280c069b1c317f7bc62620282a1626f25c9bcf4f45232",
    "currentEffectiveDate": "2026-05-01",
-   "documentCount": 5,
-   "doseCount": 724,
+   "documentCount": 3,
+   "doseCount": 362,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -2862,10 +2721,10 @@
    "country": "US",
    "city": null,
    "jurisdiction": "statewide",
-   "currentHash": "393377270884e73d55c7e14c513d51ca2103be6edb8efa57848e9732574def61",
+   "currentHash": "365443a7523fbf5b5950a04c2389665d5a543641c2bd47d729c8132b9ecc2970",
    "currentEffectiveDate": "2025-11-07",
-   "documentCount": 4,
-   "doseCount": 807,
+   "documentCount": 1,
+   "doseCount": 158,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -2883,10 +2742,10 @@
    "country": "US",
    "city": null,
    "jurisdiction": "statewide",
-   "currentHash": "a742d5a6538c3dc01c0d8363bd723918b8172d302235d68a9cffdca1fac4d149",
+   "currentHash": "2fc12fab82a25dbaf24bc5cc60e91f60",
    "currentEffectiveDate": "2025-08-21",
-   "documentCount": 9,
-   "doseCount": 809,
+   "documentCount": 6,
+   "doseCount": 613,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -2931,8 +2790,8 @@
    "jurisdiction": "statewide",
    "currentHash": "e10a5374bc5b162a56a8dabac3da65991d0b476c555352a8487e410f1c699ebf",
    "currentEffectiveDate": "2026-09-01",
-   "documentCount": 42,
-   "doseCount": 2871,
+   "documentCount": 16,
+   "doseCount": 1668,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -2996,8 +2855,8 @@
    "jurisdiction": "statewide",
    "currentHash": "118f4bc1732dcc7e300a81f763720efe18316ece02c971dc95960def561d80e4",
    "currentEffectiveDate": "2025-09-01",
-   "documentCount": 5,
-   "doseCount": 433,
+   "documentCount": 4,
+   "doseCount": 597,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -3015,9 +2874,9 @@
    "country": "US",
    "city": "Cleveland",
    "jurisdiction": "regional",
-   "currentHash": "f581aaa43ab49896a17fcacd88d1f46f",
-   "currentEffectiveDate": "2024-06-26",
-   "documentCount": 4,
+   "currentHash": "4130228f9522fd1c910fffed262b3372db61ab66d526af7b74d1013d9abdc88c",
+   "currentEffectiveDate": "2024-01-01",
+   "documentCount": 2,
    "doseCount": 216,
    "pendingReview": null,
    "mayBeOutdated": true,
@@ -3036,10 +2895,10 @@
    "country": "US",
    "city": null,
    "jurisdiction": "regional",
-   "currentHash": "34cca61bbcfbdb7a211f69b614894b12822988ae897fd6d416cb7dfbd7eab564",
+   "currentHash": "18611696c64f0aaaac4ac27409eba9fe",
    "currentEffectiveDate": "2024-08-05",
-   "documentCount": 11,
-   "doseCount": 775,
+   "documentCount": 4,
+   "doseCount": 491,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -3057,10 +2916,10 @@
    "country": "US",
    "city": null,
    "jurisdiction": "regional",
-   "currentHash": "451050d80a92b20f1eaa52daf22366b30b6fe248251b3ec443cc8afdb7b744d4",
+   "currentHash": "1e3dcf025001ba81c802359b3df3f334f0a038ffd8249f4b5f79d58a9943bc49",
    "currentEffectiveDate": "2020-03-02",
-   "documentCount": 3,
-   "doseCount": 673,
+   "documentCount": 1,
+   "doseCount": 210,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -3072,7 +2931,8 @@
    "agencyKey": "oakland-county-medical-control-authority",
    "name": "Oakland County Medical Control Authority",
    "aliases": [
-    "Oakland County Medical Control Authority"
+    "Oakland County Medical Control Authority",
+    "Oakland County Medical Control Authority (OCMCA)"
    ],
    "state": "MI",
    "country": "US",
@@ -3080,34 +2940,13 @@
    "jurisdiction": "regional",
    "currentHash": "aeee56480e5abebe34ab8393cb131a645ee3a082cc34b64829a93081dda0cbdb",
    "currentEffectiveDate": "2026-06-22",
-   "documentCount": 1,
-   "doseCount": 124,
+   "documentCount": 2,
+   "doseCount": 248,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
     "hasProtocol": true,
     "jurisdiction": "regional"
-   }
-  },
-  {
-   "agencyKey": "oakland-county-medical-control-authority-ocmca",
-   "name": "Oakland County Medical Control Authority (OCMCA)",
-   "aliases": [
-    "Oakland County Medical Control Authority (OCMCA)"
-   ],
-   "state": "MI",
-   "country": "US",
-   "city": null,
-   "jurisdiction": "county",
-   "currentHash": "e6b7090d64e5f40d955c3f7b2c6ec49c562df8f79de9bf14c8708900e789844b",
-   "currentEffectiveDate": "2026-06-22",
-   "documentCount": 1,
-   "doseCount": 124,
-   "pendingReview": null,
-   "mayBeOutdated": false,
-   "coverage": {
-    "hasProtocol": true,
-    "jurisdiction": "county"
    }
   },
   {
@@ -3183,10 +3022,10 @@
    "country": "US",
    "city": null,
    "jurisdiction": "statewide",
-   "currentHash": "0b07d6b9e44d6536d55f4f13fff51fa7866d3427fed646db9695e3ecd64ea28e",
+   "currentHash": "517f6ea19a1c69ce0d04a4f60bbbcf156096e0f4b0d832454d72d5f3718a865e",
    "currentEffectiveDate": "2018-01-01",
-   "documentCount": 10,
-   "doseCount": 823,
+   "documentCount": 3,
+   "doseCount": 398,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -3207,8 +3046,8 @@
    "jurisdiction": "regional",
    "currentHash": "dda49ae6c959547bc01caf31a8be1c5c32cd309502f03633cf8e713838dc97a5",
    "currentEffectiveDate": "2022-12-01",
-   "documentCount": 4,
-   "doseCount": 129,
+   "documentCount": 3,
+   "doseCount": 304,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -3229,7 +3068,7 @@
    "jurisdiction": "regional",
    "currentHash": "3626685d8536bcd153cd7eb3895295edb4f71584548429adab8965ee1d76e911",
    "currentEffectiveDate": "2026-06-17",
-   "documentCount": 8,
+   "documentCount": 7,
    "doseCount": 280,
    "pendingReview": null,
    "mayBeOutdated": false,
@@ -3250,8 +3089,8 @@
    "jurisdiction": "county",
    "currentHash": "9f78cb33d5025675abeee3fd2193b5ab78120517ef2398126588949679c73202",
    "currentEffectiveDate": "2025-06-19",
-   "documentCount": 11,
-   "doseCount": 98,
+   "documentCount": 5,
+   "doseCount": 219,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -3334,7 +3173,7 @@
    "jurisdiction": "statewide",
    "currentHash": "126616dbbfad1ae0ce5c6369f8ede40bed112c5f93e10e51b2c166d92639dfe5",
    "currentEffectiveDate": "2024-03-31",
-   "documentCount": 2,
+   "documentCount": 1,
    "doseCount": 0,
    "pendingReview": null,
    "mayBeOutdated": true,
@@ -3353,10 +3192,10 @@
    "country": "US",
    "city": null,
    "jurisdiction": "statewide",
-   "currentHash": "f28142e13ce8b735c1882229809c506f62d2be124ee193c0d87ae6bab71e4f9f",
+   "currentHash": "051206a2f585a6a4fad274a749e25aa8bf5ae85f8c88db94733ddcdb0895fb6e",
    "currentEffectiveDate": "2024-03-31",
-   "documentCount": 39,
-   "doseCount": 3341,
+   "documentCount": 13,
+   "doseCount": 900,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -3452,6 +3291,7 @@
    "agencyKey": "platte-valley-ambulance-service",
    "name": "Platte Valley Ambulance Service",
    "aliases": [
+    "Intermountain Health – Platte Valley Ambulance Service",
     "Platte Valley Ambulance Service"
    ],
    "state": "CO",
@@ -3482,7 +3322,7 @@
    "currentHash": "82c0de3ec1eebbf1801a9006583d647fed5fcc9df4af9cc548d8caca39acfe5a",
    "currentEffectiveDate": "2024-09-11",
    "documentCount": 1,
-   "doseCount": 0,
+   "doseCount": 11,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -3502,8 +3342,8 @@
    "jurisdiction": "statewide",
    "currentHash": "d9404c06ea4114e5f61b2a6ca2acc67a46701ed3e0591afbe1aa6d2b6e901c31",
    "currentEffectiveDate": "2025-10-01",
-   "documentCount": 1,
-   "doseCount": 142,
+   "documentCount": 2,
+   "doseCount": 285,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -3542,10 +3382,10 @@
    "country": "US",
    "city": "Chicago",
    "jurisdiction": "regional",
-   "currentHash": "e318ff996b5a326df8f3e70dc35d2f21a529ad0ceb00154d24a9b2856281a484",
+   "currentHash": "1403ef869e5736ecd71873acaeb72118605e161ef96ec88368c18465c8164d70",
    "currentEffectiveDate": "2025-03-06",
-   "documentCount": 144,
-   "doseCount": 2406,
+   "documentCount": 5,
+   "doseCount": 139,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -3566,7 +3406,7 @@
    "currentHash": "57853f300c158d5d3429c28c6810515b7ce43620aaa530a0ecc8756ec6f0f7c2",
    "currentEffectiveDate": "2023-01-01",
    "documentCount": 1,
-   "doseCount": 0,
+   "doseCount": 135,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -3652,8 +3492,8 @@
    "jurisdiction": "regional",
    "currentHash": "f8cb8f814b35696b7e00b06d1a06306e624adb0036614345c57eb59871ac588e",
    "currentEffectiveDate": "2026-08-01",
-   "documentCount": 10,
-   "doseCount": 789,
+   "documentCount": 5,
+   "doseCount": 537,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -3694,7 +3534,7 @@
    "jurisdiction": "statewide",
    "currentHash": "b59cce67fb7057a27060e3b8aedeff0f7389571139c30abce65e79e3d996daae",
    "currentEffectiveDate": "2026-06-01",
-   "documentCount": 5,
+   "documentCount": 4,
    "doseCount": 464,
    "pendingReview": null,
    "mayBeOutdated": false,
@@ -3725,61 +3565,23 @@
    }
   },
   {
-   "agencyKey": "riverside-county-emergency-medical-services-agency",
-   "name": "Riverside County Emergency Medical Services Agency",
+   "agencyKey": "riverside-county-ems-agency",
+   "name": "County of Riverside Emergency Medical Services Agency",
    "aliases": [
-    "Riverside County Emergency Medical Services Agency"
-   ],
-   "state": "CA",
-   "country": "US",
-   "city": null,
-   "jurisdiction": "county",
-   "currentHash": "5bf1463669973ad79da74b74e28c983b",
-   "currentEffectiveDate": "2025-07-01",
-   "documentCount": 1,
-   "doseCount": 0,
-   "pendingReview": null,
-   "mayBeOutdated": false,
-   "coverage": {
-    "hasProtocol": true,
-    "jurisdiction": "county"
-   }
-  },
-  {
-   "agencyKey": "riverside-county-emergency-medical-services-agency-remsa",
-   "name": "Riverside County Emergency Medical Services Agency (REMSA)",
-   "aliases": [
+    "County of Riverside Emergency Medical Services (EMS) Agency (REMSA)",
+    "County of Riverside Emergency Medical Services Agency",
+    "Riverside County EMS Agency",
+    "Riverside County Emergency Medical Services Agency",
     "Riverside County Emergency Medical Services Agency (REMSA)"
    ],
    "state": "CA",
    "country": "US",
    "city": null,
    "jurisdiction": "county",
-   "currentHash": "7452dfeb8eef840a06b350de1e58aab90d48f2583a5dd72a4c7fed9299a59726",
-   "currentEffectiveDate": "2025-07-01",
-   "documentCount": 2,
-   "doseCount": 281,
-   "pendingReview": null,
-   "mayBeOutdated": false,
-   "coverage": {
-    "hasProtocol": true,
-    "jurisdiction": "county"
-   }
-  },
-  {
-   "agencyKey": "riverside-county-ems-agency",
-   "name": "Riverside County EMS Agency",
-   "aliases": [
-    "Riverside County EMS Agency"
-   ],
-   "state": "CA",
-   "country": "US",
-   "city": "Riverside",
-   "jurisdiction": "county",
-   "currentHash": "4acd4aec96192fb6b06af3ac36fc50b05e8ddcbf50b75f2c0ec6359cc5eda5c6",
+   "currentHash": "3db372f18726283eaaff8b1843de2d5da146ce5658153a593385db4e8391dc9e",
    "currentEffectiveDate": "2026-07-01",
-   "documentCount": 3,
-   "doseCount": 141,
+   "documentCount": 6,
+   "doseCount": 449,
    "pendingReview": {
     "effectiveDate": null
    },
@@ -3925,10 +3727,10 @@
    "country": "US",
    "city": "Seattle",
    "jurisdiction": "county",
-   "currentHash": "9d2176b2b1419813d5c98d5df343043c87ad762d391affa4317d3129aeb01bbd",
+   "currentHash": "448e661da7c44cb7e9b3cebdd6874d31",
    "currentEffectiveDate": "2023-01-01",
-   "documentCount": 4,
-   "doseCount": 23,
+   "documentCount": 2,
+   "doseCount": 13,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -3951,8 +3753,8 @@
    "jurisdiction": "regional",
    "currentHash": "c068b7beb5b148b54c4034d87a5d999ff4aa99f78324eaa783a7a914e98e4979",
    "currentEffectiveDate": "2025-10-01",
-   "documentCount": 9,
-   "doseCount": 486,
+   "documentCount": 4,
+   "doseCount": 205,
    "pendingReview": {
     "effectiveDate": null
    },
@@ -4017,7 +3819,7 @@
    "currentHash": "57a2bc8c050d7575add957d33c7efe74ecc4eea6412e8990477d237ef55b91ca",
    "currentEffectiveDate": "2026-04-01",
    "documentCount": 2,
-   "doseCount": 121,
+   "doseCount": 172,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -4170,48 +3972,6 @@
    "coverage": {
     "hasProtocol": true,
     "jurisdiction": "county"
-   }
-  },
-  {
-   "agencyKey": "stars",
-   "name": "STARS",
-   "aliases": [
-    "STARS"
-   ],
-   "state": null,
-   "country": "CA",
-   "city": null,
-   "jurisdiction": "regional",
-   "currentHash": "98530643cc70777644f317e0715839bbf192f53372276782ffb97f49227b19c4",
-   "currentEffectiveDate": "2025-04-01",
-   "documentCount": 1,
-   "doseCount": 0,
-   "pendingReview": null,
-   "mayBeOutdated": false,
-   "coverage": {
-    "hasProtocol": true,
-    "jurisdiction": "regional"
-   }
-  },
-  {
-   "agencyKey": "stars-shock-trauma-air-rescue-service",
-   "name": "STARS (Shock Trauma Air Rescue Service)",
-   "aliases": [
-    "STARS (Shock Trauma Air Rescue Service)"
-   ],
-   "state": null,
-   "country": "CA",
-   "city": null,
-   "jurisdiction": "regional",
-   "currentHash": "6de7b119061e954b26b9088a0759531bd8e3beb183acf1617cb008b79c858656",
-   "currentEffectiveDate": "2025-04-01",
-   "documentCount": 1,
-   "doseCount": 0,
-   "pendingReview": null,
-   "mayBeOutdated": false,
-   "coverage": {
-    "hasProtocol": true,
-    "jurisdiction": "regional"
    }
   },
   {
@@ -4373,8 +4133,8 @@
    "jurisdiction": "county",
    "currentHash": "0b9ce4ea763a536b36a6c5548b97d22c8d0c7c477647ea0169c5a26a1c659465",
    "currentEffectiveDate": "2026-01-01",
-   "documentCount": 2,
-   "doseCount": 274,
+   "documentCount": 1,
+   "doseCount": 137,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -4415,7 +4175,7 @@
    "jurisdiction": "county",
    "currentHash": "cdb288db4328ad9c936fc10800c45de5773d5a8727f38ca6863e290d06a19079",
    "currentEffectiveDate": "2026-04-01",
-   "documentCount": 5,
+   "documentCount": 2,
    "doseCount": 309,
    "pendingReview": null,
    "mayBeOutdated": false,
@@ -4595,29 +4355,6 @@
    }
   },
   {
-   "agencyKey": "washington-county-ems",
-   "name": "Washington County EMS",
-   "aliases": [
-    "Washington County EMS"
-   ],
-   "state": "OR",
-   "country": "US",
-   "city": null,
-   "jurisdiction": "county",
-   "currentHash": "22a01e6b90ef4e591bdbb7dda0ad1e390f9ab2f181656385439eb7fe342afbf4",
-   "currentEffectiveDate": "2026-08-07",
-   "documentCount": 13,
-   "doseCount": 867,
-   "pendingReview": {
-    "effectiveDate": null
-   },
-   "mayBeOutdated": false,
-   "coverage": {
-    "hasProtocol": true,
-    "jurisdiction": "county"
-   }
-  },
-  {
    "agencyKey": "washington-state-department-of-health",
    "name": "Washington State Department of Health",
    "aliases": [
@@ -4671,8 +4408,8 @@
    "jurisdiction": "statewide",
    "currentHash": "63581c860c9ed1bf708af365077f2f650b3f6ee8c3ad5309fa50b07f3f7767ce",
    "currentEffectiveDate": "2026-04-01",
-   "documentCount": 13,
-   "doseCount": 1503,
+   "documentCount": 5,
+   "doseCount": 552,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
