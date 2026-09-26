@@ -77,6 +77,7 @@
     .gets li { font-size: 15px; line-height: 1.55; color: var(--ink-2); padding: 12px 0; border-top: 1px solid var(--line); }
     .gets b { color: var(--ink); }
     .check { margin: 22px 0 0; font-size: 15px; line-height: 1.6; color: var(--ink-2); }
+    .check .btn { display: inline-block; margin-left: 10px; text-decoration: none; }
 
     .contact-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(24px, 5vw, 64px); align-items: start; }
     .contact-grid h2 { font-size: clamp(24px, 2.6vw, 32px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; margin: 0 0 12px; }
@@ -184,7 +185,7 @@
           <li><b>CE documentation.</b> Training time is logged for your medical director to approve.</li>
           <li><b>Your protocols only.</b> Every question cites the page of your own document.</li>
         </ul>
-        <p class="check">Not sure yet? We will build a free protocol quiz you can send to your providers, so you can see how well they know your protocols before you buy. <a href="#contact">Ask for one</a>.</p>
+        <p class="check">Not sure yet? Get a free <b>Protocol Baseline</b>: a custom quiz built from your own protocols that shows exactly how well your crew knows them, before you buy anything. <a href="#contact" class="btn" id="baselineCta">Get Your Free Protocol Baseline</a></p>
       </div>
     </section>
 
@@ -221,12 +222,12 @@
         <div>
           <div class="section-eyebrow">Get started</div>
           <h2>Tell us about your agency.</h2>
-          <p class="note">We start with one email and your protocol PDF.</p>
+          <p class="note">Send your protocol PDF for a free Protocol Baseline, or ask about pricing. We start with one email.</p>
           <p class="direct">Prefer email? <a href="mailto:sales@protoquiz.com">sales@protoquiz.com</a></p>
         </div>
         <form id="contactForm" class="form" action="https://api.protoquiz.com/api/monitor?type=contactForm" method="POST">
           <input type="text" name="phone" tabindex="-1" autocomplete="off" style="position:absolute;left:-10000px" aria-hidden="true">
-          <input type="hidden" name="source" value="agency-preview-v15">
+          <input type="hidden" name="source" value="agency-baseline-v16">
           <div class="field">
             <label for="cf-name">Name</label>
             <input type="text" id="cf-name" name="name" autocomplete="name" placeholder="Your name">
