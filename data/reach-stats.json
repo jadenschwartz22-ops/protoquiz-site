@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-09-27T00:08:44.172Z",
-  "totalUploads": 660,
-  "distinctProtocols": 433,
-  "activeStudiers": 452,
-  "pagesProcessed": 104070,
+  "generatedAt": "2026-09-27T06:08:48.290Z",
+  "totalUploads": 662,
+  "distinctProtocols": 435,
+  "activeStudiers": 453,
+  "pagesProcessed": 104377,
   "statesRepresented": 43,
   "countriesRepresented": 5,
   "internationalUploads": 12,
   "byState": {
-    "CO": 72,
+    "CO": 73,
     "MI": 49,
-    "CA": 45,
+    "CA": 46,
     "TX": 27,
     "MA": 27,
     "PA": 26,
@@ -65,7 +65,7 @@
       "city": "Denver",
       "x": 330,
       "y": 258,
-      "count": 66,
+      "count": 67,
       "tier": "hot",
       "topProtocols": [
         {
@@ -1143,6 +1143,24 @@
       ]
     },
     {
+      "state": "CA",
+      "city": "Fresno",
+      "x": 68,
+      "y": 280,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "530.02 general procedures h +19 more",
+          "count": 1
+        },
+        {
+          "title": "02 530.05 Traumatic Cardiac Arrest +42 more",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "NC",
       "city": "Davidson County",
       "x": 760,
@@ -1866,20 +1884,6 @@
       "topProtocols": [
         {
           "title": "gilescountyambulance 5269aed19ab810ba6bd02",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CA",
-      "city": "Fresno",
-      "x": 68,
-      "y": 280,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "530.02 general procedures h +19 more",
           "count": 1
         }
       ]
