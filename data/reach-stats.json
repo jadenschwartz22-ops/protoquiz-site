@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-09-28T00:08:51.295Z",
-  "totalUploads": 662,
-  "distinctProtocols": 435,
-  "activeStudiers": 453,
-  "pagesProcessed": 104377,
+  "generatedAt": "2026-09-28T06:08:48.504Z",
+  "totalUploads": 664,
+  "distinctProtocols": 436,
+  "activeStudiers": 455,
+  "pagesProcessed": 104737,
   "statesRepresented": 43,
   "countriesRepresented": 5,
   "internationalUploads": 12,
   "byState": {
     "CO": 73,
     "MI": 49,
-    "CA": 46,
+    "CA": 47,
     "TX": 27,
     "MA": 27,
     "PA": 26,
     "GA": 25,
-    "NY": 23,
+    "NY": 24,
     "VA": 18,
     "CT": 18,
     "NC": 17,
@@ -149,6 +149,28 @@
       ]
     },
     {
+      "state": "NY",
+      "city": "New York",
+      "x": 843,
+      "y": 202,
+      "count": 24,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "ny collaborative protocols",
+          "count": 5
+        },
+        {
+          "title": "bls protocols V.26.0",
+          "count": 4
+        },
+        {
+          "title": "ny collaborative protocols",
+          "count": 3
+        }
+      ]
+    },
+    {
       "state": "GA",
       "city": "Atlanta",
       "x": 692,
@@ -167,28 +189,6 @@
         {
           "title": "2024 Scope of Practice 260123",
           "count": 1
-        }
-      ]
-    },
-    {
-      "state": "NY",
-      "city": "New York",
-      "x": 843,
-      "y": 202,
-      "count": 23,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "ny collaborative protocols",
-          "count": 5
-        },
-        {
-          "title": "bls protocols V.26.0",
-          "count": 4
-        },
-        {
-          "title": "ny collaborative protocols",
-          "count": 3
         }
       ]
     },
@@ -347,6 +347,28 @@
       ]
     },
     {
+      "state": "CA",
+      "city": "San Leandro",
+      "x": 34,
+      "y": 249,
+      "count": 10,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "2026 Alameda County EMS Field Manual Rev3",
+          "count": 7
+        },
+        {
+          "title": "alco fm 2025 draft 07 31 2024",
+          "count": 1
+        },
+        {
+          "title": "Alco Field Manual",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "NM",
       "city": "Roswell",
       "x": 325,
@@ -378,28 +400,6 @@
         },
         {
           "title": "Section 9 Peds Medical Revised Racemic Epi",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CA",
-      "city": "San Leandro",
-      "x": 34,
-      "y": 249,
-      "count": 9,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "2026 Alameda County EMS Field Manual Rev3",
-          "count": 6
-        },
-        {
-          "title": "alco fm 2025 draft 07 31 2024",
-          "count": 1
-        },
-        {
-          "title": "Alco Field Manual",
           "count": 1
         }
       ]
