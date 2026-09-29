@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-09-29T12:09:18.439Z",
-  "totalUploads": 665,
-  "distinctProtocols": 437,
-  "activeStudiers": 456,
-  "pagesProcessed": 104737,
+  "generatedAt": "2026-09-29T18:09:23.429Z",
+  "totalUploads": 667,
+  "distinctProtocols": 439,
+  "activeStudiers": 458,
+  "pagesProcessed": 105268,
   "statesRepresented": 43,
   "countriesRepresented": 5,
   "internationalUploads": 12,
@@ -22,10 +22,10 @@
     "OR": 16,
     "NV": 13,
     "WA": 12,
+    "FL": 10,
     "IL": 10,
     "WY": 10,
     "NM": 10,
-    "FL": 9,
     "MD": 8,
     "AZ": 8,
     "TN": 6,
@@ -42,6 +42,7 @@
     "MO": 3,
     "DE": 3,
     "OH": 3,
+    "DC": 3,
     "WV": 3,
     "MN": 2,
     "VT": 2,
@@ -49,7 +50,6 @@
     "NH": 2,
     "NJ": 2,
     "IA": 2,
-    "DC": 2,
     "RI": 2
   },
   "byCountry": {
@@ -675,6 +675,28 @@
       ]
     },
     {
+      "state": "FL",
+      "city": "Miami",
+      "x": 797,
+      "y": 548,
+      "count": 3,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "volusiacountyprotocolpdf cf1c8cb1f3a6cbebb4f3e",
+          "count": 1
+        },
+        {
+          "title": "LAKE COUNTY MARCH 2022 PROTOCOLS",
+          "count": 1
+        },
+        {
+          "title": "msop",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "TX",
       "city": "Austin",
       "x": 448,
@@ -795,6 +817,28 @@
       ]
     },
     {
+      "state": "DC",
+      "city": "Washington, D.C.",
+      "x": 801,
+      "y": 252,
+      "count": 3,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "DC Fire & EMS Protocols August 2024",
+          "count": 1
+        },
+        {
+          "title": "DC Fire EMS Protocols",
+          "count": 1
+        },
+        {
+          "title": "2026 DHS EMS Protocols w: Hyperlinks",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "CA",
       "city": "Sacramento",
       "x": 50,
@@ -899,24 +943,6 @@
         {
           "title": "WVEMS Protocols 2026",
           "count": 2
-        }
-      ]
-    },
-    {
-      "state": "FL",
-      "city": "Miami",
-      "x": 797,
-      "y": 548,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "LAKE COUNTY MARCH 2022 PROTOCOLS",
-          "count": 1
-        },
-        {
-          "title": "msop",
-          "count": 1
         }
       ]
     },
@@ -1066,24 +1092,6 @@
         },
         {
           "title": "Field Manual 79",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "DC",
-      "city": "Washington, D.C.",
-      "x": 801,
-      "y": 252,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "DC Fire & EMS Protocols August 2024",
-          "count": 1
-        },
-        {
-          "title": "2026 DHS EMS Protocols w: Hyperlinks",
           "count": 1
         }
       ]
