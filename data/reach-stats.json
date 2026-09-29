@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-09-29T00:09:20.273Z",
-  "totalUploads": 664,
-  "distinctProtocols": 436,
-  "activeStudiers": 455,
+  "generatedAt": "2026-09-29T06:09:29.211Z",
+  "totalUploads": 665,
+  "distinctProtocols": 437,
+  "activeStudiers": 456,
   "pagesProcessed": 104737,
   "statesRepresented": 43,
   "countriesRepresented": 5,
@@ -12,8 +12,8 @@
     "MI": 49,
     "CA": 47,
     "TX": 27,
+    "PA": 27,
     "MA": 27,
-    "PA": 26,
     "GA": 25,
     "NY": 24,
     "VA": 18,
@@ -105,6 +105,28 @@
       ]
     },
     {
+      "state": "PA",
+      "city": "Philadelphia",
+      "x": 828,
+      "y": 223,
+      "count": 27,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "2023v1 2 PA ALS Protocols",
+          "count": 10
+        },
+        {
+          "title": "2023v1 2 PA BLS Protocols",
+          "count": 5
+        },
+        {
+          "title": "2023v1 2 pa bls protocols",
+          "count": 3
+        }
+      ]
+    },
+    {
       "state": "MA",
       "city": "Boston",
       "x": 881,
@@ -123,28 +145,6 @@
         {
           "title": "download",
           "count": 4
-        }
-      ]
-    },
-    {
-      "state": "PA",
-      "city": "Philadelphia",
-      "x": 828,
-      "y": 223,
-      "count": 26,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "2023v1 2 PA ALS Protocols",
-          "count": 10
-        },
-        {
-          "title": "2023v1 2 PA BLS Protocols",
-          "count": 5
-        },
-        {
-          "title": "2023v1 2 pa bls protocols",
-          "count": 3
         }
       ]
     },
