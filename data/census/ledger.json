@@ -2,8 +2,8 @@
  "schemaVersion": 3,
  "rows": [
   {
-   "at": "2026-09-28T00:00:00Z",
-   "hash": "1ba178cb4a23aaeacedc5020ef77c7bb",
+   "at": "2026-09-29T00:00:00Z",
+   "hash": "32c59af070e64a84d207ca8b09dc5ac2",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -12,8 +12,18 @@
    "reason": null
   },
   {
-   "at": "2026-09-28T00:00:00Z",
-   "hash": "73232a74646ca33356f3a95a86b7f974",
+   "at": "2026-09-29T00:00:00Z",
+   "hash": "4130228f9522fd1c910fffed262b3372db61ab66d526af7b74d1013d9abdc88c",
+   "agencyKey": "northeast-ohio-regional-ems-protocol-committee",
+   "change": "superseded",
+   "from": "current",
+   "to": "superseded",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-09-29T00:00:00Z",
+   "hash": "6ee9c399e6ef56db255b6da9e40e6fb6",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -22,9 +32,9 @@
    "reason": null
   },
   {
-   "at": "2026-09-28T00:00:00Z",
-   "hash": "953d2ac12419e0afe3e2efba663e60b5ed01e0359ee6fabc59954519063820df",
-   "agencyKey": "denver-metro-ems-medical-directors",
+   "at": "2026-09-29T00:00:00Z",
+   "hash": "a2882beb67f11890db916f18119761c648594a4327a8b832db2c02345d0355c3",
+   "agencyKey": "new-york-state-department-of-health-bureau-of-emergency-medical-services-and-trauma-systems",
    "change": "added",
    "from": null,
    "to": "listed_named",
@@ -32,8 +42,18 @@
    "reason": null
   },
   {
-   "at": "2026-09-28T00:00:00Z",
-   "hash": "a5065ff5158fae8c3f32e8d34c46bb1c",
+   "at": "2026-09-29T00:00:00Z",
+   "hash": "b71e4f98145f6289ef83fcddf2442575",
+   "agencyKey": "northeast-ohio-regional-ems-protocol-committee",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-09-29T00:00:00Z",
+   "hash": "b8cc77a1316968986702b03f5e71edcd7d115bf9e67ad1971e83da5bb61d31ea",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -42,12 +62,12 @@
    "reason": null
   },
   {
-   "at": "2026-09-28T00:00:00Z",
-   "hash": "f9f36f4770fa77fbe1b820411d59aea17ece658a8e0550c629f1aa2794622480",
-   "agencyKey": "central-california-emergency-medical-services",
-   "change": "added",
-   "from": null,
-   "to": "listed_named",
+   "at": "2026-09-29T00:00:00Z",
+   "hash": "e10a5374bc5b162a56a8dabac3da65991d0b476c555352a8487e410f1c699ebf",
+   "agencyKey": "new-york-state-department-of-health-bureau-of-emergency-medical-services-and-trauma-systems",
+   "change": "superseded",
+   "from": "current",
+   "to": "superseded",
    "by": "build",
    "reason": null
   }
