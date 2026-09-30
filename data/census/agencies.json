@@ -98,7 +98,7 @@
    "currentHash": "82ffaec11ef95ee997351be9c90fde0243034e1a038061c1d08a02844211f51d",
    "currentEffectiveDate": "2020-01-01",
    "documentCount": 1,
-   "doseCount": 0,
+   "doseCount": 113,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -161,7 +161,7 @@
    "currentHash": "b9e114f9c942a13ca59e32b3f274aad84dd3dc2b13edaf325b2fedcee824c636",
    "currentEffectiveDate": "2026-01-01",
    "documentCount": 8,
-   "doseCount": 558,
+   "doseCount": 654,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -729,7 +729,7 @@
    "currentHash": "6f6858e6187248f2f6cb5840c59be29d2b4941a0d0a98ac0727c6fc5dcd435a0",
    "currentEffectiveDate": "2016-10-17",
    "documentCount": 1,
-   "doseCount": 0,
+   "doseCount": 18,
    "pendingReview": {
     "effectiveDate": null
    },
@@ -967,7 +967,7 @@
    "currentHash": "a9a04253fd925ae5fd26452a9c6cacac17720b756599650eba563078d1111ce4",
    "currentEffectiveDate": "2026-05-01",
    "documentCount": 8,
-   "doseCount": 22,
+   "doseCount": 29,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -1111,10 +1111,10 @@
    "country": "US",
    "city": "Washington",
    "jurisdiction": "fire-district",
-   "currentHash": "72a82c30cd8a4b545628300c40126d0e76260d5c9276cceabf4b3c79fd0efe34",
+   "currentHash": "71ab27eb32d187373ad1b13913fb6d9f5535254780043bafca38673bd1fbed25",
    "currentEffectiveDate": "2026-03-17",
    "documentCount": 2,
-   "doseCount": 164,
+   "doseCount": 333,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -1201,7 +1201,7 @@
    "currentHash": "3a3ab041e79beac3d2d47e5cd0cf6db849ecc3df3c03caa184494c55dade0a88",
    "currentEffectiveDate": "2025-07-01",
    "documentCount": 16,
-   "doseCount": 402,
+   "doseCount": 487,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -1557,10 +1557,10 @@
    "country": "ZA",
    "city": null,
    "jurisdiction": "statewide",
-   "currentHash": "d501dfb6360aea159498add6dbd91422697c680e0bcb7fdf34f9ff13e0e5e66d",
+   "currentHash": "33686101d9e8da243898cc94476c7cdbb66eec651e8f238270ff26997c596a77",
    "currentEffectiveDate": "2018-07-01",
-   "documentCount": 3,
-   "doseCount": 248,
+   "documentCount": 4,
+   "doseCount": 427,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -2087,7 +2087,7 @@
    "currentHash": "c1fa8b8af1b730f3e54e2c0b3dbc824b0bc26c297c0337740a22acad899df61b",
    "currentEffectiveDate": "2026-07-01",
    "documentCount": 10,
-   "doseCount": 1960,
+   "doseCount": 2163,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -2499,27 +2499,6 @@
    "coverage": {
     "hasProtocol": false,
     "jurisdiction": "statewide"
-   }
-  },
-  {
-   "agencyKey": "morton-county-health-system",
-   "name": "Morton County Health System",
-   "aliases": [
-    "Morton County Health System"
-   ],
-   "state": "KS",
-   "country": "US",
-   "city": "Elkhart",
-   "jurisdiction": "county",
-   "currentHash": "64f89af2106cc78722e505a90f93aaba",
-   "currentEffectiveDate": "2024-01-25",
-   "documentCount": 1,
-   "doseCount": 0,
-   "pendingReview": null,
-   "mayBeOutdated": true,
-   "coverage": {
-    "hasProtocol": true,
-    "jurisdiction": "county"
    }
   },
   {
@@ -3194,8 +3173,8 @@
    "jurisdiction": "statewide",
    "currentHash": "051206a2f585a6a4fad274a749e25aa8bf5ae85f8c88db94733ddcdb0895fb6e",
    "currentEffectiveDate": "2024-03-31",
-   "documentCount": 13,
-   "doseCount": 900,
+   "documentCount": 14,
+   "doseCount": 930,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -3610,6 +3589,27 @@
    "coverage": {
     "hasProtocol": true,
     "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "salem-fire-department",
+   "name": "Salem Fire Department",
+   "aliases": [
+    "Salem Fire Department"
+   ],
+   "state": "OR",
+   "country": "US",
+   "city": "Salem",
+   "jurisdiction": "city",
+   "currentHash": "f678c758876a99bef00a979c63ca3974745ad861e8299b57a02518d4576d7d0b",
+   "currentEffectiveDate": "2025-01-01",
+   "documentCount": 2,
+   "doseCount": 197,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "city"
    }
   },
   {
@@ -4199,7 +4199,7 @@
    "currentHash": "5bb90e301302909e860e5069cbf971e64b0c4353551a8ff758738c9177c548bb",
    "currentEffectiveDate": "2025-07-01",
    "documentCount": 4,
-   "doseCount": 424,
+   "doseCount": 545,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {

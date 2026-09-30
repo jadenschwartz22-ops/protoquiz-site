@@ -2,8 +2,8 @@
  "schemaVersion": 3,
  "rows": [
   {
-   "at": "2026-09-29T00:00:00Z",
-   "hash": "32c59af070e64a84d207ca8b09dc5ac2",
+   "at": "2026-09-30T00:00:00Z",
+   "hash": "05d8f5f93adefbc03cff2d6cc9c931fa",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -12,29 +12,9 @@
    "reason": null
   },
   {
-   "at": "2026-09-29T00:00:00Z",
-   "hash": "4130228f9522fd1c910fffed262b3372db61ab66d526af7b74d1013d9abdc88c",
-   "agencyKey": "northeast-ohio-regional-ems-protocol-committee",
-   "change": "superseded",
-   "from": "current",
-   "to": "superseded",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-09-29T00:00:00Z",
-   "hash": "6ee9c399e6ef56db255b6da9e40e6fb6",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "pending_review",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-09-29T00:00:00Z",
-   "hash": "a2882beb67f11890db916f18119761c648594a4327a8b832db2c02345d0355c3",
-   "agencyKey": "new-york-state-department-of-health-bureau-of-emergency-medical-services-and-trauma-systems",
+   "at": "2026-09-30T00:00:00Z",
+   "hash": "33686101d9e8da243898cc94476c7cdbb66eec651e8f238270ff26997c596a77",
+   "agencyKey": "health-professions-council-of-south-africa-hpcsa",
    "change": "added",
    "from": null,
    "to": "listed_named",
@@ -42,18 +22,8 @@
    "reason": null
   },
   {
-   "at": "2026-09-29T00:00:00Z",
-   "hash": "b71e4f98145f6289ef83fcddf2442575",
-   "agencyKey": "northeast-ohio-regional-ems-protocol-committee",
-   "change": "added",
-   "from": null,
-   "to": "listed_named",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-09-29T00:00:00Z",
-   "hash": "b8cc77a1316968986702b03f5e71edcd7d115bf9e67ad1971e83da5bb61d31ea",
+   "at": "2026-09-30T00:00:00Z",
+   "hash": "61abf4ea9496a854f7a3bb58303f43704f2340223e954b4b0b7432ea78502c5e",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -62,12 +32,112 @@
    "reason": null
   },
   {
-   "at": "2026-09-29T00:00:00Z",
-   "hash": "e10a5374bc5b162a56a8dabac3da65991d0b476c555352a8487e410f1c699ebf",
-   "agencyKey": "new-york-state-department-of-health-bureau-of-emergency-medical-services-and-trauma-systems",
+   "at": "2026-09-30T00:00:00Z",
+   "hash": "6b993c694dd80c238c3ec69e036ff01a",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "listed_aggregate",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-09-30T00:00:00Z",
+   "hash": "71ab27eb32d187373ad1b13913fb6d9f5535254780043bafca38673bd1fbed25",
+   "agencyKey": "dc-fire-and-ems",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-09-30T00:00:00Z",
+   "hash": "886b587f1fd9453e65ba67128850a651",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-09-30T00:00:00Z",
+   "hash": "89c3dc84faee7472897769b80379d1f8",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-09-30T00:00:00Z",
+   "hash": "92e66a98ca7bbedf5782b6b3130526da",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-09-30T00:00:00Z",
+   "hash": "93965ff9e7d11f622cdd12003c663df28dabd1c42e3849db0436ee3bc0ba1322",
+   "agencyKey": "pennsylvania-department-of-health-bureau-of-emergency-medical-services",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-09-30T00:00:00Z",
+   "hash": "d501dfb6360aea159498add6dbd91422697c680e0bcb7fdf34f9ff13e0e5e66d",
+   "agencyKey": "health-professions-council-of-south-africa-hpcsa",
    "change": "superseded",
    "from": "current",
    "to": "superseded",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-09-30T00:00:00Z",
+   "hash": "e42d403a4284f834ab0cdc533726ee2c",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-09-30T00:00:00Z",
+   "hash": "f55b54a5e012fbc6eab6b22e02a35ffbf1c8f3c473439a151c975e47bdf3480f",
+   "agencyKey": "salem-fire-department",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-09-30T00:00:00Z",
+   "hash": "f678c758876a99bef00a979c63ca3974745ad861e8299b57a02518d4576d7d0b",
+   "agencyKey": "salem-fire-department",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-09-30T00:00:00Z",
+   "hash": "fe698158942a8f76f4416c8b3dd344a6",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
    "by": "build",
    "reason": null
   }
