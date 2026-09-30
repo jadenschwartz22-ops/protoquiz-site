@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-09-30T00:09:22.194Z",
-  "totalUploads": 667,
-  "distinctProtocols": 439,
-  "activeStudiers": 458,
-  "pagesProcessed": 105268,
+  "generatedAt": "2026-09-30T06:08:49.299Z",
+  "totalUploads": 669,
+  "distinctProtocols": 441,
+  "activeStudiers": 459,
+  "pagesProcessed": 105681,
   "statesRepresented": 43,
   "countriesRepresented": 5,
   "internationalUploads": 12,
@@ -18,8 +18,8 @@
     "NY": 24,
     "VA": 18,
     "CT": 18,
+    "OR": 18,
     "NC": 17,
-    "OR": 16,
     "NV": 13,
     "WA": 12,
     "FL": 10,
@@ -1164,6 +1164,24 @@
         },
         {
           "title": "02 530.05 Traumatic Cardiac Arrest +42 more",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "OR",
+      "city": "Salem",
+      "x": 64,
+      "y": 91,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "00.010 Scope of Practice & Medical Control Cover +5 more",
+          "count": 1
+        },
+        {
+          "title": "00.010 Scope of Practice & Medical Control Cover +176 more",
           "count": 1
         }
       ]
