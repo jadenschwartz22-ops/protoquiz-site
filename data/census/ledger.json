@@ -2,8 +2,8 @@
  "schemaVersion": 3,
  "rows": [
   {
-   "at": "2026-09-30T00:00:00Z",
-   "hash": "05d8f5f93adefbc03cff2d6cc9c931fa",
+   "at": "2026-10-01T00:00:00Z",
+   "hash": "04892fd05d618742fa80055d039b3556",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -12,88 +12,28 @@
    "reason": null
   },
   {
-   "at": "2026-09-30T00:00:00Z",
+   "at": "2026-10-01T00:00:00Z",
+   "hash": "111fa137f8891e01d9c25b2e5edcf18390a008e4b1cf65a9786d4927edf6f28b",
+   "agencyKey": "massachusetts-department-of-public-health-office-of-emergency-medical-services",
+   "change": "superseded",
+   "from": "current",
+   "to": "superseded",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-01T00:00:00Z",
+   "hash": "2fc12fab82a25dbaf24bc5cc60e91f60",
+   "agencyKey": "new-jersey-department-of-health",
+   "change": "superseded",
+   "from": "current",
+   "to": "superseded",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-01T00:00:00Z",
    "hash": "33686101d9e8da243898cc94476c7cdbb66eec651e8f238270ff26997c596a77",
-   "agencyKey": "health-professions-council-of-south-africa-hpcsa",
-   "change": "added",
-   "from": null,
-   "to": "listed_named",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-09-30T00:00:00Z",
-   "hash": "61abf4ea9496a854f7a3bb58303f43704f2340223e954b4b0b7432ea78502c5e",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "pending_review",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-09-30T00:00:00Z",
-   "hash": "6b993c694dd80c238c3ec69e036ff01a",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "listed_aggregate",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-09-30T00:00:00Z",
-   "hash": "71ab27eb32d187373ad1b13913fb6d9f5535254780043bafca38673bd1fbed25",
-   "agencyKey": "dc-fire-and-ems",
-   "change": "added",
-   "from": null,
-   "to": "listed_named",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-09-30T00:00:00Z",
-   "hash": "886b587f1fd9453e65ba67128850a651",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "pending_review",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-09-30T00:00:00Z",
-   "hash": "89c3dc84faee7472897769b80379d1f8",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "pending_review",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-09-30T00:00:00Z",
-   "hash": "92e66a98ca7bbedf5782b6b3130526da",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "pending_review",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-09-30T00:00:00Z",
-   "hash": "93965ff9e7d11f622cdd12003c663df28dabd1c42e3849db0436ee3bc0ba1322",
-   "agencyKey": "pennsylvania-department-of-health-bureau-of-emergency-medical-services",
-   "change": "added",
-   "from": null,
-   "to": "listed_named",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-09-30T00:00:00Z",
-   "hash": "d501dfb6360aea159498add6dbd91422697c680e0bcb7fdf34f9ff13e0e5e66d",
    "agencyKey": "health-professions-council-of-south-africa-hpcsa",
    "change": "superseded",
    "from": "current",
@@ -102,8 +42,38 @@
    "reason": null
   },
   {
-   "at": "2026-09-30T00:00:00Z",
-   "hash": "e42d403a4284f834ab0cdc533726ee2c",
+   "at": "2026-10-01T00:00:00Z",
+   "hash": "33f793a2f3e0fdeee2c4b3f2241411b17d68c87d714e335ae2a6a5d80def95fb",
+   "agencyKey": "boulder-county-ems",
+   "change": "superseded",
+   "from": "current",
+   "to": "superseded",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-01T00:00:00Z",
+   "hash": "36661216ad08be6661976c683412e0c0a9128335a9248410aeb6ada573f8d72e",
+   "agencyKey": "health-professions-council-of-south-africa-hpcsa",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-01T00:00:00Z",
+   "hash": "46190c373453fb18b1dad460f75d15df808bd30bae0e902ef34c137bca0bc431",
+   "agencyKey": "clark-county-ems-system",
+   "change": "superseded",
+   "from": "current",
+   "to": "superseded",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-01T00:00:00Z",
+   "hash": "481b52d660affd49f64df0575584848c",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -112,32 +82,112 @@
    "reason": null
   },
   {
-   "at": "2026-09-30T00:00:00Z",
-   "hash": "f55b54a5e012fbc6eab6b22e02a35ffbf1c8f3c473439a151c975e47bdf3480f",
-   "agencyKey": "salem-fire-department",
-   "change": "added",
-   "from": null,
-   "to": "listed_named",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-09-30T00:00:00Z",
-   "hash": "f678c758876a99bef00a979c63ca3974745ad861e8299b57a02518d4576d7d0b",
-   "agencyKey": "salem-fire-department",
-   "change": "added",
-   "from": null,
-   "to": "listed_named",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-09-30T00:00:00Z",
-   "hash": "fe698158942a8f76f4416c8b3dd344a6",
+   "at": "2026-10-01T00:00:00Z",
+   "hash": "4f4676ee51759e9f036d7de5e214f64d",
    "agencyKey": null,
    "change": "added",
    "from": null,
    "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-01T00:00:00Z",
+   "hash": "5140050213826887187d4b8d79d832dc",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-01T00:00:00Z",
+   "hash": "54bb1f2511721b2646c8da6fcbb68db7",
+   "agencyKey": "denver-health-paramedic-division",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-01T00:00:00Z",
+   "hash": "71f3bca92cb34151879b178db179e557",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-01T00:00:00Z",
+   "hash": "78bd7e8b87e1b89d5d517f2e2295057a",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-01T00:00:00Z",
+   "hash": "924d017535e31fcae598b517553dd70f15dec15460d15cf6dda23486d6e9a1ea",
+   "agencyKey": "haywood-county-ems",
+   "change": "superseded",
+   "from": "current",
+   "to": "superseded",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-01T00:00:00Z",
+   "hash": "9b35e99fff46ca29d70ceb2102c0916d",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-01T00:00:00Z",
+   "hash": "b186dd7d307aaeecffd2b7577f7e832b",
+   "agencyKey": null,
+   "change": "state_changed",
+   "from": "pending_review",
+   "to": "excluded",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-01T00:00:00Z",
+   "hash": "bd8e1110025d097994146b32cd7fd179",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-01T00:00:00Z",
+   "hash": "f922459bbbbe97d89f65b1ccfbc4776e",
+   "agencyKey": "health-professions-council-of-south-africa-hpcsa",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-01T00:00:00Z",
+   "hash": "fc0ff824e1099eced88740f269b51a9709df1eee81ed3b070c1f586e30b031a7",
+   "agencyKey": "denver-metro-ems-medical-directors",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
    "by": "build",
    "reason": null
   }

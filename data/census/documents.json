@@ -390,7 +390,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "census-01d40e274fe2dca30ed48c6419886c7fc72f0cdc2d6e2d30cccb5159a5bb5369",
-   "doseCount": 148
+   "doseCount": 140
   },
   {
    "hash": "01ec14fa7d1a89e08395805e8653fe9a",
@@ -877,6 +877,29 @@
   },
   {
    "hash": "046935318a81a74461dfe921b4b8aee7",
+   "hashSource": "md5",
+   "agencyKey": null,
+   "agencyName": null,
+   "state": null,
+   "country": null,
+   "city": null,
+   "jurisdiction": null,
+   "publicRecord": false,
+   "confidence": null,
+   "effectiveDate": null,
+   "capturedDate": null,
+   "effectiveDateSource": "none",
+   "origin": "unknown",
+   "versionLabel": null,
+   "publicationState": "pending_review",
+   "status": null,
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": null,
+   "doseCount": 0
+  },
+  {
+   "hash": "04892fd05d618742fa80055d039b3556",
    "hashSource": "md5",
    "agencyKey": null,
    "agencyName": null,
@@ -2483,7 +2506,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "census-0a41838f7b36a7260a3a3b78d1afd2126261c386ca9633c5337888c8a4ab6b9e",
-   "doseCount": 157
+   "doseCount": 142
   },
   {
    "hash": "0a4c1ec434ad1fff63b7d6cfde11f1d58a5fd352877ced06c294ba42b7240f80",
@@ -3863,7 +3886,7 @@
    "pageCount": 178,
    "sourceUrl": null,
    "corpusDocId": "543492fc8fe8e9c73fd6a0aee669634d4aab6565313060ab6d358408a299f687",
-   "doseCount": 94
+   "doseCount": 92
   },
   {
    "hash": "0f8fc084bffb5ca368f4ac63d7f73bfc614b79ae8644ae0c34898c4bf43065b2",
@@ -4250,11 +4273,11 @@
    "origin": "app",
    "versionLabel": "2026.2",
    "publicationState": "listed_named",
-   "status": "current",
+   "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "census-111fa137f8891e01d9c25b2e5edcf18390a008e4b1cf65a9786d4927edf6f28b",
-   "doseCount": 209
+   "doseCount": 187
   },
   {
    "hash": "1134f866058bf61a0ed1d8c63da34e66",
@@ -5680,7 +5703,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "census-169bb463f08ddf0c9c552687f474b14b0adf418e41166a5ebd996a0d6ad8594d",
-   "doseCount": 26
+   "doseCount": 27
   },
   {
    "hash": "16b20de7f6f9e0036c00196381616eee",
@@ -6163,7 +6186,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "census-18e265e2ece3e38b13e62b695b2627b944625a4ad43b87a7e4c7776ee2a1f652",
-   "doseCount": 278
+   "doseCount": 282
   },
   {
    "hash": "18fe3afe9d08c558848b331e6c126d04",
@@ -6987,11 +7010,11 @@
    "origin": "app",
    "versionLabel": null,
    "publicationState": "listed_named",
-   "status": "superseded",
+   "status": "current",
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "census-1c97c6cf14c197f4c6ab8e8ee61cd0d5b9b41f3e1e5e10c874a415799a47122a",
-   "doseCount": 138
+   "doseCount": 193
   },
   {
    "hash": "1cc310e118ab6cb07b7a85c87c002e37",
@@ -7290,7 +7313,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "protocol",
-   "doseCount": 210
+   "doseCount": 208
   },
   {
    "hash": "1e3f098396cd74ae4f8cb4c937c4f1a035a801e43ef0a1bd20e1ea403a658ee2",
@@ -8394,7 +8417,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "census-21eda0c59358ab4ffa7ef59698bd354cdc4af5633f80aec2119b35295c6894d4",
-   "doseCount": 250
+   "doseCount": 238
   },
   {
    "hash": "221a18f3b07bc07a7bdba11b14f1e7a9",
@@ -11403,7 +11426,7 @@
    "origin": "unknown",
    "versionLabel": "v1",
    "publicationState": "listed_named",
-   "status": "current",
+   "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "census-2fc12fab82a25dbaf24bc5cc60e91f60",
@@ -11522,7 +11545,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "census-302e6f579b3d14a106ba40366faaf689c0976ca3891d58895c0f7152d461e6fa",
-   "doseCount": 190
+   "doseCount": 173
   },
   {
    "hash": "3055d585cfbf1c8c8bd733246d94c23f",
@@ -11706,7 +11729,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "washco-meds",
-   "doseCount": 239
+   "doseCount": 226
   },
   {
    "hash": "3102e9d3b0e70dab713bcf3ffe6f67a4",
@@ -12208,11 +12231,11 @@
    "origin": "app",
    "versionLabel": null,
    "publicationState": "listed_named",
-   "status": "current",
+   "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "clinical-practice-guidelines--protocols-july-2018-6-more",
-   "doseCount": 179
+   "doseCount": 172
   },
   {
    "hash": "336bebe19d41ab7f6d741eed722811fc",
@@ -12369,11 +12392,11 @@
    "origin": "app",
    "versionLabel": null,
    "publicationState": "listed_named",
-   "status": "superseded",
+   "status": "current",
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "census-33df8095ebd1a76f281e60f6e2479120d48afa9f6eb9d1d2a94710d086a921f0",
-   "doseCount": 181
+   "doseCount": 190
   },
   {
    "hash": "33f793a2f3e0fdeee2c4b3f2241411b17d68c87d714e335ae2a6a5d80def95fb",
@@ -12392,7 +12415,7 @@
    "origin": "app",
    "versionLabel": null,
    "publicationState": "listed_named",
-   "status": "current",
+   "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "boco-protocols_apr-2026",
@@ -13087,6 +13110,29 @@
    "sourceUrl": null,
    "corpusDocId": "36c81539426f75affa76a4730f3fb8b58cf45b19f5d51e96ab4dd553723e3dec",
    "doseCount": 158
+  },
+  {
+   "hash": "36661216ad08be6661976c683412e0c0a9128335a9248410aeb6ada573f8d72e",
+   "hashSource": "pdf_hash",
+   "agencyKey": "health-professions-council-of-south-africa-hpcsa",
+   "agencyName": "Health Professions Council of South Africa",
+   "state": null,
+   "country": "ZA",
+   "city": null,
+   "jurisdiction": "statewide",
+   "publicRecord": true,
+   "confidence": "high",
+   "effectiveDate": "2018-07-01",
+   "capturedDate": null,
+   "effectiveDateSource": "printed",
+   "origin": "app",
+   "versionLabel": null,
+   "publicationState": "listed_named",
+   "status": "current",
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": "clinical-practice-guidelines--protocols-july-2018-7-more",
+   "doseCount": 183
   },
   {
    "hash": "368715245066145d34828324e62aaf16",
@@ -14558,7 +14604,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "2026.2-ma-ems-protocols",
-   "doseCount": 205
+   "doseCount": 207
   },
   {
    "hash": "3d0f6336d651e906d1d0264ee5f155ca",
@@ -14650,7 +14696,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "4105---als-drug-index",
-   "doseCount": 141
+   "doseCount": 137
   },
   {
    "hash": "3dddc45145ddac63aff70d6fd8b897c0",
@@ -17038,7 +17084,7 @@
    "origin": "seed",
    "versionLabel": null,
    "publicationState": "listed_named",
-   "status": "current",
+   "status": "superseded",
    "pageCount": null,
    "sourceUrl": "https://media.southernnevadahealthdistrict.org/download/ems/ems-protocol-manual.pdf",
    "corpusDocId": "census-46190c373453fb18b1dad460f75d15df808bd30bae0e902ef34c137bca0bc431",
@@ -17272,7 +17318,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "census-4666adb5f10dbce2675bd2682c8aaf2b30c93a694bb551fe09416befa01c0831",
-   "doseCount": 147
+   "doseCount": 140
   },
   {
    "hash": "4697e119ef4e3446cd9097b309054561",
@@ -17594,7 +17640,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "census-47b6fa45d936992729515a544bcb3e9fcd5257488420e5bf949bd18c23d11639",
-   "doseCount": 98
+   "doseCount": 109
   },
   {
    "hash": "47db372ebc658b7b9b26c60b625e92e9",
@@ -17664,6 +17710,29 @@
    "sourceUrl": null,
    "corpusDocId": "260109-section-7-procedure-111725",
    "doseCount": 40
+  },
+  {
+   "hash": "481b52d660affd49f64df0575584848c",
+   "hashSource": "md5",
+   "agencyKey": null,
+   "agencyName": null,
+   "state": null,
+   "country": null,
+   "city": null,
+   "jurisdiction": null,
+   "publicRecord": false,
+   "confidence": null,
+   "effectiveDate": null,
+   "capturedDate": null,
+   "effectiveDateSource": "none",
+   "origin": "unknown",
+   "versionLabel": null,
+   "publicationState": "pending_review",
+   "status": null,
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": null,
+   "doseCount": 0
   },
   {
    "hash": "482c6b244baac32ba039e5af3d381acd",
@@ -17824,7 +17893,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "census-48d7202d8830338860baf0c973f518e37fbe82c8d9308c22ece86be641f31312",
-   "doseCount": 16
+   "doseCount": 17
   },
   {
    "hash": "48d8700474645230c8e17891dca7aeaf",
@@ -18031,7 +18100,7 @@
    "pageCount": 263,
    "sourceUrl": null,
    "corpusDocId": "a2693ac43b4c447caf07b7dd8bcaee8cdc377cad49156b09f144441ba93fe87d",
-   "doseCount": 156
+   "doseCount": 174
   },
   {
    "hash": "4a1c31643df3c5457d23180ef2dd70ff",
@@ -19552,6 +19621,29 @@
    "doseCount": 0
   },
   {
+   "hash": "4f4676ee51759e9f036d7de5e214f64d",
+   "hashSource": "md5",
+   "agencyKey": null,
+   "agencyName": null,
+   "state": null,
+   "country": null,
+   "city": null,
+   "jurisdiction": null,
+   "publicRecord": false,
+   "confidence": null,
+   "effectiveDate": null,
+   "capturedDate": null,
+   "effectiveDateSource": "none",
+   "origin": "unknown",
+   "versionLabel": null,
+   "publicationState": "pending_review",
+   "status": null,
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": null,
+   "doseCount": 0
+  },
+  {
    "hash": "4f501e176b3419d5ca43dda15f9c8665576ae2a5613234268cc2445db868371f",
    "hashSource": "pdf_hash",
    "agencyKey": "michigan-department-of-health-and-human-services-mdhhs",
@@ -19989,6 +20081,29 @@
    "doseCount": 0
   },
   {
+   "hash": "5140050213826887187d4b8d79d832dc",
+   "hashSource": "md5",
+   "agencyKey": null,
+   "agencyName": null,
+   "state": null,
+   "country": null,
+   "city": null,
+   "jurisdiction": null,
+   "publicRecord": false,
+   "confidence": null,
+   "effectiveDate": null,
+   "capturedDate": null,
+   "effectiveDateSource": "none",
+   "origin": "unknown",
+   "versionLabel": null,
+   "publicationState": "pending_review",
+   "status": null,
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": null,
+   "doseCount": 0
+  },
+  {
    "hash": "5152a388264d08a9f1fe13edc34963b5",
    "hashSource": "md5",
    "agencyKey": null,
@@ -20055,7 +20170,7 @@
    "pageCount": 15,
    "sourceUrl": null,
    "corpusDocId": "e0bd1356c5fddc6892aa02322755f3e404a30aa082a72434f972213bb4439e06",
-   "doseCount": 36
+   "doseCount": 26
   },
   {
    "hash": "517f6ea19a1c69ce0d04a4f60bbbcf156096e0f4b0d832454d72d5f3718a865e",
@@ -20101,7 +20216,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "acadian_2026_protocols_searchable_ocr",
-   "doseCount": 115
+   "doseCount": 133
   },
   {
    "hash": "51c9561c8c9eccfe6ccf59eb5343b32c",
@@ -20489,6 +20604,29 @@
    "versionLabel": null,
    "publicationState": "excluded",
    "status": null,
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": null,
+   "doseCount": 0
+  },
+  {
+   "hash": "54bb1f2511721b2646c8da6fcbb68db7",
+   "hashSource": "md5",
+   "agencyKey": "denver-health-paramedic-division",
+   "agencyName": "Denver Health Paramedic Division",
+   "state": "CO",
+   "country": "US",
+   "city": "Denver",
+   "jurisdiction": "city",
+   "publicRecord": true,
+   "confidence": "high",
+   "effectiveDate": "2025-07-28",
+   "capturedDate": null,
+   "effectiveDateSource": "printed",
+   "origin": "app",
+   "versionLabel": null,
+   "publicationState": "listed_named",
+   "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": null,
@@ -20906,7 +21044,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "census-571e48a1e3944e28e27cccaab38e82c358172e6fa1f123f821d3fcbbba838299",
-   "doseCount": 90
+   "doseCount": 99
   },
   {
    "hash": "572fb389ba81fe0cc4fb8ebb3fefe695",
@@ -21320,7 +21458,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "-two",
-   "doseCount": 168
+   "doseCount": 165
   },
   {
    "hash": "59046b1382741d047d47e61f5ff1b4db",
@@ -21619,7 +21757,7 @@
    "pageCount": 231,
    "sourceUrl": null,
    "corpusDocId": "cb663d96f62fa8f09f0b61c9aec7b3376a21f66421a62ef995464275aaecb0e2",
-   "doseCount": 143
+   "doseCount": 152
   },
   {
    "hash": "5aa2b55f3be61a4d5229563da04f9579fdf9ea356f9cde075c82e8f7d86e4489",
@@ -21734,7 +21872,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "mgmca-all-protocols",
-   "doseCount": 146
+   "doseCount": 144
   },
   {
    "hash": "5b5acc5700acc97cbf5f831c305327f6",
@@ -21871,8 +22009,8 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-5bf1463669973ad79da74b74e28c983b",
+   "doseCount": 149
   },
   {
    "hash": "5c12b5de779e2dc8540e6a3be6f0539ccd6090ef56ffd9377357cea7efc52cb2",
@@ -23229,7 +23367,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "61abf4ea9496a854",
-   "doseCount": 114
+   "doseCount": 116
   },
   {
    "hash": "61c7362da5039d480eb504d9306d699f",
@@ -23432,11 +23570,11 @@
    "origin": "app",
    "versionLabel": "v1",
    "publicationState": "listed_named",
-   "status": "superseded",
+   "status": "current",
    "pageCount": 248,
    "sourceUrl": null,
    "corpusDocId": "4df7043b8b7dc55371629d45c1b6a9efb9fefa9ca79791df95efa33c12b169b7",
-   "doseCount": 180
+   "doseCount": 196
   },
   {
    "hash": "62baa4264558a621421df9a95bb37234",
@@ -23666,7 +23804,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "2026-protocol-booklet-final-april-2026---interactive",
-   "doseCount": 144
+   "doseCount": 147
   },
   {
    "hash": "6386f52f2bec9091c0c072ddf3800c42",
@@ -24654,8 +24792,8 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "reuse:aa08bf335f357ed5b4baf53c2cf222df52306654fedb55624f4f4c5bd4367671",
+   "doseCount": 134
   },
   {
    "hash": "672188d1a4e8a8c4b60c8d1411989e85",
@@ -27165,6 +27303,29 @@
    "doseCount": 0
   },
   {
+   "hash": "71f3bca92cb34151879b178db179e557",
+   "hashSource": "md5",
+   "agencyKey": null,
+   "agencyName": null,
+   "state": null,
+   "country": null,
+   "city": null,
+   "jurisdiction": null,
+   "publicRecord": false,
+   "confidence": null,
+   "effectiveDate": null,
+   "capturedDate": null,
+   "effectiveDateSource": "none",
+   "origin": "unknown",
+   "versionLabel": null,
+   "publicationState": "pending_review",
+   "status": null,
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": null,
+   "doseCount": 0
+  },
+  {
    "hash": "7204cc57988b088d8e71a8684eb3c26374e31c5d0be4b274fd21df2cdfffac04",
    "hashSource": "pdf_hash",
    "agencyKey": "new-york-state-department-of-health-bureau-of-emergency-medical-services-and-trauma-systems",
@@ -28614,6 +28775,29 @@
    "doseCount": 0
   },
   {
+   "hash": "78bd7e8b87e1b89d5d517f2e2295057a",
+   "hashSource": "md5",
+   "agencyKey": null,
+   "agencyName": null,
+   "state": null,
+   "country": null,
+   "city": null,
+   "jurisdiction": null,
+   "publicRecord": false,
+   "confidence": null,
+   "effectiveDate": null,
+   "capturedDate": null,
+   "effectiveDateSource": "none",
+   "origin": "unknown",
+   "versionLabel": null,
+   "publicationState": "pending_review",
+   "status": null,
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": null,
+   "doseCount": 0
+  },
+  {
    "hash": "78df4b435d894a6b24263b06f85f77f3",
    "hashSource": "md5",
    "agencyKey": null,
@@ -29876,7 +30060,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "sop-sfv-final-markup-102319docx",
-   "doseCount": 121
+   "doseCount": 120
   },
   {
    "hash": "7efdfad83645f6a76ddb99ac97347630",
@@ -32908,11 +33092,11 @@
    "origin": "app",
    "versionLabel": "REV. 4/1/2026",
    "publicationState": "listed_named",
-   "status": "superseded",
+   "status": "current",
    "pageCount": 463,
    "sourceUrl": null,
    "corpusDocId": "f9c7112342ced1f99126260854a3580993ae183f5e5682493022da86339c3d69",
-   "doseCount": 145
+   "doseCount": 158
   },
   {
    "hash": "8c647af6fc46e1c8c3ec38518e94a335",
@@ -34265,7 +34449,7 @@
    "origin": "app",
    "versionLabel": "REV. 4/1/2026",
    "publicationState": "listed_named",
-   "status": "current",
+   "status": "superseded",
    "pageCount": 463,
    "sourceUrl": null,
    "corpusDocId": "0e99d756138271a1bcbe8ceacdff4950840450608c709b695112b6f35daf15e7",
@@ -34337,8 +34521,8 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-9285b5409926ab22c28244d0e6da48f8",
+   "doseCount": 6
   },
   {
    "hash": "928985b261b28020dcdbddca79f88a649a84e0a483704e7dee1864e4524680cb",
@@ -34429,29 +34613,6 @@
    "status": "current",
    "pageCount": null,
    "sourceUrl": "https://www2.columbusco.org/emergency/EMSProtocols.pdf",
-   "corpusDocId": null,
-   "doseCount": 0
-  },
-  {
-   "hash": "93938b150674409b4d2da6a7d9370133c757cffb3bc5fdcfb90d649a6ed4623b",
-   "hashSource": "pdf_hash",
-   "agencyKey": "denver-metro-ems-medical-directors",
-   "agencyName": "Denver Metro EMS Medical Directors",
-   "state": "CO",
-   "country": "US",
-   "city": "Denver",
-   "jurisdiction": "regional",
-   "publicRecord": true,
-   "confidence": "high",
-   "effectiveDate": "2026-01-01",
-   "capturedDate": null,
-   "effectiveDateSource": "printed",
-   "origin": "app",
-   "versionLabel": null,
-   "publicationState": "listed_named",
-   "status": "superseded",
-   "pageCount": null,
-   "sourceUrl": null,
    "corpusDocId": null,
    "doseCount": 0
   },
@@ -36020,6 +36181,29 @@
    "doseCount": 0
   },
   {
+   "hash": "9b35e99fff46ca29d70ceb2102c0916d",
+   "hashSource": "md5",
+   "agencyKey": null,
+   "agencyName": null,
+   "state": null,
+   "country": null,
+   "city": null,
+   "jurisdiction": null,
+   "publicRecord": false,
+   "confidence": null,
+   "effectiveDate": null,
+   "capturedDate": null,
+   "effectiveDateSource": "none",
+   "origin": "unknown",
+   "versionLabel": null,
+   "publicationState": "pending_review",
+   "status": null,
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": null,
+   "doseCount": 0
+  },
+  {
    "hash": "9b885a53aa98d5e890d5c00b116b8224",
    "hashSource": "md5",
    "agencyKey": null,
@@ -36385,7 +36569,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "2023v1-2-pa-ials-protocols",
-   "doseCount": 39
+   "doseCount": 42
   },
   {
    "hash": "9dc37a7356f537c260d418376d2a23da",
@@ -37692,7 +37876,7 @@
    "origin": "app",
    "versionLabel": "2026.2",
    "publicationState": "listed_named",
-   "status": "superseded",
+   "status": "current",
    "pageCount": 176,
    "sourceUrl": null,
    "corpusDocId": "65c0ad564b08e8d0a7dcae20239c8e63b73bddcdfecbf7e7e326b911448e7bd1",
@@ -38363,7 +38547,7 @@
    "pageCount": 48,
    "sourceUrl": null,
    "corpusDocId": "d54844468661a18c7226d26b266cfa819499f4ba161e1b591a0dd9458e32fcd7",
-   "doseCount": 26
+   "doseCount": 23
   },
   {
    "hash": "a7b4be04c82b30923fa6e9bfcb8d119d",
@@ -40658,7 +40842,7 @@
    "effectiveDateSource": "printed",
    "origin": "app",
    "versionLabel": null,
-   "publicationState": "pending_review",
+   "publicationState": "excluded",
    "status": null,
    "pageCount": null,
    "sourceUrl": null,
@@ -42617,7 +42801,7 @@
    "status": null,
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
+   "corpusDocId": "census-baf28d454bcf48763bf7bfbcce9fc0a5",
    "doseCount": 0
   },
   {
@@ -43008,8 +43192,8 @@
    "status": "current",
    "pageCount": null,
    "sourceUrl": "https://health.hawaii.gov/emsipsb/files/2025/06/2025_STANDING-ORDERS_23June2025_NoHyperlinks2.pdf",
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-bc8896e06c4feba2846f9031472d1229c8b1f686594a0161572b8753e4a22f36",
+   "doseCount": 73
   },
   {
    "hash": "bca41c32af2da0345071bcf5a751966c",
@@ -43151,6 +43335,29 @@
   },
   {
    "hash": "bd851762da19908aa3886c55dca28951",
+   "hashSource": "md5",
+   "agencyKey": null,
+   "agencyName": null,
+   "state": null,
+   "country": null,
+   "city": null,
+   "jurisdiction": null,
+   "publicRecord": false,
+   "confidence": null,
+   "effectiveDate": null,
+   "capturedDate": null,
+   "effectiveDateSource": "none",
+   "origin": "unknown",
+   "versionLabel": null,
+   "publicationState": "pending_review",
+   "status": null,
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": null,
+   "doseCount": 0
+  },
+  {
+   "hash": "bd8e1110025d097994146b32cd7fd179",
    "hashSource": "md5",
    "agencyKey": null,
    "agencyName": null,
@@ -43790,8 +43997,8 @@
    "status": null,
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-c0e598403a3ad5ceb7dbe20a7692d4f3",
+   "doseCount": 229
   },
   {
    "hash": "c0f00013405c40ed5b1f639860343d7b",
@@ -47172,7 +47379,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "kern-county-protocols",
-   "doseCount": 127
+   "doseCount": 121
   },
   {
    "hash": "d179878d13abf29595a0ee86b18578f6",
@@ -50832,29 +51039,6 @@
    "doseCount": 0
   },
   {
-   "hash": "e42d403a4284f834ab0cdc533726ee2c",
-   "hashSource": "md5",
-   "agencyKey": null,
-   "agencyName": null,
-   "state": null,
-   "country": null,
-   "city": null,
-   "jurisdiction": null,
-   "publicRecord": false,
-   "confidence": null,
-   "effectiveDate": null,
-   "capturedDate": null,
-   "effectiveDateSource": "none",
-   "origin": "unknown",
-   "versionLabel": null,
-   "publicationState": "pending_review",
-   "status": null,
-   "pageCount": null,
-   "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
-  },
-  {
    "hash": "e46d3145a37e9c63e5850668460cb612",
    "hashSource": "md5",
    "agencyKey": null,
@@ -50943,8 +51127,8 @@
    "status": null,
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-e4bf40d8a9ecbd4c826500f9de5c0928244f39e724ae4983101e95afabbc90c1",
+   "doseCount": 7
   },
   {
    "hash": "e4c57776a05a3983565733fac77defc8",
@@ -51128,7 +51312,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "v20251_ctemsstatewideprotocolsfinal",
-   "doseCount": 236
+   "doseCount": 228
   },
   {
    "hash": "e6620a5959fdb6d865170b8484c74695",
@@ -54486,7 +54670,7 @@
    "pageCount": 15,
    "sourceUrl": null,
    "corpusDocId": "891ae72123e00cdc81a96425d8d75e909aaba0c9ee56fc9d62c6f43008857828",
-   "doseCount": 25
+   "doseCount": 30
   },
   {
    "hash": "f7db1f4edb749480c595fbf37fc5c3bb",
@@ -54782,6 +54966,29 @@
    "versionLabel": null,
    "publicationState": "pending_review",
    "status": null,
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": null,
+   "doseCount": 0
+  },
+  {
+   "hash": "f922459bbbbe97d89f65b1ccfbc4776e",
+   "hashSource": "md5",
+   "agencyKey": "health-professions-council-of-south-africa-hpcsa",
+   "agencyName": "Health Professions Council of South Africa",
+   "state": null,
+   "country": "ZA",
+   "city": null,
+   "jurisdiction": "statewide",
+   "publicRecord": true,
+   "confidence": "high",
+   "effectiveDate": "2018-07-01",
+   "capturedDate": null,
+   "effectiveDateSource": "printed",
+   "origin": "app",
+   "versionLabel": null,
+   "publicationState": "listed_named",
+   "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": null,
@@ -55292,6 +55499,29 @@
    "sourceUrl": "https://oklahoma.gov/content/dam/ok/en/health/health2/aem-documents/protective-health/emergency-systems/ems-division/protocols/2018-state-protocols-field-edition-4-18-2018.pdf",
    "corpusDocId": null,
    "doseCount": 0
+  },
+  {
+   "hash": "fc0ff824e1099eced88740f269b51a9709df1eee81ed3b070c1f586e30b031a7",
+   "hashSource": "pdf_hash",
+   "agencyKey": "denver-metro-ems-medical-directors",
+   "agencyName": "Denver Metro EMS Medical Directors",
+   "state": "CO",
+   "country": "US",
+   "city": "Denver",
+   "jurisdiction": "regional",
+   "publicRecord": true,
+   "confidence": "high",
+   "effectiveDate": "2026-01-01",
+   "capturedDate": null,
+   "effectiveDateSource": "printed",
+   "origin": "app",
+   "versionLabel": null,
+   "publicationState": "listed_named",
+   "status": "superseded",
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": "census-fc0ff824e1099eced88740f269b51a9709df1eee81ed3b070c1f586e30b031a7",
+   "doseCount": 154
   },
   {
    "hash": "fc115ea712192ea7e30a093faca26016",
