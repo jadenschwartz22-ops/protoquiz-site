@@ -347,7 +347,7 @@
     (function () {
       // Play while on screen, pause when scrolled away; never restart a video the viewer paused.
       var v = document.getElementById('tour'), replay = document.getElementById('replay'), ours = false;
-      // The video ends on its "Master your protocols" card and holds there with a replay button.
+      // The video ends on its "Master your EMS protocols" card and holds there with a replay button.
       v.addEventListener('ended', function () { replay.hidden = false; });
       v.addEventListener('play', function () { replay.hidden = true; });
       replay.addEventListener('click', function () { v.currentTime = 0; v.play(); });
