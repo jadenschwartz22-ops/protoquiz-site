@@ -8,7 +8,7 @@
  *   2. Top-level collection counts (protocol_uploads, scenario_generations, ...) as
  *      cross-checks.
  *   3. Flat `events` collection (each doc is `${YYYY-MM}_evt_${id}`) for category
- *      breakdowns and active-user windows.
+ *      breakdowns, read incrementally (see getEventStats).
  *
  * Active users come from users.lastActiveAt (note: NOT lastActive — old script bug).
  */
@@ -27,6 +27,7 @@ if (!admin.apps.length) {
   admin.initializeApp({ credential: admin.credential.cert(sa), projectId: 'ems-protoquiz-tracking' });
 }
 const db = admin.firestore();
+const { Timestamp } = admin.firestore;
 // Dev/test account — its uploads must never count toward public stats.
 // Was 'UQLMSLQZ' (wrong: not even a prefix of the real UID, and case-mismatched),
 // so ~17 dev uploads silently inflated totalUploads + activeStudiers. The real
@@ -35,21 +36,16 @@ const DEV_USER_ID = 'UqLmSIqzm9bNDnuS6ily2pUX5n22';
 const isDev = (u) => typeof u === 'string'
   && u.toLowerCase().startsWith(DEV_USER_ID.toLowerCase());
 
+// One read of users serves the counters, the active-user windows and the id set.
 async function getUserDocAggregates() {
   const snap = await db.collection('users').get();
-  const totals = {
-    protocolsUploaded: 0,
-    quizzesCompleted: 0,
-    scenariosGenerated: 0,
-    cardsReviewed: 0,
-    learnSessions: 0,
-    sessions: 0,
-    usersWithDoc: 0,
-    premiumUsers: 0
-  };
+  const [d30, d7, d1] = [30, 7, 1].map(days => Date.now() - days * 86400000);
+  const totals = { protocolsUploaded: 0, quizzesCompleted: 0, scenariosGenerated: 0, cardsReviewed: 0, learnSessions: 0,
+    sessions: 0, usersWithDoc: 0, premiumUsers: 0, active30d: 0, active7d: 0, active1d: 0, ids: new Set() };
   snap.docs.forEach(d => {
     if (isDev(d.id)) return;
     const x = d.data();
+    totals.ids.add(d.id);
     totals.usersWithDoc++;
     totals.protocolsUploaded += x.totalProtocolsUploaded || 0;
     totals.quizzesCompleted += x.totalQuizzesCompleted || 0;
@@ -58,48 +54,71 @@ async function getUserDocAggregates() {
     totals.learnSessions += x.totalLearnModeSessions || 0;
     totals.sessions += x.totalSessions || 0;
     if (x.isPremium) totals.premiumUsers++;
+    // Same semantics as where('lastActiveAt', '>=', ...): Timestamp values only.
+    const active = x.lastActiveAt instanceof Timestamp ? x.lastActiveAt.toMillis() : -1;
+    if (active >= d30) totals.active30d++;
+    if (active >= d7) totals.active7d++;
+    if (active >= d1) totals.active1d++;
   });
   return totals;
 }
 
-async function getActiveUserCounts() {
-  const now = Date.now();
-  const win = (days) => admin.firestore.Timestamp.fromDate(new Date(now - days * 86400000));
-  const [d30, d7, d1] = await Promise.all([
-    db.collection('users').where('lastActiveAt', '>=', win(30)).get(),
-    db.collection('users').where('lastActiveAt', '>=', win(7)).get(),
-    db.collection('users').where('lastActiveAt', '>=', win(1)).get()
-  ]);
-  return {
-    active30d: d30.docs.filter(d => !isDev(d.id)).length,
-    active7d: d7.docs.filter(d => !isDev(d.id)).length,
-    active1d: d1.docs.filter(d => !isDev(d.id)).length
-  };
-}
+const count = async (q) => (await q.count().get()).data().count;
 
 async function getCollectionCounts() {
   const cols = ['protocol_uploads', 'protocol_uploads_success', 'scenario_generations', 'algorithm_quiz_generations'];
-  const out = {};
-  for (const c of cols) {
-    const snap = await db.collection(c).get();
-    out[c] = snap.docs.filter(d => !isDev(d.data().userId)).length;
+  return Object.fromEntries(await Promise.all(cols.map(async c => {
+    const ref = db.collection(c);
+    const [all, dev] = await Promise.all([count(ref), count(ref.where('userId', '==', DEV_USER_ID))]);
+    return [c, all - dev];
+  })));
+}
+
+// Events grow ~1.6k/day; re-reading all of them each run was ~94% of this job's
+// reads. Tallies for events older than SETTLE_MS live in EVENTS_STATE_PATH (on the
+// Pi: ~/protoquiz-site-stats/, outside the git clone). Each run reads only events
+// after that cursor. `timestamp` is client-stamped and can land late (max seen
+// 3.1h), so every run first proves the state with a count() of the settled range;
+// a mismatch (late arrival, deletion) or a missing file means one full rescan.
+const SETTLE_MS = 6 * 3600000;
+const EVENTS_STATE_PATH = path.join(path.dirname(KEY_PATH), 'events-cursor.json');
+
+function tally(s, docs) {
+  for (const d of docs) {
+    const x = d.data();
+    s.total++;
+    if (isDev(x.userId)) continue;
+    if (x.userId) s.users.add(x.userId);
+    const c = x.category || 'unknown', k = `${c}/${x.action || 'unknown'}`;
+    s.cat[c] = (s.cat[c] || 0) + 1;
+    s.catAct[k] = (s.catAct[k] || 0) + 1;
   }
-  return out;
+  return s;
+}
+
+async function loadEventState(events) {
+  try {
+    const j = JSON.parse(await fs.readFile(EVENTS_STATE_PATH, 'utf8'));
+    const n = await count(events.where('timestamp', '<=', Timestamp.fromMillis(j.settledAt)));
+    if (n === j.total) return { ...j, users: new Set(j.users) };
+    console.log(`[events] state has ${j.total}, Firestore has ${n}: full rescan`);
+  } catch { console.log('[events] no state: full rescan'); }
+  return null;
 }
 
 async function getEventStats() {
-  const snap = await db.collection('events').get();
-  const cat = {}, catAct = {}, users = new Set();
-  let dev = 0;
-  for (const d of snap.docs) {
-    const x = d.data();
-    if (isDev(x.userId)) { dev++; continue; }
-    if (x.userId) users.add(x.userId);
-    cat[x.category || 'unknown'] = (cat[x.category || 'unknown'] || 0) + 1;
-    const k = `${x.category || 'unknown'}/${x.action || 'unknown'}`;
-    catAct[k] = (catAct[k] || 0) + 1;
-  }
-  return { totalEvents: snap.size, devEvents: dev, eventUsers: users, byCategory: cat, byCatAction: catAct };
+  const events = db.collection('events');
+  const cut = Timestamp.fromMillis(Date.now() - SETTLE_MS);
+  const prev = await loadEventState(events);
+  const snap = prev ? await events.where('timestamp', '>', Timestamp.fromMillis(prev.settledAt)).get() : await events.get();
+  console.log(`[events] read ${snap.size} docs`);
+  const settles = (d) => d.data().timestamp?.valueOf() <= cut.valueOf();
+  const settled = tally(prev || { total: 0, cat: {}, catAct: {}, users: new Set() }, snap.docs.filter(settles));
+  await fs.writeFile(`${EVENTS_STATE_PATH}.tmp`, JSON.stringify({ ...settled, settledAt: cut.toMillis(), users: [...settled.users] }), { mode: 0o600 });
+  await fs.rename(`${EVENTS_STATE_PATH}.tmp`, EVENTS_STATE_PATH);
+  const s = tally({ ...settled, cat: { ...settled.cat }, catAct: { ...settled.catAct }, users: new Set(settled.users) },
+    snap.docs.filter(d => !settles(d)));
+  return { totalEvents: s.total, eventUsers: s.users, byCategory: s.cat, byCatAction: s.catAct };
 }
 
 async function getAppStoreRating(appId = '6753611139') {
@@ -859,9 +878,8 @@ async function getReachStats() {
 async function main() {
   console.log('Pulling Firestore stats...\n');
 
-  const [userTotals, active, colCounts, events, successRate, appStore] = await Promise.all([
+  const [userTotals, colCounts, events, successRate, appStore] = await Promise.all([
     getUserDocAggregates(),
-    getActiveUserCounts(),
     getCollectionCounts(),
     getEventStats(),
     getUploadSuccessRate30d(),
@@ -869,14 +887,8 @@ async function main() {
   ]);
 
   // Combined unique users: users with a doc + anyone seen in events
-  const allUsers = new Set([...events.eventUsers]);
-  // Add user-doc IDs (need to re-query just IDs, cheap):
-  const userDocsSnap = await db.collection('users').select().get();
-  userDocsSnap.docs.forEach(d => { if (!isDev(d.id)) allUsers.add(d.id); });
-  const ups = await db.collection('protocol_uploads').select('userId').get();
-  ups.docs.forEach(d => { const u = d.data().userId; if (u && !isDev(u)) allUsers.add(u); });
-
-  const uniqueUsers = allUsers.size;
+  // (legacy protocol_uploads, the third source, has been empty since its 2025 archive).
+  const uniqueUsers = new Set([...events.eventUsers, ...userTotals.ids]).size;
 
   // Final canonical numbers — prefer user-doc aggregates, fall back to event counts
   const protocolsUploaded = Math.max(
@@ -901,9 +913,9 @@ async function main() {
       appStoreRatingCount: appStore?.count ?? null,
       appStoreDownloads: uniqueUsers,
       uniqueUsers,
-      activeUsers30d: active.active30d,
-      activeUsers7d: active.active7d,
-      activeUsers1d: active.active1d,
+      activeUsers30d: userTotals.active30d,
+      activeUsers7d: userTotals.active7d,
+      activeUsers1d: userTotals.active1d,
       protocolsUploaded,
       quizzesCompleted,
       scenariosGenerated,
@@ -918,7 +930,7 @@ async function main() {
     display: {
       appStoreRating: appStore?.rating != null ? appStore.rating.toFixed(1) : null,
       appStoreDownloads: displayBucket(uniqueUsers),
-      activeUsers30d: displayBucket(active.active30d),
+      activeUsers30d: displayBucket(userTotals.active30d),
       protocolsUploaded: displayBucket(protocolsUploaded),
       scenariosGenerated: displayBucket(scenariosGenerated),
       quizzesCompleted: displayBucket(quizzesCompleted),
@@ -942,7 +954,7 @@ async function main() {
   console.log('Stats:');
   console.log(`  App Store rating:    ${appStore?.rating ?? 'n/a'} (${appStore?.count ?? 0} ratings)`);
   console.log(`  Unique users:        ${uniqueUsers}`);
-  console.log(`  Active 30d / 7d / 1d: ${active.active30d} / ${active.active7d} / ${active.active1d}`);
+  console.log(`  Active 30d / 7d / 1d: ${userTotals.active30d} / ${userTotals.active7d} / ${userTotals.active1d}`);
   console.log(`  Protocols uploaded:  ${protocolsUploaded}`);
   console.log(`  Quizzes completed:   ${quizzesCompleted}`);
   console.log(`  Scenarios generated: ${scenariosGenerated}`);
