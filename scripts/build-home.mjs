@@ -88,7 +88,7 @@ ${jsonLd({
   url: 'https://protoquiz.com',
   logo: 'https://protoquiz.com/logo-256.png',
   description: 'Protocol training for EMS. Built by a working paramedic.',
-  parentOrganization: { '@type': 'Organization', name: 'Teach Me To Live LLC' },
+  parentOrganization: { '@type': 'Organization', name: 'ProtoQuiz LLC' },
   sameAs: ['https://apps.apple.com/app/id6753611139', 'https://play.google.com/store/apps/details?id=com.tmtl.emsprotoquiz'],
 })}
   </script>

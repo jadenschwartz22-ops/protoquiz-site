@@ -225,7 +225,7 @@ export const FOOTER_HTML = `  <!-- shared-chrome:footer -->
       </div>
     </div>
     <div class="foot-base">
-      <span>&copy; 2026 Teach Me To Live LLC, d/b/a ProtoQuiz&trade;.</span>
+      <span>&copy; 2026 ProtoQuiz LLC.</span>
     </div>
   </footer>
   <!-- /shared-chrome:footer -->`;
