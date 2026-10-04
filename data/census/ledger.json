@@ -2,8 +2,8 @@
  "schemaVersion": 3,
  "rows": [
   {
-   "at": "2026-10-03T00:00:00Z",
-   "hash": "00938b0ae2f2bc19e0109da4073ab12a",
+   "at": "2026-10-04T00:00:00Z",
+   "hash": "17e4effbba4bcde6fd51bb9fb7a50274",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -12,8 +12,18 @@
    "reason": null
   },
   {
-   "at": "2026-10-03T00:00:00Z",
-   "hash": "0d8ea4dcffdab2af9bf7c31aea87523f",
+   "at": "2026-10-04T00:00:00Z",
+   "hash": "26e895286304692f1f3a9192be8454e85d8a1ca3e5b7ed13fdc188c001e1cf3b",
+   "agencyKey": "crowley-fire-department",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-04T00:00:00Z",
+   "hash": "32620f9efa67b67655955e07137b58ee",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -22,119 +32,19 @@
    "reason": null
   },
   {
-   "at": "2026-10-03T00:00:00Z",
-   "hash": "461dddfd7eb18679bb5b5fde805d976c",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "pending_review",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-03T00:00:00Z",
-   "hash": "4a0b872458ea17b733d208b51c55879b8b3a5457afea8ccf259bb5b55d67d3f4",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "excluded",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-03T00:00:00Z",
-   "hash": "4cb79005a31b456637ad75ee16c93230",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "pending_review",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-03T00:00:00Z",
-   "hash": "57966f913991e7cb73f682087ebe0348",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "pending_review",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-03T00:00:00Z",
-   "hash": "6eb2c9e17d19abf6436e0b2bcbdf2863eb96dfbf4107f8b0c157eeb82e49caec",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "excluded",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-03T00:00:00Z",
-   "hash": "7142dbe2b03a261b5ad079dbd52f4340",
+   "at": "2026-10-04T00:00:00Z",
+   "hash": "687e1bc4c816a1d2bb6dd963f3e3cb4c3fcb86534eca22ea5e22e61782e50300",
    "agencyKey": null,
    "change": "state_changed",
-   "from": "pending_review",
+   "from": "listed_named",
    "to": "excluded",
    "by": "build",
    "reason": null
   },
   {
-   "at": "2026-10-03T00:00:00Z",
-   "hash": "860f83376ce94427ae20edc455a38414e7cde8f6228a2c6d932173f53340afb9",
-   "agencyKey": "utah-department-of-public-safety-bureau-of-emergency-medical-services",
-   "change": "superseded",
-   "from": "current",
-   "to": "superseded",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-03T00:00:00Z",
-   "hash": "8f1291c3710c8b8e43a0e8ca2099d037",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "pending_review",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-03T00:00:00Z",
-   "hash": "a2882beb67f11890db916f18119761c648594a4327a8b832db2c02345d0355c3",
-   "agencyKey": "new-york-state-department-of-health-bureau-of-emergency-medical-services-and-trauma-systems",
-   "change": "superseded",
-   "from": "current",
-   "to": "superseded",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-03T00:00:00Z",
-   "hash": "b79087649690bd82340d120462acaf98",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "pending_review",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-03T00:00:00Z",
-   "hash": "b99d76ae57321ff35682c9b7c1f8722d",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "pending_review",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-03T00:00:00Z",
-   "hash": "c08d015f4fb4ecd588d5557c2e433f697393c8b9707d89d2711dfdca6bb35e83",
-   "agencyKey": "pennsylvania-department-of-health-bureau-of-emergency-medical-services",
+   "at": "2026-10-04T00:00:00Z",
+   "hash": "abb159b2b9b3137df5c000f8e5513840",
+   "agencyKey": "coos-county-emergency-medical-services",
    "change": "added",
    "from": null,
    "to": "listed_named",
@@ -142,72 +52,12 @@
    "reason": null
   },
   {
-   "at": "2026-10-03T00:00:00Z",
-   "hash": "c9b9426d1609d8eaf3849b6cc36756cb",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "pending_review",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-03T00:00:00Z",
-   "hash": "cccafb63df9bc4edf5a99c9e4524d7c3",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "pending_review",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-03T00:00:00Z",
-   "hash": "cdca7623992869beb6fdf1ef20cec0cf",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "pending_review",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-03T00:00:00Z",
+   "at": "2026-10-04T00:00:00Z",
    "hash": "d2a5b7d06563853e36a1df47fd6cc3158204d9c5e5ee98823c24dbbc4cfdd455",
    "agencyKey": "crowley-fire-department",
-   "change": "added",
-   "from": null,
-   "to": "listed_named",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-03T00:00:00Z",
-   "hash": "d62709ea1ceba432a8da95f46182db5ee2741b9a5b03a588db5a171bf22bd0a0",
-   "agencyKey": "crowley-fire-department",
    "change": "superseded",
    "from": "current",
    "to": "superseded",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-03T00:00:00Z",
-   "hash": "f52482c2fb319aa0c6a42c24f5815d389286ac3f3710de3c04864005df2df2a9",
-   "agencyKey": "new-york-state-department-of-health-bureau-of-emergency-medical-services-and-trauma-systems",
-   "change": "added",
-   "from": null,
-   "to": "listed_named",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-03T00:00:00Z",
-   "hash": "f93b5416e476ae4f843fcb653facf1a6e8ca45d88104e715faf914296f5e7c2b",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "excluded",
    "by": "build",
    "reason": null
   }

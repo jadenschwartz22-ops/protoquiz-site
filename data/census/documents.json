@@ -6281,6 +6281,29 @@
    "doseCount": 203
   },
   {
+   "hash": "17e4effbba4bcde6fd51bb9fb7a50274",
+   "hashSource": "md5",
+   "agencyKey": null,
+   "agencyName": null,
+   "state": null,
+   "country": null,
+   "city": null,
+   "jurisdiction": null,
+   "publicRecord": false,
+   "confidence": null,
+   "effectiveDate": null,
+   "capturedDate": null,
+   "effectiveDateSource": "none",
+   "origin": "unknown",
+   "versionLabel": null,
+   "publicationState": "pending_review",
+   "status": null,
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": null,
+   "doseCount": 0
+  },
+  {
    "hash": "17ecc0e72759b399c78a1bdb3e8c8f46f830c1a5c30c0e09339c37cdbfda4af6",
    "hashSource": "pdf_hash",
    "agencyKey": null,
@@ -10145,6 +10168,29 @@
    "doseCount": 0
   },
   {
+   "hash": "26e895286304692f1f3a9192be8454e85d8a1ca3e5b7ed13fdc188c001e1cf3b",
+   "hashSource": "pdf_hash",
+   "agencyKey": "crowley-fire-department",
+   "agencyName": "Crowley Fire Department",
+   "state": "TX",
+   "country": "US",
+   "city": "Crowley",
+   "jurisdiction": "fire-district",
+   "publicRecord": true,
+   "confidence": "high",
+   "effectiveDate": "2025-02-01",
+   "capturedDate": null,
+   "effectiveDateSource": "printed",
+   "origin": "app",
+   "versionLabel": null,
+   "publicationState": "listed_named",
+   "status": "current",
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": "cfd-protocols",
+   "doseCount": 145
+  },
+  {
    "hash": "271db7d791d820b7a7b5e34123a5c629",
    "hashSource": "md5",
    "agencyKey": null,
@@ -12650,6 +12696,29 @@
    "sourceUrl": null,
    "corpusDocId": "census-322e07e219b1b056336ad589169d5cea07d7c8dc4ae3a1af60c7ba6cc086b611",
    "doseCount": 153
+  },
+  {
+   "hash": "32620f9efa67b67655955e07137b58ee",
+   "hashSource": "md5",
+   "agencyKey": null,
+   "agencyName": null,
+   "state": null,
+   "country": null,
+   "city": null,
+   "jurisdiction": null,
+   "publicRecord": false,
+   "confidence": null,
+   "effectiveDate": null,
+   "capturedDate": null,
+   "effectiveDateSource": "none",
+   "origin": "unknown",
+   "versionLabel": null,
+   "publicationState": "pending_review",
+   "status": null,
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": null,
+   "doseCount": 0
   },
   {
    "hash": "32705a4ab8b18921897c1676f0f7973c",
@@ -26201,8 +26270,8 @@
   {
    "hash": "687e1bc4c816a1d2bb6dd963f3e3cb4c3fcb86534eca22ea5e22e61782e50300",
    "hashSource": "pdf_hash",
-   "agencyKey": "riverside-county-ems-agency",
-   "agencyName": "Riverside County EMS Agency",
+   "agencyKey": null,
+   "agencyName": null,
    "state": "CA",
    "country": "US",
    "city": null,
@@ -26214,8 +26283,8 @@
    "effectiveDateSource": "printed",
    "origin": "app",
    "versionLabel": null,
-   "publicationState": "listed_named",
-   "status": "superseded",
+   "publicationState": "excluded",
+   "status": null,
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": null,
@@ -34981,8 +35050,8 @@
    "status": null,
    "pageCount": null,
    "sourceUrl": "https://chicagoems.org/wp-content/uploads/sites/2/2017/03/ALS-SMO-MDC_APPROVED_WEB.pdf",
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-8da13036e82ef9beab942cde7811ad321b9c8d45cb8ca8e901691f9f0db6722c",
+   "doseCount": 100
   },
   {
    "hash": "8da8f14f50c2226ed7bcde1d41073096cd4b3a132d114615e7e4a8fa26c5c555",
@@ -37785,29 +37854,6 @@
    "versionLabel": null,
    "publicationState": "listed_named",
    "status": "superseded",
-   "pageCount": null,
-   "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
-  },
-  {
-   "hash": "9a2aa4289f33f2133327061c5b230014",
-   "hashSource": "md5",
-   "agencyKey": "coos-county-emergency-medical-services",
-   "agencyName": "Coos County Emergency Medical Services",
-   "state": "OR",
-   "country": "US",
-   "city": "Coos Bay",
-   "jurisdiction": "county",
-   "publicRecord": true,
-   "confidence": "high",
-   "effectiveDate": "2025-01-01",
-   "capturedDate": null,
-   "effectiveDateSource": "printed",
-   "origin": "app",
-   "versionLabel": null,
-   "publicationState": "listed_named",
-   "status": "current",
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": null,
@@ -41446,6 +41492,29 @@
    "sourceUrl": null,
    "corpusDocId": null,
    "doseCount": 0
+  },
+  {
+   "hash": "abb159b2b9b3137df5c000f8e5513840",
+   "hashSource": "md5",
+   "agencyKey": "coos-county-emergency-medical-services",
+   "agencyName": "Coos County Emergency Medical Services",
+   "state": "OR",
+   "country": "US",
+   "city": "Coos Bay",
+   "jurisdiction": "county",
+   "publicRecord": true,
+   "confidence": "high",
+   "effectiveDate": "2025-01-01",
+   "capturedDate": null,
+   "effectiveDateSource": "printed",
+   "origin": "app",
+   "versionLabel": null,
+   "publicationState": "listed_named",
+   "status": "current",
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": "census-abb159b2b9b3137df5c000f8e5513840",
+   "doseCount": 196
   },
   {
    "hash": "abb4e4295092b6916be4c015da4ec0df0085d4631bcbe3a8bfa8608982721423",
@@ -48643,8 +48712,8 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-cc32e53085e3b5dcec0031e6c4a9a952",
+   "doseCount": 174
   },
   {
    "hash": "cc358814ecf585273e13398a1533567cc07932eb56575e66b7b3c1f6faffad91",
@@ -50181,10 +50250,10 @@
    "origin": "app",
    "versionLabel": null,
    "publicationState": "listed_named",
-   "status": "current",
+   "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": "cfd-protocols",
+   "corpusDocId": "reuse:cf52725a2f724b43816e2160a8679b67463a7c3e1ba97f1a5b15dd90aef76945",
    "doseCount": 138
   },
   {
@@ -52898,8 +52967,8 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-e02eb2e4c9c2cc95fdbc47be74b32d62",
+   "doseCount": 172
   },
   {
    "hash": "e04c5800cbf6bad2ae87754aed992ad9",
@@ -56877,8 +56946,8 @@
    "status": "current",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "census-f418b32ef43aee35827e91b380b0ec15",
+   "doseCount": 104
   },
   {
    "hash": "f44b312c4c618a0f9c218a128b9841f1",
