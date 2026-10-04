@@ -1,22 +1,22 @@
 {
-  "generatedAt": "2026-10-03T18:07:25.419Z",
-  "totalUploads": 682,
-  "distinctProtocols": 444,
-  "activeStudiers": 469,
-  "pagesProcessed": 106969,
+  "generatedAt": "2026-10-04T18:07:29.790Z",
+  "totalUploads": 687,
+  "distinctProtocols": 447,
+  "activeStudiers": 474,
+  "pagesProcessed": 107865,
   "statesRepresented": 43,
   "countriesRepresented": 5,
   "internationalUploads": 13,
   "byState": {
-    "CO": 82,
+    "CO": 84,
     "MI": 49,
     "CA": 47,
+    "MA": 29,
     "PA": 28,
-    "MA": 28,
     "TX": 27,
     "NY": 25,
     "GA": 25,
-    "VA": 18,
+    "VA": 19,
     "CT": 18,
     "OR": 18,
     "NC": 17,
@@ -105,6 +105,28 @@
       ]
     },
     {
+      "state": "MA",
+      "city": "Boston",
+      "x": 881,
+      "y": 155,
+      "count": 29,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "download",
+          "count": 7
+        },
+        {
+          "title": "statewide treatment protocols 2026 2",
+          "count": 6
+        },
+        {
+          "title": "download",
+          "count": 4
+        }
+      ]
+    },
+    {
       "state": "PA",
       "city": "Philadelphia",
       "x": 828,
@@ -123,28 +145,6 @@
         {
           "title": "2023v1 2 pa bls protocols",
           "count": 3
-        }
-      ]
-    },
-    {
-      "state": "MA",
-      "city": "Boston",
-      "x": 881,
-      "y": 155,
-      "count": 28,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "download",
-          "count": 7
-        },
-        {
-          "title": "statewide treatment protocols 2026 2",
-          "count": 6
-        },
-        {
-          "title": "download",
-          "count": 4
         }
       ]
     },
@@ -485,6 +485,28 @@
       ]
     },
     {
+      "state": "CO",
+      "city": "Boulder",
+      "x": 326,
+      "y": 252,
+      "count": 6,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "BoCo Protocols Apr 2026",
+          "count": 2
+        },
+        {
+          "title": "BoCo Protocols Oct 2025",
+          "count": 1
+        },
+        {
+          "title": "BoCo Protocols Apr 2026",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "AZ",
       "city": "Phoenix",
       "x": 188,
@@ -586,28 +608,6 @@
         },
         {
           "title": "Acadian 2026 Protocols",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CO",
-      "city": "Boulder",
-      "x": 326,
-      "y": 252,
-      "count": 5,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "BoCo Protocols Oct 2025",
-          "count": 1
-        },
-        {
-          "title": "BoCo Protocols Apr 2026",
-          "count": 1
-        },
-        {
-          "title": "BoCo Protocols Apr 2026",
           "count": 1
         }
       ]
@@ -746,6 +746,24 @@
         },
         {
           "title": "ODEMSA Protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "VA",
+      "city": "Roanoke",
+      "x": 759,
+      "y": 297,
+      "count": 3,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "WVEMS Protocols 2026",
+          "count": 2
+        },
+        {
+          "title": "WVEMS Protocols (v2026)",
           "count": 1
         }
       ]
@@ -929,20 +947,6 @@
         {
           "title": "2026 Thurston Co Protocol Draft",
           "count": 1
-        }
-      ]
-    },
-    {
-      "state": "VA",
-      "city": "Roanoke",
-      "x": 759,
-      "y": 297,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "WVEMS Protocols 2026",
-          "count": 2
         }
       ]
     },
@@ -1952,6 +1956,20 @@
       "topProtocols": [
         {
           "title": "2025 Revised Protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "CO",
+      "city": "Aurora",
+      "x": 332,
+      "y": 259,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "Aurora EMS Protocols Winter 2026",
           "count": 1
         }
       ]
