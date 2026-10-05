@@ -2,19 +2,9 @@
  "schemaVersion": 3,
  "rows": [
   {
-   "at": "2026-10-04T00:00:00Z",
-   "hash": "17e4effbba4bcde6fd51bb9fb7a50274",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "pending_review",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-04T00:00:00Z",
-   "hash": "26e895286304692f1f3a9192be8454e85d8a1ca3e5b7ed13fdc188c001e1cf3b",
-   "agencyKey": "crowley-fire-department",
+   "at": "2026-10-05T00:00:00Z",
+   "hash": "01f0a90f413d9088b1e4448cf8fb89878c7cea429cb67b00729c5e9c16bdcbe0",
+   "agencyKey": "boulder-county-ems",
    "change": "added",
    "from": null,
    "to": "listed_named",
@@ -22,8 +12,18 @@
    "reason": null
   },
   {
-   "at": "2026-10-04T00:00:00Z",
-   "hash": "32620f9efa67b67655955e07137b58ee",
+   "at": "2026-10-05T00:00:00Z",
+   "hash": "0e833bdd39867ff6f8b802e7b2cdcac80b835009036ae617ef7efa73e814c746",
+   "agencyKey": "polk-county-fire-rescue",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-05T00:00:00Z",
+   "hash": "0ed8f119c392332c3cc89f7c41362f9941a74f719d4e5a3dabd08401b7d32a1a",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -32,8 +32,48 @@
    "reason": null
   },
   {
-   "at": "2026-10-04T00:00:00Z",
-   "hash": "687e1bc4c816a1d2bb6dd963f3e3cb4c3fcb86534eca22ea5e22e61782e50300",
+   "at": "2026-10-05T00:00:00Z",
+   "hash": "2a039baa6720d962da8bfee976473f7f",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-05T00:00:00Z",
+   "hash": "320bf3ea851278c2d97968a3167e37c3",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-05T00:00:00Z",
+   "hash": "33df8095ebd1a76f281e60f6e2479120d48afa9f6eb9d1d2a94710d086a921f0",
+   "agencyKey": "boulder-county-ems",
+   "change": "superseded",
+   "from": "current",
+   "to": "superseded",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-05T00:00:00Z",
+   "hash": "4bc9c28c3ea6ca47d24385b2347ec4cd",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-05T00:00:00Z",
+   "hash": "698feb593f8fca7472ed8a3c787d55c1691b907003c4a8662677c6c212ffba4f",
    "agencyKey": null,
    "change": "state_changed",
    "from": "listed_named",
@@ -42,9 +82,9 @@
    "reason": null
   },
   {
-   "at": "2026-10-04T00:00:00Z",
-   "hash": "abb159b2b9b3137df5c000f8e5513840",
-   "agencyKey": "coos-county-emergency-medical-services",
+   "at": "2026-10-05T00:00:00Z",
+   "hash": "6f88fef76a845cf0502c30e7d0f7bdbe7316a2c48cc0cb8e1e1b37015a341c29",
+   "agencyKey": "aurora-fire-rescue",
    "change": "added",
    "from": null,
    "to": "listed_named",
@@ -52,12 +92,82 @@
    "reason": null
   },
   {
-   "at": "2026-10-04T00:00:00Z",
-   "hash": "d2a5b7d06563853e36a1df47fd6cc3158204d9c5e5ee98823c24dbbc4cfdd455",
-   "agencyKey": "crowley-fire-department",
+   "at": "2026-10-05T00:00:00Z",
+   "hash": "7eabc5834111b3dd01fb48e1a1a1fe95208ba79f1558567987c27e36eb798a10",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-05T00:00:00Z",
+   "hash": "83542ea9e4c898bfe61b9dd87898a15e",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-05T00:00:00Z",
+   "hash": "899f5cd6b95f55983275cbc19854e02b",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-05T00:00:00Z",
+   "hash": "a262b2713cfd565230e6a45e825b8e27",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-05T00:00:00Z",
+   "hash": "c068b7beb5b148b54c4034d87a5d999ff4aa99f78324eaa783a7a914e98e4979",
+   "agencyKey": "sierra-sacramento-valley-ems-agency",
    "change": "superseded",
    "from": "current",
    "to": "superseded",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-05T00:00:00Z",
+   "hash": "d1cf45adc549e09124d5e291ecaa5663",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-05T00:00:00Z",
+   "hash": "e77eed3b0f058583c14c0921f5241cda",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-05T00:00:00Z",
+   "hash": "f2d865fbae5d3c021cdc97f724811707",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
    "by": "build",
    "reason": null
   }

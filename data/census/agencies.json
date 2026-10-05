@@ -140,7 +140,7 @@
    "currentHash": "0438f748ba35d1cc06ce0278a72b34950d15fbdbba38cb9cb79f4332ea816479",
    "currentEffectiveDate": "2025-07-01",
    "documentCount": 7,
-   "doseCount": 1128,
+   "doseCount": 1295,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -317,6 +317,27 @@
    }
   },
   {
+   "agencyKey": "aurora-fire-rescue",
+   "name": "Aurora Fire Rescue",
+   "aliases": [
+    "Aurora Fire Rescue"
+   ],
+   "state": "CO",
+   "country": "US",
+   "city": "Aurora",
+   "jurisdiction": "city",
+   "currentHash": "6f88fef76a845cf0502c30e7d0f7bdbe7316a2c48cc0cb8e1e1b37015a341c29",
+   "currentEffectiveDate": "2026-03-10",
+   "documentCount": 1,
+   "doseCount": 123,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "city"
+   }
+  },
+  {
    "agencyKey": "aurora-medical-center-bay-area-mca",
    "name": "Aurora Medical Center Bay Area MCA",
    "aliases": [
@@ -474,10 +495,10 @@
    "country": "US",
    "city": "Boulder",
    "jurisdiction": "county",
-   "currentHash": "33df8095ebd1a76f281e60f6e2479120d48afa9f6eb9d1d2a94710d086a921f0",
+   "currentHash": "01f0a90f413d9088b1e4448cf8fb89878c7cea429cb67b00729c5e9c16bdcbe0",
    "currentEffectiveDate": "2026-04-22",
-   "documentCount": 8,
-   "doseCount": 1217,
+   "documentCount": 9,
+   "doseCount": 1409,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -1177,7 +1198,7 @@
    "currentHash": "f9815db79cfecb3bcc159d5a65ee2bcbd8806c3b0ce4f98704b01dd9f7f2197c",
    "currentEffectiveDate": "2026-07-01",
    "documentCount": 20,
-   "doseCount": 2162,
+   "doseCount": 2197,
    "pendingReview": {
     "effectiveDate": "2025-01-01"
    },
@@ -2109,7 +2130,7 @@
    "currentHash": "a48cc71aaa02e417f66c1f3b25222f4826cd2e11b0e3c952670f6f45c2bab9b5",
    "currentEffectiveDate": "2026-09-01",
    "documentCount": 14,
-   "doseCount": 2455,
+   "doseCount": 2451,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -2301,9 +2322,9 @@
    "country": "US",
    "city": null,
    "jurisdiction": "statewide",
-   "currentHash": "698feb593f8fca7472ed8a3c787d55c1691b907003c4a8662677c6c212ffba4f",
-   "currentEffectiveDate": "2024-02-01",
-   "documentCount": 6,
+   "currentHash": "41a4c559d74448a3f4c1af2c57ad77129fef2f0d8b605bc38d6c5160892f81c9",
+   "currentEffectiveDate": "2023-06-27",
+   "documentCount": 5,
    "doseCount": 99,
    "pendingReview": null,
    "mayBeOutdated": true,
@@ -3289,6 +3310,27 @@
    }
   },
   {
+   "agencyKey": "polk-county-fire-rescue",
+   "name": "Polk County Fire Rescue",
+   "aliases": [
+    "Polk County Fire Rescue"
+   ],
+   "state": "FL",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "county",
+   "currentHash": "0e833bdd39867ff6f8b802e7b2cdcac80b835009036ae617ef7efa73e814c746",
+   "currentEffectiveDate": "2026-01-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
    "agencyKey": "portland-metro-five-county-emergency-medical-system",
    "name": "Portland Metro Five County Emergency Medical System",
    "aliases": [
@@ -3343,7 +3385,7 @@
    "currentHash": "2681b840570212fe17ac05ddf6ca5766870af38500ebcc3000330612f5a8df3c",
    "currentEffectiveDate": "2026-06-01",
    "documentCount": 2,
-   "doseCount": 260,
+   "doseCount": 517,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -3740,7 +3782,7 @@
   },
   {
    "agencyKey": "sierra-sacramento-valley-ems-agency",
-   "name": "Sierra – Sacramento Valley EMS Agency",
+   "name": "Sierra-Sacramento Valley EMS Agency",
    "aliases": [
     "Sierra - Sacramento Valley EMS Agency",
     "Sierra Sacramento Valley EMS Agency",
@@ -3751,10 +3793,10 @@
    "country": "US",
    "city": null,
    "jurisdiction": "regional",
-   "currentHash": "c068b7beb5b148b54c4034d87a5d999ff4aa99f78324eaa783a7a914e98e4979",
+   "currentHash": "d2bd4d9c86103cbadc50cbc2efca1229",
    "currentEffectiveDate": "2025-10-01",
    "documentCount": 4,
-   "doseCount": 214,
+   "doseCount": 310,
    "pendingReview": {
     "effectiveDate": null
    },
@@ -4453,7 +4495,7 @@
    "currentHash": "81d7d76ae4d7117f8226abb8018e3582782f4ff81b8f12d5955539debc73cf90",
    "currentEffectiveDate": "2026-04-01",
    "documentCount": 1,
-   "doseCount": 0,
+   "doseCount": 188,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
