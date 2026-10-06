@@ -2,28 +2,8 @@
  "schemaVersion": 3,
  "rows": [
   {
-   "at": "2026-10-05T00:00:00Z",
-   "hash": "01f0a90f413d9088b1e4448cf8fb89878c7cea429cb67b00729c5e9c16bdcbe0",
-   "agencyKey": "boulder-county-ems",
-   "change": "added",
-   "from": null,
-   "to": "listed_named",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-05T00:00:00Z",
-   "hash": "0e833bdd39867ff6f8b802e7b2cdcac80b835009036ae617ef7efa73e814c746",
-   "agencyKey": "polk-county-fire-rescue",
-   "change": "added",
-   "from": null,
-   "to": "listed_named",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-05T00:00:00Z",
-   "hash": "0ed8f119c392332c3cc89f7c41362f9941a74f719d4e5a3dabd08401b7d32a1a",
+   "at": "2026-10-06T00:00:00Z",
+   "hash": "0f515b92413e6b56319fcd06ccc08ef8",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -32,8 +12,8 @@
    "reason": null
   },
   {
-   "at": "2026-10-05T00:00:00Z",
-   "hash": "2a039baa6720d962da8bfee976473f7f",
+   "at": "2026-10-06T00:00:00Z",
+   "hash": "208250957ed171e89fc98d9389037e87",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -42,8 +22,8 @@
    "reason": null
   },
   {
-   "at": "2026-10-05T00:00:00Z",
-   "hash": "320bf3ea851278c2d97968a3167e37c3",
+   "at": "2026-10-06T00:00:00Z",
+   "hash": "44398fce8a96b15ad88ba4051b11d845",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -52,18 +32,8 @@
    "reason": null
   },
   {
-   "at": "2026-10-05T00:00:00Z",
-   "hash": "33df8095ebd1a76f281e60f6e2479120d48afa9f6eb9d1d2a94710d086a921f0",
-   "agencyKey": "boulder-county-ems",
-   "change": "superseded",
-   "from": "current",
-   "to": "superseded",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-05T00:00:00Z",
-   "hash": "4bc9c28c3ea6ca47d24385b2347ec4cd",
+   "at": "2026-10-06T00:00:00Z",
+   "hash": "62b241fb5cfe88d849466427f632f1c28e789a5b427be371660784de4c499bf0",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -72,28 +42,18 @@
    "reason": null
   },
   {
-   "at": "2026-10-05T00:00:00Z",
-   "hash": "698feb593f8fca7472ed8a3c787d55c1691b907003c4a8662677c6c212ffba4f",
+   "at": "2026-10-06T00:00:00Z",
+   "hash": "7453a02d8c638a12d6ccf0a089adcc4b894c232cbac2bbc38b4277ee873bda3e",
    "agencyKey": null,
-   "change": "state_changed",
-   "from": "listed_named",
+   "change": "added",
+   "from": null,
    "to": "excluded",
    "by": "build",
    "reason": null
   },
   {
-   "at": "2026-10-05T00:00:00Z",
-   "hash": "6f88fef76a845cf0502c30e7d0f7bdbe7316a2c48cc0cb8e1e1b37015a341c29",
-   "agencyKey": "aurora-fire-rescue",
-   "change": "added",
-   "from": null,
-   "to": "listed_named",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-05T00:00:00Z",
-   "hash": "7eabc5834111b3dd01fb48e1a1a1fe95208ba79f1558567987c27e36eb798a10",
+   "at": "2026-10-06T00:00:00Z",
+   "hash": "84888f38985334fe5293f7f24fb3dfcf",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -102,8 +62,18 @@
    "reason": null
   },
   {
-   "at": "2026-10-05T00:00:00Z",
-   "hash": "83542ea9e4c898bfe61b9dd87898a15e",
+   "at": "2026-10-06T00:00:00Z",
+   "hash": "9502ee6551860938bf894f3cc959734d",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "excluded",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-06T00:00:00Z",
+   "hash": "c912c1f35e709243494610a421e084249b01d4cf4e2874ec735cd9e4ff4702a3",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -112,8 +82,8 @@
    "reason": null
   },
   {
-   "at": "2026-10-05T00:00:00Z",
-   "hash": "899f5cd6b95f55983275cbc19854e02b",
+   "at": "2026-10-06T00:00:00Z",
+   "hash": "e6b5ef5d9a91f6b7457301da0016d01e",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -122,48 +92,8 @@
    "reason": null
   },
   {
-   "at": "2026-10-05T00:00:00Z",
-   "hash": "a262b2713cfd565230e6a45e825b8e27",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "pending_review",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-05T00:00:00Z",
-   "hash": "c068b7beb5b148b54c4034d87a5d999ff4aa99f78324eaa783a7a914e98e4979",
-   "agencyKey": "sierra-sacramento-valley-ems-agency",
-   "change": "superseded",
-   "from": "current",
-   "to": "superseded",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-05T00:00:00Z",
-   "hash": "d1cf45adc549e09124d5e291ecaa5663",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "pending_review",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-05T00:00:00Z",
-   "hash": "e77eed3b0f058583c14c0921f5241cda",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "pending_review",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-05T00:00:00Z",
-   "hash": "f2d865fbae5d3c021cdc97f724811707",
+   "at": "2026-10-06T00:00:00Z",
+   "hash": "fb6182e48b71323d4765867dcacbb2dbab35aa825578978bdbc7cae768f5afb6",
    "agencyKey": null,
    "change": "added",
    "from": null,
