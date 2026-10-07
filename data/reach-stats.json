@@ -1,24 +1,24 @@
 {
-  "generatedAt": "2026-10-06T18:08:42.957Z",
-  "totalUploads": 695,
-  "distinctProtocols": 453,
-  "activeStudiers": 479,
-  "pagesProcessed": 108424,
+  "generatedAt": "2026-10-07T18:07:29.122Z",
+  "totalUploads": 700,
+  "distinctProtocols": 458,
+  "activeStudiers": 484,
+  "pagesProcessed": 109021,
   "statesRepresented": 43,
   "countriesRepresented": 5,
   "internationalUploads": 13,
   "byState": {
-    "CO": 84,
+    "CO": 85,
     "MI": 49,
-    "CA": 47,
+    "CA": 49,
     "MA": 30,
     "PA": 29,
     "TX": 27,
     "NY": 25,
     "GA": 25,
     "VA": 19,
+    "OR": 19,
     "CT": 18,
-    "OR": 18,
     "NC": 17,
     "NV": 13,
     "WA": 12,
@@ -193,6 +193,28 @@
       ]
     },
     {
+      "state": "CA",
+      "city": "Los Angeles",
+      "x": 80,
+      "y": 345,
+      "count": 18,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "1075386 LACountyTreatmentProtocols",
+          "count": 2
+        },
+        {
+          "title": "Field Manual 79",
+          "count": 2
+        },
+        {
+          "title": "PCM 2025 for posting",
+          "count": 2
+        }
+      ]
+    },
+    {
       "state": "CT",
       "city": "Hartford",
       "x": 858,
@@ -211,28 +233,6 @@
         {
           "title": "v20251 ctemsstatewideprotocolsfinal",
           "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CA",
-      "city": "Los Angeles",
-      "x": 80,
-      "y": 345,
-      "count": 16,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "1075386 LACountyTreatmentProtocols",
-          "count": 2
-        },
-        {
-          "title": "Field Manual 79",
-          "count": 2
-        },
-        {
-          "title": "PCM 2025 for posting",
-          "count": 2
         }
       ]
     },
@@ -263,7 +263,7 @@
       "city": "Portland",
       "x": 73,
       "y": 80,
-      "count": 13,
+      "count": 14,
       "tier": "warm",
       "topProtocols": [
         {
@@ -427,6 +427,28 @@
       ]
     },
     {
+      "state": "CO",
+      "city": "Boulder",
+      "x": 326,
+      "y": 252,
+      "count": 7,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "BoCo Protocols Apr 2026",
+          "count": 2
+        },
+        {
+          "title": "BoCo Protocols Oct 2025",
+          "count": 1
+        },
+        {
+          "title": "BoCo Protocols Apr 2026",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "WA",
       "city": "Seattle",
       "x": 91,
@@ -481,28 +503,6 @@
         {
           "title": "2026 2027 Protocol Packet",
           "count": 6
-        }
-      ]
-    },
-    {
-      "state": "CO",
-      "city": "Boulder",
-      "x": 326,
-      "y": 252,
-      "count": 6,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "BoCo Protocols Apr 2026",
-          "count": 2
-        },
-        {
-          "title": "BoCo Protocols Oct 2025",
-          "count": 1
-        },
-        {
-          "title": "BoCo Protocols Apr 2026",
-          "count": 1
         }
       ]
     },
