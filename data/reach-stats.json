@@ -1,29 +1,29 @@
 {
-  "generatedAt": "2026-10-07T18:07:29.122Z",
-  "totalUploads": 700,
-  "distinctProtocols": 458,
-  "activeStudiers": 484,
-  "pagesProcessed": 109021,
+  "generatedAt": "2026-10-08T18:07:29.970Z",
+  "totalUploads": 709,
+  "distinctProtocols": 463,
+  "activeStudiers": 493,
+  "pagesProcessed": 109892,
   "statesRepresented": 43,
   "countriesRepresented": 5,
   "internationalUploads": 13,
   "byState": {
-    "CO": 85,
+    "CO": 87,
+    "CA": 50,
     "MI": 49,
-    "CA": 49,
     "MA": 30,
     "PA": 29,
     "TX": 27,
-    "NY": 25,
+    "NY": 26,
     "GA": 25,
     "VA": 19,
     "OR": 19,
     "CT": 18,
     "NC": 17,
+    "WA": 14,
     "NV": 13,
-    "WA": 12,
+    "IL": 11,
     "FL": 10,
-    "IL": 10,
     "WY": 10,
     "NM": 10,
     "MD": 9,
@@ -38,12 +38,12 @@
     "KY": 4,
     "NE": 4,
     "ID": 4,
+    "WV": 4,
     "OK": 3,
     "MO": 3,
     "DE": 3,
     "OH": 3,
     "DC": 3,
-    "WV": 3,
     "MN": 2,
     "VT": 2,
     "AR": 2,
@@ -65,12 +65,12 @@
       "city": "Denver",
       "x": 330,
       "y": 258,
-      "count": 76,
+      "count": 78,
       "tier": "hot",
       "topProtocols": [
         {
           "title": "DMEMS Protocols January 2026 (Example)",
-          "count": 34
+          "count": 36
         },
         {
           "title": "DMEMSMD Protocols January 2026 FINAL 2025 02 02",
@@ -153,7 +153,7 @@
       "city": "New York",
       "x": 843,
       "y": 202,
-      "count": 25,
+      "count": 26,
       "tier": "warm",
       "topProtocols": [
         {
@@ -325,6 +325,28 @@
       ]
     },
     {
+      "state": "CA",
+      "city": "San Leandro",
+      "x": 34,
+      "y": 249,
+      "count": 11,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "2026 Alameda County EMS Field Manual Rev3",
+          "count": 7
+        },
+        {
+          "title": "alco fm 2025 draft 07 31 2024",
+          "count": 1
+        },
+        {
+          "title": "Alco Field Manual",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "WY",
       "city": "Jackson",
       "x": 246,
@@ -342,28 +364,6 @@
         },
         {
           "title": "17 17 Dextrose",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CA",
-      "city": "San Leandro",
-      "x": 34,
-      "y": 249,
-      "count": 10,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "2026 Alameda County EMS Field Manual Rev3",
-          "count": 7
-        },
-        {
-          "title": "alco fm 2025 draft 07 31 2024",
-          "count": 1
-        },
-        {
-          "title": "Alco Field Manual",
           "count": 1
         }
       ]
@@ -427,33 +427,11 @@
       ]
     },
     {
-      "state": "CO",
-      "city": "Boulder",
-      "x": 326,
-      "y": 252,
-      "count": 7,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "BoCo Protocols Apr 2026",
-          "count": 2
-        },
-        {
-          "title": "BoCo Protocols Oct 2025",
-          "count": 1
-        },
-        {
-          "title": "BoCo Protocols Apr 2026",
-          "count": 1
-        }
-      ]
-    },
-    {
       "state": "WA",
       "city": "Seattle",
       "x": 91,
       "y": 38,
-      "count": 6,
+      "count": 8,
       "tier": "warm",
       "topProtocols": [
         {
@@ -475,7 +453,7 @@
       "city": "Chicago",
       "x": 617,
       "y": 212,
-      "count": 6,
+      "count": 7,
       "tier": "warm",
       "topProtocols": [
         {
@@ -488,6 +466,28 @@
         },
         {
           "title": "short.bls",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "CO",
+      "city": "Boulder",
+      "x": 326,
+      "y": 252,
+      "count": 7,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "BoCo Protocols Apr 2026",
+          "count": 2
+        },
+        {
+          "title": "BoCo Protocols Oct 2025",
+          "count": 1
+        },
+        {
+          "title": "BoCo Protocols Apr 2026",
           "count": 1
         }
       ]
@@ -670,6 +670,24 @@
         },
         {
           "title": "ADA COUNTY Boise",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "WV",
+      "city": "Charleston",
+      "x": 726,
+      "y": 278,
+      "count": 4,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "2026 Protocol Booklet Final April 2026 INTERACTIVE",
+          "count": 3
+        },
+        {
+          "title": "WV Protocols 2025",
           "count": 1
         }
       ]
@@ -874,24 +892,6 @@
         },
         {
           "title": "PP 8001 Allergic Reaction Anaphylaxis 1",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "WV",
-      "city": "Charleston",
-      "x": 726,
-      "y": 278,
-      "count": 3,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "2026 Protocol Booklet Final April 2026 INTERACTIVE",
-          "count": 2
-        },
-        {
-          "title": "WV Protocols 2025",
           "count": 1
         }
       ]
