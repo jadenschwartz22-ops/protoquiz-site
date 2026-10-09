@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-08T18:07:29.970Z",
-  "totalUploads": 709,
-  "distinctProtocols": 463,
-  "activeStudiers": 493,
-  "pagesProcessed": 109892,
+  "generatedAt": "2026-10-09T18:08:43.460Z",
+  "totalUploads": 714,
+  "distinctProtocols": 466,
+  "activeStudiers": 496,
+  "pagesProcessed": 111111,
   "statesRepresented": 43,
   "countriesRepresented": 5,
   "internationalUploads": 13,
   "byState": {
     "CO": 87,
-    "CA": 50,
+    "CA": 53,
     "MI": 49,
     "MA": 30,
     "PA": 29,
@@ -22,8 +22,8 @@
     "NC": 17,
     "WA": 14,
     "NV": 13,
+    "FL": 11,
     "IL": 11,
-    "FL": 10,
     "WY": 10,
     "NM": 10,
     "MD": 9,
@@ -303,6 +303,28 @@
       ]
     },
     {
+      "state": "CA",
+      "city": "San Leandro",
+      "x": 34,
+      "y": 249,
+      "count": 12,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "2026 Alameda County EMS Field Manual Rev3",
+          "count": 7
+        },
+        {
+          "title": "Alco Field Manual",
+          "count": 2
+        },
+        {
+          "title": "alco fm 2025 draft 07 31 2024",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "TX",
       "city": "Houston",
       "x": 493,
@@ -320,28 +342,6 @@
         },
         {
           "title": "UTHETEMS Protocols",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CA",
-      "city": "San Leandro",
-      "x": 34,
-      "y": 249,
-      "count": 11,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "2026 Alameda County EMS Field Manual Rev3",
-          "count": 7
-        },
-        {
-          "title": "alco fm 2025 draft 07 31 2024",
-          "count": 1
-        },
-        {
-          "title": "Alco Field Manual",
           "count": 1
         }
       ]
@@ -591,6 +591,28 @@
       ]
     },
     {
+      "state": "CA",
+      "city": "Riverside",
+      "x": 95,
+      "y": 350,
+      "count": 5,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "104 Ready to Print Policy Manual 4000 Series",
+          "count": 2
+        },
+        {
+          "title": "rivcoready.org protocols (2 PDFs)",
+          "count": 1
+        },
+        {
+          "title": "4105 ALS Drug Index",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "LA",
       "city": "New Orleans",
       "x": 594,
@@ -608,6 +630,28 @@
         },
         {
           "title": "Acadian 2026 Protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "FL",
+      "city": "Miami",
+      "x": 797,
+      "y": 548,
+      "count": 4,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "volusiacountyprotocolpdf cf1c8cb1f3a6cbebb4f3e",
+          "count": 1
+        },
+        {
+          "title": "LAKE COUNTY MARCH 2022 PROTOCOLS",
+          "count": 1
+        },
+        {
+          "title": "msop",
           "count": 1
         }
       ]
@@ -688,28 +732,6 @@
         },
         {
           "title": "WV Protocols 2025",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "FL",
-      "city": "Miami",
-      "x": 797,
-      "y": 548,
-      "count": 3,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "volusiacountyprotocolpdf cf1c8cb1f3a6cbebb4f3e",
-          "count": 1
-        },
-        {
-          "title": "LAKE COUNTY MARCH 2022 PROTOCOLS",
-          "count": 1
-        },
-        {
-          "title": "msop",
           "count": 1
         }
       ]
@@ -826,28 +848,6 @@
         },
         {
           "title": "Aurora South WI EMS 2026 Pre Hospital Guidelines 4.1.26",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CA",
-      "city": "Riverside",
-      "x": 95,
-      "y": 350,
-      "count": 3,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "104 Ready to Print Policy Manual 4000 Series",
-          "count": 1
-        },
-        {
-          "title": "rivcoready.org protocols (2 PDFs)",
-          "count": 1
-        },
-        {
-          "title": "4105 ALS Drug Index",
           "count": 1
         }
       ]
