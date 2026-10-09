@@ -160,8 +160,8 @@
    "jurisdiction": "county",
    "currentHash": "b9e114f9c942a13ca59e32b3f274aad84dd3dc2b13edaf325b2fedcee824c636",
    "currentEffectiveDate": "2026-01-01",
-   "documentCount": 8,
-   "doseCount": 735,
+   "documentCount": 9,
+   "doseCount": 824,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -224,7 +224,7 @@
    "currentHash": "74a9bc797e880f9dcba8c52129461bb9",
    "currentEffectiveDate": "2025-09-22",
    "documentCount": 2,
-   "doseCount": 133,
+   "doseCount": 232,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -1222,7 +1222,7 @@
    "currentHash": "3a3ab041e79beac3d2d47e5cd0cf6db849ecc3df3c03caa184494c55dade0a88",
    "currentEffectiveDate": "2025-07-01",
    "documentCount": 16,
-   "doseCount": 516,
+   "doseCount": 518,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -1770,7 +1770,7 @@
    "currentHash": "cba0ff35bd678580a446d167893a3b261b9412edd2061fd15acbb6fd14f0f8b1",
    "currentEffectiveDate": "2026-01-01",
    "documentCount": 4,
-   "doseCount": 215,
+   "doseCount": 317,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -2640,7 +2640,7 @@
    "currentHash": "30aa0997f4216f8b7cfe47ade46da6d71cf884162babad2c02e0c4f3886e3ef2",
    "currentEffectiveDate": "2024-05-01",
    "documentCount": 5,
-   "doseCount": 817,
+   "doseCount": 1010,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -3001,10 +3001,10 @@
    "country": "US",
    "city": null,
    "jurisdiction": "statewide",
-   "currentHash": "517f6ea19a1c69ce0d04a4f60bbbcf156096e0f4b0d832454d72d5f3718a865e",
+   "currentHash": "fbe79e3a7e40d48bc9682ce5f42b315e3bace83148157e069d864b17d7488959",
    "currentEffectiveDate": "2018-01-01",
    "documentCount": 3,
-   "doseCount": 398,
+   "doseCount": 613,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -3386,7 +3386,9 @@
    "currentEffectiveDate": "2025-03-06",
    "documentCount": 5,
    "doseCount": 186,
-   "pendingReview": null,
+   "pendingReview": {
+    "effectiveDate": null
+   },
    "mayBeOutdated": false,
    "coverage": {
     "hasProtocol": true,
@@ -3492,8 +3494,8 @@
    "jurisdiction": "regional",
    "currentHash": "f8cb8f814b35696b7e00b06d1a06306e624adb0036614345c57eb59871ac588e",
    "currentEffectiveDate": "2026-08-01",
-   "documentCount": 5,
-   "doseCount": 537,
+   "documentCount": 6,
+   "doseCount": 809,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -3535,7 +3537,7 @@
    "currentHash": "b59cce67fb7057a27060e3b8aedeff0f7389571139c30abce65e79e3d996daae",
    "currentEffectiveDate": "2026-06-01",
    "documentCount": 4,
-   "doseCount": 916,
+   "doseCount": 919,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
