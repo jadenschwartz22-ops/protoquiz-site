@@ -1,0 +1,18 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["P3FW392Z96.com.protoquiz.agency"],
+        "components": [
+          { "/": "/join", "comment": "the invite: sets the org, opens PROTOCOL" },
+          { "/": "/daily-quiz", "comment": "shift / daily quiz emails" },
+          { "/": "/", "?": { "assignment": "?*" }, "comment": "assignment emails" },
+          { "/": "/assignments" },
+          { "/": "/profile", "comment": "baseline retake and CE record emails" },
+          { "/": "/pdf-viewer.html", "comment": "a protocol page" },
+          { "/": "/pdf-viewer" }
+        ]
+      }
+    ]
+  }
+}
