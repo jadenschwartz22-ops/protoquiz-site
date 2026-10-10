@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-09T18:08:43.460Z",
-  "totalUploads": 714,
+  "generatedAt": "2026-10-10T18:07:33.141Z",
+  "totalUploads": 716,
   "distinctProtocols": 466,
-  "activeStudiers": 496,
-  "pagesProcessed": 111111,
+  "activeStudiers": 498,
+  "pagesProcessed": 111578,
   "statesRepresented": 43,
   "countriesRepresented": 5,
   "internationalUploads": 13,
@@ -17,11 +17,11 @@
     "NY": 26,
     "GA": 25,
     "VA": 19,
+    "CT": 19,
     "OR": 19,
-    "CT": 18,
     "NC": 17,
     "WA": 14,
-    "NV": 13,
+    "NV": 14,
     "FL": 11,
     "IL": 11,
     "WY": 10,
@@ -193,6 +193,28 @@
       ]
     },
     {
+      "state": "CT",
+      "city": "Hartford",
+      "x": 858,
+      "y": 174,
+      "count": 19,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "v2025 2 ctemsstatewideprotocolsFINALver1",
+          "count": 11
+        },
+        {
+          "title": "v2025 2 ctemsstatewideprotocolsfinalver1",
+          "count": 5
+        },
+        {
+          "title": "v20251 ctemsstatewideprotocolsfinal",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "CA",
       "city": "Los Angeles",
       "x": 80,
@@ -211,28 +233,6 @@
         {
           "title": "PCM 2025 for posting",
           "count": 2
-        }
-      ]
-    },
-    {
-      "state": "CT",
-      "city": "Hartford",
-      "x": 858,
-      "y": 174,
-      "count": 18,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "v2025 2 ctemsstatewideprotocolsFINALver1",
-          "count": 10
-        },
-        {
-          "title": "v2025 2 ctemsstatewideprotocolsfinalver1",
-          "count": 5
-        },
-        {
-          "title": "v20251 ctemsstatewideprotocolsfinal",
-          "count": 1
         }
       ]
     },
@@ -285,12 +285,12 @@
       "city": "Las Vegas",
       "x": 145,
       "y": 311,
-      "count": 12,
+      "count": 13,
       "tier": "warm",
       "topProtocols": [
         {
           "title": "ems protocol manual",
-          "count": 10
+          "count": 11
         },
         {
           "title": "2026 EMS Protocol Manual",
