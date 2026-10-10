@@ -2,49 +2,9 @@
  "schemaVersion": 3,
  "rows": [
   {
-   "at": "2026-10-09T00:00:00Z",
-   "hash": "03a36aa823a288bac0618d92e1f14e31",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "pending_review",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-09T00:00:00Z",
-   "hash": "07aab039a9229a351faf576d4b5fa503",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "pending_review",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-09T00:00:00Z",
-   "hash": "12b83e28f0e6c2fa022d75af313f9700",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "pending_review",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-09T00:00:00Z",
-   "hash": "159d64a82e9ffb02d514aa4454bc8d9db8c0071c8bcf0e00da9c16a15cf14211",
-   "agencyKey": "alameda-county-emergency-medical-services",
-   "change": "added",
-   "from": null,
-   "to": "listed_named",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-09T00:00:00Z",
-   "hash": "517f6ea19a1c69ce0d04a4f60bbbcf156096e0f4b0d832454d72d5f3718a865e",
-   "agencyKey": "oklahoma-state-department-of-health",
+   "at": "2026-10-10T00:00:00Z",
+   "hash": "01082b257761a0720e63d91878f8a02c384698b19ac5a0a3b624ebb5871e42d5",
+   "agencyKey": "ada-county-city-emergency-services-system",
    "change": "superseded",
    "from": "current",
    "to": "superseded",
@@ -52,8 +12,8 @@
    "reason": null
   },
   {
-   "at": "2026-10-09T00:00:00Z",
-   "hash": "5d1f19ae79f9f65092024d1cb39701ff",
+   "at": "2026-10-10T00:00:00Z",
+   "hash": "06bb46ac6fd6a425da4a52165c9b950c75908b47e20c1b3a9c72a471852af10e",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -62,8 +22,8 @@
    "reason": null
   },
   {
-   "at": "2026-10-09T00:00:00Z",
-   "hash": "6e2c5fc35bd8cbedff35e040cc3bb521",
+   "at": "2026-10-10T00:00:00Z",
+   "hash": "221a0a8f0d56126105c6ffd88cf9f401",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -72,29 +32,9 @@
    "reason": null
   },
   {
-   "at": "2026-10-09T00:00:00Z",
-   "hash": "85358a3864dc29f783ecd85a10f67519",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "pending_review",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-09T00:00:00Z",
-   "hash": "8a491be79a12b2cce55a5296b0f2d3bbf853e8bc5d5730292526a03c76d77419",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "pending_review",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-09T00:00:00Z",
-   "hash": "9f9ff2202a40e4dac386867141e39f15c7e99aba7475029256af407a764ac9d7",
-   "agencyKey": "regional-emergency-medical-advisory-committee-of-new-york-city",
+   "at": "2026-10-10T00:00:00Z",
+   "hash": "247422221e093b0a66e5adcf4b204df138eacdc3362f7cdb40808a977559a4b5",
+   "agencyKey": "riverside-county-ems-agency",
    "change": "added",
    "from": null,
    "to": "listed_named",
@@ -102,12 +42,132 @@
    "reason": null
   },
   {
-   "at": "2026-10-09T00:00:00Z",
-   "hash": "e4b79f92c5587cc41aeb6dadca6b71af",
+   "at": "2026-10-10T00:00:00Z",
+   "hash": "2de12f7066d3cb4cc64bb4a47b31f6e8",
    "agencyKey": null,
    "change": "added",
    "from": null,
    "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-10T00:00:00Z",
+   "hash": "3db372f18726283eaaff8b1843de2d5da146ce5658153a593385db4e8391dc9e",
+   "agencyKey": "riverside-county-ems-agency",
+   "change": "superseded",
+   "from": "current",
+   "to": "superseded",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-10T00:00:00Z",
+   "hash": "42cf330476be5bd21476c72f7a54f51b",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-10T00:00:00Z",
+   "hash": "92b71d7eac1850f5b756c429db01ac7c",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-10T00:00:00Z",
+   "hash": "98687b90be6f8cb180d49cc8d3740d6b",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-10T00:00:00Z",
+   "hash": "b23079a23e5df1c8ec89561fa318435422c35f1650e6d529d92b52799a86af0f",
+   "agencyKey": null,
+   "change": "state_changed",
+   "from": "listed_named",
+   "to": "excluded",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-10T00:00:00Z",
+   "hash": "b3514320778bead3e7f934c94927c54c4cb3c82ae7843dc92ec02f8c10578072",
+   "agencyKey": "pinellas-county-ems",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-10T00:00:00Z",
+   "hash": "b794f5fb6a491600a2c2e49d904aea956c0b807b5e952aa419bedcf572a722d4",
+   "agencyKey": "county-of-riverside-ems-agency",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-10T00:00:00Z",
+   "hash": "c289dc850c05cf3775c82ebdfa06e530",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-10T00:00:00Z",
+   "hash": "dbc7e80609a5cf45e39ef665b859b795",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-10T00:00:00Z",
+   "hash": "e1ed922172eb1166ff661c89f20f0903",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-10T00:00:00Z",
+   "hash": "ea76fd9d5571951db1a2d1864b1b3628",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-10T00:00:00Z",
+   "hash": "fdd90e4d231722d9c9e5f21dafe3464e7a98befcbe9d622aa2a59280c07e170c",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "excluded",
    "by": "build",
    "reason": null
   }

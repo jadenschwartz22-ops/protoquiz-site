@@ -11,10 +11,10 @@
    "country": "US",
    "city": "Boise",
    "jurisdiction": "county",
-   "currentHash": "01082b257761a0720e63d91878f8a02c384698b19ac5a0a3b624ebb5871e42d5",
+   "currentHash": "72bca9a994c3b1d1cfcb3deae96b71ea",
    "currentEffectiveDate": "2026-02-01",
    "documentCount": 4,
-   "doseCount": 762,
+   "doseCount": 1032,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -837,7 +837,7 @@
    "currentHash": "1c97c6cf14c197f4c6ab8e8ee61cd0d5b9b41f3e1e5e10c874a415799a47122a",
    "currentEffectiveDate": "2026-07-01",
    "documentCount": 9,
-   "doseCount": 1345,
+   "doseCount": 1348,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -968,6 +968,27 @@
    "currentEffectiveDate": "2026-04-01",
    "documentCount": 2,
    "doseCount": 159,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "county-of-riverside-ems-agency",
+   "name": "County of Riverside EMS Agency",
+   "aliases": [
+    "County of Riverside EMS Agency"
+   ],
+   "state": "CA",
+   "country": "US",
+   "city": "Riverside",
+   "jurisdiction": "county",
+   "currentHash": "b794f5fb6a491600a2c2e49d904aea956c0b807b5e952aa419bedcf572a722d4",
+   "currentEffectiveDate": "2026-07-01",
+   "documentCount": 1,
+   "doseCount": 171,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -1156,7 +1177,7 @@
    "currentHash": "8ed65a1ad1a5f48fc93c3327243d64a0eb9608970d3f42ecbb1161113f7e597a",
    "currentEffectiveDate": "2024-11-01",
    "documentCount": 4,
-   "doseCount": 262,
+   "doseCount": 281,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -1198,7 +1219,7 @@
    "currentHash": "f9815db79cfecb3bcc159d5a65ee2bcbd8806c3b0ce4f98704b01dd9f7f2197c",
    "currentEffectiveDate": "2026-07-01",
    "documentCount": 20,
-   "doseCount": 2197,
+   "doseCount": 2241,
    "pendingReview": {
     "effectiveDate": "2025-01-01"
    },
@@ -1991,27 +2012,6 @@
    }
   },
   {
-   "agencyKey": "louisiana-department-of-health-bureau-of-emergency-medical-services",
-   "name": "Louisiana Department of Health, Bureau of Emergency Medical Services",
-   "aliases": [
-    "Louisiana Department of Health, Bureau of Emergency Medical Services"
-   ],
-   "state": "LA",
-   "country": "US",
-   "city": null,
-   "jurisdiction": "statewide",
-   "currentHash": "b23079a23e5df1c8ec89561fa318435422c35f1650e6d529d92b52799a86af0f",
-   "currentEffectiveDate": "2024-10-31",
-   "documentCount": 1,
-   "doseCount": 0,
-   "pendingReview": null,
-   "mayBeOutdated": false,
-   "coverage": {
-    "hasProtocol": false,
-    "jurisdiction": "statewide"
-   }
-  },
-  {
    "agencyKey": "lyon-county-city-of-emporia-emergency-medical-services",
    "name": "Lyon County / City of Emporia Emergency Medical Services",
    "aliases": [
@@ -2024,7 +2024,7 @@
    "currentHash": "4aa390b1ae591b87e2f58e25a5ad077a029e4249fc142870a510c61295bf73e6",
    "currentEffectiveDate": "2018-04-20",
    "documentCount": 2,
-   "doseCount": 2,
+   "doseCount": 4,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -3267,6 +3267,27 @@
    }
   },
   {
+   "agencyKey": "pinellas-county-ems",
+   "name": "Pinellas County EMS",
+   "aliases": [
+    "Pinellas County EMS"
+   ],
+   "state": "FL",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "county",
+   "currentHash": "b3514320778bead3e7f934c94927c54c4cb3c82ae7843dc92ec02f8c10578072",
+   "currentEffectiveDate": "2026-01-06",
+   "documentCount": 1,
+   "doseCount": 94,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
    "agencyKey": "platte-valley-ambulance-service",
    "name": "Platte Valley Ambulance Service",
    "aliases": [
@@ -3578,12 +3599,12 @@
    ],
    "state": "CA",
    "country": "US",
-   "city": null,
+   "city": "Riverside",
    "jurisdiction": "county",
-   "currentHash": "3db372f18726283eaaff8b1843de2d5da146ce5658153a593385db4e8391dc9e",
+   "currentHash": "247422221e093b0a66e5adcf4b204df138eacdc3362f7cdb40808a977559a4b5",
    "currentEffectiveDate": "2026-07-01",
-   "documentCount": 5,
-   "doseCount": 750,
+   "documentCount": 6,
+   "doseCount": 914,
    "pendingReview": {
     "effectiveDate": null
    },
@@ -4371,7 +4392,7 @@
    "currentHash": "7a71bfa1d351a1091a331de351b087597e03cece2c442a29ca6962bcc57533a2",
    "currentEffectiveDate": "2021-09-30",
    "documentCount": 1,
-   "doseCount": 0,
+   "doseCount": 164,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
