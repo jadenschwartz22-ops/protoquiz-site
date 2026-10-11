@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2026-10-10T18:07:33.141Z",
-  "totalUploads": 716,
-  "distinctProtocols": 466,
-  "activeStudiers": 498,
-  "pagesProcessed": 111578,
+  "generatedAt": "2026-10-11T18:08:44.642Z",
+  "totalUploads": 723,
+  "distinctProtocols": 470,
+  "activeStudiers": 502,
+  "pagesProcessed": 113197,
   "statesRepresented": 43,
   "countriesRepresented": 5,
   "internationalUploads": 13,
   "byState": {
-    "CO": 87,
+    "CO": 89,
     "CA": 53,
     "MI": 49,
+    "NY": 30,
     "MA": 30,
     "PA": 29,
     "TX": 27,
-    "NY": 26,
     "GA": 25,
     "VA": 19,
     "CT": 19,
@@ -25,8 +25,8 @@
     "FL": 11,
     "IL": 11,
     "WY": 10,
+    "MD": 10,
     "NM": 10,
-    "MD": 9,
     "AZ": 8,
     "TN": 6,
     "IN": 6,
@@ -65,7 +65,7 @@
       "city": "Denver",
       "x": 330,
       "y": 258,
-      "count": 78,
+      "count": 80,
       "tier": "hot",
       "topProtocols": [
         {
@@ -101,6 +101,28 @@
         {
           "title": "1.5 Shock",
           "count": 1
+        }
+      ]
+    },
+    {
+      "state": "NY",
+      "city": "New York",
+      "x": 843,
+      "y": 202,
+      "count": 30,
+      "tier": "hot",
+      "topProtocols": [
+        {
+          "title": "ny collaborative protocols",
+          "count": 5
+        },
+        {
+          "title": "bls protocols V.26.0",
+          "count": 4
+        },
+        {
+          "title": "ny collaborative protocols",
+          "count": 3
         }
       ]
     },
@@ -144,28 +166,6 @@
         },
         {
           "title": "2023v1 2 pa bls protocols",
-          "count": 3
-        }
-      ]
-    },
-    {
-      "state": "NY",
-      "city": "New York",
-      "x": 843,
-      "y": 202,
-      "count": 26,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "ny collaborative protocols",
-          "count": 5
-        },
-        {
-          "title": "bls protocols V.26.0",
-          "count": 4
-        },
-        {
-          "title": "ny collaborative protocols",
           "count": 3
         }
       ]
@@ -369,6 +369,28 @@
       ]
     },
     {
+      "state": "MD",
+      "city": "Baltimore",
+      "x": 807,
+      "y": 242,
+      "count": 10,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "MD Medical Protocols 2026 Print",
+          "count": 3
+        },
+        {
+          "title": "MD Protocols 2026",
+          "count": 2
+        },
+        {
+          "title": "MD Medical Protocols 2026 Hyperlinked",
+          "count": 2
+        }
+      ]
+    },
+    {
       "state": "NM",
       "city": "Roswell",
       "x": 325,
@@ -379,28 +401,6 @@
         {
           "title": "beb995af bff0 4e74 886c 9f95054bff73 copy",
           "count": 10
-        }
-      ]
-    },
-    {
-      "state": "MD",
-      "city": "Baltimore",
-      "x": 807,
-      "y": 242,
-      "count": 9,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "MD Protocols 2026",
-          "count": 2
-        },
-        {
-          "title": "MD Medical Protocols 2026 Hyperlinked",
-          "count": 2
-        },
-        {
-          "title": "MD Medical Protocols 2026 Print",
-          "count": 2
         }
       ]
     },
