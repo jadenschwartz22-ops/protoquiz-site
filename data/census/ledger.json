@@ -2,9 +2,29 @@
  "schemaVersion": 3,
  "rows": [
   {
-   "at": "2026-10-11T00:00:00Z",
-   "hash": "1489fe126d6845d2b0703092e54d33b9f85a7c6a34e04abbbdaefa4a696ce849",
-   "agencyKey": "new-york-state-department-of-health-bureau-of-emergency-medical-services-and-trauma-systems",
+   "at": "2026-10-12T00:00:00Z",
+   "hash": "01f0a90f413d9088b1e4448cf8fb89878c7cea429cb67b00729c5e9c16bdcbe0",
+   "agencyKey": "boulder-county-ems",
+   "change": "superseded",
+   "from": "current",
+   "to": "superseded",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-12T00:00:00Z",
+   "hash": "174bc531d4e41490548af54cfb6f974e",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-12T00:00:00Z",
+   "hash": "9366af52cb18dc94d798c3fa20f6e15a7fad0ab6b0eb46932582b90e0dd7d587",
+   "agencyKey": "academy-of-medicine-of-cincinnati",
    "change": "added",
    "from": null,
    "to": "listed_named",
@@ -12,8 +32,8 @@
    "reason": null
   },
   {
-   "at": "2026-10-11T00:00:00Z",
-   "hash": "400a9d340129ebfc0914b02b38742bb2",
+   "at": "2026-10-12T00:00:00Z",
+   "hash": "97efeaf2a96d2d3c60fc2bd7ddfb2687",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -22,28 +42,8 @@
    "reason": null
   },
   {
-   "at": "2026-10-11T00:00:00Z",
-   "hash": "4030e2e9b0a7ddcef021b659eee8d849",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "pending_review",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-11T00:00:00Z",
-   "hash": "7054ae9e3dee6f2829be718e5b300bc10530a6f914589e23371fd67940c6fb3e",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "excluded",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-11T00:00:00Z",
-   "hash": "7a6af9b2c6a1846c985158b284fae08dc3ea58fe53f5d26ab6d62fb3183b0e50",
+   "at": "2026-10-12T00:00:00Z",
+   "hash": "985216bf289e347b4e0841854fe48d49",
    "agencyKey": null,
    "change": "state_changed",
    "from": "pending_review",
@@ -52,8 +52,8 @@
    "reason": null
   },
   {
-   "at": "2026-10-11T00:00:00Z",
-   "hash": "b7fd5791a26ba8818182d84201f833d1",
+   "at": "2026-10-12T00:00:00Z",
+   "hash": "99cf7f085e17cc13eaad802250e0c08e",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -62,19 +62,9 @@
    "reason": null
   },
   {
-   "at": "2026-10-11T00:00:00Z",
-   "hash": "d78ffb5102ffaf1aa8f7577253ee1e8b",
-   "agencyKey": null,
-   "change": "state_changed",
-   "from": "listed_named",
-   "to": "excluded",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-11T00:00:00Z",
-   "hash": "e00d0be40156660918461a806999c2d954096a12c0d322d8a625221318bb1721",
-   "agencyKey": "new-york-state-department-of-health-bureau-of-emergency-medical-services-and-trauma-systems",
+   "at": "2026-10-12T00:00:00Z",
+   "hash": "a5033658cbdf318f2d81643bfad4eddfdd80af21ce4a16718a91a4b0dd8dbadd",
+   "agencyKey": "boulder-county-ems",
    "change": "added",
    "from": null,
    "to": "listed_named",
@@ -82,8 +72,18 @@
    "reason": null
   },
   {
-   "at": "2026-10-11T00:00:00Z",
-   "hash": "f813254df5ac32dc71f097940005dde5",
+   "at": "2026-10-12T00:00:00Z",
+   "hash": "a551384d42e83d9efc6d825bd879248b",
+   "agencyKey": "maryland-institute-for-emergency-medical-services-systems",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-12T00:00:00Z",
+   "hash": "a798317b649e4fc34e4674f9e1b556e9",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -92,8 +92,28 @@
    "reason": null
   },
   {
-   "at": "2026-10-11T00:00:00Z",
-   "hash": "fa9e3828228448c6bb26c00ab1124270",
+   "at": "2026-10-12T00:00:00Z",
+   "hash": "d14e7a48dd53091ec5805c4584677dd1",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-12T00:00:00Z",
+   "hash": "e47a56e870cf02fd5cd21560a9647dfc",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-12T00:00:00Z",
+   "hash": "f56f646ac02c62ca0d31199415575c4e",
    "agencyKey": null,
    "change": "added",
    "from": null,

@@ -2,6 +2,27 @@
  "schemaVersion": 3,
  "rows": [
   {
+   "agencyKey": "academy-of-medicine-of-cincinnati",
+   "name": "Academy of Medicine of Cincinnati",
+   "aliases": [
+    "Academy of Medicine of Cincinnati"
+   ],
+   "state": "OH",
+   "country": "US",
+   "city": "Cincinnati",
+   "jurisdiction": "regional",
+   "currentHash": "9366af52cb18dc94d798c3fa20f6e15a7fad0ab6b0eb46932582b90e0dd7d587",
+   "currentEffectiveDate": "2026-01-01",
+   "documentCount": 1,
+   "doseCount": 118,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
    "agencyKey": "ada-county-city-emergency-services-system",
    "name": "Ada County-City Emergency Services System",
    "aliases": [
@@ -493,12 +514,12 @@
    ],
    "state": "CO",
    "country": "US",
-   "city": "Boulder",
+   "city": null,
    "jurisdiction": "county",
-   "currentHash": "01f0a90f413d9088b1e4448cf8fb89878c7cea429cb67b00729c5e9c16bdcbe0",
+   "currentHash": "a5033658cbdf318f2d81643bfad4eddfdd80af21ce4a16718a91a4b0dd8dbadd",
    "currentEffectiveDate": "2026-04-22",
-   "documentCount": 9,
-   "doseCount": 1435,
+   "documentCount": 10,
+   "doseCount": 1628,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -2087,7 +2108,7 @@
    "currentHash": "c1fa8b8af1b730f3e54e2c0b3dbc824b0bc26c297c0337740a22acad899df61b",
    "currentEffectiveDate": "2026-07-01",
    "documentCount": 11,
-   "doseCount": 2679,
+   "doseCount": 2914,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -2109,7 +2130,7 @@
    "currentHash": "a48cc71aaa02e417f66c1f3b25222f4826cd2e11b0e3c952670f6f45c2bab9b5",
    "currentEffectiveDate": "2026-09-01",
    "documentCount": 14,
-   "doseCount": 2451,
+   "doseCount": 2601,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -3778,9 +3799,7 @@
    "currentEffectiveDate": "2025-10-01",
    "documentCount": 4,
    "doseCount": 310,
-   "pendingReview": {
-    "effectiveDate": null
-   },
+   "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
     "hasProtocol": true,
@@ -4287,7 +4306,7 @@
    "currentHash": "8721a95cd58508d193c373e5cc689d03",
    "currentEffectiveDate": "2025-09-01",
    "documentCount": 3,
-   "doseCount": 330,
+   "doseCount": 476,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
