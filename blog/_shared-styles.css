@@ -512,6 +512,7 @@ main {
 .category-badge.updates { background: oklch(50% 0.196 265 / .9); color: var(--bg-deep); }
 .category-badge.blog { background: rgba(255,122,0,.9); color: var(--bg-deep); }
 .category-badge.study { background: rgba(0,210,122,.9); color: var(--bg-deep); }
+.category-badge.advocacy { background: #c8102e; color: #fff; }
 .category-badge.stories { background: oklch(50% 0.196 265 / .18); color: var(--amber); border: 1px solid oklch(50% 0.196 265 / .4); }
 
 .post-card-body {
