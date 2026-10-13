@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2026-10-12T18:07:34.253Z",
-  "totalUploads": 730,
-  "distinctProtocols": 472,
-  "activeStudiers": 509,
-  "pagesProcessed": 114365,
+  "generatedAt": "2026-10-13T18:08:52.528Z",
+  "totalUploads": 737,
+  "distinctProtocols": 476,
+  "activeStudiers": 516,
+  "pagesProcessed": 115712,
   "statesRepresented": 43,
   "countriesRepresented": 5,
   "internationalUploads": 13,
   "byState": {
-    "CO": 94,
+    "CO": 97,
     "CA": 53,
     "MI": 49,
     "NY": 30,
     "MA": 30,
     "PA": 29,
-    "TX": 27,
+    "TX": 28,
     "GA": 25,
     "VA": 19,
     "CT": 19,
@@ -24,21 +24,21 @@
     "NV": 14,
     "FL": 11,
     "IL": 11,
+    "NM": 11,
     "WY": 10,
     "MD": 10,
-    "NM": 10,
     "AZ": 8,
+    "UT": 6,
     "TN": 6,
     "IN": 6,
-    "UT": 5,
     "SC": 5,
     "AL": 5,
+    "OH": 5,
     "WI": 5,
     "LA": 5,
     "KY": 4,
     "NE": 4,
     "DE": 4,
-    "OH": 4,
     "ID": 4,
     "WV": 4,
     "OK": 3,
@@ -65,7 +65,7 @@
       "city": "Denver",
       "x": 330,
       "y": 258,
-      "count": 85,
+      "count": 88,
       "tier": "hot",
       "topProtocols": [
         {
@@ -77,8 +77,8 @@
           "count": 8
         },
         {
-          "title": "dmemsmd protocols july 2025 final 2025 07 14",
-          "count": 7
+          "title": "BoCo Protocols Apr 2026",
+          "count": 8
         }
       ]
     },
@@ -529,6 +529,28 @@
       ]
     },
     {
+      "state": "UT",
+      "city": "Salt Lake City",
+      "x": 218,
+      "y": 221,
+      "count": 5,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "2023 Utah EMS Protocol Guidelines Final 4.10.2024",
+          "count": 1
+        },
+        {
+          "title": "2025 Utah EMS Protocol Guidelines 3",
+          "count": 1
+        },
+        {
+          "title": "2026 SL Co EMS Protocols 7.1.2026",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "SC",
       "city": "Columbia",
       "x": 752,
@@ -652,28 +674,6 @@
         },
         {
           "title": "msop",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "UT",
-      "city": "Salt Lake City",
-      "x": 218,
-      "y": 221,
-      "count": 4,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "2023 Utah EMS Protocol Guidelines Final 4.10.2024",
-          "count": 1
-        },
-        {
-          "title": "2025 Utah EMS Protocol Guidelines 3",
-          "count": 1
-        },
-        {
-          "title": "2026 SL Co EMS Protocols 7.1.2026",
           "count": 1
         }
       ]
@@ -1186,6 +1186,24 @@
         },
         {
           "title": "00.010 Scope of Practice & Medical Control Cover +176 more",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "OH",
+      "city": "Cincinnati",
+      "x": 675,
+      "y": 268,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "937559",
+          "count": 1
+        },
+        {
+          "title": "PPP",
           "count": 1
         }
       ]
@@ -1737,6 +1755,20 @@
       ]
     },
     {
+      "state": "NM",
+      "city": "Albuquerque",
+      "x": 290,
+      "y": 358,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "AMR Cent NM 2026 COG Final",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "IA",
       "city": "Iowa City",
       "x": 554,
@@ -1961,15 +1993,15 @@
       ]
     },
     {
-      "state": "OH",
-      "city": "Cincinnati",
-      "x": 675,
-      "y": 268,
+      "state": "TX",
+      "city": "Fort Worth",
+      "x": 456,
+      "y": 420,
       "count": 1,
       "tier": "tiny",
       "topProtocols": [
         {
-          "title": "937559",
+          "title": "fw regional ems system protocol 10.1.26.v1",
           "count": 1
         }
       ]
