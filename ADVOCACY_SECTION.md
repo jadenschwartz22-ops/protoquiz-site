@@ -48,8 +48,10 @@ onto origin/main, pushes, waits for the live page and posts the link; the cross,
 holds it unpublished. Log: `~/Library/Logs/pq-advocacy/<yyyy-mm>.log`. Test without publishing:
 `DRY=1 ~/bin/pq-advocacy-monthly.sh prepare` and `~/bin/pq-advocacy-monthly.sh notify-test`.
 
-**STATUS 2026-10-13:** the script is installed and dry-tested; the two launch agents are NOT loaded yet, so
-nothing fires on its own. Check with `launchctl list | grep advocacy`.
+**STATUS 2026-10-13:** script installed and dry-tested; both launch agents loaded by the owner (`launchctl
+list | grep advocacy` shows two). First real run is 2026-11-01. Not yet proven: a full prepare under launchd,
+and the publish path on a real check. Read the November log before trusting it for December. Remove with
+`launchctl bootout gui/$(id -u)/com.protoquiz.advocacy-prepare` (and `-poll`), then delete the two plists.
 
 The session follows the Standard and the Writer brief, with steps 4 and 5 of the Process replaced by:
 
