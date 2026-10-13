@@ -39,6 +39,10 @@ index card, feed, sitemap, deploy) are unchanged.
 
 ## Unattended monthly run (owner ruling 2026-10-13: "auto publish a post of this quality every month")
 
+**STATUS 2026-10-13: NOT INSTALLED.** The launch agent and `~/bin/pq-advocacy-monthly.sh` named below do not
+exist yet. Until they do, each month is run by hand in a session following these same steps. The owner's
+latest preference is a text asking y/n before publishing, which would replace step 5's direct push.
+
 A launch agent on the Mac (`~/Library/LaunchAgents/com.protoquiz.advocacy-monthly.plist`, 09:07 on the 1st,
 or at next wake) runs `~/bin/pq-advocacy-monthly.sh`, which starts one headless Opus session in a fresh
 worktree of origin/main with this section as its instructions. Log: `~/Library/Logs/pq-advocacy/<yyyy-mm>.log`.
