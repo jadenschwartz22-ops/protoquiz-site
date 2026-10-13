@@ -187,7 +187,7 @@
    "currentHash": "b3dde81e51f48e08bbe4cdc47e8efce99627f41be8df62aad392e1623f2e7980",
    "currentEffectiveDate": "2026-06-01",
    "documentCount": 1,
-   "doseCount": 0,
+   "doseCount": 118,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -205,10 +205,10 @@
    "country": "US",
    "city": null,
    "jurisdiction": "statewide",
-   "currentHash": "896f13a18a754ea18a8275c7e8246102d3c1c7bac75a05d780d3464e3903d19b",
+   "currentHash": "b831872aa93fe4eaea3fe0cad03c780522f0b3e3896138c69f19a50dc0e0f658",
    "currentEffectiveDate": "2026-01-22",
-   "documentCount": 1,
-   "doseCount": 0,
+   "documentCount": 2,
+   "doseCount": 152,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -421,7 +421,7 @@
    "currentHash": "bebfea4f4aec6186adee11ee041e8946947035fbd8bf63635de849f1429f96d0",
    "currentEffectiveDate": "2019-07-01",
    "documentCount": 1,
-   "doseCount": 0,
+   "doseCount": 123,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -955,7 +955,7 @@
    "currentHash": "52c94e95102f78d5b02aa64beef95aa904f074a3618725385d4c86886f93ba93",
    "currentEffectiveDate": "2024-05-01",
    "documentCount": 1,
-   "doseCount": 0,
+   "doseCount": 107,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -1190,7 +1190,7 @@
    "currentHash": "e2d15a65b908cba485964dfcad1c2ab31e679f8ca7487fb7193abb5b0302909a",
    "currentEffectiveDate": "2023-03-01",
    "documentCount": 1,
-   "doseCount": 0,
+   "doseCount": 161,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -1932,7 +1932,7 @@
    "currentHash": "99cb4ee5e760a7074c949ca573d55443e5836f70456c3e3fa6126962a8c2a3c3",
    "currentEffectiveDate": "2025-01-26",
    "documentCount": 1,
-   "doseCount": 0,
+   "doseCount": 169,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -2459,27 +2459,6 @@
    }
   },
   {
-   "agencyKey": "national-association-of-state-ems-officials-nasemso",
-   "name": "National Association of State EMS Officials (NASEMSO)",
-   "aliases": [
-    "National Association of State EMS Officials (NASEMSO)"
-   ],
-   "state": null,
-   "country": "US",
-   "city": null,
-   "jurisdiction": "statewide",
-   "currentHash": "2b8aa40827410e88fe4dd5dcc34f13e1",
-   "currentEffectiveDate": "2022-03-01",
-   "documentCount": 2,
-   "doseCount": 430,
-   "pendingReview": null,
-   "mayBeOutdated": true,
-   "coverage": {
-    "hasProtocol": false,
-    "jurisdiction": "statewide"
-   }
-  },
-  {
    "agencyKey": "national-emergency-medical-services",
    "name": "National Emergency Medical Services",
    "aliases": [
@@ -2623,30 +2602,9 @@
    "currentHash": "f52482c2fb319aa0c6a42c24f5815d389286ac3f3710de3c04864005df2df2a9",
    "currentEffectiveDate": "2026-09-11",
    "documentCount": 21,
-   "doseCount": 2150,
+   "doseCount": 2294,
    "pendingReview": null,
    "mayBeOutdated": false,
-   "coverage": {
-    "hasProtocol": false,
-    "jurisdiction": "statewide"
-   }
-  },
-  {
-   "agencyKey": "north-carolina-chapter-of-emergency-physicians",
-   "name": "North Carolina Chapter of Emergency Physicians",
-   "aliases": [
-    "North Carolina Chapter of Emergency Physicians"
-   ],
-   "state": "NC",
-   "country": "US",
-   "city": null,
-   "jurisdiction": "statewide",
-   "currentHash": "935cced84510075d46bf890fbce27832752d47696d9f745dd5849539af647895",
-   "currentEffectiveDate": "2017-01-01",
-   "documentCount": 1,
-   "doseCount": 162,
-   "pendingReview": null,
-   "mayBeOutdated": true,
    "coverage": {
     "hasProtocol": false,
     "jurisdiction": "statewide"
@@ -2677,6 +2635,7 @@
    "agencyKey": "north-carolina-office-of-emergency-medical-services",
    "name": "North Carolina Office of Emergency Medical Services (NC OEMS)",
    "aliases": [
+    "North Carolina Chapter of Emergency Physicians",
     "North Carolina Office of Emergency Medical Services",
     "North Carolina Office of Emergency Medical Services (NC OEMS)",
     "North Carolina Office of Emergency Medical Services (NCOEMS)"
@@ -2687,8 +2646,8 @@
    "jurisdiction": "statewide",
    "currentHash": "118f4bc1732dcc7e300a81f763720efe18316ece02c971dc95960def561d80e4",
    "currentEffectiveDate": "2025-09-01",
-   "documentCount": 4,
-   "doseCount": 597,
+   "documentCount": 5,
+   "doseCount": 759,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -2845,30 +2804,10 @@
    }
   },
   {
-   "agencyKey": "ocala-marion-county-fire-rescue",
-   "name": "Ocala/Marion County Fire Rescue",
-   "aliases": [
-    "Ocala/Marion County Fire Rescue"
-   ],
-   "state": "FL",
-   "country": "US",
-   "city": "Ocala",
-   "jurisdiction": "fire-district",
-   "currentHash": "544c8d8d24e4b70b1ecefde3fbb60128e53e6fbf1ca5ef74896cd482211f0312",
-   "currentEffectiveDate": "2021-06-01",
-   "documentCount": 1,
-   "doseCount": 200,
-   "pendingReview": null,
-   "mayBeOutdated": true,
-   "coverage": {
-    "hasProtocol": true,
-    "jurisdiction": "fire-district"
-   }
-  },
-  {
    "agencyKey": "ocala-marion-county-the-villages-public-safety-ems",
    "name": "Ocala/Marion County/The Villages Public Safety EMS",
    "aliases": [
+    "Ocala/Marion County Fire Rescue",
     "Ocala/Marion County/The Villages Public Safety EMS"
    ],
    "state": "FL",
@@ -2877,8 +2816,8 @@
    "jurisdiction": "regional",
    "currentHash": "185cf56d048391cf238cd9cb616771f4a3e6969beb25eb2f0f479a62c3b192c0",
    "currentEffectiveDate": "2025-07-01",
-   "documentCount": 1,
-   "doseCount": 190,
+   "documentCount": 2,
+   "doseCount": 390,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -4102,7 +4041,7 @@
    "currentHash": "58054076f36800193c2083556f7abb4400d704d1e83bc26f7add50b378b979bc",
    "currentEffectiveDate": "2024-03-25",
    "documentCount": 1,
-   "doseCount": 0,
+   "doseCount": 158,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -4167,7 +4106,7 @@
    "currentHash": "fca4312338db362d41f16a220d15d03f9819b05288679a0f3b9e1485e9c4dea8",
    "currentEffectiveDate": "2021-02-15",
    "documentCount": 1,
-   "doseCount": 0,
+   "doseCount": 115,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
