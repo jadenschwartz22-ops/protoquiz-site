@@ -73,8 +73,9 @@
     h1 .hl{background:var(--amber);color:var(--bg);padding:0 10px;}
     p{color:var(--ink-soft);font-size:17px;margin-bottom:20px;}
     h2{font-family:var(--mono);font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);margin:40px 0 14px;}
-    .portrait{float:right;width:230px;height:auto;margin:6px 0 20px 32px;border:1px solid var(--line);}
-    @media(max-width:600px){.portrait{float:none;display:block;width:170px;margin:0 0 24px;}}
+    .intro{text-align:center;margin:0 0 32px;padding:0 0 32px;border-bottom:1px solid var(--line);}
+    .intro img{display:block;width:148px;height:148px;object-fit:cover;object-position:50% 14%;border-radius:50%;margin:8px auto 22px;}
+    .intro .lead{font-size:clamp(19px,2.6vw,23px);line-height:1.4;color:var(--ink);max-width:520px;margin:0 auto;}
     .cite{font-family:var(--mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:36px;padding-top:24px;border-top:1px solid var(--line);}
     .cite b{color:var(--amber);}
     .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px;}
@@ -119,11 +120,12 @@
 
   <main>
     <div class="wrap">
-      <div class="tag">▸ About ProtoQuiz</div>
-      <h1>Built by a <span class="hl">working</span> paramedic.</h1>
-
-      <img class="portrait" src="/about/jaden.webp" width="617" height="760" alt="Jaden, paramedic and founder of ProtoQuiz">
-      <p>I'm Jaden, a working paramedic, and I've spent the last five years in EMS.</p>
+      <div class="intro">
+        <div class="tag">▸ About ProtoQuiz</div>
+        <h1>Built by a <span class="hl">working</span> paramedic.</h1>
+        <img src="/about/jaden.webp" width="617" height="760" alt="Jaden, paramedic and founder of ProtoQuiz">
+        <p class="lead">I'm Jaden, a working paramedic, and I've spent the last five years in EMS.</p>
+      </div>
       <p>ProtoQuiz started during paramedic school, when I sustained an injury that forced me to take six months off in the middle of my clinicals.</p>
       <p>During that time, I felt like I was forgetting everything I'd learned about local protocols. Those protocols had been incredibly helpful throughout school, and I wanted a way to keep studying them without making hundreds of flashcards by hand or repeatedly reading through a protocol book that was hundreds of pages long.</p>
       <p>So I built ProtoQuiz.</p>
