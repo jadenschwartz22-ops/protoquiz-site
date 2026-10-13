@@ -2,9 +2,219 @@
  "schemaVersion": 3,
  "rows": [
   {
-   "at": "2026-10-12T00:00:00Z",
-   "hash": "01f0a90f413d9088b1e4448cf8fb89878c7cea429cb67b00729c5e9c16bdcbe0",
-   "agencyKey": "boulder-county-ems",
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "0e405025532a52bd5566785b838ecbf55add7b199b7486e43a43a4be74f4e286",
+   "agencyKey": "montgomery-county-hospital-district",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "1524070af13009e6df2cbc75ffebc6f0",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "2f6ddfdd8acec758761e4c1b8970da61bd3d9591bb68f5dd22309fccb1f3adff",
+   "agencyKey": "new-york-state-department-of-health-bureau-of-emergency-medical-services-and-trauma-systems",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "3277da2d1469a470ab4713558b9688776f4941810a978827436b27a2ddd4154e",
+   "agencyKey": "east-baton-rouge-parish-department-of-emergency-medical-services",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "3286e0092a22783d615c02bad51e713079a5e7cc19ed6d3ba2d8a180b14a5251",
+   "agencyKey": "el-paso-county-emergency-services-district-2",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "336eb7926258e46268becd25f7cf4abe11a80ed099435939e443bc56626ed53f",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "3886f35cd2b002469c7c21a54da11e04",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "3c06a1ff4d31aff8f52e6295b0ce67200d33a906d5770909bcd6f76ce847d321",
+   "agencyKey": "okaloosa-county-ems",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "5126922e00e89d360022d661f14fb090",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "52c94e95102f78d5b02aa64beef95aa904f074a3618725385d4c86886f93ba93",
+   "agencyKey": "dallas-fire-rescue",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "5702bdb1b28a0d83fd356be403156ca9",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "58054076f36800193c2083556f7abb4400d704d1e83bc26f7add50b378b979bc",
+   "agencyKey": "tri-county-emergency-medical-control-authority",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "6660e3ca2ab80a8f2deb88ea7f05ee42c869ff4612d9f4dacc9f2c16df433fcb",
+   "agencyKey": "louisville-metro-ems",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "6a87148c8e122c4ff94ec37f4966ac871e878a78c5b641ae88f9afdc6d10b935",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "6b752acc9dfe4928812cf9e66db80492340ad2c605204df1a46305c3d4a2d18d",
+   "agencyKey": "north-central-oregon-ems-agencies",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "754bad306d77efe492508b57c96d649ebbf0162033beeed418f2370c7563b1bc",
+   "agencyKey": "northwest-arkansas-regional-ems",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "77a6cfcf71e90216e59875439ffb54cf9beae331d76064b2b61dcfc3a1ba957e",
+   "agencyKey": "fort-worth-regional-ems-system",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "79b5c8bd4e75e3790d94697da3f94b36",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "7c203ce17af4e03b3cc6181336d3a4f7d87144ef5e999d4865893b2d78041122",
+   "agencyKey": "washington-county-emergency-medical-services",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "84061524fb032d581d1c017c866096da",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "882aa17a2af1fae3add760c13d6822b7fdbd911ba453897b3426f9a15e21c750",
+   "agencyKey": "routt-county-ems",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "8ed65a1ad1a5f48fc93c3327243d64a0eb9608970d3f42ecbb1161113f7e597a",
+   "agencyKey": "delaware-office-of-emergency-medical-services",
    "change": "superseded",
    "from": "current",
    "to": "superseded",
@@ -12,8 +222,8 @@
    "reason": null
   },
   {
-   "at": "2026-10-12T00:00:00Z",
-   "hash": "174bc531d4e41490548af54cfb6f974e",
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "93769ef5761ea9ad1b050ab8ec94dd1f",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -22,9 +232,9 @@
    "reason": null
   },
   {
-   "at": "2026-10-12T00:00:00Z",
-   "hash": "9366af52cb18dc94d798c3fa20f6e15a7fad0ab6b0eb46932582b90e0dd7d587",
-   "agencyKey": "academy-of-medicine-of-cincinnati",
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "99cb4ee5e760a7074c949ca573d55443e5836f70456c3e3fa6126962a8c2a3c3",
+   "agencyKey": "levy-county-department-of-public-safety",
    "change": "added",
    "from": null,
    "to": "listed_named",
@@ -32,8 +242,18 @@
    "reason": null
   },
   {
-   "at": "2026-10-12T00:00:00Z",
-   "hash": "97efeaf2a96d2d3c60fc2bd7ddfb2687",
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "9bbe536d14a3e1a8c7a083fff502982b750d7371a400346357fdd3928d70d723",
+   "agencyKey": "rappahannock-ems-council",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "a05c1fc6e47fd63ec9924d540a3c0e12",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -42,18 +262,8 @@
    "reason": null
   },
   {
-   "at": "2026-10-12T00:00:00Z",
-   "hash": "985216bf289e347b4e0841854fe48d49",
-   "agencyKey": null,
-   "change": "state_changed",
-   "from": "pending_review",
-   "to": "excluded",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-12T00:00:00Z",
-   "hash": "99cf7f085e17cc13eaad802250e0c08e",
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "a93b9b7aa62f0dd0b58637d4de548ffcbb562b9e6d5743a7544877be6d295e75",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -62,62 +272,152 @@
    "reason": null
   },
   {
-   "at": "2026-10-12T00:00:00Z",
-   "hash": "a5033658cbdf318f2d81643bfad4eddfdd80af21ce4a16718a91a4b0dd8dbadd",
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "ad7d05dd3ad79f75f122e9d462bffc68e0082432c1c0c2c6101598d2367400f2",
+   "agencyKey": "coastal-valleys-ems-agency",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "b18ffbcf72c94d8d967a2441ce4aebf2",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "b3dde81e51f48e08bbe4cdc47e8efce99627f41be8df62aad392e1623f2e7980",
+   "agencyKey": "annaville-fire-department",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "b881577683c479c18a9844df1565bacdac195b541a26098b9f804c3d6ce230bc",
+   "agencyKey": "nueces-county-esd4",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "bc209a5ab72067a7734e45724e3700a6202eeb5f4bd87fee4ea4cd210e79bdac",
+   "agencyKey": "brownsville-rural-fire-district-halsey-shedd-fire-protection-district-jefferson-fire-district-lebanon-fire-district-scio-fire-district-sweet-home-fire-ambulance-district",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "bebfea4f4aec6186adee11ee041e8946947035fbd8bf63635de849f1429f96d0",
+   "agencyKey": "bonner-county-emergency-medical-services",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "bf09b06765e81ac2093fa3e466349c1ad5bae953615d2b55288a0bb8c1249e6e",
+   "agencyKey": "delaware-office-of-emergency-medical-services",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "c3556473b54cfcbd84b54f11796a4d51",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "c39c2289f998784c0b632b1efdd07ffc",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "da650fdc3ba03e73257bf24dab60b1e91976212731ac40d0b9f6032efb2f235b",
+   "agencyKey": "utsw-parkland-biotel-ems-system",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "e2d15a65b908cba485964dfcad1c2ab31e679f8ca7487fb7193abb5b0302909a",
+   "agencyKey": "el-campo-emergency-medical-service",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "ee899145819abc10aa00c079ea98dac546912bfaabb65fe94ed2c8a40c1e7ebb",
+   "agencyKey": "region-1-emergency-medical-services",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "eeb6be585634d8d1a5d731d547a91ff0aeba094aeef782097d5c63c0e7602486",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "f1437c95432a943d705c1cffe5ae8986",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-13T00:00:00Z",
+   "hash": "f9d3775805f5a152d3b631405ad69f762308df10086ff416125b7110b67dd401",
    "agencyKey": "boulder-county-ems",
    "change": "added",
    "from": null,
    "to": "listed_named",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-12T00:00:00Z",
-   "hash": "a551384d42e83d9efc6d825bd879248b",
-   "agencyKey": "maryland-institute-for-emergency-medical-services-systems",
-   "change": "added",
-   "from": null,
-   "to": "listed_named",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-12T00:00:00Z",
-   "hash": "a798317b649e4fc34e4674f9e1b556e9",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "pending_review",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-12T00:00:00Z",
-   "hash": "d14e7a48dd53091ec5805c4584677dd1",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "pending_review",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-12T00:00:00Z",
-   "hash": "e47a56e870cf02fd5cd21560a9647dfc",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "pending_review",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-12T00:00:00Z",
-   "hash": "f56f646ac02c62ca0d31199415575c4e",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "pending_review",
    "by": "build",
    "reason": null
   }

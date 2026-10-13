@@ -14,7 +14,7 @@
    "currentHash": "9366af52cb18dc94d798c3fa20f6e15a7fad0ab6b0eb46932582b90e0dd7d587",
    "currentEffectiveDate": "2026-01-01",
    "documentCount": 1,
-   "doseCount": 118,
+   "doseCount": 128,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -275,6 +275,27 @@
    }
   },
   {
+   "agencyKey": "annaville-fire-department",
+   "name": "Annaville Fire Department",
+   "aliases": [
+    "Annaville Fire Department"
+   ],
+   "state": "TX",
+   "country": "US",
+   "city": "Annaville",
+   "jurisdiction": "fire-district",
+   "currentHash": "b3dde81e51f48e08bbe4cdc47e8efce99627f41be8df62aad392e1623f2e7980",
+   "currentEffectiveDate": "2026-06-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "fire-district"
+   }
+  },
+  {
    "agencyKey": "arizona-department-of-health-services",
    "name": "Arizona Department of Health Services",
    "aliases": [
@@ -506,6 +527,27 @@
    }
   },
   {
+   "agencyKey": "bonner-county-emergency-medical-services",
+   "name": "Bonner County Emergency Medical Services",
+   "aliases": [
+    "Bonner County Emergency Medical Services"
+   ],
+   "state": "ID",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "county",
+   "currentHash": "bebfea4f4aec6186adee11ee041e8946947035fbd8bf63635de849f1429f96d0",
+   "currentEffectiveDate": "2019-07-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
    "agencyKey": "boulder-county-ems",
    "name": "Boulder County Protocol Committee",
    "aliases": [
@@ -518,8 +560,8 @@
    "jurisdiction": "county",
    "currentHash": "a5033658cbdf318f2d81643bfad4eddfdd80af21ce4a16718a91a4b0dd8dbadd",
    "currentEffectiveDate": "2026-04-22",
-   "documentCount": 10,
-   "doseCount": 1628,
+   "documentCount": 11,
+   "doseCount": 1820,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -562,6 +604,27 @@
    "currentEffectiveDate": "2025-03-10",
    "documentCount": 1,
    "doseCount": 140,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "fire-district"
+   }
+  },
+  {
+   "agencyKey": "brownsville-rural-fire-district-halsey-shedd-fire-protection-district-jefferson-fire-district-lebanon-fire-district-scio-fire-district-sweet-home-fire-ambulance-district",
+   "name": "Brownsville Rural Fire District, Halsey-Shedd Fire Protection District, Jefferson Fire District, Lebanon Fire District, Scio Fire District & Sweet Home Fire & Ambulance District",
+   "aliases": [
+    "Brownsville Rural Fire District, Halsey-Shedd Fire Protection District, Jefferson Fire District, Lebanon Fire District, Scio Fire District & Sweet Home Fire & Ambulance District"
+   ],
+   "state": "OR",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "fire-district",
+   "currentHash": "bc209a5ab72067a7734e45724e3700a6202eeb5f4bd87fee4ea4cd210e79bdac",
+   "currentEffectiveDate": "2026-01-01",
+   "documentCount": 1,
+   "doseCount": 0,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -890,6 +953,27 @@
    }
   },
   {
+   "agencyKey": "coastal-valleys-ems-agency",
+   "name": "Coastal Valleys EMS Agency",
+   "aliases": [
+    "Coastal Valleys EMS Agency"
+   ],
+   "state": "CA",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "regional",
+   "currentHash": "ad7d05dd3ad79f75f122e9d462bffc68e0082432c1c0c2c6101598d2367400f2",
+   "currentEffectiveDate": "2025-05-15",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
    "agencyKey": "cochran-county-emergency-medical-services",
    "name": "Cochran County Emergency Medical Services",
    "aliases": [
@@ -1102,6 +1186,27 @@
    }
   },
   {
+   "agencyKey": "dallas-fire-rescue",
+   "name": "Dallas Fire-Rescue",
+   "aliases": [
+    "Dallas Fire-Rescue"
+   ],
+   "state": "TX",
+   "country": "US",
+   "city": "Dallas",
+   "jurisdiction": "city",
+   "currentHash": "52c94e95102f78d5b02aa64beef95aa904f074a3618725385d4c86886f93ba93",
+   "currentEffectiveDate": "2024-05-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "city"
+   }
+  },
+  {
    "agencyKey": "dane-county-ems-system",
    "name": "Dane County EMS System",
    "aliases": [
@@ -1195,10 +1300,10 @@
    "country": "US",
    "city": null,
    "jurisdiction": "statewide",
-   "currentHash": "8ed65a1ad1a5f48fc93c3327243d64a0eb9608970d3f42ecbb1161113f7e597a",
+   "currentHash": "bf09b06765e81ac2093fa3e466349c1ad5bae953615d2b55288a0bb8c1249e6e",
    "currentEffectiveDate": "2024-11-01",
-   "documentCount": 4,
-   "doseCount": 281,
+   "documentCount": 5,
+   "doseCount": 406,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -1315,6 +1420,48 @@
    }
   },
   {
+   "agencyKey": "east-baton-rouge-parish-department-of-emergency-medical-services",
+   "name": "East Baton Rouge Parish Department of Emergency Medical Services",
+   "aliases": [
+    "East Baton Rouge Parish Department of Emergency Medical Services"
+   ],
+   "state": "LA",
+   "country": "US",
+   "city": "Baton Rouge",
+   "jurisdiction": "county",
+   "currentHash": "3277da2d1469a470ab4713558b9688776f4941810a978827436b27a2ddd4154e",
+   "currentEffectiveDate": "2025-02-06",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "el-campo-emergency-medical-service",
+   "name": "El Campo Emergency Medical Service",
+   "aliases": [
+    "El Campo Emergency Medical Service"
+   ],
+   "state": "TX",
+   "country": "US",
+   "city": "El Campo",
+   "jurisdiction": "city",
+   "currentHash": "e2d15a65b908cba485964dfcad1c2ab31e679f8ca7487fb7193abb5b0302909a",
+   "currentEffectiveDate": "2023-03-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "city"
+   }
+  },
+  {
    "agencyKey": "el-dorado-county-ems-agency",
    "name": "EL DORADO COUNTY EMS AGENCY",
    "aliases": [
@@ -1333,6 +1480,27 @@
    "coverage": {
     "hasProtocol": true,
     "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "el-paso-county-emergency-services-district-2",
+   "name": "El Paso County Emergency Services District #2",
+   "aliases": [
+    "El Paso County Emergency Services District #2"
+   ],
+   "state": "TX",
+   "country": "US",
+   "city": "El Paso",
+   "jurisdiction": "fire-district",
+   "currentHash": "3286e0092a22783d615c02bad51e713079a5e7cc19ed6d3ba2d8a180b14a5251",
+   "currentEffectiveDate": "2022-01-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "fire-district"
    }
   },
   {
@@ -1459,6 +1627,27 @@
    "coverage": {
     "hasProtocol": true,
     "jurisdiction": "fire-district"
+   }
+  },
+  {
+   "agencyKey": "fort-worth-regional-ems-system",
+   "name": "Fort Worth Regional EMS System",
+   "aliases": [
+    "Fort Worth Regional EMS System"
+   ],
+   "state": "TX",
+   "country": "US",
+   "city": "Fort Worth",
+   "jurisdiction": "regional",
+   "currentHash": "77a6cfcf71e90216e59875439ffb54cf9beae331d76064b2b61dcfc3a1ba957e",
+   "currentEffectiveDate": "2026-10-01",
+   "documentCount": 1,
+   "doseCount": 179,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
    }
   },
   {
@@ -1991,6 +2180,27 @@
    }
   },
   {
+   "agencyKey": "levy-county-department-of-public-safety",
+   "name": "Levy County Department of Public Safety",
+   "aliases": [
+    "Levy County Department of Public Safety"
+   ],
+   "state": "FL",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "county",
+   "currentHash": "99cb4ee5e760a7074c949ca573d55443e5836f70456c3e3fa6126962a8c2a3c3",
+   "currentEffectiveDate": "2025-01-26",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
    "agencyKey": "lincoln-county-ems",
    "name": "Lincoln County EMS",
    "aliases": [
@@ -2009,6 +2219,27 @@
    "coverage": {
     "hasProtocol": true,
     "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "louisville-metro-ems",
+   "name": "Louisville Metro EMS",
+   "aliases": [
+    "Louisville Metro EMS"
+   ],
+   "state": "KY",
+   "country": "US",
+   "city": "Louisville",
+   "jurisdiction": "city",
+   "currentHash": "6660e3ca2ab80a8f2deb88ea7f05ee42c869ff4612d9f4dacc9f2c16df433fcb",
+   "currentEffectiveDate": "2025-04-30",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "city"
    }
   },
   {
@@ -2502,6 +2733,27 @@
    }
   },
   {
+   "agencyKey": "montgomery-county-hospital-district",
+   "name": "Montgomery County Hospital District",
+   "aliases": [
+    "Montgomery County Hospital District"
+   ],
+   "state": "TX",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "county",
+   "currentHash": "0e405025532a52bd5566785b838ecbf55add7b199b7486e43a43a4be74f4e286",
+   "currentEffectiveDate": "2026-03-18",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
    "agencyKey": "mountain-west-ambulance",
    "name": "Mountain West Ambulance",
    "aliases": [
@@ -2769,7 +3021,7 @@
    "jurisdiction": "statewide",
    "currentHash": "f52482c2fb319aa0c6a42c24f5815d389286ac3f3710de3c04864005df2df2a9",
    "currentEffectiveDate": "2026-09-11",
-   "documentCount": 20,
+   "documentCount": 21,
    "doseCount": 2150,
    "pendingReview": null,
    "mayBeOutdated": false,
@@ -2844,6 +3096,27 @@
    }
   },
   {
+   "agencyKey": "north-central-oregon-ems-agencies",
+   "name": "North Central Oregon EMS Agencies",
+   "aliases": [
+    "North Central Oregon EMS Agencies"
+   ],
+   "state": "OR",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "regional",
+   "currentHash": "6b752acc9dfe4928812cf9e66db80492340ad2c605204df1a46305c3d4a2d18d",
+   "currentEffectiveDate": "2019-12-09",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
    "agencyKey": "northeast-ohio-regional-ems-protocol-committee",
    "name": "Northeast Ohio Regional EMS Protocol Committee",
    "aliases": [
@@ -2857,6 +3130,27 @@
    "currentEffectiveDate": "2024-01-01",
    "documentCount": 2,
    "doseCount": 437,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "northwest-arkansas-regional-ems",
+   "name": "Northwest Arkansas Regional EMS",
+   "aliases": [
+    "Northwest Arkansas Regional EMS"
+   ],
+   "state": "AR",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "regional",
+   "currentHash": "754bad306d77efe492508b57c96d649ebbf0162033beeed418f2370c7563b1bc",
+   "currentEffectiveDate": "2019-01-01",
+   "documentCount": 1,
+   "doseCount": 0,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -2904,6 +3198,27 @@
    "coverage": {
     "hasProtocol": true,
     "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "nueces-county-esd4",
+   "name": "Nueces County ESD4",
+   "aliases": [
+    "Nueces County ESD4"
+   ],
+   "state": "TX",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "fire-district",
+   "currentHash": "b881577683c479c18a9844df1565bacdac195b541a26098b9f804c3d6ce230bc",
+   "currentEffectiveDate": "2025-10-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "fire-district"
    }
   },
   {
@@ -2989,6 +3304,27 @@
    "coverage": {
     "hasProtocol": true,
     "jurisdiction": "city"
+   }
+  },
+  {
+   "agencyKey": "okaloosa-county-ems",
+   "name": "Okaloosa County EMS",
+   "aliases": [
+    "Okaloosa County EMS"
+   ],
+   "state": "FL",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "county",
+   "currentHash": "3c06a1ff4d31aff8f52e6295b0ce67200d33a906d5770909bcd6f76ce847d321",
+   "currentEffectiveDate": "2026-06-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
    }
   },
   {
@@ -3394,6 +3730,48 @@
    }
   },
   {
+   "agencyKey": "rappahannock-ems-council",
+   "name": "Rappahannock EMS Council",
+   "aliases": [
+    "Rappahannock EMS Council"
+   ],
+   "state": "VA",
+   "country": "US",
+   "city": "Fredericksburg",
+   "jurisdiction": "regional",
+   "currentHash": "9bbe536d14a3e1a8c7a083fff502982b750d7371a400346357fdd3928d70d723",
+   "currentEffectiveDate": "2022-08-17",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "region-1-emergency-medical-services",
+   "name": "Region 1 Emergency Medical Services",
+   "aliases": [
+    "Region 1 Emergency Medical Services"
+   ],
+   "state": "IL",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "regional",
+   "currentHash": "ee899145819abc10aa00c079ea98dac546912bfaabb65fe94ed2c8a40c1e7ebb",
+   "currentEffectiveDate": "2025-01-01",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
    "agencyKey": "region-11-chicago-ems-system",
    "name": "Region 11 Chicago EMS System",
    "aliases": [
@@ -3609,6 +3987,27 @@
     "effectiveDate": null
    },
    "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "routt-county-ems",
+   "name": "Routt County EMS",
+   "aliases": [
+    "Routt County EMS"
+   ],
+   "state": "CO",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "county",
+   "currentHash": "882aa17a2af1fae3add760c13d6822b7fdbd911ba453897b3426f9a15e21c750",
+   "currentEffectiveDate": "2022-04-10",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": true,
    "coverage": {
     "hasProtocol": true,
     "jurisdiction": "county"
@@ -4250,6 +4649,27 @@
    }
   },
   {
+   "agencyKey": "tri-county-emergency-medical-control-authority",
+   "name": "Tri-County Emergency Medical Control Authority",
+   "aliases": [
+    "Tri-County Emergency Medical Control Authority"
+   ],
+   "state": "MI",
+   "country": "US",
+   "city": "Okemos",
+   "jurisdiction": "regional",
+   "currentHash": "58054076f36800193c2083556f7abb4400d704d1e83bc26f7add50b378b979bc",
+   "currentEffectiveDate": "2024-03-25",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
    "agencyKey": "tri-county-emergency-medical-services-inc",
    "name": "Tri County Emergency Medical Services, Inc.",
    "aliases": [
@@ -4312,6 +4732,27 @@
    "coverage": {
     "hasProtocol": false,
     "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "utsw-parkland-biotel-ems-system",
+   "name": "UTSW/Parkland BioTel EMS System",
+   "aliases": [
+    "UTSW/Parkland BioTel EMS System"
+   ],
+   "state": "TX",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "regional",
+   "currentHash": "da650fdc3ba03e73257bf24dab60b1e91976212731ac40d0b9f6032efb2f235b",
+   "currentEffectiveDate": "2026-06-09",
+   "documentCount": 1,
+   "doseCount": 0,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
    }
   },
   {
@@ -4391,6 +4832,27 @@
    "currentEffectiveDate": "2021-09-30",
    "documentCount": 1,
    "doseCount": 164,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "washington-county-emergency-medical-services",
+   "name": "Washington County Emergency Medical Services",
+   "aliases": [
+    "Washington County Emergency Medical Services"
+   ],
+   "state": "TX",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "county",
+   "currentHash": "7c203ce17af4e03b3cc6181336d3a4f7d87144ef5e999d4865893b2d78041122",
+   "currentEffectiveDate": "2023-01-31",
+   "documentCount": 1,
+   "doseCount": 0,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
