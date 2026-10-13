@@ -62,12 +62,16 @@
     .baseline-cta { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; max-width: 680px; }
     .baseline-cta h2 { font-size: clamp(28px, 3.4vw, 40px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; margin: 0; }
     .baseline-cta .lede { font-size: 18px; line-height: 1.6; color: var(--ink-2); margin: 0; max-width: 560px; }
-    .baseline-cta .btn { display: inline-block; margin-top: 4px; text-decoration: none; padding: 15px 28px; }
+    .baseline-cta .btn, .quote-cta { display: inline-block; margin-top: 4px; text-decoration: none; padding: 15px 28px; }
+    .quote-cta { margin-top: 22px; }
 
-    .contact-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(24px, 5vw, 64px); align-items: start; }
-    .contact-grid h2 { font-size: clamp(24px, 2.6vw, 32px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; margin: 0 0 12px; }
-    .contact-grid .note { font-size: 15px; line-height: 1.7; color: var(--ink-2); margin: 0 0 16px; }
-    .direct { font-size: 13px; line-height: 1.7; color: var(--ink-3); margin: 0; }
+    .contact { width: min(560px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); overflow: auto; padding: clamp(22px, 4vw, 32px); border: 1px solid var(--line); border-radius: 14px; background: var(--paper); color: var(--ink); box-shadow: 0 24px 80px rgb(0 0 0 / .28); }
+    .contact::backdrop { background: rgb(8 9 12 / .55); backdrop-filter: blur(3px); }
+    .contact h2 { font-size: clamp(22px, 2.6vw, 28px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; margin: 0 0 10px; }
+    .contact .note { font-size: 15px; line-height: 1.6; color: var(--ink-2); margin: 0 0 20px; }
+    .contact-x { position: absolute; top: 12px; right: 12px; width: 36px; height: 36px; border: 0; border-radius: 8px; background: none; color: var(--ink-3); font-size: 22px; line-height: 1; cursor: pointer; }
+    .contact-x:hover { background: var(--panel); color: var(--ink); }
+    .direct { font-size: 13px; line-height: 1.7; color: var(--ink-3); margin: 16px 0 0; }
     .form { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
     .field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
     .field.full { grid-column: 1 / -1; }
@@ -85,7 +89,8 @@
     .btn { background: var(--accent); color: var(--paper); border: 0; border-radius: 8px; padding: 12px 24px; font: 600 15px/1 'Sora', system-ui, sans-serif; cursor: pointer; }
     .btn:hover { background: var(--accent-hover); }
     .btn:disabled { opacity: .7; cursor: default; }
-    [data-shift="night"] .btn { color: #0c0a07; }
+    a.btn:hover { color: var(--paper); }
+    [data-shift="night"] .btn, [data-shift="night"] a.btn:hover { color: #0c0a07; }
     .faq-more { margin: 22px 0 0; font-size: 15px; color: var(--ink-2); }
     .faq details.save { border: 1px solid var(--accent); border-radius: 10px; padding: 22px 24px; margin-bottom: 10px; }
     .faq details.save summary { font-size: clamp(20px, 2.6vw, 28px); letter-spacing: -0.02em; }
@@ -94,7 +99,7 @@
     .faq ol.math li { margin: 4px 0; }
 
     @media (max-width: 760px) {
-      .price-grid, .contact-grid, .form { grid-template-columns: 1fr; }
+      .price-grid, .form { grid-template-columns: 1fr; }
     }
   </style>
 <script type="application/ld+json">
@@ -179,6 +184,7 @@
               <li>Live 7 days after we receive your protocol.</li>
               <li>No add-ons or tiers.</li>
             </ul>
+            <a href="#contact" class="btn quote-cta" id="quoteCta">Get a quote</a>
           </div>
           <div>
             <div class="includes-h">Every plan includes</div>
@@ -192,50 +198,6 @@
             <p class="ask">Subscribe for a year and get a discount. Tell us what your agency needs and we will build it.</p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="wrap contact-grid">
-        <div>
-          <div class="section-eyebrow">Get started</div>
-          <h2>Tell us about your agency.</h2>
-          <p class="note">Send your protocol PDF for a free Protocol Baseline, or ask about pricing. We start with one email.</p>
-          <p class="direct">Prefer email? <a href="mailto:sales@protoquiz.com">sales@protoquiz.com</a></p>
-        </div>
-        <form id="contactForm" class="form" action="https://api.protoquiz.com/api/monitor?type=contactForm" method="POST">
-          <input type="text" name="phone" tabindex="-1" autocomplete="off" style="position:absolute;left:-10000px" aria-hidden="true">
-          <input type="hidden" name="source" value="agency-baseline-v16">
-          <div class="field">
-            <label for="cf-name">Name</label>
-            <input type="text" id="cf-name" name="name" autocomplete="name" placeholder="Your name">
-          </div>
-          <div class="field">
-            <label for="cf-email">Email *</label>
-            <input type="email" id="cf-email" name="email" autocomplete="email" required placeholder="you@agency.gov">
-          </div>
-          <div class="field">
-            <label for="cf-agency">Agency / Department</label>
-            <input type="text" id="cf-agency" name="agency" autocomplete="organization" placeholder="Your agency">
-          </div>
-          <div class="field">
-            <label for="cf-size">Department size</label>
-            <select id="cf-size" name="size">
-              <option>Under 25 providers</option>
-              <option>25-50 providers</option>
-              <option>50-100 providers</option>
-              <option>100+ providers</option>
-            </select>
-          </div>
-          <div class="field full">
-            <label for="cf-message">Anything you'd like us to know? (optional)</label>
-            <textarea id="cf-message" name="message" placeholder="Questions, current training setup, timing, whatever's useful."></textarea>
-          </div>
-          <div class="form-foot">
-            <p class="status" id="cf-status" role="status" aria-live="polite"></p>
-            <button type="submit" class="btn" id="cf-submit">Send</button>
-          </div>
-        </form>
       </div>
     </section>
 
@@ -299,6 +261,48 @@
     </section>
   </main>
 
+  <dialog class="contact" id="contact" aria-labelledby="contactTitle">
+    <button type="button" class="contact-x" id="closeContact" aria-label="Close">&times;</button>
+    <div class="section-eyebrow">Get started</div>
+    <h2 id="contactTitle">Tell us about your agency.</h2>
+    <p class="note">Send your protocol PDF for a free Protocol Baseline, or ask about pricing. We start with one email.</p>
+    <form id="contactForm" class="form" action="https://api.protoquiz.com/api/monitor?type=contactForm" method="POST">
+      <input type="text" name="phone" tabindex="-1" autocomplete="off" style="position:absolute;left:-10000px" aria-hidden="true">
+      <input type="hidden" name="source" value="agency-baseline-v16">
+      <div class="field">
+        <label for="cf-name">Name</label>
+        <input type="text" id="cf-name" name="name" autocomplete="name" placeholder="Your name" autofocus>
+      </div>
+      <div class="field">
+        <label for="cf-email">Email *</label>
+        <input type="email" id="cf-email" name="email" autocomplete="email" required placeholder="you@agency.gov">
+      </div>
+      <div class="field">
+        <label for="cf-agency">Agency / Department</label>
+        <input type="text" id="cf-agency" name="agency" autocomplete="organization" placeholder="Your agency">
+      </div>
+      <div class="field">
+        <label for="cf-size">Department size</label>
+        <select id="cf-size" name="size">
+          <option>Under 25 providers</option>
+          <option>25-50 providers</option>
+          <option>50-100 providers</option>
+          <option>100+ providers</option>
+        </select>
+      </div>
+      <div class="field full">
+        <label for="cf-message">Anything you'd like us to know? (optional)</label>
+        <textarea id="cf-message" name="message" placeholder="Questions, current training setup, timing, whatever's useful."></textarea>
+      </div>
+      <div class="form-foot">
+        <p class="status" id="cf-status" role="status" aria-live="polite"></p>
+        <button type="submit" class="btn" id="cf-submit">Send</button>
+      </div>
+    </form>
+    <p class="direct">Prefer email? <a href="mailto:sales@protoquiz.com">sales@protoquiz.com</a></p>
+  </dialog>
+
+
   <!-- shared-chrome:footer -->
   <footer class="site-footer">
     <div class="foot-cols">
@@ -356,6 +360,14 @@
           else if (!v.paused) { ours = true; v.pause(); }
         }, { threshold: 0.25 }).observe(v);
       }
+
+      // "Contact sales" and the Baseline button open the form as a popup; /agency/#contact from other pages lands in it too.
+      var dlg = document.getElementById('contact');
+      function openContact(e) { if (e) e.preventDefault(); dlg.showModal(); }
+      document.querySelectorAll('#openContact, #baselineCta, #quoteCta').forEach(function (a) { a.addEventListener('click', openContact); });
+      document.getElementById('closeContact').addEventListener('click', function () { dlg.close(); });
+      dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+      if (location.hash === '#contact') openContact();
 
       var form = document.getElementById('contactForm'),
           submitBtn = document.getElementById('cf-submit'),
