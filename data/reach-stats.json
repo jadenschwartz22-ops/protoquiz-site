@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-10-13T18:08:52.528Z",
-  "totalUploads": 737,
+  "generatedAt": "2026-10-14T18:07:35.743Z",
+  "totalUploads": 740,
   "distinctProtocols": 476,
-  "activeStudiers": 516,
-  "pagesProcessed": 115712,
+  "activeStudiers": 518,
+  "pagesProcessed": 116151,
   "statesRepresented": 43,
   "countriesRepresented": 5,
   "internationalUploads": 13,
   "byState": {
     "CO": 97,
-    "CA": 53,
+    "CA": 54,
     "MI": 49,
-    "NY": 30,
+    "NY": 31,
     "MA": 30,
     "PA": 29,
     "TX": 28,
@@ -109,7 +109,7 @@
       "city": "New York",
       "x": 843,
       "y": 202,
-      "count": 30,
+      "count": 31,
       "tier": "hot",
       "topProtocols": [
         {
@@ -494,6 +494,28 @@
     },
     {
       "state": "CA",
+      "city": "Riverside",
+      "x": 95,
+      "y": 350,
+      "count": 6,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "104 Ready to Print Policy Manual 4000 Series",
+          "count": 3
+        },
+        {
+          "title": "rivcoready.org protocols (2 PDFs)",
+          "count": 1
+        },
+        {
+          "title": "4105 ALS Drug Index",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "CA",
       "city": "San Diego",
       "x": 93,
       "y": 378,
@@ -608,28 +630,6 @@
         },
         {
           "title": "master.alabama.protocols.11th.edition.07012025",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CA",
-      "city": "Riverside",
-      "x": 95,
-      "y": 350,
-      "count": 5,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "104 Ready to Print Policy Manual 4000 Series",
-          "count": 2
-        },
-        {
-          "title": "rivcoready.org protocols (2 PDFs)",
-          "count": 1
-        },
-        {
-          "title": "4105 ALS Drug Index",
           "count": 1
         }
       ]
