@@ -1,25 +1,25 @@
 {
-  "generatedAt": "2026-10-14T18:07:35.743Z",
-  "totalUploads": 740,
-  "distinctProtocols": 476,
-  "activeStudiers": 518,
-  "pagesProcessed": 116151,
+  "generatedAt": "2026-10-15T18:08:51.627Z",
+  "totalUploads": 749,
+  "distinctProtocols": 478,
+  "activeStudiers": 527,
+  "pagesProcessed": 116894,
   "statesRepresented": 43,
   "countriesRepresented": 5,
   "internationalUploads": 13,
   "byState": {
-    "CO": 97,
+    "CO": 101,
     "CA": 54,
     "MI": 49,
     "NY": 31,
+    "PA": 30,
     "MA": 30,
-    "PA": 29,
     "TX": 28,
     "GA": 25,
     "VA": 19,
     "CT": 19,
     "OR": 19,
-    "NC": 17,
+    "NC": 18,
     "WA": 14,
     "NV": 14,
     "FL": 11,
@@ -44,13 +44,13 @@
     "OK": 3,
     "MO": 3,
     "DC": 3,
+    "RI": 3,
     "MN": 2,
     "VT": 2,
     "AR": 2,
     "NH": 2,
     "NJ": 2,
-    "IA": 2,
-    "RI": 2
+    "IA": 2
   },
   "byCountry": {
     "ZA": 7,
@@ -65,12 +65,12 @@
       "city": "Denver",
       "x": 330,
       "y": 258,
-      "count": 88,
+      "count": 92,
       "tier": "hot",
       "topProtocols": [
         {
           "title": "DMEMS Protocols January 2026 (Example)",
-          "count": 36
+          "count": 40
         },
         {
           "title": "DMEMSMD Protocols January 2026 FINAL 2025 02 02",
@@ -127,6 +127,28 @@
       ]
     },
     {
+      "state": "PA",
+      "city": "Philadelphia",
+      "x": 828,
+      "y": 223,
+      "count": 30,
+      "tier": "hot",
+      "topProtocols": [
+        {
+          "title": "2023v1 2 PA ALS Protocols",
+          "count": 11
+        },
+        {
+          "title": "2023v1 2 PA BLS Protocols",
+          "count": 6
+        },
+        {
+          "title": "2023v1 2 pa bls protocols",
+          "count": 3
+        }
+      ]
+    },
+    {
       "state": "MA",
       "city": "Boston",
       "x": 881,
@@ -145,28 +167,6 @@
         {
           "title": "download",
           "count": 4
-        }
-      ]
-    },
-    {
-      "state": "PA",
-      "city": "Philadelphia",
-      "x": 828,
-      "y": 223,
-      "count": 29,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "2023v1 2 PA ALS Protocols",
-          "count": 10
-        },
-        {
-          "title": "2023v1 2 PA BLS Protocols",
-          "count": 6
-        },
-        {
-          "title": "2023v1 2 pa bls protocols",
-          "count": 3
         }
       ]
     },
@@ -897,6 +897,24 @@
       ]
     },
     {
+      "state": "RI",
+      "city": "Providence",
+      "x": 878,
+      "y": 168,
+      "count": 3,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "StatewideEmergencyMedicalServices",
+          "count": 2
+        },
+        {
+          "title": "StatewideEmergencyMedicalServices 2024",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "OK",
       "city": "Oklahoma City",
       "x": 454,
@@ -928,6 +946,24 @@
         },
         {
           "title": "Kentucky EMS State Protocols 2025 04 30",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "NC",
+      "city": "Davidson County",
+      "x": 760,
+      "y": 330,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "2025 DCEMS Protocols 9 5 2025",
+          "count": 1
+        },
+        {
+          "title": "dcems",
           "count": 1
         }
       ]
@@ -1119,24 +1155,6 @@
       ]
     },
     {
-      "state": "RI",
-      "city": "Providence",
-      "x": 878,
-      "y": 168,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "StatewideEmergencyMedicalServices",
-          "count": 1
-        },
-        {
-          "title": "StatewideEmergencyMedicalServices 2024",
-          "count": 1
-        }
-      ]
-    },
-    {
       "state": "FL",
       "city": "Palm Beach Gardens",
       "x": 794,
@@ -1204,20 +1222,6 @@
         },
         {
           "title": "PPP",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "NC",
-      "city": "Davidson County",
-      "x": 760,
-      "y": 330,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "2025 DCEMS Protocols 9 5 2025",
           "count": 1
         }
       ]
