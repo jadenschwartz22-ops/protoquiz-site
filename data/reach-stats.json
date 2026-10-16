@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-15T18:08:51.627Z",
-  "totalUploads": 749,
+  "generatedAt": "2026-10-16T18:07:35.769Z",
+  "totalUploads": 750,
   "distinctProtocols": 478,
-  "activeStudiers": 527,
-  "pagesProcessed": 116894,
+  "activeStudiers": 528,
+  "pagesProcessed": 117408,
   "statesRepresented": 43,
   "countriesRepresented": 5,
   "internationalUploads": 13,
@@ -24,9 +24,9 @@
     "NV": 14,
     "FL": 11,
     "IL": 11,
+    "MD": 11,
     "NM": 11,
     "WY": 10,
-    "MD": 10,
     "AZ": 8,
     "UT": 6,
     "TN": 6,
@@ -347,6 +347,28 @@
       ]
     },
     {
+      "state": "MD",
+      "city": "Baltimore",
+      "x": 807,
+      "y": 242,
+      "count": 11,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "MD Medical Protocols 2026 Print",
+          "count": 3
+        },
+        {
+          "title": "MD Protocols 2026",
+          "count": 2
+        },
+        {
+          "title": "MD Medical Protocols 2026 Hyperlinked",
+          "count": 2
+        }
+      ]
+    },
+    {
       "state": "WY",
       "city": "Jackson",
       "x": 246,
@@ -365,28 +387,6 @@
         {
           "title": "17 17 Dextrose",
           "count": 1
-        }
-      ]
-    },
-    {
-      "state": "MD",
-      "city": "Baltimore",
-      "x": 807,
-      "y": 242,
-      "count": 10,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "MD Medical Protocols 2026 Print",
-          "count": 3
-        },
-        {
-          "title": "MD Protocols 2026",
-          "count": 2
-        },
-        {
-          "title": "MD Medical Protocols 2026 Hyperlinked",
-          "count": 2
         }
       ]
     },
