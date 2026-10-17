@@ -52,15 +52,17 @@ const REVIEWS = [
   ['Super fun scenarios', 'The adaptive scenarios actually feel like running a call.'],
 ];
 
-const FAQ = [
-  ['What protocols does it work with?',
-   "Any full-length protocol document: medication formulary, treatment protocols, algorithms, procedures. That's what powers the scenarios, pharmacology quizzes and algorithm tests. No preloaded NREMT filler. Your protocol set, exactly."],
-  ['Is it accurate?',
-   'Every answer cites the exact page in your PDF. One tap and you are at the source. Protocol quizzes come only from the document you uploaded. You can also edit any extraction and data yourself.'],
-  ['What kinds of quizzes are there?',
-   'Four kinds. Pharmacology quizzes cover adult and pediatric doses, indications, contraindications, routes, mechanisms and adverse effects. Algorithm tests are pulled from your protocol flowcharts. Adaptive patient scenarios respond to your decisions. Learn Mode runs spaced repetition on the meds you keep missing.'],
-  ['What does it cost?',
-   'Free to use, with an optional paid upgrade. There are no ads.'],
+const QA = [
+  ['How do I study my local EMS protocols?',
+   "Upload your agency's protocol PDF to ProtoQuiz and quiz yourself on it. The app pulls out the drugs, doses, routes and decision points, and every answer cites the page it came from."],
+  ["Does it work with my agency's protocol PDF?",
+   'Yes, with any full-length protocol document: medication formulary, treatment protocols, algorithms and procedures. There is no preloaded NREMT filler; quizzes come from your protocol set only.'],
+  ['What quiz types are there?',
+   'Four kinds. Pharmacology quizzes cover doses, indications, contraindications, routes, mechanisms and adverse effects. Algorithm tests come from your protocol flowcharts. Adaptive patient scenarios respond to your decisions. Learn Mode runs spaced repetition on the meds you keep missing.'],
+  ['Is ProtoQuiz free?',
+   'Free to use on iOS and Android, with an optional paid upgrade. There are no ads.'],
+  ['How do I know the answers are right?',
+   'Every answer cites the exact page in your PDF, and one tap opens the source. Protocol quizzes come only from the document you uploaded, and you can edit any extraction yourself.'],
 ];
 
 const html = `<!doctype html>
@@ -286,12 +288,9 @@ ${REVIEWS.map(([t, b]) => `          <div class="review">
     </section>
 
     <section class="section">
-      <div class="section-eyebrow">FAQ</div>
-      <div class="faq">
-${FAQ.map(([q, a]) => `        <details>
-          <summary>${q}</summary>
-          <p>${a}</p>
-        </details>`).join('\n')}
+      <div class="qa">
+${QA.map(([q, a]) => `        <h2>${q}</h2>
+        <p>${a}</p>`).join('\n')}
       </div>
     </section>
   </main>

@@ -168,7 +168,7 @@ write('/research/carry/', page({
         <div class="res-eyebrow">Protocol census &middot; what agencies carry</div>
         <h1>Where agencies split</h1>
         <p class="lede">${Z.core} medications are on nearly every protocol. ${Z.split} more are on a quarter to three quarters of them: that is where agencies disagree.</p>
-        <p class="fnd-note">Share of ${n(T.carryN)} agencies whose protocol lists it as a medication.</p>
+        <p class="fnd-note">Share of ${n(T.carryN)} agencies carrying any drug in the group. Rows such as cyanide antidote, RSI paralytic, antibiotics and buprenorphine are groups; the table below counts single drugs.</p>
       </div>
       <figure class="fnd-fig">${T.carry}</figure>
     </section>
@@ -181,6 +181,7 @@ write('/research/carry/', page({
     </section>
     <section class="res-table-wrap">
       <h2>Every medication <span class="fnd-sub">named by ${MIN}+ agencies; blood and procedures come later</span></h2>
+        <p class="fnd-note">Share carrying that exact drug.</p>
 ${filter()}
 ${table([['Medication'], ['Lists it', 1]], carried.map(([k, c], i) => {
   const pct = Math.round((c / T.carryN) * 100);
