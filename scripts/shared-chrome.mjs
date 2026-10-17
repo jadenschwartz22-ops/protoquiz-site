@@ -138,6 +138,7 @@ export const researchBar = (current = null) => `  <div class="rbar">
     <div class="rbar-in">
       <nav class="rbar-nav" aria-label="Research areas">${RESEARCH_AREAS.map(([label, href, on]) =>
     `<a href="${href}"${current && on(current) ? ' class="on" aria-current="page"' : ''}>${label}</a>`).join('')}</nav>
+      <p class="rbar-contact"><span>Contact: </span><a href="mailto:research@protoquiz.com">research@protoquiz.com</a></p>
     </div>
   </div>`;
 

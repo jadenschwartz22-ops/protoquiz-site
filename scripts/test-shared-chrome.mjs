@@ -8,7 +8,7 @@ import assert from 'node:assert';
 import { readFileSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { NAV_HTML, FOOTER_HTML, CHROME_HEAD, navFor } from './shared-chrome.mjs';
+import { NAV_HTML, FOOTER_HTML, CHROME_HEAD, navFor, researchBar } from './shared-chrome.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 let passed = 0;
@@ -124,6 +124,10 @@ test('chrome head declares the three fonts', () => {
 test('no hardcoded pure black or white in chrome.css', () => {
   const css = readFileSync(join(root, 'assets/chrome.css'), 'utf8');
   assert.ok(!/#fff\b|#ffffff\b|#000\b|#000000\b/i.test(css), 'chrome.css uses pure black or white');
+});
+
+test('researchBar carries the research contact mailto', () => {
+  assert.ok(researchBar('/research/').includes('href="mailto:research@protoquiz.com"'));
 });
 
 console.log(`\n${passed} passed`);

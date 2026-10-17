@@ -225,10 +225,14 @@ a:hover { color: var(--accent-hover); }
 }
 .rbar-nav a:hover{color:var(--ink,#22252c);}
 .rbar-nav a.on{color:var(--ink,#22252c);font-weight:600;border-bottom-color:var(--ink,#22252c);}
+.rbar-contact{margin:0 0 0 auto;font-size:13.5px;color:var(--muted,#6b6f77);}
+.rbar-contact a{color:var(--ink,#22252c);text-decoration:none;}
+.rbar-contact a:hover{text-decoration:underline;}
 @media (max-width:560px){
   .rbar-in{gap:10px;padding:8px 16px;}
   .rbar-nav{gap:14px;}
   .rbar-nav a{padding:4px 0;font-size:13px;}
+  .rbar-contact{flex-basis:100%;margin:0;font-size:13px;}
 }
 
 /* Listing strip — the add/remove (or correct) controls, high on a research page.
