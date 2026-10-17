@@ -516,6 +516,17 @@ test('a rows_private.json on the wrong version aborts too', () => {
   assert.throws(() => generate({ dataDir: V3_DATA, rowsDir: dir, outDir: tmp() }), /must share one version, not a mix/);
   rmSync(dir, { recursive: true, force: true });
 });
+test('a withheld row (here a raw "per medical control") never renders on its agency page', () => {
+  const dir = tmp();
+  const file = JSON.parse(readFileSync(join(V3_ROWS, 'rows_private.json'), 'utf8'));
+  const i = file.rows.findIndex(r => r.agencyKey === 'denver-health' && r.doseRaw === 'per medical control');
+  file.rows[i] = { ...file.rows[i], withheld: 'no_page' };
+  writeFileSync(join(dir, 'rows_private.json'), JSON.stringify(file));
+  const page = generate({ dataDir: V3_DATA, rowsDir: dir, outDir: tmp() }).files.find(f => f.path === '/census/agencies/denver-health/').html;
+  assert.ok(v3html['/census/agencies/denver-health/'].includes('per medical control'), 'control: the row renders when not withheld');
+  assert.ok(!page.includes('per medical control'), 'the withheld row is on the agency page');
+  rmSync(dir, { recursive: true, force: true });
+});
 test('an unknown schemaVersion still aborts at v3', () => {
   const dir = tmp();
   for (const f of readdirSync(V3_DATA)) cpSync(join(V3_DATA, f), join(dir, f));

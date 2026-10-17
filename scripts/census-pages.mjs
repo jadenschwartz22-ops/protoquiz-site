@@ -265,7 +265,8 @@ function readContract(dataDir, rowsDir) {
     schemaVersion: version,
     documents: set['documents.json'].rows,
     agencies: set['agencies.json'].rows,
-    doses: rowsFile.rows,
+    // A withheld row (no numeric dose, or no page citation) stays private for review and never renders.
+    doses: rowsFile.rows.filter((r) => !r.withheld),
     compare: set['compare.json'],
     ledger: set['ledger.json'].rows,
     manifest,
