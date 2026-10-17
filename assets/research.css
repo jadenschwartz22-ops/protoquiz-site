@@ -63,6 +63,13 @@ main{padding-bottom:64px;}
    painted area only -- and these are painted by the fill attribute. */
 .rm-svg .cty{pointer-events:all;}
 .rm-svg .cty.is-hot{stroke:#111;stroke-width:1.2;}
+/* Selected county: ring copy on top. Glow (soft ink), halo (ground) and edge (ink) strokes
+   are non-scaling so they read ~3px on screen at every zoom. Others dim slightly. */
+.rm-svg .cty-sel path{fill:none;pointer-events:none;vector-effect:non-scaling-stroke;stroke-linejoin:round;}
+.rm-svg .cty-sel-glow{stroke:var(--ink);stroke-width:10px;stroke-opacity:.22;filter:blur(3px);}
+.rm-svg .cty-sel-halo{stroke:var(--ground);stroke-width:4.5px;}
+.rm-svg .cty-sel-edge{stroke:var(--ink);stroke-width:2.5px;}
+.rm-svg.has-sel .cty{opacity:.85;}
 
 .rm-tip{
   position:absolute;z-index:5;pointer-events:none;opacity:0;

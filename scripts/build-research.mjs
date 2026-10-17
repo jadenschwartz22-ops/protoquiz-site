@@ -491,7 +491,25 @@ ${excluded.map(stateRow).join('\n')}
         // Tier A says which kind of record named the county: a state layer or a local page.
         function tierText(c) { return c.tier === 'A' && c.source === 'local' ? 'Named by a county or agency source' : (TIER[c.tier] || 'Tier ' + c.tier); }
 
-        function closePanel() { panel.classList.remove('on'); panel.hidden = true; openF = null; }
+        // Selection ring: a copy of the picked county drawn LAST in the svg (so no neighbour
+        // covers it), glow + halo + ink outline. Non-scaling strokes keep it the same width
+        // on screen at any zoom. The county's own fill is untouched: colour carries meaning.
+        var NS = 'http://www.w3.org/2000/svg', ring = null;
+        function mark(el) {
+          unmark();
+          ring = document.createElementNS(NS, 'g');
+          ring.setAttribute('class', 'cty-sel');
+          ['glow', 'halo', 'edge'].forEach(function (k) {
+            var p = document.createElementNS(NS, 'path');
+            p.setAttribute('d', el.getAttribute('d'));
+            p.setAttribute('class', 'cty-sel-' + k);
+            ring.appendChild(p);
+          });
+          svg.appendChild(ring);
+          svg.classList.add('has-sel');
+        }
+        function unmark() { if (ring) { ring.remove(); ring = null; } svg.classList.remove('has-sel'); }
+        function closePanel() { panel.classList.remove('on'); panel.hidden = true; openF = null; unmark(); }
         panel.querySelector('.rm-panel-x').addEventListener('click', closePanel);
         document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closePanel(); });
 
@@ -554,7 +572,7 @@ ${excluded.map(stateRow).join('\n')}
         function openCounty(el) {
           var f = el.getAttribute('data-f');
           if (!f) return;
-          openF = f;
+          openF = f; mark(el);
           view.classList.add('touched');
           panel.hidden = false; panel.classList.add('on');
           // Sit on whichever side the county is NOT, so the panel never covers what was
