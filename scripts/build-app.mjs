@@ -10,8 +10,8 @@ const stats = JSON.parse(readFileSync('data/firestore-stats.json', 'utf8')).raw;
 const MAP = readFileSync('assets/reach-map.html', 'utf8');
 const reach = JSON.parse(readFileSync('data/reach-stats.json', 'utf8'));
 const fmt = n => Number(n).toLocaleString('en-US');
-// The map SVG is a snapshot; its stat row is not. Build-time numbers are the fallback,
-// and the page refreshes them from the same daily JSON the home page reads.
+// Build-time map and numbers are the fallback; the page redraws both from the same
+// daily JSON the home page reads (assets/reach-map.js), so the dots match the stat row.
 const REACH_STATS = `    <div class="reach-stats">
       <div><span class="stat-n" data-stat="uploads">${fmt(reach.totalUploads)}</span><span class="stat-l">uploads</span></div>
       <div><span class="stat-n" data-stat="states">${reach.statesRepresented}</span><span class="stat-l">states</span></div>
@@ -20,7 +20,7 @@ const REACH_STATS = `    <div class="reach-stats">
       <div><span class="stat-n" data-stat="pages">${fmt(reach.pagesProcessed)}</span><span class="stat-l">pages processed</span></div>
     </div>
     <p class="reach-foot" id="reachUpdated">Live from ProtoQuiz uploads.</p>`;
-const MAP_LIVE = MAP.replace(/    <div class="reach-stats">[\s\S]*?<\/div>\n    <\/div>/, REACH_STATS);
+const MAP_LIVE = MAP.replace('    <div class="reach-stats">\n    </div>', REACH_STATS);
 if (MAP_LIVE === MAP) throw new Error('reach-map.html: stat row not found');
 
 const APPLE = `<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.7c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.8-.9-3-.8-1.5 0-2.9.9-3.7 2.2-1.6 2.8-.4 6.9 1.1 9.1.8 1.1 1.7 2.3 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.9-2.2.9-1.3 1.3-2.5 1.3-2.6 0 0-2.5-1-2.6-3.6zM14.2 5.9c.6-.8 1-1.9.9-3-.9 0-2.1.6-2.7 1.4-.6.7-1.1 1.8-1 2.9 1 .1 2.1-.5 2.8-1.3z"/></svg>`;
@@ -297,7 +297,8 @@ ${QA.map(([q, a]) => `        <h2>${q}</h2>
 
 ${FOOTER_HTML}
   <script src="/assets/app-toggle.js?v=${assetHash('assets/app-toggle.js')}" defer></script>
-  <script>
+  <script type="module">
+    import { mountReach } from '/assets/reach-map.js?v=${assetHash('assets/reach-map.js')}';
     for (const b of document.querySelectorAll('[data-map-view]')) b.addEventListener('click', () => {
       for (const x of document.querySelectorAll('[data-map-view]')) x.setAttribute('aria-pressed', x === b);
       for (const m of document.querySelectorAll('.reach-map[data-view]')) m.toggleAttribute('hidden', m.dataset.view !== b.dataset.mapView);
@@ -307,6 +308,7 @@ ${FOOTER_HTML}
       const get = u => fetch(u, { cache: 'no-cache' }).then(r => r.json()).catch(() => null);
       const [r, f] = await Promise.all([get('/data/reach-stats.json'), get('/data/firestore-stats.json')]);
       const set = (k, v) => v != null && document.querySelectorAll('[data-stat="' + k + '"]').forEach(el => { el.textContent = Number(v).toLocaleString('en-US'); });
+      mountReach(document.querySelector('.reach-wrap'), r);
       if (r) {
         set('uploads', r.totalUploads); set('states', r.statesRepresented); set('protocols', r.distinctProtocols);
         set('studiers', r.activeStudiers); set('pages', r.pagesProcessed);
