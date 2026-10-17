@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
   <link rel="stylesheet" href="/assets/chrome.css?v=c575909f">
-  <link rel="stylesheet" href="/assets/research.css?v=09e02318">
+  <link rel="stylesheet" href="/assets/research.css?v=ff436e9d">
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
@@ -4056,6 +4056,11 @@
         var pSub = panel.querySelector('.rm-panel-sub');
         var pBody = panel.querySelector('.rm-panel-bd');
         var COUNTIES = null, loading = null, openF = null;
+        // On phones the card lives under the map (CSS makes it static); move it out of the
+        // viewport, which clips and would otherwise cover the map.
+        var narrow = window.matchMedia('(max-width:640px)');
+        function place() { if (narrow.matches) view.after(panel); else view.appendChild(panel); }
+        place(); narrow.addEventListener('change', place);
 
         var OWN = { public: ['Public', '#0072B2'], private: ['Private', '#D55E00'],
                     hospital: ['Hospital', '#009E73'], mixed: ['Mixed', '#8C6BB1'] };
@@ -4158,6 +4163,11 @@
           var t = (el.getAttribute('data-t') || '').split(':')[0];
           render(f, t);
           if (!COUNTIES) load().then(function () { if (openF === f) render(f, t); });
+          if (narrow.matches) {
+            var pr = panel.getBoundingClientRect();
+            if (pr.top < 0 || pr.bottom > window.innerHeight)
+              panel.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion:reduce)').matches ? 'auto' : 'smooth', block: 'nearest' });
+          }
         }
         // The county file (~270KB) is fetched the moment a pointer reaches the map, not
         // on the first click, so the first panel opens filled instead of on "Loading...".

@@ -152,11 +152,14 @@ main{padding-bottom:64px;}
 }
 .rm-report:hover{background:#ece9e1;border-color:#b9b2a4;}
 .rm-report:focus-visible{outline:2px solid var(--accent);outline-offset:1px;}
-/* Below this there is no room to sit beside the map, so the panel spans the width as a
-   bottom sheet. !important because the script sets left/right inline to dodge the
-   clicked county, which is meaningless once the panel is full width. */
+/* Below this there is no room beside the map, and a sheet over it hides the county just
+   picked. The script moves the panel out of the viewport to sit under the map in normal
+   flow, full width. The ring is also lighter so it does not swamp small counties. */
 @media (max-width:640px){
-  .rm-panel{left:12px !important;right:12px !important;width:auto;}
+  .rm-panel{position:static;width:auto;margin:10px 0 0;transform:none;}
+  .rm-svg .cty-sel-glow{stroke-width:6px;filter:blur(2px);}
+  .rm-svg .cty-sel-halo{stroke-width:3px;}
+  .rm-svg .cty-sel-edge{stroke-width:2px;}
 }
 @media (prefers-reduced-motion:reduce){.rm-panel{transition:none;}}
 .rm-cap{

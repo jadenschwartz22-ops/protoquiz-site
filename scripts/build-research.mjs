@@ -483,6 +483,11 @@ ${excluded.map(stateRow).join('\n')}
         var pSub = panel.querySelector('.rm-panel-sub');
         var pBody = panel.querySelector('.rm-panel-bd');
         var COUNTIES = null, loading = null, openF = null;
+        // On phones the card lives under the map (CSS makes it static); move it out of the
+        // viewport, which clips and would otherwise cover the map.
+        var narrow = window.matchMedia('(max-width:640px)');
+        function place() { if (narrow.matches) view.after(panel); else view.appendChild(panel); }
+        place(); narrow.addEventListener('change', place);
 
         var OWN = { public: ['Public', '#0072B2'], private: ['Private', '#D55E00'],
                     hospital: ['Hospital', '#009E73'], mixed: ['Mixed', '#8C6BB1'] };
@@ -585,6 +590,11 @@ ${excluded.map(stateRow).join('\n')}
           var t = (el.getAttribute('data-t') || '').split(':')[0];
           render(f, t);
           if (!COUNTIES) load().then(function () { if (openF === f) render(f, t); });
+          if (narrow.matches) {
+            var pr = panel.getBoundingClientRect();
+            if (pr.top < 0 || pr.bottom > window.innerHeight)
+              panel.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion:reduce)').matches ? 'auto' : 'smooth', block: 'nearest' });
+          }
         }
         // The county file (~270KB) is fetched the moment a pointer reaches the map, not
         // on the first click, so the first panel opens filled instead of on "Loading...".
