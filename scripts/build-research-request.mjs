@@ -7,7 +7,7 @@ import { writeFileSync, mkdirSync } from 'node:fs';
 import { navFor, researchBar, FOOTER_HTML, CHROME_HEAD, seoHead, assetHash } from './shared-chrome.mjs';
 
 const ENDPOINT = 'https://api.protoquiz.com/api/monitor?type=contactForm';
-const CONTACT = 'support@protoquiz.com';
+const CONTACT = 'research@protoquiz.com';
 export const REQUEST_TYPES = [
   ['add', 'Add our protocol'],
   ['fix', 'Fix a census listing'],

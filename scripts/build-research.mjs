@@ -261,7 +261,7 @@ ${excluded.map(stateRow).join('\n')}
               msg.textContent = 'Thank you — this goes straight to a human, and a county we are told about gets checked first.';
             }).catch(function () {
               btn.disabled = false;
-              msg.textContent = 'That did not send. Email support@protoquiz.com instead and it will get the same treatment.';
+              msg.textContent = 'That did not send. Email research@protoquiz.com instead and it will get the same treatment.';
             });
           });
         })();

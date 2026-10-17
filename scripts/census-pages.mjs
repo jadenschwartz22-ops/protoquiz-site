@@ -494,7 +494,7 @@ const standingLabel = v => (v === true ? 'standing' : v === false ? 'requires co
 //
 // One form serves the whole site: /research/request/ (scripts/build-research-request.mjs).
 // Census pages only link to it, preset by ?type= and &agency=, so there is one form to keep.
-const CONTACT = 'support@protoquiz.com';
+const CONTACT = 'research@protoquiz.com';
 const requestUrl = (type, agency = '', link = '') => `/research/request/?type=${type}${agency ? `&agency=${encodeURIComponent(agency)}` : ''}${link ? `&link=${encodeURIComponent(link)}` : ''}`;
 
 function doseCell(r) {
