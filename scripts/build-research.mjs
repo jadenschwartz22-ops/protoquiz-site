@@ -201,7 +201,7 @@ ${excluded.map(stateRow).join('\n')}
 
       <h3>Shading: how sure we are</h3>
       <dl class="tierdl">
-        <dt><span class="tierchip t-a"></span>Named</dt><dd>A state or agency record names the provider for the county, or for its main towns. The only tier we treat as known.</dd>
+        <dt><span class="tierchip t-a"></span>Named</dt><dd>A state or agency record names the provider for the whole county. The only tier we treat as known. Where a record names only some towns, the county stays in the tier below and its panel says so.</dd>
         <dt><span class="tierchip t-b"></span>Confirmed biller</dt><dd>A licensed ambulance service in the county bills mostly emergency transports (Medicare).</dd>
         <dt><span class="tierchip t-c"></span>Located here</dt><dd>A licensed ambulance service is based in the county.</dd>
         <dt><span class="tierchip t-d"></span>Billing only</dt><dd>Only Medicare billing points to it. The weakest signal.</dd>
@@ -525,7 +525,7 @@ ${excluded.map(stateRow).join('\n')}
               ? 'We found records for this county but could not tell what kind of agency runs the service. The gap is ours, not the county’s.'
               : c.tier === 'A'
                 ? (c.source === 'local' ? 'Named directly by a county or agency source.' : 'Named directly by a state record.')
-                : 'Inferred from licensing rosters and Medicare billing. An inferred county is a lead, not a fact.')
+                : (c.partial ? 'A record names the provider for some towns here, not the whole county. ' : '') + 'Inferred from licensing rosters and Medicare billing. An inferred county is a lead, not a fact.')
             + '</p>';
           // The correction form is the one that already exists further down the page --
           // this link scrolls to it and fills the county in, so a reader who spots a bad
@@ -577,6 +577,22 @@ ${excluded.map(stateRow).join('\n')}
             .catch(function () { COUNTIES = {}; }));
         }
         view.addEventListener('pointerenter', load, { once: true });
+
+        // Deep link: /research/atlas/?state=TN zooms to that state and fades the rest.
+        var want = (new URLSearchParams(location.search).get('state') || '').toUpperCase();
+        if (/^[A-Z]{2}$/.test(want)) load().then(function () {
+          var l = 1e9, t = 1e9, r = -1e9, b = -1e9;
+          z = 1; x = 0; y = 0;
+          Array.prototype.forEach.call(cty, function (el) {
+            var c = COUNTIES[el.getAttribute('data-f')];
+            if (!c || c.st !== want) { el.style.opacity = '.12'; return; }
+            var q = box(el); l = Math.min(l, q.l); t = Math.min(t, q.t); r = Math.max(r, q.l + q.w); b = Math.max(b, q.t + q.h);
+          });
+          if (r < l) return;
+          var g = measure(), nz = Math.max(1, Math.min(12, 0.85 * Math.min(g.w / (r - l), g.h / (b - t))));
+          z = nz; x = g.w / 2 - nz * (l + r) / 2; y = g.h / 2 - nz * (t + b) / 2;
+          clamp(); draw();
+        });
 
         // A click only counts when the pointer did not travel: otherwise the end of
         // every pan would pop a panel open over the county you dragged to.
