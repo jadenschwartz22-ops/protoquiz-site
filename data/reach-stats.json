@@ -1,34 +1,34 @@
 {
-  "generatedAt": "2026-10-16T18:07:35.769Z",
-  "totalUploads": 750,
-  "distinctProtocols": 478,
-  "activeStudiers": 528,
-  "pagesProcessed": 117408,
-  "statesRepresented": 43,
+  "generatedAt": "2026-10-17T12:35:54.167Z",
+  "totalUploads": 756,
+  "distinctProtocols": 480,
+  "activeStudiers": 534,
+  "pagesProcessed": 118532,
+  "statesRepresented": 45,
   "countriesRepresented": 5,
   "internationalUploads": 13,
   "byState": {
-    "CO": 101,
-    "CA": 54,
+    "CO": 103,
+    "CA": 55,
     "MI": 49,
     "NY": 31,
     "PA": 30,
     "MA": 30,
     "TX": 28,
     "GA": 25,
-    "VA": 19,
+    "VA": 20,
     "CT": 19,
     "OR": 19,
     "NC": 18,
-    "WA": 14,
-    "NV": 14,
+    "WA": 15,
+    "NV": 13,
     "FL": 11,
     "IL": 11,
     "MD": 11,
     "NM": 11,
     "WY": 10,
-    "AZ": 8,
-    "UT": 6,
+    "AZ": 9,
+    "UT": 7,
     "TN": 6,
     "IN": 6,
     "SC": 5,
@@ -41,16 +41,18 @@
     "DE": 4,
     "ID": 4,
     "WV": 4,
+    "RI": 4,
     "OK": 3,
     "MO": 3,
     "DC": 3,
-    "RI": 3,
     "MN": 2,
     "VT": 2,
     "AR": 2,
     "NH": 2,
     "NJ": 2,
-    "IA": 2
+    "IA": 2,
+    "MT": 1,
+    "SD": 1
   },
   "byCountry": {
     "ZA": 7,
@@ -65,7 +67,7 @@
       "city": "Denver",
       "x": 330,
       "y": 258,
-      "count": 92,
+      "count": 94,
       "tier": "hot",
       "topProtocols": [
         {
@@ -307,12 +309,12 @@
       "city": "San Leandro",
       "x": 34,
       "y": 249,
-      "count": 12,
+      "count": 13,
       "tier": "warm",
       "topProtocols": [
         {
           "title": "2026 Alameda County EMS Field Manual Rev3",
-          "count": 7
+          "count": 8
         },
         {
           "title": "Alco Field Manual",
@@ -391,25 +393,11 @@
       ]
     },
     {
-      "state": "NM",
-      "city": "Roswell",
-      "x": 325,
-      "y": 399,
-      "count": 10,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "beb995af bff0 4e74 886c 9f95054bff73 copy",
-          "count": 10
-        }
-      ]
-    },
-    {
       "state": "VA",
       "city": "Richmond",
       "x": 801,
       "y": 283,
-      "count": 9,
+      "count": 10,
       "tier": "warm",
       "topProtocols": [
         {
@@ -427,23 +415,37 @@
       ]
     },
     {
+      "state": "NM",
+      "city": "Roswell",
+      "x": 325,
+      "y": 399,
+      "count": 10,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "beb995af bff0 4e74 886c 9f95054bff73 copy",
+          "count": 10
+        }
+      ]
+    },
+    {
       "state": "WA",
       "city": "Seattle",
       "x": 91,
       "y": 38,
-      "count": 8,
+      "count": 9,
       "tier": "warm",
       "topProtocols": [
+        {
+          "title": "ABFY County Protocols 2025",
+          "count": 2
+        },
         {
           "title": "Pend Oreille County Protocols 2022",
           "count": 1
         },
         {
           "title": "EMS Stephen’s County Protocols",
-          "count": 1
-        },
-        {
-          "title": "EMS",
           "count": 1
         }
       ]
@@ -493,6 +495,28 @@
       ]
     },
     {
+      "state": "AZ",
+      "city": "Phoenix",
+      "x": 188,
+      "y": 380,
+      "count": 7,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "tcems protocol 2025 2027 2",
+          "count": 3
+        },
+        {
+          "title": "red book chapter 3 2026",
+          "count": 2
+        },
+        {
+          "title": "tcems protocol 2023",
+          "count": 2
+        }
+      ]
+    },
+    {
       "state": "CA",
       "city": "Riverside",
       "x": 95,
@@ -525,28 +549,6 @@
         {
           "title": "2026 2027 Protocol Packet",
           "count": 6
-        }
-      ]
-    },
-    {
-      "state": "AZ",
-      "city": "Phoenix",
-      "x": 188,
-      "y": 380,
-      "count": 6,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "tcems protocol 2025 2027 2",
-          "count": 3
-        },
-        {
-          "title": "tcems protocol 2023",
-          "count": 2
-        },
-        {
-          "title": "red book chapter 3 2026",
-          "count": 1
         }
       ]
     },
@@ -759,6 +761,24 @@
       ]
     },
     {
+      "state": "RI",
+      "city": "Providence",
+      "x": 878,
+      "y": 168,
+      "count": 4,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "StatewideEmergencyMedicalServices",
+          "count": 3
+        },
+        {
+          "title": "StatewideEmergencyMedicalServices 2024",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "TX",
       "city": "Austin",
       "x": 448,
@@ -892,24 +912,6 @@
         },
         {
           "title": "PP 8001 Allergic Reaction Anaphylaxis 1",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "RI",
-      "city": "Providence",
-      "x": 878,
-      "y": 168,
-      "count": 3,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "StatewideEmergencyMedicalServices",
-          "count": 2
-        },
-        {
-          "title": "StatewideEmergencyMedicalServices 2024",
           "count": 1
         }
       ]
@@ -1150,6 +1152,24 @@
         },
         {
           "title": "Protocols FINAL Effective July 2025",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "UT",
+      "city": "Tooele",
+      "x": 211,
+      "y": 225,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "Nevada MWA Protocols 8.22.26 +1 more",
+          "count": 1
+        },
+        {
+          "title": "Protocols",
           "count": 1
         }
       ]
@@ -1396,9 +1416,9 @@
     },
     {
       "state": "WA",
-      "city": "Las Vegas",
-      "x": 91,
-      "y": 24,
+      "city": "Vancouver",
+      "x": 74,
+      "y": 78,
       "count": 1,
       "tier": "tiny",
       "topProtocols": [
@@ -1745,15 +1765,15 @@
       ]
     },
     {
-      "state": "NV",
-      "city": "Tooele",
-      "x": 145,
-      "y": 297,
+      "state": "MT",
+      "city": "Billings",
+      "x": 289,
+      "y": 119,
       "count": 1,
       "tier": "tiny",
       "topProtocols": [
         {
-          "title": "Nevada MWA Protocols 8.22.26 +1 more",
+          "title": "A medication reference",
           "count": 1
         }
       ]
@@ -1768,6 +1788,20 @@
       "topProtocols": [
         {
           "title": "AMR Cent NM 2026 COG Final",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "SD",
+      "city": "Sioux Falls",
+      "x": 469,
+      "y": 181,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "remsaprotocolspdf 43f35fee79d06b3bb5a22",
           "count": 1
         }
       ]
@@ -1824,20 +1858,6 @@
       "topProtocols": [
         {
           "title": "MFDESNAParamedicFormulary",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "UT",
-      "city": "Tooele",
-      "x": 211,
-      "y": 225,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "Protocols",
           "count": 1
         }
       ]
