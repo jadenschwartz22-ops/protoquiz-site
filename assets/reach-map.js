@@ -104,12 +104,8 @@ export function reachLayers(reach) {
   return { us, world, byState, usLocated, intlLocated, total, unlocated: Math.max(0, total - usLocated - intlLocated) };
 }
 
-// The sum, spelled out, so every number on the map adds up to the headline.
 const nf = n => n.toLocaleString('en-US');
-export const pickHint = ({ usLocated, intlLocated, unlocated, total }) =>
-  `US ${nf(usLocated)} + outside the US ${nf(intlLocated)}`
-  + (unlocated ? ` + no location in the file ${nf(unlocated)}` : '')
-  + ` = ${nf(total)} uploads. Tap a dot for its city.`;
+export const pickHint = ({ unlocated }) => unlocated ? `No location: ${nf(unlocated)} uploads` : '';
 
 // Browser: redraw from the live JSON and wire tap-to-inspect.
 export function mountReach(root, reach) {
