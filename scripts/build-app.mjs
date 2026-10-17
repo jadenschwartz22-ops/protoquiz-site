@@ -56,7 +56,7 @@ const FAQ = [
   ['What protocols does it work with?',
    "Any full-length protocol document: medication formulary, treatment protocols, algorithms, procedures. That's what powers the scenarios, pharmacology quizzes and algorithm tests. No preloaded NREMT filler. Your protocol set, exactly."],
   ['Is it accurate?',
-   'Every answer cites the exact page in your PDF. One tap and you are at the source. Protocol quizzes come only from the document you uploaded. In our testing it runs about 90% accuracy across the board on any EMS protocol, which is why you can edit any extraction and data yourself to fix errors.'],
+   'Every answer cites the exact page in your PDF. One tap and you are at the source. Protocol quizzes come only from the document you uploaded. You can also edit any extraction and data yourself.'],
   ['What kinds of quizzes are there?',
    'Four kinds. Pharmacology quizzes cover adult and pediatric doses, indications, contraindications, routes, mechanisms and adverse effects. Algorithm tests are pulled from your protocol flowcharts. Adaptive patient scenarios respond to your decisions. Learn Mode runs spaced repetition on the meds you keep missing.'],
   ['What does it cost?',
