@@ -36,4 +36,4 @@ ${land.map(p => '      ' + p.replace('<path', '<path class="land"')).join('\n')}
     <div class="reach-stats">
     </div>
 `);
-console.log(`wrote assets/reach-map.html — ${states.length} states, ${L.located} located of ${reach.totalUploads} uploads`);
+console.log(`wrote assets/reach-map.html — ${states.length} states, ${L.usLocated} US + ${L.intlLocated} intl + ${L.unlocated} unlocated = ${L.total}`);
