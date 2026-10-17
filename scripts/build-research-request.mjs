@@ -4,7 +4,7 @@
 // ?type= (and optionally &agency=) to preset it. Posts to the general contact endpoint
 // (b2b-ingest `contactForm`: {name, email, phone, message, source}) as one readable message.
 import { writeFileSync, mkdirSync } from 'node:fs';
-import { navFor, researchBar, FOOTER_HTML, CHROME_HEAD, assetHash } from './shared-chrome.mjs';
+import { navFor, researchBar, FOOTER_HTML, CHROME_HEAD, seoHead, assetHash } from './shared-chrome.mjs';
 
 const ENDPOINT = 'https://api.protoquiz.com/api/monitor?type=contactForm';
 const CONTACT = 'support@protoquiz.com';
@@ -24,6 +24,7 @@ const html = `<!doctype html>
   <title>Add, fix, or remove - ProtoQuiz Research</title>
   <meta name="description" content="Add your agency's protocol to the EMS Protocol Census, fix or remove a listing, or correct a county on the 911 map. Handled the same day.">
   <link rel="canonical" href="https://protoquiz.com/research/request/">
+${seoHead({ path: '/research/request/', name: 'Add, fix, or remove', title: 'Add, fix, or remove - ProtoQuiz Research', desc: 'Add your agency to the EMS Protocol Census, fix or remove a listing, or correct a county on the 911 map. Handled the same day.', crumbs: [['Research', '/research/']], og: true })}
 ${CHROME_HEAD}
   <link rel="stylesheet" href="/assets/research.css?v=${assetHash('assets/research.css')}">
   <style>

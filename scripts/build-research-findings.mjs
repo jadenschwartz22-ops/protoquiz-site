@@ -4,7 +4,7 @@
 // assets/research-thumbs.json (build-research-thumbs.mjs), so a slide and its page can
 // never disagree. No agency names: these are counts across the census.
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
-import { navFor, researchBar, FOOTER_HTML, CHROME_HEAD, assetHash } from './shared-chrome.mjs';
+import { navFor, researchBar, FOOTER_HTML, CHROME_HEAD, seoHead, assetHash } from './shared-chrome.mjs';
 import { indicationLabel } from './census-pages.mjs';
 
 const T = JSON.parse(readFileSync('assets/research-thumbs.json', 'utf8'));
@@ -31,6 +31,7 @@ const page = ({ path, title, desc, body }) => `<!doctype html>
   <meta property="og:site_name" content="ProtoQuiz">
   <link rel="icon" href="/favicon.ico?v=4" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=4">
+${seoHead({ path, name: title, title: `${title} - ProtoQuiz Research`, desc, crumbs: [['Research', '/research/']] })}
 ${CHROME_HEAD}
   <link rel="stylesheet" href="/assets/research.css?v=${assetHash('assets/research.css')}">
 </head>

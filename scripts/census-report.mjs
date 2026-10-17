@@ -206,7 +206,7 @@ ${chart(g)}
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>${esc(title)} - United States EMS Protocol Census</title>
+  <title>${esc(title)} - US EMS Census</title>
   <meta name="description" content="${esc(description)}" />
 
   <meta name="apple-itunes-app" content="app-id=${APP_ID}" />

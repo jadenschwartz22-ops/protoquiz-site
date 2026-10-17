@@ -8,7 +8,7 @@
 // with the highest "fire-based" share are high because their only source is a fire
 // STATION list, and the page says so on the row rather than in a footnote.
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
-import { navFor, researchBar, listingStrip, FOOTER_HTML, CHROME_HEAD, assetHash } from './shared-chrome.mjs';
+import { navFor, researchBar, listingStrip, FOOTER_HTML, CHROME_HEAD, seoHead, assetHash } from './shared-chrome.mjs';
 
 // NOTE: this input lives in scratch/, which is gitignored, so a fresh clone cannot
 // build this page until research.json is regenerated from the ems-services pipeline.
@@ -109,7 +109,7 @@ const html = `<!doctype html>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The American EMS Atlas - who answers 911, by county</title>
-  <meta name="description" content="A state-by-state map of who provides 911 EMS in the United States: fire departments, private ambulance companies, county third services or hospitals. Built from state licensing rosters.">
+  <meta name="description" content="A state-by-state map of who provides 911 EMS in the US: fire, private, county or hospital-based services. Built from state licensing rosters.">
   <link rel="canonical" href="https://protoquiz.com/research/atlas/">
   <meta name="robots" content="index,follow">
   <meta property="og:title" content="Who runs American EMS">
@@ -120,6 +120,7 @@ const html = `<!doctype html>
   <meta property="og:site_name" content="ProtoQuiz">
   <link rel="icon" href="/favicon.ico?v=4" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=4">
+${seoHead({ path: '/research/atlas/', name: 'American EMS Atlas', title: 'The American EMS Atlas - who answers 911, by county', desc: 'A state-by-state map of who provides 911 EMS in the US: fire, private, county or hospital-based services. Built from state licensing rosters.', crumbs: [['Research', '/research/']] })}
 ${CHROME_HEAD}
   <link rel="stylesheet" href="/assets/research.css?v=${assetHash('assets/research.css')}">
 </head>

@@ -30,6 +30,38 @@ export const CHROME_HEAD = `  <link rel="preconnect" href="https://fonts.googlea
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
   <link rel="stylesheet" href="/assets/chrome.css?v=${assetHash('assets/chrome.css')}">`;
 
+// Social + discovery tags shared by every generated research page: Twitter card, OG image
+// size, Smart App Banner and a BreadcrumbList. `og` adds the full OG set for pages that
+// have none of their own. Text args must already be HTML-escaped attribute text.
+export const seoHead = ({ path, title, desc, name = title, crumbs = [], og = false }) => {
+  const U = 'https://protoquiz.com';
+  const img = `${U}/og-image.png`;
+  const trail = [['ProtoQuiz', '/'], ...crumbs, [name, path]];
+  const ld = JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+    itemListElement: trail.map(([name, p], i) => ({ '@type': 'ListItem', position: i + 1, name, item: U + p })),
+  });
+  return [
+    ...(og ? [
+      `  <meta name="robots" content="index,follow">`,
+      `  <meta property="og:title" content="${title}">`,
+      `  <meta property="og:description" content="${desc}">`,
+      `  <meta property="og:type" content="website">`,
+      `  <meta property="og:url" content="${U}${path}">`,
+      `  <meta property="og:image" content="${img}">`,
+      `  <meta property="og:site_name" content="ProtoQuiz">`,
+    ] : []),
+    `  <meta property="og:image:width" content="1200">`,
+    `  <meta property="og:image:height" content="630">`,
+    `  <meta name="twitter:card" content="summary_large_image">`,
+    `  <meta name="twitter:title" content="${title}">`,
+    `  <meta name="twitter:description" content="${desc}">`,
+    `  <meta name="twitter:image" content="${img}">`,
+    `  <meta name="apple-itunes-app" content="app-id=6753611139">`,
+    `  <script type="application/ld+json">${ld}</script>`,
+  ].join('\n');
+};
+
 const SECTIONS = [
   ['App', '/app/'],
   ['For agencies', '/agency/'],

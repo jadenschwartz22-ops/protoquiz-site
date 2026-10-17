@@ -1515,7 +1515,7 @@ ${railLinks('Related', [
     html: page({
       rail,
       title: 'How the EMS Protocol Census is built - methodology',
-      description: 'Where census documents come from, what is included and what is not, how doses are compared, how outliers are reviewed, and why no dose-level accuracy number is published.',
+      description: 'Where census documents come from, what is included, how doses are compared, how outliers are reviewed, and why no dose-level accuracy number is published.',
       path: '/census/methodology/',
       trail: [['Home', '/'], ['EMS Census', '/census/'], ['Methodology', '/census/methodology/']],
       body,
@@ -1562,8 +1562,8 @@ function dataLicensePage() {
   return {
     path: '/census/data-license/',
     html: page({
-      title: 'EMS Census data license - CC BY 4.0 summaries, data not for sale',
-      description: 'Census summaries and compare.json are CC BY 4.0 with attribution. Row-level data is not published, sold, licensed, or shared. Corrections and removals are handled the same day.',
+      title: 'EMS Census data license - CC BY 4.0 summaries',
+      description: 'Census summaries and compare.json are CC BY 4.0 with attribution. Row-level data is not published, sold, licensed, or shared.',
       path: '/census/data-license/',
       trail: [['Home', '/'], ['EMS Census', '/census/'], ['Data license', '/census/data-license/']],
       body,

@@ -14,7 +14,7 @@
 // registry is 23% named-by-a-source and saying otherwise here would undo the care the
 // the work itself takes.
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
-import { navFor, researchBar, FOOTER_HTML, CHROME_HEAD, assetHash } from './shared-chrome.mjs';
+import { navFor, researchBar, FOOTER_HTML, CHROME_HEAD, seoHead, assetHash } from './shared-chrome.mjs';
 import { DATA_DIR as PRACTICE_DIR } from './practice-data.mjs';
 import { loadThumbs, censusSlides, slideshow, SLIDES_JS } from './research-slides.mjs';
 
@@ -235,8 +235,9 @@ const html = `<!doctype html>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ProtoQuiz Research - open research on American EMS</title>
-  <meta name="description" content="ProtoQuiz Research is a free, open reference on American EMS: the US EMS Protocol Census, which compares EMS protocols across agencies, and a county-level map of who answers the 911 call.">
+  <meta name="description" content="A free, open reference on American EMS: the US EMS Protocol Census comparing agency protocols, and a county map of who answers 911.">
   <link rel="canonical" href="https://protoquiz.com/research/">
+${seoHead({ path: '/research/', name: 'Research', title: 'ProtoQuiz Research - open research on American EMS', desc: 'A free, open reference on American EMS: the US EMS Protocol Census comparing agency protocols, and a county map of who answers 911.', og: true })}
 ${CHROME_HEAD}
   <link rel="stylesheet" href="/assets/research.css?v=${assetHash('assets/research.css')}">
 </head>

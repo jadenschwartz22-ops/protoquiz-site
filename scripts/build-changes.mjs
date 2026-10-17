@@ -23,7 +23,7 @@
 // on the page it was cited from. Candidates are counted, never shown.
 import { writeFileSync, mkdirSync, readFileSync, existsSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
-import { navFor, researchBar, FOOTER_HTML, CHROME_HEAD, assetHash } from './shared-chrome.mjs';
+import { navFor, researchBar, FOOTER_HTML, CHROME_HEAD, seoHead, assetHash } from './shared-chrome.mjs';
 import {
   readTimeline, verifiedEvents, CHANGE_LABEL, isAdd, isDrop,
   subjectOf, fmtMonth, n, escapeHtml,
@@ -203,7 +203,7 @@ ${a.events.map(evRow).join('\n')}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>What changed - US EMS protocols between dated editions</title>
-  <meta name="description" content="US EMS agencies revise their protocols between editions. Comparing ${n(editions)} dated editions from ${agencies.length} agencies shows what appeared and what stopped appearing between them, each change quoted from the page it was found on.">
+  <meta name="description" content="Comparing ${n(editions)} dated editions from ${agencies.length} agencies shows what appeared and what stopped appearing in US EMS protocols.">
   <link rel="canonical" href="https://protoquiz.com/research/changes/">
   <meta name="robots" content="index,follow">
   <meta property="og:title" content="What changed in US EMS protocols">
@@ -214,6 +214,7 @@ ${a.events.map(evRow).join('\n')}
   <meta property="og:site_name" content="ProtoQuiz">
   <link rel="icon" href="/favicon.ico?v=4" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=4">
+${seoHead({ path: '/research/changes/', name: 'What changed', title: 'What changed - US EMS protocols between dated editions', desc: `Comparing ${n(editions)} dated editions from ${agencies.length} agencies shows what appeared and what stopped appearing in US EMS protocols.`, crumbs: [['Research', '/research/']] })}
 ${CHROME_HEAD}
   <link rel="stylesheet" href="/assets/research.css?v=${assetHash('assets/research.css')}">
 </head>

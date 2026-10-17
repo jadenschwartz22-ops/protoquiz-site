@@ -15,7 +15,7 @@
 // write a number in prose here, compute it instead.
 import { writeFileSync, mkdirSync, readFileSync, existsSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
-import { navFor, researchBar, FOOTER_HTML, CHROME_HEAD, assetHash } from './shared-chrome.mjs';
+import { navFor, researchBar, FOOTER_HTML, CHROME_HEAD, seoHead, assetHash } from './shared-chrome.mjs';
 import {
   readProcedures, readScope, byProcedure, contested, MIN_PER_SIDE,
   matrixOnly, scopeDisagreements, authOf,
@@ -86,8 +86,8 @@ export function render({ proc, scope, charts = {} }) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Who decides - authorization and certification across US EMS protocols</title>
-  <meta name="description" content="The same procedure is a standing order in one US EMS system and requires calling a physician in another. Drawn from ${n(agencies)} agencies' published protocol books, and from state competency matrices where a state enumerates what each certification level may do.">
+  <title>Who decides - EMS authorization across US protocols</title>
+  <meta name="description" content="The same procedure is a standing order in one US EMS system and needs a physician call in another. Drawn from ${n(agencies)} agencies' protocol books.">
   <link rel="canonical" href="https://protoquiz.com/research/practice/">
   <meta name="robots" content="index,follow">
   <meta property="og:title" content="Who decides: authorization and certification across US EMS">
@@ -98,6 +98,7 @@ export function render({ proc, scope, charts = {} }) {
   <meta property="og:site_name" content="ProtoQuiz">
   <link rel="icon" href="/favicon.ico?v=4" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=4">
+${seoHead({ path: '/research/practice/', name: 'Who decides', title: 'Who decides - EMS authorization across US protocols', desc: `The same procedure is a standing order in one US EMS system and needs a physician call in another. Drawn from ${n(agencies)} agencies' protocol books.`, crumbs: [['Research', '/research/']] })}
 ${CHROME_HEAD}
   <link rel="stylesheet" href="/assets/research.css?v=${assetHash('assets/research.css')}">
 </head>
