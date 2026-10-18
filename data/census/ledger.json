@@ -2,8 +2,158 @@
  "schemaVersion": 3,
  "rows": [
   {
-   "at": "2026-10-17T00:00:00Z",
+   "at": "2026-10-18T00:00:00Z",
+   "hash": "09012c91a515aa69981512a1c539306b0202c3c6630c132e5406737bad3aa77f",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-18T00:00:00Z",
+   "hash": "4efe1a3132a5b3c2900af20984c0d9163bc68fe7e837639a1369aa7d63fc1005",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-18T00:00:00Z",
+   "hash": "7c2c378410820fad03722d764682e8435257709ddeb42b36da126a64114558ae",
+   "agencyKey": "remsa",
+   "change": "effective_date_changed",
+   "from": null,
+   "to": "2026-07-30",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-18T00:00:00Z",
+   "hash": "7c2c378410820fad03722d764682e8435257709ddeb42b36da126a64114558ae",
+   "agencyKey": "remsa",
+   "change": "state_changed",
+   "from": "pending_review",
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-18T00:00:00Z",
+   "hash": "9a3268a7c0502d5332016617f703620abe33f9f9ec6140b94f3b55c44eed1e08",
+   "agencyKey": "alameda-county-emergency-medical-services",
+   "change": "effective_date_changed",
+   "from": null,
+   "to": "2026-01-01",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-18T00:00:00Z",
+   "hash": "9a3268a7c0502d5332016617f703620abe33f9f9ec6140b94f3b55c44eed1e08",
+   "agencyKey": "alameda-county-emergency-medical-services",
+   "change": "state_changed",
+   "from": "pending_review",
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-18T00:00:00Z",
+   "hash": "9a3268a7c0502d5332016617f703620abe33f9f9ec6140b94f3b55c44eed1e08",
+   "agencyKey": "alameda-county-emergency-medical-services",
+   "change": "superseded",
+   "from": null,
+   "to": "superseded",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-18T00:00:00Z",
+   "hash": "bc9ae07e5a226582731a40a1131fa20578731894eac5ff62d68b52063d56cf0f",
+   "agencyKey": "tidewater-emergency-medical-services-council-inc",
+   "change": "effective_date_changed",
+   "from": null,
+   "to": "2025-07-01",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-18T00:00:00Z",
+   "hash": "bc9ae07e5a226582731a40a1131fa20578731894eac5ff62d68b52063d56cf0f",
+   "agencyKey": "tidewater-emergency-medical-services-council-inc",
+   "change": "state_changed",
+   "from": "pending_review",
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-18T00:00:00Z",
+   "hash": "bc9ae07e5a226582731a40a1131fa20578731894eac5ff62d68b52063d56cf0f",
+   "agencyKey": "tidewater-emergency-medical-services-council-inc",
+   "change": "superseded",
+   "from": null,
+   "to": "superseded",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-18T00:00:00Z",
+   "hash": "bca531539f821dfa3832686bee7158b41aa0b7c570e380f6b236b70e7a82dbe6",
+   "agencyKey": "adams-benton-franklin-yakima-counties-ems",
+   "change": "superseded",
+   "from": "current",
+   "to": "superseded",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-18T00:00:00Z",
    "hash": "bfeb3baad8a5c75ef9c605a0468f7e27806dd319a62c6766a06a915ea12941f8",
+   "agencyKey": "adams-benton-franklin-yakima-counties-ems",
+   "change": "effective_date_changed",
+   "from": null,
+   "to": "2025-01-01",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-18T00:00:00Z",
+   "hash": "bfeb3baad8a5c75ef9c605a0468f7e27806dd319a62c6766a06a915ea12941f8",
+   "agencyKey": "adams-benton-franklin-yakima-counties-ems",
+   "change": "state_changed",
+   "from": "pending_review",
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-18T00:00:00Z",
+   "hash": "c28a3fdff5e3d48b928141313253d508e49c87ac9caf31b378a97c197b51e9d5",
+   "agencyKey": null,
+   "change": "effective_date_changed",
+   "from": null,
+   "to": "2025-01-01",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-18T00:00:00Z",
+   "hash": "c28a3fdff5e3d48b928141313253d508e49c87ac9caf31b378a97c197b51e9d5",
+   "agencyKey": null,
+   "change": "state_changed",
+   "from": "pending_review",
+   "to": "listed_aggregate",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-18T00:00:00Z",
+   "hash": "f8ecebf21f4c7928ca81d1bdfc66c47a2609a16ae867bbf8a5110fc174385acc",
    "agencyKey": null,
    "change": "added",
    "from": null,

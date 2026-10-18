@@ -45,7 +45,7 @@
   },
   {
    "agencyKey": "adams-benton-franklin-yakima-counties-ems",
-   "name": "Adams, Benton, Franklin, Yakima Counties EMS",
+   "name": "Adams, Benton, Franklin, Yakima Counties",
    "aliases": [
     "Adams, Benton, Franklin, Yakima Counties",
     "Adams, Benton, Franklin, Yakima Counties EMS"
@@ -54,10 +54,10 @@
    "country": "US",
    "city": null,
    "jurisdiction": "county",
-   "currentHash": "bca531539f821dfa3832686bee7158b41aa0b7c570e380f6b236b70e7a82dbe6",
+   "currentHash": "bfeb3baad8a5c75ef9c605a0468f7e27806dd319a62c6766a06a915ea12941f8",
    "currentEffectiveDate": "2025-01-01",
-   "documentCount": 2,
-   "doseCount": 309,
+   "documentCount": 3,
+   "doseCount": 472,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -102,8 +102,8 @@
    "jurisdiction": "county",
    "currentHash": "b9e114f9c942a13ca59e32b3f274aad84dd3dc2b13edaf325b2fedcee824c636",
    "currentEffectiveDate": "2026-01-01",
-   "documentCount": 10,
-   "doseCount": 855,
+   "documentCount": 11,
+   "doseCount": 948,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -735,7 +735,7 @@
    ],
    "state": "WA",
    "country": "US",
-   "city": "Las Vegas",
+   "city": "Vancouver",
    "jurisdiction": "county",
    "currentHash": "7b5a428f3277eeebd458c55d22c539943699231ebb0145d2a9ae92c40dab1f93",
    "currentEffectiveDate": "2026-03-01",
@@ -1549,7 +1549,9 @@
    "currentEffectiveDate": "2026-04-01",
    "documentCount": 2,
    "doseCount": 308,
-   "pendingReview": null,
+   "pendingReview": {
+    "effectiveDate": null
+   },
    "mayBeOutdated": false,
    "coverage": {
     "hasProtocol": true,
@@ -2380,7 +2382,7 @@
    "aliases": [
     "Mountain West Ambulance"
    ],
-   "state": "NV",
+   "state": "UT",
    "country": "US",
    "city": "Tooele",
    "jurisdiction": "county",
@@ -3343,6 +3345,27 @@
    }
   },
   {
+   "agencyKey": "remsa",
+   "name": "REMSA",
+   "aliases": [
+    "REMSA"
+   ],
+   "state": "SD",
+   "country": "US",
+   "city": "Sioux Falls",
+   "jurisdiction": "city",
+   "currentHash": "7c2c378410820fad03722d764682e8435257709ddeb42b36da126a64114558ae",
+   "currentEffectiveDate": "2026-07-30",
+   "documentCount": 1,
+   "doseCount": 124,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "city"
+   }
+  },
+  {
    "agencyKey": "remsa-sioux-falls",
    "name": "REMSA Sioux Falls",
    "aliases": [
@@ -4019,8 +4042,8 @@
    "jurisdiction": "regional",
    "currentHash": "5bb90e301302909e860e5069cbf971e64b0c4353551a8ff758738c9177c548bb",
    "currentEffectiveDate": "2025-07-01",
-   "documentCount": 4,
-   "doseCount": 545,
+   "documentCount": 5,
+   "doseCount": 680,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
