@@ -1,24 +1,24 @@
 {
-  "generatedAt": "2026-10-17T18:07:33.439Z",
-  "totalUploads": 758,
-  "distinctProtocols": 481,
-  "activeStudiers": 536,
-  "pagesProcessed": 118638,
+  "generatedAt": "2026-10-18T18:07:46.015Z",
+  "totalUploads": 775,
+  "distinctProtocols": 491,
+  "activeStudiers": 552,
+  "pagesProcessed": 122806,
   "statesRepresented": 45,
   "countriesRepresented": 5,
   "internationalUploads": 13,
   "byState": {
-    "CO": 104,
-    "CA": 55,
-    "MI": 49,
+    "CO": 106,
+    "CA": 56,
+    "MI": 51,
+    "PA": 31,
     "NY": 31,
-    "PA": 30,
+    "TX": 30,
     "MA": 30,
-    "TX": 28,
     "GA": 25,
-    "VA": 20,
+    "VA": 21,
+    "CT": 20,
     "NC": 19,
-    "CT": 19,
     "OR": 19,
     "WA": 15,
     "NV": 13,
@@ -29,28 +29,28 @@
     "WY": 10,
     "AZ": 9,
     "UT": 7,
-    "TN": 6,
+    "TN": 7,
+    "SC": 6,
     "IN": 6,
-    "SC": 5,
     "AL": 5,
     "OH": 5,
     "WI": 5,
     "LA": 5,
+    "WV": 5,
     "KY": 4,
     "NE": 4,
     "DE": 4,
+    "NH": 4,
     "ID": 4,
-    "WV": 4,
     "RI": 4,
     "OK": 3,
     "MO": 3,
+    "IA": 3,
     "DC": 3,
     "MN": 2,
     "VT": 2,
     "AR": 2,
-    "NH": 2,
     "NJ": 2,
-    "IA": 2,
     "MT": 1,
     "SD": 1
   },
@@ -67,12 +67,12 @@
       "city": "Denver",
       "x": 330,
       "y": 258,
-      "count": 95,
+      "count": 97,
       "tier": "hot",
       "topProtocols": [
         {
           "title": "DMEMS Protocols January 2026 (Example)",
-          "count": 40
+          "count": 41
         },
         {
           "title": "DMEMSMD Protocols January 2026 FINAL 2025 02 02",
@@ -89,7 +89,7 @@
       "city": "Detroit",
       "x": 690,
       "y": 194,
-      "count": 49,
+      "count": 51,
       "tier": "hot",
       "topProtocols": [
         {
@@ -103,6 +103,28 @@
         {
           "title": "1.5 Shock",
           "count": 1
+        }
+      ]
+    },
+    {
+      "state": "PA",
+      "city": "Philadelphia",
+      "x": 828,
+      "y": 223,
+      "count": 31,
+      "tier": "hot",
+      "topProtocols": [
+        {
+          "title": "2023v1 2 PA ALS Protocols",
+          "count": 12
+        },
+        {
+          "title": "2023v1 2 PA BLS Protocols",
+          "count": 6
+        },
+        {
+          "title": "2023v1 2 pa bls protocols",
+          "count": 3
         }
       ]
     },
@@ -124,28 +146,6 @@
         },
         {
           "title": "ny collaborative protocols",
-          "count": 3
-        }
-      ]
-    },
-    {
-      "state": "PA",
-      "city": "Philadelphia",
-      "x": 828,
-      "y": 223,
-      "count": 30,
-      "tier": "hot",
-      "topProtocols": [
-        {
-          "title": "2023v1 2 PA ALS Protocols",
-          "count": 11
-        },
-        {
-          "title": "2023v1 2 PA BLS Protocols",
-          "count": 6
-        },
-        {
-          "title": "2023v1 2 pa bls protocols",
           "count": 3
         }
       ]
@@ -199,7 +199,7 @@
       "city": "Hartford",
       "x": 858,
       "y": 174,
-      "count": 19,
+      "count": 20,
       "tier": "warm",
       "topProtocols": [
         {
@@ -208,7 +208,7 @@
         },
         {
           "title": "v2025 2 ctemsstatewideprotocolsfinalver1",
-          "count": 5
+          "count": 6
         },
         {
           "title": "v20251 ctemsstatewideprotocolsfinal",
@@ -517,6 +517,28 @@
       ]
     },
     {
+      "state": "TN",
+      "city": "Nashville",
+      "x": 643,
+      "y": 337,
+      "count": 6,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "CCEMS Protocols 1.2",
+          "count": 2
+        },
+        {
+          "title": "2026 COG",
+          "count": 1
+        },
+        {
+          "title": "gilescountyambulance 07cd0506e8aa0cfb8cfec",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "CA",
       "city": "Riverside",
       "x": 95,
@@ -549,6 +571,28 @@
         {
           "title": "2026 2027 Protocol Packet",
           "count": 6
+        }
+      ]
+    },
+    {
+      "state": "TX",
+      "city": "Austin",
+      "x": 448,
+      "y": 475,
+      "count": 5,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "09 17 2026 COG Master Document",
+          "count": 2
+        },
+        {
+          "title": "02 06 2026 COG Master Document",
+          "count": 1
+        },
+        {
+          "title": "12 01 2024 COG Master Document",
+          "count": 1
         }
       ]
     },
@@ -597,28 +641,6 @@
       ]
     },
     {
-      "state": "TN",
-      "city": "Nashville",
-      "x": 643,
-      "y": 337,
-      "count": 5,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "CCEMS Protocols 1.2",
-          "count": 2
-        },
-        {
-          "title": "2026 COG",
-          "count": 1
-        },
-        {
-          "title": "gilescountyambulance 07cd0506e8aa0cfb8cfec",
-          "count": 1
-        }
-      ]
-    },
-    {
       "state": "AL",
       "city": "Birmingham",
       "x": 649,
@@ -654,6 +676,28 @@
         },
         {
           "title": "Acadian 2026 Protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "WV",
+      "city": "Charleston",
+      "x": 726,
+      "y": 278,
+      "count": 5,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "2026 Protocol Booklet Final April 2026 INTERACTIVE",
+          "count": 3
+        },
+        {
+          "title": "Safari",
+          "count": 1
+        },
+        {
+          "title": "WV Protocols 2025",
           "count": 1
         }
       ]
@@ -721,6 +765,24 @@
       ]
     },
     {
+      "state": "NH",
+      "city": "Manchester",
+      "x": 871,
+      "y": 143,
+      "count": 4,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "patient care protocols",
+          "count": 3
+        },
+        {
+          "title": "New Hampshire EMS Protocols Version 8.0",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "ID",
       "city": "Boise",
       "x": 162,
@@ -743,24 +805,6 @@
       ]
     },
     {
-      "state": "WV",
-      "city": "Charleston",
-      "x": 726,
-      "y": 278,
-      "count": 4,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "2026 Protocol Booklet Final April 2026 INTERACTIVE",
-          "count": 3
-        },
-        {
-          "title": "WV Protocols 2025",
-          "count": 1
-        }
-      ]
-    },
-    {
       "state": "RI",
       "city": "Providence",
       "x": 878,
@@ -774,28 +818,6 @@
         },
         {
           "title": "StatewideEmergencyMedicalServices 2024",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "TX",
-      "city": "Austin",
-      "x": 448,
-      "y": 475,
-      "count": 3,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "02 06 2026 COG Master Document",
-          "count": 1
-        },
-        {
-          "title": "12 01 2024 COG Master Document",
-          "count": 1
-        },
-        {
-          "title": "MASTER COG",
           "count": 1
         }
       ]
@@ -912,6 +934,28 @@
         },
         {
           "title": "PP 8001 Allergic Reaction Anaphylaxis 1",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "CA",
+      "city": "Fresno",
+      "x": 68,
+      "y": 280,
+      "count": 3,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "530.02 general procedures h +19 more",
+          "count": 1
+        },
+        {
+          "title": "02 530.05 Traumatic Cardiac Arrest +42 more",
+          "count": 1
+        },
+        {
+          "title": "530.04 Cardiac Arrest Medical a",
           "count": 1
         }
       ]
@@ -1057,20 +1101,6 @@
       ]
     },
     {
-      "state": "NH",
-      "city": "Manchester",
-      "x": 871,
-      "y": 143,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "patient care protocols",
-          "count": 2
-        }
-      ]
-    },
-    {
       "state": "NJ",
       "city": "Newark",
       "x": 840,
@@ -1188,24 +1218,6 @@
         },
         {
           "title": "palmbeachgardensfirerescuepatientcareprotocols2025 bf30c8b884…",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CA",
-      "city": "Fresno",
-      "x": 68,
-      "y": 280,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "530.02 general procedures h +19 more",
-          "count": 1
-        },
-        {
-          "title": "02 530.05 Traumatic Cardiac Arrest +42 more",
           "count": 1
         }
       ]
@@ -1807,6 +1819,20 @@
       ]
     },
     {
+      "state": "VA",
+      "city": "Fluvanna",
+      "x": 801,
+      "y": 269,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "Fluvanna EMS Protocols Highlighted Changes",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "IA",
       "city": "Iowa City",
       "x": 554,
@@ -2040,6 +2066,34 @@
       "topProtocols": [
         {
           "title": "Aurora EMS Protocols Winter 2026",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "SC",
+      "city": "Horry County",
+      "x": 789,
+      "y": 367,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "COG's Final Digital format",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "IA",
+      "city": "Marion County",
+      "x": 528,
+      "y": 230,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "renewedemsprotocolsgoodpdf 0e25c1bb39df4cb505471",
           "count": 1
         }
       ]
