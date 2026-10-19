@@ -66,7 +66,7 @@ const stateRow = ([code, d]) => {
       ? '<span class="src-flag">fire-station source</span>'
       : '';
   return `        <tr${d.tag ? ' class="thin"' : ''}>
-          <th scope="row">${code}${note}</th>
+          <th scope="row"><a href="?state=${code}">${code}</a>${note}</th>
           <td class="num">${d.n.toLocaleString('en-US')}</td>
 ${MODELS.map(m => `          <td class="num">${d.pct[m] ? Math.round(d.pct[m]) + '%' : '&mdash;'}</td>`).join('\n')}
         </tr>`;
@@ -98,9 +98,9 @@ const GROUPS = [
 const stateBar = ([code, d]) => {
   const label = `${code}, ${d.n.toLocaleString('en-US')} agencies: ` + MODELS.filter(m => d.pct[m])
     .map(m => `${Math.round(d.pct[m])}% ${MODEL_LABEL[m].toLowerCase()}`).join(', ');
-  return `        <div class="st-item" title="${label}"><b>${code}</b><div class="st-bar" role="img" aria-label="${label}">`
+  return `        <a class="st-item" href="?state=${code}" title="${label}"><b>${code}</b><div class="st-bar" role="img" aria-label="${label}">`
     + MODELS.filter(m => d.pct[m]).map(m => `<i class="m-${m}" style="width:${d.pct[m].toFixed(1)}%"></i>`).join('')
-    + '</div></div>';
+    + '</div></a>';
 };
 
 const html = `<!doctype html>
@@ -169,7 +169,7 @@ ${MODELS.map(m => `        <span class="key"><i class="m-${m.replace(' ', '')}">
       </div>
 ${GROUPS.map(g => `      <details class="res-fold st-group"${g.open ? ' open' : ''}>
       <summary><h3>${g.name}</h3><span>${g.states.length} states &middot; ${g.why}</span></summary>
-${g.line ? `      <p class="res-subnote">${g.states.map(([c]) => c).join(', ')}</p>` : `      <div class="st-grid">
+${g.line ? `      <p class="res-subnote">${g.states.map(([c]) => `<a href="?state=${c}">${c}</a>`).join(', ')}</p>` : `      <div class="st-grid">
 ${g.states.map(stateBar).join('\n')}
       </div>`}
       </details>`).join('\n')}
@@ -556,6 +556,7 @@ ${excluded.map(stateRow).join('\n')}
           // The correction form is the one that already exists further down the page --
           // this link scrolls to it and fills the county in, so a reader who spots a bad
           // row reports it from where they saw it instead of hunting for the form.
+          h += '<a class="rm-state" href="?state=' + c.st + '">See all of ' + c.st + ' in detail &rarr;</a>';
           h += '<button type="button" class="rm-report">This is wrong &mdash; tell us</button>';
           pBody.innerHTML = h;
           var rep = pBody.querySelector('.rm-report');
