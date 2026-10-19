@@ -435,13 +435,13 @@ const railLinks = (heading, items) => (items.length
 // A page that passes none renders one column. The research bar shows on the census
 // landing only: detail pages already carry the census bar, and three stacked bars
 // pushed the data below the fold.
-const page = ({ title, description, path, trail, jsonLd = [], body, rail = '' }) => `${head({ title, description, path, jsonLd: [breadcrumbs(trail), ...jsonLd] })}
+const page = ({ title, description, path, trail, jsonLd = [], body, rail = '', crumbs = true }) => `${head({ title, description, path, jsonLd: [breadcrumbs(trail), ...jsonLd] })}
 <body>
 ${nav}
 ${researchBar(path)}
   <main>
     <div class="wrap">
-${trail.length > 2 ? crumbHtml(trail.slice(1)) : ''}
+${crumbs && trail.length > 2 ? crumbHtml(trail.slice(1)) : ''}
       <div class="layout${rail ? '' : ' solo'}">
         <div class="col">
 ${body}
@@ -897,6 +897,27 @@ ${footRow([
 // list render identically for an agency that appears in both.
 const agencyLi = a => `<li><a href="/census/agencies/${esc(a.agencyKey)}/">${esc(a.name)}</a>${a.currentEffectiveDate ? ` <span class="muted">${esc(a.currentEffectiveDate)}</span>` : ''}</li>`;
 
+// Licensed EMS agencies per state (the state rosters), so a state page can say how small a
+// sample the census is. Absent file or state: the bar is simply left out.
+const STATE_LICENSED = (() => {
+  try { return JSON.parse(readFileSync(new URL('../data/state-licensed.json', import.meta.url), 'utf8')); } catch { return {}; }
+})();
+
+const stateHead = ({ state, name, agencies, doseCount, drugCount, statewide }) => {
+  const lic = STATE_LICENSED[state], bar = lic && lic >= agencies;
+  return `      <div class="shead">
+        <div class="seye"><a href="/census/#states">&larr; All states</a><span aria-hidden="true">&middot;</span><a href="/research/atlas/?state=${esc(state)}">911 coverage: ${esc(name)} &rarr;</a></div>
+        <h1>${esc(name)}</h1>
+        <p class="slede">The census names ${num(agencies)} ${esc(name)} ${agencies === 1 ? 'agency' : 'agencies'}, with ${num(doseCount)} dose entries across ${num(drugCount)} ${drugCount === 1 ? 'drug' : 'drugs'}.${bar ? ` ${esc(name)} licenses ${num(lic)} EMS agencies, so this is a sample of the state, not the whole of it.` : ''}${statewide ? ' The state also publishes a statewide protocol.' : ''}</p>
+${bar ? `        <div class="sbar" role="img" aria-label="${agencies} of ${lic} licensed agencies are in the census"><i style="width:${Math.max(1.5, 100 * agencies / lic).toFixed(1)}%"></i></div>
+        <div class="skey"><span><b>${num(agencies)}</b> in the census</span><span><b>${num(lic - agencies)}</b> not in the census yet</span></div>\n` : ''}      </div>
+`;
+};
+
+const agencyFind = (name, count) => count > 12 ? `      <div class="sfind"><input type="search" id="agency-q" placeholder="Find an agency" aria-label="Find an agency in ${esc(name)}" autocomplete="off"><p class="sfind-none" role="status" hidden></p></div>
+      <script src="/assets/census-filter.js?v=${assetHash('assets/census-filter.js')}" defer></script>
+` : '';
+
 function statePage(state, { agencies, doses, documents = [] }) {
   const listed = agencies.filter(a => a.state === state).sort((a, b) => a.agencyKey.localeCompare(b.agencyKey));
   const drugs = groupBy(doses, r => r.drugKey);
@@ -948,7 +969,8 @@ ${statewideBaselines.length ? `      <section id="statewide-baseline">
       ? `<ul class="cols">${listed.map(agencyLi).join('')}</ul>`
       : '<p>No agency in this state has a page yet.</p>'}
       </section>`;
-  const body = `${docHeader({
+  const us = countryOf(listed[0]) === 'US';
+  const body = `${us ? stateHead({ state, name, agencies: listed.length, doseCount: doses.length, drugCount: drugs.size, statewide: statewideBaselines.length > 0 }) + agencyFind(name, listed.length) : docHeader({
     kind: 'State',
     title: `EMS protocols in ${esc(name)}`,
     chips: [
@@ -958,7 +980,7 @@ ${statewideBaselines.length ? `      <section id="statewide-baseline">
       ...(statewideBaselines.length ? ['statewide protocol'] : []),
     ],
   })}
-${countryOf(listed[0]) === 'US' ? `      <p class="xnav" style="margin:2px 0 18px"><a href="/research/atlas/?state=${esc(state)}">911 coverage in ${esc(name)}: who answers, county by county &rarr;</a></p>\n` : ''}${agenciesSection}
+${agenciesSection}
 ${footRow([citePanel('cite', [
     esc(`United States EMS Protocol Census, ${name}: ${listed.length} named ${listed.length === 1 ? 'agency' : 'agencies'}, ${doses.length} dose entries across ${drugs.size} ${drugs.size === 1 ? 'drug' : 'drugs'}.`),
     `${ORIGIN}/census/states/${slug(state)}/`,
@@ -976,6 +998,7 @@ ${footRow([citePanel('cite', [
       path: `/census/states/${slug(state)}/`,
       trail: [['Home', '/'], ['Protocol census', '/census/'], [name, `/census/states/${slug(state)}/`]],
       body,
+      crumbs: !us,
     }),
   };
 }
@@ -2027,6 +2050,18 @@ ul.railnav a:hover{text-decoration:underline}
   .rng .muted{display:block;margin:0}
   .rng .muted+.gl{display:block;margin:0}
 }
+.shead{margin:6px 0 22px}
+.seye{display:flex;gap:10px;flex-wrap:wrap;font:500 .72rem/1 "IBM Plex Mono",ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.seye a{color:inherit;text-decoration:none}
+.seye a:hover{color:var(--link)}
+.shead h1{font-size:clamp(2.4rem,6vw,3.6rem);line-height:1;letter-spacing:-.035em;font-weight:700;margin:0 0 10px}
+.slede{max-width:760px;font-size:1.1rem;line-height:1.5;color:var(--muted);margin:0 0 18px}
+.sbar{height:26px;border-radius:5px;background:var(--panel);overflow:hidden}
+.sbar i{display:block;height:100%;background:#0072b2}
+.skey{display:flex;gap:22px;flex-wrap:wrap;margin-top:8px;font-size:.85rem;color:var(--muted)}
+.sfind{margin:0 0 18px}
+.sfind input{width:100%;max-width:360px;box-sizing:border-box;font:inherit;padding:9px 12px;border:1px solid var(--rule);border-radius:6px;background:#fff;color:var(--ink)}
+.sfind-none{margin:10px 0 0;color:var(--muted)}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 `;
 
