@@ -135,7 +135,10 @@ ${researchBar('/research/atlas/')}
       <h1>Who runs American EMS?</h1>
       <p class="lede">In some states a fire department answers the 911 call. In others it is a
       private ambulance company, a county service, or a hospital. This map shows it county by county, from the states' own licensing rosters.</p>
+      <label class="st-pick">Open a state <select id="st-pick" aria-label="Open a state"><option value="">Choose...</option></select></label>
     </section>
+
+    <section class="res-state" id="state-view" hidden></section>
 
     <section class="res-map-wrap">
 ${mapWithControls(MAP)}
@@ -606,22 +609,6 @@ ${excluded.map(stateRow).join('\n')}
         }
         view.addEventListener('pointerenter', load, { once: true });
 
-        // Deep link: /research/atlas/?state=TN zooms to that state and fades the rest.
-        var want = (new URLSearchParams(location.search).get('state') || '').toUpperCase();
-        if (/^[A-Z]{2}$/.test(want)) load().then(function () {
-          var l = 1e9, t = 1e9, r = -1e9, b = -1e9;
-          z = 1; x = 0; y = 0;
-          Array.prototype.forEach.call(cty, function (el) {
-            var c = COUNTIES[el.getAttribute('data-f')];
-            if (!c || c.st !== want) { el.style.opacity = '.12'; return; }
-            var q = box(el); l = Math.min(l, q.l); t = Math.min(t, q.t); r = Math.max(r, q.l + q.w); b = Math.max(b, q.t + q.h);
-          });
-          if (r < l) return;
-          var g = measure(), nz = Math.max(1, Math.min(12, 0.85 * Math.min(g.w / (r - l), g.h / (b - t))));
-          z = nz; x = g.w / 2 - nz * (l + r) / 2; y = g.h / 2 - nz * (t + b) / 2;
-          clamp(); draw();
-        });
-
         // A click only counts when the pointer did not travel: otherwise the end of
         // every pan would pop a panel open over the county you dragged to.
         //
@@ -663,6 +650,7 @@ ${excluded.map(stateRow).join('\n')}
         });
       })();
     </script>
+    <script src="/assets/research-state.js?v=${assetHash('assets/research-state.js')}" defer></script>
   </main>
 
 ${FOOTER_HTML}

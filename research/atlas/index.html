@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
   <link rel="stylesheet" href="/assets/chrome.css?v=f5e22e65">
-  <link rel="stylesheet" href="/assets/research.css?v=ff436e9d">
+  <link rel="stylesheet" href="/assets/research.css?v=76dc8d5c">
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
@@ -74,7 +74,10 @@
       <h1>Who runs American EMS?</h1>
       <p class="lede">In some states a fire department answers the 911 call. In others it is a
       private ambulance company, a county service, or a hospital. This map shows it county by county, from the states' own licensing rosters.</p>
+      <label class="st-pick">Open a state <select id="st-pick" aria-label="Open a state"><option value="">Choose...</option></select></label>
     </section>
+
+    <section class="res-state" id="state-view" hidden></section>
 
     <section class="res-map-wrap">
 <figure class="research-map">
@@ -4180,22 +4183,6 @@
         }
         view.addEventListener('pointerenter', load, { once: true });
 
-        // Deep link: /research/atlas/?state=TN zooms to that state and fades the rest.
-        var want = (new URLSearchParams(location.search).get('state') || '').toUpperCase();
-        if (/^[A-Z]{2}$/.test(want)) load().then(function () {
-          var l = 1e9, t = 1e9, r = -1e9, b = -1e9;
-          z = 1; x = 0; y = 0;
-          Array.prototype.forEach.call(cty, function (el) {
-            var c = COUNTIES[el.getAttribute('data-f')];
-            if (!c || c.st !== want) { el.style.opacity = '.12'; return; }
-            var q = box(el); l = Math.min(l, q.l); t = Math.min(t, q.t); r = Math.max(r, q.l + q.w); b = Math.max(b, q.t + q.h);
-          });
-          if (r < l) return;
-          var g = measure(), nz = Math.max(1, Math.min(12, 0.85 * Math.min(g.w / (r - l), g.h / (b - t))));
-          z = nz; x = g.w / 2 - nz * (l + r) / 2; y = g.h / 2 - nz * (t + b) / 2;
-          clamp(); draw();
-        });
-
         // A click only counts when the pointer did not travel: otherwise the end of
         // every pan would pop a panel open over the county you dragged to.
         //
@@ -4237,6 +4224,7 @@
         });
       })();
     </script>
+    <script src="/assets/research-state.js?v=97eac9ef" defer></script>
   </main>
 
   <!-- shared-chrome:footer -->
