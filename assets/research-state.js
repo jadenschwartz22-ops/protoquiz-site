@@ -108,7 +108,15 @@
         + '<button type="button" class="rm-report">This is wrong &mdash; tell us</button>';
       return h;
     }
+    var hint = 'Select a county on the map, or a row below, to see the agencies on record.';
+    function clear() {
+      if (!sel) return;
+      paths[sel].classList.remove('is-sel'); rows[sel].classList.remove('is-sel'); sel = null;
+      svg.classList.remove('has-sel'); card.classList.remove('on');
+      card.innerHTML = '<p class="ss-mute">' + hint + '</p>';
+    }
     function select(f, scroll) {
+      if (f === sel) return clear();
       if (sel) { paths[sel].classList.remove('is-sel'); rows[sel].classList.remove('is-sel'); }
       sel = f; paths[f].classList.add('is-sel'); rows[f].classList.add('is-sel');
       svg.appendChild(paths[f]);  // draw the picked county last so no neighbour covers its outline
@@ -124,7 +132,7 @@
       });
       if (scroll) card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
-    card.innerHTML = '<p class="ss-mute">Select a county on the map, or a row below, to see the agencies on record.</p>';
+    card.innerHTML = '<p class="ss-mute">' + hint + '</p>';
 
     svg.addEventListener('pointermove', function (e) {
       var p = e.target.closest && e.target.closest('.cty');
@@ -133,6 +141,7 @@
       tip.innerHTML = '<b>' + esc(c.name) + '</b><span>' + (c.tier === '-' ? 'No usable source' : ownLabel(c) + ' &middot; ' + tierText(c).toLowerCase()) + '</span>';
       tip.style.left = (e.clientX - r.left) + 'px'; tip.style.top = (e.clientY - r.top) + 'px'; tip.classList.add('on');
     });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') clear(); });
     svg.addEventListener('pointerleave', function () { tip.classList.remove('on'); });
     svg.addEventListener('click', function (e) { var p = e.target.closest && e.target.closest('.cty'); if (p) select(p.getAttribute('data-f'), true); });
     host.querySelector('tbody').addEventListener('click', function (e) { var r = e.target.closest('tr'); if (r) select(r.getAttribute('data-f'), false); box.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); });

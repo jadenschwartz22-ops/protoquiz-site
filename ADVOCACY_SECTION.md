@@ -72,7 +72,8 @@ The session follows the Standard and the Writer brief, with steps 4 and 5 of the
 5. Build exactly as the October article was built: `blog/posts/YYYY-MM-DD-<slug>.html` (category
    advocacy, byline "By ProtoQuiz Research", JSON-LD author Organization "ProtoQuiz Research"), card at the
    top of `blog/index.html`, `node scripts/generate-rss-feed.mjs`, `sitemap.xml`, images under
-   `blog/images/advocacy-*`. Stage only those paths and commit. Do not push: the script publishes on the
+   `blog/images/advocacy-*`, then `node scripts/build-research-index.mjs` (adds the article to
+   `research/findings/index.html`, which is staged too). Stage only those paths and commit. Do not push: the script publishes on the
    owner's check. End with the one `READY:` or `NOT READY:` line the script asks for.
 6. Update the Calendar row to "live <date>" in the same commit. When fewer than three rows remain "to
    write", append three new months that rotate the six pillars and do not repeat a source-heavy topic
