@@ -17,18 +17,19 @@
   var host = document.getElementById('state-view');
   if (!NAMES[want] || !host) return;
   if (pick) pick.value = want;
-  document.getElementById('main').classList.add('state-mode');
+  document.documentElement.classList.add('state-mode');
   host.hidden = false;
   var name = NAMES[want];
   document.title = name + ' - The American EMS Atlas';
-  host.innerHTML = '<p class="res-eyebrow"><a href="' + location.pathname + '">&larr; All states</a></p><h1>' + name + '</h1><p class="lede">Loading...</p>';
+  // Same skeleton as the loaded page (eyebrow, title, a map-shaped box), so nothing moves when the data lands.
+  host.innerHTML = '<p class="res-eyebrow"><a href="' + location.pathname + '">&larr; All states</a></p><h1>' + name + '</h1><p class="lede ss-skel-line">&nbsp;<br>&nbsp;</p><div class="ss-skel"></div>';
 
   var esc = function (t) { return String(t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
   var tierText = function (c) { return c.tier === 'A' ? (c.source === 'local' ? 'Named by a county or agency source' : TIER.A) : (c.tier === '-' ? 'No usable source' : TIER[c.tier]); };
   var ownLabel = function (c) { return OWN[c.ownership] ? OWN[c.ownership][0] : 'Not established'; };
   var n0 = function (n) { return n.toLocaleString('en-US'); };
 
-  Promise.all(['/data/atlas/geo/' + want + '.json', '/data/atlas/' + want + '.json'].map(function (u) {
+  Promise.all(window.__atlas || ['/data/atlas/geo/' + want + '.json', '/data/atlas/' + want + '.json'].map(function (u) {
     return fetch(u).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); });
   })).then(function (res) { render(res[0], res[1]); }).catch(function () {
     host.querySelector('.lede').textContent = 'This state could not be loaded. Try again in a moment.';
@@ -50,6 +51,7 @@
       : 'No county in ' + name + ' is named directly by a state or agency record yet. ' + inferred + ' of ' + F.length + ' counties are inferred from licensing rosters and Medicare billing'
         + (none ? '; ' + none + ' have no usable source' : '') + '. An inferred county is a lead, not a fact.';
 
+    host.classList.add('ss-in');
     host.innerHTML =
       '<p class="res-eyebrow"><a href="' + location.pathname + '">&larr; All states</a></p>'
       + '<h1>' + name + '</h1><p class="lede">' + esc(lede) + '</p>'

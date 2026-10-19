@@ -123,6 +123,10 @@ const html = `<!doctype html>
 ${seoHead({ path: '/research/atlas/', name: 'American EMS Atlas', title: 'The American EMS Atlas - who answers 911, by county', desc: 'A state-by-state map of who provides 911 EMS in the US: fire, private, county or hospital-based services. Built from state licensing rosters.', crumbs: [['Research', '/research/']] })}
 ${CHROME_HEAD}
   <link rel="stylesheet" href="/assets/research.css?v=${assetHash('assets/research.css')}">
+  <script>/* ?state=XX: switch to the state view and start its two files before the body parses, so the national map never flashes */
+  (function(){var m=/[?&]state=([A-Za-z]{2})(&|$)/.exec(location.search);if(!m)return;var s=m[1].toUpperCase();document.documentElement.classList.add('state-mode');
+  window.__atlas=['/data/atlas/geo/'+s+'.json','/data/atlas/'+s+'.json'].map(function(u){return fetch(u).then(function(r){if(!r.ok)throw new Error(r.status);return r.json()})});window.__atlas.forEach(function(p){p.catch(function(){})})})();
+  </script>
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
