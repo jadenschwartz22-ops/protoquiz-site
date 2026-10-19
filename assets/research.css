@@ -490,7 +490,8 @@ main{padding-bottom:64px;}
 /* Charts. These CROP rather than scale: no max-height, because a height cap shrinks the
    SVG and takes the row labels below reading size with it — the documented mistake the
    dose chart made. The figure scrolls sideways on a narrow screen instead. */
-.practice-fig{margin:0;}
+.practice-fig{margin:0;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+@media (max-width:640px){.practice-fig::before{content:"Swipe sideways to see the full chart \2192";display:block;margin:0 0 6px;font-size:.75rem;color:var(--muted);}}
 .practice-fig .pc-svg{
   display:block;width:100%;height:auto;min-width:560px;
   background:#fdfcfa;border:1px solid var(--rule);border-radius:var(--r);
@@ -844,3 +845,4 @@ a.st-item:hover .st-bar{outline:1px solid var(--ink);}
 @media (max-width:640px){.ss-table td.num{text-align:left;}}
 .res-state .res-eyebrow a{white-space:nowrap;}
 .res-state .res-eyebrow{line-height:1.8;}
+.pc-svg .pc-head-cond,.pc-svg .pc-head-unk{font-size:9px;letter-spacing:.04em;}

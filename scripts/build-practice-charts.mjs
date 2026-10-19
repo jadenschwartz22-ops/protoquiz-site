@@ -55,7 +55,7 @@ function contestedChart(groups) {
     // The conditional count sits in its own column, not in the bar: drawing it as a
     // third segment would put it on one side of the axis and imply it leans that way.
     return `<g>
-      <text x="${LAB}" y="${y + 14}" class="pc-lab" text-anchor="end">${escapeHtml(r.label)}</text>
+      <text x="${LAB}" y="${y + 14}" class="pc-lab" text-anchor="end">${escapeHtml(r.label.length > 38 ? `${r.label.slice(0, 37)}…` : r.label)}</text>
       <rect x="${(MID - ws).toFixed(1)}" y="${y + 3}" width="${ws.toFixed(1)}" height="15" class="pc-so"/>
       <rect x="${MID}" y="${y + 3}" width="${wc.toFixed(1)}" height="15" class="pc-cr"/>
       <text x="${(MID - ws + (inS ? 5 : -5)).toFixed(1)}" y="${y + 14.5}" class="pc-num${inS ? ' pc-in' : ''}" text-anchor="${inS ? 'start' : 'end'}">${r.standing}</text>
@@ -68,8 +68,8 @@ function contestedChart(groups) {
   const svg = `<svg viewBox="0 0 ${W} ${H}" class="pc-svg pc-contested" role="img" aria-label="Contested procedures: for each, the number of agencies whose protocol makes it a standing order versus the number that require contacting a physician first.">
     <text x="${MID - 6}" y="14" class="pc-head" text-anchor="end">&#8592; Standing order</text>
     <text x="${MID + 6}" y="14" class="pc-head pc-head-cr">Contact required &#8594;</text>
-    <text x="${W - 62}" y="14" class="pc-head pc-head-cond" text-anchor="middle">Depends</text>
-    <text x="${W - 4}" y="14" class="pc-head pc-head-unk" text-anchor="end">Not stated</text>
+    <text x="${W - 46}" y="14" class="pc-head pc-head-cond" text-anchor="end">Depends</text>
+    <text x="${W - 4}" y="14" class="pc-head pc-head-unk" text-anchor="end"><tspan x="${W - 4}" dy="-6">Not</tspan><tspan x="${W - 4}" dy="10">stated</tspan></text>
     <line x1="${MID}" y1="${PAD_T - 6}" x2="${MID}" y2="${H - PAD_B + 2}" class="pc-axis"/>
     ${bars}
     <text x="0" y="${H - 18}" class="pc-foot">Each bar counts AGENCIES, and every agency is counted once. &ldquo;Depends&rdquo; is the count whose book gives BOTH answers for this</text>
@@ -108,7 +108,7 @@ function changeChart(t) {
   // DHHS" and "Massachusetts DPH" are the fact a reader is scanning for.
   const short = r => {
     const s = r.name.replace(/\s*\(.*?\)\s*/g, ' ').replace(/\s+/g, ' ').trim();
-    return s.length > 42 ? `${s.slice(0, 41)}…` : s;
+    return s.length > 36 ? `${s.slice(0, 35)}…` : s;
   };
 
   const bars = rows.map((r, i) => {
