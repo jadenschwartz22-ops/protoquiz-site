@@ -32,6 +32,8 @@ const { Timestamp } = admin.firestore;
 // Was 'UQLMSLQZ' (wrong: not even a prefix of the real UID, and case-mismatched),
 // so ~17 dev uploads silently inflated totalUploads + activeStudiers. The real
 // anonymous-auth UID is in PQ-B2C/CLAUDE.md. Matched case-insensitively as a guard.
+// Paying B2B agencies: their protocols belong on the map even when the classifier calls a book "not an agency protocol".
+const B2B_CUSTOMER = /ridgeview/i;
 const DEV_USER_ID = 'UqLmSIqzm9bNDnuS6ily2pUX5n22';
 const isDev = (u) => typeof u === 'string'
   && u.toLowerCase().startsWith(DEV_USER_ID.toLowerCase());
@@ -561,6 +563,15 @@ const STATE_NAMES = {
   WI:'Wisconsin',WY:'Wyoming',
 };
 
+// "Haywood County EMS System" -> "Haywood County"; "County of Marin EMS" -> "Marin County"; else null.
+function countyOf(agency) {
+  const a = agency || '';
+  const m = /(?:^|[^A-Za-z.'-])([A-Z][\w.'-]*(?: [A-Z][\w.'-]*)*) County\b/.exec(a);
+  if (m) return `${m[1]} County`;
+  const o = /\bCounty of ([A-Z][\w.'-]*)/.exec(a);
+  return o ? `${o[1]} County` : null;
+}
+
 async function geocodeToSVG(city, state) {
   const key = `${state}|${city}`;
   if (_geoCache[key]) return _geoCache[key];
@@ -666,7 +677,7 @@ async function getReachStats() {
   const ensureCity = (k) => { if (!cityData.has(k)) cityData.set(k, { count: 0, protocols: new Map() }); return cityData.get(k); };
   const ensureIntl = (k) => { if (!intlData.has(k)) intlData.set(k, { count: 0, protocols: new Map() }); return intlData.get(k); };
 
-  const junkName = n => /^[0-9a-f]{8}-[0-9a-f]{4}-/i.test(n) || !/[a-z]{3}/i.test(n.replace(/\.pdf$/i, '').replace(/^\d{9,}\s+/, ''));
+  const junkName = n => /^[0-9a-f]{8}-[0-9a-f]{4}-/i.test(n) || /[0-9a-f]{16,}/i.test(n) || !/[a-z]{3}/i.test(n.replace(/\.pdf$/i, '').replace(/^\d{9,}\s+/, ''));
   const beltCand = [];  // real classified US agency protocols for the /app conveyor belt
 
   // Per-doc loop. AI takes priority; regex is fallback per upload (not per filename).
@@ -677,7 +688,7 @@ async function getReachStats() {
     const x = d.data();
     if (isDev(x.userId)) continue;
     // Not a protocol an agency runs (formularies, school books, forms, strangers' files): not part of the reach map.
-    if (x.locationIsAgencyProtocol === false) continue;
+    if (x.locationIsAgencyProtocol === false && !B2B_CUSTOMER.test(x.locationAgency || '')) continue;
     // Studier count = distinct real people who uploaded a protocol.
     // Legacy backfilled docs (Nov 2025, ~66 of them) all carry the placeholder
     // userId 'anonymous' — their original per-user identity was never recorded.
@@ -737,7 +748,12 @@ async function getReachStats() {
         // the state is all we know, so the dot sits in the state itself rather than on a made-up city.
         const hint = ai.city || ai.jurisdiction === 'statewide' ? null : classifyCity(`${ai.agency || ''} ${name}`);
         const hintCity = hint?.state === ai.state ? hint.city : null;
-        const coords = ai.city || hintCity ? coordsForCity(ai.city || hintCity, ai.state) : stateDot(ai.state) || coordsForCity(null, ai.state);
+        // Still nothing: an agency named for a county sits at that county's centre (geocoded, cached, kept inside the state).
+        const county = ai.city || hintCity ? null : countyOf(ai.agency);
+        const countyPt = county ? await geocodeToSVG(county, ai.state) : null;
+        const coords = ai.city || hintCity ? coordsForCity(ai.city || hintCity, ai.state)
+          : countyPt ? { x: countyPt.x, y: countyPt.y, canonicalCity: county }
+          : stateDot(ai.state) || coordsForCity(null, ai.state);
         if (coords) {
           const cityName = coords.canonicalCity || ai.city || coords.fallbackCity || ai.state;
           const k = `${ai.state}|${cityName}|${coords.x}|${coords.y}`;

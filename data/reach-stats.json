@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-19T21:44:44.138Z",
-  "totalUploads": 680,
-  "distinctProtocols": 486,
-  "activeStudiers": 554,
-  "pagesProcessed": 124723,
+  "generatedAt": "2026-10-19T21:54:17.997Z",
+  "totalUploads": 681,
+  "distinctProtocols": 487,
+  "activeStudiers": 555,
+  "pagesProcessed": 125164,
   "statesRepresented": 47,
   "countriesRepresented": 3,
   "internationalUploads": 9,
@@ -48,13 +48,13 @@
     "ID": 3,
     "OK": 3,
     "VT": 2,
+    "MN": 2,
     "NJ": 2,
     "AR": 2,
     "AK": 1,
     "KS": 1,
     "SD": 1,
-    "MT": 1,
-    "MN": 1
+    "MT": 1
   },
   "byCountry": {
     "ZA": 5,
@@ -89,7 +89,7 @@
       "city": "Michigan statewide",
       "x": 662,
       "y": 172,
-      "count": 52,
+      "count": 35,
       "tier": "hot",
       "topProtocols": [
         {
@@ -101,7 +101,7 @@
           "count": 1
         },
         {
-          "title": "St Joseph Protocols",
+          "title": "www.r8mcan.org protocols (12 PDFs)",
           "count": 1
         }
       ],
@@ -222,29 +222,6 @@
       "statewide": true
     },
     {
-      "state": "NC",
-      "city": "North Carolina statewide",
-      "x": 776,
-      "y": 333,
-      "count": 13,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "Haywood County EMS 2026 Protocols Policies and Procedures",
-          "count": 3
-        },
-        {
-          "title": "Haywood County EMS System protocols",
-          "count": 1
-        },
-        {
-          "title": "Haywood Protocols 2",
-          "count": 1
-        }
-      ],
-      "statewide": true
-    },
-    {
       "state": "CA",
       "city": "San Leandro",
       "x": 34,
@@ -335,50 +312,26 @@
       "statewide": true
     },
     {
-      "state": "CA",
-      "city": "California statewide",
-      "x": 76,
-      "y": 272,
+      "state": "MI",
+      "city": "Berrien County",
+      "x": 637,
+      "y": 208,
       "count": 12,
       "tier": "warm",
       "topProtocols": [
         {
-          "title": "Adult bradycardias +38 more",
+          "title": "Berrien County Protocols as of August 2026",
           "count": 1
         },
         {
-          "title": "PCM 2025 for posting",
+          "title": "binder",
           "count": 1
         },
         {
-          "title": "530.04 Cardiac Arrest Medical a +17 more",
+          "title": "2025 Berrien County EMS Protocols Combined",
           "count": 1
         }
-      ],
-      "statewide": true
-    },
-    {
-      "state": "TX",
-      "city": "Texas statewide",
-      "x": 418,
-      "y": 447,
-      "count": 10,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "UTHETEMS Protocols (with Drugs)",
-          "count": 2
-        },
-        {
-          "title": "Clinical Protocols ALS",
-          "count": 1
-        },
-        {
-          "title": "2024 Lake Cities Protocols",
-          "count": 1
-        }
-      ],
-      "statewide": true
+      ]
     },
     {
       "state": "WY",
@@ -403,29 +356,6 @@
       ]
     },
     {
-      "state": "WA",
-      "city": "Washington statewide",
-      "x": 117,
-      "y": 50,
-      "count": 9,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "ABFY County Protocols 2025",
-          "count": 2
-        },
-        {
-          "title": "Protocols CC AMR",
-          "count": 1
-        },
-        {
-          "title": "swregionpatientcareprotocols clarkcountyems 8177090dfbbd584e0…",
-          "count": 1
-        }
-      ],
-      "statewide": true
-    },
-    {
       "state": "VA",
       "city": "Virginia statewide",
       "x": 776,
@@ -434,8 +364,8 @@
       "tier": "warm",
       "topProtocols": [
         {
-          "title": "6a3c362727e100463b039339 20250701L Protocols compressed",
-          "count": 2
+          "title": "Tidewater Emergency Medical Services Council, Inc. protocols",
+          "count": 3
         },
         {
           "title": "TEMS July 2025 Protocols",
@@ -471,23 +401,23 @@
       ]
     },
     {
-      "state": "TN",
-      "city": "Tennessee statewide",
-      "x": 652,
-      "y": 343,
-      "count": 6,
+      "state": "TX",
+      "city": "Texas statewide",
+      "x": 418,
+      "y": 447,
+      "count": 7,
       "tier": "warm",
       "topProtocols": [
         {
-          "title": "CCEMS Protocols 1.2",
+          "title": "UTHETEMS Protocols (with Drugs)",
           "count": 2
         },
         {
-          "title": "Treatment Protocols",
+          "title": "Clinical Protocols ALS",
           "count": 1
         },
         {
-          "title": "gilescountyambulance 07cd0506e8aa0cfb8cfec",
+          "title": "2024 Lake Cities Protocols",
           "count": 1
         }
       ],
@@ -504,6 +434,28 @@
         {
           "title": "2026 2027 Protocol Packet",
           "count": 6
+        }
+      ]
+    },
+    {
+      "state": "NC",
+      "city": "Haywood County",
+      "x": 712,
+      "y": 343,
+      "count": 5,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "Haywood County EMS 2026 Protocols Policies and Procedures",
+          "count": 3
+        },
+        {
+          "title": "Haywood County EMS System protocols",
+          "count": 1
+        },
+        {
+          "title": "Haywood Protocols 2",
+          "count": 1
         }
       ]
     },
@@ -553,6 +505,29 @@
       "statewide": true
     },
     {
+      "state": "WA",
+      "city": "Washington statewide",
+      "x": 117,
+      "y": 50,
+      "count": 5,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "ABFY County Protocols 2025",
+          "count": 2
+        },
+        {
+          "title": "Protocol",
+          "count": 1
+        },
+        {
+          "title": "CDOG+Co+ +BLS+ILS+Regional+Protocols+updated+2026 06 19",
+          "count": 1
+        }
+      ],
+      "statewide": true
+    },
+    {
       "state": "CA",
       "city": "Riverside",
       "x": 95,
@@ -575,23 +550,23 @@
       ]
     },
     {
-      "state": "SC",
-      "city": "South Carolina statewide",
-      "x": 754,
-      "y": 373,
+      "state": "CA",
+      "city": "California statewide",
+      "x": 76,
+      "y": 272,
       "count": 5,
       "tier": "warm",
       "topProtocols": [
         {
-          "title": "Jasper County Medical protocols",
+          "title": "Adult bradycardias +38 more",
           "count": 1
         },
         {
-          "title": "Laurens County Emergency Medical Services protocols",
+          "title": "530.04 Cardiac Arrest Medical a +17 more",
           "count": 1
         },
         {
-          "title": "DCEMS 2025 Guidelines Rev 4",
+          "title": "Icema",
           "count": 1
         }
       ],
@@ -700,29 +675,6 @@
       "statewide": true
     },
     {
-      "state": "FL",
-      "city": "Florida statewide",
-      "x": 742,
-      "y": 492,
-      "count": 4,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "Pinellas County Protocols",
-          "count": 1
-        },
-        {
-          "title": "volusiacountyprotocolpdf cf1c8cb1f3a6cbebb4f3e",
-          "count": 1
-        },
-        {
-          "title": "msop",
-          "count": 1
-        }
-      ],
-      "statewide": true
-    },
-    {
       "state": "NE",
       "city": "Nebraska statewide",
       "x": 418,
@@ -740,6 +692,28 @@
         }
       ],
       "statewide": true
+    },
+    {
+      "state": "CA",
+      "city": "Marin County",
+      "x": 28,
+      "y": 240,
+      "count": 4,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "PCM 2025 for posting",
+          "count": 1
+        },
+        {
+          "title": "protocol stuff",
+          "count": 1
+        },
+        {
+          "title": "2026 Drafts 2nd round",
+          "count": 1
+        }
+      ]
     },
     {
       "state": "IL",
@@ -784,6 +758,29 @@
       "statewide": true
     },
     {
+      "state": "NC",
+      "city": "North Carolina statewide",
+      "x": 776,
+      "y": 333,
+      "count": 4,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "2026 FirstHealth EMS System Protocols",
+          "count": 1
+        },
+        {
+          "title": "2025 2026 FirstHealth EMS System Protocols",
+          "count": 1
+        },
+        {
+          "title": "19 +2023+NCCEP+and+NCMB+List+Approved+Medications",
+          "count": 1
+        }
+      ],
+      "statewide": true
+    },
+    {
       "state": "FL",
       "city": "Palm Beach Gardens",
       "x": 794,
@@ -792,16 +789,8 @@
       "tier": "on",
       "topProtocols": [
         {
-          "title": "palmbeachgardensfirerescuepatientcareprotocols2026 69e1c052cc…",
-          "count": 1
-        },
-        {
-          "title": "palmbeachgardensfirerescuepatientcareprotocols2025 bf30c8b884…",
-          "count": 1
-        },
-        {
-          "title": "palmbeachgardensfirerescuepatientcareprotocols2025 091bdd8ec7…",
-          "count": 1
+          "title": "Palm Beach Gardens Fire Rescue protocols",
+          "count": 3
         }
       ]
     },
@@ -846,27 +835,48 @@
       ]
     },
     {
-      "state": "UT",
-      "city": "Utah statewide",
-      "x": 217,
-      "y": 253,
+      "state": "MI",
+      "city": "Oakland County",
+      "x": 684,
+      "y": 187,
       "count": 3,
       "tier": "on",
       "topProtocols": [
         {
-          "title": "EMS protocols (8 12 2026)",
+          "title": "Combined Suite 9 1 26",
           "count": 1
         },
         {
-          "title": "Safari",
+          "title": "OCMCA",
           "count": 1
         },
         {
-          "title": "2025 Utah EMS Protocol Guidelines 3",
+          "title": "Combined Suite 8 3 26",
           "count": 1
         }
-      ],
-      "statewide": true
+      ]
+    },
+    {
+      "state": "NC",
+      "city": "Davidson County",
+      "x": 760,
+      "y": 330,
+      "count": 3,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "dcems",
+          "count": 1
+        },
+        {
+          "title": "DCEMS protocols",
+          "count": 1
+        },
+        {
+          "title": "2025 DCEMS Protocols 9 5 2025",
+          "count": 1
+        }
+      ]
     },
     {
       "state": "IL",
@@ -972,47 +982,6 @@
       "statewide": true
     },
     {
-      "state": "GA",
-      "city": "Georgia statewide",
-      "x": 712,
-      "y": 408,
-      "count": 3,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "2024 Scope of Practice 260123",
-          "count": 1
-        },
-        {
-          "title": "FCEMS COG Jan 26",
-          "count": 1
-        },
-        {
-          "title": "CA Protocols 2025 October UPDATED",
-          "count": 1
-        }
-      ],
-      "statewide": true
-    },
-    {
-      "state": "NC",
-      "city": "Davidson County",
-      "x": 760,
-      "y": 330,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "dcems",
-          "count": 1
-        },
-        {
-          "title": "2025 DCEMS Protocols 9 5 2025",
-          "count": 1
-        }
-      ]
-    },
-    {
       "state": "OH",
       "city": "Cincinnati",
       "x": 675,
@@ -1026,6 +995,24 @@
         },
         {
           "title": "Academy of Medicine of Cincinnati protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "WA",
+      "city": "Clark County",
+      "x": 77,
+      "y": 76,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "Protocols CC AMR",
+          "count": 1
+        },
+        {
+          "title": "Clark County EMS protocols",
           "count": 1
         }
       ]
@@ -1256,6 +1243,24 @@
       "statewide": true
     },
     {
+      "state": "CA",
+      "city": "Riverside County",
+      "x": 118,
+      "y": 361,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "4105 ALS Drug Index",
+          "count": 1
+        },
+        {
+          "title": "103 Ready to Print Policy Manual Complete",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "VA",
       "city": "Henrico",
       "x": 799,
@@ -1289,6 +1294,25 @@
       "statewide": true
     },
     {
+      "state": "GA",
+      "city": "Georgia statewide",
+      "x": 712,
+      "y": 408,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "2024 Scope of Practice 260123",
+          "count": 1
+        },
+        {
+          "title": "CA Protocols 2025 October UPDATED",
+          "count": 1
+        }
+      ],
+      "statewide": true
+    },
+    {
       "state": "AR",
       "city": "Arkansas statewide",
       "x": 544,
@@ -1317,6 +1341,20 @@
       "topProtocols": [
         {
           "title": "CFD Protocols",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "state": "TN",
+      "city": "Campbell County",
+      "x": 689,
+      "y": 327,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "CCEMS Protocols 1.2",
           "count": 2
         }
       ]
@@ -1432,9 +1470,9 @@
     },
     {
       "state": "NM",
-      "city": "New Mexico statewide",
-      "x": 298,
-      "y": 374,
+      "city": "Grant County",
+      "x": 253,
+      "y": 406,
       "count": 1,
       "tier": "tiny",
       "topProtocols": [
@@ -1442,8 +1480,7 @@
           "title": "2026 Grant County Drug Guidelines 8 20 26 +1 more",
           "count": 1
         }
-      ],
-      "statewide": true
+      ]
     },
     {
       "state": "AL",
@@ -1455,6 +1492,20 @@
       "topProtocols": [
         {
           "title": "FY27 SMOG 01 OCT 2026 compress",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "MI",
+      "city": "Saint Joseph County",
+      "x": 651,
+      "y": 208,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "St Joseph Protocols",
           "count": 1
         }
       ]
@@ -1539,7 +1590,7 @@
       "tier": "tiny",
       "topProtocols": [
         {
-          "title": "renewedemsprotocolsgoodpdf 0e25c1bb39df4cb505471",
+          "title": "Marion County protocols",
           "count": 1
         }
       ]
@@ -1573,6 +1624,20 @@
       ]
     },
     {
+      "state": "TN",
+      "city": "Carter County",
+      "x": 725,
+      "y": 325,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "Treatment Protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "SD",
       "city": "Sioux Falls",
       "x": 469,
@@ -1581,7 +1646,7 @@
       "tier": "tiny",
       "topProtocols": [
         {
-          "title": "remsaprotocolspdf 43f35fee79d06b3bb5a22",
+          "title": "REMSA protocols",
           "count": 1
         }
       ]
@@ -1615,6 +1680,20 @@
       ]
     },
     {
+      "state": "UT",
+      "city": "Weber County",
+      "x": 220,
+      "y": 210,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "EMS protocols (8 12 2026)",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "TX",
       "city": "Fort Worth",
       "x": 456,
@@ -1624,6 +1703,20 @@
       "topProtocols": [
         {
           "title": "fw regional ems system protocol 10.1.26.v1",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "FL",
+      "city": "Pinellas County",
+      "x": 740,
+      "y": 510,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "Pinellas County Protocols",
           "count": 1
         }
       ]
@@ -1643,6 +1736,20 @@
       ]
     },
     {
+      "state": "FL",
+      "city": "Volusia County",
+      "x": 767,
+      "y": 480,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "Volusia County EMS protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "NM",
       "city": "Roswell",
       "x": 325,
@@ -1652,6 +1759,20 @@
       "topProtocols": [
         {
           "title": "Chaves County EMS protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "MI",
+      "city": "Macomb County",
+      "x": 691,
+      "y": 186,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "MCMCA",
           "count": 1
         }
       ]
@@ -1683,6 +1804,35 @@
           "count": 1
         }
       ]
+    },
+    {
+      "state": "FL",
+      "city": "St. Johns County",
+      "x": 759,
+      "y": 462,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "msop",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "SC",
+      "city": "South Carolina statewide",
+      "x": 754,
+      "y": 373,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "Jasper County Medical protocols",
+          "count": 1
+        }
+      ],
+      "statewide": true
     },
     {
       "state": "IL",
@@ -1722,6 +1872,20 @@
       "topProtocols": [
         {
           "title": "2025 Revised Protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "NC",
+      "city": "Cabarrus County",
+      "x": 755,
+      "y": 340,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "Cabarrus County EMS protocols",
           "count": 1
         }
       ]
@@ -1825,6 +1989,20 @@
       ]
     },
     {
+      "state": "CA",
+      "city": "Kern County",
+      "x": 78,
+      "y": 315,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "Kern County Protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "IN",
       "city": "Fort Wayne",
       "x": 660,
@@ -1840,9 +2018,9 @@
     },
     {
       "state": "IN",
-      "city": "Indiana statewide",
-      "x": 644,
-      "y": 254,
+      "city": "Daviess County",
+      "x": 633,
+      "y": 282,
       "count": 1,
       "tier": "tiny",
       "topProtocols": [
@@ -1850,8 +2028,21 @@
           "title": "Daviess County EMS protocols",
           "count": 1
         }
-      ],
-      "statewide": true
+      ]
+    },
+    {
+      "state": "NC",
+      "city": "Nash County",
+      "x": 798,
+      "y": 319,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "Final Copy Nash EMS Protocols revised 2022",
+          "count": 1
+        }
+      ]
     },
     {
       "state": "VA",
@@ -1862,7 +2053,21 @@
       "tier": "tiny",
       "topProtocols": [
         {
-          "title": "2024emsmanual1 16 2024 d1857f3401fae1e5c50fe",
+          "title": "Fairfax County Fire and Rescue Department protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "TN",
+      "city": "Giles County",
+      "x": 641,
+      "y": 359,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "Giles County EMS protocols",
           "count": 1
         }
       ]
@@ -1982,6 +2187,20 @@
       ]
     },
     {
+      "state": "SC",
+      "city": "Laurens County",
+      "x": 733,
+      "y": 364,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "Laurens County Emergency Medical Services protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "TX",
       "city": "Arlington",
       "x": 460,
@@ -2018,7 +2237,7 @@
       "tier": "tiny",
       "topProtocols": [
         {
-          "title": "regionalpatientprotocolspoliciesandprocedures 79eaedbc7dd1c77…",
+          "title": "Peninsulas EMS Council, Inc. protocols",
           "count": 1
         }
       ]
@@ -2060,7 +2279,7 @@
       "tier": "tiny",
       "topProtocols": [
         {
-          "title": "mayoclinicambulanceservicepatientcareguidelines cb9878846fe31…",
+          "title": "Mayo Clinic Ambulance Service protocols",
           "count": 1
         }
       ]
@@ -2094,6 +2313,20 @@
       ]
     },
     {
+      "state": "MN",
+      "city": "Waconia",
+      "x": 515,
+      "y": 152,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "RAS Protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "NC",
       "city": "Charlotte",
       "x": 751,
@@ -2117,6 +2350,20 @@
       "topProtocols": [
         {
           "title": "2026CJPPROTOCOLS (1)",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "WA",
+      "city": "Stevens County",
+      "x": 160,
+      "y": 37,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "EMS Stephen’s County Protocols",
           "count": 1
         }
       ]
@@ -2158,7 +2405,21 @@
       "tier": "tiny",
       "topProtocols": [
         {
-          "title": "Whole Protocol V 3807012026150232 (1)",
+          "title": "MetroAtlanta Ambulance Service protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "NC",
+      "city": "Brunswick County",
+      "x": 801,
+      "y": 362,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "BCEMS Protocols",
           "count": 1
         }
       ]
@@ -2192,6 +2453,34 @@
       ]
     },
     {
+      "state": "TX",
+      "city": "Hays County",
+      "x": 442,
+      "y": 480,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "Final cog",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "TX",
+      "city": "Hunt County",
+      "x": 479,
+      "y": 413,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "HCEMS Protocols 9 8 25 Reduced",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "IL",
       "city": "Elgin",
       "x": 606,
@@ -2215,6 +2504,34 @@
       "topProtocols": [
         {
           "title": "Clark County Protocols 2026",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "TN",
+      "city": "Anderson County",
+      "x": 689,
+      "y": 333,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "2026 COG",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "WA",
+      "city": "Pend Oreille County",
+      "x": 169,
+      "y": 37,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "Pend Oreille County Protocols 2022",
           "count": 1
         }
       ]
@@ -2256,7 +2573,49 @@
       "tier": "tiny",
       "topProtocols": [
         {
-          "title": "gilescountyambulance 5269aed19ab810ba6bd02",
+          "title": "Giles County EMS protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "FL",
+      "city": "Lake County",
+      "x": 756,
+      "y": 490,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "LAKE COUNTY MARCH 2022 PROTOCOLS",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "GA",
+      "city": "Franklin County",
+      "x": 711,
+      "y": 369,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "FCEMS COG Jan 26",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "SC",
+      "city": "Dorchester County",
+      "x": 767,
+      "y": 390,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "DCEMS 2025 Guidelines Rev 4",
           "count": 1
         }
       ]
@@ -2270,7 +2629,7 @@
       "tier": "tiny",
       "topProtocols": [
         {
-          "title": "eae0ef3826d74d5f8c4bdc5cb18abe04",
+          "title": "Peoria Area EMS System protocols",
           "count": 1
         }
       ]
@@ -2284,7 +2643,7 @@
       "tier": "tiny",
       "topProtocols": [
         {
-          "title": "adultpediatricprotocolsandprocedures d726027d913a8b36add7d",
+          "title": "Pettis County Ambulance District protocols",
           "count": 1
         }
       ]
@@ -2319,6 +2678,20 @@
       ]
     },
     {
+      "state": "TX",
+      "city": "Cochran County",
+      "x": 356,
+      "y": 398,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "2026 Protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "AZ",
       "city": "Prescott",
       "x": 185,
@@ -2333,6 +2706,49 @@
       ]
     },
     {
+      "state": "UT",
+      "city": "Cache County",
+      "x": 224,
+      "y": 201,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "Safari",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "SC",
+      "city": "Richland County",
+      "x": 754,
+      "y": 371,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "2025 Patient Care Guidelines PDF",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "UT",
+      "city": "Utah statewide",
+      "x": 217,
+      "y": 253,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "2025 Utah EMS Protocol Guidelines 3",
+          "count": 1
+        }
+      ],
+      "statewide": true
+    },
+    {
       "state": "TX",
       "city": "Hickory Creek",
       "x": 462,
@@ -2342,6 +2758,20 @@
       "topProtocols": [
         {
           "title": "2024 Lake Cities Protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "TN",
+      "city": "Wilson County",
+      "x": 652,
+      "y": 337,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "WEMA Protocols POCKET GUIDE AMBULANCE V3 9 23 15",
           "count": 1
         }
       ]
@@ -2403,20 +2833,6 @@
       ]
     },
     {
-      "state": "CA",
-      "city": "Marin County",
-      "x": 28,
-      "y": 240,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "MC protocols",
-          "count": 1
-        }
-      ]
-    },
-    {
       "state": "FL",
       "city": "West Palm Beach",
       "x": 796,
@@ -2454,6 +2870,34 @@
       "topProtocols": [
         {
           "title": "TVEMS Master Protocols August 2025",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "CA",
+      "city": "Santa Barbara County",
+      "x": 53,
+      "y": 323,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "App protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "SC",
+      "city": "Kershaw County",
+      "x": 759,
+      "y": 363,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "Kershaw County Emergency Medical Services protocols",
           "count": 1
         }
       ]
