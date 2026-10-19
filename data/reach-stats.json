@@ -1,50 +1,50 @@
 {
-  "generatedAt": "2026-10-18T18:07:46.015Z",
-  "totalUploads": 775,
-  "distinctProtocols": 491,
-  "activeStudiers": 552,
-  "pagesProcessed": 122806,
-  "statesRepresented": 45,
+  "generatedAt": "2026-10-19T18:07:48.776Z",
+  "totalUploads": 795,
+  "distinctProtocols": 506,
+  "activeStudiers": 570,
+  "pagesProcessed": 127404,
+  "statesRepresented": 47,
   "countriesRepresented": 5,
   "internationalUploads": 13,
   "byState": {
     "CO": 106,
     "CA": 56,
-    "MI": 51,
-    "PA": 31,
-    "NY": 31,
+    "MI": 52,
+    "NY": 34,
+    "PA": 32,
     "TX": 30,
     "MA": 30,
     "GA": 25,
     "VA": 21,
+    "NC": 20,
     "CT": 20,
-    "NC": 19,
     "OR": 19,
-    "WA": 15,
+    "WA": 16,
     "NV": 13,
+    "MD": 12,
+    "NM": 12,
     "FL": 11,
     "IL": 11,
-    "MD": 11,
-    "NM": 11,
+    "AZ": 11,
     "WY": 10,
-    "AZ": 9,
     "UT": 7,
+    "SC": 7,
     "TN": 7,
-    "SC": 6,
+    "AL": 6,
     "IN": 6,
-    "AL": 5,
+    "WV": 6,
     "OH": 5,
     "WI": 5,
     "LA": 5,
-    "WV": 5,
     "KY": 4,
     "NE": 4,
+    "MO": 4,
     "DE": 4,
     "NH": 4,
     "ID": 4,
     "RI": 4,
     "OK": 3,
-    "MO": 3,
     "IA": 3,
     "DC": 3,
     "MN": 2,
@@ -52,7 +52,9 @@
     "AR": 2,
     "NJ": 2,
     "MT": 1,
-    "SD": 1
+    "AK": 1,
+    "SD": 1,
+    "KS": 1
   },
   "byCountry": {
     "ZA": 7,
@@ -89,7 +91,7 @@
       "city": "Detroit",
       "x": 690,
       "y": 194,
-      "count": 51,
+      "count": 52,
       "tier": "hot",
       "topProtocols": [
         {
@@ -107,33 +109,11 @@
       ]
     },
     {
-      "state": "PA",
-      "city": "Philadelphia",
-      "x": 828,
-      "y": 223,
-      "count": 31,
-      "tier": "hot",
-      "topProtocols": [
-        {
-          "title": "2023v1 2 PA ALS Protocols",
-          "count": 12
-        },
-        {
-          "title": "2023v1 2 PA BLS Protocols",
-          "count": 6
-        },
-        {
-          "title": "2023v1 2 pa bls protocols",
-          "count": 3
-        }
-      ]
-    },
-    {
       "state": "NY",
       "city": "New York",
       "x": 843,
       "y": 202,
-      "count": 31,
+      "count": 34,
       "tier": "hot",
       "topProtocols": [
         {
@@ -146,6 +126,28 @@
         },
         {
           "title": "ny collaborative protocols",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "state": "PA",
+      "city": "Philadelphia",
+      "x": 828,
+      "y": 223,
+      "count": 32,
+      "tier": "hot",
+      "topProtocols": [
+        {
+          "title": "2023v1 2 PA ALS Protocols",
+          "count": 12
+        },
+        {
+          "title": "2023v1 2 PA BLS Protocols",
+          "count": 7
+        },
+        {
+          "title": "2023v1 2 pa bls protocols",
           "count": 3
         }
       ]
@@ -243,7 +245,7 @@
       "city": "Charlotte",
       "x": 751,
       "y": 344,
-      "count": 15,
+      "count": 16,
       "tier": "warm",
       "topProtocols": [
         {
@@ -327,6 +329,28 @@
       ]
     },
     {
+      "state": "MD",
+      "city": "Baltimore",
+      "x": 807,
+      "y": 242,
+      "count": 12,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "MD Medical Protocols 2026 Hyperlinked",
+          "count": 3
+        },
+        {
+          "title": "MD Medical Protocols 2026 Print",
+          "count": 3
+        },
+        {
+          "title": "MD Protocols 2026",
+          "count": 2
+        }
+      ]
+    },
+    {
       "state": "TX",
       "city": "Houston",
       "x": 493,
@@ -345,28 +369,6 @@
         {
           "title": "UTHETEMS Protocols",
           "count": 1
-        }
-      ]
-    },
-    {
-      "state": "MD",
-      "city": "Baltimore",
-      "x": 807,
-      "y": 242,
-      "count": 11,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "MD Medical Protocols 2026 Print",
-          "count": 3
-        },
-        {
-          "title": "MD Protocols 2026",
-          "count": 2
-        },
-        {
-          "title": "MD Medical Protocols 2026 Hyperlinked",
-          "count": 2
         }
       ]
     },
@@ -451,6 +453,28 @@
       ]
     },
     {
+      "state": "AZ",
+      "city": "Phoenix",
+      "x": 188,
+      "y": 380,
+      "count": 9,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "red book chapter 3 2026",
+          "count": 3
+        },
+        {
+          "title": "tcems protocol 2025 2027 2",
+          "count": 3
+        },
+        {
+          "title": "tcems protocol 2023",
+          "count": 2
+        }
+      ]
+    },
+    {
       "state": "IL",
       "city": "Chicago",
       "x": 617,
@@ -491,28 +515,6 @@
         {
           "title": "BoCo Protocols Apr 2026",
           "count": 1
-        }
-      ]
-    },
-    {
-      "state": "AZ",
-      "city": "Phoenix",
-      "x": 188,
-      "y": 380,
-      "count": 7,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "tcems protocol 2025 2027 2",
-          "count": 3
-        },
-        {
-          "title": "red book chapter 3 2026",
-          "count": 2
-        },
-        {
-          "title": "tcems protocol 2023",
-          "count": 2
         }
       ]
     },
@@ -571,6 +573,28 @@
         {
           "title": "2026 2027 Protocol Packet",
           "count": 6
+        }
+      ]
+    },
+    {
+      "state": "WV",
+      "city": "Charleston",
+      "x": 726,
+      "y": 278,
+      "count": 6,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "2026 Protocol Booklet Final April 2026 INTERACTIVE",
+          "count": 3
+        },
+        {
+          "title": "HN Critical Care Guidelines 10 23 25 v1 (1)05222026104412",
+          "count": 1
+        },
+        {
+          "title": "Safari",
+          "count": 1
         }
       ]
     },
@@ -676,28 +700,6 @@
         },
         {
           "title": "Acadian 2026 Protocols",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "WV",
-      "city": "Charleston",
-      "x": 726,
-      "y": 278,
-      "count": 5,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "2026 Protocol Booklet Final April 2026 INTERACTIVE",
-          "count": 3
-        },
-        {
-          "title": "Safari",
-          "count": 1
-        },
-        {
-          "title": "WV Protocols 2025",
           "count": 1
         }
       ]
@@ -873,6 +875,24 @@
       ]
     },
     {
+      "state": "WA",
+      "city": "Tacoma",
+      "x": 87,
+      "y": 45,
+      "count": 3,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "2025 Patient Care Protocol Final 10 2025",
+          "count": 2
+        },
+        {
+          "title": "Pierce county",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "WI",
       "city": "Milwaukee",
       "x": 611,
@@ -1033,24 +1053,6 @@
       ]
     },
     {
-      "state": "WA",
-      "city": "Tacoma",
-      "x": 87,
-      "y": 45,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "2025 Patient Care Protocol Final 10 2025",
-          "count": 1
-        },
-        {
-          "title": "Pierce county",
-          "count": 1
-        }
-      ]
-    },
-    {
       "state": "VT",
       "city": "Burlington",
       "x": 836,
@@ -1187,6 +1189,24 @@
       ]
     },
     {
+      "state": "MO",
+      "city": "Kansas City",
+      "x": 505,
+      "y": 280,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "KCFD EMS PROTOCOLS 2026",
+          "count": 1
+        },
+        {
+          "title": "FILE 1c1b7a37 e064 4a6b bbd7 f50cdc395342",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "UT",
       "city": "Tooele",
       "x": 211,
@@ -1200,6 +1220,24 @@
         },
         {
           "title": "Protocols",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "NM",
+      "city": "Albuquerque",
+      "x": 290,
+      "y": 358,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "2026 Grant County Drug Guidelines 8 20 26 +1 more",
+          "count": 1
+        },
+        {
+          "title": "AMR Cent NM 2026 COG Final",
           "count": 1
         }
       ]
@@ -1763,20 +1801,6 @@
       ]
     },
     {
-      "state": "MO",
-      "city": "Kansas City",
-      "x": 505,
-      "y": 280,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "KCFD EMS PROTOCOLS 2026",
-          "count": 1
-        }
-      ]
-    },
-    {
       "state": "MT",
       "city": "Billings",
       "x": 289,
@@ -1791,15 +1815,29 @@
       ]
     },
     {
-      "state": "NM",
-      "city": "Albuquerque",
-      "x": 290,
-      "y": 358,
+      "state": "AK",
+      "city": "Anchorage",
+      "x": 110,
+      "y": 575,
       "count": 1,
       "tier": "tiny",
       "topProtocols": [
         {
-          "title": "AMR Cent NM 2026 COG Final",
+          "title": "5037539691239280559",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "AL",
+      "city": "Fort Rucker",
+      "x": 649,
+      "y": 382,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "FY27 SMOG 01 OCT 2026 compress",
           "count": 1
         }
       ]
@@ -2066,6 +2104,34 @@
       "topProtocols": [
         {
           "title": "Aurora EMS Protocols Winter 2026",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "SC",
+      "city": "Charleston",
+      "x": 776,
+      "y": 395,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "7 1 2026 COGs",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "KS",
+      "city": "Emporia",
+      "x": 478,
+      "y": 295,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "Protocol",
           "count": 1
         }
       ]
