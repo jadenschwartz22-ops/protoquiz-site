@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
   <link rel="stylesheet" href="/assets/chrome.css?v=f5e22e65">
-  <link rel="stylesheet" href="/assets/research.css?v=4b01963a">
+  <link rel="stylesheet" href="/assets/research.css?v=8f80aafe">
   <style>
     .rq{max-width:640px;margin:0 auto;padding:20px 24px 56px;box-sizing:border-box}
     .rq h1{font-size:1.75rem;letter-spacing:-.02em;margin:0 0 6px}
@@ -43,6 +43,7 @@
     .rq .msg{margin:0;font-size:.9375rem;min-height:1.4em}
     .rq .done{padding:16px;border:1px solid var(--rule);border-radius:var(--r);background:var(--panel);font-size:1rem}
     .rq .hp{position:absolute;left:-9999px}
+    .rq a{color:var(--link)}
     .rq .alt{font-size:.875rem;color:var(--muted);margin:18px 0 0}
   </style>
 </head>
@@ -80,10 +81,18 @@
   <!-- /shared-chrome:nav -->
   <div class="rbar">
     <div class="rbar-in">
-      <nav class="rbar-nav" aria-label="Research areas"><a href="/research/" class="on" aria-current="page">Overview</a><a href="/census/">Protocol census</a><a href="/research/atlas/">911 coverage</a></nav>
+      <nav class="rbar-nav" aria-label="Research areas"><a href="/research/">Overview</a><a href="/census/">Protocol census</a><a href="/research/atlas/">911 coverage</a><a href="/research/findings/">Findings</a></nav>
       <p class="rbar-contact"><span>Contact: </span><a href="mailto:research@protoquiz.com">research@protoquiz.com</a></p>
     </div>
   </div>
+  <style id="rbar-mobile-nav">@media (max-width:900px){
+    body:has(.rbar) .site-header .site-nav{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:0;gap:6px 12px}
+    body:has(.rbar) .site-header .nav-left{display:contents}
+    body:has(.rbar) .site-header .brand{order:1;margin-right:auto}
+    body:has(.rbar) .site-header .nav-right{order:2}
+    body:has(.rbar) .site-header .nav-links{display:flex;order:3;flex:0 0 100%;gap:22px;overflow-x:auto;padding:8px 0 10px;margin-top:4px;border-top:1px solid var(--line)}
+  }</style>
+  <script src="/assets/research-nav.js?v=e0144007" defer></script>
   <main id="main" class="rq">
     <h1>Add, fix, or remove</h1>
     <p class="lede">For the protocol census and the 911 map. A person reads every request, and it is handled the same day.</p>
@@ -181,6 +190,5 @@
     </div>
   </footer>
   <!-- /shared-chrome:footer -->
-  <script src="/assets/research-nav.js?v=e0144007" defer></script>
 </body>
 </html>

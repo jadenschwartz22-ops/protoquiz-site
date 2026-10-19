@@ -81,7 +81,7 @@ const CTA = {
   '/research/':         ['Add your protocol',  '/research/request/?type=add'],
   '/research/practice/':['Add your protocol',  '/research/request/?type=add'],
   '/research/changes/': ['Add your protocol',  '/research/request/?type=add'],
-  '/research/atlas/':   ['Correct this county','/research/atlas/#correct'],
+  '/research/atlas/':   ['Correct the map','/research/atlas/#correct'],
 };
 const CTA_DEFAULT = ['Contact sales', '/agency/#contact'];
 
@@ -129,11 +129,24 @@ const RESEARCH_AREAS = [
   ['Overview', '/research/', p => p === '/research/'],
   ['Protocol census', '/census/', p => p.startsWith('/census/')],
   ['911 coverage', '/research/atlas/', p => p.startsWith('/research/atlas/')],
+  ['Findings', '/research/findings/', p => ['/research/findings/', '/research/doses/', '/research/carry/', '/research/changes/', '/research/practice/'].some(x => p.startsWith(x))],
 ];
 
 // No "ProtoQuiz Research" mark on this bar: the main nav directly above already shows
 // Research as the active section, so the mark restated it and was most of the bar's
 // visual weight. The links are the part that earns the row.
+// Below 900px the main nav's links are hidden site-wide and there is no menu button. On
+// Research pages (the ones with this bar) they move to a second row of the header instead,
+// so App / Research / Blog / About stay reachable on a phone. Inline and scoped, so no other
+// page changes and no stylesheet cache has to be busted.
+export const RBAR_MOBILE_CSS = `  <style id="rbar-mobile-nav">@media (max-width:900px){
+    body:has(.rbar) .site-header .site-nav{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:0;gap:6px 12px}
+    body:has(.rbar) .site-header .nav-left{display:contents}
+    body:has(.rbar) .site-header .brand{order:1;margin-right:auto}
+    body:has(.rbar) .site-header .nav-right{order:2}
+    body:has(.rbar) .site-header .nav-links{display:flex;order:3;flex:0 0 100%;gap:22px;overflow-x:auto;padding:8px 0 10px;margin-top:4px;border-top:1px solid var(--line)}
+  }</style>`;
+
 export const researchBar = (current = null) => `  <div class="rbar">
     <div class="rbar-in">
       <nav class="rbar-nav" aria-label="Research areas">${RESEARCH_AREAS.map(([label, href, on]) =>
@@ -141,6 +154,7 @@ export const researchBar = (current = null) => `  <div class="rbar">
       <p class="rbar-contact"><span>Contact: </span><a href="mailto:research@protoquiz.com">research@protoquiz.com</a></p>
     </div>
   </div>
+${RBAR_MOBILE_CSS}
   <script src="/assets/research-nav.js?v=${assetHash('assets/research-nav.js')}" defer></script>`;
 
 // The listing strip. The census names real agencies from records they published

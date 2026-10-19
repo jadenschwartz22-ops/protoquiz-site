@@ -219,10 +219,12 @@ main{padding-bottom:64px;}
    part-to-whole across four models, and a bar compares segment lengths honestly
    where a pie asks the eye to compare angles. Colours are the map's, so a model
    means the same thing in both. */
-.m-fire-based{--m:#d55e00}
-.m-private{--m:#0072b2}
-.m-third-service{--m:#009e73}
-.m-hospital{--m:#cc79a7}
+/* Same colour language as the county map: blue family = public (fire-based dark, third service light), orange = private, green = hospital. */
+.m-fire-based{--m:#0072b2}
+.m-private{--m:#d55e00}
+.m-third-service{--m:#56b4e9}
+.m-hospital{--m:#009e73}
+.bar-seg.m-third-service span{color:#0b2a3a}
 
 .lede{margin:0;font-size:.9375rem;line-height:1.5;color:var(--muted);max-width:74ch;}
 .lede .num{

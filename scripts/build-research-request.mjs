@@ -44,13 +44,14 @@ ${CHROME_HEAD}
     .rq .msg{margin:0;font-size:.9375rem;min-height:1.4em}
     .rq .done{padding:16px;border:1px solid var(--rule);border-radius:var(--r);background:var(--panel);font-size:1rem}
     .rq .hp{position:absolute;left:-9999px}
+    .rq a{color:var(--link)}
     .rq .alt{font-size:.875rem;color:var(--muted);margin:18px 0 0}
   </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 ${navFor('/research/')}
-${researchBar('/research/')}
+${researchBar('/research/request/')}
   <main id="main" class="rq">
     <h1>Add, fix, or remove</h1>
     <p class="lede">For the protocol census and the 911 map. A person reads every request, and it is handled the same day.</p>
