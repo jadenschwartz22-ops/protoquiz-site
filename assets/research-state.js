@@ -15,6 +15,12 @@
   }
   var want = (new URLSearchParams(location.search).get('state') || '').toUpperCase();
   var host = document.getElementById('state-view');
+  if (host && /^[A-Z]{2}$/.test(want) && !NAMES[want]) {
+    document.documentElement.classList.remove('state-mode');
+    host.hidden = false;
+    host.innerHTML = '<p class="ss-bad">There is no state called &ldquo;' + want + '&rdquo; on this map. Choose one from the list above, or click a county below.</p>';
+    return;
+  }
   if (!NAMES[want] || !host) return;
   if (pick) pick.value = want;
   document.documentElement.classList.add('state-mode');
@@ -47,12 +53,13 @@
     var none = F.filter(function (f) { return D[f].tier === '-'; }).length;
     var inferred = F.length - named.length - none;
     var cnt = {}; F.forEach(function (f) { var o = D[f].tier === '-' ? null : D[f].ownership; if (OWN[o]) cnt[o] = (cnt[o] || 0) + 1; });
+    var nogrey = F.filter(function (f) { return D[f].tier === '-' || !OWN[D[f].ownership]; }).length;
     var withOwn = Object.keys(cnt).reduce(function (s, k) { return s + cnt[k]; }, 0);
 
     var lede = named.length
       ? named.length + ' of ' + F.length + ' counties are named directly by a state or agency record, covering ' + Math.round(100 * namedPop / tot) + '% of residents. '
         + (inferred ? inferred + ' more are inferred from licensing rosters and Medicare billing' : 'The rest have no usable source') + (inferred && none ? '; ' + none + ' have no usable source' : '') + '.'
-      : 'No county in ' + name + ' is named directly by a state or agency record yet. ' + inferred + ' of ' + F.length + ' counties are inferred from licensing rosters and Medicare billing'
+      : (F.length === 1 ? 'The county in ' : 'No county in ') + name + ' is named directly by a state or agency record yet. ' + inferred + ' of ' + F.length + (F.length === 1 ? ' county is' : ' counties are') + ' inferred from licensing rosters and Medicare billing'
         + (none ? '; ' + none + ' have no usable source' : '') + '. An inferred county is a lead, not a fact.';
 
     host.classList.add('ss-in');
@@ -62,7 +69,7 @@
       + '<div class="ss-bar" role="img" aria-label="Counties by ownership of the agency that answers">'
       + Object.keys(OWN).filter(function (k) { return cnt[k]; }).map(function (k) { return '<i style="width:' + (100 * cnt[k] / withOwn).toFixed(1) + '%;background:' + OWN[k][1] + '"><span>' + Math.round(100 * cnt[k] / withOwn) + '%</span></i>'; }).join('')
       + '</div>'
-      + '<div class="bar-key">' + Object.keys(OWN).filter(function (k) { return cnt[k]; }).map(function (k) { return '<span class="key"><i style="background:' + OWN[k][1] + '"></i>' + OWN[k][0] + ' &middot; ' + cnt[k] + '</span>'; }).join('') + '<span class="key ss-faint"><i></i>fainter = weaker evidence</span></div>'
+      + '<div class="bar-key">' + Object.keys(OWN).filter(function (k) { return cnt[k]; }).map(function (k) { return '<span class="key"><i style="background:' + OWN[k][1] + '"></i>' + OWN[k][0] + ' &middot; ' + cnt[k] + '</span>'; }).join('') + '<span class="key ss-faint"><i></i>fainter = weaker evidence</span>' + (nogrey ? '<span class="key"><i style="background:#e4e0d6"></i>No source or model not established &middot; ' + nogrey + '</span>' : '') + '</div>'
       + '<div class="ss-grid"><div class="ss-mapbox"><div class="rm-tip" role="presentation"></div>'
       + '<svg class="ss-svg" viewBox="0 0 ' + geo.vb[0] + ' ' + geo.vb[1] + '" role="img" aria-label="' + esc(name) + ' counties coloured by who owns the agency that answers 911">'
       + F.map(function (f) {
@@ -75,8 +82,8 @@
       + F.map(function (f) {
           var c = D[f], o = OWN[c.ownership];
           return '<tr data-f="' + f + '" tabindex="0"><th scope="row">' + esc(c.name) + '</th><td class="num">' + n0(c.pop) + '</td><td>'
-            + (c.tier === '-' ? '<span class="ss-mute">No usable source</span>' : (o ? '<span class="rm-swatch" style="background:' + o[1] + '"></span>' + o[0] : '<span class="ss-mute">Not established</span>'))
-            + (c.a.length ? '<span class="ss-ag">' + (c.tier === 'A' ? '' : '<em>On record, unconfirmed:</em> ') + esc(c.a.slice(0, 2).join(', ')) + (c.n > 2 ? ' +' + (c.n - 2) : '') + '</span>' : '') + '</td><td>' + tierText(c) + (c.partial ? ' (some towns)' : '') + '</td></tr>';
+            + (c.tier === '-' ? '<span class="ss-mute">No usable source</span>' : (o ? '<span class="rm-swatch" style="background:' + o[1] + ';opacity:' + (OPA[c.tier] || 1) + '"></span>' + o[0] : '<span class="ss-mute">Not established</span>'))
+            + (c.a.length ? '<span class="ss-ag">' + (c.tier === 'A' ? '' : '<em>' + (c.tier === 'D' ? 'Medicare billing name, unconfirmed:' : 'On record, unconfirmed:') + '</em> ') + esc(c.a.slice(0, 2).join(', ')) + (c.n > 2 ? ' +' + (c.n - 2) : '') + '</span>' : '') + '</td><td>' + tierText(c) + (c.partial ? ' (some towns)' : '') + '</td></tr>';
         }).join('') + '</tbody></table></div>';
 
     var svg = host.querySelector('.ss-svg'), tip = host.querySelector('.rm-tip'), card = host.querySelector('.ss-card'), box = host.querySelector('.ss-mapbox');
@@ -89,7 +96,7 @@
       var h = '<h3>' + esc(c.name) + '</h3><p class="rm-panel-sub">' + (blank ? 'No usable source' : (o ? o[0] : 'Model not established') + ' &middot; ' + tierText(c).toLowerCase()) + '</p>';
       h += '<dl><div class="rm-row"><dt>Residents</dt><dd>' + n0(c.pop) + '</dd></div></dl>';
       if (c.a.length) {
-        h += '<h4>' + (c.tier === 'A' ? 'Named as answering' : 'On record here, not confirmed') + '</h4><ul>'
+        h += '<h4>' + (c.tier === 'A' ? 'Named as answering' : c.tier === 'D' ? 'Billing names (Medicare), not confirmed' : 'On record here, not confirmed') + '</h4><ul>'
           + c.a.map(function (a) { return '<li>' + esc(a) + '</li>'; }).join('') + '</ul>'
           + (c.n > c.a.length ? '<p class="ss-mute">and ' + (c.n - c.a.length) + ' more</p>' : '');
       }
