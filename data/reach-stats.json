@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-10-19T18:07:48.776Z",
-  "totalUploads": 795,
-  "distinctProtocols": 506,
-  "activeStudiers": 570,
-  "pagesProcessed": 127404,
+  "generatedAt": "2026-10-19T21:00:03.060Z",
+  "totalUploads": 798,
+  "distinctProtocols": 508,
+  "activeStudiers": 573,
+  "pagesProcessed": 128648,
   "statesRepresented": 47,
   "countriesRepresented": 5,
   "internationalUploads": 13,
   "byState": {
     "CO": 106,
     "CA": 56,
-    "MI": 52,
+    "MI": 53,
     "NY": 34,
     "PA": 32,
     "TX": 30,
@@ -21,10 +21,10 @@
     "CT": 20,
     "OR": 19,
     "WA": 16,
+    "MD": 13,
     "NV": 13,
-    "MD": 12,
+    "FL": 12,
     "NM": 12,
-    "FL": 11,
     "IL": 11,
     "AZ": 11,
     "WY": 10,
@@ -69,7 +69,7 @@
       "city": "Denver",
       "x": 330,
       "y": 258,
-      "count": 97,
+      "count": 84,
       "tier": "hot",
       "topProtocols": [
         {
@@ -81,8 +81,8 @@
           "count": 8
         },
         {
-          "title": "BoCo Protocols Apr 2026",
-          "count": 8
+          "title": "dmemsmd protocols july 2025 final 2025 07 14",
+          "count": 7
         }
       ]
     },
@@ -91,7 +91,7 @@
       "city": "Detroit",
       "x": 690,
       "y": 194,
-      "count": 52,
+      "count": 53,
       "tier": "hot",
       "topProtocols": [
         {
@@ -175,28 +175,6 @@
       ]
     },
     {
-      "state": "GA",
-      "city": "Atlanta",
-      "x": 692,
-      "y": 386,
-      "count": 24,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "National EMS Patient Care Guidelines Sept 2024 Revision 01.66…",
-          "count": 20
-        },
-        {
-          "title": "Whole Protocol V 3807012026150232 (1)",
-          "count": 1
-        },
-        {
-          "title": "2024 Scope of Practice 260123",
-          "count": 1
-        }
-      ]
-    },
-    {
       "state": "CT",
       "city": "Hartford",
       "x": 858,
@@ -219,11 +197,47 @@
       ]
     },
     {
+      "state": "GA",
+      "city": "Athens",
+      "x": 710,
+      "y": 379,
+      "count": 20,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "National EMS Patient Care Guidelines Sept 2024 Revision 01.66…",
+          "count": 20
+        }
+      ]
+    },
+    {
+      "state": "CO",
+      "city": "Boulder",
+      "x": 326,
+      "y": 252,
+      "count": 20,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "BoCo Protocols Apr 2026",
+          "count": 10
+        },
+        {
+          "title": "BoCo Protocols Apr 2026",
+          "count": 3
+        },
+        {
+          "title": "BoCo Protocols Oct 2025",
+          "count": 2
+        }
+      ]
+    },
+    {
       "state": "CA",
       "city": "Los Angeles",
       "x": 80,
       "y": 345,
-      "count": 18,
+      "count": 16,
       "tier": "warm",
       "topProtocols": [
         {
@@ -231,12 +245,12 @@
           "count": 2
         },
         {
-          "title": "Field Manual 79",
+          "title": "PCM 2025 for posting",
           "count": 2
         },
         {
-          "title": "PCM 2025 for posting",
-          "count": 2
+          "title": "103 Ready to Print Policy Manual Complete",
+          "count": 1
         }
       ]
     },
@@ -245,7 +259,7 @@
       "city": "Charlotte",
       "x": 751,
       "y": 344,
-      "count": 16,
+      "count": 15,
       "tier": "warm",
       "topProtocols": [
         {
@@ -281,6 +295,28 @@
         {
           "title": "httpss3.amazonaws.comtsresources.targetsolutions.com197A1159…",
           "count": 1
+        }
+      ]
+    },
+    {
+      "state": "MD",
+      "city": "Baltimore",
+      "x": 807,
+      "y": 242,
+      "count": 13,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "MD Medical Protocols 2026 Print",
+          "count": 4
+        },
+        {
+          "title": "MD Medical Protocols 2026 Hyperlinked",
+          "count": 3
+        },
+        {
+          "title": "MD Protocols 2026",
+          "count": 2
         }
       ]
     },
@@ -325,28 +361,6 @@
         {
           "title": "alco fm 2025 draft 07 31 2024",
           "count": 1
-        }
-      ]
-    },
-    {
-      "state": "MD",
-      "city": "Baltimore",
-      "x": 807,
-      "y": 242,
-      "count": 12,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "MD Medical Protocols 2026 Hyperlinked",
-          "count": 3
-        },
-        {
-          "title": "MD Medical Protocols 2026 Print",
-          "count": 3
-        },
-        {
-          "title": "MD Protocols 2026",
-          "count": 2
         }
       ]
     },
@@ -492,28 +506,6 @@
         },
         {
           "title": "short.bls",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "CO",
-      "city": "Boulder",
-      "x": 326,
-      "y": 252,
-      "count": 7,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "BoCo Protocols Apr 2026",
-          "count": 2
-        },
-        {
-          "title": "BoCo Protocols Oct 2025",
-          "count": 1
-        },
-        {
-          "title": "BoCo Protocols Apr 2026",
           "count": 1
         }
       ]
@@ -705,6 +697,28 @@
       ]
     },
     {
+      "state": "CA",
+      "city": "Sacramento",
+      "x": 50,
+      "y": 233,
+      "count": 5,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "Field Manual 79",
+          "count": 2
+        },
+        {
+          "title": "2002.02 Naloxone Leave Behind",
+          "count": 1
+        },
+        {
+          "title": "8001.21 Allergic Reaction Anaphylaxis",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "FL",
       "city": "Miami",
       "x": 797,
@@ -780,6 +794,28 @@
         },
         {
           "title": "New Hampshire EMS Protocols Version 8.0",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "GA",
+      "city": "Atlanta",
+      "x": 692,
+      "y": 386,
+      "count": 4,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "Whole Protocol V 3807012026150232 (1)",
+          "count": 1
+        },
+        {
+          "title": "2024 Scope of Practice 260123",
+          "count": 1
+        },
+        {
+          "title": "FCEMS COG Jan 26",
           "count": 1
         }
       ]
@@ -893,28 +929,6 @@
       ]
     },
     {
-      "state": "WI",
-      "city": "Milwaukee",
-      "x": 611,
-      "y": 187,
-      "count": 3,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "2025 Mercyhealth Pre Hospital Medical Guidelines for Wisconsi…",
-          "count": 1
-        },
-        {
-          "title": "MEP SSM Protocols 2026",
-          "count": 1
-        },
-        {
-          "title": "Aurora South WI EMS 2026 Pre Hospital Guidelines 4.1.26",
-          "count": 1
-        }
-      ]
-    },
-    {
       "state": "DC",
       "city": "Washington, D.C.",
       "x": 801,
@@ -937,23 +951,23 @@
       ]
     },
     {
-      "state": "CA",
-      "city": "Sacramento",
-      "x": 50,
-      "y": 233,
+      "state": "FL",
+      "city": "Palm Beach Gardens",
+      "x": 794,
+      "y": 525,
       "count": 3,
       "tier": "on",
       "topProtocols": [
         {
-          "title": "2002.02 Naloxone Leave Behind",
+          "title": "palmbeachgardensfirerescuepatientcareprotocols2026 69e1c052cc…",
           "count": 1
         },
         {
-          "title": "8001.21 Allergic Reaction Anaphylaxis",
+          "title": "palmbeachgardensfirerescuepatientcareprotocols2025 091bdd8ec7…",
           "count": 1
         },
         {
-          "title": "PP 8001 Allergic Reaction Anaphylaxis 1",
+          "title": "palmbeachgardensfirerescuepatientcareprotocols2025 bf30c8b884…",
           "count": 1
         }
       ]
@@ -1135,6 +1149,24 @@
       ]
     },
     {
+      "state": "WI",
+      "city": "Milwaukee",
+      "x": 611,
+      "y": 187,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "2025 Mercyhealth Pre Hospital Medical Guidelines for Wisconsi…",
+          "count": 1
+        },
+        {
+          "title": "MEP SSM Protocols 2026",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "TX",
       "city": "Lubbock",
       "x": 374,
@@ -1243,19 +1275,19 @@
       ]
     },
     {
-      "state": "FL",
-      "city": "Palm Beach Gardens",
-      "x": 794,
-      "y": 525,
+      "state": "WI",
+      "city": "Aurora",
+      "x": 609,
+      "y": 188,
       "count": 2,
       "tier": "on",
       "topProtocols": [
         {
-          "title": "palmbeachgardensfirerescuepatientcareprotocols2025 091bdd8ec7…",
+          "title": "aurora south wi ems 2024 pre hospital guidelines",
           "count": 1
         },
         {
-          "title": "palmbeachgardensfirerescuepatientcareprotocols2025 bf30c8b884…",
+          "title": "Aurora South WI EMS 2026 Pre Hospital Guidelines 4.1.26",
           "count": 1
         }
       ]
@@ -1474,6 +1506,20 @@
       "topProtocols": [
         {
           "title": "Clark County Protocols 2026",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "NC",
+      "city": "Craven",
+      "x": 818,
+      "y": 335,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [
+        {
+          "title": "2026CJPPROTOCOLS (1)",
           "count": 1
         }
       ]
@@ -1880,20 +1926,6 @@
       "topProtocols": [
         {
           "title": "AirCare Protocols",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "state": "WI",
-      "city": "Aurora",
-      "x": 609,
-      "y": 188,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [
-        {
-          "title": "aurora south wi ems 2024 pre hospital guidelines",
           "count": 1
         }
       ]

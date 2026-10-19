@@ -257,6 +257,7 @@ const CITY_RULES = [
   [/greater[\s_-]?miami|miami/i,                      { state:'FL', city:'Miami',           lat:25.7617, lon:-80.1918 }],
   [/orlando/i,                                        { state:'FL', city:'Orlando',         lat:28.5384, lon:-81.3789 }],
   [/jacksonville/i,                                   { state:'FL', city:'Jacksonville',    lat:30.3322, lon:-81.6557 }],
+  [/national[\s_-]?(ems|emergency[\s_-]?medical)|athens/i, { state:'GA', city:'Athens',  lat:33.9519, lon:-83.3576 }],
   [/atlanta|grady/i,                                  { state:'GA', city:'Atlanta',         lat:33.7490, lon:-84.3880 }],
   [/region[\s_-]?iii/i,                               { state:'GA', city:'Region III',      lat:33.7490, lon:-84.3880 }],
   [/region[\s_-]?xi|cfd|nwc[\s_-]?ems|chicago/i,      { state:'IL', city:'Chicago',         lat:41.8781, lon:-87.6298 }],
@@ -689,7 +690,9 @@ async function getReachStats() {
           aiHits++; placed = true;
         }
       } else if (ai.state) {
-        const coords = coordsForCity(ai.city, ai.state);
+        // The classifier often names a state and agency but no city: let the agency/file name pick one in that state.
+        const hint = ai.city ? null : classifyCity(`${ai.agency || ''} ${name}`);
+        const coords = coordsForCity(ai.city || (hint?.state === ai.state ? hint.city : null), ai.state);
         if (coords) {
           const cityName = coords.canonicalCity || ai.city || coords.fallbackCity || ai.state;
           const k = `${ai.state}|${cityName}|${coords.x}|${coords.y}`;
