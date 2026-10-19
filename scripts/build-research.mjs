@@ -146,6 +146,7 @@ ${researchBar('/research/atlas/')}
     <section class="res-state" id="state-view" hidden></section>
 
     <section class="res-map-wrap">
+      <a class="skip-link skip-map" href="#by-state">Skip the map: browse every state with the keyboard</a>
 ${mapWithControls(MAP)}
       <p class="map-note">The model changes at county lines, not state lines, which is why this
       is drawn by county. The averages below come from state licensing rosters instead, so they
@@ -168,7 +169,7 @@ ${MODELS.map(m => `        <span class="key"><i class="m-${m.replace(' ', '')}">
     </section>
 
     <section class="res-table-wrap">
-      <h2>By state</h2>
+      <h2 id="by-state">By state</h2>
       <div class="bar-key">
 ${MODELS.map(m => `        <span class="key"><i class="m-${m.replace(' ', '')}"></i>${MODEL_LABEL[m]}</span>`).join('\n')}
       </div>

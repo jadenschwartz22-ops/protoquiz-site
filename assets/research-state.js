@@ -78,6 +78,7 @@
         }).join('') + '</svg></div>'
       + '<aside class="ss-card" aria-live="polite"></aside></div>'
       + '<div class="ss-tools"><input type="search" id="ss-q" placeholder="Find a county or an agency" aria-label="Find a county or an agency" autocomplete="off"></div>'
+      + '<p class="ss-none" role="status" hidden></p>'
       + '<div class="table-scroll"><table class="res-table ss-table"><thead><tr><th scope="col">County</th><th scope="col" class="num">Residents</th><th scope="col">Who answers / on record</th><th scope="col">Evidence</th></tr></thead><tbody>'
       + F.map(function (f) {
           var c = D[f], o = OWN[c.ownership];
@@ -105,7 +106,8 @@
         : c.tier === 'A' ? (c.source === 'local' ? 'Named directly by a county or agency source.' : 'Named directly by a state record.')
         : (c.partial ? 'A record names the provider for some towns here, not the whole county. ' : '')
           + 'Agencies are listed by licence address or Medicare billing, which is not proof they answer 911 in this county. An inferred county is a lead, not a fact.') + '</p>'
-        + '<button type="button" class="rm-report">This is wrong &mdash; tell us</button>';
+        + '<button type="button" class="rm-report">This is wrong &mdash; tell us</button>'
+        + '<button type="button" class="rm-link">Copy link to this county</button>';
       return h;
     }
     var hint = 'Select a county on the map, or a row below, to see the agencies on record.';
@@ -114,6 +116,7 @@
       paths[sel].classList.remove('is-sel'); rows[sel].classList.remove('is-sel'); sel = null;
       svg.classList.remove('has-sel'); card.classList.remove('on');
       card.innerHTML = '<p class="ss-mute">' + hint + '</p>';
+      history.replaceState(null, '', location.pathname + location.search);
     }
     function select(f, scroll) {
       if (f === sel) return clear();
@@ -122,6 +125,12 @@
       svg.appendChild(paths[f]);  // draw the picked county last so no neighbour covers its outline
       svg.classList.add('has-sel');
       card.innerHTML = cardHtml(f); card.classList.add('on');
+      var lk = card.querySelector('.rm-link');
+      lk.addEventListener('click', function () {
+        var u = location.href.split('#')[0] + '#' + f, done = function () { lk.textContent = 'Link copied'; setTimeout(function () { lk.textContent = 'Copy link to this county'; }, 1800); };
+        if (navigator.clipboard) navigator.clipboard.writeText(u).then(done, function () { prompt('Copy this link', u); }); else prompt('Copy this link', u);
+      });
+      history.replaceState(null, '', '#' + f);
       card.querySelector('.rm-report').addEventListener('click', function () {
         var where = document.getElementById('fix-where'), what = document.getElementById('fix-what');
         var d = document.getElementById('correct'), fold = d && d.closest('details');
@@ -147,13 +156,18 @@
     host.querySelector('tbody').addEventListener('click', function (e) { var r = e.target.closest('tr'); if (r) select(r.getAttribute('data-f'), false); box.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); });
     host.querySelector('tbody').addEventListener('keydown', function (e) { if (e.key === 'Enter' && e.target.matches('tr')) select(e.target.getAttribute('data-f'), false); });
 
-    var q = host.querySelector('#ss-q');
+    var q = host.querySelector('#ss-q'), none = host.querySelector('.ss-none');
     q.addEventListener('input', function () {
-      var t = q.value.trim().toLowerCase();
+      var t = q.value.trim().toLowerCase(), hits = 0;
       F.forEach(function (f) {
         var c = D[f], hit = !t || (c.name + ' ' + c.a.join(' ')).toLowerCase().indexOf(t) >= 0;
+        if (hit) hits++;
         rows[f].hidden = !hit; paths[f].classList.toggle('is-dim', !hit);
       });
+      none.hidden = hits > 0;
+      if (!hits) { none.innerHTML = 'No county or agency in ' + esc(want) + ' matches &ldquo;' + esc(q.value.trim()) + '&rdquo;. <button type="button">Clear search</button>'; none.querySelector('button').onclick = function () { q.value = ''; q.dispatchEvent(new Event('input')); q.focus(); }; }
     });
+    var h0 = location.hash.slice(1);
+    if (D[h0]) select(h0, false), box.scrollIntoView({ block: 'nearest' });
   }
 })();

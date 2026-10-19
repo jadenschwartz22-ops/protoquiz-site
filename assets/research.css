@@ -846,3 +846,8 @@ a.st-item:hover .st-bar{outline:1px solid var(--ink);}
 .res-state .res-eyebrow a{white-space:nowrap;}
 .res-state .res-eyebrow{line-height:1.8;}
 .pc-svg .pc-head-cond,.pc-svg .pc-head-unk{font-size:9px;letter-spacing:.04em;}
+
+.skip-map:focus{position:static;display:inline-block;margin:0 0 10px;}
+.ss-none{margin:14px 0 0;color:var(--muted);font-size:.95rem;}
+.ss-none button{font:inherit;color:var(--link);background:none;border:0;padding:0;text-decoration:underline;cursor:pointer;}
+.rm-link{margin:8px 0 0;font:inherit;font-size:.8rem;color:var(--link);background:none;border:0;padding:0;text-decoration:underline;cursor:pointer;}
