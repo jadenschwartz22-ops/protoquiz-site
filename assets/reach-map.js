@@ -112,7 +112,7 @@ const nf = n => n.toLocaleString('en-US');
 
 // A place's uploaded documents: titles with the account-timestamp prefix and the "+N more"
 // merge suffix stripped, same titles folded together, and the rest as one "+N more" line.
-const docTitle = t => t.replace(/^\d{9,}\s+/, '').replace(/\s*\+\d+ more$/, '').replace(/^[^a-z]*$/i, 'Untitled protocol');
+const docTitle = t => t.replace(/\.pdf$/i, '').replace(/^\d{9,}\s+/, '').replace(/\s*\+\d+ more$/, '').replace(/^[^a-z]*$/i, 'Untitled protocol');
 function docList(l) {
   const by = new Map();
   for (const p of l?.topProtocols || []) by.set(docTitle(p.title), (by.get(docTitle(p.title)) || 0) + p.count);

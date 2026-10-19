@@ -258,6 +258,7 @@ const CITY_RULES = [
   [/orlando/i,                                        { state:'FL', city:'Orlando',         lat:28.5384, lon:-81.3789 }],
   [/jacksonville/i,                                   { state:'FL', city:'Jacksonville',    lat:30.3322, lon:-81.6557 }],
   [/national[\s_-]?(ems|emergency[\s_-]?medical)|athens/i, { state:'GA', city:'Athens',  lat:33.9519, lon:-83.3576 }],
+  [/norton[\s_-]?sound|\bnome\b/i,                     { state:'AK', city:'Nome',            x:52,  y:492 }],
   [/atlanta|grady/i,                                  { state:'GA', city:'Atlanta',         lat:33.7490, lon:-84.3880 }],
   [/region[\s_-]?iii/i,                               { state:'GA', city:'Region III',      lat:33.7490, lon:-84.3880 }],
   [/region[\s_-]?xi|cfd|nwc[\s_-]?ems|chicago/i,      { state:'IL', city:'Chicago',         lat:41.8781, lon:-87.6298 }],
@@ -643,6 +644,9 @@ async function getReachStats() {
   const ensureCity = (k) => { if (!cityData.has(k)) cityData.set(k, { count: 0, protocols: new Map() }); return cityData.get(k); };
   const ensureIntl = (k) => { if (!intlData.has(k)) intlData.set(k, { count: 0, protocols: new Map() }); return intlData.get(k); };
 
+  const junkName = n => /^[0-9a-f]{8}-[0-9a-f]{4}-/i.test(n) || !/[a-z]{3}/i.test(n.replace(/\.pdf$/i, '').replace(/^\d{9,}\s+/, ''));
+  const beltCand = [];  // real classified US agency protocols for the /app conveyor belt
+
   // Per-doc loop. AI takes priority; regex is fallback per upload (not per filename).
   for (const d of snap.docs) {
     const x = d.data();
@@ -664,6 +668,8 @@ async function getReachStats() {
     else if (typeof x.pages === 'number') pages += x.pages;
     const name = (x.protocolName || '').trim();
     if (name) nameCounts.set(name, (nameCounts.get(name) || 0) + 1);
+    // Shown title: a filename that is only digits or a UUID says nothing, so the classified agency stands in.
+    const label = junkName(name) && x.locationAgency ? `${x.locationAgency} protocols` : name;
 
     // Read AI-classified location directly from this doc
     const ai = (x.locationStatus === 'classified' && (x.locationState || x.locationCountry))
@@ -676,6 +682,10 @@ async function getReachStats() {
         }
       : null;
 
+    if (ai?.agency && ai.confidence === 'high' && ai.state && ai.country === 'US' && x.pageCount >= 60 && x.timestamp?.toMillis) {
+      beltCand.push({ agency: ai.agency, state: ai.state, pages: +x.pageCount, ts: x.timestamp.toMillis(),
+        year: +((x.locationEffectiveDate || '').slice(0, 4) || new Date(x.timestamp.toMillis()).getFullYear()) });
+    }
     let placed = false;
     if (ai) {
       if (ai.country && ai.country !== 'US') {
@@ -684,7 +694,7 @@ async function getReachStats() {
           const k = `${ai.country}|${meta.city}|${meta.x}|${meta.y}`;
           const e = ensureIntl(k);
           e.count += 1;
-          if (name) e.protocols.set(name, (e.protocols.get(name) || 0) + 1);
+          if (label) e.protocols.set(label, (e.protocols.get(label) || 0) + 1);
           e.countryName = meta.countryName;
           countryCounts.set(ai.country, (countryCounts.get(ai.country) || 0) + 1);
           aiHits++; placed = true;
@@ -698,7 +708,7 @@ async function getReachStats() {
           const k = `${ai.state}|${cityName}|${coords.x}|${coords.y}`;
           const e = ensureCity(k);
           e.count += 1;
-          if (name) e.protocols.set(name, (e.protocols.get(name) || 0) + 1);
+          if (label) e.protocols.set(label, (e.protocols.get(label) || 0) + 1);
           stateCounts.set(ai.state, (stateCounts.get(ai.state) || 0) + 1);
           aiHits++; placed = true;
         }
@@ -875,7 +885,25 @@ async function getReachStats() {
     byCountry: Object.fromEntries([...countryCounts.entries()].sort((a, b) => b[1] - a[1])),
     locales,
     internationalLocales,
+    belt: pickBelt(beltCand),
   };
+}
+
+// One card per state (its most-uploaded agency, newest upload), short names only, newest first.
+function pickBelt(cands) {
+  const by = new Map();
+  for (const c of cands) {
+    const k = c.agency.toLowerCase(), e = by.get(k);
+    if (!e) by.set(k, { ...c, n: 1 }); else { e.n++; if (c.ts > e.ts) Object.assign(e, { pages: c.pages, ts: c.ts, year: c.year }); }
+  }
+  const perState = new Map();
+  for (const e of by.values()) {
+    if (e.agency.length > 40 || +e.year < 2024) continue;
+    const cur = perState.get(e.state);
+    if (!cur || e.n > cur.n || (e.n === cur.n && e.ts > cur.ts)) perState.set(e.state, e);
+  }
+  return [...perState.values()].sort((a, b) => b.ts - a.ts).slice(0, 14)
+    .map(e => ({ agency: e.agency, state: STATE_NAMES[e.state] || e.state, year: e.year, pages: e.pages }));
 }
 
 async function main() {
