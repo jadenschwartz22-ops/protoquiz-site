@@ -631,8 +631,8 @@
    "jurisdiction": "regional",
    "currentHash": "805476ccf4939ccf0f8c3f70bcb0a5c8f2ff62c6236d28ed99dd2f623a29d205",
    "currentEffectiveDate": "2026-08-18",
-   "documentCount": 5,
-   "doseCount": 244,
+   "documentCount": 6,
+   "doseCount": 254,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -696,8 +696,8 @@
    "jurisdiction": "county",
    "currentHash": "c8c3a1f177209c41d4d7d130175615ffad4f25459896337a27b78012ebe9fb88",
    "currentEffectiveDate": "2024-12-01",
-   "documentCount": 5,
-   "doseCount": 797,
+   "documentCount": 6,
+   "doseCount": 965,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -1082,7 +1082,7 @@
    "currentHash": "07cf7422a4d7eb2c374a6aee3ab773940ba963c14dc8d81b338aaf3a25997fe1",
    "currentEffectiveDate": "2026-06-10",
    "documentCount": 4,
-   "doseCount": 513,
+   "doseCount": 509,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -1547,8 +1547,8 @@
    "jurisdiction": "county",
    "currentHash": "8c3441e6598aeaad2605d38d7802528624e238e2d3f5793bc2ec1bddd84e227c",
    "currentEffectiveDate": "2026-04-01",
-   "documentCount": 2,
-   "doseCount": 308,
+   "documentCount": 3,
+   "doseCount": 454,
    "pendingReview": {
     "effectiveDate": null
    },
@@ -1996,8 +1996,8 @@
    "jurisdiction": "county",
    "currentHash": "4aa390b1ae591b87e2f58e25a5ad077a029e4249fc142870a510c61295bf73e6",
    "currentEffectiveDate": "2018-04-20",
-   "documentCount": 2,
-   "doseCount": 4,
+   "documentCount": 3,
+   "doseCount": 5,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -2064,6 +2064,27 @@
    "doseCount": 351,
    "pendingReview": null,
    "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
+   "agencyKey": "marion-county",
+   "name": "Marion County",
+   "aliases": [
+    "Marion County"
+   ],
+   "state": "IA",
+   "country": "US",
+   "city": "Marion County",
+   "jurisdiction": "county",
+   "currentHash": "1b34d6d9fd051563a979dcdb233180f5a45f8c77257d5c4f22d1121e17c20123",
+   "currentEffectiveDate": "2022-01-01",
+   "documentCount": 1,
+   "doseCount": 123,
+   "pendingReview": null,
+   "mayBeOutdated": true,
    "coverage": {
     "hasProtocol": true,
     "jurisdiction": "county"
@@ -2218,8 +2239,8 @@
    "jurisdiction": "statewide",
    "currentHash": "a278f41102237fc2a2d448c7035c631f36d3e68ed7a1ba5381acdc9b504fcbde",
    "currentEffectiveDate": "2025-11-17",
-   "documentCount": 30,
-   "doseCount": 1190,
+   "documentCount": 31,
+   "doseCount": 1330,
    "pendingReview": {
     "effectiveDate": null
    },
@@ -2534,11 +2555,13 @@
    "country": "US",
    "city": null,
    "jurisdiction": "statewide",
-   "currentHash": "365443a7523fbf5b5950a04c2389665d5a543641c2bd47d729c8132b9ecc2970",
+   "currentHash": "f291bcdeabd639a0ef4af006e3824d9df8da045dd7a258cc2325701d82041257",
    "currentEffectiveDate": "2025-11-07",
-   "documentCount": 1,
-   "doseCount": 158,
-   "pendingReview": null,
+   "documentCount": 2,
+   "doseCount": 366,
+   "pendingReview": {
+    "effectiveDate": null
+   },
    "mayBeOutdated": false,
    "coverage": {
     "hasProtocol": false,
@@ -2754,7 +2777,7 @@
    "currentHash": "1e3dcf025001ba81c802359b3df3f334f0a038ffd8249f4b5f79d58a9943bc49",
    "currentEffectiveDate": "2020-03-02",
    "documentCount": 1,
-   "doseCount": 206,
+   "doseCount": 208,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -2798,7 +2821,9 @@
    "currentEffectiveDate": "2026-06-22",
    "documentCount": 2,
    "doseCount": 248,
-   "pendingReview": null,
+   "pendingReview": {
+    "effectiveDate": null
+   },
    "mayBeOutdated": false,
    "coverage": {
     "hasProtocol": true,
@@ -2936,6 +2961,27 @@
    }
   },
   {
+   "agencyKey": "osage-ambulance-district",
+   "name": "Osage Ambulance District",
+   "aliases": [
+    "Osage Ambulance District"
+   ],
+   "state": "MO",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "fire-district",
+   "currentHash": "5e053df30fab59c4c56791ebb68089460565dc5e6017dc2c6d2245afeaa1bd90",
+   "currentEffectiveDate": "2015-12-08",
+   "documentCount": 1,
+   "doseCount": 149,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "fire-district"
+   }
+  },
+  {
    "agencyKey": "palm-beach-gardens-fire-rescue",
    "name": "Palm Beach Gardens Fire Rescue",
    "aliases": [
@@ -3012,7 +3058,7 @@
    "currentHash": "051206a2f585a6a4fad274a749e25aa8bf5ae85f8c88db94733ddcdb0895fb6e",
    "currentEffectiveDate": "2024-03-31",
    "documentCount": 16,
-   "doseCount": 1101,
+   "doseCount": 1099,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -3074,8 +3120,8 @@
    "jurisdiction": "county",
    "currentHash": "8b9f161a65e9b032608cc8790f4529e2cfbc6274fc369c12ecd319306dab2fc2",
    "currentEffectiveDate": "2025-02-01",
-   "documentCount": 2,
-   "doseCount": 566,
+   "documentCount": 3,
+   "doseCount": 824,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -4342,8 +4388,8 @@
    "jurisdiction": "statewide",
    "currentHash": "63581c860c9ed1bf708af365077f2f650b3f6ee8c3ad5309fa50b07f3f7767ce",
    "currentEffectiveDate": "2026-04-01",
-   "documentCount": 5,
-   "doseCount": 695,
+   "documentCount": 6,
+   "doseCount": 840,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
