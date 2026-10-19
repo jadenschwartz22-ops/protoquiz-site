@@ -35,7 +35,8 @@ index card, feed, sitemap, deploy) are unchanged.
    quote, and removes anything that does not check out.
 4. Owner sees the draft opened locally and gives one verdict round. Nothing is built before that.
 5. Build into `blog/posts/YYYY-MM-DD-<slug>.html` with category `advocacy`, card at the top of `blog/index.html`,
-   feed and sitemap, then push main and look at the live page.
+   feed and sitemap, run `node scripts/build-research-index.mjs` (the article appears on /research/findings/),
+   then push main and look at the live page.
 
 ## Unattended monthly run (owner rulings 2026-10-13: automatic every month, published on his approval)
 
