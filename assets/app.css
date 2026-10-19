@@ -316,6 +316,8 @@ html.no-anim, html.no-anim * { transition: none !important; animation: none !imp
 .reach-map .state[data-b="warm"] { stroke: var(--accent); stroke-opacity: .6; }
 .reach-map .state[data-b="hot"]  { stroke: var(--accent); stroke-opacity: .9; }
 .reach-map .core { fill: var(--accent); }
+/* statewide: the state is all we know, so the dot is a hollow ring, not a city pin */
+.reach-map .lc.sw .core { fill: none; stroke: var(--accent); stroke-width: 1.6; }
 .reach-map .halo { fill: none; stroke: var(--accent); stroke-width: 1.2; opacity: .3; vector-effect: non-scaling-stroke; }
 .reach-map .lc.hot .halo { opacity: .55; stroke-width: 1.6; }
 .reach-map .lc, .reach-map .lbl[data-for] { cursor: pointer; }

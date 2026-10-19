@@ -458,7 +458,7 @@ function statePolys() {
   if (_statePolys) return _statePolys;
   _statePolys = {};
   try {
-    const html = fsSync.readFileSync(path.join(_SITE_ROOT, 'index.html'), 'utf8');
+    const html = fsSync.readFileSync(path.join(_SITE_ROOT, 'data', 'us-state-paths.txt'), 'utf8');
     for (const m of html.matchAll(/<path class="state s-([a-z]{2})" d="([^"]+)"/g)) {
       const toks = m[2].match(/[a-zA-Z]|-?\d*\.?\d+/g);
       const polys = []; let poly = [], x = 0, y = 0, sx = 0, sy = 0, cmd = null, i = 0;
@@ -494,6 +494,28 @@ function _inPoly(px, py, poly) {
   }
   return inside;
 }
+// A point well inside a state's shape for its "statewide" dot: the biggest ring's centroid, or
+// the nearest interior grid point when the centroid falls outside (Michigan, Florida, Louisiana).
+function stateDot(st) {
+  const rings = statePolys()[st];
+  const name = `${STATE_NAMES[st] || st} statewide`;
+  if (!rings?.length) { const c = STATE_CITIES[st]; return c ? { x: c.x, y: c.y, canonicalCity: name } : null; }
+  const area = r => r.reduce((s, [x, y], i) => { const [x2, y2] = r[(i + 1) % r.length]; return s + (x * y2 - x2 * y); }, 0) / 2;
+  const big = rings.reduce((a, b) => (Math.abs(area(b)) > Math.abs(area(a)) ? b : a));
+  const A = area(big);
+  let cx = 0, cy = 0;
+  big.forEach(([x, y], i) => { const [x2, y2] = big[(i + 1) % big.length]; const f = x * y2 - x2 * y; cx += (x + x2) * f; cy += (y + y2) * f; });
+  let best = { x: Math.round(cx / (6 * A)), y: Math.round(cy / (6 * A)) };
+  if (!_inPoly(best.x, best.y, big)) {
+    let d = Infinity;
+    for (let gx = -40; gx <= 40; gx += 2) for (let gy = -40; gy <= 40; gy += 2) {
+      const px = best.x + gx, py = best.y + gy, dd = gx * gx + gy * gy;
+      if (dd < d && _inPoly(px, py, big)) { d = dd; best = { x: px, y: py }; }
+    }
+  }
+  return { ...best, canonicalCity: name };
+}
+
 // true if (x,y) is inside state's shape or within tolPx of its outline.
 // Unknown shapes (AK/HI, bad state code) pass — the guard only rejects when
 // it positively knows the point is wrong.
@@ -654,6 +676,8 @@ async function getReachStats() {
   for (const d of newestFirst) {
     const x = d.data();
     if (isDev(x.userId)) continue;
+    // Not a protocol an agency runs (formularies, school books, forms, strangers' files): not part of the reach map.
+    if (x.locationIsAgencyProtocol === false) continue;
     // Studier count = distinct real people who uploaded a protocol.
     // Legacy backfilled docs (Nov 2025, ~66 of them) all carry the placeholder
     // userId 'anonymous' — their original per-user identity was never recorded.
@@ -685,6 +709,7 @@ async function getReachStats() {
           state: x.locationState || null,
           city: x.locationCity || null,
           agency: x.locationAgency || null,
+          jurisdiction: x.locationJurisdiction || null,
           confidence: x.locationConfidence || 'low',
         }
       : null;
@@ -708,8 +733,11 @@ async function getReachStats() {
         }
       } else if (ai.state) {
         // The classifier often names a state and agency but no city: let the agency/file name pick one in that state.
-        const hint = ai.city ? null : classifyCity(`${ai.agency || ''} ${name}`);
-        const coords = coordsForCity(ai.city || (hint?.state === ai.state ? hint.city : null), ai.state);
+        // No city: a rule on the agency/file name may still pick one (statewide books skip this); otherwise
+        // the state is all we know, so the dot sits in the state itself rather than on a made-up city.
+        const hint = ai.city || ai.jurisdiction === 'statewide' ? null : classifyCity(`${ai.agency || ''} ${name}`);
+        const hintCity = hint?.state === ai.state ? hint.city : null;
+        const coords = ai.city || hintCity ? coordsForCity(ai.city || hintCity, ai.state) : stateDot(ai.state) || coordsForCity(null, ai.state);
         if (coords) {
           const cityName = coords.canonicalCity || ai.city || coords.fallbackCity || ai.state;
           const k = `${ai.state}|${cityName}|${coords.x}|${coords.y}`;
@@ -825,7 +853,8 @@ async function getReachStats() {
         .slice(0, 3)
         .map(([name, n]) => ({ title: prettifyName(name), count: n }));
       return {
-        state, city, x: Number(x), y: Number(y), count, tier: tier(count), topProtocols
+        state, city, x: Number(x), y: Number(y), count, tier: tier(count), topProtocols,
+        ...(city.endsWith(' statewide') && { statewide: true }),
       };
     })
     .sort((a, b) => b.count - a.count);

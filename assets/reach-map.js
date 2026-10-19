@@ -14,12 +14,14 @@ const SZ = { hot: 16, warm: 13, on: 10.5, tiny: 8.5 };
 const WSZ = 22;
 const US = { x: 195, y: 205 };
 
+// A statewide dot is named for the state alone ("Colorado statewide"); a city dot is "Denver, CO".
+export const usName = l => (l.statewide ? l.city : `${l.city}, ${l.state}`);
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
 export const plural = n => `${Number(n).toLocaleString('en-US')} upload${n === 1 ? '' : 's'}`;
 export const bucket = n => n >= 20 ? 'hot' : n >= 8 ? 'warm' : n >= 1 ? 'on' : 'off';
 
 const dot = (l, tier, name, k = 1) =>
-  `<g class="lc ${tier}" data-name="${esc(name)}" data-n="${l.count}" tabindex="0" role="button" aria-label="${esc(name)}, ${plural(l.count)}">`
+  `<g class="lc ${tier}${l.statewide ? ' sw' : ''}" data-name="${esc(name)}" data-n="${l.count}" tabindex="0" role="button" aria-label="${esc(name)}, ${plural(l.count)}">`
   + `<circle class="halo" cx="${l.x}" cy="${l.y}" r="${+(H[tier] * k).toFixed(2)}"/><circle class="core" cx="${l.x}" cy="${l.y}" r="${+(R[tier] * k).toFixed(2)}"/></g>`;
 
 // items: [{ x, y, name, count, cls, sz, big, key }] in priority order; box = the visible
@@ -73,14 +75,13 @@ export function reachLayers(reach, view = {}) {
   const has = l => l.x != null && l.y != null;
   const locales = (reach.locales || []).filter(has).sort((a, b) => b.count - a.count);
   const intl = (reach.internationalLocales || []).filter(has).sort((a, b) => b.count - a.count);
-  const usName = l => `${l.city}, ${l.state}`;
   const usLocated = locales.reduce((t, l) => t + l.count, 0);
   const intlLocated = intl.reduce((t, l) => t + l.count, 0);
 
   const us = [
     ...locales.map(l => dot(l, l.tier, usName(l), vu.k)),
     ...placeLabels(locales.filter(seen(vu)).map(l => ({
-      x: l.x, y: l.y, name: l.city.toUpperCase(), count: l.count, key: usName(l),
+      x: l.x, y: l.y, name: l.city.replace(/ statewide$/, '').toUpperCase(), count: l.count, key: usName(l),
       cls: l.tier, sz: SZ[l.tier], big: l.tier === 'hot' || l.tier === 'warm',
     })), vu.box, { dots: locales, k: vu.k }),
   ].join('');
@@ -200,7 +201,7 @@ export function mountReach(root, reach) {
     }
     if (note) note.textContent = pickHint(L);
   }
-  const places = new Map([...(reach?.locales || []).map(l => [`${l.city}, ${l.state}`, l]), ...(reach?.internationalLocales || []).map(l => [`${l.city}, ${l.countryName}`, l])]);
+  const places = new Map([...(reach?.locales || []).map(l => [usName(l), l]), ...(reach?.internationalLocales || []).map(l => [`${l.city}, ${l.countryName}`, l])]);
   let selName = '';
   const mark = () => root.querySelectorAll('.lc').forEach(x => x.classList.toggle('sel', x.dataset.name === selName));
   if (note && reach) mountZoom(root, note, (m, views) => {
