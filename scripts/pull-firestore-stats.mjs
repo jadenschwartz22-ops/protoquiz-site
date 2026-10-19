@@ -648,10 +648,12 @@ async function getReachStats() {
   const beltCand = [];  // real classified US agency protocols for the /app conveyor belt
 
   // Per-doc loop. AI takes priority; regex is fallback per upload (not per filename).
-  for (const d of snap.docs) {
+  // Newest first, so a re-upload's duplicate rows are the older ones and the kept row is the latest.
+  const newestFirst = [...snap.docs].sort((a, b) => (b.data().timestamp?.toMillis?.() || 0) - (a.data().timestamp?.toMillis?.() || 0));
+  const seenUpload = new Set();  // one upload per account + protocol name: re-uploading the same file is not a new upload
+  for (const d of newestFirst) {
     const x = d.data();
     if (isDev(x.userId)) continue;
-    total++;
     // Studier count = distinct real people who uploaded a protocol.
     // Legacy backfilled docs (Nov 2025, ~66 of them) all carry the placeholder
     // userId 'anonymous' — their original per-user identity was never recorded.
@@ -664,15 +666,20 @@ async function getReachStats() {
     } else if (x.userId) {
       userIds.add(x.userId);
     }
-    if (typeof x.pageCount === 'number') pages += x.pageCount;
+    if (typeof x.pageCount === 'number') pages += x.pageCount;  // every run is real processing, duplicates included
     else if (typeof x.pages === 'number') pages += x.pages;
     const name = (x.protocolName || '').trim();
+    const dupKey = `${x.userId}|${name.toLowerCase().replace(/\.pdf$/, '').replace(/\s+/g, ' ')}`;
+    if (name && seenUpload.has(dupKey)) continue;
+    seenUpload.add(dupKey);
+    total++;
     if (name) nameCounts.set(name, (nameCounts.get(name) || 0) + 1);
     // Shown title: a filename that is only digits or a UUID says nothing, so the classified agency stands in.
     const label = junkName(name) && x.locationAgency ? `${x.locationAgency} protocols` : name;
 
     // Read AI-classified location directly from this doc
-    const ai = (x.locationStatus === 'classified' && (x.locationState || x.locationCountry))
+    // Low confidence means the cover page named no one (blank scans, unlabeled excerpts): never pinned.
+    const ai = (x.locationStatus === 'classified' && x.locationConfidence !== 'low' && (x.locationState || x.locationCountry))
       ? {
           country: x.locationCountry || 'US',
           state: x.locationState || null,
