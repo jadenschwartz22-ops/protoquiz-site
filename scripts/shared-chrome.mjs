@@ -95,7 +95,7 @@ const ALSO = { '/research/': ['/census/'] };
 // The census is research, not a sales page: an agency reading its own listing should
 // not find the sales pitch one click away in the header, or read the census as a
 // product we sell. The footer still reaches /agency/.
-const hiddenOn = { '/agency/': ['/census/', '/research/'] };
+const hiddenOn = { '/agency/': ['/census/'] };
 
 const navLinks = current => SECTIONS.filter(([, href]) =>
   !(current && (hiddenOn[href] || []).some(p => current.startsWith(p)))).map(([label, href]) => {
