@@ -34,7 +34,7 @@ const STAR = `<svg width="14" height="14" viewBox="0 0 24 24" fill="oklch(74% 0.
 const STEPS = [
   ['01', "Upload your agency's PDF", 'The document your medical director signed, however many hundreds of pages it runs.'],
   ['02', 'We extract the structure', 'Drugs, doses, routes and decision points, each tied back to the page it came from.'],
-  ['03', 'Quiz, learn, compete', 'Pharmacology, algorithms, adaptive scenarios and spaced repetition on your own protocols.'],
+  ['03', 'Quiz, learn, look it up', 'Pharmacology, algorithms, adaptive scenarios and spaced repetition on your own protocols, plus contents, search and Ask AI over the same pages.'],
 ];
 
 // What the app actually does, past the upload. The How-it-works steps say how your
@@ -154,7 +154,7 @@ ${navFor('/app/')}
 
         <div class="shot-col">
           <div class="toggles">
-            <div class="toggle" role="group" aria-label="Platform">
+            <div class="toggle" role="group" aria-label="Platform" hidden><!-- Android shots predate the current tabs; re-enable after a recapture -->
               <button type="button" data-set="platform:ios" aria-pressed="true">${APPLE.replace('width="20" height="20"','width="13" height="13"')}<span>iOS</span></button>
               <button type="button" data-set="platform:android" aria-pressed="false"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.6 9.5l1.4-2.4a.3.3 0 00-.5-.3L17 9.2a9.6 9.6 0 00-8.1 0L7.4 6.8a.3.3 0 00-.5.3l1.4 2.4A8.3 8.3 0 004 16h16a8.3 8.3 0 00-2.4-6.5zM8.5 13.4a.8.8 0 110-1.6.8.8 0 010 1.6zm7 0a.8.8 0 110-1.6.8.8 0 010 1.6z"/></svg><span>Android</span></button>
             </div>

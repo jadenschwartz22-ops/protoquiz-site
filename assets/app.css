@@ -64,6 +64,7 @@
   font-size: 10px; letter-spacing: 1.3px; text-transform: uppercase; font-weight: 500;
 }
 .toggle button:hover { color: var(--ink); }
+.toggle[hidden] { display: none; }
 .toggle button.on { background: var(--ink); color: var(--paper); }
 .toggle button.on.night { background: var(--night); color: var(--night-ink); }
 .dot { width: 8px; height: 8px; border-radius: 2px; display: block; }

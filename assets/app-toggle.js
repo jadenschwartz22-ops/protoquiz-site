@@ -5,8 +5,8 @@
 // [data-shift] on <html> and every token in app.css is redefined, so the hero, the
 // chrome, the conveyor and the screenshots all move together.
 //
-// One screenshot could never show the app, so the phone cycles eight screens. Day and
-// night are the SAME eight in the same order, which is what makes the shift toggle
+// One screenshot could never show the app, so the phone cycles nine screens. Day and
+// night are the SAME nine in the same order, which is what makes the shift toggle
 // honest: you are comparing one screen against itself, not two unrelated ones.
 //
 // Night is the default: it is the app's own default and the look the live site
@@ -18,13 +18,14 @@
 
   const SCREENS = [
     ['study-hub',         'Study hub'],
-    ['protocols',         'Protocols'],
+    ['protocol-nav',      'Protocol navigation'],
+    ['ask-ai',            'Ask AI'],
+    ['protocols',         'Upload and library'],
     ['scenario',          'Scenario briefing'],
     ['spaced-repetition', 'Spaced repetition'],
     ['quiz-results',      'Quiz results'],
     ['algorithm-quiz',    'Algorithm quiz'],
     ['nremt',             'NREMT prep'],
-    ['compete',           'Compete'],
   ];
 
   const root = document.documentElement;
