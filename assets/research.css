@@ -828,3 +828,4 @@ a.st-item:hover .st-bar{outline:1px solid var(--ink);}
 .res-state.ss-in .ss-bar,.res-state.ss-in .bar-key,.res-state.ss-in .ss-grid,.res-state.ss-in .ss-tools,.res-state.ss-in .table-scroll{animation:ssIn .35s ease both;}
 .res-state.ss-in .ss-grid{animation-delay:.05s;}
 @media (prefers-reduced-motion:reduce){.ss-skel,.ss-skel-line{animation:none;}.res-state.ss-in *{animation:none!important;}}
+.ss-ag em{font-style:normal;color:var(--ink);opacity:.7;}

@@ -67,12 +67,12 @@
         }).join('') + '</svg></div>'
       + '<aside class="ss-card" aria-live="polite"></aside></div>'
       + '<div class="ss-tools"><input type="search" id="ss-q" placeholder="Find a county or an agency" aria-label="Find a county or an agency" autocomplete="off"></div>'
-      + '<div class="table-scroll"><table class="res-table ss-table"><thead><tr><th scope="col">County</th><th scope="col" class="num">Residents</th><th scope="col">Who answers</th><th scope="col">Evidence</th></tr></thead><tbody>'
+      + '<div class="table-scroll"><table class="res-table ss-table"><thead><tr><th scope="col">County</th><th scope="col" class="num">Residents</th><th scope="col">Who answers / on record</th><th scope="col">Evidence</th></tr></thead><tbody>'
       + F.map(function (f) {
           var c = D[f], o = OWN[c.ownership];
           return '<tr data-f="' + f + '" tabindex="0"><th scope="row">' + esc(c.name) + '</th><td class="num">' + n0(c.pop) + '</td><td>'
             + (c.tier === '-' ? '<span class="ss-mute">No usable source</span>' : (o ? '<span class="rm-swatch" style="background:' + o[1] + '"></span>' + o[0] : '<span class="ss-mute">Not established</span>'))
-            + (c.a.length ? '<span class="ss-ag">' + esc(c.a.slice(0, 2).join(', ')) + (c.n > 2 ? ' +' + (c.n - 2) : '') + '</span>' : '') + '</td><td>' + tierText(c) + (c.partial ? ' (some towns)' : '') + '</td></tr>';
+            + (c.a.length ? '<span class="ss-ag">' + (c.tier === 'A' ? '' : '<em>On record, unconfirmed:</em> ') + esc(c.a.slice(0, 2).join(', ')) + (c.n > 2 ? ' +' + (c.n - 2) : '') + '</span>' : '') + '</td><td>' + tierText(c) + (c.partial ? ' (some towns)' : '') + '</td></tr>';
         }).join('') + '</tbody></table></div>';
 
     var svg = host.querySelector('.ss-svg'), tip = host.querySelector('.rm-tip'), card = host.querySelector('.ss-card'), box = host.querySelector('.ss-mapbox');
@@ -85,7 +85,7 @@
       var h = '<h3>' + esc(c.name) + '</h3><p class="rm-panel-sub">' + (blank ? 'No usable source' : (o ? o[0] : 'Model not established') + ' &middot; ' + tierText(c).toLowerCase()) + '</p>';
       h += '<dl><div class="rm-row"><dt>Residents</dt><dd>' + n0(c.pop) + '</dd></div></dl>';
       if (c.a.length) {
-        h += '<h4>' + (c.tier === 'A' ? 'Named as answering' : 'Agencies on record here') + '</h4><ul>'
+        h += '<h4>' + (c.tier === 'A' ? 'Named as answering' : 'On record here, not confirmed') + '</h4><ul>'
           + c.a.map(function (a) { return '<li>' + esc(a) + '</li>'; }).join('') + '</ul>'
           + (c.n > c.a.length ? '<p class="ss-mute">and ' + (c.n - c.a.length) + ' more</p>' : '');
       }
