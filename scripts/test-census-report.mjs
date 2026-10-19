@@ -137,7 +137,7 @@ test('charts are CSS bars with no chart library', () => {
   assert.ok(html.includes('class="chart"'), 'expected the CSS chart');
   assert.ok(!/<script[^>]*src="[^"]*(chart|d3|plotly|highcharts)/i.test(html), 'no chart library may be loaded');
   const externalScripts = [...html.matchAll(/<script[^>]*src="([^"]*)"/g)].map(m => m[1]);
-  assert.deepStrictEqual(externalScripts.filter(s => !s.includes('googletagmanager')), [],
+  assert.deepStrictEqual(externalScripts.filter(s => !s.includes('googletagmanager') && !s.startsWith('/assets/')), [],
     'the only external script may be GA');
 });
 test('every chart shows the full five-number summary', () => {

@@ -958,7 +958,7 @@ ${statewideBaselines.length ? `      <section id="statewide-baseline">
       ...(statewideBaselines.length ? ['statewide protocol'] : []),
     ],
   })}
-${agenciesSection}
+${countryOf(listed[0]) === 'US' ? `      <p class="xnav" style="margin:2px 0 18px"><a href="/research/atlas/?state=${esc(state)}">911 coverage in ${esc(name)}: who answers, county by county &rarr;</a></p>\n` : ''}${agenciesSection}
 ${footRow([citePanel('cite', [
     esc(`United States EMS Protocol Census, ${name}: ${listed.length} named ${listed.length === 1 ? 'agency' : 'agencies'}, ${doses.length} dose entries across ${drugs.size} ${drugs.size === 1 ? 'drug' : 'drugs'}.`),
     `${ORIGIN}/census/states/${slug(state)}/`,

@@ -21,13 +21,17 @@
   host.hidden = false;
   var name = NAMES[want];
   document.title = name + ' - The American EMS Atlas';
-  // Same skeleton as the loaded page (eyebrow, title, a map-shaped box), so nothing moves when the data lands.
-  host.innerHTML = '<p class="res-eyebrow"><a href="' + location.pathname + '">&larr; All states</a></p><h1>' + name + '</h1><p class="lede ss-skel-line">&nbsp;<br>&nbsp;</p><div class="ss-skel"></div>';
+
+  var eyebrow = '<p class="res-eyebrow"><a href="' + location.pathname + '">&larr; All states</a>'
+    + ((window.CENSUS_STATES || []).indexOf(want.toLowerCase()) >= 0 ? ' &nbsp;&middot;&nbsp; <a href="/census/states/' + want.toLowerCase() + '/">Protocol census: ' + name + ' &rarr;</a>' : '') + '</p>';
 
   var esc = function (t) { return String(t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
   var tierText = function (c) { return c.tier === 'A' ? (c.source === 'local' ? 'Named by a county or agency source' : TIER.A) : (c.tier === '-' ? 'No usable source' : TIER[c.tier]); };
   var ownLabel = function (c) { return OWN[c.ownership] ? OWN[c.ownership][0] : 'Not established'; };
   var n0 = function (n) { return n.toLocaleString('en-US'); };
+
+  // Same skeleton as the loaded page (eyebrow, title, a map-shaped box), so nothing moves when the data lands.
+  host.innerHTML = eyebrow + '<h1>' + name + '</h1><p class="lede ss-skel-line">&nbsp;<br>&nbsp;</p><div class="ss-skel"></div>';
 
   Promise.all(window.__atlas || ['/data/atlas/geo/' + want + '.json', '/data/atlas/' + want + '.json'].map(function (u) {
     return fetch(u).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); });
@@ -53,7 +57,7 @@
 
     host.classList.add('ss-in');
     host.innerHTML =
-      '<p class="res-eyebrow"><a href="' + location.pathname + '">&larr; All states</a></p>'
+      eyebrow
       + '<h1>' + name + '</h1><p class="lede">' + esc(lede) + '</p>'
       + '<div class="ss-bar" role="img" aria-label="Counties by ownership of the agency that answers">'
       + Object.keys(OWN).filter(function (k) { return cnt[k]; }).map(function (k) { return '<i style="width:' + (100 * cnt[k] / withOwn).toFixed(1) + '%;background:' + OWN[k][1] + '"><span>' + Math.round(100 * cnt[k] / withOwn) + '%</span></i>'; }).join('')

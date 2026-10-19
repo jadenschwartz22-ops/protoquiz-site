@@ -140,7 +140,8 @@ export const researchBar = (current = null) => `  <div class="rbar">
     `<a href="${href}"${current && on(current) ? ' class="on" aria-current="page"' : ''}>${label}</a>`).join('')}</nav>
       <p class="rbar-contact"><span>Contact: </span><a href="mailto:research@protoquiz.com">research@protoquiz.com</a></p>
     </div>
-  </div>`;
+  </div>
+  <script src="/assets/research-nav.js?v=${assetHash('assets/research-nav.js')}" defer></script>`;
 
 // The listing strip. The census names real agencies from records they published
 // themselves, so the way OUT has to be as visible as the way in -- the policy already is
