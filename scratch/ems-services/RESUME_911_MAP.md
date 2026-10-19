@@ -15,6 +15,15 @@ Not "ambulance companies in the county". Interfacility-only carriers, air, event
 critical-care units are noise. Aurora Fire Rescue answers the 911 call and does not
 transport; Falck does. That distinction is the product.
 
+## Update 2026-09-24 (website session): IL, OH, NJ, VA, WA added, TX Kaufman
+Rows: IL 38, OH 45, NJ 59, VA 20, WA 45, TX +2 (Kaufman = CareFlite; Collin ESD 1 flag now sourced).
+Tier A 672 -> 757 counties, 51% -> 62% of US population (snapshot county_history/2026-09-24.json;
+site 5240d3d4). CAVEAT: these states source the main towns, not every municipality, yet one row
+marks the whole county tier A (NJ reads 19 of 21 counties with ~60 of 564 towns sourced). The site's
+tier-A wording now says "for the county, or for its main towns". Honest fix later: a partial tier.
+Each state's README lists its gaps and a "Needs Chrome" list (IL state licence lookup is the big one).
+Lanes' shared-scratchpad lesson: give each lane its own tools folder; IL's crawl.py overwrote OH's.
+
 ## Where we are (2026-09-12, map v3)
 
 3,144 counties. Tier is the strength of the evidence, colour is ownership of the answer.
@@ -31,7 +40,7 @@ Tier A states: AZ (CON), CA (EOA), CT (PSAR), MN (PSA), MS (county list), HI, DC
 159 (zoned roster + council minutes), OR 19 of 36 (ASA layer), CO 11 of 64 (metro rows).
 
 Human-graded correct: Denver, Arapahoe, Jefferson (Arvada), Douglas, Broomfield, Boulder,
-Weld, El Paso, Pueblo, Adams, Larimer. Georgia grading by Jaden still pending.
+Weld, El Paso, Pueblo, Adams, Larimer. Georgia: Clarke, Morgan, Rockdale graded 2026-09-23 (National EMS; see states/GA_zoning.README.md), rest pending.
 
 Known wrong by construction (fix before publishing any state as done):
 - Tiers B, C, D place an agency at its licence or billing address. South Metro sits under
@@ -52,7 +61,7 @@ Known wrong by construction (fix before publishing any state as done):
 | st | counties | A | B | C | D | none | pop unconf | what unlocks it |
 |---|---|---|---|---|---|---|---|---|
 | FL | 67 | 0 | 14 | 50 | 2 | 1 | 77% | county COPCN ordinances (each BOCC names its 911 provider); FL records request |
-| TX | 254 | 0 | 44 | 167 | 3 | 40 | 55% | DSHS roster has no 911 field; county-by-county: ESD and county EMS pages, city contracts; TX records request |
+| TX | 254 | 0 | 44 | 167 | 3 | 40 | 55% | DSHS roster (states/TX_dshs_roster_2026-10.xlsx, monthly, from the State EMS Director 10-19) carries Response_Type + current Entity_Type but only the MAILING county, so still tier C; Transfer-only licences are dropped from the 911 pool (10-19, 32 counties changed); county-by-county: ESD and county EMS pages, city contracts; TX records request |
 | IL | 102 | 0 | 0 | 0 | 91 | 11 | 100% | IDPH verification API is WAF-gated (real browser unlocks); EMS System resource-hospital plans list agencies by county |
 | OH | 88 | 0 | 0 | 0 | 87 | 1 | 100% | ODPS EMS roster needs the records request; county EMS pages are the fallback |
 | NC | 100 | 0 | 17 | 74 | 7 | 2 | 77% | OEMS roster HAS the 911 field; county EMS is the provider in most counties, map from county sites |
@@ -162,7 +171,13 @@ Never blend official, derived and model ownership in one published number.
    captures to `states/web_raw/`. Budget: no WebSearch inside agents; direct URLs only.
 5. Every pull: `Counter(attributes['STATE'])` or the equivalent sanity count, then
    `python3 county_911_all.py && python3 snapshot_counties.py && python3 build_map.py`,
-   then republish the same file path.
+   then republish the same file path. Tier-A rows live in `states/<ST>_911.json` (plus
+   `GA_zoning.json`, `CO_metro_911.json`); never `COUNTY_911_<ST>.json`, which is
+   `county_911.py`'s draft. A row may carry `flag` (an unresolved conflict or a dated
+   change), shown after its area. `build_map.py` writes `ems-911-response-map.html` here.
+   Site sync: `data/county-911.json` = {name, st, pop, tier, ownership, source (tier A:
+   state|local)} from `county_911.json`, then in the site `node scripts/build-research-map.mjs`,
+   `build-research-thumbs.mjs`, `build-research.mjs`, `build-research-home.mjs`.
    Read the per-state tier line the builder prints and compare with the table above.
    **`snapshot_counties.py` is not optional.** `county_911.json` is overwritten by every
    build and a county row carries no date, so the previous answer is destroyed unless it
@@ -176,7 +191,7 @@ Never blend official, derived and model ownership in one published number.
 
 ## Accuracy programme (assume the data is wrong until checked)
 
-- Georgia grading by Jaden: pending. Twenty blank counties wait on the ORA request.
+- Georgia grading by Jaden: Clarke, Morgan, Rockdale done 2026-09-23; rest pending. Twenty blank counties wait on the ORA request.
 - `states/VALIDATION_SAMPLE_2026-09-12.csv`: 200 blind rows, transport and ownership
   verdict columns empty. Fill, compute the error rate by tier, print it on the page.
 - Address-county fix: for every tier B/C row where the agency's Medicare billing is more
