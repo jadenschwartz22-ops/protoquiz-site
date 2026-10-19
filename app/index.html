@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
   <link rel="stylesheet" href="/assets/chrome.css?v=f5e22e65">
   <link rel="stylesheet" href="/assets/conveyor.css">
-  <link rel="stylesheet" href="/assets/app.css?v=89e9b763">
+  <link rel="stylesheet" href="/assets/app.css?v=81cb245a">
   <script>
     /* THE SHIFT IS RESOLVED BEFORE THE FIRST PAINT. app-toggle.js is deferred, so it
        runs after the page has already painted: a visitor who chose Day Shift saw the
@@ -589,7 +589,8 @@
       <path class="land" d="m 585.96527,312.66599 c -0.0555,-0.53273 0.16725,-0.98823 0.38815,-1.43003 0.0122,-0.0244 -0.009,-0.0559 0,-0.0817 0.01,-0.0287 0.17018,-0.29275 0.20429,-0.32687 0.0698,-0.0698 0.19623,-0.19622 0.28601,-0.286 0.014,-0.014 0.0128,-0.0869 0.0204,-0.10215 0.009,-0.0184 0.0751,-0.0553 0.0817,-0.0817 0.0277,-0.1108 0.0822,-0.18467 0.14301,-0.28601 0.0348,-0.058 0.21142,-0.1777 0.22472,-0.20429 0.0467,-0.0934 -0.003,-0.46659 0,-0.53115 0.009,-0.17735 0.0638,-0.37884 0.10214,-0.55159 0.13432,-0.60442 0.42244,-1.15929 0.51073,-1.77732 0.0167,-0.11662 0.0586,-0.23193 0.0817,-0.34729 0.0401,-0.20044 -0.0506,-1.35803 -0.143,-1.45046"/>
       <g class="reach-layer"><g class="lc warm" data-name="United States" data-n="644" tabindex="0" role="button" aria-label="United States, 644 uploads"><circle class="halo" cx="195" cy="205" r="11"/><circle class="core" cx="195" cy="205" r="5"/></g><g class="lc warm" data-name="Cape Town, South Africa" data-n="7" tabindex="0" role="button" aria-label="Cape Town, South Africa, 7 uploads"><circle class="halo" cx="509" cy="456" r="11"/><circle class="core" cx="509" cy="456" r="5"/></g><g class="lc on" data-name="Vancouver, BC, Canada" data-n="1" tabindex="0" role="button" aria-label="Vancouver, BC, Canada, 1 upload"><circle class="halo" cx="134" cy="157" r="8"/><circle class="core" cx="134" cy="157" r="3.5"/></g><g class="lc on" data-name="Paris, France" data-n="1" tabindex="0" role="button" aria-label="Paris, France, 1 upload"><circle class="halo" cx="467" cy="159" r="8"/><circle class="core" cx="467" cy="159" r="3.5"/></g><g class="lc on" data-name="Sydney, NSW, Australia" data-n="1" tabindex="0" role="button" aria-label="Sydney, NSW, Australia, 1 upload"><circle class="halo" cx="861" cy="456" r="8"/><circle class="core" cx="861" cy="456" r="3.5"/></g><g class="lc on" data-name="Melbourne, VIC, Australia" data-n="1" tabindex="0" role="button" aria-label="Melbourne, VIC, Australia, 1 upload"><circle class="halo" cx="845" cy="471" r="8"/><circle class="core" cx="845" cy="471" r="3.5"/></g><g class="lc on" data-name="Auckland, New Zealand" data-n="1" tabindex="0" role="button" aria-label="Auckland, New Zealand, 1 upload"><circle class="halo" cx="916" cy="486" r="8"/><circle class="core" cx="916" cy="486" r="3.5"/></g><g class="lc on" data-name="Calgary, AB, Canada" data-n="1" tabindex="0" role="button" aria-label="Calgary, AB, Canada, 1 upload"><circle class="halo" cx="158" cy="148" r="8"/><circle class="core" cx="158" cy="148" r="3.5"/></g><text class="lbl w hot" data-for="United States" x="201" y="199" text-anchor="start">US <tspan class="n">644</tspan></text><text class="lbl w" data-for="Cape Town, South Africa" x="515" y="450" text-anchor="start">SOUTH AFRICA <tspan class="n">7</tspan></text><text class="lbl w" data-for="Vancouver, BC, Canada" x="128" y="151" text-anchor="end">CANADA <tspan class="n">2</tspan></text><text class="lbl w" data-for="Paris, France" x="473" y="153" text-anchor="start">FRANCE <tspan class="n">1</tspan></text><line class="lead" x1="861" y1="456" x2="855.3" y2="447.4"/><text class="lbl w" data-for="Sydney, NSW, Australia" x="855.3" y="447.4" text-anchor="middle">AUSTRALIA <tspan class="n">2</tspan></text><line class="lead" x1="916" y1="486" x2="905" y2="505.1"/><text class="lbl w" data-for="Auckland, New Zealand" x="905" y="517.7" text-anchor="end">NEW ZEALAND <tspan class="n">1</tspan></text></g>
   </svg>
-    <p class="reach-pick" data-reach-pick aria-live="polite">No location: 138 uploads</p>
+    <div class="reach-tools"><p class="reach-note" data-reach-note>No location: 138 uploads</p></div>
+    <p class="reach-pick" data-reach-pick aria-live="polite"></p>
     <div class="reach-stats">
       <div><span class="stat-n" data-stat="uploads">795</span><span class="stat-l">uploads</span></div>
       <div><span class="stat-n" data-stat="states">47</span><span class="stat-l">states</span></div>
@@ -746,7 +747,7 @@
   <!-- /shared-chrome:footer -->
   <script src="/assets/app-toggle.js?v=5633e070" defer></script>
   <script type="module">
-    import { mountReach } from '/assets/reach-map.js?v=13ad6525';
+    import { mountReach } from '/assets/reach-map.js?v=05643855';
     for (const b of document.querySelectorAll('[data-map-view]')) b.addEventListener('click', () => {
       for (const x of document.querySelectorAll('[data-map-view]')) x.setAttribute('aria-pressed', x === b);
       for (const m of document.querySelectorAll('.reach-map[data-view]')) m.toggleAttribute('hidden', m.dataset.view !== b.dataset.mapView);

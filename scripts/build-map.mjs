@@ -32,7 +32,8 @@ ${states.map(p => '      ' + p).join('\n')}
 ${land.map(p => '      ' + p.replace('<path', '<path class="land"')).join('\n')}
       <g class="reach-layer">${L.world}</g>
   </svg>
-    <p class="reach-pick" data-reach-pick aria-live="polite">${pickHint(L)}</p>
+    <div class="reach-tools"><p class="reach-note" data-reach-note>${pickHint(L)}</p></div>
+    <p class="reach-pick" data-reach-pick aria-live="polite"></p>
     <div class="reach-stats">
     </div>
 `);

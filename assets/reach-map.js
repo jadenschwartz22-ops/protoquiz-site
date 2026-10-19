@@ -190,7 +190,7 @@ export const pickHint = ({ unlocated }) => unlocated ? `No location: ${nf(unloca
 
 // Browser: redraw from the live JSON and wire tap-to-inspect.
 export function mountReach(root, reach) {
-  const pick = root.querySelector('[data-reach-pick]');
+  const pick = root.querySelector('[data-reach-pick]'), note = root.querySelector('[data-reach-note]');
   if (reach) {
     const L = reachLayers(reach);
     for (const v of ['us', 'world']) { const g = root.querySelector(`.reach-map[data-view="${v}"] .reach-layer`); if (g) g.innerHTML = L[v]; }
@@ -198,20 +198,19 @@ export function mountReach(root, reach) {
       const st = (p.getAttribute('class').match(/s-([a-z]{2})/) || [])[1]?.toUpperCase();
       if (st) p.dataset.b = L.byState[st] || 'off';
     }
-    if (pick) pick.textContent = pickHint(L);
+    if (note) note.textContent = pickHint(L);
   }
-  const hint = pick?.textContent;
   const places = new Map([...(reach?.locales || []).map(l => [`${l.city}, ${l.state}`, l]), ...(reach?.internationalLocales || []).map(l => [`${l.city}, ${l.countryName}`, l])]);
   let selName = '';
   const mark = () => root.querySelectorAll('.lc').forEach(x => x.classList.toggle('sel', x.dataset.name === selName));
-  if (pick && reach) mountZoom(root, pick, (m, views) => {
+  if (note && reach) mountZoom(root, note, (m, views) => {
     m.querySelector('.reach-layer').innerHTML = reachLayers(reach, views)[m.dataset.view];
     mark();
   });
   const select = g => {
     selName = g?.dataset.name || '';
     mark();
-    if (!g) { if (pick) pick.textContent = hint; return; }
+    if (!g) { if (pick) pick.textContent = ''; return; }
     if (pick) pick.innerHTML = `<b>${esc(g.dataset.name)}</b> &middot; ${plural(+g.dataset.n)}${places.has(g.dataset.name) ? docList(places.get(g.dataset.name)) : ''}`;
   };
   const target = e => {
