@@ -316,7 +316,7 @@ html.no-anim, html.no-anim * { transition: none !important; animation: none !imp
 .reach-map .state[data-b="warm"] { stroke: var(--accent); stroke-opacity: .6; }
 .reach-map .state[data-b="hot"]  { stroke: var(--accent); stroke-opacity: .9; }
 .reach-map .core { fill: var(--accent); }
-.reach-map .halo { fill: none; stroke: var(--accent); stroke-width: 1.2; opacity: .3; }
+.reach-map .halo { fill: none; stroke: var(--accent); stroke-width: 1.2; opacity: .3; vector-effect: non-scaling-stroke; }
 .reach-map .lc.hot .halo { opacity: .55; stroke-width: 1.6; }
 .reach-map .lc, .reach-map .lbl[data-for] { cursor: pointer; }
 .reach-map .halo { pointer-events: all; }
@@ -335,7 +335,7 @@ html.no-anim, html.no-anim * { transition: none !important; animation: none !imp
 }
 .reach-zoom button:hover { border-color: var(--accent); }
 .reach-zoom button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
-.reach-map .lead { stroke: var(--ink-3); stroke-width: .7; opacity: .55; }
+.reach-map .lead { stroke: var(--ink-3); stroke-width: .7; opacity: .55; vector-effect: non-scaling-stroke; }
 .reach-map .lbl {
   font-family: 'IBM Plex Mono', ui-monospace, monospace; font-weight: 600; letter-spacing: .05em;
   fill: var(--ink-2); paint-order: stroke fill; stroke: var(--ground); stroke-width: 4px; stroke-linejoin: round;
