@@ -533,7 +533,12 @@ ${excluded.map(stateRow).join('\n')}
             return;
           }
           var own = OWN[c.ownership], blank = c.tier === '-';
-          pTitle.textContent = c.name + ', ' + c.st;
+          var sn = (window.ATLAS_STATES || {})[c.st] || c.st;
+          pTitle.textContent = c.name + ', ';
+          var sl = document.createElement('a');
+          sl.className = 'rm-statelink'; sl.href = '?state=' + c.st; sl.textContent = sn;
+          sl.title = 'See all of ' + sn + ' county by county';
+          pTitle.appendChild(sl);
           // 146 counties have a usable tier but no ownership we could classify. They
           // are NOT the same as the 299 with no source at all, and neither is the
           // county lacking a service -- both are gaps in our reading.
@@ -556,7 +561,7 @@ ${excluded.map(stateRow).join('\n')}
           // The correction form is the one that already exists further down the page --
           // this link scrolls to it and fills the county in, so a reader who spots a bad
           // row reports it from where they saw it instead of hunting for the form.
-          h += '<a class="rm-state" href="?state=' + c.st + '">See all of ' + c.st + ' in detail &rarr;</a>';
+          h += '<a class="rm-state" href="?state=' + c.st + '">Open ' + sn + ' county by county &rarr;</a>';
           h += '<button type="button" class="rm-report">This is wrong &mdash; tell us</button>';
           pBody.innerHTML = h;
           var rep = pBody.querySelector('.rm-report');
