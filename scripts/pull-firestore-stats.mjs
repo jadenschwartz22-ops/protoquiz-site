@@ -736,7 +736,7 @@ async function getReachStats() {
         if (meta) {
           const k = `${ai.country}|${meta.city}|${meta.x}|${meta.y}`;
           const e = ensureIntl(k);
-          e.count += 1;
+          e.count += 1; (e.users ??= new Set()).add(x.userId);
           if (label) e.protocols.set(label, (e.protocols.get(label) || 0) + 1);
           e.countryName = meta.countryName;
           countryCounts.set(ai.country, (countryCounts.get(ai.country) || 0) + 1);
@@ -758,7 +758,7 @@ async function getReachStats() {
           const cityName = coords.canonicalCity || ai.city || coords.fallbackCity || ai.state;
           const k = `${ai.state}|${cityName}|${coords.x}|${coords.y}`;
           const e = ensureCity(k);
-          e.count += 1;
+          e.count += 1; (e.users ??= new Set()).add(x.userId);
           if (label) e.protocols.set(label, (e.protocols.get(label) || 0) + 1);
           stateCounts.set(ai.state, (stateCounts.get(ai.state) || 0) + 1);
           aiHits++; placed = true;
@@ -772,7 +772,7 @@ async function getReachStats() {
       if (intl) {
         const k = `${intl.country}|${intl.city}|${intl.x}|${intl.y}`;
         const e = ensureIntl(k);
-        e.count += 1;
+        e.count += 1; (e.users ??= new Set()).add(x.userId);
         e.protocols.set(name, (e.protocols.get(name) || 0) + 1);
         e.countryName = intl.countryName;
         countryCounts.set(intl.country, (countryCounts.get(intl.country) || 0) + 1);
@@ -782,7 +782,7 @@ async function getReachStats() {
         if (cityInfo) {
           const k = `${cityInfo.state}|${cityInfo.city}|${cityInfo.x}|${cityInfo.y}`;
           const e = ensureCity(k);
-          e.count += 1;
+          e.count += 1; (e.users ??= new Set()).add(x.userId);
           e.protocols.set(name, (e.protocols.get(name) || 0) + 1);
           stateCounts.set(cityInfo.state, (stateCounts.get(cityInfo.state) || 0) + 1);
           regexHits++; placed = true;
@@ -793,7 +793,7 @@ async function getReachStats() {
             if (c) {
               const k = `${st}|${c.city}|${c.x}|${c.y}`;
               const e = ensureCity(k);
-              e.count += 1;
+              e.count += 1; (e.users ??= new Set()).add(x.userId);
               e.protocols.set(name, (e.protocols.get(name) || 0) + 1);
             }
             stateCounts.set(st, (stateCounts.get(st) || 0) + 1);
@@ -852,7 +852,7 @@ async function getReachStats() {
         const newK = `${state}|${city}|${cached.x}|${cached.y}`;
         const existing = cityData.get(newK);
         if (existing) {
-          existing.count += data.count;
+          existing.count += data.count; for (const u of data.users || []) (existing.users ??= new Set()).add(u);
           for (const [p, c] of data.protocols) existing.protocols.set(p, (existing.protocols.get(p)||0)+c);
         } else {
           cityData.set(newK, data);
@@ -862,9 +862,11 @@ async function getReachStats() {
   }
 
   const locales = [...cityData.entries()]
-    .map(([k, { count, protocols }]) => {
+    .map(([k, { count, protocols, users }]) => {
       const [state, city, x, y] = k.split('|');
-      const topProtocols = [...protocols.entries()]
+      // Titles are public on the map, so a place lists them only once 3+ different accounts uploaded there:
+      // a title beside a one- or two-upload dot can point at one person.
+      const topProtocols = (users?.size ?? 0) < 3 ? [] : [...protocols.entries()]
         .sort((a, b) => b[1] - a[1])
         .slice(0, 3)
         .map(([name, n]) => ({ title: prettifyName(name), count: n }));
@@ -911,9 +913,11 @@ async function getReachStats() {
 
   // International locales for world view (viewBox 0 0 950 620, latLonToWorldSVG)
   const internationalLocales = [...intlData.entries()]
-    .map(([k, { count, protocols, countryName }]) => {
+    .map(([k, { count, protocols, users, countryName }]) => {
       const [country, city, x, y] = k.split('|');
-      const topProtocols = [...protocols.entries()]
+      // Titles are public on the map, so a place lists them only once 3+ different accounts uploaded there:
+      // a title beside a one- or two-upload dot can point at one person.
+      const topProtocols = (users?.size ?? 0) < 3 ? [] : [...protocols.entries()]
         .sort((a, b) => b[1] - a[1])
         .slice(0, 3)
         .map(([name, n]) => ({ title: prettifyName(name), count: n }));
