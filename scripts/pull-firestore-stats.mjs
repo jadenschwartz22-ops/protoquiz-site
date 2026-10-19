@@ -346,11 +346,11 @@ function classifyIntl(name) {
 
 // Default representative city per US state (lat/lon, projected at startup).
 // New states automatically render as a dot when they show up.
-// AK/HI keep fixed pixel coords: the map has no AK/HI shapes, so they render
-// at hand-picked inset spots the projection can't produce.
+// AK/HI keep fixed pixel coords inside their inset shapes (bottom-left of the map,
+// Albers-USA style, data/us-state-paths.txt) that the CONUS projection can't produce.
 const STATE_CITIES = {
   AL: { city: "Birmingham",      lat:33.5186, lon:-86.8104 },
-  AK: { city: "Anchorage",       x:110, y:575 },
+  AK: { city: "Anchorage",       x:105, y:521 },
   AZ: { city: "Phoenix",         lat:33.4484, lon:-112.0740 },
   AR: { city: "Little Rock",     lat:34.7465, lon:-92.2896 },
   CA: { city: "Los Angeles",     lat:34.0522, lon:-118.2437 },
@@ -360,7 +360,7 @@ const STATE_CITIES = {
   DC: { city: "Washington, D.C.",lat:38.9072, lon:-77.0369 },
   FL: { city: "Miami",           lat:25.7617, lon:-80.1918 },
   GA: { city: "Atlanta",         lat:33.7490, lon:-84.3880 },
-  HI: { city: "Honolulu",        x:280, y:575 },
+  HI: { city: "Honolulu",        x:255, y:526 },
   ID: { city: "Boise",           lat:43.6150, lon:-116.2023 },
   IL: { city: "Chicago",         lat:41.8781, lon:-87.6298 },
   IN: { city: "Indianapolis",    lat:39.7684, lon:-86.1581 },

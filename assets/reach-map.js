@@ -105,6 +105,73 @@ export function reachLayers(reach) {
 }
 
 const nf = n => n.toLocaleString('en-US');
+
+// A place's uploaded documents: titles with the account-timestamp prefix and the "+N more"
+// merge suffix stripped, same titles folded together, and the rest as one "+N more" line.
+const docTitle = t => t.replace(/^\d{9,}\s+/, '').replace(/\s*\+\d+ more$/, '').replace(/^[^a-z]*$/i, 'Untitled protocol');
+function docList(l) {
+  const by = new Map();
+  for (const p of l?.topProtocols || []) by.set(docTitle(p.title), (by.get(docTitle(p.title)) || 0) + p.count);
+  const rest = l ? l.count - [...by.values()].reduce((a, b) => a + b, 0) : 0;
+  return `<ul class="reach-docs">${[...by].map(([t, n]) => `<li><b>${n}&times;</b> ${esc(t)}</li>`).join('')}`
+    + `${rest > 0 ? `<li class="more">+ ${nf(rest)} more</li>` : ''}</ul>`;
+}
+
+// Zoom: buttons, ctrl/pinch wheel, double-click, two-finger pinch; drag to pan once zoomed.
+function mountZoom(root, anchor) {
+  const maps = [...root.querySelectorAll('.reach-map')];
+  const view = new Map(maps.map(m => [m, m.getAttribute('viewBox').split(' ').map(Number)]));
+  const cur = new Map([...view].map(([m, v]) => [m, [...v]]));
+  const apply = m => {
+    const w = cur.get(m)[2], bw = view.get(m)[2];
+    m.setAttribute('viewBox', cur.get(m).map(n => +n.toFixed(1)).join(' '));
+    m.style.touchAction = w < bw - 0.5 ? 'none' : 'pan-y';
+  };
+  const zoom = (m, f, cx = 0.5, cy = 0.5) => {
+    const [bx, by, bw, bh] = view.get(m), [x, y, w, h] = cur.get(m);
+    const nw = Math.min(bw, Math.max(bw / 8, w / f)), nh = nw * bh / bw;
+    const nx = Math.min(bx + bw - nw, Math.max(bx, x + (w - nw) * cx)), ny = Math.min(by + bh - nh, Math.max(by, y + (h - nh) * cy));
+    cur.set(m, [nx, ny, nw, nh]); apply(m);
+  };
+  const shown = () => maps.find(m => !m.hasAttribute('hidden'));
+  const bar = document.createElement('div');
+  bar.className = 'reach-zoom';
+  bar.innerHTML = '<button type="button" data-z="in" aria-label="Zoom in">+</button><button type="button" data-z="out" aria-label="Zoom out">&minus;</button><button type="button" data-z="reset">Reset</button>';
+  anchor.before(bar);
+  bar.addEventListener('click', e => {
+    const z = e.target.closest('[data-z]')?.dataset.z, m = shown();
+    if (!z || !m) return;
+    if (z === 'reset') { cur.set(m, [...view.get(m)]); apply(m); } else zoom(m, z === 'in' ? 1.6 : 1 / 1.6);
+  });
+  const frac = (m, e) => { const r = m.getBoundingClientRect(); return [(e.clientX - r.x) / r.width, (e.clientY - r.y) / r.height]; };
+  for (const m of maps) {
+    m.style.touchAction = 'pan-y';
+    m.addEventListener('wheel', e => { if (e.ctrlKey || e.metaKey) { e.preventDefault(); zoom(m, Math.exp(-e.deltaY * 0.012), ...frac(m, e)); } }, { passive: false });
+    m.addEventListener('dblclick', e => zoom(m, 2, ...frac(m, e)));
+    const ptrs = new Map();
+    m.addEventListener('pointerdown', e => { ptrs.set(e.pointerId, [e.clientX, e.clientY]); m._moved = 0; });
+    const end = e => ptrs.delete(e.pointerId);
+    m.addEventListener('pointerup', end); m.addEventListener('pointercancel', end); m.addEventListener('pointerleave', end);
+    m.addEventListener('pointermove', e => {
+      const p = ptrs.get(e.pointerId); if (!p) return;
+      const [x, y, w] = cur.get(m), k = w / m.getBoundingClientRect().width;
+      if (ptrs.size === 2) {
+        const [a, b] = [...ptrs.values()], d0 = Math.hypot(a[0] - b[0], a[1] - b[1]);
+        ptrs.set(e.pointerId, [e.clientX, e.clientY]);
+        const [c, d] = [...ptrs.values()], d1 = Math.hypot(c[0] - d[0], c[1] - d[1]);
+        if (d0) zoom(m, d1 / d0, ...frac(m, { clientX: (c[0] + d[0]) / 2, clientY: (c[1] + d[1]) / 2 }));
+        m._moved = 9; return;
+      }
+      const dx = e.clientX - p[0], dy = e.clientY - p[1];
+      if (w >= view.get(m)[2] - 0.5) return;
+      m._moved += Math.abs(dx) + Math.abs(dy);
+      ptrs.set(e.pointerId, [e.clientX, e.clientY]);
+      if (m._moved < 4) return;
+      const [bx, by, bw, bh] = view.get(m), h = cur.get(m)[3];
+      cur.set(m, [Math.min(bx + bw - w, Math.max(bx, x - dx * k)), Math.min(by + bh - h, Math.max(by, y - dy * k)), w, h]); apply(m);
+    });
+  }
+}
 export const pickHint = ({ unlocated }) => unlocated ? `No location: ${nf(unlocated)} uploads` : '';
 
 // Browser: redraw from the live JSON and wire tap-to-inspect.
@@ -120,13 +187,16 @@ export function mountReach(root, reach) {
     if (pick) pick.textContent = pickHint(L);
   }
   const hint = pick?.textContent;
+  const places = new Map([...(reach?.locales || []).map(l => [`${l.city}, ${l.state}`, l]), ...(reach?.internationalLocales || []).map(l => [`${l.city}, ${l.countryName}`, l])]);
+  if (pick) mountZoom(root, pick);
   const select = g => {
     root.querySelectorAll('.lc.sel').forEach(x => x.classList.remove('sel'));
     if (!g) { if (pick) pick.textContent = hint; return; }
     g.classList.add('sel');
-    if (pick) pick.innerHTML = `<b>${esc(g.dataset.name)}</b> &middot; ${plural(+g.dataset.n)}`;
+    if (pick) pick.innerHTML = `<b>${esc(g.dataset.name)}</b> &middot; ${plural(+g.dataset.n)}${places.has(g.dataset.name) ? docList(places.get(g.dataset.name)) : ''}`;
   };
   const target = e => {
+    if (e.target.closest('.reach-map')?._moved > 4) return null;
     const lbl = e.target.closest('.lbl[data-for]');
     const map = e.target.closest('.reach-map'), lcs = [...map.querySelectorAll('.lc')];
     if (e.target.closest('.lc')) return e.target.closest('.lc');
