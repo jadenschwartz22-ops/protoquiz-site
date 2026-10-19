@@ -185,7 +185,7 @@ ${chart(g)}
     {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
-      itemListElement: [['Home', '/'], ['EMS Census', '/census/'], [title, path]]
+      itemListElement: [['Home', '/'], ['Protocol census', '/census/'], [title, path]]
         .map(([name, item], i) => ({ '@type': 'ListItem', position: i + 1, name, item: ORIGIN + item })),
     },
     {

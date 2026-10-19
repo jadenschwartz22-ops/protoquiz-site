@@ -191,9 +191,8 @@ ${a.events.map(evRow).join('\n')}
         <p>${escapeHtml(String(head.verification.evidence).replace(/\s+/g, ' ').trim())}</p>
         <cite>${escapeHtml(head.agencyName)}, ${fmtMonth(head.toDate)} edition, page ${head.verification.page}</cite>
       </blockquote>
-      <p class="headline-note">We did not infer this from a word count. The quote above was
-      re-found on the page it was cited from before this event was allowed to publish, which is
-      what &ldquo;verified&rdquo; means everywhere on this page.${head.handChecked
+      <p class="headline-note">This is not a word-count guess. Before we published it, we found the quote above again on
+      the page it cites. That check is what &ldquo;verified&rdquo; means on this page.${head.handChecked
     ? ` ${head.handChecked.note}` : ''}</p>
     </section>` : '';
 
@@ -227,10 +226,9 @@ ${researchBar('/research/changes/')}
     <section class="res-hero">
       <div class="res-eyebrow">Protocol census &middot; a finding</div>
       <h1>Protocols change between editions.</h1>
-      <p class="lede">An agency publishes a new edition of its protocol book, and what moved is not always easy to see. This page compares
-      ${n(editions)} dated books from ${agencies.length} agencies in sequence and shows what
-      appeared and what stopped appearing between them &mdash; each one quoted from the page it
-      was found on.</p>
+      <p class="lede">Agencies reissue their protocol books, and what changed is rarely easy to see. We lined up
+      ${n(editions)} dated books from ${agencies.length} agencies, edition by edition, and quoted
+      what appeared or disappeared from the page it was found on.</p>
     </section>
 
 ${headBlock}
@@ -238,10 +236,8 @@ ${headBlock}
     <section class="res-map-wrap">
       <figure class="practice-fig">
 ${charts.changes || '<p class="rm-cap">Chart unavailable: the timeline extract was not readable at build time.</p>'}
-        <figcaption class="rm-cap">Every verified change this timeline holds, by agency. The
-        shape of this chart is the finding as much as the bars are: ${covered} agencies, very
-        unevenly. An agency near the bottom is not a stable one &mdash; it is one we hold fewer
-        editions of.</figcaption>
+        <figcaption class="rm-cap">Verified changes, by agency. Only ${covered} agencies, and very unevenly: a short bar
+        means we hold fewer of that agency&rsquo;s editions, not that its protocols are stable.</figcaption>
       </figure>
     </section>
 
@@ -253,44 +249,40 @@ ${charts.changes || '<p class="rm-cap">Chart unavailable: the timeline extract w
         <div><dt>${n(drops)}</dt><dd>things a later edition stopped naming</dd></div>
         <div><dt>${n(rejected)}</dt><dd>candidate changes the guards threw out</dd></div>
       </dl>
-      <p class="headline-note">The fourth number is the one to read first. Comparing two PDFs
-      produces mostly noise &mdash; a reorganised chapter, a term the extractor missed, one
-      edition twice the length of the other &mdash; and ${n(rejected)} candidates were rejected
-      to publish ${n(ev.length)}. A further ${n(candidates)} survived the guards but were never
-      re-read against the page, so they are leads and are not shown here.
-      ${unchanged ? `${n(unchanged)} edition pairs came back with no difference at all, which is
+      <p class="headline-note">Start with the last number. Comparing two PDFs throws up mostly false alarms: a chapter
+      moved, a term our reader missed, one edition twice as long as the other. We threw out
+      ${n(rejected)} candidates to publish ${n(ev.length)}. Another ${n(candidates)} passed the
+      checks but were never re-read against the page, so they are leads and are not shown.
+      ${unchanged ? `${n(unchanged)} edition pairs showed no difference at all, which is
       also a result.` : ''}</p>
     </section>
 
     <section class="res-table-wrap">
       <h2>The ledger</h2>
-      <p class="res-subnote">Grouped by agency, in the order the changes happened, because
-      &ldquo;what did my system change&rdquo; is the question this is for. Every row names the
-      two editions, the page, and what that page says.</p>
+      <p class="res-subnote">Grouped by agency, in the order the changes happened, so you can answer &ldquo;what did my
+      system change?&rdquo; Every row names the two editions, the page, and what that page says.</p>
 ${ledger.map(agencyBlock).join('\n')}
     </section>
 
     <section class="res-method">
       <h2>Why a row says &ldquo;stopped naming&rdquo; and never &ldquo;stopped doing&rdquo;</h2>
-      <p>This is the whole discipline of the page. When a procedure is in the ${states.length ? '' : ''}earlier
-      edition and not the later one, what we know is exactly that: <strong>the later book does
-      not name it</strong>. We do not know the agency stopped doing it. A protocol book is
-      written to guide care, not to enumerate a scope of practice, and a procedure can move to a
-      separate policy, a state rule, a training bulletin or a medical director&rsquo;s memo and
-      go on being performed every day.</p>
-      <p>So no row on this page says an agency stopped doing anything, and if you find one, it
-      is a bug. Both editions were read successfully &mdash; a book we could not parse produces
-      no rows rather than an empty one, because an unread document would otherwise look like an
-      agency that dropped everything.</p>
+      <p>If a procedure is in the earlier edition and not the later one, all we know is that
+      <strong>the later book does not name it</strong>. We do not know the agency stopped doing
+      it. A protocol book guides care; it is not a list of everything a crew may do. The
+      procedure may have moved to a separate policy, a state rule, a training bulletin or a
+      medical director&rsquo;s memo, and crews may still perform it every day.</p>
+      <p>So no row here says an agency stopped doing anything, and if you find one, it is a bug.
+      A row appears only when both editions were read successfully. A book we could not read
+      produces no rows, because an unread document would otherwise look like an agency that
+      dropped everything.</p>
 
       <h2>What we deliberately do not publish</h2>
       <p>We can tell you that ${n(authEvents)} authorization changes and ${n(certEvents)}
       certification changes were detected between editions, and we will not draw them as a
-      trend. They were measured and they did not survive: the readings pointed both ways in
-      similar numbers and none of them was grounded well enough to publish. The extractor is
-      stable comparing one region against another and is <em>not</em> stable comparing one
-      agency against its own past, and until that is fixed a direction drawn from these would be
-      a picture of our instrument rather than of EMS.</p>
+      trend. They did not hold up: the readings pointed both ways in similar numbers, and none was
+      solid enough to publish. Our reading of the books is reliable when comparing one region
+      to another, but <em>not</em> when comparing one agency to its own past. Until that is
+      fixed, a trend drawn from these would show the limits of our method, not a change in EMS.</p>
       <p>The half that does hold &mdash; who decides, compared across regions at one moment
       &mdash; is on <a href="/research/practice/">the authorization page</a>.</p>
 
@@ -299,8 +291,7 @@ ${ledger.map(agencyBlock).join('\n')}
       out of roughly 26,883 licensed EMS agencies nationally. This is not a national picture of
       how EMS is changing and cannot be read as one: an agency is here only if it publishes
       dated editions, keeps them readable, and published at least two we could hold side by
-      side. What it is good for is showing that the changes are real, specific, and findable
-      &mdash; and that nobody is currently telling the people who work there.</p>
+      side. What it is good for is showing that the changes are real, specific, and findable.</p>
       <p><a href="/research/practice/">Who decides: authorization across regions</a> &middot;
       <a href="/census/">The protocol census</a> &middot;
       <a href="/census/methodology/">Methodology</a></p>

@@ -728,7 +728,7 @@ ${footRow([
       title: 'United States EMS Protocol Census - open research on US EMS',
       description: `A free reference comparing United States EMS protocols: ${num(manifest.doseRows)} dose entries from ${num(manifest.namedAgencies)} named agencies, as of ${manifest.asOf}.`,
       path: '/census/',
-      trail: [['Home', '/'], ['EMS Census', '/census/']],
+      trail: [['Home', '/'], ['Protocol census', '/census/']],
       jsonLd: [{
         '@context': 'https://schema.org',
         '@type': 'Dataset',
@@ -766,7 +766,7 @@ ${filterScript('q', '.list', 'ul')}`;
       title: 'Drugs in US EMS protocols - EMS Protocol Census',
       description: `${num(drugs.length)} drugs in published US EMS protocols, each with its doses, indications and routes across agencies.`,
       path: '/census/drugs/',
-      trail: [['Home', '/'], ['EMS Census', '/census/'], ['Drugs', '/census/drugs/']],
+      trail: [['Home', '/'], ['Protocol census', '/census/'], ['Drugs', '/census/drugs/']],
       body,
     }),
   };
@@ -887,7 +887,7 @@ ${footRow([
         isPartOf: { '@type': 'Dataset', name: 'United States EMS Protocol Census', url: `${ORIGIN}/census/` },
         ...(agency.state ? { spatialCoverage: place } : {}),
       }],
-      trail: [['Home', '/'], ['EMS Census', '/census/'], ...(agency.state ? [[place, `/census/states/${slug(agency.state)}/`]] : []), [agency.name, `/census/agencies/${agency.agencyKey}/`]],
+      trail: [['Home', '/'], ['Protocol census', '/census/'], ...(agency.state ? [[place, `/census/states/${slug(agency.state)}/`]] : []), [agency.name, `/census/agencies/${agency.agencyKey}/`]],
       body,
     }),
   };
@@ -974,7 +974,7 @@ ${footRow([citePanel('cite', [
       title: `${name} EMS protocols - agencies, drugs, and doses`,
       description: `${listed.length} named EMS agencies in ${name} with published protocol doses in the United States EMS Protocol Census.`,
       path: `/census/states/${slug(state)}/`,
-      trail: [['Home', '/'], ['EMS Census', '/census/'], [name, `/census/states/${slug(state)}/`]],
+      trail: [['Home', '/'], ['Protocol census', '/census/'], [name, `/census/states/${slug(state)}/`]],
       body,
     }),
   };
@@ -1015,7 +1015,7 @@ ${abroadNote(abroad)}      <section id="indications">
       title: `${drugLabel(drugKey)} EMS dose by protocol - indications and routes`,
       description: `How ${num(agencies.size)} ${abroad ? '' : 'US '}EMS agencies dose ${drugLabel(drugKey)}: indications, routes, and adult vs pediatric entries from published protocols.`,
       path: `/census/drugs/${slug(drugKey)}/`,
-      trail: [['Home', '/'], ['EMS Census', '/census/'], [drugLabel(drugKey), `/census/drugs/${slug(drugKey)}/`]],
+      trail: [['Home', '/'], ['Protocol census', '/census/'], [drugLabel(drugKey), `/census/drugs/${slug(drugKey)}/`]],
       body,
     }),
   };
@@ -1185,7 +1185,7 @@ ${underReview(manifest)}${footRow([
       title: `${drugLabel(drugKey)} EMS dose by protocol - indications and routes`,
       description: `How ${num(summary.n.sources)} ${abroad ? '' : 'US '}EMS protocols dose ${drugLabel(drugKey)}: indications, routes, and adult vs pediatric distributions from published protocols.`,
       path: `/census/drugs/${slug(drugKey)}/`,
-      trail: [['Home', '/'], ['EMS Census', '/census/'], [drugLabel(drugKey), `/census/drugs/${slug(drugKey)}/`]],
+      trail: [['Home', '/'], ['Protocol census', '/census/'], [drugLabel(drugKey), `/census/drugs/${slug(drugKey)}/`]],
       body,
     }),
   };
@@ -1290,7 +1290,7 @@ ${railLinks('Related', [
       title: `${drugLabel(drugKey)} dose for ${indicationLabel(indicationKey)} - US EMS protocols`,
       description: `Published ${drugLabel(drugKey)} doses for ${indicationLabel(indicationKey)} across US EMS protocols: median, quartiles, routes, and adult vs pediatric, with the agencies that carry it.`,
       path,
-      trail: [['Home', '/'], ['EMS Census', '/census/'], [drugLabel(drugKey), `/census/drugs/${slug(drugKey)}/`], [indicationLabel(indicationKey), path]],
+      trail: [['Home', '/'], ['Protocol census', '/census/'], [drugLabel(drugKey), `/census/drugs/${slug(drugKey)}/`], [indicationLabel(indicationKey), path]],
       body,
     }),
   };
@@ -1411,7 +1411,7 @@ ${routes.length ? `      <section id="routes">
       title: `${drugLabel(drugKey)} dose for ${indicationLabel(indicationKey)} - US EMS protocols`,
       description: `Published ${drugLabel(drugKey)} doses for ${indicationLabel(indicationKey)} across US EMS agencies: median, range, routes, and adult vs pediatric, with named agencies and source pages.`,
       path,
-      trail: [['Home', '/'], ['EMS Census', '/census/'], [drugLabel(drugKey), `/census/drugs/${slug(drugKey)}/`], [indicationLabel(indicationKey), path]],
+      trail: [['Home', '/'], ['Protocol census', '/census/'], [drugLabel(drugKey), `/census/drugs/${slug(drugKey)}/`], [indicationLabel(indicationKey), path]],
       body,
     }),
   };
@@ -1518,7 +1518,7 @@ ${railLinks('Related', [
       title: 'How the EMS Protocol Census is built - methodology',
       description: 'Where census documents come from, what is included, how doses are compared, how outliers are reviewed, and why no dose-level accuracy number is published.',
       path: '/census/methodology/',
-      trail: [['Home', '/'], ['EMS Census', '/census/'], ['Methodology', '/census/methodology/']],
+      trail: [['Home', '/'], ['Protocol census', '/census/'], ['Methodology', '/census/methodology/']],
       body,
     }),
   };
@@ -1566,7 +1566,7 @@ function dataLicensePage() {
       title: 'EMS Census data license - CC BY 4.0 summaries',
       description: 'Census summaries and compare.json are CC BY 4.0 with attribution. Row-level data is not published, sold, licensed, or shared.',
       path: '/census/data-license/',
-      trail: [['Home', '/'], ['EMS Census', '/census/'], ['Data license', '/census/data-license/']],
+      trail: [['Home', '/'], ['Protocol census', '/census/'], ['Data license', '/census/data-license/']],
       body,
     }),
   };

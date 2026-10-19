@@ -38,7 +38,6 @@
         <a href="/" class="brand"><img src="/logo-256.png" alt="" width="30" height="30"><span>Proto<b>Quiz</b><sup>&trade;</sup></span></a>
         <div class="nav-links">
           <a href="/app/" class="nav-link">App</a>
-          <a href="/agency/" class="nav-link">For agencies</a>
           <a href="/research/" class="nav-link on" aria-current="page">Research</a>
           <a href="/blog/" class="nav-link">Blog</a>
           <a href="/about/" class="nav-link">About</a>
@@ -72,10 +71,9 @@
     <section class="res-hero">
       <div class="res-eyebrow">Protocol census &middot; a finding</div>
       <h1>Protocols change between editions.</h1>
-      <p class="lede">An agency publishes a new edition of its protocol book, and what moved is not always easy to see. This page compares
-      140 dated books from 46 agencies in sequence and shows what
-      appeared and what stopped appearing between them &mdash; each one quoted from the page it
-      was found on.</p>
+      <p class="lede">Agencies reissue their protocol books, and what changed is rarely easy to see. We lined up
+      140 dated books from 46 agencies, edition by edition, and quoted
+      what appeared or disappeared from the page it was found on.</p>
     </section>
 
     <section class="res-headline ch-headline">
@@ -88,9 +86,8 @@
         <p>Finger Thoracostomy only approved for Paramedic level if the following criteria are met: ... Tube Thoracostomy only approved for Paramedic level if the following criteria are met:</p>
         <cite>Nebraska Board of Emergency Medical Services, May 2024 edition, page 144</cite>
       </blockquote>
-      <p class="headline-note">We did not infer this from a word count. The quote above was
-      re-found on the page it was cited from before this event was allowed to publish, which is
-      what &ldquo;verified&rdquo; means everywhere on this page. Confirmed by hand against the source PDF: the 2024 edition's page 144 is headed
+      <p class="headline-note">This is not a word-count guess. Before we published it, we found the quote above again on
+      the page it cites. That check is what &ldquo;verified&rdquo; means on this page. Confirmed by hand against the source PDF: the 2024 edition's page 144 is headed
     &ldquo;THORACOSTOMY (Revised 5/7/2024)&rdquo; &mdash; the agency dating its own change
     &mdash; and the term appears nowhere in the 2022 edition.</p>
     </section>
@@ -158,10 +155,8 @@
     </g>
     <text x="0" y="342" class="pc-foot">Only changes whose quote was re-found on the page it was cited from. 11 agencies &mdash; the whole of what this timeline covers.</text>
   </svg>
-        <figcaption class="rm-cap">Every verified change this timeline holds, by agency. The
-        shape of this chart is the finding as much as the bars are: 11 agencies, very
-        unevenly. An agency near the bottom is not a stable one &mdash; it is one we hold fewer
-        editions of.</figcaption>
+        <figcaption class="rm-cap">Verified changes, by agency. Only 11 agencies, and very unevenly: a short bar
+        means we hold fewer of that agency&rsquo;s editions, not that its protocols are stable.</figcaption>
       </figure>
     </section>
 
@@ -173,20 +168,18 @@
         <div><dt>26</dt><dd>things a later edition stopped naming</dd></div>
         <div><dt>1,097</dt><dd>candidate changes the guards threw out</dd></div>
       </dl>
-      <p class="headline-note">The fourth number is the one to read first. Comparing two PDFs
-      produces mostly noise &mdash; a reorganised chapter, a term the extractor missed, one
-      edition twice the length of the other &mdash; and 1,097 candidates were rejected
-      to publish 110. A further 55 survived the guards but were never
-      re-read against the page, so they are leads and are not shown here.
-      47 edition pairs came back with no difference at all, which is
-      also a result.</p>
+      <p class="headline-note">Start with the last number. Comparing two PDFs throws up mostly false alarms: a chapter
+      moved, a term our reader missed, one edition twice as long as the other. We threw out
+      1,097 candidates to publish 110. Another 55 passed the
+      checks but were never re-read against the page, so they are leads and are not shown.
+      ${unchanged ? `${n(unchanged)} edition pairs showed no difference at all, which is
+      also a result.` : ''}</p>
     </section>
 
     <section class="res-table-wrap">
       <h2>The ledger</h2>
-      <p class="res-subnote">Grouped by agency, in the order the changes happened, because
-      &ldquo;what did my system change&rdquo; is the question this is for. Every row names the
-      two editions, the page, and what that page says.</p>
+      <p class="res-subnote">Grouped by agency, in the order the changes happened, so you can answer &ldquo;what did my
+      system change?&rdquo; Every row names the two editions, the page, and what that page says.</p>
       <section class="ch-agency">
         <h3>Pennsylvania Department of Health, Bureau of Emergency Medical Services<span class="ch-meta">PA &middot; statewide &middot; 4 editions read</span></h3>
         <div class="table-scroll">
@@ -1181,25 +1174,23 @@
 
     <section class="res-method">
       <h2>Why a row says &ldquo;stopped naming&rdquo; and never &ldquo;stopped doing&rdquo;</h2>
-      <p>This is the whole discipline of the page. When a procedure is in the earlier
-      edition and not the later one, what we know is exactly that: <strong>the later book does
-      not name it</strong>. We do not know the agency stopped doing it. A protocol book is
-      written to guide care, not to enumerate a scope of practice, and a procedure can move to a
-      separate policy, a state rule, a training bulletin or a medical director&rsquo;s memo and
-      go on being performed every day.</p>
-      <p>So no row on this page says an agency stopped doing anything, and if you find one, it
-      is a bug. Both editions were read successfully &mdash; a book we could not parse produces
-      no rows rather than an empty one, because an unread document would otherwise look like an
-      agency that dropped everything.</p>
+      <p>If a procedure is in the earlier edition and not the later one, all we know is that
+      <strong>the later book does not name it</strong>. We do not know the agency stopped doing
+      it. A protocol book guides care; it is not a list of everything a crew may do. The
+      procedure may have moved to a separate policy, a state rule, a training bulletin or a
+      medical director&rsquo;s memo, and crews may still perform it every day.</p>
+      <p>So no row here says an agency stopped doing anything, and if you find one, it is a bug.
+      A row appears only when both editions were read successfully. A book we could not read
+      produces no rows, because an unread document would otherwise look like an agency that
+      dropped everything.</p>
 
       <h2>What we deliberately do not publish</h2>
       <p>We can tell you that 5 authorization changes and 7
       certification changes were detected between editions, and we will not draw them as a
-      trend. They were measured and they did not survive: the readings pointed both ways in
-      similar numbers and none of them was grounded well enough to publish. The extractor is
-      stable comparing one region against another and is <em>not</em> stable comparing one
-      agency against its own past, and until that is fixed a direction drawn from these would be
-      a picture of our instrument rather than of EMS.</p>
+      trend. They did not hold up: the readings pointed both ways in similar numbers, and none was
+      solid enough to publish. Our reading of the books is reliable when comparing one region
+      to another, but <em>not</em> when comparing one agency to its own past. Until that is
+      fixed, a trend drawn from these would show the limits of our method, not a change in EMS.</p>
       <p>The half that does hold &mdash; who decides, compared across regions at one moment
       &mdash; is on <a href="/research/practice/">the authorization page</a>.</p>
 
@@ -1208,8 +1199,7 @@
       out of roughly 26,883 licensed EMS agencies nationally. This is not a national picture of
       how EMS is changing and cannot be read as one: an agency is here only if it publishes
       dated editions, keeps them readable, and published at least two we could hold side by
-      side. What it is good for is showing that the changes are real, specific, and findable
-      &mdash; and that nobody is currently telling the people who work there.</p>
+      side. What it is good for is showing that the changes are real, specific, and findable.</p>
       <p><a href="/research/practice/">Who decides: authorization across regions</a> &middot;
       <a href="/census/">The protocol census</a> &middot;
       <a href="/census/methodology/">Methodology</a></p>
