@@ -265,7 +265,7 @@ ${FEATURES.map(([h, p]) => `        <div class="feature">
           </div>
 ${REVIEWS.map(([t, b]) => `          <div class="review">
             <h3>${t}</h3>
-            <p>${b}</p>
+            <p>&ldquo;${b}&rdquo;</p>
           </div>`).join('\n')}
         </div>
         <div class="review-card pending">
