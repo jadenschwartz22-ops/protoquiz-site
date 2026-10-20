@@ -154,7 +154,7 @@ ${navFor('/app/')}
 
         <div class="shot-col">
           <div class="toggles">
-            <div class="toggle" role="group" aria-label="Platform" hidden><!-- Android shots predate the current tabs; re-enable after a recapture -->
+            <div class="toggle" role="group" aria-label="Platform">
               <button type="button" data-set="platform:ios" aria-pressed="true">${APPLE.replace('width="20" height="20"','width="13" height="13"')}<span>iOS</span></button>
               <button type="button" data-set="platform:android" aria-pressed="false"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.6 9.5l1.4-2.4a.3.3 0 00-.5-.3L17 9.2a9.6 9.6 0 00-8.1 0L7.4 6.8a.3.3 0 00-.5.3l1.4 2.4A8.3 8.3 0 004 16h16a8.3 8.3 0 00-2.4-6.5zM8.5 13.4a.8.8 0 110-1.6.8.8 0 010 1.6zm7 0a.8.8 0 110-1.6.8.8 0 010 1.6z"/></svg><span>Android</span></button>
             </div>
