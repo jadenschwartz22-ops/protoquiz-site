@@ -1,31 +1,31 @@
 {
-  "generatedAt": "2026-10-20T01:26:07.549Z",
-  "totalUploads": 683,
-  "distinctProtocols": 489,
-  "activeStudiers": 556,
-  "pagesProcessed": 125164,
+  "generatedAt": "2026-10-20T18:07:10.379Z",
+  "totalUploads": 688,
+  "distinctProtocols": 490,
+  "activeStudiers": 562,
+  "pagesProcessed": 127139,
   "statesRepresented": 47,
   "countriesRepresented": 3,
   "internationalUploads": 9,
   "byState": {
     "CO": 87,
     "CA": 54,
-    "MI": 52,
+    "MI": 53,
     "NY": 32,
+    "PA": 30,
     "MA": 30,
-    "PA": 29,
     "TX": 29,
+    "NC": 20,
     "VA": 20,
-    "NC": 19,
-    "WA": 18,
     "OR": 18,
+    "WA": 16,
     "CT": 15,
-    "MD": 13,
+    "MD": 14,
+    "FL": 13,
     "NV": 13,
-    "FL": 12,
     "IL": 11,
     "WY": 10,
-    "AZ": 8,
+    "AZ": 9,
     "SC": 7,
     "TN": 7,
     "UT": 7,
@@ -33,11 +33,11 @@
     "AL": 6,
     "WV": 6,
     "IN": 6,
+    "RI": 5,
     "OH": 5,
     "LA": 5,
     "MO": 4,
     "NH": 4,
-    "RI": 4,
     "DE": 4,
     "NE": 4,
     "WI": 4,
@@ -89,19 +89,19 @@
       "city": "Michigan statewide",
       "x": 662,
       "y": 172,
-      "count": 35,
+      "count": 36,
       "tier": "hot",
       "topProtocols": [
+        {
+          "title": "260109 Section 9 Medications",
+          "count": 2
+        },
         {
           "title": "HEMS State Protocol Suite may 2026",
           "count": 2
         },
         {
           "title": "WLMCA Combined Protocols",
-          "count": 1
-        },
-        {
-          "title": "www.r8mcan.org protocols (12 PDFs)",
           "count": 1
         }
       ],
@@ -135,12 +135,12 @@
       "city": "Pennsylvania statewide",
       "x": 780,
       "y": 211,
-      "count": 27,
+      "count": 28,
       "tier": "warm",
       "topProtocols": [
         {
           "title": "2023v1 2 PA ALS Protocols",
-          "count": 12
+          "count": 13
         },
         {
           "title": "2023v1 2 PA BLS Protocols",
@@ -222,6 +222,29 @@
       "statewide": true
     },
     {
+      "state": "MD",
+      "city": "Maryland statewide",
+      "x": 805,
+      "y": 248,
+      "count": 13,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "MD Medical Protocols 2026 Print",
+          "count": 5
+        },
+        {
+          "title": "MD Medical Protocols 2026 Hyperlinked",
+          "count": 3
+        },
+        {
+          "title": "MD Medical Protocols 2026 Print",
+          "count": 2
+        }
+      ],
+      "statewide": true
+    },
+    {
       "state": "CA",
       "city": "San Leandro",
       "x": 34,
@@ -284,29 +307,6 @@
         {
           "title": "2026 CTGR Protocols",
           "count": 1
-        }
-      ],
-      "statewide": true
-    },
-    {
-      "state": "MD",
-      "city": "Maryland statewide",
-      "x": 805,
-      "y": 248,
-      "count": 12,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "MD Medical Protocols 2026 Print",
-          "count": 4
-        },
-        {
-          "title": "MD Medical Protocols 2026 Hyperlinked",
-          "count": 3
-        },
-        {
-          "title": "MD Medical Protocols 2026 Print",
-          "count": 2
         }
       ],
       "statewide": true
@@ -410,6 +410,48 @@
           "count": 6
         }
       ]
+    },
+    {
+      "state": "AZ",
+      "city": "Arizona statewide",
+      "x": 199,
+      "y": 364,
+      "count": 5,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "red book chapter 3 2026",
+          "count": 3
+        },
+        {
+          "title": "red book chapter 3 2026",
+          "count": 1
+        },
+        {
+          "title": "Guidelines",
+          "count": 1
+        }
+      ],
+      "statewide": true
+    },
+    {
+      "state": "RI",
+      "city": "Rhode Island statewide",
+      "x": 876,
+      "y": 171,
+      "count": 5,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "StatewideEmergencyMedicalServices",
+          "count": 4
+        },
+        {
+          "title": "StatewideEmergencyMedicalServices 2024",
+          "count": 1
+        }
+      ],
+      "statewide": true
     },
     {
       "state": "NC",
@@ -569,25 +611,6 @@
       ]
     },
     {
-      "state": "AZ",
-      "city": "Arizona statewide",
-      "x": 199,
-      "y": 364,
-      "count": 4,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "red book chapter 3 2026",
-          "count": 3
-        },
-        {
-          "title": "Guidelines",
-          "count": 1
-        }
-      ],
-      "statewide": true
-    },
-    {
       "state": "NH",
       "city": "New Hampshire statewide",
       "x": 865,
@@ -601,25 +624,6 @@
         },
         {
           "title": "New Hampshire EMS Protocols Version 8.0",
-          "count": 1
-        }
-      ],
-      "statewide": true
-    },
-    {
-      "state": "RI",
-      "city": "Rhode Island statewide",
-      "x": 876,
-      "y": 171,
-      "count": 4,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "StatewideEmergencyMedicalServices",
-          "count": 3
-        },
-        {
-          "title": "StatewideEmergencyMedicalServices 2024",
           "count": 1
         }
       ],
@@ -930,10 +934,19 @@
       "statewide": true
     },
     {
-      "state": "WA",
-      "city": "Seattle",
-      "x": 91,
-      "y": 38,
+      "state": "FL",
+      "city": "Lake County",
+      "x": 756,
+      "y": 490,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": []
+    },
+    {
+      "state": "NC",
+      "city": "Charlotte",
+      "x": 751,
+      "y": 344,
       "count": 2,
       "tier": "on",
       "topProtocols": []
@@ -1752,15 +1765,6 @@
     },
     {
       "state": "NC",
-      "city": "Charlotte",
-      "x": 751,
-      "y": 344,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": []
-    },
-    {
-      "state": "NC",
       "city": "Craven",
       "x": 818,
       "y": 335,
@@ -1908,15 +1912,6 @@
       "city": "Pulaski",
       "x": 745,
       "y": 304,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": []
-    },
-    {
-      "state": "FL",
-      "city": "Lake County",
-      "x": 756,
-      "y": 490,
       "count": 1,
       "tier": "tiny",
       "topProtocols": []
@@ -2198,6 +2193,12 @@
   ],
   "belt": [
     {
+      "agency": "Central Arizona Regional EMS",
+      "state": "Arizona",
+      "year": 2026,
+      "pages": 186
+    },
+    {
       "agency": "Palm Beach Gardens Fire Rescue",
       "state": "Florida",
       "year": 2026,
@@ -2208,12 +2209,6 @@
       "state": "New Mexico",
       "year": 2026,
       "pages": 189
-    },
-    {
-      "agency": "Central Arizona Regional EMS",
-      "state": "Arizona",
-      "year": 2026,
-      "pages": 186
     },
     {
       "agency": "Department of Aviation Medicine",
