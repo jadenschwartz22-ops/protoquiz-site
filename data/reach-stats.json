@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-19T22:08:06.632Z",
-  "totalUploads": 681,
-  "distinctProtocols": 487,
-  "activeStudiers": 555,
+  "generatedAt": "2026-10-20T01:26:07.549Z",
+  "totalUploads": 683,
+  "distinctProtocols": 489,
+  "activeStudiers": 556,
   "pagesProcessed": 125164,
   "statesRepresented": 47,
   "countriesRepresented": 3,
@@ -17,8 +17,8 @@
     "TX": 29,
     "VA": 20,
     "NC": 19,
+    "WA": 18,
     "OR": 18,
-    "WA": 16,
     "CT": 15,
     "MD": 13,
     "NV": 13,
@@ -928,6 +928,15 @@
       "tier": "on",
       "topProtocols": [],
       "statewide": true
+    },
+    {
+      "state": "WA",
+      "city": "Seattle",
+      "x": 91,
+      "y": 38,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": []
     },
     {
       "state": "OH",

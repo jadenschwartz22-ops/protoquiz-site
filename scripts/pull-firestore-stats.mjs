@@ -686,7 +686,7 @@ async function getReachStats() {
   const seenUpload = new Set();  // one upload per account + protocol name: re-uploading the same file is not a new upload
   for (const d of newestFirst) {
     const x = d.data();
-    if (isDev(x.userId)) continue;
+    if (isDev(x.userId) || /^sdk_gphone|emulator/i.test(x.device || '')) continue;  // dev account and emulator test runs
     // Not a protocol an agency runs (formularies, school books, forms, strangers' files): not part of the reach map.
     if (x.locationIsAgencyProtocol === false && !B2B_CUSTOMER.test(x.locationAgency || '')) continue;
     // Studier count = distinct real people who uploaded a protocol.
