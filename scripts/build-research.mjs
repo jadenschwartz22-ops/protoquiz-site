@@ -502,7 +502,12 @@ ${excluded.map(stateRow).join('\n')}
                     hospital: ['Hospital', '#009E73'], mixed: ['Mixed', '#8C6BB1'] };
         var TIER = { A: 'Named by a state record', B: 'Inferred, strong sourcing',
                      C: 'Inferred', D: 'Inferred, weak sourcing' };
-        function viaText(v) { return ' Source: ' + v + ', credited to the state ' + (/Board/.test(v) ? 'board' : 'office') + '. ' + (/service areas/.test(v) ? 'A licence area is not an exclusive or dispatch assignment.' : 'It lists each service once, under the county where it is licensed and tagged primary 911, not by service area.'); }
+        // The credit clause only where we know the body (KY board, TN/WA health dept); vias that already name their steward carry no extra credit. Area sentence only for service-area sources, directory sentence only for the TN directory.
+        function viaText(v) {
+          var cr = /Board/.test(v) ? ', credited to the state board' : /Department of Health/.test(v) ? ', credited to the state office' : '';
+          var tail = /service[- ]areas?/.test(v) ? 'A ' + (/Board|Department of Health/.test(v) ? 'licence' : 'service') + ' area is not an exclusive or dispatch assignment.' : /Directory/.test(v) ? 'It lists each service once, under the county where it is licensed and tagged primary 911, not by service area.' : '';
+          return ' Source: ' + v + cr + '.' + (tail ? ' ' + tail : '');
+        }
         // Tier A says which kind of record named the county: a state layer or a local page.
         function tierText(c) { return c.tier === 'A' && c.source === 'local' ? 'Named by a county or agency source' : (TIER[c.tier] || 'Tier ' + c.tier); }
 
