@@ -107,16 +107,31 @@ def build():
     # TN DoH EMS Directory: each service listed once, under the county where it is LICENSED (a *PRIMARY 911 tag is strong evidence, not a service area). Never tier A: basis 'located', so B/C by the Medicare check.
     for e in json.load(open('states/TN_directory.json')):
         add('TN', e['county'], {'name': e['provider'], 'own': model_of(e['provider']), 'sub': None, 'src': 'directory', 'basis': 'located', 'note': e['evidence'], 'url': e['source_url']})
+    # KY KBEMS EMS Directory (2026-08-01): each licence carries a verbatim Service Area Description, parsed per county (states/KY_public_2026-10.README.md).
+    # A licence area is not an exclusive or dispatch assignment, so several operators may name one county; all are kept (tier A, several named providers, like GA zones).
+    # Counties where the NG911 boundary layer names another operator are held at 'located' (B/C); part-county licences are 'located' + partial.
+    KY_VIA = 'Kentucky Board of EMS licensed service areas (EMS Directory, 2026-08-01)'
+    KY_OWN = {'Governmental, Non-Fire': 'public', 'Fire Department': 'public', 'Private, Non-Hospital': 'private', 'Community, Non-Profit': 'private', 'Hospital': 'hospital'}
+    KY_CONFLICT = {'Lewis': 'NG911 EMS layer: PORTSMOUTH AMBULANCE SERVICE', 'Henderson': 'NG911 EMS layer: AMR-Henderson', 'Martin': 'NG911 EMS layer: PATRIOT EMS', 'Warren': 'NG911 EMS layer: Bowling Green Police Department (the PSAP)'}
+    ky = json.load(open('states/KY_public_2026-10.json')); kyrow = {r['name']: r for r in ky['rows']}
+    for v in ky['county_verdict'].values():
+        c = cname(v['county']); held = c in KY_CONFLICT
+        for n in v['whole_county_services'] or v['part_county_services']:
+            r = kyrow[n]; part = not v['whole_county_services']
+            add('KY', c, {'name': re.sub(r' \(\d+\)$', '', n), 'own': KY_OWN[r['org_type']], 'sub': None, 'src': 'provider-of-record', 'basis': 'located' if held or part else 'serves', 'partial': part, 'kind': 'state',
+                          'note': r['service_area_text'] + ('; ' + KY_CONFLICT[c] if held else ''), 'url': r['source_url'], 'via': KY_VIA})
     for o in json.load(open('cms/orgs/2024_labeled.json')):
         z = zc.get(o['zip'])
         if z and z[0] in S: S[z[0]]['medicare'].append({'name': o['name'], 'own': o['own'], 'sub': o['subtype'], 'E': int(o['E']), 'share': round(o['share'], 2), 'emerg': o['share'] >= .5})
     for k, d in S.items():
         d['medicare'].sort(key=lambda m: -m['E']); mnames = {norm(m['name']) for m in d['medicare'] if m['emerg']}
-        seen = set(); ps = []
+        seen = {}; ps = []
         for p in d['providers']:
             key = (norm(p['name']), p['basis'])
-            if key in seen: continue
-            seen.add(key); p['confirmed'] = norm(p['name']) in mnames; ps.append(p)
+            if key in seen:
+                if p.get('via') and not ps[seen[key]].get('via'): ps[seen[key]] = dict(p, confirmed=norm(p['name']) in mnames)   # the sourced row replaces a bare roster row
+                continue
+            seen[key] = len(ps); p['confirmed'] = norm(p['name']) in mnames; ps.append(p)
         d['providers'] = ps
         serves = [p for p in ps if p['basis'] == 'serves']; conf = [p for p in ps if p['confirmed']]
         if serves: tier, ans = 'A', serves
@@ -125,7 +140,8 @@ def build():
         elif any(m['emerg'] for m in d['medicare']): tier, ans = 'D', [dict(m, src='medicare') for m in d['medicare'] if m['emerg']]
         else: tier, ans = '-', []
         owns = set(); [owns.update(['public','private'] if own_of(p)=='mixed' else [own_of(p)]) for p in ans if p.get('own') and own_of(p) != 'other']
-        if any(p.get('src') == 'directory' for p in ans): d['via'] = 'Tennessee Department of Health EMS Directory (licensed county)'
+        via = next((p['via'] for p in ans if p.get('via')), None) or ('Tennessee Department of Health EMS Directory (licensed county)' if any(p.get('src') == 'directory' for p in ans) else None)
+        if via: d['via'] = via
         d['partial'] = tier != 'A' and any(p.get('partial') for p in ps)
         d['tier'] = tier; d['answer'] = [p['name'] for p in ans]
         if tier == 'A': d['source'] = 'state' if any(p.get('kind', 'state') == 'state' for p in ans) else 'local'   # rows without kind came from a state layer
