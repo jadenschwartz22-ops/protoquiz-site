@@ -1,0 +1,37 @@
+{
+ "meta": {
+  "state": "VA",
+  "source": "county page + VA OEMS roster",
+  "retrieved": "2026-10-21",
+  "note": "One county added; VA has no statewide EMS service-area layer (VGIN NG911 layers are PSAP polygons only)"
+ },
+ "rows": [
+  {
+   "county": "Albemarle",
+   "area": "Albemarle County (not the independent City of Charlottesville)",
+   "provider": "Albemarle County Fire Rescue",
+   "ownership": "municipal fire (county combination career-volunteer department)",
+   "transport": true,
+   "source_url": "https://www.albemarle.org/government/fire-rescue/about-us",
+   "evidence": "Albemarle County Fire Rescue (ACFR) provides essential emergency services ... including fire suppression, emergency medical treatment and transport ... Services are provided through a combination of career staff, nine volunteer fire and rescue agencies and regional partners.",
+   "vintage": "2026 (undated page, captured 2026-10-21 via Chrome; curl/archive/WebFetch get 403)",
+   "roster_check": "VA OEMS roster: ALBEMARLE COUNTY DEPARTMENT OF FIRE AND RESCUE (00939), Ground Ambulance - ALS, Ground Ambulance - BLS; volunteer squads Charlottesville-Albemarle Rescue Squad (00109) and Western Albemarle Rescue Squad (00121) also hold ground-ambulance licences",
+   "flag": "how transports split between ACFR and the volunteer rescue squads is not sourced"
+  }
+ ],
+ "county_verdict": {
+  "51003": {
+   "county": "Albemarle County",
+   "tier": "A",
+   "add": [
+    {
+     "name": "Albemarle County Fire Rescue",
+     "basis": "serves",
+     "kind": "local",
+     "url": "https://www.albemarle.org/government/fire-rescue/about-us",
+     "note": "County page: emergency medical treatment and transport, career staff plus nine volunteer fire and rescue agencies; volunteer squads (Charlottesville-Albemarle Rescue Squad, Western Albemarle Rescue Squad) also hold OEMS ambulance licences"
+    }
+   ]
+  }
+ }
+}

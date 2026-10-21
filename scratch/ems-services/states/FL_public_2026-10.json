@@ -1,0 +1,239 @@
+{
+ "meta": {
+  "state": "FL",
+  "retrieved": "2026-10-21",
+  "source": "County BOCC department pages (6) and one county-published ArcGIS district layer (Baker); no statewide service-area layer exists",
+  "layer_last_edit": "Baker layer 2024-04-24",
+  "counts": {
+   "A": 6,
+   "partial": 1
+  },
+  "not_sourced": [
+   "Holmes",
+   "Taylor",
+   "Washington"
+  ],
+  "not_sourced_note": "Holmes: county site holmescountyfl.org is a parked stub; Taylor: county Fire & Rescue page says it supports EMS only \"on an as-needed basis\", EMS provider not named; Washington: county site lists no EMS department (Emergency Management only). CMS 2024 does show Holmes BOCC (Bonifay, 557 emergency transports), Washington County Ambulance (Chipley, 791, share 0.77) and none for Taylor, but a county page is still needed."
+ },
+ "rows": [
+  {
+   "county": "Liberty",
+   "fips": "12077",
+   "area": "entire county",
+   "provider": "Liberty County Ambulance",
+   "ownership": "county EMS (Liberty County BOCC, Community Services)",
+   "transport": true,
+   "transport_basis": "FL DOH licence type ALS/T (states/FL_parsed.json) + CMS 2024 emergency billing; the cited page does not say \"transports\"",
+   "source_url": "https://libertycountyfl.org/community-services/ambulance-services/",
+   "evidence": "Home / Community Services / Ambulance Services: \"EMS Effective October 1, 2024 ... Download Copy of EMS Fee Schedule (Updated October 2024)\"; office Bristol, FL.",
+   "vintage": "2026-10-21",
+   "raw": "downloads/fl_2026-10/fl_sites/Liberty_5309.html",
+   "note": "County ambulance department with its own fee schedule; no sentence says \"transports\". Transport rests on the FL DOH licence ALS/T (licence 3901) and the CMS 2024 file (County Of Liberty BOCC, Bristol: 61 emergency transports, share 1.0).",
+   "st": "FL",
+   "tier_supported": "A"
+  },
+  {
+   "county": "Lafayette",
+   "fips": "12067",
+   "area": "entire county",
+   "provider": "Lafayette County Rescue",
+   "ownership": "county EMS (Lafayette County BOCC)",
+   "transport": true,
+   "transport_basis": "FL DOH licence type ALS/T (states/FL_parsed.json) + CMS 2024 emergency billing; the cited page does not say \"transports\"",
+   "source_url": "https://lafayettecountyfl.org/departments-services/emergency-medical-services/",
+   "evidence": "Departments & Services / Emergency Medical Services: \"contact the Emergency Medical Services Director, Marty Tompkins ... Office Location 136 SE Industrial Park Circle, Mayo, FL\".",
+   "vintage": "2026-10-21",
+   "raw": "downloads/fl_2026-10/fl_sites/Lafayette_6398.html",
+   "note": "County EMS department; the FL DOH licence name is \"Lafayette County Rescue\" (licence 3401, ALS/T, Mayo); a second Lafayette ALS/T licence (Specialized Event Services) is event cover, not named by the county. CMS 2024: County Of Lafayette BOCC, Mayo, 182 emergency transports, share 1.0.",
+   "st": "FL",
+   "tier_supported": "A"
+  },
+  {
+   "county": "Union",
+   "fips": "12125",
+   "area": "entire county",
+   "provider": "Union County Department Of Emergency Services",
+   "ownership": "county EMS (Union County BOCC)",
+   "transport": true,
+   "transport_basis": "FL DOH licence type ALS/T (states/FL_parsed.json) + CMS 2024 emergency billing; the cited page does not say \"transports\"",
+   "source_url": "https://web.archive.org/web/2025/https://unioncounty-fl.gov/emergency-medical-services/",
+   "evidence": "Union County BOCC departments: \"Emergency Medical Services (EMS) Toby Witt, Director, 550 SE 6th Street, Lake Butler, FL\" (live site is Cloudflare-walled; Internet Archive 2025 capture).",
+   "vintage": "2026-10-21",
+   "raw": "downloads/fl_2026-10/arch_union_ems.html",
+   "note": "County EMS department; FL DOH licence 6301 ALS/T \"Union County Department Of Emergency Services\". CMS 2024: Union County BOCC, Lake Butler, 208 emergency transports, share 1.0.",
+   "st": "FL",
+   "tier_supported": "A"
+  },
+  {
+   "county": "DeSoto",
+   "fips": "12027",
+   "area": "entire county",
+   "provider": "Desoto County Fire/Rescue Department",
+   "ownership": "county fire rescue (DeSoto County Public Safety)",
+   "transport": true,
+   "transport_basis": "FL DOH licence type ALS/T (states/FL_parsed.json) + CMS 2024 emergency billing; the cited page does not say \"transports\"",
+   "source_url": "https://www.desotobocc.com/300/Public-Safety",
+   "evidence": "Public Safety (Fire Chief & Public Safety Director): \"Our team protects the lives and property of the citizens and visitors of Desoto County by providing the highest level of service in Fire Suppression, Fire Prevention Education, Emergency Medical Services, Rescue, and Incident Mitigation.\"",
+   "vintage": "2026-10-21",
+   "raw": "downloads/fl_2026-10/desoto_ps.html",
+   "note": "Page names EMS as a service of the county department and hires \"Firefighter Paramedic\" (page 225); no sentence says \"transports\". FL DOH licence 1402 ALS/T. CMS 2024: Desoto County Fire Rescue, Arcadia, 658 emergency transports, share 1.0.",
+   "st": "FL",
+   "tier_supported": "A"
+  },
+  {
+   "county": "Hardee",
+   "fips": "12049",
+   "area": "entire county",
+   "provider": "Hardee County Fire Rescue",
+   "ownership": "county fire rescue (Hardee County BOCC)",
+   "transport": true,
+   "transport_basis": "FL DOH licence type ALS/T (states/FL_parsed.json) + CMS 2024 emergency billing; the cited page does not say \"transports\"",
+   "source_url": "https://www.hardeecountyfl.gov/departments-services/public-safety/fire-rescue/",
+   "evidence": "Fire Rescue: \"EMS Mission Statement It is the mission of Emergency Medical Services to provide a rapid response and highly professional care with caring and highly trained emergency medical technicians and paramedics to all medical emergencies.\"",
+   "vintage": "2026-10-21",
+   "raw": "downloads/fl_2026-10/hardee_fr.html",
+   "note": "FL DOH licence 2501 ALS/T. CMS 2024: Hardee County BOCC, Wauchula, 243 emergency transports, share 1.0. A second Hardee ALS/T licence (Aloha Medical Services, Wauchula, private) is not named by the county page and is left to the existing roster row.",
+   "st": "FL",
+   "tier_supported": "A"
+  },
+  {
+   "county": "Madison",
+   "fips": "12079",
+   "area": "entire county",
+   "provider": "Madison County Fire Rescue",
+   "ownership": "county fire rescue (Madison County BOCC)",
+   "transport": true,
+   "transport_basis": "FL DOH licence type ALS/T (states/FL_parsed.json) + CMS 2024 emergency billing; the cited page does not say \"transports\"",
+   "source_url": "https://madisoncountyfl.com/departments-services/fire-rescue/",
+   "evidence": "Departments & Services / Fire Rescue: \"Emergencies: 911 Station: (850) 973-3494 Billing: (850) 973-1494\", 1314 West Base St., Madison (page has no sentence on EMS or ambulances).",
+   "vintage": "2026-10-21",
+   "raw": "downloads/fl_2026-10/madison_fr.html",
+   "note": "WEAK page: names the department and a billing line only. FL DOH licence 4001 ALS/T. CMS 2024: County Of Madison BOCC, Madison, 554 emergency transports, share 0.97. Held partial until a page says what the department does.",
+   "st": "FL",
+   "tier_supported": "partial"
+  },
+  {
+   "county": "Baker",
+   "fips": "12003",
+   "area": "entire county (3 districts)",
+   "provider": "Baker County Fire Rescue",
+   "ownership": "county fire rescue (Baker County Board of County Commissioners)",
+   "transport": true,
+   "transport_basis": "FL DOH licence type ALS/T (states/FL_parsed.json) + CMS 2024 emergency billing; the cited page does not say \"transports\"",
+   "source_url": "https://services6.arcgis.com/HSWu3dhzHf7nZfIa/arcgis/rest/services/BCFR_EMS___Career_Fire_Districts/FeatureServer/68",
+   "evidence": "County-published ArcGIS layer \"BCFR EMS & Career Fire Districts\" (owner account at bakerfl.gov, last edit 2024-04-24); service description: \"Map showing the districts of the Baker County Fire & Rescue EMS and Career Fire Employees\". Three district polygons cover 99.8% of Baker County (District 70 73.8%, District 90 13.8%, District 50 12.3%).",
+   "vintage": "2026-10-21",
+   "raw": "downloads/fl_2026-10/bcfr.geojson",
+   "note": "Polygons carry district numbers only, no provider field: the provider is named by the layer title/description. FL DOH licence 201 ALS/T \"Baker County Fire Rescue\", Macclenny. CMS 2024: County Of Baker, Macclenny, 648 emergency transports, share 1.0. Layer is 2.5 years old.",
+   "st": "FL",
+   "tier_supported": "A"
+  }
+ ],
+ "county_verdict": {
+  "12077": {
+   "county": "Liberty County",
+   "tier": "A",
+   "add": [
+    {
+     "name": "Liberty County Ambulance",
+     "basis": "serves",
+     "partial": false,
+     "kind": "local",
+     "via": "Florida county government page (BOCC)",
+     "url": "https://libertycountyfl.org/community-services/ambulance-services/",
+     "note": "entire county; County ambulance department with its own fee schedule; no sentence says \"transports\""
+    }
+   ]
+  },
+  "12067": {
+   "county": "Lafayette County",
+   "tier": "A",
+   "add": [
+    {
+     "name": "Lafayette County Rescue",
+     "basis": "serves",
+     "partial": false,
+     "kind": "local",
+     "via": "Florida county government page (BOCC)",
+     "url": "https://lafayettecountyfl.org/departments-services/emergency-medical-services/",
+     "note": "entire county; County EMS department; the FL DOH licence name is \"Lafayette County Rescue\" (licence 3401, ALS/T, Mayo); a second Lafayette ALS/T licence (Specialized Event Services) is event cover, not named by the county"
+    }
+   ]
+  },
+  "12125": {
+   "county": "Union County",
+   "tier": "A",
+   "add": [
+    {
+     "name": "Union County Department Of Emergency Services",
+     "basis": "serves",
+     "partial": false,
+     "kind": "local",
+     "via": "Florida county government page (BOCC)",
+     "url": "https://web.archive.org/web/2025/https://unioncounty-fl.gov/emergency-medical-services/",
+     "note": "entire county; County EMS department; FL DOH licence 6301 ALS/T \"Union County Department Of Emergency Services\""
+    }
+   ]
+  },
+  "12027": {
+   "county": "DeSoto County",
+   "tier": "A",
+   "add": [
+    {
+     "name": "Desoto County Fire/Rescue Department",
+     "basis": "serves",
+     "partial": false,
+     "kind": "local",
+     "via": "Florida county government page (BOCC)",
+     "url": "https://www.desotobocc.com/300/Public-Safety",
+     "note": "entire county; Page names EMS as a service of the county department and hires \"Firefighter Paramedic\" (page 225); no sentence says \"transports\""
+    }
+   ]
+  },
+  "12049": {
+   "county": "Hardee County",
+   "tier": "A",
+   "add": [
+    {
+     "name": "Hardee County Fire Rescue",
+     "basis": "serves",
+     "partial": false,
+     "kind": "local",
+     "via": "Florida county government page (BOCC)",
+     "url": "https://www.hardeecountyfl.gov/departments-services/public-safety/fire-rescue/",
+     "note": "entire county; FL DOH licence 2501 ALS/T"
+    }
+   ]
+  },
+  "12079": {
+   "county": "Madison County",
+   "tier": "C",
+   "add": [
+    {
+     "name": "Madison County Fire Rescue",
+     "basis": "located",
+     "partial": true,
+     "kind": "local",
+     "via": "Florida county government page (BOCC)",
+     "url": "https://madisoncountyfl.com/departments-services/fire-rescue/",
+     "note": "entire county; WEAK page: names the department and a billing line only"
+    }
+   ]
+  },
+  "12003": {
+   "county": "Baker County",
+   "tier": "A",
+   "add": [
+    {
+     "name": "Baker County Fire Rescue",
+     "basis": "serves",
+     "partial": false,
+     "kind": "local",
+     "via": "Baker County, FL ArcGIS layer BCFR EMS & Career Fire Districts (county-published)",
+     "url": "https://services6.arcgis.com/HSWu3dhzHf7nZfIa/arcgis/rest/services/BCFR_EMS___Career_Fire_Districts/FeatureServer/68",
+     "note": "entire county (3 districts); Polygons carry district numbers only, no provider field: the provider is named by the layer title/description"
+    }
+   ]
+  }
+ }
+}

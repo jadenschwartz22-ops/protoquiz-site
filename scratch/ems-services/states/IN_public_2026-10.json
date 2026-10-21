@@ -1,0 +1,4613 @@
+{
+ "meta": {
+  "state": "IN",
+  "retrieved": "2026-10-21",
+  "source": "IndianaMap Hosted/EMS FeatureServer layer 0 (state EMS incident run records, IDHS/ImageTrend), aggregated server-side by county x agency x service type (outStatistics); incident rows not downloaded",
+  "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+  "layer_last_edit": "2026-04-19",
+  "run_dates": "2022-01-01 to 2022-12-30",
+  "total_runs": 991699,
+  "counties": 91,
+  "kind": "run counts (who ran 911 scene calls), NOT a service-area or licence record",
+  "tier_counts": {
+   "held": 91
+  }
+ },
+ "rows": [
+  {
+   "county": "Adams",
+   "county_fips": "18001",
+   "provider": "Adams County EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 2505,
+   "share_of_county_runs": 0.981,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Allen",
+   "county_fips": "18003",
+   "provider": "Three Rivers Ambulance Authority",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 23293,
+   "share_of_county_runs": 0.501,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Allen",
+   "county_fips": "18003",
+   "provider": "Fort Wayne FD",
+   "service_type": "911 Response (Scene) without Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 8793,
+   "share_of_county_runs": 0.189,
+   "transport": false,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Allen",
+   "county_fips": "18003",
+   "provider": "East Central Fire & EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Mixed",
+   "runs_2022": 3330,
+   "share_of_county_runs": 0.072,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Allen",
+   "county_fips": "18003",
+   "provider": "Lutheran Hospital of Indiana",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 3282,
+   "share_of_county_runs": 0.071,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Bartholomew",
+   "county_fips": "18005",
+   "provider": "Columbus Regional Hospital Ambulance Service",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 12847,
+   "share_of_county_runs": 0.895,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Bartholomew",
+   "county_fips": "18005",
+   "provider": "Columbus FD",
+   "service_type": "911 Response (Scene) without Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 990,
+   "share_of_county_runs": 0.069,
+   "transport": false,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Benton",
+   "county_fips": "18007",
+   "provider": "Benton County Emergency Ambulance Service",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Mixed",
+   "runs_2022": 1332,
+   "share_of_county_runs": 0.935,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Blackford",
+   "county_fips": "18009",
+   "provider": "Eaton EMTs Inc.",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Mixed",
+   "runs_2022": 74,
+   "share_of_county_runs": 0.43,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Boone",
+   "county_fips": "18011",
+   "provider": "Boone County EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Mixed",
+   "runs_2022": 4780,
+   "share_of_county_runs": 0.644,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Boone",
+   "county_fips": "18011",
+   "provider": "Zionsville Fire Department",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 1582,
+   "share_of_county_runs": 0.213,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Boone",
+   "county_fips": "18011",
+   "provider": "Whitestown Fire",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 784,
+   "share_of_county_runs": 0.106,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Brown",
+   "county_fips": "18013",
+   "provider": "Hamblen Township VFD",
+   "service_type": "911 Response (Scene) without Transport Capability",
+   "staffing": "Volunteer",
+   "runs_2022": 91,
+   "share_of_county_runs": 0.391,
+   "transport": false,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Brown",
+   "county_fips": "18013",
+   "provider": "Columbus Regional Hospital Ambulance Service",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 58,
+   "share_of_county_runs": 0.249,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Carroll",
+   "county_fips": "18015",
+   "provider": "Carroll County EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 1670,
+   "share_of_county_runs": 0.903,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Carroll",
+   "county_fips": "18015",
+   "provider": "Monticello FD",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 132,
+   "share_of_county_runs": 0.071,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Cass",
+   "county_fips": "18017",
+   "provider": "St. Vincent Kokomo",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 552,
+   "share_of_county_runs": 0.618,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Cass",
+   "county_fips": "18017",
+   "provider": "Galveston VFD",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Volunteer",
+   "runs_2022": 85,
+   "share_of_county_runs": 0.095,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Cass",
+   "county_fips": "18017",
+   "provider": "St Vincent Hospital",
+   "service_type": "Critical Care (Ground)",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 72,
+   "share_of_county_runs": 0.081,
+   "transport": false,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Clark",
+   "county_fips": "18019",
+   "provider": "Utica FD / New Chapel EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 19910,
+   "share_of_county_runs": 0.975,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Clay",
+   "county_fips": "18021",
+   "provider": "Statewide Transfer Ambulance & Rescue, Inc",
+   "service_type": "Critical Care (Ground)",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 3658,
+   "share_of_county_runs": 0.978,
+   "transport": false,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Clinton",
+   "county_fips": "18023",
+   "provider": "Clinton County EMS (Frankfort)",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 4215,
+   "share_of_county_runs": 0.909,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Crawford",
+   "county_fips": "18025",
+   "provider": "Crawford County Ambulance Service",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 987,
+   "share_of_county_runs": 0.935,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Daviess",
+   "county_fips": "18027",
+   "provider": "Daviess County EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 4206,
+   "share_of_county_runs": 0.975,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Dearborn",
+   "county_fips": "18029",
+   "provider": "Lawrenceburg Emergency Rescue Unit",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Mixed",
+   "runs_2022": 2086,
+   "share_of_county_runs": 0.329,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Dearborn",
+   "county_fips": "18029",
+   "provider": "Aurora Emergency Rescue",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Mixed",
+   "runs_2022": 1644,
+   "share_of_county_runs": 0.26,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Dearborn",
+   "county_fips": "18029",
+   "provider": "Bright VFD",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Mixed",
+   "runs_2022": 720,
+   "share_of_county_runs": 0.114,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Dearborn",
+   "county_fips": "18029",
+   "provider": "Greendale Emergency Medical Service",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 487,
+   "share_of_county_runs": 0.077,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Dearborn",
+   "county_fips": "18029",
+   "provider": "Harrison FD",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 433,
+   "share_of_county_runs": 0.068,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Decatur",
+   "county_fips": "18031",
+   "provider": "Decatur County EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 2218,
+   "share_of_county_runs": 0.853,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Decatur",
+   "county_fips": "18031",
+   "provider": "Letts Community VFD",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Mixed",
+   "runs_2022": 204,
+   "share_of_county_runs": 0.078,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Dekalb",
+   "county_fips": "18033",
+   "provider": "Parkview DeKalb Hospital",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 5987,
+   "share_of_county_runs": 0.922,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Dekalb",
+   "county_fips": "18033",
+   "provider": "Parkview Noble Hospital",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 360,
+   "share_of_county_runs": 0.055,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Delaware",
+   "county_fips": "18035",
+   "provider": "Muncie FD",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 14094,
+   "share_of_county_runs": 0.613,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Delaware",
+   "county_fips": "18035",
+   "provider": "Delaware County / Muncie EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 3820,
+   "share_of_county_runs": 0.166,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Delaware",
+   "county_fips": "18035",
+   "provider": "Eaton EMTs Inc.",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Mixed",
+   "runs_2022": 3769,
+   "share_of_county_runs": 0.164,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Dubois",
+   "county_fips": "18037",
+   "provider": "Memorial Hospital Ambulance Service",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 7677,
+   "share_of_county_runs": 0.987,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Elkhart",
+   "county_fips": "18039",
+   "provider": "Elkhart FD",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 6512,
+   "share_of_county_runs": 0.334,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Elkhart",
+   "county_fips": "18039",
+   "provider": "Goshen FD",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 4396,
+   "share_of_county_runs": 0.225,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Elkhart",
+   "county_fips": "18039",
+   "provider": "Concord Township FD (Elkhart)",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Mixed",
+   "runs_2022": 1283,
+   "share_of_county_runs": 0.066,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Elkhart",
+   "county_fips": "18039",
+   "provider": "Tri-County Ambulance Service Inc (Wakarusa)",
+   "service_type": "Critical Care (Ground)",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 1265,
+   "share_of_county_runs": 0.065,
+   "transport": false,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Elkhart",
+   "county_fips": "18039",
+   "provider": "Osolo Emergency Medical",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Volunteer",
+   "runs_2022": 1084,
+   "share_of_county_runs": 0.056,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Fayette",
+   "county_fips": "18041",
+   "provider": "Fayette County EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 2454,
+   "share_of_county_runs": 0.37,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Fayette",
+   "county_fips": "18041",
+   "provider": "Reid Hospital and Health Care Services INC.",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 2164,
+   "share_of_county_runs": 0.326,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Fayette",
+   "county_fips": "18041",
+   "provider": "Dublin VFD",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Volunteer",
+   "runs_2022": 1747,
+   "share_of_county_runs": 0.263,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Floyd",
+   "county_fips": "18043",
+   "provider": "Mercury Ambulance Service, INC d/b/a American Medical Response",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 7292,
+   "share_of_county_runs": 0.595,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Floyd",
+   "county_fips": "18043",
+   "provider": "Utica FD / New Chapel EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 4879,
+   "share_of_county_runs": 0.398,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Fountain",
+   "county_fips": "18045",
+   "provider": "Fountain County Ambulance Service",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 1666,
+   "share_of_county_runs": 0.891,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Franklin",
+   "county_fips": "18047",
+   "provider": "Franklin County EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Mixed",
+   "runs_2022": 2868,
+   "share_of_county_runs": 0.847,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Franklin",
+   "county_fips": "18047",
+   "provider": "Batesville Volunteer Fire & Rescue Department - EMS 10",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Mixed",
+   "runs_2022": 298,
+   "share_of_county_runs": 0.088,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Fulton",
+   "county_fips": "18049",
+   "provider": "Kosciusko Ambulance Services, LLC",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 2915,
+   "share_of_county_runs": 0.973,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Gibson",
+   "county_fips": "18051",
+   "provider": "Gibson County EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 4721,
+   "share_of_county_runs": 0.963,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Grant",
+   "county_fips": "18053",
+   "provider": "Marion General Hospital Ambulance Service",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 6765,
+   "share_of_county_runs": 0.615,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Grant",
+   "county_fips": "18053",
+   "provider": "Grant County EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Mixed",
+   "runs_2022": 3681,
+   "share_of_county_runs": 0.335,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Greene",
+   "county_fips": "18055",
+   "provider": "Greene County Ambulance Service",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 4460,
+   "share_of_county_runs": 0.979,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Hamilton",
+   "county_fips": "18057",
+   "provider": "Noblesville FD",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 6511,
+   "share_of_county_runs": 0.249,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Hamilton",
+   "county_fips": "18057",
+   "provider": "Carmel FD",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 5797,
+   "share_of_county_runs": 0.222,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Hamilton",
+   "county_fips": "18057",
+   "provider": "Fishers Fire & Emergency Services",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 5609,
+   "share_of_county_runs": 0.215,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Hamilton",
+   "county_fips": "18057",
+   "provider": "Westfield FD",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 3166,
+   "share_of_county_runs": 0.121,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Hancock",
+   "county_fips": "18059",
+   "provider": "Greenfield FD",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 3392,
+   "share_of_county_runs": 0.432,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Hancock",
+   "county_fips": "18059",
+   "provider": "Sugar Creek Township FD",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 1511,
+   "share_of_county_runs": 0.192,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Hancock",
+   "county_fips": "18059",
+   "provider": "Vernon Township Fire Department",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Volunteer",
+   "runs_2022": 1326,
+   "share_of_county_runs": 0.169,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Hancock",
+   "county_fips": "18059",
+   "provider": "Buck Creek Township VFD",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 992,
+   "share_of_county_runs": 0.126,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Harrison",
+   "county_fips": "18061",
+   "provider": "Harrison County Hospital EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 6534,
+   "share_of_county_runs": 0.97,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Hendricks",
+   "county_fips": "18063",
+   "provider": "Town of Plainfield / Plainfield FD",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 5024,
+   "share_of_county_runs": 0.247,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Hendricks",
+   "county_fips": "18063",
+   "provider": "Statewide Transfer Ambulance & Rescue, Inc",
+   "service_type": "Critical Care (Ground)",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 4427,
+   "share_of_county_runs": 0.218,
+   "transport": false,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Hendricks",
+   "county_fips": "18063",
+   "provider": "Washington Township / Avon FD",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 3775,
+   "share_of_county_runs": 0.186,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Hendricks",
+   "county_fips": "18063",
+   "provider": "Brownsburg Fire Territory",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 2754,
+   "share_of_county_runs": 0.136,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Hendricks",
+   "county_fips": "18063",
+   "provider": "Danville FD / Center Township Trustee",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 1158,
+   "share_of_county_runs": 0.057,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Henry",
+   "county_fips": "18065",
+   "provider": "New Castle/Henry County EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 7939,
+   "share_of_county_runs": 0.78,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Henry",
+   "county_fips": "18065",
+   "provider": "Henry County EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 1491,
+   "share_of_county_runs": 0.146,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Howard",
+   "county_fips": "18067",
+   "provider": "St. Vincent Kokomo",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 8600,
+   "share_of_county_runs": 0.499,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Howard",
+   "county_fips": "18067",
+   "provider": "Howard Community Ambulance Services, LLC",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 7591,
+   "share_of_county_runs": 0.441,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Huntington",
+   "county_fips": "18069",
+   "provider": "Parkview Huntington Hospital / EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 7939,
+   "share_of_county_runs": 0.97,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Jackson",
+   "county_fips": "18071",
+   "provider": "Jackson Co Ambulance Service",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 6762,
+   "share_of_county_runs": 0.983,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Jasper",
+   "county_fips": "18073",
+   "provider": "Keener Township EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 1227,
+   "share_of_county_runs": 0.384,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Jasper",
+   "county_fips": "18073",
+   "provider": "Wheatfield Ambulance",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Volunteer",
+   "runs_2022": 782,
+   "share_of_county_runs": 0.245,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Jasper",
+   "county_fips": "18073",
+   "provider": "Phoenix Paramedic Solutions LLC",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 655,
+   "share_of_county_runs": 0.205,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Jasper",
+   "county_fips": "18073",
+   "provider": "Southern Jasper County Ambulance Serv.",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Volunteer",
+   "runs_2022": 202,
+   "share_of_county_runs": 0.063,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Jay",
+   "county_fips": "18075",
+   "provider": "Jay County EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 2817,
+   "share_of_county_runs": 0.976,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Jefferson",
+   "county_fips": "18077",
+   "provider": "King's Daughters' Health EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 6527,
+   "share_of_county_runs": 0.966,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Jennings",
+   "county_fips": "18079",
+   "provider": "Jennings County EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Mixed",
+   "runs_2022": 2553,
+   "share_of_county_runs": 0.869,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Jennings",
+   "county_fips": "18079",
+   "provider": "Letts Community VFD",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Mixed",
+   "runs_2022": 186,
+   "share_of_county_runs": 0.063,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Johnson",
+   "county_fips": "18081",
+   "provider": "White River Township FD (Greenwood)",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 2862,
+   "share_of_county_runs": 0.245,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Johnson",
+   "county_fips": "18081",
+   "provider": "Franklin FD",
+   "service_type": "911 Response (Scene) without Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 2326,
+   "share_of_county_runs": 0.199,
+   "transport": false,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Johnson",
+   "county_fips": "18081",
+   "provider": "Greenwood FD",
+   "service_type": "911 Response (Scene) without Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 2177,
+   "share_of_county_runs": 0.186,
+   "transport": false,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Johnson",
+   "county_fips": "18081",
+   "provider": "Bargersville Community FD",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Mixed",
+   "runs_2022": 1858,
+   "share_of_county_runs": 0.159,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Johnson",
+   "county_fips": "18081",
+   "provider": "Trans-Care, Inc",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 725,
+   "share_of_county_runs": 0.062,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Knox",
+   "county_fips": "18083",
+   "provider": "Good Samaritan",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 2724,
+   "share_of_county_runs": 0.502,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Knox",
+   "county_fips": "18083",
+   "provider": "Knox County EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 2308,
+   "share_of_county_runs": 0.425,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Kosciusko",
+   "county_fips": "18085",
+   "provider": "Kosciusko Ambulance Services, LLC",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 7652,
+   "share_of_county_runs": 0.628,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Kosciusko",
+   "county_fips": "18085",
+   "provider": "Parkview Huntington Hospital / EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 1031,
+   "share_of_county_runs": 0.085,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Kosciusko",
+   "county_fips": "18085",
+   "provider": "Turkey Creek Fire Territory",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Mixed",
+   "runs_2022": 1023,
+   "share_of_county_runs": 0.084,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Kosciusko",
+   "county_fips": "18085",
+   "provider": "Parkview - Whitley County EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 1000,
+   "share_of_county_runs": 0.082,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Lagrange",
+   "county_fips": "18087",
+   "provider": "Parkview Noble Hospital",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 4217,
+   "share_of_county_runs": 0.978,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Lake",
+   "county_fips": "18089",
+   "provider": "City of Gary FD",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 17299,
+   "share_of_county_runs": 0.387,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Lake",
+   "county_fips": "18089",
+   "provider": "Hammond Fire Department",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 7182,
+   "share_of_county_runs": 0.161,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Lake",
+   "county_fips": "18089",
+   "provider": "Northwest Ambulance Service",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 4395,
+   "share_of_county_runs": 0.098,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Lake",
+   "county_fips": "18089",
+   "provider": "Crown Point Fire & Rescue Department",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 3521,
+   "share_of_county_runs": 0.079,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Lake",
+   "county_fips": "18089",
+   "provider": "Hobart Fire Department",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 3414,
+   "share_of_county_runs": 0.076,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Lake",
+   "county_fips": "18089",
+   "provider": "Town of Schererville",
+   "service_type": "911 Response (Scene) without Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 2671,
+   "share_of_county_runs": 0.06,
+   "transport": false,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Laporte",
+   "county_fips": "18091",
+   "provider": "LaPorte County EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 11332,
+   "share_of_county_runs": 0.958,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Madison",
+   "county_fips": "18095",
+   "provider": "Anderson Fire Department",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 8594,
+   "share_of_county_runs": 0.411,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Madison",
+   "county_fips": "18095",
+   "provider": "Physicians Ambulance Service",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Mixed",
+   "runs_2022": 2342,
+   "share_of_county_runs": 0.112,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Madison",
+   "county_fips": "18095",
+   "provider": "South Madison Fire Territory",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Volunteer",
+   "runs_2022": 1829,
+   "share_of_county_runs": 0.087,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Madison",
+   "county_fips": "18095",
+   "provider": "East Madison Fire Territory",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Mixed",
+   "runs_2022": 1745,
+   "share_of_county_runs": 0.083,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Madison",
+   "county_fips": "18095",
+   "provider": "Elwood FD",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 1598,
+   "share_of_county_runs": 0.076,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Madison",
+   "county_fips": "18095",
+   "provider": "St. Vincent Kokomo",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 1147,
+   "share_of_county_runs": 0.055,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Madison",
+   "county_fips": "18095",
+   "provider": "Alexandria FD",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 1093,
+   "share_of_county_runs": 0.052,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Marion",
+   "county_fips": "18097",
+   "provider": "Indianapolis Emergency Medical Services",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 155276,
+   "share_of_county_runs": 0.514,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Marion",
+   "county_fips": "18097",
+   "provider": "Indianapolis FD",
+   "service_type": "911 Response (Scene) without Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 83774,
+   "share_of_county_runs": 0.277,
+   "transport": false,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Marshall",
+   "county_fips": "18099",
+   "provider": "Plymouth Community Ambulance Service",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 2265,
+   "share_of_county_runs": 0.57,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Marshall",
+   "county_fips": "18099",
+   "provider": "Union North Ambulance Service",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Volunteer",
+   "runs_2022": 443,
+   "share_of_county_runs": 0.112,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Marshall",
+   "county_fips": "18099",
+   "provider": "Argos Community Ambulance Service",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Volunteer",
+   "runs_2022": 285,
+   "share_of_county_runs": 0.072,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Marshall",
+   "county_fips": "18099",
+   "provider": "Kosciusko Ambulance Services, LLC",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 274,
+   "share_of_county_runs": 0.069,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Marshall",
+   "county_fips": "18099",
+   "provider": "Tri-County Ambulance Service Inc (Wakarusa)",
+   "service_type": "Critical Care (Ground)",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 267,
+   "share_of_county_runs": 0.067,
+   "transport": false,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Marshall",
+   "county_fips": "18099",
+   "provider": "Culver Union Township Ambulance Service",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 219,
+   "share_of_county_runs": 0.055,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Martin",
+   "county_fips": "18101",
+   "provider": "Knox County EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 495,
+   "share_of_county_runs": 0.536,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Martin",
+   "county_fips": "18101",
+   "provider": "Martin County Ambulance Service",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 342,
+   "share_of_county_runs": 0.37,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Martin",
+   "county_fips": "18101",
+   "provider": "Daviess County EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 58,
+   "share_of_county_runs": 0.063,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Miami",
+   "county_fips": "18103",
+   "provider": "Dukes Memorial Hospital EMS/DBA/Miami County EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 4244,
+   "share_of_county_runs": 0.95,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Monroe",
+   "county_fips": "18105",
+   "provider": "Letts Community VFD",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Mixed",
+   "runs_2022": 123,
+   "share_of_county_runs": 0.243,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Monroe",
+   "county_fips": "18105",
+   "provider": "Owen County EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 97,
+   "share_of_county_runs": 0.191,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Monroe",
+   "county_fips": "18105",
+   "provider": "Amerimed EMS LLC.",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 87,
+   "share_of_county_runs": 0.172,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Monroe",
+   "county_fips": "18105",
+   "provider": "Trans-Care, Inc",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 85,
+   "share_of_county_runs": 0.168,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Montgomery",
+   "county_fips": "18107",
+   "provider": "Crawfordsville Emergency Ambulance/ Crawfordsville FD",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 3759,
+   "share_of_county_runs": 0.512,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Montgomery",
+   "county_fips": "18107",
+   "provider": "Statewide Transfer Ambulance & Rescue, Inc",
+   "service_type": "Critical Care (Ground)",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 3256,
+   "share_of_county_runs": 0.444,
+   "transport": false,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Morgan",
+   "county_fips": "18109",
+   "provider": "Morgan County EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 4678,
+   "share_of_county_runs": 0.447,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Morgan",
+   "county_fips": "18109",
+   "provider": "Brown Township Fire & Rescue",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Mixed",
+   "runs_2022": 2397,
+   "share_of_county_runs": 0.229,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Morgan",
+   "county_fips": "18109",
+   "provider": "Trans-Care, Inc",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 2081,
+   "share_of_county_runs": 0.199,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Morgan",
+   "county_fips": "18109",
+   "provider": "Madison Township Fire Department",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 728,
+   "share_of_county_runs": 0.07,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Newton",
+   "county_fips": "18111",
+   "provider": "Newton County Emergency Medical Services",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 1836,
+   "share_of_county_runs": 0.953,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Noble",
+   "county_fips": "18113",
+   "provider": "Parkview Noble Hospital",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 7764,
+   "share_of_county_runs": 0.909,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Noble",
+   "county_fips": "18113",
+   "provider": "Parkview - Whitley County EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 458,
+   "share_of_county_runs": 0.054,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Ohio",
+   "county_fips": "18115",
+   "provider": "Ohio County Rescue",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Mixed",
+   "runs_2022": 789,
+   "share_of_county_runs": 0.892,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Owen",
+   "county_fips": "18119",
+   "provider": "Owen County EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 2924,
+   "share_of_county_runs": 0.983,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Parke",
+   "county_fips": "18121",
+   "provider": "Parke County EMS & Transportation Service",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 1251,
+   "share_of_county_runs": 0.942,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Perry",
+   "county_fips": "18123",
+   "provider": "Perry County Memorial Hospital",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 2319,
+   "share_of_county_runs": 0.957,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Pike",
+   "county_fips": "18125",
+   "provider": "Pike County EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 1608,
+   "share_of_county_runs": 0.953,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Porter",
+   "county_fips": "18127",
+   "provider": "Porter Memorial Hospital EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 10682,
+   "share_of_county_runs": 0.571,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Porter",
+   "county_fips": "18127",
+   "provider": "Valparaiso Fire Department",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 3957,
+   "share_of_county_runs": 0.212,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Porter",
+   "county_fips": "18127",
+   "provider": "Portage Fire Department",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 2137,
+   "share_of_county_runs": 0.114,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Porter",
+   "county_fips": "18127",
+   "provider": "South Haven Fire Department",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 1083,
+   "share_of_county_runs": 0.058,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Posey",
+   "county_fips": "18129",
+   "provider": "Posey County EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 2696,
+   "share_of_county_runs": 0.984,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Pulaski",
+   "county_fips": "18131",
+   "provider": "Pulaski County EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 1537,
+   "share_of_county_runs": 0.971,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Putnam",
+   "county_fips": "18133",
+   "provider": "Putnam County Emergency Medical Services",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 3573,
+   "share_of_county_runs": 0.758,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Putnam",
+   "county_fips": "18133",
+   "provider": "Statewide Transfer Ambulance & Rescue, Inc",
+   "service_type": "Critical Care (Ground)",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 1079,
+   "share_of_county_runs": 0.229,
+   "transport": false,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Randolph",
+   "county_fips": "18135",
+   "provider": "Randolph County EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 1426,
+   "share_of_county_runs": 0.437,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Randolph",
+   "county_fips": "18135",
+   "provider": "Winchester FD",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 951,
+   "share_of_county_runs": 0.291,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Randolph",
+   "county_fips": "18135",
+   "provider": "Union City FD (Indiana)",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 494,
+   "share_of_county_runs": 0.151,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Ripley",
+   "county_fips": "18137",
+   "provider": "Ripley County EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 2158,
+   "share_of_county_runs": 0.407,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Ripley",
+   "county_fips": "18137",
+   "provider": "Letts Community VFD",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Mixed",
+   "runs_2022": 1306,
+   "share_of_county_runs": 0.246,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Ripley",
+   "county_fips": "18137",
+   "provider": "Batesville Volunteer Fire & Rescue Department - EMS 10",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Mixed",
+   "runs_2022": 970,
+   "share_of_county_runs": 0.183,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Ripley",
+   "county_fips": "18137",
+   "provider": "Switzerland County EMS, Inc",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 557,
+   "share_of_county_runs": 0.105,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Ripley",
+   "county_fips": "18137",
+   "provider": "Sunman Area Life Squad Inc",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Mixed",
+   "runs_2022": 266,
+   "share_of_county_runs": 0.05,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Rush",
+   "county_fips": "18139",
+   "provider": "City of Rushville FD",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Mixed",
+   "runs_2022": 1374,
+   "share_of_county_runs": 0.643,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Rush",
+   "county_fips": "18139",
+   "provider": "Rush Memorial Hospital",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 273,
+   "share_of_county_runs": 0.128,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Rush",
+   "county_fips": "18139",
+   "provider": "Raleigh FD",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Volunteer",
+   "runs_2022": 205,
+   "share_of_county_runs": 0.096,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Rush",
+   "county_fips": "18139",
+   "provider": "Anderson TWP VFD (Milroy)",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Volunteer",
+   "runs_2022": 143,
+   "share_of_county_runs": 0.067,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Scott",
+   "county_fips": "18143",
+   "provider": "Scott County EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 4197,
+   "share_of_county_runs": 0.972,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Shelby",
+   "county_fips": "18145",
+   "provider": "Shelbyville FD",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 4227,
+   "share_of_county_runs": 0.642,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Shelby",
+   "county_fips": "18145",
+   "provider": "Trans-Care, Inc",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 1864,
+   "share_of_county_runs": 0.283,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Spencer",
+   "county_fips": "18147",
+   "provider": "Spencer County Emergency Ambulance Service, Inc",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 3444,
+   "share_of_county_runs": 0.954,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Starke",
+   "county_fips": "18149",
+   "provider": "Starke County Ambulance Service",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 862,
+   "share_of_county_runs": 0.938,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Steuben",
+   "county_fips": "18151",
+   "provider": "Steuben County EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Mixed",
+   "runs_2022": 3556,
+   "share_of_county_runs": 0.98,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Sullivan",
+   "county_fips": "18153",
+   "provider": "Sullivan County Ambulance Service",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 1302,
+   "share_of_county_runs": 0.582,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Sullivan",
+   "county_fips": "18153",
+   "provider": "Sullivan FD",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Mixed",
+   "runs_2022": 495,
+   "share_of_county_runs": 0.221,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Sullivan",
+   "county_fips": "18153",
+   "provider": "Carlisle Lions Community Ambulance Service",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Volunteer",
+   "runs_2022": 368,
+   "share_of_county_runs": 0.164,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Switzerland",
+   "county_fips": "18155",
+   "provider": "Switzerland County Emergency Response",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 1008,
+   "share_of_county_runs": 0.958,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Tippecanoe",
+   "county_fips": "18157",
+   "provider": "Tippecanoe Emergency Ambulance",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 19020,
+   "share_of_county_runs": 0.632,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Tippecanoe",
+   "county_fips": "18157",
+   "provider": "Spirit EMS LLC",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 3854,
+   "share_of_county_runs": 0.128,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Tippecanoe",
+   "county_fips": "18157",
+   "provider": "Trans-Care, Inc",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 3340,
+   "share_of_county_runs": 0.111,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Tippecanoe",
+   "county_fips": "18157",
+   "provider": "Statewide Transfer Ambulance & Rescue, Inc",
+   "service_type": "Critical Care (Ground)",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 1564,
+   "share_of_county_runs": 0.052,
+   "transport": false,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Tippecanoe",
+   "county_fips": "18157",
+   "provider": "Purdue University FD",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 1519,
+   "share_of_county_runs": 0.05,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Tipton",
+   "county_fips": "18159",
+   "provider": "Tipton FD",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 144,
+   "share_of_county_runs": 0.225,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Tipton",
+   "county_fips": "18159",
+   "provider": "Cicero Township FD (Tipton)",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Mixed",
+   "runs_2022": 126,
+   "share_of_county_runs": 0.197,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Tipton",
+   "county_fips": "18159",
+   "provider": "St. Vincent Kokomo",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 99,
+   "share_of_county_runs": 0.154,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Tipton",
+   "county_fips": "18159",
+   "provider": "Sharpsville FD/ EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Volunteer",
+   "runs_2022": 78,
+   "share_of_county_runs": 0.122,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Tipton",
+   "county_fips": "18159",
+   "provider": "Howard Community Ambulance Services, LLC",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 74,
+   "share_of_county_runs": 0.115,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Union",
+   "county_fips": "18161",
+   "provider": "Reid Hospital and Health Care Services INC.",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 685,
+   "share_of_county_runs": 0.957,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Vanderburgh",
+   "county_fips": "18163",
+   "provider": "American Medical Response of Evansville",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 27547,
+   "share_of_county_runs": 0.937,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Vermillion",
+   "county_fips": "18165",
+   "provider": "Illiana EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 1894,
+   "share_of_county_runs": 0.89,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Vigo",
+   "county_fips": "18167",
+   "provider": "Trans-Care, Inc",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 11078,
+   "share_of_county_runs": 0.562,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Vigo",
+   "county_fips": "18167",
+   "provider": "Terre Haute FD",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 8200,
+   "share_of_county_runs": 0.416,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Wabash",
+   "county_fips": "18169",
+   "provider": "Parkview Huntington Hospital / EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 3506,
+   "share_of_county_runs": 0.531,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Wabash",
+   "county_fips": "18169",
+   "provider": "Wabash FD",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 2921,
+   "share_of_county_runs": 0.442,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Warren",
+   "county_fips": "18171",
+   "provider": "Warren County EMS (Williamsport)",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 1310,
+   "share_of_county_runs": 0.917,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Warrick",
+   "county_fips": "18173",
+   "provider": "St Marys Warrick EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 6422,
+   "share_of_county_runs": 0.747,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Warrick",
+   "county_fips": "18173",
+   "provider": "American Medical Response of Evansville",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 1920,
+   "share_of_county_runs": 0.223,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Washington",
+   "county_fips": "18175",
+   "provider": "Washington County Ambulance Service",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 2518,
+   "share_of_county_runs": 0.984,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Wayne",
+   "county_fips": "18177",
+   "provider": "Richmond FD",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 7267,
+   "share_of_county_runs": 0.506,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Wayne",
+   "county_fips": "18177",
+   "provider": "Reid Hospital and Health Care Services INC.",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 4105,
+   "share_of_county_runs": 0.286,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Wayne",
+   "county_fips": "18177",
+   "provider": "Red Line Emergency Medical Services",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 1453,
+   "share_of_county_runs": 0.101,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Wayne",
+   "county_fips": "18177",
+   "provider": "Spirit Medical Transport LLC",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 854,
+   "share_of_county_runs": 0.059,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Wells",
+   "county_fips": "18179",
+   "provider": "Wells County EMS, Inc",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 2971,
+   "share_of_county_runs": 0.974,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "White",
+   "county_fips": "18181",
+   "provider": "Monticello FD",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 1975,
+   "share_of_county_runs": 0.768,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "White",
+   "county_fips": "18181",
+   "provider": "Monon First Response",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Volunteer",
+   "runs_2022": 146,
+   "share_of_county_runs": 0.057,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "White",
+   "county_fips": "18181",
+   "provider": "Statewide Transfer Ambulance & Rescue, Inc",
+   "service_type": "Critical Care (Ground)",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 138,
+   "share_of_county_runs": 0.054,
+   "transport": false,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Whitley",
+   "county_fips": "18183",
+   "provider": "Parkview - Whitley County EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 5439,
+   "share_of_county_runs": 0.908,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  },
+  {
+   "county": "Whitley",
+   "county_fips": "18183",
+   "provider": "Parkview Huntington Hospital / EMS",
+   "service_type": "911 Response (Scene) with Transport Capability",
+   "staffing": "Non-Volunteer",
+   "runs_2022": 369,
+   "share_of_county_runs": 0.062,
+   "transport": true,
+   "transport_basis": "agency's own service-type field in the state EMS run data (ImageTrend)",
+   "source_url": "https://gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0",
+   "vintage": "2022"
+  }
+ ],
+ "county_verdict": {
+  "18001": {
+   "county": "Adams",
+   "tier": "held",
+   "runs_2022": 2553,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "Adams County EMS",
+     "runs": 2505,
+     "share": 0.981,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (2553 runs in this county); tier left alone."
+  },
+  "18003": {
+   "county": "Allen",
+   "tier": "held",
+   "runs_2022": 46447,
+   "agencies_listed": 4,
+   "top_agencies": [
+    {
+     "name": "Three Rivers Ambulance Authority",
+     "runs": 23293,
+     "share": 0.501,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Fort Wayne FD",
+     "runs": 8793,
+     "share": 0.189,
+     "type": "911 Response (Scene) without Transport Capability"
+    },
+    {
+     "name": "East Central Fire & EMS",
+     "runs": 3330,
+     "share": 0.072,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Lutheran Hospital of Indiana",
+     "runs": 3282,
+     "share": 0.071,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (46447 runs in this county); tier left alone."
+  },
+  "18005": {
+   "county": "Bartholomew",
+   "tier": "held",
+   "runs_2022": 14349,
+   "agencies_listed": 2,
+   "top_agencies": [
+    {
+     "name": "Columbus Regional Hospital Ambulance Service",
+     "runs": 12847,
+     "share": 0.895,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Columbus FD",
+     "runs": 990,
+     "share": 0.069,
+     "type": "911 Response (Scene) without Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (14349 runs in this county); tier left alone."
+  },
+  "18007": {
+   "county": "Benton",
+   "tier": "held",
+   "runs_2022": 1424,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "Benton County Emergency Ambulance Service",
+     "runs": 1332,
+     "share": 0.935,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (1424 runs in this county); tier left alone."
+  },
+  "18009": {
+   "county": "Blackford",
+   "tier": "held",
+   "runs_2022": 172,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "Eaton EMTs Inc.",
+     "runs": 74,
+     "share": 0.43,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (172 runs in this county); tier left alone."
+  },
+  "18011": {
+   "county": "Boone",
+   "tier": "held",
+   "runs_2022": 7425,
+   "agencies_listed": 3,
+   "top_agencies": [
+    {
+     "name": "Boone County EMS",
+     "runs": 4780,
+     "share": 0.644,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Zionsville Fire Department",
+     "runs": 1582,
+     "share": 0.213,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Whitestown Fire",
+     "runs": 784,
+     "share": 0.106,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (7425 runs in this county); tier left alone."
+  },
+  "18013": {
+   "county": "Brown",
+   "tier": "held",
+   "runs_2022": 233,
+   "agencies_listed": 2,
+   "top_agencies": [
+    {
+     "name": "Hamblen Township VFD",
+     "runs": 91,
+     "share": 0.391,
+     "type": "911 Response (Scene) without Transport Capability"
+    },
+    {
+     "name": "Columbus Regional Hospital Ambulance Service",
+     "runs": 58,
+     "share": 0.249,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (233 runs in this county); tier left alone."
+  },
+  "18015": {
+   "county": "Carroll",
+   "tier": "held",
+   "runs_2022": 1849,
+   "agencies_listed": 2,
+   "top_agencies": [
+    {
+     "name": "Carroll County EMS",
+     "runs": 1670,
+     "share": 0.903,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Monticello FD",
+     "runs": 132,
+     "share": 0.071,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (1849 runs in this county); tier left alone."
+  },
+  "18017": {
+   "county": "Cass",
+   "tier": "held",
+   "runs_2022": 893,
+   "agencies_listed": 3,
+   "top_agencies": [
+    {
+     "name": "St. Vincent Kokomo",
+     "runs": 552,
+     "share": 0.618,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Galveston VFD",
+     "runs": 85,
+     "share": 0.095,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "St Vincent Hospital",
+     "runs": 72,
+     "share": 0.081,
+     "type": "Critical Care (Ground)"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (893 runs in this county); tier left alone."
+  },
+  "18019": {
+   "county": "Clark",
+   "tier": "held",
+   "runs_2022": 20414,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "Utica FD / New Chapel EMS",
+     "runs": 19910,
+     "share": 0.975,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (20414 runs in this county); tier left alone."
+  },
+  "18021": {
+   "county": "Clay",
+   "tier": "held",
+   "runs_2022": 3741,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "Statewide Transfer Ambulance & Rescue, Inc",
+     "runs": 3658,
+     "share": 0.978,
+     "type": "Critical Care (Ground)"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (3741 runs in this county); tier left alone."
+  },
+  "18023": {
+   "county": "Clinton",
+   "tier": "held",
+   "runs_2022": 4635,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "Clinton County EMS (Frankfort)",
+     "runs": 4215,
+     "share": 0.909,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (4635 runs in this county); tier left alone."
+  },
+  "18025": {
+   "county": "Crawford",
+   "tier": "held",
+   "runs_2022": 1056,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "Crawford County Ambulance Service",
+     "runs": 987,
+     "share": 0.935,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (1056 runs in this county); tier left alone."
+  },
+  "18027": {
+   "county": "Daviess",
+   "tier": "held",
+   "runs_2022": 4316,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "Daviess County EMS",
+     "runs": 4206,
+     "share": 0.975,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (4316 runs in this county); tier left alone."
+  },
+  "18029": {
+   "county": "Dearborn",
+   "tier": "held",
+   "runs_2022": 6331,
+   "agencies_listed": 5,
+   "top_agencies": [
+    {
+     "name": "Lawrenceburg Emergency Rescue Unit",
+     "runs": 2086,
+     "share": 0.329,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Aurora Emergency Rescue",
+     "runs": 1644,
+     "share": 0.26,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Bright VFD",
+     "runs": 720,
+     "share": 0.114,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Greendale Emergency Medical Service",
+     "runs": 487,
+     "share": 0.077,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Harrison FD",
+     "runs": 433,
+     "share": 0.068,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (6331 runs in this county); tier left alone."
+  },
+  "18031": {
+   "county": "Decatur",
+   "tier": "held",
+   "runs_2022": 2599,
+   "agencies_listed": 2,
+   "top_agencies": [
+    {
+     "name": "Decatur County EMS",
+     "runs": 2218,
+     "share": 0.853,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Letts Community VFD",
+     "runs": 204,
+     "share": 0.078,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (2599 runs in this county); tier left alone."
+  },
+  "18033": {
+   "county": "Dekalb",
+   "tier": "held",
+   "runs_2022": 6496,
+   "agencies_listed": 2,
+   "top_agencies": [
+    {
+     "name": "Parkview DeKalb Hospital",
+     "runs": 5987,
+     "share": 0.922,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Parkview Noble Hospital",
+     "runs": 360,
+     "share": 0.055,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (6496 runs in this county); tier left alone."
+  },
+  "18035": {
+   "county": "Delaware",
+   "tier": "held",
+   "runs_2022": 22985,
+   "agencies_listed": 3,
+   "top_agencies": [
+    {
+     "name": "Muncie FD",
+     "runs": 14094,
+     "share": 0.613,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Delaware County / Muncie EMS",
+     "runs": 3820,
+     "share": 0.166,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Eaton EMTs Inc.",
+     "runs": 3769,
+     "share": 0.164,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (22985 runs in this county); tier left alone."
+  },
+  "18037": {
+   "county": "Dubois",
+   "tier": "held",
+   "runs_2022": 7782,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "Memorial Hospital Ambulance Service",
+     "runs": 7677,
+     "share": 0.987,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (7782 runs in this county); tier left alone."
+  },
+  "18039": {
+   "county": "Elkhart",
+   "tier": "held",
+   "runs_2022": 19509,
+   "agencies_listed": 5,
+   "top_agencies": [
+    {
+     "name": "Elkhart FD",
+     "runs": 6512,
+     "share": 0.334,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Goshen FD",
+     "runs": 4396,
+     "share": 0.225,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Concord Township FD (Elkhart)",
+     "runs": 1283,
+     "share": 0.066,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Tri-County Ambulance Service Inc (Wakarusa)",
+     "runs": 1265,
+     "share": 0.065,
+     "type": "Critical Care (Ground)"
+    },
+    {
+     "name": "Osolo Emergency Medical",
+     "runs": 1084,
+     "share": 0.056,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (19509 runs in this county); tier left alone."
+  },
+  "18041": {
+   "county": "Fayette",
+   "tier": "held",
+   "runs_2022": 6638,
+   "agencies_listed": 3,
+   "top_agencies": [
+    {
+     "name": "Fayette County EMS",
+     "runs": 2454,
+     "share": 0.37,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Reid Hospital and Health Care Services INC.",
+     "runs": 2164,
+     "share": 0.326,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Dublin VFD",
+     "runs": 1747,
+     "share": 0.263,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (6638 runs in this county); tier left alone."
+  },
+  "18043": {
+   "county": "Floyd",
+   "tier": "held",
+   "runs_2022": 12259,
+   "agencies_listed": 2,
+   "top_agencies": [
+    {
+     "name": "Mercury Ambulance Service, INC d/b/a American Medical Response",
+     "runs": 7292,
+     "share": 0.595,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Utica FD / New Chapel EMS",
+     "runs": 4879,
+     "share": 0.398,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (12259 runs in this county); tier left alone."
+  },
+  "18045": {
+   "county": "Fountain",
+   "tier": "held",
+   "runs_2022": 1869,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "Fountain County Ambulance Service",
+     "runs": 1666,
+     "share": 0.891,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (1869 runs in this county); tier left alone."
+  },
+  "18047": {
+   "county": "Franklin",
+   "tier": "held",
+   "runs_2022": 3388,
+   "agencies_listed": 2,
+   "top_agencies": [
+    {
+     "name": "Franklin County EMS",
+     "runs": 2868,
+     "share": 0.847,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Batesville Volunteer Fire & Rescue Department - EMS 10",
+     "runs": 298,
+     "share": 0.088,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (3388 runs in this county); tier left alone."
+  },
+  "18049": {
+   "county": "Fulton",
+   "tier": "held",
+   "runs_2022": 2996,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "Kosciusko Ambulance Services, LLC",
+     "runs": 2915,
+     "share": 0.973,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (2996 runs in this county); tier left alone."
+  },
+  "18051": {
+   "county": "Gibson",
+   "tier": "held",
+   "runs_2022": 4900,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "Gibson County EMS",
+     "runs": 4721,
+     "share": 0.963,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (4900 runs in this county); tier left alone."
+  },
+  "18053": {
+   "county": "Grant",
+   "tier": "held",
+   "runs_2022": 10992,
+   "agencies_listed": 2,
+   "top_agencies": [
+    {
+     "name": "Marion General Hospital Ambulance Service",
+     "runs": 6765,
+     "share": 0.615,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Grant County EMS",
+     "runs": 3681,
+     "share": 0.335,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (10992 runs in this county); tier left alone."
+  },
+  "18055": {
+   "county": "Greene",
+   "tier": "held",
+   "runs_2022": 4556,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "Greene County Ambulance Service",
+     "runs": 4460,
+     "share": 0.979,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (4556 runs in this county); tier left alone."
+  },
+  "18057": {
+   "county": "Hamilton",
+   "tier": "held",
+   "runs_2022": 26132,
+   "agencies_listed": 4,
+   "top_agencies": [
+    {
+     "name": "Noblesville FD",
+     "runs": 6511,
+     "share": 0.249,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Carmel FD",
+     "runs": 5797,
+     "share": 0.222,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Fishers Fire & Emergency Services",
+     "runs": 5609,
+     "share": 0.215,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Westfield FD",
+     "runs": 3166,
+     "share": 0.121,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (26132 runs in this county); tier left alone."
+  },
+  "18059": {
+   "county": "Hancock",
+   "tier": "held",
+   "runs_2022": 7852,
+   "agencies_listed": 4,
+   "top_agencies": [
+    {
+     "name": "Greenfield FD",
+     "runs": 3392,
+     "share": 0.432,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Sugar Creek Township FD",
+     "runs": 1511,
+     "share": 0.192,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Vernon Township Fire Department",
+     "runs": 1326,
+     "share": 0.169,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Buck Creek Township VFD",
+     "runs": 992,
+     "share": 0.126,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (7852 runs in this county); tier left alone."
+  },
+  "18061": {
+   "county": "Harrison",
+   "tier": "held",
+   "runs_2022": 6739,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "Harrison County Hospital EMS",
+     "runs": 6534,
+     "share": 0.97,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (6739 runs in this county); tier left alone."
+  },
+  "18063": {
+   "county": "Hendricks",
+   "tier": "held",
+   "runs_2022": 20299,
+   "agencies_listed": 5,
+   "top_agencies": [
+    {
+     "name": "Town of Plainfield / Plainfield FD",
+     "runs": 5024,
+     "share": 0.247,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Statewide Transfer Ambulance & Rescue, Inc",
+     "runs": 4427,
+     "share": 0.218,
+     "type": "Critical Care (Ground)"
+    },
+    {
+     "name": "Washington Township / Avon FD",
+     "runs": 3775,
+     "share": 0.186,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Brownsburg Fire Territory",
+     "runs": 2754,
+     "share": 0.136,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Danville FD / Center Township Trustee",
+     "runs": 1158,
+     "share": 0.057,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (20299 runs in this county); tier left alone."
+  },
+  "18065": {
+   "county": "Henry",
+   "tier": "held",
+   "runs_2022": 10179,
+   "agencies_listed": 2,
+   "top_agencies": [
+    {
+     "name": "New Castle/Henry County EMS",
+     "runs": 7939,
+     "share": 0.78,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Henry County EMS",
+     "runs": 1491,
+     "share": 0.146,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (10179 runs in this county); tier left alone."
+  },
+  "18067": {
+   "county": "Howard",
+   "tier": "held",
+   "runs_2022": 17232,
+   "agencies_listed": 2,
+   "top_agencies": [
+    {
+     "name": "St. Vincent Kokomo",
+     "runs": 8600,
+     "share": 0.499,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Howard Community Ambulance Services, LLC",
+     "runs": 7591,
+     "share": 0.441,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (17232 runs in this county); tier left alone."
+  },
+  "18069": {
+   "county": "Huntington",
+   "tier": "held",
+   "runs_2022": 8182,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "Parkview Huntington Hospital / EMS",
+     "runs": 7939,
+     "share": 0.97,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (8182 runs in this county); tier left alone."
+  },
+  "18071": {
+   "county": "Jackson",
+   "tier": "held",
+   "runs_2022": 6881,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "Jackson Co Ambulance Service",
+     "runs": 6762,
+     "share": 0.983,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (6881 runs in this county); tier left alone."
+  },
+  "18073": {
+   "county": "Jasper",
+   "tier": "held",
+   "runs_2022": 3192,
+   "agencies_listed": 4,
+   "top_agencies": [
+    {
+     "name": "Keener Township EMS",
+     "runs": 1227,
+     "share": 0.384,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Wheatfield Ambulance",
+     "runs": 782,
+     "share": 0.245,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Phoenix Paramedic Solutions LLC",
+     "runs": 655,
+     "share": 0.205,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Southern Jasper County Ambulance Serv.",
+     "runs": 202,
+     "share": 0.063,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (3192 runs in this county); tier left alone."
+  },
+  "18075": {
+   "county": "Jay",
+   "tier": "held",
+   "runs_2022": 2886,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "Jay County EMS",
+     "runs": 2817,
+     "share": 0.976,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (2886 runs in this county); tier left alone."
+  },
+  "18077": {
+   "county": "Jefferson",
+   "tier": "held",
+   "runs_2022": 6759,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "King's Daughters' Health EMS",
+     "runs": 6527,
+     "share": 0.966,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (6759 runs in this county); tier left alone."
+  },
+  "18079": {
+   "county": "Jennings",
+   "tier": "held",
+   "runs_2022": 2939,
+   "agencies_listed": 2,
+   "top_agencies": [
+    {
+     "name": "Jennings County EMS",
+     "runs": 2553,
+     "share": 0.869,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Letts Community VFD",
+     "runs": 186,
+     "share": 0.063,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (2939 runs in this county); tier left alone."
+  },
+  "18081": {
+   "county": "Johnson",
+   "tier": "held",
+   "runs_2022": 11704,
+   "agencies_listed": 5,
+   "top_agencies": [
+    {
+     "name": "White River Township FD (Greenwood)",
+     "runs": 2862,
+     "share": 0.245,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Franklin FD",
+     "runs": 2326,
+     "share": 0.199,
+     "type": "911 Response (Scene) without Transport Capability"
+    },
+    {
+     "name": "Greenwood FD",
+     "runs": 2177,
+     "share": 0.186,
+     "type": "911 Response (Scene) without Transport Capability"
+    },
+    {
+     "name": "Bargersville Community FD",
+     "runs": 1858,
+     "share": 0.159,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Trans-Care, Inc",
+     "runs": 725,
+     "share": 0.062,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (11704 runs in this county); tier left alone."
+  },
+  "18083": {
+   "county": "Knox",
+   "tier": "held",
+   "runs_2022": 5429,
+   "agencies_listed": 2,
+   "top_agencies": [
+    {
+     "name": "Good Samaritan",
+     "runs": 2724,
+     "share": 0.502,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Knox County EMS",
+     "runs": 2308,
+     "share": 0.425,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (5429 runs in this county); tier left alone."
+  },
+  "18085": {
+   "county": "Kosciusko",
+   "tier": "held",
+   "runs_2022": 12192,
+   "agencies_listed": 4,
+   "top_agencies": [
+    {
+     "name": "Kosciusko Ambulance Services, LLC",
+     "runs": 7652,
+     "share": 0.628,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Parkview Huntington Hospital / EMS",
+     "runs": 1031,
+     "share": 0.085,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Turkey Creek Fire Territory",
+     "runs": 1023,
+     "share": 0.084,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Parkview - Whitley County EMS",
+     "runs": 1000,
+     "share": 0.082,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (12192 runs in this county); tier left alone."
+  },
+  "18087": {
+   "county": "Lagrange",
+   "tier": "held",
+   "runs_2022": 4311,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "Parkview Noble Hospital",
+     "runs": 4217,
+     "share": 0.978,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (4311 runs in this county); tier left alone."
+  },
+  "18089": {
+   "county": "Lake",
+   "tier": "held",
+   "runs_2022": 44718,
+   "agencies_listed": 6,
+   "top_agencies": [
+    {
+     "name": "City of Gary FD",
+     "runs": 17299,
+     "share": 0.387,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Hammond Fire Department",
+     "runs": 7182,
+     "share": 0.161,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Northwest Ambulance Service",
+     "runs": 4395,
+     "share": 0.098,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Crown Point Fire & Rescue Department",
+     "runs": 3521,
+     "share": 0.079,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Hobart Fire Department",
+     "runs": 3414,
+     "share": 0.076,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (44718 runs in this county); tier left alone."
+  },
+  "18091": {
+   "county": "Laporte",
+   "tier": "held",
+   "runs_2022": 11825,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "LaPorte County EMS",
+     "runs": 11332,
+     "share": 0.958,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (11825 runs in this county); tier left alone."
+  },
+  "18093": {
+   "county": "Lawrence",
+   "tier": "held",
+   "runs_2022": 119,
+   "agencies_listed": 0,
+   "top_agencies": [],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (119 runs in this county); tier left alone."
+  },
+  "18095": {
+   "county": "Madison",
+   "tier": "held",
+   "runs_2022": 20909,
+   "agencies_listed": 7,
+   "top_agencies": [
+    {
+     "name": "Anderson Fire Department",
+     "runs": 8594,
+     "share": 0.411,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Physicians Ambulance Service",
+     "runs": 2342,
+     "share": 0.112,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "South Madison Fire Territory",
+     "runs": 1829,
+     "share": 0.087,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "East Madison Fire Territory",
+     "runs": 1745,
+     "share": 0.083,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Elwood FD",
+     "runs": 1598,
+     "share": 0.076,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (20909 runs in this county); tier left alone."
+  },
+  "18097": {
+   "county": "Marion",
+   "tier": "held",
+   "runs_2022": 302249,
+   "agencies_listed": 2,
+   "top_agencies": [
+    {
+     "name": "Indianapolis Emergency Medical Services",
+     "runs": 155276,
+     "share": 0.514,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Indianapolis FD",
+     "runs": 83774,
+     "share": 0.277,
+     "type": "911 Response (Scene) without Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (302249 runs in this county); tier left alone."
+  },
+  "18099": {
+   "county": "Marshall",
+   "tier": "held",
+   "runs_2022": 3971,
+   "agencies_listed": 6,
+   "top_agencies": [
+    {
+     "name": "Plymouth Community Ambulance Service",
+     "runs": 2265,
+     "share": 0.57,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Union North Ambulance Service",
+     "runs": 443,
+     "share": 0.112,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Argos Community Ambulance Service",
+     "runs": 285,
+     "share": 0.072,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Kosciusko Ambulance Services, LLC",
+     "runs": 274,
+     "share": 0.069,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Tri-County Ambulance Service Inc (Wakarusa)",
+     "runs": 267,
+     "share": 0.067,
+     "type": "Critical Care (Ground)"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (3971 runs in this county); tier left alone."
+  },
+  "18101": {
+   "county": "Martin",
+   "tier": "held",
+   "runs_2022": 924,
+   "agencies_listed": 3,
+   "top_agencies": [
+    {
+     "name": "Knox County EMS",
+     "runs": 495,
+     "share": 0.536,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Martin County Ambulance Service",
+     "runs": 342,
+     "share": 0.37,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Daviess County EMS",
+     "runs": 58,
+     "share": 0.063,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (924 runs in this county); tier left alone."
+  },
+  "18103": {
+   "county": "Miami",
+   "tier": "held",
+   "runs_2022": 4467,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "Dukes Memorial Hospital EMS/DBA/Miami County EMS",
+     "runs": 4244,
+     "share": 0.95,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (4467 runs in this county); tier left alone."
+  },
+  "18105": {
+   "county": "Monroe",
+   "tier": "held",
+   "runs_2022": 507,
+   "agencies_listed": 4,
+   "top_agencies": [
+    {
+     "name": "Letts Community VFD",
+     "runs": 123,
+     "share": 0.243,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Owen County EMS",
+     "runs": 97,
+     "share": 0.191,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Amerimed EMS LLC.",
+     "runs": 87,
+     "share": 0.172,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Trans-Care, Inc",
+     "runs": 85,
+     "share": 0.168,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (507 runs in this county); tier left alone."
+  },
+  "18107": {
+   "county": "Montgomery",
+   "tier": "held",
+   "runs_2022": 7337,
+   "agencies_listed": 2,
+   "top_agencies": [
+    {
+     "name": "Crawfordsville Emergency Ambulance/ Crawfordsville FD",
+     "runs": 3759,
+     "share": 0.512,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Statewide Transfer Ambulance & Rescue, Inc",
+     "runs": 3256,
+     "share": 0.444,
+     "type": "Critical Care (Ground)"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (7337 runs in this county); tier left alone."
+  },
+  "18109": {
+   "county": "Morgan",
+   "tier": "held",
+   "runs_2022": 10472,
+   "agencies_listed": 4,
+   "top_agencies": [
+    {
+     "name": "Morgan County EMS",
+     "runs": 4678,
+     "share": 0.447,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Brown Township Fire & Rescue",
+     "runs": 2397,
+     "share": 0.229,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Trans-Care, Inc",
+     "runs": 2081,
+     "share": 0.199,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Madison Township Fire Department",
+     "runs": 728,
+     "share": 0.07,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (10472 runs in this county); tier left alone."
+  },
+  "18111": {
+   "county": "Newton",
+   "tier": "held",
+   "runs_2022": 1926,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "Newton County Emergency Medical Services",
+     "runs": 1836,
+     "share": 0.953,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (1926 runs in this county); tier left alone."
+  },
+  "18113": {
+   "county": "Noble",
+   "tier": "held",
+   "runs_2022": 8540,
+   "agencies_listed": 2,
+   "top_agencies": [
+    {
+     "name": "Parkview Noble Hospital",
+     "runs": 7764,
+     "share": 0.909,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Parkview - Whitley County EMS",
+     "runs": 458,
+     "share": 0.054,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (8540 runs in this county); tier left alone."
+  },
+  "18115": {
+   "county": "Ohio",
+   "tier": "held",
+   "runs_2022": 885,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "Ohio County Rescue",
+     "runs": 789,
+     "share": 0.892,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (885 runs in this county); tier left alone."
+  },
+  "18117": {
+   "county": "Orange",
+   "tier": "held",
+   "runs_2022": 76,
+   "agencies_listed": 0,
+   "top_agencies": [],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (76 runs in this county); tier left alone."
+  },
+  "18119": {
+   "county": "Owen",
+   "tier": "held",
+   "runs_2022": 2974,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "Owen County EMS",
+     "runs": 2924,
+     "share": 0.983,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (2974 runs in this county); tier left alone."
+  },
+  "18121": {
+   "county": "Parke",
+   "tier": "held",
+   "runs_2022": 1328,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "Parke County EMS & Transportation Service",
+     "runs": 1251,
+     "share": 0.942,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (1328 runs in this county); tier left alone."
+  },
+  "18123": {
+   "county": "Perry",
+   "tier": "held",
+   "runs_2022": 2424,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "Perry County Memorial Hospital",
+     "runs": 2319,
+     "share": 0.957,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (2424 runs in this county); tier left alone."
+  },
+  "18125": {
+   "county": "Pike",
+   "tier": "held",
+   "runs_2022": 1687,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "Pike County EMS",
+     "runs": 1608,
+     "share": 0.953,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (1687 runs in this county); tier left alone."
+  },
+  "18127": {
+   "county": "Porter",
+   "tier": "held",
+   "runs_2022": 18704,
+   "agencies_listed": 4,
+   "top_agencies": [
+    {
+     "name": "Porter Memorial Hospital EMS",
+     "runs": 10682,
+     "share": 0.571,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Valparaiso Fire Department",
+     "runs": 3957,
+     "share": 0.212,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Portage Fire Department",
+     "runs": 2137,
+     "share": 0.114,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "South Haven Fire Department",
+     "runs": 1083,
+     "share": 0.058,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (18704 runs in this county); tier left alone."
+  },
+  "18129": {
+   "county": "Posey",
+   "tier": "held",
+   "runs_2022": 2740,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "Posey County EMS",
+     "runs": 2696,
+     "share": 0.984,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (2740 runs in this county); tier left alone."
+  },
+  "18131": {
+   "county": "Pulaski",
+   "tier": "held",
+   "runs_2022": 1583,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "Pulaski County EMS",
+     "runs": 1537,
+     "share": 0.971,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (1583 runs in this county); tier left alone."
+  },
+  "18133": {
+   "county": "Putnam",
+   "tier": "held",
+   "runs_2022": 4714,
+   "agencies_listed": 2,
+   "top_agencies": [
+    {
+     "name": "Putnam County Emergency Medical Services",
+     "runs": 3573,
+     "share": 0.758,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Statewide Transfer Ambulance & Rescue, Inc",
+     "runs": 1079,
+     "share": 0.229,
+     "type": "Critical Care (Ground)"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (4714 runs in this county); tier left alone."
+  },
+  "18135": {
+   "county": "Randolph",
+   "tier": "held",
+   "runs_2022": 3263,
+   "agencies_listed": 3,
+   "top_agencies": [
+    {
+     "name": "Randolph County EMS",
+     "runs": 1426,
+     "share": 0.437,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Winchester FD",
+     "runs": 951,
+     "share": 0.291,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Union City FD (Indiana)",
+     "runs": 494,
+     "share": 0.151,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (3263 runs in this county); tier left alone."
+  },
+  "18137": {
+   "county": "Ripley",
+   "tier": "held",
+   "runs_2022": 5301,
+   "agencies_listed": 5,
+   "top_agencies": [
+    {
+     "name": "Ripley County EMS",
+     "runs": 2158,
+     "share": 0.407,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Letts Community VFD",
+     "runs": 1306,
+     "share": 0.246,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Batesville Volunteer Fire & Rescue Department - EMS 10",
+     "runs": 970,
+     "share": 0.183,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Switzerland County EMS, Inc",
+     "runs": 557,
+     "share": 0.105,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Sunman Area Life Squad Inc",
+     "runs": 266,
+     "share": 0.05,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (5301 runs in this county); tier left alone."
+  },
+  "18139": {
+   "county": "Rush",
+   "tier": "held",
+   "runs_2022": 2137,
+   "agencies_listed": 4,
+   "top_agencies": [
+    {
+     "name": "City of Rushville FD",
+     "runs": 1374,
+     "share": 0.643,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Rush Memorial Hospital",
+     "runs": 273,
+     "share": 0.128,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Raleigh FD",
+     "runs": 205,
+     "share": 0.096,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Anderson TWP VFD (Milroy)",
+     "runs": 143,
+     "share": 0.067,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (2137 runs in this county); tier left alone."
+  },
+  "18143": {
+   "county": "Scott",
+   "tier": "held",
+   "runs_2022": 4316,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "Scott County EMS",
+     "runs": 4197,
+     "share": 0.972,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (4316 runs in this county); tier left alone."
+  },
+  "18145": {
+   "county": "Shelby",
+   "tier": "held",
+   "runs_2022": 6583,
+   "agencies_listed": 2,
+   "top_agencies": [
+    {
+     "name": "Shelbyville FD",
+     "runs": 4227,
+     "share": 0.642,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Trans-Care, Inc",
+     "runs": 1864,
+     "share": 0.283,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (6583 runs in this county); tier left alone."
+  },
+  "18147": {
+   "county": "Spencer",
+   "tier": "held",
+   "runs_2022": 3609,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "Spencer County Emergency Ambulance Service, Inc",
+     "runs": 3444,
+     "share": 0.954,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (3609 runs in this county); tier left alone."
+  },
+  "18149": {
+   "county": "Starke",
+   "tier": "held",
+   "runs_2022": 919,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "Starke County Ambulance Service",
+     "runs": 862,
+     "share": 0.938,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (919 runs in this county); tier left alone."
+  },
+  "18151": {
+   "county": "Steuben",
+   "tier": "held",
+   "runs_2022": 3630,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "Steuben County EMS",
+     "runs": 3556,
+     "share": 0.98,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (3630 runs in this county); tier left alone."
+  },
+  "18153": {
+   "county": "Sullivan",
+   "tier": "held",
+   "runs_2022": 2238,
+   "agencies_listed": 3,
+   "top_agencies": [
+    {
+     "name": "Sullivan County Ambulance Service",
+     "runs": 1302,
+     "share": 0.582,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Sullivan FD",
+     "runs": 495,
+     "share": 0.221,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Carlisle Lions Community Ambulance Service",
+     "runs": 368,
+     "share": 0.164,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (2238 runs in this county); tier left alone."
+  },
+  "18155": {
+   "county": "Switzerland",
+   "tier": "held",
+   "runs_2022": 1052,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "Switzerland County Emergency Response",
+     "runs": 1008,
+     "share": 0.958,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (1052 runs in this county); tier left alone."
+  },
+  "18157": {
+   "county": "Tippecanoe",
+   "tier": "held",
+   "runs_2022": 30099,
+   "agencies_listed": 5,
+   "top_agencies": [
+    {
+     "name": "Tippecanoe Emergency Ambulance",
+     "runs": 19020,
+     "share": 0.632,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Spirit EMS LLC",
+     "runs": 3854,
+     "share": 0.128,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Trans-Care, Inc",
+     "runs": 3340,
+     "share": 0.111,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Statewide Transfer Ambulance & Rescue, Inc",
+     "runs": 1564,
+     "share": 0.052,
+     "type": "Critical Care (Ground)"
+    },
+    {
+     "name": "Purdue University FD",
+     "runs": 1519,
+     "share": 0.05,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (30099 runs in this county); tier left alone."
+  },
+  "18159": {
+   "county": "Tipton",
+   "tier": "held",
+   "runs_2022": 641,
+   "agencies_listed": 5,
+   "top_agencies": [
+    {
+     "name": "Tipton FD",
+     "runs": 144,
+     "share": 0.225,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Cicero Township FD (Tipton)",
+     "runs": 126,
+     "share": 0.197,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "St. Vincent Kokomo",
+     "runs": 99,
+     "share": 0.154,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Sharpsville FD/ EMS",
+     "runs": 78,
+     "share": 0.122,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Howard Community Ambulance Services, LLC",
+     "runs": 74,
+     "share": 0.115,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (641 runs in this county); tier left alone."
+  },
+  "18161": {
+   "county": "Union",
+   "tier": "held",
+   "runs_2022": 716,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "Reid Hospital and Health Care Services INC.",
+     "runs": 685,
+     "share": 0.957,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (716 runs in this county); tier left alone."
+  },
+  "18163": {
+   "county": "Vanderburgh",
+   "tier": "held",
+   "runs_2022": 29389,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "American Medical Response of Evansville",
+     "runs": 27547,
+     "share": 0.937,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (29389 runs in this county); tier left alone."
+  },
+  "18165": {
+   "county": "Vermillion",
+   "tier": "held",
+   "runs_2022": 2129,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "Illiana EMS",
+     "runs": 1894,
+     "share": 0.89,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (2129 runs in this county); tier left alone."
+  },
+  "18167": {
+   "county": "Vigo",
+   "tier": "held",
+   "runs_2022": 19723,
+   "agencies_listed": 2,
+   "top_agencies": [
+    {
+     "name": "Trans-Care, Inc",
+     "runs": 11078,
+     "share": 0.562,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Terre Haute FD",
+     "runs": 8200,
+     "share": 0.416,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (19723 runs in this county); tier left alone."
+  },
+  "18169": {
+   "county": "Wabash",
+   "tier": "held",
+   "runs_2022": 6608,
+   "agencies_listed": 2,
+   "top_agencies": [
+    {
+     "name": "Parkview Huntington Hospital / EMS",
+     "runs": 3506,
+     "share": 0.531,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Wabash FD",
+     "runs": 2921,
+     "share": 0.442,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (6608 runs in this county); tier left alone."
+  },
+  "18171": {
+   "county": "Warren",
+   "tier": "held",
+   "runs_2022": 1428,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "Warren County EMS (Williamsport)",
+     "runs": 1310,
+     "share": 0.917,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (1428 runs in this county); tier left alone."
+  },
+  "18173": {
+   "county": "Warrick",
+   "tier": "held",
+   "runs_2022": 8598,
+   "agencies_listed": 2,
+   "top_agencies": [
+    {
+     "name": "St Marys Warrick EMS",
+     "runs": 6422,
+     "share": 0.747,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "American Medical Response of Evansville",
+     "runs": 1920,
+     "share": 0.223,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (8598 runs in this county); tier left alone."
+  },
+  "18175": {
+   "county": "Washington",
+   "tier": "held",
+   "runs_2022": 2560,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "Washington County Ambulance Service",
+     "runs": 2518,
+     "share": 0.984,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (2560 runs in this county); tier left alone."
+  },
+  "18177": {
+   "county": "Wayne",
+   "tier": "held",
+   "runs_2022": 14356,
+   "agencies_listed": 4,
+   "top_agencies": [
+    {
+     "name": "Richmond FD",
+     "runs": 7267,
+     "share": 0.506,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Reid Hospital and Health Care Services INC.",
+     "runs": 4105,
+     "share": 0.286,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Red Line Emergency Medical Services",
+     "runs": 1453,
+     "share": 0.101,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Spirit Medical Transport LLC",
+     "runs": 854,
+     "share": 0.059,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (14356 runs in this county); tier left alone."
+  },
+  "18179": {
+   "county": "Wells",
+   "tier": "held",
+   "runs_2022": 3050,
+   "agencies_listed": 1,
+   "top_agencies": [
+    {
+     "name": "Wells County EMS, Inc",
+     "runs": 2971,
+     "share": 0.974,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (3050 runs in this county); tier left alone."
+  },
+  "18181": {
+   "county": "White",
+   "tier": "held",
+   "runs_2022": 2570,
+   "agencies_listed": 3,
+   "top_agencies": [
+    {
+     "name": "Monticello FD",
+     "runs": 1975,
+     "share": 0.768,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Monon First Response",
+     "runs": 146,
+     "share": 0.057,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Statewide Transfer Ambulance & Rescue, Inc",
+     "runs": 138,
+     "share": 0.054,
+     "type": "Critical Care (Ground)"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (2570 runs in this county); tier left alone."
+  },
+  "18183": {
+   "county": "Whitley",
+   "tier": "held",
+   "runs_2022": 5990,
+   "agencies_listed": 2,
+   "top_agencies": [
+    {
+     "name": "Parkview - Whitley County EMS",
+     "runs": 5439,
+     "share": 0.908,
+     "type": "911 Response (Scene) with Transport Capability"
+    },
+    {
+     "name": "Parkview Huntington Hospital / EMS",
+     "runs": 369,
+     "share": 0.062,
+     "type": "911 Response (Scene) with Transport Capability"
+    }
+   ],
+   "page_note": "From the state EMS run records (2022, geocoded incident location, county as recorded): shows which agencies ran 911 scene calls here, not a service area. 2022 data (over 3 years) and only agencies that report to the state system appear (5990 runs in this county); tier left alone."
+  }
+ }
+}

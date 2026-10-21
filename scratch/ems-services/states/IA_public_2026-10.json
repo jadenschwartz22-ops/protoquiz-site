@@ -1,0 +1,109 @@
+{
+ "meta": {
+  "state": "IA",
+  "source": "Linn County, Iowa E911 EMS Emergency Service Area (public) ArcGIS layer (owner lc.ago.user); a county NG911 layer, not a state record",
+  "retrieved": "2026-10-21",
+  "scope": "Linn County only; no statewide source found",
+  "tier_counts": {
+   "A": 1
+  }
+ },
+ "rows": [
+  {
+   "name": "Area Ambulance",
+   "state_label": "AREA AMBULANCE",
+   "polygons": 51,
+   "county": "Linn",
+   "transport": true,
+   "transport_basis": "layer is the county \"E911 EMS Emergency Service Area\" with ambulance service names (display names end in AMBULANCE)",
+   "source_url": "https://services.arcgis.com/i14SLLmXo7Hn9vNc/arcgis/rest/services/E911_EMS_Emergency_Service_Area_(public)/FeatureServer/0",
+   "vintage_layer_edit": "2025-11-20"
+  },
+  {
+   "name": "Center Point Ambulance",
+   "state_label": "CENTER POINT AMBULANCE",
+   "polygons": 1,
+   "county": "Linn",
+   "transport": true,
+   "transport_basis": "layer is the county \"E911 EMS Emergency Service Area\" with ambulance service names (display names end in AMBULANCE)",
+   "source_url": "https://services.arcgis.com/i14SLLmXo7Hn9vNc/arcgis/rest/services/E911_EMS_Emergency_Service_Area_(public)/FeatureServer/0",
+   "vintage_layer_edit": "2025-11-20"
+  },
+  {
+   "name": "Anamosa Ambulance",
+   "state_label": "ANAMOSA AMBULANCE",
+   "polygons": 2,
+   "county": "Linn",
+   "transport": true,
+   "transport_basis": "layer is the county \"E911 EMS Emergency Service Area\" with ambulance service names (display names end in AMBULANCE)",
+   "source_url": "https://services.arcgis.com/i14SLLmXo7Hn9vNc/arcgis/rest/services/E911_EMS_Emergency_Service_Area_(public)/FeatureServer/0",
+   "vintage_layer_edit": "2025-11-20"
+  },
+  {
+   "name": "Lisbon-Mount Vernon Ambulance",
+   "state_label": "LISBON-MOUNT VERNON AMBULANCE",
+   "polygons": 1,
+   "county": "Linn",
+   "transport": true,
+   "transport_basis": "layer is the county \"E911 EMS Emergency Service Area\" with ambulance service names (display names end in AMBULANCE)",
+   "source_url": "https://services.arcgis.com/i14SLLmXo7Hn9vNc/arcgis/rest/services/E911_EMS_Emergency_Service_Area_(public)/FeatureServer/0",
+   "vintage_layer_edit": "2025-11-20"
+  },
+  {
+   "name": "Hiawatha Ambulance",
+   "state_label": "HIAWATHA AMBULANCE",
+   "polygons": 6,
+   "county": "Linn",
+   "transport": true,
+   "transport_basis": "layer is the county \"E911 EMS Emergency Service Area\" with ambulance service names (display names end in AMBULANCE)",
+   "source_url": "https://services.arcgis.com/i14SLLmXo7Hn9vNc/arcgis/rest/services/E911_EMS_Emergency_Service_Area_(public)/FeatureServer/0",
+   "vintage_layer_edit": "2025-11-20"
+  },
+  {
+   "name": "Monticello Ambulance",
+   "state_label": "MONTICELLO AMBULANCE",
+   "polygons": 1,
+   "county": "Linn",
+   "transport": true,
+   "transport_basis": "layer is the county \"E911 EMS Emergency Service Area\" with ambulance service names (display names end in AMBULANCE)",
+   "source_url": "https://services.arcgis.com/i14SLLmXo7Hn9vNc/arcgis/rest/services/E911_EMS_Emergency_Service_Area_(public)/FeatureServer/0",
+   "vintage_layer_edit": "2025-11-20"
+  }
+ ],
+ "county_verdict": {
+  "19113": {
+   "county": "Linn County",
+   "pop": 231762,
+   "tier": "A",
+   "ems_coverage": 0.9962,
+   "overlap_share": 0.0345,
+   "services": [
+    {
+     "name": "Anamosa Ambulance",
+     "share": 0.1295
+    },
+    {
+     "name": "Area Ambulance",
+     "share": 0.3516
+    },
+    {
+     "name": "Center Point Ambulance",
+     "share": 0.3246
+    },
+    {
+     "name": "Hiawatha Ambulance",
+     "share": 0.0827
+    },
+    {
+     "name": "Lisbon-Mount Vernon Ambulance",
+     "share": 0.1266
+    },
+    {
+     "name": "Monticello Ambulance",
+     "share": 0.016
+    }
+   ],
+   "basis": "Linn County E911 EMS emergency service zones (62 polygons, maintained by Cedar Rapids / Linn County 911) tile the county; six named ambulance services, all named, none picked"
+  }
+ }
+}

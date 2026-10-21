@@ -1,0 +1,2025 @@
+{
+ "meta": {
+  "retrieved": "2026-10-21",
+  "layer": "UGRC Utah EMS Response Areas (EMSResponseAreas FeatureServer/0)",
+  "hub": "https://opendata.gis.utah.gov/datasets/utah-ems-response-areas",
+  "layer_description_date": "2026-06-29",
+  "polygons": 123,
+  "min_share_listed": 0.01,
+  "a_threshold": 0.95,
+  "label": "from the state NG911 EMS response-area layer (UGRC), compiled from Bureau of EMS licence descriptions plus dispatch data; not a licence record",
+  "note": "Polygons include non-transport first responders and some SAR/industrial units; licence_class is a fuzzy name match to UT_imagetrend.json (null = unmatched, transport unknown). Area share is not population."
+ },
+ "rows": [
+  {
+   "name": "American Fork City",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "American Fork City - Primary license #2540L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Beaver Ambulance Service",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Beaver Ambulance Service - Primary license #0101L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Box Elder County Ambulance",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Box Elder County Ambulance - Primary license #0225L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Brigham City Ambulance",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Ephraim Ambulance Association - Primary license #2007L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Carbon County Amulance",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-08-28",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Carbon County Ambulance - Primary license #0402L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "East Carbon City Sunnyside Ambulance",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "East Carbon City Sunnyside Ambulance #0401L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Cedar Mountain Fire Protection District",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Wasatch County Fire Protection Special Service District- Primary license #2601L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Clarkston Fire and Rescue Department",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Roy City Fire And Rescue Department - Primary license #2940L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Ute Tribe Ambulance Service",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Ute Tribe Ambulance Service - Primary license #2403L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Clinton City Fire Department",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Clinton City Fire Department - Primary license #0612L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Snowville Fire & EMS",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": null,
+   "licence_match": null,
+   "transport": null,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Daggett County Ambulance - Dutch John",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": null,
+   "licence_match": null,
+   "transport": null,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "South Davis Metro Fire Agency",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "South Davis Metro Fire Agency - Primary license #0635L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Garfield County Ambulance",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Garfield County Ambulance - Primary license #0901L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Deseret Generation and Transmission",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - BLS",
+   "licence_match": "Deseret Generation & Transmission - Primary license #2402L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Unified Fire Authority",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Unified Fire Authority - Primary license #1867L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Emery Emergency Medical Special Service District",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "QRU - BLS non transport",
+   "licence_match": "Nibley Emergency Medical Services - Primary license #0320D",
+   "transport": false,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Farmington City Fire Department",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Farmington City Fire Department - Primary license #0630L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Fielding Fire Department",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Fielding Fire Department - Primary license #0260L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Gold Cross Ambulance Services Inc - Eastern",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Gold Cross Ambulance Services, Inc-Eastern - Primary license #2404L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Eagle Mountain Ambulance (UFA)",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": null,
+   "licence_match": null,
+   "transport": null,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Grand County Emergency Medical Services SSD",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Grand County Emergency Medical Services Special Service District- Primary license #1001L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Gunnison Valley Hospital Ambulance",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Gunnison Valley Hospital Special Service Ambulance - Primary license #2001L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Helper Fire Department",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Weber Fire District - Primary license #2945L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Hildale Fire Department",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Hildale Fire Department - Primary license #2720L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Kane County Ambulance",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Kane County Ambulance - Primary license #1301L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Kaysville City Fire Department boundary",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Kaysville City Fire Department - Primary license #0606L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Lewiston First Responders",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "QRU - BLS non transport",
+   "licence_match": "Lewiston First Responders - Primary license #0303D",
+   "transport": false,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Lone Peak Public Safety District",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Lone Peak Public Safety District - Primary license #2535L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Mapleton Ambulance",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": null,
+   "licence_match": null,
+   "transport": null,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Juab County Emergency Medical Services",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Grand County Emergency Medical Services Special Service District- Primary license #1001L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Santaquin City Ambulance",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Santaquin City Ambulance - Primary license #2513L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Layton City Fire Department",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Layton City Fire Department - Primary license #0631L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Lehi Fire and Emergency Medical Services",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Lehi Fire/Emergency Medical Services - Primary license #2550L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Milford Valley Ambulance Service",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Milford Valley Ambulance Service - Primary license #0102L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Millard County Ambulance",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Millard County Ambulance - Primary license #1401L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Morgan County Ambulance",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Morgan County Ambulance - Primary license #1501L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Mountain West Ambulance",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Mountain West Ambulance - Primary license #2320L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Newton First Responders",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "QRU - BLS non transport",
+   "licence_match": "Newton First Responders - Primary license #0304D",
+   "transport": false,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Nibley Emergency Medical Services",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "QRU - BLS non transport",
+   "licence_match": "Nibley Emergency Medical Services - Primary license #0320D",
+   "transport": false,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "North Sanpete Ambulance",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "North Sanpete Ambulance - Primary license #2002L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "North View Fire District",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "North View Fire District - Primary license #2919L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Orem Department Of Public Safety",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Orem Department Of Public Safety - Primary license #2506L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Paradise First Responders",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "QRU - BLS non transport",
+   "licence_match": "Paradise First Responders - Primary license #0305D",
+   "transport": false,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Payson City Ambulance",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Scipio Ambulance - Primary license #1403L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Salem Emergency Medical Association",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "QRU - BLS non transport",
+   "licence_match": "Nibley Emergency Medical Services - Primary license #0320D",
+   "transport": false,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Plymouth Fire Department",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Plymouth Fire Department - Primary license #0205L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Perry City First Responders",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "QRU - ALS non transport",
+   "licence_match": "Perry City First Responders # 0215D",
+   "transport": false,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Rich County Ambulance",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Rich County Ambulance - Primary license #1701L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Provo City Fire and Rescue",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Provo City Fire and Rescue - Primary license #2505L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "South Weber City Fire Department",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "South Weber City Fire Department 0637L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "South Summit Ambulance Service",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": null,
+   "licence_match": null,
+   "transport": null,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Springville Fire And Rescue",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Springville Fire And Rescue - Primary license #2508L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Utah Air National Guard Fire Department",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "QRU - BLS non transport",
+   "licence_match": "Utah Air National Guard Fire Department - Primary license #1826D",
+   "transport": false,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Wasatch County Emergency Medical Services",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-08-28",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Grand County Emergency Medical Services Special Service District- Primary license #1001L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Washington Terrace Fire Deptartment",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "QRU - BLS non transport",
+   "licence_match": "Washington Terrace Fire Dept - Primary license #2907D",
+   "transport": false,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Wayne County EMS",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Wayne County EMS - Primary license #2801L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Weber Co - Ogden City Fire Department",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Weber Co/Ogden City FD - Primary license #2917L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Utah Navajo Health System",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Utah Navajo Health System - Primary license #1915L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Wellsville First Responders",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "QRU - ALS non transport",
+   "licence_match": "Wellsville First Responders - Primary license #0306D",
+   "transport": false,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Wendover Ambulance Service",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Wendover Ambulance Service - Primary license #2315L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Hurricane Valley Fire Special Services District",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Hurricane Valley Fire Special Services District - Primary license #2703L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Riverdale Fire Services",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Riverdale Fire Services - Primary license #2934L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Northrop Grumman Utah (ATK)",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Northrop Grumman Utah (ATK)- Primary license #0210L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Park City Fire District-Summit Co",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Training Center",
+   "licence_match": "Park City Fire District-TC",
+   "transport": null,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "North Summit Fire District",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "North Summit Fire District - Primary license #2205L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Santa Clara Ivins Public Safety",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": null,
+   "licence_match": null,
+   "transport": null,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Saratoga Springs Fire and Rescue",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Saratoga Springs Fire & Rescue - Primary license #2551L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Pleasant Grove Ambulance",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Pleasant Grove Fire Department - Primary license #2545L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Chevron Fire Department",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": null,
+   "licence_match": null,
+   "transport": null,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Mountain Green Fire Protection Agency",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "QRU - ALS non transport",
+   "licence_match": "Mountain Green Fire Protection Agency - Primary Designation # 1502D",
+   "transport": false,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "North Davis Fire District",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "North Davis Fire District - Primary license #0620L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Piute County Ambulance",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Piute County Ambulance - Primary license #1601L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Sevier County Ambulance",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Sevier County Ambulance - Primary license #2101L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Weber Fire District",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Weber Fire District - Primary license #2945L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Trenton First Responders",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "QRU - BLS non transport",
+   "licence_match": "Trenton First Responders - Primary license #0321D",
+   "transport": false,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Uintah Basin Medical Center",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Uintah Basin Medical Center - Primary license #0714L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Plain City Fire Department",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "QRU - BLS non transport",
+   "licence_match": "Plain City Fire Department - Primary license #2921D",
+   "transport": false,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Scipio Ambulance",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Scipio Ambulance - Primary license #1403L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Smithfield Fire and EMS",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Smithfield Fire & EMS #0336L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Syracuse City Fire Department",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Syracuse City Fire Department - Primary license #0618L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Roy City Fire And Rescue Department",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Roy City Fire And Rescue Department - Primary license #2940L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "South Ogden City Fire Department",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "South Ogden City Fire Department - Primary license #2933L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Tremonton City Fire Department",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Tremonton City Fire Department - Primary license #0202L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Spanish Fork Ambulance",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Spanish Fork Ambulance - Primary license #2509L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Gold Cross Ambulance Services Inc - Southern",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Gold Cross Ambulance Services, Inc-Southern - Primary license #2765L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Hill AFB Fire and Emergency Services",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": null,
+   "licence_match": null,
+   "transport": null,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Manila Ambulance",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Training Center",
+   "licence_match": "Garfield Ambulance #0901T",
+   "transport": null,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Bluff EMS",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": null,
+   "licence_match": null,
+   "transport": null,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Dugway Ambulance",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Curlew Ambulance Service - Primary license #0222L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Tooele Army Depot Fire Department",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": null,
+   "licence_match": null,
+   "transport": null,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Logan City Fire Department",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Logan City Fire Department #0337L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Hyrum First Responders",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "QRU - BLS non transport",
+   "licence_match": "Hyrum First Responders - Primary license #0302D",
+   "transport": false,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Utah County Sheriff Search and Rescue Service",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "QRU - ALS non transport",
+   "licence_match": "Utah County Sheriff Search & Rescue Service - Primary license #2526D",
+   "transport": false,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "North Fork Fire Department",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "North Fork Fire Department - Primary license #2541L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Utah Test and Training Range Fire and EMS",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": null,
+   "licence_match": null,
+   "transport": null,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Bluffdale Fire Department",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Bluffdale Fire Department - Primary license #1869L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Draper City Fire Department",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Draper City Fire Department-Primary # 1852L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Murray City Fire Department",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Murray City Fire Department - Primary license #1868L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Salt Lake City Fire Department",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Paramedic Rescue - ALS non transport",
+   "licence_match": "Salt Lake City Fire Department - Primary license #1804L",
+   "transport": false,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "South Salt Lake Fire Department",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "South Salt Lake Fire Department - Primary license #1821L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "West Valley City Fire Department",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "West Valley City Fire Department - Primary license #1865L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Sandy City Fire Department",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Sandy City Fire Department - Primary license #1809L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "West Jordan City Fire Department",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "West Jordan Fire Department - Primary license #1861L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "South Jordan City Fire Department",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "South Jordan Fire Department - Primary license #1858L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Mendon Fire Department",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "QRU - BLS non transport",
+   "licence_match": "Mendon Fire Department - Primary license #0313D",
+   "transport": false,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Richmond Fire Department",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Brigham City Fire Department - Primary license #0201L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Cache County Search and Rescue",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "QRU - ALS non transport",
+   "licence_match": "Utah County Sheriff Search & Rescue Service - Primary license #2526D",
+   "transport": false,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Willard City Fire Department",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": null,
+   "licence_match": null,
+   "transport": null,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Corinne Fire Department",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Clinton City Fire Department - Primary license #0612L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Thatcher-Penrose Fire Department",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "QRU - BLS non transport",
+   "licence_match": "Thatcher-Penrose Fire Department - Primary license #0224D",
+   "transport": false,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Garland Fire Department",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "QRU - BLS non transport",
+   "licence_match": "Garland Fire Department-Primary License #0211D",
+   "transport": false,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Zion National Park Fire Department",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": null,
+   "licence_match": null,
+   "transport": null,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Inscription House EMS",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": null,
+   "licence_match": null,
+   "transport": null,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "San Juan County EMS",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "San Juan County Ems - Primary license #1904L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Flaming Gorge Fire and EMS District",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Flaming Gorge Fire and EMS District - Primary # 0503L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Parowan Ambulance",
+   "polygons": 1,
+   "source": "Iron County",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Beaver Ambulance Service - Primary license #0101L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Cedar City Ambulance",
+   "polygons": 1,
+   "source": "Iron County",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Beaver Ambulance Service - Primary license #0101L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Beryl Ambulance",
+   "polygons": 1,
+   "source": "Iron County",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Beaver Ambulance Service - Primary license #0101L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Enterprise Ambulance",
+   "polygons": 1,
+   "source": "Iron County",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Enterprise Ambulance Service - Primary license #2701L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Lower Valley Fire Department (Fruita CO)",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": null,
+   "licence_match": null,
+   "transport": null,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Manti Ambulance",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Santaquin City Ambulance - Primary license #2513L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  },
+  {
+   "name": "Ephraim Ambulance",
+   "polygons": 1,
+   "source": "UGRC",
+   "updated": "2026-06-15",
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Ephraim Ambulance Association - Primary license #2007L",
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
+  }
+ ],
+ "county_verdict": {
+  "Cache": {
+   "county": "Cache",
+   "ems_coverage": 0.986,
+   "services": [
+    {
+     "name": "Cache County Search and Rescue",
+     "share": 0.637,
+     "transport": "QRU - ALS non transport"
+    },
+    {
+     "name": "Logan City Fire Department",
+     "share": 0.061,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Smithfield Fire and EMS",
+     "share": 0.059,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Lewiston First Responders",
+     "share": 0.045,
+     "transport": "QRU - BLS non transport"
+    },
+    {
+     "name": "Clarkston Fire and Rescue Department",
+     "share": 0.038,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Newton First Responders",
+     "share": 0.031,
+     "transport": "QRU - BLS non transport"
+    },
+    {
+     "name": "Wellsville First Responders",
+     "share": 0.028,
+     "transport": "QRU - ALS non transport"
+    },
+    {
+     "name": "Mendon Fire Department",
+     "share": 0.025,
+     "transport": "QRU - BLS non transport"
+    },
+    {
+     "name": "Hyrum First Responders",
+     "share": 0.023,
+     "transport": "QRU - BLS non transport"
+    },
+    {
+     "name": "Richmond Fire Department",
+     "share": 0.021,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Paradise First Responders",
+     "share": 0.018,
+     "transport": "QRU - BLS non transport"
+    }
+   ],
+   "tier_supportable": true
+  },
+  "Duchesne": {
+   "county": "Duchesne",
+   "ems_coverage": 0.991,
+   "services": [
+    {
+     "name": "Uintah Basin Medical Center",
+     "share": 0.991,
+     "transport": "Ground Ambulance - ALS"
+    }
+   ],
+   "tier_supportable": true
+  },
+  "Davis": {
+   "county": "Davis",
+   "ems_coverage": 0.99,
+   "services": [
+    {
+     "name": "Syracuse City Fire Department",
+     "share": 0.659,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "South Davis Metro Fire Agency",
+     "share": 0.125,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Layton City Fire Department",
+     "share": 0.058,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Farmington City Fire Department",
+     "share": 0.05,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Kaysville City Fire Department boundary",
+     "share": 0.035,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "North Davis Fire District",
+     "share": 0.032,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "South Weber City Fire Department",
+     "share": 0.016,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Hill AFB Fire and Emergency Services",
+     "share": 0.015,
+     "transport": null
+    }
+   ],
+   "tier_supportable": true
+  },
+  "Millard": {
+   "county": "Millard",
+   "ems_coverage": 1.0,
+   "services": [
+    {
+     "name": "Millard County Ambulance",
+     "share": 0.736,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Milford Valley Ambulance Service",
+     "share": 0.243,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Scipio Ambulance",
+     "share": 0.021,
+     "transport": "Ground Ambulance - ALS"
+    }
+   ],
+   "tier_supportable": true
+  },
+  "Wasatch": {
+   "county": "Wasatch",
+   "ems_coverage": 1.001,
+   "services": [
+    {
+     "name": "Wasatch County Emergency Medical Services",
+     "share": 0.902,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Carbon County Amulance",
+     "share": 0.086,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Lone Peak Public Safety District",
+     "share": 0.013,
+     "transport": "Ground Ambulance - ALS"
+    }
+   ],
+   "tier_supportable": true
+  },
+  "Box Elder": {
+   "county": "Box Elder",
+   "ems_coverage": 0.982,
+   "services": [
+    {
+     "name": "Box Elder County Ambulance",
+     "share": 0.553,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Snowville Fire & EMS",
+     "share": 0.093,
+     "transport": null
+    },
+    {
+     "name": "Thatcher-Penrose Fire Department",
+     "share": 0.082,
+     "transport": "QRU - BLS non transport"
+    },
+    {
+     "name": "Wendover Ambulance Service",
+     "share": 0.068,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Brigham City Ambulance",
+     "share": 0.064,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Utah Test and Training Range Fire and EMS",
+     "share": 0.047,
+     "transport": null
+    },
+    {
+     "name": "Tremonton City Fire Department",
+     "share": 0.041,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Plymouth Fire Department",
+     "share": 0.018,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Corinne Fire Department",
+     "share": 0.016,
+     "transport": "Ground Ambulance - ALS"
+    }
+   ],
+   "tier_supportable": true
+  },
+  "Weber": {
+   "county": "Weber",
+   "ems_coverage": 0.99,
+   "services": [
+    {
+     "name": "Weber Fire District",
+     "share": 0.491,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Weber Co - Ogden City Fire Department",
+     "share": 0.214,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Roy City Fire And Rescue Department",
+     "share": 0.203,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "North View Fire District",
+     "share": 0.046,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Plain City Fire Department",
+     "share": 0.018,
+     "transport": "QRU - BLS non transport"
+    },
+    {
+     "name": "South Ogden City Fire Department",
+     "share": 0.018,
+     "transport": "Ground Ambulance - ALS"
+    }
+   ],
+   "tier_supportable": true
+  },
+  "Juab": {
+   "county": "Juab",
+   "ems_coverage": 1.0,
+   "services": [
+    {
+     "name": "Juab County Emergency Medical Services",
+     "share": 1.0,
+     "transport": "Ground Ambulance - ALS"
+    }
+   ],
+   "tier_supportable": true
+  },
+  "Sanpete": {
+   "county": "Sanpete",
+   "ems_coverage": 1.001,
+   "services": [
+    {
+     "name": "North Sanpete Ambulance",
+     "share": 0.394,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Gunnison Valley Hospital Ambulance",
+     "share": 0.341,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Manti Ambulance",
+     "share": 0.173,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Ephraim Ambulance",
+     "share": 0.093,
+     "transport": "Ground Ambulance - ALS"
+    }
+   ],
+   "tier_supportable": true
+  },
+  "Washington": {
+   "county": "Washington",
+   "ems_coverage": 1.0,
+   "services": [
+    {
+     "name": "Enterprise Ambulance",
+     "share": 0.264,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Hurricane Valley Fire Special Services District",
+     "share": 0.251,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Santa Clara Ivins Public Safety",
+     "share": 0.208,
+     "transport": null
+    },
+    {
+     "name": "Gold Cross Ambulance Services Inc - Southern",
+     "share": 0.109,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Hildale Fire Department",
+     "share": 0.064,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Zion National Park Fire Department",
+     "share": 0.054,
+     "transport": null
+    },
+    {
+     "name": "Cedar City Ambulance",
+     "share": 0.05,
+     "transport": "Ground Ambulance - ALS"
+    }
+   ],
+   "tier_supportable": true
+  },
+  "Grand": {
+   "county": "Grand",
+   "ems_coverage": 0.991,
+   "services": [
+    {
+     "name": "Grand County Emergency Medical Services SSD",
+     "share": 0.98,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Lower Valley Fire Department (Fruita CO)",
+     "share": 0.011,
+     "transport": null
+    }
+   ],
+   "tier_supportable": true
+  },
+  "Rich": {
+   "county": "Rich",
+   "ems_coverage": 1.0,
+   "services": [
+    {
+     "name": "Rich County Ambulance",
+     "share": 1.0,
+     "transport": "Ground Ambulance - ALS"
+    }
+   ],
+   "tier_supportable": true
+  },
+  "Carbon": {
+   "county": "Carbon",
+   "ems_coverage": 1.0,
+   "services": [
+    {
+     "name": "Carbon County Amulance",
+     "share": 0.918,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "East Carbon City Sunnyside Ambulance",
+     "share": 0.082,
+     "transport": "Ground Ambulance - ALS"
+    }
+   ],
+   "tier_supportable": true
+  },
+  "Daggett": {
+   "county": "Daggett",
+   "ems_coverage": 0.99,
+   "services": [
+    {
+     "name": "Flaming Gorge Fire and EMS District",
+     "share": 0.99,
+     "transport": "Ground Ambulance - ALS"
+    }
+   ],
+   "tier_supportable": true
+  },
+  "Beaver": {
+   "county": "Beaver",
+   "ems_coverage": 1.0,
+   "services": [
+    {
+     "name": "Milford Valley Ambulance Service",
+     "share": 0.749,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Beaver Ambulance Service",
+     "share": 0.251,
+     "transport": "Ground Ambulance - ALS"
+    }
+   ],
+   "tier_supportable": true
+  },
+  "Sevier": {
+   "county": "Sevier",
+   "ems_coverage": 0.999,
+   "services": [
+    {
+     "name": "Sevier County Ambulance",
+     "share": 0.915,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Emery Emergency Medical Special Service District",
+     "share": 0.084,
+     "transport": "QRU - BLS non transport"
+    }
+   ],
+   "tier_supportable": true
+  },
+  "Garfield": {
+   "county": "Garfield",
+   "ems_coverage": 1.0,
+   "services": [
+    {
+     "name": "Garfield County Ambulance",
+     "share": 1.0,
+     "transport": "Ground Ambulance - ALS"
+    }
+   ],
+   "tier_supportable": true
+  },
+  "Tooele": {
+   "county": "Tooele",
+   "ems_coverage": 0.991,
+   "services": [
+    {
+     "name": "Mountain West Ambulance",
+     "share": 0.421,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Dugway Ambulance",
+     "share": 0.293,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Wendover Ambulance Service",
+     "share": 0.244,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Utah Test and Training Range Fire and EMS",
+     "share": 0.033,
+     "transport": null
+    }
+   ],
+   "tier_supportable": true
+  },
+  "Summit": {
+   "county": "Summit",
+   "ems_coverage": 1.0,
+   "services": [
+    {
+     "name": "Park City Fire District-Summit Co",
+     "share": 0.569,
+     "transport": "Training Center"
+    },
+    {
+     "name": "North Summit Fire District",
+     "share": 0.221,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "South Summit Ambulance Service",
+     "share": 0.21,
+     "transport": null
+    }
+   ],
+   "tier_supportable": true
+  },
+  "Piute": {
+   "county": "Piute",
+   "ems_coverage": 1.0,
+   "services": [
+    {
+     "name": "Piute County Ambulance",
+     "share": 1.0,
+     "transport": "Ground Ambulance - ALS"
+    }
+   ],
+   "tier_supportable": true
+  },
+  "Uintah": {
+   "county": "Uintah",
+   "ems_coverage": 0.993,
+   "services": [
+    {
+     "name": "Gold Cross Ambulance Services Inc - Eastern",
+     "share": 0.653,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Ute Tribe Ambulance Service",
+     "share": 0.34,
+     "transport": "Ground Ambulance - ALS"
+    }
+   ],
+   "tier_supportable": true
+  },
+  "Iron": {
+   "county": "Iron",
+   "ems_coverage": 1.0,
+   "services": [
+    {
+     "name": "Beryl Ambulance",
+     "share": 0.381,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Cedar City Ambulance",
+     "share": 0.309,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Parowan Ambulance",
+     "share": 0.237,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Milford Valley Ambulance Service",
+     "share": 0.04,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Enterprise Ambulance",
+     "share": 0.019,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Beaver Ambulance Service",
+     "share": 0.014,
+     "transport": "Ground Ambulance - ALS"
+    }
+   ],
+   "tier_supportable": true
+  },
+  "Emery": {
+   "county": "Emery",
+   "ems_coverage": 0.992,
+   "services": [
+    {
+     "name": "Emery Emergency Medical Special Service District",
+     "share": 0.992,
+     "transport": "QRU - BLS non transport"
+    }
+   ],
+   "tier_supportable": true
+  },
+  "Wayne": {
+   "county": "Wayne",
+   "ems_coverage": 1.0,
+   "services": [
+    {
+     "name": "Wayne County EMS",
+     "share": 1.0,
+     "transport": "Ground Ambulance - ALS"
+    }
+   ],
+   "tier_supportable": true
+  },
+  "San Juan": {
+   "county": "San Juan",
+   "ems_coverage": 1.0,
+   "services": [
+    {
+     "name": "San Juan County EMS",
+     "share": 0.702,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Utah Navajo Health System",
+     "share": 0.176,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Bluff EMS",
+     "share": 0.073,
+     "transport": null
+    },
+    {
+     "name": "Inscription House EMS",
+     "share": 0.049,
+     "transport": null
+    }
+   ],
+   "tier_supportable": true
+  },
+  "Morgan": {
+   "county": "Morgan",
+   "ems_coverage": 1.0,
+   "services": [
+    {
+     "name": "Morgan County Ambulance",
+     "share": 0.979,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Mountain Green Fire Protection Agency",
+     "share": 0.021,
+     "transport": "QRU - ALS non transport"
+    }
+   ],
+   "tier_supportable": true
+  },
+  "Kane": {
+   "county": "Kane",
+   "ems_coverage": 1.0,
+   "services": [
+    {
+     "name": "Kane County Ambulance",
+     "share": 0.86,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Cedar Mountain Fire Protection District",
+     "share": 0.14,
+     "transport": "Ground Ambulance - ALS"
+    }
+   ],
+   "tier_supportable": true
+  },
+  "Salt Lake": {
+   "county": "Salt Lake",
+   "ems_coverage": 0.991,
+   "services": [
+    {
+     "name": "Unified Fire Authority",
+     "share": 0.646,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Salt Lake City Fire Department",
+     "share": 0.143,
+     "transport": "Paramedic Rescue - ALS non transport"
+    },
+    {
+     "name": "West Valley City Fire Department",
+     "share": 0.045,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "West Jordan City Fire Department",
+     "share": 0.04,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Sandy City Fire Department",
+     "share": 0.033,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Draper City Fire Department",
+     "share": 0.028,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "South Jordan City Fire Department",
+     "share": 0.028,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Murray City Fire Department",
+     "share": 0.015,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Bluffdale Fire Department",
+     "share": 0.013,
+     "transport": "Ground Ambulance - ALS"
+    }
+   ],
+   "tier_supportable": true
+  },
+  "Utah": {
+   "county": "Utah",
+   "ems_coverage": 0.972,
+   "services": [
+    {
+     "name": "Spanish Fork Ambulance",
+     "share": 0.269,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Santaquin City Ambulance",
+     "share": 0.148,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Eagle Mountain Ambulance (UFA)",
+     "share": 0.107,
+     "transport": null
+    },
+    {
+     "name": "Mapleton Ambulance",
+     "share": 0.077,
+     "transport": null
+    },
+    {
+     "name": "Utah County Sheriff Search and Rescue Service",
+     "share": 0.064,
+     "transport": "QRU - ALS non transport"
+    },
+    {
+     "name": "Payson City Ambulance",
+     "share": 0.059,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Lone Peak Public Safety District",
+     "share": 0.048,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Provo City Fire and Rescue",
+     "share": 0.041,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Saratoga Springs Fire and Rescue",
+     "share": 0.036,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Carbon County Amulance",
+     "share": 0.028,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Juab County Emergency Medical Services",
+     "share": 0.019,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "North Fork Fire Department",
+     "share": 0.019,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Helper Fire Department",
+     "share": 0.016,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Orem Department Of Public Safety",
+     "share": 0.015,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Lehi Fire and Emergency Medical Services",
+     "share": 0.013,
+     "transport": "Ground Ambulance - ALS"
+    },
+    {
+     "name": "Salem Emergency Medical Association",
+     "share": 0.013,
+     "transport": "QRU - BLS non transport"
+    }
+   ],
+   "tier_supportable": true
+  }
+ }
+}

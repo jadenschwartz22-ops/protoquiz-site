@@ -1,0 +1,621 @@
+{
+ "meta": {
+  "state": "OH",
+  "retrieved": "2026-10-21",
+  "source_kind": "county-level NG911 / GIS emergency service boundaries, five counties found; no statewide layer",
+  "layers": {
+   "wood": {
+    "county_fips": "39173",
+    "url": "https://services2.arcgis.com/MlJ0G8iWUyC7jAmu/arcgis/rest/services/Wood_County_EMS_Emergency_Service_Boundary/FeatureServer/0",
+    "data_last_edit": "2026-06-01",
+    "owner": "geohio org (Ohio statewide GIS hosting), \"Wood County EMS Emergency Service Boundary\"",
+    "kind": "county NG911 emergency service boundary"
+   },
+   "huron": {
+    "county_fips": "39077",
+    "url": "https://services2.arcgis.com/MlJ0G8iWUyC7jAmu/arcgis/rest/services/Huron_EMS_Boundary/FeatureServer/0",
+    "data_last_edit": "2026-06-13",
+    "owner": "geohio org, \"Huron EMS Boundary\"",
+    "kind": "county NG911 emergency service boundary"
+   },
+   "paulding": {
+    "county_fips": "39125",
+    "url": "https://services3.arcgis.com/kiHlZpY4RugxH2pF/arcgis/rest/services/Paulding_County_EMS_Districts/FeatureServer/4",
+    "data_last_edit": "2024-03-14",
+    "owner": "Paulding County engineer GIS, \"Paulding County EMS Districts\" layer EMS_paulding_spn_ft",
+    "kind": "county EMS zone layer"
+   },
+   "fayette": {
+    "county_fips": "39047",
+    "url": "https://services8.arcgis.com/CJpiu5T88EYxY793/arcgis/rest/services/911_Fire_EMS/FeatureServer/1",
+    "data_last_edit": "2022-05-27",
+    "owner": "Fayette County GIS, \"Fayette County Ohio GIS Fire EMS Areas\" (911 ESN table)",
+    "kind": "county 911 ESN zones"
+   },
+   "lucas": {
+    "county_fips": "39095",
+    "url": "https://services2.arcgis.com/MlJ0G8iWUyC7jAmu/arcgis/rest/services/Lucas_County_EMS_ESB_Boundary/FeatureServer/0",
+    "data_last_edit": "2026-08-04",
+    "owner": "geohio org, \"Lucas County EMS ESB Boundary\"",
+    "kind": "one polygon only (Rossford EMS)"
+   }
+  },
+  "min_share_listed": 0.01,
+  "a_threshold": 0.95,
+  "tier_counts": {
+   "held": 3,
+   "A": 3
+  },
+  "transport_note": "None of these layers carries a transport field; every row transport=false (kept) until a source says it carries patients."
+ },
+ "rows": [
+  {
+   "name": "FC EMS (Station 700)",
+   "county_fips": "39047",
+   "polygons": 22,
+   "layer_last_edit": "2022-05-27",
+   "source_url": "https://services8.arcgis.com/CJpiu5T88EYxY793/arcgis/rest/services/911_Fire_EMS/FeatureServer/1",
+   "source": "Fayette County GIS, \"Fayette County Ohio GIS Fire EMS Areas\" (911 ESN table)",
+   "transport": false,
+   "transport_basis": "layer does not say"
+  },
+  {
+   "name": "JEFFERSON TWP EMS (Station 590)",
+   "county_fips": "39047",
+   "polygons": 3,
+   "layer_last_edit": "2022-05-27",
+   "source_url": "https://services8.arcgis.com/CJpiu5T88EYxY793/arcgis/rest/services/911_Fire_EMS/FeatureServer/1",
+   "source": "Fayette County GIS, \"Fayette County Ohio GIS Fire EMS Areas\" (911 ESN table)",
+   "transport": false,
+   "transport_basis": "layer does not say"
+  },
+  {
+   "name": "NH LS (Station 773)",
+   "county_fips": "39047",
+   "polygons": 6,
+   "layer_last_edit": "2022-05-27",
+   "source_url": "https://services8.arcgis.com/CJpiu5T88EYxY793/arcgis/rest/services/911_Fire_EMS/FeatureServer/1",
+   "source": "Fayette County GIS, \"Fayette County Ohio GIS Fire EMS Areas\" (911 ESN table)",
+   "transport": false,
+   "transport_basis": "layer does not say"
+  },
+  {
+   "name": "Sterling Joint EMS (Station 371)",
+   "county_fips": "39047",
+   "polygons": 2,
+   "layer_last_edit": "2022-05-27",
+   "source_url": "https://services8.arcgis.com/CJpiu5T88EYxY793/arcgis/rest/services/911_Fire_EMS/FeatureServer/1",
+   "source": "Fayette County GIS, \"Fayette County Ohio GIS Fire EMS Areas\" (911 ESN table)",
+   "transport": false,
+   "transport_basis": "layer does not say"
+  },
+  {
+   "name": "Wades (Station 600)",
+   "county_fips": "39047",
+   "polygons": 2,
+   "layer_last_edit": "2022-05-27",
+   "source_url": "https://services8.arcgis.com/CJpiu5T88EYxY793/arcgis/rest/services/911_Fire_EMS/FeatureServer/1",
+   "source": "Fayette County GIS, \"Fayette County Ohio GIS Fire EMS Areas\" (911 ESN table)",
+   "transport": false,
+   "transport_basis": "layer does not say"
+  },
+  {
+   "name": "CITIZENS",
+   "county_fips": "39077",
+   "polygons": 1,
+   "layer_last_edit": "2026-06-13",
+   "source_url": "https://services2.arcgis.com/MlJ0G8iWUyC7jAmu/arcgis/rest/services/Huron_EMS_Boundary/FeatureServer/0",
+   "source": "geohio org, \"Huron EMS Boundary\"",
+   "transport": false,
+   "transport_basis": "layer does not say"
+  },
+  {
+   "name": "FIRELANDS",
+   "county_fips": "39077",
+   "polygons": 1,
+   "layer_last_edit": "2026-06-13",
+   "source_url": "https://services2.arcgis.com/MlJ0G8iWUyC7jAmu/arcgis/rest/services/Huron_EMS_Boundary/FeatureServer/0",
+   "source": "geohio org, \"Huron EMS Boundary\"",
+   "transport": false,
+   "transport_basis": "layer does not say"
+  },
+  {
+   "name": "NCEMS",
+   "county_fips": "39077",
+   "polygons": 1,
+   "layer_last_edit": "2026-06-13",
+   "source_url": "https://services2.arcgis.com/MlJ0G8iWUyC7jAmu/arcgis/rest/services/Huron_EMS_Boundary/FeatureServer/0",
+   "source": "geohio org, \"Huron EMS Boundary\"",
+   "transport": false,
+   "transport_basis": "layer does not say"
+  },
+  {
+   "name": "PLYMOUTH",
+   "county_fips": "39077",
+   "polygons": 1,
+   "layer_last_edit": "2026-06-13",
+   "source_url": "https://services2.arcgis.com/MlJ0G8iWUyC7jAmu/arcgis/rest/services/Huron_EMS_Boundary/FeatureServer/0",
+   "source": "geohio org, \"Huron EMS Boundary\"",
+   "transport": false,
+   "transport_basis": "layer does not say"
+  },
+  {
+   "name": "WILLARD",
+   "county_fips": "39077",
+   "polygons": 1,
+   "layer_last_edit": "2026-06-13",
+   "source_url": "https://services2.arcgis.com/MlJ0G8iWUyC7jAmu/arcgis/rest/services/Huron_EMS_Boundary/FeatureServer/0",
+   "source": "geohio org, \"Huron EMS Boundary\"",
+   "transport": false,
+   "transport_basis": "layer does not say"
+  },
+  {
+   "name": "Rossford EMS",
+   "county_fips": "39095",
+   "polygons": 1,
+   "layer_last_edit": "2026-08-04",
+   "source_url": "https://services2.arcgis.com/MlJ0G8iWUyC7jAmu/arcgis/rest/services/Lucas_County_EMS_ESB_Boundary/FeatureServer/0",
+   "source": "geohio org, \"Lucas County EMS ESB Boundary\"",
+   "transport": false,
+   "transport_basis": "layer does not say"
+  },
+  {
+   "name": "ANT EMS",
+   "county_fips": "39125",
+   "polygons": 1,
+   "layer_last_edit": "2024-03-14",
+   "source_url": "https://services3.arcgis.com/kiHlZpY4RugxH2pF/arcgis/rest/services/Paulding_County_EMS_Districts/FeatureServer/4",
+   "source": "Paulding County engineer GIS, \"Paulding County EMS Districts\" layer EMS_paulding_spn_ft",
+   "transport": false,
+   "transport_basis": "layer does not say"
+  },
+  {
+   "name": "GR HILL EMS",
+   "county_fips": "39125",
+   "polygons": 1,
+   "layer_last_edit": "2024-03-14",
+   "source_url": "https://services3.arcgis.com/kiHlZpY4RugxH2pF/arcgis/rest/services/Paulding_County_EMS_Districts/FeatureServer/4",
+   "source": "Paulding County engineer GIS, \"Paulding County EMS Districts\" layer EMS_paulding_spn_ft",
+   "transport": false,
+   "transport_basis": "layer does not say"
+  },
+  {
+   "name": "OAK EMS",
+   "county_fips": "39125",
+   "polygons": 1,
+   "layer_last_edit": "2024-03-14",
+   "source_url": "https://services3.arcgis.com/kiHlZpY4RugxH2pF/arcgis/rest/services/Paulding_County_EMS_Districts/FeatureServer/4",
+   "source": "Paulding County engineer GIS, \"Paulding County EMS Districts\" layer EMS_paulding_spn_ft",
+   "transport": false,
+   "transport_basis": "layer does not say"
+  },
+  {
+   "name": "OTT EMS",
+   "county_fips": "39125",
+   "polygons": 1,
+   "layer_last_edit": "2024-03-14",
+   "source_url": "https://services3.arcgis.com/kiHlZpY4RugxH2pF/arcgis/rest/services/Paulding_County_EMS_Districts/FeatureServer/4",
+   "source": "Paulding County engineer GIS, \"Paulding County EMS Districts\" layer EMS_paulding_spn_ft",
+   "transport": false,
+   "transport_basis": "layer does not say"
+  },
+  {
+   "name": "PLDG EMS",
+   "county_fips": "39125",
+   "polygons": 1,
+   "layer_last_edit": "2024-03-14",
+   "source_url": "https://services3.arcgis.com/kiHlZpY4RugxH2pF/arcgis/rest/services/Paulding_County_EMS_Districts/FeatureServer/4",
+   "source": "Paulding County engineer GIS, \"Paulding County EMS Districts\" layer EMS_paulding_spn_ft",
+   "transport": false,
+   "transport_basis": "layer does not say"
+  },
+  {
+   "name": "PYN EMS",
+   "county_fips": "39125",
+   "polygons": 1,
+   "layer_last_edit": "2024-03-14",
+   "source_url": "https://services3.arcgis.com/kiHlZpY4RugxH2pF/arcgis/rest/services/Paulding_County_EMS_Districts/FeatureServer/4",
+   "source": "Paulding County engineer GIS, \"Paulding County EMS Districts\" layer EMS_paulding_spn_ft",
+   "transport": false,
+   "transport_basis": "layer does not say"
+  },
+  {
+   "name": "SCOTT EMS",
+   "county_fips": "39125",
+   "polygons": 2,
+   "layer_last_edit": "2024-03-14",
+   "source_url": "https://services3.arcgis.com/kiHlZpY4RugxH2pF/arcgis/rest/services/Paulding_County_EMS_Districts/FeatureServer/4",
+   "source": "Paulding County engineer GIS, \"Paulding County EMS Districts\" layer EMS_paulding_spn_ft",
+   "transport": false,
+   "transport_basis": "layer does not say"
+  },
+  {
+   "name": "Bowling Green EMS",
+   "county_fips": "39173",
+   "polygons": 1,
+   "layer_last_edit": "2026-06-01",
+   "source_url": "https://services2.arcgis.com/MlJ0G8iWUyC7jAmu/arcgis/rest/services/Wood_County_EMS_Emergency_Service_Boundary/FeatureServer/0",
+   "source": "geohio org (Ohio statewide GIS hosting), \"Wood County EMS Emergency Service Boundary\"",
+   "transport": false,
+   "transport_basis": "layer does not say"
+  },
+  {
+   "name": "Bradner EMS",
+   "county_fips": "39173",
+   "polygons": 1,
+   "layer_last_edit": "2026-06-01",
+   "source_url": "https://services2.arcgis.com/MlJ0G8iWUyC7jAmu/arcgis/rest/services/Wood_County_EMS_Emergency_Service_Boundary/FeatureServer/0",
+   "source": "geohio org (Ohio statewide GIS hosting), \"Wood County EMS Emergency Service Boundary\"",
+   "transport": false,
+   "transport_basis": "layer does not say"
+  },
+  {
+   "name": "Eagleville Joint District",
+   "county_fips": "39173",
+   "polygons": 1,
+   "layer_last_edit": "2026-06-01",
+   "source_url": "https://services2.arcgis.com/MlJ0G8iWUyC7jAmu/arcgis/rest/services/Wood_County_EMS_Emergency_Service_Boundary/FeatureServer/0",
+   "source": "geohio org (Ohio statewide GIS hosting), \"Wood County EMS Emergency Service Boundary\"",
+   "transport": false,
+   "transport_basis": "layer does not say"
+  },
+  {
+   "name": "Elmwood High School",
+   "county_fips": "39173",
+   "polygons": 1,
+   "layer_last_edit": "2026-06-01",
+   "source_url": "https://services2.arcgis.com/MlJ0G8iWUyC7jAmu/arcgis/rest/services/Wood_County_EMS_Emergency_Service_Boundary/FeatureServer/0",
+   "source": "geohio org (Ohio statewide GIS hosting), \"Wood County EMS Emergency Service Boundary\"",
+   "transport": false,
+   "transport_basis": "layer does not say"
+  },
+  {
+   "name": "Fostoria EMS",
+   "county_fips": "39173",
+   "polygons": 1,
+   "layer_last_edit": "2026-06-01",
+   "source_url": "https://services2.arcgis.com/MlJ0G8iWUyC7jAmu/arcgis/rest/services/Wood_County_EMS_Emergency_Service_Boundary/FeatureServer/0",
+   "source": "geohio org (Ohio statewide GIS hosting), \"Wood County EMS Emergency Service Boundary\"",
+   "transport": false,
+   "transport_basis": "layer does not say"
+  },
+  {
+   "name": "Jackson Twp",
+   "county_fips": "39173",
+   "polygons": 1,
+   "layer_last_edit": "2026-06-01",
+   "source_url": "https://services2.arcgis.com/MlJ0G8iWUyC7jAmu/arcgis/rest/services/Wood_County_EMS_Emergency_Service_Boundary/FeatureServer/0",
+   "source": "geohio org (Ohio statewide GIS hosting), \"Wood County EMS Emergency Service Boundary\"",
+   "transport": false,
+   "transport_basis": "layer does not say"
+  },
+  {
+   "name": "Lake Twp Fire & EMS",
+   "county_fips": "39173",
+   "polygons": 3,
+   "layer_last_edit": "2026-06-01",
+   "source_url": "https://services2.arcgis.com/MlJ0G8iWUyC7jAmu/arcgis/rest/services/Wood_County_EMS_Emergency_Service_Boundary/FeatureServer/0",
+   "source": "geohio org (Ohio statewide GIS hosting), \"Wood County EMS Emergency Service Boundary\"",
+   "transport": false,
+   "transport_basis": "layer does not say"
+  },
+  {
+   "name": "Lake Twp Medic 26 EMS",
+   "county_fips": "39173",
+   "polygons": 1,
+   "layer_last_edit": "2026-06-01",
+   "source_url": "https://services2.arcgis.com/MlJ0G8iWUyC7jAmu/arcgis/rest/services/Wood_County_EMS_Emergency_Service_Boundary/FeatureServer/0",
+   "source": "geohio org (Ohio statewide GIS hosting), \"Wood County EMS Emergency Service Boundary\"",
+   "transport": false,
+   "transport_basis": "layer does not say"
+  },
+  {
+   "name": "Lake Twp Medic 50 EMS",
+   "county_fips": "39173",
+   "polygons": 2,
+   "layer_last_edit": "2026-06-01",
+   "source_url": "https://services2.arcgis.com/MlJ0G8iWUyC7jAmu/arcgis/rest/services/Wood_County_EMS_Emergency_Service_Boundary/FeatureServer/0",
+   "source": "geohio org (Ohio statewide GIS hosting), \"Wood County EMS Emergency Service Boundary\"",
+   "transport": false,
+   "transport_basis": "layer does not say"
+  },
+  {
+   "name": "Mid County 120",
+   "county_fips": "39173",
+   "polygons": 1,
+   "layer_last_edit": "2026-06-01",
+   "source_url": "https://services2.arcgis.com/MlJ0G8iWUyC7jAmu/arcgis/rest/services/Wood_County_EMS_Emergency_Service_Boundary/FeatureServer/0",
+   "source": "geohio org (Ohio statewide GIS hosting), \"Wood County EMS Emergency Service Boundary\"",
+   "transport": false,
+   "transport_basis": "layer does not say"
+  },
+  {
+   "name": "Middleton Twp Medic 680",
+   "county_fips": "39173",
+   "polygons": 1,
+   "layer_last_edit": "2026-06-01",
+   "source_url": "https://services2.arcgis.com/MlJ0G8iWUyC7jAmu/arcgis/rest/services/Wood_County_EMS_Emergency_Service_Boundary/FeatureServer/0",
+   "source": "geohio org (Ohio statewide GIS hosting), \"Wood County EMS Emergency Service Boundary\"",
+   "transport": false,
+   "transport_basis": "layer does not say"
+  },
+  {
+   "name": "North Baltimore EMS",
+   "county_fips": "39173",
+   "polygons": 1,
+   "layer_last_edit": "2026-06-01",
+   "source_url": "https://services2.arcgis.com/MlJ0G8iWUyC7jAmu/arcgis/rest/services/Wood_County_EMS_Emergency_Service_Boundary/FeatureServer/0",
+   "source": "geohio org (Ohio statewide GIS hosting), \"Wood County EMS Emergency Service Boundary\"",
+   "transport": false,
+   "transport_basis": "layer does not say"
+  },
+  {
+   "name": "Northwest 190 EMS",
+   "county_fips": "39173",
+   "polygons": 1,
+   "layer_last_edit": "2026-06-01",
+   "source_url": "https://services2.arcgis.com/MlJ0G8iWUyC7jAmu/arcgis/rest/services/Wood_County_EMS_Emergency_Service_Boundary/FeatureServer/0",
+   "source": "geohio org (Ohio statewide GIS hosting), \"Wood County EMS Emergency Service Boundary\"",
+   "transport": false,
+   "transport_basis": "layer does not say"
+  },
+  {
+   "name": "Northwood EMS",
+   "county_fips": "39173",
+   "polygons": 1,
+   "layer_last_edit": "2026-06-01",
+   "source_url": "https://services2.arcgis.com/MlJ0G8iWUyC7jAmu/arcgis/rest/services/Wood_County_EMS_Emergency_Service_Boundary/FeatureServer/0",
+   "source": "geohio org (Ohio statewide GIS hosting), \"Wood County EMS Emergency Service Boundary\"",
+   "transport": false,
+   "transport_basis": "layer does not say"
+  },
+  {
+   "name": "Pemberville-Freedom EMS",
+   "county_fips": "39173",
+   "polygons": 1,
+   "layer_last_edit": "2026-06-01",
+   "source_url": "https://services2.arcgis.com/MlJ0G8iWUyC7jAmu/arcgis/rest/services/Wood_County_EMS_Emergency_Service_Boundary/FeatureServer/0",
+   "source": "geohio org (Ohio statewide GIS hosting), \"Wood County EMS Emergency Service Boundary\"",
+   "transport": false,
+   "transport_basis": "layer does not say"
+  },
+  {
+   "name": "Perrysburg City EMS",
+   "county_fips": "39173",
+   "polygons": 1,
+   "layer_last_edit": "2026-06-01",
+   "source_url": "https://services2.arcgis.com/MlJ0G8iWUyC7jAmu/arcgis/rest/services/Wood_County_EMS_Emergency_Service_Boundary/FeatureServer/0",
+   "source": "geohio org (Ohio statewide GIS hosting), \"Wood County EMS Emergency Service Boundary\"",
+   "transport": false,
+   "transport_basis": "layer does not say"
+  },
+  {
+   "name": "Perrysburg Twp EMS",
+   "county_fips": "39173",
+   "polygons": 4,
+   "layer_last_edit": "2026-06-01",
+   "source_url": "https://services2.arcgis.com/MlJ0G8iWUyC7jAmu/arcgis/rest/services/Wood_County_EMS_Emergency_Service_Boundary/FeatureServer/0",
+   "source": "geohio org (Ohio statewide GIS hosting), \"Wood County EMS Emergency Service Boundary\"",
+   "transport": false,
+   "transport_basis": "layer does not say"
+  },
+  {
+   "name": "Rossford EMS",
+   "county_fips": "39173",
+   "polygons": 1,
+   "layer_last_edit": "2026-06-01",
+   "source_url": "https://services2.arcgis.com/MlJ0G8iWUyC7jAmu/arcgis/rest/services/Wood_County_EMS_Emergency_Service_Boundary/FeatureServer/0",
+   "source": "geohio org (Ohio statewide GIS hosting), \"Wood County EMS Emergency Service Boundary\"",
+   "transport": false,
+   "transport_basis": "layer does not say"
+  },
+  {
+   "name": "South East 150",
+   "county_fips": "39173",
+   "polygons": 1,
+   "layer_last_edit": "2026-06-01",
+   "source_url": "https://services2.arcgis.com/MlJ0G8iWUyC7jAmu/arcgis/rest/services/Wood_County_EMS_Emergency_Service_Boundary/FeatureServer/0",
+   "source": "geohio org (Ohio statewide GIS hosting), \"Wood County EMS Emergency Service Boundary\"",
+   "transport": false,
+   "transport_basis": "layer does not say"
+  },
+  {
+   "name": "Troy Twp EMS",
+   "county_fips": "39173",
+   "polygons": 1,
+   "layer_last_edit": "2026-06-01",
+   "source_url": "https://services2.arcgis.com/MlJ0G8iWUyC7jAmu/arcgis/rest/services/Wood_County_EMS_Emergency_Service_Boundary/FeatureServer/0",
+   "source": "geohio org (Ohio statewide GIS hosting), \"Wood County EMS Emergency Service Boundary\"",
+   "transport": false,
+   "transport_basis": "layer does not say"
+  },
+  {
+   "name": "Weston EMS",
+   "county_fips": "39173",
+   "polygons": 1,
+   "layer_last_edit": "2026-06-01",
+   "source_url": "https://services2.arcgis.com/MlJ0G8iWUyC7jAmu/arcgis/rest/services/Wood_County_EMS_Emergency_Service_Boundary/FeatureServer/0",
+   "source": "geohio org (Ohio statewide GIS hosting), \"Wood County EMS Emergency Service Boundary\"",
+   "transport": false,
+   "transport_basis": "layer does not say"
+  }
+ ],
+ "county_verdict": {
+  "39047": {
+   "county": "Fayette",
+   "ems_coverage": 0.9976,
+   "services": [
+    {
+     "name": "FC EMS (Station 700)",
+     "share": 0.7569
+    },
+    {
+     "name": "JEFFERSON TWP EMS (Station 590)",
+     "share": 0.1498
+    },
+    {
+     "name": "NH LS (Station 773)",
+     "share": 0.0907
+    }
+   ],
+   "slivers_under_1pct": 2,
+   "tier": "held",
+   "page_note": "STALE: this county layer was last edited 2022-05-27 (over 3 years); tier left alone. It names FC EMS (Station 700) 75.7%, Jefferson Twp EMS (Station 590) 15.0%, NH LS (Station 773) 9.1%."
+  },
+  "39077": {
+   "county": "Huron",
+   "ems_coverage": 0.9973,
+   "services": [
+    {
+     "name": "CITIZENS",
+     "share": 0.1846
+    },
+    {
+     "name": "FIRELANDS",
+     "share": 0.1053
+    },
+    {
+     "name": "NCEMS",
+     "share": 0.4981
+    },
+    {
+     "name": "PLYMOUTH",
+     "share": 0.0123
+    },
+    {
+     "name": "WILLARD",
+     "share": 0.197
+    }
+   ],
+   "slivers_under_1pct": 0,
+   "tier": "A",
+   "page_note": "Layer labels are the county's own short names (NCEMS, CITIZENS, FIRELANDS, WILLARD, PLYMOUTH), not expanded here."
+  },
+  "39095": {
+   "county": "Lucas",
+   "ems_coverage": 0.0092,
+   "services": [],
+   "slivers_under_1pct": 6,
+   "tier": "held",
+   "page_note": "Lucas layer holds one named polygon (Rossford EMS, 0.9% of the county) and a blank one; not usable."
+  },
+  "39125": {
+   "county": "Paulding",
+   "ems_coverage": 0.9976,
+   "services": [
+    {
+     "name": "ANT EMS",
+     "share": 0.1641
+    },
+    {
+     "name": "GR HILL EMS",
+     "share": 0.1064
+    },
+    {
+     "name": "OAK EMS",
+     "share": 0.1667
+    },
+    {
+     "name": "PLDG EMS",
+     "share": 0.276
+    },
+    {
+     "name": "PYN EMS",
+     "share": 0.1589
+    },
+    {
+     "name": "SCOTT EMS",
+     "share": 0.1165
+    }
+   ],
+   "slivers_under_1pct": 1,
+   "tier": "A",
+   "page_note": "Layer labels are the county's own codes (PLDG EMS, OAK EMS, ANT EMS, PYN EMS, SCOTT EMS, GR HILL EMS, OTT EMS) = township/village zones; agency names not given. Layer last edited 2024-03."
+  },
+  "39129": {
+   "county": "Pickaway",
+   "ems_coverage": 0.3128,
+   "services": [
+    {
+     "name": "Sterling Joint EMS (Station 371)",
+     "share": 0.138
+    },
+    {
+     "name": "Wades (Station 600)",
+     "share": 0.172
+    }
+   ],
+   "slivers_under_1pct": 2,
+   "tier": "held",
+   "page_note": "Fayette County layer reaches into Pickaway (Wades Station 600 17%, Sterling Joint EMS Station 371 14%); stale 2022 layer and only 31% of the county; tier left alone."
+  },
+  "39173": {
+   "county": "Wood",
+   "ems_coverage": 0.9957,
+   "services": [
+    {
+     "name": "Bowling Green EMS",
+     "share": 0.0213
+    },
+    {
+     "name": "Eagleville Joint District",
+     "share": 0.1127
+    },
+    {
+     "name": "Jackson Twp",
+     "share": 0.0585
+    },
+    {
+     "name": "Lake Twp Medic 26 EMS",
+     "share": 0.056
+    },
+    {
+     "name": "Mid County 120",
+     "share": 0.1601
+    },
+    {
+     "name": "Middleton Twp Medic 680",
+     "share": 0.0562
+    },
+    {
+     "name": "North Baltimore EMS",
+     "share": 0.0584
+    },
+    {
+     "name": "Northwest 190 EMS",
+     "share": 0.0566
+    },
+    {
+     "name": "Northwood EMS",
+     "share": 0.0134
+    },
+    {
+     "name": "Pemberville-Freedom EMS",
+     "share": 0.0654
+    },
+    {
+     "name": "Perrysburg City EMS",
+     "share": 0.0187
+    },
+    {
+     "name": "Perrysburg Twp EMS",
+     "share": 0.058
+    },
+    {
+     "name": "South East 150",
+     "share": 0.0583
+    },
+    {
+     "name": "Troy Twp EMS",
+     "share": 0.0696
+    },
+    {
+     "name": "Weston EMS",
+     "share": 0.1408
+    }
+   ],
+   "slivers_under_1pct": 6,
+   "tier": "A"
+  }
+ }
+}

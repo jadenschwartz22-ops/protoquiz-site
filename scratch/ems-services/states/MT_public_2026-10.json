@@ -1,0 +1,81 @@
+{
+ "meta": {
+  "state": "MT",
+  "source": "Carbon County MT \"EMS Districts\" ArcGIS layer (owner CarbonFire)",
+  "retrieved": "2026-10-21",
+  "scope": "Carbon County only; the MSL statewide Ambulance Districts layer holds only 5 polygons (Madison, Stillwater, Beaverhead, Jefferson)",
+  "tier_counts": {
+   "A": 1
+  }
+ },
+ "rows": [
+  {
+   "name": "Bridger",
+   "county": "Carbon",
+   "transport": null,
+   "transport_basis": "EMS district polygon (Carbon County Emergency Medical Services Districts); layer does not state transport (not asserted)",
+   "source_url": "https://services1.arcgis.com/lo6DwqkHoBfbpsNX/arcgis/rest/services/EMSDistricts/FeatureServer/0",
+   "vintage_layer_edit": "2026-06-15"
+  },
+  {
+   "name": "Red Lodge",
+   "county": "Carbon",
+   "transport": null,
+   "transport_basis": "EMS district polygon (Carbon County Emergency Medical Services Districts); layer does not state transport (not asserted)",
+   "source_url": "https://services1.arcgis.com/lo6DwqkHoBfbpsNX/arcgis/rest/services/EMSDistricts/FeatureServer/0",
+   "vintage_layer_edit": "2026-06-15"
+  },
+  {
+   "name": "Joliet",
+   "county": "Carbon",
+   "transport": null,
+   "transport_basis": "EMS district polygon (Carbon County Emergency Medical Services Districts); layer does not state transport (not asserted)",
+   "source_url": "https://services1.arcgis.com/lo6DwqkHoBfbpsNX/arcgis/rest/services/EMSDistricts/FeatureServer/0",
+   "vintage_layer_edit": "2026-06-15"
+  },
+  {
+   "name": "Absarokee",
+   "county": "Carbon",
+   "transport": null,
+   "transport_basis": "EMS district polygon (Carbon County Emergency Medical Services Districts); layer does not state transport (not asserted)",
+   "source_url": "https://services1.arcgis.com/lo6DwqkHoBfbpsNX/arcgis/rest/services/EMSDistricts/FeatureServer/0",
+   "vintage_layer_edit": "2026-06-15"
+  },
+  {
+   "name": "Laurel",
+   "county": "Carbon",
+   "transport": null,
+   "transport_basis": "EMS district polygon (Carbon County Emergency Medical Services Districts); layer does not state transport (not asserted)",
+   "source_url": "https://services1.arcgis.com/lo6DwqkHoBfbpsNX/arcgis/rest/services/EMSDistricts/FeatureServer/0",
+   "vintage_layer_edit": "2026-06-15"
+  }
+ ],
+ "county_verdict": {
+  "30009": {
+   "county": "Carbon County",
+   "pop": 11498,
+   "tier": "A",
+   "ems_coverage": 0.9999,
+   "overlap_share": 0.0135,
+   "services": [
+    {
+     "name": "Absarokee",
+     "share": 0.0533
+    },
+    {
+     "name": "Bridger",
+     "share": 0.4731
+    },
+    {
+     "name": "Joliet",
+     "share": 0.1298
+    },
+    {
+     "name": "Red Lodge",
+     "share": 0.3554
+    }
+   ],
+   "page_note": "County-published layer (owner CarbonFire); district names are place names, not agency names."
+  }
+ }
+}

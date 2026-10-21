@@ -1,0 +1,2213 @@
+{
+ "meta": {
+  "retrieved": "2026-10-21",
+  "state": "AR",
+  "stale": true,
+  "tier_counts": {
+   "A_supportable_if_stale_accepted": 75
+  },
+  "a_threshold": 0.95,
+  "label": "from the Arkansas NG911 ambulance service-area polygons (2021), not the ADH licence record",
+  "note": "STALE (>3 years): do not raise any tier from this file. A newer layer exists inside the ADH EMS web map 9a6326f0239f4c828eae4859fabb0bf1 (modified 2026-07-22) as \"NG911 EMS BOUNDARY\" at gis.arkansas.gov/arcgis/rest/services/Apps/NG911_Boundaries/FeatureServer/3, but that service returns 404 \"Service not found\" to the public REST endpoint.",
+  "sources": [
+   {
+    "url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+    "label": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18"
+   }
+  ]
+ },
+ "rows": [
+  {
+   "name": "AMH Health Services - Rector",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Amity Volunteer Ambulance",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Ark Methodist Hospital EMS",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Arkansas Paramed Transfer (Transfer Only)",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "BHMC - Ambulance (ALS)",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "BHMC - Ambulance: (ALS)",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Baptist Ambulance",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Baxter Reg. Med. Ct. - Yellville",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Baxter Regional EMS",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Bearden Ambulance Service",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Bella Vista Amb. Svc., Inc",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Bentonville Fire Department",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Calhoun County Ambulance Service",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Caraway Vol Ambulance Serv",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Chimes Vol Fire Dept",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "City of Rogers Ambulance Service",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Columbia Co. Paramedic Svc.",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Crittenden EMS",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Crossett Fire Department Paramedic",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "DeWitt Hospital EMS",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Des Arc Ambulance Service",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Dumas Emergnecy Medical Serv",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "EASI",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "EASI - Cleveland County",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "EASI - DeWitt",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "EASI - England",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "EASI - Pine Bluff",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "EASI - Star City",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "EASI - Warren",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "EMS South East Emer. Med. Serv. INC.",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "El Dorado Fire Department/ALS",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Elite Medical Services Inc. - Dallas Co",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Emergency Medical Services of Arkansas",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Emergency Medical Transport",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Emerson Ambulance Service",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Emerson Ambulance Service, Inc - Manila",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Eureka Springs Fire Department EMS",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Fairfield Bay EMS",
+   "polygons": 2,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Fort Smith EMS",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Franklin County EMS",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Fulton County Hospital (Para)",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Gravette Fire Department",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Greers Ferry Ambulance",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Huttig Volunteer Ambulance Service",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Jacksonville Fire Department",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Johnson County EMS",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Junction City Ambulance",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Lafayette County Ambulance Ser",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "LifeNet",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "LifeNet (TX)",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "LifeNet Inc., Hot Springs Village #2",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "LifeNet, Hot Springs",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Logan County E.M.S.",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "MEMS",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "MEMS - Cabot",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "MEMS - Conway",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "MEMS - Grant - Advanced Response",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Madison County EMS",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "McGehee Fire and EMS",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Med-Tech EMS - Conway County",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Medic One Ambulance Service",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "MedicOne - Harrisburg",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "MedicOne - Jonesboro",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "MedicOne - Walnut Ridge",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Medical Transport Management, Inc.",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Medtran EMS",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Monticello Ambulance Service",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "NARMC",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "NARMC - Jasper",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "NARMC - Marshall",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "NEBCO EMS",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Nevada Co. Amb. Sev. Inc.",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Newport EMS",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "NorthStar - Searcy",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Ouachita County Ambulance",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Pafford",
+   "polygons": 3,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Pafford - Hope",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Pafford - Marianna",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Pafford - West Helena",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Pafford - West Helena (Desha Co)",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Pafford - Woodruff",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Pafford-Nashville",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Pea Ridge Fire Department",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Piggott Comm. Hosp. EMS",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Pinnacle EMS",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Pope County Emergency Medical Services",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Prim Ambulance Service",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Pro Med",
+   "polygons": 3,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "ProMed - El Dorado",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "ProMed - Pocahontas",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Riverside EMS, Inc.",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Sebastian County EMS",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Siloam Springs ALS/Rescue",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Southern Para Svc. - Hazen",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Southern Paramedic",
+   "polygons": 2,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Southern Paramedic Service - Brinkley",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Southern Paramedic. - Cherry Valley",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Southwest EMS",
+   "polygons": 4,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Southwest EMS _DeQueen",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Spring River Ambulance Svc.",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Springdale Fire Department",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "St. Francis County EMS",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Survival Flight Ground",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Total Life Care EMS, Inc (Transfer Only)",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Tuckerman Vol Fire Department EMS",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Tumbling Shoals EMS",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Tyronza Fire Department",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Vital Link Inc. - Mountain View",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Vital Link, Inc",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Vital Link, Inc - Izard Co.",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Wash. Co. Reg. Amb. Auth, Central EMS",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "West Memphis Fire Department",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "White River EMS, ALS",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  },
+  {
+   "name": "Wilburn Rescue",
+   "polygons": 1,
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "vintage": "2021-09"
+  }
+ ],
+ "county_verdict": {
+  "05087": {
+   "county": "Madison",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Madison County EMS",
+     "share": 0.9936
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Madison: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05111": {
+   "county": "Poinsett",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "MedicOne - Harrisburg",
+     "share": 0.7041
+    },
+    {
+     "name": "Riverside EMS, Inc.",
+     "share": 0.2494
+    },
+    {
+     "name": "Tyronza Fire Department",
+     "share": 0.0458
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Poinsett: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05009": {
+   "county": "Boone",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "NARMC",
+     "share": 0.9991
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Boone: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05107": {
+   "county": "Phillips",
+   "coverage": 0.9694,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Pafford - West Helena",
+     "share": 0.9664
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Phillips: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 97% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05121": {
+   "county": "Randolph",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "ProMed - Pocahontas",
+     "share": 0.9993
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Randolph: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05093": {
+   "county": "Mississippi",
+   "coverage": 0.9868,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Pafford",
+     "share": 0.8365
+    },
+    {
+     "name": "Emerson Ambulance Service, Inc - Manila",
+     "share": 0.1502
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Mississippi: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 99% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05053": {
+   "county": "Grant",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "MEMS - Grant - Advanced Response",
+     "share": 0.9999
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Grant: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05073": {
+   "county": "Lafayette",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Lafayette County Ambulance Ser",
+     "share": 0.9999
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Lafayette: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05037": {
+   "county": "Cross",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Southern Paramedic. - Cherry Valley",
+     "share": 0.9992
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Cross: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05021": {
+   "county": "Clay",
+   "coverage": 0.9999,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "AMH Health Services - Rector",
+     "share": 0.7259
+    },
+    {
+     "name": "Piggott Comm. Hosp. EMS",
+     "share": 0.2739
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Clay: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05045": {
+   "county": "Faulkner",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "MEMS - Conway",
+     "share": 0.9996
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Faulkner: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05075": {
+   "county": "Lawrence",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Pro Med",
+     "share": 0.9969
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Lawrence: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05065": {
+   "county": "Izard",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Vital Link, Inc - Izard Co.",
+     "share": 0.9975
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Izard: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05061": {
+   "county": "Howard",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Pafford-Nashville",
+     "share": 0.9999
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Howard: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05099": {
+   "county": "Nevada",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Nevada Co. Amb. Sev. Inc.",
+     "share": 0.9999
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Nevada: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05139": {
+   "county": "Union",
+   "coverage": 0.9999,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "ProMed - El Dorado",
+     "share": 0.9825
+    },
+    {
+     "name": "El Dorado Fire Department/ALS",
+     "share": 0.0153
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Union: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05055": {
+   "county": "Greene",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Ark Methodist Hospital EMS",
+     "share": 0.9999
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Greene: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05145": {
+   "county": "White",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "NorthStar - Searcy",
+     "share": 0.9998
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "White: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05001": {
+   "county": "Arkansas",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "EASI - DeWitt",
+     "share": 0.648
+    },
+    {
+     "name": "Southern Para Svc. - Hazen",
+     "share": 0.3436
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Arkansas: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05035": {
+   "county": "Crittenden",
+   "coverage": 0.9972,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Baptist Ambulance",
+     "share": 0.9524
+    },
+    {
+     "name": "Crittenden EMS",
+     "share": 0.9524
+    },
+    {
+     "name": "West Memphis Fire Department",
+     "share": 0.0448
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Crittenden: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05103": {
+   "county": "Ouachita",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Ouachita County Ambulance",
+     "share": 0.9977
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Ouachita: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05149": {
+   "county": "Yell",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Pinnacle EMS",
+     "share": 0.998
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Yell: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05135": {
+   "county": "Sharp",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Spring River Ambulance Svc.",
+     "share": 0.9927
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Sharp: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05077": {
+   "county": "Lee",
+   "coverage": 0.9658,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Pafford - Marianna",
+     "share": 0.9657
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Lee: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 97% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05031": {
+   "county": "Craighead",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Emerson Ambulance Service",
+     "share": 0.9966
+    },
+    {
+     "name": "MedicOne - Walnut Ridge",
+     "share": 0.8833
+    },
+    {
+     "name": "MedicOne - Jonesboro",
+     "share": 0.1133
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Craighead: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05063": {
+   "county": "Independence",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Vital Link, Inc",
+     "share": 1.0
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Independence: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05085": {
+   "county": "Lonoke",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Southern Paramedic",
+     "share": 0.6892
+    },
+    {
+     "name": "EASI - England",
+     "share": 0.2825
+    },
+    {
+     "name": "MEMS - Cabot",
+     "share": 0.0254
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Lonoke: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05143": {
+   "county": "Washington",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Wash. Co. Reg. Amb. Auth, Central EMS",
+     "share": 0.8753
+    },
+    {
+     "name": "Springdale Fire Department",
+     "share": 0.1246
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Washington: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05147": {
+   "county": "Woodruff",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Pafford - Woodruff",
+     "share": 0.9998
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Woodruff: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05051": {
+   "county": "Garland",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "LifeNet, Hot Springs",
+     "share": 1.0
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Garland: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05081": {
+   "county": "Little River",
+   "coverage": 0.9999,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Pafford",
+     "share": 0.9999
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Little River: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05141": {
+   "county": "Van Buren",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Chimes Vol Fire Dept",
+     "share": 0.9788
+    },
+    {
+     "name": "Medic One Ambulance Service",
+     "share": 0.9788
+    },
+    {
+     "name": "Fairfield Bay EMS",
+     "share": 0.0209
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Van Buren: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05071": {
+   "county": "Johnson",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Johnson County EMS",
+     "share": 0.9934
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Johnson: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05089": {
+   "county": "Marion",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Baxter Reg. Med. Ct. - Yellville",
+     "share": 0.9709
+    },
+    {
+     "name": "NARMC",
+     "share": 0.028
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Marion: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05039": {
+   "county": "Dallas",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Elite Medical Services Inc. - Dallas Co",
+     "share": 0.9999
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Dallas: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05131": {
+   "county": "Sebastian",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Sebastian County EMS",
+     "share": 0.8424
+    },
+    {
+     "name": "Fort Smith EMS",
+     "share": 0.1543
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Sebastian: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05007": {
+   "county": "Benton",
+   "coverage": 0.9999,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Arkansas Paramed Transfer (Transfer Only)",
+     "share": 0.9909
+    },
+    {
+     "name": "Total Life Care EMS, Inc (Transfer Only)",
+     "share": 0.9909
+    },
+    {
+     "name": "Siloam Springs ALS/Rescue",
+     "share": 0.262
+    },
+    {
+     "name": "Bentonville Fire Department",
+     "share": 0.2305
+    },
+    {
+     "name": "City of Rogers Ambulance Service",
+     "share": 0.1862
+    },
+    {
+     "name": "NEBCO EMS",
+     "share": 0.1366
+    },
+    {
+     "name": "Gravette Fire Department",
+     "share": 0.0823
+    },
+    {
+     "name": "Bella Vista Amb. Svc., Inc",
+     "share": 0.053
+    },
+    {
+     "name": "Springdale Fire Department",
+     "share": 0.0274
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Benton: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05047": {
+   "county": "Franklin",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Franklin County EMS",
+     "share": 0.993
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Franklin: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05095": {
+   "county": "Monroe",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "EASI",
+     "share": 0.6718
+    },
+    {
+     "name": "Southern Paramedic Service - Brinkley",
+     "share": 0.298
+    },
+    {
+     "name": "Pafford - West Helena",
+     "share": 0.0301
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Monroe: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05123": {
+   "county": "St. Francis",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Emergency Medical Services of Arkansas",
+     "share": 0.9963
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "St. Francis: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05097": {
+   "county": "Montgomery",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Southwest EMS",
+     "share": 1.0
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Montgomery: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05113": {
+   "county": "Polk",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Southwest EMS",
+     "share": 1.0
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Polk: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05003": {
+   "county": "Ashley",
+   "coverage": 0.9994,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Pro Med",
+     "share": 0.7288
+    },
+    {
+     "name": "Crossett Fire Department Paramedic",
+     "share": 0.2705
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Ashley: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05041": {
+   "county": "Desha",
+   "coverage": 0.9607,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Dumas Emergnecy Medical Serv",
+     "share": 0.4355
+    },
+    {
+     "name": "McGehee Fire and EMS",
+     "share": 0.3542
+    },
+    {
+     "name": "Pafford - West Helena (Desha Co)",
+     "share": 0.1709
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Desha: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 96% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05119": {
+   "county": "Pulaski",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "MEMS",
+     "share": 0.9968
+    },
+    {
+     "name": "Jacksonville Fire Department",
+     "share": 0.0358
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Pulaski: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05023": {
+   "county": "Cleburne",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Survival Flight Ground",
+     "share": 0.507
+    },
+    {
+     "name": "Prim Ambulance Service",
+     "share": 0.1198
+    },
+    {
+     "name": "Wilburn Rescue",
+     "share": 0.0949
+    },
+    {
+     "name": "Greers Ferry Ambulance",
+     "share": 0.0937
+    },
+    {
+     "name": "Vital Link, Inc",
+     "share": 0.0847
+    },
+    {
+     "name": "Tumbling Shoals EMS",
+     "share": 0.0757
+    },
+    {
+     "name": "Vital Link Inc. - Mountain View",
+     "share": 0.0188
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Cleburne: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05059": {
+   "county": "Hot Spring",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "LifeNet",
+     "share": 0.7238
+    },
+    {
+     "name": "BHMC - Ambulance: (ALS)",
+     "share": 0.2752
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Hot Spring: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05027": {
+   "county": "Columbia",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Columbia Co. Paramedic Svc.",
+     "share": 1.0
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Columbia: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05049": {
+   "county": "Fulton",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Fulton County Hospital (Para)",
+     "share": 0.9933
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Fulton: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05083": {
+   "county": "Logan",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Logan County E.M.S.",
+     "share": 0.9971
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Logan: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05091": {
+   "county": "Miller",
+   "coverage": 0.9999,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "LifeNet (TX)",
+     "share": 0.9998
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Miller: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05033": {
+   "county": "Crawford",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Southwest EMS",
+     "share": 0.9989
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Crawford: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05067": {
+   "county": "Jackson",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "White River EMS, ALS",
+     "share": 0.5778
+    },
+    {
+     "name": "Tuckerman Vol Fire Department EMS",
+     "share": 0.3999
+    },
+    {
+     "name": "Newport EMS",
+     "share": 0.0215
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Jackson: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05105": {
+   "county": "Perry",
+   "coverage": 0.996,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Pro Med",
+     "share": 0.9956
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Perry: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05017": {
+   "county": "Chicot",
+   "coverage": 0.9988,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Pafford",
+     "share": 0.9938
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Chicot: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05115": {
+   "county": "Pope",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Pope County Emergency Medical Services",
+     "share": 0.9876
+    },
+    {
+     "name": "Pinnacle EMS",
+     "share": 0.0121
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Pope: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05005": {
+   "county": "Baxter",
+   "coverage": 0.9999,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Baxter Regional EMS",
+     "share": 0.9978
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Baxter: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05015": {
+   "county": "Carroll",
+   "coverage": 0.9999,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Southern Paramedic",
+     "share": 0.755
+    },
+    {
+     "name": "Eureka Springs Fire Department EMS",
+     "share": 0.2418
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Carroll: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05109": {
+   "county": "Pike",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Emergency Medical Transport",
+     "share": 0.9999
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Pike: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05125": {
+   "county": "Saline",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Medtran EMS",
+     "share": 0.9622
+    },
+    {
+     "name": "LifeNet Inc., Hot Springs Village #2",
+     "share": 0.031
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Saline: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05101": {
+   "county": "Newton",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "NARMC - Jasper",
+     "share": 0.9883
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Newton: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05129": {
+   "county": "Searcy",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "NARMC - Marshall",
+     "share": 0.9949
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Searcy: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05013": {
+   "county": "Calhoun",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Calhoun County Ambulance Service",
+     "share": 0.9999
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Calhoun: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05025": {
+   "county": "Cleveland",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "EASI - Cleveland County",
+     "share": 0.9999
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Cleveland: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05019": {
+   "county": "Clark",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "BHMC - Ambulance (ALS)",
+     "share": 0.9963
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Clark: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05137": {
+   "county": "Stone",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Vital Link Inc. - Mountain View",
+     "share": 0.9657
+    },
+    {
+     "name": "Prim Ambulance Service",
+     "share": 0.0227
+    },
+    {
+     "name": "Medic One Ambulance Service",
+     "share": 0.0107
+    },
+    {
+     "name": "Chimes Vol Fire Dept",
+     "share": 0.0107
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Stone: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05117": {
+   "county": "Prairie",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Southern Para Svc. - Hazen",
+     "share": 0.5836
+    },
+    {
+     "name": "Des Arc Ambulance Service",
+     "share": 0.4161
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Prairie: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05011": {
+   "county": "Bradley",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "EASI - Warren",
+     "share": 0.9999
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Bradley: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05029": {
+   "county": "Conway",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Med-Tech EMS - Conway County",
+     "share": 0.9997
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Conway: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05127": {
+   "county": "Scott",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Southwest EMS",
+     "share": 0.9981
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Scott: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05043": {
+   "county": "Drew",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Monticello Ambulance Service",
+     "share": 0.9832
+    },
+    {
+     "name": "EMS South East Emer. Med. Serv. INC.",
+     "share": 0.0128
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Drew: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05133": {
+   "county": "Sevier",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Southwest EMS _DeQueen",
+     "share": 0.9999
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Sevier: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05069": {
+   "county": "Jefferson",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "EASI - Pine Bluff",
+     "share": 0.9999
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Jefferson: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05079": {
+   "county": "Lincoln",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "EASI - Star City",
+     "share": 0.9954
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Lincoln: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  },
+  "05057": {
+   "county": "Hempstead",
+   "coverage": 1.0,
+   "tier": null,
+   "stale": true,
+   "services": [
+    {
+     "name": "Pafford - Hope",
+     "share": 0.9997
+    }
+   ],
+   "source": "Arkansas Ambulance Service Areas (Revised) web map, layer \"EMS 20210915 2\" (ArcGIS owner Katy_Hattenhauer, Arkansas GIS Office / ADH NG911 service-area polygons), layer edit 2021-09-15, map modified 2021-12-18",
+   "source_url": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0",
+   "layer_edit": "2021-09-15",
+   "page_note": "Hempstead: the only public statewide ambulance service-area polygon layer is dated 2021-09 (5 years old); it names services covering 100% of the county. Tier left alone until the state publishes a current layer."
+  }
+ }
+}

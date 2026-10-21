@@ -1,0 +1,426 @@
+{
+ "meta": {
+  "state": "OR",
+  "sources": [
+   "Marion County HHS \"AmbulanceServiceArea\" ArcGIS layer (owner Marion_County), https://services1.arcgis.com/sYGZnQPdJ0azuLyn/arcgis/rest/services/AmbulanceServiceArea/FeatureServer/0, last edit 2025-10-31",
+   "Oregon DHS/OHA \"OREGON_AMBULANCE_SERVICE_AREAS\" (owner dhs_heriford), https://services.arcgis.com/uUvqNMGPm7axC2dD/arcgis/rest/services/OREGON_AMBULANCE_SERVICE_AREAS/FeatureServer/0, 125 polygons in 19 counties, last edit 2025-12-19 (area names only for most counties)"
+  ],
+  "retrieved": "2026-10-21",
+  "scope": "the 17 counties not tier A on 2026-10-21",
+  "tier_counts": {
+   "none": 8,
+   "partial-areas": 8,
+   "A": 1
+  },
+  "a_threshold": 0.95
+ },
+ "rows": [
+  {
+   "name": "Jefferson Rural Fire Protection District",
+   "asa_number": "ASA 9",
+   "asa_label": "Jefferson ASA",
+   "sq_miles": 49.2,
+   "county": "Marion",
+   "transport": null,
+   "transport_basis": "Marion County designated Ambulance Service Area holder per county HHS layer; the layer does not state transport per se (an ASA is the exclusive 911 ambulance area under ORS 682, so the holder is the 911 ambulance provider, but this is our reading)",
+   "source_url": "https://services1.arcgis.com/sYGZnQPdJ0azuLyn/arcgis/rest/services/AmbulanceServiceArea/FeatureServer/0",
+   "vintage_layer_edit": "2025-10-31 (boundaries last updated 2022-12 per layer description)"
+  },
+  {
+   "name": "Lyons Rural Fire Protection District",
+   "asa_number": "ASA 6",
+   "asa_label": "Lyons ASA",
+   "sq_miles": 455.8,
+   "county": "Marion",
+   "transport": null,
+   "transport_basis": "Marion County designated Ambulance Service Area holder per county HHS layer; the layer does not state transport per se (an ASA is the exclusive 911 ambulance area under ORS 682, so the holder is the 911 ambulance provider, but this is our reading)",
+   "source_url": "https://services1.arcgis.com/sYGZnQPdJ0azuLyn/arcgis/rest/services/AmbulanceServiceArea/FeatureServer/0",
+   "vintage_layer_edit": "2025-10-31 (boundaries last updated 2022-12 per layer description)"
+  },
+  {
+   "name": "Turner Rural Fire Protection District",
+   "asa_number": "ASA 8",
+   "asa_label": "Turner ASA",
+   "sq_miles": 37.2,
+   "county": "Marion",
+   "transport": null,
+   "transport_basis": "Marion County designated Ambulance Service Area holder per county HHS layer; the layer does not state transport per se (an ASA is the exclusive 911 ambulance area under ORS 682, so the holder is the 911 ambulance provider, but this is our reading)",
+   "source_url": "https://services1.arcgis.com/sYGZnQPdJ0azuLyn/arcgis/rest/services/AmbulanceServiceArea/FeatureServer/0",
+   "vintage_layer_edit": "2025-10-31 (boundaries last updated 2022-12 per layer description)"
+  },
+  {
+   "name": "Polk County Fire District #1",
+   "asa_number": "ASA 10",
+   "asa_label": "Polk Co Fire ASA",
+   "sq_miles": 5.8,
+   "county": "Marion",
+   "transport": null,
+   "transport_basis": "Marion County designated Ambulance Service Area holder per county HHS layer; the layer does not state transport per se (an ASA is the exclusive 911 ambulance area under ORS 682, so the holder is the 911 ambulance provider, but this is our reading)",
+   "source_url": "https://services1.arcgis.com/sYGZnQPdJ0azuLyn/arcgis/rest/services/AmbulanceServiceArea/FeatureServer/0",
+   "vintage_layer_edit": "2025-10-31 (boundaries last updated 2022-12 per layer description)"
+  },
+  {
+   "name": "Santiam Memorial Hospital Ambulance",
+   "asa_number": "ASA 7",
+   "asa_label": "Santiam ASA",
+   "sq_miles": 112.2,
+   "county": "Marion",
+   "transport": null,
+   "transport_basis": "Marion County designated Ambulance Service Area holder per county HHS layer; the layer does not state transport per se (an ASA is the exclusive 911 ambulance area under ORS 682, so the holder is the 911 ambulance provider, but this is our reading)",
+   "source_url": "https://services1.arcgis.com/sYGZnQPdJ0azuLyn/arcgis/rest/services/AmbulanceServiceArea/FeatureServer/0",
+   "vintage_layer_edit": "2025-10-31 (boundaries last updated 2022-12 per layer description)"
+  },
+  {
+   "name": "Salem Area Ambulance",
+   "asa_number": "ASA 1",
+   "asa_label": "Salem Area ASA",
+   "sq_miles": 63.9,
+   "county": "Marion",
+   "transport": null,
+   "transport_basis": "Marion County designated Ambulance Service Area holder per county HHS layer; the layer does not state transport per se (an ASA is the exclusive 911 ambulance area under ORS 682, so the holder is the 911 ambulance provider, but this is our reading)",
+   "source_url": "https://services1.arcgis.com/sYGZnQPdJ0azuLyn/arcgis/rest/services/AmbulanceServiceArea/FeatureServer/0",
+   "vintage_layer_edit": "2025-10-31 (boundaries last updated 2022-12 per layer description)"
+  },
+  {
+   "name": "Keizer Fire District",
+   "asa_number": "ASA 2",
+   "asa_label": "Keizer Fire ASA",
+   "sq_miles": 10.2,
+   "county": "Marion",
+   "transport": null,
+   "transport_basis": "Marion County designated Ambulance Service Area holder per county HHS layer; the layer does not state transport per se (an ASA is the exclusive 911 ambulance area under ORS 682, so the holder is the 911 ambulance provider, but this is our reading)",
+   "source_url": "https://services1.arcgis.com/sYGZnQPdJ0azuLyn/arcgis/rest/services/AmbulanceServiceArea/FeatureServer/0",
+   "vintage_layer_edit": "2025-10-31 (boundaries last updated 2022-12 per layer description)"
+  },
+  {
+   "name": "Marion County Fire District #1",
+   "asa_number": "ASA 4",
+   "asa_label": "Marion Co Fire ASA",
+   "sq_miles": 89.8,
+   "county": "Marion",
+   "transport": null,
+   "transport_basis": "Marion County designated Ambulance Service Area holder per county HHS layer; the layer does not state transport per se (an ASA is the exclusive 911 ambulance area under ORS 682, so the holder is the 911 ambulance provider, but this is our reading)",
+   "source_url": "https://services1.arcgis.com/sYGZnQPdJ0azuLyn/arcgis/rest/services/AmbulanceServiceArea/FeatureServer/0",
+   "vintage_layer_edit": "2025-10-31 (boundaries last updated 2022-12 per layer description)"
+  },
+  {
+   "name": "Woodburn Ambulance Service",
+   "asa_number": "ASA 5",
+   "asa_label": "Woodburn ASA",
+   "sq_miles": 318.3,
+   "county": "Marion",
+   "transport": null,
+   "transport_basis": "Marion County designated Ambulance Service Area holder per county HHS layer; the layer does not state transport per se (an ASA is the exclusive 911 ambulance area under ORS 682, so the holder is the 911 ambulance provider, but this is our reading)",
+   "source_url": "https://services1.arcgis.com/sYGZnQPdJ0azuLyn/arcgis/rest/services/AmbulanceServiceArea/FeatureServer/0",
+   "vintage_layer_edit": "2025-10-31 (boundaries last updated 2022-12 per layer description)"
+  },
+  {
+   "name": "St Paul Rural Fire Protection District",
+   "asa_number": "ASA 3",
+   "asa_label": "St Paul ASA",
+   "sq_miles": 48.6,
+   "county": "Marion",
+   "transport": null,
+   "transport_basis": "Marion County designated Ambulance Service Area holder per county HHS layer; the layer does not state transport per se (an ASA is the exclusive 911 ambulance area under ORS 682, so the holder is the 911 ambulance provider, but this is our reading)",
+   "source_url": "https://services1.arcgis.com/sYGZnQPdJ0azuLyn/arcgis/rest/services/AmbulanceServiceArea/FeatureServer/0",
+   "vintage_layer_edit": "2025-10-31 (boundaries last updated 2022-12 per layer description)"
+  }
+ ],
+ "county_verdict": {
+  "41021": {
+   "county": "Gilliam County",
+   "pop": 1971,
+   "tier": "none",
+   "asa_coverage": 0.0202,
+   "asa_polygon_names": [
+    {
+     "name": "Sherman County ASA",
+     "share": 0.011
+    }
+   ],
+   "page_note": "Not in the Oregon DHS/OHA ASA layer (it holds 19 counties); no county layer found."
+  },
+  "41043": {
+   "county": "Linn County",
+   "pop": 132474,
+   "tier": "partial-areas",
+   "asa_coverage": 0.9999,
+   "asa_polygon_names": [
+    {
+     "name": "ALBANY",
+     "share": 0.0684
+    },
+    {
+     "name": "CORVALLIS",
+     "share": 0.0273
+    },
+    {
+     "name": "IDANHA/DETROIT",
+     "share": 0.1003
+    },
+    {
+     "name": "JEFFERSON",
+     "share": 0.0161
+    },
+    {
+     "name": "LEBANON",
+     "share": 0.1833
+    },
+    {
+     "name": "LYONS",
+     "share": 0.0946
+    },
+    {
+     "name": "SANTIAM",
+     "share": 0.0218
+    },
+    {
+     "name": "SISTERS",
+     "share": 0.0348
+    },
+    {
+     "name": "SPRINGFIELD",
+     "share": 0.0419
+    },
+    {
+     "name": "SWEET HOME",
+     "share": 0.4244
+    }
+   ],
+   "page_note": "Oregon DHS/OHA ambulance-service-area layer covers the county (100%) with ASA names, but the polygons carry area names (e.g. \"ASA 5\", \"MULTNOMAH ASA\", towns), not the ambulance provider; the provider is in the county ASA plan, not fetched."
+  },
+  "41069": {
+   "county": "Wheeler County",
+   "pop": 1456,
+   "tier": "none",
+   "asa_coverage": 0.0013,
+   "asa_polygon_names": [],
+   "page_note": "Not in the Oregon DHS/OHA ASA layer (it holds 19 counties); no county layer found."
+  },
+  "41001": {
+   "county": "Baker County",
+   "pop": 16750,
+   "tier": "none",
+   "asa_coverage": 0.0065,
+   "asa_polygon_names": [],
+   "page_note": "Not in the Oregon DHS/OHA ASA layer (it holds 19 counties); no county layer found."
+  },
+  "41061": {
+   "county": "Union County",
+   "pop": 26058,
+   "tier": "none",
+   "asa_coverage": 0.0191,
+   "asa_polygon_names": [],
+   "page_note": "Not in the Oregon DHS/OHA ASA layer (it holds 19 counties); no county layer found."
+  },
+  "41023": {
+   "county": "Grant County",
+   "pop": 7093,
+   "tier": "none",
+   "asa_coverage": 0.0031,
+   "asa_polygon_names": [],
+   "page_note": "Not in the Oregon DHS/OHA ASA layer (it holds 19 counties); no county layer found."
+  },
+  "41053": {
+   "county": "Polk County",
+   "pop": 90549,
+   "tier": "partial-areas",
+   "asa_coverage": 1.0,
+   "asa_polygon_names": [
+    {
+     "name": "ASA 1",
+     "share": 0.0665
+    },
+    {
+     "name": "ASA 2",
+     "share": 0.039
+    },
+    {
+     "name": "ASA 3",
+     "share": 0.1062
+    },
+    {
+     "name": "ASA 4",
+     "share": 0.1392
+    },
+    {
+     "name": "ASA 5",
+     "share": 0.0741
+    },
+    {
+     "name": "ASA 6",
+     "share": 0.3307
+    },
+    {
+     "name": "ASA 7",
+     "share": 0.2795
+    }
+   ],
+   "page_note": "Oregon DHS/OHA ambulance-service-area layer covers the county (100%) with ASA names, but the polygons carry area names (e.g. \"ASA 5\", \"MULTNOMAH ASA\", towns), not the ambulance provider; the provider is in the county ASA plan, not fetched."
+  },
+  "41055": {
+   "county": "Sherman County",
+   "pop": 2002,
+   "tier": "partial-areas",
+   "asa_coverage": 0.997,
+   "asa_polygon_names": [
+    {
+     "name": "Sherman County ASA",
+     "share": 0.997
+    }
+   ],
+   "page_note": "Oregon DHS/OHA ambulance-service-area layer covers the county (100%) with ASA names, but the polygons carry area names (e.g. \"ASA 5\", \"MULTNOMAH ASA\", towns), not the ambulance provider; the provider is in the county ASA plan, not fetched."
+  },
+  "41033": {
+   "county": "Josephine County",
+   "pop": 88276,
+   "tier": "none",
+   "asa_coverage": 0.005,
+   "asa_polygon_names": [],
+   "page_note": "Not in the Oregon DHS/OHA ASA layer (it holds 19 counties); no county layer found."
+  },
+  "41047": {
+   "county": "Marion County",
+   "pop": 352867,
+   "tier": "A",
+   "asa_coverage": 0.9994,
+   "overlap_share": 0.0296,
+   "services": [
+    {
+     "name": "Jefferson Rural Fire Protection District",
+     "share": 0.0438
+    },
+    {
+     "name": "Lyons Rural Fire Protection District",
+     "share": 0.3832
+    },
+    {
+     "name": "Marion County Fire District #1",
+     "share": 0.08
+    },
+    {
+     "name": "Salem Area Ambulance",
+     "share": 0.0573
+    },
+    {
+     "name": "Santiam Memorial Hospital Ambulance",
+     "share": 0.0977
+    },
+    {
+     "name": "St Paul Rural Fire Protection District",
+     "share": 0.0434
+    },
+    {
+     "name": "Turner Rural Fire Protection District",
+     "share": 0.0332
+    },
+    {
+     "name": "Woodburn Ambulance Service",
+     "share": 0.2751
+    }
+   ],
+   "basis": "Marion County HHS ambulance service area layer: 10 named ASAs tile the county; all named, none picked (several are fire districts that hold an ASA, some of which may contract operation out)"
+  },
+  "41003": {
+   "county": "Benton County",
+   "pop": 98899,
+   "tier": "partial-areas",
+   "asa_coverage": 1.0,
+   "asa_polygon_names": [
+    {
+     "name": "Benton County ASA",
+     "share": 0.9602
+    },
+    {
+     "name": "North Albany ASA",
+     "share": 0.0421
+    }
+   ],
+   "page_note": "Oregon DHS/OHA ambulance-service-area layer covers the county (100%) with ASA names, but the polygons carry area names (e.g. \"ASA 5\", \"MULTNOMAH ASA\", towns), not the ambulance provider; the provider is in the county ASA plan, not fetched."
+  },
+  "41015": {
+   "county": "Curry County",
+   "pop": 22774,
+   "tier": "none",
+   "asa_coverage": 0.0005,
+   "asa_polygon_names": [],
+   "page_note": "Not in the Oregon DHS/OHA ASA layer (it holds 19 counties); no county layer found."
+  },
+  "41005": {
+   "county": "Clackamas County",
+   "pop": 425857,
+   "tier": "partial-areas",
+   "asa_coverage": 0.9993,
+   "asa_polygon_names": [
+    {
+     "name": "CANBY ASA",
+     "share": 0.0302
+    },
+    {
+     "name": "CLACKAMAS ASA",
+     "share": 0.7486
+    },
+    {
+     "name": "MOLALLA ASA",
+     "share": 0.2012
+    },
+    {
+     "name": "WOODBURN AMBULANCE",
+     "share": 0.0265
+    }
+   ],
+   "page_note": "Oregon DHS/OHA ambulance-service-area layer covers the county (100%) with ASA names, but the polygons carry area names (e.g. \"ASA 5\", \"MULTNOMAH ASA\", towns), not the ambulance provider; the provider is in the county ASA plan, not fetched."
+  },
+  "41025": {
+   "county": "Harney County",
+   "pop": 7402,
+   "tier": "partial-areas",
+   "asa_coverage": 0.9999,
+   "asa_polygon_names": [
+    {
+     "name": "Harney County ASA",
+     "share": 0.9999
+    }
+   ],
+   "page_note": "Oregon DHS/OHA ambulance-service-area layer covers the county (100%) with ASA names, but the polygons carry area names (e.g. \"ASA 5\", \"MULTNOMAH ASA\", towns), not the ambulance provider; the provider is in the county ASA plan, not fetched."
+  },
+  "41051": {
+   "county": "Multnomah County",
+   "pop": 795897,
+   "tier": "partial-areas",
+   "asa_coverage": 0.9978,
+   "asa_polygon_names": [
+    {
+     "name": "CLACKAMAS ASA",
+     "share": 0.0203
+    },
+    {
+     "name": "MULTNOMAH ASA",
+     "share": 0.9978
+    }
+   ],
+   "page_note": "Oregon DHS/OHA ambulance-service-area layer covers the county (100%) with ASA names, but the polygons carry area names (e.g. \"ASA 5\", \"MULTNOMAH ASA\", towns), not the ambulance provider; the provider is in the county ASA plan, not fetched."
+  },
+  "41009": {
+   "county": "Columbia County",
+   "pop": 54063,
+   "tier": "none",
+   "asa_coverage": 0.008,
+   "asa_polygon_names": [],
+   "page_note": "Not in the Oregon DHS/OHA ASA layer (it holds 19 counties); no county layer found."
+  },
+  "41063": {
+   "county": "Wallowa County",
+   "pop": 7522,
+   "tier": "partial-areas",
+   "asa_coverage": 0.9991,
+   "asa_polygon_names": [
+    {
+     "name": "Wallowa County ASA",
+     "share": 0.9991
+    }
+   ],
+   "page_note": "Oregon DHS/OHA ambulance-service-area layer covers the county (100%) with ASA names, but the polygons carry area names (e.g. \"ASA 5\", \"MULTNOMAH ASA\", towns), not the ambulance provider; the provider is in the county ASA plan, not fetched."
+  }
+ }
+}

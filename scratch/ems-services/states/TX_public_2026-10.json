@@ -1,0 +1,1414 @@
+{
+ "meta": {
+  "retrieved": "2026-10-21",
+  "state": "TX",
+  "sources": [
+   {
+    "url": "https://services1.arcgis.com/z3DZ2dwxv2tyH8pc/arcgis/rest/services/DETCOG_Regional_EMS_Agency/FeatureServer/140",
+    "label": "Deep East Texas COG regional 911 GIS \"EMS Agency\" layer (primary service areas)",
+    "layer_last_edit": "2026-10-20"
+   },
+   {
+    "url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0",
+    "label": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+    "layer_last_edit": "2026-06-30"
+   },
+   {
+    "url": "https://services3.arcgis.com/wdTkTU0MdZbNBEZy/arcgis/rest/services/EmergencyServiceBoundaryMedical/FeatureServer/0",
+    "label": "Bastrop County GIS \"Emergency Service Boundary for Medical (EMS)\" (NG911 ESB)",
+    "layer_last_edit": "2026-09-23"
+   }
+  ],
+  "tier_counts": {
+   "partial": 3,
+   "held": 2,
+   "A": 31
+  },
+  "a_threshold": 0.95,
+  "min_share_listed": 0.01,
+  "label": "from regional/county 911 GIS service-area layers, not the DSHS licence record",
+  "transport_note": "These layers are EMS service areas (response areas); none carries a transport flag. Pantex EMS (plant) and Boys Ranch EMS are in the Panhandle layer."
+ },
+ "rows": [
+  {
+   "name": "Acadian EMS",
+   "state_name": "Acadian EMS",
+   "polygons": 1,
+   "updated": "2025-05-12",
+   "source": "Deep East Texas COG regional 911 GIS \"EMS Agency\" layer (primary service areas)",
+   "source_url": "https://services1.arcgis.com/z3DZ2dwxv2tyH8pc/arcgis/rest/services/DETCOG_Regional_EMS_Agency/FeatureServer/140"
+  },
+  {
+   "name": "Acadian EMS",
+   "state_name": "ACADIAN EMS",
+   "polygons": 1,
+   "updated": "2026-09-23",
+   "source": "Bastrop County GIS \"Emergency Service Boundary for Medical (EMS)\" (NG911 ESB)",
+   "source_url": "https://services3.arcgis.com/wdTkTU0MdZbNBEZy/arcgis/rest/services/EmergencyServiceBoundaryMedical/FeatureServer/0"
+  },
+  {
+   "name": "Adrian EMS",
+   "state_name": "ADRIAN EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Allegiance EMS",
+   "state_name": "Allegiance EMS",
+   "polygons": 3,
+   "updated": "2025-09-04",
+   "source": "Deep East Texas COG regional 911 GIS \"EMS Agency\" layer (primary service areas)",
+   "source_url": "https://services1.arcgis.com/z3DZ2dwxv2tyH8pc/arcgis/rest/services/DETCOG_Regional_EMS_Agency/FeatureServer/140"
+  },
+  {
+   "name": "Allegiance Mobile Health EMS",
+   "state_name": "Allegiance Mobile Health EMS",
+   "polygons": 3,
+   "updated": "2026-01-05",
+   "source": "Deep East Texas COG regional 911 GIS \"EMS Agency\" layer (primary service areas)",
+   "source_url": "https://services1.arcgis.com/z3DZ2dwxv2tyH8pc/arcgis/rest/services/DETCOG_Regional_EMS_Agency/FeatureServer/140"
+  },
+  {
+   "name": "Booker EMS",
+   "state_name": "BOOKER EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Borger EMS",
+   "state_name": "BORGER EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Bovina EMS",
+   "state_name": "BOVINA EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Boys Ranch EMS",
+   "state_name": "BOYS RANCH EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Castro County EMS",
+   "state_name": "CASTRO CO EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Channing EMS",
+   "state_name": "CHANNING EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Childress EMS",
+   "state_name": "CHILDRESS EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Claude EMS",
+   "state_name": "CLAUDE EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Dalhart EMS",
+   "state_name": "DALHART EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Darrouzett EMS",
+   "state_name": "DARROUZETT EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Donley County EMS",
+   "state_name": "DONLEY CO EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Farwell EMS",
+   "state_name": "FARWELL EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Follett EMS",
+   "state_name": "FOLLETT EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Friona EMS",
+   "state_name": "FRIONA EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Fritch EMS",
+   "state_name": "FRITCH EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Garrison Volunteer Ambulance",
+   "state_name": "Garrison Volunteer Ambulance",
+   "polygons": 1,
+   "updated": "2024-07-24",
+   "source": "Deep East Texas COG regional 911 GIS \"EMS Agency\" layer (primary service areas)",
+   "source_url": "https://services1.arcgis.com/z3DZ2dwxv2tyH8pc/arcgis/rest/services/DETCOG_Regional_EMS_Agency/FeatureServer/140"
+  },
+  {
+   "name": "Grapeland EMS",
+   "state_name": "Grapeland EMS",
+   "polygons": 1,
+   "updated": "2025-07-01",
+   "source": "Deep East Texas COG regional 911 GIS \"EMS Agency\" layer (primary service areas)",
+   "source_url": "https://services1.arcgis.com/z3DZ2dwxv2tyH8pc/arcgis/rest/services/DETCOG_Regional_EMS_Agency/FeatureServer/140"
+  },
+  {
+   "name": "Groom Volunteer EMS",
+   "state_name": "GROOM VOLUNTEER EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Gruver EMS",
+   "state_name": "GRUVER EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Hall County EMS",
+   "state_name": "HALL CO EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Happy EMS",
+   "state_name": "HAPPY EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Hart EMS",
+   "state_name": "HART EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Hartley Volunteer EMS",
+   "state_name": "HARTLEY VOLUNTEER EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Hedley EMS",
+   "state_name": "HEDLEY EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Hemphill County EMS",
+   "state_name": "HEMPHILL CO EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Hereford EMS",
+   "state_name": "HEREFORD EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Higgins EMS",
+   "state_name": "HIGGINS EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Lazbuddie EMS",
+   "state_name": "LAZBUDDIE EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Lefors EMS",
+   "state_name": "LEFORS EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Lifeguard Ambulance Service",
+   "state_name": "Lifeguard Ambulance Service",
+   "polygons": 1,
+   "updated": "2025-07-01",
+   "source": "Deep East Texas COG regional 911 GIS \"EMS Agency\" layer (primary service areas)",
+   "source_url": "https://services1.arcgis.com/z3DZ2dwxv2tyH8pc/arcgis/rest/services/DETCOG_Regional_EMS_Agency/FeatureServer/140"
+  },
+  {
+   "name": "Lufkin EMS 2",
+   "state_name": "Lufkin EMS 2",
+   "polygons": 1,
+   "updated": "2025-07-17",
+   "source": "Deep East Texas COG regional 911 GIS \"EMS Agency\" layer (primary service areas)",
+   "source_url": "https://services1.arcgis.com/z3DZ2dwxv2tyH8pc/arcgis/rest/services/DETCOG_Regional_EMS_Agency/FeatureServer/140"
+  },
+  {
+   "name": "Lufkin EMS 3",
+   "state_name": "Lufkin EMS 3",
+   "polygons": 1,
+   "updated": "2025-08-29",
+   "source": "Deep East Texas COG regional 911 GIS \"EMS Agency\" layer (primary service areas)",
+   "source_url": "https://services1.arcgis.com/z3DZ2dwxv2tyH8pc/arcgis/rest/services/DETCOG_Regional_EMS_Agency/FeatureServer/140"
+  },
+  {
+   "name": "Lufkin EMS 4",
+   "state_name": "Lufkin EMS 4",
+   "polygons": 1,
+   "updated": "2025-08-29",
+   "source": "Deep East Texas COG regional 911 GIS \"EMS Agency\" layer (primary service areas)",
+   "source_url": "https://services1.arcgis.com/z3DZ2dwxv2tyH8pc/arcgis/rest/services/DETCOG_Regional_EMS_Agency/FeatureServer/140"
+  },
+  {
+   "name": "Lufkin EMS 5",
+   "state_name": "Lufkin EMS 5",
+   "polygons": 4,
+   "updated": "2025-08-29",
+   "source": "Deep East Texas COG regional 911 GIS \"EMS Agency\" layer (primary service areas)",
+   "source_url": "https://services1.arcgis.com/z3DZ2dwxv2tyH8pc/arcgis/rest/services/DETCOG_Regional_EMS_Agency/FeatureServer/140"
+  },
+  {
+   "name": "McLean EMS",
+   "state_name": "MCLEAN EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Memorial Hospital",
+   "state_name": "Memorial Hospital",
+   "polygons": 1,
+   "updated": "2024-07-24",
+   "source": "Deep East Texas COG regional 911 GIS \"EMS Agency\" layer (primary service areas)",
+   "source_url": "https://services1.arcgis.com/z3DZ2dwxv2tyH8pc/arcgis/rest/services/DETCOG_Regional_EMS_Agency/FeatureServer/140"
+  },
+  {
+   "name": "Miami Volunteer EMS",
+   "state_name": "MIAMI VOLUNTEER EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Mobeetie EMS",
+   "state_name": "MOBEETIE EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Moore County Hospital District EMS",
+   "state_name": "MOORE COUNTY HOSPITAL DISTRICT EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Nazareth EMS",
+   "state_name": "NAZARETH EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Pampa EMS",
+   "state_name": "PAMPA EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Panhandle EMS",
+   "state_name": "PANHANDLE EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Pantex EMS",
+   "state_name": "PANTEX EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Perryton EMS",
+   "state_name": "PERRYTON EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Quitaque Volunteer EMS",
+   "state_name": "QUITAQUE VOLUNTEER EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Sabine County EMS",
+   "state_name": "Sabine County EMS",
+   "polygons": 10,
+   "updated": "2024-07-25",
+   "source": "Deep East Texas COG regional 911 GIS \"EMS Agency\" layer (primary service areas)",
+   "source_url": "https://services1.arcgis.com/z3DZ2dwxv2tyH8pc/arcgis/rest/services/DETCOG_Regional_EMS_Agency/FeatureServer/140"
+  },
+  {
+   "name": "San Augustine County EMS",
+   "state_name": "San Augustine County EMS",
+   "polygons": 1,
+   "updated": "2024-07-25",
+   "source": "Deep East Texas COG regional 911 GIS \"EMS Agency\" layer (primary service areas)",
+   "source_url": "https://services1.arcgis.com/z3DZ2dwxv2tyH8pc/arcgis/rest/services/DETCOG_Regional_EMS_Agency/FeatureServer/140"
+  },
+  {
+   "name": "Sanford EMS",
+   "state_name": "SANFORD EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Shamrock EMS",
+   "state_name": "SHAMROCK EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Silverton Volunteer EMS",
+   "state_name": "SILVERTON VOLUNTEER EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Spearman EMS",
+   "state_name": "SPEARMAN EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Stinnett EMS",
+   "state_name": "STINNETT EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Stratford EMS",
+   "state_name": "STRATFORD EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Sunray EMS",
+   "state_name": "SUNRAY EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Texhoma EMS",
+   "state_name": "TEXHOMA EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Texline EMS",
+   "state_name": "TEXLINE EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Timpson EMS",
+   "state_name": "Timpson EMS",
+   "polygons": 1,
+   "updated": "2023-05-02",
+   "source": "Deep East Texas COG regional 911 GIS \"EMS Agency\" layer (primary service areas)",
+   "source_url": "https://services1.arcgis.com/z3DZ2dwxv2tyH8pc/arcgis/rest/services/DETCOG_Regional_EMS_Agency/FeatureServer/140"
+  },
+  {
+   "name": "Tulia EMS",
+   "state_name": "TULIA EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Turkey EMS",
+   "state_name": "TURKEY EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Vega EMS",
+   "state_name": "VEGA EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Ventura EMS",
+   "state_name": "Ventura EMS",
+   "polygons": 1,
+   "updated": "2025-02-13",
+   "source": "Deep East Texas COG regional 911 GIS \"EMS Agency\" layer (primary service areas)",
+   "source_url": "https://services1.arcgis.com/z3DZ2dwxv2tyH8pc/arcgis/rest/services/DETCOG_Regional_EMS_Agency/FeatureServer/140"
+  },
+  {
+   "name": "Verify EMS",
+   "state_name": "Verify EMS",
+   "polygons": 6,
+   "updated": "2025-05-12",
+   "source": "Deep East Texas COG regional 911 GIS \"EMS Agency\" layer (primary service areas)",
+   "source_url": "https://services1.arcgis.com/z3DZ2dwxv2tyH8pc/arcgis/rest/services/DETCOG_Regional_EMS_Agency/FeatureServer/140"
+  },
+  {
+   "name": "Vigo Park EMS",
+   "state_name": "VIGO PARK EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Wayside EMS",
+   "state_name": "WAYSIDE EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Wellington EMS",
+   "state_name": "WELLINGTON EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "Wheeler EMS",
+   "state_name": "WHEELER EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  },
+  {
+   "name": "White Deer EMS",
+   "state_name": "WHITE DEER EMS",
+   "polygons": 1,
+   "updated": null,
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0"
+  }
+ ],
+ "county_verdict": {
+  "48405": {
+   "county": "San Augustine",
+   "coverage": 1.0,
+   "named_coverage": 0.899,
+   "services": [
+    {
+     "name": "San Augustine County EMS",
+     "share": 0.8983
+    }
+   ],
+   "tier": "partial",
+   "source": "Deep East Texas COG regional 911 GIS \"EMS Agency\" layer (primary service areas)",
+   "source_url": "https://services1.arcgis.com/z3DZ2dwxv2tyH8pc/arcgis/rest/services/DETCOG_Regional_EMS_Agency/FeatureServer/140",
+   "layer_edit": "2026-10-20",
+   "unverified_placeholder_share": 0.101,
+   "page_note": "San Augustine County: the Deep East Texas COG regional 911 GIS \"EMS Agency\" layer (primary service areas) names services for 90% of the county; the rest is unassigned or marked Verify. Tier left alone."
+  },
+  "48373": {
+   "county": "Polk",
+   "coverage": 1.0,
+   "named_coverage": 1.0,
+   "services": [
+    {
+     "name": "Allegiance Mobile Health EMS",
+     "share": 1.0
+    }
+   ],
+   "tier": "held",
+   "source": "Deep East Texas COG regional 911 GIS \"EMS Agency\" layer (primary service areas)",
+   "source_url": "https://services1.arcgis.com/z3DZ2dwxv2tyH8pc/arcgis/rest/services/DETCOG_Regional_EMS_Agency/FeatureServer/140",
+   "layer_edit": "2026-10-20",
+   "page_note": "Polk: the DETCOG layer names Allegiance Mobile Health EMS for 100% of the county, but the DSHS roster of 2026-10-02 lists Texan EMS LLC (Livingston, 911 & Transfer, 3 stations) as the Polk licensee. Conflict; tier left alone."
+  },
+  "48419": {
+   "county": "Shelby",
+   "coverage": 0.9993,
+   "named_coverage": 0.9668,
+   "services": [
+    {
+     "name": "Allegiance EMS",
+     "share": 0.9632
+    }
+   ],
+   "tier": "A",
+   "source": "Deep East Texas COG regional 911 GIS \"EMS Agency\" layer (primary service areas)",
+   "source_url": "https://services1.arcgis.com/z3DZ2dwxv2tyH8pc/arcgis/rest/services/DETCOG_Regional_EMS_Agency/FeatureServer/140",
+   "layer_edit": "2026-10-20",
+   "unverified_placeholder_share": 0.0325,
+   "page_note": "3% of the county is the placeholder \"Verify EMS\" (unverified by the COG); named services cover 96.7%."
+  },
+  "48005": {
+   "county": "Angelina",
+   "coverage": 0.9999,
+   "named_coverage": 0.9998,
+   "services": [
+    {
+     "name": "Allegiance Mobile Health EMS",
+     "share": 0.9587
+    },
+    {
+     "name": "Lufkin EMS 2",
+     "share": 0.0144
+    },
+    {
+     "name": "Lufkin EMS 5",
+     "share": 0.0104
+    }
+   ],
+   "tier": "A",
+   "source": "Deep East Texas COG regional 911 GIS \"EMS Agency\" layer (primary service areas)",
+   "source_url": "https://services1.arcgis.com/z3DZ2dwxv2tyH8pc/arcgis/rest/services/DETCOG_Regional_EMS_Agency/FeatureServer/140",
+   "layer_edit": "2026-10-20",
+   "unverified_placeholder_share": 0.0001,
+   "page_note": "Allegiance Mobile Health EMS covers 96% by area; the City of Lufkin Fire Dept (8 ambulances, Emergency 911 on the DSHS roster) is the city service (layer \"Lufkin EMS 2-5\", about 4% by area). Several rows are the same operator under two spellings (Allegiance EMS / Allegiance Mobile Health EMS)."
+  },
+  "48351": {
+   "county": "Newton",
+   "coverage": 0.9982,
+   "named_coverage": 0.181,
+   "services": [
+    {
+     "name": "Acadian EMS",
+     "share": 0.181
+    }
+   ],
+   "tier": "partial",
+   "source": "Deep East Texas COG regional 911 GIS \"EMS Agency\" layer (primary service areas)",
+   "source_url": "https://services1.arcgis.com/z3DZ2dwxv2tyH8pc/arcgis/rest/services/DETCOG_Regional_EMS_Agency/FeatureServer/140",
+   "layer_edit": "2026-10-20",
+   "unverified_placeholder_share": 0.8172,
+   "page_note": "Newton County: the Deep East Texas COG regional 911 GIS \"EMS Agency\" layer (primary service areas) names services for 18% of the county; the rest is unassigned or marked Verify. Tier left alone."
+  },
+  "48225": {
+   "county": "Houston",
+   "coverage": 0.9992,
+   "named_coverage": 0.9992,
+   "services": [
+    {
+     "name": "Grapeland EMS",
+     "share": 0.2066
+    },
+    {
+     "name": "Lifeguard Ambulance Service",
+     "share": 0.7925
+    }
+   ],
+   "tier": "A",
+   "source": "Deep East Texas COG regional 911 GIS \"EMS Agency\" layer (primary service areas)",
+   "source_url": "https://services1.arcgis.com/z3DZ2dwxv2tyH8pc/arcgis/rest/services/DETCOG_Regional_EMS_Agency/FeatureServer/140",
+   "layer_edit": "2026-10-20"
+  },
+  "48407": {
+   "county": "San Jacinto",
+   "coverage": 0.999,
+   "named_coverage": 0.999,
+   "services": [
+    {
+     "name": "Allegiance Mobile Health EMS",
+     "share": 0.9989
+    }
+   ],
+   "tier": "A",
+   "source": "Deep East Texas COG regional 911 GIS \"EMS Agency\" layer (primary service areas)",
+   "source_url": "https://services1.arcgis.com/z3DZ2dwxv2tyH8pc/arcgis/rest/services/DETCOG_Regional_EMS_Agency/FeatureServer/140",
+   "layer_edit": "2026-10-20"
+  },
+  "48457": {
+   "county": "Tyler",
+   "coverage": 0.9994,
+   "named_coverage": 0.9994,
+   "services": [
+    {
+     "name": "Allegiance EMS",
+     "share": 0.9984
+    }
+   ],
+   "tier": "A",
+   "source": "Deep East Texas COG regional 911 GIS \"EMS Agency\" layer (primary service areas)",
+   "source_url": "https://services1.arcgis.com/z3DZ2dwxv2tyH8pc/arcgis/rest/services/DETCOG_Regional_EMS_Agency/FeatureServer/140",
+   "layer_edit": "2026-10-20"
+  },
+  "48347": {
+   "county": "Nacogdoches",
+   "coverage": 0.9998,
+   "named_coverage": 0.9997,
+   "services": [
+    {
+     "name": "Garrison Volunteer Ambulance",
+     "share": 0.0661
+    },
+    {
+     "name": "Memorial Hospital",
+     "share": 0.9332
+    }
+   ],
+   "tier": "A",
+   "source": "Deep East Texas COG regional 911 GIS \"EMS Agency\" layer (primary service areas)",
+   "source_url": "https://services1.arcgis.com/z3DZ2dwxv2tyH8pc/arcgis/rest/services/DETCOG_Regional_EMS_Agency/FeatureServer/140",
+   "layer_edit": "2026-10-20",
+   "unverified_placeholder_share": 0.0001,
+   "page_note": "The layer labels the service \"Memorial Hospital\" (93%); the DSHS roster shows Nacogdoches County Hospital District dba Nacogdoches County EMS (911 & Transfer), so read it as that service."
+  },
+  "48403": {
+   "county": "Sabine",
+   "coverage": 0.9995,
+   "named_coverage": 0.8508,
+   "services": [
+    {
+     "name": "Sabine County EMS",
+     "share": 0.8505
+    }
+   ],
+   "tier": "partial",
+   "source": "Deep East Texas COG regional 911 GIS \"EMS Agency\" layer (primary service areas)",
+   "source_url": "https://services1.arcgis.com/z3DZ2dwxv2tyH8pc/arcgis/rest/services/DETCOG_Regional_EMS_Agency/FeatureServer/140",
+   "layer_edit": "2026-10-20",
+   "unverified_placeholder_share": 0.1487,
+   "page_note": "Sabine County: the Deep East Texas COG regional 911 GIS \"EMS Agency\" layer (primary service areas) names services for 85% of the county; the rest is unassigned or marked Verify. Tier left alone."
+  },
+  "48455": {
+   "county": "Trinity",
+   "coverage": 0.9999,
+   "named_coverage": 0.9999,
+   "services": [
+    {
+     "name": "Allegiance EMS",
+     "share": 0.7026
+    },
+    {
+     "name": "Ventura EMS",
+     "share": 0.2952
+    }
+   ],
+   "tier": "A",
+   "source": "Deep East Texas COG regional 911 GIS \"EMS Agency\" layer (primary service areas)",
+   "source_url": "https://services1.arcgis.com/z3DZ2dwxv2tyH8pc/arcgis/rest/services/DETCOG_Regional_EMS_Agency/FeatureServer/140",
+   "layer_edit": "2026-10-20"
+  },
+  "48421": {
+   "county": "Sherman",
+   "coverage": 1.0,
+   "named_coverage": 1.0,
+   "services": [
+    {
+     "name": "Gruver EMS",
+     "share": 0.1333
+    },
+    {
+     "name": "Moore County Hospital District EMS",
+     "share": 0.1075
+    },
+    {
+     "name": "Stratford EMS",
+     "share": 0.6679
+    },
+    {
+     "name": "Sunray EMS",
+     "share": 0.0892
+    }
+   ],
+   "tier": "A",
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0",
+   "layer_edit": "2026-06-30"
+  },
+  "48191": {
+   "county": "Hall",
+   "coverage": 0.9998,
+   "named_coverage": 0.9998,
+   "services": [
+    {
+     "name": "Childress EMS",
+     "share": 0.059
+    },
+    {
+     "name": "Hall County EMS",
+     "share": 0.5808
+    },
+    {
+     "name": "Turkey EMS",
+     "share": 0.3601
+    }
+   ],
+   "tier": "A",
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0",
+   "layer_edit": "2026-06-30"
+  },
+  "48129": {
+   "county": "Donley",
+   "coverage": 1.0,
+   "named_coverage": 1.0,
+   "services": [
+    {
+     "name": "Donley County EMS",
+     "share": 0.4401
+    },
+    {
+     "name": "Groom Volunteer EMS",
+     "share": 0.0677
+    },
+    {
+     "name": "Hall County EMS",
+     "share": 0.0199
+    },
+    {
+     "name": "Hedley EMS",
+     "share": 0.2177
+    },
+    {
+     "name": "McLean EMS",
+     "share": 0.2546
+    }
+   ],
+   "tier": "A",
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0",
+   "layer_edit": "2026-06-30"
+  },
+  "48117": {
+   "county": "Deaf Smith",
+   "coverage": 1.0,
+   "named_coverage": 1.0,
+   "services": [
+    {
+     "name": "Adrian EMS",
+     "share": 0.1047
+    },
+    {
+     "name": "Hereford EMS",
+     "share": 0.8082
+    },
+    {
+     "name": "Vega EMS",
+     "share": 0.087
+    }
+   ],
+   "tier": "A",
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0",
+   "layer_edit": "2026-06-30"
+  },
+  "48233": {
+   "county": "Hutchinson",
+   "coverage": 1.0,
+   "named_coverage": 1.0,
+   "services": [
+    {
+     "name": "Borger EMS",
+     "share": 0.2977
+    },
+    {
+     "name": "Fritch EMS",
+     "share": 0.0549
+    },
+    {
+     "name": "Stinnett EMS",
+     "share": 0.6473
+    }
+   ],
+   "tier": "A",
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0",
+   "layer_edit": "2026-06-30"
+  },
+  "48393": {
+   "county": "Roberts",
+   "coverage": 1.0,
+   "named_coverage": 1.0,
+   "services": [
+    {
+     "name": "Hemphill County EMS",
+     "share": 0.1061
+    },
+    {
+     "name": "Miami Volunteer EMS",
+     "share": 0.5695
+    },
+    {
+     "name": "Pampa EMS",
+     "share": 0.2709
+    },
+    {
+     "name": "Spearman EMS",
+     "share": 0.0534
+    }
+   ],
+   "tier": "A",
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0",
+   "layer_edit": "2026-06-30"
+  },
+  "48111": {
+   "county": "Dallam",
+   "coverage": 1.0,
+   "named_coverage": 1.0,
+   "services": [
+    {
+     "name": "Dalhart EMS",
+     "share": 0.6946
+    },
+    {
+     "name": "Stratford EMS",
+     "share": 0.0697
+    },
+    {
+     "name": "Texline EMS",
+     "share": 0.2357
+    }
+   ],
+   "tier": "A",
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0",
+   "layer_edit": "2026-06-30"
+  },
+  "48075": {
+   "county": "Childress",
+   "coverage": 0.9998,
+   "named_coverage": 0.9998,
+   "services": [
+    {
+     "name": "Childress EMS",
+     "share": 0.7833
+    },
+    {
+     "name": "Hall County EMS",
+     "share": 0.1105
+    },
+    {
+     "name": "Wellington EMS",
+     "share": 0.106
+    }
+   ],
+   "tier": "A",
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0",
+   "layer_edit": "2026-06-30"
+  },
+  "48195": {
+   "county": "Hansford",
+   "coverage": 1.0,
+   "named_coverage": 1.0,
+   "services": [
+    {
+     "name": "Gruver EMS",
+     "share": 0.5851
+    },
+    {
+     "name": "Spearman EMS",
+     "share": 0.4149
+    }
+   ],
+   "tier": "A",
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0",
+   "layer_edit": "2026-06-30"
+  },
+  "48295": {
+   "county": "Lipscomb",
+   "coverage": 0.9999,
+   "named_coverage": 0.9999,
+   "services": [
+    {
+     "name": "Booker EMS",
+     "share": 0.1212
+    },
+    {
+     "name": "Darrouzett EMS",
+     "share": 0.2098
+    },
+    {
+     "name": "Follett EMS",
+     "share": 0.2569
+    },
+    {
+     "name": "Higgins EMS",
+     "share": 0.412
+    }
+   ],
+   "tier": "A",
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0",
+   "layer_edit": "2026-06-30"
+  },
+  "48359": {
+   "county": "Oldham",
+   "coverage": 0.9999,
+   "named_coverage": 0.9999,
+   "services": [
+    {
+     "name": "Adrian EMS",
+     "share": 0.3692
+    },
+    {
+     "name": "Boys Ranch EMS",
+     "share": 0.0849
+    },
+    {
+     "name": "Channing EMS",
+     "share": 0.2333
+    },
+    {
+     "name": "Vega EMS",
+     "share": 0.3125
+    }
+   ],
+   "tier": "A",
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0",
+   "layer_edit": "2026-06-30"
+  },
+  "48437": {
+   "county": "Swisher",
+   "coverage": 0.9999,
+   "named_coverage": 0.9999,
+   "services": [
+    {
+     "name": "Happy EMS",
+     "share": 0.1642
+    },
+    {
+     "name": "Tulia EMS",
+     "share": 0.7515
+    },
+    {
+     "name": "Wayside EMS",
+     "share": 0.0841
+    }
+   ],
+   "tier": "A",
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0",
+   "layer_edit": "2026-06-30"
+  },
+  "48369": {
+   "county": "Parmer",
+   "coverage": 0.9999,
+   "named_coverage": 0.9999,
+   "services": [
+    {
+     "name": "Bovina EMS",
+     "share": 0.2576
+    },
+    {
+     "name": "Farwell EMS",
+     "share": 0.1489
+    },
+    {
+     "name": "Friona EMS",
+     "share": 0.3574
+    },
+    {
+     "name": "Lazbuddie EMS",
+     "share": 0.2359
+    }
+   ],
+   "tier": "A",
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0",
+   "layer_edit": "2026-06-30"
+  },
+  "48357": {
+   "county": "Ochiltree",
+   "coverage": 1.0,
+   "named_coverage": 1.0,
+   "services": [
+    {
+     "name": "Perryton EMS",
+     "share": 0.8067
+    },
+    {
+     "name": "Spearman EMS",
+     "share": 0.193
+    }
+   ],
+   "tier": "A",
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0",
+   "layer_edit": "2026-06-30"
+  },
+  "48483": {
+   "county": "Wheeler",
+   "coverage": 1.0,
+   "named_coverage": 1.0,
+   "services": [
+    {
+     "name": "Shamrock EMS",
+     "share": 0.3402
+    },
+    {
+     "name": "Wheeler EMS",
+     "share": 0.6591
+    }
+   ],
+   "tier": "A",
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0",
+   "layer_edit": "2026-06-30"
+  },
+  "48211": {
+   "county": "Hemphill",
+   "coverage": 1.0,
+   "named_coverage": 1.0,
+   "services": [
+    {
+     "name": "Hemphill County EMS",
+     "share": 0.8855
+    },
+    {
+     "name": "Higgins EMS",
+     "share": 0.0899
+    },
+    {
+     "name": "Miami Volunteer EMS",
+     "share": 0.0246
+    }
+   ],
+   "tier": "A",
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0",
+   "layer_edit": "2026-06-30"
+  },
+  "48341": {
+   "county": "Moore",
+   "coverage": 0.9998,
+   "named_coverage": 0.9998,
+   "services": [
+    {
+     "name": "Moore County Hospital District EMS",
+     "share": 0.8272
+    },
+    {
+     "name": "Sunray EMS",
+     "share": 0.1726
+    }
+   ],
+   "tier": "A",
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0",
+   "layer_edit": "2026-06-30"
+  },
+  "48045": {
+   "county": "Briscoe",
+   "coverage": 0.9999,
+   "named_coverage": 0.9999,
+   "services": [
+    {
+     "name": "Quitaque Volunteer EMS",
+     "share": 0.235
+    },
+    {
+     "name": "Silverton Volunteer EMS",
+     "share": 0.712
+    },
+    {
+     "name": "Vigo Park EMS",
+     "share": 0.0529
+    }
+   ],
+   "tier": "A",
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0",
+   "layer_edit": "2026-06-30"
+  },
+  "48179": {
+   "county": "Gray",
+   "coverage": 1.0,
+   "named_coverage": 1.0,
+   "services": [
+    {
+     "name": "Groom Volunteer EMS",
+     "share": 0.0842
+    },
+    {
+     "name": "Lefors EMS",
+     "share": 0.477
+    },
+    {
+     "name": "Pampa EMS",
+     "share": 0.3764
+    },
+    {
+     "name": "Wheeler EMS",
+     "share": 0.0623
+    }
+   ],
+   "tier": "A",
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0",
+   "layer_edit": "2026-06-30"
+  },
+  "48087": {
+   "county": "Collingsworth",
+   "coverage": 1.0,
+   "named_coverage": 1.0,
+   "services": [
+    {
+     "name": "Hall County EMS",
+     "share": 0.026
+    },
+    {
+     "name": "McLean EMS",
+     "share": 0.0999
+    },
+    {
+     "name": "Shamrock EMS",
+     "share": 0.2409
+    },
+    {
+     "name": "Wellington EMS",
+     "share": 0.6331
+    }
+   ],
+   "tier": "A",
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0",
+   "layer_edit": "2026-06-30"
+  },
+  "48065": {
+   "county": "Carson",
+   "coverage": 0.9999,
+   "named_coverage": 0.9999,
+   "services": [
+    {
+     "name": "Borger EMS",
+     "share": 0.0819
+    },
+    {
+     "name": "Fritch EMS",
+     "share": 0.046
+    },
+    {
+     "name": "Groom Volunteer EMS",
+     "share": 0.1161
+    },
+    {
+     "name": "Panhandle EMS",
+     "share": 0.3964
+    },
+    {
+     "name": "Pantex EMS",
+     "share": 0.1164
+    },
+    {
+     "name": "White Deer EMS",
+     "share": 0.2431
+    }
+   ],
+   "tier": "A",
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0",
+   "layer_edit": "2026-06-30"
+  },
+  "48011": {
+   "county": "Armstrong",
+   "coverage": 1.0,
+   "named_coverage": 1.0,
+   "services": [
+    {
+     "name": "Claude EMS",
+     "share": 0.841
+    },
+    {
+     "name": "Groom Volunteer EMS",
+     "share": 0.0371
+    },
+    {
+     "name": "Wayside EMS",
+     "share": 0.1219
+    }
+   ],
+   "tier": "A",
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0",
+   "layer_edit": "2026-06-30"
+  },
+  "48205": {
+   "county": "Hartley",
+   "coverage": 0.9999,
+   "named_coverage": 0.9999,
+   "services": [
+    {
+     "name": "Channing EMS",
+     "share": 0.2793
+    },
+    {
+     "name": "Dalhart EMS",
+     "share": 0.5534
+    },
+    {
+     "name": "Hartley Volunteer EMS",
+     "share": 0.1672
+    }
+   ],
+   "tier": "A",
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0",
+   "layer_edit": "2026-06-30"
+  },
+  "48069": {
+   "county": "Castro",
+   "coverage": 0.9999,
+   "named_coverage": 0.9999,
+   "services": [
+    {
+     "name": "Castro County EMS",
+     "share": 0.5471
+    },
+    {
+     "name": "Hart EMS",
+     "share": 0.1455
+    },
+    {
+     "name": "Hereford EMS",
+     "share": 0.0366
+    },
+    {
+     "name": "Nazareth EMS",
+     "share": 0.2706
+    }
+   ],
+   "tier": "A",
+   "source": "Texas Panhandle regional 911 GIS \"EMS Boundaries\" layer (24 rural counties)",
+   "source_url": "https://services8.arcgis.com/OpbGEllMqef1LMjj/arcgis/rest/services/EMS_Boundaries/FeatureServer/0",
+   "layer_edit": "2026-06-30"
+  },
+  "48021": {
+   "county": "Bastrop",
+   "coverage": 0.9995,
+   "named_coverage": 0.9995,
+   "services": [
+    {
+     "name": "Acadian EMS",
+     "share": 0.9995
+    }
+   ],
+   "tier": "held",
+   "source": "Bastrop County GIS \"Emergency Service Boundary for Medical (EMS)\" (NG911 ESB)",
+   "source_url": "https://services3.arcgis.com/wdTkTU0MdZbNBEZy/arcgis/rest/services/EmergencyServiceBoundaryMedical/FeatureServer/0",
+   "layer_edit": "2026-09-23",
+   "page_note": "Bastrop: the county NG911 medical boundary (edited 2026-09-23) names Acadian EMS for the whole county, but the DSHS roster of 2026-10-02 shows a new licence for Bastrop County ESD 3 (county government, Emergency 911, 16 units, first licensed 2026-02-23). Likely a transition; confirm with the county before changing the tier."
+  }
+ }
+}

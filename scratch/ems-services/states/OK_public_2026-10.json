@@ -1,0 +1,1108 @@
+{
+ "meta": {
+  "retrieved": "2026-10-21",
+  "state": "OK",
+  "tier_counts": {
+   "A": 32,
+   "partial": 6
+  },
+  "a_threshold": 0.95,
+  "label": "from Oklahoma Regional Medical Response System EMS service-area maps, not the OSDH licence record",
+  "sources": [
+   {
+    "url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+    "label": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06"
+   },
+   {
+    "url": "https://services6.arcgis.com/ritCBtUKIwVmwnta/arcgis/rest/services/Region_2_EMS_Agency_Service_Areas/FeatureServer",
+    "label": "Oklahoma Regional Medical Response System Region 2 EMS Agency Service Areas (ArcGIS owner Landon.Sweeney_R2), layer edit 2025-03-28"
+   }
+  ],
+  "transport_note": "Neither source says an agency carries patients; Survival Flight is an air service and Region 2 lists Survival Flight with no polygon. No transport flag is set."
+ },
+ "rows": [
+  {
+   "name": "Woodward County EMS",
+   "area": "whole county (Woodward)",
+   "county": "Woodward",
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "evidence": "map layer \"Woodward County EMS\" is the Woodward County polygon",
+   "vintage": "2024-08"
+  },
+  {
+   "name": "Watonga EMS",
+   "area": "whole county (Blaine)",
+   "county": "Blaine",
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "evidence": "map layer \"Watonga EMS\" is the Blaine County polygon",
+   "vintage": "2024-08"
+  },
+  {
+   "name": "Tillman County EMS",
+   "area": "whole county (Tillman)",
+   "county": "Tillman",
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "evidence": "map layer \"Tillman County EMS\" is the Tillman County polygon",
+   "vintage": "2024-08"
+  },
+  {
+   "name": "SW OK Ambulance Authority (S.W.O.K.A.A.)",
+   "area": "whole county (Harmon)",
+   "county": "Harmon",
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "evidence": "map layer \"SW OK Ambulance Authority (S.W.O.K.A.A.)\" is the Harmon County polygon",
+   "vintage": "2024-08"
+  },
+  {
+   "name": "Survival Flight EMS (County Based)",
+   "area": "whole county (Kiowa)",
+   "county": "Kiowa",
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "evidence": "map layer \"Survival Flight EMS (County Based)\" is the Kiowa County polygon",
+   "vintage": "2024-08"
+  },
+  {
+   "name": "Survival Flight EMS (County Based)",
+   "area": "whole county (Cotton)",
+   "county": "Cotton",
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "evidence": "map layer \"Survival Flight EMS (County Based)\" is the Cotton County polygon",
+   "vintage": "2024-08"
+  },
+  {
+   "name": "Roger Mills County EMS",
+   "area": "whole county (Roger Mills)",
+   "county": "Roger Mills",
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "evidence": "map layer \"Roger Mills County EMS\" is the Roger Mills County polygon",
+   "vintage": "2024-08"
+  },
+  {
+   "name": "Muskogee County EMS",
+   "area": "whole county (Muskogee)",
+   "county": "Muskogee",
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "evidence": "map layer \"Muskogee County EMS\" is the Muskogee County polygon",
+   "vintage": "2024-08"
+  },
+  {
+   "name": "Murray County EMS",
+   "area": "whole county (Murray)",
+   "county": "Murray",
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "evidence": "map layer \"Murray County EMS\" is the Murray County polygon",
+   "vintage": "2024-08"
+  },
+  {
+   "name": "Mercy Regional EMS (County Based)",
+   "area": "whole county (Craig)",
+   "county": "Craig",
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "evidence": "map layer \"Mercy Regional EMS (County Based)\" is the Craig County polygon",
+   "vintage": "2024-08"
+  },
+  {
+   "name": "Mercy Health - Love County EMS",
+   "area": "whole county (Love)",
+   "county": "Love",
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "evidence": "map layer \"Mercy Health - Love County EMS\" is the Love County polygon",
+   "vintage": "2024-08"
+  },
+  {
+   "name": "McCurtain County EMS",
+   "area": "whole county (McCurtain)",
+   "county": "McCurtain",
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "evidence": "map layer \"McCurtain County EMS\" is the McCurtain County polygon",
+   "vintage": "2024-08"
+  },
+  {
+   "name": "Marshall County EMS",
+   "area": "whole county (Marshall)",
+   "county": "Marshall",
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "evidence": "map layer \"Marshall County EMS\" is the Marshall County polygon",
+   "vintage": "2024-08"
+  },
+  {
+   "name": "LIFE EMS",
+   "area": "whole county (Garfield)",
+   "county": "Garfield",
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "evidence": "map layer \"LIFE EMS\" is the Garfield County polygon",
+   "vintage": "2024-08"
+  },
+  {
+   "name": "LeFlore County EMS",
+   "area": "whole county (Le Flore)",
+   "county": "Le Flore",
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "evidence": "map layer \"LeFlore County EMS\" is the Le Flore County polygon",
+   "vintage": "2024-08"
+  },
+  {
+   "name": "Johnston County EMS",
+   "area": "whole county (Johnston)",
+   "county": "Johnston",
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "evidence": "map layer \"Johnston County EMS\" is the Johnston County polygon",
+   "vintage": "2024-08"
+  },
+  {
+   "name": "Jackson County EMS",
+   "area": "whole county (Jackson)",
+   "county": "Jackson",
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "evidence": "map layer \"Jackson County EMS\" is the Jackson County polygon",
+   "vintage": "2024-08"
+  },
+  {
+   "name": "INTEGRIS Health EMS",
+   "area": "whole county (Ottawa)",
+   "county": "Ottawa",
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "evidence": "map layer \"INTEGRIS Health EMS\" is the Ottawa County polygon",
+   "vintage": "2024-08"
+  },
+  {
+   "name": "Guymon Fire/EMS",
+   "area": "whole county (Texas)",
+   "county": "Texas",
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "evidence": "map layer \"Guymon Fire/EMS\" is the Texas County polygon",
+   "vintage": "2024-08"
+  },
+  {
+   "name": "Comanche County EMS",
+   "area": "whole county (Comanche)",
+   "county": "Comanche",
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "evidence": "map layer \"Comanche County EMS\" is the Comanche County polygon",
+   "vintage": "2024-08"
+  },
+  {
+   "name": "Choctaw County EMS",
+   "area": "whole county (Choctaw)",
+   "county": "Choctaw",
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "evidence": "map layer \"Choctaw County EMS\" is the Choctaw County polygon",
+   "vintage": "2024-08"
+  },
+  {
+   "name": "Cimarron County EMS",
+   "area": "whole county (Cimarron)",
+   "county": "Cimarron",
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "evidence": "map layer \"Cimarron County EMS\" is the Cimarron County polygon",
+   "vintage": "2024-08"
+  },
+  {
+   "name": "Bryan County EMS",
+   "area": "whole county (Bryan)",
+   "county": "Bryan",
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "evidence": "map layer \"Bryan County EMS\" is the Bryan County polygon",
+   "vintage": "2024-08"
+  },
+  {
+   "name": "Beckham County EMS",
+   "area": "whole county (Beckham)",
+   "county": "Beckham",
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "evidence": "map layer \"Beckham County EMS\" is the Beckham County polygon",
+   "vintage": "2024-08"
+  },
+  {
+   "name": "Beaver County EMS",
+   "area": "whole county (Beaver)",
+   "county": "Beaver",
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "evidence": "map layer \"Beaver County EMS\" is the Beaver County polygon",
+   "vintage": "2024-08"
+  },
+  {
+   "name": "Atoka County EMS",
+   "area": "whole county (Atoka)",
+   "county": "Atoka",
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "evidence": "map layer \"Atoka County EMS\" is the Atoka County polygon",
+   "vintage": "2024-08"
+  },
+  {
+   "name": "Antlers Fire/EMS",
+   "area": "whole county (Pushmataha)",
+   "county": "Pushmataha",
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "evidence": "map layer \"Antlers Fire/EMS\" is the Pushmataha County polygon",
+   "vintage": "2024-08"
+  },
+  {
+   "name": "Alfalfa County EMS",
+   "area": "whole county (Alfalfa)",
+   "county": "Alfalfa",
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "evidence": "map layer \"Alfalfa County EMS\" is the Alfalfa County polygon",
+   "vintage": "2024-08"
+  },
+  {
+   "name": "Bartlesville Ambulance",
+   "area": "service-area polygon (Region 2)",
+   "source": "Oklahoma Regional Medical Response System Region 2 EMS Agency Service Areas (ArcGIS owner Landon.Sweeney_R2), layer edit 2025-03-28",
+   "source_url": "https://services6.arcgis.com/ritCBtUKIwVmwnta/arcgis/rest/services/Region_2_EMS_Agency_Service_Areas/FeatureServer",
+   "vintage": "2025-03"
+  },
+  {
+   "name": "Blackwell Fire/EMS",
+   "area": "service-area polygon (Region 2)",
+   "source": "Oklahoma Regional Medical Response System Region 2 EMS Agency Service Areas (ArcGIS owner Landon.Sweeney_R2), layer edit 2025-03-28",
+   "source_url": "https://services6.arcgis.com/ritCBtUKIwVmwnta/arcgis/rest/services/Region_2_EMS_Agency_Service_Areas/FeatureServer",
+   "vintage": "2025-03"
+  },
+  {
+   "name": "County Corner Fire/EMS",
+   "area": "service-area polygon (Region 2)",
+   "source": "Oklahoma Regional Medical Response System Region 2 EMS Agency Service Areas (ArcGIS owner Landon.Sweeney_R2), layer edit 2025-03-28",
+   "source_url": "https://services6.arcgis.com/ritCBtUKIwVmwnta/arcgis/rest/services/Region_2_EMS_Agency_Service_Areas/FeatureServer",
+   "vintage": "2025-03"
+  },
+  {
+   "name": "Cushing Fire/EMS",
+   "area": "service-area polygon (Region 2)",
+   "source": "Oklahoma Regional Medical Response System Region 2 EMS Agency Service Areas (ArcGIS owner Landon.Sweeney_R2), layer edit 2025-03-28",
+   "source_url": "https://services6.arcgis.com/ritCBtUKIwVmwnta/arcgis/rest/services/Region_2_EMS_Agency_Service_Areas/FeatureServer",
+   "vintage": "2025-03"
+  },
+  {
+   "name": "Hominy EMS",
+   "area": "service-area polygon (Region 2)",
+   "source": "Oklahoma Regional Medical Response System Region 2 EMS Agency Service Areas (ArcGIS owner Landon.Sweeney_R2), layer edit 2025-03-28",
+   "source_url": "https://services6.arcgis.com/ritCBtUKIwVmwnta/arcgis/rest/services/Region_2_EMS_Agency_Service_Areas/FeatureServer",
+   "vintage": "2025-03"
+  },
+  {
+   "name": "Integris Grove EMS",
+   "area": "service-area polygon (Region 2)",
+   "source": "Oklahoma Regional Medical Response System Region 2 EMS Agency Service Areas (ArcGIS owner Landon.Sweeney_R2), layer edit 2025-03-28",
+   "source_url": "https://services6.arcgis.com/ritCBtUKIwVmwnta/arcgis/rest/services/Region_2_EMS_Agency_Service_Areas/FeatureServer",
+   "vintage": "2025-03"
+  },
+  {
+   "name": "Integris Miami EMS",
+   "area": "service-area polygon (Region 2)",
+   "source": "Oklahoma Regional Medical Response System Region 2 EMS Agency Service Areas (ArcGIS owner Landon.Sweeney_R2), layer edit 2025-03-28",
+   "source_url": "https://services6.arcgis.com/ritCBtUKIwVmwnta/arcgis/rest/services/Region_2_EMS_Agency_Service_Areas/FeatureServer",
+   "vintage": "2025-03"
+  },
+  {
+   "name": "Jay Fire/EMS",
+   "area": "service-area polygon (Region 2)",
+   "source": "Oklahoma Regional Medical Response System Region 2 EMS Agency Service Areas (ArcGIS owner Landon.Sweeney_R2), layer edit 2025-03-28",
+   "source_url": "https://services6.arcgis.com/ritCBtUKIwVmwnta/arcgis/rest/services/Region_2_EMS_Agency_Service_Areas/FeatureServer",
+   "vintage": "2025-03"
+  },
+  {
+   "name": "Lifenet EMS",
+   "area": "service-area polygon (Region 2)",
+   "source": "Oklahoma Regional Medical Response System Region 2 EMS Agency Service Areas (ArcGIS owner Landon.Sweeney_R2), layer edit 2025-03-28",
+   "source_url": "https://services6.arcgis.com/ritCBtUKIwVmwnta/arcgis/rest/services/Region_2_EMS_Agency_Service_Areas/FeatureServer",
+   "vintage": "2025-03"
+  },
+  {
+   "name": "MESTA",
+   "area": "service-area polygon (Region 2)",
+   "source": "Oklahoma Regional Medical Response System Region 2 EMS Agency Service Areas (ArcGIS owner Landon.Sweeney_R2), layer edit 2025-03-28",
+   "source_url": "https://services6.arcgis.com/ritCBtUKIwVmwnta/arcgis/rest/services/Region_2_EMS_Agency_Service_Areas/FeatureServer",
+   "vintage": "2025-03"
+  },
+  {
+   "name": "Mercy Regional EMS",
+   "area": "service-area polygon (Region 2)",
+   "source": "Oklahoma Regional Medical Response System Region 2 EMS Agency Service Areas (ArcGIS owner Landon.Sweeney_R2), layer edit 2025-03-28",
+   "source_url": "https://services6.arcgis.com/ritCBtUKIwVmwnta/arcgis/rest/services/Region_2_EMS_Agency_Service_Areas/FeatureServer",
+   "vintage": "2025-03"
+  },
+  {
+   "name": "Newkirk Fire/EMS",
+   "area": "service-area polygon (Region 2)",
+   "source": "Oklahoma Regional Medical Response System Region 2 EMS Agency Service Areas (ArcGIS owner Landon.Sweeney_R2), layer edit 2025-03-28",
+   "source_url": "https://services6.arcgis.com/ritCBtUKIwVmwnta/arcgis/rest/services/Region_2_EMS_Agency_Service_Areas/FeatureServer",
+   "vintage": "2025-03"
+  },
+  {
+   "name": "Nowata Fire/EMS",
+   "area": "service-area polygon (Region 2)",
+   "source": "Oklahoma Regional Medical Response System Region 2 EMS Agency Service Areas (ArcGIS owner Landon.Sweeney_R2), layer edit 2025-03-28",
+   "source_url": "https://services6.arcgis.com/ritCBtUKIwVmwnta/arcgis/rest/services/Region_2_EMS_Agency_Service_Areas/FeatureServer",
+   "vintage": "2025-03"
+  },
+  {
+   "name": "Oologah-Talala EMS",
+   "area": "service-area polygon (Region 2)",
+   "source": "Oklahoma Regional Medical Response System Region 2 EMS Agency Service Areas (ArcGIS owner Landon.Sweeney_R2), layer edit 2025-03-28",
+   "source_url": "https://services6.arcgis.com/ritCBtUKIwVmwnta/arcgis/rest/services/Region_2_EMS_Agency_Service_Areas/FeatureServer",
+   "vintage": "2025-03"
+  },
+  {
+   "name": "Pafford EMS",
+   "area": "service-area polygon (Region 2)",
+   "source": "Oklahoma Regional Medical Response System Region 2 EMS Agency Service Areas (ArcGIS owner Landon.Sweeney_R2), layer edit 2025-03-28",
+   "source_url": "https://services6.arcgis.com/ritCBtUKIwVmwnta/arcgis/rest/services/Region_2_EMS_Agency_Service_Areas/FeatureServer",
+   "vintage": "2025-03"
+  },
+  {
+   "name": "Pawhuska EMS",
+   "area": "service-area polygon (Region 2)",
+   "source": "Oklahoma Regional Medical Response System Region 2 EMS Agency Service Areas (ArcGIS owner Landon.Sweeney_R2), layer edit 2025-03-28",
+   "source_url": "https://services6.arcgis.com/ritCBtUKIwVmwnta/arcgis/rest/services/Region_2_EMS_Agency_Service_Areas/FeatureServer",
+   "vintage": "2025-03"
+  },
+  {
+   "name": "Pawnee EMS",
+   "area": "service-area polygon (Region 2)",
+   "source": "Oklahoma Regional Medical Response System Region 2 EMS Agency Service Areas (ArcGIS owner Landon.Sweeney_R2), layer edit 2025-03-28",
+   "source_url": "https://services6.arcgis.com/ritCBtUKIwVmwnta/arcgis/rest/services/Region_2_EMS_Agency_Service_Areas/FeatureServer",
+   "vintage": "2025-03"
+  },
+  {
+   "name": "Perry Fire/EMS",
+   "area": "service-area polygon (Region 2)",
+   "source": "Oklahoma Regional Medical Response System Region 2 EMS Agency Service Areas (ArcGIS owner Landon.Sweeney_R2), layer edit 2025-03-28",
+   "source_url": "https://services6.arcgis.com/ritCBtUKIwVmwnta/arcgis/rest/services/Region_2_EMS_Agency_Service_Areas/FeatureServer",
+   "vintage": "2025-03"
+  },
+  {
+   "name": "Ponca City Fire/EMS",
+   "area": "service-area polygon (Region 2)",
+   "source": "Oklahoma Regional Medical Response System Region 2 EMS Agency Service Areas (ArcGIS owner Landon.Sweeney_R2), layer edit 2025-03-28",
+   "source_url": "https://services6.arcgis.com/ritCBtUKIwVmwnta/arcgis/rest/services/Region_2_EMS_Agency_Service_Areas/FeatureServer",
+   "vintage": "2025-03"
+  },
+  {
+   "name": "Quapaw Tribe Fire/EMS",
+   "area": "service-area polygon (Region 2)",
+   "source": "Oklahoma Regional Medical Response System Region 2 EMS Agency Service Areas (ArcGIS owner Landon.Sweeney_R2), layer edit 2025-03-28",
+   "source_url": "https://services6.arcgis.com/ritCBtUKIwVmwnta/arcgis/rest/services/Region_2_EMS_Agency_Service_Areas/FeatureServer",
+   "vintage": "2025-03"
+  },
+  {
+   "name": "Shidler Fire/EMS",
+   "area": "service-area polygon (Region 2)",
+   "source": "Oklahoma Regional Medical Response System Region 2 EMS Agency Service Areas (ArcGIS owner Landon.Sweeney_R2), layer edit 2025-03-28",
+   "source_url": "https://services6.arcgis.com/ritCBtUKIwVmwnta/arcgis/rest/services/Region_2_EMS_Agency_Service_Areas/FeatureServer",
+   "vintage": "2025-03"
+  },
+  {
+   "name": "Tonkawa Fire/EMS",
+   "area": "service-area polygon (Region 2)",
+   "source": "Oklahoma Regional Medical Response System Region 2 EMS Agency Service Areas (ArcGIS owner Landon.Sweeney_R2), layer edit 2025-03-28",
+   "source_url": "https://services6.arcgis.com/ritCBtUKIwVmwnta/arcgis/rest/services/Region_2_EMS_Agency_Service_Areas/FeatureServer",
+   "vintage": "2025-03"
+  }
+ ],
+ "county_verdict": {
+  "40153": {
+   "county": "Woodward",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Woodward County EMS",
+     "area": "whole county"
+    }
+   ],
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "layer_edit": "2024-08-06",
+   "page_note": "Woodward: from the Regions 6/8 RSA map, one county-wide layer plus any city layers listed; the map is a response-area roster, not a licence record, and does not say who transports. Dated 2024-08."
+  },
+  "40011": {
+   "county": "Blaine",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Watonga EMS",
+     "area": "whole county"
+    },
+    {
+     "name": "Okeene City EMS",
+     "area": "city limits: Okeene"
+    },
+    {
+     "name": "Canton-Longdale EMS",
+     "area": "city limits: Canton, Longdale"
+    }
+   ],
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "layer_edit": "2024-08-06",
+   "page_note": "Blaine: from the Regions 6/8 RSA map, one county-wide layer plus any city layers listed; the map is a response-area roster, not a licence record, and does not say who transports. Dated 2024-08."
+  },
+  "40141": {
+   "county": "Tillman",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Tillman County EMS",
+     "area": "whole county"
+    }
+   ],
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "layer_edit": "2024-08-06",
+   "page_note": "Tillman: from the Regions 6/8 RSA map, one county-wide layer plus any city layers listed; the map is a response-area roster, not a licence record, and does not say who transports. Dated 2024-08."
+  },
+  "40057": {
+   "county": "Harmon",
+   "tier": "A",
+   "services": [
+    {
+     "name": "SW OK Ambulance Authority (S.W.O.K.A.A.)",
+     "area": "whole county"
+    }
+   ],
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "layer_edit": "2024-08-06",
+   "page_note": "Harmon: from the Regions 6/8 RSA map, one county-wide layer plus any city layers listed; the map is a response-area roster, not a licence record, and does not say who transports. Dated 2024-08."
+  },
+  "40075": {
+   "county": "Kiowa",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Survival Flight EMS (County Based)",
+     "area": "whole county"
+    },
+    {
+     "name": "Survival Flight EMS",
+     "area": "city limits: Snyder, Mountain Park, Roosevelt"
+    },
+    {
+     "name": "Sinor EMS",
+     "area": "city limits: Hobart"
+    }
+   ],
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "layer_edit": "2024-08-06",
+   "page_note": "Kiowa: from the Regions 6/8 RSA map, one county-wide layer plus any city layers listed; the map is a response-area roster, not a licence record, and does not say who transports. Dated 2024-08."
+  },
+  "40033": {
+   "county": "Cotton",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Survival Flight EMS (County Based)",
+     "area": "whole county"
+    },
+    {
+     "name": "Survival Flight EMS",
+     "area": "city limits: Walters"
+    }
+   ],
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "layer_edit": "2024-08-06",
+   "page_note": "Cotton: from the Regions 6/8 RSA map, one county-wide layer plus any city layers listed; the map is a response-area roster, not a licence record, and does not say who transports. Dated 2024-08."
+  },
+  "40129": {
+   "county": "Roger Mills",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Roger Mills County EMS",
+     "area": "whole county"
+    }
+   ],
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "layer_edit": "2024-08-06",
+   "page_note": "Roger Mills: from the Regions 6/8 RSA map, one county-wide layer plus any city layers listed; the map is a response-area roster, not a licence record, and does not say who transports. Dated 2024-08."
+  },
+  "40101": {
+   "county": "Muskogee",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Muskogee County EMS",
+     "area": "whole county"
+    }
+   ],
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "layer_edit": "2024-08-06",
+   "page_note": "Muskogee: from the Regions 6/8 RSA map, one county-wide layer plus any city layers listed; the map is a response-area roster, not a licence record, and does not say who transports. Dated 2024-08."
+  },
+  "40099": {
+   "county": "Murray",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Murray County EMS",
+     "area": "whole county"
+    }
+   ],
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "layer_edit": "2024-08-06",
+   "page_note": "Murray: from the Regions 6/8 RSA map, one county-wide layer plus any city layers listed; the map is a response-area roster, not a licence record, and does not say who transports. Dated 2024-08."
+  },
+  "40035": {
+   "county": "Craig",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Mercy Regional EMS (County Based)",
+     "area": "whole county"
+    },
+    {
+     "name": "Mercy Regional EMS",
+     "share": 0.9994,
+     "source": "Region 2 polygons"
+    }
+   ],
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "layer_edit": "2024-08-06",
+   "page_note": "Craig: from the Regions 6/8 RSA map, one county-wide layer plus any city layers listed; the map is a response-area roster, not a licence record, and does not say who transports. Dated 2024-08.",
+   "also": "https://services6.arcgis.com/ritCBtUKIwVmwnta/arcgis/rest/services/Region_2_EMS_Agency_Service_Areas/FeatureServer"
+  },
+  "40085": {
+   "county": "Love",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Mercy Health - Love County EMS",
+     "area": "whole county"
+    }
+   ],
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "layer_edit": "2024-08-06",
+   "page_note": "Love: from the Regions 6/8 RSA map, one county-wide layer plus any city layers listed; the map is a response-area roster, not a licence record, and does not say who transports. Dated 2024-08."
+  },
+  "40089": {
+   "county": "McCurtain",
+   "tier": "A",
+   "services": [
+    {
+     "name": "McCurtain County EMS",
+     "area": "whole county"
+    }
+   ],
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "layer_edit": "2024-08-06",
+   "page_note": "McCurtain: from the Regions 6/8 RSA map, one county-wide layer plus any city layers listed; the map is a response-area roster, not a licence record, and does not say who transports. Dated 2024-08."
+  },
+  "40095": {
+   "county": "Marshall",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Marshall County EMS",
+     "area": "whole county"
+    }
+   ],
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "layer_edit": "2024-08-06",
+   "page_note": "Marshall: from the Regions 6/8 RSA map, one county-wide layer plus any city layers listed; the map is a response-area roster, not a licence record, and does not say who transports. Dated 2024-08."
+  },
+  "40047": {
+   "county": "Garfield",
+   "tier": "A",
+   "services": [
+    {
+     "name": "LIFE EMS",
+     "area": "whole county"
+    }
+   ],
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "layer_edit": "2024-08-06",
+   "page_note": "Garfield: from the Regions 6/8 RSA map, one county-wide layer plus any city layers listed; the map is a response-area roster, not a licence record, and does not say who transports. Dated 2024-08."
+  },
+  "40079": {
+   "county": "Le Flore",
+   "tier": "A",
+   "services": [
+    {
+     "name": "LeFlore County EMS",
+     "area": "whole county"
+    }
+   ],
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "layer_edit": "2024-08-06",
+   "page_note": "Le Flore: from the Regions 6/8 RSA map, one county-wide layer plus any city layers listed; the map is a response-area roster, not a licence record, and does not say who transports. Dated 2024-08."
+  },
+  "40069": {
+   "county": "Johnston",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Johnston County EMS",
+     "area": "whole county"
+    }
+   ],
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "layer_edit": "2024-08-06",
+   "page_note": "Johnston: from the Regions 6/8 RSA map, one county-wide layer plus any city layers listed; the map is a response-area roster, not a licence record, and does not say who transports. Dated 2024-08."
+  },
+  "40065": {
+   "county": "Jackson",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Jackson County EMS",
+     "area": "whole county"
+    }
+   ],
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "layer_edit": "2024-08-06",
+   "page_note": "Jackson: from the Regions 6/8 RSA map, one county-wide layer plus any city layers listed; the map is a response-area roster, not a licence record, and does not say who transports. Dated 2024-08."
+  },
+  "40115": {
+   "county": "Ottawa",
+   "tier": "A",
+   "services": [
+    {
+     "name": "INTEGRIS Health EMS",
+     "area": "whole county"
+    },
+    {
+     "name": "Quapaw Tribe Fire/EMS",
+     "share": 0.6514,
+     "source": "Region 2 polygons"
+    },
+    {
+     "name": "Integris Miami EMS",
+     "share": 0.3454,
+     "source": "Region 2 polygons"
+    }
+   ],
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "layer_edit": "2024-08-06",
+   "page_note": "Ottawa: from the Regions 6/8 RSA map, one county-wide layer plus any city layers listed; the map is a response-area roster, not a licence record, and does not say who transports. Dated 2024-08.",
+   "also": "https://services6.arcgis.com/ritCBtUKIwVmwnta/arcgis/rest/services/Region_2_EMS_Agency_Service_Areas/FeatureServer"
+  },
+  "40139": {
+   "county": "Texas",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Guymon Fire/EMS",
+     "area": "whole county"
+    },
+    {
+     "name": "Hooker EMS",
+     "area": "city limits: Hooker"
+    }
+   ],
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "layer_edit": "2024-08-06",
+   "page_note": "Texas: from the Regions 6/8 RSA map, one county-wide layer plus any city layers listed; the map is a response-area roster, not a licence record, and does not say who transports. Dated 2024-08."
+  },
+  "40031": {
+   "county": "Comanche",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Comanche County EMS",
+     "area": "whole county"
+    }
+   ],
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "layer_edit": "2024-08-06",
+   "page_note": "Comanche: from the Regions 6/8 RSA map, one county-wide layer plus any city layers listed; the map is a response-area roster, not a licence record, and does not say who transports. Dated 2024-08."
+  },
+  "40023": {
+   "county": "Choctaw",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Choctaw County EMS",
+     "area": "whole county"
+    }
+   ],
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "layer_edit": "2024-08-06",
+   "page_note": "Choctaw: from the Regions 6/8 RSA map, one county-wide layer plus any city layers listed; the map is a response-area roster, not a licence record, and does not say who transports. Dated 2024-08."
+  },
+  "40025": {
+   "county": "Cimarron",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Cimarron County EMS",
+     "area": "whole county"
+    }
+   ],
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "layer_edit": "2024-08-06",
+   "page_note": "Cimarron: from the Regions 6/8 RSA map, one county-wide layer plus any city layers listed; the map is a response-area roster, not a licence record, and does not say who transports. Dated 2024-08."
+  },
+  "40013": {
+   "county": "Bryan",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Bryan County EMS",
+     "area": "whole county"
+    }
+   ],
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "layer_edit": "2024-08-06",
+   "page_note": "Bryan: from the Regions 6/8 RSA map, one county-wide layer plus any city layers listed; the map is a response-area roster, not a licence record, and does not say who transports. Dated 2024-08."
+  },
+  "40009": {
+   "county": "Beckham",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Beckham County EMS",
+     "area": "whole county"
+    },
+    {
+     "name": "Sinor EMS",
+     "area": "city limits: Sayre"
+    },
+    {
+     "name": "Elk City Fire/EMS",
+     "area": "city limits: Elk City"
+    },
+    {
+     "name": "Erick EMS",
+     "area": "city limits: Erick"
+    }
+   ],
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "layer_edit": "2024-08-06",
+   "page_note": "Beckham: from the Regions 6/8 RSA map, one county-wide layer plus any city layers listed; the map is a response-area roster, not a licence record, and does not say who transports. Dated 2024-08."
+  },
+  "40007": {
+   "county": "Beaver",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Beaver County EMS",
+     "area": "whole county"
+    }
+   ],
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "layer_edit": "2024-08-06",
+   "page_note": "Beaver: from the Regions 6/8 RSA map, one county-wide layer plus any city layers listed; the map is a response-area roster, not a licence record, and does not say who transports. Dated 2024-08."
+  },
+  "40005": {
+   "county": "Atoka",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Atoka County EMS",
+     "area": "whole county"
+    }
+   ],
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "layer_edit": "2024-08-06",
+   "page_note": "Atoka: from the Regions 6/8 RSA map, one county-wide layer plus any city layers listed; the map is a response-area roster, not a licence record, and does not say who transports. Dated 2024-08."
+  },
+  "40127": {
+   "county": "Pushmataha",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Antlers Fire/EMS",
+     "area": "whole county"
+    }
+   ],
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "layer_edit": "2024-08-06",
+   "page_note": "Pushmataha: from the Regions 6/8 RSA map, one county-wide layer plus any city layers listed; the map is a response-area roster, not a licence record, and does not say who transports. Dated 2024-08."
+  },
+  "40003": {
+   "county": "Alfalfa",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Alfalfa County EMS",
+     "area": "whole county"
+    }
+   ],
+   "source": "Oklahoma EMS Response Service Area (RSA) web map, Oklahoma Regional Medical Response System Regions 6 and 8 (ArcGIS owner OKRMRS68Director), modified 2024-08-06",
+   "source_url": "https://www.arcgis.com/home/item.html?id=61f5ca542f644a6c9e0ecd0e4f80dad3",
+   "layer_edit": "2024-08-06",
+   "page_note": "Alfalfa: from the Regions 6/8 RSA map, one county-wide layer plus any city layers listed; the map is a response-area roster, not a licence record, and does not say who transports. Dated 2024-08."
+  },
+  "40041": {
+   "county": "Delaware",
+   "coverage": 0.7036,
+   "tier": "partial",
+   "services": [
+    {
+     "name": "Jay Fire/EMS",
+     "share": 0.3965
+    },
+    {
+     "name": "Integris Grove EMS",
+     "share": 0.2377
+    },
+    {
+     "name": "Mercy Regional EMS",
+     "share": 0.0681
+    },
+    {
+     "name": "Quapaw Tribe Fire/EMS",
+     "share": 0.0112
+    }
+   ],
+   "source": "Oklahoma Regional Medical Response System Region 2 EMS Agency Service Areas (ArcGIS owner Landon.Sweeney_R2), layer edit 2025-03-28",
+   "source_url": "https://services6.arcgis.com/ritCBtUKIwVmwnta/arcgis/rest/services/Region_2_EMS_Agency_Service_Areas/FeatureServer",
+   "layer_edit": "2025-03-28",
+   "page_note": "Delaware: Region 2 polygons cover 70% of the county; tier left alone."
+  },
+  "40105": {
+   "county": "Nowata",
+   "coverage": 0.7752,
+   "tier": "partial",
+   "services": [
+    {
+     "name": "Nowata Fire/EMS",
+     "share": 0.7749
+    }
+   ],
+   "source": "Oklahoma Regional Medical Response System Region 2 EMS Agency Service Areas (ArcGIS owner Landon.Sweeney_R2), layer edit 2025-03-28",
+   "source_url": "https://services6.arcgis.com/ritCBtUKIwVmwnta/arcgis/rest/services/Region_2_EMS_Agency_Service_Areas/FeatureServer",
+   "layer_edit": "2025-03-28",
+   "page_note": "Nowata: Region 2 polygons cover 78% of the county; tier left alone."
+  },
+  "40147": {
+   "county": "Washington",
+   "coverage": 0.8504,
+   "tier": "partial",
+   "services": [
+    {
+     "name": "Bartlesville Ambulance",
+     "share": 0.8502
+    }
+   ],
+   "source": "Oklahoma Regional Medical Response System Region 2 EMS Agency Service Areas (ArcGIS owner Landon.Sweeney_R2), layer edit 2025-03-28",
+   "source_url": "https://services6.arcgis.com/ritCBtUKIwVmwnta/arcgis/rest/services/Region_2_EMS_Agency_Service_Areas/FeatureServer",
+   "layer_edit": "2025-03-28",
+   "page_note": "Washington: Region 2 polygons cover 85% of the county; tier left alone."
+  },
+  "40071": {
+   "county": "Kay",
+   "coverage": 0.9934,
+   "tier": "A",
+   "services": [
+    {
+     "name": "Newkirk Fire/EMS",
+     "share": 0.3651
+    },
+    {
+     "name": "Blackwell Fire/EMS",
+     "share": 0.2817
+    },
+    {
+     "name": "Ponca City Fire/EMS",
+     "share": 0.1992
+    },
+    {
+     "name": "Tonkawa Fire/EMS",
+     "share": 0.1475
+    }
+   ],
+   "source": "Oklahoma Regional Medical Response System Region 2 EMS Agency Service Areas (ArcGIS owner Landon.Sweeney_R2), layer edit 2025-03-28",
+   "source_url": "https://services6.arcgis.com/ritCBtUKIwVmwnta/arcgis/rest/services/Region_2_EMS_Agency_Service_Areas/FeatureServer",
+   "layer_edit": "2025-03-28",
+   "page_note": "Kay: Region 2 EMS agency service-area polygons cover 99% of the county; the layer does not say who transports."
+  },
+  "40097": {
+   "county": "Mayes",
+   "coverage": 0.9997,
+   "tier": "A",
+   "services": [
+    {
+     "name": "MESTA",
+     "share": 0.9995
+    }
+   ],
+   "source": "Oklahoma Regional Medical Response System Region 2 EMS Agency Service Areas (ArcGIS owner Landon.Sweeney_R2), layer edit 2025-03-28",
+   "source_url": "https://services6.arcgis.com/ritCBtUKIwVmwnta/arcgis/rest/services/Region_2_EMS_Agency_Service_Areas/FeatureServer",
+   "layer_edit": "2025-03-28",
+   "page_note": "Mayes: Region 2 EMS agency service-area polygons cover 100% of the county; the layer does not say who transports."
+  },
+  "40131": {
+   "county": "Rogers",
+   "coverage": 0.9701,
+   "tier": "A",
+   "services": [
+    {
+     "name": "Pafford EMS",
+     "share": 0.7096
+    },
+    {
+     "name": "Oologah-Talala EMS",
+     "share": 0.2604
+    }
+   ],
+   "source": "Oklahoma Regional Medical Response System Region 2 EMS Agency Service Areas (ArcGIS owner Landon.Sweeney_R2), layer edit 2025-03-28",
+   "source_url": "https://services6.arcgis.com/ritCBtUKIwVmwnta/arcgis/rest/services/Region_2_EMS_Agency_Service_Areas/FeatureServer",
+   "layer_edit": "2025-03-28",
+   "page_note": "Rogers: Region 2 EMS agency service-area polygons cover 97% of the county; the layer does not say who transports."
+  },
+  "40117": {
+   "county": "Pawnee",
+   "coverage": 0.9422,
+   "tier": "partial",
+   "services": [
+    {
+     "name": "Pawnee EMS",
+     "share": 0.6511
+    },
+    {
+     "name": "Mercy Regional EMS",
+     "share": 0.291
+    }
+   ],
+   "source": "Oklahoma Regional Medical Response System Region 2 EMS Agency Service Areas (ArcGIS owner Landon.Sweeney_R2), layer edit 2025-03-28",
+   "source_url": "https://services6.arcgis.com/ritCBtUKIwVmwnta/arcgis/rest/services/Region_2_EMS_Agency_Service_Areas/FeatureServer",
+   "layer_edit": "2025-03-28",
+   "page_note": "Pawnee: Region 2 polygons cover 94% of the county; tier left alone."
+  },
+  "40113": {
+   "county": "Osage",
+   "coverage": 0.7103,
+   "tier": "partial",
+   "services": [
+    {
+     "name": "Shidler Fire/EMS",
+     "share": 0.1953
+    },
+    {
+     "name": "Hominy EMS",
+     "share": 0.1696
+    },
+    {
+     "name": "Bartlesville Ambulance",
+     "share": 0.1452
+    },
+    {
+     "name": "Pawhuska EMS",
+     "share": 0.0914
+    },
+    {
+     "name": "Mercy Regional EMS",
+     "share": 0.054
+    },
+    {
+     "name": "Ponca City Fire/EMS",
+     "share": 0.0419
+    },
+    {
+     "name": "County Corner Fire/EMS",
+     "share": 0.0131
+    }
+   ],
+   "source": "Oklahoma Regional Medical Response System Region 2 EMS Agency Service Areas (ArcGIS owner Landon.Sweeney_R2), layer edit 2025-03-28",
+   "source_url": "https://services6.arcgis.com/ritCBtUKIwVmwnta/arcgis/rest/services/Region_2_EMS_Agency_Service_Areas/FeatureServer",
+   "layer_edit": "2025-03-28",
+   "page_note": "Osage: Region 2 polygons cover 71% of the county; tier left alone."
+  },
+  "40103": {
+   "county": "Noble",
+   "coverage": 0.9433,
+   "tier": "partial",
+   "services": [
+    {
+     "name": "Perry Fire/EMS",
+     "share": 0.5826
+    },
+    {
+     "name": "Ponca City Fire/EMS",
+     "share": 0.1748
+    },
+    {
+     "name": "Tonkawa Fire/EMS",
+     "share": 0.1064
+    },
+    {
+     "name": "Lifenet EMS",
+     "share": 0.0605
+    },
+    {
+     "name": "Pawnee EMS",
+     "share": 0.0272
+    }
+   ],
+   "source": "Oklahoma Regional Medical Response System Region 2 EMS Agency Service Areas (ArcGIS owner Landon.Sweeney_R2), layer edit 2025-03-28",
+   "source_url": "https://services6.arcgis.com/ritCBtUKIwVmwnta/arcgis/rest/services/Region_2_EMS_Agency_Service_Areas/FeatureServer",
+   "layer_edit": "2025-03-28",
+   "page_note": "Noble: Region 2 polygons cover 94% of the county; tier left alone."
+  },
+  "40119": {
+   "county": "Payne",
+   "coverage": 0.9759,
+   "tier": "A",
+   "services": [
+    {
+     "name": "Lifenet EMS",
+     "share": 0.6547
+    },
+    {
+     "name": "Cushing Fire/EMS",
+     "share": 0.3033
+    },
+    {
+     "name": "Pawnee EMS",
+     "share": 0.0195
+    }
+   ],
+   "source": "Oklahoma Regional Medical Response System Region 2 EMS Agency Service Areas (ArcGIS owner Landon.Sweeney_R2), layer edit 2025-03-28",
+   "source_url": "https://services6.arcgis.com/ritCBtUKIwVmwnta/arcgis/rest/services/Region_2_EMS_Agency_Service_Areas/FeatureServer",
+   "layer_edit": "2025-03-28",
+   "page_note": "Payne: Region 2 EMS agency service-area polygons cover 98% of the county; the layer does not say who transports."
+  }
+ }
+}
