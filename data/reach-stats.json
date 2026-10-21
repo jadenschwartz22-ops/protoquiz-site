@@ -1,40 +1,40 @@
 {
-  "generatedAt": "2026-10-20T18:07:10.379Z",
-  "totalUploads": 688,
-  "distinctProtocols": 490,
-  "activeStudiers": 562,
-  "pagesProcessed": 127139,
+  "generatedAt": "2026-10-21T18:07:19.298Z",
+  "totalUploads": 704,
+  "distinctProtocols": 500,
+  "activeStudiers": 577,
+  "pagesProcessed": 130940,
   "statesRepresented": 47,
   "countriesRepresented": 3,
   "internationalUploads": 9,
   "byState": {
-    "CO": 87,
+    "CO": 92,
     "CA": 54,
     "MI": 53,
     "NY": 32,
     "PA": 30,
     "MA": 30,
     "TX": 29,
-    "NC": 20,
+    "NC": 21,
     "VA": 20,
-    "OR": 18,
-    "WA": 16,
+    "OR": 19,
+    "WA": 17,
     "CT": 15,
     "MD": 14,
+    "IL": 13,
     "FL": 13,
     "NV": 13,
-    "IL": 11,
+    "AZ": 10,
     "WY": 10,
-    "AZ": 9,
     "SC": 7,
     "TN": 7,
     "UT": 7,
     "GA": 7,
+    "OH": 6,
     "AL": 6,
     "WV": 6,
     "IN": 6,
     "RI": 5,
-    "OH": 5,
     "LA": 5,
     "MO": 4,
     "NH": 4,
@@ -42,10 +42,10 @@
     "NE": 4,
     "WI": 4,
     "KY": 4,
+    "ID": 3,
     "NM": 3,
     "IA": 3,
     "DC": 3,
-    "ID": 3,
     "OK": 3,
     "VT": 2,
     "MN": 2,
@@ -67,12 +67,12 @@
       "city": "Denver",
       "x": 330,
       "y": 258,
-      "count": 65,
+      "count": 69,
       "tier": "hot",
       "topProtocols": [
         {
           "title": "DMEMS Protocols January 2026 (Example)",
-          "count": 36
+          "count": 40
         },
         {
           "title": "DMEMSMD Protocols January 2026 FINAL 2025 02 02",
@@ -222,6 +222,29 @@
       "statewide": true
     },
     {
+      "state": "OR",
+      "city": "Oregon statewide",
+      "x": 96,
+      "y": 123,
+      "count": 14,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "Clackamas protocols 2026",
+          "count": 1
+        },
+        {
+          "title": "www.washingtoncountyor.gov protocols (10 PDFs)",
+          "count": 1
+        },
+        {
+          "title": "WASHCO Combined Protocol",
+          "count": 1
+        }
+      ],
+      "statewide": true
+    },
+    {
       "state": "MD",
       "city": "Maryland statewide",
       "x": 805,
@@ -287,29 +310,6 @@
           "count": 1
         }
       ]
-    },
-    {
-      "state": "OR",
-      "city": "Oregon statewide",
-      "x": 96,
-      "y": 123,
-      "count": 13,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "www.washingtoncountyor.gov protocols (10 PDFs)",
-          "count": 1
-        },
-        {
-          "title": "WASHCO Combined Protocol",
-          "count": 1
-        },
-        {
-          "title": "2026 CTGR Protocols",
-          "count": 1
-        }
-      ],
-      "statewide": true
     },
     {
       "state": "MI",
@@ -398,6 +398,29 @@
       "statewide": true
     },
     {
+      "state": "AZ",
+      "city": "Arizona statewide",
+      "x": 199,
+      "y": 364,
+      "count": 6,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "red book chapter 3 2026",
+          "count": 4
+        },
+        {
+          "title": "red book chapter 3 2026",
+          "count": 1
+        },
+        {
+          "title": "Guidelines",
+          "count": 1
+        }
+      ],
+      "statewide": true
+    },
+    {
       "state": "CA",
       "city": "San Diego",
       "x": 93,
@@ -412,23 +435,23 @@
       ]
     },
     {
-      "state": "AZ",
-      "city": "Arizona statewide",
-      "x": 199,
-      "y": 364,
+      "state": "IL",
+      "city": "Illinois statewide",
+      "x": 595,
+      "y": 255,
       "count": 5,
       "tier": "warm",
       "topProtocols": [
         {
-          "title": "red book chapter 3 2026",
-          "count": 3
-        },
-        {
-          "title": "red book chapter 3 2026",
+          "title": "pediatricprehospitalprotocolscompletefilefeb20163 2018",
           "count": 1
         },
         {
-          "title": "Guidelines",
+          "title": "SOP SFV FINAL markup 102319docx",
+          "count": 1
+        },
+        {
+          "title": "CCT Protocols 2024",
           "count": 1
         }
       ],
@@ -694,29 +717,6 @@
       ]
     },
     {
-      "state": "IL",
-      "city": "Illinois statewide",
-      "x": 595,
-      "y": 255,
-      "count": 4,
-      "tier": "on",
-      "topProtocols": [
-        {
-          "title": "SOP SFV FINAL markup 102319docx",
-          "count": 1
-        },
-        {
-          "title": "CCT Protocols 2024",
-          "count": 1
-        },
-        {
-          "title": "region x sop",
-          "count": 1
-        }
-      ],
-      "statewide": true
-    },
-    {
       "state": "AL",
       "city": "Alabama statewide",
       "x": 650,
@@ -934,6 +934,43 @@
       "statewide": true
     },
     {
+      "state": "ID",
+      "city": "Boise",
+      "x": 162,
+      "y": 146,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": []
+    },
+    {
+      "state": "WA",
+      "city": "Spokane",
+      "x": 162,
+      "y": 55,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": []
+    },
+    {
+      "state": "OH",
+      "city": "Ohio statewide",
+      "x": 700,
+      "y": 238,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": [],
+      "statewide": true
+    },
+    {
+      "state": "IL",
+      "city": "Elgin",
+      "x": 606,
+      "y": 209,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": []
+    },
+    {
       "state": "FL",
       "city": "Lake County",
       "x": 756,
@@ -1019,15 +1056,6 @@
       "city": "New Orleans",
       "x": 594,
       "y": 479,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": []
-    },
-    {
-      "state": "ID",
-      "city": "Boise",
-      "x": 162,
-      "y": 146,
       "count": 2,
       "tier": "on",
       "topProtocols": []
@@ -1510,15 +1538,6 @@
       "topProtocols": []
     },
     {
-      "state": "WA",
-      "city": "Spokane",
-      "x": 162,
-      "y": 55,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": []
-    },
-    {
       "state": "MO",
       "city": "Springfield",
       "x": 528,
@@ -1854,15 +1873,6 @@
       "topProtocols": []
     },
     {
-      "state": "IL",
-      "city": "Elgin",
-      "x": 606,
-      "y": 209,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": []
-    },
-    {
       "state": "WA",
       "city": "Vancouver",
       "x": 74,
@@ -1951,16 +1961,6 @@
       "count": 1,
       "tier": "tiny",
       "topProtocols": []
-    },
-    {
-      "state": "OH",
-      "city": "Ohio statewide",
-      "x": 700,
-      "y": 238,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": [],
-      "statewide": true
     },
     {
       "state": "VA",
@@ -2124,6 +2124,24 @@
       "count": 1,
       "tier": "tiny",
       "topProtocols": []
+    },
+    {
+      "state": "NC",
+      "city": "Wake County",
+      "x": 788,
+      "y": 325,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": []
+    },
+    {
+      "state": "CO",
+      "city": "Fort Lupton",
+      "x": 333,
+      "y": 251,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": []
     }
   ],
   "internationalLocales": [
@@ -2193,6 +2211,12 @@
   ],
   "belt": [
     {
+      "agency": "Denver Metro EMS Medical Directors",
+      "state": "Colorado",
+      "year": 2026,
+      "pages": 193
+    },
+    {
       "agency": "Central Arizona Regional EMS",
       "state": "Arizona",
       "year": 2026,
@@ -2239,12 +2263,6 @@
       "state": "Washington",
       "year": 2025,
       "pages": 197
-    },
-    {
-      "agency": "Denver Metro EMS Medical Directors",
-      "state": "Colorado",
-      "year": 2026,
-      "pages": 193
     },
     {
       "agency": "Fluvanna Emergency Medical Services",
