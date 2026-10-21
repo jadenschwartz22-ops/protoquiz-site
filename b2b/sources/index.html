@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Protocol Sources — ProtoQuiz Agency</title>
+  <meta name="description" content="Where the protocol content in the ProtoQuiz Agency app comes from, with links to the original sources." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://protoquiz.com/b2b/sources/" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=4" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+  <link rel="stylesheet" href="/assets/chrome.css?v=f5e22e65">
+  <link rel="stylesheet" href="/legal/_shared.css" />
+</head>
+<body>
+  <!-- shared-chrome:nav -->
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary">
+      <div class="nav-left">
+        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="30" height="30"><span>Proto<b>Quiz</b><sup>&trade;</sup></span></a>
+        <div class="nav-links">
+          <a href="/app/" class="nav-link">App</a>
+          <a href="/agency/" class="nav-link">For agencies</a>
+          <a href="/research/" class="nav-link">Research</a>
+          <a href="/blog/" class="nav-link">Blog</a>
+          <a href="/about/" class="nav-link">About</a>
+        </div>
+      </div>
+      <!-- NO "SIGN IN" HERE, DELIBERATELY. There is nothing on protoquiz.com to sign
+           into: every agency gets its own subdomain (youragency.protoquiz.com) and its
+           crews arrive by a link the agency gives them. The nav used to point "Sign in"
+           at demo.protoquiz.com -- the DEMO org, which /agency itself labels "Try the
+           demo" -- so the link promised a door that does not exist and landed a provider
+           on someone else's tenant. If a real web login is ever built, it goes here. -->
+      <!-- id="openContact" is what /agency's contact <dialog> binds to. The nav used to
+           carry that id; the move into shared-chrome dropped it, so the JS bound nothing
+           and "Contact sales" silently did nothing on the one page with the form. On every
+           other page there is no dialog and the href is the whole behaviour: a normal link
+           to /agency/#contact. -->
+      <div class="nav-right">
+        <a href="/agency/#contact" class="nav-cta" id="openContact">Contact sales</a>
+      </div>
+    </nav>
+  </header>
+  <!-- /shared-chrome:nav -->
+
+
+<main>
+
+  <header class="doc-header">
+    <div class="doc-kicker">ProtoQuiz Agency</div>
+    <h1 class="doc-title">Protocol Sources</h1>
+    <p style="color:var(--muted);font-size:13px;margin-top:8px">Last updated: October 21, 2026</p>
+  </header>
+
+  <div class="callout">
+    ProtoQuiz Agency is an independent training tool. It is not affiliated with or endorsed by any government agency. This page says where the protocol content in the app comes from and links to the original sources.
+  </div>
+
+  <section id="where-from">
+    <h2><span class="num">1.</span> Where protocol content comes from</h2>
+    <p>Every agency in the app uses its own protocol book: the document its medical director and agency have adopted. ProtoQuiz builds quizzes, scenarios and search from that book. We do not write, change or approve clinical protocols.</p>
+    <p>Members can open their agency's protocol book at any time from <strong>Profile &rarr; Source</strong> inside the app. The agency's book is the original source for everything the app teaches from it.</p>
+  </section>
+
+  <section id="demo">
+    <h2><span class="num">2.</span> Original source for the demonstration agency</h2>
+    <p>The demonstration agencies in the app use the Denver Metropolitan Prehospital Protocols, written and published by the Denver Metro EMS Medical Directors.</p>
+    <ul>
+      <li><strong>Original source:</strong> <a href="https://dmemsmd.org" rel="noopener">https://dmemsmd.org</a> (Denver Metro EMS Medical Directors)</li>
+    </ul>
+    <p>The protocol document states that its content is the property of the Denver Metro EMS Medical Directors and its contributors. ProtoQuiz does not claim authorship of it.</p>
+  </section>
+
+  <section id="use">
+    <h2><span class="num">3.</span> Using the app</h2>
+    <p>ProtoQuiz is an educational training tool, not medical advice. Always follow your agency's approved protocols and your medical director's direction. If you find a mistake or an out-of-date page, tell your training officer, or write to <a href="mailto:support@protoquiz.com">support@protoquiz.com</a>.</p>
+  </section>
+
+  <section id="more">
+    <h2><span class="num">4.</span> More</h2>
+    <p><a href="/b2b/terms/">Terms of Service</a> &middot; <a href="/b2b/privacy/">Privacy Policy</a></p>
+  </section>
+</main>
+
+  <!-- shared-chrome:footer -->
+  <footer class="site-footer">
+    <div class="foot-cols">
+      <div class="foot-brand">
+        <a href="/" class="brand"><img src="/logo-256.png" alt="" width="24" height="24"><span>Proto<b>Quiz</b><sup>&trade;</sup></span></a>
+        <p>Protocol training for EMS. Built by a working paramedic.</p>
+      </div>
+      <div class="foot-col">
+        <h2>Product</h2>
+        <a href="/app/">iOS app</a>
+        <a href="https://play.google.com/store/apps/details?id=com.tmtl.emsprotoquiz">Android</a>
+        <a href="/agency/">For agencies</a>
+        <a href="/agency/#pricing-section">Pricing</a>
+      </div>
+      <div class="foot-col">
+        <h2>Research</h2>
+        <a href="/research/">Overview</a>
+        <a href="/census/">Protocol census</a>
+        <a href="/census/#states">By state</a>
+        <a href="/census/#drugs">By medication</a>
+        <a href="/research/atlas/">911 coverage</a>
+        <a href="/census/methodology/">Methodology</a>
+      </div>
+      <div class="foot-col">
+        <h2>Company</h2>
+        <a href="/about/">About</a>
+        <a href="/blog/">Blog</a>
+        <a href="/trust/">Trust</a>
+        <a href="https://status.protoquiz.com">Status</a>
+      </div>
+      <div class="foot-col">
+        <h2>Legal</h2>
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+        <a href="/trust/">Security</a>
+        <a href="/census/data-license/">Data license</a>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>&copy; 2026 ProtoQuiz LLC.</span>
+    </div>
+  </footer>
+  <!-- /shared-chrome:footer -->
+
+</body>
+</html>
