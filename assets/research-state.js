@@ -32,6 +32,7 @@
     + ((window.CENSUS_STATES || []).indexOf(want.toLowerCase()) >= 0 ? ' &nbsp;&middot;&nbsp; <a href="/census/states/' + want.toLowerCase() + '/">Protocol census: ' + name + ' &rarr;</a>' : '') + '</p>';
 
   var esc = function (t) { return String(t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  function viaText(v) { return ' Source: ' + v + ', credited to the state ' + (/Board/.test(v) ? 'board' : 'office') + '. ' + (/service areas/.test(v) ? 'A licence area is not an exclusive or dispatch assignment.' : 'It lists each service once, under the county where it is licensed and tagged primary 911, not by service area.'); }
   var tierText = function (c) { return c.tier === 'A' ? (c.source === 'local' ? 'Named by a county or agency source' : TIER.A) : (c.tier === '-' ? 'No usable source' : TIER[c.tier]); };
   var ownLabel = function (c) { return OWN[c.ownership] ? OWN[c.ownership][0] : 'Not established'; };
   var n0 = function (n) { return n.toLocaleString('en-US'); };
@@ -103,9 +104,10 @@
       }
       h += '<p class="rm-panel-note">' + (blank
         ? 'We could not find a source good enough to say who answers here. That is a gap in our reading, not a finding about the county.'
-        : c.tier === 'A' ? (c.source === 'local' ? 'Named directly by a county or agency source.' : 'Named directly by a state record.')
+        : c.tier === 'A' ? (c.source === 'local' ? 'Named directly by a county or agency source.' : 'Named directly by a state record.') + (c.via ? viaText(c.via) : '')
         : (c.partial ? 'A record names the provider for some towns here, not the whole county. ' : '')
-          + 'Agencies are listed by licence address or Medicare billing, which is not proof they answer 911 in this county. An inferred county is a lead, not a fact.') + '</p>'
+          + (c.via ? viaText(c.via).slice(1) + ' An inferred county is a lead, not a fact.' : 'Agencies are listed by licence address or Medicare billing, which is not proof they answer 911 in this county. An inferred county is a lead, not a fact.')) + '</p>'
+        + (c.note ? '<p class="rm-panel-note">' + esc(c.note) + '</p>' : '')
         + '<button type="button" class="rm-report">This is wrong &mdash; tell us</button>'
         + '<button type="button" class="rm-link">Copy link to this county</button>';
       return h;

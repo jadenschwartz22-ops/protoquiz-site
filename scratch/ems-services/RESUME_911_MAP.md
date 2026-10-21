@@ -24,6 +24,9 @@ tier-A wording now says "for the county, or for its main towns". Honest fix late
 Each state's README lists its gaps and a "Needs Chrome" list (IL state licence lookup is the big one).
 Lanes' shared-scratchpad lesson: give each lane its own tools folder; IL's crawl.py overwrote OH's.
 
+## Update 2026-10-21 (gap research: WA NV NH RI)
+Sourced corrections only, tiers follow the rows: WA Stevens C->A (Deer Park added), Asotin/Walla Walla rows fixed and held at C, Garfield note; NV Clark held C partial (LVMPD NG911 layer covers the valley, 6 places outside), Lyon +North Lyon FPD, Churchill/Nye noise removed; NH and RI carry a "Source needed" note on every county (records requests drafted in the gap research, NOT sent). Mechanism: `county_verdict` drop/add/show/page_note and `meta.county_page_note` in states/<ST>_public_2026-10.json, read by county_911_all.py.
+
 ## Where we are (2026-09-12, map v3)
 
 3,144 counties. Tier is the strength of the evidence, colour is ownership of the answer.
@@ -66,7 +69,7 @@ Known wrong by construction (fix before publishing any state as done):
 | OH | 88 | 0 | 0 | 0 | 87 | 1 | 100% | ODPS EMS roster needs the records request; county EMS pages are the fallback |
 | NC | 100 | 0 | 17 | 74 | 7 | 2 | 77% | OEMS roster HAS the 911 field; county EMS is the provider in most counties, map from county sites |
 | VA | 133 | 0 | 23 | 48 | 39 | 23 | 94% | OEMS agency list + county/city fire-EMS pages; many independent cities |
-| TN | 95 | 0 | 0 | 0 | 71 | 24 | 100% | TN publishes only totals; county EMS pages (most counties run county EMS); records request |
+| TN | 95 | 0 | 15 | 80 | 0 | 0 | 90% | 10-21: DoH EMS Directory (licensed county, *PRIMARY 911 tag; states/TN_directory.README.md) is tier B/C, not A; county EMS pages or a service-area record would make A |
 | MD | 24 | 0 | 0 | 0 | 24 | 0 | 100% | MIEMSS jurisdictional pages are login-walled; each county has one jurisdictional program, 24 pages by hand |
 | IN | 92 | 0 | 4 | 47 | 33 | 8 | 83% | IDHS roster has 911 field; county sites |
 | LA | 64 | 0 | 0 | 0 | 22 | 42 | 100% | parish sites; Acadian dominates; LA records request |
@@ -77,16 +80,17 @@ Known wrong by construction (fix before publishing any state as done):
 | IA | 99 | 0 | 0 | 70 | 22 | 7 | 100% | IDPH roster; county EMS associations; many volunteer |
 | AR | 75 | 0 | 0 | 0 | 35 | 40 | 100% | ADH roster needs request; county sites |
 | AL | 67 | 0 | 16 | 50 | 0 | 1 | 58% | county sites; ADPH roster is licence-only |
-| KY | 120 | 0 | 21 | 95 | 2 | 2 | 62% | KBEMS roster has 911 field; county sites |
+| KY | 120 | 112 | 2 | 6 | 0 | 0 | 5% | 10-21 (spot check: Kenton + Campbell B partial listing every licensed local agency (KY_SPLIT), Greenup trimmed; per-county page_note shown on the card for Kenton, Campbell, Greenup, Knox; see README): KBEMS EMS Directory service areas (states/KY_public_2026-10.README.md): 95 single-operator + 18 multi-operator (all named, owner may pick) = A; 4 held at C (Lewis, Henderson, Martin, Warren: NG911 layer names another operator); Fulton, Knox, McLean partial; open: county pages for the 4 conflicts and the 18 overlaps |
 | KS | 105 | 0 | 8 | 95 | 1 | 1 | 95% | KBEMS roster; county EMS nearly everywhere (county-run = easy public) |
 | MI | 83 | 0 | 32 | 43 | 2 | 6 | 27% | LARA roster has 911 field; MCA (medical control authority) plans list agencies by county |
 | NE | 93 | 0 | 0 | 0 | 80 | 13 | 100% | NE publishes only totals; volunteer rescue squads, county sites |
 | ID | 44 | 0 | 0 | 0 | 39 | 5 | 100% | Idaho roster has 911 field but the county pull failed; rerun |
 | NM | 33 | 0 | 0 | 31 | 2 | 0 | 100% | NM roster has 911 field; PRC certificates carry territory |
-| WY, AK, MT, SD, ND, NV | | | | | | | | thin rosters; county/borough sites; small population, low priority |
+| ND | 53 | 53 | 0 | 0 | 0 | 0 | 0% | 10-21: ND HHS EMS service-area atlas (ND GIS Hub ambulance boundary layer, 147 polygons, 127 services; states/ND_public_2026-10.README.md): every county >=99.9% covered, 3-10 services each, all named, none picked; was B28 C21 D3 none1. Layer is flagged preliminary; ownership not in the atlas (derived from names, mostly unknown) |
+| WY, AK, MT, SD, NV | | | | | | | | thin rosters; county/borough sites; small population, low priority |
 
 Near-done states, spot-check only: PA (2% unconf), CO 5%, VT 5%, MN 8%, NY 11%, NJ 11%,
-GA 15% (20 blank pending ORA), NH 15%, ME 17%, WI 25%, MI 27%, ND 28%, WA 28%, MA 34%.
+GA 15% (20 blank pending ORA), NH 15%, ME 17%, WI 25%, MI 27%, WA 28%, MA 34%.
 
 ## What worked (use in this order)
 
