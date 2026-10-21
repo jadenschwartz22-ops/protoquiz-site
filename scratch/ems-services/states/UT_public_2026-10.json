@@ -656,8 +656,8 @@
    "polygons": 1,
    "source": "UGRC",
    "updated": "2026-06-15",
-   "licence_class": "Training Center",
-   "licence_match": "Park City Fire District-TC",
+   "licence_class": null,
+   "licence_match": null,
    "transport": null,
    "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
   },
@@ -886,9 +886,9 @@
    "polygons": 1,
    "source": "UGRC",
    "updated": "2026-06-15",
-   "licence_class": "Training Center",
-   "licence_match": "Garfield Ambulance #0901T",
-   "transport": null,
+   "licence_class": "Ground Ambulance - ALS",
+   "licence_match": "Santaquin City Ambulance - Primary license #2513L",
+   "transport": true,
    "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/EMSResponseAreas/FeatureServer/0"
   },
   {
@@ -1716,7 +1716,7 @@
     {
      "name": "Park City Fire District-Summit Co",
      "share": 0.569,
-     "transport": "Training Center"
+     "transport": null
     },
     {
      "name": "North Summit Fire District",
