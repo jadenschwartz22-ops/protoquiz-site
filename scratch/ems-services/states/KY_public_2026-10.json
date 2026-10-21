@@ -7301,7 +7301,8 @@
     "American Medical Response - Northern Kentucky",
     "First Care Ohio, LLC"
    ],
-   "spot_check": "Spot check 2026-10-21 (KBEMS EMS_Agencies_2026-08-01.PDF + agency/county pages). AMR and First Care dropped from the 911 list (no county PSAP, unsourced 911 role). Campbell Fire/Rescue kept on its own licence text (\"Campbell County\"; NG911 layer 77% of county area), not on AMR/First Care text. Fort Thomas and Central Campbell hold KBEMS 911-response licences (Campbell County Consolidated Dispatch); listed with their verbatim area text. Melbourne Fire District and Wilder Fire are named by the county but hold no KBEMS 911-transport licence."
+   "spot_check": "Spot check 2026-10-21 (KBEMS EMS_Agencies_2026-08-01.PDF + agency/county pages). AMR and First Care dropped from the 911 list (no county PSAP, unsourced 911 role). Campbell Fire/Rescue kept on its own licence text (\"Campbell County\"; NG911 layer 77% of county area), not on AMR/First Care text. Fort Thomas and Central Campbell hold KBEMS 911-response licences (Campbell County Consolidated Dispatch); listed with their verbatim area text. Melbourne Fire District and Wilder Fire are named by the county but hold no KBEMS 911-transport licence.",
+   "page_note": "Campbell Fire/Rescue is a fire district, not a whole-county provider: the state 911 boundary layer gives it about 77% of the county. Six local districts and agencies split Campbell County between them, and we cannot verify from public records where one ends and the next begins. American Medical Response and First Care Ohio also name the county but have no 911 role we can source, so they are not listed. Melbourne and Wilder fire are named by the county but hold no Board of EMS 911-transport licence."
   },
   "21039": {
    "county": "Carlisle County",
@@ -7925,7 +7926,8 @@
     "PORTSMOUTH EMERGENCY AMBULANCE SERVICES (1686)",
     "Rapid EMS (1653)"
    ],
-   "spot_check": "Spot check 2026-10-21 (KBEMS EMS_Agencies_2026-08-01.PDF + agency/county pages). No source puts Greenup Emergency Ambulance, Portsmouth Emergency Ambulance, King\u2019s Daughters Medical Transport or Rapid EMS on Greenup 911 calls."
+   "spot_check": "Spot check 2026-10-21 (KBEMS EMS_Agencies_2026-08-01.PDF + agency/county pages). No source puts Greenup Emergency Ambulance, Portsmouth Emergency Ambulance, King\u2019s Daughters Medical Transport or Rapid EMS on Greenup 911 calls.",
+   "page_note": "Greenup County Ambulance Authority has been the countywide 911 ambulance since 2024-01-01 (6 paramedic ambulances). Also licensed in the county, but no source we found puts them on Greenup 911 calls (transfers): Greenup Emergency Ambulance, Portsmouth Emergency Ambulance, King\u2019s Daughters Medical Transport and Rapid EMS."
   },
   "21091": {
    "county": "Hancock County",
@@ -8285,7 +8287,8 @@
     "American Medical Response - Northern Kentucky",
     "First Care Ohio, LLC"
    ],
-   "spot_check": "Spot check 2026-10-21 (KBEMS EMS_Agencies_2026-08-01.PDF + agency/county pages). Walton Fire Prot. Dist. (Boone PSAP) left out: Boone-based."
+   "spot_check": "Spot check 2026-10-21 (KBEMS EMS_Agencies_2026-08-01.PDF + agency/county pages). Walton Fire Prot. Dist. (Boone PSAP) left out: Boone-based.",
+   "page_note": "Twelve city and district fire-EMS agencies hold Kentucky Board of EMS licences here and take 911 through the Kenton County Emergency Communications Center. Each covers its own area, so this is a split between them, not one county provider, and the licences do not draw the lines between them. American Medical Response and First Care Ohio also name the county but have no county 911 role we can source, so they are not listed. Walton Fire is left out (Boone County dispatch)."
   },
   "21119": {
    "county": "Knott County",
@@ -8331,7 +8334,8 @@
     ]
    },
    "kbems_vs_ng911_label_overlap": true,
-   "spot_check": "Spot check 2026-10-21 (KBEMS EMS_Agencies_2026-08-01.PDF + agency/county pages). Knox County Ambulance Service holds licences 1285 (North, East and South sections of Knox) and 1516 (City of Corbin, West Knox, South Laurel, North Whitley); PSAP Knox County 911. Licensed by sections; no source on the centre or Barbourville."
+   "spot_check": "Spot check 2026-10-21 (KBEMS EMS_Agencies_2026-08-01.PDF + agency/county pages). Knox County Ambulance Service holds licences 1285 (North, East and South sections of Knox) and 1516 (City of Corbin, West Knox, South Laurel, North Whitley); PSAP Knox County 911. Licensed by sections; no source on the centre or Barbourville.",
+   "page_note": "Knox County Ambulance Service holds two licences, each by section: 1285 (North, East and South Knox) and 1516 (City of Corbin, West Knox, South Laurel, North Whitley). The licences do not name Barbourville or the center of the county, so we cannot say from them who covers those places. The state 911 boundary layer shows Knox County EMS over about 98% of the county."
   },
   "21123": {
    "county": "Larue County",

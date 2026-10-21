@@ -107,6 +107,7 @@
         : c.tier === 'A' ? (c.source === 'local' ? 'Named directly by a county or agency source.' : 'Named directly by a state record.') + (c.via ? viaText(c.via) : '')
         : (c.partial ? 'A record names the provider for some towns here, not the whole county. ' : '')
           + (c.via ? viaText(c.via).slice(1) + ' An inferred county is a lead, not a fact.' : 'Agencies are listed by licence address or Medicare billing, which is not proof they answer 911 in this county. An inferred county is a lead, not a fact.')) + '</p>'
+        + (c.note ? '<p class="rm-panel-note">' + esc(c.note) + '</p>' : '')
         + '<button type="button" class="rm-report">This is wrong &mdash; tell us</button>'
         + '<button type="button" class="rm-link">Copy link to this county</button>';
       return h;

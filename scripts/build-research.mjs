@@ -564,7 +564,8 @@ ${excluded.map(stateRow).join('\n')}
               : c.tier === 'A'
                 ? (c.source === 'local' ? 'Named directly by a county or agency source.' : 'Named directly by a state record.') + (c.via ? viaText(c.via) : '')
                 : (c.partial ? 'A record names the provider for some towns here, not the whole county. ' : '') + (c.via ? viaText(c.via).slice(1) + ' An inferred county is a lead, not a fact.' : 'Inferred from licensing rosters and Medicare billing. An inferred county is a lead, not a fact.'))
-            + '</p>';
+            + '</p>'
+            + (c.note ? '<p class="rm-panel-note">' + c.note.replace(/[&<>]/g, function (m) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;' }[m]; }) + '</p>' : '');
           // The correction form is the one that already exists further down the page --
           // this link scrolls to it and fills the county in, so a reader who spots a bad
           // row reports it from where they saw it instead of hunting for the form.

@@ -113,12 +113,16 @@ def build():
     KY_VIA = 'Kentucky Board of EMS licensed service areas (EMS Directory, 2026-08-01)'
     KY_OWN = {'Governmental, Non-Fire': 'public', 'Fire Department': 'public', 'Private, Non-Hospital': 'private', 'Community, Non-Profit': 'private', 'Hospital': 'hospital'}
     KY_CONFLICT = {'Lewis': 'NG911 EMS layer: PORTSMOUTH AMBULANCE SERVICE', 'Henderson': 'NG911 EMS layer: AMR-Henderson', 'Martin': 'NG911 EMS layer: PATRIOT EMS', 'Warren': 'NG911 EMS layer: Bowling Green Police Department (the PSAP)'}
+    # KY_SPLIT: the licensed local agencies split the county (state layer: Campbell Fire/Rescue is a district, 77%), so every licensed row is listed, partial, never a whole-county claim.
+    # A verdict's page_note is free text shown on the county card; the same note field works for any state.
+    KY_SPLIT = {'Kenton', 'Campbell'}
     ky = json.load(open('states/KY_public_2026-10.json')); kyrow = {r['name']: r for r in ky['rows']}
     for v in ky['county_verdict'].values():
         c = cname(v['county']); held = c in KY_CONFLICT
+        if v.get('page_note'): S[bykey[('KY', c.lower())]]['note'] = v['page_note']
         for n in v['whole_county_services'] or v['part_county_services']:
-            r = kyrow[n]; part = not v['whole_county_services']
-            add('KY', c, {'name': re.sub(r' \(\d+\)$', '', n), 'own': KY_OWN[r['org_type']], 'sub': None, 'src': 'provider-of-record', 'basis': 'located' if held or part else 'serves', 'partial': part, 'kind': 'state',
+            r = kyrow[n]; part = not v['whole_county_services'] or c in KY_SPLIT
+            add('KY', c, {'name': re.sub(r' \(\d+\)$', '', n), 'own': KY_OWN[r['org_type']], 'sub': None, 'src': 'provider-of-record', 'basis': 'located' if held or part else 'serves', 'partial': part, 'kind': 'state', **({'show': True} if c in KY_SPLIT else {}),
                           'note': r['service_area_text'] + ('; ' + KY_CONFLICT[c] if held else ''), 'url': r['source_url'], 'via': KY_VIA})
     # ND HHS EMS service-area atlas (official, ND GIS Hub ambulance boundary layer, 2026-10-21): polygon-vs-county overlay, tier A where the ambulance polygons cover >=95% of the county (states/ND_public_2026-10.README.md).
     # A licensed service area is not an exclusive or dispatch assignment, so every service naming the county (>=1% of its area) is kept; none is picked. Quick-response units are not providers of record and are not read.
@@ -143,7 +147,7 @@ def build():
         d['providers'] = ps
         serves = [p for p in ps if p['basis'] == 'serves']; conf = [p for p in ps if p['confirmed']]
         if serves: tier, ans = 'A', serves
-        elif conf: tier, ans = 'B', conf
+        elif conf: tier, ans = 'B', [p for p in ps if p.get('show')] or conf   # a split county lists every licensed local agency, not only the Medicare-matched names
         elif ps: tier, ans = 'C', ps
         elif any(m['emerg'] for m in d['medicare']): tier, ans = 'D', [dict(m, src='medicare') for m in d['medicare'] if m['emerg']]
         else: tier, ans = '-', []
@@ -158,7 +162,7 @@ def build():
 if __name__ == '__main__':
     S = build(); json.dump(S, open('county_911.json', 'w'))
     # slim file the site reads (scripts/build-research-*.mjs)
-    json.dump({k: {**{f: d[f] for f in ('name', 'st', 'pop', 'tier', 'ownership')}, **({'source': d['source']} if d['tier'] == 'A' else {}), **({'partial': True} if d['partial'] else {}), **({'via': d['via']} if d.get('via') else {})} for k, d in S.items()},
+    json.dump({k: {**{f: d[f] for f in ('name', 'st', 'pop', 'tier', 'ownership')}, **({'source': d['source']} if d['tier'] == 'A' else {}), **({'partial': True} if d['partial'] else {}), **({'via': d['via']} if d.get('via') else {}), **({'note': d['note']} if d.get('note') else {})} for k, d in S.items()},
               open('../../data/county-911.json', 'w'), separators=(',', ':'), ensure_ascii=False)
     # per-state files for /research/atlas/?state=XX: the slim fields plus the agencies on record
     def pretty(n):
@@ -171,7 +175,7 @@ if __name__ == '__main__':
     os.makedirs('../../data/atlas', exist_ok=True); byst = collections.defaultdict(dict)
     for k, d in S.items():
         byst[d['st']][k] = {**{f: d[f] for f in ('name', 'pop', 'tier', 'ownership')}, **({'source': d['source']} if d['tier'] == 'A' else {}),
-                            **({'partial': True} if d['partial'] else {}), **({'via': d['via']} if d.get('via') else {}), 'n': len(shown(d)), 'a': shown(d)[:12]}
+                            **({'partial': True} if d['partial'] else {}), **({'via': d['via']} if d.get('via') else {}), **({'note': d['note']} if d.get('note') else {}), 'n': len(shown(d)), 'a': shown(d)[:12]}
     for st, v in byst.items(): json.dump(v, open(f'../../data/atlas/{st}.json', 'w'), separators=(',', ':'), ensure_ascii=False)
     tiers = collections.Counter(d['tier'] for d in S.values()); pop = collections.Counter()
     for d in S.values(): pop[d['tier']] += d['pop']
