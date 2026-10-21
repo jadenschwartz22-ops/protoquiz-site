@@ -84,6 +84,14 @@
       <p class="rbar-contact"><span>Contact: </span><a href="mailto:research@protoquiz.com">research@protoquiz.com</a></p>
     </div>
   </div>
+  <style id="rbar-mobile-nav">@media (max-width:900px){
+    body:has(.rbar) .site-header .site-nav{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:0;gap:6px 12px}
+    body:has(.rbar) .site-header .nav-left{display:contents}
+    body:has(.rbar) .site-header .brand{order:1;margin-right:auto}
+    body:has(.rbar) .site-header .nav-right{order:2}
+    body:has(.rbar) .site-header .nav-links{display:flex;order:3;flex:0 0 100%;gap:22px;overflow-x:auto;padding:8px 0 10px;margin-top:4px;border-top:1px solid var(--line)}
+  }</style>
+  <script src="/assets/research-nav.js?v=e0144007" defer></script>
   <main>
     <div class="wrap">
       <nav class="crumbs"><a href="/census/">Protocol census</a> <span class="sep">/</span> <a href="/census/drugs/dextrose/">Dextrose</a> <span class="sep">/</span> <span>Cardiac arrest</span></nav>
@@ -92,10 +100,10 @@
       <div class="dochead">
         <span class="badge">Indication</span>
         <h1>Dextrose for Cardiac arrest</h1>
-        <div class="meta"><span class="chip">15 sources</span><span class="chip">12 named agencies</span><span class="chip">11 states</span><span class="chip">as of 2026-10-19</span></div>
+        <div class="meta"><span class="chip">16 sources</span><span class="chip">13 named agencies</span><span class="chip">11 states</span><span class="chip">as of 2026-10-21</span></div>
         <p class="lede">Pediatric weight-based dosing has a median of 500 mg/kg across 8 published protocols, with the middle half between 500 and 500.</p>
       </div>
-      <div class="stats"><div class="stat"><span class="v">15</span><span class="l">sources</span></div><div class="stat"><span class="v">12</span><span class="l">named agencies</span></div><div class="stat"><span class="v">11</span><span class="l">states</span></div><div class="stat"><span class="v">19</span><span class="l">entries</span></div><div class="stat"><span class="v">12</span><span class="l">named here</span></div></div>
+      <div class="stats"><div class="stat"><span class="v">16</span><span class="l">sources</span></div><div class="stat"><span class="v">13</span><span class="l">named agencies</span></div><div class="stat"><span class="v">11</span><span class="l">states</span></div><div class="stat"><span class="v">20</span><span class="l">entries</span></div><div class="stat"><span class="v">13</span><span class="l">named here</span></div></div>
       <p class="honest">Doses far off from what other protocols give are likely misreads, so they are left out until checked. <a href="/census/methodology/#outliers">How that works</a>.</p>
       <section id="g-peds-perkg-mg">
         <h2>Pediatric, weight-based<span class="unit">mg/kg</span></h2>
@@ -129,6 +137,14 @@
         <ul class="inline"><li>IV <span class="muted">57%</span></li><li>IV/IO <span class="muted">43%</span></li></ul>
         <p class="cite">United States EMS Protocol Census, n=7 protocols from 4 named agencies / 6 states, updated Oct 2026</p>
       </section>
+      <section id="g-peds-perkg-ml">
+        <h2>Pediatric, weight-based<span class="unit">mL/kg</span></h2>
+      <div class="stats"><div class="stat"><span class="v">3</span><span class="l">sources</span></div><div class="stat"><span class="v">3</span><span class="l">named agencies</span></div><div class="stat"><span class="v">2</span><span class="l">states</span></div><div class="stat"><span class="v">3</span><span class="l">entries</span></div><div class="stat"><span class="v">0</span><span class="l">kept as written</span></div></div>
+        <p class="honest">Below 5 sources, so no distribution is published for this group &mdash; only the counts above.</p>
+        <h3>Routes</h3>
+        <ul class="inline"><li>IV/IO <span class="muted">100%</span></li></ul>
+        <p class="cite">United States EMS Protocol Census, n=3 protocols from 3 named agencies / 2 states, updated Oct 2026</p>
+      </section>
       <section id="g-adult-flat-ml">
         <h2>Adult<span class="unit">mL</span></h2>
       <div class="stats"><div class="stat"><span class="v">2</span><span class="l">sources</span></div><div class="stat"><span class="v">2</span><span class="l">named agencies</span></div><div class="stat"><span class="v">2</span><span class="l">states</span></div><div class="stat"><span class="v">2</span><span class="l">entries</span></div><div class="stat"><span class="v">0</span><span class="l">kept as written</span></div></div>
@@ -137,17 +153,9 @@
         <ul class="inline"><li>IV/IO <span class="muted">100%</span></li></ul>
         <p class="cite">United States EMS Protocol Census, n=2 protocols from 2 named agencies / 2 states, updated Oct 2026</p>
       </section>
-      <section id="g-peds-perkg-ml">
-        <h2>Pediatric, weight-based<span class="unit">mL/kg</span></h2>
-      <div class="stats"><div class="stat"><span class="v">2</span><span class="l">sources</span></div><div class="stat"><span class="v">2</span><span class="l">named agencies</span></div><div class="stat"><span class="v">2</span><span class="l">states</span></div><div class="stat"><span class="v">2</span><span class="l">entries</span></div><div class="stat"><span class="v">0</span><span class="l">kept as written</span></div></div>
-        <p class="honest">Below 5 sources, so no distribution is published for this group &mdash; only the counts above.</p>
-        <h3>Routes</h3>
-        <ul class="inline"><li>IV/IO <span class="muted">100%</span></li></ul>
-        <p class="cite">United States EMS Protocol Census, n=2 protocols from 2 named agencies / 2 states, updated Oct 2026</p>
-      </section>
-<details class="fold" id="agencies"><summary>Named agencies with a page<span class="count">12</span></summary>
+<details class="fold" id="agencies"><summary>Named agencies with a page<span class="count">13</span></summary>
         <p class="muted">Agencies whose protocols are a public record are named here. Their own doses are on their own pages; this list carries no values.</p>
-        <ul class="cols"><li><a href="/census/agencies/berrien-county-medical-control-authority/">Berrien County Medical Control Authority</a></li><li><a href="/census/agencies/bexar-county-esd-4-fire-rescue/">Bexar County ESD 4 Fire Rescue</a></li><li><a href="/census/agencies/chaves-county-ems/">Chaves County EMS</a></li><li><a href="/census/agencies/chelan-douglas-okanogan-grant-county/">Chelan/Douglas/Okanogan/Grant County</a></li><li><a href="/census/agencies/evansville-fire-department/">Evansville Fire Department</a></li><li><a href="/census/agencies/fort-lauderdale-fire-rescue/">Fort Lauderdale Fire Rescue</a></li><li><a href="/census/agencies/hunt-county-ems/">Hunt County EMS</a></li><li><a href="/census/agencies/muskegon-county/">Muskegon County</a></li><li><a href="/census/agencies/national-emergency-medical-services/">National Emergency Medical Services</a></li><li><a href="/census/agencies/region-one-metropolitan-ambulance-council-mac/">Region One Metropolitan Ambulance Council (MAC)</a></li><li><a href="/census/agencies/regional-emergency-medical-advisory-committee-of-new-york-city/">Regional Emergency Medical Advisory Committee of New York City</a></li><li><a href="/census/agencies/tri-county-emergency-medical-control-authority/">Tri-County Emergency Medical Control Authority</a></li></ul>
+        <ul class="cols"><li><a href="/census/agencies/berrien-county-medical-control-authority/">Berrien County Medical Control Authority</a></li><li><a href="/census/agencies/bexar-county-esd-4-fire-rescue/">Bexar County ESD 4 Fire Rescue</a></li><li><a href="/census/agencies/chaves-county-ems/">Chaves County EMS</a></li><li><a href="/census/agencies/chelan-douglas-okanogan-grant-county/">Chelan/Douglas/Okanogan/Grant County</a></li><li><a href="/census/agencies/evansville-fire-department/">Evansville Fire Department</a></li><li><a href="/census/agencies/fort-lauderdale-fire-rescue/">Fort Lauderdale Fire Rescue</a></li><li><a href="/census/agencies/hunt-county-ems/">Hunt County EMS</a></li><li><a href="/census/agencies/muskegon-county/">Muskegon County</a></li><li><a href="/census/agencies/national-emergency-medical-services/">National Emergency Medical Services</a></li><li><a href="/census/agencies/region-one-metropolitan-ambulance-council/">Region One Metropolitan Ambulance Council</a></li><li><a href="/census/agencies/region-one-metropolitan-ambulance-council-mac/">Region One Metropolitan Ambulance Council (MAC)</a></li><li><a href="/census/agencies/regional-emergency-medical-advisory-committee-of-new-york-city/">Regional Emergency Medical Advisory Committee of New York City</a></li><li><a href="/census/agencies/tri-county-emergency-medical-control-authority/">Tri-County Emergency Medical Control Authority</a></li></ul>
 </details>
         </div>
         <aside class="rail">
@@ -229,13 +237,5 @@
     </div>
   </footer>
   <!-- /shared-chrome:footer -->
-  <style id="rbar-mobile-nav">@media (max-width:900px){
-    body:has(.rbar) .site-header .site-nav{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:0;gap:6px 12px}
-    body:has(.rbar) .site-header .nav-left{display:contents}
-    body:has(.rbar) .site-header .brand{order:1;margin-right:auto}
-    body:has(.rbar) .site-header .nav-right{order:2}
-    body:has(.rbar) .site-header .nav-links{display:flex;order:3;flex:0 0 100%;gap:22px;overflow-x:auto;padding:8px 0 10px;margin-top:4px;border-top:1px solid var(--line)}
-  }</style>
-  <script src="/assets/research-nav.js?v=e0144007" defer></script>
 </body>
 </html>

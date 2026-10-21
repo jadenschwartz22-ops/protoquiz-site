@@ -84,16 +84,25 @@
       <p class="rbar-contact"><span>Contact: </span><a href="mailto:research@protoquiz.com">research@protoquiz.com</a></p>
     </div>
   </div>
+  <style id="rbar-mobile-nav">@media (max-width:900px){
+    body:has(.rbar) .site-header .site-nav{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:0;gap:6px 12px}
+    body:has(.rbar) .site-header .nav-left{display:contents}
+    body:has(.rbar) .site-header .brand{order:1;margin-right:auto}
+    body:has(.rbar) .site-header .nav-right{order:2}
+    body:has(.rbar) .site-header .nav-links{display:flex;order:3;flex:0 0 100%;gap:22px;overflow-x:auto;padding:8px 0 10px;margin-top:4px;border-top:1px solid var(--line)}
+  }</style>
+  <script src="/assets/research-nav.js?v=e0144007" defer></script>
   <main>
     <div class="wrap">
-      <nav class="crumbs"><a href="/census/">Protocol census</a> <span class="sep">/</span> <span>VI</span></nav>
+
       <div class="layout solo">
         <div class="col">
-      <div class="dochead">
-        <span class="badge">State</span>
-        <h1>EMS protocols in VI</h1>
-        <div class="meta"><span class="chip">1 named agency</span><span class="chip">126 dose entries</span><span class="chip">28 drugs</span><span class="chip">statewide protocol</span></div>
+      <div class="shead">
+        <div class="seye"><a href="/census/#states">&larr; All states</a><span aria-hidden="true">&middot;</span><a href="/research/atlas/?state=VI">911 coverage: VI &rarr;</a></div>
+        <h1>VI</h1>
+        <p class="slede">The census names 1 VI agency, with 127 dose entries across 28 drugs. The state also publishes a statewide protocol.</p>
       </div>
+
       <section id="agencies">
         <h2>Agencies</h2>
         <h3>With a protocol</h3>
@@ -108,7 +117,7 @@
         <ul class="cols"><li>Virgin Islands Fire &amp; Emergency Medical Services</li></ul>
       </section>
       <div class="actions"><details class="fold" id="cite"><summary>Cite this</summary>
-            <div class="citebox" id="cite-text"><p class="cite">United States EMS Protocol Census, VI: 1 named agency, 126 dose entries across 28 drugs.</p><p class="cite">https://protoquiz.com/census/states/vi/</p></div>
+            <div class="citebox" id="cite-text"><p class="cite">United States EMS Protocol Census, VI: 1 named agency, 127 dose entries across 28 drugs.</p><p class="cite">https://protoquiz.com/census/states/vi/</p></div>
             <button type="button" class="copybtn" id="cite-btn">Copy citation</button>
           </details>
           <script>
@@ -181,13 +190,5 @@
     </div>
   </footer>
   <!-- /shared-chrome:footer -->
-  <style id="rbar-mobile-nav">@media (max-width:900px){
-    body:has(.rbar) .site-header .site-nav{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:0;gap:6px 12px}
-    body:has(.rbar) .site-header .nav-left{display:contents}
-    body:has(.rbar) .site-header .brand{order:1;margin-right:auto}
-    body:has(.rbar) .site-header .nav-right{order:2}
-    body:has(.rbar) .site-header .nav-links{display:flex;order:3;flex:0 0 100%;gap:22px;overflow-x:auto;padding:8px 0 10px;margin-top:4px;border-top:1px solid var(--line)}
-  }</style>
-  <script src="/assets/research-nav.js?v=e0144007" defer></script>
 </body>
 </html>

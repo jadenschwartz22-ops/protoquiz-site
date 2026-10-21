@@ -87,6 +87,14 @@
       <p class="rbar-contact"><span>Contact: </span><a href="mailto:research@protoquiz.com">research@protoquiz.com</a></p>
     </div>
   </div>
+  <style id="rbar-mobile-nav">@media (max-width:900px){
+    body:has(.rbar) .site-header .site-nav{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:0;gap:6px 12px}
+    body:has(.rbar) .site-header .nav-left{display:contents}
+    body:has(.rbar) .site-header .brand{order:1;margin-right:auto}
+    body:has(.rbar) .site-header .nav-right{order:2}
+    body:has(.rbar) .site-header .nav-links{display:flex;order:3;flex:0 0 100%;gap:22px;overflow-x:auto;padding:8px 0 10px;margin-top:4px;border-top:1px solid var(--line)}
+  }</style>
+  <script src="/assets/research-nav.js?v=e0144007" defer></script>
   <main>
     <div class="wrap">
       <nav class="crumbs"><a href="/census/">Protocol census</a> <span class="sep">/</span> <a href="/census/states/ri/">Rhode Island</a> <span class="sep">/</span> <span>Rhode Island Department of Health – Center for Emergency Medical Services</span></nav>
@@ -95,10 +103,10 @@
       <div class="dochead">
         <span class="badge">Statewide</span>
         <h1>Rhode Island Department of Health – Center for Emergency Medical Services</h1>
-        <div class="meta"><span class="pill sig-current">Current</span><span class="chip">229 dose entries</span><span class="chip">62 drugs</span><span class="chip">4 documents</span><span class="chip">RI</span><span class="chip">effective 2026-06-01</span><span class="chip">100% machine-parsed of 229</span></div>
+        <div class="meta"><span class="pill sig-current">Current</span><span class="chip">222 dose entries</span><span class="chip">63 drugs</span><span class="chip">4 documents</span><span class="chip">RI</span><span class="chip">effective 2026-06-01</span><span class="chip">100% machine-parsed of 222</span></div>
       </div>
       <section id="doses">
-        <h2>Drugs and doses<span class="count">62</span></h2>
+        <h2>Drugs and doses<span class="count">63</span></h2>
         <input type="search" class="filter" id="f" placeholder="Filter drugs or indications" aria-label="Filter drugs or indications" autocomplete="off" />
 <details class="fold"><summary><b>A&ndash;C</b> <span class="names">20% Fat Emulsion, Acetaminophen, Adenosine, Albuterol, Amiodarone, Aspirin, Atropine, Buprenorphine, Calcium Chloride, Calcium Gluconate, Ceftriaxone, Cetirizine</span><span class="count">12</span></summary>
         <div class="drug"><h3 id="20-fat-emulsion">20% Fat Emulsion</h3>
@@ -259,7 +267,7 @@
           <thead><tr><th>Indication</th><th>Population</th><th>Dose</th><th>Route</th><th>Repeat</th><th>Standing</th><th>Source</th></tr></thead>
           <tbody>
 <tr>
-              <td>Allergic reaction</td>
+              <td>Anaphylaxis</td>
               <td>adult</td>
               <td>2.5&ndash;5 mg</td>
               <td>NEB</td>
@@ -268,13 +276,31 @@
               <td class="src">pages 35, 36, 37, 39, 40, 41 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
             </tr>
 <tr>
-              <td>Allergic reaction</td>
+              <td>Anaphylaxis</td>
               <td>peds</td>
               <td>2.5&ndash;5 mg</td>
               <td>NEB</td>
               <td>not captured</td>
               <td>standing</td>
               <td class="src">pages 35, 36, 37, 39, 40, 41 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
+            </tr>
+<tr>
+              <td>Asthma / bronchospasm</td>
+              <td>adult</td>
+              <td>2.5&ndash;5 mg</td>
+              <td>NEB</td>
+              <td>not captured</td>
+              <td>standing</td>
+              <td class="src">pages 53, 55, 56 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
+            </tr>
+<tr>
+              <td>Asthma / bronchospasm</td>
+              <td>peds</td>
+              <td>2.5&ndash;5 mg</td>
+              <td>NEB</td>
+              <td>not captured</td>
+              <td>standing</td>
+              <td class="src">pages 53, 55, 56 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
             </tr>
 <tr>
               <td>Hyperkalemia</td>
@@ -293,24 +319,6 @@
               <td>not captured</td>
               <td>standing</td>
               <td class="src">page 147 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
-            </tr>
-<tr>
-              <td>Respiratory distress</td>
-              <td>adult</td>
-              <td>2.5&ndash;5 mg</td>
-              <td>NEB</td>
-              <td>not captured</td>
-              <td>standing</td>
-              <td class="src">pages 53, 55, 56 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
-            </tr>
-<tr>
-              <td>Respiratory distress</td>
-              <td>peds</td>
-              <td>2.5&ndash;5 mg</td>
-              <td>NEB</td>
-              <td>not captured</td>
-              <td>standing</td>
-              <td class="src">pages 53, 55, 56 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
             </tr>
           </tbody>
         </table></div></div>
@@ -442,31 +450,13 @@
           <thead><tr><th>Indication</th><th>Population</th><th>Dose</th><th>Route</th><th>Repeat</th><th>Standing</th><th>Source</th></tr></thead>
           <tbody>
 <tr>
-              <td>Beta-blocker / calcium-channel-blocker overdose</td>
-              <td>adult</td>
-              <td>1 g</td>
-              <td>IV</td>
-              <td>not captured</td>
-              <td>standing</td>
-              <td class="src">pages 145, 161, 162, 164, 165 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
-            </tr>
-<tr>
-              <td>Beta-blocker / calcium-channel-blocker overdose</td>
-              <td>peds</td>
-              <td>20 mg/kg</td>
-              <td>IV</td>
-              <td>not captured</td>
-              <td>standing</td>
-              <td class="src">pages 145, 161, 162, 164, 165 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
-            </tr>
-<tr>
               <td>Hyperkalemia</td>
               <td>adult</td>
               <td>1 g</td>
               <td>IV</td>
               <td>not captured</td>
               <td>standing</td>
-              <td class="src">page 63 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
+              <td class="src">pages 63, 147 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
             </tr>
 <tr>
               <td>Other</td>
@@ -475,7 +465,16 @@
               <td>IV</td>
               <td>not captured</td>
               <td>standing</td>
-              <td class="src">page 159 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
+              <td class="src">pages 161, 162, 164, 165 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
+            </tr>
+<tr>
+              <td>Other</td>
+              <td>adult</td>
+              <td>1 g</td>
+              <td>IV</td>
+              <td>not captured</td>
+              <td>standing</td>
+              <td class="src">pages 164, 165 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
             </tr>
 <tr>
               <td>Other</td>
@@ -484,7 +483,7 @@
               <td>IV</td>
               <td>not captured</td>
               <td>standing</td>
-              <td class="src">page 159 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
+              <td class="src">pages 161, 162, 164, 165 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
             </tr>
           </tbody>
         </table></div></div>
@@ -588,7 +587,7 @@
           </tbody>
         </table></div></div>
 </details>
-<details class="fold"><summary><b>D&ndash;F</b> <span class="names">Dexamethasone, Dextrose, Diazepam, Diltiazem, Diphenhydramine, Dopamine, Droperidol, Enalaprilat, Epinephrine, Etomidate, Famotidine, Fentanyl, Furosemide</span><span class="count">13</span></summary>
+<details class="fold"><summary><b>D&ndash;F</b> <span class="names">Dexamethasone, Dextrose, Diazepam, Diltiazem, Diphenhydramine, Dopamine, Droperidol, Enalaprilat, Epinephrine, Etomidate, Famotidine, Fat Emulsion, Fentanyl, Furosemide</span><span class="count">14</span></summary>
         <div class="drug"><h3 id="dexamethasone">Dexamethasone</h3>
         <div class="scroll"><table class="dose">
           <thead><tr><th>Indication</th><th>Population</th><th>Dose</th><th>Route</th><th>Repeat</th><th>Standing</th><th>Source</th></tr></thead>
@@ -961,48 +960,36 @@
             </tr>
 <tr>
               <td>Allergic reaction</td>
+              <td>peds</td>
+              <td>1 mg/kg</td>
+              <td>IV/PO</td>
+              <td>not captured</td>
+              <td>standing</td>
+              <td class="src">pages 37, 41 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
+            </tr>
+          </tbody>
+        </table></div></div>
+        <div class="drug"><h3 id="fat-emulsion">Fat Emulsion</h3>
+        <div class="scroll"><table class="dose">
+          <thead><tr><th>Indication</th><th>Population</th><th>Dose</th><th>Route</th><th>Repeat</th><th>Standing</th><th>Source</th></tr></thead>
+          <tbody>
+<tr>
+              <td>Other</td>
               <td>adult</td>
-              <td>20&ndash;40 mg</td>
-              <td>IV/PO</td>
+              <td>1.5 mL/kg</td>
+              <td>IV</td>
               <td>not captured</td>
               <td>standing</td>
-              <td class="src">pages 37, 41 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
+              <td class="src">pages 162, 165 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
             </tr>
 <tr>
-              <td>Allergic reaction</td>
+              <td>Other</td>
               <td>peds</td>
-              <td>1 mg/kg</td>
-              <td>IV/PO</td>
+              <td>1.5 mL/kg</td>
+              <td>IV</td>
               <td>not captured</td>
               <td>standing</td>
-              <td class="src">pages 37, 41 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
-            </tr>
-<tr>
-              <td>Allergic reaction</td>
-              <td>peds</td>
-              <td>1 mg/kg</td>
-              <td>IV/PO</td>
-              <td>not captured</td>
-              <td>standing</td>
-              <td class="src">pages 37, 41 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
-            </tr>
-<tr>
-              <td>Anaphylaxis</td>
-              <td>adult</td>
-              <td>20&ndash;40 mg</td>
-              <td>IV/PO</td>
-              <td>not captured</td>
-              <td>standing</td>
-              <td class="src">pages 37, 41 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
-            </tr>
-<tr>
-              <td>Anaphylaxis</td>
-              <td>peds</td>
-              <td>1 mg/kg</td>
-              <td>IV/PO</td>
-              <td>not captured</td>
-              <td>standing</td>
-              <td class="src">pages 37, 41 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
+              <td class="src">pages 162, 165 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
             </tr>
           </tbody>
         </table></div></div>
@@ -1154,6 +1141,15 @@
               <td>IV/IM</td>
               <td>not captured</td>
               <td>standing</td>
+              <td class="src">page 95 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
+            </tr>
+<tr>
+              <td>Agitation</td>
+              <td>adult</td>
+              <td>5&ndash;10 mg</td>
+              <td>IV/IM</td>
+              <td>not captured</td>
+              <td>standing</td>
               <td class="src">page 59 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
             </tr>
           </tbody>
@@ -1181,7 +1177,7 @@
               <td class="src">page 34 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
             </tr>
 <tr>
-              <td>Allergic reaction</td>
+              <td>Anaphylaxis</td>
               <td>adult</td>
               <td>100 mg</td>
               <td>IV</td>
@@ -1190,7 +1186,7 @@
               <td class="src">pages 36, 37, 40, 41 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
             </tr>
 <tr>
-              <td>Allergic reaction</td>
+              <td>Anaphylaxis</td>
               <td>peds</td>
               <td>2 mg/kg</td>
               <td>IV</td>
@@ -1199,7 +1195,7 @@
               <td class="src">pages 36, 37, 40, 41 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
             </tr>
 <tr>
-              <td>Respiratory distress</td>
+              <td>Asthma / bronchospasm</td>
               <td>adult</td>
               <td>100 mg</td>
               <td>IV</td>
@@ -1208,7 +1204,7 @@
               <td class="src">pages 55, 56 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
             </tr>
 <tr>
-              <td>Respiratory distress</td>
+              <td>Asthma / bronchospasm</td>
               <td>peds</td>
               <td>2 mg/kg</td>
               <td>IV</td>
@@ -1289,7 +1285,7 @@
           <thead><tr><th>Indication</th><th>Population</th><th>Dose</th><th>Route</th><th>Repeat</th><th>Standing</th><th>Source</th></tr></thead>
           <tbody>
 <tr>
-              <td>Allergic reaction</td>
+              <td>Anaphylaxis</td>
               <td>adult</td>
               <td>500 mcg</td>
               <td>NEB</td>
@@ -1298,7 +1294,7 @@
               <td class="src">pages 35, 36, 37, 39, 40, 41 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
             </tr>
 <tr>
-              <td>Allergic reaction</td>
+              <td>Anaphylaxis</td>
               <td>peds</td>
               <td>500 mcg</td>
               <td>NEB</td>
@@ -1307,7 +1303,7 @@
               <td class="src">pages 35, 36, 37, 39, 40, 41 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
             </tr>
 <tr>
-              <td>Respiratory distress</td>
+              <td>Asthma / bronchospasm</td>
               <td>adult</td>
               <td>500 mcg</td>
               <td>NEB</td>
@@ -1316,7 +1312,7 @@
               <td class="src">pages 53, 55, 56 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
             </tr>
 <tr>
-              <td>Respiratory distress</td>
+              <td>Asthma / bronchospasm</td>
               <td>peds</td>
               <td>500 mcg</td>
               <td>NEB</td>
@@ -1699,7 +1695,7 @@
               <td class="src">page 34 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
             </tr>
 <tr>
-              <td>Allergic reaction</td>
+              <td>Anaphylaxis</td>
               <td>adult</td>
               <td>125 mg</td>
               <td>IV</td>
@@ -1708,7 +1704,7 @@
               <td class="src">pages 36, 37, 40, 41 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
             </tr>
 <tr>
-              <td>Allergic reaction</td>
+              <td>Anaphylaxis</td>
               <td>peds</td>
               <td>2 mg/kg</td>
               <td>IV</td>
@@ -1717,7 +1713,7 @@
               <td class="src">pages 36, 37, 40, 41 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
             </tr>
 <tr>
-              <td>Respiratory distress</td>
+              <td>Asthma / bronchospasm</td>
               <td>adult</td>
               <td>125 mg</td>
               <td>IV</td>
@@ -1726,7 +1722,7 @@
               <td class="src">pages 53, 55, 56 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
             </tr>
 <tr>
-              <td>Respiratory distress</td>
+              <td>Asthma / bronchospasm</td>
               <td>peds</td>
               <td>2 mg/kg</td>
               <td>IV</td>
@@ -1741,6 +1737,15 @@
           <thead><tr><th>Indication</th><th>Population</th><th>Dose</th><th>Route</th><th>Repeat</th><th>Standing</th><th>Source</th></tr></thead>
           <tbody>
 <tr>
+              <td>Other</td>
+              <td>adult</td>
+              <td>5 mg</td>
+              <td>IV</td>
+              <td>not captured</td>
+              <td>standing</td>
+              <td class="src">page 105 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
+            </tr>
+<tr>
               <td>Narrow-complex tachycardia</td>
               <td>adult</td>
               <td>2.5&ndash;5 mg</td>
@@ -1748,15 +1753,6 @@
               <td>not captured</td>
               <td>standing</td>
               <td class="src">page 120 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
-            </tr>
-<tr>
-              <td>VF / pulseless VT</td>
-              <td>adult</td>
-              <td>5 mg</td>
-              <td>IV</td>
-              <td>not captured</td>
-              <td>standing</td>
-              <td class="src">page 105 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
             </tr>
           </tbody>
         </table></div></div>
@@ -2151,7 +2147,7 @@
               <td>IV/IM</td>
               <td>not captured</td>
               <td>standing</td>
-              <td class="src">page 166 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
+              <td class="src">pages 166, 167 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
             </tr>
 <tr>
               <td>Nerve agent exposure</td>
@@ -2160,7 +2156,7 @@
               <td>IV/IM</td>
               <td>not captured</td>
               <td>standing</td>
-              <td class="src">page 166 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
+              <td class="src">pages 166, 167 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
             </tr>
           </tbody>
         </table></div></div>
@@ -2186,42 +2182,6 @@
               <td>standing</td>
               <td class="src">pages 37, 41 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
             </tr>
-<tr>
-              <td>Anaphylaxis</td>
-              <td>adult</td>
-              <td>60 mg</td>
-              <td>PO</td>
-              <td>not captured</td>
-              <td>standing</td>
-              <td class="src">pages 37, 41 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
-            </tr>
-<tr>
-              <td>Anaphylaxis</td>
-              <td>peds</td>
-              <td>2 mg/kg</td>
-              <td>PO</td>
-              <td>not captured</td>
-              <td>standing</td>
-              <td class="src">pages 37, 41 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
-            </tr>
-<tr>
-              <td>Respiratory distress</td>
-              <td>adult</td>
-              <td>60 mg</td>
-              <td>PO</td>
-              <td>not captured</td>
-              <td>standing</td>
-              <td class="src">pages 53, 56 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
-            </tr>
-<tr>
-              <td>Respiratory distress</td>
-              <td>peds</td>
-              <td>2 mg/kg</td>
-              <td>PO</td>
-              <td>not captured</td>
-              <td>standing</td>
-              <td class="src">pages 53, 56 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
-            </tr>
           </tbody>
         </table></div></div>
         <div class="drug"><h3 id="procainamide">Procainamide</h3>
@@ -2236,15 +2196,6 @@
               <td>not captured</td>
               <td>standing</td>
               <td class="src">page 124 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
-            </tr>
-<tr>
-              <td>VF / pulseless VT</td>
-              <td>adult</td>
-              <td>1.5 g</td>
-              <td>IV</td>
-              <td>not captured</td>
-              <td>standing</td>
-              <td class="src">page 105 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
             </tr>
           </tbody>
         </table></div></div>
@@ -2378,10 +2329,10 @@
               <td>IV</td>
               <td>not captured</td>
               <td>standing</td>
-              <td class="src">page 63 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
+              <td class="src">pages 63, 147 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
             </tr>
 <tr>
-              <td>Tricyclic overdose</td>
+              <td>Other</td>
               <td>adult</td>
               <td>50 mEq</td>
               <td>IV</td>
@@ -2390,7 +2341,7 @@
               <td class="src">pages 161, 162, 164, 165 &middot; <a href="https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf" rel="nofollow noopener">source</a></td>
             </tr>
 <tr>
-              <td>Tricyclic overdose</td>
+              <td>Other</td>
               <td>peds</td>
               <td>1 mEq/kg</td>
               <td>IV</td>
@@ -2566,7 +2517,7 @@
           })();
         </script>
       <div class="actions"><details class="fold" id="cite"><summary>Cite this</summary>
-            <div class="citebox" id="cite-text"><p class="cite">Rhode Island Department of Health – Center for Emergency Medical Services, United States EMS Protocol Census. 229 dose entries, effective 2026-06-01.</p><p class="cite">https://protoquiz.com/census/agencies/rhode-island-department-of-health-center-for-emergency-medical-services/</p></div>
+            <div class="citebox" id="cite-text"><p class="cite">Rhode Island Department of Health – Center for Emergency Medical Services, United States EMS Protocol Census. 222 dose entries, effective 2026-06-01.</p><p class="cite">https://protoquiz.com/census/agencies/rhode-island-department-of-health-center-for-emergency-medical-services/</p></div>
             <button type="button" class="copybtn" id="cite-btn">Copy citation</button>
           </details>
           <script>
@@ -2640,13 +2591,5 @@
     </div>
   </footer>
   <!-- /shared-chrome:footer -->
-  <style id="rbar-mobile-nav">@media (max-width:900px){
-    body:has(.rbar) .site-header .site-nav{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:0;gap:6px 12px}
-    body:has(.rbar) .site-header .nav-left{display:contents}
-    body:has(.rbar) .site-header .brand{order:1;margin-right:auto}
-    body:has(.rbar) .site-header .nav-right{order:2}
-    body:has(.rbar) .site-header .nav-links{display:flex;order:3;flex:0 0 100%;gap:22px;overflow-x:auto;padding:8px 0 10px;margin-top:4px;border-top:1px solid var(--line)}
-  }</style>
-  <script src="/assets/research-nav.js?v=e0144007" defer></script>
 </body>
 </html>

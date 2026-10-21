@@ -84,6 +84,14 @@
       <p class="rbar-contact"><span>Contact: </span><a href="mailto:research@protoquiz.com">research@protoquiz.com</a></p>
     </div>
   </div>
+  <style id="rbar-mobile-nav">@media (max-width:900px){
+    body:has(.rbar) .site-header .site-nav{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:0;gap:6px 12px}
+    body:has(.rbar) .site-header .nav-left{display:contents}
+    body:has(.rbar) .site-header .brand{order:1;margin-right:auto}
+    body:has(.rbar) .site-header .nav-right{order:2}
+    body:has(.rbar) .site-header .nav-links{display:flex;order:3;flex:0 0 100%;gap:22px;overflow-x:auto;padding:8px 0 10px;margin-top:4px;border-top:1px solid var(--line)}
+  }</style>
+  <script src="/assets/research-nav.js?v=e0144007" defer></script>
   <main>
     <div class="wrap">
       <nav class="crumbs"><a href="/census/">Protocol census</a> <span class="sep">/</span> <a href="/census/drugs/ceftriaxone/">Ceftriaxone</a> <span class="sep">/</span> <span>Other</span></nav>
@@ -92,10 +100,10 @@
       <div class="dochead">
         <span class="badge">Indication</span>
         <h1>Ceftriaxone for Other</h1>
-        <div class="meta"><span class="chip">16 sources</span><span class="chip">14 named agencies</span><span class="chip">9 states</span><span class="chip">as of 2026-10-19</span></div>
+        <div class="meta"><span class="chip">17 sources</span><span class="chip">15 named agencies</span><span class="chip">10 states</span><span class="chip">as of 2026-10-21</span></div>
         <p class="lede">Pediatric weight-based dosing has a median of 50 mg/kg across 16 published protocols, with the middle half between 50 and 50.</p>
       </div>
-      <div class="stats"><div class="stat"><span class="v">16</span><span class="l">sources</span></div><div class="stat"><span class="v">14</span><span class="l">named agencies</span></div><div class="stat"><span class="v">9</span><span class="l">states</span></div><div class="stat"><span class="v">42</span><span class="l">entries</span></div><div class="stat"><span class="v">14</span><span class="l">named here</span></div></div>
+      <div class="stats"><div class="stat"><span class="v">17</span><span class="l">sources</span></div><div class="stat"><span class="v">15</span><span class="l">named agencies</span></div><div class="stat"><span class="v">10</span><span class="l">states</span></div><div class="stat"><span class="v">49</span><span class="l">entries</span></div><div class="stat"><span class="v">15</span><span class="l">named here</span></div></div>
       <p class="muted">Includes 2 agencies outside the US.</p>
       <p class="honest">Doses far off from what other protocols give are likely misreads, so they are left out until checked. <a href="/census/methodology/#outliers">How that works</a>.</p>
       <section id="g-peds-perkg-mg">
@@ -116,7 +124,7 @@
       </section>
       <section id="g-adult-flat-mg">
         <h2>Adult<span class="unit">mg</span></h2>
-      <div class="stats"><div class="stat"><span class="v">13</span><span class="l">sources</span></div><div class="stat"><span class="v">13</span><span class="l">named agencies</span></div><div class="stat"><span class="v">8</span><span class="l">states</span></div><div class="stat"><span class="v">17</span><span class="l">entries</span></div><div class="stat"><span class="v">0</span><span class="l">kept as written</span></div></div>
+      <div class="stats"><div class="stat"><span class="v">14</span><span class="l">sources</span></div><div class="stat"><span class="v">14</span><span class="l">named agencies</span></div><div class="stat"><span class="v">9</span><span class="l">states</span></div><div class="stat"><span class="v">20</span><span class="l">entries</span></div><div class="stat"><span class="v">0</span><span class="l">kept as written</span></div></div>
         <div class="five">
           <div class="five-track" role="img" aria-label="Range 1000 to 2000 mg, middle half 2000 to 2000, median 2000"><span class="five-iqr" style="left:98.50%;width:1.50%"></span><span class="five-med" style="left:100.00%"></span></div>
           <div class="five-ends" aria-hidden="true"><span>1000</span><span>2000</span></div>
@@ -127,8 +135,8 @@
           <p class="muted">Values in mg. One value per source (that source's median), so a document listing a medication five times still gets one vote.</p>
         </div>
         <h3>Routes</h3>
-        <ul class="inline"><li>IV <span class="muted">47%</span></li><li>IV/IM <span class="muted">18%</span></li><li>IV/IO <span class="muted">12%</span></li><li>IM <span class="muted">6%</span></li><li>IO <span class="muted">6%</span></li><li>IV/IO/IM <span class="muted">6%</span></li></ul>
-        <p class="cite">United States EMS Protocol Census, n=13 protocols from 13 named agencies / 8 states, updated Oct 2026</p>
+        <ul class="inline"><li>IV <span class="muted">40%</span></li><li>IV/IO <span class="muted">25%</span></li><li>IV/IM <span class="muted">15%</span></li><li>IM <span class="muted">5%</span></li><li>IO <span class="muted">5%</span></li><li>IV/IO/IM <span class="muted">5%</span></li></ul>
+        <p class="cite">United States EMS Protocol Census, n=14 protocols from 14 named agencies / 9 states, updated Oct 2026</p>
       </section>
       <section id="g-adult-perkg-mg">
         <h2>Adult, weight-based<span class="unit">mg/kg</span></h2>
@@ -138,9 +146,17 @@
         <ul class="inline"><li>IV <span class="muted">50%</span></li><li>IV/IO/IM <span class="muted">50%</span></li></ul>
         <p class="cite">United States EMS Protocol Census, n=2 protocols from 1 named agencies / 1 states, updated Oct 2026</p>
       </section>
-<details class="fold" id="agencies"><summary>Named agencies with a page<span class="count">14</span></summary>
+      <section id="g-peds-flat-mg">
+        <h2>Pediatric<span class="unit">mg</span></h2>
+      <div class="stats"><div class="stat"><span class="v">1</span><span class="l">sources</span></div><div class="stat"><span class="v">1</span><span class="l">named agencies</span></div><div class="stat"><span class="v">1</span><span class="l">states</span></div><div class="stat"><span class="v">4</span><span class="l">entries</span></div><div class="stat"><span class="v">0</span><span class="l">kept as written</span></div></div>
+        <p class="honest">Below 5 sources, so no distribution is published for this group &mdash; only the counts above.</p>
+        <h3>Routes</h3>
+        <ul class="inline"><li>IV/IO <span class="muted">100%</span></li></ul>
+        <p class="cite">United States EMS Protocol Census, n=1 protocols from 1 named agencies / 1 states, updated Oct 2026</p>
+      </section>
+<details class="fold" id="agencies"><summary>Named agencies with a page<span class="count">15</span></summary>
         <p class="muted">Agencies whose protocols are a public record are named here. Their own doses are on their own pages; this list carries no values.</p>
-        <ul class="cols"><li><a href="/census/agencies/alabama-department-of-public-health-office-of-emergency-medical-services/">Alabama Department of Public Health Office of Emergency Medical Services</a></li><li><a href="/census/agencies/ambulance-victoria/">Ambulance Victoria</a></li><li><a href="/census/agencies/berrien-county-medical-control-authority/">Berrien County Medical Control Authority</a></li><li><a href="/census/agencies/manatee-county-emergency-medical-services/">Manatee County Emergency Medical Services</a></li><li><a href="/census/agencies/michigan-department-of-health-and-human-services-mdhhs-midland-gladwin-mca/">Michigan Department of Health and Human Services (MDHHS) / Midland Gladwin MCA</a></li><li><a href="/census/agencies/montgomery-county-hospital-district/">Montgomery County Hospital District</a></li><li><a href="/census/agencies/muskegon-county/">Muskegon County</a></li><li><a href="/census/agencies/new-hampshire-bureau-of-emergency-medical-services/">New Hampshire Bureau of Emergency Medical Services</a></li><li><a href="/census/agencies/oakland-county-medical-control-authority/">Oakland County Medical Control Authority</a></li><li><a href="/census/agencies/queensland-ambulance-service/">Queensland Ambulance Service</a></li><li><a href="/census/agencies/rhode-island-department-of-health-center-for-emergency-medical-services/">Rhode Island Department of Health – Center for Emergency Medical Services</a></li><li><a href="/census/agencies/st-johns-county-fire-rescue/">St. Johns County Fire Rescue</a></li><li><a href="/census/agencies/tri-county-emergency-medical-control-authority/">Tri-County Emergency Medical Control Authority</a></li><li><a href="/census/agencies/wilson-county-esd-4/">Wilson County ESD #4</a></li></ul>
+        <ul class="cols"><li><a href="/census/agencies/alabama-department-of-public-health-office-of-emergency-medical-services/">Alabama Department of Public Health Office of Emergency Medical Services</a></li><li><a href="/census/agencies/ambulance-victoria/">Ambulance Victoria</a></li><li><a href="/census/agencies/berrien-county-medical-control-authority/">Berrien County Medical Control Authority</a></li><li><a href="/census/agencies/charleston-county-ems/">Charleston County EMS</a></li><li><a href="/census/agencies/manatee-county-emergency-medical-services/">Manatee County Emergency Medical Services</a></li><li><a href="/census/agencies/michigan-department-of-health-and-human-services-mdhhs-midland-gladwin-mca/">Michigan Department of Health and Human Services (MDHHS) / Midland Gladwin MCA</a></li><li><a href="/census/agencies/montgomery-county-hospital-district/">Montgomery County Hospital District</a></li><li><a href="/census/agencies/muskegon-county/">Muskegon County</a></li><li><a href="/census/agencies/new-hampshire-bureau-of-emergency-medical-services/">New Hampshire Bureau of Emergency Medical Services</a></li><li><a href="/census/agencies/oakland-county-medical-control-authority/">Oakland County Medical Control Authority</a></li><li><a href="/census/agencies/queensland-ambulance-service/">Queensland Ambulance Service</a></li><li><a href="/census/agencies/rhode-island-department-of-health-center-for-emergency-medical-services/">Rhode Island Department of Health – Center for Emergency Medical Services</a></li><li><a href="/census/agencies/st-johns-county-fire-rescue/">St. Johns County Fire Rescue</a></li><li><a href="/census/agencies/tri-county-emergency-medical-control-authority/">Tri-County Emergency Medical Control Authority</a></li><li><a href="/census/agencies/wilson-county-esd-4/">Wilson County ESD #4</a></li></ul>
 </details>
         </div>
         <aside class="rail">
@@ -222,13 +238,5 @@
     </div>
   </footer>
   <!-- /shared-chrome:footer -->
-  <style id="rbar-mobile-nav">@media (max-width:900px){
-    body:has(.rbar) .site-header .site-nav{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:0;gap:6px 12px}
-    body:has(.rbar) .site-header .nav-left{display:contents}
-    body:has(.rbar) .site-header .brand{order:1;margin-right:auto}
-    body:has(.rbar) .site-header .nav-right{order:2}
-    body:has(.rbar) .site-header .nav-links{display:flex;order:3;flex:0 0 100%;gap:22px;overflow-x:auto;padding:8px 0 10px;margin-top:4px;border-top:1px solid var(--line)}
-  }</style>
-  <script src="/assets/research-nav.js?v=e0144007" defer></script>
 </body>
 </html>

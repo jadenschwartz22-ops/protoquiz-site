@@ -84,6 +84,14 @@
       <p class="rbar-contact"><span>Contact: </span><a href="mailto:research@protoquiz.com">research@protoquiz.com</a></p>
     </div>
   </div>
+  <style id="rbar-mobile-nav">@media (max-width:900px){
+    body:has(.rbar) .site-header .site-nav{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:0;gap:6px 12px}
+    body:has(.rbar) .site-header .nav-left{display:contents}
+    body:has(.rbar) .site-header .brand{order:1;margin-right:auto}
+    body:has(.rbar) .site-header .nav-right{order:2}
+    body:has(.rbar) .site-header .nav-links{display:flex;order:3;flex:0 0 100%;gap:22px;overflow-x:auto;padding:8px 0 10px;margin-top:4px;border-top:1px solid var(--line)}
+  }</style>
+  <script src="/assets/research-nav.js?v=e0144007" defer></script>
   <main>
     <div class="wrap">
       <nav class="crumbs"><a href="/census/">Protocol census</a> <span class="sep">/</span> <span>Propofol</span></nav>
@@ -93,21 +101,21 @@
         <span class="badge">Medication</span>
         <h1>Propofol in US EMS protocols</h1>
       </div>
-      <div class="stats"><div class="stat"><span class="v">16</span><span class="l">protocols</span></div><div class="stat"><span class="v">5</span><span class="l">named agencies</span></div><div class="stat"><span class="v">13</span><span class="l">states and regions</span></div><div class="stat"><span class="v">7</span><span class="l">indications</span></div><div class="stat"><span class="v">37</span><span class="l">dose entries</span></div><div class="stat"><span class="v">100% of 37</span><span class="l">machine-parsed</span></div></div>
+      <div class="stats"><div class="stat"><span class="v">16</span><span class="l">protocols</span></div><div class="stat"><span class="v">6</span><span class="l">named agencies</span></div><div class="stat"><span class="v">13</span><span class="l">states and regions</span></div><div class="stat"><span class="v">7</span><span class="l">indications</span></div><div class="stat"><span class="v">38</span><span class="l">dose entries</span></div><div class="stat"><span class="v">100% of 38</span><span class="l">machine-parsed</span></div></div>
       <p class="muted">Includes 2 agencies outside the US.</p>
       <section id="distributions">
         <table class="spread">
           <thead><tr><th>Indication</th><th>Spread: box is the middle half, dot means most agree</th><th>Range</th></tr></thead>
-          <tbody><tr><th scope="row"><a href="/census/drugs/propofol/procedural-sedation/">Procedural sedation</a> <span class="muted">Adult</span></th><td><svg viewBox="0 0 100 14" class="box" role="img" aria-label="min 10, p25 10, median 10, p75 10, max 30 mg"><path d="M3 7H97M3 3v8M97 3v8" class="w"/><circle cx="3" cy="7" r="5" class="agree"/></svg></td><td class="rng"><strong>Most use 10 mg</strong> <span class="muted">range 10 to 30 mg, n=5</span></td></tr><tr class="cont"><th scope="row"> <span class="muted">Adult, weight-based</span></th><td><svg viewBox="0 0 100 14" class="box" role="img" aria-label="min 0.005, p25 0.005, median 0.005, p75 0.0075, max 0.01 mg/kg"><path d="M3 7H97M3 3v8M97 3v8" class="w"/><rect x="3" y="2.5" width="47.0" height="9"/><path d="M3 1.5v11" class="m"/></svg></td><td class="rng">0.005 to 0.01 mg/kg <span class="muted">median 0.005, n=7</span></td></tr></tbody>
+          <tbody><tr><th scope="row"><a href="/census/drugs/propofol/procedural-sedation/">Procedural sedation</a> <span class="muted">Adult, weight-based</span></th><td><svg viewBox="0 0 100 14" class="box" role="img" aria-label="min 0.005, p25 0.005, median 0.005, p75 0.0075, max 0.01 mg/kg"><path d="M3 7H97M3 3v8M97 3v8" class="w"/><rect x="3" y="2.5" width="47.0" height="9"/><path d="M3 1.5v11" class="m"/></svg></td><td class="rng">0.005 to 0.01 mg/kg <span class="muted">median 0.005, n=7</span></td></tr></tbody>
         </table>
       </section>
-      <p class="also" id="indications">Too few protocols to chart yet (protocols in brackets): Hyperactive delirium <span class="muted">(1)</span>, Other <span class="muted">(3)</span>, Post-intubation sedation <span class="muted">(4)</span>, RSI induction <span class="muted">(1)</span>, Seizure <span class="muted">(1)</span>, Status epilepticus <span class="muted">(3)</span></p>
+      <p class="also" id="indications">Too few protocols to chart yet (protocols in brackets): Hyperactive delirium <span class="muted">(1)</span>, Other <span class="muted">(4)</span>, Post-intubation sedation <span class="muted">(4)</span>, RSI induction <span class="muted">(1)</span>, Seizure <span class="muted">(1)</span>, Status epilepticus <span class="muted">(3)</span></p>
       <p class="honest">Doses far off from what other protocols give are likely misreads, so they are left out until checked. <a href="/census/methodology/#outliers">How that works</a>.</p>
-      <div class="actions"><details class="fold" id="agencies"><summary>Named agencies with a page<span class="count">5</span></summary>
+      <div class="actions"><details class="fold" id="agencies"><summary>Named agencies with a page<span class="count">6</span></summary>
         <p class="muted">Agencies whose protocols are a public record are named here. Their own doses are on their own pages; this list carries no values.</p>
-        <ul class="cols"><li><a href="/census/agencies/anderson-county-emergency-medical-services/">Anderson County Emergency Medical Services</a></li><li><a href="/census/agencies/bc-emergency-health-services/">BC Emergency Health Services</a></li><li><a href="/census/agencies/northwest-region-emergency-medical-services-trauma-care-council/">Northwest Region Emergency Medical Services &amp; Trauma Care Council</a></li><li><a href="/census/agencies/pettis-county-ambulance-district/">Pettis County Ambulance District</a></li><li><a href="/census/agencies/queensland-ambulance-service/">Queensland Ambulance Service</a></li></ul>
+        <ul class="cols"><li><a href="/census/agencies/anderson-county-emergency-medical-services/">Anderson County Emergency Medical Services</a></li><li><a href="/census/agencies/bc-emergency-health-services/">BC Emergency Health Services</a></li><li><a href="/census/agencies/department-of-aviation-medicine/">Department of Aviation Medicine</a></li><li><a href="/census/agencies/northwest-region-emergency-medical-services-trauma-care-council/">Northwest Region Emergency Medical Services &amp; Trauma Care Council</a></li><li><a href="/census/agencies/pettis-county-ambulance-district/">Pettis County Ambulance District</a></li><li><a href="/census/agencies/queensland-ambulance-service/">Queensland Ambulance Service</a></li></ul>
 </details><details class="fold" id="cite"><summary>Cite this</summary>
-            <div class="citebox" id="cite-text"><p class="cite">United States EMS Protocol Census, Propofol: n=16 protocols from 5 named agencies / 13 states, as of 2026-10-19</p></div>
+            <div class="citebox" id="cite-text"><p class="cite">United States EMS Protocol Census, Propofol: n=16 protocols from 6 named agencies / 13 states, as of 2026-10-21</p></div>
             <button type="button" class="copybtn" id="cite-btn">Copy citation</button>
           </details>
           <script>
@@ -180,13 +188,5 @@
     </div>
   </footer>
   <!-- /shared-chrome:footer -->
-  <style id="rbar-mobile-nav">@media (max-width:900px){
-    body:has(.rbar) .site-header .site-nav{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:0;gap:6px 12px}
-    body:has(.rbar) .site-header .nav-left{display:contents}
-    body:has(.rbar) .site-header .brand{order:1;margin-right:auto}
-    body:has(.rbar) .site-header .nav-right{order:2}
-    body:has(.rbar) .site-header .nav-links{display:flex;order:3;flex:0 0 100%;gap:22px;overflow-x:auto;padding:8px 0 10px;margin-top:4px;border-top:1px solid var(--line)}
-  }</style>
-  <script src="/assets/research-nav.js?v=e0144007" defer></script>
 </body>
 </html>

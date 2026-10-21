@@ -84,6 +84,14 @@
       <p class="rbar-contact"><span>Contact: </span><a href="mailto:research@protoquiz.com">research@protoquiz.com</a></p>
     </div>
   </div>
+  <style id="rbar-mobile-nav">@media (max-width:900px){
+    body:has(.rbar) .site-header .site-nav{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:0;gap:6px 12px}
+    body:has(.rbar) .site-header .nav-left{display:contents}
+    body:has(.rbar) .site-header .brand{order:1;margin-right:auto}
+    body:has(.rbar) .site-header .nav-right{order:2}
+    body:has(.rbar) .site-header .nav-links{display:flex;order:3;flex:0 0 100%;gap:22px;overflow-x:auto;padding:8px 0 10px;margin-top:4px;border-top:1px solid var(--line)}
+  }</style>
+  <script src="/assets/research-nav.js?v=e0144007" defer></script>
   <main>
     <div class="wrap">
       <nav class="crumbs"><a href="/census/">Protocol census</a> <span class="sep">/</span> <a href="/census/drugs/midazolam/">Midazolam</a> <span class="sep">/</span> <span>Status epilepticus</span></nav>
@@ -92,43 +100,43 @@
       <div class="dochead">
         <span class="badge">Indication</span>
         <h1>Midazolam for Status epilepticus</h1>
-        <div class="meta"><span class="chip">14 sources</span><span class="chip">11 named agencies</span><span class="chip">10 states</span><span class="chip">as of 2026-10-19</span></div>
-        <p class="lede">Pediatric weight-based dosing has a median of 0.15 mg/kg across 13 published protocols, with the middle half between 0.15 and 0.2.</p>
+        <div class="meta"><span class="chip">16 sources</span><span class="chip">13 named agencies</span><span class="chip">12 states</span><span class="chip">as of 2026-10-21</span></div>
+        <p class="lede">Pediatric weight-based dosing has a median of 0.15 mg/kg across 14 published protocols, with the middle half between 0.1125 and 0.1875.</p>
       </div>
-      <div class="stats"><div class="stat"><span class="v">14</span><span class="l">sources</span></div><div class="stat"><span class="v">11</span><span class="l">named agencies</span></div><div class="stat"><span class="v">10</span><span class="l">states</span></div><div class="stat"><span class="v">43</span><span class="l">entries</span></div><div class="stat"><span class="v">10</span><span class="l">named here</span></div></div>
+      <div class="stats"><div class="stat"><span class="v">16</span><span class="l">sources</span></div><div class="stat"><span class="v">13</span><span class="l">named agencies</span></div><div class="stat"><span class="v">12</span><span class="l">states</span></div><div class="stat"><span class="v">47</span><span class="l">entries</span></div><div class="stat"><span class="v">12</span><span class="l">named here</span></div></div>
       <p class="muted">Includes 1 agency outside the US.</p>
       <p class="honest">Doses far off from what other protocols give are likely misreads, so they are left out until checked. <a href="/census/methodology/#outliers">How that works</a>.</p>
       <section id="g-peds-perkg-mg">
         <h2>Pediatric, weight-based<span class="unit">mg/kg</span></h2>
-      <div class="stats"><div class="stat"><span class="v">13</span><span class="l">sources</span></div><div class="stat"><span class="v">10</span><span class="l">named agencies</span></div><div class="stat"><span class="v">9</span><span class="l">states</span></div><div class="stat"><span class="v">21</span><span class="l">entries</span></div><div class="stat"><span class="v">0</span><span class="l">kept as written</span></div></div>
+      <div class="stats"><div class="stat"><span class="v">14</span><span class="l">sources</span></div><div class="stat"><span class="v">11</span><span class="l">named agencies</span></div><div class="stat"><span class="v">10</span><span class="l">states</span></div><div class="stat"><span class="v">22</span><span class="l">entries</span></div><div class="stat"><span class="v">0</span><span class="l">kept as written</span></div></div>
         <div class="five">
-          <div class="five-track" role="img" aria-label="Range 0.1 to 0.2 mg/kg, middle half 0.15 to 0.2, median 0.15"><span class="five-iqr" style="left:50.00%;width:50.00%"></span><span class="five-med" style="left:50.00%"></span></div>
+          <div class="five-track" role="img" aria-label="Range 0.1 to 0.2 mg/kg, middle half 0.1125 to 0.1875, median 0.15"><span class="five-iqr" style="left:12.50%;width:75.00%"></span><span class="five-med" style="left:50.00%"></span></div>
           <div class="five-ends" aria-hidden="true"><span>0.1</span><span>0.2</span></div>
           <table class="five-nums">
             <thead><tr><th>min</th><th>p25</th><th>median</th><th>p75</th><th>max</th></tr></thead>
-            <tbody><tr><td>0.1</td><td>0.15</td><td>0.15</td><td>0.2</td><td>0.2</td></tr></tbody>
+            <tbody><tr><td>0.1</td><td>0.1125</td><td>0.15</td><td>0.1875</td><td>0.2</td></tr></tbody>
           </table>
           <p class="muted">Values in mg/kg. One value per source (that source's median), so a document listing a medication five times still gets one vote.</p>
         </div>
         <h3>Routes</h3>
-        <ul class="inline"><li>IV/IO <span class="muted">29%</span></li><li>IM <span class="muted">24%</span></li><li>IM/IN <span class="muted">19%</span></li><li>IV <span class="muted">14%</span></li><li>IN <span class="muted">5%</span></li><li>IV/IO/IM/IN <span class="muted">5%</span></li><li>IV/IO/IN <span class="muted">5%</span></li></ul>
-        <p class="cite">United States EMS Protocol Census, n=13 protocols from 10 named agencies / 9 states, updated Oct 2026</p>
+        <ul class="inline"><li>IV/IO <span class="muted">27%</span></li><li>IM <span class="muted">23%</span></li><li>IM/IN <span class="muted">18%</span></li><li>IV <span class="muted">14%</span></li><li>IN <span class="muted">5%</span></li><li>IV/IM/IN <span class="muted">5%</span></li><li>IV/IO/IM/IN <span class="muted">5%</span></li><li>IV/IO/IN <span class="muted">5%</span></li></ul>
+        <p class="cite">United States EMS Protocol Census, n=14 protocols from 11 named agencies / 10 states, updated Oct 2026</p>
       </section>
       <section id="g-adult-flat-mg">
         <h2>Adult<span class="unit">mg</span></h2>
-      <div class="stats"><div class="stat"><span class="v">11</span><span class="l">sources</span></div><div class="stat"><span class="v">9</span><span class="l">named agencies</span></div><div class="stat"><span class="v">8</span><span class="l">states</span></div><div class="stat"><span class="v">20</span><span class="l">entries</span></div><div class="stat"><span class="v">0</span><span class="l">kept as written</span></div></div>
+      <div class="stats"><div class="stat"><span class="v">13</span><span class="l">sources</span></div><div class="stat"><span class="v">11</span><span class="l">named agencies</span></div><div class="stat"><span class="v">10</span><span class="l">states</span></div><div class="stat"><span class="v">23</span><span class="l">entries</span></div><div class="stat"><span class="v">0</span><span class="l">kept as written</span></div></div>
         <div class="five">
-          <div class="five-track" role="img" aria-label="Range 2.5 to 10 mg, middle half 4.375 to 7.5, median 7.5"><span class="five-iqr" style="left:25.00%;width:41.67%"></span><span class="five-med" style="left:66.67%"></span></div>
-          <div class="five-ends" aria-hidden="true"><span>2.5</span><span>10</span></div>
+          <div class="five-track" role="img" aria-label="Range 2 to 10 mg, middle half 3.75 to 7.5, median 6.25"><span class="five-iqr" style="left:21.88%;width:46.88%"></span><span class="five-med" style="left:53.13%"></span></div>
+          <div class="five-ends" aria-hidden="true"><span>2</span><span>10</span></div>
           <table class="five-nums">
             <thead><tr><th>min</th><th>p25</th><th>median</th><th>p75</th><th>max</th></tr></thead>
-            <tbody><tr><td>2.5</td><td>4.375</td><td>7.5</td><td>7.5</td><td>10</td></tr></tbody>
+            <tbody><tr><td>2</td><td>3.75</td><td>6.25</td><td>7.5</td><td>10</td></tr></tbody>
           </table>
           <p class="muted">Values in mg. One value per source (that source's median), so a document listing a medication five times still gets one vote.</p>
         </div>
         <h3>Routes</h3>
-        <ul class="inline"><li>IV/IO <span class="muted">35%</span></li><li>IM/IN <span class="muted">30%</span></li><li>IM <span class="muted">20%</span></li><li>IN <span class="muted">5%</span></li><li>IV <span class="muted">5%</span></li><li>IV/IO/IM/IN <span class="muted">5%</span></li></ul>
-        <p class="cite">United States EMS Protocol Census, n=11 protocols from 9 named agencies / 8 states, updated Oct 2026</p>
+        <ul class="inline"><li>IV/IO <span class="muted">35%</span></li><li>IM/IN <span class="muted">30%</span></li><li>IM <span class="muted">17%</span></li><li>IN <span class="muted">4%</span></li><li>IV <span class="muted">4%</span></li><li>IV/IM/IN <span class="muted">4%</span></li><li>IV/IO/IM/IN <span class="muted">4%</span></li></ul>
+        <p class="cite">United States EMS Protocol Census, n=13 protocols from 11 named agencies / 10 states, updated Oct 2026</p>
       </section>
       <section id="g-adult-perkg-mg">
         <h2>Adult, weight-based<span class="unit">mg/kg</span></h2>
@@ -138,14 +146,14 @@
         <ul class="inline"><li>IM <span class="muted">50%</span></li><li>IV <span class="muted">50%</span></li></ul>
         <p class="cite">United States EMS Protocol Census, n=1 protocols from 1 named agencies / 1 states, updated Oct 2026</p>
       </section>
-<details class="fold" id="agencies"><summary>Named agencies with a page<span class="count">10</span></summary>
+<details class="fold" id="agencies"><summary>Named agencies with a page<span class="count">12</span></summary>
         <p class="muted">Agencies whose protocols are a public record are named here. Their own doses are on their own pages; this list carries no values.</p>
-        <ul class="cols"><li><a href="/census/agencies/ambulance-victoria/">Ambulance Victoria</a></li><li><a href="/census/agencies/aurora-fire-rescue/">Aurora Fire Rescue</a></li><li><a href="/census/agencies/boulder-county-ems/">Boulder County Protocol Committee</a></li><li><a href="/census/agencies/brownsville-rural-fire-district-halsey-shedd-fire-protection-district-jefferson-fire-district-lebanon-fire-district-scio-fire-district-sweet-home-fire-ambulance-district/">Brownsville Rural Fire District, Halsey-Shedd Fire Protection District, Jefferson Fire District, Lebanon Fire District, Scio Fire District &amp; Sweet Home Fire &amp; Ambulance District</a></li><li><a href="/census/agencies/chaves-county-ems/">Chaves County EMS</a></li><li><a href="/census/agencies/chelan-douglas-okanogan-grant-county/">Chelan/Douglas/Okanogan/Grant County</a></li><li><a href="/census/agencies/county-of-san-diego-emergency-medical-services/">County of San Diego Emergency Medical Services</a></li><li><a href="/census/agencies/greenville-county-emergency-medical-services/">Greenville County Emergency Medical Services</a></li><li><a href="/census/agencies/northeast-ohio-regional-ems-protocol-committee/">Northeast Ohio Regional EMS Protocol Committee</a></li><li><a href="/census/agencies/thurston-county-medic-one/">Thurston County Medic One</a></li></ul>
+        <ul class="cols"><li><a href="/census/agencies/ambulance-victoria/">Ambulance Victoria</a></li><li><a href="/census/agencies/aurora-fire-rescue/">Aurora Fire Rescue</a></li><li><a href="/census/agencies/boulder-county-ems/">Boulder County Protocol Committee</a></li><li><a href="/census/agencies/brownsville-rural-fire-district-halsey-shedd-fire-protection-district-jefferson-fire-district-lebanon-fire-district-scio-fire-district-sweet-home-fire-ambulance-district/">Brownsville Rural Fire District, Halsey-Shedd Fire Protection District, Jefferson Fire District, Lebanon Fire District, Scio Fire District &amp; Sweet Home Fire &amp; Ambulance District</a></li><li><a href="/census/agencies/chaves-county-ems/">Chaves County EMS</a></li><li><a href="/census/agencies/chelan-douglas-okanogan-grant-county/">Chelan/Douglas/Okanogan/Grant County</a></li><li><a href="/census/agencies/county-of-san-diego-emergency-medical-services/">County of San Diego Emergency Medical Services</a></li><li><a href="/census/agencies/greenville-county-emergency-medical-services/">Greenville County Emergency Medical Services</a></li><li><a href="/census/agencies/northeast-ohio-regional-ems-protocol-committee/">Northeast Ohio Regional EMS Protocol Committee</a></li><li><a href="/census/agencies/norton-sound-health-corporation/">Norton Sound Health Corporation</a></li><li><a href="/census/agencies/thurston-county-medic-one/">Thurston County Medic One</a></li><li><a href="/census/agencies/washington-county-emergency-medical-services/">Washington County Emergency Medical Services</a></li></ul>
 </details>
         </div>
         <aside class="rail">
 <details class="fold" id="cite"><summary>Cite this</summary>
-            <div class="citebox" id="cite-text"><p class="cite">United States EMS Protocol Census, n=13 protocols from 10 named agencies / 9 states, updated Oct 2026</p></div>
+            <div class="citebox" id="cite-text"><p class="cite">United States EMS Protocol Census, n=14 protocols from 11 named agencies / 10 states, updated Oct 2026</p></div>
             <button type="button" class="copybtn" id="cite-btn">Copy citation</button>
           </details>
           <script>
@@ -222,13 +230,5 @@
     </div>
   </footer>
   <!-- /shared-chrome:footer -->
-  <style id="rbar-mobile-nav">@media (max-width:900px){
-    body:has(.rbar) .site-header .site-nav{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:0;gap:6px 12px}
-    body:has(.rbar) .site-header .nav-left{display:contents}
-    body:has(.rbar) .site-header .brand{order:1;margin-right:auto}
-    body:has(.rbar) .site-header .nav-right{order:2}
-    body:has(.rbar) .site-header .nav-links{display:flex;order:3;flex:0 0 100%;gap:22px;overflow-x:auto;padding:8px 0 10px;margin-top:4px;border-top:1px solid var(--line)}
-  }</style>
-  <script src="/assets/research-nav.js?v=e0144007" defer></script>
 </body>
 </html>

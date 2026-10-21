@@ -87,6 +87,14 @@
       <p class="rbar-contact"><span>Contact: </span><a href="mailto:research@protoquiz.com">research@protoquiz.com</a></p>
     </div>
   </div>
+  <style id="rbar-mobile-nav">@media (max-width:900px){
+    body:has(.rbar) .site-header .site-nav{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:0;gap:6px 12px}
+    body:has(.rbar) .site-header .nav-left{display:contents}
+    body:has(.rbar) .site-header .brand{order:1;margin-right:auto}
+    body:has(.rbar) .site-header .nav-right{order:2}
+    body:has(.rbar) .site-header .nav-links{display:flex;order:3;flex:0 0 100%;gap:22px;overflow-x:auto;padding:8px 0 10px;margin-top:4px;border-top:1px solid var(--line)}
+  }</style>
+  <script src="/assets/research-nav.js?v=e0144007" defer></script>
   <main>
     <div class="wrap">
       <nav class="crumbs"><a href="/census/">Protocol census</a> <span class="sep">/</span> <a href="/census/states/tx/">Texas</a> <span class="sep">/</span> <span>Washington County Emergency Medical Services</span></nav>
@@ -744,15 +752,6 @@
           <thead><tr><th>Indication</th><th>Population</th><th>Dose</th><th>Route</th><th>Repeat</th><th>Standing</th><th>Source</th></tr></thead>
           <tbody>
 <tr>
-              <td>Bradycardia</td>
-              <td>adult</td>
-              <td>0.25 mg/kg</td>
-              <td>IV</td>
-              <td>not captured</td>
-              <td>standing</td>
-              <td class="src">pages 55, 149 &middot; <a href="https://www.washingtoncountyems.net/wp-content/uploads/2024/05/Wash-Co-EMS-Protocols-05012024.pdf" rel="nofollow noopener">source</a></td>
-            </tr>
-<tr>
               <td>Other</td>
               <td>adult</td>
               <td>1 mg/kg</td>
@@ -1035,6 +1034,15 @@
             </tr>
 <tr>
               <td>Seizure</td>
+              <td>adult</td>
+              <td>2 mg</td>
+              <td>IM/IN</td>
+              <td>not captured</td>
+              <td>standing</td>
+              <td class="src">pages 101, 153 &middot; <a href="https://www.washingtoncountyems.net/wp-content/uploads/2024/05/Wash-Co-EMS-Protocols-05012024.pdf" rel="nofollow noopener">source</a></td>
+            </tr>
+<tr>
+              <td>Status epilepticus</td>
               <td>adult</td>
               <td>2 mg</td>
               <td>IM/IN</td>
@@ -1585,13 +1593,5 @@
     </div>
   </footer>
   <!-- /shared-chrome:footer -->
-  <style id="rbar-mobile-nav">@media (max-width:900px){
-    body:has(.rbar) .site-header .site-nav{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:0;gap:6px 12px}
-    body:has(.rbar) .site-header .nav-left{display:contents}
-    body:has(.rbar) .site-header .brand{order:1;margin-right:auto}
-    body:has(.rbar) .site-header .nav-right{order:2}
-    body:has(.rbar) .site-header .nav-links{display:flex;order:3;flex:0 0 100%;gap:22px;overflow-x:auto;padding:8px 0 10px;margin-top:4px;border-top:1px solid var(--line)}
-  }</style>
-  <script src="/assets/research-nav.js?v=e0144007" defer></script>
 </body>
 </html>

@@ -2,9 +2,9 @@
  "schemaVersion": 3,
  "rows": [
   {
-   "at": "2026-10-19T00:00:00Z",
-   "hash": "09f63b28c6e05775cadb0aa44ecaec405745a74a378e23545ee50127885fe669",
-   "agencyKey": "pierce-county-emergency-medical-services",
+   "at": "2026-10-21T00:00:00Z",
+   "hash": "022e71fac519f8ad4a75bff3baf2c1e8ad4ec1c0efed95787e4934a3295d38ee",
+   "agencyKey": "charleston-county-ems",
    "change": "added",
    "from": null,
    "to": "listed_named",
@@ -12,28 +12,8 @@
    "reason": null
   },
   {
-   "at": "2026-10-19T00:00:00Z",
-   "hash": "1b34d6d9fd051563a979dcdb233180f5a45f8c77257d5c4f22d1121e17c20123",
-   "agencyKey": "marion-county",
-   "change": "added",
-   "from": null,
-   "to": "listed_named",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-19T00:00:00Z",
-   "hash": "265d8b37fb8039ae2756b98be2d19b037faa63dfed94d81043b72e8a84eb0216",
-   "agencyKey": "central-california-emergency-medical-services",
-   "change": "added",
-   "from": null,
-   "to": "listed_named",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-19T00:00:00Z",
-   "hash": "269f720b2eab47cb6637967f71372b6f0e5a488a7cec5279c5805b716265ba81",
+   "at": "2026-10-21T00:00:00Z",
+   "hash": "0495c7f30431c2ca882efee91e7c488e3d47acc688f82fc6cc58e6ebbfd33c25",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -42,68 +22,8 @@
    "reason": null
   },
   {
-   "at": "2026-10-19T00:00:00Z",
-   "hash": "2b9d02b1ef2c54d2fef11e7afe1a6692ed8ca9855ed5df7583eef274c88aaf1c",
-   "agencyKey": "city-of-austin-austin-travis-county-ems-system",
-   "change": "added",
-   "from": null,
-   "to": "listed_named",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-19T00:00:00Z",
-   "hash": "365443a7523fbf5b5950a04c2389665d5a543641c2bd47d729c8132b9ecc2970",
-   "agencyKey": "new-hampshire-bureau-of-emergency-medical-services",
-   "change": "superseded",
-   "from": "current",
-   "to": "superseded",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-19T00:00:00Z",
-   "hash": "39b2b5c1e8801c2b3c3c831800f6f2a9873752e11158d91bc138b7d48d892641",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "pending_review",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-19T00:00:00Z",
-   "hash": "59dcdb3120525872184de1402423413f3ac68f33c463e341df8e3f56722196a3",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "pending_review",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-19T00:00:00Z",
-   "hash": "5cc843a3ed94a646d8137a926982c72a",
-   "agencyKey": "lyon-county-city-of-emporia-emergency-medical-services",
-   "change": "added",
-   "from": null,
-   "to": "listed_named",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-19T00:00:00Z",
-   "hash": "5e053df30fab59c4c56791ebb68089460565dc5e6017dc2c6d2245afeaa1bd90",
-   "agencyKey": "osage-ambulance-district",
-   "change": "added",
-   "from": null,
-   "to": "listed_named",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-19T00:00:00Z",
-   "hash": "674ac003f24a983c99ee79b2b9a9ed503ba2e6aefccaa5fcc97d6058e000d955",
+   "at": "2026-10-21T00:00:00Z",
+   "hash": "0e1f9d4652a5ff89b044e78a70439595dce02d05e75b21a78a0918c963a0e1e4",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -112,8 +32,48 @@
    "reason": null
   },
   {
-   "at": "2026-10-19T00:00:00Z",
-   "hash": "708e0a8db21f707a5d81f305c0fb7a3ff8450e206fd8b5cdd0bb4f50471ff147",
+   "at": "2026-10-21T00:00:00Z",
+   "hash": "260bb62125426744e02df719225bc13b1fd2b006984978d474aaabe9c16c204e",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-21T00:00:00Z",
+   "hash": "2a6c3878490733134e636112fc5008ed84caebc073a65737829100506e8d7420",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "listed_aggregate",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-21T00:00:00Z",
+   "hash": "2a93e04b6f88aa75111cc52d5f8e1edf4a9e5bcf621639c153652f80f1de02ff",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-21T00:00:00Z",
+   "hash": "2fa3583bc2697621f226022df7132c5c02bfb4838902722f608509bcf788d6a7",
+   "agencyKey": "region-one-metropolitan-ambulance-council",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-21T00:00:00Z",
+   "hash": "4a47ea783eeb4334cd3573a37e4af558ffba3d6c0bb10a6c560ee1a42e53b9a9",
    "agencyKey": "michigan-department-of-health-and-human-services-mdhhs",
    "change": "added",
    "from": null,
@@ -122,9 +82,9 @@
    "reason": null
   },
   {
-   "at": "2026-10-19T00:00:00Z",
-   "hash": "7aed2ee7c84e8de16764f21444edcf8da1634d8f756547bf0d7a49786db7efb6",
-   "agencyKey": "haywood-county-ems",
+   "at": "2026-10-21T00:00:00Z",
+   "hash": "5b5b6a64d1b3585d5a2f19f0a249372fc97115aecef6113864b74ea016d4e25d",
+   "agencyKey": "new-york-state-department-of-health-bureau-of-emergency-medical-services-and-trauma-systems",
    "change": "added",
    "from": null,
    "to": "listed_named",
@@ -132,28 +92,38 @@
    "reason": null
   },
   {
-   "at": "2026-10-19T00:00:00Z",
-   "hash": "8ef562c4011d3906d6026c7d919208f07bb052f1d598351602f68de1e9e93a0e",
+   "at": "2026-10-21T00:00:00Z",
+   "hash": "5f8ab279fc0ee7380ea08bc9dadc1a9040000895a279c126ac00ae32a919e9a3",
+   "agencyKey": "palm-beach-gardens-fire-rescue",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-21T00:00:00Z",
+   "hash": "8940c1e8fc059b23eb8e64928792955964e93244ec70a5947d54567e70ca3eb2",
+   "agencyKey": "illinois-emergency-medical-services-for-children",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-21T00:00:00Z",
+   "hash": "8e89a262c58cf67b9e7a8e01868f12e3b9c796527ee16967cb15103f4cb840fb",
    "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "listed_aggregate",
+   "change": "superseded",
+   "from": "current",
+   "to": "superseded",
    "by": "build",
    "reason": null
   },
   {
-   "at": "2026-10-19T00:00:00Z",
-   "hash": "ab2dd85f9ecf5eccdb72e9d004fd4eb63f0df8b81034c05822ec682d9cfe49a5",
-   "agencyKey": "west-virginia-department-of-health-office-of-emergency-medical-services",
-   "change": "added",
-   "from": null,
-   "to": "listed_named",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-19T00:00:00Z",
-   "hash": "db9ce80a1c625987d6587f0c9d92d0f0807f9499367f9474f1fb97405aeb59fc",
+   "at": "2026-10-21T00:00:00Z",
+   "hash": "97142aeeeb5dc442f04f86a66cd2679df541653fb0287a3bd04ac2a55afb15b5",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -162,9 +132,139 @@
    "reason": null
   },
   {
-   "at": "2026-10-19T00:00:00Z",
-   "hash": "f291bcdeabd639a0ef4af006e3824d9df8da045dd7a258cc2325701d82041257",
-   "agencyKey": "new-hampshire-bureau-of-emergency-medical-services",
+   "at": "2026-10-21T00:00:00Z",
+   "hash": "a113df0210f7e35c61b0f49aebdfa37d4bab3695465a19b3811b38e40a0032a2",
+   "agencyKey": "department-of-aviation-medicine",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-21T00:00:00Z",
+   "hash": "a4a36f680931be0764d68bcf4fa3a00136cbdbfa7498cb9a3ae8d126c587384b",
+   "agencyKey": "norton-sound-health-corporation",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-21T00:00:00Z",
+   "hash": "a8819f30b0665404120e67aa6e6a59f8",
+   "agencyKey": "reno-county-emergency-medical-services",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-21T00:00:00Z",
+   "hash": "af13f3996508773ec43015455028bcfdce3086cb92646f47d5fc92e4b41a49b3",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "listed_aggregate",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-21T00:00:00Z",
+   "hash": "c15ec8e6197847f7c27c7fa29b21b5b63c5f838b477812cd9c9b0ffb27f7b5c9",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "excluded",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-21T00:00:00Z",
+   "hash": "c3002fc6d7a6093aee5747fcee23dec8376a74d72284315e41534478f70b8208",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-21T00:00:00Z",
+   "hash": "c8cbdd2f9427cfdf7b0380cf490bea5eb821e54b23c8a621fb7f7b8deabd3766",
+   "agencyKey": "grant-county",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-21T00:00:00Z",
+   "hash": "c9bcdf84c30785ba7ca065982f27e544eda15ed145699f9b0b3aa142caabfada",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-21T00:00:00Z",
+   "hash": "ce968ba2c41c549be1e392a1cd57915c",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "listed_aggregate",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-21T00:00:00Z",
+   "hash": "d6d868a70eeeadf5a8adcc50a699c6287b9fb3ff20eceeda5ed62e060aa51adb",
+   "agencyKey": "palm-beach-gardens-fire-rescue",
+   "change": "superseded",
+   "from": "current",
+   "to": "superseded",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-21T00:00:00Z",
+   "hash": "df87336c99e39b4c7f10255658105e5bf6c08652477dd3928a605ef8880d9a2e",
+   "agencyKey": "lake-county-emergency-medical-system",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-21T00:00:00Z",
+   "hash": "e14a85000b6d6db8d54757ccd952e71db7678b7346e0ad39d6ff95329d20b7e0",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "listed_aggregate",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-21T00:00:00Z",
+   "hash": "f6b9907528608b6326bfc73d2191eaca1077ce35b26f386506a47ed3790fe64d",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-21T00:00:00Z",
+   "hash": "fda9d268dd7acb94ea4cb4cb154aaefa",
+   "agencyKey": "michigan-department-of-health-and-human-services-mdhhs",
    "change": "added",
    "from": null,
    "to": "listed_named",

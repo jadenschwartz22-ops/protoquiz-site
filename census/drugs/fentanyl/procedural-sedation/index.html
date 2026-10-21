@@ -84,6 +84,14 @@
       <p class="rbar-contact"><span>Contact: </span><a href="mailto:research@protoquiz.com">research@protoquiz.com</a></p>
     </div>
   </div>
+  <style id="rbar-mobile-nav">@media (max-width:900px){
+    body:has(.rbar) .site-header .site-nav{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:0;gap:6px 12px}
+    body:has(.rbar) .site-header .nav-left{display:contents}
+    body:has(.rbar) .site-header .brand{order:1;margin-right:auto}
+    body:has(.rbar) .site-header .nav-right{order:2}
+    body:has(.rbar) .site-header .nav-links{display:flex;order:3;flex:0 0 100%;gap:22px;overflow-x:auto;padding:8px 0 10px;margin-top:4px;border-top:1px solid var(--line)}
+  }</style>
+  <script src="/assets/research-nav.js?v=e0144007" defer></script>
   <main>
     <div class="wrap">
       <nav class="crumbs"><a href="/census/">Protocol census</a> <span class="sep">/</span> <a href="/census/drugs/fentanyl/">Fentanyl</a> <span class="sep">/</span> <span>Procedural sedation</span></nav>
@@ -92,15 +100,15 @@
       <div class="dochead">
         <span class="badge">Indication</span>
         <h1>Fentanyl for Procedural sedation</h1>
-        <div class="meta"><span class="chip">41 sources</span><span class="chip">30 named agencies</span><span class="chip">21 states</span><span class="chip">as of 2026-10-19</span></div>
-        <p class="lede">Pediatric weight-based dosing has a median of 0.001 mg/kg across 26 published protocols, with the middle half between 0.001 and 0.001.</p>
+        <div class="meta"><span class="chip">41 sources</span><span class="chip">30 named agencies</span><span class="chip">21 states</span><span class="chip">as of 2026-10-21</span></div>
+        <p class="lede">Pediatric weight-based dosing has a median of 0.001 mg/kg across 27 published protocols, with the middle half between 0.001 and 0.001.</p>
       </div>
-      <div class="stats"><div class="stat"><span class="v">41</span><span class="l">sources</span></div><div class="stat"><span class="v">30</span><span class="l">named agencies</span></div><div class="stat"><span class="v">21</span><span class="l">states</span></div><div class="stat"><span class="v">78</span><span class="l">entries</span></div><div class="stat"><span class="v">30</span><span class="l">named here</span></div></div>
+      <div class="stats"><div class="stat"><span class="v">41</span><span class="l">sources</span></div><div class="stat"><span class="v">30</span><span class="l">named agencies</span></div><div class="stat"><span class="v">21</span><span class="l">states</span></div><div class="stat"><span class="v">79</span><span class="l">entries</span></div><div class="stat"><span class="v">30</span><span class="l">named here</span></div></div>
       <p class="muted">Includes 3 agencies outside the US.</p>
       <p class="honest">Doses far off from what other protocols give are likely misreads, so they are left out until checked. <a href="/census/methodology/#outliers">How that works</a>.</p>
       <section id="g-peds-perkg-mg">
         <h2>Pediatric, weight-based<span class="unit">mg/kg</span></h2>
-      <div class="stats"><div class="stat"><span class="v">26</span><span class="l">sources</span></div><div class="stat"><span class="v">19</span><span class="l">named agencies</span></div><div class="stat"><span class="v">17</span><span class="l">states</span></div><div class="stat"><span class="v">31</span><span class="l">entries</span></div><div class="stat"><span class="v">0</span><span class="l">kept as written</span></div></div>
+      <div class="stats"><div class="stat"><span class="v">27</span><span class="l">sources</span></div><div class="stat"><span class="v">19</span><span class="l">named agencies</span></div><div class="stat"><span class="v">17</span><span class="l">states</span></div><div class="stat"><span class="v">32</span><span class="l">entries</span></div><div class="stat"><span class="v">0</span><span class="l">kept as written</span></div></div>
         <div class="five">
           <div class="five-track" role="img" aria-label="Range 0.0005 to 0.002 mg/kg, middle half 0.001 to 0.001, median 0.001"><span class="five-iqr" style="left:33.33%;width:1.50%"></span><span class="five-med" style="left:33.33%"></span></div>
           <div class="five-ends" aria-hidden="true"><span>0.0005</span><span>0.002</span></div>
@@ -111,8 +119,8 @@
           <p class="muted">Values in mg/kg. One value per source (that source's median), so a document listing a medication five times still gets one vote.</p>
         </div>
         <h3>Routes</h3>
-        <ul class="inline"><li>IV/IO/IM/IN <span class="muted">39%</span></li><li>IV <span class="muted">16%</span></li><li>IV/IM/IN <span class="muted">13%</span></li><li>IV/IO <span class="muted">13%</span></li><li>IV/IO/IN <span class="muted">10%</span></li><li>IV/IO/IM <span class="muted">7%</span></li><li>IO <span class="muted">3%</span></li></ul>
-        <p class="cite">United States EMS Protocol Census, n=26 protocols from 19 named agencies / 17 states, updated Oct 2026</p>
+        <ul class="inline"><li>IV/IO/IM/IN <span class="muted">38%</span></li><li>IV <span class="muted">19%</span></li><li>IV/IM/IN <span class="muted">13%</span></li><li>IV/IO <span class="muted">13%</span></li><li>IV/IO/IN <span class="muted">9%</span></li><li>IV/IO/IM <span class="muted">6%</span></li><li>IO <span class="muted">3%</span></li></ul>
+        <p class="cite">United States EMS Protocol Census, n=27 protocols from 19 named agencies / 17 states, updated Oct 2026</p>
       </section>
       <section id="g-adult-flat-mg">
         <h2>Adult<span class="unit">mg</span></h2>
@@ -161,7 +169,7 @@
         </div>
         <aside class="rail">
 <details class="fold" id="cite"><summary>Cite this</summary>
-            <div class="citebox" id="cite-text"><p class="cite">United States EMS Protocol Census, n=26 protocols from 19 named agencies / 17 states, updated Oct 2026</p></div>
+            <div class="citebox" id="cite-text"><p class="cite">United States EMS Protocol Census, n=27 protocols from 19 named agencies / 17 states, updated Oct 2026</p></div>
             <button type="button" class="copybtn" id="cite-btn">Copy citation</button>
           </details>
           <script>
@@ -238,13 +246,5 @@
     </div>
   </footer>
   <!-- /shared-chrome:footer -->
-  <style id="rbar-mobile-nav">@media (max-width:900px){
-    body:has(.rbar) .site-header .site-nav{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:0;gap:6px 12px}
-    body:has(.rbar) .site-header .nav-left{display:contents}
-    body:has(.rbar) .site-header .brand{order:1;margin-right:auto}
-    body:has(.rbar) .site-header .nav-right{order:2}
-    body:has(.rbar) .site-header .nav-links{display:flex;order:3;flex:0 0 100%;gap:22px;overflow-x:auto;padding:8px 0 10px;margin-top:4px;border-top:1px solid var(--line)}
-  }</style>
-  <script src="/assets/research-nav.js?v=e0144007" defer></script>
 </body>
 </html>

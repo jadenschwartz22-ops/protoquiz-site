@@ -84,6 +84,14 @@
       <p class="rbar-contact"><span>Contact: </span><a href="mailto:research@protoquiz.com">research@protoquiz.com</a></p>
     </div>
   </div>
+  <style id="rbar-mobile-nav">@media (max-width:900px){
+    body:has(.rbar) .site-header .site-nav{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:0;gap:6px 12px}
+    body:has(.rbar) .site-header .nav-left{display:contents}
+    body:has(.rbar) .site-header .brand{order:1;margin-right:auto}
+    body:has(.rbar) .site-header .nav-right{order:2}
+    body:has(.rbar) .site-header .nav-links{display:flex;order:3;flex:0 0 100%;gap:22px;overflow-x:auto;padding:8px 0 10px;margin-top:4px;border-top:1px solid var(--line)}
+  }</style>
+  <script src="/assets/research-nav.js?v=e0144007" defer></script>
   <main>
     <div class="wrap">
       <nav class="crumbs"><a href="/census/">Protocol census</a> <span class="sep">/</span> <a href="/census/drugs/etomidate/">Etomidate</a> <span class="sep">/</span> <span>Other</span></nav>
@@ -92,60 +100,60 @@
       <div class="dochead">
         <span class="badge">Indication</span>
         <h1>Etomidate for Other</h1>
-        <div class="meta"><span class="chip">34 sources</span><span class="chip">31 named agencies</span><span class="chip">18 states</span><span class="chip">as of 2026-10-19</span></div>
-        <p class="lede">Adult weight-based dosing has a median of 0.3 mg/kg across 32 published protocols, with the middle half between 0.2875 and 0.3.</p>
+        <div class="meta"><span class="chip">37 sources</span><span class="chip">34 named agencies</span><span class="chip">19 states</span><span class="chip">as of 2026-10-21</span></div>
+        <p class="lede">Adult weight-based dosing has a median of 0.3 mg/kg across 34 published protocols, with the middle half between 0.3 and 0.3.</p>
       </div>
-      <div class="stats"><div class="stat"><span class="v">34</span><span class="l">sources</span></div><div class="stat"><span class="v">31</span><span class="l">named agencies</span></div><div class="stat"><span class="v">18</span><span class="l">states</span></div><div class="stat"><span class="v">62</span><span class="l">entries</span></div><div class="stat"><span class="v">30</span><span class="l">named here</span></div></div>
+      <div class="stats"><div class="stat"><span class="v">37</span><span class="l">sources</span></div><div class="stat"><span class="v">34</span><span class="l">named agencies</span></div><div class="stat"><span class="v">19</span><span class="l">states</span></div><div class="stat"><span class="v">67</span><span class="l">entries</span></div><div class="stat"><span class="v">33</span><span class="l">named here</span></div></div>
       <p class="muted">Includes 1 agency outside the US.</p>
       <p class="honest">Doses far off from what other protocols give are likely misreads, so they are left out until checked. <a href="/census/methodology/#outliers">How that works</a>.</p>
       <section id="g-adult-perkg-mg">
         <h2>Adult, weight-based<span class="unit">mg/kg</span></h2>
-      <div class="stats"><div class="stat"><span class="v">32</span><span class="l">sources</span></div><div class="stat"><span class="v">29</span><span class="l">named agencies</span></div><div class="stat"><span class="v">18</span><span class="l">states</span></div><div class="stat"><span class="v">35</span><span class="l">entries</span></div><div class="stat"><span class="v">0</span><span class="l">kept as written</span></div></div>
+      <div class="stats"><div class="stat"><span class="v">34</span><span class="l">sources</span></div><div class="stat"><span class="v">31</span><span class="l">named agencies</span></div><div class="stat"><span class="v">19</span><span class="l">states</span></div><div class="stat"><span class="v">37</span><span class="l">entries</span></div><div class="stat"><span class="v">0</span><span class="l">kept as written</span></div></div>
         <div class="five">
-          <div class="five-track" role="img" aria-label="Range 0.1 to 0.5 mg/kg, middle half 0.2875 to 0.3, median 0.3"><span class="five-iqr" style="left:46.87%;width:3.13%"></span><span class="five-med" style="left:50.00%"></span></div>
+          <div class="five-track" role="img" aria-label="Range 0.1 to 0.5 mg/kg, middle half 0.3 to 0.3, median 0.3"><span class="five-iqr" style="left:50.00%;width:1.50%"></span><span class="five-med" style="left:50.00%"></span></div>
           <div class="five-ends" aria-hidden="true"><span>0.1</span><span>0.5</span></div>
           <table class="five-nums">
             <thead><tr><th>min</th><th>p25</th><th>median</th><th>p75</th><th>max</th></tr></thead>
-            <tbody><tr><td>0.1</td><td>0.2875</td><td>0.3</td><td>0.3</td><td>0.5</td></tr></tbody>
+            <tbody><tr><td>0.1</td><td>0.3</td><td>0.3</td><td>0.3</td><td>0.5</td></tr></tbody>
           </table>
           <p class="muted">Values in mg/kg. One value per source (that source's median), so a document listing a medication five times still gets one vote.</p>
         </div>
         <h3>Routes</h3>
-        <ul class="inline"><li>IV/IO <span class="muted">69%</span></li><li>IV <span class="muted">29%</span></li></ul>
-        <p class="cite">United States EMS Protocol Census, n=32 protocols from 29 named agencies / 18 states, updated Oct 2026</p>
+        <ul class="inline"><li>IV/IO <span class="muted">70%</span></li><li>IV <span class="muted">27%</span></li></ul>
+        <p class="cite">United States EMS Protocol Census, n=34 protocols from 31 named agencies / 19 states, updated Oct 2026</p>
       </section>
       <section id="g-peds-perkg-mg">
         <h2>Pediatric, weight-based<span class="unit">mg/kg</span></h2>
-      <div class="stats"><div class="stat"><span class="v">19</span><span class="l">sources</span></div><div class="stat"><span class="v">19</span><span class="l">named agencies</span></div><div class="stat"><span class="v">14</span><span class="l">states</span></div><div class="stat"><span class="v">23</span><span class="l">entries</span></div><div class="stat"><span class="v">0</span><span class="l">kept as written</span></div></div>
+      <div class="stats"><div class="stat"><span class="v">20</span><span class="l">sources</span></div><div class="stat"><span class="v">20</span><span class="l">named agencies</span></div><div class="stat"><span class="v">14</span><span class="l">states</span></div><div class="stat"><span class="v">24</span><span class="l">entries</span></div><div class="stat"><span class="v">0</span><span class="l">kept as written</span></div></div>
         <div class="five">
-          <div class="five-track" role="img" aria-label="Range 0.1 to 0.3 mg/kg, middle half 0.25 to 0.3, median 0.3"><span class="five-iqr" style="left:75.00%;width:25.00%"></span><span class="five-med" style="left:100.00%"></span></div>
+          <div class="five-track" role="img" aria-label="Range 0.1 to 0.3 mg/kg, middle half 0.2 to 0.3, median 0.3"><span class="five-iqr" style="left:50.00%;width:50.00%"></span><span class="five-med" style="left:100.00%"></span></div>
           <div class="five-ends" aria-hidden="true"><span>0.1</span><span>0.3</span></div>
           <table class="five-nums">
             <thead><tr><th>min</th><th>p25</th><th>median</th><th>p75</th><th>max</th></tr></thead>
-            <tbody><tr><td>0.1</td><td>0.25</td><td>0.3</td><td>0.3</td><td>0.3</td></tr></tbody>
+            <tbody><tr><td>0.1</td><td>0.2</td><td>0.3</td><td>0.3</td><td>0.3</td></tr></tbody>
           </table>
           <p class="muted">Values in mg/kg. One value per source (that source's median), so a document listing a medication five times still gets one vote.</p>
         </div>
         <h3>Routes</h3>
-        <ul class="inline"><li>IV/IO <span class="muted">65%</span></li><li>IV <span class="muted">30%</span></li></ul>
-        <p class="cite">United States EMS Protocol Census, n=19 protocols from 19 named agencies / 14 states, updated Oct 2026</p>
+        <ul class="inline"><li>IV/IO <span class="muted">67%</span></li><li>IV <span class="muted">29%</span></li></ul>
+        <p class="cite">United States EMS Protocol Census, n=20 protocols from 20 named agencies / 14 states, updated Oct 2026</p>
       </section>
       <section id="g-adult-flat-mg">
         <h2>Adult<span class="unit">mg</span></h2>
-      <div class="stats"><div class="stat"><span class="v">3</span><span class="l">sources</span></div><div class="stat"><span class="v">3</span><span class="l">named agencies</span></div><div class="stat"><span class="v">1</span><span class="l">states</span></div><div class="stat"><span class="v">4</span><span class="l">entries</span></div><div class="stat"><span class="v">0</span><span class="l">kept as written</span></div></div>
+      <div class="stats"><div class="stat"><span class="v">4</span><span class="l">sources</span></div><div class="stat"><span class="v">4</span><span class="l">named agencies</span></div><div class="stat"><span class="v">1</span><span class="l">states</span></div><div class="stat"><span class="v">6</span><span class="l">entries</span></div><div class="stat"><span class="v">0</span><span class="l">kept as written</span></div></div>
         <p class="honest">Below 5 sources, so no distribution is published for this group &mdash; only the counts above.</p>
         <h3>Routes</h3>
         <ul class="inline"><li>IV/IO <span class="muted">100%</span></li></ul>
-        <p class="cite">United States EMS Protocol Census, n=3 protocols from 3 named agencies / 1 states, updated Oct 2026</p>
+        <p class="cite">United States EMS Protocol Census, n=4 protocols from 4 named agencies / 1 states, updated Oct 2026</p>
       </section>
-<details class="fold" id="agencies"><summary>Named agencies with a page<span class="count">30</span></summary>
+<details class="fold" id="agencies"><summary>Named agencies with a page<span class="count">33</span></summary>
         <p class="muted">Agencies whose protocols are a public record are named here. Their own doses are on their own pages; this list carries no values.</p>
-        <ul class="cols"><li><a href="/census/agencies/annaville-fire-department/">Annaville Fire Department</a></li><li><a href="/census/agencies/bc-emergency-health-services/">BC Emergency Health Services</a></li><li><a href="/census/agencies/bonner-county-emergency-medical-services/">Bonner County Emergency Medical Services</a></li><li><a href="/census/agencies/brilliant-fire-department/">Brilliant Fire Department</a></li><li><a href="/census/agencies/chelan-douglas-okanogan-grant-county/">Chelan/Douglas/Okanogan/Grant County</a></li><li><a href="/census/agencies/clark-county-ems-system/">Clark County EMS System</a></li><li><a href="/census/agencies/coos-county-emergency-medical-services/">Coos County Emergency Medical Services</a></li><li><a href="/census/agencies/dane-county-ems-system/">Dane County EMS System</a></li><li><a href="/census/agencies/delaware-office-of-emergency-medical-services/">Delaware Office of Emergency Medical Services</a></li><li><a href="/census/agencies/escambia-county-emergency-medical-services/">Escambia County Emergency Medical Services</a></li><li><a href="/census/agencies/fort-lauderdale-fire-rescue/">Fort Lauderdale Fire Rescue</a></li><li><a href="/census/agencies/greenville-county-emergency-medical-services/">Greenville County Emergency Medical Services</a></li><li><a href="/census/agencies/hays-county-esd-9-ems/">Hays County ESD 9 EMS</a></li><li><a href="/census/agencies/levy-county-department-of-public-safety/">Levy County Department of Public Safety</a></li><li><a href="/census/agencies/marion-county/">Marion County</a></li><li><a href="/census/agencies/northeast-ohio-regional-ems-protocol-committee/">Northeast Ohio Regional EMS Protocol Committee</a></li><li><a href="/census/agencies/northwest-arkansas-regional-ems/">Northwest Arkansas Regional EMS</a></li><li><a href="/census/agencies/northwest-community-ems-system/">Northwest Community EMS System</a></li><li><a href="/census/agencies/nueces-county-esd4/">Nueces County ESD4</a></li><li><a href="/census/agencies/oklahoma-state-department-of-health/">Oklahoma State Department of Health</a></li><li><a href="/census/agencies/pend-oreille-county-emergency-medical-services/">Pend Oreille County Emergency Medical Services</a></li><li><a href="/census/agencies/region-1-emergency-medical-services/">Region 1 Emergency Medical Services</a></li><li><a href="/census/agencies/regional-emergency-medical-advisory-committee-of-new-york-city/">Regional Emergency Medical Advisory Committee of New York City</a></li><li><a href="/census/agencies/remsa/">REMSA</a></li><li><a href="/census/agencies/remsa-sioux-falls/">REMSA Sioux Falls</a></li><li><a href="/census/agencies/riverside-county-ems-agency/">County of Riverside EMS Agency</a></li><li><a href="/census/agencies/south-carolina-department-of-public-health-dph-division-of-ems/">South Carolina Department of Public Health (DPH) Division of EMS</a></li><li><a href="/census/agencies/spokane-county-ems/">Spokane County EMS</a></li><li><a href="/census/agencies/st-johns-county-fire-rescue/">St. Johns County Fire Rescue</a></li><li><a href="/census/agencies/tri-county-emergency-medical-services-inc/">Tri County Emergency Medical Services, Inc.</a></li></ul>
+        <ul class="cols"><li><a href="/census/agencies/annaville-fire-department/">Annaville Fire Department</a></li><li><a href="/census/agencies/bc-emergency-health-services/">BC Emergency Health Services</a></li><li><a href="/census/agencies/bonner-county-emergency-medical-services/">Bonner County Emergency Medical Services</a></li><li><a href="/census/agencies/brilliant-fire-department/">Brilliant Fire Department</a></li><li><a href="/census/agencies/charleston-county-ems/">Charleston County EMS</a></li><li><a href="/census/agencies/chelan-douglas-okanogan-grant-county/">Chelan/Douglas/Okanogan/Grant County</a></li><li><a href="/census/agencies/clark-county-ems-system/">Clark County EMS System</a></li><li><a href="/census/agencies/coos-county-emergency-medical-services/">Coos County Emergency Medical Services</a></li><li><a href="/census/agencies/dane-county-ems-system/">Dane County EMS System</a></li><li><a href="/census/agencies/delaware-office-of-emergency-medical-services/">Delaware Office of Emergency Medical Services</a></li><li><a href="/census/agencies/escambia-county-emergency-medical-services/">Escambia County Emergency Medical Services</a></li><li><a href="/census/agencies/fort-lauderdale-fire-rescue/">Fort Lauderdale Fire Rescue</a></li><li><a href="/census/agencies/greenville-county-emergency-medical-services/">Greenville County Emergency Medical Services</a></li><li><a href="/census/agencies/hays-county-esd-9-ems/">Hays County ESD 9 EMS</a></li><li><a href="/census/agencies/levy-county-department-of-public-safety/">Levy County Department of Public Safety</a></li><li><a href="/census/agencies/marion-county/">Marion County</a></li><li><a href="/census/agencies/northeast-ohio-regional-ems-protocol-committee/">Northeast Ohio Regional EMS Protocol Committee</a></li><li><a href="/census/agencies/northwest-arkansas-regional-ems/">Northwest Arkansas Regional EMS</a></li><li><a href="/census/agencies/northwest-community-ems-system/">Northwest Community EMS System</a></li><li><a href="/census/agencies/nueces-county-esd4/">Nueces County ESD4</a></li><li><a href="/census/agencies/oklahoma-state-department-of-health/">Oklahoma State Department of Health</a></li><li><a href="/census/agencies/palm-beach-gardens-fire-rescue/">Palm Beach Gardens Fire Rescue</a></li><li><a href="/census/agencies/pend-oreille-county-emergency-medical-services/">Pend Oreille County Emergency Medical Services</a></li><li><a href="/census/agencies/region-1-emergency-medical-services/">Region 1 Emergency Medical Services</a></li><li><a href="/census/agencies/region-one-metropolitan-ambulance-council/">Region One Metropolitan Ambulance Council</a></li><li><a href="/census/agencies/regional-emergency-medical-advisory-committee-of-new-york-city/">Regional Emergency Medical Advisory Committee of New York City</a></li><li><a href="/census/agencies/remsa/">REMSA</a></li><li><a href="/census/agencies/remsa-sioux-falls/">REMSA Sioux Falls</a></li><li><a href="/census/agencies/riverside-county-ems-agency/">County of Riverside EMS Agency</a></li><li><a href="/census/agencies/south-carolina-department-of-public-health-dph-division-of-ems/">South Carolina Department of Public Health (DPH) Division of EMS</a></li><li><a href="/census/agencies/spokane-county-ems/">Spokane County EMS</a></li><li><a href="/census/agencies/st-johns-county-fire-rescue/">St. Johns County Fire Rescue</a></li><li><a href="/census/agencies/tri-county-emergency-medical-services-inc/">Tri County Emergency Medical Services, Inc.</a></li></ul>
 </details>
         </div>
         <aside class="rail">
 <details class="fold" id="cite"><summary>Cite this</summary>
-            <div class="citebox" id="cite-text"><p class="cite">United States EMS Protocol Census, n=32 protocols from 29 named agencies / 18 states, updated Oct 2026</p></div>
+            <div class="citebox" id="cite-text"><p class="cite">United States EMS Protocol Census, n=34 protocols from 31 named agencies / 19 states, updated Oct 2026</p></div>
             <button type="button" class="copybtn" id="cite-btn">Copy citation</button>
           </details>
           <script>
@@ -222,13 +230,5 @@
     </div>
   </footer>
   <!-- /shared-chrome:footer -->
-  <style id="rbar-mobile-nav">@media (max-width:900px){
-    body:has(.rbar) .site-header .site-nav{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:0;gap:6px 12px}
-    body:has(.rbar) .site-header .nav-left{display:contents}
-    body:has(.rbar) .site-header .brand{order:1;margin-right:auto}
-    body:has(.rbar) .site-header .nav-right{order:2}
-    body:has(.rbar) .site-header .nav-links{display:flex;order:3;flex:0 0 100%;gap:22px;overflow-x:auto;padding:8px 0 10px;margin-top:4px;border-top:1px solid var(--line)}
-  }</style>
-  <script src="/assets/research-nav.js?v=e0144007" defer></script>
 </body>
 </html>

@@ -84,6 +84,14 @@
       <p class="rbar-contact"><span>Contact: </span><a href="mailto:research@protoquiz.com">research@protoquiz.com</a></p>
     </div>
   </div>
+  <style id="rbar-mobile-nav">@media (max-width:900px){
+    body:has(.rbar) .site-header .site-nav{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:0;gap:6px 12px}
+    body:has(.rbar) .site-header .nav-left{display:contents}
+    body:has(.rbar) .site-header .brand{order:1;margin-right:auto}
+    body:has(.rbar) .site-header .nav-right{order:2}
+    body:has(.rbar) .site-header .nav-links{display:flex;order:3;flex:0 0 100%;gap:22px;overflow-x:auto;padding:8px 0 10px;margin-top:4px;border-top:1px solid var(--line)}
+  }</style>
+  <script src="/assets/research-nav.js?v=e0144007" defer></script>
   <main>
     <div class="wrap">
       <nav class="crumbs"><a href="/census/">Protocol census</a> <span class="sep">/</span> <a href="/census/drugs/haloperidol/">Haloperidol</a> <span class="sep">/</span> <span>Agitation</span></nav>
@@ -92,14 +100,14 @@
       <div class="dochead">
         <span class="badge">Indication</span>
         <h1>Haloperidol for Agitation</h1>
-        <div class="meta"><span class="chip">46 sources</span><span class="chip">39 named agencies</span><span class="chip">24 states</span><span class="chip">as of 2026-10-19</span></div>
+        <div class="meta"><span class="chip">46 sources</span><span class="chip">39 named agencies</span><span class="chip">24 states</span><span class="chip">as of 2026-10-21</span></div>
         <p class="lede">Adult dosing has a median of 5 mg across 46 published protocols, with the middle half between 2.75 and 5.</p>
       </div>
-      <div class="stats"><div class="stat"><span class="v">46</span><span class="l">sources</span></div><div class="stat"><span class="v">39</span><span class="l">named agencies</span></div><div class="stat"><span class="v">24</span><span class="l">states</span></div><div class="stat"><span class="v">77</span><span class="l">entries</span></div><div class="stat"><span class="v">38</span><span class="l">named here</span></div></div>
+      <div class="stats"><div class="stat"><span class="v">46</span><span class="l">sources</span></div><div class="stat"><span class="v">39</span><span class="l">named agencies</span></div><div class="stat"><span class="v">24</span><span class="l">states</span></div><div class="stat"><span class="v">78</span><span class="l">entries</span></div><div class="stat"><span class="v">38</span><span class="l">named here</span></div></div>
       <p class="honest">Doses far off from what other protocols give are likely misreads, so they are left out until checked. <a href="/census/methodology/#outliers">How that works</a>.</p>
       <section id="g-adult-flat-mg">
         <h2>Adult<span class="unit">mg</span></h2>
-      <div class="stats"><div class="stat"><span class="v">46</span><span class="l">sources</span></div><div class="stat"><span class="v">39</span><span class="l">named agencies</span></div><div class="stat"><span class="v">24</span><span class="l">states</span></div><div class="stat"><span class="v">65</span><span class="l">entries</span></div><div class="stat"><span class="v">0</span><span class="l">kept as written</span></div></div>
+      <div class="stats"><div class="stat"><span class="v">46</span><span class="l">sources</span></div><div class="stat"><span class="v">39</span><span class="l">named agencies</span></div><div class="stat"><span class="v">24</span><span class="l">states</span></div><div class="stat"><span class="v">66</span><span class="l">entries</span></div><div class="stat"><span class="v">0</span><span class="l">kept as written</span></div></div>
         <div class="five">
           <div class="five-track" role="img" aria-label="Range 2 to 7.5 mg, middle half 2.75 to 5, median 5"><span class="five-iqr" style="left:13.64%;width:40.91%"></span><span class="five-med" style="left:54.55%"></span></div>
           <div class="five-ends" aria-hidden="true"><span>2</span><span>7.5</span></div>
@@ -110,7 +118,7 @@
           <p class="muted">Values in mg. One value per source (that source's median), so a document listing a medication five times still gets one vote.</p>
         </div>
         <h3>Routes</h3>
-        <ul class="inline"><li>IM <span class="muted">59%</span></li><li>IV <span class="muted">12%</span></li><li>IV/IM <span class="muted">12%</span></li><li>IV/IO <span class="muted">6%</span></li><li>IV/IO/IM <span class="muted">6%</span></li><li>IV/IM/SQ <span class="muted">3%</span></li><li>PO <span class="muted">2%</span></li></ul>
+        <ul class="inline"><li>IM <span class="muted">58%</span></li><li>IV/IM <span class="muted">14%</span></li><li>IV <span class="muted">12%</span></li><li>IV/IO <span class="muted">6%</span></li><li>IV/IO/IM <span class="muted">6%</span></li><li>IV/IM/SQ <span class="muted">3%</span></li><li>PO <span class="muted">2%</span></li></ul>
         <p class="cite">United States EMS Protocol Census, n=46 protocols from 39 named agencies / 24 states, updated Oct 2026</p>
       </section>
       <section id="g-peds-flat-mg">
@@ -237,13 +245,5 @@
     </div>
   </footer>
   <!-- /shared-chrome:footer -->
-  <style id="rbar-mobile-nav">@media (max-width:900px){
-    body:has(.rbar) .site-header .site-nav{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:0;gap:6px 12px}
-    body:has(.rbar) .site-header .nav-left{display:contents}
-    body:has(.rbar) .site-header .brand{order:1;margin-right:auto}
-    body:has(.rbar) .site-header .nav-right{order:2}
-    body:has(.rbar) .site-header .nav-links{display:flex;order:3;flex:0 0 100%;gap:22px;overflow-x:auto;padding:8px 0 10px;margin-top:4px;border-top:1px solid var(--line)}
-  }</style>
-  <script src="/assets/research-nav.js?v=e0144007" defer></script>
 </body>
 </html>

@@ -641,6 +641,27 @@
    }
   },
   {
+   "agencyKey": "charleston-county-ems",
+   "name": "Charleston County EMS",
+   "aliases": [
+    "Charleston County EMS"
+   ],
+   "state": "SC",
+   "country": "US",
+   "city": "Charleston",
+   "jurisdiction": "county",
+   "currentHash": "022e71fac519f8ad4a75bff3baf2c1e8ad4ec1c0efed95787e4934a3295d38ee",
+   "currentEffectiveDate": "2026-07-01",
+   "documentCount": 1,
+   "doseCount": 151,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
    "agencyKey": "chaves-county-ems",
    "name": "Chaves County EMS",
    "aliases": [
@@ -1114,6 +1135,27 @@
    }
   },
   {
+   "agencyKey": "department-of-aviation-medicine",
+   "name": "Department of Aviation Medicine",
+   "aliases": [
+    "Department of Aviation Medicine"
+   ],
+   "state": "AL",
+   "country": "US",
+   "city": "Fort Rucker",
+   "jurisdiction": "regional",
+   "currentHash": "a113df0210f7e35c61b0f49aebdfa37d4bab3695465a19b3811b38e40a0032a2",
+   "currentEffectiveDate": "2026-10-01",
+   "documentCount": 1,
+   "doseCount": 236,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
    "agencyKey": "department-of-health-services-county-of-los-angeles",
    "name": "Department of Health Services, County of Los Angeles",
    "aliases": [
@@ -1472,6 +1514,27 @@
    }
   },
   {
+   "agencyKey": "grant-county",
+   "name": "Grant County",
+   "aliases": [
+    "Grant County"
+   ],
+   "state": "NM",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "county",
+   "currentHash": "c8cbdd2f9427cfdf7b0380cf490bea5eb821e54b23c8a621fb7f7b8deabd3766",
+   "currentEffectiveDate": "2026-07-01",
+   "documentCount": 1,
+   "doseCount": 186,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
    "agencyKey": "greater-miami-valley-ems-council",
    "name": "Greater Miami Valley EMS Council",
    "aliases": [
@@ -1662,6 +1725,27 @@
    "doseCount": 317,
    "pendingReview": null,
    "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": false,
+    "jurisdiction": "statewide"
+   }
+  },
+  {
+   "agencyKey": "illinois-emergency-medical-services-for-children",
+   "name": "Illinois Emergency Medical Services for Children",
+   "aliases": [
+    "Illinois Emergency Medical Services for Children"
+   ],
+   "state": "IL",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "currentHash": "8940c1e8fc059b23eb8e64928792955964e93244ec70a5947d54567e70ca3eb2",
+   "currentEffectiveDate": "2016-01-01",
+   "documentCount": 1,
+   "doseCount": 40,
+   "pendingReview": null,
+   "mayBeOutdated": true,
    "coverage": {
     "hasProtocol": false,
     "jurisdiction": "statewide"
@@ -1891,8 +1975,8 @@
    "jurisdiction": "county",
    "currentHash": "4c361e29983736e6a32c36d1552014e685511c30fe4218f2c88e67800ae116bb",
    "currentEffectiveDate": "2022-03-01",
-   "documentCount": 1,
-   "doseCount": 138,
+   "documentCount": 2,
+   "doseCount": 271,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -2103,7 +2187,7 @@
    "currentHash": "c1fa8b8af1b730f3e54e2c0b3dbc824b0bc26c297c0337740a22acad899df61b",
    "currentEffectiveDate": "2026-07-01",
    "documentCount": 11,
-   "doseCount": 2914,
+   "doseCount": 2984,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -2147,7 +2231,9 @@
    "currentEffectiveDate": "2026-06-15",
    "documentCount": 1,
    "doseCount": 128,
-   "pendingReview": null,
+   "pendingReview": {
+    "effectiveDate": null
+   },
    "mayBeOutdated": false,
    "coverage": {
     "hasProtocol": true,
@@ -2192,7 +2278,7 @@
    "documentCount": 10,
    "doseCount": 865,
    "pendingReview": {
-    "effectiveDate": "2026-01-01"
+    "effectiveDate": null
    },
    "mayBeOutdated": false,
    "coverage": {
@@ -2239,8 +2325,8 @@
    "jurisdiction": "statewide",
    "currentHash": "a278f41102237fc2a2d448c7035c631f36d3e68ed7a1ba5381acdc9b504fcbde",
    "currentEffectiveDate": "2025-11-17",
-   "documentCount": 31,
-   "doseCount": 1330,
+   "documentCount": 33,
+   "doseCount": 1615,
    "pendingReview": {
     "effectiveDate": null
    },
@@ -2626,8 +2712,8 @@
    "jurisdiction": "statewide",
    "currentHash": "f52482c2fb319aa0c6a42c24f5815d389286ac3f3710de3c04864005df2df2a9",
    "currentEffectiveDate": "2026-09-11",
-   "documentCount": 22,
-   "doseCount": 2307,
+   "documentCount": 23,
+   "doseCount": 2447,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -2778,6 +2864,27 @@
    "currentEffectiveDate": "2020-03-02",
    "documentCount": 1,
    "doseCount": 208,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
+   "agencyKey": "norton-sound-health-corporation",
+   "name": "Norton Sound Health Corporation",
+   "aliases": [
+    "Norton Sound Health Corporation"
+   ],
+   "state": "AK",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "regional",
+   "currentHash": "a4a36f680931be0764d68bcf4fa3a00136cbdbfa7498cb9a3ae8d126c587384b",
+   "currentEffectiveDate": "2024-05-10",
+   "documentCount": 1,
+   "doseCount": 109,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {
@@ -2991,10 +3098,10 @@
    "country": "US",
    "city": "Palm Beach Gardens",
    "jurisdiction": "fire-district",
-   "currentHash": "d6d868a70eeeadf5a8adcc50a699c6287b9fb3ff20eceeda5ed62e060aa51adb",
-   "currentEffectiveDate": "2025-01-01",
-   "documentCount": 1,
-   "doseCount": 79,
+   "currentHash": "5f8ab279fc0ee7380ea08bc9dadc1a9040000895a279c126ac00ae32a919e9a3",
+   "currentEffectiveDate": "2026-01-01",
+   "documentCount": 2,
+   "doseCount": 237,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -3325,6 +3432,27 @@
    }
   },
   {
+   "agencyKey": "region-one-metropolitan-ambulance-council",
+   "name": "Region One Metropolitan Ambulance Council",
+   "aliases": [
+    "Region One Metropolitan Ambulance Council"
+   ],
+   "state": "LA",
+   "country": "US",
+   "city": "New Orleans",
+   "jurisdiction": "regional",
+   "currentHash": "2fa3583bc2697621f226022df7132c5c02bfb4838902722f608509bcf788d6a7",
+   "currentEffectiveDate": "2021-03-01",
+   "documentCount": 1,
+   "doseCount": 151,
+   "pendingReview": null,
+   "mayBeOutdated": true,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "regional"
+   }
+  },
+  {
    "agencyKey": "region-one-metropolitan-ambulance-council-mac",
    "name": "Region One Metropolitan Ambulance Council (MAC)",
    "aliases": [
@@ -3433,6 +3561,27 @@
    }
   },
   {
+   "agencyKey": "reno-county-emergency-medical-services",
+   "name": "Reno County Emergency Medical Services",
+   "aliases": [
+    "Reno County Emergency Medical Services"
+   ],
+   "state": "KS",
+   "country": "US",
+   "city": "Hutchinson",
+   "jurisdiction": "county",
+   "currentHash": "a8819f30b0665404120e67aa6e6a59f8",
+   "currentEffectiveDate": "2026-05-01",
+   "documentCount": 1,
+   "doseCount": 126,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
    "agencyKey": "rhode-island-department-of-health-center-for-emergency-medical-services",
    "name": "Rhode Island Department of Health – Center for Emergency Medical Services",
    "aliases": [
@@ -3445,7 +3594,7 @@
    "currentHash": "b59cce67fb7057a27060e3b8aedeff0f7389571139c30abce65e79e3d996daae",
    "currentEffectiveDate": "2026-06-01",
    "documentCount": 4,
-   "doseCount": 923,
+   "doseCount": 919,
    "pendingReview": null,
    "mayBeOutdated": false,
    "coverage": {
@@ -3642,7 +3791,7 @@
    "currentHash": "448e661da7c44cb7e9b3cebdd6874d31",
    "currentEffectiveDate": "2023-01-01",
    "documentCount": 2,
-   "doseCount": 13,
+   "doseCount": 11,
    "pendingReview": null,
    "mayBeOutdated": true,
    "coverage": {

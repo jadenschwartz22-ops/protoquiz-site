@@ -84,6 +84,14 @@
       <p class="rbar-contact"><span>Contact: </span><a href="mailto:research@protoquiz.com">research@protoquiz.com</a></p>
     </div>
   </div>
+  <style id="rbar-mobile-nav">@media (max-width:900px){
+    body:has(.rbar) .site-header .site-nav{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:0;gap:6px 12px}
+    body:has(.rbar) .site-header .nav-left{display:contents}
+    body:has(.rbar) .site-header .brand{order:1;margin-right:auto}
+    body:has(.rbar) .site-header .nav-right{order:2}
+    body:has(.rbar) .site-header .nav-links{display:flex;order:3;flex:0 0 100%;gap:22px;overflow-x:auto;padding:8px 0 10px;margin-top:4px;border-top:1px solid var(--line)}
+  }</style>
+  <script src="/assets/research-nav.js?v=e0144007" defer></script>
   <main>
     <div class="wrap">
       <nav class="crumbs"><a href="/census/">Protocol census</a> <span class="sep">/</span> <a href="/census/drugs/racemic-epinephrine/">Racemic Epinephrine</a> <span class="sep">/</span> <span>Other</span></nav>
@@ -92,10 +100,10 @@
       <div class="dochead">
         <span class="badge">Indication</span>
         <h1>Racemic Epinephrine for Other</h1>
-        <div class="meta"><span class="chip">12 sources</span><span class="chip">8 named agencies</span><span class="chip">10 states</span><span class="chip">as of 2026-10-19</span></div>
+        <div class="meta"><span class="chip">13 sources</span><span class="chip">9 named agencies</span><span class="chip">11 states</span><span class="chip">as of 2026-10-21</span></div>
         <p class="lede">Pediatric dosing has a median of 0.25 mL across 9 published protocols, with the middle half between 0.25 and 0.5.</p>
       </div>
-      <div class="stats"><div class="stat"><span class="v">12</span><span class="l">sources</span></div><div class="stat"><span class="v">8</span><span class="l">named agencies</span></div><div class="stat"><span class="v">10</span><span class="l">states</span></div><div class="stat"><span class="v">23</span><span class="l">entries</span></div><div class="stat"><span class="v">8</span><span class="l">named here</span></div></div>
+      <div class="stats"><div class="stat"><span class="v">13</span><span class="l">sources</span></div><div class="stat"><span class="v">9</span><span class="l">named agencies</span></div><div class="stat"><span class="v">11</span><span class="l">states</span></div><div class="stat"><span class="v">24</span><span class="l">entries</span></div><div class="stat"><span class="v">9</span><span class="l">named here</span></div></div>
       <p class="honest">Doses far off from what other protocols give are likely misreads, so they are left out until checked. <a href="/census/methodology/#outliers">How that works</a>.</p>
       <section id="g-peds-flat-ml">
         <h2>Pediatric<span class="unit">mL</span></h2>
@@ -145,6 +153,14 @@
         <ul class="inline"><li>NEB <span class="muted">100%</span></li></ul>
         <p class="cite">United States EMS Protocol Census, n=2 protocols from 0 named agencies / 2 states, updated Oct 2026</p>
       </section>
+      <section id="g-peds-perkg-mg">
+        <h2>Pediatric, weight-based<span class="unit">mg/kg</span></h2>
+      <div class="stats"><div class="stat"><span class="v">1</span><span class="l">sources</span></div><div class="stat"><span class="v">1</span><span class="l">named agencies</span></div><div class="stat"><span class="v">1</span><span class="l">states</span></div><div class="stat"><span class="v">1</span><span class="l">entries</span></div><div class="stat"><span class="v">0</span><span class="l">kept as written</span></div></div>
+        <p class="honest">Below 5 sources, so no distribution is published for this group &mdash; only the counts above.</p>
+        <h3>Routes</h3>
+        <ul class="inline"><li>NEB <span class="muted">100%</span></li></ul>
+        <p class="cite">United States EMS Protocol Census, n=1 protocols from 1 named agencies / 1 states, updated Oct 2026</p>
+      </section>
       <section id="g-peds-perkg-ml">
         <h2>Pediatric, weight-based<span class="unit">mL/kg</span></h2>
       <div class="stats"><div class="stat"><span class="v">1</span><span class="l">sources</span></div><div class="stat"><span class="v">1</span><span class="l">named agencies</span></div><div class="stat"><span class="v">1</span><span class="l">states</span></div><div class="stat"><span class="v">1</span><span class="l">entries</span></div><div class="stat"><span class="v">0</span><span class="l">kept as written</span></div></div>
@@ -153,9 +169,9 @@
         <ul class="inline"><li>NEB <span class="muted">100%</span></li></ul>
         <p class="cite">United States EMS Protocol Census, n=1 protocols from 1 named agencies / 1 states, updated Oct 2026</p>
       </section>
-<details class="fold" id="agencies"><summary>Named agencies with a page<span class="count">8</span></summary>
+<details class="fold" id="agencies"><summary>Named agencies with a page<span class="count">9</span></summary>
         <p class="muted">Agencies whose protocols are a public record are named here. Their own doses are on their own pages; this list carries no values.</p>
-        <ul class="cols"><li><a href="/census/agencies/adams-benton-franklin-yakima-counties-ems/">Adams, Benton, Franklin, Yakima Counties</a></li><li><a href="/census/agencies/coos-county-emergency-medical-services/">Coos County Emergency Medical Services</a></li><li><a href="/census/agencies/northwest-arkansas-regional-ems/">Northwest Arkansas Regional EMS</a></li><li><a href="/census/agencies/old-dominion-ems-alliance/">Old Dominion EMS Alliance, Inc.</a></li><li><a href="/census/agencies/osage-ambulance-district/">Osage Ambulance District</a></li><li><a href="/census/agencies/region-1-emergency-medical-services/">Region 1 Emergency Medical Services</a></li><li><a href="/census/agencies/sierra-sacramento-valley-ems-agency/">Sierra-Sacramento Valley EMS Agency</a></li><li><a href="/census/agencies/spokane-county-ems/">Spokane County EMS</a></li></ul>
+        <ul class="cols"><li><a href="/census/agencies/adams-benton-franklin-yakima-counties-ems/">Adams, Benton, Franklin, Yakima Counties</a></li><li><a href="/census/agencies/coos-county-emergency-medical-services/">Coos County Emergency Medical Services</a></li><li><a href="/census/agencies/northwest-arkansas-regional-ems/">Northwest Arkansas Regional EMS</a></li><li><a href="/census/agencies/old-dominion-ems-alliance/">Old Dominion EMS Alliance, Inc.</a></li><li><a href="/census/agencies/osage-ambulance-district/">Osage Ambulance District</a></li><li><a href="/census/agencies/region-1-emergency-medical-services/">Region 1 Emergency Medical Services</a></li><li><a href="/census/agencies/reno-county-emergency-medical-services/">Reno County Emergency Medical Services</a></li><li><a href="/census/agencies/sierra-sacramento-valley-ems-agency/">Sierra-Sacramento Valley EMS Agency</a></li><li><a href="/census/agencies/spokane-county-ems/">Spokane County EMS</a></li></ul>
 </details>
         </div>
         <aside class="rail">
@@ -237,13 +253,5 @@
     </div>
   </footer>
   <!-- /shared-chrome:footer -->
-  <style id="rbar-mobile-nav">@media (max-width:900px){
-    body:has(.rbar) .site-header .site-nav{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:0;gap:6px 12px}
-    body:has(.rbar) .site-header .nav-left{display:contents}
-    body:has(.rbar) .site-header .brand{order:1;margin-right:auto}
-    body:has(.rbar) .site-header .nav-right{order:2}
-    body:has(.rbar) .site-header .nav-links{display:flex;order:3;flex:0 0 100%;gap:22px;overflow-x:auto;padding:8px 0 10px;margin-top:4px;border-top:1px solid var(--line)}
-  }</style>
-  <script src="/assets/research-nav.js?v=e0144007" defer></script>
 </body>
 </html>

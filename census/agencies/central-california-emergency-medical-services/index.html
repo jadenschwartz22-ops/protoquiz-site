@@ -87,6 +87,14 @@
       <p class="rbar-contact"><span>Contact: </span><a href="mailto:research@protoquiz.com">research@protoquiz.com</a></p>
     </div>
   </div>
+  <style id="rbar-mobile-nav">@media (max-width:900px){
+    body:has(.rbar) .site-header .site-nav{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:0;gap:6px 12px}
+    body:has(.rbar) .site-header .nav-left{display:contents}
+    body:has(.rbar) .site-header .brand{order:1;margin-right:auto}
+    body:has(.rbar) .site-header .nav-right{order:2}
+    body:has(.rbar) .site-header .nav-links{display:flex;order:3;flex:0 0 100%;gap:22px;overflow-x:auto;padding:8px 0 10px;margin-top:4px;border-top:1px solid var(--line)}
+  }</style>
+  <script src="/assets/research-nav.js?v=e0144007" defer></script>
   <main>
     <div class="wrap">
       <nav class="crumbs"><a href="/census/">Protocol census</a> <span class="sep">/</span> <a href="/census/states/ca/">California</a> <span class="sep">/</span> <span>Central California Emergency Medical Services</span></nav>
@@ -1423,12 +1431,7 @@
             });
           })();
         </script>
-      <div class="actions"><details class="fold" id="ledger"><summary>Change history<span class="count">1</span></summary>
-        <div class="scroll"><table>
-          <thead><tr><th>Recorded</th><th>Change</th><th>From</th><th>To</th></tr></thead>
-          <tbody><tr><td>2026-10-19</td><td>added</td><td>not captured</td><td>listed_named</td></tr></tbody>
-        </table></div>
-</details><details class="fold" id="cite"><summary>Cite this</summary>
+      <div class="actions"><details class="fold" id="cite"><summary>Cite this</summary>
             <div class="citebox" id="cite-text"><p class="cite">Central California Emergency Medical Services, United States EMS Protocol Census. 125 dose entries, effective 2026-08-18.</p><p class="cite">https://protoquiz.com/census/agencies/central-california-emergency-medical-services/</p></div>
             <button type="button" class="copybtn" id="cite-btn">Copy citation</button>
           </details>
@@ -1503,13 +1506,5 @@
     </div>
   </footer>
   <!-- /shared-chrome:footer -->
-  <style id="rbar-mobile-nav">@media (max-width:900px){
-    body:has(.rbar) .site-header .site-nav{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:0;gap:6px 12px}
-    body:has(.rbar) .site-header .nav-left{display:contents}
-    body:has(.rbar) .site-header .brand{order:1;margin-right:auto}
-    body:has(.rbar) .site-header .nav-right{order:2}
-    body:has(.rbar) .site-header .nav-links{display:flex;order:3;flex:0 0 100%;gap:22px;overflow-x:auto;padding:8px 0 10px;margin-top:4px;border-top:1px solid var(--line)}
-  }</style>
-  <script src="/assets/research-nav.js?v=e0144007" defer></script>
 </body>
 </html>
