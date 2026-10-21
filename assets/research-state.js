@@ -105,7 +105,7 @@
         ? 'We could not find a source good enough to say who answers here. That is a gap in our reading, not a finding about the county.'
         : c.tier === 'A' ? (c.source === 'local' ? 'Named directly by a county or agency source.' : 'Named directly by a state record.')
         : (c.partial ? 'A record names the provider for some towns here, not the whole county. ' : '')
-          + 'Agencies are listed by licence address or Medicare billing, which is not proof they answer 911 in this county. An inferred county is a lead, not a fact.') + '</p>'
+          + (c.via ? 'Source: ' + c.via + ', credited to the state office. It lists each service once, under the county where it is licensed and tagged primary 911, not by service area. An inferred county is a lead, not a fact.' : 'Agencies are listed by licence address or Medicare billing, which is not proof they answer 911 in this county. An inferred county is a lead, not a fact.')) + '</p>'
         + '<button type="button" class="rm-report">This is wrong &mdash; tell us</button>'
         + '<button type="button" class="rm-link">Copy link to this county</button>';
       return h;

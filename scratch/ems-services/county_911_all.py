@@ -1,0 +1,159 @@
+"""County layer for every state: when you call 911 here, who transports?
+Per county: providers from the state's rows (basis 'serves' when the source names the
+county as service area -- CA EOA zones, AZ CON, MN PSA, MS county list, GA grant/zoning,
+OR ASA, CT PSAR towns -- else 'located' = the agency's address county), Medicare
+emergency-majority billers located in the county by ZIP, and a confidence tier:
+  A  a provider-of-record source names the county
+  B  a roster transporter located here that also bills Medicare emergencies from here
+  C  a roster transporter located here, unconfirmed
+  D  Medicare emergency billers only
+  -  nothing
+Answer ownership = public / private / hospital / mixed from the best available basis."""
+import json, csv, collections, re, glob, os
+from dedupe import agencies
+from transport import transport
+from irs_match import norm
+from report_who import PUBLIC
+SERVES = {'CA', 'AZ', 'MN', 'MS', 'GA', 'HI', 'DC'}
+FIPS = {}
+for r in csv.DictReader(open('states/census_county_pop_2024.csv', encoding='latin-1')):
+    if r['SUMLEV'] == '040': FIPS[r['STATE']] = r['STNAME']
+ST_ABBR = {'Alabama':'AL','Alaska':'AK','Arizona':'AZ','Arkansas':'AR','California':'CA','Colorado':'CO','Connecticut':'CT','Delaware':'DE','District of Columbia':'DC','Florida':'FL','Georgia':'GA','Hawaii':'HI','Idaho':'ID','Illinois':'IL','Indiana':'IN','Iowa':'IA','Kansas':'KS','Kentucky':'KY','Louisiana':'LA','Maine':'ME','Maryland':'MD','Massachusetts':'MA','Michigan':'MI','Minnesota':'MN','Mississippi':'MS','Missouri':'MO','Montana':'MT','Nebraska':'NE','Nevada':'NV','New Hampshire':'NH','New Jersey':'NJ','New Mexico':'NM','New York':'NY','North Carolina':'NC','North Dakota':'ND','Ohio':'OH','Oklahoma':'OK','Oregon':'OR','Pennsylvania':'PA','Rhode Island':'RI','South Carolina':'SC','South Dakota':'SD','Tennessee':'TN','Texas':'TX','Utah':'UT','Vermont':'VT','Virginia':'VA','Washington':'WA','West Virginia':'WV','Wisconsin':'WI','Wyoming':'WY'}
+def cname(n): return re.sub(r' (County|Parish|Borough|Census Area|Municipality|City and Borough|city)$', '', n).strip()
+def counties():
+    out = {}
+    for r in csv.DictReader(open('states/census_county_pop_2024.csv', encoding='latin-1')):
+        if r['SUMLEV'] == '050':
+            st = ST_ABBR[r['STNAME']]; out[r['STATE'] + r['COUNTY']] = {'st': st, 'name': r['CTYNAME'], 'key': (st, cname(r['CTYNAME']).lower()), 'pop': int(r['POPESTIMATE2024'])}
+    return out
+def zip_county():
+    best = {}
+    for r in csv.DictReader(open('geo/zcta_county.txt', encoding='utf-8-sig'), delimiter='|'):
+        z = r['GEOID_ZCTA5_20']; a = int(r['AREALAND_PART'] or 0)
+        if z and (z not in best or a > best[z][1]): best[z] = (r['GEOID_COUNTY_20'], a)
+    return best
+def ct_town_county():
+    m = {}
+    for r in csv.DictReader(open('geo/2024_Gaz_cousubs_national.txt', encoding='latin-1'), delimiter='\t'):
+        if r['USPS'] == 'CT': m[re.sub(r' town$', '', r['NAME'].strip()).lower()] = r['GEOID'][:5]
+    return m
+def or_asa():
+    m = collections.defaultdict(set)
+    for f in json.load(open('states/OR_ASA.json'))['features']:
+        a = f['attributes']; 
+        if a.get('ASA_AMBULANCE_PROVIDER_NAME') and a.get('COUNTY_NAME'): m[norm(a['ASA_AMBULANCE_PROVIDER_NAME'])].add(a['COUNTY_NAME'].title())
+    return m
+# Counties whose rows name only some towns (main-town sourcing) are NOT tier A: those providers are kept as 'located' evidence.
+# Only these counties have a row that says the whole county (or an explicit countywide service) is covered.
+PARTIAL_STATES = {'OH', 'IL', 'NJ', 'WA', 'PA'}
+WHOLE_COUNTY = {('OH', 'Delaware'), ('NJ', 'Mercer'), ('NJ', 'Gloucester'), ('WA', 'Spokane'), ('WA', 'Thurston'), ('WA', 'Whatcom'),
+                ('PA', 'Philadelphia'), ('PA', 'Montgomery'), ('PA', 'Bucks'), ('PA', 'Delaware'), ('PA', 'Chester'), ('PA', 'York'),
+                ('PA', 'Berks'), ('PA', 'Cumberland'), ('PA', 'Centre'), ('PA', 'Northampton'), ('PA', 'Monroe')}
+def own_word(t):
+    t = (t or '').lower()
+    if t.startswith('mixed'): return 'mixed'
+    if re.search(r'hospital', t): return 'hospital'
+    if re.search(r'private|commercial|contractor|non-?profit|volunteer', t): return 'private'
+    if re.search(r'fire|municipal|district|public|county|city|third|government', t): return 'public'
+    return None
+def own_of(p):
+    m = p['own']
+    if m in ('public', 'private', 'hospital', 'mixed'): return m      # Medicare / provider-of-record vocabulary
+    return 'public' if m in PUBLIC or m == 'federal' else 'hospital' if m == 'hospital' else 'private' if m == 'private' else 'other'
+def build():
+    C = counties(); bykey = {v['key']: k for k, v in C.items()}
+    rows = [r for r in agencies() if transport(r) == 'transport' and r.get('response') != 'Transfer']   # TX roster flags interfacility-only licences
+    try: rec = json.load(open('states/county_recovered.json'))
+    except FileNotFoundError: rec = {}
+    zc = zip_county(); ctm = ct_town_county(); ora = or_asa()
+    # tier-A provider-of-record rows: GA zoning, CO metro, and states/<ST>_911.json (never COUNTY_911_<ST>.json, county_911.py's draft)
+    extra = {f: json.load(open(f)) for f in ['states/GA_zoning.json', 'states/CO_metro_911.json'] + sorted(glob.glob('states/[A-Z][A-Z]_911.json'))}
+    S = {k: dict(v, providers=[], medicare=[]) for k, v in C.items()}
+    def add(st, county, p):
+        k = bykey.get((st, cname(county).strip().lower()))
+        if k: S[k]['providers'].append(p); return True
+        return False
+    for r in rows:
+        st = r['state']; p = {'name': r['provider'], 'own': r['model'], 'sub': r.get('subtype'), 'src': r['model_source'], 'basis': 'serves' if st in SERVES else 'located'}
+        if st == 'CT':
+            for t in r.get('towns', []):
+                g = ctm.get(t.lower())
+                if g: S[g]['providers'].append(dict(p, basis='serves'))
+            continue
+        if st == 'OR':
+            for c in ora.get(norm(r['provider']), []): add('OR', c, dict(p, basis='serves'))
+            continue
+        cty = r.get('county') or rec.get(f"{st}|{r['provider']}") or ''
+        for c in re.split(r'[/,;]', cty):
+            if c.strip(): add(st, c, dict(p))
+    # official provider-of-record lists from the agents (GA zoning, CO metro), basis 'serves', tier A
+    from model_of import model_of
+    for f in json.load(open('states/OR_ASA.json'))['features']:
+        a = f['attributes']; nm = a.get('ASA_AMBULANCE_PROVIDER_NAME'); c = a.get('COUNTY_NAME')
+        if nm and c: add('OR', c.title(), {'name': nm.strip(), 'own': model_of(nm), 'sub': None, 'src': 'derived', 'basis': 'serves', 'note': a.get('ASA_NAME')})
+    for e in json.load(open('states/MS_county_providers.json')):
+        for c in (e['county'] if isinstance(e['county'], list) else re.split(r'[/,;]', e['county'] or '')):
+            add('MS', re.sub(r'\s+MS$', '', c.strip()), {'name': e['provider'], 'own': model_of(e['provider']), 'sub': None, 'src': 'derived', 'basis': 'serves', 'note': e.get('level')})
+    for f, d in extra.items():
+        for e in d:
+            if not e.get('provider') or e.get('transport', True) is not True: continue   # zoning rows carry no flag: a 911 zone IS the designation
+            if re.search(r'SUPERSEDED|not named verbatim', (e.get('zone_note') or '') + (e.get('provider') or ''), re.I): continue
+            url = e.get('source_url') or ''
+            kind = 'state' if url.startswith('states/') or e.get('source_type') == 'regional council' else 'local'
+            note = '; '.join(x for x in (e.get('zone_note') or e.get('area'), e.get('flag')) if x)   # flag: an unresolved conflict or a dated change
+            est = e.get('st') or os.path.basename(f)[:2]
+            part = est in PARTIAL_STATES and (est, e['county']) not in WHOLE_COUNTY
+            add(est, e['county'], {'name': e['provider'], 'own': own_word(e.get('ownership')) or model_of(e['provider']), 'sub': None, 'src': 'provider-of-record', 'basis': 'located' if part else 'serves', 'partial': part, 'kind': kind, 'note': note, 'url': url})
+    # TN DoH EMS Directory: each service listed once, under the county where it is LICENSED (a *PRIMARY 911 tag is strong evidence, not a service area). Never tier A: basis 'located', so B/C by the Medicare check.
+    for e in json.load(open('states/TN_directory.json')):
+        add('TN', e['county'], {'name': e['provider'], 'own': model_of(e['provider']), 'sub': None, 'src': 'directory', 'basis': 'located', 'note': e['evidence'], 'url': e['source_url']})
+    for o in json.load(open('cms/orgs/2024_labeled.json')):
+        z = zc.get(o['zip'])
+        if z and z[0] in S: S[z[0]]['medicare'].append({'name': o['name'], 'own': o['own'], 'sub': o['subtype'], 'E': int(o['E']), 'share': round(o['share'], 2), 'emerg': o['share'] >= .5})
+    for k, d in S.items():
+        d['medicare'].sort(key=lambda m: -m['E']); mnames = {norm(m['name']) for m in d['medicare'] if m['emerg']}
+        seen = set(); ps = []
+        for p in d['providers']:
+            key = (norm(p['name']), p['basis'])
+            if key in seen: continue
+            seen.add(key); p['confirmed'] = norm(p['name']) in mnames; ps.append(p)
+        d['providers'] = ps
+        serves = [p for p in ps if p['basis'] == 'serves']; conf = [p for p in ps if p['confirmed']]
+        if serves: tier, ans = 'A', serves
+        elif conf: tier, ans = 'B', conf
+        elif ps: tier, ans = 'C', ps
+        elif any(m['emerg'] for m in d['medicare']): tier, ans = 'D', [dict(m, src='medicare') for m in d['medicare'] if m['emerg']]
+        else: tier, ans = '-', []
+        owns = set(); [owns.update(['public','private'] if own_of(p)=='mixed' else [own_of(p)]) for p in ans if p.get('own') and own_of(p) != 'other']
+        if any(p.get('src') == 'directory' for p in ans): d['via'] = 'Tennessee Department of Health EMS Directory (licensed county)'
+        d['partial'] = tier != 'A' and any(p.get('partial') for p in ps)
+        d['tier'] = tier; d['answer'] = [p['name'] for p in ans]
+        if tier == 'A': d['source'] = 'state' if any(p.get('kind', 'state') == 'state' for p in ans) else 'local'   # rows without kind came from a state layer
+        d['ownership'] = ('mixed' if len(owns) > 1 else next(iter(owns)) if owns else 'unknown')
+    return S
+if __name__ == '__main__':
+    S = build(); json.dump(S, open('county_911.json', 'w'))
+    # slim file the site reads (scripts/build-research-*.mjs)
+    json.dump({k: {**{f: d[f] for f in ('name', 'st', 'pop', 'tier', 'ownership')}, **({'source': d['source']} if d['tier'] == 'A' else {}), **({'partial': True} if d['partial'] else {}), **({'via': d['via']} if d.get('via') else {})} for k, d in S.items()},
+              open('../../data/county-911.json', 'w'), separators=(',', ':'), ensure_ascii=False)
+    # per-state files for /research/atlas/?state=XX: the slim fields plus the agencies on record
+    def pretty(n):
+        n = re.sub(r'\s+(DBA|D/B/A)\.?$', '', n.strip(), flags=re.I)
+        if n.isupper(): n = re.sub(r'\b(Llc|Lp|Llp|Pllc|Ems|Esd|Emd|Ii|Iii)\b', lambda m: m.group(1).upper(), n.title())
+        return re.sub(r'(?<=\w) (Of|And|The|For|At|In)\b', lambda m: m.group(0).lower(), n)
+    # display only: test records, tax/finance offices and airport authorities are billing or roster noise, never an answer
+    junk = re.compile(r'\btest\b|\bdemo\b|office of (the )?(tax|budget|revenue|finance|treasurer)|budget director|finance office|tax and revenue|treasurer|\bauditors?\b|\bfinance\b|comptroller|airports? authority|^\W*\d+\s', re.I)
+    shown = lambda d: [pretty(a) for a in d['answer'] if not junk.search(a)]
+    os.makedirs('../../data/atlas', exist_ok=True); byst = collections.defaultdict(dict)
+    for k, d in S.items():
+        byst[d['st']][k] = {**{f: d[f] for f in ('name', 'pop', 'tier', 'ownership')}, **({'source': d['source']} if d['tier'] == 'A' else {}),
+                            **({'partial': True} if d['partial'] else {}), **({'via': d['via']} if d.get('via') else {}), 'n': len(shown(d)), 'a': shown(d)[:12]}
+    for st, v in byst.items(): json.dump(v, open(f'../../data/atlas/{st}.json', 'w'), separators=(',', ':'), ensure_ascii=False)
+    tiers = collections.Counter(d['tier'] for d in S.values()); pop = collections.Counter()
+    for d in S.values(): pop[d['tier']] += d['pop']
+    tot = sum(d['pop'] for d in S.values())
+    print('counties by tier:', dict(tiers), ' population share:', {k: f'{v/tot:.0%}' for k, v in pop.items()})
+    print('ownership of answer:', collections.Counter(d['ownership'] for d in S.values() if d['tier'] != '-'))
+    per = collections.defaultdict(collections.Counter)
+    for d in S.values(): per[d['st']][d['tier']] += 1
+    print(' '.join(f"{st}:{''.join(f'{t}{c}' for t, c in sorted(cn.items()))}" for st, cn in sorted(per.items())))

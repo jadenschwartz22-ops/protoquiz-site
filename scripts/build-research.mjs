@@ -562,7 +562,7 @@ ${excluded.map(stateRow).join('\n')}
               ? 'We found records for this county but could not tell what kind of agency runs the service. The gap is ours, not the county’s.'
               : c.tier === 'A'
                 ? (c.source === 'local' ? 'Named directly by a county or agency source.' : 'Named directly by a state record.')
-                : (c.partial ? 'A record names the provider for some towns here, not the whole county. ' : '') + 'Inferred from licensing rosters and Medicare billing. An inferred county is a lead, not a fact.')
+                : (c.partial ? 'A record names the provider for some towns here, not the whole county. ' : '') + (c.via ? 'Source: ' + c.via + ', credited to the state office. It lists each service once, under the county where it is licensed and tagged primary 911, not by service area. An inferred county is a lead, not a fact.' : 'Inferred from licensing rosters and Medicare billing. An inferred county is a lead, not a fact.'))
             + '</p>';
           // The correction form is the one that already exists further down the page --
           // this link scrolls to it and fills the county in, so a reader who spots a bad

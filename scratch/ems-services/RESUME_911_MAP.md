@@ -66,7 +66,7 @@ Known wrong by construction (fix before publishing any state as done):
 | OH | 88 | 0 | 0 | 0 | 87 | 1 | 100% | ODPS EMS roster needs the records request; county EMS pages are the fallback |
 | NC | 100 | 0 | 17 | 74 | 7 | 2 | 77% | OEMS roster HAS the 911 field; county EMS is the provider in most counties, map from county sites |
 | VA | 133 | 0 | 23 | 48 | 39 | 23 | 94% | OEMS agency list + county/city fire-EMS pages; many independent cities |
-| TN | 95 | 0 | 0 | 0 | 71 | 24 | 100% | TN publishes only totals; county EMS pages (most counties run county EMS); records request |
+| TN | 95 | 0 | 15 | 80 | 0 | 0 | 90% | 10-21: DoH EMS Directory (licensed county, *PRIMARY 911 tag; states/TN_directory.README.md) is tier B/C, not A; county EMS pages or a service-area record would make A |
 | MD | 24 | 0 | 0 | 0 | 24 | 0 | 100% | MIEMSS jurisdictional pages are login-walled; each county has one jurisdictional program, 24 pages by hand |
 | IN | 92 | 0 | 4 | 47 | 33 | 8 | 83% | IDHS roster has 911 field; county sites |
 | LA | 64 | 0 | 0 | 0 | 22 | 42 | 100% | parish sites; Acadian dominates; LA records request |
