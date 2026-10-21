@@ -132,19 +132,94 @@ def build():
         for s in v['services']:
             add('ND', v['county'], {'name': s['name'], 'own': model_of(s['name']), 'sub': None, 'src': 'provider-of-record', 'basis': 'serves' if v['tier'] == 'A' else 'located', 'partial': v['tier'] != 'A', 'kind': 'state',
                                     'note': f"{s['share']:.0%} of the county by the atlas ambulance service-area polygon", 'url': nd['meta']['atlas_url'], 'via': ND_VIA})
-    # Gap-research verdicts (2026-10-21; WA NV NH RI): per county `drop` (roster names removed), `add` (sourced rows; a same-named roster row is replaced), `show` (names listed in a tier-B answer) and `page_note`;
+    # Gap-research verdicts (2026-10-21; WA NV NH RI VA FL MD): per county `drop` (roster names removed), `add` (sourced rows; a same-named roster row is replaced), `show` (names listed in a tier-B answer) and `page_note`;
     # meta.county_page_note puts one short note on every county of a state that publishes no 911 areas (NH, RI). Tiers are never set here: they follow the rows (states/<ST>_public_2026-10.README.md).
-    for st in ('WA', 'NV', 'NH', 'RI'):
+    # Verdict keys are county FIPS (the S key), so Baltimore city (24510) never collides with Baltimore County by name. FL: only the A-supportable counties are wired.
+    for st in ('WA', 'NV', 'NH', 'RI', 'VA', 'FL', 'MD'):
         g = json.load(open(f'states/{st}_public_2026-10.json')); sn = g['meta'].get('county_page_note')
         for k in [k for k, d in S.items() if d['st'] == st and sn]: S[k]['note'] = sn
-        for v in g.get('county_verdict', {}).values():
-            k = bykey[(st, cname(v['county']).lower())]; gone = set(v.get('drop', [])) | {a['name'] for a in v.get('add', [])}
+        for fk, v in g.get('county_verdict', {}).items():
+            if st == 'FL' and v['tier'] != 'A': continue
+            k = fk if fk in S else bykey[(st, cname(v['county']).lower())]; gone = set(v.get('drop', [])) | {a['name'] for a in v.get('add', [])}
             if v.get('page_note'): S[k]['note'] = v['page_note']
             S[k]['providers'] = [p for p in S[k]['providers'] if p['name'] not in gone]
             for p in S[k]['providers']:
                 if p['name'] in v.get('show', []): p['show'] = True
             for a in v.get('add', []):
-                add(st, v['county'], {'name': a['name'], 'own': model_of(a['name']), 'sub': None, 'src': 'provider-of-record', 'basis': a['basis'], 'partial': a.get('partial', False), 'kind': a['kind'], 'note': a['note'], 'url': a['url'], **({'via': a['via']} if a.get('via') else {})})
+                S[k]['providers'].append({'name': a['name'], 'own': model_of(a['name']), 'sub': None, 'src': 'provider-of-record', 'basis': a['basis'], 'partial': a.get('partial', False), 'kind': a['kind'], 'note': a['note'], 'url': a['url'], **({'via': a['via']} if a.get('via') else {})})
+    # Public-source state files (2026-10-21), one block per state, shapes differ. Every service the file names for a tier-A county is listed, none picked; tiers follow the rows.
+    # pub(): a provider-of-record row; `transport` is the file's own value (True / False / None), never guessed from a name. basis 'serves' = the source names the county (or a named part of it).
+    def pub(k, name, via, url, note, kind='state', basis='serves', partial=False, transport=None, own=None):
+        S[k]['providers'].append({'name': name, 'own': own or model_of(name), 'sub': None, 'src': 'provider-of-record', 'basis': basis, 'partial': partial, 'kind': kind, 'note': note, 'url': url, 'via': via, 'transport': transport})
+    def load(st): return json.load(open(f'states/{st}_public_2026-10.json'))
+    def ck(st, v): return bykey[(st, cname(v['county']).lower())]
+    NOT_SAID = 'the source does not say this service carries patients'
+    # UT: UGRC EMS Response Areas (NG911, compiled from Bureau of EMS licence descriptions + dispatch data). 29 of 29 counties >=97% covered. Confirmed non-transport units (QRU, SAR, training centres) are not read; unmatched names stay, transport unknown.
+    UT_VIA = 'Utah UGRC EMS response areas, the state NG911 service areas layer (compiled from Bureau of EMS licence descriptions; not a licence record)'
+    ut = load('UT'); utrow = {r['name']: r for r in ut['rows']}
+    nt = lambda n: re.search(r'non transport|Training Center', utrow[n]['licence_class'] or '')
+    for v in ut['county_verdict'].values():
+        sv = [s for s in v['services'] if not nt(s['name'])] or v['services']   # a county whose only named service is a fuzzy-matched non-transport class keeps it, flagged (Emery)
+        for s in sv:
+            r = utrow[s['name']]
+            pub(ck('UT', v), s['name'], UT_VIA, r['source_url'], 'named in the state EMS response-area layer for this county' + ('' if r['transport'] else f"; licence class {r['licence_class']}, transport not confirmed" if r['licence_class'] else '; licence class not matched, transport not confirmed'), transport=r['transport'])
+    # VT: VCGI ambulance service areas, one provider of record per town (a compilation); 14 of 14 counties >=99.8% covered. Several services per county, alphabetical.
+    VT_VIA = 'Vermont VCGI ambulance service areas, the state service-area layer (one provider of record per town)'
+    vt = load('VT'); vtrow = {r['name']: r for r in vt['rows']}
+    for fk, v in vt['county_verdict'].items():
+        for s in v['services']:
+            r = vtrow[s['name']]
+            pub(fk, s['name'], VT_VIA, r['source_url'], 'assigned town by town in the state service-area layer' + ('' if r['transport'] else '; ' + NOT_SAID), transport=r['transport'])
+    # TX: DETCOG, Panhandle and Bastrop 911 GIS service-area layers; only the A-supportable counties. Partial and held counties keep their tier and show the file's page_note.
+    TX_VIA = 'Texas regional and county 911 GIS service-area layers (DETCOG, Panhandle, Bastrop), not the DSHS licence record'
+    tx = load('TX')
+    for fk, v in tx['county_verdict'].items():
+        if v.get('page_note'): S[fk]['note'] = v['page_note']
+        if v['tier'] != 'A': continue
+        for s in v['services']: pub(fk, s['name'], TX_VIA, v['source_url'], 'named in the regional 911 GIS service-area layer; ' + NOT_SAID, kind='local')
+    # OK: Regional Medical Response System EMS service-area maps (a regional EMS roster, not the OSDH licence record). A whole-county layer serves the county; a city layer serves its city limits only (partial).
+    OK_VIA = 'Oklahoma Regional Medical Response System EMS service-area maps (a regional EMS roster, not the OSDH licence record)'
+    ok = load('OK')
+    for fk, v in ok['county_verdict'].items():
+        if v.get('page_note'): S[fk]['note'] = v['page_note']
+        if v['tier'] != 'A': continue
+        for s in v['services']:   # `area` = a Regions 6/8 RSA map layer; `share` = a Region 2 agency polygon (second source)
+            pub(fk, s['name'].replace(' (County Based)', ''), OK_VIA, v['source_url'] if 'area' in s else ok['meta']['sources'][1]['url'],
+                (s['area'] + ' on the RSA map' if 'area' in s else f"{s['share']:.0%} of the county by the Region 2 agency polygons") + '; ' + NOT_SAID, kind='local', partial='area' in s and s['area'] != 'whole county')
+    # MO: ambulance-district polygons (an osageadmin compilation, 2023) cross-checked with the DHSS ground-station layer. A 63 only; A-unverified (4), partial and none keep their tier and show the file's page_note.
+    MO_VIA = 'Missouri ambulance-district boundaries, a compilation of district service areas (cross-checked with the MO DHSS ambulance station layer; not a state or licence record)'
+    mo = load('MO'); morow = {r['name']: r for r in mo['rows']}
+    for fk, v in mo['county_verdict'].items():
+        if v.get('page_note'): S[fk]['note'] = v['page_note']
+        if v['tier'] != 'A': continue
+        for s in v['services']:
+            r = morow[s['name']]; dh = r['dhss_name_match']
+            pub(fk, dh[0] if len(dh) == 1 else s['name'], MO_VIA, r['source_url'], f"ambulance district layer name '{s['name']}'" + (f"; DHSS station layer: {', '.join(dh)}" if dh else '; no DHSS ground station of that name inside it'), kind='local', transport=r['transport'], own=own_word(r['ownership']) or 'public')
+    # KS: NG911 EMS emergency service boundaries (Kansas 911 Coordinating Council, stewarded by the county PSAPs). A 55 only (named polygon matches a KBEMS ground licence); A-unverified (35) and partial keep their tier. The label is the PSAP's free text, not a licence-exact name.
+    KS_VIA = 'Kansas NG911 EMS service area boundaries (Kansas 911 Coordinating Council, stewarded by the county PSAPs; not a licence record)'
+    ks = load('KS'); ksrow = {r['name']: r for r in ks['rows']}
+    for fk, v in ks['county_verdict'].items():
+        if v.get('page_note'): S[fk]['note'] = v['page_note']
+        if v['tier'] != 'A': continue
+        for s in v['services']:
+            rg = s.get('roster_ground_match') or []
+            pub(fk, s['name'], KS_VIA, ksrow[s['name']]['source_url'], "the PSAP's label in the state NG911 layer" + (f"; KBEMS ground licence: {', '.join(rg)}" if rg else '; no KBEMS ground licence name matched'), transport=s.get('transport'))
+    # WI: statewide NG911 EMS boundary layer (Office of Emergency Communications, county-submitted). A 62 only; the 7 partial and 3 none keep their tier. Fire and first-responder labels stay, transport False; "Verify EMS" placeholders are not providers.
+    WI_VIA = 'Wisconsin NG911 EMS service area boundaries (Office of Emergency Communications, county-submitted; not a licence record)'
+    wi = load('WI'); wirow = {r['name']: r for r in wi['rows']}
+    for fk, v in wi['county_verdict'].items():
+        if v.get('page_note'): S[fk]['note'] = v['page_note']
+        if v['tier'] != 'A': continue
+        for s in v['services']:
+            if re.search(r'verify', s['name'], re.I): continue
+            pub(fk, s['name'], WI_VIA, wirow[s['name']]['source_url'], "the county's label in the state NG911 layer" + ('' if s['transport'] else '; ' + NOT_SAID), transport=s['transport'])
+    # OH: five county NG911/GIS layers found, no statewide layer. Wood, Huron, Paulding are A; the layer labels (Huron, Paulding) are the county's own short names, kept as written.
+    OH_VIA = "Ohio county NG911/GIS EMS service area boundaries (the county's own layer; not a licence record)"
+    oh = load('OH'); ohlay = {l['county_fips']: l for l in oh['meta']['layers'].values()}
+    for fk in ('39173', '39077', '39125'):
+        v = oh['county_verdict'][fk]
+        if v.get('page_note'): S[fk]['note'] = v['page_note']
+        for s in v['services']: pub(fk, s['name'], OH_VIA, ohlay[fk]['url'], "the county layer's label; " + NOT_SAID, kind='local', transport=False)
     for o in json.load(open('cms/orgs/2024_labeled.json')):
         z = zc.get(o['zip'])
         if z and z[0] in S: S[z[0]]['medicare'].append({'name': o['name'], 'own': o['own'], 'sub': o['subtype'], 'E': int(o['E']), 'share': round(o['share'], 2), 'emerg': o['share'] >= .5})
