@@ -83,10 +83,11 @@ Known wrong by construction (fix before publishing any state as done):
 | NE | 93 | 0 | 0 | 0 | 80 | 13 | 100% | NE publishes only totals; volunteer rescue squads, county sites |
 | ID | 44 | 0 | 0 | 0 | 39 | 5 | 100% | Idaho roster has 911 field but the county pull failed; rerun |
 | NM | 33 | 0 | 0 | 31 | 2 | 0 | 100% | NM roster has 911 field; PRC certificates carry territory |
-| WY, AK, MT, SD, ND, NV | | | | | | | | thin rosters; county/borough sites; small population, low priority |
+| ND | 53 | 53 | 0 | 0 | 0 | 0 | 0% | 10-21: ND HHS EMS service-area atlas (ND GIS Hub ambulance boundary layer, 147 polygons, 127 services; states/ND_public_2026-10.README.md): every county >=99.9% covered, 3-10 services each, all named, none picked; was B28 C21 D3 none1. Layer is flagged preliminary; ownership not in the atlas (derived from names, mostly unknown) |
+| WY, AK, MT, SD, NV | | | | | | | | thin rosters; county/borough sites; small population, low priority |
 
 Near-done states, spot-check only: PA (2% unconf), CO 5%, VT 5%, MN 8%, NY 11%, NJ 11%,
-GA 15% (20 blank pending ORA), NH 15%, ME 17%, WI 25%, MI 27%, ND 28%, WA 28%, MA 34%.
+GA 15% (20 blank pending ORA), NH 15%, ME 17%, WI 25%, MI 27%, WA 28%, MA 34%.
 
 ## What worked (use in this order)
 

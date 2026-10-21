@@ -120,6 +120,14 @@ def build():
             r = kyrow[n]; part = not v['whole_county_services']
             add('KY', c, {'name': re.sub(r' \(\d+\)$', '', n), 'own': KY_OWN[r['org_type']], 'sub': None, 'src': 'provider-of-record', 'basis': 'located' if held or part else 'serves', 'partial': part, 'kind': 'state',
                           'note': r['service_area_text'] + ('; ' + KY_CONFLICT[c] if held else ''), 'url': r['source_url'], 'via': KY_VIA})
+    # ND HHS EMS service-area atlas (official, ND GIS Hub ambulance boundary layer, 2026-10-21): polygon-vs-county overlay, tier A where the ambulance polygons cover >=95% of the county (states/ND_public_2026-10.README.md).
+    # A licensed service area is not an exclusive or dispatch assignment, so every service naming the county (>=1% of its area) is kept; none is picked. Quick-response units are not providers of record and are not read.
+    ND_VIA = 'North Dakota HHS EMS service-area atlas (official), credited to the state EMS unit'
+    nd = json.load(open('states/ND_public_2026-10.json'))
+    for v in nd['county_verdict'].values():
+        for s in v['services']:
+            add('ND', v['county'], {'name': s['name'], 'own': model_of(s['name']), 'sub': None, 'src': 'provider-of-record', 'basis': 'serves' if v['tier'] == 'A' else 'located', 'partial': v['tier'] != 'A', 'kind': 'state',
+                                    'note': f"{s['share']:.0%} of the county by the atlas ambulance service-area polygon", 'url': nd['meta']['atlas_url'], 'via': ND_VIA})
     for o in json.load(open('cms/orgs/2024_labeled.json')):
         z = zc.get(o['zip'])
         if z and z[0] in S: S[z[0]]['medicare'].append({'name': o['name'], 'own': o['own'], 'sub': o['subtype'], 'E': int(o['E']), 'share': round(o['share'], 2), 'emerg': o['share'] >= .5})

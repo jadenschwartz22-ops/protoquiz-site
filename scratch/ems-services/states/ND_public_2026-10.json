@@ -1,0 +1,4943 @@
+{
+ "meta": {
+  "retrieved": "2026-10-21",
+  "atlas_url": "https://des-ndgov.maps.arcgis.com/apps/instant/atlas/index.html?appid=8d96c5ab33674fccaa7a71997a0f9997&webmap=16ad17bd65754482922d22eb40ae7617",
+  "webmap_item": "16ad17bd65754482922d22eb40ae7617",
+  "layer": "NDGISHUB_Emergency_Medical_Services_Boundary (FeatureServer/0)",
+  "layer_last_edit": "2025-12-29",
+  "polygons": 147,
+  "distinct_services": 127,
+  "qru_polygons": 54,
+  "min_share_listed": 0.01,
+  "a_threshold": 0.95,
+  "tier_counts": {
+   "A": 53
+  }
+ },
+ "rows": [
+  {
+   "name": "Almont EMS",
+   "state_name": "ALMONT EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2023-07-18",
+   "ambulance_locations": [
+    {
+     "address": "108 BURT AVE",
+     "community": "ALMONT"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Altru EMS",
+   "state_name": "ALTRU EMS",
+   "polygons": 2,
+   "sources": [
+    "CITY OF GRAND FORKS 911",
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-04-09",
+   "ambulance_locations": [
+    {
+     "address": "1200 S COLUMBIA RD",
+     "community": "GRAND FORKS"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Ambulance Service Incorp",
+   "state_name": "AMBULANCE SERVICE INCORP",
+   "polygons": 1,
+   "sources": [
+    "RICHLAND COUNTY 911"
+   ],
+   "updated": "2022-03-04",
+   "ambulance_locations": [
+    {
+     "address": "120 MINNESOTA AVE",
+     "community": "BRECKENRIDGE"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Ashley EMS",
+   "state_name": "ASHLEY EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "212 6TH ST NW",
+     "community": "ASHLEY"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Barnes County EMS",
+   "state_name": "BARNES COUNTY EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "914 11TH AVE SW",
+     "community": "VALLEY CITY"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Beach EMS",
+   "state_name": "BEACH EMS",
+   "polygons": 2,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES",
+    "MCKENZIE COUNTY 911"
+   ],
+   "updated": "2025-12-01",
+   "ambulance_locations": [
+    {
+     "address": "65 2ND AVE SE",
+     "community": "BEACH"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Belcourt EMS",
+   "state_name": "BELCOURT EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-10-14",
+   "ambulance_locations": [
+    {
+     "address": "1300 HOSPITAL LOOP",
+     "community": "BELCOURT"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Belfield EMS",
+   "state_name": "BELFIELD EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "106 3RD AVE SE",
+     "community": "BELFIELD"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Berthold EMS",
+   "state_name": "BERTHOLD EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2023-07-12",
+   "ambulance_locations": [
+    {
+     "address": "9 3RD AVE NE",
+     "community": "BERTHOLD"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Beulah EMS",
+   "state_name": "BEULAH EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "909 PARKWAY DR",
+     "community": "BEULAH"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Bottineau EMS",
+   "state_name": "BOTTINEAU EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "323 BENNETT ST",
+     "community": "BOTTINEAU"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Bowbells EMS",
+   "state_name": "BOWBELLS EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "101 2ND ST NW",
+     "community": "BOWBELLS"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Bowdon EMS",
+   "state_name": "BOWDON EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "211 WARRINGTON AVE",
+     "community": "BOWDEN"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Bowman EMS",
+   "state_name": "BOWMAN EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "606 1ST ST SW",
+     "community": "BOWMAN"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Cando EMS",
+   "state_name": "CANDO EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2024-01-10",
+   "ambulance_locations": [
+    {
+     "address": "314 MAIN ST",
+     "community": "CANDO"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Carrington EMS",
+   "state_name": "CARRINGTON EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "840 4TH ST N",
+     "community": "CARRINGTON"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Casselton EMS",
+   "state_name": "CASSELTON EMS",
+   "polygons": 1,
+   "sources": [
+    "CASS COUNTY 911"
+   ],
+   "updated": "2025-12-03",
+   "ambulance_locations": [
+    {
+     "address": "101 6TH AVE S",
+     "community": "CASSELTON"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Cavalier EMS",
+   "state_name": "CAVALIER EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "105 W 2ND AVE N",
+     "community": "CAVALIER"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Cooperstown EMS",
+   "state_name": "COOPERSTOWN EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-10-13",
+   "ambulance_locations": [
+    {
+     "address": "611 9TH ST NE",
+     "community": "COOPERSTOWN"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Crosby EMS",
+   "state_name": "CROSBY EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-10-07",
+   "ambulance_locations": [
+    {
+     "address": "107 W CENTRAL AVE",
+     "community": "CROSBY"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Dickinson EMS",
+   "state_name": "DICKINSON EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "42 B AVE E",
+     "community": "DICKINSON"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Drayton EMS",
+   "state_name": "DRAYTON EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "105 W GRANT AVE",
+     "community": "DRAYTON"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Dunseith EMS",
+   "state_name": "DUNSEITH EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-10-14",
+   "ambulance_locations": [
+    {
+     "address": "515 MAIN ST",
+     "community": "DUNSEITH"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Edgeley EMS",
+   "state_name": "EDGELEY EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "108 7TH AVE",
+     "community": "EDGELEY"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Edmore EMS",
+   "state_name": "EDMORE EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2024-01-10",
+   "ambulance_locations": [
+    {
+     "address": "303 MADISON ST S",
+     "community": "EDMORE"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Ellendale EMS",
+   "state_name": "ELLENDALE EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "53 3RD AVE S",
+     "community": "ELLENDALE"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Emmons County EMS",
+   "state_name": "EMMONS COUNTY EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "518 BROADWAY ST N",
+     "community": "LINTON"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "F-M EMS",
+   "state_name": "F-M EMS",
+   "polygons": 1,
+   "sources": [
+    "CASS COUNTY 911"
+   ],
+   "updated": "2025-12-03",
+   "ambulance_locations": [
+    {
+     "address": "2215 18TH ST S",
+     "community": "FARGO"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Fairview EMS",
+   "state_name": "FAIRVIEW EMS",
+   "polygons": 1,
+   "sources": [
+    "MCKENZIE COUNTY 911"
+   ],
+   "updated": "2024-03-28",
+   "ambulance_locations": [
+    {
+     "address": "218 4TH AVE WEST",
+     "community": "FAIRVIEW"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Fessenden EMS",
+   "state_name": "FESSENDEN EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "602 RAILWAY ST S",
+     "community": "FESSENDEN"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Finley EMS",
+   "state_name": "FINLEY EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "207 CENTRAL AVE",
+     "community": "FINLEY"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "First Medic EMS",
+   "state_name": "FIRST MEDIC EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "1100 OAK ST",
+     "community": "LISBON"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Flasher EMS",
+   "state_name": "FLASHER EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "96 2ND AVE W",
+     "community": "FLASHER"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Forman EMS",
+   "state_name": "FORMAN EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "355 MAIN ST S",
+     "community": "FORMAN"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "GF AFB EMS",
+   "state_name": "GF AFB EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2023-07-12",
+   "ambulance_locations": [
+    {
+     "address": "1599 JONES ST",
+     "community": "GRAND FORKS AIR FORCE BASE"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Gackle EMS",
+   "state_name": "GACKLE EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "201 MAIN ST",
+     "community": "GACKLE"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Garrison EMS",
+   "state_name": "GARRISON EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2023-07-12",
+   "ambulance_locations": [
+    {
+     "address": "143 5TH ST SE",
+     "community": "GARRISON"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Glen Ullin EMS",
+   "state_name": "GLEN ULLIN EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "206 S 2ND ST",
+     "community": "GLEN ULLIN"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Grenora EMS",
+   "state_name": "GRENORA EMS",
+   "polygons": 2,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES",
+    "WILLIAMS COUNTY"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "205 MAIN ST",
+     "community": "GRENORA"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Halliday EMS",
+   "state_name": "HALLIDAY EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "32 MAIN ST E",
+     "community": "HALLIDAY"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Hankinson EMS",
+   "state_name": "HANKINSON EMS",
+   "polygons": 1,
+   "sources": [
+    "RICHLAND COUNTY 911"
+   ],
+   "updated": "2022-03-04",
+   "ambulance_locations": [
+    {
+     "address": "102 MAIN AVE N",
+     "community": "HANKINSON"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Harvey EMS",
+   "state_name": "HARVEY EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "713 ALDER AVE",
+     "community": "HARVEY"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Hazen EMS",
+   "state_name": "HAZEN EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2022-10-18",
+   "ambulance_locations": [
+    {
+     "address": "801 4TH ST NE",
+     "community": "HAZEN"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Hebron EMS",
+   "state_name": "HEBRON EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "620 WASHINGTON AVE",
+     "community": "HEBRON"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Hillsboro EMS",
+   "state_name": "HILLSBORO EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2022-08-18",
+   "ambulance_locations": [
+    {
+     "address": "12 3RD ST SE",
+     "community": "HILLSBORO"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Hope EMS",
+   "state_name": "HOPE EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "202 STEELE AVE",
+     "community": "HOPE"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Hunter EMS",
+   "state_name": "HUNTER EMS",
+   "polygons": 2,
+   "sources": [
+    "CASS COUNTY 911",
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-12-03",
+   "ambulance_locations": [
+    {
+     "address": "401 MAIN ST",
+     "community": "HUNTER"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Jamestown EMS",
+   "state_name": "JAMESTOWN EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "502 1ST AVE S",
+     "community": "JAMESTOWN"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Kenmare EMS",
+   "state_name": "KENMARE EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "5 3RD ST NE",
+     "community": "KENMARE"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Kidder EMS",
+   "state_name": "KIDDER EMS",
+   "polygons": 2,
+   "sources": [
+    "BURLEIGH COUNTY 911",
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "120 MITCHELL AVE N",
+     "community": "STEELE"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Killdeer EMS",
+   "state_name": "KILLDEER EMS",
+   "polygons": 2,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES",
+    "MCKENZIE COUNTY 911"
+   ],
+   "updated": "2024-11-21",
+   "ambulance_locations": [
+    {
+     "address": "151 CENTRAL AVE",
+     "community": "KILLDEER"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Kindred EMS",
+   "state_name": "KINDRED EMS",
+   "polygons": 3,
+   "sources": [
+    "CASS COUNTY 911",
+    "DEPARTMENT OF EMERGENCY SERVICES",
+    "RICHLAND COUNTY 911"
+   ],
+   "updated": "2025-12-03",
+   "ambulance_locations": [
+    {
+     "address": "100 1ST AVE N",
+     "community": "KINDRED"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Kulm EMS",
+   "state_name": "KULM EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2023-07-12",
+   "ambulance_locations": [
+    {
+     "address": "10 1ST ST SW",
+     "community": "KULM"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "LaMoure EMS",
+   "state_name": "LAMOURE EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "31 CENTER AVE E",
+     "community": "LAMOURE"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Lake Region EMS",
+   "state_name": "LAKE REGION EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-10-13",
+   "ambulance_locations": [
+    {
+     "address": "314 2ND AVE SE",
+     "community": "DEVILS LAKE"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Lakota EMS",
+   "state_name": "LAKOTA EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-10-13",
+   "ambulance_locations": [
+    {
+     "address": "306 A AVE W",
+     "community": "LAKOTA"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Langdon EMS",
+   "state_name": "LANGDON EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "909 2ND ST",
+     "community": "LANGDON"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Lansford EMS",
+   "state_name": "LANSFORD EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "655 LAUREL ST",
+     "community": "LANSFORD"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Larimore EMS",
+   "state_name": "LARIMORE EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2023-07-12",
+   "ambulance_locations": [
+    {
+     "address": "420 TOWNER AVE",
+     "community": "LARIMORE"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Leeds EMS",
+   "state_name": "LEEDS EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2022-10-17",
+   "ambulance_locations": [
+    {
+     "address": "130 1ST AVE NW",
+     "community": "LEEDS"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Lemmon EMS",
+   "state_name": "LEMMON EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-12-23",
+   "ambulance_locations": [],
+   "has_location_point": false,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Lidgerwood EMS",
+   "state_name": "LIDGERWOOD EMS",
+   "polygons": 2,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES",
+    "RICHLAND COUNTY 911"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "109 PARK ST W",
+     "community": "LIDGERWOOD"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Maddock EMS",
+   "state_name": "MADDOCK EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "99 WESTERN AVE N",
+     "community": "MADDOCK"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Mandaree EMS",
+   "state_name": "MANDAREE EMS",
+   "polygons": 2,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES",
+    "MCKENZIE COUNTY 911"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "401 RIDGE RD",
+     "community": "MANDAREE"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Marmarth EMS",
+   "state_name": "MARMARTH EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "204 N MAIN",
+     "community": "MARMARTH"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Max EMS",
+   "state_name": "MAX EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "207 2ND AVE",
+     "community": "MAX"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "McClusky EMS",
+   "state_name": "MCCLUSKY EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "311 MAIN ST S",
+     "community": "MCCLUSKY"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "McHenry EMS",
+   "state_name": "MCHENRY EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-10-13",
+   "ambulance_locations": [
+    {
+     "address": "178 JOHNSTON ST",
+     "community": "MCHENRY"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "McVille EMS",
+   "state_name": "MCVILLE EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-10-13",
+   "ambulance_locations": [
+    {
+     "address": "118 MCDOUGAL AVE W",
+     "community": "MCVILLE"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Medina EMS",
+   "state_name": "MEDINA EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "107 COLLEGE ST SW",
+     "community": "MEDINA"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Medora EMS",
+   "state_name": "MEDORA EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2024-05-29",
+   "ambulance_locations": [
+    {
+     "address": "604 EAST RIVER RD S",
+     "community": "MEDORA"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Metro EMS",
+   "state_name": "METRO EMS",
+   "polygons": 3,
+   "sources": [
+    "BURLEIGH COUNTY 911",
+    "CITY OF BISMARCK 911",
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "2940 N 19TH ST",
+     "community": "BISMARCK"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Michigan EMS",
+   "state_name": "MICHIGAN EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2024-01-10",
+   "ambulance_locations": [
+    {
+     "address": "117 BROADWAY N",
+     "community": "MICHIGAN"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Milnor EMS",
+   "state_name": "MILNOR EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "323 MAIN ST",
+     "community": "MILNOR"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Minot AFB EMS",
+   "state_name": "MINOT AFB EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2018-08-02",
+   "ambulance_locations": [
+    {
+     "address": "17331 HWY 83 N",
+     "community": "MINOT AFB"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Minot Community EMS",
+   "state_name": "MINOT COMMUNITY EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "305 11TH AVE SW",
+     "community": "MINOT"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Mohall EMS",
+   "state_name": "MOHALL EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2023-07-12",
+   "ambulance_locations": [
+    {
+     "address": "104 CENTRAL AVE N",
+     "community": "MOHALL"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Mott EMS",
+   "state_name": "MOTT EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "301 E 5TH ST",
+     "community": "MOTT"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Munich EMS",
+   "state_name": "MUNICH EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2024-01-10",
+   "ambulance_locations": [
+    {
+     "address": "402 4TH AVE",
+     "community": "MUNICH"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Napoleon EMS",
+   "state_name": "NAPOLEON EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "105 3RD ST W",
+     "community": "NAPOLEON"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "New England EMS",
+   "state_name": "NEW ENGLAND EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "639 MAIN ST",
+     "community": "NEW ENGLAND"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "New Leipzig EMS",
+   "state_name": "NEW LEIPZIG EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "26 1ST ST SE",
+     "community": "NEW LEIPZIG"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "New Rockford EMS",
+   "state_name": "NEW ROCKFORD EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-10-13",
+   "ambulance_locations": [
+    {
+     "address": "117 1ST ST S",
+     "community": "NEW ROCKFORD"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "New Salem EMS",
+   "state_name": "NEW SALEM EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "109 5TH ST N",
+     "community": "NEW SALEM"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "New Town EMS",
+   "state_name": "NEW TOWN EMS",
+   "polygons": 2,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES",
+    "MCKENZIE COUNTY 911"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "107 SOO PL",
+     "community": "NEW TOWN"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Northwood EMS",
+   "state_name": "NORTHWOOD EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2023-07-12",
+   "ambulance_locations": [
+    {
+     "address": "4 N PARK ST",
+     "community": "NORTHWOOD"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Oakes EMS",
+   "state_name": "OAKES EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "615 IVY AVE",
+     "community": "OAKES"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Oliver EMS",
+   "state_name": "OLIVER EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "208 MARKET ST E",
+     "community": "CENTER"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Page EMS",
+   "state_name": "PAGE EMS",
+   "polygons": 2,
+   "sources": [
+    "CASS COUNTY 911",
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-12-03",
+   "ambulance_locations": [
+    {
+     "address": "114 MORTON AVE",
+     "community": "PAGE"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Park River EMS",
+   "state_name": "PARK RIVER EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "203 CODE AVE",
+     "community": "PARK RIVER"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Parshall EMS",
+   "state_name": "PARSHALL EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "116 1ST AVE NE",
+     "community": "PARSHALL"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Pembina EMS",
+   "state_name": "PEMBINA EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "152 W ROLETTE ST W",
+     "community": "PEMBINA"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Plaza EMS",
+   "state_name": "PLAZA EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2022-10-25",
+   "ambulance_locations": [
+    {
+     "address": "308 4TH AVE",
+     "community": "PLAZA"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Portal EMS",
+   "state_name": "PORTAL EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "300 CLARK ST",
+     "community": "PORTAL"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Powers Lake EMS",
+   "state_name": "POWERS LAKE EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "115 RAILROAD AVE W",
+     "community": "POWERS LAKE"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Ray Community EMS",
+   "state_name": "RAY COMMUNITY EMS",
+   "polygons": 2,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES",
+    "WILLIAMS COUNTY"
+   ],
+   "updated": "2025-10-07",
+   "ambulance_locations": [
+    {
+     "address": "24 1ST AVE",
+     "community": "RAY"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Regent EMS",
+   "state_name": "REGENT EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "100 MAIN ST",
+     "community": "REGENT"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Richardton EMS",
+   "state_name": "RICHARDTON EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "112 MAIN ST N",
+     "community": "RICHARDTON"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Riverdale EMS",
+   "state_name": "RIVERDALE EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2022-10-18",
+   "ambulance_locations": [
+    {
+     "address": "307 DAKOTA AVE",
+     "community": "RIVERDALE"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Rock Lake EMS",
+   "state_name": "ROCK LAKE EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2021-12-22",
+   "ambulance_locations": [
+    {
+     "address": "33 MAIN ST",
+     "community": "ROCK LAKE"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Rolette EMS",
+   "state_name": "ROLETTE EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2024-03-06",
+   "ambulance_locations": [
+    {
+     "address": "304 MAIN ST",
+     "community": "ROLETTE"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Rolla EMS",
+   "state_name": "ROLLA EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-10-14",
+   "ambulance_locations": [
+    {
+     "address": "217 5TH AVE NE",
+     "community": "ROLLA"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Rugby EMS",
+   "state_name": "RUGBY EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "800 MAIN AVE S",
+     "community": "RUGBY"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Ryder Makoti EMS",
+   "state_name": "RYDER MAKOTI EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2022-10-25",
+   "ambulance_locations": [
+    {
+     "address": "50 2ND AVE W",
+     "community": "MAKOTI"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Sherwood EMS",
+   "state_name": "SHERWOOD EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "108 MAIN ST",
+     "community": "SHERWOOD"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Sidney EMS",
+   "state_name": "SIDNEY EMS",
+   "polygons": 1,
+   "sources": [
+    "MCKENZIE COUNTY 911"
+   ],
+   "updated": "2024-03-28",
+   "ambulance_locations": [
+    {
+     "address": "216 14TH AVE SW",
+     "community": "SIDNEY"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Spirit Lake EMS",
+   "state_name": "SPIRIT LAKE EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-10-13",
+   "ambulance_locations": [
+    {
+     "address": "7686 EPHRIAM HILL RD",
+     "community": "FORT TOTTEN"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Standing Rock EMS",
+   "state_name": "STANDING ROCK EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-12-23",
+   "ambulance_locations": [
+    {
+     "address": "9311 HIGHWAY 24",
+     "community": "FORT YATES"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Stanley EMS",
+   "state_name": "STANLEY EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "14TH ST SE",
+     "community": "STANLEY"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Tioga EMS",
+   "state_name": "TIOGA EMS",
+   "polygons": 2,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES",
+    "WILLIAMS COUNTY"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "810 WELO ST N",
+     "community": "TIOGA"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Towner EMS",
+   "state_name": "TOWNER EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "308 MAIN ST S",
+     "community": "TOWNER"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Turtle Lake EMS",
+   "state_name": "TURTLE LAKE EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-10-15",
+   "ambulance_locations": [
+    {
+     "address": "216 PUTNAM ST",
+     "community": "TURTLE LAKE"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Underwood EMS",
+   "state_name": "UNDERWOOD EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2018-06-27",
+   "ambulance_locations": [
+    {
+     "address": "208 GRANT AVE",
+     "community": "UNDERWOOD"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Upham EMS",
+   "state_name": "UPHAM EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "6 D AVE S",
+     "community": "UPHAM"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Valley EMS",
+   "state_name": "VALLEY EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "1317 GRIGGS AVE",
+     "community": "GRAFTON"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Velva EMS",
+   "state_name": "VELVA EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "101 1ST ST W",
+     "community": "VELVA"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Walhalla EMS",
+   "state_name": "WALHALLA EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "1309 DELANO AVE",
+     "community": "WALHALLA"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Washburn EMS",
+   "state_name": "WASHBURN EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-10-15",
+   "ambulance_locations": [
+    {
+     "address": "917 MAIN AVE",
+     "community": "WASHBURN"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Watford City EMS",
+   "state_name": "WATFORD CITY EMS",
+   "polygons": 2,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES",
+    "MCKENZIE COUNTY 911"
+   ],
+   "updated": "2025-06-26",
+   "ambulance_locations": [
+    {
+     "address": "204 3RD AVE NE",
+     "community": "WATFORD CITY"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "West River EMS",
+   "state_name": "WEST RIVER EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "1000 HWY 12",
+     "community": "HETTINGER"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "West Traill EMS",
+   "state_name": "WEST TRAILL EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2023-05-31",
+   "ambulance_locations": [
+    {
+     "address": "42 6TH AVE SE",
+     "community": "MAYVILLE"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Westhope EMS",
+   "state_name": "WESTHOPE EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "110 RAILWAY E",
+     "community": "WESTHOPE"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "White Shield EMS",
+   "state_name": "WHITE SHIELD EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "9 2ND AVE W",
+     "community": "WHITE SHIELD"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Williston EMS",
+   "state_name": "WILLISTON EMS",
+   "polygons": 2,
+   "sources": [
+    "MCKENZIE COUNTY 911",
+    "WILLIAMS COUNTY"
+   ],
+   "updated": "2024-03-28",
+   "ambulance_locations": [
+    {
+     "address": "317 11TH ST W",
+     "community": "WILLISTON"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Wilton EMS",
+   "state_name": "WILTON EMS",
+   "polygons": 2,
+   "sources": [
+    "BURLEIGH COUNTY 911",
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2025-10-15",
+   "ambulance_locations": [
+    {
+     "address": "117 DAKOTA AVE",
+     "community": "WILTON"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Wishek EMS",
+   "state_name": "WISHEK EMS",
+   "polygons": 1,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES"
+   ],
+   "updated": "2022-10-19",
+   "ambulance_locations": [
+    {
+     "address": "305 BADGER ST S",
+     "community": "WISHEK"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  },
+  {
+   "name": "Wyndmere EMS",
+   "state_name": "WYNDMERE EMS",
+   "polygons": 2,
+   "sources": [
+    "DEPARTMENT OF EMERGENCY SERVICES",
+    "RICHLAND COUNTY 911"
+   ],
+   "updated": "2025-07-15",
+   "ambulance_locations": [
+    {
+     "address": "403 ASH AV",
+     "community": "WYNDMERE"
+    }
+   ],
+   "has_location_point": true,
+   "source_url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Emergency_Medical_Services_Boundary/FeatureServer/0"
+  }
+ ],
+ "county_verdict": {
+  "38001": {
+   "county": "Adams",
+   "ems_coverage": 0.9996,
+   "ems_overlap_share": 0.0202,
+   "services": [
+    {
+     "name": "Lemmon EMS",
+     "share": 0.1498
+    },
+    {
+     "name": "Mott EMS",
+     "share": 0.0733
+    },
+    {
+     "name": "New Leipzig EMS",
+     "share": 0.0281
+    },
+    {
+     "name": "Regent EMS",
+     "share": 0.067
+    },
+    {
+     "name": "West River EMS",
+     "share": 0.6959
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Bowman EMS",
+     "share": 0.0042
+    },
+    {
+     "name": "New England EMS",
+     "share": 0.0016
+    }
+   ],
+   "qru_units_not_counted": [
+    {
+     "name": "REEDER QUICK RESPONSE",
+     "share": 0.2634
+    }
+   ],
+   "qru_coverage": 0.2634,
+   "rescue_coverage_not_counted": 0.9996,
+   "tier": "A"
+  },
+  "38003": {
+   "county": "Barnes",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.018,
+   "services": [
+    {
+     "name": "Barnes County EMS",
+     "share": 0.843
+    },
+    {
+     "name": "Hope EMS",
+     "share": 0.0498
+    },
+    {
+     "name": "Jamestown EMS",
+     "share": 0.0523
+    },
+    {
+     "name": "LaMoure EMS",
+     "share": 0.0394
+    },
+    {
+     "name": "Page EMS",
+     "share": 0.0271
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Casselton EMS",
+     "share": 0.0028
+    },
+    {
+     "name": "Cooperstown EMS",
+     "share": 0.0027
+    },
+    {
+     "name": "First Medic EMS",
+     "share": 0.0011
+    }
+   ],
+   "qru_units_not_counted": [
+    {
+     "name": "ENDERLIN SHELDON QUICK RESPONSE",
+     "share": 0.025
+    }
+   ],
+   "qru_coverage": 0.0271,
+   "rescue_coverage_not_counted": 0.0468,
+   "tier": "A"
+  },
+  "38005": {
+   "county": "Benson",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.0235,
+   "services": [
+    {
+     "name": "Cando EMS",
+     "share": 0.0104
+    },
+    {
+     "name": "Harvey EMS",
+     "share": 0.0261
+    },
+    {
+     "name": "Lake Region EMS",
+     "share": 0.0618
+    },
+    {
+     "name": "Leeds EMS",
+     "share": 0.3047
+    },
+    {
+     "name": "Maddock EMS",
+     "share": 0.2681
+    },
+    {
+     "name": "Rugby EMS",
+     "share": 0.0882
+    },
+    {
+     "name": "Spirit Lake EMS",
+     "share": 0.2605
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "New Rockford EMS",
+     "share": 0.0024
+    },
+    {
+     "name": "Fessenden EMS",
+     "share": 0.0007
+    },
+    {
+     "name": "McVille EMS",
+     "share": 0.0007
+    }
+   ],
+   "qru_units_not_counted": [
+    {
+     "name": "ESMOND QUICK RESPONSE",
+     "share": 0.1544
+    },
+    {
+     "name": "TOLNA QUICK RESPONSE",
+     "share": 0.017
+    }
+   ],
+   "qru_coverage": 0.1714,
+   "rescue_coverage_not_counted": 0.5996,
+   "tier": "A"
+  },
+  "38007": {
+   "county": "Billings",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.0245,
+   "services": [
+    {
+     "name": "Beach EMS",
+     "share": 0.035
+    },
+    {
+     "name": "Belfield EMS",
+     "share": 0.6311
+    },
+    {
+     "name": "Killdeer EMS",
+     "share": 0.0327
+    },
+    {
+     "name": "Medora EMS",
+     "share": 0.3222
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Watford City EMS",
+     "share": 0.0024
+    },
+    {
+     "name": "New England EMS",
+     "share": 0.001
+    },
+    {
+     "name": "Bowman EMS",
+     "share": 0.0002
+    }
+   ],
+   "qru_units_not_counted": [
+    {
+     "name": "BILLINGS COUNTY QUICK RESPONSE",
+     "share": 1.0
+    }
+   ],
+   "qru_coverage": 1.0,
+   "rescue_coverage_not_counted": 1.0,
+   "tier": "A"
+  },
+  "38009": {
+   "county": "Bottineau",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.0184,
+   "services": [
+    {
+     "name": "Bottineau EMS",
+     "share": 0.4006
+    },
+    {
+     "name": "Lansford EMS",
+     "share": 0.138
+    },
+    {
+     "name": "Mohall EMS",
+     "share": 0.0856
+    },
+    {
+     "name": "Rugby EMS",
+     "share": 0.0114
+    },
+    {
+     "name": "Sherwood EMS",
+     "share": 0.0315
+    },
+    {
+     "name": "Upham EMS",
+     "share": 0.0383
+    },
+    {
+     "name": "Westhope EMS",
+     "share": 0.304
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Towner EMS",
+     "share": 0.0062
+    },
+    {
+     "name": "Dunseith EMS",
+     "share": 0.0021
+    },
+    {
+     "name": "Rolette EMS",
+     "share": 0.0009
+    },
+    {
+     "name": "Minot Community EMS",
+     "share": 0.0
+    }
+   ],
+   "qru_units_not_counted": [],
+   "qru_coverage": 0.0,
+   "rescue_coverage_not_counted": 0.3684,
+   "tier": "A"
+  },
+  "38011": {
+   "county": "Bowman",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.0131,
+   "services": [
+    {
+     "name": "Bowman EMS",
+     "share": 0.8519
+    },
+    {
+     "name": "Marmarth EMS",
+     "share": 0.1577
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "West River EMS",
+     "share": 0.0035
+    }
+   ],
+   "qru_units_not_counted": [
+    {
+     "name": "SCRANTON QUICK RESPONSE",
+     "share": 0.2524
+    }
+   ],
+   "qru_coverage": 0.2524,
+   "rescue_coverage_not_counted": 1.0,
+   "tier": "A"
+  },
+  "38013": {
+   "county": "Burke",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.0261,
+   "services": [
+    {
+     "name": "Bowbells EMS",
+     "share": 0.3297
+    },
+    {
+     "name": "Kenmare EMS",
+     "share": 0.0527
+    },
+    {
+     "name": "Portal EMS",
+     "share": 0.3197
+    },
+    {
+     "name": "Powers Lake EMS",
+     "share": 0.3165
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Crosby EMS",
+     "share": 0.0041
+    },
+    {
+     "name": "Tioga EMS",
+     "share": 0.0018
+    },
+    {
+     "name": "Stanley EMS",
+     "share": 0.0009
+    },
+    {
+     "name": "Sherwood EMS",
+     "share": 0.0008
+    }
+   ],
+   "qru_units_not_counted": [],
+   "qru_coverage": 0.0,
+   "rescue_coverage_not_counted": 1.0,
+   "tier": "A"
+  },
+  "38015": {
+   "county": "Burleigh",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.0156,
+   "services": [
+    {
+     "name": "Kidder EMS",
+     "share": 0.0843
+    },
+    {
+     "name": "Metro EMS",
+     "share": 0.4456
+    },
+    {
+     "name": "Wilton EMS",
+     "share": 0.4799
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "McClusky EMS",
+     "share": 0.0024
+    },
+    {
+     "name": "Emmons County EMS",
+     "share": 0.0018
+    },
+    {
+     "name": "Bowdon EMS",
+     "share": 0.0006
+    },
+    {
+     "name": "Oliver EMS",
+     "share": 0.0006
+    },
+    {
+     "name": "Turtle Lake EMS",
+     "share": 0.0004
+    },
+    {
+     "name": "Washburn EMS",
+     "share": 0.0001
+    }
+   ],
+   "qru_units_not_counted": [],
+   "qru_coverage": 0.0019,
+   "rescue_coverage_not_counted": 0.0162,
+   "tier": "A"
+  },
+  "38017": {
+   "county": "Cass",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.0213,
+   "services": [
+    {
+     "name": "Casselton EMS",
+     "share": 0.3914
+    },
+    {
+     "name": "F-M EMS",
+     "share": 0.1535
+    },
+    {
+     "name": "Hunter EMS",
+     "share": 0.2007
+    },
+    {
+     "name": "Kindred EMS",
+     "share": 0.1307
+    },
+    {
+     "name": "Page EMS",
+     "share": 0.1376
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Barnes County EMS",
+     "share": 0.0031
+    },
+    {
+     "name": "Hope EMS",
+     "share": 0.0017
+    },
+    {
+     "name": "First Medic EMS",
+     "share": 0.0014
+    },
+    {
+     "name": "Hillsboro EMS",
+     "share": 0.0012
+    }
+   ],
+   "qru_units_not_counted": [
+    {
+     "name": "ENDERLIN SHELDON QUICK RESPONSE",
+     "share": 0.065
+    }
+   ],
+   "qru_coverage": 0.066,
+   "rescue_coverage_not_counted": 0.0,
+   "tier": "A"
+  },
+  "38019": {
+   "county": "Cavalier",
+   "ems_coverage": 0.9997,
+   "ems_overlap_share": 0.018,
+   "services": [
+    {
+     "name": "Langdon EMS",
+     "share": 0.6313
+    },
+    {
+     "name": "Munich EMS",
+     "share": 0.3215
+    },
+    {
+     "name": "Walhalla EMS",
+     "share": 0.055
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Edmore EMS",
+     "share": 0.0036
+    },
+    {
+     "name": "Rock Lake EMS",
+     "share": 0.0022
+    },
+    {
+     "name": "Cando EMS",
+     "share": 0.0015
+    },
+    {
+     "name": "Park River EMS",
+     "share": 0.0014
+    },
+    {
+     "name": "Cavalier EMS",
+     "share": 0.0013
+    }
+   ],
+   "qru_units_not_counted": [
+    {
+     "name": "WALES QUICK RESPONSE",
+     "share": 0.1453
+    },
+    {
+     "name": "NEKOMA QUICK RESPONSE",
+     "share": 0.0731
+    }
+   ],
+   "qru_coverage": 0.2221,
+   "rescue_coverage_not_counted": 0.0,
+   "tier": "A"
+  },
+  "38021": {
+   "county": "Dickey",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.0179,
+   "services": [
+    {
+     "name": "Ashley EMS",
+     "share": 0.0268
+    },
+    {
+     "name": "Edgeley EMS",
+     "share": 0.0771
+    },
+    {
+     "name": "Ellendale EMS",
+     "share": 0.3969
+    },
+    {
+     "name": "Kulm EMS",
+     "share": 0.1216
+    },
+    {
+     "name": "LaMoure EMS",
+     "share": 0.0454
+    },
+    {
+     "name": "Oakes EMS",
+     "share": 0.3503
+    }
+   ],
+   "slivers_under_1pct": [],
+   "qru_units_not_counted": [],
+   "qru_coverage": 0.0,
+   "rescue_coverage_not_counted": 1.0,
+   "tier": "A"
+  },
+  "38023": {
+   "county": "Divide",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.0139,
+   "services": [
+    {
+     "name": "Crosby EMS",
+     "share": 0.728
+    },
+    {
+     "name": "Grenora EMS",
+     "share": 0.2367
+    },
+    {
+     "name": "Ray Community EMS",
+     "share": 0.0447
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Powers Lake EMS",
+     "share": 0.0019
+    },
+    {
+     "name": "Portal EMS",
+     "share": 0.0017
+    },
+    {
+     "name": "Tioga EMS",
+     "share": 0.0008
+    }
+   ],
+   "qru_units_not_counted": [],
+   "qru_coverage": 0.0,
+   "rescue_coverage_not_counted": 1.0,
+   "tier": "A"
+  },
+  "38025": {
+   "county": "Dunn",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.0198,
+   "services": [
+    {
+     "name": "Dickinson EMS",
+     "share": 0.0833
+    },
+    {
+     "name": "Halliday EMS",
+     "share": 0.2555
+    },
+    {
+     "name": "Hebron EMS",
+     "share": 0.0106
+    },
+    {
+     "name": "Killdeer EMS",
+     "share": 0.3905
+    },
+    {
+     "name": "Mandaree EMS",
+     "share": 0.1677
+    },
+    {
+     "name": "Richardton EMS",
+     "share": 0.0853
+    },
+    {
+     "name": "Watford City EMS",
+     "share": 0.0108
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Belfield EMS",
+     "share": 0.0083
+    },
+    {
+     "name": "Parshall EMS",
+     "share": 0.0045
+    },
+    {
+     "name": "White Shield EMS",
+     "share": 0.0014
+    },
+    {
+     "name": "Beulah EMS",
+     "share": 0.001
+    },
+    {
+     "name": "New Town EMS",
+     "share": 0.0009
+    }
+   ],
+   "qru_units_not_counted": [],
+   "qru_coverage": 0.0114,
+   "rescue_coverage_not_counted": 0.9959,
+   "tier": "A"
+  },
+  "38027": {
+   "county": "Eddy",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.0278,
+   "services": [
+    {
+     "name": "McHenry EMS",
+     "share": 0.1883
+    },
+    {
+     "name": "New Rockford EMS",
+     "share": 0.6994
+    },
+    {
+     "name": "Spirit Lake EMS",
+     "share": 0.1328
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "McVille EMS",
+     "share": 0.0036
+    },
+    {
+     "name": "Lake Region EMS",
+     "share": 0.0022
+    },
+    {
+     "name": "Cooperstown EMS",
+     "share": 0.0017
+    },
+    {
+     "name": "Maddock EMS",
+     "share": 0.0
+    },
+    {
+     "name": "Carrington EMS",
+     "share": 0.0
+    }
+   ],
+   "qru_units_not_counted": [
+    {
+     "name": "TOLNA QUICK RESPONSE",
+     "share": 0.107
+    }
+   ],
+   "qru_coverage": 0.1087,
+   "rescue_coverage_not_counted": 0.0108,
+   "tier": "A"
+  },
+  "38029": {
+   "county": "Emmons",
+   "ems_coverage": 0.9997,
+   "ems_overlap_share": 0.0153,
+   "services": [
+    {
+     "name": "Emmons County EMS",
+     "share": 0.9561
+    },
+    {
+     "name": "Metro EMS",
+     "share": 0.0201
+    },
+    {
+     "name": "Napoleon EMS",
+     "share": 0.0298
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Standing Rock EMS",
+     "share": 0.005
+    },
+    {
+     "name": "Wishek EMS",
+     "share": 0.0022
+    },
+    {
+     "name": "Ashley EMS",
+     "share": 0.0009
+    },
+    {
+     "name": "Kidder EMS",
+     "share": 0.0009
+    }
+   ],
+   "qru_units_not_counted": [
+    {
+     "name": "STRASBURG QUICK RESPONSE",
+     "share": 0.3625
+    }
+   ],
+   "qru_coverage": 0.3626,
+   "rescue_coverage_not_counted": 0.998,
+   "tier": "A"
+  },
+  "38031": {
+   "county": "Foster",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.0168,
+   "services": [
+    {
+     "name": "Carrington EMS",
+     "share": 0.7141
+    },
+    {
+     "name": "McHenry EMS",
+     "share": 0.2601
+    },
+    {
+     "name": "New Rockford EMS",
+     "share": 0.0389
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Jamestown EMS",
+     "share": 0.0022
+    },
+    {
+     "name": "Cooperstown EMS",
+     "share": 0.0016
+    }
+   ],
+   "qru_units_not_counted": [],
+   "qru_coverage": 0.008,
+   "rescue_coverage_not_counted": 0.5882,
+   "tier": "A"
+  },
+  "38033": {
+   "county": "Golden Valley",
+   "ems_coverage": 0.9995,
+   "ems_overlap_share": 0.0085,
+   "services": [
+    {
+     "name": "Beach EMS",
+     "share": 0.9721
+    },
+    {
+     "name": "Medora EMS",
+     "share": 0.0346
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Bowman EMS",
+     "share": 0.0007
+    },
+    {
+     "name": "Marmarth EMS",
+     "share": 0.0005
+    }
+   ],
+   "qru_units_not_counted": [],
+   "qru_coverage": 0.0124,
+   "rescue_coverage_not_counted": 0.9995,
+   "tier": "A"
+  },
+  "38035": {
+   "county": "Grand Forks",
+   "ems_coverage": 0.9999,
+   "ems_overlap_share": 0.0198,
+   "services": [
+    {
+     "name": "Altru EMS",
+     "share": 0.4492
+    },
+    {
+     "name": "Larimore EMS",
+     "share": 0.3593
+    },
+    {
+     "name": "Northwood EMS",
+     "share": 0.1952
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "GF AFB EMS",
+     "share": 0.0063
+    },
+    {
+     "name": "Michigan EMS",
+     "share": 0.003
+    },
+    {
+     "name": "Valley EMS",
+     "share": 0.0023
+    },
+    {
+     "name": "Park River EMS",
+     "share": 0.0019
+    },
+    {
+     "name": "West Traill EMS",
+     "share": 0.0018
+    },
+    {
+     "name": "Finley EMS",
+     "share": 0.0009
+    }
+   ],
+   "qru_units_not_counted": [
+    {
+     "name": "ANETA QUICK RESPONSE",
+     "share": 0.0139
+    }
+   ],
+   "qru_coverage": 0.0181,
+   "rescue_coverage_not_counted": 0.0162,
+   "tier": "A"
+  },
+  "38037": {
+   "county": "Grant",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.0306,
+   "services": [
+    {
+     "name": "Almont EMS",
+     "share": 0.053
+    },
+    {
+     "name": "Flasher EMS",
+     "share": 0.3375
+    },
+    {
+     "name": "Glen Ullin EMS",
+     "share": 0.0692
+    },
+    {
+     "name": "Hebron EMS",
+     "share": 0.0148
+    },
+    {
+     "name": "New Leipzig EMS",
+     "share": 0.5341
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Lemmon EMS",
+     "share": 0.0098
+    },
+    {
+     "name": "Standing Rock EMS",
+     "share": 0.0055
+    },
+    {
+     "name": "New Salem EMS",
+     "share": 0.0037
+    },
+    {
+     "name": "Mott EMS",
+     "share": 0.0026
+    },
+    {
+     "name": "Richardton EMS",
+     "share": 0.0007
+    }
+   ],
+   "qru_units_not_counted": [
+    {
+     "name": "CARSON QUICK RESPONSE",
+     "share": 0.3014
+    }
+   ],
+   "qru_coverage": 0.3014,
+   "rescue_coverage_not_counted": 0.9999,
+   "tier": "A"
+  },
+  "38039": {
+   "county": "Griggs",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.0275,
+   "services": [
+    {
+     "name": "Cooperstown EMS",
+     "share": 0.8898
+    },
+    {
+     "name": "McHenry EMS",
+     "share": 0.0897
+    },
+    {
+     "name": "McVille EMS",
+     "share": 0.0349
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Barnes County EMS",
+     "share": 0.0048
+    },
+    {
+     "name": "Finley EMS",
+     "share": 0.0041
+    },
+    {
+     "name": "Jamestown EMS",
+     "share": 0.0028
+    },
+    {
+     "name": "Hope EMS",
+     "share": 0.0016
+    }
+   ],
+   "qru_units_not_counted": [
+    {
+     "name": "BINFORD QUICK RESPONSE",
+     "share": 0.2386
+    },
+    {
+     "name": "ANETA QUICK RESPONSE",
+     "share": 0.0764
+    }
+   ],
+   "qru_coverage": 0.3151,
+   "rescue_coverage_not_counted": 1.0,
+   "tier": "A"
+  },
+  "38041": {
+   "county": "Hettinger",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.0228,
+   "services": [
+    {
+     "name": "Mott EMS",
+     "share": 0.4599
+    },
+    {
+     "name": "New England EMS",
+     "share": 0.2002
+    },
+    {
+     "name": "New Leipzig EMS",
+     "share": 0.0388
+    },
+    {
+     "name": "Regent EMS",
+     "share": 0.3177
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Richardton EMS",
+     "share": 0.0026
+    },
+    {
+     "name": "West River EMS",
+     "share": 0.0024
+    },
+    {
+     "name": "Dickinson EMS",
+     "share": 0.001
+    },
+    {
+     "name": "Hebron EMS",
+     "share": 0.0003
+    }
+   ],
+   "qru_units_not_counted": [],
+   "qru_coverage": 0.0013,
+   "rescue_coverage_not_counted": 1.0,
+   "tier": "A"
+  },
+  "38043": {
+   "county": "Kidder",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.0188,
+   "services": [
+    {
+     "name": "Bowdon EMS",
+     "share": 0.1253
+    },
+    {
+     "name": "Gackle EMS",
+     "share": 0.0267
+    },
+    {
+     "name": "Kidder EMS",
+     "share": 0.7195
+    },
+    {
+     "name": "Medina EMS",
+     "share": 0.0794
+    },
+    {
+     "name": "Napoleon EMS",
+     "share": 0.0623
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Wilton EMS",
+     "share": 0.0026
+    },
+    {
+     "name": "Carrington EMS",
+     "share": 0.0013
+    },
+    {
+     "name": "Emmons County EMS",
+     "share": 0.001
+    },
+    {
+     "name": "Metro EMS",
+     "share": 0.0008
+    },
+    {
+     "name": "McClusky EMS",
+     "share": 0.0001
+    }
+   ],
+   "qru_units_not_counted": [
+    {
+     "name": "ROBINSON QUICK RESPONSE",
+     "share": 0.2989
+    },
+    {
+     "name": "TAPPEN QUICK RESPONSE",
+     "share": 0.2172
+    },
+    {
+     "name": "PETTIBONE QUICK RESPONSE",
+     "share": 0.1347
+    },
+    {
+     "name": "DAWSON QUICK RESPONSE",
+     "share": 0.1118
+    }
+   ],
+   "qru_coverage": 0.7528,
+   "rescue_coverage_not_counted": 0.9999,
+   "tier": "A"
+  },
+  "38045": {
+   "county": "LaMoure",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.0194,
+   "services": [
+    {
+     "name": "Barnes County EMS",
+     "share": 0.0251
+    },
+    {
+     "name": "Edgeley EMS",
+     "share": 0.358
+    },
+    {
+     "name": "Gackle EMS",
+     "share": 0.0638
+    },
+    {
+     "name": "Kulm EMS",
+     "share": 0.1163
+    },
+    {
+     "name": "LaMoure EMS",
+     "share": 0.4367
+    },
+    {
+     "name": "Oakes EMS",
+     "share": 0.0155
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Jamestown EMS",
+     "share": 0.0027
+    },
+    {
+     "name": "First Medic EMS",
+     "share": 0.0014
+    }
+   ],
+   "qru_units_not_counted": [
+    {
+     "name": "JUD QUICK RESPONSE",
+     "share": 0.1277
+    }
+   ],
+   "qru_coverage": 0.1309,
+   "rescue_coverage_not_counted": 1.0,
+   "tier": "A"
+  },
+  "38047": {
+   "county": "Logan",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.0196,
+   "services": [
+    {
+     "name": "Gackle EMS",
+     "share": 0.2329
+    },
+    {
+     "name": "Kulm EMS",
+     "share": 0.0968
+    },
+    {
+     "name": "Napoleon EMS",
+     "share": 0.4558
+    },
+    {
+     "name": "Wishek EMS",
+     "share": 0.2311
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Emmons County EMS",
+     "share": 0.0024
+    },
+    {
+     "name": "Kidder EMS",
+     "share": 0.0007
+    }
+   ],
+   "qru_units_not_counted": [
+    {
+     "name": "LEHR QUICK RESPONSE",
+     "share": 0.0971
+    }
+   ],
+   "qru_coverage": 0.1022,
+   "rescue_coverage_not_counted": 1.0,
+   "tier": "A"
+  },
+  "38049": {
+   "county": "McHenry",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.019,
+   "services": [
+    {
+     "name": "Bottineau EMS",
+     "share": 0.0105
+    },
+    {
+     "name": "Harvey EMS",
+     "share": 0.0772
+    },
+    {
+     "name": "Minot Community EMS",
+     "share": 0.0417
+    },
+    {
+     "name": "Towner EMS",
+     "share": 0.3668
+    },
+    {
+     "name": "Upham EMS",
+     "share": 0.1345
+    },
+    {
+     "name": "Velva EMS",
+     "share": 0.3835
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Rugby EMS",
+     "share": 0.0028
+    },
+    {
+     "name": "Lansford EMS",
+     "share": 0.0011
+    },
+    {
+     "name": "Westhope EMS",
+     "share": 0.0006
+    },
+    {
+     "name": "Max EMS",
+     "share": 0.0006
+    }
+   ],
+   "qru_units_not_counted": [],
+   "qru_coverage": 0.0,
+   "rescue_coverage_not_counted": 0.9527,
+   "tier": "A"
+  },
+  "38051": {
+   "county": "McIntosh",
+   "ems_coverage": 0.9993,
+   "ems_overlap_share": 0.0175,
+   "services": [
+    {
+     "name": "Ashley EMS",
+     "share": 0.5737
+    },
+    {
+     "name": "Kulm EMS",
+     "share": 0.1093
+    },
+    {
+     "name": "Wishek EMS",
+     "share": 0.3289
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Emmons County EMS",
+     "share": 0.0035
+    },
+    {
+     "name": "Napoleon EMS",
+     "share": 0.0012
+    },
+    {
+     "name": "Ellendale EMS",
+     "share": 0.0004
+    }
+   ],
+   "qru_units_not_counted": [
+    {
+     "name": "SOUTH WEST MCINTOSH QUICK RESPONSE",
+     "share": 0.105
+    },
+    {
+     "name": "LEHR QUICK RESPONSE",
+     "share": 0.0988
+    },
+    {
+     "name": "ZEELAND QUICK RESPONSE",
+     "share": 0.0501
+    }
+   ],
+   "qru_coverage": 0.2519,
+   "rescue_coverage_not_counted": 0.9993,
+   "tier": "A"
+  },
+  "38053": {
+   "county": "McKenzie",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.0167,
+   "services": [
+    {
+     "name": "Beach EMS",
+     "share": 0.0233
+    },
+    {
+     "name": "Fairview EMS",
+     "share": 0.0695
+    },
+    {
+     "name": "Killdeer EMS",
+     "share": 0.0234
+    },
+    {
+     "name": "Mandaree EMS",
+     "share": 0.0654
+    },
+    {
+     "name": "New Town EMS",
+     "share": 0.0443
+    },
+    {
+     "name": "Sidney EMS",
+     "share": 0.1606
+    },
+    {
+     "name": "Watford City EMS",
+     "share": 0.5564
+    },
+    {
+     "name": "Williston EMS",
+     "share": 0.0698
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Tioga EMS",
+     "share": 0.0018
+    },
+    {
+     "name": "Belfield EMS",
+     "share": 0.0012
+    },
+    {
+     "name": "Ray Community EMS",
+     "share": 0.0011
+    }
+   ],
+   "qru_units_not_counted": [
+    {
+     "name": "ALEXANDER QUICK RESPONSE",
+     "share": 0.2614
+    },
+    {
+     "name": "KEENE QUICK RESPONSE",
+     "share": 0.1667
+    },
+    {
+     "name": "GRASSY BUTTE QUICK RESPONSE",
+     "share": 0.1425
+    },
+    {
+     "name": "ARNEGARD QUICK RESPONSE",
+     "share": 0.0797
+    }
+   ],
+   "qru_coverage": 0.6444,
+   "rescue_coverage_not_counted": 0.9976,
+   "tier": "A"
+  },
+  "38055": {
+   "county": "McLean",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.0269,
+   "services": [
+    {
+     "name": "Garrison EMS",
+     "share": 0.1542
+    },
+    {
+     "name": "Max EMS",
+     "share": 0.0888
+    },
+    {
+     "name": "Parshall EMS",
+     "share": 0.0545
+    },
+    {
+     "name": "Riverdale EMS",
+     "share": 0.0363
+    },
+    {
+     "name": "Turtle Lake EMS",
+     "share": 0.2212
+    },
+    {
+     "name": "Underwood EMS",
+     "share": 0.091
+    },
+    {
+     "name": "Velva EMS",
+     "share": 0.045
+    },
+    {
+     "name": "Washburn EMS",
+     "share": 0.0947
+    },
+    {
+     "name": "White Shield EMS",
+     "share": 0.1926
+    },
+    {
+     "name": "Wilton EMS",
+     "share": 0.0246
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Ryder Makoti EMS",
+     "share": 0.0063
+    },
+    {
+     "name": "Halliday EMS",
+     "share": 0.0061
+    },
+    {
+     "name": "Plaza EMS",
+     "share": 0.0032
+    },
+    {
+     "name": "McClusky EMS",
+     "share": 0.0025
+    },
+    {
+     "name": "Mandaree EMS",
+     "share": 0.0019
+    },
+    {
+     "name": "Hazen EMS",
+     "share": 0.0014
+    },
+    {
+     "name": "Beulah EMS",
+     "share": 0.0012
+    },
+    {
+     "name": "Oliver EMS",
+     "share": 0.0008
+    },
+    {
+     "name": "New Town EMS",
+     "share": 0.0007
+    }
+   ],
+   "qru_units_not_counted": [],
+   "qru_coverage": 0.0,
+   "rescue_coverage_not_counted": 0.0707,
+   "tier": "A"
+  },
+  "38057": {
+   "county": "Mercer",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.0248,
+   "services": [
+    {
+     "name": "Beulah EMS",
+     "share": 0.4723
+    },
+    {
+     "name": "Glen Ullin EMS",
+     "share": 0.0144
+    },
+    {
+     "name": "Halliday EMS",
+     "share": 0.1264
+    },
+    {
+     "name": "Hazen EMS",
+     "share": 0.2312
+    },
+    {
+     "name": "Hebron EMS",
+     "share": 0.094
+    },
+    {
+     "name": "Oliver EMS",
+     "share": 0.0113
+    },
+    {
+     "name": "Riverdale EMS",
+     "share": 0.0641
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "White Shield EMS",
+     "share": 0.0078
+    },
+    {
+     "name": "Washburn EMS",
+     "share": 0.002
+    },
+    {
+     "name": "Underwood EMS",
+     "share": 0.001
+    },
+    {
+     "name": "Garrison EMS",
+     "share": 0.0006
+    }
+   ],
+   "qru_units_not_counted": [
+    {
+     "name": "ZAP QUICK RESPONSE",
+     "share": 0.1264
+    }
+   ],
+   "qru_coverage": 0.1264,
+   "rescue_coverage_not_counted": 0.9924,
+   "tier": "A"
+  },
+  "38059": {
+   "county": "Morton",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.0233,
+   "services": [
+    {
+     "name": "Almont EMS",
+     "share": 0.083
+    },
+    {
+     "name": "Flasher EMS",
+     "share": 0.1603
+    },
+    {
+     "name": "Glen Ullin EMS",
+     "share": 0.1408
+    },
+    {
+     "name": "Hebron EMS",
+     "share": 0.0791
+    },
+    {
+     "name": "Metro EMS",
+     "share": 0.3819
+    },
+    {
+     "name": "New Salem EMS",
+     "share": 0.1708
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Standing Rock EMS",
+     "share": 0.0046
+    },
+    {
+     "name": "Emmons County EMS",
+     "share": 0.0015
+    },
+    {
+     "name": "Oliver EMS",
+     "share": 0.0013
+    },
+    {
+     "name": "Wilton EMS",
+     "share": 0.0
+    },
+    {
+     "name": "Richardton EMS",
+     "share": 0.0
+    }
+   ],
+   "qru_units_not_counted": [],
+   "qru_coverage": 0.0,
+   "rescue_coverage_not_counted": 0.9988,
+   "tier": "A"
+  },
+  "38061": {
+   "county": "Mountrail",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.0241,
+   "services": [
+    {
+     "name": "Berthold EMS",
+     "share": 0.0457
+    },
+    {
+     "name": "Kenmare EMS",
+     "share": 0.0577
+    },
+    {
+     "name": "New Town EMS",
+     "share": 0.2054
+    },
+    {
+     "name": "Parshall EMS",
+     "share": 0.1037
+    },
+    {
+     "name": "Plaza EMS",
+     "share": 0.1113
+    },
+    {
+     "name": "Powers Lake EMS",
+     "share": 0.0624
+    },
+    {
+     "name": "Stanley EMS",
+     "share": 0.3452
+    },
+    {
+     "name": "Tioga EMS",
+     "share": 0.0884
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Mandaree EMS",
+     "share": 0.0033
+    },
+    {
+     "name": "Ryder Makoti EMS",
+     "share": 0.0011
+    }
+   ],
+   "qru_units_not_counted": [],
+   "qru_coverage": 0.0,
+   "rescue_coverage_not_counted": 0.2825,
+   "tier": "A"
+  },
+  "38063": {
+   "county": "Nelson",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.0259,
+   "services": [
+    {
+     "name": "Lakota EMS",
+     "share": 0.2127
+    },
+    {
+     "name": "McVille EMS",
+     "share": 0.4162
+    },
+    {
+     "name": "Michigan EMS",
+     "share": 0.3585
+    },
+    {
+     "name": "Northwood EMS",
+     "share": 0.0223
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Larimore EMS",
+     "share": 0.0091
+    },
+    {
+     "name": "Lake Region EMS",
+     "share": 0.0024
+    },
+    {
+     "name": "Cooperstown EMS",
+     "share": 0.002
+    },
+    {
+     "name": "McHenry EMS",
+     "share": 0.0014
+    },
+    {
+     "name": "Finley EMS",
+     "share": 0.0008
+    },
+    {
+     "name": "Spirit Lake EMS",
+     "share": 0.0006
+    },
+    {
+     "name": "Park River EMS",
+     "share": 0.0002
+    }
+   ],
+   "qru_units_not_counted": [
+    {
+     "name": "TOLNA QUICK RESPONSE",
+     "share": 0.2001
+    },
+    {
+     "name": "ANETA QUICK RESPONSE",
+     "share": 0.0887
+    }
+   ],
+   "qru_coverage": 0.2904,
+   "rescue_coverage_not_counted": 0.25,
+   "tier": "A"
+  },
+  "38065": {
+   "county": "Oliver",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.0321,
+   "services": [
+    {
+     "name": "Beulah EMS",
+     "share": 0.1105
+    },
+    {
+     "name": "Glen Ullin EMS",
+     "share": 0.0211
+    },
+    {
+     "name": "Hazen EMS",
+     "share": 0.0903
+    },
+    {
+     "name": "Metro EMS",
+     "share": 0.0443
+    },
+    {
+     "name": "New Salem EMS",
+     "share": 0.0945
+    },
+    {
+     "name": "Oliver EMS",
+     "share": 0.5898
+    },
+    {
+     "name": "Washburn EMS",
+     "share": 0.0779
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Wilton EMS",
+     "share": 0.004
+    }
+   ],
+   "qru_units_not_counted": [],
+   "qru_coverage": 0.0,
+   "rescue_coverage_not_counted": 0.9975,
+   "tier": "A"
+  },
+  "38067": {
+   "county": "Pembina",
+   "ems_coverage": 0.9998,
+   "ems_overlap_share": 0.0204,
+   "services": [
+    {
+     "name": "Cavalier EMS",
+     "share": 0.5394
+    },
+    {
+     "name": "Drayton EMS",
+     "share": 0.1657
+    },
+    {
+     "name": "Park River EMS",
+     "share": 0.045
+    },
+    {
+     "name": "Pembina EMS",
+     "share": 0.1278
+    },
+    {
+     "name": "Valley EMS",
+     "share": 0.0194
+    },
+    {
+     "name": "Walhalla EMS",
+     "share": 0.1205
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Langdon EMS",
+     "share": 0.0026
+    }
+   ],
+   "qru_units_not_counted": [
+    {
+     "name": "ST THOMAS QUICK RESPONSE",
+     "share": 0.1643
+    },
+    {
+     "name": "NECHE QUICK RESPONSE",
+     "share": 0.0917
+    },
+    {
+     "name": "MOUNTAIN QUICK RESPONSE",
+     "share": 0.0914
+    },
+    {
+     "name": "CRYSTAL QUICK RESPONSE",
+     "share": 0.0763
+    },
+    {
+     "name": "EDINBURG QUICK RESPONSE",
+     "share": 0.0205
+    },
+    {
+     "name": "HOOPLE QUICK RESPONSE",
+     "share": 0.017
+    }
+   ],
+   "qru_coverage": 0.4532,
+   "rescue_coverage_not_counted": 0.0017,
+   "tier": "A"
+  },
+  "38069": {
+   "county": "Pierce",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.017,
+   "services": [
+    {
+     "name": "Harvey EMS",
+     "share": 0.2682
+    },
+    {
+     "name": "Leeds EMS",
+     "share": 0.0248
+    },
+    {
+     "name": "Rugby EMS",
+     "share": 0.7125
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Towner EMS",
+     "share": 0.0061
+    },
+    {
+     "name": "Rolette EMS",
+     "share": 0.0038
+    },
+    {
+     "name": "Cando EMS",
+     "share": 0.001
+    },
+    {
+     "name": "Maddock EMS",
+     "share": 0.0006
+    },
+    {
+     "name": "Bottineau EMS",
+     "share": 0.0
+    }
+   ],
+   "qru_units_not_counted": [
+    {
+     "name": "ESMOND QUICK RESPONSE",
+     "share": 0.1091
+    }
+   ],
+   "qru_coverage": 0.1091,
+   "rescue_coverage_not_counted": 0.9997,
+   "tier": "A"
+  },
+  "38071": {
+   "county": "Ramsey",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.0222,
+   "services": [
+    {
+     "name": "Cando EMS",
+     "share": 0.0438
+    },
+    {
+     "name": "Edmore EMS",
+     "share": 0.2729
+    },
+    {
+     "name": "Lake Region EMS",
+     "share": 0.5635
+    },
+    {
+     "name": "Lakota EMS",
+     "share": 0.0959
+    },
+    {
+     "name": "Munich EMS",
+     "share": 0.0267
+    },
+    {
+     "name": "Spirit Lake EMS",
+     "share": 0.0168
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Leeds EMS",
+     "share": 0.0015
+    },
+    {
+     "name": "Langdon EMS",
+     "share": 0.0012
+    },
+    {
+     "name": "McVille EMS",
+     "share": 0.0002
+    }
+   ],
+   "qru_units_not_counted": [
+    {
+     "name": "STARKWEATHER QUICK RESPONSE",
+     "share": 0.1661
+    },
+    {
+     "name": "BROCKET LAWTON QUICK RESPONSE",
+     "share": 0.0905
+    }
+   ],
+   "qru_coverage": 0.2636,
+   "rescue_coverage_not_counted": 0.0152,
+   "tier": "A"
+  },
+  "38073": {
+   "county": "Ransom",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.0271,
+   "services": [
+    {
+     "name": "Barnes County EMS",
+     "share": 0.0198
+    },
+    {
+     "name": "First Medic EMS",
+     "share": 0.7621
+    },
+    {
+     "name": "Kindred EMS",
+     "share": 0.0507
+    },
+    {
+     "name": "LaMoure EMS",
+     "share": 0.0376
+    },
+    {
+     "name": "Milnor EMS",
+     "share": 0.1077
+    },
+    {
+     "name": "Oakes EMS",
+     "share": 0.044
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Wyndmere EMS",
+     "share": 0.0029
+    },
+    {
+     "name": "Casselton EMS",
+     "share": 0.0026
+    }
+   ],
+   "qru_units_not_counted": [
+    {
+     "name": "ENDERLIN SHELDON QUICK RESPONSE",
+     "share": 0.1967
+    },
+    {
+     "name": "FORT RANSOM QUICK RESPONSE",
+     "share": 0.124
+    }
+   ],
+   "qru_coverage": 0.3237,
+   "rescue_coverage_not_counted": 0.0116,
+   "tier": "A"
+  },
+  "38075": {
+   "county": "Renville",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.0299,
+   "services": [
+    {
+     "name": "Berthold EMS",
+     "share": 0.0682
+    },
+    {
+     "name": "Kenmare EMS",
+     "share": 0.1524
+    },
+    {
+     "name": "Lansford EMS",
+     "share": 0.203
+    },
+    {
+     "name": "Minot Community EMS",
+     "share": 0.0252
+    },
+    {
+     "name": "Mohall EMS",
+     "share": 0.3417
+    },
+    {
+     "name": "Sherwood EMS",
+     "share": 0.2396
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Upham EMS",
+     "share": 0.0
+    }
+   ],
+   "qru_units_not_counted": [],
+   "qru_coverage": 0.0,
+   "rescue_coverage_not_counted": 0.0025,
+   "tier": "A"
+  },
+  "38077": {
+   "county": "Richland",
+   "ems_coverage": 0.9999,
+   "ems_overlap_share": 0.0181,
+   "services": [
+    {
+     "name": "Ambulance Service Incorp",
+     "share": 0.254
+    },
+    {
+     "name": "Hankinson EMS",
+     "share": 0.2314
+    },
+    {
+     "name": "Kindred EMS",
+     "share": 0.1889
+    },
+    {
+     "name": "Lidgerwood EMS",
+     "share": 0.1416
+    },
+    {
+     "name": "Wyndmere EMS",
+     "share": 0.1995
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Milnor EMS",
+     "share": 0.0016
+    },
+    {
+     "name": "First Medic EMS",
+     "share": 0.0011
+    }
+   ],
+   "qru_units_not_counted": [
+    {
+     "name": "DWIGHT QUICK RESPONSE",
+     "share": 0.0731
+    },
+    {
+     "name": "FAIRMOUNT QUICK RESPONSE",
+     "share": 0.0643
+    },
+    {
+     "name": "WALCOTT QUICK RESPONSE",
+     "share": 0.064
+    },
+    {
+     "name": "BARNEY QUICK RESPONSE",
+     "share": 0.0571
+    },
+    {
+     "name": "LEONARD QUICK RESPONSE",
+     "share": 0.0416
+    },
+    {
+     "name": "ABERCROMBIE QUICK RESPONSE",
+     "share": 0.0397
+    },
+    {
+     "name": "CHRISTINE QUICK RESPONSE",
+     "share": 0.0351
+    },
+    {
+     "name": "GREAT BEND QUICK RESPONSE",
+     "share": 0.0286
+    },
+    {
+     "name": "COLFAX QUICK RESPONSE",
+     "share": 0.0251
+    }
+   ],
+   "qru_coverage": 0.4217,
+   "rescue_coverage_not_counted": 0.0031,
+   "tier": "A"
+  },
+  "38079": {
+   "county": "Rolette",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.0307,
+   "services": [
+    {
+     "name": "Belcourt EMS",
+     "share": 0.1231
+    },
+    {
+     "name": "Dunseith EMS",
+     "share": 0.2493
+    },
+    {
+     "name": "Rolette EMS",
+     "share": 0.3459
+    },
+    {
+     "name": "Rolla EMS",
+     "share": 0.275
+    },
+    {
+     "name": "Rugby EMS",
+     "share": 0.0304
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Bottineau EMS",
+     "share": 0.0051
+    },
+    {
+     "name": "Cando EMS",
+     "share": 0.0022
+    }
+   ],
+   "qru_units_not_counted": [
+    {
+     "name": "SAINT JOHN QUICK RESPONSE",
+     "share": 0.1912
+    }
+   ],
+   "qru_coverage": 0.1912,
+   "rescue_coverage_not_counted": 0.034,
+   "tier": "A"
+  },
+  "38081": {
+   "county": "Sargent",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.021,
+   "services": [
+    {
+     "name": "Forman EMS",
+     "share": 0.4795
+    },
+    {
+     "name": "Lidgerwood EMS",
+     "share": 0.0843
+    },
+    {
+     "name": "Milnor EMS",
+     "share": 0.2474
+    },
+    {
+     "name": "Oakes EMS",
+     "share": 0.2028
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Wyndmere EMS",
+     "share": 0.0047
+    },
+    {
+     "name": "First Medic EMS",
+     "share": 0.0024
+    }
+   ],
+   "qru_units_not_counted": [
+    {
+     "name": "GWINNER QUICK RESPONSE",
+     "share": 0.1734
+    }
+   ],
+   "qru_coverage": 0.1734,
+   "rescue_coverage_not_counted": 0.9993,
+   "tier": "A"
+  },
+  "38083": {
+   "county": "Sheridan",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.0221,
+   "services": [
+    {
+     "name": "Bowdon EMS",
+     "share": 0.0431
+    },
+    {
+     "name": "Harvey EMS",
+     "share": 0.1968
+    },
+    {
+     "name": "McClusky EMS",
+     "share": 0.6986
+    },
+    {
+     "name": "Velva EMS",
+     "share": 0.0731
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Turtle Lake EMS",
+     "share": 0.0058
+    },
+    {
+     "name": "Wilton EMS",
+     "share": 0.0049
+    }
+   ],
+   "qru_units_not_counted": [],
+   "qru_coverage": 0.0007,
+   "rescue_coverage_not_counted": 0.9994,
+   "tier": "A"
+  },
+  "38085": {
+   "county": "Sioux",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.0347,
+   "services": [
+    {
+     "name": "Flasher EMS",
+     "share": 0.0134
+    },
+    {
+     "name": "Lemmon EMS",
+     "share": 0.1753
+    },
+    {
+     "name": "New Leipzig EMS",
+     "share": 0.011
+    },
+    {
+     "name": "Standing Rock EMS",
+     "share": 0.823
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Emmons County EMS",
+     "share": 0.0074
+    },
+    {
+     "name": "Metro EMS",
+     "share": 0.0048
+    }
+   ],
+   "qru_units_not_counted": [],
+   "qru_coverage": 0.0092,
+   "rescue_coverage_not_counted": 0.0375,
+   "tier": "A"
+  },
+  "38087": {
+   "county": "Slope",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.023,
+   "services": [
+    {
+     "name": "Beach EMS",
+     "share": 0.0631
+    },
+    {
+     "name": "Bowman EMS",
+     "share": 0.4842
+    },
+    {
+     "name": "Marmarth EMS",
+     "share": 0.1801
+    },
+    {
+     "name": "New England EMS",
+     "share": 0.2905
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Belfield EMS",
+     "share": 0.0037
+    },
+    {
+     "name": "Medora EMS",
+     "share": 0.0012
+    },
+    {
+     "name": "West River EMS",
+     "share": 0.0005
+    }
+   ],
+   "qru_units_not_counted": [
+    {
+     "name": "AMIDON QUICK RESPONSE",
+     "share": 0.2808
+    },
+    {
+     "name": "SCRANTON QUICK RESPONSE",
+     "share": 0.0917
+    }
+   ],
+   "qru_coverage": 0.374,
+   "rescue_coverage_not_counted": 1.0,
+   "tier": "A"
+  },
+  "38089": {
+   "county": "Stark",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.02,
+   "services": [
+    {
+     "name": "Belfield EMS",
+     "share": 0.2207
+    },
+    {
+     "name": "Dickinson EMS",
+     "share": 0.3384
+    },
+    {
+     "name": "Hebron EMS",
+     "share": 0.0611
+    },
+    {
+     "name": "New England EMS",
+     "share": 0.0829
+    },
+    {
+     "name": "Richardton EMS",
+     "share": 0.3137
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Mott EMS",
+     "share": 0.002
+    },
+    {
+     "name": "Regent EMS",
+     "share": 0.0013
+    }
+   ],
+   "qru_units_not_counted": [
+    {
+     "name": "BILLINGS COUNTY QUICK RESPONSE",
+     "share": 0.2207
+    }
+   ],
+   "qru_coverage": 0.2207,
+   "rescue_coverage_not_counted": 1.0,
+   "tier": "A"
+  },
+  "38091": {
+   "county": "Steele",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.0317,
+   "services": [
+    {
+     "name": "Cooperstown EMS",
+     "share": 0.0252
+    },
+    {
+     "name": "Finley EMS",
+     "share": 0.4326
+    },
+    {
+     "name": "Hope EMS",
+     "share": 0.3923
+    },
+    {
+     "name": "Northwood EMS",
+     "share": 0.0892
+    },
+    {
+     "name": "West Traill EMS",
+     "share": 0.0875
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Page EMS",
+     "share": 0.0027
+    },
+    {
+     "name": "Hunter EMS",
+     "share": 0.0015
+    },
+    {
+     "name": "McVille EMS",
+     "share": 0.0012
+    },
+    {
+     "name": "Barnes County EMS",
+     "share": 0.0
+    }
+   ],
+   "qru_units_not_counted": [
+    {
+     "name": "ANETA QUICK RESPONSE",
+     "share": 0.0439
+    }
+   ],
+   "qru_coverage": 0.0439,
+   "rescue_coverage_not_counted": 0.0502,
+   "tier": "A"
+  },
+  "38093": {
+   "county": "Stutsman",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.0159,
+   "services": [
+    {
+     "name": "Carrington EMS",
+     "share": 0.1371
+    },
+    {
+     "name": "Gackle EMS",
+     "share": 0.1037
+    },
+    {
+     "name": "Jamestown EMS",
+     "share": 0.5191
+    },
+    {
+     "name": "Medina EMS",
+     "share": 0.2493
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Barnes County EMS",
+     "share": 0.0015
+    },
+    {
+     "name": "Kidder EMS",
+     "share": 0.0014
+    },
+    {
+     "name": "LaMoure EMS",
+     "share": 0.0012
+    },
+    {
+     "name": "Edgeley EMS",
+     "share": 0.0009
+    },
+    {
+     "name": "McHenry EMS",
+     "share": 0.0007
+    },
+    {
+     "name": "Bowdon EMS",
+     "share": 0.0005
+    },
+    {
+     "name": "Cooperstown EMS",
+     "share": 0.0005
+    },
+    {
+     "name": "Napoleon EMS",
+     "share": 0.0001
+    }
+   ],
+   "qru_units_not_counted": [
+    {
+     "name": "WOODWORTH QUICK RESPONSE",
+     "share": 0.1621
+    },
+    {
+     "name": "KENSAL QUICK RESPONSE",
+     "share": 0.0763
+    },
+    {
+     "name": "WIMBLEDON QUICK RESPONSE",
+     "share": 0.0547
+    }
+   ],
+   "qru_coverage": 0.2945,
+   "rescue_coverage_not_counted": 0.9999,
+   "tier": "A"
+  },
+  "38095": {
+   "county": "Towner",
+   "ems_coverage": 0.9999,
+   "ems_overlap_share": 0.0207,
+   "services": [
+    {
+     "name": "Cando EMS",
+     "share": 0.5259
+    },
+    {
+     "name": "Leeds EMS",
+     "share": 0.0314
+    },
+    {
+     "name": "Rock Lake EMS",
+     "share": 0.3399
+    },
+    {
+     "name": "Rolla EMS",
+     "share": 0.1141
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Munich EMS",
+     "share": 0.0058
+    },
+    {
+     "name": "Rugby EMS",
+     "share": 0.0013
+    },
+    {
+     "name": "Lake Region EMS",
+     "share": 0.0013
+    },
+    {
+     "name": "Rolette EMS",
+     "share": 0.0012
+    }
+   ],
+   "qru_units_not_counted": [],
+   "qru_coverage": 0.004,
+   "rescue_coverage_not_counted": 0.0331,
+   "tier": "A"
+  },
+  "38097": {
+   "county": "Traill",
+   "ems_coverage": 0.9999,
+   "ems_overlap_share": 0.0218,
+   "services": [
+    {
+     "name": "Altru EMS",
+     "share": 0.0447
+    },
+    {
+     "name": "Hillsboro EMS",
+     "share": 0.4625
+    },
+    {
+     "name": "Hunter EMS",
+     "share": 0.097
+    },
+    {
+     "name": "West Traill EMS",
+     "share": 0.4092
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Hope EMS",
+     "share": 0.0057
+    },
+    {
+     "name": "Northwood EMS",
+     "share": 0.0028
+    }
+   ],
+   "qru_units_not_counted": [],
+   "qru_coverage": 0.0,
+   "rescue_coverage_not_counted": 0.0,
+   "tier": "A"
+  },
+  "38099": {
+   "county": "Walsh",
+   "ems_coverage": 0.9999,
+   "ems_overlap_share": 0.0211,
+   "services": [
+    {
+     "name": "Drayton EMS",
+     "share": 0.042
+    },
+    {
+     "name": "Edmore EMS",
+     "share": 0.1331
+    },
+    {
+     "name": "Lakota EMS",
+     "share": 0.0158
+    },
+    {
+     "name": "Michigan EMS",
+     "share": 0.0616
+    },
+    {
+     "name": "Park River EMS",
+     "share": 0.4159
+    },
+    {
+     "name": "Valley EMS",
+     "share": 0.3457
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Larimore EMS",
+     "share": 0.0026
+    },
+    {
+     "name": "Langdon EMS",
+     "share": 0.0024
+    },
+    {
+     "name": "Altru EMS",
+     "share": 0.002
+    }
+   ],
+   "qru_units_not_counted": [
+    {
+     "name": "MINTO QUICK RESPONSE",
+     "share": 0.123
+    },
+    {
+     "name": "EDINBURG QUICK RESPONSE",
+     "share": 0.0711
+    },
+    {
+     "name": "HOOPLE QUICK RESPONSE",
+     "share": 0.0571
+    },
+    {
+     "name": "FORDVILLE QUICK RESPONSE",
+     "share": 0.0467
+    },
+    {
+     "name": "OSLO QUICK RESPONSE",
+     "share": 0.0402
+    },
+    {
+     "name": "INKSTER QUICK RESPONSE",
+     "share": 0.0181
+    }
+   ],
+   "qru_coverage": 0.3549,
+   "rescue_coverage_not_counted": 0.3457,
+   "tier": "A"
+  },
+  "38101": {
+   "county": "Ward",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.0196,
+   "services": [
+    {
+     "name": "Berthold EMS",
+     "share": 0.1903
+    },
+    {
+     "name": "Kenmare EMS",
+     "share": 0.1458
+    },
+    {
+     "name": "Max EMS",
+     "share": 0.1114
+    },
+    {
+     "name": "Minot Community EMS",
+     "share": 0.339
+    },
+    {
+     "name": "Plaza EMS",
+     "share": 0.0219
+    },
+    {
+     "name": "Ryder Makoti EMS",
+     "share": 0.1617
+    },
+    {
+     "name": "Velva EMS",
+     "share": 0.0407
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Minot AFB EMS",
+     "share": 0.0043
+    },
+    {
+     "name": "Lansford EMS",
+     "share": 0.0016
+    },
+    {
+     "name": "Bowbells EMS",
+     "share": 0.0014
+    },
+    {
+     "name": "Garrison EMS",
+     "share": 0.0006
+    },
+    {
+     "name": "Powers Lake EMS",
+     "share": 0.0005
+    },
+    {
+     "name": "Mohall EMS",
+     "share": 0.0003
+    }
+   ],
+   "qru_units_not_counted": [
+    {
+     "name": "BURLINGTON QUICK RESPONSE",
+     "share": 0.046
+    }
+   ],
+   "qru_coverage": 0.046,
+   "rescue_coverage_not_counted": 0.043,
+   "tier": "A"
+  },
+  "38103": {
+   "county": "Wells",
+   "ems_coverage": 1.0,
+   "ems_overlap_share": 0.0186,
+   "services": [
+    {
+     "name": "Bowdon EMS",
+     "share": 0.2688
+    },
+    {
+     "name": "Carrington EMS",
+     "share": 0.1426
+    },
+    {
+     "name": "Fessenden EMS",
+     "share": 0.2564
+    },
+    {
+     "name": "Harvey EMS",
+     "share": 0.2424
+    },
+    {
+     "name": "Maddock EMS",
+     "share": 0.0254
+    },
+    {
+     "name": "New Rockford EMS",
+     "share": 0.0831
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Spirit Lake EMS",
+     "share": 0.0
+    }
+   ],
+   "qru_units_not_counted": [],
+   "qru_coverage": 0.0048,
+   "rescue_coverage_not_counted": 1.0,
+   "tier": "A"
+  },
+  "38105": {
+   "county": "Williams",
+   "ems_coverage": 0.9999,
+   "ems_overlap_share": 0.0146,
+   "services": [
+    {
+     "name": "Grenora EMS",
+     "share": 0.2405
+    },
+    {
+     "name": "Ray Community EMS",
+     "share": 0.2612
+    },
+    {
+     "name": "Tioga EMS",
+     "share": 0.1391
+    },
+    {
+     "name": "Williston EMS",
+     "share": 0.3653
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Watford City EMS",
+     "share": 0.0057
+    },
+    {
+     "name": "Crosby EMS",
+     "share": 0.0012
+    },
+    {
+     "name": "Fairview EMS",
+     "share": 0.0011
+    },
+    {
+     "name": "Powers Lake EMS",
+     "share": 0.0005
+    }
+   ],
+   "qru_units_not_counted": [],
+   "qru_coverage": 0.0029,
+   "rescue_coverage_not_counted": 0.2903,
+   "tier": "A"
+  }
+ }
+}
