@@ -132,6 +132,19 @@ def build():
         for s in v['services']:
             add('ND', v['county'], {'name': s['name'], 'own': model_of(s['name']), 'sub': None, 'src': 'provider-of-record', 'basis': 'serves' if v['tier'] == 'A' else 'located', 'partial': v['tier'] != 'A', 'kind': 'state',
                                     'note': f"{s['share']:.0%} of the county by the atlas ambulance service-area polygon", 'url': nd['meta']['atlas_url'], 'via': ND_VIA})
+    # Gap-research verdicts (2026-10-21; WA NV NH RI): per county `drop` (roster names removed), `add` (sourced rows; a same-named roster row is replaced), `show` (names listed in a tier-B answer) and `page_note`;
+    # meta.county_page_note puts one short note on every county of a state that publishes no 911 areas (NH, RI). Tiers are never set here: they follow the rows (states/<ST>_public_2026-10.README.md).
+    for st in ('WA', 'NV', 'NH', 'RI'):
+        g = json.load(open(f'states/{st}_public_2026-10.json')); sn = g['meta'].get('county_page_note')
+        for k in [k for k, d in S.items() if d['st'] == st and sn]: S[k]['note'] = sn
+        for v in g.get('county_verdict', {}).values():
+            k = bykey[(st, cname(v['county']).lower())]; gone = set(v.get('drop', [])) | {a['name'] for a in v.get('add', [])}
+            if v.get('page_note'): S[k]['note'] = v['page_note']
+            S[k]['providers'] = [p for p in S[k]['providers'] if p['name'] not in gone]
+            for p in S[k]['providers']:
+                if p['name'] in v.get('show', []): p['show'] = True
+            for a in v.get('add', []):
+                add(st, v['county'], {'name': a['name'], 'own': model_of(a['name']), 'sub': None, 'src': 'provider-of-record', 'basis': a['basis'], 'partial': a.get('partial', False), 'kind': a['kind'], 'note': a['note'], 'url': a['url'], **({'via': a['via']} if a.get('via') else {})})
     for o in json.load(open('cms/orgs/2024_labeled.json')):
         z = zc.get(o['zip'])
         if z and z[0] in S: S[z[0]]['medicare'].append({'name': o['name'], 'own': o['own'], 'sub': o['subtype'], 'E': int(o['E']), 'share': round(o['share'], 2), 'emerg': o['share'] >= .5})

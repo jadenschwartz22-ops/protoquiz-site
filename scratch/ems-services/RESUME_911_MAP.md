@@ -24,6 +24,9 @@ tier-A wording now says "for the county, or for its main towns". Honest fix late
 Each state's README lists its gaps and a "Needs Chrome" list (IL state licence lookup is the big one).
 Lanes' shared-scratchpad lesson: give each lane its own tools folder; IL's crawl.py overwrote OH's.
 
+## Update 2026-10-21 (gap research: WA NV NH RI)
+Sourced corrections only, tiers follow the rows: WA Stevens C->A (Deer Park added), Asotin/Walla Walla rows fixed and held at C, Garfield note; NV Clark held C partial (LVMPD NG911 layer covers the valley, 6 places outside), Lyon +North Lyon FPD, Churchill/Nye noise removed; NH and RI carry a "Source needed" note on every county (records requests drafted in the gap research, NOT sent). Mechanism: `county_verdict` drop/add/show/page_note and `meta.county_page_note` in states/<ST>_public_2026-10.json, read by county_911_all.py.
+
 ## Where we are (2026-09-12, map v3)
 
 3,144 counties. Tier is the strength of the evidence, colour is ownership of the answer.
