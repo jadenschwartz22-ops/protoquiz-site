@@ -220,6 +220,22 @@ def build():
         v = oh['county_verdict'][fk]
         if v.get('page_note'): S[fk]['note'] = v['page_note']
         for s in v['services']: pub(fk, s['name'], OH_VIA, ohlay[fk]['url'], "the county layer's label; " + NOT_SAID, kind='local', transport=False)
+    # Read-only page notes, NO tier change and no providers: a stale, unnamed or non-911 source is a note on the card, never evidence.
+    idn = load('ID')
+    for fk, v in idn['county_verdict'].items():
+        S[fk]['note'] = "From the state's 2021 layer, not yet reconfirmed (Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021): " + ', '.join(s['name'] for s in v['services']) + '. Tier left alone.'
+    arn = load('AR')
+    for fk, v in arn['county_verdict'].items():
+        S[fk]['note'] = "From the state's 2021 NG911 ambulance service-area layer (data as of Sept 2021, stale, not yet reconfirmed): " + ', '.join(s['name'] for s in v['services']) + '. Tier left alone.'
+    inn = load('IN')
+    for fk, v in inn['county_verdict'].items():
+        S[fk]['note'] = v['page_note'] + ' Most runs: ' + ', '.join(a['name'] for a in v['top_agencies']) + '.'
+    for fk, v in load('LA')['county_verdict'].items():
+        S[fk]['note'] = ('' if 'Acadian' in v['add'][0]['note'] else ', '.join(a['name'] for a in v['add']) + ': ') + v['add'][0]['note'] + ' Tier left alone.'
+    ga = load('GA')['county_verdict']
+    for fk in ('13243', '13205', '13027'):
+        a = ga[fk]['add'][0]
+        S[fk]['note'] = f"Candidate, not confirmed: {a['name']} ({a['via']}: {a['note']}). Tier left alone."
     for o in json.load(open('cms/orgs/2024_labeled.json')):
         z = zc.get(o['zip'])
         if z and z[0] in S: S[z[0]]['medicare'].append({'name': o['name'], 'own': o['own'], 'sub': o['subtype'], 'E': int(o['E']), 'share': round(o['share'], 2), 'emerg': o['share'] >= .5})
