@@ -77,7 +77,7 @@ Known wrong by construction (fix before publishing any state as done):
 | IA | 99 | 0 | 0 | 70 | 22 | 7 | 100% | IDPH roster; county EMS associations; many volunteer |
 | AR | 75 | 0 | 0 | 0 | 35 | 40 | 100% | ADH roster needs request; county sites |
 | AL | 67 | 0 | 16 | 50 | 0 | 1 | 58% | county sites; ADPH roster is licence-only |
-| KY | 120 | 113 | 1 | 6 | 0 | 0 | 5% | 10-21: KBEMS EMS Directory service areas (states/KY_public_2026-10.README.md): 95 single-operator + 18 multi-operator (all named, owner may pick) = A; 4 held at C (Lewis, Henderson, Martin, Warren: NG911 layer names another operator); Fulton, Knox, McLean partial; open: county pages for the 4 conflicts and the 18 overlaps |
+| KY | 120 | 112 | 2 | 6 | 0 | 0 | 5% | 10-21 (spot check: Kenton B partial local fire-EMS, Campbell + Greenup trimmed; see README): KBEMS EMS Directory service areas (states/KY_public_2026-10.README.md): 95 single-operator + 18 multi-operator (all named, owner may pick) = A; 4 held at C (Lewis, Henderson, Martin, Warren: NG911 layer names another operator); Fulton, Knox, McLean partial; open: county pages for the 4 conflicts and the 18 overlaps |
 | KS | 105 | 0 | 8 | 95 | 1 | 1 | 95% | KBEMS roster; county EMS nearly everywhere (county-run = easy public) |
 | MI | 83 | 0 | 32 | 43 | 2 | 6 | 27% | LARA roster has 911 field; MCA (medical control authority) plans list agencies by county |
 | NE | 93 | 0 | 0 | 0 | 80 | 13 | 100% | NE publishes only totals; volunteer rescue squads, county sites |

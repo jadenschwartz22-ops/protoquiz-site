@@ -7265,16 +7265,14 @@
    "tier": "A-multi",
    "basis": "several 911-transport licences name the whole county; provider of record needs a human read",
    "whole_county_services": [
-    "American Medical Response - Northern Kentucky",
     "Campbell Fire/Rescue",
     "Fire Department of Bellevue-Dayton",
-    "First Care Ohio, LLC",
     "NEWPORT FIRE DEPT. AMBULANCE SERVICE",
-    "Southgate-Wilder EMS"
-   ],
-   "part_county_services": [
+    "Southgate-Wilder EMS",
+    "FORT THOMAS FIRE DEPT. AMBULANCE SERVICE",
     "Central Campbell County Fire District"
    ],
+   "part_county_services": [],
    "address_only_services": [],
    "ng911_ems_boundary": {
     "source": "Kentucky_DGI Ky_911_RSB_EMS FeatureServer layer 5, 435 polygons, pulled 2026-10-21 (dataLastEditDate ~2026-08)",
@@ -7298,7 +7296,12 @@
      }
     ]
    },
-   "kbems_vs_ng911_label_overlap": true
+   "kbems_vs_ng911_label_overlap": true,
+   "also_licensed": [
+    "American Medical Response - Northern Kentucky",
+    "First Care Ohio, LLC"
+   ],
+   "spot_check": "Spot check 2026-10-21 (KBEMS EMS_Agencies_2026-08-01.PDF + agency/county pages). AMR and First Care dropped from the 911 list (no county PSAP, unsourced 911 role). Campbell Fire/Rescue kept on its own licence text (\"Campbell County\"; NG911 layer 77% of county area), not on AMR/First Care text. Fort Thomas and Central Campbell hold KBEMS 911-response licences (Campbell County Consolidated Dispatch); listed with their verbatim area text. Melbourne Fire District and Wilder Fire are named by the county but hold no KBEMS 911-transport licence."
   },
   "21039": {
    "county": "Carlisle County",
@@ -7891,13 +7894,9 @@
    "county": "Greenup County",
    "pop": 35273,
    "tier": "A-multi",
-   "basis": "several 911-transport licences name the whole county; provider of record needs a human read",
+   "basis": "Greenup County Ambulance Authority is the countywide 911 ambulance since 2024-01-01 (6 paramedic ambulances); other licences are also licensed / transfers",
    "whole_county_services": [
-    "Greenup County Ambulance Authority",
-    "GREENUP EMERGENCY AMBULANCE SERVICE, LLC",
-    "King\u2019s Daughters Medical Transport",
-    "PORTSMOUTH EMERGENCY AMBULANCE SERVICES (1686)",
-    "Rapid EMS (1653)"
+    "Greenup County Ambulance Authority"
    ],
    "part_county_services": [],
    "address_only_services": [],
@@ -7919,7 +7918,14 @@
      }
     ]
    },
-   "kbems_vs_ng911_label_overlap": false
+   "kbems_vs_ng911_label_overlap": false,
+   "also_licensed": [
+    "GREENUP EMERGENCY AMBULANCE SERVICE, LLC",
+    "King\u2019s Daughters Medical Transport",
+    "PORTSMOUTH EMERGENCY AMBULANCE SERVICES (1686)",
+    "Rapid EMS (1653)"
+   ],
+   "spot_check": "Spot check 2026-10-21 (KBEMS EMS_Agencies_2026-08-01.PDF + agency/county pages). No source puts Greenup Emergency Ambulance, Portsmouth Emergency Ambulance, King\u2019s Daughters Medical Transport or Rapid EMS on Greenup 911 calls."
   },
   "21091": {
    "county": "Hancock County",
@@ -8218,19 +8224,22 @@
   "21117": {
    "county": "Kenton County",
    "pop": 174862,
-   "tier": "A-multi",
-   "basis": "several 911-transport licences name the whole county; provider of record needs a human read",
-   "whole_county_services": [
-    "American Medical Response - Northern Kentucky",
-    "EDGEWOOD FIRE & EMS",
-    "First Care Ohio, LLC"
-   ],
+   "tier": "A-partial",
+   "basis": "city/district fire-EMS 911 licences (dispatched by Kenton Co EM Comm Center); AMR and First Care name the county but have no county PSAP and no sourced 911 role",
+   "whole_county_services": [],
    "part_county_services": [
-    "CRESCENT SPRINGS VFD",
+    "Covington Fire Dept. Ambulance Service",
+    "Erlanger Fire/EMS",
+    "EDGEWOOD FIRE & EMS",
     "ELSMERE FIRE PROTECTION DISTRICT",
+    "Fort Mitchell Life Squad",
+    "Fort Wright Fire Dept. Ambulance Service",
+    "INDEPENDENCE FIRE DISTRICT AMBULANCE SERVICE",
+    "LUDLOW FIRE DEPARTMENT LIFE SQUAD",
+    "CITY OF TAYLOR MILL FIRE/EMS",
+    "CRESCENT SPRINGS VFD",
     "PINER-FISKBURG FIRE PROTECTION DISTRICT",
-    "Ryland Heights Fire Protection District",
-    "Walton Fire Prot. Dist. Ambulance Service"
+    "Ryland Heights Fire Protection District"
    ],
    "address_only_services": [],
    "ng911_ems_boundary": {
@@ -8271,7 +8280,12 @@
      }
     ]
    },
-   "kbems_vs_ng911_label_overlap": true
+   "kbems_vs_ng911_label_overlap": true,
+   "also_licensed": [
+    "American Medical Response - Northern Kentucky",
+    "First Care Ohio, LLC"
+   ],
+   "spot_check": "Spot check 2026-10-21 (KBEMS EMS_Agencies_2026-08-01.PDF + agency/county pages). Walton Fire Prot. Dist. (Boone PSAP) left out: Boone-based."
   },
   "21119": {
    "county": "Knott County",
@@ -8316,7 +8330,8 @@
      }
     ]
    },
-   "kbems_vs_ng911_label_overlap": true
+   "kbems_vs_ng911_label_overlap": true,
+   "spot_check": "Spot check 2026-10-21 (KBEMS EMS_Agencies_2026-08-01.PDF + agency/county pages). Knox County Ambulance Service holds licences 1285 (North, East and South sections of Knox) and 1516 (City of Corbin, West Knox, South Laurel, North Whitley); PSAP Knox County 911. Licensed by sections; no source on the centre or Barbourville."
   },
   "21123": {
    "county": "Larue County",
