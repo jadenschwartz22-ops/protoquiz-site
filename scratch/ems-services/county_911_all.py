@@ -162,7 +162,12 @@ def build():
         sv = [s for s in v['services'] if not nt(s['name'])] or v['services']   # a county whose only named service is a fuzzy-matched non-transport class keeps it, flagged (Emery)
         for s in sv:
             r = utrow[s['name']]
+            if v['county'] == 'Daggett': continue   # VERIFY 10-21: the county runs the ambulance; the single district label is fire for the west only (county row below)
             pub(ck('UT', v), s['name'], UT_VIA, r['source_url'], 'named in the state EMS response-area layer for this county' + ('' if r['transport'] else f"; licence class {r['licence_class']}, transport not confirmed" if r['licence_class'] else '; licence class not matched, transport not confirmed'), transport=r['transport'])
+    pub(ck('UT', {'county': 'Daggett'}), 'Daggett County Emergency Medical Services', 'Daggett County, Utah Emergency Medical Services page (county government)', 'https://www.daggettcounty.gov/98/Ambulance-Services', 'county department: emergency medical treatment and transport, paid volunteer EMTs; the state layer labels the county Flaming Gorge Fire and EMS District, which the county describes as fire protection for the west', kind='local', transport=True)
+    for c, n in {'Salt Lake': 'Salt Lake City transport is run by Gold Cross in partnership with SLC Fire; the state layer lists responders, not Gold Cross.',
+                 'Daggett': 'Ambulance operated by the Daggett County EMS department; Flaming Gorge Fire and EMS District covers the west only.',
+                 'Uintah': 'Ute Tribe Ambulance unverified; Gold Cross has a Vernal base.'}.items(): S[ck('UT', {'county': c})]['note'] = n
     # VT: VCGI ambulance service areas, one provider of record per town (a compilation); 14 of 14 counties >=99.8% covered. Several services per county, alphabetical.
     VT_VIA = 'Vermont VCGI ambulance service areas, the state service-area layer (one provider of record per town)'
     vt = load('VT'); vtrow = {r['name']: r for r in vt['rows']}
@@ -220,6 +225,24 @@ def build():
         v = oh['county_verdict'][fk]
         if v.get('page_note'): S[fk]['note'] = v['page_note']
         for s in v['services']: pub(fk, s['name'], OH_VIA, ohlay[fk]['url'], "the county layer's label; " + NOT_SAID, kind='local', transport=False)
+    # IA Linn, CO Park, MT Carbon, OR Marion: single-county layers (2026-10-21), spot-checked in VERIFY_2026-10-21.md. Tier A; no transport is asserted beyond what the file says.
+    ia = load('IA'); IA_VIA = 'Linn County, Iowa E911 EMS emergency service area layer (maintained by Cedar Rapids / Linn County 911; a county NG911 layer, not a state record)'
+    for s in ia['county_verdict']['19113']['services']: pub('19113', s['name'], IA_VIA, ia['rows'][0]['source_url'], "named in the county's E911 EMS service area layer", kind='local', transport=True)
+    S['19113']['note'] = 'The Linn County Communications Division lists six ambulance services serving the county, the same six this layer names.'
+    co = load('CO'); CO_VIA = 'Park County, Colorado GIS ambulance district service area layer (county-published, not a licence record)'
+    for s in co['county_verdict']['08093']['services']:
+        pub('08093', s['name'].replace('Ute Pass Regional Ambulance District', 'Ute Pass Regional Health Service District'), CO_VIA, co['rows'][0]['source_url'], 'named in the county ambulance district layer; the layer does not say this district carries patients', kind='local')
+    S['08093']['note'] = co['county_verdict']['08093']['page_note']
+    mt = load('MT'); MT_VIA = 'Carbon County, Montana EMS district service area layer (county-published, owner CarbonFire)'
+    for s in mt['county_verdict']['30009']['services']:
+        pub('30009', s['name'], MT_VIA, mt['rows'][0]['source_url'], ('Red Lodge Fire Rescue EMS: 911 medical response and interfacility transfers (redlodgefire.com/ems)' if s['name'] == 'Red Lodge' else 'named in the county EMS district layer; the layer does not say this district carries patients'), kind='local')
+    S['30009']['note'] = mt['county_verdict']['30009']['page_note']
+    orr = load('OR'); OR_VIA = 'Marion County, Oregon HHS ambulance service area layer (county-published; the holder of each ASA, not a licence record)'; orrow = {r['name']: r for r in orr['rows']}
+    for s in orr['county_verdict']['41047']['services']:
+        pub('41047', s['name'], OR_VIA, orrow[s['name']]['source_url'], 'holds an ambulance service area (ASA) in the county HHS layer; the layer does not say it transports', kind='local')
+    S['41047']['note'] = 'The county layer names who holds each ambulance service area. Woodburn Ambulance and Marion County Fire District #1 are confirmed on their own sites; Lyons RFPD (the largest area share) and the other holders are unverified, and some fire districts may contract operation out.'
+    # NE: page note only, no promotion (spot check weak: town and acronym labels, Buffalo had no source)
+    for fk in load('NE')['county_verdict']: S[fk]['note'] = 'Named loosely from the state response-area layer (town and acronym labels); transport not confirmed.'
     # Read-only page notes, NO tier change and no providers: a stale, unnamed or non-911 source is a note on the card, never evidence.
     idn = load('ID')
     for fk, v in idn['county_verdict'].items():
