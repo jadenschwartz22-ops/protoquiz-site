@@ -113,7 +113,7 @@
   },
   "21227": {
    "county": "Warren",
-   "tier": "held",
+   "tier": "A",
    "services": [
     {
      "name": "The Medical Center EMS (Med Center Health)",
@@ -121,13 +121,13 @@
      "ownership": "hospital",
      "partial": false,
      "area": "whole county",
-     "source_url": "https://www.wbko.com/content/news/Med-Center-rebukes-report-that-claims-emergency-services-are-underserved-in-Warren-County-498355471.html",
-     "evidence": "With 13 EMS trucks, dispatch onsite and about 100 employees, Med Center EMS is the only ambulance provider in the Warren County-Bowling Green area. | KBEMS EMS Directory 2026-08-01: THE MEDICAL CENTER EMS (1077), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"Warren County, Kentucky\"",
-     "vintage": "undated news (c.2021); KBEMS 2026"
+     "source_url": "https://www.medcenterhealth.com/ems",
+     "evidence": "When you call for an ambulance in an emergency, it’s often a life-threatening situation. That’s why we operate Med Center EMS",
+     "vintage": "2026 (undated page; menu lists the 2025 Community Impact Report)"
     }
    ],
-   "page_note": "Med Center EMS holds the only 911 ambulance licence in Warren County on the state list (August 2026). TriStar Greenview won approval in October 2023 to run a ground ambulance service \"to serve the county along with Med Center EMS\"; not yet confirmed from a 2024 or later source whether it operates.",
-   "second_source": ""
+   "page_note": "Medical Center EMS (Med Center Health) answers 911 ambulance calls in Warren County and is the only ambulance service licensed for 911 in the county on the state list of August 2026. TriStar Greenview Hospital won state approval in 2023 to start a second ambulance service and said in January 2024 it would begin in 2025; it holds no ambulance licence on the August 2026 state list and in August 2024 it said the ambulance project was on hold, and no report shows it carrying patients. Neighbouring services sometimes help at crashes on the county line.",
+   "second_source": "https://www.wnky.com/multiple-fire-departments-emergency-services-respond-to-i-65-crash-with-entrapment/ (2025-09-06: 'Medical Center EMS and Barren-Metcalfe provided care and transported one of the individuals to a local hospital.') ; https://bgdailynews.com/2024/08/30/greenviews-plans-for-lovers-lane-take-shape/ (2024-08-30: 'Another Greenview expansion project, establishment of an ambulance service on its Ashley Circle campus, is also on hold.')"
   },
   "21093": {
    "county": "Hardin",
@@ -919,15 +919,39 @@
   },
   "21049": {
    "county": "Clark",
-   "tier": "held",
-   "services": [],
-   "page_note": "Winchester Fire-EMS runs the 911 ambulances for Winchester and Clark County. A second ambulance company, Cross Medical Response, is licensed in Clark County with a 911 permit; whether it answers any 911 calls is not yet confirmed."
+   "tier": "A",
+   "services": [
+    {
+     "name": "Winchester Fire-EMS (joint City of Winchester and Clark County service)",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.winchesterky.com/DepartmentsSubPage/44/ems",
+     "evidence": "Winchester Fire/EMS responds to approximately 6,000 medical emergencies every year.",
+     "vintage": "live city page, 2026"
+    }
+   ],
+   "page_note": "Winchester Fire-EMS, run by the City of Winchester with Clark County paying a share, carries 911 patients across Winchester and Clark County. Cross Medical Response is licensed in Clark County only for hospital-to-hospital transfers under contract to the city; a 2025 proposal to hand 911 transports to it was discussed but the city was still running the service in February 2026.",
+   "second_source": "https://winchestersun.com/2026/02/16/joint-ems-committee-holds-february-meeting/ (2026-02-16: 'In 2025, EMS teams completed 7,552 runs countywide') ; https://www.winchesterky.com/Departments/10/fire-emergency-medical-services ('Emergency Medical Services Responds to medical emergencies throughout Winchester and Clark County.') ; https://winchestersun.com/2026/02/23/multi-vehicle-crash-leads-to-hospital-transport/ (2026-02-23: 'one individual being transported to the University of Kentucky Hospital', per Winchester Fire Department personnel) ; https://winchestersun.com/2025/07/10/privatization-of-ems-services-issue-dominates-joint-ems-committee-meeting/ (2025-07-10, Judge-Executive: 'I think the city has been running the ambulance service fantastic.')"
   },
   "21083": {
    "county": "Graves",
-   "tier": "held",
-   "services": [],
-   "page_note": "Mayfield-Graves County Ambulance Service holds the only 911 ambulance licence for Graves County. No current page from the service itself has been found yet confirming who operates it."
+   "tier": "A",
+   "services": [
+    {
+     "name": "Mayfield-Graves County Ambulance Service",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.mayfieldky.gov/departments/fire_ems_planning/ems/index.php",
+     "evidence": "The Mayfield-Graves County Ambulance Service operates within the Mayfield Fire Department and is jointly funded by the City of Mayfield and the Graves County Fiscal Court. The MGCAS provides both ALS and BLS transport for Emergency and Non-Emergency patients",
+     "vintage": "live city page, 2026 (menu lists Budget 2026-2027)"
+    }
+   ],
+   "page_note": "Mayfield-Graves County Ambulance Service, run inside the Mayfield Fire Department and funded by the City of Mayfield and the Graves County Fiscal Court, carries 911 patients in Graves County. It holds the only 911 ambulance licence in the county. Neighbouring services, including Weakley County EMS from Tennessee, sometimes help at crashes on the county line.",
+   "second_source": "https://www.wnky.com/2-injured-in-graves-county-after-crash/ (2026-06-25: 'Fort was taken to Jackson Purchase Medical Center by Mayfield/Graves County EMS')"
   },
   "21163": {
    "county": "Meade",
@@ -1036,9 +1060,21 @@
   },
   "21207": {
    "county": "Russell",
-   "tier": "held",
-   "services": [],
-   "page_note": "Russell County EMS answers 911 calls in Russell County and Russell County Ambulance Service holds the county's only 911 ambulance licence. A page saying it transports patients is not yet found."
+   "tier": "A",
+   "services": [
+    {
+     "name": "Russell County EMS (Russell County Ambulance Service)",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://lakercountry.com/2026/10/two-truck-crash-sends-both-drivers-to-russell-county-hospital/",
+     "evidence": "Russell Springs Fire and Rescue and Russell County EMS responded. Both men were transported by ambulance to Russell County Hospital",
+     "vintage": "2026-10-09"
+    }
+   ],
+   "page_note": "Russell County EMS, licensed as Russell County Ambulance Service and run by its own board, carries 911 patients across Russell County. It holds the only 911 ambulance licence in the county.",
+   "second_source": "https://lakercountry.com/2026/08/russell-county-ems-averaging-more-than-200-runs-a-month/ (2026-08-12: 'From January 1 through July 31, Russell County EMS responded to 1,720 runs.')"
   },
   "21213": {
    "county": "Simpson",
@@ -1536,6 +1572,24 @@
    "page_note": "Cross Medical Response (Breathitt-Wolfe EMS) holds the 911 ambulance licence for Breathitt County. A recent page saying it carries patients there was not yet found.",
    "second_source": "https://www.wnky.com/1-dead-after-vehicle-collides-with-ambulance-in-breathitt-county/ (2026-05: a Perry County ambulance 'returning to its station' crashed in Breathitt County; not evidence of Perry serving Breathitt)",
    "licence_check": "Only Ia licence: 1672 Breathitt-Wolfe EMS, Inc. dba Cross Medical Response ('Breathitt County and Wolfe County'). NG911 'BREATHIITT CO EMS' 99.68%."
+  },
+  "21135": {
+   "county": "Lewis",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Lewis County EMS",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://lewiscountyherald.com/lewis-county-ems-is-open-for-business/",
+     "evidence": "Vanceburg Rehabilitation and Care welcomes back a resident who had been the first to be transported by Lewis County EMS on Friday.",
+     "vintage": "2024-06-03"
+    }
+   ],
+   "page_note": "Lewis County EMS, run by the county ambulance service district board, began 911 ambulance service in Lewis County on May 31, 2024, replacing Portsmouth Ambulance, which left the county in April 2024 and now helps only as mutual aid. It holds the only 911 ambulance licence in the county.",
+   "second_source": "https://lewiscountyherald.com/four-hurt-in-crash-involving-school-bus/ (2025-04-23: 'The driver of one of the vehicles and two passengers in a second vehicle were taken to Southern Ohio Medical Center in Portsmouth, Ohio, by Lewis County EMS.') ; https://www.wnky.com/21-year-old-man-dead-after-crash-in-lewis-county/ (2026-07-09: 'Lewis County Fire and EMS' at scene)"
   }
  }
 }
