@@ -792,6 +792,8 @@ main{padding-bottom:64px;}
 .ss-bar i{display:block;font-style:normal;color:#fff;font-size:.72rem;line-height:26px;text-align:center;overflow:hidden;}
 .ss-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:20px;align-items:start;margin:18px 0 28px;}
 .ss-mapbox{position:relative;background:#f7f5f0;border-radius:10px;padding:14px;}
+.ss-mapbox .ss-svg{touch-action:none;cursor:grab;-webkit-user-select:none;user-select:none;}
+.ss-mapbox .rm-ctl{top:10px;left:10px;}
 .ss-svg{display:block;width:100%;height:auto;max-height:78vh;margin:0 auto;}
 .ss-svg .cty{stroke:#fff;stroke-width:.7;stroke-linejoin:round;cursor:pointer;vector-effect:non-scaling-stroke;transition:opacity .12s;}
 .ss-svg .cty:hover{stroke:#111;stroke-width:1.4;}

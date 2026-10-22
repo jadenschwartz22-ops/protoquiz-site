@@ -102,6 +102,7 @@
       + '</div>'
       + '<div class="bar-key">' + Object.keys(OWN).filter(function (k) { return cnt[k]; }).map(function (k) { return '<span class="key"><i style="background:' + OWN[k][1] + '"></i>' + OWN[k][0] + ' &middot; ' + cnt[k] + '</span>'; }).join('') + '<span class="key"><i style="background:#6b6b6b"></i>Solid = named by a record</span><span class="key"><i style="background:' + STRIPE + '#6b6b6b"></i>Striped = inferred, fainter = weaker</span>' + (nogrey ? '<span class="key"><i style="background:#e4e0d6"></i>No source or model not established &middot; ' + nogrey + '</span>' : '') + '</div>'
       + '<div class="ss-grid"><div class="ss-mapbox"><div class="rm-tip" role="presentation"></div>'
+      + '<div class="rm-ctl"><button type="button" data-z="in" aria-label="Zoom in">+</button><button type="button" data-z="out" aria-label="Zoom out">&minus;</button><button type="button" data-z="reset" aria-label="Reset zoom">&#8634;</button></div>'
       + '<svg class="ss-svg" viewBox="0 0 ' + geo.vb[0] + ' ' + geo.vb[1] + '" role="img" aria-label="' + esc(name) + ' counties coloured by who owns the agency that answers 911; inferred counties are striped">'
       + '<defs>' + Object.keys(OWN).map(function (k) { return '<pattern id="ss-h-' + k + '" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" fill="' + OWN[k][1] + '"/><rect width="2.6" height="7" fill="#fff" fill-opacity=".6"/></pattern>'; }).join('') + '</defs>'
       + F.map(function (f) {
@@ -124,6 +125,51 @@
     var paths = {}; Array.prototype.forEach.call(svg.querySelectorAll('.cty'), function (p) { paths[p.getAttribute('data-f')] = p; });
     var rows = {}; Array.prototype.forEach.call(host.querySelectorAll('tbody tr'), function (r) { rows[r.getAttribute('data-f')] = r; });
     var sel = null;
+
+    // Zoom and pan by rewriting the viewBox: wheel, pinch, drag, and the +/- buttons. A drag
+    // that moved more than 3px is a pan, so its click does not select a county.
+    var W = geo.vb[0], H = geo.vb[1], v = { x: 0, y: 0, w: W, h: H }, pts = {}, drag = null, dragged = false;
+    function setVb() {
+      v.w = Math.min(W, Math.max(W / 12, v.w)); v.h = v.w * H / W;
+      v.x = Math.min(W - v.w, Math.max(0, v.x)); v.y = Math.min(H - v.h, Math.max(0, v.y));
+      svg.setAttribute('viewBox', v.x + ' ' + v.y + ' ' + v.w + ' ' + v.h);
+      box.querySelector('[data-z=in]').disabled = v.w <= W / 12 + 0.01;
+      box.querySelector('[data-z=out]').disabled = box.querySelector('[data-z=reset]').disabled = v.w >= W - 0.01;
+    }
+    function zoomAt(k, cx, cy) {   // k > 1 zooms in, about client point (cx, cy)
+      var r = svg.getBoundingClientRect(), fx = (cx - r.left) / r.width, fy = (cy - r.top) / r.height;
+      var px = v.x + fx * v.w, py = v.y + fy * v.h;
+      v.w /= k; v.h = v.w * H / W; v.x = px - fx * v.w; v.y = py - fy * v.h; setVb();
+    }
+    setVb();
+    box.querySelector('.rm-ctl').addEventListener('click', function (e) {
+      var b = e.target.closest('button'); if (!b) return;
+      var z = b.getAttribute('data-z'), r = svg.getBoundingClientRect();
+      if (z === 'reset') { v = { x: 0, y: 0, w: W, h: H }; setVb(); } else zoomAt(z === 'in' ? 1.6 : 1 / 1.6, r.left + r.width / 2, r.top + r.height / 2);
+    });
+    svg.addEventListener('wheel', function (e) { e.preventDefault(); zoomAt(e.deltaY < 0 ? 1.15 : 1 / 1.15, e.clientX, e.clientY); }, { passive: false });
+    svg.addEventListener('pointerdown', function (e) {
+      pts[e.pointerId] = { x: e.clientX, y: e.clientY };
+      drag = { x: e.clientX, y: e.clientY, vx: v.x, vy: v.y }; dragged = false;
+    });
+    svg.addEventListener('pointermove', function (e) {
+      if (!pts[e.pointerId]) return;
+      var ids = Object.keys(pts);
+      if (ids.length === 2) {   // pinch: scale by the change in finger distance, about their midpoint
+        var o = pts[ids[0]], q = pts[ids[1]], d0 = Math.hypot(o.x - q.x, o.y - q.y);
+        pts[e.pointerId] = { x: e.clientX, y: e.clientY };
+        o = pts[ids[0]]; q = pts[ids[1]];
+        var d1 = Math.hypot(o.x - q.x, o.y - q.y);
+        if (d0 > 0) zoomAt(d1 / d0, (o.x + q.x) / 2, (o.y + q.y) / 2);
+        dragged = true; drag = null; return;
+      }
+      if (!drag) return;
+      var dx = e.clientX - drag.x, dy = e.clientY - drag.y;
+      if (!dragged && Math.abs(dx) + Math.abs(dy) > 3) { dragged = true; try { svg.setPointerCapture(e.pointerId); } catch (err) { /* not fatal */ } }
+      if (dragged) { var r = svg.getBoundingClientRect(); v.x = drag.vx - dx / r.width * v.w; v.y = drag.vy - dy / r.height * v.h; setVb(); }
+    });
+    function up(e) { delete pts[e.pointerId]; drag = null; }
+    svg.addEventListener('pointerup', up); svg.addEventListener('pointercancel', up);
 
     function cardHtml(f) {
       var c = D[f], o = OWN[c.ownership], blank = c.tier === '-';
@@ -186,7 +232,7 @@
     });
     onEsc = clear;
     svg.addEventListener('pointerleave', function () { tip.classList.remove('on'); });
-    svg.addEventListener('click', function (e) { var p = e.target.closest && e.target.closest('.cty'); if (p) select(p.getAttribute('data-f'), true); });
+    svg.addEventListener('click', function (e) { if (dragged) return; var p = e.target.closest && e.target.closest('.cty'); if (p) select(p.getAttribute('data-f'), true); });
     host.querySelector('tbody').addEventListener('click', function (e) { var r = e.target.closest('tr[data-f]'); if (r) select(r.getAttribute('data-f'), false); box.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); });
     host.querySelector('tbody').addEventListener('keydown', function (e) { if (e.key === 'Enter' && e.target.matches('tr')) select(e.target.getAttribute('data-f'), false); });
 

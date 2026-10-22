@@ -255,6 +255,15 @@ def build():
         S[fk]['note'] = v['page_note'] + ' Most runs: ' + ', '.join(a['name'] for a in v['top_agencies']) + '.'
     for fk, v in load('LA')['county_verdict'].items():
         S[fk]['note'] = ('' if 'Acadian' in v['add'][0]['note'] else ', '.join(a['name'] for a in v['add']) + ': ') + v['add'][0]['note'] + ' Tier left alone.'
+    # County-by-county local sources (2026-10-22 lanes, LANE_BRIEF_2026-10-22.md), one shape for every state. Last, so its page_note wins over the stale-layer notes above.
+    # Tier A rows serve the county (partial rows a named part of it); held counties only carry their page_note.
+    for f in sorted(glob.glob('states/*_local_2026-10.json')):
+        g = json.load(open(f))
+        for fk, v in g['county_verdict'].items():
+            if v.get('page_note'): S[fk]['note'] = v['page_note']
+            if v['tier'] != 'A': continue
+            for s in v['services']:
+                pub(fk, s['name'], g['meta']['via'], s['source_url'], (s.get('area') or 'whole county') + ': ' + s['evidence'], kind='local', partial=s.get('partial', False), transport=s.get('transport'), own=own_word(s.get('ownership')) or None)
     ga = load('GA')['county_verdict']
     for fk in ('13243', '13205', '13027'):
         a = ga[fk]['add'][0]
