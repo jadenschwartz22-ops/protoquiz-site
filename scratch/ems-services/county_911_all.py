@@ -288,6 +288,8 @@ def build():
             for s in v['services']:
                 pub(fk, s['name'], g['meta']['via'], s['source_url'], (s.get('area') or 'whole county') + ': ' + s['evidence'], kind='local', partial=s.get('partial', False), transport=s.get('transport'), own=own_word(s.get('ownership')) or None)
                 S[fk]['providers'][-1]['audited'] = True   # a lane row an audit lane passed (LANE_BRIEF_AUDIT.md); never demoted below
+                S[fk].setdefault('years', []).extend(re.findall(r'20[12]\d', str(s.get('vintage', ''))))
+            S[fk]['checked'] = g['meta'].get('retrieved', '2026-10')[:7]
     ga = load('GA')['county_verdict']
     for fk in ('13243', '13205', '13027'):
         a = ga[fk]['add'][0]
@@ -325,6 +327,10 @@ def build():
         if via: d['via'] = via
         d['partial'] = tier != 'A' and any(p.get('partial') for p in ps)
         d['tier'] = tier; d['answer'] = [p['name'] for p in ans]
+        if tier == 'A':   # how old the evidence is, shown on the card (owner 10-22: be honest it can be out of date)
+            ys = sorted(set(d.get('years') or re.findall(r'20[12]\d', d.get('via') or '')))
+            if ys: d['asof'] = ys[0] if len(ys) == 1 else f'{ys[0]}-{ys[-1]}'
+            d.setdefault('checked', '2026-10')
         if tier == 'A': d['source'] = 'state' if any(p.get('kind', 'state') == 'state' for p in ans) else 'local'   # rows without kind came from a state layer
         d['ownership'] = ('mixed' if len(owns) > 1 else next(iter(owns)) if owns else 'unknown')
         # Only an audited, named county may sound certain; every other note is a lead (owner 10-22: say it only when certain).
@@ -336,7 +342,7 @@ def build():
 if __name__ == '__main__':
     S = build(); json.dump(S, open('county_911.json', 'w'))
     # slim file the site reads (scripts/build-research-*.mjs)
-    json.dump({k: {**{f: d[f] for f in ('name', 'st', 'pop', 'tier', 'ownership')}, **({'source': d['source']} if d['tier'] == 'A' else {}), **({'partial': True} if d['partial'] else {}), **({'via': d['via']} if d.get('via') else {}), **({'note': d['note']} if d.get('note') else {})} for k, d in S.items()},
+    json.dump({k: {**{f: d[f] for f in ('name', 'st', 'pop', 'tier', 'ownership')}, **({'source': d['source'], 'checked': d['checked'], **({'asof': d['asof']} if d.get('asof') else {})} if d['tier'] == 'A' else {}), **({'partial': True} if d['partial'] else {}), **({'via': d['via']} if d.get('via') else {}), **({'note': d['note']} if d.get('note') else {})} for k, d in S.items()},
               open('../../data/county-911.json', 'w'), separators=(',', ':'), ensure_ascii=False)
     # per-state files for /research/atlas/?state=XX: the slim fields plus the agencies on record
     def pretty(n):
@@ -348,7 +354,7 @@ if __name__ == '__main__':
     shown = lambda d: [pretty(a) for a in d['answer'] if not junk.search(a)]
     os.makedirs('../../data/atlas', exist_ok=True); byst = collections.defaultdict(dict)
     for k, d in S.items():
-        byst[d['st']][k] = {**{f: d[f] for f in ('name', 'pop', 'tier', 'ownership')}, **({'source': d['source']} if d['tier'] == 'A' else {}),
+        byst[d['st']][k] = {**{f: d[f] for f in ('name', 'pop', 'tier', 'ownership')}, **({'source': d['source'], 'checked': d['checked'], **({'asof': d['asof']} if d.get('asof') else {})} if d['tier'] == 'A' else {}),
                             **({'partial': True} if d['partial'] else {}), **({'via': d['via']} if d.get('via') else {}), **({'note': d['note']} if d.get('note') else {}), 'n': len(shown(d)), 'a': shown(d)[:12]}
     for st, v in byst.items(): json.dump(v, open(f'../../data/atlas/{st}.json', 'w'), separators=(',', ':'), ensure_ascii=False)
     tiers = collections.Counter(d['tier'] for d in S.values()); pop = collections.Counter()

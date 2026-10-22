@@ -3794,7 +3794,7 @@
 
       <h3>Shading: how sure we are</h3>
       <dl class="tierdl">
-        <dt><span class="tierchip t-a"></span>Named</dt><dd>A state or agency record names the provider for the whole county. The only tier we treat as known. Where a record names only some towns, the county stays in the tier below and its panel says so.</dd>
+        <dt><span class="tierchip t-a"></span>Named</dt><dd>A state or agency record names the provider for the whole county. The only tier we treat as known, and only after a second, independent review reopened every source and checked the state licence list. Named means correct as of that check, not forever: each county's panel says how old its sources are and when we last checked. Where a record names only some towns, the county stays in the tier below and its panel says so.</dd>
         <dt><span class="tierchip t-b"></span>Confirmed biller</dt><dd>A licensed ambulance service in the county bills mostly emergency transports (Medicare).</dd>
         <dt><span class="tierchip t-c"></span>Located here</dt><dd>A licensed ambulance service is based in the county.</dd>
         <dt><span class="tierchip t-d"></span>Billing only</dt><dd>Only Medicare billing points to it. The weakest signal.</dd>
@@ -4092,6 +4092,13 @@
           var tail = /service[- ]areas?/.test(v) ? 'A ' + (/Board|Department of Health/.test(v) ? 'licence' : 'service') + ' area is not an exclusive or dispatch assignment.' : /Directory/.test(v) ? 'It lists each service once, under the county where it is licensed and tagged primary 911, not by service area.' : '';
           return ' Source: ' + v + cr + '.' + (tail ? ' ' + tail : '');
         }
+        // How old the evidence is: services and contracts change, so a named county says when its sources were dated and when we last checked them.
+        var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+        function dateText(c) {
+          var chk = c.checked ? MONTHS[+c.checked.slice(5, 7) - 1] + ' ' + c.checked.slice(0, 4) : '';
+          return ' ' + (c.asof ? 'Sources dated ' + c.asof.replace('-', '–') + '.' : 'Source date not recorded.')
+            + (chk ? ' Last checked ' + chk + '.' : '') + ' Ambulance contracts change, so this can go out of date.';
+        }
         // Tier A says which kind of record named the county: a state layer or a local page.
         function tierText(c) { return c.tier === 'A' && c.source === 'local' ? 'Named by a county or agency source' : (TIER[c.tier] || 'Tier ' + c.tier); }
 
@@ -4158,7 +4165,7 @@
             : !own
               ? 'We found records for this county but could not tell what kind of agency runs the service. The gap is ours, not the county’s.'
               : c.tier === 'A'
-                ? (c.source === 'local' ? 'Named directly by a county or agency source.' : 'Named directly by a state record.') + (c.via ? viaText(c.via) : '')
+                ? (c.source === 'local' ? 'Named directly by a county or agency source.' : 'Named directly by a state record.') + (c.via ? viaText(c.via) : '') + dateText(c)
                 : (c.partial ? 'A record names the provider for some towns here, not the whole county. ' : '') + (c.via ? viaText(c.via).slice(1) + ' An inferred county is a lead, not a fact.' : 'Inferred from licensing rosters and Medicare billing. An inferred county is a lead, not a fact.'))
             + '</p>'
             + (c.note ? '<p class="rm-panel-note">' + c.note.replace(/[&<>]/g, function (m) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;' }[m]; }) + '</p>' : '');
