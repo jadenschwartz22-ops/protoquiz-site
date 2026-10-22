@@ -88,7 +88,7 @@
      "partial": false,
      "area": "City of Alexandria",
      "source_url": "https://www.alexandriava.gov/fire-department/ambulance-billing-faqs",
-     "evidence": "What is the charge for being transported to the hospital by a medic unit? ... The City of Alexandria Fire Department\u2019s ambulance billing is handled by a third-party company EMS/MC Management Consultants",
+     "evidence": "What is the charge for being transported to the hospital by a medic unit? ... The City of Alexandria Fire Department’s ambulance billing is handled by a third-party company EMS/MC Management Consultants",
      "vintage": "2026 undated page"
     }
    ],
@@ -440,7 +440,7 @@
      "partial": false,
      "area": "whole city",
      "source_url": "https://www.winchesterva.gov/Services-Payments/Public-Safety/Fire-Rescue/Emergency-Services/Ambulance-Billing",
-     "evidence": "The Winchester Fire and Rescue (WFRD) Revenue Recovery Program is based on concern for the medical and financial health of city residents. ... If you need to provide insurance information regarding your transport or have specific questions about your bill, please contact the City\u2019s billing agency, Digitech",
+     "evidence": "The Winchester Fire and Rescue (WFRD) Revenue Recovery Program is based on concern for the medical and financial health of city residents. ... If you need to provide insurance information regarding your transport or have specific questions about your bill, please contact the City’s billing agency, Digitech",
      "vintage": "2025 (archive capture; Calendar Year 2025 rates)",
      "raw": "states/web_raw/VA/winc_bill.txt"
     }
@@ -594,9 +594,41 @@
   },
   "51775": {
    "county": "Salem city",
-   "tier": "held",
-   "services": [],
-   "page_note": "The volunteer Salem Rescue Squad runs ambulances in the city. Not yet confirmed: the ambulance role of Salem Fire-EMS and the Salem Volunteer Fire Department, which also hold ambulance licences."
+   "tier": "A",
+   "services": [
+    {
+     "name": "Salem Fire-EMS",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "whole city",
+     "source_url": "https://www.salemva.gov/229/Emergency-Medical-Services",
+     "evidence": "The Salem Fire and EMS are called upon for emergency medical services more than 4,000 times a year and transports over 3,000 of these patients to three local hospitals.",
+     "vintage": "2023 page; FY2026-27 adopted budget agrees"
+    },
+    {
+     "name": "Salem Fire-EMS",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "whole city",
+     "source_url": "https://www.salemva.gov/DocumentCenter/View/12007/budget26-27",
+     "evidence": "Fire & Rescue Fee for Service 46210 EMS Revenue Recovery",
+     "vintage": "2026 (FY2026-27 budget)"
+    },
+    {
+     "name": "Salem Rescue Squad",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": false,
+     "area": "City of Salem (all-volunteer squad, listed as a city department)",
+     "source_url": "https://www.salemva.gov/358/Rescue-Squad",
+     "evidence": "Our rescue squad currently operates four ALS-equipped ambulances",
+     "vintage": "2025 (page last changed 2025-08)"
+    }
+   ],
+   "page_note": "Salem Fire-EMS runs three advanced life support ambulances around the clock and bills for transports; the all-volunteer Salem Rescue Squad also runs four ambulances in the city.",
+   "second_source": "https://www.salemva.gov/226/Fire---EMS"
   },
   "51079": {
    "county": "Greene County",
@@ -679,8 +711,40 @@
   "51683": {
    "county": "Manassas city",
    "tier": "held",
-   "services": [],
-   "page_note": "The City of Manassas Fire and Rescue Department, with the Greater Manassas Volunteer Rescue Squad, provides emergency medical services and bills for EMS. A page stating who transports, and the role of a private ambulance company licensed in the city, are not yet confirmed."
+   "services": [
+    {
+     "name": "City of Manassas Fire and Rescue Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "whole city",
+     "source_url": "https://www.manassasva.gov/fire___rescue/ems_billing.php",
+     "evidence": "Our EMS Transport Rates increased as of July 1, 2025.",
+     "vintage": "2025"
+    },
+    {
+     "name": "City of Manassas Fire and Rescue Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "whole city",
+     "source_url": "https://www.manassasva.gov/fire___rescue/faq.php",
+     "evidence": "I was recently transported by the City of Manassas to the hospital; will I get a bill? Yes, you will receive a bill if you are transported to the hospital.",
+     "vintage": "2025-26"
+    },
+    {
+     "name": "Greater Manassas Volunteer Rescue Squad",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": false,
+     "area": "City of Manassas, as part of the city fire and rescue system",
+     "source_url": "https://gmvrs.org/about/",
+     "evidence": "The GMVRS then became an integral part of the City of Manassas Fire and Rescue System",
+     "vintage": "2024+ (current site)"
+    }
+   ],
+   "page_note": "The City of Manassas Fire and Rescue Department, together with the Greater Manassas Volunteer Rescue Squad and the Manassas Volunteer Fire Company, staffs the city ambulances and bills for transports. The city's 2025 annual report also counts 2,088 mutual-aid responses into the city from Prince William County and 559 from Manassas Park, and no page says which parts of the city those services cover, so the list may be incomplete.",
+   "second_source": "https://www.manassasva.gov/fire___rescue/index.php"
   },
   "51193": {
    "county": "Westmoreland County",
@@ -729,7 +793,7 @@
      "partial": false,
      "area": "whole county (stations 2, 3 and 8)",
      "source_url": "https://kingandqueenco.net/emergency-medial-services/",
-     "evidence": "King and Queen County Emergency Services is responsible for the provision of Emergency Medical Services to King and Queen County as the county\u2019s licensed EMS agency by the Virginia Department of Health.",
+     "evidence": "King and Queen County Emergency Services is responsible for the provision of Emergency Medical Services to King and Queen County as the county’s licensed EMS agency by the Virginia Department of Health.",
      "vintage": "2026"
     }
    ],
