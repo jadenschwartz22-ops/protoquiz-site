@@ -723,6 +723,108 @@
    ],
    "page_note": "",
    "second_source": "https://www.perquimanscountync.gov/departments/emergency-services/ems (county EMS page, Perquimans EMS fee schedule FY 2025-2026)"
+  },
+  "37139": {
+   "county": "Pasquotank",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Pasquotank County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.pasquotankcountyems.com/about-us",
+     "evidence": "Our department is the exclusive sole provider of both 911 ambulance service for Pasquotank County 24 hours a day/7 days a week.",
+     "vintage": "2025-2026 (page cites 2024 projections; fee schedule July 1, 2025; live 2026-10-22)"
+    }
+   ],
+   "page_note": "Pasquotank County EMS is the only 911 ambulance service in the county. Albemarle Medical Transport and Midwest Medical Transport are franchised in the county system for non-emergency transport.",
+   "second_source": "https://www.pasquotankcountyems.com/billing"
+  },
+  "37113": {
+   "county": "Macon",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Macon County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county (517 square miles; stations in Franklin, Highlands, Nantahala, Otto)",
+     "source_url": "http://www.maconnc.org/ems.html",
+     "evidence": "We are a paramedic level service providing both emergent ALS (Advanced Life Support) and convalescent service to the citizens and visitors of Macon County, NC.",
+     "vintage": "2026 (live page; FY2026-27 county budget carries ambulance fee revenue and a new 2026 ambulance for EMS)"
+    }
+   ],
+   "page_note": "Macon County EMS is the county's ambulance service, with stations in Franklin, Highlands and Nantahala.",
+   "second_source": "https://www.maconnc.org/images/FY%202026-2027%20Proposed%20Budget.pdf"
+  },
+  "37151": {
+   "county": "Randolph",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Randolph County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county (8 EMS bases)",
+     "source_url": "https://www.randolphcountync.gov/196/Emergency-Medical-Services-EMS",
+     "evidence": "Randolph County operates an Advanced Life Support (ALS) Paramedic service consisting of nine 24-hour ambulances and two \"prime time\" ambulances that operate during peak call volume through 8 EMS bases across Randolph County.",
+     "vintage": "2026 (live page, retrieved 2026-10-22)"
+    },
+    {
+     "name": "Ash-Rand Rescue & EMS",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": true,
+     "area": "franchised with the county; its site says it covers the county from 3 bases (franchise area not stated by the county)",
+     "source_url": "https://www.randolphcountync.gov/196/Emergency-Medical-Services-EMS",
+     "evidence": "Randolph County EMS is also supported by two franchised EMT-Intermediate ambulance services; Ash-Rand Rescue & EMS, Inc. and Piedmont Triad Ambulance and Rescue, Inc. These private non-profit agencies respond to emergency and non-emergency calls, as well as handle most convalescent transports.",
+     "vintage": "2026 (live page, retrieved 2026-10-22)"
+    },
+    {
+     "name": "Piedmont Triad Ambulance and Rescue",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": true,
+     "area": "franchised with the county as emergency back-up (area not stated)",
+     "source_url": "https://ptarinc.com",
+     "evidence": "We provide Emergency Response Service as a back-up to local Emergency Medical Services (EMS) agencies in Guilford County, Davidson County, and Randolph County",
+     "vintage": "2026 (live page, retrieved 2026-10-22)"
+    }
+   ],
+   "page_note": "Randolph County EMS runs ambulances from eight bases across the county. Two private non-profit services, Ash-Rand Rescue & EMS and Piedmont Triad Ambulance and Rescue, are franchised with the county and also answer emergency calls; the county page does not say which areas each covers. No county franchise document, EMS plan or meeting record found names the area where Ash-Rand Rescue & EMS answers emergency calls, so the split of 911 ambulance coverage in the county is not yet confirmed.",
+   "second_source": "https://www.ashrandrescue.com"
+  },
+  "37109": {
+   "county": "Lincoln",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Lincoln County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county, including Lincolnton",
+     "source_url": "https://www.lincolncountync.gov/113/Emergency-Medical-Services",
+     "evidence": "Lincoln County Emergency Medical Services (LCEMS) is the primary provider of emergency and non-emergency 911 Advanced Life Support transport and paramedic level service for Lincoln County, North Carolina, including the incorporated City of Lincolnton.",
+     "vintage": "2026 (live page; FY2027 approved budget: EMS provides medical transport throughout Lincoln County)"
+    },
+    {
+     "name": "West Lincoln Rescue Squad",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": true,
+     "area": "back-up ambulance support to Lincoln County EMS (squad based in Vale, western Lincoln County)",
+     "source_url": "https://www.lincolncountync.gov/132/Rescue-Squad",
+     "evidence": "It plays a vital role in providing back-up ambulance support to Lincoln County Emergency Medical Services.",
+     "vintage": "2026 (live page, retrieved 2026-10-22)"
+    }
+   ],
+   "page_note": "Lincoln County EMS is the primary 911 ambulance provider for the whole county. The all-volunteer West Lincoln Rescue Squad, based in Vale, provides back-up ambulance support to the county service.",
+   "second_source": "https://www.lincolncountync.gov/DocumentCenter/View/26019/FY-2027-Approved-Budget-for-Website"
   }
  }
 }
