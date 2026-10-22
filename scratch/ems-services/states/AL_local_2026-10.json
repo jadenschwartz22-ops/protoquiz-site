@@ -614,6 +614,34 @@
    "tier": "held",
    "services": [],
    "page_note": "Cleburne County EMS is the only ground ambulance service licensed in Cleburne County. A current page describing its 911 role has not been found yet, and a 2019 report of a Georgia company planning service in Ranburne is unresolved."
+  },
+  "01133": {
+   "county": "Winston",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Regional Paramedical Services (RPS)",
+     "transport": true,
+     "ownership": "private",
+     "partial": true,
+     "area": "Winston County, ambulances based at and west of Double Springs",
+     "source_url": "https://abc3340.com/news/local/newly-established-winston-county-rescue-squad-aims-to-improve-response-times-arley",
+     "evidence": "Area fire departments respond and administer initial care to people who call 911, but they have relied on Regional Paramedical Services (RPS) to respond to transport patients to the hospital. RPS has two, sometimes three, ambulances in Winston County, but none are stationed east of Double Springs.",
+     "vintage": "2023-10; no sign of change since: Daily Mountain Eagle 2025-06-28 says RPS left only East Winston (\"was in East Winston County but they literally cannot make a living operating out of there\"), and the Governor's 2026-08 rural health grants list Winston among RPS's EMS service counties; ADPH transport licence RPS - WINSTON"
+    },
+    {
+     "name": "Winston County Rescue Squad",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": true,
+     "area": "eastern Winston County (Arley, Helicon, Central and Addison fire districts; Addison substation)",
+     "source_url": "https://www.mountaineagle.com/news/winston-county-rescue-squad-comes-a-long-way-in-two-years/article_f00e20a6-d359-5c83-b57d-d9c7fca63f29.html",
+     "evidence": "So we went live with 9-1-1 in November of 2023. In one year's time, we went from one truck to four. Now we have five.",
+     "vintage": "2025-06 (Addison substation opening, Mountain Eagle 2025-07-01)"
+    }
+   ],
+   "page_note": "Two ambulance services carry 911 patients in Winston County. Regional Paramedical Services runs ambulances at and west of Double Springs, and the Winston County Rescue Squad (formed in 2023 by four east-county fire departments) staffs a 24-hour ambulance in the eastern part of the county and is opening an Addison substation. Local fire departments give first care until an ambulance arrives.",
+   "second_source": "https://yellowhammernews.com/governor-ivey-announces-first-144-million-in-grants-under-trump-backed-alabama-rural-health-program-with-projects-in-every-county/"
   }
  }
 }
