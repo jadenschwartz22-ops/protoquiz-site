@@ -115,21 +115,21 @@
   },
   "17149": {
    "county": "Pike",
-   "tier": "held",
+   "tier": "A",
    "services": [
     {
      "name": "Pike County Ambulance Service",
      "transport": true,
      "ownership": "county EMS",
-     "partial": true,
-     "area": "unstated",
+     "partial": false,
+     "area": "whole county",
      "source_url": "https://pikecoems.org/",
-     "evidence": "Pike County Ambulance Service operates as a department of Pike County, Illinois Government... Emergency Medical Services; Enhanced 911 EMS Communications Center",
-     "vintage": "2026"
+     "evidence": "The emergency medical staff is available 24 hours a day, 7 days a week, and 365 days a year to serve every medical emergency in Pike County.",
+     "vintage": "2025 (page modified 2025-10-31)"
     }
    ],
-   "page_note": "Pike County Ambulance Service is likely the sole county provider, but its page does not state a coverage area.",
-   "second_source": ""
+   "page_note": "Pike County Ambulance Service, a county department based in Pittsfield, answers medical emergencies throughout Pike County; local fire departments assist on scene.",
+   "second_source": "https://pikecoems.org/community-information/"
   },
   "17143": {
    "county": "Peoria",
@@ -212,6 +212,24 @@
    ],
    "page_note": "Chicago Fire Department serves the city. Suburban Cook County has about 120 municipal fire departments and fire protection districts, many with private contract ambulances, and is not covered here.",
    "second_source": ""
+  },
+  "17001": {
+   "county": "Adams",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Adams County Ambulance & EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county (Quincy SW, Camp Point NE, Mendon NW, Liberty SE/S-central)",
+     "source_url": "https://www.adamscountyil.gov/government/departments/ambulance-ems",
+     "evidence": "Adams County EMTs and Paramedics staff six ambulances throughout Adams County and Quincy.",
+     "vintage": "2025 (archive capture); fee schedule effective 2024-02-01"
+    }
+   ],
+   "page_note": "Adams County Ambulance & EMS runs six ambulances from Quincy, Camp Point, Mendon and Liberty and covers the whole county; the Quincy Fire Department is a non-transport first-response agency.",
+   "second_source": "https://www.adamscountyil.gov/government/departments/ambulance-ems/fees"
   }
  }
 }
