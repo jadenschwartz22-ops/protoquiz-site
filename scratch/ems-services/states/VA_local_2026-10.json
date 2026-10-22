@@ -681,6 +681,96 @@
    "tier": "held",
    "services": [],
    "page_note": "The City of Manassas Fire and Rescue Department, with the Greater Manassas Volunteer Rescue Squad, provides emergency medical services and bills for EMS. A page stating who transports, and the role of a private ambulance company licensed in the city, are not yet confirmed."
+  },
+  "51193": {
+   "county": "Westmoreland County",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Westmoreland County Department of Emergency Services (EMS Division)",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county (stations Colonial Beach, Oak Grove, Montross, Coles Point)",
+     "source_url": "https://www.westmoreland-county.org/311/Emergency-Services-Billing",
+     "evidence": "Westmoreland County Emergency Medical Services provides emergency medical care to all residents and visitors, regardless of their ability to pay. To help recover the cost of providing these services, the County utilizes a third-party billing service for ambulance transports.",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Westmoreland County Emergency Services runs the county's ambulances from four stations (Colonial Beach, Oak Grove, Montross and Coles Point) and bills for ambulance transports. It is the only ambulance service licensed by the state with a Westmoreland address; the volunteer fire companies in the county are first-response only.",
+   "second_source": "https://www.westmoreland-county.org/202/Emergency-Services"
+  },
+  "51159": {
+   "county": "Richmond County",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Richmond County Department of Emergency Services (EMS Division)",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://co.richmond.va.us/departments/county-administration/emergency-services/emergency-services-billing",
+     "evidence": "The Richmond County Board of Supervisors has approved a scale of income guidelines for those individuals who lack insurance coverage and are interested in applying for an exemption for fees billed for ambulance transports.",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Richmond County Emergency Services provides 24-hour basic and advanced life support emergency medical service to residents and visitors and bills for ambulance transports. It is the only state-licensed ambulance service with a Richmond County address.",
+   "second_source": "https://co.richmond.va.us/departments/county-administration/emergency-services"
+  },
+  "51097": {
+   "county": "King and Queen County",
+   "tier": "A",
+   "services": [
+    {
+     "name": "King and Queen County Emergency Services",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county (stations 2, 3 and 8)",
+     "source_url": "https://kingandqueenco.net/emergency-medial-services/",
+     "evidence": "King and Queen County Emergency Services is responsible for the provision of Emergency Medical Services to King and Queen County as the county’s licensed EMS agency by the Virginia Department of Health.",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "King and Queen County Emergency Services is the county's licensed EMS agency; the former volunteer rescue squads now operate under its license, with all emergency response run by the county as one team since November 1, 2024.",
+   "second_source": "https://kingandqueenco.net/wp-content/uploads/2023/08/Hardship-waiver-form.pdf (county EMS billing form: 'NEW HARDSHIP APPLICATION MUST BE SUBMITTED FOR EACH EMS TRANSPORT')"
+  },
+  "51113": {
+   "county": "Madison County",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Madison County Emergency Medical Services",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://madisonco.virginia.gov/180/Ambulance-Billing",
+     "evidence": "If we transport you to the hospital, our billing vendor Ambulance Medical Billing (AMB) will send a bill to your insurance company.",
+     "vintage": "2026 page; state licence 01029 valid to 2027-11-30"
+    }
+   ],
+   "page_note": "Madison County EMS staffs two advanced life support ambulances around the clock and bills for hospital transports. It is the only state-licensed ambulance service with a Madison County address (the Culpeper, Orange and Greene County services that share some ZIP codes are based in those counties). Not yet confirmed: whether the Sperryville Volunteer Rescue Squad from Rappahannock County, whose first-due area starts at Nethers near Old Rag, carries patients in that corner of Madison County.",
+   "second_source": "https://madisonco.virginia.gov/175/Emergency-Medical-Services"
+  },
+  "51155": {
+   "county": "Pulaski County",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Pulaski County Public Safety (EMS)",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.wdbj7.com/2026/08/06/pulaski-county-paramedic-visits-high-risk-patients-home-reduce-911-calls/",
+     "evidence": "In 2025, Pulaski County received more than 6,000 EMS calls. According to Pulaski County Public Safety, only 122 of those led to emergent transportation to a hospital.",
+     "vintage": "2026-08"
+    }
+   ],
+   "page_note": "Pulaski County Public Safety runs the county's EMS and transports patients to the hospital (WDBJ, August 2026). It is the only state-licensed ambulance service based in the county; Radford's city service is licensed in Radford. Not yet confirmed from a county page: that Pulaski County Public Safety carries all 911 patients across the whole county, including the towns of Pulaski and Dublin and the Fairlawn area, and what the county's separate ambulance-service budget line pays for.",
+   "second_source": "state OEMS licence 00856, Pulaski County Public Safety, 143 Third St NW, Pulaski (valid to 2027-02-28)"
   }
  }
 }
