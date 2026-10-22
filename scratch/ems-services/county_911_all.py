@@ -14,7 +14,8 @@ from dedupe import agencies
 from transport import transport
 from irs_match import norm
 from report_who import PUBLIC
-SERVES = {'CA', 'AZ', 'MN', 'MS', 'GA', 'HI', 'DC'}
+# Only rosters that ARE a 911 service-area grant (AZ certificates of necessity, HI, DC). CA, MN, MS, GA rosters locate an agency by address, so they stay inferred (AUDIT_TIER_A_2026-10-22.md).
+SERVES = {'AZ', 'HI', 'DC'}
 FIPS = {}
 for r in csv.DictReader(open('states/census_county_pop_2024.csv', encoding='latin-1')):
     if r['SUMLEV'] == '040': FIPS[r['STATE']] = r['STNAME']
@@ -90,7 +91,7 @@ def build():
     from model_of import model_of
     for f in json.load(open('states/OR_ASA.json'))['features']:
         a = f['attributes']; nm = a.get('ASA_AMBULANCE_PROVIDER_NAME'); c = a.get('COUNTY_NAME')
-        if nm and c: add('OR', c.title(), {'name': nm.strip(), 'own': model_of(nm), 'sub': None, 'src': 'derived', 'basis': 'serves', 'note': a.get('ASA_NAME')})
+        if nm and c: add('OR', c.title(), {'name': nm.strip(), 'own': model_of(nm), 'sub': None, 'src': 'derived', 'basis': 'located', 'note': a.get('ASA_NAME')})
     for e in json.load(open('states/MS_county_providers.json')):
         for c in (e['county'] if isinstance(e['county'], list) else re.split(r'[/,;]', e['county'] or '')):
             add('MS', re.sub(r'\s+MS$', '', c.strip()), {'name': e['provider'], 'own': model_of(e['provider']), 'sub': None, 'src': 'derived', 'basis': 'serves', 'note': e.get('level')})
