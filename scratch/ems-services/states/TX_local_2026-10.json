@@ -146,6 +146,78 @@
    "tier": "held",
    "services": [],
    "page_note": "UT Health East Texas EMS says it serves 'all of Henderson and Panola Counties, most of Smith, Cherokee and Wood Counties'. Not yet confirmed from a public source: who serves the rest of Smith County."
+  },
+  "48497": {
+   "county": "Wise",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Wise County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.co.wise.tx.us/362/About",
+     "evidence": "Wise County EMS Rescue provides emergency pre-hospital care as well as critical care transfers for the entire county.",
+     "vintage": "2026 (page live 2026-10-22; Wise County Messenger 2026-09-12 and 2026-10-19 name the Wise County EMS chief and Medic units transporting patients)"
+    }
+   ],
+   "page_note": "Wise County EMS, a county department based in Decatur, provides emergency ambulance care and transfers for the entire county. It is the only ambulance service licensed by the state in Wise County; Justin Fire Department (Denton County) is a neighbouring first-response unit and no transport by it inside Wise County was found. City fire departments such as Decatur and Rhome give first response and Wise County EMS transports.",
+   "second_source": "https://www.wcmessenger.com/articles/5-injured-3-critically-in-fm-51-head-on-crash/ (2026-09-12: \"Wise County EMS later transported the patient by ground to Medical City Decatur. Medic-1 transported 2 patients to Medical City Decatur\"); https://www.wcmessenger.com/articles/hospital-partnership-advances-decatur-fire-departments-ems-capabilities/ (2024-12-11: Decatur Fire Department is not going into patient transport; Wise County EMS transports)"
+  },
+  "48015": {
+   "county": "Austin",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Austin County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "http://www.austincountyems.com/",
+     "evidence": "Austin County EMS is the sole 911 emergency medical provider for all 656 square miles of Austin County.",
+     "vintage": "2025 (about-us page: \"In April 2025, Austin County proudly implemented new SDO/Guidelines\"; page live 2026-10-22)"
+    }
+   ],
+   "page_note": "Austin County EMS, a county service based in Bellville with stations in Bellville, Sealy, Wallis and Industry, says it is the sole 911 emergency medical provider for the whole county. The other licensed ambulance company in the county (Holiness & Brothers EMS, Sealy) is licensed for non-emergency transfers only. The Sealy Fire Department provides medical first response, not ambulance transport.",
+   "second_source": "https://www.austincounty.com/page/austin.EMS (county site lists EMS and links to austincountyems.com); https://sealyfire.com/about/ (Sealy Fire Department, Austin County ESD No. 2, provides fire response and \"emergency medical assists\")"
+  },
+  "48477": {
+   "county": "Washington",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Washington County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "http://www.washingtoncountyems.net/about/",
+     "evidence": "The department believes in a maintaining a comprehensive system that is capable of handling 911 calls, Emergency Transfers, Critical Care Services, Non-emergency transfers, and even Rescue Paramedic Services to the visitors and residents of Washington County.",
+     "vintage": "2026 (page live 2026-10-22; City of Brenham post 2026-08-22: \"two people were transported by Washington County EMS\")"
+    }
+   ],
+   "page_note": "Washington County EMS, a county department based in Brenham with a service area of about 700 square miles, handles 911 calls and emergency transfers for the county. It is the only ambulance service licensed by the state in Washington County; Brenham has no city ambulance licence.",
+   "second_source": "https://www.aol.com/articles/2-injured-plane-crash-brenham-152344000.html (2026-08-22: \"two people were transported by Washington County EMS with minor injuries\"); county FY2027 adopted budget has an EMS section (pages 31-33); Washington County EMS strategic plan linked from the county site (https://app.smore.com/n/5xz2fc-ems-strategic-planning-document) reports its countywide response time; Brenham Fire Department works with Washington County EMS at entrapment scenes (cityofbrenham.org fire history page)"
+  },
+  "48097": {
+   "county": "Cooke",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Cooke County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.co.cooke.tx.us/page/cooke.EMS",
+     "evidence": "Cooke County EMS is a department within the government of Cooke County in North Texas. We are located directly off of Interstate 35. Bordered by the Red River, Grayson County, Montague County and Denton County, we cover approximately 900 square miles.",
+     "vintage": "2026 (page live 2026-10-22; EMS protocols effective 2026-03-05: \"Cooke County Emergency Medical Services covers 874 Sq. Miles of Cooke County ... the transporting unit will contact the destination hospital\"; FY2027 adopted budget carries ambulance fee revenue)"
+    }
+   ],
+   "page_note": "Cooke County EMS, a county department based in Gainesville, covers the whole county and transports patients. It is the only ambulance service licensed by the state in Cooke County; Gainesville has no city ambulance licence. Gainesville Fire-Rescue and the volunteer fire departments respond as medical first responders; the county 911 center dispatches Cooke County EMS.",
+   "second_source": "https://newtools.cira.state.tx.us/upload/page/3110/docs/2026CookeCountyEMSProtocols.pdf; https://www.co.cooke.tx.us/page/cooke.SheriffComm (county 911 Communications: \"handles 911 emergency services and provides dispatch services for ... EMS\", listing Cooke County Emergency Medical Services as the only EMS agency); https://www.gainesville.tx.us/1284/About-Us (Gainesville Fire-Rescue provides \"medical first responder\" services)"
   }
  }
 }
