@@ -1428,6 +1428,114 @@
    "page_note": "Since June 2026 AmeriPro Health holds Magoffin County's five-year emergency ambulance contract. Whether any other service still answers 911 calls in the county is not yet confirmed.",
    "second_source": "",
    "licence_check": "KBEMS 2026-08-01 still lists Magoffin County Ambulance Service 1699 and Lifeguard 1611 (Ia, Magoffin) and no AmeriPro licence naming Magoffin; the current map names those two. Contract is newer than the map; AmeriPro licence status not seen."
+  },
+  "21097": {
+   "county": "Harrison",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Harrison County EMS (Harrison Memorial Hospital)",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.pmg-ky3.com/cynthiana/harrison-county-ems-receives-successful-kbems-inspection/article_9955f09d-182b-5968-a21d-883cf7ac0099.html",
+     "evidence": "Harrison County EMS, operated by Harrison Memorial Hospital, ... The service currently operates two Advanced Life Support ambulances 24 hours a day, seven days a week. The 35-member EMS team responds to approximately 4,000 emergency calls each year and stays prepared for rapid response throughout Harrison County. In addition to emergency responses, Harrison County EMS also transports Basic, Advanced and Critical Care inter facility transfers from Harrison Memorial Hospital.",
+     "vintage": "2026-03-23"
+    }
+   ],
+   "page_note": "Harrison County EMS, run by Harrison Memorial Hospital, answers 911 calls and runs the ambulances across Harrison County, including Cynthiana.",
+   "second_source": "https://www.pmg-ky3.com/cynthiana/harrison-county-ems-receives-state-and-national-recognition-for-excellence-in-patient-care/article_6b3dc1f9-cfb2-5ef7-8ca0-c2ce0f7959c3.html (2026-04-29: Mission: Lifeline EMS Silver award; 'responds to approximately 4,000 emergency calls annually')",
+   "licence_check": "Only Class Ia 911 licence naming Harrison: 1263 HARRISON COUNTY EMS ('Cynthiana and Harrison County', exact name); others are event (Alpha 8001, no transport) and UK critical care 3004. NG911 Ky_911_RSB_EMS: 'Cynthiana-Harrison Co E911' 99.99% (dispatch label, single zone). Cynthiana ~6k, no city ambulance licence. Weak point: transport wording is 'emergency responses' plus interfacility 'transports'; no crash story naming the transporting crew found."
+  },
+  "21069": {
+   "county": "Fleming",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Fleming County EMS (Fleming County Ambulance Taxing District)",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.flemingems.com/about",
+     "evidence": "We at Fleming County EMS provide Advanced Life Support Services to our Fleming County Residents by responding to all Emergency 911 calls in the county as well as providing transport for patients of our local hospital to other higher level of care facilities",
+     "vintage": "live page fetched 2026-10-22 (footer 2023)"
+    }
+   ],
+   "page_note": "Fleming County EMS, the county ambulance taxing district, answers every 911 call in Fleming County and carries the patients.",
+   "second_source": "https://www.wtvq.com/kentucky-man-sentenced-after-cutting-a-fleming-county-deputy-with-a-knife-at-a-hospital/ (2026-04-23: 'Fleming County EMS transported Hall to the hospital for evaluation.')",
+   "licence_check": "Only licence of any class naming Fleming: 1147 FLEMING COUNTY EMS (Ia, 'Fleming County', exact name). NG911 'Fleming County EMS' 99.99% (Rowan County EMS 0.13% edge). Flemingsburg ~3k."
+  },
+  "21061": {
+   "county": "Edmonson",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Edmonson County EMS (licensed as Edmonson Co. Ambulance Service)",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.wnky.com/bowling-green-man-charged-with-assault-in-edmonson-county/",
+     "evidence": "The other male involved was transported by Edmonson County EMS to The Medical Center at Bowling Green.",
+     "vintage": "2026-07-06"
+    }
+   ],
+   "page_note": "Edmonson County EMS (Edmonson County Ambulance Service) carries 911 patients across Edmonson County.",
+   "second_source": "https://www.wbko.com/2021/10/26/edmonson-co-ems-urban-classification-negatively-impacting-agency-taxpayers/ (name tie: 'said Keith Sanders, Edmonson County EMS Director/Paramedic ... \"It affects our Ambulance Service negatively\"'); county page https://edmonsoncounty.org/ambulance-service/ lists the county entity 'EDMONSON COUNTY AMBULANCE SERVICE 1755 Ky Highway 259 N Brownsville'.",
+   "licence_check": "Only Ia licence naming Edmonson: 1519 EDMONSON CO. AMBULANCE SERVICE ('Brownsville and Edmonson County'). NG911 'Edmonson County Ambulance Service' 99.99% (Hart Co EMS 0.5%, Grayson 0.07% edges). Name tie is the 2021 WBKO quote (director of 'Edmonson County EMS' calls it 'our Ambulance Service'): audit should judge it."
+  },
+  "21225": {
+   "county": "Union",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Deaconess EMS",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.deaconess.com/for-you/healthcare-professionals/prehospital-care",
+     "evidence": "If you or a loved one experience a medical emergency, call 9-1-1. Skilled medical professionals will provide crucial pre-hospital care during transport to the most appropriate Deaconess facility. Deaconess EMS Our Illinois teams serve Saline & Gallatin Co. Illinois. Our Kentucky/ Indiana teams serve Henderson & Union County",
+     "vintage": "live page fetched 2026-10-22"
+    }
+   ],
+   "page_note": "Deaconess EMS runs the 911 ambulances for Union County, including Morganfield and Sturgis.",
+   "second_source": "https://web.archive.org/web/20241213001801/https://deaconess.com/For-You/HealthCare-Professionals/Prehospital-Care (same wording 2024-12; present since 2022-12 captures)",
+   "licence_check": "Every 911-transport licence naming Union County is Deaconess: 1342 DEACONESS EMS, LLC (Ia, Morganfield, 'Union County') and 1043 DEACONESS EMS, LLC (Ia, Henderson, 'Henderson & Union County'); 3008 Deaconess Women's critical care; 1489 Union Fire Protection District is Boone County. NG911 'Union County EMS | unioncountyky.org' 99.65% (unioncountyky.org returns 403). Morganfield ~3.5k. Weak point: no dated 2024+ news naming Deaconess in Union County found."
+  },
+  "21177": {
+   "county": "Muhlenberg",
+   "tier": "held",
+   "services": [],
+   "page_note": "Muhlenberg County EMS answers 911 calls in Muhlenberg County; the state licence is held by Owensboro Health Muhlenberg Community Hospital. A page tying the two names was not yet found.",
+   "second_source": "https://www.wbko.com/2026/08/23/drakesboro-man-charged-with-assault-murder/ ('Shanks was rushed by EMS to Owensboro Health Muhlenberg Community Hospital'; responders list 'Muhlenberg County EMS')",
+   "licence_check": "Only Ia 911 licence: 1420 OWENSBORO HEALTH MUHLENBERG COMMUNITY HOSPITAL ('Muhlenberg County'); NG911 'Muhlenberg EMS' 99.92%. Missing: page saying the hospital runs Muhlenberg County EMS."
+  },
+  "21219": {
+   "county": "Todd",
+   "tier": "held",
+   "services": [],
+   "page_note": "Todd County EMS responds across Todd County (licensed as Todd County Ambulance Service). A page tying the two names and naming it as the transporting crew was not yet found.",
+   "second_source": "https://www.wnky.com/bus-driver-children-sustain-injuries-in-todd-county-crash/ (2025-05-06: 'Todd County EMS says four children, a bus driver, and an occupant of the truck sustained injuries in the crash and were transported to a local hospital.')",
+   "licence_check": "Only Ia licence: 1325 TODD CO. AMBULANCE SERVICE; Vanderbilt 2002 is IIa IFT. NG911 'Todd County EMS' 100%. Missing: name tie; quote does not say who transported."
+  },
+  "21211": {
+   "county": "Shelby",
+   "tier": "held",
+   "services": [],
+   "page_note": "Shelby County EMS, a county department, holds the 911 ambulance licence for Shelby County. A recent page saying it carries patients was not yet found.",
+   "second_source": "https://www.pmg-ky1.com/sentinel_news/park-reflects-on-2024-accomplishments-of-shelby-agencies/article_daa45110-63f9-551a-99b4-784c55b93710.html (2025-01: 'The emergency medical services (EMS) department celebrated receiving a new ambulance')",
+   "licence_check": "1118 SHELBY COUNTY EMS (Ia 911, 'Shelby County'); 1706 AmeriPro EMS of Kentucky (Ia, typed convalescent/interfacility, 'Jefferson and Shelby Counties', excluded as IFT per Fayette precedent). NG911 'SHELBY COUNTY EMS' 100%. Shelbyville ~17k, no city licence. Missing: transport quote."
+  },
+  "21025": {
+   "county": "Breathitt",
+   "tier": "held",
+   "services": [],
+   "page_note": "Cross Medical Response (Breathitt-Wolfe EMS) holds the 911 ambulance licence for Breathitt County. A recent page saying it carries patients there was not yet found.",
+   "second_source": "https://www.wnky.com/1-dead-after-vehicle-collides-with-ambulance-in-breathitt-county/ (2026-05: a Perry County ambulance 'returning to its station' crashed in Breathitt County; not evidence of Perry serving Breathitt)",
+   "licence_check": "Only Ia licence: 1672 Breathitt-Wolfe EMS, Inc. dba Cross Medical Response ('Breathitt County and Wolfe County'). NG911 'BREATHIITT CO EMS' 99.68%."
   }
  }
 }
