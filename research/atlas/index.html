@@ -4096,7 +4096,7 @@
         var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
         function dateText(c) {
           var chk = c.checked ? MONTHS[+c.checked.slice(5, 7) - 1] + ' ' + c.checked.slice(0, 4) : '';
-          return ' ' + (c.asof ? 'Sources dated ' + c.asof.replace('-', '–') + '.' : 'Source date not recorded.')
+          return ' ' + (c.asof ? 'Sources dated or seen live in ' + c.asof.replace('-', '–') + '.' : 'Source date not recorded.')
             + (chk ? ' Last checked ' + chk + '.' : '') + ' Ambulance contracts change, so this can go out of date.';
         }
         // Tier A says which kind of record named the county: a state layer or a local page.

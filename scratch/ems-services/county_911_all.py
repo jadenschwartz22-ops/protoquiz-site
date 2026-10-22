@@ -89,9 +89,9 @@ def build():
     # tier-A provider-of-record rows: GA zoning, CO metro, and states/<ST>_911.json (never COUNTY_911_<ST>.json, county_911.py's draft)
     extra = {f: json.load(open(f)) for f in ['states/GA_zoning.json', 'states/CO_metro_911.json'] + sorted(glob.glob('states/[A-Z][A-Z]_911.json'))}
     S = {k: dict(v, providers=[], medicare=[]) for k, v in C.items()}
-    def add(st, county, p):
+    def add(st, county, p, yr=''):   # yr: the row's own source date, the asof fallback when no lane row or via text carries a year
         k = fips(st, county)
-        if k: S[k]['providers'].append(p); return True
+        if k: S[k]['providers'].append(p); S[k].setdefault('vint', []).extend(re.findall(r'20[12]\d', yr)); return True
         return False
     for r in rows:
         st = r['state']; p = {'name': r['provider'], 'own': r['model'], 'sub': r.get('subtype'), 'src': r['model_source'], 'basis': 'serves' if st in SERVES else 'located'}
@@ -126,7 +126,7 @@ def build():
             note = '; '.join(x for x in (e.get('zone_note') or e.get('area'), e.get('flag')) if x)   # flag: an unresolved conflict or a dated change
             est = e.get('st') or os.path.basename(f)[:2]
             part = est in PARTIAL_STATES and (est, e['county']) not in WHOLE_COUNTY
-            add(est, e['county'], {'name': e['provider'], 'own': own_word(e.get('ownership')) or model_of(e['provider']), 'sub': None, 'src': 'provider-of-record', 'basis': 'located' if part else 'serves', 'partial': part, 'kind': kind, 'note': note, 'url': url})
+            add(est, e['county'], {'name': e['provider'], 'own': own_word(e.get('ownership')) or model_of(e['provider']), 'sub': None, 'src': 'provider-of-record', 'basis': 'located' if part else 'serves', 'partial': part, 'kind': kind, 'note': note, 'url': url}, '' if part else str(e.get('vintage', '')).split('(')[0])   # text before any parenthesis: it can name capture or contract dates, not the source's
     # TN DoH EMS Directory: each service listed once, under the county where it is LICENSED (a *PRIMARY 911 tag is strong evidence, not a service area). Never tier A: basis 'located', so B/C by the Medicare check.
     for e in json.load(open('states/TN_directory.json')):
         add('TN', e['county'], {'name': e['provider'], 'own': model_of(e['provider']), 'sub': None, 'src': 'directory', 'basis': 'located', 'note': e['evidence'], 'url': e['source_url']})
@@ -172,7 +172,8 @@ def build():
                 S[k]['providers'].append({'name': a['name'], 'own': model_of(a['name']), 'sub': None, 'src': 'provider-of-record', 'basis': a['basis'], 'partial': a.get('partial', False), 'kind': a['kind'], 'note': a['note'], 'url': a['url'], **({'via': a['via']} if a.get('via') else {})})
     # Public-source state files (2026-10-21), one block per state, shapes differ. Every service the file names for a tier-A county is listed, none picked; tiers follow the rows.
     # pub(): a provider-of-record row; `transport` is the file's own value (True / False / None), never guessed from a name. basis 'serves' = the source names the county (or a named part of it).
-    def pub(k, name, via, url, note, kind='state', basis='serves', partial=False, transport=None, own=None):
+    def pub(k, name, via, url, note, kind='state', basis='serves', partial=False, transport=None, own=None, yr=''):
+        S[k].setdefault('vint', []).extend(re.findall(r'20[12]\d', yr))
         S[k]['providers'].append({'name': name, 'own': own or model_of(name), 'sub': None, 'src': 'provider-of-record', 'basis': basis, 'partial': partial, 'kind': kind, 'note': note, 'url': url, 'via': via, 'transport': transport})
     def load(st): return json.load(open(f'states/{st}_public_2026-10.json'))
     def ck(st, v): return fips(st, v['county'])
@@ -186,8 +187,8 @@ def build():
         for s in sv:
             r = utrow[s['name']]
             if v['county'] == 'Daggett': continue   # VERIFY 10-21: the county runs the ambulance; the single district label is fire for the west only (county row below)
-            pub(ck('UT', v), s['name'], UT_VIA, r['source_url'], 'named in the state EMS response-area layer for this county' + ('' if r['transport'] else f"; licence class {r['licence_class']}, transport not confirmed" if r['licence_class'] else '; licence class not matched, transport not confirmed'), transport=r['transport'])
-    pub(ck('UT', {'county': 'Daggett'}), 'Daggett County Emergency Medical Services', 'Daggett County, Utah Emergency Medical Services page (county government)', 'https://www.daggettcounty.gov/98/Ambulance-Services', 'county department: emergency medical treatment and transport, paid volunteer EMTs; the state layer labels the county Flaming Gorge Fire and EMS District, which the county describes as fire protection for the west', kind='local', transport=True)
+            pub(ck('UT', v), s['name'], UT_VIA, r['source_url'], 'named in the state EMS response-area layer for this county' + ('' if r['transport'] else f"; licence class {r['licence_class']}, transport not confirmed" if r['licence_class'] else '; licence class not matched, transport not confirmed'), transport=r['transport'], yr=ut['meta']['layer_description_date'])
+    pub(ck('UT', {'county': 'Daggett'}), 'Daggett County Emergency Medical Services', 'Daggett County, Utah Emergency Medical Services page (county government)', 'https://www.daggettcounty.gov/98/Ambulance-Services', 'county department: emergency medical treatment and transport, paid volunteer EMTs; the state layer labels the county Flaming Gorge Fire and EMS District, which the county describes as fire protection for the west', kind='local', transport=True, yr=ut['meta']['retrieved'])   # undated county page, dated by the pull
     for c, n in {'Salt Lake': 'Salt Lake City transport is run by Gold Cross in partnership with SLC Fire; the state layer lists responders, not Gold Cross.',
                  'Daggett': 'Ambulance operated by the Daggett County EMS department; Flaming Gorge Fire and EMS District covers the west only.',
                  'Uintah': 'Ute Tribe Ambulance unverified; Gold Cross has a Vernal base.'}.items(): S[ck('UT', {'county': c})]['note'] = n
@@ -197,7 +198,7 @@ def build():
     for fk, v in vt['county_verdict'].items():
         for s in v['services']:
             r = vtrow[s['name']]
-            pub(fk, s['name'], VT_VIA, r['source_url'], 'assigned town by town in the state service-area layer' + ('' if r['transport'] else '; ' + NOT_SAID), transport=r['transport'])
+            pub(fk, s['name'], VT_VIA, r['source_url'], 'assigned town by town in the state service-area layer' + ('' if r['transport'] else '; ' + NOT_SAID), transport=r['transport'], yr=vt['meta']['layer_data_last_edit'])
     # TX: DETCOG, Panhandle and Bastrop 911 GIS service-area layers; only the A-supportable counties. Partial and held counties keep their tier and show the file's page_note.
     TX_VIA = 'Texas regional and county 911 GIS service-area layers (DETCOG, Panhandle, Bastrop), not the DSHS licence record'
     tx = load('TX')
@@ -213,7 +214,7 @@ def build():
         if v['tier'] != 'A': continue
         for s in v['services']:   # `area` = a Regions 6/8 RSA map layer; `share` = a Region 2 agency polygon (second source)
             pub(fk, s['name'].replace(' (County Based)', ''), OK_VIA, v['source_url'] if 'area' in s else ok['meta']['sources'][1]['url'],
-                (s['area'] + ' on the RSA map' if 'area' in s else f"{s['share']:.0%} of the county by the Region 2 agency polygons") + '; ' + NOT_SAID, kind='local', partial='area' in s and s['area'] != 'whole county')
+                (s['area'] + ' on the RSA map' if 'area' in s else f"{s['share']:.0%} of the county by the Region 2 agency polygons") + '; ' + NOT_SAID, kind='local', partial='area' in s and s['area'] != 'whole county', yr=ok['meta']['sources']['area' not in s]['label'])
     # MO: ambulance-district polygons (an osageadmin compilation, 2023) cross-checked with the DHSS ground-station layer. A 63 only; A-unverified (4), partial and none keep their tier and show the file's page_note.
     MO_VIA = 'Missouri ambulance-district boundaries, a compilation of district service areas (cross-checked with the MO DHSS ambulance station layer; not a state or licence record)'
     mo = load('MO'); morow = {r['name']: r for r in mo['rows']}
@@ -222,7 +223,7 @@ def build():
         if v['tier'] != 'A': continue
         for s in v['services']:
             r = morow[s['name']]; dh = r['dhss_name_match']
-            pub(fk, dh[0] if len(dh) == 1 else s['name'], MO_VIA, r['source_url'], f"ambulance district layer name '{s['name']}'" + (f"; DHSS station layer: {', '.join(dh)}" if dh else '; no DHSS ground station of that name inside it'), kind='local', transport=r['transport'], own=own_word(r['ownership']) or 'public')
+            pub(fk, dh[0] if len(dh) == 1 else s['name'], MO_VIA, r['source_url'], f"ambulance district layer name '{s['name']}'" + (f"; DHSS station layer: {', '.join(dh)}" if dh else '; no DHSS ground station of that name inside it'), kind='local', transport=r['transport'], own=own_word(r['ownership']) or 'public', yr=r['vintage'])
     # KS: NG911 EMS emergency service boundaries (Kansas 911 Coordinating Council, stewarded by the county PSAPs). A 55 only (named polygon matches a KBEMS ground licence); A-unverified (35) and partial keep their tier. The label is the PSAP's free text, not a licence-exact name.
     KS_VIA = 'Kansas NG911 EMS service area boundaries (Kansas 911 Coordinating Council, stewarded by the county PSAPs; not a licence record)'
     ks = load('KS'); ksrow = {r['name']: r for r in ks['rows']}
@@ -231,7 +232,7 @@ def build():
         if v['tier'] != 'A': continue
         for s in v['services']:
             rg = s.get('roster_ground_match') or []
-            pub(fk, s['name'], KS_VIA, ksrow[s['name']]['source_url'], "the PSAP's label in the state NG911 layer" + (f"; KBEMS ground licence: {', '.join(rg)}" if rg else '; no KBEMS ground licence name matched'), transport=s.get('transport'))
+            pub(fk, s['name'], KS_VIA, ksrow[s['name']]['source_url'], "the PSAP's label in the state NG911 layer" + (f"; KBEMS ground licence: {', '.join(rg)}" if rg else '; no KBEMS ground licence name matched'), transport=s.get('transport'), yr=ks['meta']['layer_last_edit'])
     # WI: statewide NG911 EMS boundary layer (Office of Emergency Communications, county-submitted). A 62 only; the 7 partial and 3 none keep their tier. Fire and first-responder labels stay, transport False; "Verify EMS" placeholders are not providers.
     WI_VIA = 'Wisconsin NG911 EMS service area boundaries (Office of Emergency Communications, county-submitted; not a licence record)'
     wi = load('WI'); wirow = {r['name']: r for r in wi['rows']}
@@ -254,7 +255,7 @@ def build():
     S['19113']['note'] = 'The Linn County Communications Division lists six ambulance services serving the county, the same six this layer names.'
     co = load('CO'); CO_VIA = 'Park County, Colorado GIS ambulance district service area layer (county-published, not a licence record)'
     for s in co['county_verdict']['08093']['services']:
-        pub('08093', s['name'].replace('Ute Pass Regional Ambulance District', 'Ute Pass Regional Health Service District'), CO_VIA, co['rows'][0]['source_url'], 'named in the county ambulance district layer; the layer does not say this district carries patients', kind='local')
+        pub('08093', s['name'].replace('Ute Pass Regional Ambulance District', 'Ute Pass Regional Health Service District'), CO_VIA, co['rows'][0]['source_url'], 'named in the county ambulance district layer; the layer does not say this district carries patients', kind='local', yr=co['rows'][0]['vintage_layer_edit'][:10])
     S['08093']['note'] = co['county_verdict']['08093']['page_note']
     mt = load('MT'); MT_VIA = 'Carbon County, Montana EMS district service area layer (county-published, owner CarbonFire)'
     for s in mt['county_verdict']['30009']['services']:
@@ -305,6 +306,8 @@ def build():
             for p in d['providers']:
                 if p['basis'] == 'serves' and not p.get('audited'): p['basis'] = 'located'
     if ambiguous: print('not placed, county or city not said:', dict(ambiguous))
+    # State-wide rosters whose rows carry no date: the source's own date (AZ CON item modified 2026-01-02; CT DPH PSAR table m4bu-3dad last change 2026-03-19; HI DOH EMS_Stations layer "as of December 2025"; MSDH licensed-ambulance list "July 2026")
+    ROSTER_YEAR = {'AZ': ['2026'], 'CT': ['2026'], 'HI': ['2025'], 'MS': ['2026']}
     for k, d in S.items():
         d['medicare'].sort(key=lambda m: -m['E']); mnames = {norm(m['name']) for m in d['medicare'] if m['emerg']}
         seen = {}; ps = []
@@ -328,7 +331,7 @@ def build():
         d['partial'] = tier != 'A' and any(p.get('partial') for p in ps)
         d['tier'] = tier; d['answer'] = [p['name'] for p in ans]
         if tier == 'A':   # how old the evidence is, shown on the card (owner 10-22: be honest it can be out of date)
-            ys = sorted(set(d.get('years') or re.findall(r'20[12]\d', d.get('via') or '')))
+            ys = sorted(set(d.get('years') or re.findall(r'20[12]\d', d.get('via') or '') or d.get('vint') or ROSTER_YEAR.get(d['st'], [])))
             if ys: d['asof'] = ys[0] if len(ys) == 1 else f'{ys[0]}-{ys[-1]}'
             d.setdefault('checked', '2026-10')
         if tier == 'A': d['source'] = 'state' if any(p.get('kind', 'state') == 'state' for p in ans) else 'local'   # rows without kind came from a state layer
