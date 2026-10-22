@@ -88,7 +88,7 @@
      "partial": false,
      "area": "City of Alexandria",
      "source_url": "https://www.alexandriava.gov/fire-department/ambulance-billing-faqs",
-     "evidence": "What is the charge for being transported to the hospital by a medic unit? ... The City of Alexandria Fire Department’s ambulance billing is handled by a third-party company EMS/MC Management Consultants",
+     "evidence": "What is the charge for being transported to the hospital by a medic unit? ... The City of Alexandria Fire Department\u2019s ambulance billing is handled by a third-party company EMS/MC Management Consultants",
      "vintage": "2026 undated page"
     }
    ],
@@ -440,7 +440,7 @@
      "partial": false,
      "area": "whole city",
      "source_url": "https://www.winchesterva.gov/Services-Payments/Public-Safety/Fire-Rescue/Emergency-Services/Ambulance-Billing",
-     "evidence": "The Winchester Fire and Rescue (WFRD) Revenue Recovery Program is based on concern for the medical and financial health of city residents. ... If you need to provide insurance information regarding your transport or have specific questions about your bill, please contact the City’s billing agency, Digitech",
+     "evidence": "The Winchester Fire and Rescue (WFRD) Revenue Recovery Program is based on concern for the medical and financial health of city residents. ... If you need to provide insurance information regarding your transport or have specific questions about your bill, please contact the City\u2019s billing agency, Digitech",
      "vintage": "2025 (archive capture; Calendar Year 2025 rates)",
      "raw": "states/web_raw/VA/winc_bill.txt"
     }
@@ -729,7 +729,7 @@
      "partial": false,
      "area": "whole county (stations 2, 3 and 8)",
      "source_url": "https://kingandqueenco.net/emergency-medial-services/",
-     "evidence": "King and Queen County Emergency Services is responsible for the provision of Emergency Medical Services to King and Queen County as the county’s licensed EMS agency by the Virginia Department of Health.",
+     "evidence": "King and Queen County Emergency Services is responsible for the provision of Emergency Medical Services to King and Queen County as the county\u2019s licensed EMS agency by the Virginia Department of Health.",
      "vintage": "2026"
     }
    ],
@@ -771,6 +771,34 @@
    ],
    "page_note": "Pulaski County Public Safety runs the county's EMS and transports patients to the hospital (WDBJ, August 2026). It is the only state-licensed ambulance service based in the county; Radford's city service is licensed in Radford. Not yet confirmed from a county page: that Pulaski County Public Safety carries all 911 patients across the whole county, including the towns of Pulaski and Dublin and the Fairlawn area, and what the county's separate ambulance-service budget line pays for.",
    "second_source": "state OEMS licence 00856, Pulaski County Public Safety, 143 Third St NW, Pulaski (valid to 2027-02-28)"
+  },
+  "51670": {
+   "county": "Hopewell city",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Hopewell Fire & EMS",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "whole city",
+     "source_url": "https://www.hopewellva.gov/DocumentCenter/View/4447/EMS-Billing-Guide-2026-PDF",
+     "evidence": "The Ride Saver Program offers City of Hopewell residents unlimited medically necessary transports for one year",
+     "vintage": "2026"
+    },
+    {
+     "name": "Hopewell Fire & EMS",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "whole city",
+     "source_url": "https://www.hopewellva.gov/510/Operations",
+     "evidence": "Both stations house an advanced life support (ALS) engine and ALS medic",
+     "vintage": "2023 (Operations page, last changed 2023-11; billing guide 2026 agrees)"
+    }
+   ],
+   "page_note": "",
+   "second_source": "https://www.hopewellva.gov/510/Operations"
   }
  }
 }

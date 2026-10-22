@@ -1,0 +1,118 @@
+{
+ "meta": {
+  "state": "IA",
+  "retrieved": "2026-10-22",
+  "via": "county government websites with Wayback snapshots for vintage"
+ },
+ "county_verdict": {
+  "19103": {
+   "county": "Johnson",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Johnson County Ambulance Service",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.johnsoncountyiowa.gov/ambulance/about-jcas",
+     "evidence": "Johnson County Ambulance Service (JCAS) is owned and operated by the County of Johnson, Iowa. Since its establishment in 1966, the service has been the exclusive provider of emergency ambulance response, pre-hospital emergency care and transportation in Johnson County.",
+     "vintage": "2025 (archived 2025-12-16)"
+    },
+    {
+     "name": "Iowa City Fire Department",
+     "transport": false,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "Iowa City",
+     "source_url": "https://www.johnsoncountyiowa.gov/news/ambulance/2025-10-01/iowa-city-fire-department-johnson-county-ambulance-service-expand",
+     "evidence": "All Iowa City Firefighters are trained to the EMT-Basic level and can provide lifesaving care. However, ICFD cannot transport patients.",
+     "vintage": "2025-10-01"
+    }
+   ],
+   "page_note": "Johnson County Ambulance Service, run by the county, is the exclusive provider of 911 ambulance response and transport countywide; Iowa City Fire responds but does not transport. Air ambulance operators based in Iowa City are not 911 ground services. Two privately licensed ground ambulance services based in Iowa City, Southeast Iowa Ambulance Service and Advanced Medical Transport of Iowa, are not yet confirmed as non-emergency transfer services only.",
+   "second_source": "https://www.johnsoncountyiowa.gov/news/ambulance/2025-10-01/iowa-city-fire-department-johnson-county-ambulance-service-expand"
+  },
+  "19095": {
+   "county": "Iowa",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Iowa County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.iowacounty.iowa.gov/ems/",
+     "evidence": "Iowa County EMS provides paramedic level ambulance services to all 586 square miles of Iowa County.",
+     "vintage": "2025 (archived 2025-06-01)"
+    },
+    {
+     "name": "Iowa County first responder teams (Amana Colonies, Ladora, Marengo, Millersburg, North English, Victor, Williamsburg)",
+     "transport": false,
+     "ownership": "mixed: city and volunteer first responders",
+     "partial": false,
+     "area": "their communities",
+     "source_url": "https://www.iowacounty.iowa.gov/ems/",
+     "evidence": "These teams provide basic emergency level care to stabilize patients until the ambulance arrives.",
+     "vintage": "2025"
+    }
+   ],
+   "page_note": "Iowa County EMS, a county service with ambulances staffed in Marengo and Williamsburg, provides ambulance service to the whole county; local first responder teams assist but do not transport."
+  },
+  "19121": {
+   "county": "Madison",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Madison County Emergency Medical Services",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.madisoncounty.iowa.gov/offices/emergency-medical-services/",
+     "evidence": "EMS is staffed with 24 hour coverage for entire Madison County with paramedic specialists",
+     "vintage": "2026 (archived 2026-01-20)"
+    },
+    {
+     "name": "First responder units of Earlham, Truro and St. Charles",
+     "transport": false,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "their cities",
+     "source_url": "https://www.madisoncounty.iowa.gov/offices/emergency-medical-services/",
+     "evidence": "First Responders units include the cities of Earlham, Truro, and St. Charles.",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Madison County EMS, a county department based in Winterset, provides 24-hour paramedic ambulance coverage for the whole county; Earlham, Truro and St. Charles are first responder units. Truro Fire and Rescue holds a state ambulance licence with a transport agreement, and whether it transports patients is not yet confirmed."
+  },
+  "19161": {
+   "county": "Sac",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Sac County Ambulance",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.saccountyiowa.gov/ambulance_service/",
+     "evidence": "Today Sac County Ambulance maintains a workforce comprised of approximately 80% volunteer, 20% paid and paid on call with 5 ambulances throughout the county. The main station in Sac City houses 2 Advanced Life Support Ambulances and the 3 satellite stations located in Lake View, Schaller and Odebolt",
+     "vintage": "2026 (archived 2026-02-15)"
+    },
+    {
+     "name": "Auburn, Early, Lytton, Odebolt, Schaller and Wall Lake first responders",
+     "transport": false,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "their communities",
+     "source_url": "https://www.saccountyiowa.gov/ambulance_service/",
+     "evidence": "First Responder Services Auburn First Responders Early First Responders Lytton First Responders Odebolt First Responders Schaller First Responders Wall Lake First Responders",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Sac County Ambulance, run by the county from Sac City with satellite ambulances at Lake View, Schaller and Odebolt, provides ambulance transport countywide; town first responder groups do not transport."
+  }
+ }
+}

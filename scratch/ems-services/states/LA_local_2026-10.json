@@ -186,6 +186,60 @@
    "tier": "held",
    "services": [],
    "page_note": "Not yet confirmed from a public source: who provides 911 ambulance service. State law lets the parish run its own ambulance service, but no evidence was found of what it does."
+  },
+  "22021": {
+   "county": "Caldwell",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Acadian Ambulance Service",
+     "transport": true,
+     "ownership": "private (contractor to Caldwell Parish Police Jury)",
+     "partial": false,
+     "area": "whole parish",
+     "source_url": "https://www.knoe.com/2026/10/07/acadian-ambulance-expands-caldwell-parish/",
+     "evidence": "Acadian Ambulance is now the sole emergency medical services provider for Caldwell Parish, effective Thursday, Oct. 1. ... On Sept. 1, the Caldwell Parish Police Jury unanimously voted to select Acadian Ambulance as its EMS provider following a recommendation from the Ambulance Committee. ... Because we’re going to provide 2 ambulances to Caldwell Parish, both of those are going to be ALS units ... they’ll both be located in Caldwell Parish (KNOE, 2026-10-07)",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Acadian Ambulance became the sole emergency medical services provider for Caldwell Parish on October 1, 2026, after a unanimous Police Jury vote on September 1, 2026. It staffs two advanced life support ambulances inside the parish. The state ambulance licence list shows no other licensed transporter based in the parish.",
+   "second_source": "https://www.knoe.com/2026/09/01/acadian-ambulance-become-sole-ems-provider-caldwell-parish/ (KNOE 2026-09-01: exclusive provider of emergency and non-emergency medical transportation for Caldwell Parish effective Oct. 1, 2026); The Advocate 2026-09-01; Acadian Louisiana page lists Caldwell in North Louisiana (2026-10, absent in June 2026 capture)"
+  },
+  "22049": {
+   "county": "Jackson",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Jackson Parish Ambulance Service District",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "whole parish (Jonesboro and Chatham stations)",
+     "source_url": "https://www.jacksonparishpolicejury.org/bc-ambulanceservicesdistrict",
+     "evidence": "We are the sole ambulance service provider to the residents of Jackson Parish. We provide ALS (advanced life support) and BLS (basic life support) emergency transports. ... Residents and visitors of Jackson Parish depend on Jackson Parish Ambulance Service District to provide responsive and reliable 911 ambulance transportation",
+     "vintage": "2026 (2025 district articles report over 4,600 calls in 2024; 2026 board minutes)"
+    }
+   ],
+   "page_note": "The Jackson Parish Ambulance Service District, created by Police Jury ordinance effective June 1, 1998, states that it is the sole ambulance provider and the 911 emergency ambulance for the whole parish, from stations in Jonesboro and Chatham. It is the only ambulance service on the state licence list for the parish.",
+   "second_source": "https://www.jpasd.com (We are the 911 emergency ambulance provider to the residents of Jackson Parish); https://www.jpasd.com/articles.html (June 2025: call volume of over 4,600 calls in 2024)"
+  },
+  "22075": {
+   "county": "Plaquemines",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Plaquemines Parish Government Emergency Medical Services/Ambulance",
+     "transport": true,
+     "ownership": "municipal EMS",
+     "partial": false,
+     "area": "whole parish (EMS districts 1 to 7: Pointe-a-la-Hache, Belle Chasse, Port Sulphur, Buras, Boothville/Venice, Lake Hermitage, Woodlawn)",
+     "source_url": "https://www.plaqueminesparish.gov/433/Emergency-Medical-ServicesAmbulance",
+     "evidence": "The Plaquemines Parish Emergency Medical/Ambulance services is dedicated to providing the highest quality prehospital emergency to individuals living in and visiting Plaquemines Parish. ... EMS Districts: District Number 1 East Pointe-A-La-Hache ... District Number 7 Woodlawn; billing page: Ambulance Billing for Emergency Medical Service (Insight Billing Corporation). Medicare 2024 billing file: Plaquemines Parish Government Ambulance Department, 163 emergency transports.",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "The Plaquemines Parish Government runs the parish Emergency Medical Services/Ambulance department, with seven EMS districts spread from Pointe-a-la-Hache and Belle Chasse to Boothville/Venice. It is the only ambulance service on the state licence list for the parish. The parish page does not use the words 911 transport; the 2024 Medicare billing file shows emergency transports by this department. No page found yet shows that the department carries 911 patients across the whole parish, including the east bank and the lower river; the parish's November 2026 EMS funding proposal lists north, south and east bank coverage among what new funding would support.",
+   "second_source": "CMS 2024 billing file (see LA_public_2026-10.json row for Plaquemines)"
   }
  }
 }
