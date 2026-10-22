@@ -22,6 +22,42 @@
    ],
    "page_note": "Kimball Health Services EMS runs the ambulances for Kimball County under the county's arrangement since November 2022.",
    "second_source": "https://gis.ne.gov/Enterprise/rest/services/Rescue_District_Response_Area/FeatureServer/0 (state 911 response-area layer: one polygon, KIMBALL COUNTY AMBULANCE, 99.9% of the county)"
+  },
+  "31071": {
+   "county": "Garfield",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Burwell Volunteer Fire Department and Rescue",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://jeo.com/wp-content/uploads/pdfs/lower-loup/Garfield-County-Appendix_Public-Review.pdf",
+     "evidence": "The local volunteer fire department in town would be first to respond to hazard events. One ambulance is located at the local fire department which transports victims to Ord.",
+     "vintage": "2022 (Lower Loup NRD Hazard Mitigation Plan, City of Burwell profile); 2024 City of Burwell Comprehensive Plan; active June and July 2026"
+    }
+   ],
+   "page_note": "Burwell Volunteer Fire Department and Rescue runs the ambulance for Garfield County from Burwell; the City of Burwell's 2024 plan says the department serves the city and Garfield County with two ambulances, and the state's 911 rescue response areas give the whole county to Burwell Rescue.",
+   "second_source": "https://img1.wsimg.com/blobby/go/0d3b4b4b-78f1-468a-9978-86466a885a40/2024%20Burwell%20Comp%20Plan.pdf (City of Burwell Comprehensive Plan 2024: 'The Burwell Volunteer Fire Department serves the City of Burwell as well as Garfield County ... 2 Emergency units (ambulance) ... Burwell Rescue provides basic Emergency Medical Services (EMS) response in the same service area.'); https://ruralradio.com/krvn/news/texas-man-dies-in-garfield-county-crash-investigation-ongoing/ (2026-07-29: Garfield County Sheriff recognized 'Burwell Volunteer Fire Department and Rescue' among responders to a fatal Garfield County crash); state layer https://gis.ne.gov/Enterprise/rest/services/Rescue_District_Response_Area/FeatureServer/0 (one polygon, BURWELL RESCUE, 100% of county); https://ruralradio.com/krvn/news/one-person-killed-in-deadly-crash-in-garfield-county/ (2026-06: 'assisted at the scene by Region 26 Dispatch, Burwell EMS, and the Burwell Volunteer Fire Department')"
+  },
+  "31017": {
+   "county": "Brown",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Brown County Ambulance (Brown County Ambulance Association)",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://nebraskapublicmedia.org/news/news-articles/ainsworth-among-small-towns-preparing-for-coronavirus/",
+     "evidence": "she's also director of the Brown County Ambulance Service. That's a service people in town would depend on if they got sick enough to have to be transferred to a larger hospital.",
+     "vintage": "2020; ambulances in a 2024 state telemedicine program; active August and October 2026"
+    }
+   ],
+   "page_note": "Brown County Ambulance, based in Ainsworth, serves all of Brown County, including Long Pine and Johnstown; the state's 911 rescue response areas give the whole county to it.",
+   "second_source": "https://panhandle.newschannelnebraska.com/story/364065642/three-crashes-stolen-boat-motor-and-dump-trailer-fire-included-in-brown-county-sheriffs-office-report (2026-10-01: 'Brown County Ambulance responded to check on those involved, while the Long Pine Fire Department provided traffic control'); state layer https://gis.ne.gov/Enterprise/rest/services/Rescue_District_Response_Area/FeatureServer/0 (one polygon, BROWN COUNTY AMBULANCE, 100%); https://www.centralnebraskatoday.com/2024/02/28/rural-nebraska-ems-ambulances-being-equipped-with-telemedicine-technology/ (2024-02-28: ambulances being equipped with telemedicine; participants include 'Brown County Ambulance Association'); https://rivercountry.newschannelnebraska.com/story/355495213/fight-in-long-pine-leads-to-arrest-several-citations (2026-08: 'the Brown County Ambulance was called to assist')"
   }
  }
 }
