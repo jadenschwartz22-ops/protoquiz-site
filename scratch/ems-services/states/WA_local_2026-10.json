@@ -1,0 +1,27 @@
+{
+ "meta": {
+  "state": "WA",
+  "retrieved": "2026-10-22",
+  "via": "WA DOH response-area and EMS station layers (fresh query, edited 2025-03), WA OIC ground ambulance rate register (data.wa.gov r9b2-b8ff), agency and county pages"
+ },
+ "county_verdict": {
+  "53023": {
+   "county": "Garfield",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Garfield County Fire District 1",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": false,
+     "area": "whole county (populated areas; also answers EMS calls on the Umatilla National Forest)",
+     "source_url": "https://web.archive.org/web/2025/https://www.garfieldcountywa.gov/sites/default/files/fileattachments/emergency_management/page/3231/garfield_county_hazard_mitigation_final_draft_2021.pdf",
+     "evidence": "Garfield Fire District #1 provides structural and wildland fire protection as well as emergency medical service to all of the populated areas in the county (excludes the National Forest). The district will also respond to emergency medical calls on the Umatilla National Forest. ... They provide fire suppression, Basic Life Support (BLS) ambulance transport, rescue services, fire code enforcement, and public education to the residents and visitors of Garfield County.",
+     "vintage": "2021 plan (archived copy; county link now dead); Garfield County Fire District 1 filed its ground ambulance rates for Garfield County with the state insurance commissioner on 2024-11-06; state response area edited 2025-03; no sign of change"
+    }
+   ],
+   "page_note": "Garfield County Fire District 1 in Pomeroy runs the county's basic life support ambulances and is the only licensed ambulance service based in the county. The county's hazard plan says it covers all populated areas and also answers medical calls in the national forest. Patients needing advanced care may be met by outside paramedic or air units.",
+   "second_source": "https://data.wa.gov/resource/r9b2-b8ff.json (gaso_name 'Garfield County Fire District 1', service_counties 'Garfield', recorded 2024-11-06); https://services8.arcgis.com/rGGrs6HCnw87OFOT/arcgis/rest/services/Agency_Primary_Response_Area_view/FeatureServer/0 (AMBV.ES.00000137, 99.8% of county)"
+  }
+ }
+}

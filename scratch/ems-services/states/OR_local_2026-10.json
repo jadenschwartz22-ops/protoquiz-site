@@ -136,6 +136,184 @@
    ],
    "page_note": "Clackamas County has three ambulance service areas under its 2024 county code: American Medical Response (most of the county), Canby Fire District (Canby area) and Molalla Fire District (Molalla area). Not yet confirmed: whether Lake Oswego Fire Department carries patients in Lake Oswego, and which agency serves the edge areas the county plan routes to Woodburn Ambulance Service.",
    "second_source": "https://www.clackamas.us/publichealth/ems"
+  },
+  "41051": {
+   "county": "Multnomah",
+   "tier": "held",
+   "services": [
+    {
+     "name": "American Medical Response (AMR)",
+     "transport": true,
+     "ownership": "private (contractor to Multnomah County)",
+     "partial": false,
+     "area": "whole county (single Multnomah County ASA)",
+     "source_url": "https://multco.us/info/emergency-medical-services",
+     "evidence": "A single franchised provider—American Medical Response, Inc. (AMR)—provides all of Multnomah County's ambulance services. ... The team that arrives first starts medical care, and the ambulance team transports patients to the hospital.",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "American Medical Response holds Multnomah County's single 911 ambulance contract, which runs through August 31, 2028. Not yet confirmed: whether neighbouring agencies that answer calls at the county's edges under agreements, such as Cascade Locks Fire & EMS in the eastern Columbia River Gorge and the area along Highway 30 next to Columbia County, also carry patients from those areas.",
+   "second_source": "https://multco.us/file/multnomah_county_ems_services_assessment_report_-_february_17,_2026/download (Feb 2026 county EMS assessment: AMR dispatcher at BOEC, AMR low-acuity triage and BLS units; draft ASA plan June 2026: 'All of Multnomah County comprises a single ambulance service area (ASA).'); county contract history (docs.google.com/document/d/13DRZ2mAN32DV5i7cNd2opjsRPiKdnaYd-QEgwr8sfVg, linked from multco.us EMS page): 2018 contract Amendment #2 extended termination to August 31, 2028; draft ASP June 2026 lists out-of-county IGA areas (Dunthorpe, Lake Oswego portions, Hwy 30 near Columbia County, eastern areas next to Clackamas and Hood River counties)"
+  },
+  "41017": {
+   "county": "Deschutes",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Bend Fire & Rescue",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": true,
+     "area": "Bend ASA (Bend and most of central and east Deschutes County)",
+     "source_url": "https://www.deschutescounty.gov/DocumentCenter/View/8939/ASA-Committee-Roster-09-2026-Deschutesdocx",
+     "evidence": "City of Bend Fire Dept (c) — Deschutes County ASA Committee roster 'Updated September 2026' lists this agency as '(c)', and the key reads 'c.Ambulance service provider representative from each ASA.'",
+     "vintage": "2026"
+    },
+    {
+     "name": "Redmond Fire & Rescue",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": true,
+     "area": "Redmond ASA",
+     "source_url": "https://www.deschutescounty.gov/DocumentCenter/View/8939/ASA-Committee-Roster-09-2026-Deschutesdocx",
+     "evidence": "Redmond Fire & Rescue (c) — Deschutes County ASA Committee roster 'Updated September 2026' lists this agency as '(c)', and the key reads 'c.Ambulance service provider representative from each ASA.'",
+     "vintage": "2026"
+    },
+    {
+     "name": "Sisters-Camp Sherman Fire District",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": true,
+     "area": "Sisters-Camp Sherman ASA",
+     "source_url": "https://www.deschutescounty.gov/DocumentCenter/View/8939/ASA-Committee-Roster-09-2026-Deschutesdocx",
+     "evidence": "Sisters Fire Department (c) — Deschutes County ASA Committee roster 'Updated September 2026' lists this agency as '(c)', and the key reads 'c.Ambulance service provider representative from each ASA.'",
+     "vintage": "2026"
+    },
+    {
+     "name": "La Pine Rural Fire Protection District",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": true,
+     "area": "La Pine ASA",
+     "source_url": "https://www.deschutescounty.gov/DocumentCenter/View/8939/ASA-Committee-Roster-09-2026-Deschutesdocx",
+     "evidence": "La Pine Rural Fire Protection District (c) — Deschutes County ASA Committee roster 'Updated September 2026' lists this agency as '(c)', and the key reads 'c.Ambulance service provider representative from each ASA.'",
+     "vintage": "2026"
+    },
+    {
+     "name": "Sunriver Fire Department",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": true,
+     "area": "Sunriver ASA",
+     "source_url": "https://www.deschutescounty.gov/DocumentCenter/View/8939/ASA-Committee-Roster-09-2026-Deschutesdocx",
+     "evidence": "Sunriver Fire Dept (c) — Deschutes County ASA Committee roster 'Updated September 2026' lists this agency as '(c)', and the key reads 'c.Ambulance service provider representative from each ASA.'",
+     "vintage": "2026"
+    },
+    {
+     "name": "Black Butte Ranch Fire",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": true,
+     "area": "Black Butte Ranch ASA",
+     "source_url": "https://www.deschutescounty.gov/DocumentCenter/View/8939/ASA-Committee-Roster-09-2026-Deschutesdocx",
+     "evidence": "Black Butte Ranch Fire (c) — Deschutes County ASA Committee roster 'Updated September 2026' lists this agency as '(c)', and the key reads 'c.Ambulance service provider representative from each ASA.'",
+     "vintage": "2026"
+    },
+    {
+     "name": "Crooked River Ranch Fire",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": true,
+     "area": "Crooked River Ranch ASA",
+     "source_url": "https://www.deschutescounty.gov/DocumentCenter/View/8939/ASA-Committee-Roster-09-2026-Deschutesdocx",
+     "evidence": "Crooked River Ranch (c) — Deschutes County ASA Committee roster 'Updated September 2026' lists this agency as '(c)', and the key reads 'c.Ambulance service provider representative from each ASA.'",
+     "vintage": "2026"
+    },
+    {
+     "name": "Alfalfa Fire District",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": true,
+     "area": "Alfalfa fire district (inside the Bend ASA, by agreement with Bend Fire)",
+     "source_url": "https://www.centraloregondaily.com/news/local/alfalfa-fire-district-new-ambulance-ems-service/article_df3f943a-dfab-40a6-a5db-988bf21dc88d.html",
+     "evidence": "The Alfalfa Fire District will begin making its own medical transports after coming to an agreement with Bend Fire and Rescue and Deschutes County Commissioners that will result in a new ambulance.",
+     "vintage": "2025-10"
+    }
+   ],
+   "page_note": "Deschutes County assigns emergency ambulance service by area (county code 8.30, terms through June 30, 2028). Confirmed: Bend Fire & Rescue, Redmond Fire & Rescue, Sisters-Camp Sherman, La Pine, Sunriver, Black Butte Ranch and Crooked River Ranch fire agencies, plus Alfalfa Fire District, which began its own ambulance transports in 2025 under an agreement with Bend Fire. Not yet confirmed: the small far-eastern corner of the county (near Hampton) that the county map assigns to the Burns ambulance area in Harney County.",
+   "second_source": "https://ktvz.com/news/government-politics/2026/06/30/commitment-to-serve-alfalfa-fire-district-pushes-forward-amid-challenges/ (Alfalfa Fire still operating, June 2026); county ASA page https://www.deschutescounty.gov/985/Ambulance-Service-Area"
+  },
+  "41011": {
+   "county": "Coos",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Bay Cities Ambulance",
+     "transport": true,
+     "ownership": "private",
+     "partial": true,
+     "area": "ASA 1 and ASA 4 (Coos Bay / North Bend area)",
+     "source_url": "https://baycitiesambulance.com/",
+     "evidence": "Responders in our EMS system. Serving the South Coast since 1966 ... Bay Cities Ambulance is a proud member of the Metro West Ambulance Family of Companies",
+     "vintage": "undated (site live 2026)"
+    },
+    {
+     "name": "Lower Umpqua Hospital EMS",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": true,
+     "area": "ASA 6 (northern Coos County)",
+     "source_url": "https://www.lowerumpquahospital.org/emergency-medical-services/",
+     "evidence": "Lower Umpqua Hospital Emergency Medical Service (EMS) is a hospital-based ambulance service located in Reedsport Oregon ... Our ambulance district consists of the western part of Douglas county and the northern part of Coos county",
+     "vintage": "undated (site live 2026)"
+    },
+    {
+     "name": "Coquille Valley Ambulance (City of Coquille)",
+     "transport": true,
+     "ownership": "municipal EMS",
+     "partial": true,
+     "area": "ASA 2",
+     "source_url": "https://services8.arcgis.com/Mg5lKoVeyQMwwiX3/arcgis/rest/services/CoosCountyAmbulanceServiceAreas/FeatureServer/0",
+     "evidence": "County ASA layer (owner City of Coquille, Jan 2025): ASA 2 'COQUILLE AMBULANCE', licence 604",
+     "vintage": "2025-01"
+    },
+    {
+     "name": "Myrtle Point Ambulance (City of Myrtle Point)",
+     "transport": true,
+     "ownership": "municipal EMS",
+     "partial": true,
+     "area": "ASA 3",
+     "source_url": "https://services8.arcgis.com/Mg5lKoVeyQMwwiX3/arcgis/rest/services/CoosCountyAmbulanceServiceAreas/FeatureServer/0",
+     "evidence": "County ASA layer: ASA 3 'MYRTLE POINT AMBULANCE', licence 602; city site (2026) has an 'Ambulance/ Firemed Payments' link",
+     "vintage": "2025-01"
+    },
+    {
+     "name": "Powers Ambulance",
+     "transport": true,
+     "ownership": "municipal EMS",
+     "partial": true,
+     "area": "ASA 5",
+     "source_url": "https://services8.arcgis.com/Mg5lKoVeyQMwwiX3/arcgis/rest/services/CoosCountyAmbulanceServiceAreas/FeatureServer/0",
+     "evidence": "County ASA layer: ASA 5 'POWERS AMBULANCE', licence 814",
+     "vintage": "2025-01"
+    }
+   ],
+   "page_note": "Coos County has six ambulance service areas held by five services: Bay Cities Ambulance (Coos Bay and North Bend areas), Coquille Valley Ambulance, Myrtle Point Ambulance, Powers Ambulance, and Lower Umpqua Hospital EMS (northern Coos County). Bay Cities Ambulance and Lower Umpqua Hospital EMS are confirmed by their own websites; the Coquille, Myrtle Point and Powers services are not yet confirmed by a recent source.",
+   "second_source": ""
+  },
+  "41059": {
+   "county": "Umatilla",
+   "tier": "held",
+   "services": [],
+   "page_note": "Umatilla County has six ambulance service areas (county map, June 2026): Pendleton, Hermiston/Umatilla, Milton-Freewater, Mill Creek (served from Walla Walla), Athena/Weston, and the Confederated Tribes of the Umatilla Indian Reservation. The service running each area is not yet confirmed by a recent source.",
+   "second_source": ""
+  },
+  "41043": {
+   "county": "Linn",
+   "tier": "held",
+   "services": [],
+   "page_note": "Linn County's ambulance service area map (August 2026) names areas for Albany, Lebanon, Sweet Home, Santiam, Lyons, Jefferson, Idanha/Detroit, Corvallis, Sisters, Eugene and Springfield. Which of these reach into Linn County and the service running each are not yet confirmed by a recent source.",
+   "second_source": ""
   }
  }
 }

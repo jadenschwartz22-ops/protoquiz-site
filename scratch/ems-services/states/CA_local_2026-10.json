@@ -452,6 +452,126 @@
    ],
    "page_note": "The state EMS authority's January 2026 list names Alpine County EMS for the whole county. Not yet confirmed from a county page, or who covers Kirkwood and Bear Valley.",
    "second_source": ""
+  },
+  "06113": {
+   "county": "Yolo",
+   "tier": "A",
+   "services": [
+    {
+     "name": "American Medical Response (AMR)",
+     "transport": true,
+     "ownership": "private (contractor to Yolo County EMS Agency)",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.amr.net/locations/california/yolo-county",
+     "evidence": "Services in Yolo County 911 Emergency 911 emergency ambulance services from the nation’s leading EMS provider",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "",
+   "second_source": "https://emsa.ca.gov/wp-content/uploads/sites/71/2026/01/Jan_26_AmbulanceEOAStatus.pdf (EMSA Ambulance Areas, Ground / EOA Status, Jan 2026; capture states/web_raw/CA/Jan_26_AmbulanceEOAStatus.txt): 'YOLO | Yolo County | Yolo County | AMR | Exclusive | Emergency Ambulance', approved 11/17/21.; YEMSA EOA Agreement (yolocounty.gov showpublisheddocument/72590, via web.archive.org): AMR exclusive EOA, services commence April 1, 2024, initial term ends April 1, 2029"
+  },
+  "06069": {
+   "county": "San Benito",
+   "tier": "held",
+   "services": [
+    {
+     "name": "American Medical Response (AMR)",
+     "transport": true,
+     "ownership": "private (contractor to San Benito County)",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.amr.net/locations/california/san-benito-county",
+     "evidence": "Services in San Benito County 911 Emergency 911 emergency ambulance services from the nation’s leading EMS provider",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "AMR answered 911 ambulance calls in San Benito County as of October 2026, but the county agreement with AMR ended June 30, 2026 and no renewal or new agreement has been found yet.",
+   "second_source": "https://emsa.ca.gov/wp-content/uploads/sites/71/2026/01/Jan_26_AmbulanceEOAStatus.pdf (EMSA Ambulance Areas, Ground / EOA Status, Jan 2026; capture states/web_raw/CA/Jan_26_AmbulanceEOAStatus.txt): 'SAN BENITO | Entire County | AMR | Exclusive', approved 08/27/25.; County 2021-2026 AMR Agreement (sanbenitocountyca.gov showpublisheddocument/7012) term ended June 30, 2026 with two 30-month extension options; BenitoLink 2026-10-08 (benitolink.com/police-investigate-fatal-traffic-collision-involving-bicyclist/): \"personnel from the Hollister Fire Department and AMR Ambulance, responded to the scene.\""
+  },
+  "06087": {
+   "county": "Santa Cruz",
+   "tier": "held",
+   "services": [
+    {
+     "name": "American Medical Response West (AMR)",
+     "transport": true,
+     "ownership": "private (contractor to Santa Cruz County)",
+     "partial": false,
+     "area": "whole county (exclusive area)",
+     "source_url": "https://www.amr.net/locations/california/santa-cruz-county",
+     "evidence": "Services in Santa Cruz County 911 Emergency 911 emergency ambulance services from the nation’s leading EMS provider",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "American Medical Response holds the exclusive 911 ambulance area for all of Santa Cruz County. Not yet confirmed: whether Aptos/La Selva Fire, which held an ambulance transport permit in 2019, still transports patients.",
+   "second_source": "https://emsa.ca.gov/wp-content/uploads/sites/71/2026/01/Jan_26_AmbulanceEOAStatus.pdf (EMSA Ambulance Areas, Ground / EOA Status, Jan 2026; capture states/web_raw/CA/Jan_26_AmbulanceEOAStatus.txt): 'Santa Cruz County | AMR West | Exclusive | Emergency Ambulance', 5/3/23."
+  },
+  "06055": {
+   "county": "Napa",
+   "tier": "held",
+   "services": [
+    {
+     "name": "American Medical Response (AMR West - Napa)",
+     "transport": true,
+     "ownership": "private (contractor to Napa County)",
+     "partial": false,
+     "area": "whole county (exclusive area)",
+     "source_url": "https://www.amr.net/locations/california/napa-county",
+     "evidence": "Services in Napa County 911 Emergency 911 emergency ambulance services from the nation’s leading EMS provider",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "American Medical Response holds the exclusive 911 ambulance area for all of Napa County. Not yet confirmed: the result of the county's 2026 ambulance transport request for proposals, and whether Angwin Community Ambulance still answers 911 calls in Angwin.",
+   "second_source": "https://emsa.ca.gov/wp-content/uploads/sites/71/2026/01/Jan_26_AmbulanceEOAStatus.pdf (EMSA Ambulance Areas, Ground / EOA Status, Jan 2026; capture states/web_raw/CA/Jan_26_AmbulanceEOAStatus.txt): 'NAPA | Napa County | Entire County | AMR (dba AMR West - Napa) | Exclusive', 05/06/25."
+  },
+  "06061": {
+   "county": "Placer",
+   "tier": "held",
+   "services": [
+    {
+     "name": "American Medical Response West (AMR Placer County)",
+     "transport": true,
+     "ownership": "private (contractor to Placer County)",
+     "partial": true,
+     "area": "Zone 3: I-80 corridor Colfax and west, incl. Roseville, Lincoln, Rocklin, Loomis, Newcastle, Auburn",
+     "source_url": "https://ssvems.com/hospitals-ems-provider-agencies/",
+     "evidence": "AMR Placer County Transport – EOA Agreement Placer",
+     "vintage": "2026"
+    },
+    {
+     "name": "South Placer Fire District",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": true,
+     "area": "Zone 2: Granite Bay",
+     "source_url": "https://ssvems.com/hospitals-ems-provider-agencies/",
+     "evidence": "South Placer Fire District Transport – EOA Agreement Placer",
+     "vintage": "2026"
+    },
+    {
+     "name": "Foresthill Fire Protection District",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": true,
+     "area": "Zone 1: Foresthill, Todd Valley Estates, Baker Ranch",
+     "source_url": "https://ssvems.com/hospitals-ems-provider-agencies/",
+     "evidence": "Foresthill Fire Protection District Transport – EOA Agreement Placer",
+     "vintage": "2026"
+    },
+    {
+     "name": "North Tahoe Fire Protection District",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": true,
+     "area": "Zone 4: north and west shores of Lake Tahoe",
+     "source_url": "https://ssvems.com/hospitals-ems-provider-agencies/",
+     "evidence": "North Tahoe Fire Protection District Transport – EOA Agreement Placer",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Confirmed: American Medical Response (Roseville, Rocklin, Lincoln, Auburn and the I-80 corridor from Colfax west), South Placer Fire (Granite Bay), Foresthill Fire and North Tahoe Fire. Not yet confirmed: who carries 911 patients along I-80 east of Colfax and in the Northstar and Martis Valley area; Northstar and Olympic Valley fire departments are listed as non-transport.",
+   "second_source": "https://emsa.ca.gov/wp-content/uploads/sites/71/2026/01/Jan_26_AmbulanceEOAStatus.pdf (EMSA Ambulance Areas, Ground / EOA Status, Jan 2026; capture states/web_raw/CA/Jan_26_AmbulanceEOAStatus.txt): Placer zones 1-4 name the same four agencies, 03/04/25."
   }
  }
 }

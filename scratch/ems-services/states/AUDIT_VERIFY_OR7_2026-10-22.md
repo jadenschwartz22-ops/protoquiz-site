@@ -1,0 +1,6 @@
+# Audit of OR verify lane 7, 2026-10-22
+
+Input `OR_verify7_2026-10.json` (1 A, 4 held). All 5 promoted into `OR_local_2026-10.json` (pre-audit copy `web_raw/OR/audit7/OR_local_before_audit7.json`). Captures in `web_raw/OR/audit7/`.
+
+- 41051 Multnomah: FAIL -> held. Quote verified on multco.us EMS page; AMR transports; contract runs to 2028-08-31 (county contract history doc, Amendment #2); Portland Fire CHAT "do not transport" and Gresham Fire "capable of transporting, but is not licensed" (Feb 2026 assessment); Oct 2026 news: AMR still operates. Fails completeness: draft ASP June 2026 says Dunthorpe, Lake Oswego portions, the Hwy 30 area next to Columbia County and eastern areas next to Clackamas/Hood River counties are "better served by agencies responding from outside the County" under IGAs, and the assessment says Cascade Locks Fire & EMS (licensed ASA ambulance, Hood River County) answers ~20% of its 450 calls in east Multnomah with a county subsidy. Whether Cascade Locks (and Scappoose on Hwy 30) transport from those areas is unproven; Dunthorpe uses the Clackamas provider (AMR).
+- 41017 Deschutes, 41011 Coos, 41059 Umatilla, 41043 Linn: held by the verify lane, promoted unchanged (not audited).

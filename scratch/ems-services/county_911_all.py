@@ -344,7 +344,7 @@ if __name__ == '__main__':
         if n.isupper(): n = re.sub(r'\b(Llc|Lp|Llp|Pllc|Ems|Esd|Emd|Ii|Iii)\b', lambda m: m.group(1).upper(), n.title())
         return re.sub(r'(?<=\w) (Of|And|The|For|At|In)\b', lambda m: m.group(0).lower(), n)
     # display only: test records, tax/finance offices and airport authorities are billing or roster noise, never an answer
-    junk = re.compile(r'\btest\b|\bdemo\b|office of (the )?(tax|budget|revenue|finance|treasurer)|budget director|finance office|tax and revenue|treasurer|\bauditors?\b|\bfinance\b|comptroller|airports? authority|^\W*\d+\s', re.I)
+    junk = re.compile(r'\btest\b|\bdemo\b|office of (the )?(tax|budget|revenue|finance|treasurer)|budget director|finance office|tax and revenue|treasurer|\bauditors?\b|\bfinance\b|comptroller|airports? authority|^\W*\d+\s|^[\W\d]*$|^(evanc|ejfed|ncems|norems)$', re.I)   # GIS editor ids and bare zone numbers from service-area layers
     shown = lambda d: [pretty(a) for a in d['answer'] if not junk.search(a)]
     os.makedirs('../../data/atlas', exist_ok=True); byst = collections.defaultdict(dict)
     for k, d in S.items():
