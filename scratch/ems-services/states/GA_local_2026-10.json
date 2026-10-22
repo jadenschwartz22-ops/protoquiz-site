@@ -631,6 +631,78 @@
    ],
    "page_note": "Douglas County Fire and Emergency Services runs the county ambulances and bills for hospital transport (June 2026). A county page stating it is the only 911 ambulance for the whole county is not yet confirmed.",
    "second_source": ""
+  },
+  "13073": {
+   "county": "Columbia",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Gold Cross EMS",
+     "transport": true,
+     "ownership": "private",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.goldcrossems.com/",
+     "evidence": "Gold Cross EMS is based out of Augusta, GA and proudly serves as the 911 Provider for Columbia and Jefferson Counties.",
+     "vintage": "2026",
+     "evidence_2": "The contract will be from July 1, 2026-June 30, 2027, and the cost is $2,350,000",
+     "evidence_2_url": "https://theaugustapress.com/columbia-county-ces-committee-approves-moving-forward-with-gold-cross-contract/"
+    }
+   ],
+   "page_note": "Gold Cross EMS, a private company based in the Augusta area, is the 911 ambulance provider for Columbia County under a county contract renewed for July 2026 to June 2027. Columbia County Fire Rescue provides medical first response but does not run the ambulances. No city in the county has 20,000 people.",
+   "second_source": "https://www.columbiacountyga.gov/194/Fire-Rescue"
+  },
+  "13095": {
+   "county": "Dougherty",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Dougherty County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.dougherty.ga.us/public-safety/ems/",
+     "evidence": "It is the sole 911 EMS provider for Dougherty County and is an Advance Level EMS agency responding to over 22,000 EMS calls annually.",
+     "vintage": "2025",
+     "evidence_2": "This gives our medics a better way to help callers who don’t need an ambulance,” said EMS Director Gibney. “It keeps our units available for the more serious calls where minutes count.",
+     "evidence_2_url": "https://www.walb.com/2025/08/26/dougherty-county-ems-launches-911-telehealth-program-expand-access-ease-er-overcrowding/"
+    }
+   ],
+   "page_note": "Dougherty County EMS is the only 911 ambulance provider in Dougherty County, including Albany, and runs advanced life support ambulances from five stations.",
+   "second_source": "https://www.walb.com/2025/08/26/dougherty-county-ems-launches-911-telehealth-program-expand-access-ease-er-overcrowding/"
+  },
+  "13113": {
+   "county": "Fayette",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Fayette County Fire and Emergency Services (EMS)",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "unincorporated county, Tyrone, Brooks, Woolsey and Fayetteville",
+     "source_url": "https://www.fayettecountyga.gov/departments/fire_emergency_services/services/index.php",
+     "evidence": "We serve a 160-square-mile area, including all unincorporated areas and the towns of Tyrone, Brooks, and Woolsey, with emergency medical services also provided to Fayetteville.",
+     "vintage": "2026",
+     "evidence_2": "Advanced Life Support (ALS) transport ambulances are now operating out of all nine fire stations",
+     "evidence_2_url": "https://thecitizen.com/2026/04/04/fayette-county-reaches-milestone-as-als-ambulances-now-operating-from-all-fire-stations/"
+    },
+    {
+     "name": "Peachtree City Fire and EMS",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "Peachtree City",
+     "source_url": "https://www.peachtree-city.org/189/Emergency-Medical-Services",
+     "evidence": "We operate five Advanced Life Support Ambulances (one at each Fire Station).",
+     "vintage": "2026 (page also archived 2025-11-16)",
+     "evidence_2": "Peachtree City FY2025 adopted budget: fire and EMS receiving $13.9 million",
+     "evidence_2_url": "https://thecitizen.com/2025/06/24/five-myths-about-peachtree-citys-budget/"
+    }
+   ],
+   "page_note": "Fayette County Fire and Emergency Services runs the 911 ambulances for the unincorporated county, Tyrone, Brooks, Woolsey and Fayetteville, with an advanced life support ambulance at each of its nine stations since April 2026. Peachtree City Fire and EMS runs its own five advanced life support ambulances inside Peachtree City.",
+   "second_source": "https://thecitizen.com/2026/10/09/fayette-county-fire-and-emergency-services-invites-community-to-blood-drives-supporting-pre-hospital-transfusion-program/"
   }
  }
 }
