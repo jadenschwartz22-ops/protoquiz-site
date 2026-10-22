@@ -1,35 +1,35 @@
 {
-  "generatedAt": "2026-10-21T18:07:19.298Z",
-  "totalUploads": 704,
-  "distinctProtocols": 500,
-  "activeStudiers": 577,
-  "pagesProcessed": 130940,
+  "generatedAt": "2026-10-22T18:07:19.394Z",
+  "totalUploads": 716,
+  "distinctProtocols": 506,
+  "activeStudiers": 589,
+  "pagesProcessed": 133763,
   "statesRepresented": 47,
   "countriesRepresented": 3,
   "internationalUploads": 9,
   "byState": {
-    "CO": 92,
+    "CO": 96,
     "CA": 54,
     "MI": 53,
     "NY": 32,
     "PA": 30,
     "MA": 30,
     "TX": 29,
-    "NC": 21,
+    "NC": 22,
     "VA": 20,
     "OR": 19,
     "WA": 17,
     "CT": 15,
+    "IL": 14,
+    "FL": 14,
     "MD": 14,
-    "IL": 13,
-    "FL": 13,
     "NV": 13,
-    "AZ": 10,
+    "AZ": 12,
     "WY": 10,
+    "GA": 8,
     "SC": 7,
     "TN": 7,
     "UT": 7,
-    "GA": 7,
     "OH": 6,
     "AL": 6,
     "WV": 6,
@@ -42,14 +42,14 @@
     "NE": 4,
     "WI": 4,
     "KY": 4,
+    "VT": 3,
+    "NJ": 3,
     "ID": 3,
     "NM": 3,
     "IA": 3,
     "DC": 3,
     "OK": 3,
-    "VT": 2,
     "MN": 2,
-    "NJ": 2,
     "AR": 2,
     "AK": 1,
     "KS": 1,
@@ -67,19 +67,19 @@
       "city": "Denver",
       "x": 330,
       "y": 258,
-      "count": 69,
+      "count": 73,
       "tier": "hot",
       "topProtocols": [
         {
           "title": "DMEMS Protocols January 2026 (Example)",
-          "count": 40
+          "count": 42
         },
         {
           "title": "DMEMSMD Protocols January 2026 FINAL 2025 02 02",
           "count": 8
         },
         {
-          "title": "dmems protocols",
+          "title": "DMEMSMD Protocols July 2026 FINAL 2026 07 20",
           "count": 4
         }
       ]
@@ -353,6 +353,29 @@
       "statewide": true
     },
     {
+      "state": "AZ",
+      "city": "Arizona statewide",
+      "x": 199,
+      "y": 364,
+      "count": 8,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "red book chapter 3 2026",
+          "count": 6
+        },
+        {
+          "title": "red book chapter 3 2026",
+          "count": 1
+        },
+        {
+          "title": "Guidelines",
+          "count": 1
+        }
+      ],
+      "statewide": true
+    },
+    {
       "state": "NY",
       "city": "New York",
       "x": 843,
@@ -398,23 +421,23 @@
       "statewide": true
     },
     {
-      "state": "AZ",
-      "city": "Arizona statewide",
-      "x": 199,
-      "y": 364,
+      "state": "IL",
+      "city": "Illinois statewide",
+      "x": 595,
+      "y": 255,
       "count": 6,
       "tier": "warm",
       "topProtocols": [
         {
-          "title": "red book chapter 3 2026",
-          "count": 4
-        },
-        {
-          "title": "red book chapter 3 2026",
+          "title": "2025 Mercyhealth REACT Patient Care Guidelines 2025 FINAL+",
           "count": 1
         },
         {
-          "title": "Guidelines",
+          "title": "pediatricprehospitalprotocolscompletefilefeb20163 2018",
+          "count": 1
+        },
+        {
+          "title": "SOP SFV FINAL markup 102319docx",
           "count": 1
         }
       ],
@@ -433,29 +456,6 @@
           "count": 6
         }
       ]
-    },
-    {
-      "state": "IL",
-      "city": "Illinois statewide",
-      "x": 595,
-      "y": 255,
-      "count": 5,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "pediatricprehospitalprotocolscompletefilefeb20163 2018",
-          "count": 1
-        },
-        {
-          "title": "SOP SFV FINAL markup 102319docx",
-          "count": 1
-        },
-        {
-          "title": "CCT Protocols 2024",
-          "count": 1
-        }
-      ],
-      "statewide": true
     },
     {
       "state": "RI",
@@ -759,6 +759,66 @@
       "statewide": true
     },
     {
+      "state": "NC",
+      "city": "Charlotte",
+      "x": 751,
+      "y": 344,
+      "count": 3,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "ALS Protocols 6.15.26",
+          "count": 1
+        },
+        {
+          "title": "Mecklenburg EMS ALS Protocols",
+          "count": 1
+        },
+        {
+          "title": "MEDIC ALS",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "state": "VT",
+      "city": "Vermont statewide",
+      "x": 846,
+      "y": 125,
+      "count": 3,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "eprip 2025 EMS Protocols 0",
+          "count": 1
+        },
+        {
+          "title": "Vermont 2025 EMS Protocols 0",
+          "count": 1
+        },
+        {
+          "title": "eprip 2025 EMS Protocols",
+          "count": 1
+        }
+      ],
+      "statewide": true
+    },
+    {
+      "state": "NJ",
+      "city": "New Jersey statewide",
+      "x": 834,
+      "y": 216,
+      "count": 3,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "NEWJERSEYEMSCLINICALPRACTICEPROTOCOLS GUIDELINES FINAL8.21.20…",
+          "count": 3
+        }
+      ],
+      "statewide": true
+    },
+    {
       "state": "FL",
       "city": "Palm Beach Gardens",
       "x": 794,
@@ -934,6 +994,24 @@
       "statewide": true
     },
     {
+      "state": "FL",
+      "city": "Bradenton",
+      "x": 744,
+      "y": 518,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": []
+    },
+    {
+      "state": "GA",
+      "city": "Atlanta",
+      "x": 692,
+      "y": 386,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": []
+    },
+    {
       "state": "ID",
       "city": "Boise",
       "x": 162,
@@ -975,15 +1053,6 @@
       "city": "Lake County",
       "x": 756,
       "y": 490,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": []
-    },
-    {
-      "state": "NC",
-      "city": "Charlotte",
-      "x": 751,
-      "y": 344,
       "count": 2,
       "tier": "on",
       "topProtocols": []
@@ -1108,16 +1177,6 @@
       "statewide": true
     },
     {
-      "state": "VT",
-      "city": "Vermont statewide",
-      "x": 846,
-      "y": 125,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [],
-      "statewide": true
-    },
-    {
       "state": "CA",
       "city": "Riverside County",
       "x": 118,
@@ -1134,16 +1193,6 @@
       "count": 2,
       "tier": "on",
       "topProtocols": []
-    },
-    {
-      "state": "NJ",
-      "city": "New Jersey statewide",
-      "x": 834,
-      "y": 216,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": [],
-      "statewide": true
     },
     {
       "state": "GA",
@@ -1819,15 +1868,6 @@
       "topProtocols": []
     },
     {
-      "state": "GA",
-      "city": "Atlanta",
-      "x": 692,
-      "y": 386,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": []
-    },
-    {
       "state": "NC",
       "city": "Brunswick County",
       "x": 801,
@@ -1895,15 +1935,6 @@
       "city": "Pend Oreille County",
       "x": 169,
       "y": 37,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": []
-    },
-    {
-      "state": "FL",
-      "city": "Bradenton",
-      "x": 744,
-      "y": 518,
       "count": 1,
       "tier": "tiny",
       "topProtocols": []
@@ -2211,16 +2242,40 @@
   ],
   "belt": [
     {
-      "agency": "Denver Metro EMS Medical Directors",
-      "state": "Colorado",
+      "agency": "Mecklenburg EMS Agency",
+      "state": "North Carolina",
       "year": 2026,
-      "pages": 193
+      "pages": 488
     },
     {
       "agency": "Central Arizona Regional EMS",
       "state": "Arizona",
       "year": 2026,
       "pages": 186
+    },
+    {
+      "agency": "Denver Metro EMS Medical Directors",
+      "state": "Colorado",
+      "year": 2026,
+      "pages": 193
+    },
+    {
+      "agency": "Vermont Department of Health",
+      "state": "Vermont",
+      "year": 2025,
+      "pages": 283
+    },
+    {
+      "agency": "New Jersey Department of Health",
+      "state": "New Jersey",
+      "year": 2025,
+      "pages": 248
+    },
+    {
+      "agency": "MetroAtlanta Ambulance Service",
+      "state": "Georgia",
+      "year": 2026,
+      "pages": 219
     },
     {
       "agency": "Palm Beach Gardens Fire Rescue",
@@ -2269,30 +2324,6 @@
       "state": "Virginia",
       "year": 2026,
       "pages": 238
-    },
-    {
-      "agency": "REMSA",
-      "state": "South Dakota",
-      "year": 2026,
-      "pages": 404
-    },
-    {
-      "agency": "Davidson County Emergency Services",
-      "state": "North Carolina",
-      "year": 2025,
-      "pages": 263
-    },
-    {
-      "agency": "Academy of Medicine of Cincinnati",
-      "state": "Ohio",
-      "year": 2026,
-      "pages": 243
-    },
-    {
-      "agency": "Clark County EMS System",
-      "state": "Nevada",
-      "year": 2026,
-      "pages": 183
     }
   ]
 }
