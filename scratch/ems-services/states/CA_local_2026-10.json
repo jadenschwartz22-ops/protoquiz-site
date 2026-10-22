@@ -168,6 +168,290 @@
    "tier": "held",
    "services": [],
    "page_note": "The state EMS authority's January 2026 list shows one non-exclusive county zone whose licensees (including Alpha One, AMR, Bay Medic, CHP and CALSTAR) are not 911 transporters. Not yet confirmed from a public source: the fire departments that provide 911 transport (Sacramento Fire, Sacramento Metro Fire, Cosumnes, Folsom and others), which need a Sacramento County EMS source."
+  },
+  "06007": {
+   "county": "Butte",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Butte County EMS",
+     "transport": true,
+     "ownership": "private (contractor to Butte County, exclusive operating area)",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.ssvems.com/hospitals-ems-provider-agencies/",
+     "evidence": "Butte County EMS | Transport – EOA Agreement | Butte",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Butte County EMS holds the county's exclusive 911 ambulance area. Chico, Oroville and Paradise fire departments respond but do not transport.",
+   "second_source": "https://emsa.ca.gov/wp-content/uploads/sites/71/2026/01/Jan_26_AmbulanceEOAStatus.pdf (row: Butte County | Butte County | Butte County EMS LLC | Exclusive | Emergency Ambulance, rev. 03/04/25)"
+  },
+  "06101": {
+   "county": "Sutter",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Bi-County Ambulance",
+     "transport": true,
+     "ownership": "private (contractor to Sutter County, exclusive operating area)",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://bicountyambulance.com/",
+     "evidence": "24/7 Ambulance Services in Yuba and Sutter Counties ... We are the exclusive 911 ambulance provider.",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Bi-County Ambulance is the exclusive 911 ambulance provider for Sutter County. Yuba City and Sutter County fire departments respond but do not transport.",
+   "second_source": "https://www.ssvems.com/hospitals-ems-provider-agencies/ (Bi-County Ambulance | Transport – Sutter EOA, Yuba EOA | Sutter & Yuba); https://emsa.ca.gov/wp-content/uploads/sites/71/2026/01/Jan_26_AmbulanceEOAStatus.pdf"
+  },
+  "06115": {
+   "county": "Yuba",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Bi-County Ambulance",
+     "transport": true,
+     "ownership": "private (contractor to Yuba County, exclusive operating area)",
+     "partial": false,
+     "area": "all of Yuba County except Beale Air Force Base",
+     "source_url": "https://bicountyambulance.com/",
+     "evidence": "24/7 Ambulance Services in Yuba and Sutter Counties ... We are the exclusive 911 ambulance provider.",
+     "vintage": "2026"
+    },
+    {
+     "name": "Beale Air Force Base Ambulance",
+     "transport": true,
+     "ownership": "mixed: federal (US Air Force)",
+     "partial": true,
+     "area": "Beale Air Force Base",
+     "source_url": "https://www.ssvems.com/hospitals-ems-provider-agencies/",
+     "evidence": "Beale AFB Ambulance | Transport – Permit Provider | Yuba",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Bi-County Ambulance covers Yuba County except Beale Air Force Base, which runs its own ambulance.",
+   "second_source": "https://emsa.ca.gov/wp-content/uploads/sites/71/2026/01/Jan_26_AmbulanceEOAStatus.pdf (rows: Yuba County Zone 1 | All areas within the geographic boundaries of Yuba County, excluding Beale Air Force Base federal land | Bi-County Ambulance | Exclusive; Yuba County Zone 2 | Beale Air Force Base | Non-Exclusive)"
+  },
+  "06011": {
+   "county": "Colusa",
+   "tier": "A",
+   "services": [
+    {
+     "name": "AMR West (American Medical Response)",
+     "transport": true,
+     "ownership": "private (contractor to Colusa County, exclusive operating area)",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.ssvems.com/hospitals-ems-provider-agencies/",
+     "evidence": "AMR Colusa County | Transport – EOA Agreement | Colusa",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "American Medical Response holds Colusa County's exclusive 911 ambulance area (agreement 2023). The City of Colusa Fire Department responds to medical calls but its page describes engine-based care, not ambulance transport.",
+   "second_source": "https://emsa.ca.gov/wp-content/uploads/sites/71/2026/01/Jan_26_AmbulanceEOAStatus.pdf (row: Colusa County | Colusa County | American Medical Response West | Exclusive | Emergency Ambulance, agreement 2023-002 8/28/23); https://cityofcolusa.com/fire-department/operations/"
+  },
+  "06021": {
+   "county": "Glenn",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Westside Ambulance (Orland Community Ambulance Association)",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": true,
+     "area": "north of County Road 33",
+     "source_url": "https://www.ssvems.com/hospitals-ems-provider-agencies/",
+     "evidence": "Westside Ambulance | Transport – EOA Agreement | Glenn",
+     "vintage": "2026"
+    },
+    {
+     "name": "Enloe EMS – Willows",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": true,
+     "area": "south of County Road 33",
+     "source_url": "https://www.ssvems.com/hospitals-ems-provider-agencies/",
+     "evidence": "Enloe EMS – Willows | Transport – Non-EOA Agreement | Glenn",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Westside Ambulance serves Glenn County north of County Road 33 (Orland area); Enloe EMS serves the south (Willows area).",
+   "second_source": "https://emsa.ca.gov/wp-content/uploads/sites/71/2026/01/Jan_26_AmbulanceEOAStatus.pdf (rows: Glenn County North of Co Rd 33 | Orland Community Ambulance Association (dba Westside Ambulance Association) | Exclusive; Glenn County South of Co Rd 33 | Enloe Ambulance | Non-Exclusive); https://www.appeal-democrat.com/glenn_county_transcript/orland-willows-and-glenn-county-meet-to-review-the-status-of-emergency-services/article_93376f4d-ad1d-45d3-9fa5-38178ca9991f.html (2026-06-02: \"the current two-provider system\")"
+  },
+  "06103": {
+   "county": "Tehama",
+   "tier": "A",
+   "services": [
+    {
+     "name": "St. Elizabeth Community Hospital Ambulance (Dignity Health)",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.ssvems.com/hospitals-ems-provider-agencies/",
+     "evidence": "St. Elizabeth Ambulance | Transport – Non-EOA Agreement | Tehama",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "St. Elizabeth Community Hospital's ambulance service covers Tehama County, including two ambulances posted in Corning that the Corning Healthcare District funded in 2025.",
+   "second_source": "https://emsa.ca.gov/wp-content/uploads/sites/71/2026/01/Jan_26_AmbulanceEOAStatus.pdf (row: Zone 1 Tehama County | Tehama County | St. Elizabeth Community Hospital Ambulance | Non-Exclusive); https://www.yahoo.com/news/articles/south-tehama-county-served-corning-035900588.html (2025-03-19: 'supports Dignity Health St. Elizabeth Community Hospital's emergency services fleet')"
+  },
+  "06057": {
+   "county": "Nevada",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Sierra Nevada Ambulance (Sierra Nevada Memorial Hospital)",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": true,
+     "area": "Grass Valley, Nevada City and surrounding areas through Higgins FPD (Zone 2)",
+     "source_url": "https://www.ssvems.com/hospitals-ems-provider-agencies/",
+     "evidence": "Sierra Nevada Ambulance | Transport – EOA Agreement | Nevada",
+     "vintage": "2026"
+    },
+    {
+     "name": "Penn Valley Fire Protection District",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": true,
+     "area": "Penn Valley and Lake Wildwood (Zone 3)",
+     "source_url": "https://www.ssvems.com/hospitals-ems-provider-agencies/",
+     "evidence": "Penn Valley Fire Protection DIstrict | Transport – EOA Agreement | Nevada",
+     "vintage": "2026"
+    },
+    {
+     "name": "Truckee Fire Protection District",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": true,
+     "area": "Truckee and Donner Summit (Zones 1 and 4)",
+     "source_url": "https://www.ssvems.com/hospitals-ems-provider-agencies/",
+     "evidence": "Truckee Fire Protection District | Transport – Donner Summit EOA | Nevada",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Sierra Nevada Ambulance serves western Nevada County (Grass Valley, Nevada City, south to the Placer line); Penn Valley Fire serves Penn Valley and Lake Wildwood; Truckee Fire serves Truckee and Donner Summit.",
+   "second_source": "https://emsa.ca.gov/wp-content/uploads/sites/71/2026/01/Jan_26_AmbulanceEOAStatus.pdf (Nevada Zones 1-4: Truckee Fire - Donner Summit; Sierra Nevada Memorial – Miners Hospital DBA Sierra Nevada Ambulance; Penn Valley Fire Protection District; Truckee Fire Protection District)"
+  },
+  "06015": {
+   "county": "Del Norte",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Del Norte Ambulance",
+     "transport": true,
+     "ownership": "private",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.northcoastems.com/ems-system/regional-providers/",
+     "evidence": "Ambulance Providers ... Del Norte County | Del Norte Ambulance | P.O. Box 306 Crescent City, CA 95531",
+     "vintage": "2025"
+    }
+   ],
+   "page_note": "Del Norte Ambulance is the only ground ambulance provider in Del Norte County.",
+   "second_source": "https://emsa.ca.gov/wp-content/uploads/sites/71/2026/01/Jan_26_AmbulanceEOAStatus.pdf (row: Del Norte County | Entire County | Del Norte Ambulance | Non-Exclusive, rev. 04/22/25); https://krcrtv.com/north-coast-news/eureka-local-news/del-norte-ambulance-and-yurok-tribe-launch-emt-scholarship-program-amid-staffing-crisis (2025-10: \"The new station opened on October 3 which is being used as an ambulance station\" in Klamath)"
+  },
+  "06047": {
+   "county": "Merced",
+   "tier": "held",
+   "services": [
+    {
+     "name": "AMR (American Medical Response)",
+     "transport": true,
+     "ownership": "private (contractor to Merced County)",
+     "partial": true,
+     "area": "county EOA (from about January 2026)",
+     "source_url": "https://www.msn.com/en-us/news/other/new-ambulance-service-for-merced-county-starts-this-week/ar-AA1TjyEG",
+     "evidence": "New ambulance service for Merced County starts this week (headline, 2025-12-30; body not readable)",
+     "vintage": "2025-12"
+    },
+    {
+     "name": "West Side Community Ambulance (Westside Community Healthcare District)",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": true,
+     "area": "part of west Merced County (area not confirmed)",
+     "source_url": "https://www.westsideambulance.com/",
+     "evidence": "Proudly Serving The Communities of Stanislaus and Merced Counties",
+     "vintage": "undated"
+    }
+   ],
+   "page_note": "Merced County changed its 911 ambulance contractor from Riggs Ambulance (Sierra Medical Services Alliance) to AMR around January 2026. West Side Community Ambulance, based in Newman, also serves part of Merced County. Not yet confirmed: a county or state source after the change naming AMR, and which area West Side covers.",
+   "second_source": ""
+  },
+  "06109": {
+   "county": "Tuolumne",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Mercy Medical Transportation",
+     "transport": true,
+     "ownership": "private (contractor to Tuolumne County)",
+     "partial": false,
+     "area": "whole county (contract approved April 2026)",
+     "source_url": "https://www.uniondemocrat.com/news/article_fabf9cec-986e-43ac-9888-43a449c82f77.html",
+     "evidence": "The Tuolumne County Board of Supervisors voted 5-0 Tuesday to contract for ambulance services with Mariposa-based Mercy Medical Transportation Inc. ... three months after the county's provider since 1987, Manteca District Ambulance, told the county it could not and would not bid to continue its services beyond June 30.",
+     "vintage": "2026-04"
+    }
+   ],
+   "page_note": "Tuolumne County picked Mercy Medical Transportation in April 2026 to replace Tuolumne County Ambulance Service (run by Manteca District Ambulance since 1987) after June 30, 2026. Not yet confirmed: a source after the handover saying Mercy now runs 911 ambulances.",
+   "second_source": ""
+  },
+  "06043": {
+   "county": "Mariposa",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Mercy Medical Transport",
+     "transport": true,
+     "ownership": "private",
+     "partial": false,
+     "area": "entire county (non-exclusive)",
+     "source_url": "https://emsa.ca.gov/wp-content/uploads/sites/71/2026/01/Jan_26_AmbulanceEOAStatus.pdf",
+     "evidence": "Mariposa County | Entire county | Mercy Medical Transport (MMT) | Non-Exclusive",
+     "vintage": "2025-11"
+    }
+   ],
+   "page_note": "The state EMS authority's January 2026 list names Mercy Medical Transport for all of Mariposa County. Not yet confirmed: a county source, and whether Yosemite National Park's own ambulance transports from the park.",
+   "second_source": ""
+  },
+  "06005": {
+   "county": "Amador",
+   "tier": "held",
+   "services": [
+    {
+     "name": "American Legion Ambulance",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": false,
+     "area": "entire county (exclusive)",
+     "source_url": "https://emsa.ca.gov/wp-content/uploads/sites/71/2026/01/Jan_26_AmbulanceEOAStatus.pdf",
+     "evidence": "Amador County | Entire county | American Legion Ambulance Service | Exclusive",
+     "vintage": "2025-11"
+    }
+   ],
+   "page_note": "The state EMS authority's January 2026 list names American Legion Ambulance for all of Amador County. Not yet confirmed from a county or regional EMS agency page.",
+   "second_source": ""
+  },
+  "06003": {
+   "county": "Alpine",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Alpine County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "entire county (non-exclusive)",
+     "source_url": "https://emsa.ca.gov/wp-content/uploads/sites/71/2026/01/Jan_26_AmbulanceEOAStatus.pdf",
+     "evidence": "Alpine County | Entire county | Alpine County EMS | Non-Exclusive",
+     "vintage": "2025-11"
+    }
+   ],
+   "page_note": "The state EMS authority's January 2026 list names Alpine County EMS for the whole county. Not yet confirmed from a county page, or who covers Kirkwood and Bear Valley.",
+   "second_source": ""
   }
  }
 }

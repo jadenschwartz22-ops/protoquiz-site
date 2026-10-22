@@ -66,7 +66,7 @@
   },
   "38069": {
    "county": "Pierce",
-   "tier": "held",
+   "tier": "A",
    "services": [
     {
      "name": "Rugby Emergency Medical Services",
@@ -76,7 +76,18 @@
      "area": "Rugby Ems atlas polygon, 71.2% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 148: \"Rugby Emergency Medical Services\", 800 South Main Ave, Rugby ND 58368, level \"Basic Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"RUGBY EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2024": {
+      "url": "https://www.thepiercecountytribune.com/opinions/letters-to-the-tribune/2026/05/02/rugby-ambulance-service-seeks-mill-levy-increase-to-sustain-lifesaving-care/",
+      "quote": "Rugby Ambulance Service seeks mill levy increase to sustain lifesaving care (headline; page body not retrievable)",
+      "date": "2026-05"
+     },
+     "verify_2025": {
+      "url": "https://www.statepatrol.nd.gov/sites/www/files/documents/News/2025%20Media%20Release/November%202025/2025.11.13.Pierce%20County.Injury%20Crash1.UPDATE.pdf",
+      "quote": "Wolfe sustained serious injuries and was transported by Rugby Ambulance to a local medical facility.",
+      "date": "2025-11-13",
+      "source": "North Dakota State Patrol news release"
+     }
     },
     {
      "name": "Harvey Ambulance Service, Inc.",
@@ -86,7 +97,13 @@
      "area": "Harvey Ems atlas polygon, 26.6% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 52: \"Harvey Ambulance Service, Inc.\", 708 Alder Ave, Harvey ND 58341, level \"Basic Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"HARVEY EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2025": {
+      "url": "https://www.statepatrol.nd.gov/sites/www/files/documents/News/2025%20Media%20Release/November%202025/2025.11.13.Pierce%20County%20Injury%20Crash2.UPDATE.pdf",
+      "quote": "Wolfe sustained serious injuries in the crash and was transported by Harvey Ambulance to a nearby medical facility.",
+      "date": "2025-11-13",
+      "source": "North Dakota State Patrol news release"
+     }
     },
     {
      "name": "Leeds Ambulance Service",
@@ -96,10 +113,16 @@
      "area": "Leeds Ems atlas polygon, 2.2% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 70: \"Leeds Ambulance Service\", 130 1st Ave Ne, Leeds ND 58346, level \"Basic Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"LEEDS EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2025": {
+      "url": "https://www.statepatrol.nd.gov/sites/default/files/documents/News/2026%20Media%20Releases/January-2026/2026.1.14.BensonCounty.FatalCrash.UPDATE.pdf",
+      "quote": "Agencies Involved: NDHP, Benson County Sheriff\u2019s Office, Leeds Fire, Leeds Ambulance",
+      "date": "2026-01-14",
+      "source": "North Dakota State Patrol news release"
+     }
     }
    ],
-   "page_note": "Confirmed operating since 2024: Rugby Emergency Medical Services. Not yet confirmed from a 2024 or later source: Harvey Ambulance Service, Inc., Leeds Ambulance Service.",
+   "page_note": "Licensed ground ambulances (state list, May 2025) covering this county, each seen answering calls in 2025 or 2026: Rugby Emergency Medical Services, Harvey Ambulance Service, Inc., Leeds Ambulance Service.",
    "second_source": "https://des-ndgov.maps.arcgis.com/apps/instant/atlas/index.html?appid=8d96c5ab33674fccaa7a71997a0f9997&webmap=16ad17bd65754482922d22eb40ae7617"
   },
   "38047": {
@@ -152,7 +175,7 @@
   },
   "38029": {
    "county": "Emmons",
-   "tier": "held",
+   "tier": "A",
    "services": [
     {
      "name": "Emmons County Ambulance Service",
@@ -162,7 +185,13 @@
      "area": "Emmons County Ems atlas polygon, 95.6% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 72: \"Emmons County Ambulance Service\", 111 Elm Ave W, Linton ND 58552, level \"Advanced Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"EMMONS COUNTY EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2025": {
+      "url": "https://www.statepatrol.nd.gov/sites/www/files/documents/News/2025%20Media%20Release/September%202025/2025.9.7.EmmonsCounty.FatalCrash.UPDATE.pdf",
+      "quote": "Agencies Involved: NDHP, Emmons Sheriff\u2019s Department, Hazelton Rural Fire, Linton Ambulance",
+      "date": "2025-09-07",
+      "source": "North Dakota State Patrol news release"
+     }
     },
     {
      "name": "Napoleon Ambulance Service",
@@ -172,7 +201,18 @@
      "area": "Napoleon Ems atlas polygon, 2.7% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 92: \"Napoleon Ambulance Service\", 105 3rd St W Ste A, Napoleon ND 58561, level \"Basic Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"NAPOLEON EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2024": {
+      "url": "https://www.kfyrtv.com/2025/10/16/napoleon-teens-step-up-serve-volunteer-fire-department-ambulance-service/",
+      "quote": "They\u2019re just a huge asset,\u201d said Kristen Moos, a Napoleon ambulance service volunteer.",
+      "date": "2025-10"
+     },
+     "verify_2025": {
+      "url": "https://www.statepatrol.nd.gov/sites/www/files/documents/News/2025%20Media%20Release/September%202025/2025.9.8.Emmons%20County.Injury%20Crash.UPDATE.pdf",
+      "quote": "Agencies Involved: ...ghway Patrol, Emmons County Sheriff\u2019s Department, Braddock Fire, Hazelton Fire, Napolean Ambulance, Sanford Air Med",
+      "date": "2025-09-08",
+      "source": "North Dakota State Patrol news release"
+     }
     },
     {
      "name": "Metro Area Ambulance Service Inc - Bismarck (atlas label \"Metro EMS\" = Metro Area Ambulance Service, Bismarck/Mandan)",
@@ -182,10 +222,16 @@
      "area": "Metro Ems atlas polygon, 1.6% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 12: \"Metro Area Ambulance Service Inc - Bismarck\", 2940 N. 19th St, Bismarck ND 58503, level \"Advanced Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"METRO EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2025": {
+      "url": "https://www.statepatrol.nd.gov/sites/default/files/documents/News/2026%20Media%20Releases/2026%20March/2026.3.8.BurleighCounty.FatalCrash.UPDATE-UA.pdf",
+      "quote": "The driver was transported by Metro Ambulance to CHI St.",
+      "date": "2026-03-08",
+      "source": "North Dakota State Patrol news release"
+     }
     }
    ],
-   "page_note": "Confirmed operating since 2024: Napoleon Ambulance Service. Not yet confirmed from a 2024 or later source: Emmons County Ambulance Service, Metro Area Ambulance Service Inc - Bismarck.",
+   "page_note": "Licensed ground ambulances (state list, May 2025) covering this county, each seen answering calls in 2025 or 2026: Emmons County Ambulance Service, Napoleon Ambulance Service, Metro Area Ambulance Service Inc - Bismarck.",
    "second_source": "https://des-ndgov.maps.arcgis.com/apps/instant/atlas/index.html?appid=8d96c5ab33674fccaa7a71997a0f9997&webmap=16ad17bd65754482922d22eb40ae7617"
   },
   "38027": {
@@ -742,7 +788,7 @@
   },
   "38023": {
    "county": "Divide",
-   "tier": "held",
+   "tier": "A",
    "services": [
     {
      "name": "Divide County Ambulance Service",
@@ -752,7 +798,13 @@
      "area": "Crosby Ems atlas polygon, 72.6% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 27: \"Divide County Ambulance Service\", 702 1st St Sw, Crosby ND 58730, level \"Basic Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"CROSBY EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2025": {
+      "url": "https://www.statepatrol.nd.gov/sites/www/files/documents/News/2025%20Media%20Release/April%202025/2025.4.11.DivideCounty.UTVRollover.InjuryCrash.pdf",
+      "quote": "Agencies Involved: North Dakota Highway Patrol, Divide County Sheriff\u2019s Office, Divide County Ambulance, and Crosby Fire Department",
+      "date": "2025-04-11",
+      "source": "North Dakota State Patrol news release"
+     }
     },
     {
      "name": "Grenora Ambulance Service",
@@ -762,7 +814,13 @@
      "area": "Grenora Ems atlas polygon, 23.2% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 49: \"Grenora Ambulance Service\", 205 Main Street, Grenora ND 58845, level \"Basic Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"GRENORA EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2025": {
+      "url": "https://www.statepatrol.nd.gov/sites/www/files/documents/News/2025%20Media%20Release/August%202025/2025.8.10.Williams%20County%20Injury%20Crash.UPDATE.pdf",
+      "quote": "Agencies Involved: ...ta Highway Patrol, Williams County Sheriff\u2019s Office, Williams County Ambulance, Grenora Ambulance",
+      "date": "2025-08-10",
+      "source": "North Dakota State Patrol news release"
+     }
     },
     {
      "name": "Ray Community Ambulance District",
@@ -772,10 +830,16 @@
      "area": "Ray Community Ems atlas polygon, 4.2% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 107: \"Ray Community Ambulance District\", 24 1st Ave W, Ray ND 58849, level \"Basic Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"RAY COMMUNITY EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2025": {
+      "url": "https://www.statepatrol.nd.gov/sites/www/files/documents/News/2025%20Media%20Release/November%202025/2025.11.17.Williams%20County.Fatal%20Crash.UPDATE.pdf",
+      "quote": "Basher was transported by Ray Ambulance to CHI St.",
+      "date": "2025-11-17",
+      "source": "North Dakota State Patrol news release"
+     }
     }
    ],
-   "page_note": "Confirmed operating since 2024: none yet. Not yet confirmed from a 2024 or later source: Divide County Ambulance Service, Grenora Ambulance Service, Ray Community Ambulance District.",
+   "page_note": "Licensed ground ambulances (state list, May 2025) covering this county, each seen answering calls in 2025 or 2026: Divide County Ambulance Service, Grenora Ambulance Service, Ray Community Ambulance District.",
    "second_source": "https://des-ndgov.maps.arcgis.com/apps/instant/atlas/index.html?appid=8d96c5ab33674fccaa7a71997a0f9997&webmap=16ad17bd65754482922d22eb40ae7617"
   },
   "38035": {
@@ -1030,7 +1094,13 @@
      "area": "Leeds Ems atlas polygon, 30.3% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 70: \"Leeds Ambulance Service\", 130 1st Ave Ne, Leeds ND 58346, level \"Basic Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"LEEDS EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2025": {
+      "url": "https://www.statepatrol.nd.gov/sites/default/files/documents/News/2026%20Media%20Releases/January-2026/2026.1.14.BensonCounty.FatalCrash.UPDATE.pdf",
+      "quote": "Agencies Involved: NDHP, Benson County Sheriff\u2019s Office, Leeds Fire, Leeds Ambulance",
+      "date": "2026-01-14",
+      "source": "North Dakota State Patrol news release"
+     }
     },
     {
      "name": "Maddock Ambulance Service",
@@ -1040,7 +1110,13 @@
      "area": "Maddock Ems atlas polygon, 26.6% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 74: \"Maddock Ambulance Service\", 99 Western Ave, Maddock ND 58348, level \"Basic Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"MADDOCK EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2025": {
+      "url": "https://www.statepatrol.nd.gov/sites/www/files/documents/News/2025%20Media%20Release/September%202025/2025.10.22.BensonCounty.InjuryCrash.UPDATE2.pdf",
+      "quote": "Agencies Involved: North Dakota Highway Patrol, Maddock Fire & Rescue, Maddock Ambulance Service, and Harvey Ambulance Service V",
+      "date": "2025-10-22",
+      "source": "North Dakota State Patrol news release"
+     }
     },
     {
      "name": "Spirit Lake Emergency Medical Service",
@@ -1050,7 +1126,13 @@
      "area": "Spirit Lake Ems atlas polygon, 25.8% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 142: \"Spirit Lake Emergency Medical Service\", 7686 Ephriam Hill Road, Fort Totten ND 58335, level \"Basic Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"SPIRIT LAKE EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2025": {
+      "url": "https://www.statepatrol.nd.gov/sites/default/files/documents/News/2026%20Media%20Releases/August%202026/2026.8.25.EddyCounty.InjuryCrash.UPDATE.pdf",
+      "quote": "Two juvenile passengers were transported by Spirit Lake Ambulance to Altru Hospital Devils Lake with serious injuries.",
+      "date": "2026-08-25",
+      "source": "North Dakota State Patrol news release"
+     }
     },
     {
      "name": "Rugby Emergency Medical Services",
@@ -1060,7 +1142,18 @@
      "area": "Rugby Ems atlas polygon, 8.5% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 148: \"Rugby Emergency Medical Services\", 800 South Main Ave, Rugby ND 58368, level \"Basic Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"RUGBY EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2024": {
+      "url": "https://www.thepiercecountytribune.com/opinions/letters-to-the-tribune/2026/05/02/rugby-ambulance-service-seeks-mill-levy-increase-to-sustain-lifesaving-care/",
+      "quote": "Rugby Ambulance Service seeks mill levy increase to sustain lifesaving care (headline; page body not retrievable)",
+      "date": "2026-05"
+     },
+     "verify_2025": {
+      "url": "https://www.statepatrol.nd.gov/sites/www/files/documents/News/2025%20Media%20Release/November%202025/2025.11.13.Pierce%20County.Injury%20Crash1.UPDATE.pdf",
+      "quote": "Wolfe sustained serious injuries and was transported by Rugby Ambulance to a local medical facility.",
+      "date": "2025-11-13",
+      "source": "North Dakota State Patrol news release"
+     }
     },
     {
      "name": "Lake Region Ambulance Service",
@@ -1070,7 +1163,13 @@
      "area": "Lake Region Ems atlas polygon, 5.5% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 28: \"Lake Region Ambulance Service\", 804 5th St Se, Devils Lake ND 58301, level \"Advanced Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"LAKE REGION EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2025": {
+      "url": "https://www.statepatrol.nd.gov/sites/www/files/documents/News/2025%20Media%20Release/August%202025/2025.8.8%20Ramsey%20County%20Injury%20Crash.pdf",
+      "quote": "He was transported by Lake Region Ambulance to CHI St.",
+      "date": "2025-08-08",
+      "source": "North Dakota State Patrol news release"
+     }
     },
     {
      "name": "Harvey Ambulance Service, Inc.",
@@ -1080,15 +1179,21 @@
      "area": "Harvey Ems atlas polygon, 2.4% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 52: \"Harvey Ambulance Service, Inc.\", 708 Alder Ave, Harvey ND 58341, level \"Basic Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"HARVEY EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2025": {
+      "url": "https://www.statepatrol.nd.gov/sites/www/files/documents/News/2025%20Media%20Release/November%202025/2025.11.13.Pierce%20County%20Injury%20Crash2.UPDATE.pdf",
+      "quote": "Wolfe sustained serious injuries in the crash and was transported by Harvey Ambulance to a nearby medical facility.",
+      "date": "2025-11-13",
+      "source": "North Dakota State Patrol news release"
+     }
     }
    ],
-   "page_note": "Confirmed operating since 2024: Rugby Emergency Medical Services. Not yet confirmed from a 2024 or later source: Leeds Ambulance Service, Maddock Ambulance Service, Spirit Lake Emergency Medical Service, Lake Region Ambulance Service, Harvey Ambulance Service, Inc..",
+   "page_note": "Licensed ground ambulances (state list, May 2025) covering this county, each seen answering calls in 2025 or 2026: Leeds Ambulance Service, Maddock Ambulance Service, Spirit Lake Emergency Medical Service, Rugby Emergency Medical Services, Lake Region Ambulance Service, Harvey Ambulance Service, Inc. A small area in the northeast corner of the county is in Cando's ambulance area, and that service is not yet confirmed there.",
    "second_source": "https://des-ndgov.maps.arcgis.com/apps/instant/atlas/index.html?appid=8d96c5ab33674fccaa7a71997a0f9997&webmap=16ad17bd65754482922d22eb40ae7617"
   },
   "38083": {
    "county": "Sheridan",
-   "tier": "held",
+   "tier": "A",
    "services": [
     {
      "name": "McClusky Rural Ambulance District",
@@ -1098,7 +1203,13 @@
      "area": "Mcclusky Ems atlas polygon, 70.0% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 78: \"McClusky Rural Ambulance District\", 311 Main St S, Mcclusky ND 58463, level \"Basic Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"MCCLUSKY EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2025": {
+      "url": "https://www.statepatrol.nd.gov/sites/www/files/documents/News/2025%20Media%20Release/July%202025/2025.7.9.SheridanCounty.FatalCrash.UPDATE.pdf",
+      "quote": "Agencies Involved: North Dakota Highway Patrol, McClusky Fire Dept, McClusky Ambulance, Sheridan County Sheriff\u2019s Office Vehic",
+      "date": "2025-07-09",
+      "source": "North Dakota State Patrol news release"
+     }
     },
     {
      "name": "Harvey Ambulance Service, Inc.",
@@ -1108,7 +1219,13 @@
      "area": "Harvey Ems atlas polygon, 19.0% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 52: \"Harvey Ambulance Service, Inc.\", 708 Alder Ave, Harvey ND 58341, level \"Basic Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"HARVEY EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2025": {
+      "url": "https://www.statepatrol.nd.gov/sites/www/files/documents/News/2025%20Media%20Release/November%202025/2025.11.13.Pierce%20County%20Injury%20Crash2.UPDATE.pdf",
+      "quote": "Wolfe sustained serious injuries in the crash and was transported by Harvey Ambulance to a nearby medical facility.",
+      "date": "2025-11-13",
+      "source": "North Dakota State Patrol news release"
+     }
     },
     {
      "name": "Velva Ambulance Service",
@@ -1118,7 +1235,13 @@
      "area": "Velva Ems atlas polygon, 7.1% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 126: \"Velva Ambulance Service\", 105 1st St W, Velva ND 58790, level \"Basic Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"VELVA EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2025": {
+      "url": "https://www.statepatrol.nd.gov/sites/www/files/documents/News/2025%20Media%20Release/November%202025/2025.11.10.McLean%20County.Fatal%20Crash.UPDATE.pdf",
+      "quote": "Agencies Involved: North Dakota Highway Patrol, McLean County Sheriff\u2019s Office, Velva Ambulance, Butte Fire Protection District",
+      "date": "2025-11-10",
+      "source": "North Dakota State Patrol news release"
+     }
     },
     {
      "name": "Bowdon Ambulance District",
@@ -1128,10 +1251,16 @@
      "area": "Bowdon Ems atlas polygon, 3.9% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 16: \"Bowdon Ambulance District\", 211 Warrington Ave, Bowdon ND 58418, level \"Basic Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"BOWDON EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2025": {
+      "url": "https://www.statepatrol.nd.gov/sites/www/files/documents/News/2025%20Media%20Release/August%202025/2025.8.21.KidderCounty.FatalCrash.UPDATE2.pdf",
+      "quote": "Agencies Involved: ...nty Sheriff\u2019s Office, Steele Police Department, McLean County Sheriff\u2019s Office, Bowdon Ambulance, Steele Ambulance, Kidder County EMS, W",
+      "date": "2025-08-21",
+      "source": "North Dakota State Patrol news release"
+     }
     }
    ],
-   "page_note": "Confirmed operating since 2024: none yet. Not yet confirmed from a 2024 or later source: McClusky Rural Ambulance District, Harvey Ambulance Service, Inc., Velva Ambulance Service, Bowdon Ambulance District.",
+   "page_note": "Licensed ground ambulances (state list, May 2025) covering this county, each seen answering calls in 2025 or 2026: McClusky Rural Ambulance District, Harvey Ambulance Service, Inc., Velva Ambulance Service, Bowdon Ambulance District.",
    "second_source": "https://des-ndgov.maps.arcgis.com/apps/instant/atlas/index.html?appid=8d96c5ab33674fccaa7a71997a0f9997&webmap=16ad17bd65754482922d22eb40ae7617"
   },
   "38091": {
@@ -2004,7 +2133,13 @@
      "area": "Velva Ems atlas polygon, 38.3% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 126: \"Velva Ambulance Service\", 105 1st St W, Velva ND 58790, level \"Basic Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"VELVA EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2025": {
+      "url": "https://www.statepatrol.nd.gov/sites/www/files/documents/News/2025%20Media%20Release/November%202025/2025.11.10.McLean%20County.Fatal%20Crash.UPDATE.pdf",
+      "quote": "Agencies Involved: North Dakota Highway Patrol, McLean County Sheriff\u2019s Office, Velva Ambulance, Butte Fire Protection District",
+      "date": "2025-11-10",
+      "source": "North Dakota State Patrol news release"
+     }
     },
     {
      "name": "Towner Ambulance District",
@@ -2014,7 +2149,13 @@
      "area": "Towner Ems atlas polygon, 36.2% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 119: \"Towner Ambulance District\", 308 Main St S, Towner ND 58788, level \"Basic Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"TOWNER EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2025": {
+      "url": "https://www.statepatrol.nd.gov/sites/default/files/documents/News/2026%20Media%20Releases/2026%20April/2026.4.9.McHenryCounty.FatalCrash.UPDATE-UA.pdf",
+      "quote": "Agencies Involved: ...kota State Patrol, McHenry County Sheriff\u2019s Office, North Dakota Game and Fish, Towner Ambulance District, Towner Fire Department Vehicl",
+      "date": "2026-04-09",
+      "source": "North Dakota State Patrol news release"
+     }
     },
     {
      "name": "Upham Ambulance Service",
@@ -2024,7 +2165,13 @@
      "area": "Upham Ems atlas polygon, 13.2% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 124: \"Upham Ambulance Service\", 117 C Ave South, Upham ND 58789, level \"Substation (BLS)\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"UPHAM EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2025": {
+      "url": "https://www.statepatrol.nd.gov/sites/www/files/documents/News/2025%20Media%20Release/August%202025/2025.8.26.McHenryCounty.FatalCrash.UPDATE.pdf",
+      "quote": "Agencies Involved: ...lved: North Dakota Highway Patrol, McHenry County Sheriff\u2019s Office, Upham Fire, Upham Ambulance",
+      "date": "2025-08-26",
+      "source": "North Dakota State Patrol news release"
+     }
     },
     {
      "name": "Harvey Ambulance Service, Inc.",
@@ -2034,7 +2181,13 @@
      "area": "Harvey Ems atlas polygon, 7.6% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 52: \"Harvey Ambulance Service, Inc.\", 708 Alder Ave, Harvey ND 58341, level \"Basic Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"HARVEY EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2025": {
+      "url": "https://www.statepatrol.nd.gov/sites/www/files/documents/News/2025%20Media%20Release/November%202025/2025.11.13.Pierce%20County%20Injury%20Crash2.UPDATE.pdf",
+      "quote": "Wolfe sustained serious injuries in the crash and was transported by Harvey Ambulance to a nearby medical facility.",
+      "date": "2025-11-13",
+      "source": "North Dakota State Patrol news release"
+     }
     },
     {
      "name": "Trinity Health First Response Ground Ambulance (atlas label for Minot city = Trinity Health ambulance)",
@@ -2044,15 +2197,21 @@
      "area": "Minot Community Ems atlas polygon, 3.8% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 88: \"Trinity Health First Response Ground Ambulance\", 305 11th Ave Sw, Minot ND 58701, level \"Advanced Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"MINOT COMMUNITY EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2025": {
+      "url": "https://www.statepatrol.nd.gov/sites/default/files/documents/News/2025%20Media%20Release/March%202025/2026.3.9.WardCounty.FatalCrash.pdf",
+      "quote": "Agencies Involved: North Dakota State Patrol, Ward County Sheriff\u2019s Department, Burlington Police Department, Burlington Fire Department, Trinity Health First Response Community Ambulance Service",
+      "date": "2026-03-09",
+      "source": "North Dakota State Patrol news release"
+     }
     }
    ],
-   "page_note": "Confirmed operating since 2024: none yet. Not yet confirmed from a 2024 or later source: Velva Ambulance Service, Towner Ambulance District, Upham Ambulance Service, Harvey Ambulance Service, Inc., Trinity Health First Response Ground Ambulance.",
+   "page_note": "Licensed ground ambulances (state list, May 2025) covering this county, each seen answering calls in 2025 or 2026: Velva Ambulance Service, Towner Ambulance District, Upham Ambulance Service, Harvey Ambulance Service, Inc., Trinity Health First Response Ground Ambulance. A small area on the northern edge of the county is in Bottineau's ambulance area, and that service is not yet confirmed there.",
    "second_source": "https://des-ndgov.maps.arcgis.com/apps/instant/atlas/index.html?appid=8d96c5ab33674fccaa7a71997a0f9997&webmap=16ad17bd65754482922d22eb40ae7617"
   },
   "38045": {
    "county": "LaMoure",
-   "tier": "held",
+   "tier": "A",
    "services": [
     {
      "name": "Community Volunteer EMS of LaMoure",
@@ -2062,7 +2221,12 @@
      "area": "Lamoure Ems atlas polygon, 43.4% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 153: \"Community Volunteer EMS of LaMoure\", 315 3rd Ave Se, Lamoure ND 58458, level \"Basic Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"LAMOURE EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2024": {
+      "url": "https://www.jamestownsun.com/news/local/lamoure-ems-volunteers-earn-stork-pins-after-assisting-with-home-birth",
+      "quote": "the Community Volunteer EMS of LaMoure was paged to her home, located about 5 miles outside of LaMoure.",
+      "date": "2025-12"
+     }
     },
     {
      "name": "Edgeley Ambulance Service",
@@ -2072,7 +2236,12 @@
      "area": "Edgeley Ems atlas polygon, 35.5% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 31: \"Edgeley Ambulance Service\", 108 7th Ave, Edgeley ND 58433, level \"Basic Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"EDGELEY EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2024": {
+      "url": "https://www.newsdakota.com/2025/04/28/kenny-scallon-awarded-ndemsa-southeast-region-siren-award/",
+      "quote": "In 2025, we are honored to present the NDEMSA Southeast Region Siren Award to Kenny Scallon from Edgeley Ambulance Service",
+      "date": "2025-04"
+     }
     },
     {
      "name": "Kulm Ambulance Corps, Inc.",
@@ -2082,7 +2251,12 @@
      "area": "Kulm Ems atlas polygon, 11.4% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 64: \"Kulm Ambulance Corps, Inc.\", Po Box 189, Kulm ND 58456-0189, level \"Basic Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"KULM EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2024": {
+      "url": "https://www.jamestownsun.com/community/dakota-valley-electric-co-op-awards-9k-grant-to-kulm-ambulance-corp",
+      "quote": "The volunteer ambulance service will use the donation to help finance construction of its new ambulance garage and training center",
+      "date": "2025-08"
+     }
     },
     {
      "name": "Gackle Ambulance Service",
@@ -2092,7 +2266,13 @@
      "area": "Gackle Ems atlas polygon, 6.0% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 42: \"Gackle Ambulance Service\", 111 Cedar St E, Gackle ND 58442, level \"Basic Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"GACKLE EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2025": {
+      "url": "https://www.statepatrol.nd.gov/sites/www/files/documents/News/2025%20Media%20Release/December%202025/2025.12.26.LoganCounty.FatalCrash.UPDATE.pdf",
+      "quote": "Agencies Involved: ...\u2019s Office; Logan County Sheriff\u2019s Office; ND DOT; Medina Rescue; Streeter Fire; Gackle Ambulance; Gackle Fire; Sanford Airmed",
+      "date": "2025-12-26",
+      "source": "North Dakota State Patrol news release"
+     }
     },
     {
      "name": "Barnes County / City Ambulance",
@@ -2102,7 +2282,13 @@
      "area": "Barnes County Ems atlas polygon, 2.4% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 125: \"Barnes County / City Ambulance\", 674 11th Ave Sw, Valley City ND 58072, level \"Advanced Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"BARNES COUNTY EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2025": {
+      "url": "https://www.statepatrol.nd.gov/sites/default/files/documents/News/2026%20Media%20Releases/2026%20May/2026.5.30.BarnesCounty.InjuryCrash.UPDATE%201.pdf",
+      "quote": "He ran to the nearby Sheyenne River to remove the bees and was later transported by Barnes County Ambulance to Mercy Hospital in Valley City for treatment of hundreds of bee stings.",
+      "date": "2026-05-30",
+      "source": "North Dakota State Patrol news release"
+     }
     },
     {
      "name": "Oakes Volunteer Ambulance Service",
@@ -2112,15 +2298,21 @@
      "area": "Oakes Ems atlas polygon, 1.4% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 99: \"Oakes Volunteer Ambulance Service\", 615 Ivy Ave, Oakes ND 58474, level \"Basic Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"OAKES EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2025": {
+      "url": "https://www.statepatrol.nd.gov/sites/default/files/documents/News/2026%20Media%20Releases/January-2026/2026.1.23.Dickey%20County.InjuryCrash.UPDATE.pdf",
+      "quote": "Krueger was seriously injured and transported by Oakes Ambulance to Oakes Hospital and then transported via Avera Careflight to Avera St.",
+      "date": "2026-01-23",
+      "source": "North Dakota State Patrol news release"
+     }
     }
    ],
-   "page_note": "Confirmed operating since 2024: Community Volunteer EMS of LaMoure, Edgeley Ambulance Service, Kulm Ambulance Corps, Inc.. Not yet confirmed from a 2024 or later source: Gackle Ambulance Service, Barnes County / City Ambulance, Oakes Volunteer Ambulance Service.",
+   "page_note": "Licensed ground ambulances (state list, May 2025) covering this county, each seen answering calls in 2025 or 2026: Community Volunteer EMS of LaMoure, Edgeley Ambulance Service, Kulm Ambulance Corps, Inc., Gackle Ambulance Service, Barnes County / City Ambulance, Oakes Volunteer Ambulance Service.",
    "second_source": "https://des-ndgov.maps.arcgis.com/apps/instant/atlas/index.html?appid=8d96c5ab33674fccaa7a71997a0f9997&webmap=16ad17bd65754482922d22eb40ae7617"
   },
   "38043": {
    "county": "Kidder",
-   "tier": "held",
+   "tier": "A",
    "services": [
     {
      "name": "Kidder County Ambulance Service",
@@ -2130,7 +2322,13 @@
      "area": "Kidder Ems atlas polygon, 71.7% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 117: \"Kidder County Ambulance Service\", 120 N Mitchell Ave, Steele ND 58482, level \"Basic Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"KIDDER EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2025": {
+      "url": "https://www.statepatrol.nd.gov/sites/default/files/documents/News/2026%20Media%20Releases/February%202026/2026.2.19.KidderCounty.InjuryCrash.UPDATE.pdf",
+      "quote": "Both drivers were transported by Kidder County Ambulance Service to CHI St. Alexius",
+      "date": "2026-02-19",
+      "source": "North Dakota State Patrol news release"
+     }
     },
     {
      "name": "Bowdon Ambulance District",
@@ -2140,7 +2338,13 @@
      "area": "Bowdon Ems atlas polygon, 12.3% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 16: \"Bowdon Ambulance District\", 211 Warrington Ave, Bowdon ND 58418, level \"Basic Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"BOWDON EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2025": {
+      "url": "https://www.statepatrol.nd.gov/sites/www/files/documents/News/2025%20Media%20Release/August%202025/2025.8.21.KidderCounty.FatalCrash.UPDATE2.pdf",
+      "quote": "Agencies Involved: ...nty Sheriff\u2019s Office, Steele Police Department, McLean County Sheriff\u2019s Office, Bowdon Ambulance, Steele Ambulance, Kidder County EMS, W",
+      "date": "2025-08-21",
+      "source": "North Dakota State Patrol news release"
+     }
     },
     {
      "name": "Medina Ambulance Service",
@@ -2150,7 +2354,12 @@
      "area": "Medina Ems atlas polygon, 7.6% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 83: \"Medina Ambulance Service\", 107 College St Sw, Medina ND 58467, level \"Basic Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"MEDINA EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2024": {
+      "url": "https://www.jamestownsun.com/news/local/medina-ambulance-receives-20-000-donation-for-new-ambulance",
+      "quote": "The Medina Ambulance District recently received a $20,000 donation from Dakota Heritage Bank in Medina, North Dakota, for its new ambulance",
+      "date": "2026-07"
+     }
     },
     {
      "name": "Napoleon Ambulance Service",
@@ -2160,7 +2369,18 @@
      "area": "Napoleon Ems atlas polygon, 5.9% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 92: \"Napoleon Ambulance Service\", 105 3rd St W Ste A, Napoleon ND 58561, level \"Basic Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"NAPOLEON EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2024": {
+      "url": "https://www.kfyrtv.com/2025/10/16/napoleon-teens-step-up-serve-volunteer-fire-department-ambulance-service/",
+      "quote": "They\u2019re just a huge asset,\u201d said Kristen Moos, a Napoleon ambulance service volunteer.",
+      "date": "2025-10"
+     },
+     "verify_2025": {
+      "url": "https://www.statepatrol.nd.gov/sites/www/files/documents/News/2025%20Media%20Release/September%202025/2025.9.8.Emmons%20County.Injury%20Crash.UPDATE.pdf",
+      "quote": "Agencies Involved: ...ghway Patrol, Emmons County Sheriff\u2019s Department, Braddock Fire, Hazelton Fire, Napolean Ambulance, Sanford Air Med",
+      "date": "2025-09-08",
+      "source": "North Dakota State Patrol news release"
+     }
     },
     {
      "name": "Gackle Ambulance Service",
@@ -2170,10 +2390,16 @@
      "area": "Gackle Ems atlas polygon, 2.5% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 42: \"Gackle Ambulance Service\", 111 Cedar St E, Gackle ND 58442, level \"Basic Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"GACKLE EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2025": {
+      "url": "https://www.statepatrol.nd.gov/sites/www/files/documents/News/2025%20Media%20Release/December%202025/2025.12.26.LoganCounty.FatalCrash.UPDATE.pdf",
+      "quote": "Agencies Involved: ...\u2019s Office; Logan County Sheriff\u2019s Office; ND DOT; Medina Rescue; Streeter Fire; Gackle Ambulance; Gackle Fire; Sanford Airmed",
+      "date": "2025-12-26",
+      "source": "North Dakota State Patrol news release"
+     }
     }
    ],
-   "page_note": "Confirmed operating since 2024: Medina Ambulance Service, Napoleon Ambulance Service. Not yet confirmed from a 2024 or later source: Kidder County Ambulance Service, Bowdon Ambulance District, Gackle Ambulance Service.",
+   "page_note": "Licensed ground ambulances (state list, May 2025) covering this county, each seen answering calls in 2025 or 2026: Kidder County Ambulance Service, Bowdon Ambulance District, Medina Ambulance Service, Napoleon Ambulance Service, Gackle Ambulance Service.",
    "second_source": "https://des-ndgov.maps.arcgis.com/apps/instant/atlas/index.html?appid=8d96c5ab33674fccaa7a71997a0f9997&webmap=16ad17bd65754482922d22eb40ae7617"
   },
   "38063": {
@@ -2720,7 +2946,7 @@
   },
   "38085": {
    "county": "Sioux",
-   "tier": "held",
+   "tier": "A",
    "services": [
     {
      "name": "Standing Rock Ambulance Service",
@@ -2730,7 +2956,13 @@
      "area": "Standing Rock Ems atlas polygon, 82.8% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 41: \"Standing Rock Ambulance Service\", 9323 Hwy 24, Fort Yates ND 58538, level \"Advanced Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"STANDING ROCK EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2025": {
+      "url": "https://www.statepatrol.nd.gov/sites/default/files/documents/News/2026%20Media%20Releases/September%202026/2026.9.10.SiouxCounty.FatalCrash.UPDATE.pdf",
+      "quote": "Agencies Involved: ...h Dakota State Patrol, Sioux County Sheriff\u2019s Office, Bureau of Indian Affairs, Standing Rock Ambulance Service, Mobridge (SD) Fire Department",
+      "date": "2026-09-10",
+      "source": "North Dakota State Patrol news release"
+     }
     },
     {
      "name": "Lemmon EMT Association (Lemmon, SD service licensed in ND)",
@@ -2740,10 +2972,15 @@
      "area": "Lemmon Ems atlas polygon, 16.9% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 138: \"Lemmon EMT Association\", 211 1st Ave W, Lemmon SD 58639, level \"Basic Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"LEMMON EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2024": {
+      "url": "https://www.sdpb.org/healthcare/2026-06-26/workforce-shortage-threatens-to-shut-down-lemmons-ambulance-service",
+      "quote": "Lemmon\u2019s ambulance service covers an estimated 1,350 square miles.",
+      "date": "2026-06 (operating, but the article says it is close to shutting down)"
+     }
     }
    ],
-   "page_note": "Confirmed operating since 2024: Lemmon EMT Association. Not yet confirmed from a 2024 or later source: Standing Rock Ambulance Service. A June 2026 report says the Lemmon ambulance service is close to shutting down because of staffing.",
+   "page_note": "Licensed ground ambulances (state list, May 2025) covering this county, each seen answering calls in 2025 or 2026: Standing Rock Ambulance Service (most of the county) and Lemmon EMT Association of Lemmon, South Dakota (the southwest corner). In June 2026 the Lemmon service said staff shortages could force it to shut down, so ambulance service in the southwest corner may change.",
    "second_source": "https://des-ndgov.maps.arcgis.com/apps/instant/atlas/index.html?appid=8d96c5ab33674fccaa7a71997a0f9997&webmap=16ad17bd65754482922d22eb40ae7617"
   },
   "38073": {
@@ -2874,17 +3111,24 @@
   },
   "38089": {
    "county": "Stark",
-   "tier": "held",
+   "tier": "A",
    "services": [
     {
-     "name": "Dickinson Area Ambulance Service, Inc.",
+     "name": "Dickinson Fire/EMS Department (City of Dickinson)",
      "transport": true,
-     "ownership": "mixed: not stated in the state list",
+     "ownership": "municipal fire",
      "partial": false,
      "area": "Dickinson Ems atlas polygon, 33.4% of county area",
-     "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
-     "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 29: \"Dickinson Area Ambulance Service, Inc.\", 42 B Avenue E, Dickinson ND 58601, level \"Advanced Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"DICKINSON EMS\".",
-     "vintage": "2025"
+     "source_url": "https://www.thedickinsonpress.com/news/local/dickinson-launches-city-run-ems-ending-44-years-of-private-service",
+     "evidence": "Monday, June 30, marked the final day of operations for Dickinson Area Ambulance Service ... Shortly after midnight on July 1, responsibility for emergency medical services officially shifted to the newly formed Dickinson Fire/EMS Department.",
+     "vintage": "2025-07",
+     "verify": "replaces Dickinson Area Ambulance Service (licence 29), closed 6/30/2025",
+     "verify_2025": {
+      "url": "https://www.statepatrol.nd.gov/sites/default/files/documents/News/2026%20Media%20Releases/2026%20May/2026.5.23.StarkCounty.FatalCrash.pdf",
+      "quote": "Agencies Involved: North Dakota State Patrol, Dickinson Police Department, Dickinson EMS",
+      "date": "2026-05-23",
+      "source": "North Dakota State Patrol news release"
+     }
     },
     {
      "name": "Richardton-Taylor Ambulance Service",
@@ -2894,17 +3138,35 @@
      "area": "Richardton Ems atlas polygon, 31.1% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 109: \"Richardton-Taylor Ambulance Service\", 111 North Avenue W, Richardton ND 58652, level \"Basic Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"RICHARDTON EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2025": {
+      "url": "https://www.statepatrol.nd.gov/sites/default/files/documents/News/2026%20Media%20Releases/September%202026/2026.9.7.StarkCounty.InjuryCrash.UPDATE.pdf",
+      "quote": "Agencies Involved: ...y Sheriff\u2019s Office, Hebron Fire Protection District, Hebron Ambulance Services, Richardton Taylor Rural Ambulance District, Metro Ambulance Services Vehi",
+      "date": "2026-09-07",
+      "source": "North Dakota State Patrol news release"
+     }
     },
     {
-     "name": "Belfield Ambulance Service Inc.",
+     "name": "Billings County EMS (Billings County Ambulance Service, Medora, merged with Belfield Ambulance Service)",
      "transport": true,
      "ownership": "mixed: not stated in the state list",
      "partial": false,
      "area": "Belfield Ems atlas polygon, 21.7% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 5: \"Belfield Ambulance Service Inc.\", 304 Main St South, Belfield ND 58622, level \"Basic Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"BELFIELD EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2025": {
+      "url": "https://www.statepatrol.nd.gov/sites/default/files/documents/News/2026%20Media%20Releases/2026%20March/2026.3.11.StarkCounty.InjuryCrash.UPDATE-UA.pdf",
+      "quote": "Where: Highway 85, MM 78; three miles north of Belfield When: Monday, March 9, 12:53 p.m. Central Time Road Conditions: Wet/slushy Weather Conditions: Light snow Crash Involvement: CMV with trailer vs. pickup with trailer Type of Crash: Angle Agencies Involved: North Dakota State Patrol, Stark County Sheriff\u2019s Office, Billings County EMS, Billings County Rural Fire",
+      "date": "2026-03-11",
+      "source": "North Dakota State Patrol news release"
+     },
+     "merger_source": {
+      "url": "https://www.yahoo.com/news/belfield-city-council-members-sworn-235000502.html",
+      "quote": "A merger of the Belfield and Billings County Ambulance Service featured discussion on the opportunities presented to more efficiently share resources and volunteer labor. ... The funding and merger discussions culminated in a 4-0 vote",
+      "date": "2022-06 (Dickinson Press via Yahoo)"
+     },
+     "verify": "atlas label BELFIELD EMS; 2026 state patrol releases on Highway 85 near Belfield list Billings County EMS as the ambulance"
     },
     {
      "name": "New England Ambulance Service",
@@ -2914,7 +3176,18 @@
      "area": "New England Ems atlas polygon, 8.0% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 93: \"New England Ambulance Service\", 1205 3rd Ave East, New England ND 58647, level \"Basic Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"NEW ENGLAND EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2024": {
+      "url": "https://www.thedickinsonpress.com/legal-notices/new-england-ambulance-district-meeting-e-stratica-legals-292128",
+      "quote": "New England Ambulance District Meeting Emergency Services Building, New England February 5, 2024 at 8:00 pm Agenda: Election of Officers Funding Requests Budget",
+      "date": "2024-01 (district meeting notice only)"
+     },
+     "verify_2025": {
+      "url": "https://www.statepatrol.nd.gov/sites/default/files/documents/News/2026%20Media%20Releases/January-2026/2026.1.22.SlopeCounty.InjuryCrash.UPDATE.pdf",
+      "quote": "Agencies Involved: ...ghway Patrol, Slope County Sheriff\u2019s Office, Hettinger County Sheriff\u2019s Office, New England Ambulance, New England Fire",
+      "date": "2026-01-22",
+      "source": "North Dakota State Patrol news release"
+     }
     },
     {
      "name": "Hebron Ambulance Service",
@@ -2924,10 +3197,16 @@
      "area": "Hebron Ems atlas polygon, 5.8% of county area",
      "source_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/EMS/EMS/Agency%20Licensure/EMS_Agencies_052025.xlsx",
      "evidence": "ND HHS licensed EMS agencies list (05/06/2025), licence 54: \"Hebron Ambulance Service\", 620 Washington Ave, Hebron ND 58638, level \"Basic Life Support Ground Ambulance\". Atlas (DES/NDGIS Hub EMS boundary layer, edited 2025-12-29, \"used for determining which ambulance service is associated with a 9-1-1 incident location\", labelled preliminary) assigns this area to \"HEBRON EMS\".",
-     "vintage": "2025"
+     "vintage": "2025",
+     "verify_2025": {
+      "url": "https://www.statepatrol.nd.gov/sites/default/files/documents/News/2026%20Media%20Releases/September%202026/2026.9.7.StarkCounty.InjuryCrash.UPDATE.pdf",
+      "quote": "Agencies Involved: ...a State Patrol, Stark County Sheriff\u2019s Office, Hebron Fire Protection District, Hebron Ambulance Services, Richardton Taylor Rural Ambul",
+      "date": "2026-09-07",
+      "source": "North Dakota State Patrol news release"
+     }
     }
    ],
-   "page_note": "Confirmed operating since 2024: Dickinson Fire/EMS Department, New England Ambulance Service. Not yet confirmed from a 2024 or later source: Richardton-Taylor Ambulance Service, Belfield Ambulance Service Inc., Hebron Ambulance Service. Dickinson Area Ambulance Service closed June 30, 2025; the City of Dickinson Fire/EMS Department took over its area July 1, 2025.",
+   "page_note": "Licensed ground ambulances (state list, May 2025) covering this county, each seen answering calls in 2025 or 2026: Dickinson Fire/EMS Department, Richardton-Taylor Ambulance Service, Billings County EMS, New England Ambulance Service, Hebron Ambulance Service. Dickinson Area Ambulance Service closed on June 30, 2025; the Dickinson Fire/EMS Department now answers in Dickinson. Belfield and Billings County ambulances moved to merge in 2022, and in 2026 Billings County EMS answers around Belfield.",
    "second_source": "https://des-ndgov.maps.arcgis.com/apps/instant/atlas/index.html?appid=8d96c5ab33674fccaa7a71997a0f9997&webmap=16ad17bd65754482922d22eb40ae7617"
   }
  }

@@ -1,0 +1,141 @@
+{
+ "meta": {
+  "state": "OR",
+  "retrieved": "2026-10-22",
+  "via": "county ASA plans, county GIS ASA layers and agency websites (local sources)"
+ },
+ "county_verdict": {
+  "41029": {
+   "county": "Jackson",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Mercy Flights",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": true,
+     "area": "ASA 2 (Medford, Central Point, Eagle Point, most of the county)",
+     "source_url": "https://www.arcgis.com/home/item.html?id=2bf5e3e249434452a5629a49b3917244",
+     "evidence": "Jackson County is comprised of 3 ambulance service providers each responsible for dispatching to a specified area known as an Ambulance Service Area (ASA). (Jackson County GIS layer, features: 1 Rogue River Fire Department, 2 Mercy Flights, 3 Ashland Fire & Rescue) | mercyflights.com: \"Eligible members can avoid out-of-pocket costs for medically necessary emergency ground and air ambulance transports\"; Aug 2026 release: \"nonprofit provider of air and ground ambulance services serving southern Oregon\"",
+     "vintage": "2024-11 layer; 2026 site"
+    },
+    {
+     "name": "Ashland Fire & Rescue",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": true,
+     "area": "ASA 3 (Ashland, Talent and the south county)",
+     "source_url": "https://www.ashlandoregon.gov/678/Ambulance-Membership-and-Billing",
+     "evidence": "For ground transport coverage if you reside in Ashland or Talent, AF&R ambulance membership is required. ... Emergency ambulance transportation to all local hospitals. ... Updated Benefit Structure as of Feb. 1, 2026",
+     "vintage": "2026"
+    },
+    {
+     "name": "Rogue River Fire District (Jackson County Fire District 1)",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": true,
+     "area": "ASA 1 (Rogue River, Gold Hill area)",
+     "source_url": "https://www.rogueriverfd.com/history",
+     "evidence": "1993: Jackson County awarded Ambulance Service District (ASA) #1 to the RRFD. ... Two new ambulances where purchased (firemed page: \"$55 per year covers you and your household with FireMed, emergency ground ambulance transportation\"; site menu lists Strategic Plan 2025)",
+     "vintage": "2024-11 county layer; 2025 site"
+    }
+   ],
+   "page_note": "Jackson County has three ambulance service areas: Mercy Flights (Medford and most of the county), Ashland Fire & Rescue (Ashland and Talent) and Rogue River Fire District (Rogue River and Gold Hill area).",
+   "second_source": "https://spatial.jacksoncountyor.gov/arcgis/rest/services/OpenData/BoundaryData/MapServer/1"
+  },
+  "41027": {
+   "county": "Hood River",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Hood River Fire & EMS",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": true,
+     "area": "ASA 2 (City of Hood River and surrounding 145 sq mi)",
+     "source_url": "https://cityofhoodriver.gov/fire/",
+     "evidence": "a minimum of four (4) firefighter/paramedics on-duty around the clock, responding from our station within the City of Hood River and our 145 square mile Ambulance Service Area (ASA) in Hood River and Wasco Counties",
+     "vintage": "2023+ (page cites July 2023); county layer 2025-09"
+    },
+    {
+     "name": "Parkdale Rural Fire Protection District",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": true,
+     "area": "ASA 3 (upper Hood River Valley)",
+     "source_url": "https://www.parkdalefire.com/",
+     "evidence": "A ground ambulance transport in the Hood River or Parkdale area can cost you more than $1500 ... As a FireMed member you would pay NOTHING (county layer: 'ASA 3 - Parkdale Fire District'; OHA roster: Parkdale RFPD, Agencies-Transport, Active)",
+     "vintage": "2025-09 county layer"
+    },
+    {
+     "name": "Cascade Locks Fire & EMS",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": true,
+     "area": "ASA 1 (Cascade Locks)",
+     "source_url": "https://www.cascade-locks.or.us/vertical/sites/%7BCBA69777-87EC-4CCE-94AE-A171F7FE7A86%7D/uploads/April_2026_Financial_for_budget_book.pdf",
+     "evidence": "City of Cascade Locks April 2026 financial report: \"FIRE/AMB SERVICE FEES\" and \"SUPPLIES/MATERIALS - AMBULANCE\" | Hood River County layer feature: Label 'ASA 1 - Cascade Locks Fire & EMS'",
+     "vintage": "2026 city financials; 2025-09 county layer"
+    }
+   ],
+   "page_note": "Hood River County has three ambulance service areas: Hood River Fire & EMS (Hood River and surroundings), Parkdale Fire District (upper valley) and Cascade Locks Fire & EMS (Cascade Locks).",
+   "second_source": "OR_imagetrend.json (OHA EMS licence roster, permit level Agencies-Transport)"
+  },
+  "41067": {
+   "county": "Washington",
+   "tier": "held",
+   "services": [
+    {
+     "name": "American Medical Response Northwest (AMR)",
+     "transport": true,
+     "ownership": "private (contractor to Washington County)",
+     "partial": true,
+     "area": "single county ASA (whole county except the slivers below)",
+     "source_url": "https://www.washingtoncountyor.gov/ems/documents/ambulance-service-area-plan/download?inline",
+     "evidence": "The Washington County ASA Plan (ASP) designates the county as a single ambulance service area (ASA). The ASA is awarded to a single emergency ambulance service provider in the form of a franchise. | EMS Strategic Plan 2026-2030: \"In August of 2023, the Washington County EMS program entered into a franchise agreement with American Medical Response (AMR)\"; county EMS page: \"one emergency ambulance company, seven fire department first response agencies\"",
+     "vintage": "2023 plan; 2026 strategic plan; July 2026 AMR performance report"
+    }
+   ],
+   "page_note": "American Medical Response (AMR) holds Washington County's emergency ambulance franchise for the county's single ambulance service area; the fire departments respond first but do not hold it. The Washington County parts of Wilsonville, Lake Oswego and Rivergrove are served from Clackamas County, and the area south of Bell Road and Highway 99W is in Tualatin Valley Fire & Rescue's Yamhill County service area; who transports in those small areas is not yet confirmed.",
+   "second_source": "https://www.washingtoncountyor.gov/ems/documents/performance-assessment-and-summary-july-2026/download?inline"
+  },
+  "41005": {
+   "county": "Clackamas",
+   "tier": "held",
+   "services": [
+    {
+     "name": "American Medical Response Northwest (AMR)",
+     "transport": true,
+     "ownership": "private (contractor to Clackamas County)",
+     "partial": true,
+     "area": "Clackamas ASA (Hoodland, Estacada, Sandy, Clackamas Fire districts, Gladstone, Lake Oswego, TVF&R area)",
+     "source_url": "https://dochub.clackamas.us/documents/drupal/fa7f57a6-eddc-40ad-a20a-544877eda973",
+     "evidence": "American Medical Response Northwest, Inc. was assigned as the provider for the Clackamas ASA in a competitive process under the 1993 Ambulance Service Plan. (County Code 10.01, amended by Ord. 04-2024, 11/14/24); county EMS page: \"Emergency Medical Services (EMS) in Clackamas County are provided under contract by American Medical Response (AMR) and local fire agencies\"",
+     "vintage": "2024-11"
+    },
+    {
+     "name": "Canby Fire District",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": true,
+     "area": "Canby ASA",
+     "source_url": "https://dochub.clackamas.us/documents/drupal/fa7f57a6-eddc-40ad-a20a-544877eda973",
+     "evidence": "The Canby Rural Fire Protection District was assigned as the provider for the Canby ASA under the 1991 Ambulance Service Plan and will continue to provide service to that area.",
+     "vintage": "2024-11"
+    },
+    {
+     "name": "Molalla Fire District",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": true,
+     "area": "Molalla ASA (Molalla, Colton, Clackamas parts of Monitor and Silverton districts)",
+     "source_url": "https://dochub.clackamas.us/documents/drupal/fa7f57a6-eddc-40ad-a20a-544877eda973",
+     "evidence": "The Molalla Rural Fire Protection District (RFPD) was assigned as the provider for the Molalla ASA under the 1991 Ambulance Service Plan and will continue to provide service to that area.",
+     "vintage": "2024-11"
+    }
+   ],
+   "page_note": "Clackamas County has three ambulance service areas under its 2024 county code: American Medical Response (most of the county), Canby Fire District (Canby area) and Molalla Fire District (Molalla area). Not yet confirmed: whether Lake Oswego Fire Department carries patients in Lake Oswego, and which agency serves the edge areas the county plan routes to Woodburn Ambulance Service.",
+   "second_source": "https://www.clackamas.us/publichealth/ems"
+  }
+ }
+}

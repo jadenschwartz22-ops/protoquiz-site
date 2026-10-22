@@ -20,3 +20,5 @@ Report back in <=15 lines: counties A / held / not reached, population A, every 
 - Fastest wins: counties where the state licence list shows exactly one transport licence. Do those first, biggest first; skip a county after ~6 minutes.
 - page_note is shown to the public: plain sentences naming who is confirmed and what is not yet confirmed; never mention lanes, audits, tiers, "held", or the map.
 - Helper scripts go in your own folder `states/web_raw/<ST>/v/` (never shared names in the scratchpad): parallel lanes overwrite each other.
+- Activity proof without search (ND 10-22): State Patrol / sheriff crash news releases name the transporting ambulance ("transported by X Ambulance"); bulk-download the state's release PDFs and grep. Also MN Revenue "Certified Aid" lists, state agency workbooks on archive.org, and regional EMS agency provider pages (CA Sierra-Sacramento Valley).
+- Lagging layers: a state service-area layer can keep an old operator's name for years after a takeover (MN Meds-1, Hutchinson). Every named service needs a 2024+ sign it still runs under that name.
