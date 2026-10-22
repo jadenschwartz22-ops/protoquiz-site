@@ -327,6 +327,11 @@ def build():
         d['tier'] = tier; d['answer'] = [p['name'] for p in ans]
         if tier == 'A': d['source'] = 'state' if any(p.get('kind', 'state') == 'state' for p in ans) else 'local'   # rows without kind came from a state layer
         d['ownership'] = ('mixed' if len(owns) > 1 else next(iter(owns)) if owns else 'unknown')
+        # Only an audited, named county may sound certain; every other note is a lead (owner 10-22: say it only when certain).
+        if tier != 'A' and d.get('note'):
+            n = re.sub(r'\bConfirmed\b:?', 'Seen on a public page:', d['note'])
+            n = re.sub(r'(?<!not )(?<!not yet )(?<!yet )\bconfirm(ed|s)\b', lambda m: 'seen' if m.group(1) == 'ed' else 'says', n)
+            d['note'] = 'Unverified lead, not yet independently checked. ' + n
     return S
 if __name__ == '__main__':
     S = build(); json.dump(S, open('county_911.json', 'w'))
