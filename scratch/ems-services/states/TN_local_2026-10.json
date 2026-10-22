@@ -1361,6 +1361,60 @@
    "tier": "held",
    "services": [],
    "page_note": "Dickson County EMS runs the county's ambulance service. A second licensed service, First Call Ambulance (basic life support), is based in Dickson; that it does only non-emergency work is not yet confirmed."
+  },
+  "47071": {
+   "county": "Hardin",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Hardin County EMS (operated by Hardin Medical Center; licence 9976)",
+     "transport": true,
+     "ownership": "hospital (county hospital)",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.hardinmedicalcenter.org/emsservice",
+     "evidence": "Hardin County Emergency Medical Services (EMS), operated by Hardin Medical Center, provides 24/7 ambulance services for all 911 emergency calls throughout Hardin County, as well as non-emergency medical transportation [...] a paramedic accompanies every emergency transport.",
+     "vintage": "undated, live 2026-10-22; licence current in 2026 directory"
+    }
+   ],
+   "page_note": "Hardin County EMS, run by Hardin Medical Center, answers all 911 ambulance calls throughout Hardin County. It is the only ambulance service licensed in the county.",
+   "second_source": "TN EMS Directory 2026-10-22 (internet.health.tn.gov/EMSDirectory, saved at web_raw/TN/v/dir50.txt): only licence based in Hardin, HARDIN COUNTY EMS, Savannah, licence 9976, *PRIMARY 911"
+  },
+  "47033": {
+   "county": "Crockett",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Crockett County Ambulance Service (licence 1701)",
+     "transport": true,
+     "ownership": "county",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.crockettcountytn.com/county-services",
+     "evidence": "Medical & EMS Services For any medical emergency always call 911. Emergency Medical Services (EMS) are provided to residents in need. Crockett County takes great care of patients with their excellent ambulance service.",
+     "vintage": "undated county page, live 2026-10-22 (current mayor Joe Gibson on the same site)"
+    }
+   ],
+   "page_note": "Crockett County runs its own ambulance service, the only one licensed in the county. A page stating that it carries 911 patients across the county is not yet confirmed.",
+   "second_source": "TN EMS Directory 2026-10-22 (internet.health.tn.gov/EMSDirectory, saved at web_raw/TN/v/dir50.txt): only licence based in Crockett, CROCKETT COUNTY AMBULANCE SERVICE, Alamo, licence 1701, *PRIMARY 911"
+  },
+  "47075": {
+   "county": "Haywood",
+   "tier": "held",
+   "services": [],
+   "page_note": "Haywood County runs its own ambulance service outside Brownsville. Who carries 911 patients inside Brownsville (local reports name a Brownsville EMS) and what the second licensed service, Haywood EMS, does are not yet confirmed. The county was also weighing a private provider in 2026."
+  },
+  "47067": {
+   "county": "Hancock",
+   "tier": "held",
+   "services": [],
+   "page_note": "Hancock County runs its own EMS service, based in Sneedville. No page found yet states that it carries 911 patients to hospital. It is the only ambulance service licensed in the county."
+  },
+  "47121": {
+   "county": "Meigs",
+   "tier": "held",
+   "services": [],
+   "page_note": "Meigs County funds and runs its own EMS department (2025). No page found yet states that it carries 911 patients, and the role of the second licensed service in Decatur, Prestige Patient Transport, is not yet confirmed."
   }
  }
 }

@@ -24,3 +24,8 @@ All quotes re-found (web_raw/TN/audit4/). Licence check web_raw/TN/v/dir50.txt: 
 - Polk 47139 PASS: AmeriPro Tennessee location page names Polk County alone for 911 (brand list also overstates in KY, so weighed with sole licence 10324 in Copperhill); own searches found no other Polk provider. Weakest pass.
 - Fayette 47047 PASS: 2017 county page backed by a 2024+ source: county job posting 2026-10-09 (Fayette County Ambulance Service crews responding to dispatcher, emergency ambulance requests); sole licence 2401. Added to second_source.
 Held rows promoted as empty-service notes: Chester, DeKalb, Warren, Grundy, Rhea, Pickett, Dickson.
+
+## Run 5 audit (verify file with 2 A, 2026-10-22; helpers web_raw/TN/audit5/)
+- Hardin 47071 PASS: hardinmedicalcenter.org quote present ("all 911 emergency calls throughout Hardin County ... every emergency transport"); sole licence 9976 in 2026-10 directory; Savannah ~7k; own Bing/Courier searches found no other provider.
+- Crockett 47033 FAIL: county page only says "excellent ambulance service" (no 911 transport); Bing News, WBBJ, States-Graphic and Crockett County Times searches found no page that does.
+Held rows promoted as empty-service notes: Haywood, Hancock, Meigs.

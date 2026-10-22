@@ -39,3 +39,13 @@ All quotes re-found (web_raw/KY/audit4/). Licences KY_public_2026-10.json by ser
 - Hart 21099 PASS: licence 1423; WNKY 2026-05 transport by Hart County EMS.
 - Grayson 21085 PASS: licence 1081; WNKY 2026-10 names Grayson County EMS at scene; Vanderbilt ground licence is non-911.
 Held rows promoted as empty-service notes: Oldham, Bullitt, Breckinridge, Russell, Simpson.
+
+## Run 5 audit (verify file with 7 A, 2026-10-22; helpers web_raw/KY/audit5/)
+- Perry 21193 PASS: quote present (Hazard Herald 2026-03 "Perry County Ambulance transported"); only Ia licence for Perry is Perry Co. Ambulance Authority 1416 (Knott's licence 1376 "DBA Perry County Ambulance" is area Knott only, same brand); NG911 "Perry County Ambulance Service" 97%.
+- Harlan 21095 PASS: Yahoo 2025-07 quote present; "Harlan Lifeguard Ambulance Service" matches sole Ia licensee Lifeguard EMS 1303 (distinctive name, NG911 "Lifeguard Ems" 98%).
+- Johnson 21115 PASS: both Paintsville Herald 2026 quotes present; Paintsville EMS = licensee City of Paintsville Fire-Rescue-EMS 1192 (area City + Johnson County); Lifeguard 1611/3010 are interfacility-only in Johnson; NG911 Paintsville FD 98%.
+- Mercer 21167 PASS: LEX18/WKYT 2024-04 quotes present; AmeriPro 1717 sole licence 2026-08; three-year contract runs past 2027-01; NG911 Mercer Co EMS updated 2025-06. Own search: only Mercer County OH hits.
+- Marion 21155 PASS: WNKY 2026-04 quote present; sole licence Marion County EMS 1470, exact name; NG911 99%.
+- Wayne 21231 FAIL: quote present and name matches licence 1648, but Wayne County's own NG911 EMS layer (2023-09) assigns a zone on the north edge (Mill Springs / Lake Cumberland, ~4% of the county) to "PULASKI EMS"; no page explains it.
+- Adair 21001 PASS: WNKY 2026-10 quotes present; sole licence Adair County Ambulance Service 1466, exact name; NG911 99.8%.
+Held rows promoted as empty-service notes: Casey, Pulaski, Laurel, Whitley, Garrard, Spencer, Rockcastle.

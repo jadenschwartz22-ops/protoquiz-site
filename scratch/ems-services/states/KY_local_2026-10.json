@@ -1045,6 +1045,174 @@
    "tier": "held",
    "services": [],
    "page_note": "Franklin-Simpson County Ambulance Service (Simpson County EMS) answers 911 calls in Simpson County and holds the county's only 911 ambulance licence. A current page saying it transports patients is not yet found."
+  },
+  "21193": {
+   "county": "Perry",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Perry County Ambulance Authority (Perry County Ambulance)",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.hazard-herald.com/news/hazard-fire-leaves-one-hfd-firefighter-injured/article_a2635da1-162e-4dfb-8b28-6d2f722794fc.html",
+     "evidence": "Perry County Ambulance transported one firefighter to Hazard ARH from the scene, the statement said.",
+     "vintage": "2026-03-25"
+    }
+   ],
+   "page_note": "",
+   "second_source": "https://www.hazard-herald.com/news/ksp-investigate-fatal-crash/article_e8896af8-b4a3-4e88-8d25-d1a567139131.html (2026-03-23: 'assisted at the scene by ... Perry County Ambulance Service'); KBEMS licence 1416 Ia, Perry County; hazard-herald.com 2026-05-17 \"KSP: Man dies after colliding with Perry County Ambulance in Breathitt\"; NG911 EMS zone \"Perry County Ambulance Service\" 97% of county"
+  },
+  "21095": {
+   "county": "Harlan",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Lifeguard Emergency Medical Services (Harlan Lifeguard Ambulance Service)",
+     "transport": true,
+     "ownership": "private",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.yahoo.com/news/fatal-atv-crash-harlan-county-212504439.html",
+     "evidence": "The Harlan County Coroner's Office, Harlan Lifeguard Ambulance Service and the Harlan Rescue Squad responded to assist.",
+     "vintage": "2025-07-06"
+    }
+   ],
+   "page_note": "",
+   "second_source": "https://kbems.ky.gov/Legal/Documents/EMS_Agencies_2026-08-01.xlsx (licence 1303 Ia, area Harlan County; only 911 transport licence in the county); NG911 EMS zone \"Lifeguard Ems\" 98% of county"
+  },
+  "21167": {
+   "county": "Mercer",
+   "tier": "A",
+   "services": [
+    {
+     "name": "AmeriPro EMS of Kentucky",
+     "transport": true,
+     "ownership": "private (contractor to Mercer County Fiscal Court)",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.lex18.com/news/covering-kentucky/new-mercer-county-ambulance-provider-contract-approved",
+     "evidence": "Mercer County residents will continue to receive ambulance services thanks to a new contract with AmeriPro ... That will allow two trucks, both with a paramedic and an EMT, to be stationed inside the county for three years.",
+     "vintage": "2024-04-19"
+    }
+   ],
+   "page_note": "",
+   "second_source": "https://www.wkyt.com/2024/04/18/private-company-cut-ties-with-mercer-county-ambulance-service/ (2024-04-17, AmeriPro steps in after Raintree exit); https://kbems.ky.gov/Legal/Documents/EMS_Agencies_2026-08-01.xlsx (2026-08-01: AmeriPro licence 1717 Ia, area Mercer County); NG911 EMS zone \"Mercer Co EMS\" 96% (updated 2025-06); AmeriPro contract (2024-04, three years) runs past 2027-01"
+  },
+  "21115": {
+   "county": "Johnson",
+   "tier": "A",
+   "services": [
+    {
+     "name": "City of Paintsville Fire-Rescue-EMS (Paintsville EMS)",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.paintsvilleherald.com/news/johnson-fiscal-court-approves-support-for-ems-911-services/article_94a69b49-dc59-4590-ad94-637affe38fe4.html",
+     "evidence": "Johnson Fiscal Court approved support for ambulance service and 911 operations ... He said prior run data showed about 40 percent of ambulance runs were outside Paintsville city limits.",
+     "vintage": "2026-04-15"
+    }
+   ],
+   "page_note": "",
+   "second_source": "https://www.paintsvilleherald.com/news/two-killed-in-johnson-county-crash/article_25cce439-c384-4511-ac0d-54027515df66.html (2026-03-13, West Van Lear crash: 'assisted at the scene by ... Paintsville EMS'); KBEMS licence 1192 Ia, area Johnson County; NG911 EMS zone \"Paintsville Fire Department\" 98% of county (updated 2025-06); Lifeguard 1611 is interfacility-only in Johnson"
+  },
+  "21155": {
+   "county": "Marion",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Marion County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.wnky.com/2-dead-2-transported-for-treatment-after-crash-in-marion-county/",
+     "evidence": "KSP Post 15 Troopers were assisted at the scene by the Marion County Sheriff's Office, Marion County EMS, Lebanon Fire Department, Gravel Switch Fire Department and the Marion County Coroner's Office.",
+     "vintage": "2026-04-27"
+    }
+   ],
+   "page_note": "",
+   "second_source": "https://kbems.ky.gov/Legal/Documents/EMS_Agencies_2026-08-01.xlsx (licence 1470 Ia, area Marion County; only licence in the county)"
+  },
+  "21231": {
+   "county": "Wayne",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Wayne County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.wnky.com/ksp-conducts-murder-investigation-in-wayne-county/",
+     "evidence": "The Kentucky State Police was also assisted at the scene by Post 11 personnel, Wayne County Sheriff's Office, Wayne County EMS, Kentucky Fish and Wildlife and KSP Aircraft.",
+     "vintage": "2024-09-11"
+    }
+   ],
+   "page_note": "Wayne County EMS answers emergency calls across most of Wayne County. The county's 911 map assigns an area on the northern edge near Lake Cumberland to Pulaski County EMS, and which service carries patients there is not yet confirmed.",
+   "second_source": "https://kbems.ky.gov/Legal/Documents/EMS_Agencies_2026-08-01.xlsx (licence 1648 Ia, area Wayne County; only licence in the county)"
+  },
+  "21001": {
+   "county": "Adair",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Adair County Ambulance Service",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.wnky.com/units-respond-to-structure-fire-in-adair-county/",
+     "evidence": "Mutual aid was provided by the Breeding Fire Department, along with assistance by Adair County E911 Center, the Adair County Ambulance Service, the Adair County Sheriff's Office, Taylor County RECC and the Kentucky Red Cross.",
+     "vintage": "2026-10-19"
+    }
+   ],
+   "page_note": "",
+   "second_source": "https://www.wnky.com/adair-county-firefighters-battle-transfer-station-fire/ (2026-10-01); https://kbems.ky.gov/Legal/Documents/EMS_Agencies_2026-08-01.xlsx (licence 1466 Ia, area Adair County; only licence)"
+  },
+  "21045": {
+   "county": "Casey",
+   "tier": "held",
+   "services": [],
+   "page_note": "Casey County EMS responds to emergencies in Casey County. The state licence is held as Casey County Ambulance Service; a page tying the two names together and naming who transports is not yet confirmed."
+  },
+  "21199": {
+   "county": "Pulaski",
+   "tier": "held",
+   "services": [],
+   "page_note": "Somerset-Pulaski County EMS answers emergency calls across Pulaski County. The Somerset-Pulaski County Rescue Squad also holds a state ambulance licence for the county; whether it carries patients is not yet confirmed."
+  },
+  "21125": {
+   "county": "Laurel",
+   "tier": "held",
+   "services": [],
+   "page_note": "Ambulance Inc. of Laurel County carries emergency patients in London and across Laurel County; the London Fire Department responds alongside it but does not transport. The state licence list also gives Knox County Ambulance Service (Corbin) part of south Laurel County; its role there is not yet confirmed."
+  },
+  "21235": {
+   "county": "Whitley",
+   "tier": "held",
+   "services": [],
+   "page_note": "Whitley County EMS carries emergency patients in Whitley County. The state licence list also gives Knox County Ambulance Service the City of Corbin and north Whitley County; its role there is not yet confirmed."
+  },
+  "21079": {
+   "county": "Garrard",
+   "tier": "held",
+   "services": [],
+   "page_note": "Garrard County EMS responds to emergencies in Garrard County. The state licence is held as Garrard County Ambulance Service; a page tying the two names together and naming who transports is not yet confirmed."
+  },
+  "21215": {
+   "county": "Spencer",
+   "tier": "held",
+   "services": [],
+   "page_note": "Spencer County has its own EMS department. A recent page saying it answers emergency calls and carries patients is not yet confirmed."
+  },
+  "21203": {
+   "county": "Rockcastle",
+   "tier": "held",
+   "services": [],
+   "page_note": "Rockcastle County EMS responds to emergencies in Rockcastle County. The state licence is held as Rockcastle County Ambulance Service; a page tying the two names together and naming who transports is not yet confirmed."
   }
  }
 }

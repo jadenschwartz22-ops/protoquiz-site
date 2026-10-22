@@ -74,6 +74,88 @@
    "tier": "held",
    "services": [],
    "page_note": "Rusk County Ambulance Service in Ladysmith is the only ambulance service licensed in the county. Who carries patients from the Bruce, Hawkins, Sheldon, Chetek and Birchwood areas is not yet confirmed."
+  },
+  "55085": {
+   "county": "Oneida",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Oneida County Ambulance Service (staffed under county contract by Aspirus Rhinelander Hospital and Howard Young Medical Center)",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": true,
+     "area": "all of the county outside the City of Rhinelander (all towns)",
+     "source_url": "https://www.oneidacountywi.gov/departments/em/oneida-ems/",
+     "evidence": "Oneida County Ambulance Service provides emergency medical response to all unincorporated municipalities within Oneida County along with some outside areas of Vilas, Lincoln and Forest Counties. The City of Rhinelander provides emergency medical response within the city limits. Oneida County has four staffed bases and one volunteer base. ... The County contracts with Aspirus Rhinelander Hospital and Howard Young Medical Center to provide personnel to staff and operate the ambulances.",
+     "vintage": "page modified 2021-11-29 (WP API); 2026 licence list still carries Oneida County Ambulance-Rhinelander, -Three Lakes Unit and Howard Young ... Oneida County EMS; NG911 zones (2022) agree"
+    },
+    {
+     "name": "Rhinelander Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": true,
+     "area": "City of Rhinelander",
+     "source_url": "https://www.rhinelanderwi.us/departments/fire_department/services/emergency_medical_services.php",
+     "evidence": "In August of 2010 the Rhinelander Fire Department took over operation of all emergency medical responses in the city of Rhinelander. ... The department provides these services with three ambulances ... Ambulances are staffed 24 hours a day, 7 days a week, covering 8.17 square miles of the city of Rhinelander.",
+     "vintage": "2023+ (page cites 2022 call volume, 2021 ambulance)"
+    }
+   ],
+   "page_note": "",
+   "second_source": "https://services3.arcgis.com/GoOAGCoqFEhZEh7f/arcgis/rest/services/WI_NG911_GIS_Service_Polygons_and_Road_Centerline_Data_v2/FeatureServer/2; https://www.wjfw.com/news/accident-in-town-of-nokomis-sends-one-person-to-the-hospital/article_375c06e5-7124-49cd-a564-e65fa3aee3e8.html (2025-06: \"Oneida County Ambulance Service\" at Nokomis crash); wjfw.com 2026-06-22 (\"Oneida County Ambulance Medic-5\", Hazelhurst); wjfw.com 2026-09-14 (Med 4 Oneida County ambulance team based at Nokomis Fire Department); wjfw.com 2025-07-07 \"Rhinelander Fire Department has new ambulance in fleet\"; county page unchanged in Wayback 2024-04",
+   "licence_check": "Wisconsin DHS E-Licensing service lookup (pulled 2026-10-22, states/WI_lms_2026-10.json): the only 911 transporting licence with an Oneida address is Rhinelander Fire Department; the county ambulance units are licensed as Oneida County Ambulance-Rhinelander, Oneida County Ambulance-Three Lakes Unit and Howard Young Medical Center Ambulance Oneida County EMS (filed under a Wausau/Marathon address). NG911 EMS zones for Oneida (2022): Northeast/Northwest/Southeast/Southwest Ambulance (county) and Rhinelander Ambulance only; no neighbouring service has a zone. Only incorporated place is the City of Rhinelander (~8k)."
+  },
+  "55013": {
+   "county": "Burnett",
+   "tier": "A",
+   "services": [
+    {
+     "name": "North Memorial Health Ambulance (Wisconsin Region)",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": true,
+     "area": "Burnett County except the Town of Roosevelt (bases in A&H, Grantsburg and Webster)",
+     "source_url": "https://ambulanceservices.northmemorial.com/ambulance/",
+     "evidence": "Experienced emergency transport With over 60 years of experience, we serve eight ambulance regions across Minnesota and western Wisconsin ... Wisconsin Region 715-349-7699 ... Operational bases located in: A&H, Grantsburg, Spooner, and Webster",
+     "vintage": "2025-2026 (service map PDF uploaded 2025-09 labels the region 'Burnett/Washburn Cty, WI')"
+    },
+    {
+     "name": "Cumberland Memorial Hospital Ambulance Service (Cumberland EMS)",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": true,
+     "area": "Town of Roosevelt",
+     "source_url": "https://cumberlandhealthcare.com/services/emergency-medical-services-cumberland-wi/",
+     "evidence": "... Polk County Townships of Beaver, Johnstown, and McKinley; Burnett County Township of Roosevelt, and Washburn County Township of Barronett. Cumberland EMS operates 24 hours a day, 7 days a week, providing advanced life support services",
+     "vintage": "page modified 2026-09-24"
+    }
+   ],
+   "page_note": "",
+   "second_source": "https://ambulanceservices.northmemorial.com/wp-content/uploads/2025/09/NMH-Ground-Ambulance-Service_Map_2025.pdf; https://www.burnettcountysentinel.com/news/burnett-county-ambulance-service-could-add-additional-daytime-truck/article_a9a0cf2e-f05c-4e0c-8feb-d113a3c3f67e.html (2026-07-30: \"North Memorial Health, the county's ambulance provider\"; current agreement runs until a new one starts Jan. 1, 2028; 390 patient transports in Q2 2026)",
+   "licence_check": "Wisconsin DHS E-Licensing service lookup (pulled 2026-10-22, states/WI_lms_2026-10.json): the only 911 transporting licence based in Burnett is North Memorial Ambulance-WI Region (Webster). NG911 EMS zones for Burnett (updated 2026-04-01): North Memorial 5101/5103/5104/5109 (96%) and Cumberland (4%), nothing else. No city over 20k."
+  },
+  "55069": {
+   "county": "Lincoln",
+   "tier": "held",
+   "services": [],
+   "page_note": "The Merrill Fire Department carries 911 patients in the southern two-thirds of Lincoln County under its contract with the county. Who carries patients in the northern third around Tomahawk is not yet confirmed; Oneida County Ambulance also serves some edge areas."
+  },
+  "55113": {
+   "county": "Sawyer",
+   "tier": "held",
+   "services": [],
+   "page_note": "Sawyer County Ambulance runs ambulances from stations in Hayward and Ojibwa. Which service carries patients in the Round Lake, Stone Lake, Radisson and Birchwood edge areas is not yet confirmed."
+  },
+  "55119": {
+   "county": "Taylor",
+   "tier": "held",
+   "services": [],
+   "page_note": "Taylor County Ambulance Service in Medford is the only ambulance service licensed in the county. Whether its ambulances, or Owen-Withee and Sheldon area services, carry patients from the Rib Lake, Gilman and western edge areas is not yet confirmed."
+  },
+  "55078": {
+   "county": "Menominee",
+   "tier": "held",
+   "services": [],
+   "page_note": "Menominee Tribal Ambulance Service in Keshena is the only ambulance service licensed in the county. No public page describing its service area has been found yet."
   }
  }
 }
