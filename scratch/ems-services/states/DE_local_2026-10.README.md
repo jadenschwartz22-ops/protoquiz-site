@@ -1,0 +1,6 @@
+# DE local sources (2026-10-22)
+Sources: sussexcountyde.gov/emergency-medical-services (live, 2026); newcastlede.gov/343/History (Wayback 2025 id_ capture; live site is Cloudflare-blocked to curl and WebFetch); trinityhealthma.org Saint Francis EMS (Wayback 2025, (c) 2024); kentcountyde.gov Public Safety + Emergency Communications (WebFetch; curl 403 Akamai). Raw: web_raw/DE/.
+Model: county paramedics are ALS and non-transport; BLS ambulances (volunteer fire companies, plus Saint Francis EMS by contract in Wilmington and Dover) carry patients.
+A: 10003 New Castle, 10005 Sussex. Held: 10001 Kent (no source says which fire companies carry BLS patients outside Dover; 911 page names 18 fire companies + "14 EMS agencies" but only American Legion Ambulance).
+Dead ends: kentcountyde.gov EMS page 403, no Wayback copy; newcastlede.gov CivicPlus pages Cloudflare-blocked (use web.archive.org/web/2025id_/).
+Spot check: largest (New Castle): county page /341 (search excerpt; not cited by the row's evidence) says paramedics work with "21 county volunteer fire company BLS ambulances ... a contracted private BLS provider" - agrees. Mid (Kent): held, n/a. Rural (Sussex): no independent source found; row rests on the county's own page only.

@@ -1,0 +1,451 @@
+{
+ "meta": {
+  "state": "TN",
+  "retrieved": "2026-10-22",
+  "via": "county and agency websites (local sources)"
+ },
+ "county_verdict": {
+  "47037": {
+   "county": "Davidson",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Nashville Fire Department EMS",
+     "transport": true,
+     "ownership": "municipal fire (Metro Nashville)",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.nashville.gov/departments/fire/operations-division/ems",
+     "evidence": "Nashville Fire Department maintains a high commitment of medical excellence for the citizens of Davidson County. ... pay bills for ambulance transports provided by Nashville Fire Department.",
+     "vintage": "2026 (page read 2026-10-22)"
+    }
+   ],
+   "page_note": "Agrees: TN Dept of Health EMS Directory lists it under the county with the *PRIMARY 911 tag.",
+   "second_source": "https://www.jems.com/ems-operations/ground-ambulance-operations/nashville-tn-fire-department-adds-new-ambulance-to-ems-division/"
+  },
+  "47093": {
+   "county": "Knox",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Rural/Metro of Tennessee (American Medical Response)",
+     "transport": true,
+     "ownership": "private (contractor to Knox County)",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.wvlt.tv/2023/10/26/amid-ambulance-issues-knox-county-awards-amr-with-contract-renewal/",
+     "evidence": "Knox County plans to award American Medical Response, also known as AMR, with a contract renewal ... five years, with an optional five-year renewal.",
+     "vintage": "2023 (news; contract Nov 2023, 5+5 yr)"
+    },
+    {
+     "name": "Knoxville Fire Department",
+     "transport": false,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "Knoxville",
+     "source_url": "https://www.wbir.com/article/news/health/knox-co-to-discuss-allowing-contract-with-amr-to-expire-to-rework-ambulance-priorities/51-873b259a-0fee-461d-854a-3541621f194b",
+     "evidence": "KFD responds to about 65% of emergency medical calls (first response); AMR carries the patient.",
+     "vintage": "2022 (search summary; page 403 to fetch)"
+    }
+   ],
+   "page_note": "Differs from the TN directory, which lists Priority Ambulance as primary 911 for Knox; the county contract is AMR/Rural-Metro. Local source is news, not county site; confirm against the commission resolution if published.",
+   "second_source": "https://www.jems.com/ems-operations/ground-ambulance-operations/bidders-announced-tennessee-ambulance-co/ (2013 bid: contract covers county, Knoxville and Farragut)"
+  },
+  "47065": {
+   "county": "Hamilton",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Hamilton County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.wdef.com/?p=1472563",
+     "evidence": "Hamilton County EMS has only been operating since 1988 and services all 576 square miles of the county.",
+     "vintage": "2023 (news)"
+    }
+   ],
+   "page_note": "A 2006 newspaper report (search summary) said East Ridge contracts private ambulances; not confirmed current. County site hamiltontn.gov/EMS 404 to fetch. Agrees: TN Dept of Health EMS Directory lists it under the county with the *PRIMARY 911 tag.",
+   "second_source": "https://www.wdef.com/?p=1344466"
+  },
+  "47149": {
+   "county": "Rutherford",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Rutherford County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://rutherfordcountytn.gov/ambulance-overview",
+     "evidence": "Rutherford County EMS is the primary Advanced Life Support (ALS) provider for the County of Rutherford. ... 18 transport units ... responsible for the primary 911 medical response twenty-four hours a day.",
+     "vintage": "2026 (page read 2026-10-22)"
+    }
+   ],
+   "page_note": "Agrees: TN Dept of Health EMS Directory lists it under the county with the *PRIMARY 911 tag.",
+   "second_source": ""
+  },
+  "47187": {
+   "county": "Williamson",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Williamson Health EMS (Williamson Medical Center)",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://williamsonhealth.org/medical-services/emergency-medical-services/",
+     "evidence": "Williamson Health serves as the lead 911 Emergency Medical Services (EMS) provider for all of Williamson County, ... 18 advanced life support ambulances ... from 17 stations.",
+     "vintage": "2026 (page read 2026-10-22)"
+    }
+   ],
+   "page_note": "Agrees: TN Dept of Health EMS Directory lists it under the county with the *PRIMARY 911 tag.",
+   "second_source": "https://www.williamsonherald.com/news/local_news/williamson-medical-center-opens-new-ems-station-in-brentwood/article_916796e0-a0dd-11ec-8083-ef89b7261a2b.html (2022: county commissioner calls WMC EMS 'our county's primary 911 EMS provider')"
+  },
+  "47125": {
+   "county": "Montgomery",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Montgomery County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.mcgtn.org/ems",
+     "evidence": "Montgomery County Emergency Medical Service (EMS), the sole 911 provider for Clarksville-Montgomery County, provides 24-hour emergency medical transportation",
+     "vintage": "2026 (page read 2026-10-22)"
+    }
+   ],
+   "page_note": "Agrees: TN Dept of Health EMS Directory lists it under the county with the *PRIMARY 911 tag.",
+   "second_source": ""
+  },
+  "47163": {
+   "county": "Sullivan",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Sullivan County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://sullivancountytn.gov/emergency-medical-services/",
+     "evidence": "Sullivan County Emergency Medical Services is dedicated to the welfare and safety of residents and visitors through the provision of Advanced Life Support prehospital care, medically directed Technical Rescue and transportation of the ill and injured. For medical emergencies, please dial 911.",
+     "vintage": "2026 (page read 2026-10-22)"
+    }
+   ],
+   "page_note": "Page does not state the service area; countywide is inferred from county department status and the directory tag. Agrees: TN Dept of Health EMS Directory lists it under the county with the *PRIMARY 911 tag.",
+   "second_source": ""
+  },
+  "47009": {
+   "county": "Blount",
+   "tier": "held",
+   "services": [
+    {
+     "name": "American Medical Response (Rural/Metro of Tennessee)",
+     "transport": true,
+     "ownership": "private (contractor to Blount County)",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://amr.net/locations/tennessee/blount-county",
+     "evidence": "AMR is honored to have served the Blount County community with 911 ambulance services for more than 35 years.",
+     "vintage": "undated company page, read 2026-10-22"
+    }
+   ],
+   "page_note": "Only the ambulance company's own page names it for the county. Held until a county source confirms.",
+   "second_source": ""
+  },
+  "47179": {
+   "county": "Washington",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Washington County - Johnson City EMS",
+     "transport": true,
+     "ownership": "mixed: joint venture of Washington County and City of Johnson City (nonprofit inc.)",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.wcjcems.org/?p=1095",
+     "evidence": "Washington County / Johnson City Emergency Medical Services Inc., a joint venture of Washington County and the City of Johnson City, was created to provide excellence in emergency medical and rescue services to all citizens of Washington County, and the citizens of Johnson City",
+     "vintage": "2026 (page read 2026-10-22)"
+    }
+   ],
+   "page_note": "Agrees: TN Dept of Health EMS Directory lists it under the county with the *PRIMARY 911 tag.",
+   "second_source": "https://www.wcjcems.org/ (24/7 emergency medical ambulance transport)"
+  },
+  "47011": {
+   "county": "Bradley",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Bradley County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://bradleycountytn.gov/departments/emergency-services/emergency-medical-services-ems/",
+     "evidence": "We are a County Government agency that provides emergency medical service for Bradley County and the city of Cleveland.",
+     "vintage": "2026 (page read 2026-10-22)"
+    }
+   ],
+   "page_note": "Agrees: TN Dept of Health EMS Directory lists it under the county with the *PRIMARY 911 tag.",
+   "second_source": ""
+  },
+  "47141": {
+   "county": "Putnam",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Putnam County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://putnamcountytn.gov/emergency-services-ems",
+     "evidence": "Putnam County EMS is the sole ambulance service provider in Putnam County. We respond to all emergency and non-emergency requests for medical services and transportation in Putnam County.",
+     "vintage": "2026 (page read 2026-10-22)"
+    }
+   ],
+   "page_note": "Agrees: TN Dept of Health EMS Directory lists it under the county with the *PRIMARY 911 tag.",
+   "second_source": ""
+  },
+  "47001": {
+   "county": "Anderson",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Anderson County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://andersoncountytn.gov/emergency-medical-services/",
+     "evidence": "Anderson County Emergency Medical Services provides primary pre-hospital care to the citizens of Anderson County, Tennessee. The service includes emergency, non-emergency and convalescent transports",
+     "vintage": "2026 (page read 2026-10-22)"
+    }
+   ],
+   "page_note": "Agrees: TN Dept of Health EMS Directory lists it under the county with the *PRIMARY 911 tag.",
+   "second_source": ""
+  },
+  "47147": {
+   "county": "Robertson",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Robertson County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://robertsoncountytn.gov/departments/emergency_medical_services/index.php",
+     "evidence": "The purpose of this department is to care for and transport the sick and injured and provide advanced and basic life support to the citizens of the County. Emergency calls for either service should be made by dialing 911.",
+     "vintage": "2026 (page read 2026-10-22)"
+    }
+   ],
+   "page_note": "Agrees: TN Dept of Health EMS Directory lists it under the county with the *PRIMARY 911 tag.",
+   "second_source": ""
+  },
+  "47089": {
+   "county": "Jefferson",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Jefferson County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://jeffersoncountytn.gov/emergency-medical-services/",
+     "evidence": "Jefferson County EMS is the sole provider of ambulance and paramedic service to all residents and visitors to Jefferson County, 24 hours a day. The department responds to all emergencies",
+     "vintage": "2026 (page read 2026-10-22)"
+    }
+   ],
+   "page_note": "Agrees: TN Dept of Health EMS Directory lists it under the county with the *PRIMARY 911 tag.",
+   "second_source": ""
+  },
+  "47003": {
+   "county": "Bedford",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Bedford County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://bedfordcountytn.gov/departments/ems/index.php",
+     "evidence": "Bedford County Emergency Medical Services is the county's publicly-owned and operated ambulance service, providing emergency care and transport throughout the county.",
+     "vintage": "2026 (page read 2026-10-22)"
+    }
+   ],
+   "page_note": "Agrees: TN Dept of Health EMS Directory lists it under the county with the *PRIMARY 911 tag.",
+   "second_source": ""
+  },
+  "47099": {
+   "county": "Lawrence",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Lawrence County EMS (LCEMS)",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://lawrencecountytn.gov/government/departments/ambulance-service/",
+     "evidence": "Lawrence County Emergency Medical Services (LCEMS) provides Advanced Life Support ambulance service for 911 requests within Lawrence County.",
+     "vintage": "2026 (page read 2026-10-22)"
+    }
+   ],
+   "page_note": "Agrees: TN Dept of Health EMS Directory lists it under the county with the *PRIMARY 911 tag.",
+   "second_source": ""
+  },
+  "47013": {
+   "county": "Campbell",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Campbell County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://campbellcountytn.gov/ems/",
+     "evidence": "Campbell County EMS is the sole provider of ambulance and paramedic service to all residents and visitors to Campbell County, 24 hours a day. ... Primary 911 services, Patient Transport",
+     "vintage": "2026 (page read 2026-10-22)"
+    }
+   ],
+   "page_note": "Agrees: TN Dept of Health EMS Directory lists it under the county with the *PRIMARY 911 tag.",
+   "second_source": ""
+  },
+  "47021": {
+   "county": "Cheatham",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Cheatham County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://cheathamcountytn.gov/emergency_medical_service.html",
+     "evidence": "We are the sole 911 ambulance provider for Cheatham County",
+     "vintage": "undated page, read 2026-10-22"
+    }
+   ],
+   "page_note": "Agrees: TN Dept of Health EMS Directory lists it under the county with the *PRIMARY 911 tag.",
+   "second_source": ""
+  },
+  "47157": {
+   "county": "Shelby",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Memphis Fire Department EMS Bureau",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "City of Memphis",
+     "source_url": "https://www.shelbycountytn.gov/469/Emergency-Phone-Numbers",
+     "evidence": "County emergency-numbers page (archive 2025) lists Memphis under Ambulance.",
+     "vintage": "2025"
+    },
+    {
+     "name": "Shelby County Fire Department ambulance",
+     "transport": true,
+     "ownership": "county fire",
+     "partial": true,
+     "area": "unincorporated, Arlington, Lakeland",
+     "source_url": "https://www.shelbycountytn.gov/469/Emergency-Phone-Numbers",
+     "evidence": "Arlington (uses Shelby County's ambulance services); Lakeland (uses Shelby County's ambulance services)",
+     "vintage": "2025"
+    },
+    {
+     "name": "Bartlett Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": true,
+     "area": "Bartlett",
+     "source_url": "https://www.shelbycountytn.gov/469/Emergency-Phone-Numbers",
+     "evidence": "Bartlett listed under Ambulance on the county page.",
+     "vintage": "2025"
+    },
+    {
+     "name": "Collierville Fire and Rescue / Germantown Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": true,
+     "area": "Collierville, Germantown",
+     "source_url": "https://internet.health.tn.gov/EMSDirectory",
+     "evidence": "Directory lists both with *PRIMARY 911; county page does not list them under Ambulance.",
+     "vintage": "2026-10-21 directory"
+    }
+   ],
+   "page_note": "Multi-agency; Millington ambulance arrangement not found, and a Nov 2025 WMC report (https://www.actionnews5.com/2025/11/12/shelby-countys-ambulance-services-could-be-expanding-underserved-areas) says unincorporated areas are underserved and a county fire-based ambulance expansion was before the Commission (outcome not found). Held.",
+   "second_source": ""
+  },
+  "47165": {
+   "county": "Sumner",
+   "tier": "held",
+   "services": [],
+   "page_note": "sumnerems.org (Sumner County EMS) loaded but gave no coverage statement in the text pulled; not confirmed.",
+   "second_source": ""
+  },
+  "47189": {
+   "county": "Wilson",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Wilson County EMA (WEMA) EMS",
+     "transport": true,
+     "ownership": "county EMA",
+     "partial": true,
+     "area": "whole county",
+     "source_url": "https://www.wilsonema.com/emergency-medical-services-2/",
+     "evidence": "WEMA runs EMS in the county; page text pulled gave no coverage statement.",
+     "vintage": "2026"
+    },
+    {
+     "name": "Mt. Juliet ambulance service",
+     "transport": true,
+     "ownership": "municipal",
+     "partial": true,
+     "area": "Mt. Juliet",
+     "source_url": "https://news.yahoo.com/looking-back-2022-045900666.html",
+     "evidence": "2022 Lebanon Democrat roundup (search summary): ambulance service in Mt. Juliet to be run exclusively by the city, amending its relationship with WEMA.",
+     "vintage": "2022"
+    }
+   ],
+   "page_note": "Split between WEMA and a city Mt. Juliet ambulance service; current arrangement not confirmed. Held.",
+   "second_source": ""
+  },
+  "47019": {
+   "county": "Carter",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Carter County Emergency & Rescue Squad",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://cartercountytn.gov/services/public_safety/carter_county_ems.php",
+     "evidence": "The Carter County Emergency & Rescue Squad provides emergency medical and rescue services for Carter County.",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "County page does not say ambulance transport or 911; directory lists it *PRIMARY 911. Held.",
+   "second_source": ""
+  },
+  "47155": {
+   "county": "Sevier",
+   "tier": "held",
+   "services": [],
+   "page_note": "Directory lists Sevier County Ambulance Service and Gatlinburg Fire (two primary 911); county page found but no coverage statement pulled. Held.",
+   "second_source": ""
+  }
+ }
+}

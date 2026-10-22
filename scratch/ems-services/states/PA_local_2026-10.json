@@ -1,0 +1,151 @@
+{
+ "meta": {
+  "state": "PA",
+  "retrieved": "2026-10-22",
+  "via": "county and agency websites (local sources)"
+ },
+ "county_verdict": {
+  "42075": {
+   "county": "Lebanon",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Life Lion EMS (Penn State Health)",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": false,
+     "area": "Annville, Bethel, Cold Spring, East Hanover, North Annville, North Londonderry, Swatara, Union Twps; Jonestown and Palmyra Boroughs (43.8% of area)",
+     "source_url": "https://utility.arcgis.com/usrsvcs/servers/80757e317ce549f6ba0248defe99eaa0/rest/services/Places/EmergencyServices_BoxesStations_SVC/MapServer/3",
+     "evidence": "County EMS_Boxes layer CMPNY_NAME 'LIFE LION EMS'; LebTown 2020: 'Life Lion is now the \"primary\" EMS service in those municipalities, replacing the First Aid and Safety Patrol'",
+     "vintage": "county layer live 2026; LebTown 2020"
+    },
+    {
+     "name": "First Aid and Safety Patrol",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": false,
+     "area": "City of Lebanon, Cornwall, North Cornwall, North Lebanon, South Annville, South Lebanon, South Londonderry, West Cornwall (30.9%); ALS for Myerstown",
+     "source_url": "https://utility.arcgis.com/usrsvcs/servers/80757e317ce549f6ba0248defe99eaa0/rest/services/Places/EmergencyServices_BoxesStations_SVC/MapServer/3",
+     "evidence": "County EMS_Boxes layer CMPNY_NAME 'FIRST AID AND SAFETY PATROL'; Myerstown Borough: 'First Aid and Safety Patrol provides Advanced Life Support (ALS) Services for Myerstown Borough.'",
+     "vintage": "2026"
+    },
+    {
+     "name": "Myerstown First Aid Unit",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": false,
+     "area": "Jackson Twp, Richland Borough, Myerstown Borough (7.4%)",
+     "source_url": "https://utility.arcgis.com/usrsvcs/servers/80757e317ce549f6ba0248defe99eaa0/rest/services/Places/EmergencyServices_BoxesStations_SVC/MapServer/3",
+     "evidence": "County EMS_Boxes layer; Myerstown Borough: 'Myerstown First Aid Unit provides Basic Life Support (BLS) Services for Myerstown Borough.'",
+     "vintage": "2026"
+    },
+    {
+     "name": "Schaefferstown EMS",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": false,
+     "area": "Heidelberg Twp (6.6%)",
+     "source_url": "https://utility.arcgis.com/usrsvcs/servers/80757e317ce549f6ba0248defe99eaa0/rest/services/Places/EmergencyServices_BoxesStations_SVC/MapServer/3",
+     "evidence": "County EMS_Boxes layer CMPNY_NAME 'SCHAEFFERSTOWN EMS'",
+     "vintage": "2026"
+    },
+    {
+     "name": "Newmanstown EMS",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": false,
+     "area": "Millcreek Twp (5.8%)",
+     "source_url": "https://utility.arcgis.com/usrsvcs/servers/80757e317ce549f6ba0248defe99eaa0/rest/services/Places/EmergencyServices_BoxesStations_SVC/MapServer/3",
+     "evidence": "County EMS_Boxes layer CMPNY_NAME 'NEWMANSTOWN EMS'",
+     "vintage": "2026"
+    },
+    {
+     "name": "Fort Indiantown Gap EMS (FTIG)",
+     "transport": true,
+     "ownership": "mixed: military installation EMS",
+     "partial": false,
+     "area": "Fort Indiantown Gap (5.1%)",
+     "source_url": "https://utility.arcgis.com/usrsvcs/servers/80757e317ce549f6ba0248defe99eaa0/rest/services/Places/EmergencyServices_BoxesStations_SVC/MapServer/3",
+     "evidence": "County EMS_Boxes layer CMPNY_NAME 'FTIG'",
+     "vintage": "2026"
+    },
+    {
+     "name": "Central Medical Transport",
+     "transport": true,
+     "ownership": "private (contractor to Cleona Borough)",
+     "partial": true,
+     "area": "Cleona Borough (0.2%)",
+     "source_url": "https://utility.arcgis.com/usrsvcs/servers/80757e317ce549f6ba0248defe99eaa0/rest/services/Places/EmergencyServices_BoxesStations_SVC/MapServer/3",
+     "evidence": "County EMS_Boxes layer CMPNY_NAME 'CENTRAL MEDICAL TRANSPORT'",
+     "vintage": "2026"
+    },
+    {
+     "name": "Northwest EMS",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": true,
+     "area": "part of South Londonderry Twp (0.1%)",
+     "source_url": "https://utility.arcgis.com/usrsvcs/servers/80757e317ce549f6ba0248defe99eaa0/rest/services/Places/EmergencyServices_BoxesStations_SVC/MapServer/3",
+     "evidence": "County EMS_Boxes layer CMPNY_NAME 'NORTHWEST EMS'",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "County 911 EMS box layer covers 100% of county area (41 boxes). LebTown 2020: 'Lebanon County municipalities contract with a designated primary EMS provider.' Box assignment = 911 primary ambulance; ownership of small squads from names.",
+   "second_source": "https://lebtown.com/2020/03/10/life-lion-ems-now-serving-northern-lebanon-county-annville/"
+  },
+  "42043": {
+   "county": "Dauphin",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Community LifeTeam (UPMC) 35.7%; South Central EMS 18.1%; Halifax Ambulance 12.5%; Life Lion EMS 10%; Millersburg Area Ambulance 5.8%; Londonderry Fire Co Ambulance 5.4%; Williamstown Area EMS 3.3%; Susquehanna Twp EMS 3.0%",
+     "transport": true,
+     "ownership": "mixed: hospital, nonprofit, municipal",
+     "partial": true,
+     "area": "99.9% of area",
+     "source_url": "https://services2.arcgis.com/Q4NxsjNmWBIR4LYH/arcgis/rest/services/Regional_EMS2/FeatureServer/0",
+     "evidence": "South Central Task Force Regional_BLS layer, County='Dauphin', BLS_Name field",
+     "vintage": "2020"
+    }
+   ],
+   "page_note": "Held: regional BLS map is 2020 and ~6.5% of area carries neighbour-county unit codes (SCH 66, LEB 180, LAN 86, NOR 541). UPMC page (2026) confirms Community LifeTeam ambulance in Dauphin; no current county assignment list found.",
+   "second_source": "https://upmc.com/services/south-central-pa/emergency/ems"
+  },
+  "42055": {
+   "county": "Franklin",
+   "tier": "held",
+   "services": [
+    {
+     "name": "16 BLS companies: MMPW EMS, Pleasant Hall EMS, Fannett Metal EMS, Rescue Hose EMS, St Thomas EMS, Chambersburg EMS, Fayetteville EMS, Metal Twp EMS, Shippensburg EMS, Waynesboro EMS, Mont Alto EMS, Letterkenny EMS, Marion EMS, Blue Ridge Summit EMS, South Mountain EMS, Geisinger EMS",
+     "transport": true,
+     "ownership": "mixed: nonprofit, municipal, hospital",
+     "partial": true,
+     "area": "99.9% of area",
+     "source_url": "https://services2.arcgis.com/Q4NxsjNmWBIR4LYH/arcgis/rest/services/Regional_EMS2/FeatureServer/0",
+     "evidence": "South Central Task Force Regional_BLS layer, County='Franklin'",
+     "vintage": "2020"
+    }
+   ],
+   "page_note": "Held: only source is the 2020 regional BLS layer; not confirmed current.",
+   "second_source": ""
+  },
+  "42099": {
+   "county": "Perry",
+   "tier": "held",
+   "services": [
+    {
+     "name": "BLS zones labelled by town: Blain, New Bloomfield, Landisburg, Millerstown, Newport, Duncannon, Shermans Dale, Liverpool, East Pennsboro",
+     "transport": true,
+     "ownership": "mixed",
+     "partial": true,
+     "area": "97% of area",
+     "source_url": "https://services2.arcgis.com/Q4NxsjNmWBIR4LYH/arcgis/rest/services/Regional_EMS2/FeatureServer/0",
+     "evidence": "South Central Task Force Regional_BLS layer, County='Perry'",
+     "vintage": "2020"
+    }
+   ],
+   "page_note": "Held: labels are towns, not agency names; 2020.",
+   "second_source": ""
+  }
+ }
+}

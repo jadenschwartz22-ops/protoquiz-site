@@ -1,0 +1,113 @@
+{
+ "meta": {
+  "state": "DE",
+  "retrieved": "2026-10-22",
+  "via": "county and agency websites (local sources)"
+ },
+ "county_verdict": {
+  "10003": {
+   "county": "New Castle",
+   "tier": "A",
+   "services": [
+    {
+     "name": "New Castle County EMS (County Paramedics)",
+     "transport": false,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county, ALS non-transport (rides in BLS ambulance)",
+     "source_url": "https://www.newcastlede.gov/343/History",
+     "evidence": "The paramedic units operate in a tiered response configuration with the basic life support (BLS) ambulances of the volunteer fire service and contractual ambulance service for the City of Wilmington.",
+     "vintage": "2025 (Wayback 2025 capture)"
+    },
+    {
+     "name": "New Castle County volunteer fire company BLS ambulances (set; county page counts 21)",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": true,
+     "area": "county outside the City of Wilmington",
+     "source_url": "https://www.newcastlede.gov/343/History",
+     "evidence": "...tiered response configuration with the basic life support (BLS) ambulances of the volunteer fire service...",
+     "vintage": "2025"
+    },
+    {
+     "name": "Saint Francis EMS (Trinity Health Mid-Atlantic)",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": true,
+     "area": "City of Wilmington (contract)",
+     "source_url": "https://trinityhealthma.org/services/ems/saint-francis",
+     "evidence": "Saint Francis EMS is the largest Basic Life Support (BLS) provider in the state of Delaware, delivering 911 EMS care in the City of Wilmington and the City of Dover",
+     "vintage": "2024"
+    }
+   ],
+   "page_note": "Two-tier system: county paramedics (ALS, non-transport) ride with BLS ambulances run by the volunteer fire companies; Wilmington BLS is contracted (Saint Francis EMS). Individual fire companies not listed one by one.",
+   "second_source": "https://www.newcastlede.gov/341"
+  },
+  "10005": {
+   "county": "Sussex",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Sussex County EMS (SCEMS)",
+     "transport": false,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county, ALS non-transport",
+     "source_url": "https://sussexcountyde.gov/emergency-medical-services",
+     "evidence": "SCEMS is a non-transporting EMS agency, using specially designed rapid response vehicles.",
+     "vintage": "2026"
+    },
+    {
+     "name": "Sussex County fire company / BLS transport services (set; county page counts 21)",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://sussexcountyde.gov/emergency-medical-services",
+     "evidence": "Transportation of patients is provided by 21 BLS transport services (with a SCEMS Paramedic on-board if the patient meets ALS criteria), or by ALS helicopter service provided by the Delaware State Police or Christiana LifeNet",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "County paramedics do not transport; 21 BLS services (mostly volunteer fire companies) carry patients. Individual services not named by the source.",
+   "second_source": ""
+  },
+  "10001": {
+   "county": "Kent",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Kent County Department of Public Safety, EMS Division (paramedics)",
+     "transport": false,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county, ALS",
+     "source_url": "https://www.kentcountyde.gov/My-Government/Departments/Public-Safety",
+     "evidence": "EMS team delivers advanced life support and pre-hospital care (page does not say who carries BLS patients)",
+     "vintage": "2026"
+    },
+    {
+     "name": "Saint Francis EMS",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": true,
+     "area": "City of Dover",
+     "source_url": "https://trinityhealthma.org/services/ems/saint-francis",
+     "evidence": "delivering 911 EMS care in the City of Wilmington and the City of Dover",
+     "vintage": "2024"
+    },
+    {
+     "name": "American Legion Ambulance (and 13 other unnamed EMS agencies dispatched by Kent County 911)",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": true,
+     "area": "unknown",
+     "source_url": "https://www.kentcountyde.gov/My-Government/Departments/Public-Safety/Emergency-Communications",
+     "evidence": "countywide 911 ... dispatching ... to 18 volunteer fire departments and 14 EMS agencies",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Held: no source names which fire companies carry BLS patients outside Dover (county paramedics are ALS; Dover BLS is Saint Francis EMS). kentcountyde.gov EMS page 403s (Akamai) and has no Wayback copy.",
+   "second_source": ""
+  }
+ }
+}

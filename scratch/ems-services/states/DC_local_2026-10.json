@@ -1,0 +1,37 @@
+{
+ "meta": {
+  "state": "DC",
+  "retrieved": "2026-10-22",
+  "via": "county and agency websites (local sources)"
+ },
+ "county_verdict": {
+  "11001": {
+   "county": "District of Columbia",
+   "tier": "A",
+   "services": [
+    {
+     "name": "DC Fire and Emergency Medical Services Department (FEMS)",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "whole District",
+     "source_url": "https://fems.dc.gov/page/about-fems",
+     "evidence": "The mission of the District of Columbia Fire and Emergency Medical Service Department is to preserve life and promote health and safety through excellent pre-hospital treatment and transportation, fire prevention, fire suppression and rescue activities",
+     "vintage": "2026"
+    },
+    {
+     "name": "American Medical Response (AMR), FEMS third-party BLS contractor",
+     "transport": true,
+     "ownership": "private (contractor to DC FEMS)",
+     "partial": true,
+     "area": "low-acuity BLS transports when FEMS requests, whole District",
+     "source_url": "https://fems.dc.gov/sites/default/files/dc/sites/fems/FY-21%20AMR-GMR%20REPORTS.pdf",
+     "evidence": "Annual report to Council on third-party contractor (AMR) operations, FY21 (Apr 2020-Mar 2021); FEMS responds to every 911 call and keeps critical patients; contractor carries BLS patients on FEMS request (D.C. Code 5-401)",
+     "vintage": "2021 (current contractor not re-confirmed)"
+    }
+   ],
+   "page_note": "",
+   "second_source": "https://www.ems1.com/dc-fire-and-ems/articles/private-ambulance-service-partnership-begins-in-dc-qgN5JUs46cecLMTx"
+  }
+ }
+}

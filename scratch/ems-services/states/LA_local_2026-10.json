@@ -1,0 +1,191 @@
+{
+ "meta": {
+  "state": "LA",
+  "retrieved": "2026-10-22",
+  "via": "parish, city and news sources (local sources)"
+ },
+ "county_verdict": {
+  "22071": {
+   "county": "Orleans",
+   "tier": "A",
+   "services": [
+    {
+     "name": "New Orleans Emergency Medical Services (NOEMS)",
+     "transport": true,
+     "ownership": "municipal EMS",
+     "partial": false,
+     "area": "whole parish (City of New Orleans = Orleans Parish)",
+     "source_url": "https://nola.gov/next/ems/billing/",
+     "evidence": "New Orleans EMS is a professional healthcare organization that provides emergency treatment and transport to residents and visitors of the City of New Orleans and Orleans Parish.",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Acadian adds ambulances for Mardi Gras (2023 city release) and mutual aid; not shown as 911 primary.",
+   "second_source": "https://nola.gov/next/ems/news/2023/230207-new-emergency-vehicles/"
+  },
+  "22033": {
+   "county": "East Baton Rouge",
+   "tier": "A",
+   "services": [
+    {
+     "name": "East Baton Rouge Parish EMS (City-Parish)",
+     "transport": true,
+     "ownership": "municipal EMS",
+     "partial": false,
+     "area": "whole parish",
+     "source_url": "https://www.brla.gov/2244/Recruitment",
+     "evidence": "East Baton Rouge EMS is a municipal emergency medical service ... 13 strategically located stations across the parish ... fleet of 20 ambulances ... In addition to 911 emergency response ... 911 Response only. No long distance transports.",
+     "vintage": "2025"
+    },
+    {
+     "name": "Acadian Ambulance",
+     "transport": true,
+     "ownership": "private (non-911 contractor)",
+     "partial": true,
+     "area": "hospital transfers and non-emergency; assists 911 only when requested by EBR EMS",
+     "source_url": "https://www.wbrz.com/news/brg-seeks-role-in-ambulance-transport-across-ebr-acadian-questions-if-there-s-a-need",
+     "evidence": "Acadian also assists with emergency calls, although only when requested by Baton Rouge EMS.",
+     "vintage": "2025"
+    }
+   ],
+   "page_note": "Contradicts the Acadian-list reading: Acadian is NOT the 911 provider here. Baton Rouge General sought an ambulance permit in Aug 2025 (4 ambulances, emergency service agreed with mayor); outcome not found.",
+   "second_source": "https://www.brla.gov/Faq.aspx?TID=24"
+  },
+  "22055": {
+   "county": "Lafayette",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Acadian Ambulance Service",
+     "transport": true,
+     "ownership": "private (contractor to Lafayette Consolidated Government)",
+     "partial": false,
+     "area": "whole parish (Broussard also has its own direct agreement)",
+     "source_url": "https://www.theadvocate.com/acadiana/news/article_79c41ac8-1c5e-11ea-92d8-8729a0bdfdb5.html",
+     "evidence": "Others [municipalities] are covered by a parish-wide contract between Acadian and Lafayette Consolidated Government. ... Acadian Ambulance's existing contract with Lafayette Consolidated Government requires the company to respond to calls outside of Lafayette within 12 minutes 80% of the time.",
+     "vintage": "2020"
+    }
+   ],
+   "page_note": "Contract source is 2020 (earlier 2012-13 Independent: 'exclusive contract in the parish for ambulance'); Oct 21 2026 KATC: Acadian opened a new Broussard station for southeast Lafayette Parish. No sign of change. Current LCG contract text not found.",
+   "second_source": "https://www.katc.com/2026/10/22/acadian-ambulance-opens-new-broussard-station-cut-response-times/"
+  },
+  "22073": {
+   "county": "Ouachita",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Acadian Ambulance",
+     "transport": true,
+     "ownership": "private (contractor to Ouachita Council of Governments)",
+     "partial": false,
+     "area": "Ouachita Parish, Monroe and West Monroe (whole parish)",
+     "source_url": "https://www.knoe.com/2026/07/28/ouachita-council-governments-renews-5-year-ems-contract-with-acadian-ambulance/",
+     "evidence": "The Ouachita Council of Governments has renewed a five-year contract with Acadian Ambulance to continue providing emergency medical services in Ouachita Parish and the cities of Monroe and West Monroe, following a competitive proposal process.",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "New contract effective by 2026-12-31 with no gap.",
+   "second_source": "https://acadian.com/ouachita-council-of-governments-renews-5-year-contract-with-acadian-ambulance/"
+  },
+  "22079": {
+   "county": "Rapides",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Pafford EMS",
+     "transport": true,
+     "ownership": "private (contractor to Rapides Parish Police Jury)",
+     "partial": false,
+     "area": "whole parish",
+     "source_url": "https://www.kalb.com/2025/04/10/pafford-ems-awarded-ambulance-service-contract-rapides-parish-residents",
+     "evidence": "The Rapides Parish Police Jury has selected Pafford EMS as the sole provider for ambulance services across Rapides Parish.",
+     "vintage": "2025"
+    }
+   ],
+   "page_note": "The Police Jury chose Pafford EMS over Acadian in April 2025; the go-live date is not confirmed. Held until a county source confirms.",
+   "second_source": "https://www.kalb.com/2026/08/14/acadian-ambulance-sued-by-rapides-parish-police-jury/"
+  },
+  "22085": {
+   "county": "Sabine",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Acadian Ambulance Service",
+     "transport": true,
+     "ownership": "private (contractor to Sabine Parish Police Jury)",
+     "partial": false,
+     "area": "whole parish",
+     "source_url": "https://www.kalb.com/2025/10/15/acadian-ambulance-named-sole-ambulance-provider-sabine-parish/",
+     "evidence": "Acadian Ambulance Service announced on October 15, that they had been confirmed by the Sabine Parish Police Jury as the sole ambulance provider in the parish beginning January 1, 2026.",
+     "vintage": "2025"
+    }
+   ],
+   "page_note": "Chosen after an RFP by the Sabine Parish EMS Advisory Board.",
+   "second_source": "https://acadianambulance.com/locations/louisiana/"
+  },
+  "22043": {
+   "county": "Grant",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Acadian Ambulance",
+     "transport": true,
+     "ownership": "private (contractor to Grant Parish Police Jury)",
+     "partial": false,
+     "area": "parish (exclusive contract)",
+     "source_url": "https://acadian.com/acadian-ambulance-renews-exclusive-contract-with-grant-parish/",
+     "evidence": "On November 13, 2025, the Grant Parish Police Jury has renewed its contract with Acadian Ambulance to provide emergency and non-emergency medical services. The exclusive five-year contract ...",
+     "vintage": "2025"
+    }
+   ],
+   "page_note": "Only the operator's own page found (reports a Police Jury action). Held per brief; a Police Jury minute or local news would make it A."
+  },
+  "22017": {
+   "county": "Caddo",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Shreveport Fire Department emergency ambulance units",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": true,
+     "area": "City of Shreveport only",
+     "source_url": "https://shreveportla.gov/284/Emergency-Medical-Services",
+     "evidence": "Emergency medical service is provided by the Shreveport Fire Department emergency ambulance units.",
+     "vintage": "current (undated)"
+    }
+   ],
+   "page_note": "City only. Shreveport FD is the Caddo 911 answering point; rest of the parish (Caddo fire districts, Ambulance Service District No. 1) not sourced. No Acadian contract found for Caddo; Acadian's own list puts Caddo in its North region (unconfirmed)."
+  },
+  "22051": {
+   "county": "Jefferson",
+   "tier": "held",
+   "services": [],
+   "page_note": "Hospital-run EMS since ~1980: East Jefferson General (east bank) and West Jefferson Medical Center (west bank); a Voice of South Louisiana piece and WWL report LCMC/West Jefferson talks with Acadian for the west bank (undated, unconfirmed). jeffparish.gov and WWL blocked. No 2024+ source for either bank."
+  },
+  "22103": {
+   "county": "St. Tammany",
+   "tier": "held",
+   "services": [],
+   "page_note": "Only a 2008 JEMS piece (Slidell: Acadian sole provider; parish requires Acadian 10-minute response in unincorporated areas). Too old; stpgov.org returned a JS shell."
+  },
+  "22019": {
+   "county": "Calcasieu",
+   "tier": "held",
+   "services": [],
+   "page_note": "No source found; calcasieu.gov 403 earlier, search returned nothing."
+  },
+  "22063": {
+   "county": "Livingston",
+   "tier": "held",
+   "services": [],
+   "page_note": "No source found; parish site JS shell, search returned nothing on a parish contract."
+  },
+  "22105": {
+   "county": "Tangipahoa",
+   "tier": "held",
+   "services": [],
+   "page_note": "No source found. RS 33:1236.4 lets the Tangipahoa governing body run an ambulance service; no evidence of what it does."
+  }
+ }
+}

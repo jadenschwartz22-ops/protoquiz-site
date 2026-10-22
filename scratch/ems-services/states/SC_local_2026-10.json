@@ -1,0 +1,445 @@
+{
+ "meta": {
+  "state": "SC",
+  "retrieved": "2026-10-22",
+  "via": "county and agency websites (local sources)"
+ },
+ "county_verdict": {
+  "45045": {
+   "county": "Greenville",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Greenville County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.greenvillecounty.org/EmergencyMedicalServices/Operations.aspx",
+     "evidence": "Being a dual-tier system, there are basic and advanced life support ambulances scheduled around the clock. The fleet consists of 49 type-1 extended cab ambulances",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Page does not use the word 911 in the quoted sentence; GCEMS home page lists 'Emergencies 9-1-1' and mission 'prehospital healthcare for Greenville County'.",
+   "second_source": "https://wiki.radioreference.com/index.php/Greenville_County_(SC) (lists Greenville County EMS)"
+  },
+  "45019": {
+   "county": "Charleston",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Charleston County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.charlestoncounty.gov/departments/ems/",
+     "evidence": "We are a third service 9-1-1 response agency who provides medical care and transportation to hospital emergency departments for citizens and visitors to Charleston County.",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Municipal fire departments first-respond; county EMS is the transporter.",
+   "second_source": ""
+  },
+  "45079": {
+   "county": "Richland",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Richland County EMS (Emergency Services Department)",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://web.archive.org/web/2025id_/https://www.richlandcountysc.gov/Courts-Safety/Emergency-Management/Emergency-Medical-Services",
+     "evidence": "Richland County's award-winning Emergency Medical Services (EMS) team is one of the busiest - if not the busiest - EMS units in South Carolina. Our crews respond to more than 90,000 calls each year.",
+     "vintage": "2025"
+    }
+   ],
+   "page_note": "County site 403s curl (Cloudflare); read via Wayback. Transport wording is in the county news item (given the number of patients EMS transports; trained to provide care ... during transport). Columbia-Richland 9-1-1 dispatches.",
+   "second_source": "https://richlandcountysc.gov/Home/News/ArtMID/479/ArticleID/1290/Dedicated-EMS-Crews-Provide-Essential-Service-to-Community (older, c.2018-20)"
+  },
+  "45051": {
+   "county": "Horry",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Horry County Fire Rescue",
+     "transport": true,
+     "ownership": "county EMS (combined fire/EMS)",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.horrycountysc.gov/departments/fire-rescue/about/",
+     "evidence": "Horry County Fire Rescue is a combination career and volunteer department, tasked with fire protection to the unincorporated areas of Horry County and emergency medical services for the entire county.",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Ambulance operation confirmed by JEMS (2020: HCFR new ambulances at stations 2, 20, 30, 31) and county EMS Patient Info page. A forum post says Myrtle Beach FD adds two medic units dispatched as county units; not confirmed by an official source, so not listed.",
+   "second_source": "https://www.jems.com/ems-operations/rescue-operations/horry-county-sc-fire-rescue-four-new-ambulances/"
+  },
+  "45083": {
+   "county": "Spartanburg",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Spartanburg County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://web.archive.org/web/2025id_/https://www.spartanburgcounty.gov/187/Emergency-Medical-Services",
+     "evidence": "The mission of Spartanburg Emergency Medical Service is to provide cost efficient, high quality Advanced Life Support emergency medical care and ambulance transportation for the citizens of Spartanburg County South Carolina.",
+     "vintage": "2025"
+    }
+   ],
+   "page_note": "Spartanburg County EMS answers 911; whether it is a county department or run by Spartanburg Regional is not confirmed. Held until a county source confirms.",
+   "second_source": ""
+  },
+  "45063": {
+   "county": "Lexington",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Lexington County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://lex-co.sc.gov/departments/public-safety/emergency-medical-services",
+     "evidence": "Presently, Lexington County EMS employs 198 full and part-time staff, managing up to twenty ambulances ... Dispatching is managed through a sophisticated 911 computer-aided dispatch (CAD) center.",
+     "vintage": "2025"
+    }
+   ],
+   "page_note": "Web search reported MedTrust (private, Charleston) takes some low-priority calls and transfers under county arrangement since Dec 2022 (Post and Courier; not fetched), so MedTrust may carry some county 911 patients; county EMS remains primary.",
+   "second_source": ""
+  },
+  "45091": {
+   "county": "York",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Piedmont Medical Center EMS",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": true,
+     "area": "countywide primary; 25 ambulances",
+     "source_url": "https://www.jems.com/ems-management/health-care-turf-war-returns-to-york-county-sc-as-atrium-piedmont-clash-over-ambulances/",
+     "evidence": "the York County primary 911 service provider for the past 40-plus years - Piedmont Medical Center EMS; Piedmont responded to more than 32,000 calls and transported 22,500 patients countywide last year",
+     "vintage": "2025 (article 2025-03-20)"
+    },
+    {
+     "name": "Fort Mill EMS",
+     "transport": true,
+     "ownership": "nonprofit (rescue squad; contract with York County)",
+     "partial": true,
+     "area": "Fort Mill area",
+     "source_url": "https://www.jems.com/ems-management/health-care-turf-war-returns-to-york-county-sc-as-atrium-piedmont-clash-over-ambulances/",
+     "evidence": "Fort Mill EMS responded to more than 4,100 calls and transported 2,600 patients; York County franchises 911 response services ... amend its contract with Fort Mill EMS",
+     "vintage": "2025"
+    },
+    {
+     "name": "River Hills/Lake Wylie EMS",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": true,
+     "area": "Lake Wylie / River Hills area",
+     "source_url": "https://www.jems.com/ems-management/health-care-turf-war-returns-to-york-county-sc-as-atrium-piedmont-clash-over-ambulances/",
+     "evidence": "alongside Piedmont and the nonprofit River Hills/Lake Wylie EMS",
+     "vintage": "2025"
+    }
+   ],
+   "page_note": "York County franchises 911 response to these three; Piedmont described as primary countywide. Atrium Health was buying Fort Mill EMS (council decision pending as of 2025-03; outcome not found), so the Fort Mill operator may now be Atrium. County site (yorkcountysc.gov) 403s; county About-Us page lists Piedmont EMS, Atrium Health Fort Mill EMS and River Hills/Lake Wylie EMS (per search snippet, not fetched).",
+   "second_source": ""
+  },
+  "45015": {
+   "county": "Berkeley",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Berkeley County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://web.archive.org/web/2025id_/https://berkeleycountysc.gov/dept/ems/",
+     "evidence": "As a team, provide the highest quality pre-hospital medical care, treatment and transport for the residents, visitors, business and industry workforce of Berkeley County, South Carolina.",
+     "vintage": "2025"
+    }
+   ],
+   "page_note": "",
+   "second_source": "https://www.live5news.com/2026/07/22/building-lifeline-berkeley-county-pays-residents-become-emts/ (department operates 15 ambulances, 2026-07)"
+  },
+  "45013": {
+   "county": "Beaufort",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Beaufort County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.beaufortcountysc.gov/ems/index.html",
+     "evidence": "Our 24/72 shift personnel - operate ambulances that transport patients to key hospitals such as Beaufort Memorial, Coastal Carolina, and Hilton Head.",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Municipal fire (e.g. Hilton Head Island Fire Rescue) not checked for any separate transport role.",
+   "second_source": ""
+  },
+  "45003": {
+   "county": "Aiken",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Aiken County Emergency Services (EMS)",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://sc-aikencounty.civicplus.com/318/Ambulance-Service",
+     "evidence": "Aiken County Emergency Services operates twelve emergency ambulances, strategically stationed across Aiken County. ... maintains working relationships with private ambulance and rescue companies in time of excess activity.",
+     "vintage": "2025"
+    }
+   ],
+   "page_note": "FLAG: WRDW (2020-2023) reported 'Status Zero' shortages and that private providers help with county 911 calls (two of three gave notice Jan 2023). Private helpers are unnamed on the county page; county EMS is the named transporter. Re-verify if the map shows Aiken.",
+   "second_source": ""
+  },
+  "45035": {
+   "county": "Dorchester",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Dorchester County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://web.archive.org/web/2025id_/https://dorchestercountysc.gov/government/public-safety/emergency-medical-services",
+     "evidence": "The department is a county operated EMS agency with 110 employees that respond to approximately 27,000 calls annually. The department operates 11 ambulances each staffed with a paramedic and an EMT",
+     "vintage": "2025"
+    }
+   ],
+   "page_note": "County EMS since 1994 (replaced contracted private ambulances).",
+   "second_source": "https://abcnews4.com/news/local/dorchester-county-expands-community-paramedic-program-after-1200-patient-contacts (2026)"
+  },
+  "45077": {
+   "county": "Pickens",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Pickens County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.co.pickens.sc.us/departments/emergency_services/ems.php",
+     "evidence": "Pickens County Emergency Medical Services ... to deliver prompt, efficient, and appropriate care during emergency and non-emergency situations (Emergency Services divisions: E911, EMS, Fire, Emergency Management)",
+     "vintage": "2025"
+    }
+   ],
+   "page_note": "WSPA/Yahoo 2025-07-03: county adding EMS trucks, Chief Billy Gibson; 11 24-hour EMS crews. yourpickenscounty.com (2012) called county EMS the sole 911 provider.",
+   "second_source": "https://www.yahoo.com/news/pickens-co-ems-uses-budget-210919638.html"
+  },
+  "45041": {
+   "county": "Florence",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Florence County EMS (FCEMS)",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.florencecountysc.gov/offices/ems",
+     "evidence": "Florence County Emergency Medical Services (FCEMS) is the primary provider of EMS to the residents and visitors of Florence County, South Carolina. We staff a minimum of ten advanced life support (ALS) ambulances at all times from our seven stations.",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Guardian Ambulance (private, Florence HQ) and Johnsonville Rescue Squad also operate locally; their 911 role is not documented here.",
+   "second_source": ""
+  },
+  "45057": {
+   "county": "Lancaster",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Lancaster County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.lancastercountysc.gov/357/About-Us",
+     "evidence": "LCEMS provides Advanced Life Support care 24 / 7 to the citizens and visitors in our country with 9 Paramedic Units and 2 Quick Response Units.",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Page does not use the word transport in the quoted sentence; paramedic 'units' are ambulances.",
+   "second_source": ""
+  },
+  "45085": {
+   "county": "Sumter",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Sumter County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.sumtercountysc.gov/departments/e_-_i/emergency_medical_services/index.php",
+     "evidence": "Sumter County EMS responds to approximately 22,000 calls for service annually and transports approximately 18,000 people annually.",
+     "vintage": "2026"
+    },
+    {
+     "name": "Guardian Ambulance",
+     "transport": true,
+     "ownership": "private (contractor to Sumter County EMS)",
+     "partial": true,
+     "area": "whole county",
+     "source_url": "https://www.sumtercountysc.gov/departments/e_-_i/emergency_medical_services/index.php",
+     "evidence": "Sumter County EMS currently utilizes two additional contract ambulances through Guardian Ambulance. ... function under the direction of Sumter County EMS Management.",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "",
+   "second_source": ""
+  },
+  "45075": {
+   "county": "Orangeburg",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Orangeburg County EMS (OCEMS)",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://sc-orangeburgcounty.civicplus.com/171/Emergency-Medical-Services",
+     "evidence": "Orangeburg County EMS was established in 1986 and serves as the sole 911 provider for Orangeburg County citizens and visitors. ... delivering pre-hospital care and safe transport to appropriate medical facilities.",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "An EMS1 article (search snippet, not fetched, undated) reports a staffing-shortage emergency agreement with MedTrust Medical Transport for two ambulances; the county page still says sole 911 provider.",
+   "second_source": ""
+  },
+  "45055": {
+   "county": "Kershaw",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Kershaw County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://web.archive.org/web/2025id_/https://www.kershaw.sc.gov/government/departments-r-z/safety-and-emergency-services/emergency-medical-services",
+     "evidence": "The men and women of Kershaw County EMS are dedicated to providing the very best medical care to the citizens of Kershaw County.",
+     "vintage": "2025"
+    }
+   ],
+   "page_note": "County EMS exists, but the county page does not describe ambulance or 911 service. Held until a county source confirms.",
+   "second_source": "https://wach.com/news/local/kershaw-county-ems-enhances-service-with-two-new-ambulances"
+  },
+  "45031": {
+   "county": "Darlington",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Darlington County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://darcosc.com/departments/ems.php",
+     "evidence": "Darlington County EMS is a licensed Advance Life Support Services; our primary mission is responding to 911 and other emergency within Darlington County.",
+     "vintage": "2025"
+    }
+   ],
+   "page_note": "Page undated (history from 1975); no sign of change.",
+   "second_source": ""
+  },
+  "45037": {
+   "county": "Edgefield",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Edgefield County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://edgefieldcounty.sc.gov/ems/",
+     "evidence": "Edgefield County EMS is responsible for providing basic and advanced care for medical and traumatic emergencies. ... A staff of 26 full-time employees ... operating from two stations with three ambulances provide these services.",
+     "vintage": "2019+ (page cites 2019 award; undated)"
+    }
+   ],
+   "page_note": "Page lacks the word 911/transport; ambulances operated by the county.",
+   "second_source": ""
+  },
+  "45065": {
+   "county": "McCormick",
+   "tier": "A",
+   "services": [
+    {
+     "name": "McCormick County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.mccormickcountysc.org/departments/emergency_services/ems.php",
+     "evidence": "we provide aggressive prehospital medical treatment and transport to the citizens and visitors of McCormick County.",
+     "vintage": "2025 (undated; no sign of change)"
+    }
+   ],
+   "page_note": "",
+   "second_source": ""
+  },
+  "45053": {
+   "county": "Jasper",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Jasper County Fire-Rescue / Emergency Services (EMS)",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.jaspercountysc.gov/public-safety-offices/emergency-services-and-billing/",
+     "evidence": "It is the mission of Jasper County Emergency Services to provide the best Fire, EMS, 911 Communications ... If we responded to your 911 call but did not transport you, this is a response fee.",
+     "vintage": "2025"
+    }
+   ],
+   "page_note": "emsmc.com on the page is the billing vendor, not the transporter. Medium confidence: no page names ambulance count.",
+   "second_source": ""
+  },
+  "45007": {
+   "county": "Anderson",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Anderson County EMS (medical direction / paramedic QRVs)",
+     "transport": false,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.andersoncountysc.org/departments-a-z/emergency-medical-services/",
+     "evidence": "Anderson County operates (15) Paramedic Quick Response Vehicles ... Under contractual agreement, a private EMS provider adds up to (17) EMS transport units to the system.",
+     "vintage": "2026"
+    },
+    {
+     "name": "Private EMS contractor (unnamed on county page)",
+     "transport": true,
+     "ownership": "private (contractor to Anderson County)",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.andersoncountysc.org/departments-a-z/emergency-medical-services/",
+     "evidence": "a private EMS provider adds up to (17) EMS transport units",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "HELD: the contractor that carries the patients is not named on the county page. Medshore Ambulance / Guardian Ambulance (both Priority Ambulance brands) run an academy in Anderson, but no county source ties them to the contract. Older county page (c.2018) said seven private services contracted. Needs the contract name.",
+   "second_source": ""
+  }
+ }
+}

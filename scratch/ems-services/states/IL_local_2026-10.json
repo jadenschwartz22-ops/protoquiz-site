@@ -1,0 +1,217 @@
+{
+ "meta": {
+  "state": "IL",
+  "retrieved": "2026-10-22",
+  "via": "county and agency websites (local sources)"
+ },
+ "county_verdict": {
+  "17181": {
+   "county": "Union",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Union County Ambulance Service",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.unioncountyil.gov/ambulance-service/",
+     "evidence": "Union County Ambulance Service responds to all of the county's 911 emergency medical calls 24 hours a day, 7 days a week.",
+     "vintage": "2026 (live page)"
+    }
+   ],
+   "page_note": "",
+   "second_source": "https://www.smartrecruiters.com/UnionCountyGovernment/81089202-emt-paramedic (county job post: ALS service in Jonesboro handling emergency calls)"
+  },
+  "17079": {
+   "county": "Jasper",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Jasper County Ambulance Service",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://jaspercountyillinois.gov/ambulance-service/",
+     "evidence": "Jasper County Ambulance service provides emergency medical care throughout the county. Emergencies: 911",
+     "vintage": "2026 (live page)"
+    }
+   ],
+   "page_note": "",
+   "second_source": ""
+  },
+  "17101": {
+   "county": "Lawrence",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Lawrence County Ambulance Service",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://lawrencecounty.illinois.gov/departments/ambulance-ems",
+     "evidence": "Lawrence County Ambulance Service provides both emergency and non-emergency ambulance services to residents of Lawrence County, Illinois.",
+     "vintage": "2026 (live page)"
+    }
+   ],
+   "page_note": "",
+   "second_source": ""
+  },
+  "17049": {
+   "county": "Effingham",
+   "tier": "held",
+   "services": [
+    {
+     "name": "RuralMed",
+     "transport": true,
+     "ownership": "private (contractor to Effingham County)",
+     "partial": true,
+     "area": "county 911 contract area",
+     "source_url": "https://effinghamcountyil.gov/event/ambulance-oversight-meeting-24/",
+     "evidence": "The current Effingham County contracted EMS provider is RuralMed.",
+     "vintage": "2026-10"
+    }
+   ],
+   "page_note": "Contractor named (Oct 2026 agenda) but contract area and any other providers not confirmed.",
+   "second_source": ""
+  },
+  "17055": {
+   "county": "Franklin",
+   "tier": "held",
+   "services": [
+    {
+     "name": "West Frankfort Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": true,
+     "area": "Denning and Frankfort townships",
+     "source_url": "https://franklincountyil.gov/wp-content/uploads/2026/10/Franklin-County-RFP-EMS.pdf",
+     "evidence": "exclusive County ambulance-service franchise for Franklin County, excluding Denning Township and Frankfort Township, where West Frankfort Fire Department presently provides primary emergency ambulance service. ... City of Benton Fire Department as a secondary provider of ambulance services at the basic life support level. (RFP p.3-4)",
+     "vintage": "2026-10"
+    }
+   ],
+   "page_note": "County franchise rebid by RFP 2026-10-20; incumbent franchisee not named in the RFP.",
+   "second_source": ""
+  },
+  "17129": {
+   "county": "Menard",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Menard County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": true,
+     "area": "unstated",
+     "source_url": "https://menardcountyil.gov/departments/emergency-medical-service-emergency-management-agency/",
+     "evidence": "Menard County EMS provides 24/7 Advanced Life Support Emergency Transport. In the event of a medical emergency, please dial 9-1-1.",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Likely sole county provider; page states no coverage area.",
+   "second_source": ""
+  },
+  "17149": {
+   "county": "Pike",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Pike County Ambulance Service",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": true,
+     "area": "unstated",
+     "source_url": "https://pikecoems.org/",
+     "evidence": "Pike County Ambulance Service operates as a department of Pike County, Illinois Government... Emergency Medical Services; Enhanced 911 EMS Communications Center",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Likely sole county provider; page states no coverage area.",
+   "second_source": ""
+  },
+  "17143": {
+   "county": "Peoria",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Advanced Medical Transport (AMT)",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": true,
+     "area": "City of Peoria (city franchise)",
+     "source_url": "https://www.wcbu.org/local-news/2025-08-27/peoria-extends-amt-ambulance-services-agreement-accepts-2-9m-grant-for-police-co-response-unit",
+     "evidence": "the City of Peoria and Advanced Medical Transport finalized a pact that extends the city's ambulance services for at least five years beyond the current contract.",
+     "vintage": "2025-08"
+    }
+   ],
+   "page_note": "Rest of Peoria County not confirmed.",
+   "second_source": ""
+  },
+  "17019": {
+   "county": "Champaign",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Carle Arrow Ambulance",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": true,
+     "area": "Cities of Champaign (franchise from 2025-11-15) and Urbana",
+     "source_url": "https://ipmnewsroom.org/carle-arrow-ambulance-is-now-champaigns-sole-emergency-medical-services-provider/",
+     "evidence": "Carle Arrow Ambulance is now Champaign's sole emergency medical services provider (5-year franchise; AMT ended Champaign service Nov. 15, 2025; Arrow already serves Urbana)",
+     "vintage": "2025-11"
+    }
+   ],
+   "page_note": "Rural Champaign County not confirmed. Map should drop AMT for Champaign city.",
+   "second_source": ""
+  },
+  "17167": {
+   "county": "Sangamon",
+   "tier": "held",
+   "services": [
+    {
+     "name": "America Ambulance, LifeStar Ambulance, MedicsFirst",
+     "transport": true,
+     "ownership": "private (city-licensed, up to three)",
+     "partial": true,
+     "area": "City of Springfield",
+     "source_url": "https://www.illinoistimes.com/news/firefighters-lobby-for-city-operated-ambulance-service-18372065",
+     "evidence": "Springfield code restricts hospital transports to up to three state-licensed private organizations, currently America Ambulance, LifeStar Ambulance and MedicsFirst; firefighters are paramedic-certified but can't transport (search summary; article date not confirmed)",
+     "vintage": "undated, likely 2024-2025"
+    },
+    {
+     "name": "Springfield Fire Department",
+     "transport": false,
+     "ownership": "municipal fire",
+     "partial": true,
+     "area": "City of Springfield",
+     "source_url": "same",
+     "evidence": "firefighters... can't transport them to a hospital",
+     "vintage": "same"
+    }
+   ],
+   "page_note": "Vintage unconfirmed; rest of Sangamon County not researched.",
+   "second_source": ""
+  },
+  "17031": {
+   "county": "Cook",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Chicago Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": true,
+     "area": "City of Chicago",
+     "source_url": "https://www.wbez.org/chicago/2017/04/11/why-send-a-firetruck-to-do-an-ambulances-job",
+     "evidence": "the Chicago Fire Department is in charge of both firefighters and paramedics... 75 ambulances (private ambulances mostly do hospital-to-hospital transports)",
+     "vintage": "2017 (no sign of change)"
+    }
+   ],
+   "page_note": "Suburban Cook is ~120 municipal FDs and fire protection districts, many with private contract transporters; not covered.",
+   "second_source": ""
+  }
+ }
+}

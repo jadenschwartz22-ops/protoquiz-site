@@ -1,0 +1,93 @@
+{
+ "meta": {
+  "state": "MA",
+  "retrieved": "2026-10-22",
+  "via": "county and agency websites (local sources)"
+ },
+ "county_verdict": {
+  "25025": {
+   "county": "Suffolk",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Boston EMS",
+     "transport": true,
+     "ownership": "municipal EMS",
+     "partial": true,
+     "area": "City of Boston (~675k of 793k)",
+     "source_url": "https://www.boston.gov/departments/emergency-medical-services",
+     "evidence": "Our department is a recognized leader in emergency medical service and the largest municipal EMS in New England ... Field Operations delivers the 9-1-1 response to residents and visitors. (page also carries Ambulance billing)",
+     "vintage": "2026"
+    },
+    {
+     "name": "Cataldo Ambulance Service",
+     "transport": true,
+     "ownership": "private (contractor to Town of Winthrop)",
+     "partial": true,
+     "area": "Winthrop",
+     "source_url": "https://cataldoambulance.com/?p=9820",
+     "evidence": "emergency medical services to the Town of Winthrop ... This contract went into effect on September 8, 2025, and will last three years.",
+     "vintage": "2025"
+    },
+    {
+     "name": "Cataldo Ambulance Service",
+     "transport": true,
+     "ownership": "private (contractor to City of Chelsea)",
+     "partial": true,
+     "area": "Chelsea",
+     "source_url": "https://cataldoambulance.com/about-us/areas-we-serve/",
+     "evidence": "Currently we provide services in: ... Revere, Winthrop, Malden, Everett, Chelsea ... (history: Cataldo became sole 9-1-1 provider for Chelsea in 1982, per en.wikipedia.org/wiki/Cataldo_Ambulance_Service)",
+     "vintage": "2025"
+    },
+    {
+     "name": "Cataldo Ambulance Service",
+     "transport": true,
+     "ownership": "private (contractor to City of Revere)",
+     "partial": true,
+     "area": "Revere",
+     "source_url": "https://cataldoambulance.com/about-us/areas-we-serve/",
+     "evidence": "Currently we provide services in: ... Revere, Winthrop ... Chelsea ... (about-us: 'provides 911 services for eighteen municipalities')",
+     "vintage": "2025"
+    }
+   ],
+   "page_note": "Boston (city EMS) plus Cataldo by contract in Chelsea, Revere and Winthrop. Revere's row is the weakest (Cataldo service list, not a city contract).",
+   "second_source": "https://en.wikipedia.org/wiki/Cataldo_Ambulance_Service"
+  },
+  "25019": {
+   "county": "Nantucket",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Nantucket Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "island",
+     "source_url": "https://www.1strespondernews.com/features/092523101/nantucket-fire-dept-superliner-ambulance",
+     "evidence": "department received a 2022 Ford F-550 Life Line ambulance (2023); does not state 911 transport role",
+     "vintage": "2023"
+    }
+   ],
+   "page_note": "Held: fire department owns ambulances but no source states it is the 911 transporter; town site has no fire page reachable.",
+   "second_source": ""
+  },
+  "25007": {
+   "county": "Dukes",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Tri-Town Ambulance",
+     "transport": true,
+     "ownership": "mixed: three-town intermunicipal (Chilmark fiscal agent)",
+     "partial": true,
+     "area": "Aquinnah, Chilmark, West Tisbury",
+     "source_url": "https://cmsarchive.civicplus.com/Chilmark_MA/ChilmarkMA_SelectAgenda/2017/05162017/TTA%204.22.17%20letter.pdf",
+     "evidence": "revenue earned from charging for ambulance calls ... staff of 5 full time paramedics (2017 letter)",
+     "vintage": "2017"
+    }
+   ],
+   "page_note": "Held: only the up-Island towns sourced; Edgartown, Oak Bluffs (Oak Bluffs EMS named 2025), Tisbury not sourced.",
+   "second_source": ""
+  }
+ }
+}

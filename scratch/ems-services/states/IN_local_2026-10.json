@@ -1,0 +1,332 @@
+{
+ "meta": {
+  "state": "IN",
+  "retrieved": "2026-10-22",
+  "via": "county and agency websites (local sources)"
+ },
+ "county_verdict": {
+  "18091": {
+   "county": "LaPorte",
+   "tier": "A",
+   "services": [
+    {
+     "name": "La Porte County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://laporteco.in.gov/departments-online/emergency-medical-services/",
+     "evidence": "La Porte County EMS provides 24/7 Advanced Life Support Emergency Ambulance service to all residents of La Porte County.",
+     "vintage": "2026 (live county page)"
+    }
+   ],
+   "page_note": "Fire departments assist on medical calls (first response).",
+   "second_source": "IN_public_2026-10.json (IndianaMap EMS run records 2022): La Porte County EMS 96% of county runs"
+  },
+  "18157": {
+   "county": "Tippecanoe",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Tippecanoe Emergency Ambulance Service (TEAS)",
+     "transport": true,
+     "ownership": "mixed: joint venture of Tippecanoe County Commissioners, IU Health and Franciscan Health; staffed by Franciscan Health",
+     "partial": false,
+     "area": "whole county (500 sq mi, city and county)",
+     "source_url": "https://www.franciscanhealth.org/teas",
+     "evidence": "Tippecanoe Emergency Ambulance Service covers an area of 500 square miles. We serve the pre-hospital emergency medical needs of more than 186,000 city and county residents... Annually TEAS responds to around 20,000 911 calls for our service areas.",
+     "vintage": "2026 (live page)"
+    }
+   ],
+   "page_note": "Purdue University FD runs campus calls (5% of 2022 runs); private Prompt/Trans-Care/Spirit do interfacility.",
+   "second_source": "IN_public_2026-10.json (IndianaMap EMS run records 2022): TEAS 63% of runs, rest mostly interfacility privates"
+  },
+  "18005": {
+   "county": "Bartholomew",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Columbus Regional Health Ambulance Service",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.crh.org/service-centers/emergency-services",
+     "evidence": "Emergency care often starts away from the hospital with a \"911\" call... We have 5 Ambulance Stations strategically located throughout Bartholomew County... city and county officials selected Columbus Regional Health Ambulance Services to serve the emergent needs of the community.",
+     "vintage": "2025-2028 city/county/CRH agreement (The Republic, therepublic.com/?p=747160, 403 to fetcher; seen via search snippet)"
+    },
+    {
+     "name": "Columbus Fire Department",
+     "transport": false,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "City of Columbus",
+     "source_url": "IN_public_2026-10.json",
+     "evidence": "service type '911 Response (Scene) without Transport'",
+     "vintage": "2022"
+    }
+   ],
+   "page_note": "",
+   "second_source": "IN_public_2026-10.json (IndianaMap EMS run records 2022): CRH Ambulance 90% of runs; The Republic: 'Columbus Regional Hospital's EMS service will provide 911 emergency ambulance service to all areas of Bartholomew County'"
+  },
+  "18071": {
+   "county": "Jackson",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Jackson County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://jacksoncounty.in.gov/government/departments_a-h/ambulance/index.php",
+     "evidence": "Jackson County EMS is the sole provider of emergency and convalescent treatment & transport of patients with Jackson County.",
+     "vintage": "2026 (live county page)"
+    }
+   ],
+   "page_note": "",
+   "second_source": "IN_public_2026-10.json (IndianaMap EMS run records 2022): Jackson Co Ambulance Service 98%"
+  },
+  "18119": {
+   "county": "Owen",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Owen County Emergency Medical Services (OCEMS)",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.owencounty.in.gov/public-safety-emergency-services/ems/",
+     "evidence": "Owen County Emergency Medical Services (OCEMS) is the Sole Provider of 911 for providing Emergent Medical Treatment... Owen County EMS Provides emergency care and transport to the Hospital.",
+     "vintage": "2026 (live county page)"
+    }
+   ],
+   "page_note": "",
+   "second_source": "IN_public_2026-10.json (IndianaMap EMS run records 2022): Owen County EMS 98%"
+  },
+  "18151": {
+   "county": "Steuben",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Steuben County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.co.steuben.in.us/departments/ems/index.php",
+     "evidence": "Steuben County EMS is a 24/7 service that serves all of Steuben County. The Emergency Medical Service is an entity of Steuben County Government.",
+     "vintage": "page live 2026 (stats on page are 2013)"
+    }
+   ],
+   "page_note": "Fire departments are BLS/ALS non-transport first responders per the same page.",
+   "second_source": "IN_public_2026-10.json (IndianaMap EMS run records 2022): Steuben County EMS 98%"
+  },
+  "18055": {
+   "county": "Greene",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Greene County Ambulance Service (GCAS)",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.co.greene.in.us/department/index.php?structureid=44",
+     "evidence": "Greene County Ambulance Service (GCAS) was created in 1974 when the Greene County Sheriff decided to take over the responsibility of providing Emergency Medical Services... Annually, GCAS averages more than 4,500 transports.",
+     "vintage": "2026 (live page, board meetings 11/2026)"
+    }
+   ],
+   "page_note": "Coverage statement implied, not explicit; run data supplies the 'whole county'.",
+   "second_source": "IN_public_2026-10.json (IndianaMap EMS run records 2022): Greene County Ambulance Service 98%"
+  },
+  "18133": {
+   "county": "Putnam",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Putnam County EMS (PCEMS)",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://co.putnam.in.us/ems",
+     "evidence": "providing exceptional emergency medical care... for all residents of Putnam County... through... our traditional 911 EMS services",
+     "vintage": "2026 (live page)"
+    }
+   ],
+   "page_note": "Statewide Transfer Ambulance (23% of 2022 runs) is non-911 interfacility.",
+   "second_source": "IN_public_2026-10.json (IndianaMap EMS run records 2022): Putnam County EMS 76%, rest Statewide Transfer (interfacility)"
+  },
+  "18175": {
+   "county": "Washington",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Washington County Ambulance Service",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://washingtoncounty.in.gov/government/public_health_and_safety/washington_county_ambulance_department.php",
+     "evidence": "Washington County Ambulance Service founded February 1, 2013 ... Staffing Five Ambulances (county Ambulance Department page)",
+     "vintage": "2026 (live page)"
+    }
+   ],
+   "page_note": "Page names the county department but states no coverage area; run data supplies it.",
+   "second_source": "IN_public_2026-10.json (IndianaMap EMS run records 2022): Washington County Ambulance Service 98%"
+  },
+  "18121": {
+   "county": "Parke",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Parke County EMS-Ambulance Service",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.in.gov/counties/parke/ems-ambulance",
+     "evidence": "Parke County EMS-Ambulance Service is located at: 395 Parkeway Dr... To pay your ambulance bill online",
+     "vintage": "2026 (live page)"
+    }
+   ],
+   "page_note": "The county page names Parke County EMS-Ambulance Service but does not say it answers 911 countywide. Held until a county source confirms.",
+   "second_source": "IN_public_2026-10.json (IndianaMap EMS run records 2022): Parke County EMS & Transportation Service 94%"
+  },
+  "18129": {
+   "county": "Posey",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Posey County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.poseycountyin.gov/county-offices/emergency-medical-services/",
+     "evidence": "Posey County EMS ... Pay your ambulance services bills here",
+     "vintage": "2026 (live page)"
+    }
+   ],
+   "page_note": "The county page names Posey County EMS but does not say it answers 911 countywide. Held until a county source confirms.",
+   "second_source": "IN_public_2026-10.json (IndianaMap EMS run records 2022): Posey County EMS 98%"
+  },
+  "18075": {
+   "county": "Jay",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Jay County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.in.gov/counties/jay/departments/ems",
+     "evidence": "Emergency Medical Services (EMS) ... ANY TRANSPORT DIAL 9-1-1",
+     "vintage": "2026 (live page)"
+    }
+   ],
+   "page_note": "Coverage area from run data.",
+   "second_source": "IN_public_2026-10.json (IndianaMap EMS run records 2022): Jay County EMS 98%"
+  },
+  "18147": {
+   "county": "Spencer",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Spencer County Emergency Ambulance Service, Inc.",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.in.gov/counties/spencer/departments/emergency-ambulance-service,-inc.",
+     "evidence": "listed as a Spencer County department; trains county firefighters as First Responders 'to provide life-saving emergency medical responses to patients before arrival of Paramedics'",
+     "vintage": "2026 (live page; grant text 2006)"
+    }
+   ],
+   "page_note": "Spencer County Emergency Ambulance Service is listed as a county department; no source says it answers 911 countywide. Held until a county source confirms.",
+   "second_source": "IN_public_2026-10.json (IndianaMap EMS run records 2022): Spencer County Emergency Ambulance Service 95%"
+  },
+  "18101": {
+   "county": "Martin",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Martin County Ambulance Service",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county (per page)",
+     "source_url": "https://www.in.gov/counties/martin/departments/martin-county-ambulance-service",
+     "evidence": "Martin County Ambulance Service is a 24/7 service that serves all of Martin County. Martin County Ambulance Service is an entity of Martin County Government.",
+     "vintage": "2026 (live page)"
+    }
+   ],
+   "page_note": "CONFLICT: 2022 run data shows Knox County EMS 54% vs Martin County Ambulance 37%; held until the split is explained.",
+   "second_source": ""
+  },
+  "18163": {
+   "county": "Vanderburgh",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Evansville Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": true,
+     "area": "City of Evansville + Knight, Pigeon (existing) and Center, Perry, Union townships (county contract 2026-06-30)",
+     "source_url": "https://www.14news.com/2026/06/30/evansville-fire-dept-take-over-vanderburgh-county-ambulance-services/",
+     "evidence": "Vanderburgh County commissioners voted 3-0 Tuesday to award ambulance service for Center, Perry, and Union townships to the Evansville Fire Department... after EFD launched its own city EMS operation.",
+     "vintage": "2026-06"
+    }
+   ],
+   "page_note": "CONTRADICTS MAP: AMR no longer the city or county 911 provider (EFD took city EMS 2026-07-01). Northern townships Armstrong, German, Scott not confirmed.",
+   "second_source": "https://news.wnin.org/2026-05-26/3-agencies-seeking-county-ambulance-contract"
+  },
+  "18019": {
+   "county": "Clark",
+   "tier": "held",
+   "services": [],
+   "page_note": "CONTRADICTS 2022 DATA: New Chapel EMS stopped Clark County 911 service 2024-09-01; Heartland Ambulance took a 90-day county contract from 2024-08-01 (WDRB/WHAS 2024). Current provider and Jeffersonville's own EMS plan not confirmed.",
+   "second_source": "https://www.wdrb.com/news/new-chapel-ems-to-stop-providing-911-ambulance-service-in-clark-county/article_86d5229e-55ce-11ef-8f00-332abbec4fc2.html"
+  },
+  "18135": {
+   "county": "Randolph",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Randolph County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": true,
+     "area": "part",
+     "source_url": "https://www.in.gov/counties/randolph/departments/emergency-medical-services-ems/ems-ambulance-service",
+     "evidence": "There are four agencies that provide emergency medical services in Randolph County. Those agencies are: Randolph County EMS... Union City Fire Department/EMS... Winchester Fire Department/EMS... Delaware County EMS (Albany)",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Four agencies named, areas not stated; Union City FD/EMS and Winchester FD/EMS transport per 2022 run data.",
+   "second_source": ""
+  },
+  "18017": {
+   "county": "Cass",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Cass County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": true,
+     "area": "unstated",
+     "source_url": "https://www.in.gov/counties/cass/departments/ems",
+     "evidence": "Cass County Emergency Medical Services, EMS Director ...",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "2022 run data: St. Vincent Kokomo 62%; county EMS may be newer. No coverage statement.",
+   "second_source": ""
+  }
+ }
+}
