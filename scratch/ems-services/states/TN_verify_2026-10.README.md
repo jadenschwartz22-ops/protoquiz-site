@@ -1,17 +1,27 @@
-# TN verify lane, 2026-10-22 (50 counties not in TN_local_2026-10.json)
+# TN verify lane, run 2 (2026-10-22)
 
-File: TN_verify_2026-10.json. Raw captures: web_raw/TN/v/ (dir50.txt = full TN EMS Directory licence list for all 50 counties, c_<COUNTY>.html raw POST results; *.html/*.txt = opened pages).
-Result: 3 A (Cocke, Henry, Fentress; 90,608 people), 3 held (Weakley, McMinn, Franklin), 44 not reached.
+File: TN_verify_2026-10.json, overwritten with only this run's counties. The run 1 file (Weakley, McMinn, Franklin held; Cocke, Henry, Fentress since promoted) is kept at web_raw/TN/v/TN_verify_prev_run_2026-10-22.json.
+Scope: the 47 TN counties not in TN_local_2026-10.json. Single-licence counties first (web_raw/TN/v/dir50.txt), biggest first.
+Result: 15 A (293,536 people), 4 held, 28 not reached.
 
-Licence cross-check (step 4): POST County=<X> to https://internet.health.tn.gov/EMSDirectory, sequential curl with cookie jar, all 50 returned 200 (2026-10-22). Single-licence counties (only the PRIMARY 911 service): Benton, Bledsoe, Cannon, Carroll, Chester, Clay, Cocke, Crockett, Decatur, Dyer, Fentress, Grainger, Grundy, Hardeman, Hardin, Henderson, Henry, Houston, Humphreys, Jackson, Johnson, Lake, Lauderdale, Lincoln, Macon, McNairy, Moore, Obion, Perry, Pickett, Polk, Rhea, Smith, Stewart, Trousdale, Van Buren, White, Wayne. Extra licences to explain before any A: Dickson (First Call BLS), McMinn (Resolute EMS ALS 5402, Englewood Rural FD BLS), Gibson (Humboldt Area Rescue Squad & EMS BLS), Fayette (PHI rotor), Warren and DeKalb (Saint Thomas EMS, hospital), Haywood (Haywood EMS ALS 10330, untagged), Meigs (Prestige BLS), Weakley (Martin Fire & EMS ALS), Franklin (two PRIMARY 911), Hancock/Overton (invalid vehicle only).
-Leads for the next lane: Henderson Medicare biller is "Ambulance Services of Lexington, Inc." (directory: Henderson County EMS); Rhea biller "Rhea Ambulance Services LLC" (directory: Rhea County Ambulance Service); Hardin biller is Hardin County General Hospital. Director Mitchell Mooney runs Henderson, Decatur and Houston (same operator likely).
+A: Obion, Carroll, Henderson, Macon, McNairy, Hardeman, Grainger, Humphreys, Johnson, Wayne, Jackson, Trousdale, Perry, Clay, Moore.
+Held: White and Van Buren (2026 news names the county EMS at scenes, no transport wording); Bledsoe (no current transport source; directory shows no primary 911 tag); Smith (Smith County Rescue Squad, unlicensed, reports EMS crews moving patients; licence holder is Smith County Ambulance Service).
+Not reached: Dickson, McMinn, Gibson, Franklin, Fayette, Warren, Lincoln, Dyer, Rhea, Weakley, Hardin, Lauderdale, Overton, DeKalb, Polk, Chester, Haywood, Benton, Cannon, Stewart, Grundy, Crockett, Meigs, Decatur, Houston, Hancock, Lake, Pickett.
 
-Search: Bing and DuckDuckGo html return junk or a captcha. Google News RSS works; its article links decode with web_raw/TN/v helper logic (fetch rss/articles/<id>?hl=en-US&gl=US&ceid=US:en, read data-n-a-sg/ts, POST batchexecute garturlreq). County sites: most are JS (Revize/Wix) and give no EMS text to curl; sitemaps empty. fentresscountytn.gov/ambulance/ works. WBIR and WKRN return 403 (Wayback also 403 for WBIR).
+Every A: one licence based in the county, tagged *PRIMARY 911, in the TN EMS Directory (dir50.txt, 2026-10-22), plus an opened page dated 2024+ (Henderson: 2021 page, with 2025 and 2026 sources showing the same operator). No city over 20k in any of them.
 
-Spot checks (source the row does not cite as source_url):
-- Largest A, Cocke: Newport Plain Talk 2026-09-16 shows Priority Ambulance running the Newport station; agrees. (WBIR 2025-04-22 "Cocke County approves five-year contract extension with Priority Ambulance" seen as a news title only, page 403.)
-- Mid, Henry: TN directory sole licence AMR HENRY COUNTY, PRIMARY 911; agrees.
-- Rural, Fentress: TN directory sole licence, PRIMARY 911; Medicare 2024 biller "Fentress County"; agrees.
+Sources that work:
+- priorityambulance.com/brands/ (WordPress, curl fine): baptist-ambulance (Carroll, Obion, McNairy, Tipton, Shelby), firstcall-ambulance (Humphreys plus non-911 work in many Middle TN counties), priority-ambulancetn.
+- Local papers via Google News RSS (gnx.py): McKenzie Banner, Macon County Chronicle, Lewis Herald, Wayne County News, Lexington Progress, Tippah News, UC Now, WSMV, WBBJ, Lebanon Democrat.
+- graingercountyems.com (agency site).
+Dead ends: county homepages (*countytn.gov/.org, *co.org) are JS with empty sitemaps for ~45 of 49 tried; wth.org Medical Center EMS pages name no counties (Dyer, Chester, Benton unresolved); guessed agency domains (<county>countyems.com) all failed except Grainger.
 
-Weak points: Henry rests on a 2025 news item ("provides emergency medical services through the Henry County Hospital"), no county or contract page. Cocke rests on the company page plus directory; no county page opened.
-Stopped at the 60-minute cap. Not reached (by size): Dickson, Gibson, Fayette, Warren, Lincoln, Dyer, Rhea, Obion, White, Carroll, Henderson, Hardin, Macon, McNairy, Hardeman, Grainger, Lauderdale, Overton, DeKalb, Smith, Humphreys, Johnson, Polk, Chester, Haywood, Benton, Wayne, Bledsoe, Cannon, Stewart, Grundy, Crockett, Meigs, Jackson, Trousdale, Decatur, Perry, Houston, Clay, Hancock, Moore, Van Buren, Lake, Pickett.
+Operator facts the map name hides (names are not wrong): Carroll, Obion, McNairy licences are "Shoals Ambulance dba Baptist", i.e. Baptist Ambulance, a Priority Ambulance brand; Carroll fire chief 2026-10-10 publicly criticises Priority's staffing (about half of required). Perry County EMS has been run under county contract by Ambulance Services of Lexington (BradenHealth) since 2025-08; the same operator runs Henderson County EMS, and director Mitchell Mooney also heads Decatur and Houston (likely the same operator, unconfirmed).
+
+Leads for the next lane: Dickson First Call BLS licence is probably non-emergency (First Call site lists Dickson among many counties); Dyer/Chester/Benton are West Tennessee Healthcare "Medical Center EMS" (need a county-named page); Lincoln is HH Health System (Huntsville Hospital) EMS.
+
+Spot checks (source the row does not cite):
+- Largest A, Obion: TN directory sole licence Shoals Ambulance dba Baptist-Obion County, Union City, PRIMARY 911; agrees.
+- Mid, Grainger: TN directory sole licence Grainger County Ambulance Authority, director Mardy Bowen (same director named on graingercountyems.com); agrees.
+- Rural, Clay: TN directory sole licence Clay County EMS, director Andrew Hall (UC Now names EMS Director Andy Hall); agrees.
+Stopped near the 60-minute cap.

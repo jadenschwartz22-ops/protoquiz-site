@@ -13,3 +13,10 @@ Per county, all of:
 Output: `states/<ST>_verify_2026-10.json` in the brief's shape, only the counties you researched (the live file `states/<ST>_local_2026-10.json` is read-only for you; an audit lane promotes passing rows into it). `tier` "A" only when steps 1-4 hold. README alongside. No git, no email, no forms, no code edits. WebSearch: at most 25 calls. Work biggest population first; record where you stopped.
 
 Report back in <=15 lines: counties A / held / not reached, population A, every county whose current map answer you found WRONG (with the right answer).
+
+## Practical (added 2026-10-22 after wave 2)
+- WebSearch is exhausted for this session: never call it. Search = Google News RSS via curl (`https://news.google.com/rss/search?q=...`), decoded with `/private/tmp/claude-501/-Users-jadenschwartz/3f3a564d-f38b-4708-8ddd-6aae9fb3074c/scratchpad/gnx.py` (read it first). DuckDuckGo/Bing/Brave via curl give captchas or junk.
+- CivicPlus county sites: `/sitemap.xml` finds the EMS page fastest (menus are JavaScript).
+- Fastest wins: counties where the state licence list shows exactly one transport licence. Do those first, biggest first; skip a county after ~6 minutes.
+- page_note is shown to the public: plain sentences naming who is confirmed and what is not yet confirmed; never mention lanes, audits, tiers, "held", or the map.
+- Helper scripts go in your own folder `states/web_raw/<ST>/v/` (never shared names in the scratchpad): parallel lanes overwrite each other.

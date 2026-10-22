@@ -1,0 +1,331 @@
+{
+ "meta": {
+  "state": "VA",
+  "retrieved": "2026-10-22",
+  "via": "county and city websites, checked against the Virginia OEMS licensed-agency roster (states/VA_oems.json)"
+ },
+ "county_verdict": {
+  "51095": {
+   "county": "James City County",
+   "tier": "A",
+   "services": [
+    {
+     "name": "James City County Fire Department",
+     "transport": true,
+     "ownership": "county fire",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.jamescitycountyva.gov/2435/Emergency-Medical-Services",
+     "evidence": "All James City County Firefighters are cross-trained in emergency medical services, and every ambulance is staffed around the clock with at least one advanced life support provider. ... Medicaid, Medicare and the majority of private insurance policies include the cost of ambulance transport.",
+     "vintage": "2025 (archive capture)",
+     "raw": "states/web_raw/VA/jcc_ems.txt"
+    }
+   ],
+   "page_note": "James City County Fire Department staffs the county ambulances and bills for ambulance transport. The City of Williamsburg runs its own ambulances inside the city.",
+   "second_source": ""
+  },
+  "51199": {
+   "county": "York County",
+   "tier": "A",
+   "services": [
+    {
+     "name": "York County Fire Department",
+     "transport": true,
+     "ownership": "county fire",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.yorkcounty.gov/513/EMS-Transport-Cost-Recovery",
+     "evidence": "the York County Fire Department strives to provide the best fire and emergency medical services possible to our citizens, businesses, and visitors. ... Our EMS transport cost recovery program, or what is commonly known as EMS transport fee, is structured with concern for the medical and financial health of our County residents and visitors.",
+     "vintage": "current page, retrieved 2026-10-22",
+     "raw": "states/web_raw/VA/york_cr.txt"
+    }
+   ],
+   "page_note": "York County Fire Department provides 911 ambulance transport and bills for it county-wide.",
+   "second_source": ""
+  },
+  "51540": {
+   "county": "Charlottesville city",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Charlottesville Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "city",
+     "source_url": "https://www.charlottesville.gov/Faq.aspx?QID=117",
+     "evidence": "Both CARS and Charlottesville Fire Department staffed ambulances will bill for service as part of the Emergency Medical Services ( EMS ) Cost Recovery Program.",
+     "vintage": "current page (program since about 2017)",
+     "raw": "states/web_raw/VA/cvq117.txt"
+    },
+    {
+     "name": "Charlottesville-Albemarle Rescue Squad (CARS)",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": false,
+     "area": "city (shared with urban Albemarle)",
+     "source_url": "https://www.charlottesville.gov/Faq.aspx?QID=117",
+     "evidence": "Will the Charlottesville-Albemarle Rescue Squad (CARS) bill for service in the City? Yes.",
+     "vintage": "current page (program since about 2017)",
+     "raw": "states/web_raw/VA/cvq117.txt"
+    }
+   ],
+   "page_note": "Charlottesville Fire Department and the Charlottesville-Albemarle Rescue Squad both run 911 ambulances in the city and bill for transport there. Albemarle County Fire Rescue describes its ambulance service as covering Albemarle County. UVA Health's medical transport network is a hospital transport service.",
+   "second_source": "https://www.cvilletomorrow.org/emergency-responders-prepare-for-severe-weather-and-warn-that-response-times-will-be-slower/"
+  },
+  "51840": {
+   "county": "Winchester city",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Winchester Fire and Rescue Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "whole city",
+     "source_url": "https://www.winchesterva.gov/Services-Payments/Public-Safety/Fire-Rescue/Emergency-Services/Ambulance-Billing",
+     "evidence": "The Winchester Fire and Rescue (WFRD) Revenue Recovery Program is based on concern for the medical and financial health of city residents. ... If you need to provide insurance information regarding your transport or have specific questions about your bill, please contact the City’s billing agency, Digitech",
+     "vintage": "2025 (archive capture; Calendar Year 2025 rates)",
+     "raw": "states/web_raw/VA/winc_bill.txt"
+    }
+   ],
+   "page_note": "Winchester Fire and Rescue Department, with the city volunteer companies, provides and bills for 911 ambulance transport. Valley Medical Transport, part of the Valley Health hospital system, carries patients booked through its own dispatch line rather than 911 calls.",
+   "second_source": "https://www.valleyhealthlink.com/our-services/valley-medical-transport/"
+  },
+  "51099": {
+   "county": "King George County",
+   "tier": "A",
+   "services": [
+    {
+     "name": "King George County Department of Fire, Rescue and Emergency Services",
+     "transport": true,
+     "ownership": "county fire",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.kinggeorgecountyva.gov/423/Ambulance-Fee-for-Service",
+     "evidence": "King George County began charging fees for emergency medical transports in 2007, but individuals will not see any disruptions in the emergency response services provided by rescue personnel and no one will ever be denied necessary medical transport service due to their inability to pay or a lack of insurance.",
+     "vintage": "current page, retrieved 2026-10-22 (fees since 2007)",
+     "raw": "states/web_raw/VA/kg_fee.txt"
+    }
+   ],
+   "page_note": "King George County Fire, Rescue and Emergency Services provides 911 ambulance transport county-wide.",
+   "second_source": ""
+  },
+  "51570": {
+   "county": "Colonial Heights city",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Colonial Heights Fire and EMS Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "whole city",
+     "source_url": "https://www.colonialheightsva.gov/207/EMS-Fare-Care",
+     "evidence": "Fare Care is a subscription program that helps cover out-of-pocket costs for emergency ambulance transport under the city's Cost Recovery Program.",
+     "vintage": "current page, retrieved 2026-10-22",
+     "raw": "states/web_raw/VA/colh_fc.txt"
+    }
+   ],
+   "page_note": "The Colonial Heights Fire and EMS Department provides 911 ambulance transport in the city.",
+   "second_source": ""
+  },
+  "51685": {
+   "county": "Manassas Park city",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Manassas Park Fire and Rescue Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "whole city",
+     "source_url": "https://www.manassasparkva.gov/Standards%20of%20Cover%202022%20Final.pdf",
+     "evidence": "The Department is a full- service fire and emergency medical service (EMS) agency delivering suppression services, EMS as an advanced life support transport agency",
+     "vintage": "2022 Standards of Cover; current apparatus page lists two medic units",
+     "raw": "states/web_raw/VA/mpark_soc.txt"
+    }
+   ],
+   "page_note": "Manassas Park Fire and Rescue is the city's ambulance transport agency, with automatic aid from Prince William County and the City of Manassas.",
+   "second_source": "https://www.manassasparkva.gov/about/apparatus_equipment.php"
+  },
+  "51735": {
+   "county": "Poquoson city",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Poquoson Fire & Rescue (with Poquoson Volunteer Rescue Squad)",
+     "transport": true,
+     "ownership": "mixed: city fire department with volunteer rescue squad",
+     "partial": false,
+     "area": "whole city",
+     "source_url": "https://www.poquoson-va.gov/178/Emergency-Medical-Services",
+     "evidence": "Each of our ambulances is staffed to the Advanced Life Support standards established by the State of Virginia.",
+     "vintage": "current page, retrieved 2026-10-22",
+     "raw": "states/web_raw/VA/poq_ems.txt"
+    }
+   ],
+   "page_note": "Poquoson Fire & Rescue runs the city ambulances; the Poquoson Volunteer Rescue Squad also keeps an ambulance in the city system.",
+   "second_source": "https://www.poquoson-va.gov/188/Volunteer-Rescue-Squad"
+  },
+  "51830": {
+   "county": "Williamsburg city",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Williamsburg Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "whole city",
+     "source_url": "https://www.williamsburgva.gov/243/Emergency-Medical-Services",
+     "evidence": "The department currently has a fleet of four ambulances containing sophisticated state-of-the-art life-saving equipment designed specifically for advanced life support. Two of the ambulances are always operational, with the other two functioning as reserve units. In the event that both ambulances are on a call, the next closest ambulance responds as part of our mutual aid agreement with James City County and York County Fire Departments.",
+     "vintage": "current page, retrieved 2026-10-22",
+     "raw": "states/web_raw/VA/wbg_ems.txt"
+    }
+   ],
+   "page_note": "Williamsburg Fire Department runs the city ambulances, backed by James City County and York County under mutual aid.",
+   "second_source": "https://www.williamsburgva.gov/996/EMS-Billing"
+  },
+  "51740": {
+   "county": "Portsmouth city",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Portsmouth Fire, Rescue & Emergency Services",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "city",
+     "source_url": "https://www.portsmouthva.gov/ems-operations",
+     "evidence": "Yearly, Portsmouth Fire, Rescue, and Emergency Service (PFRES) responds to more than 16,000 emergency medical and trauma-related calls. Of these calls, 76% or nearly 9,000 patients are transported to local emergency departments each year.",
+     "vintage": "current page, retrieved 2026-10-22",
+     "raw": "states/web_raw/VA/ports_emsops.txt"
+    }
+   ],
+   "page_note": "Portsmouth Fire, Rescue & Emergency Services transports 911 patients in the city. Not yet confirmed: the role of Tidewater Medical Transport, a private ambulance company licensed in Portsmouth.",
+   "second_source": ""
+  },
+  "51145": {
+   "county": "Powhatan County",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Powhatan County Fire & Rescue (with Powhatan Volunteer Rescue Squad)",
+     "transport": true,
+     "ownership": "mixed: county department with volunteer companies",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.powhatanva.gov/236/Fire-Rescue",
+     "evidence": "Powhatan County Fire Rescue operates as a combination system of full time, part time and volunteer staff working cooperatively to provide fire, rescue, and emergency medical services to Powhatan’s citizens and visitors.",
+     "vintage": "current page, retrieved 2026-10-22",
+     "raw": "states/web_raw/VA/pow_fr.txt"
+    }
+   ],
+   "page_note": "Powhatan County Fire & Rescue, with the Powhatan Volunteer Rescue Squad, provides emergency medical services. Not yet confirmed: a page saying which units carry patients, and the role of the contracted EMS staff.",
+   "second_source": ""
+  },
+  "51127": {
+   "county": "New Kent County",
+   "tier": "held",
+   "services": [
+    {
+     "name": "New Kent Fire-Rescue",
+     "transport": true,
+     "ownership": "county fire",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.newkent-va.us/284/Ambulance-Transport",
+     "evidence": "Please use the following link for HIPAA information regarding ambulance transportation. NKFR Notice of Privacy Practices",
+     "vintage": "current page, retrieved 2026-10-22",
+     "raw": "states/web_raw/VA/nk_amb.txt"
+    }
+   ],
+   "page_note": "New Kent Fire-Rescue publishes the notice for its ambulance transport. Not yet confirmed: a page that states it carries all 911 patients in the county.",
+   "second_source": ""
+  },
+  "51065": {
+   "county": "Fluvanna County",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Fluvanna County EMS system (Office of Emergency Services with volunteer rescue squads)",
+     "transport": true,
+     "ownership": "mixed: county with volunteer rescue squads",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.fluvannacounty.org/es/page/ems-cost-recovery-program",
+     "evidence": "to defray costs and improve services associated with providing EMS transport services by collecting a user fee for emergency ambulance transports.",
+     "vintage": "current page (code adopted 2015)",
+     "raw": "states/web_raw/VA/fluv_cr.txt"
+    }
+   ],
+   "page_note": "Fluvanna County bills for emergency ambulance transport. The county lists the Office of Emergency Services, the Lake Monticello Rescue Squad and the Fluvanna Volunteer Rescue Squad; which of them carry patients is not yet confirmed.",
+   "second_source": "https://www.fluvannacounty.org/es"
+  },
+  "51750": {
+   "county": "Radford city",
+   "tier": "held",
+   "services": [],
+   "page_note": "The Radford Emergency Medical Services Commission was created by contract with Carilion Patient Transportation Services, and the city fire department holds an ambulance licence. Not yet confirmed: which of them carries 911 patients today.",
+   "second_source": ""
+  },
+  "51775": {
+   "county": "Salem city",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Salem Rescue Squad",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": false,
+     "area": "city",
+     "source_url": "https://www.salemva.gov/358/Rescue-Squad",
+     "evidence": "Our rescue squad currently operates four ALS-equipped ambulances",
+     "vintage": "undated city page",
+     "raw": "states/web_raw/VA/sal_rs.txt"
+    }
+   ],
+   "page_note": "The volunteer Salem Rescue Squad runs ambulances in the city. Not yet confirmed: the ambulance role of Salem Fire-EMS and the Salem Volunteer Fire Department, which also hold ambulance licences.",
+   "second_source": ""
+  },
+  "51075": {
+   "county": "Goochland County",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Goochland County Department of Fire-Rescue and Emergency Services",
+     "transport": true,
+     "ownership": "mixed: county department with volunteer companies",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.goochlandfire-rescue.org/about/faqs/",
+     "evidence": "When did Goochland County implement EMS billing? Goochland County began billing for EMS transports on January 1, 2013.",
+     "vintage": "current page, retrieved 2026-10-22",
+     "raw": "states/web_raw/VA/gfr_faq.txt"
+    }
+   ],
+   "page_note": "Goochland County Department of Fire-Rescue and Emergency Services runs the county ambulances and bills for 911 transport.",
+   "second_source": "https://www.goochlandva.us/1471/Sandy-Hook-Fire-Rescue-Station-8"
+  },
+  "51079": {
+   "county": "Greene County",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Greene County volunteer fire companies",
+     "transport": false,
+     "ownership": "fire district",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.greenecountyva.gov/266/Fire-Department",
+     "evidence": "Greene County is served by three all-volunteer fire and EMS first response companies.",
+     "vintage": "current page, retrieved 2026-10-22",
+     "raw": "states/web_raw/VA/gr_fd.txt"
+    }
+   ],
+   "page_note": "The three volunteer fire companies are first responders. Greene County EMS is the only licensed ambulance service in the county; a page stating that it carries 911 patients is not yet confirmed.",
+   "second_source": ""
+  }
+ }
+}

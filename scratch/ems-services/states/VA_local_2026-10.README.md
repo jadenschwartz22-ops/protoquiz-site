@@ -6,3 +6,6 @@ Method: re-opened each VA_911.json source (web_raw/VA/row*.txt), evidence string
 Stopped after the largest ~25 jurisdictions; everything below Roanoke County in population, plus Richmond County, Falls Church, Manassas, Manassas Park, Portsmouth, Frederick, Montgomery, Albemarle neighbours: not reached.
 Spot check: Fairfax Co (largest) agrees with the OEMS roster; Suffolk (mid) roster lists SUFFOLK FIRE & RESCUE only; Stafford (rural-ish) roster lists the county department only.
 Wrong in current map: Fairfax Co (was tier D after the name collision, right answer FCFRD), Fairfax city (right answer City of Fairfax FD), Roanoke city is Roanoke Fire-EMS only, Roanoke County is RCFRD (combination).
+
+## Promoted 2026-10-22 from VA_verify_2026-10.json (audit pass, AUDIT_VERIFY_VA_2026-10-22.md second pass)
+Added as A: James City Co, York Co, Charlottesville city, King George Co, Goochland Co, Winchester city, Colonial Heights city, Williamsburg city, Manassas Park city, Poquoson city (27 FIPS total).

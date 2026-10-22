@@ -514,6 +514,420 @@
    ],
    "page_note": "Campbell Fire/Rescue (six ALS ambulances) and the Bellevue-Dayton, Newport, Southgate-Wilder, Fort Thomas and Central Campbell departments hold ambulance licences. Not yet confirmed from agency pages: which carry 911 patients, and whether AMR-NKY and First Care Ohio, also licensed for Campbell, do.",
    "second_source": "NG911 Ky_911_RSB_EMS layer"
+  },
+  "21209": {
+   "county": "Scott",
+   "tier": "A",
+   "population": 61700,
+   "services": [
+    {
+     "name": "Georgetown-Scott County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.ems1.com/ems-management/rising-diesel-costs-push-ky-ems-to-adjust-budget",
+     "evidence": "\"GEORGETOWN, Ky. — Georgetown Scott County EMS is preparing to adjust its fuel budget as diesel prices continue to rise, though officials said the higher costs will not affect emergency response.\"",
+     "vintage": "2026-04",
+     "licence_source": "https://kbems.ky.gov/Legal/Documents/EMS_Agencies_2026-08-01.xlsx",
+     "licence_evidence": "KBEMS EMS Directory 2026-08-01, licence 1337, Class Ia: \"911 Response (Scene) with Transport Capability\"; service area \"Scott County\"",
+     "confirm_url": "https://www.news-graphic.com/news/three-injured-in-ambulance-suv-accident/article_66d795bf-2c30-451a-9e2a-715db12cdf6a.html",
+     "confirm_vintage": "2025-08-12",
+     "confirm_evidence": "Three people were injured Saturday when a Georgetown/Scott County Emergency Medical ambulance collided with a SUV at the intersection of Showalter and Broadway about 1:30 p.m. Saturday. The ambulance was enroute on an emergency call when the collision occurred."
+    }
+   ],
+   "page_note": "Georgetown-Scott County EMS (joint city-county service, licence 1337) carries 911 patients in all of Scott County, including Georgetown. It is the only 911 ambulance licence in the county.",
+   "second_source": "Kentucky NG911 Ky_911_RSB_EMS boundary layer (Kentucky_DGI FeatureServer layer 5, edited ~2026-08): county EMS response area labelled 'Georgetown-Scott County EMS'"
+  },
+  "21113": {
+   "county": "Jessamine",
+   "tier": "A",
+   "population": 56495,
+   "services": [
+    {
+     "name": "Jessamine County Ambulance Service (Jessamine County EMS)",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://web.archive.org/web/20250803144835/https://jcems911.com/",
+     "evidence": "\"It is the purpose of Jessamine County Emergency Medical Services to provide pre-hospital care to the residents and visitors of Jessamine County.\" ... \"Emergency Transport: 911 Non-Emergency Transport: (859) 887-5447\"",
+     "vintage": "2025-08",
+     "licence_source": "https://kbems.ky.gov/Legal/Documents/EMS_Agencies_2026-08-01.xlsx",
+     "licence_evidence": "KBEMS EMS Directory 2026-08-01, licence 1449, Class Ia: \"911 Response (Scene) with Transport Capability\"; service area \"Jessamine County\"",
+     "confirm_url": "https://www.ems1.com/scheduling/ky-county-ems-moves-to-12-hour-shifts-for-medic-safety",
+     "confirm_vintage": "2024-03-05",
+     "confirm_evidence": "EMS officials in Jessamine County have changed their shift schedule to improve safety and decrease fatigue in its EMS personnel."
+    }
+   ],
+   "page_note": "Jessamine County EMS carries 911 patients in all of Jessamine County, including Nicholasville and Wilmore. It is the only 911 ambulance licence in the county.",
+   "second_source": ""
+  },
+  "21073": {
+   "county": "Franklin",
+   "tier": "A",
+   "population": 52442,
+   "services": [
+    {
+     "name": "Frankfort Fire & EMS",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.frankfort.ky.gov/1922/Fire-Department",
+     "evidence": "Fire Chief: \"Protecting the people of Frankfort and Franklin County isn't just our duty, it's our calling\"; apparatus page lists ambulances Med 1 to Med 5 (https://www.frankfort.ky.gov/1945/Apparatus)",
+     "vintage": "2026",
+     "licence_source": "https://kbems.ky.gov/Legal/Documents/EMS_Agencies_2026-08-01.xlsx",
+     "licence_evidence": "KBEMS EMS Directory 2026-08-01, licence 1262, Class Ia: \"911 Response (Scene) with Transport Capability\"; service area \"Franklin County\"",
+     "confirm_url": "https://state-journal.com/2025/09/15/police-fire-blotter-sept-12-14/",
+     "confirm_vintage": "2025-09-15",
+     "confirm_evidence": "The following calls were received by the Frankfort Police Department, Franklin County Sheriff’s Office, Frankfort Fire and EMS, and Franklin County Fire Department"
+    }
+   ],
+   "page_note": "Frankfort Fire & EMS, the city fire department, runs the 911 ambulances for Frankfort and all of Franklin County. It is the only 911 ambulance licence in the county; SkyLife Frankfort is licensed for non-emergency transfers only.",
+   "second_source": ""
+  },
+  "21179": {
+   "county": "Nelson",
+   "tier": "A",
+   "population": 48706,
+   "services": [
+    {
+     "name": "Nelson County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.nelsoncountyems.com/about-us",
+     "evidence": "\"Nelson County EMS is committed to being leaders in emergency medical services by providing emergency and non-emergency pre-hospital treatment and care to the sick and injured\" ... \"to ensure coverage to 424 square miles of rural Nelson County\"",
+     "vintage": "2025",
+     "licence_source": "https://kbems.ky.gov/Legal/Documents/EMS_Agencies_2026-08-01.xlsx",
+     "licence_evidence": "KBEMS EMS Directory 2026-08-01, licence 1363, Class Ia: \"911 Response (Scene) with Transport Capability\"; service area \"Nelson County\""
+    }
+   ],
+   "page_note": "Nelson County EMS carries 911 patients in all of Nelson County, including Bardstown. It is the only 911 ambulance licence in the county.",
+   "second_source": "Kentucky NG911 Ky_911_RSB_EMS boundary layer (Kentucky_DGI FeatureServer layer 5, edited ~2026-08): county EMS response area labelled 'NELSON COUNTY EMS'"
+  },
+  "21009": {
+   "county": "Barren",
+   "tier": "A",
+   "population": 45609,
+   "services": [
+    {
+     "name": "Barren-Metcalfe EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.wcluradio.com/2025/03/24/glasgow-emergency-personnel-respond-to-two-vehicle-collision/",
+     "evidence": "\"Page and three juveniles were transported by Barren-Metcalfe EMS to T.J. Samson Community Hospital for injuries\"",
+     "vintage": "2025-03",
+     "licence_source": "https://kbems.ky.gov/Legal/Documents/EMS_Agencies_2026-08-01.xlsx",
+     "licence_evidence": "KBEMS EMS Directory 2026-08-01, licence 1281, Class Ia: \"911 Response (Scene) with Transport Capability\"; service area \"Barren & Metcalfe County\""
+    }
+   ],
+   "page_note": "Barren-Metcalfe EMS carries 911 patients in all of Barren County, including Glasgow, and also serves Metcalfe County. It is the only 911 ambulance licence in the county.",
+   "second_source": ""
+  },
+  "21107": {
+   "county": "Hopkins",
+   "tier": "A",
+   "population": 45218,
+   "services": [
+    {
+     "name": "Medical Center Ambulance Service, Inc.",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.wkdzradio.com/2026/08/14/madisonville-police-investigating-death-of-infant-found-unresponsive-in-vehicle/news-edge/",
+     "evidence": "\"After arriving on the scene, officers and Medical Center Ambulance personnel performed life-saving measures\"",
+     "vintage": "2026-08",
+     "licence_source": "https://kbems.ky.gov/Legal/Documents/EMS_Agencies_2026-08-01.xlsx",
+     "licence_evidence": "KBEMS EMS Directory 2026-08-01, licence 1413, Class Ia: \"911 Response (Scene) with Transport Capability\"; service area \"Hopkins County, KY, and an area limited to a thirty (30) minute response for 95% of the population served from the above address.\"",
+     "confirm_url": "https://www.wbko.com/2025/12/18/1-killed-1-injured-hopkins-county-two-vehicle-crash/",
+     "confirm_vintage": "2025-12-18",
+     "confirm_evidence": "Bialek was transported by Medical Center Ambulance Service to a local hospital for treatment of suspected injuries."
+    }
+   ],
+   "page_note": "Medical Center Ambulance Service (hospital-based, Madisonville) carries 911 patients in all of Hopkins County. It is the only 911 ambulance licence in the county.",
+   "second_source": "Kentucky NG911 Ky_911_RSB_EMS boundary layer (Kentucky_DGI FeatureServer layer 5, edited ~2026-08): county EMS response area labelled 'Medical Center Ambulance Service'"
+  },
+  "21035": {
+   "county": "Calloway",
+   "tier": "A",
+   "population": 38975,
+   "services": [
+    {
+     "name": "Murray-Calloway County Hospital Ambulance Service",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.kfvs12.com/2024/10/14/three-people-injured-following-vehicle-crash-calloway-county/",
+     "evidence": "\"Murray/Calloway County Ambulance arrived on scene to provide medical care to all three occupants.\" ... \"Murray-Calloway County EMS also transported two patients to the Murray-Calloway County Hospital\"",
+     "vintage": "2024-10",
+     "licence_source": "https://kbems.ky.gov/Legal/Documents/EMS_Agencies_2026-08-01.xlsx",
+     "licence_evidence": "KBEMS EMS Directory 2026-08-01, licence 1004, Class Ia: \"911 Response (Scene) with Transport Capability\"; service area \"Calloway County\""
+    }
+   ],
+   "page_note": "Murray-Calloway County Hospital Ambulance Service carries 911 patients in all of Calloway County, including Murray. It is the only 911 ambulance licence in the county.",
+   "second_source": ""
+  },
+  "21157": {
+   "county": "Marshall",
+   "tier": "A",
+   "population": 31734,
+   "services": [
+    {
+     "name": "Marshall County Ambulance Service",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.marshallcountyky.gov/190/Ambulance-Service",
+     "evidence": "\"Marshall County Ambulance Service was created in 1974 and continues to provide Advanced Life Support (ALS) and Basic Life Support (BLS) ambulance services to the citizens of Marshall County.\" ... \"These calls are a mixture of 911 emergency calls, interfacility transfers\"",
+     "vintage": "2026",
+     "licence_source": "https://kbems.ky.gov/Legal/Documents/EMS_Agencies_2026-08-01.xlsx",
+     "licence_evidence": "KBEMS EMS Directory 2026-08-01, licence 1300, Class Ia: \"911 Response (Scene) with Transport Capability\"; service area \"Marshall County\""
+    }
+   ],
+   "page_note": "Marshall County Ambulance Service carries 911 patients in all of Marshall County, from Benton and a Calvert City station. It is the only 911 ambulance licence in the county.",
+   "second_source": "Kentucky NG911 Ky_911_RSB_EMS boundary layer (Kentucky_DGI FeatureServer layer 5, edited ~2026-08): county EMS response area labelled 'Marshall County Ambulance Service'"
+  },
+  "21021": {
+   "county": "Boyle",
+   "tier": "A",
+   "population": 31394,
+   "services": [
+    {
+     "name": "Boyle County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.boylecountyky.gov/186/Emergency-Medical-Services",
+     "evidence": "\"The ultimate goal of Boyle County EMS is to at all times possess the personnel and equipment dedicated to providing pre-hospital emergency medical care to all persons found sick or injured in Boyle County\"; fee schedule effective January 1, 2024 bills ALS/BLS emergency transport (https://www.boylecountyky.gov/201/Boyle-County-EMS-Fee-Schedule)",
+     "vintage": "2024",
+     "licence_source": "https://kbems.ky.gov/Legal/Documents/EMS_Agencies_2026-08-01.xlsx",
+     "licence_evidence": "KBEMS EMS Directory 2026-08-01, licence 1540, Class Ia: \"911 Response (Scene) with Transport Capability\"; service area \"Boyle County\""
+    }
+   ],
+   "page_note": "Boyle County EMS, a county government service, carries 911 patients in all of Boyle County, including Danville. It is the only 911 ambulance licence in the county.",
+   "second_source": ""
+  },
+  "21173": {
+   "county": "Montgomery",
+   "tier": "A",
+   "population": 28771,
+   "services": [
+    {
+     "name": "Montgomery County Fire/EMS (Montgomery Co. Ambulance Service)",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://mcfdems.com/ems/",
+     "evidence": "\"Montgomery County Fire/EMS is responsible for delivery of emergency medical services to an estimated population of 28,000 people living in a geographic area of approximately 200 square miles.\" ... \"We have 3 ambulances on duty each day\"",
+     "vintage": "2026",
+     "licence_source": "https://kbems.ky.gov/Legal/Documents/EMS_Agencies_2026-08-01.xlsx",
+     "licence_evidence": "KBEMS EMS Directory 2026-08-01, licence 1445, Class Ia: \"911 Response (Scene) with Transport Capability\"; service area \"Montgomery County\""
+    }
+   ],
+   "page_note": "Montgomery County Fire/EMS carries 911 patients in all of Montgomery County, including Mount Sterling. It is the only 911 ambulance licence in the county.",
+   "second_source": "Kentucky NG911 Ky_911_RSB_EMS boundary layer (Kentucky_DGI FeatureServer layer 5, edited ~2026-08): county EMS response area labelled 'Montgomery County Fire and EMS'"
+  },
+  "21141": {
+   "county": "Logan",
+   "tier": "A",
+   "population": 28467,
+   "services": [
+    {
+     "name": "Logan County EMS",
+     "transport": true,
+     "ownership": "private (contractor to Logan County)",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.wnky.com/2-critically-injured-in-logan-county-crash/",
+     "evidence": "\"Lewisburg Fire Department, Russellville City Fire Department, Logan Aluminum Fire Department, the Logan County Sheriff's Department and Logan County EMS assisted at the scene.\"",
+     "vintage": "2026-08",
+     "licence_source": "https://kbems.ky.gov/Legal/Documents/EMS_Agencies_2026-08-01.xlsx",
+     "licence_evidence": "KBEMS EMS Directory 2026-08-01, licence 1680, Class Ia: \"911 Response (Scene) with Transport Capability\"; service area \"Logan County\"",
+     "confirm_url": "https://www.wbko.com/2025/08/29/logan-county-collision-kills-1-injures-1/",
+     "confirm_vintage": "2025-08-29",
+     "confirm_evidence": "Mr. Brooks was transported to Russellville Medical Center to be treated for his injuries. The Logan County Sheriff’s Office was assisted on scene by Logan County EMS"
+    }
+   ],
+   "page_note": "Logan County EMS carries 911 patients in all of Logan County, from Russellville and an Auburn station (licence 1681). Logan Aluminum holds a plant-only licence.",
+   "second_source": "Kentucky NG911 Ky_911_RSB_EMS boundary layer (Kentucky_DGI FeatureServer layer 5, edited ~2026-08): county EMS response area labelled 'Logan County EMS'"
+  },
+  "21239": {
+   "county": "Woodford",
+   "tier": "A",
+   "population": 27728,
+   "services": [
+    {
+     "name": "Woodford County Ambulance Service (Woodford County EMS)",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.lex18.com/news/covering-kentucky/former-woodford-county-emt-fighting-for-accountability-after-filing-sexual-harassment-complaint",
+     "evidence": "\"The Woodford County Fiscal Court has voted to place EMS Director Freeman Bailey on administrative leave\"",
+     "vintage": "2026-08",
+     "licence_source": "https://kbems.ky.gov/Legal/Documents/EMS_Agencies_2026-08-01.xlsx",
+     "licence_evidence": "KBEMS EMS Directory 2026-08-01, licence 1275, Class Ia: \"911 Response (Scene) with Transport Capability\"; service area \"Woodford County\"",
+     "confirm_url": "https://www.wkyt.com/2026/02/13/driver-dies-after-suv-crashes-into-tree/",
+     "confirm_vintage": "2026-02-13",
+     "confirm_evidence": "The single occupant was transported to the University of Kentucky Hospital by Woodford County EMS"
+    }
+   ],
+   "page_note": "Woodford County EMS, a county government service, carries 911 patients in all of Woodford County, including Versailles and Midway. It is the only 911 ambulance licence in the county.",
+   "second_source": "Kentucky NG911 Ky_911_RSB_EMS boundary layer (Kentucky_DGI FeatureServer layer 5, edited ~2026-08): county EMS response area labelled 'Woodford EMS'"
+  },
+  "21217": {
+   "county": "Taylor",
+   "tier": "A",
+   "population": 26809,
+   "services": [
+    {
+     "name": "Campbellsville-Taylor County EMS",
+     "transport": true,
+     "ownership": "municipal EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://campbellsville.us/departments/emergency-medical-services-ems/",
+     "evidence": "\"Campbellsville–Taylor County Emergency Medical Services (CTCEMS) provides 24-hour emergency medical response to residents and visitors throughout Campbellsville and Taylor County.\" ... \"EMS services are provided to approximately 24,000 residents throughout Taylor County\"",
+     "vintage": "2026",
+     "licence_source": "https://kbems.ky.gov/Legal/Documents/EMS_Agencies_2026-08-01.xlsx",
+     "licence_evidence": "KBEMS EMS Directory 2026-08-01, licence 1468, Class Ia: \"911 Response (Scene) with Transport Capability\"; service area \"Taylor County\""
+    }
+   ],
+   "page_note": "Campbellsville-Taylor County EMS carries 911 patients in all of Taylor County. It is the only 911 ambulance licence in the county.",
+   "second_source": "Kentucky NG911 Ky_911_RSB_EMS boundary layer (Kentucky_DGI FeatureServer layer 5, edited ~2026-08): county EMS response area labelled 'Campbellsville-Taylor County EMS'"
+  },
+  "21043": {
+   "county": "Carter",
+   "tier": "A",
+   "population": 26098,
+   "services": [
+    {
+     "name": "Carter County Emergency Medical Service (Carter County Ambulance Service)",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://cartercountytimes.com/local-news/emergency-response/employees-allege-ambulance-service-misconduct/",
+     "evidence": "\"Wears and director Tim Woods have left the county without adequate emergency coverage when they've assigned vehicles to perform non-emergency transports while no other ambulances were available to respond in the event of a 911 call.\"",
+     "vintage": "2025-04",
+     "licence_source": "https://kbems.ky.gov/Legal/Documents/EMS_Agencies_2026-08-01.xlsx",
+     "licence_evidence": "KBEMS EMS Directory 2026-08-01, licence 1174, Class Ia: \"911 Response (Scene) with Transport Capability\"; service area \"Carter County\""
+    }
+   ],
+   "page_note": "Carter County EMS carries 911 patients in all of Carter County, including Grayson and Olive Hill. It is the only 911 ambulance licence in the county.",
+   "second_source": "Kentucky NG911 Ky_911_RSB_EMS boundary layer (Kentucky_DGI FeatureServer layer 5, edited ~2026-08): county EMS response area labelled 'Carter County EMS'"
+  },
+  "21137": {
+   "county": "Lincoln",
+   "tier": "A",
+   "population": 24910,
+   "services": [
+    {
+     "name": "Lincoln County EMS (Stanford EMS and Rescue)",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://web.archive.org/web/20241010202516/http://stanfordems.com/",
+     "evidence": "\"LCEMS (Formerly Stanford EMS & Rescue Inc.) \\\"Proudly Serving Lincoln County\\\"\" ... \"IN AN EMERGENCY DIAL 911\"; stations in Stanford, Hustonville, Waynesburg and Crab Orchard; ambulance rate schedule",
+     "vintage": "2024-10",
+     "licence_source": "https://kbems.ky.gov/Legal/Documents/EMS_Agencies_2026-08-01.xlsx",
+     "licence_evidence": "KBEMS EMS Directory 2026-08-01, licence 1267, Class Ia: \"911 Response (Scene) with Transport Capability\"; service area \"Stanford and Lincoln County Area\""
+    }
+   ],
+   "page_note": "Lincoln County EMS carries 911 patients in all of Lincoln County from stations in Stanford, Hustonville, Waynesburg and Crab Orchard. It is the only 911 ambulance licence in the county.",
+   "second_source": "Kentucky NG911 Ky_911_RSB_EMS boundary layer (Kentucky_DGI FeatureServer layer 5, edited ~2026-08): county EMS response area labelled 'Lincoln Co EMS Station 1'"
+  },
+  "21005": {
+   "county": "Anderson",
+   "tier": "A",
+   "population": 24883,
+   "services": [
+    {
+     "name": "Anderson County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://andersoncounty.ky.gov/departments/Pages/Public-Safety.aspx",
+     "evidence": "\"Present-day Anderson County EMS has continued to grow with the community by further adding a third full-time Advanced Life Support ambulance\" ... \"Anderson County Emergency Management and EMS are now under the Anderson County Department of Public Safety umbrella, owned and operated by the Anderson County Fiscal Court.\"",
+     "vintage": "2026 (live county page)",
+     "licence_source": "https://kbems.ky.gov/Legal/Documents/EMS_Agencies_2026-08-01.xlsx",
+     "licence_evidence": "KBEMS EMS Directory 2026-08-01, licence 1253, Class Ia: \"911 Response (Scene) with Transport Capability\"; service area \"Anderson County, Kentucky\"",
+     "confirm_url": "https://web.archive.org/web/20220930033024/https://andersoncounty.ky.gov/departments/ACDPS/Pages/acems.aspx",
+     "confirm_vintage": "2022",
+     "confirm_evidence": "\"Anderson County Emergency Medical Services is a KBEMS certified ground transport Advanced Life Support provider serving all of Anderson County, including the City of Lawrenceburg, Kentucky. Anderson County EMS holds the only certificate of need for all emergent and non-emergent transportation for Anderson County.\""
+    }
+   ],
+   "page_note": "Anderson County EMS carries 911 patients in all of Anderson County, including Lawrenceburg, and holds the county's only ambulance certificate of need.",
+   "second_source": ""
+  },
+  "21205": {
+   "county": "Rowan",
+   "tier": "A",
+   "population": 24675,
+   "services": [
+    {
+     "name": "Morehead-Rowan County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.rcky.us/ambulance-service-1",
+     "evidence": "\"Rowan County Emergency Medical Services provides both emergency and non-emergency care and transport to the citizens of Rowan County.\" ... \"We annually make over 5,000 runs covering all 911 requests for ambulances\"",
+     "vintage": "2026",
+     "licence_source": "https://kbems.ky.gov/Legal/Documents/EMS_Agencies_2026-08-01.xlsx",
+     "licence_evidence": "KBEMS EMS Directory 2026-08-01, licence 1169, Class Ia: \"911 Response (Scene) with Transport Capability\"; service area \"Rowan County, KY\""
+    }
+   ],
+   "page_note": "Morehead-Rowan County EMS carries all 911 ambulance calls in Rowan County, including Morehead. It is the only 911 ambulance licence in the county.",
+   "second_source": "Kentucky NG911 Ky_911_RSB_EMS boundary layer (Kentucky_DGI FeatureServer layer 5, edited ~2026-08): county EMS response area labelled 'Rowan County EMS'"
+  },
+  "21003": {
+   "county": "Allen",
+   "tier": "A",
+   "population": 22037,
+   "services": [
+    {
+     "name": "Allen County Ambulance Service",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.allencountykentucky.com/offices/allen-county-ems",
+     "evidence": "\"The Allen County Ambulance Service has been serving Scottsville and Allen County since 1979. We answer over 4,000 calls per year in our area.\" ... \"The Ambulance Service is available 24 hours a day, 7 days a week\"",
+     "vintage": "2024",
+     "licence_source": "https://kbems.ky.gov/Legal/Documents/EMS_Agencies_2026-08-01.xlsx",
+     "licence_evidence": "KBEMS EMS Directory 2026-08-01, licence 1414, Class Ia: \"911 Response (Scene) with Transport Capability\"; service area \"Allen County\"",
+     "confirm_url": "https://www.wbko.com/2026/09/09/allen-county-ems-adopts-new-ambulance-technology/",
+     "confirm_vintage": "2026-09-09",
+     "confirm_evidence": "Allen County EMS have adopted new technology that is being used in ambulances to keep drivers and first responders safe."
+    }
+   ],
+   "page_note": "Allen County Ambulance Service (an ambulance district) carries 911 patients in all of Allen County, including Scottsville. It is the only 911 ambulance licence in the county.",
+   "second_source": "Kentucky NG911 Ky_911_RSB_EMS boundary layer (Kentucky_DGI FeatureServer layer 5, edited ~2026-08): county EMS response area labelled 'Allen County EMS'"
+  },
+  "21049": {
+   "county": "Clark",
+   "tier": "held",
+   "services": [],
+   "page_note": "Winchester Fire-EMS runs the 911 ambulances for Winchester and Clark County. A second ambulance company, Cross Medical Response, is licensed in Clark County with a 911 permit; whether it answers any 911 calls is not yet confirmed."
+  },
+  "21083": {
+   "county": "Graves",
+   "tier": "held",
+   "services": [],
+   "page_note": "Mayfield-Graves County Ambulance Service holds the only 911 ambulance licence for Graves County. No current page from the service itself has been found yet confirming who operates it."
   }
  }
 }

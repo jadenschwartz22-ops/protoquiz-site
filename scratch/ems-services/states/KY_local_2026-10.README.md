@@ -24,3 +24,6 @@ KBEMS EMS Directory 2026-08-01 (Class Ia rows are the licence cross-check, step 
 - Fern Creek, Jeffersontown, St. Matthews rest on the 2023 Metro deck plus 2026 KBEMS text.
 - Spot check (largest/mid/rural) not done against an independent source; NG911 layer agrees for Jefferson, Fayette, Madison, Daviess, Hardin (86% coverage).
 - Next: Bullitt (NG911 18.5% uncovered, Mt Washington Fire & EMS), Oldham (county EMS non-transport + AmeriPro 1707), Pulaski (two licences), Laurel (Knox 1516 south Laurel), Scott, Jessamine, Pike, Boyd, Hopkins, Henderson (AMR-Henderson vs Deaconess).
+
+## 2026-10-22 promotion
+18 counties from KY_verify_2026-10.json promoted as tier A after the second audit (AUDIT_VERIFY_KY_2026-10-22.md): Scott, Jessamine, Franklin, Nelson, Barren, Hopkins, Calloway, Marshall, Boyle, Montgomery, Logan, Woodford, Taylor, Carter, Lincoln, Anderson, Rowan, Allen. Rows carry confirm_url/confirm_evidence where the audit added a second dated source. Clark and Graves stay in the verify file as held (not promoted).
