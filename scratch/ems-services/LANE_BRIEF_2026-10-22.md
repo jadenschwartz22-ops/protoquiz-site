@@ -23,3 +23,10 @@ Write ONE file per state: `states/<ST>_local_2026-10.json`, exactly:
 `ownership` is one of: county EMS, municipal fire, municipal EMS, fire district, public special district, hospital, private (contractor to <who>), nonprofit, tribal, mixed: <words>. `tier` is "A" or "held". Only counties you actually researched go in the file. Raw captures go to `states/web_raw/<ST>/` (never /tmp). Also write `states/<ST>_local_2026-10.README.md`: source list, counties A / held, and a three-county spot check (largest, mid, rural) against a source the row does not cite.
 
 Report back in <=15 lines: per state, counties A / held / skipped and the population now A; anything contradicting the current map; dead ends worth recording.
+
+## Added after the lane audit (13 of 66 failed)
+- A county EMS page never proves "whole county": check every city in the county over ~20k people for its own fire-department ambulances (Myrtle Beach, Hilton Head, Springdale, Jacksonville AR all broke rows) and for low-acuity or overflow contractors (Lexington SC MedTrust).
+- Check the state licence list for every transport licence based in the county before calling it covered.
+- Quote only text you saw on the opened page; a search snippet is not a source.
+- An unnamed set ("21 volunteer services") is not named: hold.
+- A contract or merger from the last two years needs a source dated after it.
