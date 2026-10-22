@@ -441,23 +441,33 @@
      "source_url": "https://www.stgeorgeutah.com/news/archive/2015/03/09/dsc-county-commission-votes-to-privatize-iron-county-ambulance",
      "evidence": "St George News 3/9/2015: \"the Iron County Commission voted to sell the county-owned ambulance service to Gold Cross Ambulance.\" Gold Cross press release 5/18/2026: serves counties of \"Salt Lake, Uintah, Utah, Washington, and Iron\" and provides \"911 services.\" Medicaid 1/12/2026: GOLD CROSS AMBULANCE 59,885 transports (all licences). The roster lists only one Iron County ground licence (Gold Cross). Bureau of EMS licence roster: \"Gold Cross Ambulance Services, Inc.-Iron County - Primary license #1110L\".",
      "vintage": "2026"
+    },
+    {
+     "name": "Gold Cross Ambulance (Parowan area)",
+     "transport": true,
+     "ownership": "private (contractor to Iron County)",
+     "partial": true,
+     "area": "Parowan area",
+     "source_url": "https://gephardtdaily.com/local/30-responders-helped-rescue-injured-hiker-in-iron-county/",
+     "evidence": "\"Multiple agencies responded to the afternoon call of a 39-year-old woman with a likely broken leg on the Valentine Peak Trail east of Parowan\" ... \"Members of Gold Cross Ambulance also hiked up the trail to assist.\" ... \"she was transferred to a waiting ambulance and transported to Cedar City\" (Gephardt Daily, Aug. 26, 2026).",
+     "vintage": "2026"
     }
    ],
-   "page_note": "Gold Cross Ambulance is the only ground-ambulance licence based in Iron County. Not yet confirmed from a public source: that the Parowan and Beryl response areas (62% of the county) are Gold Cross stations.",
+   "page_note": "Gold Cross Ambulance is the only ground-ambulance service licensed in Iron County and serves Cedar City and the Parowan area. Not yet confirmed from a public source: who transports in the Beryl and Escalante Valley area of western Iron County (about 38% of the county).",
    "second_source": "stgeorgeutah.com 2026 Gold Cross article (search result) says Gold Cross took control of Iron County 911 in 2015"
   },
   "49043": {
    "county": "Summit",
-   "tier": "held",
+   "tier": "A",
    "services": [
     {
      "name": "Park City Fire District",
      "transport": true,
      "ownership": "fire district",
      "partial": false,
-     "area": "Park City and the west county (56.9% of county area)",
-     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
-     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"PARK CITY AMBULANCE\" listed with 2,564 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Park City Fire District Primary License #2220L\".",
+     "area": "Park City and the Snyderville Basin, west county (56.9% of area)",
+     "source_url": "https://www.parkrecord.com/2026/09/25/answering-the-call-the-growing-role-of-ems-in-summit-county-fire-districts/",
+     "evidence": "\"During Park City Fire’s peak season, when the resorts are open, the district runs five ambulances out of seven stations and sends the closest appropriate unit to the problem.\" ... \"In 1996, the Park City Fire District contracted with Summit County to provide ambulance services to the residents of Park City\" (Park Record, Sept. 25, 2026). Medicaid Ambulance Assessment 1/12/2026: \"PARK CITY AMBULANCE\" 2,564 ground transports (CY2024).",
      "vintage": "2026"
     },
     {
@@ -465,24 +475,24 @@
      "transport": true,
      "ownership": "fire district",
      "partial": false,
-     "area": "Coalville / north-east county (22.1%)",
-     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
-     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"North Summit Fire District\" listed with 171 ground transports, calendar year 2024. Bureau of EMS licence roster: \"North Summit Fire District - Primary license #2205L\".",
+     "area": "Coalville, Henefer, Echo, Upton, Hoytsville, Wanship, north-east county (22.1%)",
+     "source_url": "https://www.parkrecord.com/2026/09/25/answering-the-call-the-growing-role-of-ems-in-summit-county-fire-districts/",
+     "evidence": "\"North Summit Fire has three ambulances and covers 500 square miles, including Coalville, Henefer, and areas of Echo, Upton, Hoytsville, Wanship, Rockport State Park and everywhere in between. The coverage area is from mile marker 150 on Interstate 80 to the Wyoming border, and from the Morgan County line to just outside of Peoa.\" (Park Record, Sept. 25, 2026). Medicaid 1/12/2026: \"North Summit Fire District\" 171 ground transports.",
      "vintage": "2026"
     },
     {
-     "name": "South Summit Fire Protection District (South Summit Ambulance Service)",
+     "name": "South Summit Fire Protection District",
      "transport": true,
      "ownership": "fire district",
      "partial": false,
-     "area": "Kamas, Oakley, Francis (21.0%)",
-     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
-     "evidence": "Medicaid Ambulance Assessment 1/12/2026: provider \"SOUTH SUMMIT FIRE PROTECTION DISTRICT\" listed with 257 ground transports (CY2024). Interlocal agreement eff. 1/1/2024 names the South Summit Fire Protection District among Summit County fire districts (utah.gov/pmn notice).",
+     "area": "Kamas, Francis, Marion, Oakley, Peoa, Woodland and the south-east county (21.0%)",
+     "source_url": "https://www.parkrecord.com/2026/09/25/answering-the-call-the-growing-role-of-ems-in-summit-county-fire-districts/",
+     "evidence": "\"The South Summit Fire Protection District, which took on its own EMS services two and a half years ago\" ... \"South Summit Fire covers Kamas, Francis, Marion, Oakley, Peoa, Woodland and other unincorporated areas of Summit County\" ... \"South Summit Fire also runs a second ambulance 12 hours a day\" ... \"Park City Fire, South Summit Fire and North Summit Fire are in the top 15%\" [of fire departments that provide ambulance services] (Park Record, Sept. 25, 2026). Medicaid 1/12/2026: 257 ground transports.",
      "vintage": "2026"
     }
    ],
-   "page_note": "EMS changed on January 1, 2024 under a county interlocal agreement: each district runs EMS in its boundaries or contracts with another. Not yet confirmed from a public source: who transports in Kamas and Coalville now (South Summit contracted Wasatch Fire for 2024 through 2025).",
-   "second_source": "UGRC Utah EMS Response Areas (ugrc_ems.geojson, raw in states/web_raw/UT): polygon assigns the area to this agency."
+   "page_note": "Summit County's three fire districts each run their own ambulances: Park City Fire District (Park City and the Snyderville Basin), North Summit Fire District (Coalville, Henefer, Echo, Wanship and the north) and South Summit Fire Protection District (Kamas, Francis, Marion, Oakley, Peoa, Woodland).",
+   "second_source": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm (all three listed with 2024 ground transports); UGRC response areas: the three district polygons cover 100% of the county."
   },
   "49047": {
    "county": "Uintah",
@@ -941,7 +951,7 @@
      "vintage": "2026"
     }
    ],
-   "page_note": "Confirmed: the six services listed. Not yet confirmed from a public source: which agency transports from Plain City (1.8% of the county) and Washington Terrace (0.3%), whose fire departments are licensed as non-transport first responders.",
+   "page_note": "Confirmed: Weber Fire District, Ogden City Fire, Roy City Fire, North View Fire District, South Ogden Fire and Riverdale Fire. Not yet confirmed from a public source: which agency transports patients from Plain City and Washington Terrace, whose fire departments are licensed for first response only.",
    "second_source": "UGRC Utah EMS Response Areas (ugrc_ems.geojson, raw in states/web_raw/UT): polygon assigns the area to this agency."
   },
   "49005": {
@@ -979,7 +989,7 @@
      "vintage": "2026"
     }
    ],
-   "page_note": "The Cache County Fire District ambulance contract went out to bid with proposals due January 2, 2026; the outcome is not yet confirmed. Not yet confirmed from a public source: who transports in the northern towns (Lewiston, Newton, Trenton, Clarkston, Richmond), where only non-transport first responders were found.",
+   "page_note": "Confirmed: Logan City Fire Department, Smithfield Fire & EMS and the Cache County Fire District ambulance. Not yet confirmed: the outcome of the county's 2026 ambulance contract, and who transports in Lewiston, Newton, Trenton, Clarkston and Richmond, where only first-response departments are licensed.",
    "second_source": "UGRC Utah EMS Response Areas (ugrc_ems.geojson, raw in states/web_raw/UT): polygon assigns the area to this agency."
   },
   "49003": {
@@ -1005,9 +1015,29 @@
      "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
      "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"TREMONTON CITY CORP\" listed with 851 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Tremonton City Fire Department - Primary license #0202L\".",
      "vintage": "2026"
+    },
+    {
+     "name": "Mountain West Ambulance (Wendover station, formerly Wendover Ambulance Service)",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": true,
+     "area": "Wendover strip, south-west county (6.8%)",
+     "source_url": "https://www.tooeleonline.com/articles/news/mountain-west-ambulance-to-acquire-wendover-ambulance/",
+     "evidence": "\"Mountain West Ambulance is pleased to announce the official acquisition of the Wendover Ambulance Service, effective Sept. 1, 2026.\" ... \"the Wendover ambulance station—located in West Wendover\" (Tooele Transcript Bulletin, Sept. 2, 2026).",
+     "vintage": "2026"
+    },
+    {
+     "name": "Tremonton City Fire Department (2026 activity)",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": true,
+     "area": "Tremonton area",
+     "source_url": "https://gephardtdaily.com/local/tremonton-fire-crews-transport-patient-after-t-bone-collision/",
+     "evidence": "Headline: \"Tremonton Fire crews transport critically injured patient after T-bone collision\" (Gephardt Daily, Oct. 12, 2026).",
+     "vintage": "2026"
     }
    ],
-   "page_note": "Confirmed: Brigham City and Tremonton fire departments. Not yet confirmed from a public source: Box Elder County Ambulance (55% of the county, with only 8 Medicaid transports), the outcome of Tremonton's August 2026 EMS bid, and the Snowville, Wendover and military areas.",
+   "page_note": "Confirmed: Brigham City and Tremonton fire departments (Tremonton Fire was still transporting patients in October 2026), and Mountain West Ambulance in the Wendover area. Not yet confirmed from a public source: Box Elder County Ambulance (55% of the county), who transports in the Thatcher-Penrose, Corinne and Garland areas, and the Snowville and military test-range areas.",
    "second_source": "UGRC Utah EMS Response Areas (ugrc_ems.geojson, raw in states/web_raw/UT): polygon assigns the area to this agency."
   },
   "49045": {
@@ -1023,28 +1053,38 @@
      "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
      "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"MOUNTAIN WEST INC\" listed with 453 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Mountain West Ambulance - Primary license #2320L\".",
      "vintage": "2026"
+    },
+    {
+     "name": "Mountain West Ambulance (Wendover station, formerly Wendover Ambulance Service)",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": true,
+     "area": "Wendover area, west county (24.4%)",
+     "source_url": "https://www.tooeleonline.com/articles/news/mountain-west-ambulance-to-acquire-wendover-ambulance/",
+     "evidence": "\"Mountain West Ambulance is pleased to announce the official acquisition of the Wendover Ambulance Service, effective Sept. 1, 2026.\" ... \"the Wendover ambulance station—located in West Wendover\" (Tooele Transcript Bulletin, Sept. 2, 2026).",
+     "vintage": "2026"
     }
    ],
-   "page_note": "Confirmed: Mountain West Ambulance. Not yet confirmed from a public source: whether Dugway Ambulance (29.3%, Army), Wendover Ambulance Service (24.4%, licensed in Elko, Nevada), UTTR Fire and EMS (3.3%) and Tooele Army Depot transport or answer the public, and the Mountain West county contract.",
+   "page_note": "Confirmed: Mountain West Ambulance, which also took over the Wendover Ambulance Service on September 1, 2026 and now covers the Wendover area. Not yet confirmed from a public source: whether the Dugway Proving Ground ambulance, the Utah Test and Training Range and Tooele Army Depot fire departments transport patients or answer the public in their areas.",
    "second_source": "UGRC Utah EMS Response Areas (ugrc_ems.geojson, raw in states/web_raw/UT): polygon assigns the area to this agency."
   },
   "49029": {
    "county": "Morgan",
-   "tier": "held",
+   "tier": "A",
    "services": [
     {
-     "name": "Morgan County Ambulance",
+     "name": "Morgan County Fire Department (Morgan County Ambulance, licence #1501L)",
      "transport": true,
      "ownership": "county EMS",
      "partial": false,
-     "area": "county (97.9%)",
-     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
-     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"MORGAN COUNTY AMBULANCE\" listed with 238 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Morgan County Ambulance - Primary license #1501L\".",
+     "area": "whole county, including Mountain Green",
+     "source_url": "https://www.morgancountyutah.gov/fire-department-about-us",
+     "evidence": "\"We are proud to serve the 12,000 residents of Morgan County, covering 611 square miles with fire suppression, technical rescue, and emergency medical services. Our department operates from a centrally located station, responding with a fleet that includes two engines, a ladder truck, two ambulances\" ... \"We work closely with our partners, including the Morgan County Sheriff’s Office, Utah Highway Patrol, Mountain Green Fire District\" (county site, live Oct 2026). Gephardt Daily Oct. 10, 2026 (I-84 crash, Mountain Green Fire responding): \"a life threatening injury was transported by Morgan Fire & EMS and Ogden Paramedics.\"",
      "vintage": "2026"
     }
    ],
-   "page_note": "Confirmed: Morgan County Ambulance. Mountain Green Fire Protection Agency (2.1% of the county, about a quarter of its population) is a licensed non-transport ALS designation; not yet confirmed that Morgan County Ambulance covers Mountain Green.",
-   "second_source": "UGRC Utah EMS Response Areas (ugrc_ems.geojson, raw in states/web_raw/UT): polygon assigns the area to this agency."
+   "page_note": "Morgan County Fire Department runs the county's ambulances for all of Morgan County, including Mountain Green, whose fire district is a first-response (non-transport) agency.",
+   "second_source": "https://gephardtdaily.com/local/construction-backup-leads-to-i-84-crash/ ; Medicaid Ambulance Assessment 1/12/2026: MORGAN COUNTY AMBULANCE 238 ground transports; Bureau of EMS roster: Mountain Green Fire Protection Agency #1502D \"QRU - ALS non transport\". ; https://gephardtdaily.com/local/mountain-green-fire-performs-complex-extrication-after-guardrail-impales-car-traps-driver-inside/ (Jan 2026, Mountain Green: \"the patient was transported to the hospital by Morgan A121\"). \"Ogden Paramedics\" = Ogden City Fire roster #2915 \"Paramedic Rescue - ALS non transport\"."
   },
   "49037": {
    "county": "San Juan",

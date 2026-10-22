@@ -1213,6 +1213,221 @@
    "tier": "held",
    "services": [],
    "page_note": "Rockcastle County EMS responds to emergencies in Rockcastle County. The state licence is held as Rockcastle County Ambulance Service; a page tying the two names together and naming who transports is not yet confirmed."
+  },
+  "21051": {
+   "county": "Clay",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Clay County EMS (licensed as Clay Co. Emergency Ambulance Service)",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.wymt.com/2026/07/10/ksp-investigating-deadly-clay-co-crash/",
+     "evidence": "Fisher was taken to AdventHealth Manchester by Clay County EMS, where he later died.",
+     "vintage": "2026-07"
+    }
+   ],
+   "page_note": "Clay County EMS carries 911 patients across Clay County (state licence: Clay Co. Emergency Ambulance Service).",
+   "second_source": "https://www.wkyt.com/2026/07/15/man-dies-after-motorcycle-hits-fallen-tree/ ; https://www.wnky.com/man-allegedly-shot-in-chest-in-clay-county/ (\"turning him over to Clay County EMS, who continued treatment and transport to an area hospital\", 2026-06)",
+   "licence_check": "Only Class Ia 911 licence naming Clay: 1359 CLAY CO. EMERGENCY AMBULANCE SERVICE (area 'Clay County'); UK 3004 is critical care. NG911 Ky_911_RSB_EMS: 'CLAY COUNTY EMS' 99.99% of county. Manchester (~1.5k) has no ambulance licence.",
+   "tie_source": "https://claycountyky.com/departments/ems/",
+   "tie_evidence": "Clay County EMS ... As an emergency Kentucky licensed ambulance service, Clay Co. EMS provides care for our county and its communities – 24/7/365. Our mission is to provide quality pre-hospital care and transportation to persons of sudden illness or injury within the 469 square miles of Clay County, Kentucky. (Clay County Fiscal Court, Ambulance / EMS department page, live 2026-10-22)"
+  },
+  "21017": {
+   "county": "Bourbon",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Paris-Bourbon County EMS",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://paris.ky.gov/ems/",
+     "evidence": "Paris-Bourbon County EMS, a division of the Fire Department, provides emergency medical services for all of Bourbon County. ... Each station operates a frontline fire apparatus and one ambulance each day.",
+     "vintage": "2026-10-19 (page published date in the city site, modified 2026-10-20)"
+    }
+   ],
+   "page_note": "Paris-Bourbon County EMS, part of the Paris Fire Department, runs the ambulances for all of Bourbon County.",
+   "second_source": "",
+   "licence_check": "Only Ia 911 licence: 1417 PARIS-BOURBON COUNTY EMS ('Paris and Bourbon County'); others are event (8001), community paramedicine (5002), UK critical care (3004). NG911 'PARIS FIRE & EMS' 99.98%. City page itself is dated 2026-10-19 (WordPress page date); no 2024+ news names a different provider."
+  },
+  "21147": {
+   "county": "McCreary",
+   "tier": "A",
+   "services": [
+    {
+     "name": "McCreary County EMS (licensed as McCreary Co. Ambulance Service)",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.z93country.com/mccreary-county-ambulance-caught-fire-after-dropping-off-patient/",
+     "evidence": "McCreary County EMS crew driving Ambulance 82 was traveling on West KY 92 going up Yamacraw Hill after having came back from a run dropping a patient off at the Wayne County Hospital",
+     "vintage": "2026-04-27"
+    }
+   ],
+   "page_note": "McCreary County EMS carries 911 patients across McCreary County (state licence: McCreary Co. Ambulance Service).",
+   "second_source": "https://www.wnky.com/two-dead-following-mccreary-county-crash/ (\"transported by McCreary County EMS to Lake Cumberland Regional Hospital\", 2025-07-23)",
+   "licence_check": "Only licence naming McCreary: 1312 MCCREARY CO. AMBULANCE SERVICE (Ia, 'McCreary County'). NG911 'McCreary County EMS | mccrearycounty.com' 99.96%.",
+   "tie_source": "https://mccrearycounty.com/county-departments/",
+   "tie_evidence": "Emergency Medical EMS / Ambulance / 911 Center Jimmy Barnett (EMS/911 Director) (McCreary County Fiscal Court departments page, live 2026-10-22: one county department for EMS and ambulance)"
+  },
+  "21221": {
+   "county": "Trigg",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Trigg County Hospital Ambulance Service",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.kentuckynewera.com/news/local/article_eb74d8d4-096c-5a26-b0cc-79c713e5f597.html",
+     "evidence": "Sumner noted that the hospital’s ambulance service area includes anywhere from the Kentucky Lake Bridge to Land Between the Lakes, from Cerulean to Wallonia, to Roaring Springs and Linton.",
+     "vintage": "2026-09-01"
+    }
+   ],
+   "page_note": "Trigg County Hospital runs the ambulance service for Trigg County.",
+   "second_source": "",
+   "licence_check": "Only Ia 911 licence: 1366 TRIGG CO. HOSPITAL AMBULANCE SERVICE ('Trigg County'); Deaconess Women's 3008 critical care, Vanderbilt 2002 IFT. NG911 'TRIGG CO HOSPITAL' 100%."
+  },
+  "21011": {
+   "county": "Bath",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Bath County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.lex18.com/news/crime/3-kids-injured-in-hit-and-run-crash-involving-amish-buggy-in-bath-co-man-facing-several-charges",
+     "evidence": "According to the citation, three kids were taken by Bath County EMS to UK Hospital for their injuries.",
+     "vintage": "2025-07-25"
+    }
+   ],
+   "page_note": "Bath County EMS carries 911 patients in Bath County.",
+   "second_source": "",
+   "licence_check": "Only Ia 911 licence: 1553 Bath County EMS ('Bath County'). NG911 PSAP-labelled zone 99.5%, 0.45% Montgomery edge (boundary noise)."
+  },
+  "21197": {
+   "county": "Powell",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Powell County Ambulance Service",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://powellcounty.ky.gov/department/Pages/ambulance.aspx",
+     "evidence": "We are located in the center of Powell County in the city of Stanton and serve all of Powell County. ... Our ambulance service offers both emergency and non-emergency transportation to the citizens of Powell County.",
+     "vintage": "live page fetched 2026-10-22"
+    }
+   ],
+   "page_note": "Powell County Ambulance Service, based in Stanton, covers all of Powell County.",
+   "second_source": "https://www.lex18.com/news/covering-kentucky/safe-haven-baby-box-to-be-unveiled-at-powell-county-ambulance-service",
+   "confirm_evidence": "installation of a Safe Haven Baby Box at the Powell County Ambulance Service ... at the ambulance service headquarters, located at 56 Adkinson Street (LEX18, 2026-09-08)",
+   "licence_check": "Only Ia 911 licence: 1273 Powell County Ambulance Service ('Powell County, KY'). NG911 99.99%. RedSTAR Wilderness EMS agreement (non-transport) terminated 2025-03."
+  },
+  "21233": {
+   "county": "Webster",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Deaconess EMS",
+     "transport": true,
+     "ownership": "private (licensed hospital-system service, 911 for Webster County)",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.the-messenger.com/journal_enterprise/news/local/article_7ad4c792-75a5-5bb2-b234-e3252e9c4201.html",
+     "evidence": "She was wearing a seatbelt and reported minor injuries but refused transport by Deaconess EMS. ... Deputy Elder was assisted at the scene by Sheriff William Braden, Sebree Rescue, and Deaconess EMS.",
+     "vintage": "2025-10-16"
+    }
+   ],
+   "page_note": "Deaconess EMS carries 911 patients in Webster County. The City of Providence also runs its own ambulance service (Providence EMS, state licence for the city and nearby area), and which parts of the county it carries patients from is not yet confirmed.",
+   "second_source": "https://www.the-messenger.com/journal_enterprise/news/local/article_26d00426-9055-509d-bf2a-bb774c649bea.html",
+   "confirm_evidence": "Three were transported by ambulance to area hospitals ... The WCSO and SFD were assisted at the scene by Deaconess EMS, Air Evac (Journal-Enterprise, 2025-04-03)",
+   "licence_check": "Only Ia licence naming Webster: 1646 Deaconess EMS, LLC (address Webster, 'Webster County'). NG911 zone labelled 'Webster County EMS | webstercountykentucky.org' 99.99% (label is the county, not a second agency; no Webster County EMS licence exists). Providence/Sebree/Clay are small cities with no ambulance licence. AUDIT: KBEMS 2026-08-01 also lists 1331 PROVIDENCE FIRE DEPT. EMS, Class Ia 911 with transport, City of Providence + 30-minute area; Journal-Enterprise 2026-04-23/06-18/07-09: Providence ambulance taxing district, new city ambulance (\"If we stay in the ambulance business\")."
+  },
+  "21169": {
+   "county": "Metcalfe",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Barren-Metcalfe EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.wnky.com/metcalfe-county-emergency-personnel-respond-to-two-vehicle-collision-with-reported-injuries/",
+     "evidence": "fire units, along with the Edmonton/Metcalfe Volunteer Fire Department, Metcalfe County Sheriff’s Office, and Barren-Metcalfe EMS, responded to a motor vehicle accident with injuries ... Firefighters extracted patients from the vehicles and assisted EMS with care.",
+     "vintage": "2026-08-28"
+    }
+   ],
+   "page_note": "Barren-Metcalfe EMS, the same service that covers Barren County, carries 911 patients in Metcalfe County.",
+   "second_source": "https://www.wnky.com/multiple-injured-infant-transported-after-collision-in-metcalfe-county/ (\"All injured were removed from the scene by Barren-Metcalfe EMS and transported to T.J. Samson Community Hospital\", 2026-03-24)",
+   "licence_check": "Only licence naming Metcalfe: 1281 Barren-Metcalfe EMS (Ia, 'Barren & Metcalfe County'). NG911 'Barren-Metcalfe Ambulance Service | metcalfecounty.ky.gov' 100%. Barren row (same service, 'transported by Barren-Metcalfe EMS') already passed audit."
+  },
+  "21123": {
+   "county": "LaRue",
+   "tier": "held",
+   "services": [
+    {
+     "name": "LaRue County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.pmg-ky2.com/larue/news/larue-county-finds-potential-use-for-opioid-funds/article_6376f73a-7fd4-5377-8ee7-4c452e7f5128.html",
+     "evidence": "five small lock boxes that are kept inside each ambulance ... Cottrell reported 216 EMS runs in August. Total billable transports in Sept. were 158",
+     "vintage": "2026-09-30"
+    }
+   ],
+   "page_note": "LaRue County EMS carries 911 patients in LaRue County. Small areas on the county's northern and western edges near Upton and Sonora are not yet confirmed.",
+   "second_source": "https://laruecountyky.gov/departments/ems/",
+   "licence_check": "Only licence: 1361 LARUE COUNTY EMS. NG911 'LaRue County EMS' 94-97%, plus zones labelled 'Upton EMS' 2.2% and 'Sonora EMS' 1.5% (Upton/Sonora are Hardin County EMS station towns); unexplained, so held."
+  },
+  "21229": {
+   "county": "Washington",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Washington County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.pmg-ky2.com/springfield/news/three-car-accident-on-perryville-road-leaves-two-with-injuries/article_b0bfdc5a-9854-5575-b0b4-bfd74ed00046.html",
+     "evidence": "he was then transported to Springview Hospital in Lebanon, Kentucky, by Washington County EMS.",
+     "vintage": "2026-07-22"
+    }
+   ],
+   "page_note": "Washington County EMS carries 911 patients in Washington County. The link between this name and the state-licensed Washington Co. Ambulance Service is not yet confirmed on a public page.",
+   "second_source": "https://www.pmg-ky2.com/springfield/news/first-responders-honor-longtime-ems-leader-bruce-milburn/article_876dff10-0914-5fd1-a5b4-df4be1f01227.html",
+   "licence_check": "Only licence: 1365 Washington Co. Ambulance Service; NG911 'Washington County Ambulance Service' 99.99%. Held on the name mismatch, same rule as Casey/Garrard/Rockcastle."
+  },
+  "21153": {
+   "county": "Magoffin",
+   "tier": "held",
+   "services": [
+    {
+     "name": "AmeriPro Health",
+     "transport": true,
+     "ownership": "private (contractor to Magoffin County Fiscal Court)",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.wymt.com/2026/07/01/magoffin-co-names-ameripro-long-term-ems-provider/",
+     "evidence": "AmeriPro Health has been awarded a five-year contract to provide emergency ambulance services in Magoffin County, following several months of interim 911 coverage ... AmeriPro will provide Advanced Life Support (ALS) ambulance coverage for an estimated 11,040 residents across Magoffin County’s 309-square-mile service area.",
+     "vintage": "2026-07-01"
+    }
+   ],
+   "page_note": "Since June 2026 AmeriPro Health holds Magoffin County's five-year emergency ambulance contract. Whether any other service still answers 911 calls in the county is not yet confirmed.",
+   "second_source": "",
+   "licence_check": "KBEMS 2026-08-01 still lists Magoffin County Ambulance Service 1699 and Lifeguard 1611 (Ia, Magoffin) and no AmeriPro licence naming Magoffin; the current map names those two. Contract is newer than the map; AmeriPro licence status not seen."
   }
  }
 }

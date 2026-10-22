@@ -1,0 +1,15 @@
+# KY audit of KY_verify8_2026-10.json, 2026-10-22 (LANE_BRIEF_AUDIT.md)
+
+Method: every source re-opened by curl (web_raw/KY/audit8/, fetch.py), every quote found; KBEMS 2026-08-01 licences listed per county by address county and service-area text (KY_public_2026-10.json); one own search per county (Google News titles via v8/gg.py, BLOX RSS via v8/x.py). Name rule (Casey/Garrard/Rockcastle): news "<County> County EMS" vs licence "... Ambulance Service" passes only when an opened page ties the two names; NG911 zone labels were not counted as the tie.
+
+- 21017 Bourbon (20,333) PASS. paris.ky.gov/ems quotes found ("all of Bourbon County", "one ambulance each day"); page itself dated 2026-10-19 (WordPress page date, modified 2026-10-20), which closes the vintage gap; sole Ia 911 licence 1417 Paris-Bourbon County EMS (exact name); others event/community-paramedicine/UK critical care; own search: no other provider.
+- 21051 Clay (19,592) PASS. WYMT 2026-07 transport quote found. Name tie found: Clay County Fiscal Court "Ambulance / EMS" page (claycountyky.com/departments/ems/): "Clay County EMS ... As an emergency Kentucky licensed ambulance service ... transportation ... within the 469 square miles of Clay County". Sole Ia licence 1359; own search: WNKY 2026-06 "Clay County EMS, who continued treatment and transport".
+- 21147 McCreary (16,824) PASS. Z93 2026-04 quote found. Name tie: McCreary County Fiscal Court departments page lists one county department "EMS / Ambulance / 911 Center" under the EMS/911 Director; licence 1312 is governmental and the only one naming the county. Own search: WNKY 2025-07 "transported by McCreary County EMS to Lake Cumberland Regional Hospital".
+- 21221 Trigg (14,559) PASS. New Era 2026-09-01 quote found; same article: judge-executive says the fiscal court meets its ambulance duty through Trigg County Hospital; sole Ia 911 licence 1366; Deaconess Women's critical care and Vanderbilt IFT excluded. Own search: only hospital ambulance stories.
+- 21011 Bath (12,951) PASS. LEX18 2025-07 quote found; own search adds LEX18 2025-09 "Bath County EMS took King to UK St. Claire"; sole Ia licence 1553, exact name.
+- 21197 Powell (12,928) PASS. County page quotes found; LEX18 2026-09 ambulance service HQ; sole Ia licence 1273, exact name; RedSTAR (non-transport) ended 2025-03.
+- 21233 Webster (12,854) FAIL. Quotes found, but KBEMS also lists 1331 PROVIDENCE FIRE DEPT. EMS (Class Ia, 911 with transport, City of Providence + 30-minute area), which the row says does not exist; Journal-Enterprise 2026-04-23, 06-18, 07-09: Providence formed an ambulance taxing district and bought a new city ambulance to "stay in the ambulance business". Unexplained transporter.
+- 21169 Metcalfe (10,558) PASS. WNKY 2026-08 quote found (response only); own search adds WNKY 2026-03-24 "removed from the scene by Barren-Metcalfe EMS and transported to T.J. Samson" (Metcalfe crash), added as second_source; sole licence 1281 Barren & Metcalfe.
+
+Audited 8, passed 7, failed 1; population passed 107,745.
+Held rows promoted unchanged: LaRue 21123, Washington 21229, Magoffin 21153 (AmeriPro since 2026-06).
