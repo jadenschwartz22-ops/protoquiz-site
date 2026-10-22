@@ -174,7 +174,7 @@ main{padding-bottom:64px;}
   border:1px solid var(--rule);
 }
 /* The tier ramp in the legend: same colour, stepped down, the way the map draws it. */
-.rm-fade{background:linear-gradient(90deg,#0072B2 0%,rgba(0,114,178,.38) 100%);}
+.rm-fade{background:repeating-linear-gradient(45deg,rgba(255,255,255,.6) 0 2px,transparent 2px 5px),#6b6b6b;}
 
 /* Table. A 50-row table is the reference half of the page; it scrolls on its own
    rather than forcing the page sideways on a phone. */

@@ -13,6 +13,7 @@
 // agency placed at its billing address; IFT and air carriers mixed in with 911
 // responders). Opacity carries the tier exactly as build_map.py already does it, so a
 // guess renders visibly faint and no county is published as known when it is not.
+// Inferred counties are also striped: opacity alone barely shows outside blue.
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 
 const GEO = 'data/county-paths.json';
@@ -30,6 +31,7 @@ const COL = {
   mixed: '#8C6BB1', unknown: '#c9c6bf',
 };
 const OPACITY = { A: 1, B: 0.85, C: 0.62, D: 0.38 };
+const STRIPED = ['public', 'private', 'hospital', 'mixed'];
 const LABEL = {
   public: 'Public', private: 'Private', hospital: 'Hospital',
   mixed: 'Mixed', unknown: 'Unknown',
@@ -54,7 +56,8 @@ const paths = Object.entries(geo.counties).map(([fips, d]) => {
   // but it is display copy -- 422 county names repeat across states, so the state
   // suffix is the only thing keeping it unique, and an escaped ampersand or a renamed
   // county would silently break the join. FIPS is the identifier; the title is words.
-  return `<path d="${d}" fill="${COL[own] ?? COL.unknown}" fill-opacity="${op}" class="cty" data-f="${fips}">`
+  const fill = blank || c.tier === 'A' || !STRIPED.includes(own) ? COL[own] ?? COL.unknown : `url(#rm-h-${own})`;
+  return `<path d="${d}" fill="${fill}" fill-opacity="${op}" class="cty" data-f="${fips}">`
     + `<title>${esc(c.name)}, ${c.st}: ${LABEL[own] ?? own} — ${tierWord}</title></path>`;
 });
 
@@ -106,13 +109,15 @@ const legend = ['public', 'private', 'hospital', 'mixed']
 
 const html = `<figure class="research-map">
   <svg viewBox="${VIEWBOX}" role="img" aria-label="Every US county coloured by who owns the agency that answers the 911 call" class="rm-svg">
+    <defs>${STRIPED.map(k => `<pattern id="rm-h-${k}" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="4" height="4" fill="${COL[k]}"/><rect width="1.5" height="4" fill="#fff" fill-opacity=".6"/></pattern>`).join('')}</defs>
 ${paths.map(p => '    ' + p).join('\n')}
     ${states}
   </svg>
   <figcaption class="rm-cap">
     <span class="rm-keys">
 ${legend}
-      <span class="rm-key"><i class="rm-fade"></i>fainter &#61; weaker evidence</span>
+      <span class="rm-key"><i style="background:#6b6b6b"></i>Solid &#61; named by a record</span>
+      <span class="rm-key"><i class="rm-fade"></i>Striped &#61; inferred, fainter &#61; weaker</span>
     </span>
     Every county, coloured by who owns the agency that answers the 911 call. <strong>${n(answered)}</strong> of ${n(Object.keys(S).length)} have an answer; <strong>${n(nA)}</strong> of those &mdash; ${Math.round((popA / tot) * 100)}% of the population &mdash; are named directly by a state or agency record. The rest are inferred and drawn fainter: a lead, not a fact.
   </figcaption>

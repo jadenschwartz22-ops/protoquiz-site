@@ -15,10 +15,33 @@
   var pick = document.getElementById('st-pick');
   if (pick) {
     Object.keys(NAMES).forEach(function (k) { var o = document.createElement('option'); o.value = k; o.textContent = NAMES[k]; pick.appendChild(o); });
-    pick.addEventListener('change', function () { location.href = pick.value ? '?state=' + pick.value : location.pathname; });
+    pick.addEventListener('change', function () { pick.value ? go(pick.value) : leave(); });
   }
-  var want = (new URLSearchParams(location.search).get('state') || '').toUpperCase();
   var host = document.getElementById('state-view');
+  var stateOf = function () { return (new URLSearchParams(location.search).get('state') || '').toUpperCase(); };
+  // A state opens in place, without reloading the 1MB national page. The national map only
+  // measures itself correctly if it was laid out first, so a page that LANDED on a state
+  // goes back to all states by a real navigation.
+  var startedNational = !stateOf(), seq = 0, onEsc = null, title0 = document.title;
+  function go(st) { history.pushState(null, '', '?state=' + st); window.scrollTo(0, 0); show(st); }
+  function leave() { if (!startedNational) { location.href = location.pathname; return; } history.pushState(null, '', location.pathname); national(); }
+  function national() {
+    seq++; onEsc = null;
+    document.documentElement.classList.remove('state-mode');
+    host.hidden = true; host.innerHTML = ''; host.classList.remove('ss-in');
+    document.title = title0; if (pick) pick.value = '';
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="?state="], a.ss-all');
+    if (!a || !host || e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;
+    e.preventDefault();
+    a.classList.contains('ss-all') ? leave() : go(a.getAttribute('href').slice(7).toUpperCase());
+  });
+  window.addEventListener('popstate', function () { var st = stateOf(); st ? show(st) : startedNational ? national() : location.reload(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && onEsc) onEsc(); });
+  show(stateOf());
+
+  function show(want) {
   if (host && /^[A-Z]{2}$/.test(want) && !NAMES[want]) {
     document.documentElement.classList.remove('state-mode');
     host.hidden = false;
@@ -32,7 +55,8 @@
   var name = NAMES[want];
   document.title = name + ' - The American EMS Atlas';
 
-  var eyebrow = '<p class="res-eyebrow"><a href="' + location.pathname + '">&larr; All states</a>'
+  var tok = ++seq; onEsc = null;
+  var eyebrow = '<p class="res-eyebrow"><a class="ss-all" href="' + location.pathname + '">&larr; All states</a>'
     + ((window.CENSUS_STATES || []).indexOf(want.toLowerCase()) >= 0 ? ' &nbsp;&middot;&nbsp; <a href="/census/states/' + want.toLowerCase() + '/">Protocol census: ' + name + ' &rarr;</a>' : '') + '</p>';
 
   var esc = function (t) { return String(t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
@@ -44,10 +68,11 @@
   // Same skeleton as the loaded page (eyebrow, title, a map-shaped box), so nothing moves when the data lands.
   host.innerHTML = eyebrow + '<h1>' + name + '</h1><p class="lede ss-skel-line">&nbsp;<br>&nbsp;</p><div class="ss-skel"></div>';
 
-  Promise.all(window.__atlas || ['/data/atlas/geo/' + want + '.json', '/data/atlas/' + want + '.json'].map(function (u) {
+  var pre = window.__atlas; window.__atlas = null;
+  Promise.all(pre || ['/data/atlas/geo/' + want + '.json', '/data/atlas/' + want + '.json'].map(function (u) {
     return fetch(u).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); });
-  })).then(function (res) { render(res[0], res[1]); }).catch(function () {
-    host.querySelector('.lede').textContent = 'This state could not be loaded. Try again in a moment.';
+  })).then(function (res) { if (tok === seq) render(res[0], res[1]); }).catch(function () {
+    if (tok === seq) host.querySelector('.lede').textContent = 'This state could not be loaded. Try again in a moment.';
   });
 
   function render(geo, D) {
@@ -159,7 +184,7 @@
       tip.innerHTML = '<b>' + esc(c.name) + '</b><span>' + (c.tier === '-' ? 'No usable source' : ownLabel(c) + ' &middot; ' + tierText(c).toLowerCase()) + '</span>';
       tip.style.left = (e.clientX - r.left) + 'px'; tip.style.top = (e.clientY - r.top) + 'px'; tip.classList.add('on');
     });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') clear(); });
+    onEsc = clear;
     svg.addEventListener('pointerleave', function () { tip.classList.remove('on'); });
     svg.addEventListener('click', function (e) { var p = e.target.closest && e.target.closest('.cty'); if (p) select(p.getAttribute('data-f'), true); });
     host.querySelector('tbody').addEventListener('click', function (e) { var r = e.target.closest('tr[data-f]'); if (r) select(r.getAttribute('data-f'), false); box.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); });
@@ -181,5 +206,6 @@
     });
     var h0 = location.hash.slice(1);
     if (D[h0]) select(h0, false), box.scrollIntoView({ block: 'nearest' });
+  }
   }
 })();

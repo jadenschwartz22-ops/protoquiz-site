@@ -531,21 +531,28 @@ ${excluded.map(stateRow).join('\n')}
         function row(k, v) {
           return '<dl class="rm-row"><dt>' + k + '</dt><dd>' + v + '</dd></dl>';
         }
+        function title(name, st) {
+          var sn = (window.ATLAS_STATES || {})[st] || st;
+          pTitle.textContent = name + ', ';
+          var sl = document.createElement('a');
+          sl.className = 'rm-statelink'; sl.href = '?state=' + st; sl.textContent = sn;
+          sl.title = 'See all of ' + sn + ' county by county';
+          pTitle.appendChild(sl);
+          return sn;
+        }
         function render(f, fallbackTitle) {
           var c = COUNTIES && COUNTIES[f];
           if (!c) { // the file is still loading, or this county is not in it
-            pTitle.textContent = fallbackTitle || 'This county';
+            // The state link comes from the path's own "Name, ST" so it is clickable at once.
+            var cut = (fallbackTitle || '').lastIndexOf(', ');
+            if (cut > 0) title(fallbackTitle.slice(0, cut), fallbackTitle.slice(cut + 2));
+            else pTitle.textContent = fallbackTitle || 'This county';
             pSub.textContent = '';
             pBody.textContent = COUNTIES ? 'No record published for this county.' : 'Loading...';
             return;
           }
           var own = OWN[c.ownership], blank = c.tier === '-';
-          var sn = (window.ATLAS_STATES || {})[c.st] || c.st;
-          pTitle.textContent = c.name + ', ';
-          var sl = document.createElement('a');
-          sl.className = 'rm-statelink'; sl.href = '?state=' + c.st; sl.textContent = sn;
-          sl.title = 'See all of ' + sn + ' county by county';
-          pTitle.appendChild(sl);
+          var sn = title(c.name, c.st);
           // 146 counties have a usable tier but no ownership we could classify. They
           // are NOT the same as the 299 with no source at all, and neither is the
           // county lacking a service -- both are gaps in our reading.
@@ -613,15 +620,14 @@ ${excluded.map(stateRow).join('\n')}
               panel.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion:reduce)').matches ? 'auto' : 'smooth', block: 'nearest' });
           }
         }
-        // The county file (~270KB) is fetched the moment a pointer reaches the map, not
-        // on the first click, so the first panel opens filled instead of on "Loading...".
         function load() {
           return loading || (loading = fetch('/data/county-911.json')
             .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
             .then(function (j) { COUNTIES = j; })
             .catch(function () { COUNTIES = {}; }));
         }
-        view.addEventListener('pointerenter', load, { once: true });
+        // Fetched once the page is idle, so a first tap (no hover on a phone) opens a filled panel.
+        (window.requestIdleCallback || setTimeout)(load);
 
         // A click only counts when the pointer did not travel: otherwise the end of
         // every pan would pop a panel open over the county you dragged to.
