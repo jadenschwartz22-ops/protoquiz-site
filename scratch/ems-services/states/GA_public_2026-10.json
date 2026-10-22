@@ -1,0 +1,127 @@
+{
+ "meta": {
+  "state": "GA",
+  "retrieved": "2026-10-21",
+  "source": "County government pages (3); GIO NG911 EMS boundary layer holds only Newton County, EMS 1-5 zones, no provider names (dead end)",
+  "counts": {
+   "A": 2,
+   "partial": 1
+  },
+  "blank_counties_probed": 18,
+  "blank_counties_no_page_found": [
+   "Baker",
+   "Baldwin",
+   "Ben Hill",
+   "Chattooga",
+   "Clay",
+   "Clinch",
+   "Cook",
+   "Echols",
+   "Lamar",
+   "Lanier",
+   "Pike",
+   "Quitman",
+   "Taliaferro",
+   "Treutlen"
+  ]
+ },
+ "rows": [
+  {
+   "county": "Randolph",
+   "fips": "13243",
+   "area": "entire county",
+   "provider": "Randolph County EMS",
+   "ownership": "county EMS (Randolph County Ambulance Service)",
+   "transport": true,
+   "source_url": "https://www.randolphcountyga.com/ems-(ambulance-services)",
+   "evidence": "\"Randolph County EMS is licensed by the Georgia Department of Human Resources and provides primary 911 EMS service to nearly 8,000 people spread over 431 square miles.\" Also: \"The EMS transports patients when needed to the Southwest Georgia Regional Medical Center in Cuthbert ... Dial 911 for all emergencies.\"",
+   "vintage": "2026-10-21",
+   "raw": "downloads/ga_2026-10/ga_sites/Randolph_5149.html",
+   "note": "County-run; page names the two municipalities (Cuthbert, Shellman) and mutual aid to neighbours.",
+   "st": "GA",
+   "tier_supported": "A"
+  },
+  {
+   "county": "Mitchell",
+   "fips": "13205",
+   "area": "entire county",
+   "provider": "AmeriPro EMS",
+   "ownership": "private (contractor to Mitchell County)",
+   "transport": true,
+   "source_url": "https://www.mitchellcountyga.net/ems/",
+   "evidence": "\"AmeriPro EMS is a private company that contracts their services to Mitchell County. Emergency Services 911 service for the citizens of Mitchell County Advanced Life Support and Basic Life Support 911 services depending on the nature of the call. Three 24-hour ALS 911 ambulance.\"",
+   "vintage": "2026-10-21",
+   "raw": "downloads/ga_2026-10/ga_sites/Mitchell_8306.html",
+   "note": "County page, department \"Emergency Medical Services\"; operations manager 24/7 line listed. AmeriPro EMS also appears (Upson County) in states/GA_grant.json, which does not list Mitchell (positive-only list).",
+   "st": "GA",
+   "tier_supported": "A"
+  },
+  {
+   "county": "Brooks",
+   "fips": "13027",
+   "area": "county (listed as the county EMS service)",
+   "provider": "Brooks County EMS (South Georgia Medical Center)",
+   "ownership": "hospital (South Georgia Medical Center, Valdosta)",
+   "transport": null,
+   "source_url": "https://brookscountyga.gov/dispatch-911-emergency-managment",
+   "evidence": "County 911/EMA page: \"Brooks County EMS Services Brooks County EMS \\ SGMS SGMC, 2501 North Patterson St., Valdosta, GA 31602\". The separate Medical Services page is JavaScript-rendered and was not readable.",
+   "vintage": "2026-10-21",
+   "raw": "downloads/ga_2026-10/brooks_911.html",
+   "note": "The listing is terse and the \"SGMS\" is a typo on the county page; it names the hospital as the county EMS service, no sentence on transport or area. CMS 2024 shows Hospital Authority Of Valdosta And Lowndes County billing 3,277 emergency transports (share 0.84), consistent with SGMC running ambulances but not county-specific. Held partial.",
+   "st": "GA",
+   "tier_supported": "partial"
+  }
+ ],
+ "county_verdict": {
+  "13243": {
+   "county": "Randolph County",
+   "tier": "A",
+   "add": [
+    {
+     "name": "Randolph County EMS",
+     "basis": "serves",
+     "partial": false,
+     "kind": "local",
+     "via": "Georgia county government page",
+     "url": "https://www.randolphcountyga.com/ems-(ambulance-services)",
+     "note": "entire county; County-run; page names the two municipalities (Cuthbert, Shellman) and mutual aid to neighbours"
+    }
+   ]
+  },
+  "13205": {
+   "county": "Mitchell County",
+   "tier": "A",
+   "add": [
+    {
+     "name": "AmeriPro EMS",
+     "basis": "serves",
+     "partial": false,
+     "kind": "local",
+     "via": "Georgia county government page",
+     "url": "https://www.mitchellcountyga.net/ems/",
+     "note": "entire county; County page, department \"Emergency Medical Services\"; operations manager 24/7 line listed"
+    }
+   ]
+  },
+  "13027": {
+   "county": "Brooks County",
+   "tier": "C",
+   "add": [
+    {
+     "name": "Brooks County EMS (South Georgia Medical Center)",
+     "basis": "located",
+     "partial": true,
+     "kind": "local",
+     "via": "Georgia county government page",
+     "url": "https://brookscountyga.gov/dispatch-911-emergency-managment",
+     "note": "county (listed as the county EMS service); The listing is terse and the \"SGMS\" is a typo on the county page; it names the hospital as the county EMS service, no sentence on transport or area"
+    }
+   ]
+  },
+  "13087": {
+   "county": "Decatur County",
+   "tier": "unchanged",
+   "page_note": "County EMS page shows \"Grady EMS\" with a Bainbridge phone number but links grady-ems.org, which now redirects to Grady Health System (Atlanta) EMS; provider ambiguous, not rowed. Needs a phone call or the GA county agreement."
+  }
+ }
+}

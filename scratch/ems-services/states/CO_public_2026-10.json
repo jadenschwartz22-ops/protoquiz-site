@@ -1,0 +1,86 @@
+{
+ "meta": {
+  "state": "CO",
+  "source": "Park County, CO GIS \"Ambulance Districts\" ArcGIS layer (owner shasselbusch_parkgis)",
+  "retrieved": "2026-10-21",
+  "scope": "Park County only; the other non-metro counties had no layer in the sweep (Pitkin Aspen Ambulance District layer exists but unchecked)",
+  "tier_counts": {
+   "A": 1
+  }
+ },
+ "rows": [
+  {
+   "name": "Southern Park County FPD",
+   "county": "Park",
+   "website": "https://www.guffeyfire.net",
+   "source_note": "EMS covered by SPCFPD",
+   "boundary_update_field": null,
+   "transport": null,
+   "transport_basis": "county ambulance/fire district polygon; layer does not say transport (not asserted)",
+   "source_url": "https://services3.arcgis.com/atP7uTVHA2caR3p6/arcgis/rest/services/Ambulance_Districts/FeatureServer/0",
+   "vintage_layer_edit": "2025-09-17 (district records inside date 2002-2010)"
+  },
+  {
+   "name": "Platte Canyon FPD",
+   "county": "Park",
+   "website": "https://www.plattecanyonfire.com",
+   "source_note": "used to be PC Rescue, then North Park Co EMS",
+   "boundary_update_field": 1292976000000,
+   "transport": null,
+   "transport_basis": "county ambulance/fire district polygon; layer does not say transport (not asserted)",
+   "source_url": "https://services3.arcgis.com/atP7uTVHA2caR3p6/arcgis/rest/services/Ambulance_Districts/FeatureServer/0",
+   "vintage_layer_edit": "2025-09-17 (district records inside date 2002-2010)"
+  },
+  {
+   "name": "South Park Ambulance District",
+   "county": "Park",
+   "website": "https://southparkambulance.com",
+   "source_note": "modified 7/15/02 to match PCFPD",
+   "boundary_update_field": 1026691200000,
+   "transport": null,
+   "transport_basis": "county ambulance/fire district polygon; layer does not say transport (not asserted)",
+   "source_url": "https://services3.arcgis.com/atP7uTVHA2caR3p6/arcgis/rest/services/Ambulance_Districts/FeatureServer/0",
+   "vintage_layer_edit": "2025-09-17 (district records inside date 2002-2010)"
+  },
+  {
+   "name": "Ute Pass Regional Ambulance District",
+   "county": "Park",
+   "website": "https://www.uprhsd.org",
+   "source_note": null,
+   "boundary_update_field": 1260662400000,
+   "transport": null,
+   "transport_basis": "county ambulance/fire district polygon; layer does not say transport (not asserted)",
+   "source_url": "https://services3.arcgis.com/atP7uTVHA2caR3p6/arcgis/rest/services/Ambulance_Districts/FeatureServer/0",
+   "vintage_layer_edit": "2025-09-17 (district records inside date 2002-2010)"
+  }
+ ],
+ "county_verdict": {
+  "08093": {
+   "county": "Park County",
+   "pop": 18316,
+   "tier": "A",
+   "ems_coverage": 0.9994,
+   "overlap_share": 0.0109,
+   "services": [
+    {
+     "name": "Platte Canyon FPD",
+     "share": 0.1256
+    },
+    {
+     "name": "South Park Ambulance District",
+     "share": 0.6662
+    },
+    {
+     "name": "Southern Park County FPD",
+     "share": 0.1042
+    },
+    {
+     "name": "Ute Pass Regional Ambulance District",
+     "share": 0.1144
+    }
+   ],
+   "basis": "Park County GIS (shasselbusch_parkgis) ambulance-district layer: four districts tile the county; all named, none picked",
+   "page_note": "Layer item edited 2025-09, but the district rows carry update dates of 2002 to 2010 and a note that Platte Canyon \"used to be PC Rescue, then North Park Co EMS\"; boundaries rarely move, names confirmed by the existing tier B answer."
+  }
+ }
+}

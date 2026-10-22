@@ -1,0 +1,1977 @@
+{
+ "meta": {
+  "retrieved": "2026-10-21",
+  "source": "Vermont Center for Geographic Information (VCGI), VT Ambulance Service Areas, data steward at the State of Vermont (KJ Johnston)",
+  "item": "https://www.arcgis.com/home/item.html?id=92590d21b8f94b9cbbff87b108b09d10",
+  "layer": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0",
+  "layer_data_last_edit": "2025-12-08",
+  "item_modified": "2026-08-28",
+  "polygons": 67,
+  "distinct_services": 67,
+  "a_threshold": 0.95,
+  "min_share_listed": 0.01,
+  "assignment_rule": "VCGI: in towns with overlapping services, coverage area was assigned to the provider with the largest geographic area or serving the most residents (one provider of record per town)",
+  "tier_counts": {
+   "A": 14
+  }
+ },
+ "rows": [
+  {
+   "name": "45th Parallel Emergency Medical Services",
+   "cert_level": "Paramedic",
+   "hq_city": "Colebrook",
+   "hq_state": "NH",
+   "total_transports": null,
+   "transport": null,
+   "coverage_area_towns": [
+    "Canaan",
+    "Lemington",
+    "Bloomfield"
+   ],
+   "counties": {
+    "Essex County": 0.1617
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Alburgh Rescue, Inc.",
+   "cert_level": "Advanced EMT",
+   "hq_city": "Alburgh",
+   "hq_state": "VT",
+   "total_transports": 285,
+   "transport": true,
+   "coverage_area_towns": [
+    "Alburgh",
+    "Isle LaMotte"
+   ],
+   "counties": {
+    "Grand Isle County": 0.3406
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Amcare Medical Systems",
+   "cert_level": "Paramedic - Critical Care Endorsement",
+   "hq_city": "Saint Albans",
+   "hq_state": "VT",
+   "total_transports": 3406,
+   "transport": true,
+   "coverage_area_towns": [
+    "St Albans Town",
+    "St Albans City",
+    "Fairfield",
+    "Sheldon"
+   ],
+   "counties": {
+    "Franklin County": 0.2475
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Arlington Rescue Squad",
+   "cert_level": "Paramedic",
+   "hq_city": "Arlington",
+   "hq_state": "VT",
+   "total_transports": 437,
+   "transport": true,
+   "coverage_area_towns": [
+    "Arlington",
+    "Sunderland",
+    "Sandgate",
+    "Glastonbury"
+   ],
+   "counties": {
+    "Bennington County": 0.2577
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Bennington Rescue Squad, Inc",
+   "cert_level": "Paramedic - Critical Care Endorsement",
+   "hq_city": "Bennington",
+   "hq_state": "VT",
+   "total_transports": 3968,
+   "transport": true,
+   "coverage_area_towns": [
+    "Bennington",
+    "North Bennington",
+    "Shaftsbury"
+   ],
+   "counties": {
+    "Bennington County": 0.1962
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Brandon Area Rescue Squad, Inc.",
+   "cert_level": "Advanced EMT",
+   "hq_city": "Brandon",
+   "hq_state": "VT",
+   "total_transports": 625,
+   "transport": true,
+   "coverage_area_towns": [
+    "Brandon",
+    "Leicester",
+    "Goshen",
+    "Sudbury"
+   ],
+   "counties": {
+    "Rutland County": 0.0657,
+    "Addison County": 0.0526
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Brattleboro Fire Department",
+   "cert_level": "Paramedic",
+   "hq_city": "Brattleboro",
+   "hq_state": "VT",
+   "total_transports": 2592,
+   "transport": true,
+   "coverage_area_towns": [
+    "Brattleboro"
+   ],
+   "counties": {
+    "Windham County": 0.0409
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Bristol Rescue Squad, Inc.",
+   "cert_level": "Advanced EMT",
+   "hq_city": "Bristol",
+   "hq_state": "VT",
+   "total_transports": 960,
+   "transport": true,
+   "coverage_area_towns": [
+    "Bristol",
+    "Lincoln",
+    "Monkton",
+    "New Haven",
+    "Starksboro",
+    "Buels Gore"
+   ],
+   "counties": {
+    "Addison County": 0.2604
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Burlington Fire Dept. Ambulance",
+   "cert_level": "Paramedic",
+   "hq_city": "Burlington",
+   "hq_state": "VT",
+   "total_transports": 5584,
+   "transport": true,
+   "coverage_area_towns": [
+    "Burlington"
+   ],
+   "counties": {
+    "Chittenden County": 0.0247
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Cabot Emergency Ambulance Service, Inc",
+   "cert_level": "Advanced EMT",
+   "hq_city": "Cabot",
+   "hq_state": "VT",
+   "total_transports": 57,
+   "transport": true,
+   "coverage_area_towns": [
+    "Cabot"
+   ],
+   "counties": {
+    "Washington County": 0.0552
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Caledonia Essex Area Ambulance Service, Inc.",
+   "cert_level": "Paramedic",
+   "hq_city": "St. Johnsbury",
+   "hq_state": "VT",
+   "total_transports": 2805,
+   "transport": true,
+   "coverage_area_towns": [
+    "St. Johnsbury",
+    "Waterford",
+    "Barnet",
+    "Concord",
+    "Victory",
+    "South Kirby",
+    "Granby",
+    "Walden",
+    "Danville",
+    "Peacham"
+   ],
+   "counties": {
+    "Essex County": 0.2009,
+    "Caledonia County": 0.4446
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Cambridge Rescue Squad, Inc.",
+   "cert_level": "Paramedic",
+   "hq_city": "Jeffersonville",
+   "hq_state": "VT",
+   "total_transports": 303,
+   "transport": true,
+   "coverage_area_towns": [
+    "Cambridge"
+   ],
+   "counties": {
+    "Lamoille County": 0.1361
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Charlotte Fire and Rescue",
+   "cert_level": "Paramedic",
+   "hq_city": "Charlotte",
+   "hq_state": "VT",
+   "total_transports": 349,
+   "transport": true,
+   "coverage_area_towns": [
+    "Charlotte"
+   ],
+   "counties": {
+    "Chittenden County": 0.0811
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Chester Ambulance Service",
+   "cert_level": "Advanced EMT",
+   "hq_city": "Chester",
+   "hq_state": "VT",
+   "total_transports": 382,
+   "transport": true,
+   "coverage_area_towns": [
+    "Chester",
+    "Andover"
+   ],
+   "counties": {
+    "Windsor County": 0.0573
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "City of Barre",
+   "cert_level": "Paramedic - Critical Care Endorsement",
+   "hq_city": "Barre",
+   "hq_state": "VT",
+   "total_transports": 1556,
+   "transport": true,
+   "coverage_area_towns": [
+    "City of Barre"
+   ],
+   "counties": {},
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Colchester Rescue",
+   "cert_level": "Paramedic",
+   "hq_city": "Colchester",
+   "hq_state": "VT",
+   "total_transports": 1595.3000000000002,
+   "transport": true,
+   "coverage_area_towns": [
+    "Colchester"
+   ],
+   "counties": {
+    "Chittenden County": 0.097
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Community Ambulance Service D/B/A Ludlow Ambulance Service",
+   "cert_level": "Paramedic",
+   "hq_city": "Ludlow",
+   "hq_state": "VT",
+   "total_transports": 558,
+   "transport": true,
+   "coverage_area_towns": [
+    "Ludlow",
+    "Mount Holly",
+    "Plymouth",
+    "Cavendish"
+   ],
+   "counties": {
+    "Rutland County": 0.0525,
+    "Windsor County": 0.1067
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Deerfield Valley Rescue, Inc",
+   "cert_level": "Paramedic",
+   "hq_city": "Wilmington",
+   "hq_state": "VT",
+   "total_transports": 535,
+   "transport": true,
+   "coverage_area_towns": [
+    "Wilmington",
+    "Dover",
+    "Searsbury",
+    "Halifax",
+    "Jacksonville",
+    "Whitingham"
+   ],
+   "counties": {
+    "Bennington County": 0.0316,
+    "Windham County": 0.2314
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "East Montpelier Volunteer Fire Dept. Inc.",
+   "cert_level": "Paramedic",
+   "hq_city": "East Montpelier",
+   "hq_state": "VT",
+   "total_transports": 325,
+   "transport": true,
+   "coverage_area_towns": [
+    "East Montpelier",
+    "Calais",
+    "Plainfield",
+    "Marshfield"
+   ],
+   "counties": {
+    "Washington County": 0.1947
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Enosburgh Ambulance Service",
+   "cert_level": "Paramedic",
+   "hq_city": "Enosburg Falls",
+   "hq_state": "VT",
+   "total_transports": 931,
+   "transport": true,
+   "coverage_area_towns": [
+    "Enosburg",
+    "Bakersfield",
+    "Franklin",
+    "Bershire",
+    "Montgomery"
+   ],
+   "counties": {
+    "Franklin County": 0.333
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Essex Rescue, Inc.",
+   "cert_level": "Paramedic",
+   "hq_city": "Essex Junction",
+   "hq_state": "VT",
+   "total_transports": 2438,
+   "transport": true,
+   "coverage_area_towns": [
+    "Essex",
+    "Essex Junction",
+    "Jericho",
+    "Underhill",
+    "Westford"
+   ],
+   "counties": {
+    "Chittenden County": 0.2665
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Fair Haven Rescue Squad",
+   "cert_level": "Paramedic",
+   "hq_city": "Fair Haven",
+   "hq_state": "VT",
+   "total_transports": 1096,
+   "transport": true,
+   "coverage_area_towns": [
+    "Fair Haven",
+    "West Haven",
+    "Benson",
+    "Hubberton"
+   ],
+   "counties": {
+    "Rutland County": 0.1278
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Fairfax EMS, Inc.",
+   "cert_level": "Paramedic",
+   "hq_city": "Fairfax",
+   "hq_state": "VT",
+   "total_transports": 533.4,
+   "transport": true,
+   "coverage_area_towns": [
+    "Fairfax",
+    "Fletcher",
+    "Georgia"
+   ],
+   "counties": {
+    "Franklin County": 0.1802
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "First Branch Ambulance",
+   "cert_level": "Paramedic",
+   "hq_city": "Chelsea",
+   "hq_state": "VT",
+   "total_transports": 318,
+   "transport": true,
+   "coverage_area_towns": [
+    "Chelsea",
+    "Tunbridge",
+    "Washington"
+   ],
+   "counties": {
+    "Orange County": 0.1792
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Glover Ambulance Squad, Inc.",
+   "cert_level": "Paramedic",
+   "hq_city": "West Glover",
+   "hq_state": "VT",
+   "total_transports": 451,
+   "transport": true,
+   "coverage_area_towns": [
+    "Glover",
+    "Albany",
+    "Westmore"
+   ],
+   "counties": {
+    "Orleans County": 0.1594
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Golden Cross Ambulance Inc.",
+   "cert_level": "Paramedic",
+   "hq_city": "Claremont",
+   "hq_state": "NH",
+   "total_transports": 981,
+   "transport": true,
+   "coverage_area_towns": [
+    "Rockingham",
+    "Westminister",
+    "Athens",
+    "Grafton"
+   ],
+   "counties": {
+    "Windham County": 0.1749,
+    "Windsor County": 0.0451
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Grand Isle Rescue, Inc.",
+   "cert_level": "Advanced EMT",
+   "hq_city": "Grand Isle",
+   "hq_state": "VT",
+   "total_transports": 208,
+   "transport": true,
+   "coverage_area_towns": [
+    "Grand Isle",
+    "North Hero"
+   ],
+   "counties": {
+    "Grand Isle County": 0.4189
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Granville Rescue Squad",
+   "cert_level": null,
+   "hq_city": null,
+   "hq_state": null,
+   "total_transports": null,
+   "transport": null,
+   "coverage_area_towns": [
+    "Pawlet",
+    "Rupert",
+    "Wells"
+   ],
+   "counties": {
+    "Bennington County": 0.0661,
+    "Rutland County": 0.0701
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Hardwick Emergency Rescue Squad, Inc.",
+   "cert_level": "Paramedic",
+   "hq_city": "Hardwick",
+   "hq_state": "VT",
+   "total_transports": 522,
+   "transport": true,
+   "coverage_area_towns": [
+    "Hardwick",
+    "Woodbury",
+    "Greensboro",
+    "Craftsbury",
+    "Wolcott"
+   ],
+   "counties": {
+    "Washington County": 0.0565,
+    "Orleans County": 0.1096,
+    "Caledonia County": 0.0781,
+    "Lamoille County": 0.0843
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Hartford Fire Department",
+   "cert_level": "Paramedic",
+   "hq_city": "White River Junction",
+   "hq_state": "VT",
+   "total_transports": 1231,
+   "transport": true,
+   "coverage_area_towns": [
+    "Hartford",
+    "Hartland"
+   ],
+   "counties": {
+    "Windsor County": 0.1394
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Lancaster Fire Department",
+   "cert_level": "Paramedic",
+   "hq_city": "Lancaster",
+   "hq_state": "NH",
+   "total_transports": null,
+   "transport": null,
+   "coverage_area_towns": [
+    "Guildhall",
+    "Lunenburg",
+    "Maidstone"
+   ],
+   "counties": {
+    "Essex County": 0.164
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Londonderry Volunteer Rescue Squad",
+   "cert_level": "Paramedic",
+   "hq_city": "Londonderry",
+   "hq_state": "VT",
+   "total_transports": 376,
+   "transport": true,
+   "coverage_area_towns": [
+    "Londonderry",
+    "Weston",
+    "Peru",
+    "Windham",
+    "Landgrove",
+    "Winhall",
+    "Stratton",
+    "Andover"
+   ],
+   "counties": {
+    "Bennington County": 0.1343,
+    "Windham County": 0.0778,
+    "Windsor County": 0.036
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Lyndon Rescue, Inc.",
+   "cert_level": "Paramedic",
+   "hq_city": "Lyndonville",
+   "hq_state": "VT",
+   "total_transports": 1060,
+   "transport": true,
+   "coverage_area_towns": [
+    "Lyndon",
+    "Burke",
+    "Sutton",
+    "Sheffield",
+    "Wheelock",
+    "Newark",
+    "Kirby",
+    "Granby",
+    "East Haven"
+   ],
+   "counties": {
+    "Essex County": 0.0554,
+    "Caledonia County": 0.3374
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Mad River Valley Ambulance Service",
+   "cert_level": "Advanced EMT",
+   "hq_city": "Waitsfield",
+   "hq_state": "VT",
+   "total_transports": 371,
+   "transport": true,
+   "coverage_area_towns": [
+    "Waitsfield",
+    "Warren",
+    "Moretown",
+    "Fayston"
+   ],
+   "counties": {
+    "Washington County": 0.2051
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Manchester Rescue Squad D/B/A Northshire Rescue Squad",
+   "cert_level": "Paramedic",
+   "hq_city": "Manchester Center",
+   "hq_state": "VT",
+   "total_transports": 1513,
+   "transport": true,
+   "coverage_area_towns": [
+    "Manchester",
+    "Dorset",
+    "Mount Tabor",
+    "Winhall"
+   ],
+   "counties": {
+    "Bennington County": 0.1323,
+    "Rutland County": 0.0907
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Middlebury Regional EMS",
+   "cert_level": "Paramedic",
+   "hq_city": "Middlebury",
+   "hq_state": "VT",
+   "total_transports": 2728,
+   "transport": true,
+   "coverage_area_towns": [
+    "Middlebury",
+    "Cornwall",
+    "Ripton",
+    "Shoreham",
+    "Bridport",
+    "Orwell",
+    "Salisbury",
+    "Whiting",
+    "Weybridge"
+   ],
+   "counties": {
+    "Addison County": 0.3978
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Milton Rescue",
+   "cert_level": "Paramedic",
+   "hq_city": "Milton",
+   "hq_state": "VT",
+   "total_transports": 973,
+   "transport": true,
+   "coverage_area_towns": [
+    "Milton"
+   ],
+   "counties": {
+    "Chittenden County": 0.0982
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Missisquoi Valley Rescue, Inc.",
+   "cert_level": "Paramedic",
+   "hq_city": "Swanton",
+   "hq_state": "VT",
+   "total_transports": 1379,
+   "transport": true,
+   "coverage_area_towns": [
+    "Swanton",
+    "Highgate"
+   ],
+   "counties": {
+    "Franklin County": 0.1767
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Montpelier Ambulance Service",
+   "cert_level": "Paramedic",
+   "hq_city": "Montpelier",
+   "hq_state": "VT",
+   "total_transports": 968,
+   "transport": true,
+   "coverage_area_towns": [
+    "Montpelier",
+    "Middlesex",
+    "Worcester"
+   ],
+   "counties": {
+    "Washington County": 0.1277
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Morristown EMS",
+   "cert_level": "Paramedic - Critical Care Endorsement",
+   "hq_city": "Morrisville",
+   "hq_state": "VT",
+   "total_transports": 817,
+   "transport": true,
+   "coverage_area_towns": [
+    "Morristown",
+    "Elmore"
+   ],
+   "counties": {
+    "Lamoille County": 0.1947
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Newport Ambulance Service, Inc.",
+   "cert_level": "Paramedic - Critical Care Endorsement",
+   "hq_city": "Newport",
+   "hq_state": "VT",
+   "total_transports": 5170,
+   "transport": true,
+   "coverage_area_towns": [
+    "Newport Town",
+    "Newport City",
+    "Waterville",
+    "Belvidere",
+    "Hyde Park",
+    "Johnson",
+    "Eden",
+    "Troy",
+    "Jay",
+    "Westfield",
+    "Lowell",
+    "Coventry",
+    "Derby",
+    "Morgan",
+    "Holland",
+    "Charleston",
+    "Brighton"
+   ],
+   "counties": {
+    "Essex County": 0.4159,
+    "Orleans County": 0.5357,
+    "Lamoille County": 0.429
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "North Adams Ambulance Service",
+   "cert_level": "Paramedic",
+   "hq_city": "North Adams",
+   "hq_state": "MA",
+   "total_transports": 1046,
+   "transport": true,
+   "coverage_area_towns": [
+    "Readsboro",
+    "Stamford"
+   ],
+   "counties": {
+    "Bennington County": 0.1121
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Northfield Ambulance Service",
+   "cert_level": "Paramedic",
+   "hq_city": "Northfield",
+   "hq_state": "VT",
+   "total_transports": 261.5,
+   "transport": true,
+   "coverage_area_towns": [
+    "Northfield",
+    "Roxbury",
+    "West Berlin",
+    "Moretown"
+   ],
+   "counties": {
+    "Washington County": 0.1244
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Orleans Emergency Unit, Inc.",
+   "cert_level": "Advanced EMT",
+   "hq_city": "Orleans",
+   "hq_state": "VT",
+   "total_transports": 1725,
+   "transport": true,
+   "coverage_area_towns": [
+    "Orleans",
+    "Barton",
+    "Albany",
+    "Irasburg",
+    "Brownington",
+    "Coventry"
+   ],
+   "counties": {
+    "Orleans County": 0.1954
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Poultney Rescue Squad, Inc.",
+   "cert_level": "Advanced EMT",
+   "hq_city": "Poultney",
+   "hq_state": "VT",
+   "total_transports": 280,
+   "transport": true,
+   "coverage_area_towns": [
+    "Poultney",
+    "Middletown Springs",
+    "Tinmouth"
+   ],
+   "counties": {
+    "Rutland County": 0.1005
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Pownal Rescue Squad, Inc",
+   "cert_level": "Paramedic - Critical Care Endorsement",
+   "hq_city": "Pownal",
+   "hq_state": "VT",
+   "total_transports": 674,
+   "transport": true,
+   "coverage_area_towns": [
+    "Pownal"
+   ],
+   "counties": {
+    "Bennington County": 0.0695
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Regional Ambulance Service",
+   "cert_level": "Paramedic - Critical Care Endorsement",
+   "hq_city": "Rutland",
+   "hq_state": "VT",
+   "total_transports": 7689,
+   "transport": true,
+   "coverage_area_towns": [
+    "Rutland City",
+    "Rutland",
+    "West Rutland",
+    "Castleton",
+    "Ira",
+    "Clarendon",
+    "Chittenden",
+    "Pitsford",
+    "Mendon",
+    "Killington",
+    "Proctor",
+    "Shrewsbury"
+   ],
+   "counties": {
+    "Rutland County": 0.4253
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Rescue Inc.",
+   "cert_level": "Paramedic - Critical Care Endorsement",
+   "hq_city": "Brattleboro",
+   "hq_state": "VT",
+   "total_transports": 4449,
+   "transport": true,
+   "coverage_area_towns": [
+    "Guilford",
+    "Vernon",
+    "Marlboro",
+    "Dummerston",
+    "Newfane",
+    "Townshend",
+    "Brookline",
+    "Jamaica",
+    "Wardsboro",
+    "Putney",
+    "Stratton"
+   ],
+   "counties": {
+    "Windham County": 0.4747
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Richford Ambulance Service",
+   "cert_level": "Advanced EMT",
+   "hq_city": "Richford",
+   "hq_state": "VT",
+   "total_transports": null,
+   "transport": null,
+   "coverage_area_towns": [
+    "Richford"
+   ],
+   "counties": {
+    "Franklin County": 0.0627
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Richmond Rescue, Inc.",
+   "cert_level": "Paramedic",
+   "hq_city": "Richmond",
+   "hq_state": "VT",
+   "total_transports": 854,
+   "transport": true,
+   "coverage_area_towns": [
+    "Richmond",
+    "Huntington",
+    "Bolton",
+    "Hinesburg",
+    "St. George"
+   ],
+   "counties": {
+    "Chittenden County": 0.2524
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Saint Michael's College Fire and Rescue, Inc.",
+   "cert_level": "Paramedic",
+   "hq_city": "Colchester",
+   "hq_state": "VT",
+   "total_transports": null,
+   "transport": null,
+   "coverage_area_towns": [
+    "Winooski"
+   ],
+   "counties": {},
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "South Burlington Fire Department",
+   "cert_level": "Paramedic",
+   "hq_city": "South Burlington",
+   "hq_state": "VT",
+   "total_transports": 2878,
+   "transport": true,
+   "coverage_area_towns": [
+    "South Burlington"
+   ],
+   "counties": {
+    "Chittenden County": 0.0495
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "South Hero Rescue",
+   "cert_level": "Advanced EMT",
+   "hq_city": "South Hero",
+   "hq_state": "VT",
+   "total_transports": 189,
+   "transport": true,
+   "coverage_area_towns": [
+    "South Hero",
+    "Grand Isle"
+   ],
+   "counties": {
+    "Grand Isle County": 0.24
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "South Royalton Rescue Squad",
+   "cert_level": "Paramedic",
+   "hq_city": "South Royalton",
+   "hq_state": "VT",
+   "total_transports": 243,
+   "transport": true,
+   "coverage_area_towns": [
+    "Royalton",
+    "Sharon"
+   ],
+   "counties": {
+    "Windsor County": 0.0832
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Springfield Fire Dept. Ambulance",
+   "cert_level": "Paramedic",
+   "hq_city": "Springfield",
+   "hq_state": "VT",
+   "total_transports": 1976,
+   "transport": true,
+   "coverage_area_towns": [
+    "Springfield",
+    "Baltimore"
+   ],
+   "counties": {
+    "Windsor County": 0.0556
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Town of Barre Dept. of EMS",
+   "cert_level": "Paramedic - Critical Care Endorsement",
+   "hq_city": "East Barre",
+   "hq_state": "VT",
+   "total_transports": 3870,
+   "transport": true,
+   "coverage_area_towns": [
+    "Barre",
+    "Berlin",
+    "Orange",
+    "Washington",
+    "Brookfield",
+    "Williamstown",
+    "Topsham"
+   ],
+   "counties": {
+    "Washington County": 0.097,
+    "Orange County": 0.2452
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Town of Shelburne - Rescue Department",
+   "cert_level": "Paramedic",
+   "hq_city": "Shelburne",
+   "hq_state": "VT",
+   "total_transports": 1600,
+   "transport": true,
+   "coverage_area_towns": [
+    "Shelburne"
+   ],
+   "counties": {
+    "Chittenden County": 0.0697
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Town of Stowe - Emergency Medical Services Dept.",
+   "cert_level": "Paramedic",
+   "hq_city": "Stowe",
+   "hq_state": "VT",
+   "total_transports": 468,
+   "transport": true,
+   "coverage_area_towns": [
+    "Stowe"
+   ],
+   "counties": {
+    "Lamoille County": 0.1558
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Town of Williston, D.B.A. Williston Fire Department",
+   "cert_level": "Paramedic",
+   "hq_city": "Williston",
+   "hq_state": "VT",
+   "total_transports": 1430,
+   "transport": true,
+   "coverage_area_towns": [
+    "Williston"
+   ],
+   "counties": {
+    "Chittenden County": 0.05
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Upper Valley Ambulance, Inc",
+   "cert_level": "Paramedic",
+   "hq_city": "Fairlee",
+   "hq_state": "VT",
+   "total_transports": 1537,
+   "transport": true,
+   "coverage_area_towns": [
+    "Bradford",
+    "Fairlee",
+    "Theford",
+    "Corinth",
+    "Vershire",
+    "West Fairlee",
+    "Strafford"
+   ],
+   "counties": {
+    "Orange County": 0.3568
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Vergennes Area Rescue Squad, Inc.",
+   "cert_level": "Advanced EMT",
+   "hq_city": "Vergennes",
+   "hq_state": "VT",
+   "total_transports": 624,
+   "transport": true,
+   "coverage_area_towns": [
+    "Vergennes",
+    "Panton",
+    "Ferrisburgh",
+    "Addison",
+    "Waltham",
+    "Monkton",
+    "New Haven"
+   ],
+   "counties": {
+    "Addison County": 0.1782
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Wallingford Rescue, Inc.",
+   "cert_level": "Advanced EMT",
+   "hq_city": "Wallingford",
+   "hq_state": "VT",
+   "total_transports": 210,
+   "transport": true,
+   "coverage_area_towns": [
+    "Wallingford"
+   ],
+   "counties": {
+    "Rutland County": 0.0454
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Waterbury Ambulance Service, Inc.",
+   "cert_level": "Paramedic",
+   "hq_city": "Waterbury Center",
+   "hq_state": "VT",
+   "total_transports": 463,
+   "transport": true,
+   "coverage_area_towns": [
+    "Waterbury",
+    "Duxbury",
+    "Moretown"
+   ],
+   "counties": {
+    "Washington County": 0.1334
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "White River Valley Ambulance",
+   "cert_level": "Paramedic - Critical Care Endorsement",
+   "hq_city": "Bethel",
+   "hq_state": "VT",
+   "total_transports": 1174,
+   "transport": true,
+   "coverage_area_towns": [
+    "Granville",
+    "Hancock",
+    "Rochester",
+    "Stockbridge",
+    "Bethel",
+    "Barnard",
+    "Randolph",
+    "Braintree"
+   ],
+   "counties": {
+    "Rutland County": 0.0217,
+    "Addison County": 0.1109,
+    "Orange County": 0.1253,
+    "Windsor County": 0.2019
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Windsor Ambulance Service",
+   "cert_level": "Paramedic",
+   "hq_city": "Windsor",
+   "hq_state": "VT",
+   "total_transports": 1204,
+   "transport": true,
+   "coverage_area_towns": [
+    "Windsor",
+    "Reading",
+    "Hartland",
+    "West Windsor"
+   ],
+   "counties": {
+    "Windsor County": 0.0878
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Woodstock Ambulance Service",
+   "cert_level": "Paramedic",
+   "hq_city": "Woodstock",
+   "hq_state": "VT",
+   "total_transports": 1154,
+   "transport": true,
+   "coverage_area_towns": [
+    "Woodstock",
+    "Plymouth",
+    "Bridgewater"
+   ],
+   "counties": {
+    "Windsor County": 0.1866
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  },
+  {
+   "name": "Woodsville Rescue And Ambulance Service",
+   "cert_level": "Paramedic",
+   "hq_city": "Woodsville",
+   "hq_state": "NH",
+   "total_transports": null,
+   "transport": null,
+   "coverage_area_towns": [
+    "Groton",
+    "Ryegate",
+    "Newbury"
+   ],
+   "counties": {
+    "Caledonia County": 0.1396,
+    "Orange County": 0.0932
+   },
+   "source_url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_AmbulanceServiceAreas_SP_v1/FeatureServer/0"
+  }
+ ],
+ "county_verdict": {
+  "50013": {
+   "county": "Grand Isle",
+   "ems_coverage": 0.9996,
+   "services": [
+    {
+     "name": "Alburgh Rescue, Inc.",
+     "share": 0.3406
+    },
+    {
+     "name": "Grand Isle Rescue, Inc.",
+     "share": 0.4189
+    },
+    {
+     "name": "South Hero Rescue",
+     "share": 0.24
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Amcare Medical Systems",
+     "share": 0.0
+    },
+    {
+     "name": "Colchester Rescue",
+     "share": 0.0
+    },
+    {
+     "name": "Fairfax EMS, Inc.",
+     "share": 0.0
+    },
+    {
+     "name": "Milton Rescue",
+     "share": 0.0
+    },
+    {
+     "name": "Missisquoi Valley Rescue, Inc.",
+     "share": 0.0
+    }
+   ],
+   "tier": "A"
+  },
+  "50011": {
+   "county": "Franklin",
+   "ems_coverage": 1.0,
+   "services": [
+    {
+     "name": "Amcare Medical Systems",
+     "share": 0.2475
+    },
+    {
+     "name": "Enosburgh Ambulance Service",
+     "share": 0.333
+    },
+    {
+     "name": "Fairfax EMS, Inc.",
+     "share": 0.1802
+    },
+    {
+     "name": "Missisquoi Valley Rescue, Inc.",
+     "share": 0.1767
+    },
+    {
+     "name": "Richford Ambulance Service",
+     "share": 0.0627
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Alburgh Rescue, Inc.",
+     "share": 0.0
+    },
+    {
+     "name": "Cambridge Rescue Squad, Inc.",
+     "share": 0.0
+    },
+    {
+     "name": "Essex Rescue, Inc.",
+     "share": 0.0
+    },
+    {
+     "name": "Grand Isle Rescue, Inc.",
+     "share": 0.0
+    },
+    {
+     "name": "Milton Rescue",
+     "share": 0.0
+    },
+    {
+     "name": "Newport Ambulance Service, Inc.",
+     "share": 0.0
+    }
+   ],
+   "tier": "A"
+  },
+  "50023": {
+   "county": "Washington",
+   "ems_coverage": 1,
+   "services": [
+    {
+     "name": "Cabot Emergency Ambulance Service, Inc",
+     "share": 0.0552
+    },
+    {
+     "name": "East Montpelier Volunteer Fire Dept. Inc.",
+     "share": 0.1947
+    },
+    {
+     "name": "Hardwick Emergency Rescue Squad, Inc.",
+     "share": 0.0565
+    },
+    {
+     "name": "Mad River Valley Ambulance Service",
+     "share": 0.2051
+    },
+    {
+     "name": "Montpelier Ambulance Service",
+     "share": 0.1277
+    },
+    {
+     "name": "Northfield Ambulance Service",
+     "share": 0.1244
+    },
+    {
+     "name": "Town of Barre Dept. of EMS",
+     "share": 0.097
+    },
+    {
+     "name": "Waterbury Ambulance Service, Inc.",
+     "share": 0.1334
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Bristol Rescue Squad, Inc.",
+     "share": 0.0
+    },
+    {
+     "name": "Caledonia Essex Area Ambulance Service, Inc.",
+     "share": 0.0
+    },
+    {
+     "name": "City of Barre",
+     "share": 0.0058
+    },
+    {
+     "name": "First Branch Ambulance",
+     "share": 0.0
+    },
+    {
+     "name": "Morristown EMS",
+     "share": 0.0
+    },
+    {
+     "name": "Richmond Rescue, Inc.",
+     "share": 0.0002
+    },
+    {
+     "name": "Town of Stowe - Emergency Medical Services Dept.",
+     "share": 0.0
+    },
+    {
+     "name": "White River Valley Ambulance",
+     "share": 0.0
+    },
+    {
+     "name": "Woodsville Rescue And Ambulance Service",
+     "share": 0.0
+    }
+   ],
+   "tier": "A"
+  },
+  "50003": {
+   "county": "Bennington",
+   "ems_coverage": 0.9999,
+   "services": [
+    {
+     "name": "Arlington Rescue Squad",
+     "share": 0.2577
+    },
+    {
+     "name": "Bennington Rescue Squad, Inc",
+     "share": 0.1962
+    },
+    {
+     "name": "Deerfield Valley Rescue, Inc",
+     "share": 0.0316
+    },
+    {
+     "name": "Granville Rescue Squad",
+     "share": 0.0661
+    },
+    {
+     "name": "Londonderry Volunteer Rescue Squad",
+     "share": 0.1343
+    },
+    {
+     "name": "Manchester Rescue Squad D/B/A Northshire Rescue Squad",
+     "share": 0.1323
+    },
+    {
+     "name": "North Adams Ambulance Service",
+     "share": 0.1121
+    },
+    {
+     "name": "Pownal Rescue Squad, Inc",
+     "share": 0.0695
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Rescue Inc.",
+     "share": 0.0
+    }
+   ],
+   "tier": "A"
+  },
+  "50007": {
+   "county": "Chittenden",
+   "ems_coverage": 0.9997,
+   "services": [
+    {
+     "name": "Burlington Fire Dept. Ambulance",
+     "share": 0.0247
+    },
+    {
+     "name": "Charlotte Fire and Rescue",
+     "share": 0.0811
+    },
+    {
+     "name": "Colchester Rescue",
+     "share": 0.097
+    },
+    {
+     "name": "Essex Rescue, Inc.",
+     "share": 0.2665
+    },
+    {
+     "name": "Milton Rescue",
+     "share": 0.0982
+    },
+    {
+     "name": "Richmond Rescue, Inc.",
+     "share": 0.2524
+    },
+    {
+     "name": "South Burlington Fire Department",
+     "share": 0.0495
+    },
+    {
+     "name": "Town of Shelburne - Rescue Department",
+     "share": 0.0697
+    },
+    {
+     "name": "Town of Williston, D.B.A. Williston Fire Department",
+     "share": 0.05
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Bristol Rescue Squad, Inc.",
+     "share": 0.0081
+    },
+    {
+     "name": "Cambridge Rescue Squad, Inc.",
+     "share": 0.0
+    },
+    {
+     "name": "Fairfax EMS, Inc.",
+     "share": 0.0
+    },
+    {
+     "name": "Grand Isle Rescue, Inc.",
+     "share": 0.0
+    },
+    {
+     "name": "Mad River Valley Ambulance Service",
+     "share": 0.0
+    },
+    {
+     "name": "Saint Michael's College Fire and Rescue, Inc.",
+     "share": 0.0024
+    },
+    {
+     "name": "South Hero Rescue",
+     "share": 0.0
+    },
+    {
+     "name": "Town of Stowe - Emergency Medical Services Dept.",
+     "share": 0.0
+    },
+    {
+     "name": "Vergennes Area Rescue Squad, Inc.",
+     "share": 0.0
+    },
+    {
+     "name": "Waterbury Ambulance Service, Inc.",
+     "share": 0.0
+    }
+   ],
+   "tier": "A"
+  },
+  "50021": {
+   "county": "Rutland",
+   "ems_coverage": 0.9997,
+   "services": [
+    {
+     "name": "Brandon Area Rescue Squad, Inc.",
+     "share": 0.0657
+    },
+    {
+     "name": "Community Ambulance Service D/B/A Ludlow Ambulance Service",
+     "share": 0.0525
+    },
+    {
+     "name": "Fair Haven Rescue Squad",
+     "share": 0.1278
+    },
+    {
+     "name": "Granville Rescue Squad",
+     "share": 0.0701
+    },
+    {
+     "name": "Manchester Rescue Squad D/B/A Northshire Rescue Squad",
+     "share": 0.0907
+    },
+    {
+     "name": "Poultney Rescue Squad, Inc.",
+     "share": 0.1005
+    },
+    {
+     "name": "Regional Ambulance Service",
+     "share": 0.4253
+    },
+    {
+     "name": "Wallingford Rescue, Inc.",
+     "share": 0.0454
+    },
+    {
+     "name": "White River Valley Ambulance",
+     "share": 0.0217
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Londonderry Volunteer Rescue Squad",
+     "share": 0.0001
+    },
+    {
+     "name": "Middlebury Regional EMS",
+     "share": 0.0
+    },
+    {
+     "name": "Woodstock Ambulance Service",
+     "share": 0.0
+    }
+   ],
+   "tier": "A"
+  },
+  "50009": {
+   "county": "Essex",
+   "ems_coverage": 0.9979,
+   "services": [
+    {
+     "name": "45th Parallel Emergency Medical Services",
+     "share": 0.1617
+    },
+    {
+     "name": "Caledonia Essex Area Ambulance Service, Inc.",
+     "share": 0.2009
+    },
+    {
+     "name": "Lancaster Fire Department",
+     "share": 0.164
+    },
+    {
+     "name": "Lyndon Rescue, Inc.",
+     "share": 0.0554
+    },
+    {
+     "name": "Newport Ambulance Service, Inc.",
+     "share": 0.4159
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Glover Ambulance Squad, Inc.",
+     "share": 0.0
+    }
+   ],
+   "tier": "A"
+  },
+  "50001": {
+   "county": "Addison",
+   "ems_coverage": 0.9999,
+   "services": [
+    {
+     "name": "Brandon Area Rescue Squad, Inc.",
+     "share": 0.0526
+    },
+    {
+     "name": "Bristol Rescue Squad, Inc.",
+     "share": 0.2604
+    },
+    {
+     "name": "Middlebury Regional EMS",
+     "share": 0.3978
+    },
+    {
+     "name": "Vergennes Area Rescue Squad, Inc.",
+     "share": 0.1782
+    },
+    {
+     "name": "White River Valley Ambulance",
+     "share": 0.1109
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Charlotte Fire and Rescue",
+     "share": 0.0
+    },
+    {
+     "name": "Fair Haven Rescue Squad",
+     "share": 0.0
+    },
+    {
+     "name": "Mad River Valley Ambulance Service",
+     "share": 0.0
+    },
+    {
+     "name": "Regional Ambulance Service",
+     "share": 0.0
+    },
+    {
+     "name": "Richmond Rescue, Inc.",
+     "share": 0.0
+    }
+   ],
+   "tier": "A"
+  },
+  "50025": {
+   "county": "Windham",
+   "ems_coverage": 0.9997,
+   "services": [
+    {
+     "name": "Brattleboro Fire Department",
+     "share": 0.0409
+    },
+    {
+     "name": "Deerfield Valley Rescue, Inc",
+     "share": 0.2314
+    },
+    {
+     "name": "Golden Cross Ambulance Inc.",
+     "share": 0.1749
+    },
+    {
+     "name": "Londonderry Volunteer Rescue Squad",
+     "share": 0.0778
+    },
+    {
+     "name": "Rescue Inc.",
+     "share": 0.4747
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Arlington Rescue Squad",
+     "share": 0.0
+    },
+    {
+     "name": "Bennington Rescue Squad, Inc",
+     "share": 0.0
+    },
+    {
+     "name": "Community Ambulance Service D/B/A Ludlow Ambulance Service",
+     "share": 0.0
+    },
+    {
+     "name": "North Adams Ambulance Service",
+     "share": 0.0
+    }
+   ],
+   "tier": "A"
+  },
+  "50019": {
+   "county": "Orleans",
+   "ems_coverage": 1.0,
+   "services": [
+    {
+     "name": "Glover Ambulance Squad, Inc.",
+     "share": 0.1594
+    },
+    {
+     "name": "Hardwick Emergency Rescue Squad, Inc.",
+     "share": 0.1096
+    },
+    {
+     "name": "Newport Ambulance Service, Inc.",
+     "share": 0.5357
+    },
+    {
+     "name": "Orleans Emergency Unit, Inc.",
+     "share": 0.1954
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Caledonia Essex Area Ambulance Service, Inc.",
+     "share": 0.0
+    },
+    {
+     "name": "Enosburgh Ambulance Service",
+     "share": 0.0
+    },
+    {
+     "name": "Lyndon Rescue, Inc.",
+     "share": 0.0
+    },
+    {
+     "name": "Richford Ambulance Service",
+     "share": 0.0
+    }
+   ],
+   "tier": "A"
+  },
+  "50005": {
+   "county": "Caledonia",
+   "ems_coverage": 0.9998,
+   "services": [
+    {
+     "name": "Caledonia Essex Area Ambulance Service, Inc.",
+     "share": 0.4446
+    },
+    {
+     "name": "Hardwick Emergency Rescue Squad, Inc.",
+     "share": 0.0781
+    },
+    {
+     "name": "Lyndon Rescue, Inc.",
+     "share": 0.3374
+    },
+    {
+     "name": "Woodsville Rescue And Ambulance Service",
+     "share": 0.1396
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Cabot Emergency Ambulance Service, Inc",
+     "share": 0.0
+    },
+    {
+     "name": "East Montpelier Volunteer Fire Dept. Inc.",
+     "share": 0.0
+    },
+    {
+     "name": "Glover Ambulance Squad, Inc.",
+     "share": 0.0
+    },
+    {
+     "name": "Orleans Emergency Unit, Inc.",
+     "share": 0.0
+    },
+    {
+     "name": "Town of Barre Dept. of EMS",
+     "share": 0.0
+    }
+   ],
+   "tier": "A"
+  },
+  "50015": {
+   "county": "Lamoille",
+   "ems_coverage": 1,
+   "services": [
+    {
+     "name": "Cambridge Rescue Squad, Inc.",
+     "share": 0.1361
+    },
+    {
+     "name": "Hardwick Emergency Rescue Squad, Inc.",
+     "share": 0.0843
+    },
+    {
+     "name": "Morristown EMS",
+     "share": 0.1947
+    },
+    {
+     "name": "Newport Ambulance Service, Inc.",
+     "share": 0.429
+    },
+    {
+     "name": "Town of Stowe - Emergency Medical Services Dept.",
+     "share": 0.1558
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "East Montpelier Volunteer Fire Dept. Inc.",
+     "share": 0.0
+    },
+    {
+     "name": "Enosburgh Ambulance Service",
+     "share": 0.0
+    },
+    {
+     "name": "Essex Rescue, Inc.",
+     "share": 0.0
+    },
+    {
+     "name": "Fairfax EMS, Inc.",
+     "share": 0.0
+    },
+    {
+     "name": "Glover Ambulance Squad, Inc.",
+     "share": 0.0
+    },
+    {
+     "name": "Montpelier Ambulance Service",
+     "share": 0.0
+    },
+    {
+     "name": "Richmond Rescue, Inc.",
+     "share": 0.0
+    },
+    {
+     "name": "Waterbury Ambulance Service, Inc.",
+     "share": 0.0
+    }
+   ],
+   "tier": "A"
+  },
+  "50017": {
+   "county": "Orange",
+   "ems_coverage": 0.9996,
+   "services": [
+    {
+     "name": "First Branch Ambulance",
+     "share": 0.1792
+    },
+    {
+     "name": "Town of Barre Dept. of EMS",
+     "share": 0.2452
+    },
+    {
+     "name": "Upper Valley Ambulance, Inc",
+     "share": 0.3568
+    },
+    {
+     "name": "White River Valley Ambulance",
+     "share": 0.1253
+    },
+    {
+     "name": "Woodsville Rescue And Ambulance Service",
+     "share": 0.0932
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Hartford Fire Department",
+     "share": 0.0
+    },
+    {
+     "name": "Northfield Ambulance Service",
+     "share": 0.0
+    },
+    {
+     "name": "South Royalton Rescue Squad",
+     "share": 0.0
+    }
+   ],
+   "tier": "A"
+  },
+  "50027": {
+   "county": "Windsor",
+   "ems_coverage": 0.9997,
+   "services": [
+    {
+     "name": "Chester Ambulance Service",
+     "share": 0.0573
+    },
+    {
+     "name": "Community Ambulance Service D/B/A Ludlow Ambulance Service",
+     "share": 0.1067
+    },
+    {
+     "name": "Golden Cross Ambulance Inc.",
+     "share": 0.0451
+    },
+    {
+     "name": "Hartford Fire Department",
+     "share": 0.1394
+    },
+    {
+     "name": "Londonderry Volunteer Rescue Squad",
+     "share": 0.036
+    },
+    {
+     "name": "South Royalton Rescue Squad",
+     "share": 0.0832
+    },
+    {
+     "name": "Springfield Fire Dept. Ambulance",
+     "share": 0.0556
+    },
+    {
+     "name": "White River Valley Ambulance",
+     "share": 0.2019
+    },
+    {
+     "name": "Windsor Ambulance Service",
+     "share": 0.0878
+    },
+    {
+     "name": "Woodstock Ambulance Service",
+     "share": 0.1866
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Brandon Area Rescue Squad, Inc.",
+     "share": 0.0
+    },
+    {
+     "name": "First Branch Ambulance",
+     "share": 0.0
+    },
+    {
+     "name": "Manchester Rescue Squad D/B/A Northshire Rescue Squad",
+     "share": 0.0001
+    },
+    {
+     "name": "Regional Ambulance Service",
+     "share": 0.0
+    },
+    {
+     "name": "Upper Valley Ambulance, Inc",
+     "share": 0.0
+    }
+   ],
+   "tier": "A"
+  }
+ }
+}

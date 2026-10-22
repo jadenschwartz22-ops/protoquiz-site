@@ -1,0 +1,1691 @@
+{
+ "meta": {
+  "state": "ID",
+  "source": "Idaho Dept of Health and Welfare, EMS Bureau (ArcGIS owner dcoleman_dhw): \"County_EMS_Coverage\" (31 rows, one 911 agency covering the whole county) and \"Partial_County_EMS_Coverage\" (13 counties split among agencies by ZIP area)",
+  "retrieved": "2026-10-21",
+  "layer_edits": {
+   "County_EMS_Coverage": "2022-01-25",
+   "Partial_County_EMS_Coverage": "2023-07-03"
+  },
+  "data_vintage": "2021-09 (station layer snippet \"911 Response Stations 9/1/2021\")",
+  "transport_from": "DHW Transport_911_Response_Agency_Stations_2022_7 / Non_transport_911_Response_Agency_Stations_2022_7 (state Service_Type field)",
+  "counties_missing": [],
+  "tier_counts": {
+   "A-supportable-stale": 44
+  }
+ },
+ "rows": [
+  {
+   "name": "Ada County-City EMS System",
+   "org_type": "Governmental, Non-Fire",
+   "licence": 8407,
+   "counties_full": [
+    "Ada County"
+   ],
+   "counties_partial": [],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Bannock County Ambulance District",
+   "org_type": "Fire Department",
+   "licence": 8611,
+   "counties_full": [
+    "Bannock County"
+   ],
+   "counties_partial": [],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Bear Lake County Ambulance Service",
+   "org_type": "Governmental, Non-Fire",
+   "licence": 7602,
+   "counties_full": [
+    "Bear Lake County"
+   ],
+   "counties_partial": [],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Bonner County Emergency Medical Services",
+   "org_type": "Governmental, Non-Fire",
+   "licence": 8142,
+   "counties_full": [
+    "Bonner County"
+   ],
+   "counties_partial": [],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "City of Idaho Falls Ambulance Service",
+   "org_type": "Fire Department",
+   "licence": 8705,
+   "counties_full": [
+    "Bonneville County"
+   ],
+   "counties_partial": [
+    "Jefferson County"
+   ],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Boundary Volunteer Ambulance Service",
+   "org_type": "Private, Non-hospital",
+   "licence": 7102,
+   "counties_full": [
+    "Boundary County"
+   ],
+   "counties_partial": [],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Lost River EMT's Inc",
+   "org_type": "Hospital",
+   "licence": 7707,
+   "counties_full": [
+    "Butte County"
+   ],
+   "counties_partial": [],
+   "transport": null,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Camas County Ambulance",
+   "org_type": "Governmental, Non-Fire",
+   "licence": 7503,
+   "counties_full": [
+    "Camas County"
+   ],
+   "counties_partial": [],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Treasure Valley Emergency Medical Services System",
+   "org_type": "Governmental, Non-Fire",
+   "licence": 7479,
+   "counties_full": [
+    "Canyon County"
+   ],
+   "counties_partial": [],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Caribou County Emergency Medical Services",
+   "org_type": "Governmental, Non-Fire",
+   "licence": 5604,
+   "counties_full": [
+    "Caribou County"
+   ],
+   "counties_partial": [],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Intermountain Cassia Regional Hospital Paramedics",
+   "org_type": "Hospital",
+   "licence": 7507,
+   "counties_full": [
+    "Cassia County"
+   ],
+   "counties_partial": [],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Clark County Ambulance",
+   "org_type": "Governmental, Non-Fire",
+   "licence": 7702,
+   "counties_full": [
+    "Clark County"
+   ],
+   "counties_partial": [],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Clearwater County Ambulance",
+   "org_type": "Governmental, Non-Fire",
+   "licence": 7219,
+   "counties_full": [
+    "Clearwater County"
+   ],
+   "counties_partial": [],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Elmore Ambulance Service",
+   "org_type": "Governmental, Non-Fire",
+   "licence": 10020,
+   "counties_full": [
+    "Elmore County"
+   ],
+   "counties_partial": [],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Franklin County Ambulance Association",
+   "org_type": "Governmental, Non-Fire",
+   "licence": 7614,
+   "counties_full": [
+    "Franklin County"
+   ],
+   "counties_partial": [],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Fremont County Emergency Medical Services",
+   "org_type": "Governmental, Non-Fire",
+   "licence": 7704,
+   "counties_full": [
+    "Fremont County"
+   ],
+   "counties_partial": [],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Gem County Fire & EMS",
+   "org_type": "Fire Department",
+   "licence": 7306,
+   "counties_full": [
+    "Gem County"
+   ],
+   "counties_partial": [],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Gooding County Emergency Medical Services",
+   "org_type": "Governmental, Non-Fire",
+   "licence": 7504,
+   "counties_full": [
+    "Gooding County"
+   ],
+   "counties_partial": [],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Magic Valley Paramedics",
+   "org_type": "Hospital",
+   "licence": 8520,
+   "counties_full": [
+    "Jerome County",
+    "Twin Falls County"
+   ],
+   "counties_partial": [],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Kootenai County Emergency Medical Services",
+   "org_type": "Governmental, Non-Fire",
+   "licence": 8146,
+   "counties_full": [
+    "Kootenai County"
+   ],
+   "counties_partial": [],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Lemhi County EMS System",
+   "org_type": "Governmental, Non-Fire",
+   "licence": 7711,
+   "counties_full": [
+    "Lemhi County"
+   ],
+   "counties_partial": [],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Lincoln County EMS",
+   "org_type": "Governmental, Non-Fire",
+   "licence": 7509,
+   "counties_full": [
+    "Lincoln County"
+   ],
+   "counties_partial": [],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Madison County Ambulance",
+   "org_type": "Governmental, Non-Fire",
+   "licence": 7708,
+   "counties_full": [
+    "Madison County"
+   ],
+   "counties_partial": [],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Emergency Response Ambulance",
+   "org_type": "Hospital",
+   "licence": 7522,
+   "counties_full": [
+    "Minidoka County"
+   ],
+   "counties_partial": [],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Lewiston Fire Department",
+   "org_type": "Fire Department",
+   "licence": 8210,
+   "counties_full": [
+    "Nez Perce County"
+   ],
+   "counties_partial": [],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Oneida County Ambulance",
+   "org_type": "Governmental, Non-Fire",
+   "licence": 4610,
+   "counties_full": [
+    "Oneida County"
+   ],
+   "counties_partial": [],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "City of Fruitland / Payette County Paramedics",
+   "org_type": "Governmental, Non-Fire",
+   "licence": 3330,
+   "counties_full": [
+    "Payette County"
+   ],
+   "counties_partial": [],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Power County Emergency Medical Services",
+   "org_type": "Governmental, Non-Fire",
+   "licence": 7620,
+   "counties_full": [
+    "Power County"
+   ],
+   "counties_partial": [],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Teton County Fire Protection District",
+   "org_type": "Fire Department",
+   "licence": 3705,
+   "counties_full": [
+    "Teton County"
+   ],
+   "counties_partial": [],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Weiser Ambulance District",
+   "org_type": "Governmental, Non-Fire",
+   "licence": 8304,
+   "counties_full": [
+    "Washington County"
+   ],
+   "counties_partial": [],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Council Valley Ambulance",
+   "org_type": "Private, Non-hospital",
+   "licence": "5310",
+   "counties_full": [],
+   "counties_partial": [
+    "Adams County"
+   ],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Meadows Valley Rural Fire District",
+   "org_type": "Fire Department",
+   "licence": "3512",
+   "counties_full": [],
+   "counties_partial": [
+    "Adams County"
+   ],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Gateway Fire Protection District",
+   "org_type": "Fire Department",
+   "licence": "8144",
+   "counties_full": [],
+   "counties_partial": [
+    "Benewah County"
+   ],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Benewah County EMS",
+   "org_type": "Governmental, Non-Fire",
+   "licence": "5109",
+   "counties_full": [],
+   "counties_partial": [
+    "Benewah County"
+   ],
+   "transport": null,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "St. Maries Ambulance",
+   "org_type": "Governmental, Non-Fire",
+   "licence": "7113",
+   "counties_full": [],
+   "counties_partial": [
+    "Benewah County",
+    "Shoshone County"
+   ],
+   "transport": null,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Aberdeen / Springfield Fire District",
+   "org_type": "Fire Department",
+   "licence": "5601",
+   "counties_full": [],
+   "counties_partial": [
+    "Bingham County",
+    "Blaine County"
+   ],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Blackfoot Fire Department",
+   "org_type": "Fire Department",
+   "licence": "7603",
+   "counties_full": [],
+   "counties_partial": [
+    "Bingham County"
+   ],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Wood River Fire & Rescue",
+   "org_type": "Fire Department",
+   "licence": "7512",
+   "counties_full": [],
+   "counties_partial": [
+    "Blaine County"
+   ],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Ketchum Fire Department",
+   "org_type": "Fire Department",
+   "licence": "7506",
+   "counties_full": [],
+   "counties_partial": [
+    "Blaine County"
+   ],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Garden Valley Fire Protection District",
+   "org_type": "Fire Department",
+   "licence": "7391",
+   "counties_full": [],
+   "counties_partial": [
+    "Boise County"
+   ],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "East Boise County Ambulance District",
+   "org_type": "Governmental, Non-Fire",
+   "licence": "5430",
+   "counties_full": [],
+   "counties_partial": [
+    "Boise County"
+   ],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Horseshoe Bend Ambulance",
+   "org_type": "Governmental, Non-Fire",
+   "licence": "5402",
+   "counties_full": [],
+   "counties_partial": [
+    "Boise County"
+   ],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "North Custer Hospital District",
+   "org_type": "Governmental, Non-Fire",
+   "licence": "7709",
+   "counties_full": [],
+   "counties_partial": [
+    "Custer County"
+   ],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "South Custer County Ambulance",
+   "org_type": "Governmental, Non-Fire",
+   "licence": "7712",
+   "counties_full": [],
+   "counties_partial": [
+    "Custer County"
+   ],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Stanley Ambulance",
+   "org_type": "Hospital",
+   "licence": "5510",
+   "counties_full": [],
+   "counties_partial": [
+    "Custer County"
+   ],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "St. Mary's Hospital Ambulance",
+   "org_type": "Hospital",
+   "licence": "7207",
+   "counties_full": [],
+   "counties_partial": [
+    "Idaho County"
+   ],
+   "transport": null,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Elk City Ambulance Service Inc.",
+   "org_type": "Governmental, Non-Fire",
+   "licence": "5201",
+   "counties_full": [],
+   "counties_partial": [
+    "Idaho County"
+   ],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Syringa General Hospital Ambulance",
+   "org_type": "Hospital",
+   "licence": "7208",
+   "counties_full": [],
+   "counties_partial": [
+    "Idaho County"
+   ],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Kooskia Ambulance",
+   "org_type": "Governmental, Non-Fire",
+   "licence": "7215",
+   "counties_full": [],
+   "counties_partial": [
+    "Idaho County"
+   ],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "City of Riggins Ambulance",
+   "org_type": "Governmental, Non-Fire",
+   "licence": "7213",
+   "counties_full": [],
+   "counties_partial": [
+    "Idaho County"
+   ],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Mud Lake Ambulance",
+   "org_type": "Private, Non-hospital",
+   "licence": "7714",
+   "counties_full": [],
+   "counties_partial": [
+    "Jefferson County"
+   ],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "J-K Ambulance",
+   "org_type": "Governmental, Non-Fire",
+   "licence": "7216",
+   "counties_full": [],
+   "counties_partial": [
+    "Latah County"
+   ],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Deary Ambulance",
+   "org_type": "Fire Department",
+   "licence": "7212",
+   "counties_full": [],
+   "counties_partial": [
+    "Latah County"
+   ],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Moscow Fire Department",
+   "org_type": "Fire Department",
+   "licence": "7203",
+   "counties_full": [],
+   "counties_partial": [
+    "Latah County"
+   ],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Potlatch Ambulance",
+   "org_type": "Fire Department",
+   "licence": "7206",
+   "counties_full": [],
+   "counties_partial": [
+    "Latah County"
+   ],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Troy Volunteer Ambulance",
+   "org_type": "Private, Non-hospital",
+   "licence": "7217",
+   "counties_full": [],
+   "counties_partial": [
+    "Latah County"
+   ],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Nezperce Ambulance Inc.",
+   "org_type": "Private, Non-hospital",
+   "licence": "7204",
+   "counties_full": [],
+   "counties_partial": [
+    "Lewis County"
+   ],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Kamiah Fire-Rescue",
+   "org_type": "Fire Department",
+   "licence": "7202",
+   "counties_full": [],
+   "counties_partial": [
+    "Lewis County"
+   ],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Grand View Ambulance Service",
+   "org_type": "Governmental, Non-Fire",
+   "licence": "7305",
+   "counties_full": [],
+   "counties_partial": [
+    "Owyhee County"
+   ],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Homedale Ambulance",
+   "org_type": "Fire Department",
+   "licence": "5302",
+   "counties_full": [],
+   "counties_partial": [
+    "Owyhee County"
+   ],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Marsing Ambulance Service Inc.",
+   "org_type": "Private, Non-hospital",
+   "licence": "5312",
+   "counties_full": [],
+   "counties_partial": [
+    "Owyhee County"
+   ],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Shoshone County Ambulance Service District",
+   "org_type": "Governmental, Non-Fire",
+   "licence": "3124",
+   "counties_full": [],
+   "counties_partial": [
+    "Shoshone County"
+   ],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Cascade Rural Fire Protection District",
+   "org_type": "Fire Department",
+   "licence": "7410",
+   "counties_full": [],
+   "counties_partial": [
+    "Valley County"
+   ],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "Donnelly Rural Fire Protection District",
+   "org_type": "Fire Department",
+   "licence": "7423",
+   "counties_full": [],
+   "counties_partial": [
+    "Valley County"
+   ],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  },
+  {
+   "name": "McCall Fire & Emergency Medical Services",
+   "org_type": "Fire Department",
+   "licence": "7427",
+   "counties_full": [],
+   "counties_partial": [
+    "Valley County"
+   ],
+   "transport": true,
+   "source_url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/arcgis/rest/services/County_EMS_Coverage/FeatureServer/0 and .../Partial_County_EMS_Coverage/FeatureServer/0",
+   "vintage": "2021-09 (layer edits 2022-01-25 and 2023-07-03)"
+  }
+ ],
+ "county_verdict": {
+  "16001": {
+   "county": "Ada County",
+   "pop": 535799,
+   "tier": "A-supportable-stale",
+   "coverage_type": "full-county (one agency named for the whole county)",
+   "services": [
+    {
+     "name": "Ada County-City EMS System",
+     "transport": true,
+     "org_type": "Governmental, Non-Fire",
+     "org_status": "Mixed",
+     "licence": 8407,
+     "response_level": "Paramedic/ALS"
+    }
+   ],
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16005": {
+   "county": "Bannock County",
+   "pop": 91010,
+   "tier": "A-supportable-stale",
+   "coverage_type": "full-county (one agency named for the whole county)",
+   "services": [
+    {
+     "name": "Bannock County Ambulance District",
+     "transport": true,
+     "org_type": "Fire Department",
+     "org_status": "Mixed",
+     "licence": 8611,
+     "response_level": "Paramedic/ALS"
+    }
+   ],
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16007": {
+   "county": "Bear Lake County",
+   "pop": 6779,
+   "tier": "A-supportable-stale",
+   "coverage_type": "full-county (one agency named for the whole county)",
+   "services": [
+    {
+     "name": "Bear Lake County Ambulance Service",
+     "transport": true,
+     "org_type": "Governmental, Non-Fire",
+     "org_status": "Volunteer",
+     "licence": 7602,
+     "response_level": "AEMT/ILS"
+    }
+   ],
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16017": {
+   "county": "Bonner County",
+   "pop": 53955,
+   "tier": "A-supportable-stale",
+   "coverage_type": "full-county (one agency named for the whole county)",
+   "services": [
+    {
+     "name": "Bonner County Emergency Medical Services",
+     "transport": true,
+     "org_type": "Governmental, Non-Fire",
+     "org_status": "Non-Volunteer",
+     "licence": 8142,
+     "response_level": "Paramedic/ALS"
+    }
+   ],
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16019": {
+   "county": "Bonneville County",
+   "pop": 133644,
+   "tier": "A-supportable-stale",
+   "coverage_type": "full-county (one agency named for the whole county)",
+   "services": [
+    {
+     "name": "City of Idaho Falls Ambulance Service",
+     "transport": true,
+     "org_type": "Fire Department",
+     "org_status": "Mixed",
+     "licence": 8705,
+     "response_level": "Paramedic/ALS"
+    }
+   ],
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16021": {
+   "county": "Boundary County",
+   "pop": 14040,
+   "tier": "A-supportable-stale",
+   "coverage_type": "full-county (one agency named for the whole county)",
+   "services": [
+    {
+     "name": "Boundary Volunteer Ambulance Service",
+     "transport": true,
+     "org_type": "Private, Non-hospital",
+     "org_status": "Mixed",
+     "licence": 7102,
+     "response_level": "Paramedic/ALS"
+    }
+   ],
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16023": {
+   "county": "Butte County",
+   "pop": 2735,
+   "tier": "A-supportable-stale",
+   "coverage_type": "full-county (one agency named for the whole county)",
+   "services": [
+    {
+     "name": "Lost River EMT's Inc",
+     "transport": null,
+     "org_type": "Hospital",
+     "org_status": "Volunteer",
+     "licence": 7707,
+     "response_level": "AEMT/ILS"
+    }
+   ],
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16025": {
+   "county": "Camas County",
+   "pop": 1247,
+   "tier": "A-supportable-stale",
+   "coverage_type": "full-county (one agency named for the whole county)",
+   "services": [
+    {
+     "name": "Camas County Ambulance",
+     "transport": true,
+     "org_type": "Governmental, Non-Fire",
+     "org_status": "Volunteer",
+     "licence": 7503,
+     "response_level": "AEMT/ILS"
+    }
+   ],
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16027": {
+   "county": "Canyon County",
+   "pop": 266892,
+   "tier": "A-supportable-stale",
+   "coverage_type": "full-county (one agency named for the whole county)",
+   "services": [
+    {
+     "name": "Treasure Valley Emergency Medical Services System",
+     "transport": true,
+     "org_type": "Governmental, Non-Fire",
+     "org_status": "Mixed",
+     "licence": 7479,
+     "response_level": "Paramedic/ALS"
+    }
+   ],
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16029": {
+   "county": "Caribou County",
+   "pop": 7239,
+   "tier": "A-supportable-stale",
+   "coverage_type": "full-county (one agency named for the whole county)",
+   "services": [
+    {
+     "name": "Caribou County Emergency Medical Services",
+     "transport": true,
+     "org_type": "Governmental, Non-Fire",
+     "org_status": "Volunteer",
+     "licence": 5604,
+     "response_level": "EMT/BLS"
+    }
+   ],
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16031": {
+   "county": "Cassia County",
+   "pop": 25976,
+   "tier": "A-supportable-stale",
+   "coverage_type": "full-county (one agency named for the whole county)",
+   "services": [
+    {
+     "name": "Intermountain Cassia Regional Hospital Paramedics",
+     "transport": true,
+     "org_type": "Hospital",
+     "org_status": "Non-Volunteer",
+     "licence": 7507,
+     "response_level": "Paramedic/ALS"
+    }
+   ],
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16033": {
+   "county": "Clark County",
+   "pop": 794,
+   "tier": "A-supportable-stale",
+   "coverage_type": "full-county (one agency named for the whole county)",
+   "services": [
+    {
+     "name": "Clark County Ambulance",
+     "transport": true,
+     "org_type": "Governmental, Non-Fire",
+     "org_status": "Mixed",
+     "licence": 7702,
+     "response_level": "EMT/BLS"
+    }
+   ],
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16035": {
+   "county": "Clearwater County",
+   "pop": 9151,
+   "tier": "A-supportable-stale",
+   "coverage_type": "full-county (one agency named for the whole county)",
+   "services": [
+    {
+     "name": "Clearwater County Ambulance",
+     "transport": true,
+     "org_type": "Governmental, Non-Fire",
+     "org_status": "Mixed",
+     "licence": 7219,
+     "response_level": "AEMT/ILS"
+    }
+   ],
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16039": {
+   "county": "Elmore County",
+   "pop": 29729,
+   "tier": "A-supportable-stale",
+   "coverage_type": "full-county (one agency named for the whole county)",
+   "services": [
+    {
+     "name": "Elmore Ambulance Service",
+     "transport": true,
+     "org_type": "Governmental, Non-Fire",
+     "org_status": "Non-Volunteer",
+     "licence": 10020,
+     "response_level": "Paramedic/ALS"
+    }
+   ],
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16041": {
+   "county": "Franklin County",
+   "pop": 15638,
+   "tier": "A-supportable-stale",
+   "coverage_type": "full-county (one agency named for the whole county)",
+   "services": [
+    {
+     "name": "Franklin County Ambulance Association",
+     "transport": true,
+     "org_type": "Governmental, Non-Fire",
+     "org_status": "Volunteer",
+     "licence": 7614,
+     "response_level": "AEMT/ILS"
+    }
+   ],
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16043": {
+   "county": "Fremont County",
+   "pop": 14399,
+   "tier": "A-supportable-stale",
+   "coverage_type": "full-county (one agency named for the whole county)",
+   "services": [
+    {
+     "name": "Fremont County Emergency Medical Services",
+     "transport": true,
+     "org_type": "Governmental, Non-Fire",
+     "org_status": "Mixed",
+     "licence": 7704,
+     "response_level": "Paramedic/ALS"
+    }
+   ],
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16045": {
+   "county": "Gem County",
+   "pop": 21857,
+   "tier": "A-supportable-stale",
+   "coverage_type": "full-county (one agency named for the whole county)",
+   "services": [
+    {
+     "name": "Gem County Fire & EMS",
+     "transport": true,
+     "org_type": "Fire Department",
+     "org_status": "Non-Volunteer",
+     "licence": 7306,
+     "response_level": "Paramedic/ALS"
+    }
+   ],
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16047": {
+   "county": "Gooding County",
+   "pop": 16189,
+   "tier": "A-supportable-stale",
+   "coverage_type": "full-county (one agency named for the whole county)",
+   "services": [
+    {
+     "name": "Gooding County Emergency Medical Services",
+     "transport": true,
+     "org_type": "Governmental, Non-Fire",
+     "org_status": "Non-Volunteer",
+     "licence": 7504,
+     "response_level": "Paramedic/ALS"
+    }
+   ],
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16053": {
+   "county": "Jerome County",
+   "pop": 26056,
+   "tier": "A-supportable-stale",
+   "coverage_type": "full-county (one agency named for the whole county)",
+   "services": [
+    {
+     "name": "Magic Valley Paramedics",
+     "transport": true,
+     "org_type": "Hospital",
+     "org_status": "Non-Volunteer",
+     "licence": 8520,
+     "response_level": "Paramedic/ALS"
+    }
+   ],
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16055": {
+   "county": "Kootenai County",
+   "pop": 188323,
+   "tier": "A-supportable-stale",
+   "coverage_type": "full-county (one agency named for the whole county)",
+   "services": [
+    {
+     "name": "Kootenai County Emergency Medical Services",
+     "transport": true,
+     "org_type": "Governmental, Non-Fire",
+     "org_status": "Mixed",
+     "licence": 8146,
+     "response_level": "Paramedic/ALS"
+    }
+   ],
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16059": {
+   "county": "Lemhi County",
+   "pop": 8397,
+   "tier": "A-supportable-stale",
+   "coverage_type": "full-county (one agency named for the whole county)",
+   "services": [
+    {
+     "name": "Lemhi County EMS System",
+     "transport": true,
+     "org_type": "Governmental, Non-Fire",
+     "org_status": "Volunteer",
+     "licence": 7711,
+     "response_level": "AEMT/ILS"
+    }
+   ],
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16063": {
+   "county": "Lincoln County",
+   "pop": 5556,
+   "tier": "A-supportable-stale",
+   "coverage_type": "full-county (one agency named for the whole county)",
+   "services": [
+    {
+     "name": "Lincoln County EMS",
+     "transport": true,
+     "org_type": "Governmental, Non-Fire",
+     "org_status": "Mixed",
+     "licence": 7509,
+     "response_level": "AEMT/ILS"
+    }
+   ],
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16065": {
+   "county": "Madison County",
+   "pop": 55549,
+   "tier": "A-supportable-stale",
+   "coverage_type": "full-county (one agency named for the whole county)",
+   "services": [
+    {
+     "name": "Madison County Ambulance",
+     "transport": true,
+     "org_type": "Governmental, Non-Fire",
+     "org_status": "Mixed",
+     "licence": 7708,
+     "response_level": "Paramedic/ALS"
+    }
+   ],
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16067": {
+   "county": "Minidoka County",
+   "pop": 22691,
+   "tier": "A-supportable-stale",
+   "coverage_type": "full-county (one agency named for the whole county)",
+   "services": [
+    {
+     "name": "Emergency Response Ambulance",
+     "transport": true,
+     "org_type": "Hospital",
+     "org_status": "Non-Volunteer",
+     "licence": 7522,
+     "response_level": "AEMT/ILS"
+    }
+   ],
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16069": {
+   "county": "Nez Perce County",
+   "pop": 42847,
+   "tier": "A-supportable-stale",
+   "coverage_type": "full-county (one agency named for the whole county)",
+   "services": [
+    {
+     "name": "Lewiston Fire Department",
+     "transport": true,
+     "org_type": "Fire Department",
+     "org_status": "Non-Volunteer",
+     "licence": 8210,
+     "response_level": "Paramedic/ALS"
+    }
+   ],
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16071": {
+   "county": "Oneida County",
+   "pop": 4976,
+   "tier": "A-supportable-stale",
+   "coverage_type": "full-county (one agency named for the whole county)",
+   "services": [
+    {
+     "name": "Oneida County Ambulance",
+     "transport": true,
+     "org_type": "Governmental, Non-Fire",
+     "org_status": "Volunteer",
+     "licence": 4610,
+     "response_level": "AEMT/ILS"
+    }
+   ],
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16075": {
+   "county": "Payette County",
+   "pop": 27662,
+   "tier": "A-supportable-stale",
+   "coverage_type": "full-county (one agency named for the whole county)",
+   "services": [
+    {
+     "name": "City of Fruitland / Payette County Paramedics",
+     "transport": true,
+     "org_type": "Governmental, Non-Fire",
+     "org_status": "Non-Volunteer",
+     "licence": 3330,
+     "response_level": "Paramedic/ALS"
+    }
+   ],
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16077": {
+   "county": "Power County",
+   "pop": 8381,
+   "tier": "A-supportable-stale",
+   "coverage_type": "full-county (one agency named for the whole county)",
+   "services": [
+    {
+     "name": "Power County Emergency Medical Services",
+     "transport": true,
+     "org_type": "Governmental, Non-Fire",
+     "org_status": "Mixed",
+     "licence": 7620,
+     "response_level": "Paramedic/ALS"
+    }
+   ],
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16081": {
+   "county": "Teton County",
+   "pop": 12932,
+   "tier": "A-supportable-stale",
+   "coverage_type": "full-county (one agency named for the whole county)",
+   "services": [
+    {
+     "name": "Teton County Fire Protection District",
+     "transport": true,
+     "org_type": "Fire Department",
+     "org_status": "Mixed",
+     "licence": 3705,
+     "response_level": "Paramedic/ALS"
+    }
+   ],
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16083": {
+   "county": "Twin Falls County",
+   "pop": 96509,
+   "tier": "A-supportable-stale",
+   "coverage_type": "full-county (one agency named for the whole county)",
+   "services": [
+    {
+     "name": "Magic Valley Paramedics",
+     "transport": true,
+     "org_type": "Hospital",
+     "org_status": "Non-Volunteer",
+     "licence": 8520,
+     "response_level": "Paramedic/ALS"
+    }
+   ],
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16087": {
+   "county": "Washington County",
+   "pop": 11539,
+   "tier": "A-supportable-stale",
+   "coverage_type": "full-county (one agency named for the whole county)",
+   "services": [
+    {
+     "name": "Weiser Ambulance District",
+     "transport": true,
+     "org_type": "Governmental, Non-Fire",
+     "org_status": "Non-Volunteer",
+     "licence": 8304,
+     "response_level": "Paramedic/ALS"
+    }
+   ],
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16003": {
+   "county": "Adams County",
+   "pop": 4998,
+   "tier": "A-supportable-stale",
+   "coverage_type": "split county: several agencies, each named by ZIP-code area (state \"Partial County EMS Coverage\" layer)",
+   "services": [
+    {
+     "name": "Council Valley Ambulance",
+     "zip_areas": 3,
+     "zip_area_population": 2528,
+     "transport": true
+    },
+    {
+     "name": "Meadows Valley Rural Fire District",
+     "zip_areas": 2,
+     "zip_area_population": 8730,
+     "transport": true
+    }
+   ],
+   "basis": "all agencies named, none picked; ZIP population shares are a rough area guide, not a boundary",
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16009": {
+   "county": "Benewah County",
+   "pop": 10529,
+   "tier": "A-supportable-stale",
+   "coverage_type": "split county: several agencies, each named by ZIP-code area (state \"Partial County EMS Coverage\" layer)",
+   "services": [
+    {
+     "name": "Benewah County EMS",
+     "zip_areas": 1,
+     "zip_area_population": 760,
+     "transport": null
+    },
+    {
+     "name": "Gateway Fire Protection District",
+     "zip_areas": 3,
+     "zip_area_population": 2755,
+     "transport": true
+    },
+    {
+     "name": "St. Maries Ambulance",
+     "zip_areas": 2,
+     "zip_area_population": 8851,
+     "transport": null
+    }
+   ],
+   "basis": "all agencies named, none picked; ZIP population shares are a rough area guide, not a boundary",
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16011": {
+   "county": "Bingham County",
+   "pop": 50889,
+   "tier": "A-supportable-stale",
+   "coverage_type": "split county: several agencies, each named by ZIP-code area (state \"Partial County EMS Coverage\" layer)",
+   "services": [
+    {
+     "name": "Aberdeen / Springfield Fire District",
+     "zip_areas": 3,
+     "zip_area_population": 10486,
+     "transport": true
+    },
+    {
+     "name": "Blackfoot Fire Department",
+     "zip_areas": 4,
+     "zip_area_population": 44023,
+     "transport": true
+    }
+   ],
+   "basis": "all agencies named, none picked; ZIP population shares are a rough area guide, not a boundary",
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16013": {
+   "county": "Blaine County",
+   "pop": 25261,
+   "tier": "A-supportable-stale",
+   "coverage_type": "split county: several agencies, each named by ZIP-code area (state \"Partial County EMS Coverage\" layer)",
+   "services": [
+    {
+     "name": "Aberdeen / Springfield Fire District",
+     "zip_areas": 1,
+     "zip_area_population": 3841,
+     "transport": true
+    },
+    {
+     "name": "Ketchum Fire Department",
+     "zip_areas": 2,
+     "zip_area_population": 6577,
+     "transport": true
+    },
+    {
+     "name": "Wood River Fire & Rescue",
+     "zip_areas": 4,
+     "zip_area_population": 16331,
+     "transport": true
+    }
+   ],
+   "basis": "all agencies named, none picked; ZIP population shares are a rough area guide, not a boundary",
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16015": {
+   "county": "Boise County",
+   "pop": 8581,
+   "tier": "A-supportable-stale",
+   "coverage_type": "split county: several agencies, each named by ZIP-code area (state \"Partial County EMS Coverage\" layer)",
+   "services": [
+    {
+     "name": "East Boise County Ambulance District",
+     "zip_areas": 6,
+     "zip_area_population": 84212,
+     "transport": true
+    },
+    {
+     "name": "Garden Valley Fire Protection District",
+     "zip_areas": 2,
+     "zip_area_population": 2040,
+     "transport": true
+    },
+    {
+     "name": "Horseshoe Bend Ambulance",
+     "zip_areas": 2,
+     "zip_area_population": 2633,
+     "transport": true
+    }
+   ],
+   "basis": "all agencies named, none picked; ZIP population shares are a rough area guide, not a boundary",
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16037": {
+   "county": "Custer County",
+   "pop": 4597,
+   "tier": "A-supportable-stale",
+   "coverage_type": "split county: several agencies, each named by ZIP-code area (state \"Partial County EMS Coverage\" layer)",
+   "services": [
+    {
+     "name": "North Custer Hospital District",
+     "zip_areas": 4,
+     "zip_area_population": 3095,
+     "transport": true
+    },
+    {
+     "name": "South Custer County Ambulance",
+     "zip_areas": 3,
+     "zip_area_population": 13489,
+     "transport": true
+    },
+    {
+     "name": "Stanley Ambulance",
+     "zip_areas": 1,
+     "zip_area_population": 199,
+     "transport": true
+    }
+   ],
+   "basis": "all agencies named, none picked; ZIP population shares are a rough area guide, not a boundary",
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16049": {
+   "county": "Idaho County",
+   "pop": 17912,
+   "tier": "A-supportable-stale",
+   "coverage_type": "split county: several agencies, each named by ZIP-code area (state \"Partial County EMS Coverage\" layer)",
+   "services": [
+    {
+     "name": "City of Riggins Ambulance",
+     "zip_areas": 4,
+     "zip_area_population": 3096,
+     "transport": true
+    },
+    {
+     "name": "Elk City Ambulance Service Inc.",
+     "zip_areas": 1,
+     "zip_area_population": 480,
+     "transport": true
+    },
+    {
+     "name": "Kooskia Ambulance",
+     "zip_areas": 3,
+     "zip_area_population": 7902,
+     "transport": true
+    },
+    {
+     "name": "St. Mary's Hospital Ambulance",
+     "zip_areas": 3,
+     "zip_area_population": 2708,
+     "transport": null
+    },
+    {
+     "name": "Syringa General Hospital Ambulance",
+     "zip_areas": 2,
+     "zip_area_population": 6251,
+     "transport": true
+    }
+   ],
+   "basis": "all agencies named, none picked; ZIP population shares are a rough area guide, not a boundary",
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16051": {
+   "county": "Jefferson County",
+   "pop": 34854,
+   "tier": "A-supportable-stale",
+   "coverage_type": "split county: several agencies, each named by ZIP-code area (state \"Partial County EMS Coverage\" layer)",
+   "services": [
+    {
+     "name": "City of Idaho Falls Ambulance Service",
+     "zip_areas": 10,
+     "zip_area_population": 181084,
+     "transport": true
+    },
+    {
+     "name": "Mud Lake Ambulance",
+     "zip_areas": 5,
+     "zip_area_population": 11054,
+     "transport": true
+    }
+   ],
+   "basis": "all agencies named, none picked; ZIP population shares are a rough area guide, not a boundary",
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16057": {
+   "county": "Latah County",
+   "pop": 42180,
+   "tier": "A-supportable-stale",
+   "coverage_type": "split county: several agencies, each named by ZIP-code area (state \"Partial County EMS Coverage\" layer)",
+   "services": [
+    {
+     "name": "Deary Ambulance",
+     "zip_areas": 2,
+     "zip_area_population": 1682,
+     "transport": true
+    },
+    {
+     "name": "J-K Ambulance",
+     "zip_areas": 2,
+     "zip_area_population": 2337,
+     "transport": true
+    },
+    {
+     "name": "Moscow Fire Department",
+     "zip_areas": 5,
+     "zip_area_population": 35118,
+     "transport": true
+    },
+    {
+     "name": "Potlatch Ambulance",
+     "zip_areas": 2,
+     "zip_area_population": 1071,
+     "transport": true
+    },
+    {
+     "name": "Troy Volunteer Ambulance",
+     "zip_areas": 1,
+     "zip_area_population": 2222,
+     "transport": true
+    }
+   ],
+   "basis": "all agencies named, none picked; ZIP population shares are a rough area guide, not a boundary",
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16061": {
+   "county": "Lewis County",
+   "pop": 3728,
+   "tier": "A-supportable-stale",
+   "coverage_type": "split county: several agencies, each named by ZIP-code area (state \"Partial County EMS Coverage\" layer)",
+   "services": [
+    {
+     "name": "Kamiah Fire-Rescue",
+     "zip_areas": 1,
+     "zip_area_population": 4518,
+     "transport": true
+    },
+    {
+     "name": "Nezperce Ambulance Inc.",
+     "zip_areas": 8,
+     "zip_area_population": 42119,
+     "transport": true
+    }
+   ],
+   "basis": "all agencies named, none picked; ZIP population shares are a rough area guide, not a boundary",
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16073": {
+   "county": "Owyhee County",
+   "pop": 12748,
+   "tier": "A-supportable-stale",
+   "coverage_type": "split county: several agencies, each named by ZIP-code area (state \"Partial County EMS Coverage\" layer)",
+   "services": [
+    {
+     "name": "Grand View Ambulance Service",
+     "zip_areas": 3,
+     "zip_area_population": 3432,
+     "transport": true
+    },
+    {
+     "name": "Homedale Ambulance",
+     "zip_areas": 1,
+     "zip_area_population": 5278,
+     "transport": true
+    },
+    {
+     "name": "Marsing Ambulance Service Inc.",
+     "zip_areas": 3,
+     "zip_area_population": 7852,
+     "transport": true
+    }
+   ],
+   "basis": "all agencies named, none picked; ZIP population shares are a rough area guide, not a boundary",
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16079": {
+   "county": "Shoshone County",
+   "pop": 14074,
+   "tier": "A-supportable-stale",
+   "coverage_type": "split county: several agencies, each named by ZIP-code area (state \"Partial County EMS Coverage\" layer)",
+   "services": [
+    {
+     "name": "Shoshone County Ambulance Service District",
+     "zip_areas": 10,
+     "zip_area_population": 13844,
+     "transport": true
+    },
+    {
+     "name": "St. Maries Ambulance",
+     "zip_areas": 3,
+     "zip_area_population": 316,
+     "transport": null
+    }
+   ],
+   "basis": "all agencies named, none picked; ZIP population shares are a rough area guide, not a boundary",
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  },
+  "16085": {
+   "county": "Valley County",
+   "pop": 12777,
+   "tier": "A-supportable-stale",
+   "coverage_type": "split county: several agencies, each named by ZIP-code area (state \"Partial County EMS Coverage\" layer)",
+   "services": [
+    {
+     "name": "Cascade Rural Fire Protection District",
+     "zip_areas": 2,
+     "zip_area_population": 2850,
+     "transport": true
+    },
+    {
+     "name": "Donnelly Rural Fire Protection District",
+     "zip_areas": 1,
+     "zip_area_population": 1573,
+     "transport": true
+    },
+    {
+     "name": "McCall Fire & Emergency Medical Services",
+     "zip_areas": 1,
+     "zip_area_population": 6952,
+     "transport": true
+    }
+   ],
+   "basis": "all agencies named, none picked; ZIP population shares are a rough area guide, not a boundary",
+   "page_note": "Idaho DHW EMS Bureau 911 response-agency layer, data as of Sept 2021 (item edited 2022-01 / 2023-07): older than the 3-year bar, so the county tier is left alone until a current source confirms."
+  }
+ }
+}

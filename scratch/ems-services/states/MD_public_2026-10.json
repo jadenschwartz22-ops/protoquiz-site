@@ -1,0 +1,915 @@
+{
+ "meta": {
+  "state": "MD",
+  "source": "MIEMSS FY2025-26 Annual Report, \"Jurisdictional EMS Operational Programs (JEMSOPs)\" list",
+  "source_url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+  "source_page": "https://www.miemss.org/home/Publications",
+  "retrieved": "2026-10-21",
+  "vintage": "2025-26 fiscal year (report text dated through 2026-09-30)",
+  "list_size": 29,
+  "mapped_to_county": 28,
+  "not_county": [
+   "Maryland State Police Aviation Command (statewide air)"
+  ],
+  "tier_counts": {
+   "A": 24
+  },
+  "raw": "downloads/md_2026-10/ar2026.pdf, ar2026.txt",
+  "caveat": "A JEMSOP is the county or city 9-1-1 EMS program of record; the report does not say per program whether its own units or volunteer companies carry the patients."
+ },
+ "rows": [
+  {
+   "state": "MD",
+   "county": "Allegany County",
+   "fips": "24001",
+   "provider": "Allegany County Emergency Services",
+   "program_kind": "county",
+   "area": "Allegany County (jurisdictional program for the county)",
+   "ownership": "county government",
+   "transport": null,
+   "transport_note": "Source says 9-1-1 emergency medical response; it does not say per program that the unit carries patients. In some counties volunteer companies transport under the program.",
+   "source_url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+   "evidence": "MIEMSS FY2025-26 Annual Report p.75: \"Maryland’s 29 Jurisdictional EMS Operational Programs (JEMSOPs) provide 9-1-1 emergency medical response across the State.\"",
+   "vintage": "2026-10 (FY2025-26 report)"
+  },
+  {
+   "state": "MD",
+   "county": "Anne Arundel County",
+   "fips": "24003",
+   "provider": "Anne Arundel County Fire Department",
+   "program_kind": "county",
+   "area": "Anne Arundel County (jurisdictional program for the county)",
+   "ownership": "county government",
+   "transport": null,
+   "transport_note": "Source says 9-1-1 emergency medical response; it does not say per program that the unit carries patients. In some counties volunteer companies transport under the program.",
+   "source_url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+   "evidence": "MIEMSS FY2025-26 Annual Report p.75: \"Maryland’s 29 Jurisdictional EMS Operational Programs (JEMSOPs) provide 9-1-1 emergency medical response across the State.\"",
+   "vintage": "2026-10 (FY2025-26 report)"
+  },
+  {
+   "state": "MD",
+   "county": "Anne Arundel County",
+   "fips": "24003",
+   "provider": "Annapolis City Fire Department",
+   "program_kind": "city",
+   "area": "City of Annapolis (municipal program inside Anne Arundel County)",
+   "ownership": "municipal fire",
+   "transport": null,
+   "transport_note": "Source says 9-1-1 emergency medical response; it does not say per program that the unit carries patients. In some counties volunteer companies transport under the program.",
+   "source_url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+   "evidence": "MIEMSS FY2025-26 Annual Report p.75: \"Maryland’s 29 Jurisdictional EMS Operational Programs (JEMSOPs) provide 9-1-1 emergency medical response across the State.\"",
+   "vintage": "2026-10 (FY2025-26 report)"
+  },
+  {
+   "state": "MD",
+   "county": "Anne Arundel County",
+   "fips": "24003",
+   "provider": "BWI Fire Rescue Department",
+   "program_kind": "airport",
+   "area": "BWI airport (program inside Anne Arundel County)",
+   "ownership": "airport fire-rescue (BWI Thurgood Marshall Airport)",
+   "transport": null,
+   "transport_note": "Source says 9-1-1 emergency medical response; it does not say per program that the unit carries patients. In some counties volunteer companies transport under the program.",
+   "source_url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+   "evidence": "MIEMSS FY2025-26 Annual Report p.75: \"Maryland’s 29 Jurisdictional EMS Operational Programs (JEMSOPs) provide 9-1-1 emergency medical response across the State.\"",
+   "vintage": "2026-10 (FY2025-26 report)"
+  },
+  {
+   "state": "MD",
+   "county": "Baltimore city",
+   "fips": "24510",
+   "provider": "Baltimore City Fire Department",
+   "program_kind": "independent city",
+   "area": "Baltimore city (independent city; jurisdictional program for the whole city)",
+   "ownership": "municipal fire",
+   "transport": null,
+   "transport_note": "Source says 9-1-1 emergency medical response; it does not say per program that the unit carries patients. In some counties volunteer companies transport under the program.",
+   "source_url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+   "evidence": "MIEMSS FY2025-26 Annual Report p.75: \"Maryland’s 29 Jurisdictional EMS Operational Programs (JEMSOPs) provide 9-1-1 emergency medical response across the State.\"",
+   "vintage": "2026-10 (FY2025-26 report)"
+  },
+  {
+   "state": "MD",
+   "county": "Baltimore County",
+   "fips": "24005",
+   "provider": "Baltimore County Fire Department",
+   "program_kind": "county",
+   "area": "Baltimore County (jurisdictional program for the county)",
+   "ownership": "county government",
+   "transport": null,
+   "transport_note": "Source says 9-1-1 emergency medical response; it does not say per program that the unit carries patients. In some counties volunteer companies transport under the program.",
+   "source_url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+   "evidence": "MIEMSS FY2025-26 Annual Report p.75: \"Maryland’s 29 Jurisdictional EMS Operational Programs (JEMSOPs) provide 9-1-1 emergency medical response across the State.\"",
+   "vintage": "2026-10 (FY2025-26 report)"
+  },
+  {
+   "state": "MD",
+   "county": "Calvert County",
+   "fips": "24009",
+   "provider": "Calvert County Fire, Rescue & EMS",
+   "program_kind": "county",
+   "area": "Calvert County (jurisdictional program for the county)",
+   "ownership": "county government",
+   "transport": null,
+   "transport_note": "Source says 9-1-1 emergency medical response; it does not say per program that the unit carries patients. In some counties volunteer companies transport under the program.",
+   "source_url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+   "evidence": "MIEMSS FY2025-26 Annual Report p.75: \"Maryland’s 29 Jurisdictional EMS Operational Programs (JEMSOPs) provide 9-1-1 emergency medical response across the State.\"",
+   "vintage": "2026-10 (FY2025-26 report)"
+  },
+  {
+   "state": "MD",
+   "county": "Caroline County",
+   "fips": "24011",
+   "provider": "Caroline County Department of Emergency Services",
+   "program_kind": "county",
+   "area": "Caroline County (jurisdictional program for the county)",
+   "ownership": "county government",
+   "transport": null,
+   "transport_note": "Source says 9-1-1 emergency medical response; it does not say per program that the unit carries patients. In some counties volunteer companies transport under the program.",
+   "source_url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+   "evidence": "MIEMSS FY2025-26 Annual Report p.75: \"Maryland’s 29 Jurisdictional EMS Operational Programs (JEMSOPs) provide 9-1-1 emergency medical response across the State.\"",
+   "vintage": "2026-10 (FY2025-26 report)"
+  },
+  {
+   "state": "MD",
+   "county": "Carroll County",
+   "fips": "24013",
+   "provider": "Carroll County Department of Fire and Emergency Medical Services",
+   "program_kind": "county",
+   "area": "Carroll County (jurisdictional program for the county)",
+   "ownership": "county government",
+   "transport": null,
+   "transport_note": "Source says 9-1-1 emergency medical response; it does not say per program that the unit carries patients. In some counties volunteer companies transport under the program.",
+   "source_url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+   "evidence": "MIEMSS FY2025-26 Annual Report p.75: \"Maryland’s 29 Jurisdictional EMS Operational Programs (JEMSOPs) provide 9-1-1 emergency medical response across the State.\"",
+   "vintage": "2026-10 (FY2025-26 report)"
+  },
+  {
+   "state": "MD",
+   "county": "Cecil County",
+   "fips": "24015",
+   "provider": "Cecil County Department of Emergency Services",
+   "program_kind": "county",
+   "area": "Cecil County (jurisdictional program for the county)",
+   "ownership": "county government",
+   "transport": null,
+   "transport_note": "Source says 9-1-1 emergency medical response; it does not say per program that the unit carries patients. In some counties volunteer companies transport under the program.",
+   "source_url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+   "evidence": "MIEMSS FY2025-26 Annual Report p.75: \"Maryland’s 29 Jurisdictional EMS Operational Programs (JEMSOPs) provide 9-1-1 emergency medical response across the State.\"",
+   "vintage": "2026-10 (FY2025-26 report)"
+  },
+  {
+   "state": "MD",
+   "county": "Charles County",
+   "fips": "24017",
+   "provider": "Charles County Emergency Services",
+   "program_kind": "county",
+   "area": "Charles County (jurisdictional program for the county)",
+   "ownership": "county government",
+   "transport": null,
+   "transport_note": "Source says 9-1-1 emergency medical response; it does not say per program that the unit carries patients. In some counties volunteer companies transport under the program.",
+   "source_url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+   "evidence": "MIEMSS FY2025-26 Annual Report p.75: \"Maryland’s 29 Jurisdictional EMS Operational Programs (JEMSOPs) provide 9-1-1 emergency medical response across the State.\"",
+   "vintage": "2026-10 (FY2025-26 report)"
+  },
+  {
+   "state": "MD",
+   "county": "Dorchester County",
+   "fips": "24019",
+   "provider": "Dorchester County Department of Emergency Services",
+   "program_kind": "county",
+   "area": "Dorchester County (jurisdictional program for the county)",
+   "ownership": "county government",
+   "transport": null,
+   "transport_note": "Source says 9-1-1 emergency medical response; it does not say per program that the unit carries patients. In some counties volunteer companies transport under the program.",
+   "source_url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+   "evidence": "MIEMSS FY2025-26 Annual Report p.75: \"Maryland’s 29 Jurisdictional EMS Operational Programs (JEMSOPs) provide 9-1-1 emergency medical response across the State.\"",
+   "vintage": "2026-10 (FY2025-26 report)"
+  },
+  {
+   "state": "MD",
+   "county": "Frederick County",
+   "fips": "24021",
+   "provider": "Frederick County Division of Fire Rescue Services",
+   "program_kind": "county",
+   "area": "Frederick County (jurisdictional program for the county)",
+   "ownership": "county government",
+   "transport": null,
+   "transport_note": "Source says 9-1-1 emergency medical response; it does not say per program that the unit carries patients. In some counties volunteer companies transport under the program.",
+   "source_url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+   "evidence": "MIEMSS FY2025-26 Annual Report p.75: \"Maryland’s 29 Jurisdictional EMS Operational Programs (JEMSOPs) provide 9-1-1 emergency medical response across the State.\"",
+   "vintage": "2026-10 (FY2025-26 report)"
+  },
+  {
+   "state": "MD",
+   "county": "Garrett County",
+   "fips": "24023",
+   "provider": "Garrett County Emergency Medical Services",
+   "program_kind": "county",
+   "area": "Garrett County (jurisdictional program for the county)",
+   "ownership": "county government",
+   "transport": null,
+   "transport_note": "Source says 9-1-1 emergency medical response; it does not say per program that the unit carries patients. In some counties volunteer companies transport under the program.",
+   "source_url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+   "evidence": "MIEMSS FY2025-26 Annual Report p.75: \"Maryland’s 29 Jurisdictional EMS Operational Programs (JEMSOPs) provide 9-1-1 emergency medical response across the State.\"",
+   "vintage": "2026-10 (FY2025-26 report)"
+  },
+  {
+   "state": "MD",
+   "county": "Harford County",
+   "fips": "24025",
+   "provider": "Harford County Department of Emergency Services",
+   "program_kind": "county",
+   "area": "Harford County (jurisdictional program for the county)",
+   "ownership": "county government",
+   "transport": null,
+   "transport_note": "Source says 9-1-1 emergency medical response; it does not say per program that the unit carries patients. In some counties volunteer companies transport under the program.",
+   "source_url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+   "evidence": "MIEMSS FY2025-26 Annual Report p.75: \"Maryland’s 29 Jurisdictional EMS Operational Programs (JEMSOPs) provide 9-1-1 emergency medical response across the State.\"",
+   "vintage": "2026-10 (FY2025-26 report)"
+  },
+  {
+   "state": "MD",
+   "county": "Howard County",
+   "fips": "24027",
+   "provider": "Howard County Department of Fire and Rescue Services",
+   "program_kind": "county",
+   "area": "Howard County (jurisdictional program for the county)",
+   "ownership": "county government",
+   "transport": null,
+   "transport_note": "Source says 9-1-1 emergency medical response; it does not say per program that the unit carries patients. In some counties volunteer companies transport under the program.",
+   "source_url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+   "evidence": "MIEMSS FY2025-26 Annual Report p.75: \"Maryland’s 29 Jurisdictional EMS Operational Programs (JEMSOPs) provide 9-1-1 emergency medical response across the State.\"",
+   "vintage": "2026-10 (FY2025-26 report)"
+  },
+  {
+   "state": "MD",
+   "county": "Kent County",
+   "fips": "24029",
+   "provider": "Kent County Office of Emergency Services",
+   "program_kind": "county",
+   "area": "Kent County (jurisdictional program for the county)",
+   "ownership": "county government",
+   "transport": null,
+   "transport_note": "Source says 9-1-1 emergency medical response; it does not say per program that the unit carries patients. In some counties volunteer companies transport under the program.",
+   "source_url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+   "evidence": "MIEMSS FY2025-26 Annual Report p.75: \"Maryland’s 29 Jurisdictional EMS Operational Programs (JEMSOPs) provide 9-1-1 emergency medical response across the State.\"",
+   "vintage": "2026-10 (FY2025-26 report)"
+  },
+  {
+   "state": "MD",
+   "county": "Montgomery County",
+   "fips": "24031",
+   "provider": "Montgomery County Fire and Rescue Service",
+   "program_kind": "county",
+   "area": "Montgomery County (jurisdictional program for the county)",
+   "ownership": "county government",
+   "transport": null,
+   "transport_note": "Source says 9-1-1 emergency medical response; it does not say per program that the unit carries patients. In some counties volunteer companies transport under the program.",
+   "source_url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+   "evidence": "MIEMSS FY2025-26 Annual Report p.75: \"Maryland’s 29 Jurisdictional EMS Operational Programs (JEMSOPs) provide 9-1-1 emergency medical response across the State.\"",
+   "vintage": "2026-10 (FY2025-26 report)"
+  },
+  {
+   "state": "MD",
+   "county": "Prince George's County",
+   "fips": "24033",
+   "provider": "Prince George's County Fire and Emergency Medical Services Department",
+   "program_kind": "county",
+   "area": "Prince George's County (jurisdictional program for the county)",
+   "ownership": "county government",
+   "transport": null,
+   "transport_note": "Source says 9-1-1 emergency medical response; it does not say per program that the unit carries patients. In some counties volunteer companies transport under the program.",
+   "source_url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+   "evidence": "MIEMSS FY2025-26 Annual Report p.75: \"Maryland’s 29 Jurisdictional EMS Operational Programs (JEMSOPs) provide 9-1-1 emergency medical response across the State.\"",
+   "vintage": "2026-10 (FY2025-26 report)"
+  },
+  {
+   "state": "MD",
+   "county": "Queen Anne's County",
+   "fips": "24035",
+   "provider": "Queen Anne's Department of Emergency Services",
+   "program_kind": "county",
+   "area": "Queen Anne's County (jurisdictional program for the county)",
+   "ownership": "county government",
+   "transport": null,
+   "transport_note": "Source says 9-1-1 emergency medical response; it does not say per program that the unit carries patients. In some counties volunteer companies transport under the program.",
+   "source_url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+   "evidence": "MIEMSS FY2025-26 Annual Report p.75: \"Maryland’s 29 Jurisdictional EMS Operational Programs (JEMSOPs) provide 9-1-1 emergency medical response across the State.\"",
+   "vintage": "2026-10 (FY2025-26 report)"
+  },
+  {
+   "state": "MD",
+   "county": "St. Mary's County",
+   "fips": "24037",
+   "provider": "St. Mary's County Department of Emergency Services",
+   "program_kind": "county",
+   "area": "St. Mary's County (jurisdictional program for the county)",
+   "ownership": "county government",
+   "transport": null,
+   "transport_note": "Source says 9-1-1 emergency medical response; it does not say per program that the unit carries patients. In some counties volunteer companies transport under the program.",
+   "source_url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+   "evidence": "MIEMSS FY2025-26 Annual Report p.75: \"Maryland’s 29 Jurisdictional EMS Operational Programs (JEMSOPs) provide 9-1-1 emergency medical response across the State.\"",
+   "vintage": "2026-10 (FY2025-26 report)"
+  },
+  {
+   "state": "MD",
+   "county": "Somerset County",
+   "fips": "24039",
+   "provider": "Somerset County Emergency Medical Services",
+   "program_kind": "county",
+   "area": "Somerset County (jurisdictional program for the county)",
+   "ownership": "county government",
+   "transport": null,
+   "transport_note": "Source says 9-1-1 emergency medical response; it does not say per program that the unit carries patients. In some counties volunteer companies transport under the program.",
+   "source_url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+   "evidence": "MIEMSS FY2025-26 Annual Report p.75: \"Maryland’s 29 Jurisdictional EMS Operational Programs (JEMSOPs) provide 9-1-1 emergency medical response across the State.\"",
+   "vintage": "2026-10 (FY2025-26 report)"
+  },
+  {
+   "state": "MD",
+   "county": "Talbot County",
+   "fips": "24041",
+   "provider": "Talbot Department of Emergency Services",
+   "program_kind": "county",
+   "area": "Talbot County (jurisdictional program for the county)",
+   "ownership": "county government",
+   "transport": null,
+   "transport_note": "Source says 9-1-1 emergency medical response; it does not say per program that the unit carries patients. In some counties volunteer companies transport under the program.",
+   "source_url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+   "evidence": "MIEMSS FY2025-26 Annual Report p.75: \"Maryland’s 29 Jurisdictional EMS Operational Programs (JEMSOPs) provide 9-1-1 emergency medical response across the State.\"",
+   "vintage": "2026-10 (FY2025-26 report)"
+  },
+  {
+   "state": "MD",
+   "county": "Washington County",
+   "fips": "24043",
+   "provider": "Washington County Department of Emergency Services",
+   "program_kind": "county",
+   "area": "Washington County (jurisdictional program for the county)",
+   "ownership": "county government",
+   "transport": null,
+   "transport_note": "Source says 9-1-1 emergency medical response; it does not say per program that the unit carries patients. In some counties volunteer companies transport under the program.",
+   "source_url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+   "evidence": "MIEMSS FY2025-26 Annual Report p.75: \"Maryland’s 29 Jurisdictional EMS Operational Programs (JEMSOPs) provide 9-1-1 emergency medical response across the State.\"",
+   "vintage": "2026-10 (FY2025-26 report)"
+  },
+  {
+   "state": "MD",
+   "county": "Wicomico County",
+   "fips": "24045",
+   "provider": "Wicomico County Department of Emergency Services",
+   "program_kind": "county",
+   "area": "Wicomico County (jurisdictional program for the county)",
+   "ownership": "county government",
+   "transport": null,
+   "transport_note": "Source says 9-1-1 emergency medical response; it does not say per program that the unit carries patients. In some counties volunteer companies transport under the program.",
+   "source_url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+   "evidence": "MIEMSS FY2025-26 Annual Report p.75: \"Maryland’s 29 Jurisdictional EMS Operational Programs (JEMSOPs) provide 9-1-1 emergency medical response across the State.\"",
+   "vintage": "2026-10 (FY2025-26 report)"
+  },
+  {
+   "state": "MD",
+   "county": "Wicomico County",
+   "fips": "24045",
+   "provider": "Salisbury Fire Department",
+   "program_kind": "city",
+   "area": "City of Salisbury (municipal program inside Wicomico County)",
+   "ownership": "municipal fire",
+   "transport": null,
+   "transport_note": "Source says 9-1-1 emergency medical response; it does not say per program that the unit carries patients. In some counties volunteer companies transport under the program.",
+   "source_url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+   "evidence": "MIEMSS FY2025-26 Annual Report p.75: \"Maryland’s 29 Jurisdictional EMS Operational Programs (JEMSOPs) provide 9-1-1 emergency medical response across the State.\"",
+   "vintage": "2026-10 (FY2025-26 report)"
+  },
+  {
+   "state": "MD",
+   "county": "Worcester County",
+   "fips": "24047",
+   "provider": "Worcester County Department of Emergency Services",
+   "program_kind": "county",
+   "area": "Worcester County (jurisdictional program for the county)",
+   "ownership": "county government",
+   "transport": null,
+   "transport_note": "Source says 9-1-1 emergency medical response; it does not say per program that the unit carries patients. In some counties volunteer companies transport under the program.",
+   "source_url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+   "evidence": "MIEMSS FY2025-26 Annual Report p.75: \"Maryland’s 29 Jurisdictional EMS Operational Programs (JEMSOPs) provide 9-1-1 emergency medical response across the State.\"",
+   "vintage": "2026-10 (FY2025-26 report)"
+  },
+  {
+   "state": "MD",
+   "county": "Worcester County",
+   "fips": "24047",
+   "provider": "Ocean City Fire Department",
+   "program_kind": "city",
+   "area": "City of Ocean (municipal program inside Worcester County)",
+   "ownership": "municipal fire",
+   "transport": null,
+   "transport_note": "Source says 9-1-1 emergency medical response; it does not say per program that the unit carries patients. In some counties volunteer companies transport under the program.",
+   "source_url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+   "evidence": "MIEMSS FY2025-26 Annual Report p.75: \"Maryland’s 29 Jurisdictional EMS Operational Programs (JEMSOPs) provide 9-1-1 emergency medical response across the State.\"",
+   "vintage": "2026-10 (FY2025-26 report)"
+  }
+ ],
+ "county_verdict": {
+  "24001": {
+   "county": "Allegany County",
+   "tier": "A",
+   "basis": "the state EMS agency names the jurisdictional EMS operational program for the county",
+   "programs": [
+    "Allegany County Emergency Services"
+   ],
+   "add": [
+    {
+     "name": "Allegany County Emergency Services",
+     "basis": "serves",
+     "kind": "state",
+     "partial": false,
+     "via": "Maryland MIEMSS Jurisdictional EMS Operational Programs list (FY2025-26 annual report, p.75)",
+     "url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+     "note": "Maryland-listed jurisdictional EMS operational program (county program); the state list does not say which units carry patients"
+    }
+   ]
+  },
+  "24003": {
+   "county": "Anne Arundel County",
+   "tier": "A",
+   "basis": "the state EMS agency names the jurisdictional EMS operational program for the county",
+   "programs": [
+    "Anne Arundel County Fire Department",
+    "Annapolis City Fire Department",
+    "BWI Fire Rescue Department"
+   ],
+   "add": [
+    {
+     "name": "Anne Arundel County Fire Department",
+     "basis": "serves",
+     "kind": "state",
+     "partial": false,
+     "via": "Maryland MIEMSS Jurisdictional EMS Operational Programs list (FY2025-26 annual report, p.75)",
+     "url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+     "note": "Maryland-listed jurisdictional EMS operational program (county program); the state list does not say which units carry patients"
+    },
+    {
+     "name": "Annapolis City Fire Department",
+     "basis": "serves",
+     "kind": "state",
+     "partial": true,
+     "via": "Maryland MIEMSS Jurisdictional EMS Operational Programs list (FY2025-26 annual report, p.75)",
+     "url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+     "note": "Maryland-listed jurisdictional EMS operational program (city/airport program inside the county, not countywide); the state list does not say which units carry patients"
+    },
+    {
+     "name": "BWI Fire Rescue Department",
+     "basis": "serves",
+     "kind": "state",
+     "partial": true,
+     "via": "Maryland MIEMSS Jurisdictional EMS Operational Programs list (FY2025-26 annual report, p.75)",
+     "url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+     "note": "Maryland-listed jurisdictional EMS operational program (city/airport program inside the county, not countywide); the state list does not say which units carry patients"
+    }
+   ],
+   "page_note": "Maryland lists three 9-1-1 EMS programs inside Anne Arundel County: the county fire department, Annapolis City Fire and BWI airport fire-rescue. The county program is the countywide one; the other two cover the city and the airport."
+  },
+  "24510": {
+   "county": "Baltimore city",
+   "tier": "A",
+   "basis": "the state EMS agency names the jurisdictional EMS operational program for the county",
+   "programs": [
+    "Baltimore City Fire Department"
+   ],
+   "add": [
+    {
+     "name": "Baltimore City Fire Department",
+     "basis": "serves",
+     "kind": "state",
+     "partial": false,
+     "via": "Maryland MIEMSS Jurisdictional EMS Operational Programs list (FY2025-26 annual report, p.75)",
+     "url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+     "note": "Maryland-listed jurisdictional EMS operational program (city program; Baltimore city is an independent city, so this is the program for the whole jurisdiction); the state list does not say which units carry patients"
+    }
+   ]
+  },
+  "24005": {
+   "county": "Baltimore County",
+   "tier": "A",
+   "basis": "the state EMS agency names the jurisdictional EMS operational program for the county",
+   "programs": [
+    "Baltimore County Fire Department"
+   ],
+   "add": [
+    {
+     "name": "Baltimore County Fire Department",
+     "basis": "serves",
+     "kind": "state",
+     "partial": false,
+     "via": "Maryland MIEMSS Jurisdictional EMS Operational Programs list (FY2025-26 annual report, p.75)",
+     "url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+     "note": "Maryland-listed jurisdictional EMS operational program (county program); the state list does not say which units carry patients"
+    }
+   ]
+  },
+  "24009": {
+   "county": "Calvert County",
+   "tier": "A",
+   "basis": "the state EMS agency names the jurisdictional EMS operational program for the county",
+   "programs": [
+    "Calvert County Fire, Rescue & EMS"
+   ],
+   "add": [
+    {
+     "name": "Calvert County Fire, Rescue & EMS",
+     "basis": "serves",
+     "kind": "state",
+     "partial": false,
+     "via": "Maryland MIEMSS Jurisdictional EMS Operational Programs list (FY2025-26 annual report, p.75)",
+     "url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+     "note": "Maryland-listed jurisdictional EMS operational program (county program); the state list does not say which units carry patients"
+    }
+   ]
+  },
+  "24011": {
+   "county": "Caroline County",
+   "tier": "A",
+   "basis": "the state EMS agency names the jurisdictional EMS operational program for the county",
+   "programs": [
+    "Caroline County Department of Emergency Services"
+   ],
+   "add": [
+    {
+     "name": "Caroline County Department of Emergency Services",
+     "basis": "serves",
+     "kind": "state",
+     "partial": false,
+     "via": "Maryland MIEMSS Jurisdictional EMS Operational Programs list (FY2025-26 annual report, p.75)",
+     "url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+     "note": "Maryland-listed jurisdictional EMS operational program (county program); the state list does not say which units carry patients"
+    }
+   ]
+  },
+  "24013": {
+   "county": "Carroll County",
+   "tier": "A",
+   "basis": "the state EMS agency names the jurisdictional EMS operational program for the county",
+   "programs": [
+    "Carroll County Department of Fire and Emergency Medical Services"
+   ],
+   "add": [
+    {
+     "name": "Carroll County Department of Fire and Emergency Medical Services",
+     "basis": "serves",
+     "kind": "state",
+     "partial": false,
+     "via": "Maryland MIEMSS Jurisdictional EMS Operational Programs list (FY2025-26 annual report, p.75)",
+     "url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+     "note": "Maryland-listed jurisdictional EMS operational program (county program); the state list does not say which units carry patients"
+    }
+   ]
+  },
+  "24015": {
+   "county": "Cecil County",
+   "tier": "A",
+   "basis": "the state EMS agency names the jurisdictional EMS operational program for the county",
+   "programs": [
+    "Cecil County Department of Emergency Services"
+   ],
+   "add": [
+    {
+     "name": "Cecil County Department of Emergency Services",
+     "basis": "serves",
+     "kind": "state",
+     "partial": false,
+     "via": "Maryland MIEMSS Jurisdictional EMS Operational Programs list (FY2025-26 annual report, p.75)",
+     "url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+     "note": "Maryland-listed jurisdictional EMS operational program (county program); the state list does not say which units carry patients"
+    }
+   ]
+  },
+  "24017": {
+   "county": "Charles County",
+   "tier": "A",
+   "basis": "the state EMS agency names the jurisdictional EMS operational program for the county",
+   "programs": [
+    "Charles County Emergency Services"
+   ],
+   "add": [
+    {
+     "name": "Charles County Emergency Services",
+     "basis": "serves",
+     "kind": "state",
+     "partial": false,
+     "via": "Maryland MIEMSS Jurisdictional EMS Operational Programs list (FY2025-26 annual report, p.75)",
+     "url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+     "note": "Maryland-listed jurisdictional EMS operational program (county program); the state list does not say which units carry patients"
+    }
+   ]
+  },
+  "24019": {
+   "county": "Dorchester County",
+   "tier": "A",
+   "basis": "the state EMS agency names the jurisdictional EMS operational program for the county",
+   "programs": [
+    "Dorchester County Department of Emergency Services"
+   ],
+   "add": [
+    {
+     "name": "Dorchester County Department of Emergency Services",
+     "basis": "serves",
+     "kind": "state",
+     "partial": false,
+     "via": "Maryland MIEMSS Jurisdictional EMS Operational Programs list (FY2025-26 annual report, p.75)",
+     "url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+     "note": "Maryland-listed jurisdictional EMS operational program (county program); the state list does not say which units carry patients"
+    }
+   ]
+  },
+  "24021": {
+   "county": "Frederick County",
+   "tier": "A",
+   "basis": "the state EMS agency names the jurisdictional EMS operational program for the county",
+   "programs": [
+    "Frederick County Division of Fire Rescue Services"
+   ],
+   "add": [
+    {
+     "name": "Frederick County Division of Fire Rescue Services",
+     "basis": "serves",
+     "kind": "state",
+     "partial": false,
+     "via": "Maryland MIEMSS Jurisdictional EMS Operational Programs list (FY2025-26 annual report, p.75)",
+     "url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+     "note": "Maryland-listed jurisdictional EMS operational program (county program); the state list does not say which units carry patients"
+    }
+   ]
+  },
+  "24023": {
+   "county": "Garrett County",
+   "tier": "A",
+   "basis": "the state EMS agency names the jurisdictional EMS operational program for the county",
+   "programs": [
+    "Garrett County Emergency Medical Services"
+   ],
+   "add": [
+    {
+     "name": "Garrett County Emergency Medical Services",
+     "basis": "serves",
+     "kind": "state",
+     "partial": false,
+     "via": "Maryland MIEMSS Jurisdictional EMS Operational Programs list (FY2025-26 annual report, p.75)",
+     "url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+     "note": "Maryland-listed jurisdictional EMS operational program (county program); the state list does not say which units carry patients"
+    }
+   ]
+  },
+  "24025": {
+   "county": "Harford County",
+   "tier": "A",
+   "basis": "the state EMS agency names the jurisdictional EMS operational program for the county",
+   "programs": [
+    "Harford County Department of Emergency Services"
+   ],
+   "add": [
+    {
+     "name": "Harford County Department of Emergency Services",
+     "basis": "serves",
+     "kind": "state",
+     "partial": false,
+     "via": "Maryland MIEMSS Jurisdictional EMS Operational Programs list (FY2025-26 annual report, p.75)",
+     "url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+     "note": "Maryland-listed jurisdictional EMS operational program (county program); the state list does not say which units carry patients"
+    }
+   ]
+  },
+  "24027": {
+   "county": "Howard County",
+   "tier": "A",
+   "basis": "the state EMS agency names the jurisdictional EMS operational program for the county",
+   "programs": [
+    "Howard County Department of Fire and Rescue Services"
+   ],
+   "add": [
+    {
+     "name": "Howard County Department of Fire and Rescue Services",
+     "basis": "serves",
+     "kind": "state",
+     "partial": false,
+     "via": "Maryland MIEMSS Jurisdictional EMS Operational Programs list (FY2025-26 annual report, p.75)",
+     "url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+     "note": "Maryland-listed jurisdictional EMS operational program (county program); the state list does not say which units carry patients"
+    }
+   ]
+  },
+  "24029": {
+   "county": "Kent County",
+   "tier": "A",
+   "basis": "the state EMS agency names the jurisdictional EMS operational program for the county",
+   "programs": [
+    "Kent County Office of Emergency Services"
+   ],
+   "add": [
+    {
+     "name": "Kent County Office of Emergency Services",
+     "basis": "serves",
+     "kind": "state",
+     "partial": false,
+     "via": "Maryland MIEMSS Jurisdictional EMS Operational Programs list (FY2025-26 annual report, p.75)",
+     "url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+     "note": "Maryland-listed jurisdictional EMS operational program (county program); the state list does not say which units carry patients"
+    }
+   ]
+  },
+  "24031": {
+   "county": "Montgomery County",
+   "tier": "A",
+   "basis": "the state EMS agency names the jurisdictional EMS operational program for the county",
+   "programs": [
+    "Montgomery County Fire and Rescue Service"
+   ],
+   "add": [
+    {
+     "name": "Montgomery County Fire and Rescue Service",
+     "basis": "serves",
+     "kind": "state",
+     "partial": false,
+     "via": "Maryland MIEMSS Jurisdictional EMS Operational Programs list (FY2025-26 annual report, p.75)",
+     "url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+     "note": "Maryland-listed jurisdictional EMS operational program (county program); the state list does not say which units carry patients"
+    }
+   ]
+  },
+  "24033": {
+   "county": "Prince George's County",
+   "tier": "A",
+   "basis": "the state EMS agency names the jurisdictional EMS operational program for the county",
+   "programs": [
+    "Prince George's County Fire and Emergency Medical Services Department"
+   ],
+   "add": [
+    {
+     "name": "Prince George's County Fire and Emergency Medical Services Department",
+     "basis": "serves",
+     "kind": "state",
+     "partial": false,
+     "via": "Maryland MIEMSS Jurisdictional EMS Operational Programs list (FY2025-26 annual report, p.75)",
+     "url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+     "note": "Maryland-listed jurisdictional EMS operational program (county program); the state list does not say which units carry patients"
+    }
+   ]
+  },
+  "24035": {
+   "county": "Queen Anne's County",
+   "tier": "A",
+   "basis": "the state EMS agency names the jurisdictional EMS operational program for the county",
+   "programs": [
+    "Queen Anne's Department of Emergency Services"
+   ],
+   "add": [
+    {
+     "name": "Queen Anne's Department of Emergency Services",
+     "basis": "serves",
+     "kind": "state",
+     "partial": false,
+     "via": "Maryland MIEMSS Jurisdictional EMS Operational Programs list (FY2025-26 annual report, p.75)",
+     "url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+     "note": "Maryland-listed jurisdictional EMS operational program (county program); the state list does not say which units carry patients"
+    }
+   ]
+  },
+  "24037": {
+   "county": "St. Mary's County",
+   "tier": "A",
+   "basis": "the state EMS agency names the jurisdictional EMS operational program for the county",
+   "programs": [
+    "St. Mary's County Department of Emergency Services"
+   ],
+   "add": [
+    {
+     "name": "St. Mary's County Department of Emergency Services",
+     "basis": "serves",
+     "kind": "state",
+     "partial": false,
+     "via": "Maryland MIEMSS Jurisdictional EMS Operational Programs list (FY2025-26 annual report, p.75)",
+     "url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+     "note": "Maryland-listed jurisdictional EMS operational program (county program); the state list does not say which units carry patients"
+    }
+   ]
+  },
+  "24039": {
+   "county": "Somerset County",
+   "tier": "A",
+   "basis": "the state EMS agency names the jurisdictional EMS operational program for the county",
+   "programs": [
+    "Somerset County Emergency Medical Services"
+   ],
+   "add": [
+    {
+     "name": "Somerset County Emergency Medical Services",
+     "basis": "serves",
+     "kind": "state",
+     "partial": false,
+     "via": "Maryland MIEMSS Jurisdictional EMS Operational Programs list (FY2025-26 annual report, p.75)",
+     "url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+     "note": "Maryland-listed jurisdictional EMS operational program (county program); the state list does not say which units carry patients"
+    }
+   ]
+  },
+  "24041": {
+   "county": "Talbot County",
+   "tier": "A",
+   "basis": "the state EMS agency names the jurisdictional EMS operational program for the county",
+   "programs": [
+    "Talbot Department of Emergency Services"
+   ],
+   "add": [
+    {
+     "name": "Talbot Department of Emergency Services",
+     "basis": "serves",
+     "kind": "state",
+     "partial": false,
+     "via": "Maryland MIEMSS Jurisdictional EMS Operational Programs list (FY2025-26 annual report, p.75)",
+     "url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+     "note": "Maryland-listed jurisdictional EMS operational program (county program); the state list does not say which units carry patients"
+    }
+   ]
+  },
+  "24043": {
+   "county": "Washington County",
+   "tier": "A",
+   "basis": "the state EMS agency names the jurisdictional EMS operational program for the county",
+   "programs": [
+    "Washington County Department of Emergency Services"
+   ],
+   "add": [
+    {
+     "name": "Washington County Department of Emergency Services",
+     "basis": "serves",
+     "kind": "state",
+     "partial": false,
+     "via": "Maryland MIEMSS Jurisdictional EMS Operational Programs list (FY2025-26 annual report, p.75)",
+     "url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+     "note": "Maryland-listed jurisdictional EMS operational program (county program); the state list does not say which units carry patients"
+    }
+   ]
+  },
+  "24045": {
+   "county": "Wicomico County",
+   "tier": "A",
+   "basis": "the state EMS agency names the jurisdictional EMS operational program for the county",
+   "programs": [
+    "Wicomico County Department of Emergency Services",
+    "Salisbury Fire Department"
+   ],
+   "add": [
+    {
+     "name": "Wicomico County Department of Emergency Services",
+     "basis": "serves",
+     "kind": "state",
+     "partial": false,
+     "via": "Maryland MIEMSS Jurisdictional EMS Operational Programs list (FY2025-26 annual report, p.75)",
+     "url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+     "note": "Maryland-listed jurisdictional EMS operational program (county program); the state list does not say which units carry patients"
+    },
+    {
+     "name": "Salisbury Fire Department",
+     "basis": "serves",
+     "kind": "state",
+     "partial": true,
+     "via": "Maryland MIEMSS Jurisdictional EMS Operational Programs list (FY2025-26 annual report, p.75)",
+     "url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+     "note": "Maryland-listed jurisdictional EMS operational program (city/airport program inside the county, not countywide); the state list does not say which units carry patients"
+    }
+   ],
+   "page_note": "Maryland lists two programs in Wicomico County: the county program and Salisbury Fire Department (city)."
+  },
+  "24047": {
+   "county": "Worcester County",
+   "tier": "A",
+   "basis": "the state EMS agency names the jurisdictional EMS operational program for the county",
+   "programs": [
+    "Worcester County Department of Emergency Services",
+    "Ocean City Fire Department"
+   ],
+   "add": [
+    {
+     "name": "Worcester County Department of Emergency Services",
+     "basis": "serves",
+     "kind": "state",
+     "partial": false,
+     "via": "Maryland MIEMSS Jurisdictional EMS Operational Programs list (FY2025-26 annual report, p.75)",
+     "url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+     "note": "Maryland-listed jurisdictional EMS operational program (county program); the state list does not say which units carry patients"
+    },
+    {
+     "name": "Ocean City Fire Department",
+     "basis": "serves",
+     "kind": "state",
+     "partial": true,
+     "via": "Maryland MIEMSS Jurisdictional EMS Operational Programs list (FY2025-26 annual report, p.75)",
+     "url": "https://www.miemss.org/home/Portals/0/Docs/AnnualReports/Annual-Report-2026.pdf",
+     "note": "Maryland-listed jurisdictional EMS operational program (city/airport program inside the county, not countywide); the state list does not say which units carry patients"
+    }
+   ],
+   "page_note": "Maryland lists two programs in Worcester County: the county program and Ocean City Fire Department (city)."
+  }
+ }
+}

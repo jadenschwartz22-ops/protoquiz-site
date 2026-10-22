@@ -1,0 +1,5504 @@
+{
+ "meta": {
+  "state": "MO",
+  "source": "MO_AMBULANCE_DISTRICTS_view (ArcGIS Online feature service owned by the Osage Ambulance District GIS admin account \"osageadmin\"): a COMPILATION of Missouri ambulance-district boundaries, not a state layer",
+  "service_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+  "layer_last_edit": "2023-04-05",
+  "retrieved": "2026-10-21",
+  "polygons": 107,
+  "cross_check": "MO DHSS Time Critical Diagnosis Unit Ambulance_Services layer (https://gis.mo.gov/arcgis/rest/services/DHSS/Ambulance_Services/FeatureServer/0, 536 stations, last edit 2025-04) point-in-polygon",
+  "a_threshold": 0.95,
+  "tier_counts": {
+   "partial": 33,
+   "none": 15,
+   "A": 63,
+   "A-unverified": 4
+  },
+  "tier_meaning": "A = districts cover >=95% of the county AND a DHSS ground station with the district name sits inside the largest district; A-unverified = covered but no name match; partial = 1-95% covered; none = <1%"
+ },
+ "rows": [
+  {
+   "name": "Adair CAD",
+   "source_note": "http://www.academs.us/ Property Tax 0.38",
+   "dhss_ground_stations_inside": [
+    "Adair County Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "Adair County Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Adair County Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Andrew CAD",
+   "source_note": "http://academs.org/ Sales tax 0.50",
+   "dhss_ground_stations_inside": [
+    "Andrew County Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "Andrew County Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Andrew County Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Worth CAD",
+   "source_note": "Property Tax",
+   "dhss_ground_stations_inside": [
+    "Worth County Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "Worth County Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Worth County Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "West Carter AD",
+   "source_note": "Property tax .43 Office 573-323-4791 Mike Reynolds - Director",
+   "dhss_ground_stations_inside": [
+    "West  Carter County Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "West  Carter County Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists West  Carter County Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Washington Area AD",
+   "source_note": "http://www.waadems.org/",
+   "dhss_ground_stations_inside": [
+    "Washington Area Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "Washington Area Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Washington Area Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Washington CAD",
+   "source_note": null,
+   "dhss_ground_stations_inside": [
+    "Washington County Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "Washington County Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Washington County Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Warsaw-Lincoln Ambulance",
+   "source_note": null,
+   "dhss_ground_stations_inside": [
+    "Warsaw-Lincoln Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "Warsaw-Lincoln Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Warsaw-Lincoln Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Warren CAD",
+   "source_note": "http://warrencountyambulance.com/ Property Tax - 04999",
+   "dhss_ground_stations_inside": [
+    "Warren County Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "Warren County Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Warren County Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Vernon CAD",
+   "source_note": "Property Tax https://www.vernoncountyambulancedistrict.com/",
+   "dhss_ground_stations_inside": [
+    "Vernon County Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "Vernon County Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Vernon County Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Van-Far AD",
+   "source_note": null,
+   "dhss_ground_stations_inside": [
+    "Van-Far Ambulance"
+   ],
+   "dhss_name_match": [
+    "Van-Far Ambulance"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Van-Far Ambulance inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Valle AD",
+   "source_note": null,
+   "dhss_ground_stations_inside": [
+    "Valle Ambulance District"
+   ],
+   "dhss_name_match": [
+    "Valle Ambulance District"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Valle Ambulance District inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Union AD",
+   "source_note": null,
+   "dhss_ground_stations_inside": [
+    "Union Ambulance District"
+   ],
+   "dhss_name_match": [
+    "Union Ambulance District"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Union Ambulance District inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Tri-County AD",
+   "source_note": "Web: Tri-County Facebook Instagram",
+   "dhss_ground_stations_inside": [
+    "Tri-County Ambulance District"
+   ],
+   "dhss_name_match": [
+    "Tri-County Ambulance District"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Tri-County Ambulance District inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Taney CAD",
+   "source_note": "www.tcad.net/ Sales tax .25 Map: TCAD Facebook Instagram",
+   "dhss_ground_stations_inside": [
+    "Taney County Ambulance District"
+   ],
+   "dhss_name_match": [
+    "Taney County Ambulance District"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Taney County Ambulance District inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Sweet Springs AD",
+   "source_note": "Property Tax .50",
+   "dhss_ground_stations_inside": [
+    "Sweet Springs Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "Sweet Springs Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Sweet Springs Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Sullivan CAD",
+   "source_note": "Property tax",
+   "dhss_ground_stations_inside": [
+    "Sullivan County Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "Sullivan County Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Sullivan County Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "South Scott CAD",
+   "source_note": "Social: https://www.facebook.com/SouthScottCAD/",
+   "dhss_ground_stations_inside": [
+    "South Scott Co Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "South Scott Co Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists South Scott Co Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "South Platte AD",
+   "source_note": null,
+   "dhss_ground_stations_inside": [
+    "American Medical Response-Indep"
+   ],
+   "dhss_name_match": [],
+   "transport": false,
+   "transport_basis": "statutory ambulance district polygon; no DHSS ground station with a matching name inside it (not asserted)",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "South Howell CAD",
+   "source_note": "https://www.shc-ems.com/",
+   "dhss_ground_stations_inside": [
+    "South Howell Co Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "South Howell Co Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists South Howell Co Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "South Barryl CAD",
+   "source_note": null,
+   "dhss_ground_stations_inside": [
+    "Mercy South Barry County Ambulance District"
+   ],
+   "dhss_name_match": [],
+   "transport": false,
+   "transport_basis": "statutory ambulance district polygon; no DHSS ground station with a matching name inside it (not asserted)",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Stoddard CAD",
+   "source_note": "Website: https://stoddems.com/ Property Tax",
+   "dhss_ground_stations_inside": [
+    "Stoddard Co Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "Stoddard Co Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Stoddard Co Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Steelville AD",
+   "source_note": null,
+   "dhss_ground_stations_inside": [
+    "Steelville Ambulance District"
+   ],
+   "dhss_name_match": [
+    "Steelville Ambulance District"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Steelville Ambulance District inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "St. James AD",
+   "source_note": null,
+   "dhss_ground_stations_inside": [
+    "St. James Ambulance District"
+   ],
+   "dhss_name_match": [
+    "St. James Ambulance District"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists St. James Ambulance District inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "St. Genevieve CAD",
+   "source_note": null,
+   "dhss_ground_stations_inside": [
+    "Sainte Genevieve County Ambulance District"
+   ],
+   "dhss_name_match": [
+    "Sainte Genevieve County Ambulance District"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Sainte Genevieve County Ambulance District inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "St. Francois CAD",
+   "source_note": "https://www.sfcad.org/",
+   "dhss_ground_stations_inside": [
+    "St. Francois County Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "St. Francois County Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists St. Francois County Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "St. Clair AD",
+   "source_note": null,
+   "dhss_ground_stations_inside": [
+    "St. Clair Ambulance District"
+   ],
+   "dhss_name_match": [
+    "St. Clair Ambulance District"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists St. Clair Ambulance District inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "St. Charles CAD",
+   "source_note": "https://sccad.com/wordpress/",
+   "dhss_ground_stations_inside": [
+    "St. Charles County Ambulance Dist",
+    "St. Charles Fire Dept"
+   ],
+   "dhss_name_match": [
+    "St. Charles County Ambulance Dist",
+    "St. Charles Fire Dept"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists St. Charles County Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Scotland CAD",
+   "source_note": null,
+   "dhss_ground_stations_inside": [
+    "Scotland County Ambulance District"
+   ],
+   "dhss_name_match": [
+    "Scotland County Ambulance District"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Scotland County Ambulance District inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Slater AD",
+   "source_note": "Property Tax 0.5",
+   "dhss_ground_stations_inside": [
+    "Slater Ambulance District # 1"
+   ],
+   "dhss_name_match": [
+    "Slater Ambulance District # 1"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Slater Ambulance District # 1 inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Shelby CAD",
+   "source_note": "DBA Salt River AD",
+   "dhss_ground_stations_inside": [
+    "Salt River Ambulance District"
+   ],
+   "dhss_name_match": [],
+   "transport": false,
+   "transport_basis": "statutory ambulance district polygon; no DHSS ground station with a matching name inside it (not asserted)",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Schuyler CAD",
+   "source_note": "Property tax",
+   "dhss_ground_stations_inside": [
+    "Schuyler County Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "Schuyler County Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Schuyler County Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Saline CAD",
+   "source_note": "Property Tax 0.5 http://salinecountyambulance.com/",
+   "dhss_ground_stations_inside": [
+    "Saline County Ambulance Dist #3"
+   ],
+   "dhss_name_match": [
+    "Saline County Ambulance Dist #3"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Saline County Ambulance Dist #3 inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Rock Township AD",
+   "source_note": "Sales tax .25 http://www.rocktownship.com/",
+   "dhss_ground_stations_inside": [
+    "Rock Township Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "Rock Township Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Rock Township Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Ripley CAD",
+   "source_note": null,
+   "dhss_ground_stations_inside": [
+    "Ripley County Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "Ripley County Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Ripley County Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Reynolds CAD",
+   "source_note": null,
+   "dhss_ground_stations_inside": [],
+   "dhss_name_match": [],
+   "transport": false,
+   "transport_basis": "statutory ambulance district polygon; no DHSS ground station with a matching name inside it (not asserted)",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Ray CAD",
+   "source_note": null,
+   "dhss_ground_stations_inside": [
+    "Ray County Ambulance District"
+   ],
+   "dhss_name_match": [
+    "Ray County Ambulance District"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Ray County Ambulance District inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Randolph CAD",
+   "source_note": null,
+   "dhss_ground_stations_inside": [
+    "Randolph County EMS"
+   ],
+   "dhss_name_match": [
+    "Randolph County EMS"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Randolph County EMS inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Ralls CAD",
+   "source_note": "Property Tax",
+   "dhss_ground_stations_inside": [
+    "Ralls County Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "Ralls County Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Ralls County Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Pulaski CAD",
+   "source_note": null,
+   "dhss_ground_stations_inside": [
+    "Pulaski County Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "Pulaski County Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Pulaski County Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Putnam CAD",
+   "source_note": "Property tax",
+   "dhss_ground_stations_inside": [
+    "Putnam County Ambulance District"
+   ],
+   "dhss_name_match": [
+    "Putnam County Ambulance District"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Putnam County Ambulance District inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Pettis CAD",
+   "source_note": null,
+   "dhss_ground_stations_inside": [
+    "Pettis County Ambulance District"
+   ],
+   "dhss_name_match": [
+    "Pettis County Ambulance District"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Pettis County Ambulance District inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Ozark Central AD",
+   "source_note": "Facebook Map 1: Ozark Central AD Map 2: Ozark Central AD",
+   "dhss_ground_stations_inside": [
+    "Maries-Osage Ambulance District",
+    "Osage Ambulance District",
+    "Ozark Central Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "Ozark Central Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Ozark Central Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Ozark CAD",
+   "source_note": null,
+   "dhss_ground_stations_inside": [
+    "Ozark County Ambulance District"
+   ],
+   "dhss_name_match": [
+    "Ozark County Ambulance District"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Ozark County Ambulance District inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Owensville Area AD",
+   "source_note": "Map: Owensville Area AD",
+   "dhss_ground_stations_inside": [
+    "Owensville Area Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "Owensville Area Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Owensville Area Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Osage AD",
+   "source_note": "https://www.osageamb.com/ Sales tax Map: Osage AD",
+   "dhss_ground_stations_inside": [
+    "Maries-Osage Ambulance District",
+    "Osage Ambulance District"
+   ],
+   "dhss_name_match": [
+    "Maries-Osage Ambulance District",
+    "Osage Ambulance District"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Maries-Osage Ambulance District inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Oregon CAD",
+   "source_note": null,
+   "dhss_ground_stations_inside": [
+    "Oregon County Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "Oregon County Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Oregon County Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "NTA Ambulance District",
+   "source_note": "Sales Tax .50 https://ntaemsrescue.co m",
+   "dhss_ground_stations_inside": [
+    "NTA Ambulance"
+   ],
+   "dhss_name_match": [
+    "NTA Ambulance"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists NTA Ambulance inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Northland Regional AD",
+   "source_note": "https://nrad-ems.org/ https://www.facebook.com/NRADAmbulance/",
+   "dhss_ground_stations_inside": [
+    "Northland Regional Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "Northland Regional Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Northland Regional Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "North Scott CAD",
+   "source_note": null,
+   "dhss_ground_stations_inside": [
+    "North Scott Co Ambulance Dist",
+    "SSM Cardinal Glennon Children's Transport"
+   ],
+   "dhss_name_match": [
+    "North Scott Co Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists North Scott Co Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "North Harrison CAD",
+   "source_note": "Property Tax",
+   "dhss_ground_stations_inside": [
+    "North Harrison Co Amb Dist"
+   ],
+   "dhss_name_match": [
+    "North Harrison Co Amb Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists North Harrison Co Amb Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "North Jefferson CAD",
+   "source_note": null,
+   "dhss_ground_stations_inside": [
+    "North Jefferson Co / SEMS Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "North Jefferson Co / SEMS Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists North Jefferson Co / SEMS Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "North Crawford CAD",
+   "source_note": null,
+   "dhss_ground_stations_inside": [
+    "North Crawford County Ambulance District"
+   ],
+   "dhss_name_match": [
+    "North Crawford County Ambulance District"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists North Crawford County Ambulance District inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Nodaway CAD",
+   "source_note": null,
+   "dhss_ground_stations_inside": [
+    "Nodaway County Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "Nodaway County Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Nodaway County Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "New Madrid CAD",
+   "source_note": "https://www.nmcad.net/",
+   "dhss_ground_stations_inside": [
+    "New Madrid County Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "New Madrid County Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists New Madrid County Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Newton CAD",
+   "source_note": "Property Tax",
+   "dhss_ground_stations_inside": [
+    "Metro Emergency Transport System-Joplin",
+    "Newton County Ambulance District"
+   ],
+   "dhss_name_match": [
+    "Newton County Ambulance District"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Newton County Ambulance District inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "New Haven AD",
+   "source_note": null,
+   "dhss_ground_stations_inside": [
+    "New Haven Ambulance District"
+   ],
+   "dhss_name_match": [
+    "New Haven Ambulance District"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists New Haven Ambulance District inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Naylor-Neelyville AD",
+   "source_note": "Contracted to Medic One https://medic-one.info/",
+   "dhss_ground_stations_inside": [],
+   "dhss_name_match": [],
+   "transport": false,
+   "transport_basis": "statutory ambulance district polygon; no DHSS ground station with a matching name inside it (not asserted)",
+   "ownership": "public ambulance district (statutory political subdivision); contracts operations out: Contracted to Medic One https://medic-one.info/",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Monroe CAD",
+   "source_note": "Property Tax",
+   "dhss_ground_stations_inside": [
+    "Monroe County Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "Monroe County Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Monroe County Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Monroe City AD",
+   "source_note": null,
+   "dhss_ground_stations_inside": [
+    "Monroe City Ambulance District"
+   ],
+   "dhss_name_match": [
+    "Monroe City Ambulance District"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Monroe City Ambulance District inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Montgomery CAD",
+   "source_note": "Property Tax .4875 https://www.facebook.com/Montgomery-County-Ambulance-District-959914817391533/",
+   "dhss_ground_stations_inside": [
+    "Montgomery County Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "Montgomery County Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Montgomery County Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Mississippi CAD",
+   "source_note": "No website, no social media, Office: 573-683-6207 Property Tax",
+   "dhss_ground_stations_inside": [
+    "Mississippi County Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "Mississippi County Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Mississippi County Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Mid-Mo AD",
+   "source_note": null,
+   "dhss_ground_stations_inside": [
+    "Mid-Mo Ambulance District"
+   ],
+   "dhss_name_match": [
+    "Mid-Mo Ambulance District"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Mid-Mo Ambulance District inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Miller CAD",
+   "source_note": null,
+   "dhss_ground_stations_inside": [
+    "Lake Ozark Fire Protection District",
+    "Miller County Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "Miller County Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Miller County Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Mercer CAD",
+   "source_note": "Property Tax",
+   "dhss_ground_stations_inside": [
+    "Mercer County Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "Mercer County Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Mercer County Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Meramec AD",
+   "source_note": null,
+   "dhss_ground_stations_inside": [
+    "Meramec Ambulance District"
+   ],
+   "dhss_name_match": [
+    "Meramec Ambulance District"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Meramec Ambulance District inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Marthasville AD",
+   "source_note": "Property Tax https://www.mcadems.org/",
+   "dhss_ground_stations_inside": [
+    "Marthasville Community Amb Dist"
+   ],
+   "dhss_name_match": [
+    "Marthasville Community Amb Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Marthasville Community Amb Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Maries-Osage AD",
+   "source_note": "Map: Maries-Osage",
+   "dhss_ground_stations_inside": [],
+   "dhss_name_match": [],
+   "transport": false,
+   "transport_basis": "statutory ambulance district polygon; no DHSS ground station with a matching name inside it (not asserted)",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Marion CAD",
+   "source_note": "http://www.mcadems.com/",
+   "dhss_ground_stations_inside": [
+    "Marion County Ambulance District"
+   ],
+   "dhss_name_match": [
+    "Marion County Ambulance District"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Marion County Ambulance District inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Madison CAD",
+   "source_note": null,
+   "dhss_ground_stations_inside": [
+    "Madison County Ambulance District"
+   ],
+   "dhss_name_match": [
+    "Madison County Ambulance District"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Madison County Ambulance District inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Macon CAD",
+   "source_note": "Property tax .1409",
+   "dhss_ground_stations_inside": [
+    "Macon County Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "Macon County Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Macon County Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Linn CAD",
+   "source_note": null,
+   "dhss_ground_stations_inside": [
+    "Linn County Ambulance District"
+   ],
+   "dhss_name_match": [
+    "Linn County Ambulance District"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Linn County Ambulance District inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Livingston AD",
+   "source_note": "Contracted to Livingston FD Property tax",
+   "dhss_ground_stations_inside": [
+    "Chillicothe Fire Department"
+   ],
+   "dhss_name_match": [],
+   "transport": false,
+   "transport_basis": "statutory ambulance district polygon; no DHSS ground station with a matching name inside it (not asserted)",
+   "ownership": "public ambulance district (statutory political subdivision); contracts operations out: Contracted to Livingston FD Property tax",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Lincoln CAD",
+   "source_note": "https://www.lcad.net/",
+   "dhss_ground_stations_inside": [
+    "Lincoln Co Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "Lincoln Co Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Lincoln Co Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Lewis CAD",
+   "source_note": null,
+   "dhss_ground_stations_inside": [
+    "Lewis County Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "Lewis County Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Lewis County Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Knox CAD",
+   "source_note": "Property tax",
+   "dhss_ground_stations_inside": [
+    "Knox County Ambulance District"
+   ],
+   "dhss_name_match": [
+    "Knox County Ambulance District"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Knox County Ambulance District inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Johnson CAD",
+   "source_note": "Property Tax https://jocoamb.com/ https://www.facebook.com/Johnson-County-Ambulance-District",
+   "dhss_ground_stations_inside": [
+    "Johnson County Ambulance District"
+   ],
+   "dhss_name_match": [
+    "Johnson County Ambulance District"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Johnson County Ambulance District inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Joachim-Plattin CAD",
+   "source_note": "https://jpadems.com/",
+   "dhss_ground_stations_inside": [
+    "Joachim-Plattin Ambulance Dist",
+    "Mercy EMS Jefferson (DBW JPAD)"
+   ],
+   "dhss_name_match": [
+    "Joachim-Plattin Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Joachim-Plattin Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Iron CAD",
+   "source_note": null,
+   "dhss_ground_stations_inside": [
+    "Iron County Ambulance District"
+   ],
+   "dhss_name_match": [
+    "Iron County Ambulance District"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Iron County Ambulance District inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Howard CAD",
+   "source_note": "No website, no social media",
+   "dhss_ground_stations_inside": [
+    "Howard County Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "Howard County Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Howard County Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Hermann Area AD",
+   "source_note": "https://www.hermannems.com/ Map: Hermann Area",
+   "dhss_ground_stations_inside": [
+    "Hermann Area Ambulance District"
+   ],
+   "dhss_name_match": [
+    "Hermann Area Ambulance District"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Hermann Area Ambulance District inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Grand River Regional AD",
+   "source_note": "Property Tax https://www.facebook.com/Grand-River-Regional-Ambulance-District-80309987187",
+   "dhss_ground_stations_inside": [
+    "Grand River Regional Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "Grand River Regional Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Grand River Regional Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Gerald Area AD",
+   "source_note": "Sales tax Map: Gerald Area AD",
+   "dhss_ground_stations_inside": [
+    "Gerald Area Ambulance District"
+   ],
+   "dhss_name_match": [
+    "Gerald Area Ambulance District"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Gerald Area Ambulance District inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "East Wayne CAD",
+   "source_note": null,
+   "dhss_ground_stations_inside": [
+    "East Wayne County Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "East Wayne County Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists East Wayne County Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Dunklin CAD",
+   "source_note": "Contracted to: https://medic-one.info/",
+   "dhss_ground_stations_inside": [
+    "Dunklin County Ambulance District dba Medic One"
+   ],
+   "dhss_name_match": [
+    "Dunklin County Ambulance District dba Medic One"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Dunklin County Ambulance District dba Medic One inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision); contracts operations out: Contracted to: https://medic-one.info/",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Dixon AD",
+   "source_note": "Property Tax",
+   "dhss_ground_stations_inside": [
+    "Dixon Ambulance District"
+   ],
+   "dhss_name_match": [
+    "Dixon Ambulance District"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Dixon Ambulance District inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Daviess CAD",
+   "source_note": "DBA Community Ambulance District of Daviess County Property Tax",
+   "dhss_ground_stations_inside": [
+    "Community Amb Dist Of Daviess Co."
+   ],
+   "dhss_name_match": [
+    "Community Amb Dist Of Daviess Co."
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Community Amb Dist Of Daviess Co. inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Dekalb-Clinton AD",
+   "source_note": null,
+   "dhss_ground_stations_inside": [
+    "Dekalb-Clinton Ambulance Dist #1"
+   ],
+   "dhss_name_match": [
+    "Dekalb-Clinton Ambulance Dist #1"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Dekalb-Clinton Ambulance Dist #1 inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Dade CAD",
+   "source_note": "Contracts out to Cox Health EMS ( https://www.coxhealth.com/services/emergency/ems/ )",
+   "dhss_ground_stations_inside": [
+    "Cox Paramedics-Dade County A. D."
+   ],
+   "dhss_name_match": [
+    "Cox Paramedics-Dade County A. D."
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Cox Paramedics-Dade County A. D. inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision); contracts operations out: Contracts out to Cox Health EMS ( https://www.coxhealth.com/services/emergency/ems/ )",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Cooper CAD",
+   "source_note": "Sales tax .25",
+   "dhss_ground_stations_inside": [
+    "Cooper County Ambulance District"
+   ],
+   "dhss_name_match": [
+    "Cooper County Ambulance District"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Cooper County Ambulance District inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Clearwater AD",
+   "source_note": null,
+   "dhss_ground_stations_inside": [
+    "Clearwater Ambulance District",
+    "East Carter Co Volunteer Ambulance"
+   ],
+   "dhss_name_match": [
+    "Clearwater Ambulance District"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Clearwater Ambulance District inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Clark CAD",
+   "source_note": null,
+   "dhss_ground_stations_inside": [
+    "Clark County Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "Clark County Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Clark County Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Cole Camp Ambulance",
+   "source_note": null,
+   "dhss_ground_stations_inside": [
+    "Cole Camp EMS"
+   ],
+   "dhss_name_match": [
+    "Cole Camp EMS"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Cole Camp EMS inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Christian CAD",
+   "source_note": "ccadems.com/ https://www.facebook.com/ChristianCountyAmbulanceDstrict Property Tax Contracts out to Cox Health EMS ( https://www.coxhealth.com/services/emergency/ems/ )",
+   "dhss_ground_stations_inside": [
+    "Cox Health Christian County Amb Dist",
+    "Cox Paramedics-Ava Area Amb. Dist."
+   ],
+   "dhss_name_match": [
+    "Cox Health Christian County Amb Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Cox Health Christian County Amb Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision); contracts operations out: ccadems.com/ https://www.facebook.com/ChristianCountyAmbulanceDstrict Property Tax Contracts out to Cox Health EMS ( htt",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Chariton CAD",
+   "source_note": "https://www.facebook.com/Chariton-County-Ambulance-District-371094033094056/ Property Tax",
+   "dhss_ground_stations_inside": [
+    "Chariton County Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "Chariton County Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Chariton County Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Cedar CAD",
+   "source_note": null,
+   "dhss_ground_stations_inside": [
+    "Cedar County Ambulance District",
+    "Citizens Memorial Ambulance Service DBA Dunnegan Critical Care Ground"
+   ],
+   "dhss_name_match": [
+    "Cedar County Ambulance District"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Cedar County Ambulance District inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Cameron AD",
+   "source_note": "https://www.cameronambulance.com/ Sales Tax .50",
+   "dhss_ground_stations_inside": [
+    "Cameron Ambulance District"
+   ],
+   "dhss_name_match": [
+    "Cameron Ambulance District"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Cameron Ambulance District inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Carroll CAD",
+   "source_note": "www.facebook.com/Carroll-County-Ambulance-District-Emergency-141917989188477/",
+   "dhss_ground_stations_inside": [
+    "Carroll County Ambulance District"
+   ],
+   "dhss_name_match": [
+    "Carroll County Ambulance District"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Carroll County Ambulance District inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Cam-Mo AD",
+   "source_note": "https://www.cam-mo.com/ Doing business as Lake West Ambulance Property tax",
+   "dhss_ground_stations_inside": [
+    "Cam-MO Ambulance District; DBA Lake West Ambulance"
+   ],
+   "dhss_name_match": [
+    "Cam-MO Ambulance District; DBA Lake West Ambulance"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Cam-MO Ambulance District; DBA Lake West Ambulance inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Camden CAD",
+   "source_note": "Property Tax",
+   "dhss_ground_stations_inside": [
+    "City of Osage Beach Ambulance",
+    "Lake Regional Health System Critical Care Transport Service",
+    "Mercy Camden County Ambulance District"
+   ],
+   "dhss_name_match": [
+    "Mercy Camden County Ambulance District"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Mercy Camden County Ambulance District inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Callaway CAD",
+   "source_note": "Sale Tax 0.50 https://www.facebook.com/callawayambulance/ https://www.callawayambulance.org/",
+   "dhss_ground_stations_inside": [
+    "Callaway County Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "Callaway County Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Callaway County Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Caldwell CAD",
+   "source_note": "https://www.facebook.com/Caldwell-County-Ambulance-District-478339305844758/ Sale Tax 0.50",
+   "dhss_ground_stations_inside": [
+    "Caldwell County Ambulance District"
+   ],
+   "dhss_name_match": [
+    "Caldwell County Ambulance District"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Caldwell County Ambulance District inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Barry/Lawrence CAD",
+   "source_note": "Sale Tax 0.50 https://www.barrylawrenceambulance.com/",
+   "dhss_ground_stations_inside": [
+    "Barry-Lawrence Co Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "Barry-Lawrence Co Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Barry-Lawrence Co Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Big River AD",
+   "source_note": "http://www.bigriverambulance.com/ Sales Tax 0.50",
+   "dhss_ground_stations_inside": [
+    "Big River Ambulance District"
+   ],
+   "dhss_name_match": [
+    "Big River Ambulance District"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Big River Ambulance District inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Barton CAD",
+   "source_note": "https://www.facebook.com/BartonCountyEMS Sales Tax 0.50",
+   "dhss_ground_stations_inside": [
+    "Barton County Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "Barton County Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Barton County Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Ava Area A.D.",
+   "source_note": "Contracted to Cox EMS: https://www.coxhealth.com/services/emergency/ems/",
+   "dhss_ground_stations_inside": [],
+   "dhss_name_match": [],
+   "transport": false,
+   "transport_basis": "statutory ambulance district polygon; no DHSS ground station with a matching name inside it (not asserted)",
+   "ownership": "public ambulance district (statutory political subdivision); contracts operations out: Contracted to Cox EMS: https://www.coxhealth.com/services/emergency/ems/",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Audrain CAD",
+   "source_note": "https://www.audrainambulance.com/ Sales Tax 0.50",
+   "dhss_ground_stations_inside": [
+    "Audrain Ambulance District"
+   ],
+   "dhss_name_match": [
+    "Audrain Ambulance District"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Audrain Ambulance District inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  },
+  {
+   "name": "Atchison-Holt CAD (Atchison County)",
+   "source_note": "http://www.ahadambulance.org/ Property Tax 0.50",
+   "dhss_ground_stations_inside": [
+    "Atchison-Holt Ambulance Dist"
+   ],
+   "dhss_name_match": [
+    "Atchison-Holt Ambulance Dist"
+   ],
+   "transport": true,
+   "transport_basis": "state DHSS ground-ambulance station layer lists Atchison-Holt Ambulance Dist inside the polygon",
+   "ownership": "public ambulance district (statutory political subdivision)",
+   "source_url": "https://services3.arcgis.com/rqXILbzU9MpAga1A/arcgis/rest/services/MO_AMBULANCE_DISTRICTS_view/FeatureServer/0",
+   "vintage": "2023-04-05"
+  }
+ ],
+ "county_verdict": {
+  "29043": {
+   "county": "Christian County",
+   "pop": 96045,
+   "tier": "partial",
+   "ems_district_coverage": 0.8427,
+   "overlap_share": 0.0095,
+   "services": [
+    {
+     "name": "Christian CAD",
+     "share": 0.842,
+     "dhss_name_match": [
+      "Cox Health Christian County Amb Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Ava Area A.D.",
+     "share": 0.0064
+    },
+    {
+     "name": "Taney CAD",
+     "share": 0.0039
+    }
+   ],
+   "page_note": "Ambulance-district polygons cover 84% of the county; the rest is outside any district (city or county EMS, private, or not compiled). Districts named are only the covered part."
+  },
+  "29059": {
+   "county": "Dallas County",
+   "pop": 17877,
+   "tier": "none",
+   "ems_district_coverage": 0.0,
+   "overlap_share": 0.0,
+   "services": [],
+   "slivers_under_1pct": [],
+   "page_note": "No ambulance district polygon covers this county; provider not in the layer."
+  },
+  "29197": {
+   "county": "Schuyler County",
+   "pop": 4069,
+   "tier": "A",
+   "ems_district_coverage": 1.0,
+   "overlap_share": 0.0425,
+   "services": [
+    {
+     "name": "Putnam CAD",
+     "share": 0.019,
+     "dhss_name_match": [
+      "Putnam County Ambulance District"
+     ]
+    },
+    {
+     "name": "Schuyler CAD",
+     "share": 0.998,
+     "dhss_name_match": [
+      "Schuyler County Ambulance Dist"
+     ]
+    },
+    {
+     "name": "Scotland CAD",
+     "share": 0.0168,
+     "dhss_name_match": [
+      "Scotland County Ambulance District"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Adair CAD",
+     "share": 0.0091
+    }
+   ],
+   "basis": "several districts tile the county; all named, none picked"
+  },
+  "29175": {
+   "county": "Randolph County",
+   "pop": 24077,
+   "tier": "A",
+   "ems_district_coverage": 0.9925,
+   "overlap_share": 0.0223,
+   "services": [
+    {
+     "name": "Randolph CAD",
+     "share": 0.9925,
+     "dhss_name_match": [
+      "Randolph County EMS"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Chariton CAD",
+     "share": 0.0082
+    },
+    {
+     "name": "Monroe CAD",
+     "share": 0.0079
+    },
+    {
+     "name": "Audrain CAD",
+     "share": 0.0033
+    },
+    {
+     "name": "Howard CAD",
+     "share": 0.0031
+    }
+   ]
+  },
+  "29103": {
+   "county": "Knox County",
+   "pop": 3740,
+   "tier": "A",
+   "ems_district_coverage": 0.9989,
+   "overlap_share": 0.0245,
+   "services": [
+    {
+     "name": "Knox CAD",
+     "share": 0.9891,
+     "dhss_name_match": [
+      "Knox County Ambulance District"
+     ]
+    },
+    {
+     "name": "Lewis CAD",
+     "share": 0.0152,
+     "dhss_name_match": [
+      "Lewis County Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Adair CAD",
+     "share": 0.009
+    },
+    {
+     "name": "Shelby CAD",
+     "share": 0.004
+    },
+    {
+     "name": "Scotland CAD",
+     "share": 0.0038
+    },
+    {
+     "name": "Macon CAD",
+     "share": 0.0013
+    },
+    {
+     "name": "Clark CAD",
+     "share": 0.0012
+    }
+   ],
+   "basis": "several districts tile the county; all named, none picked"
+  },
+  "29117": {
+   "county": "Livingston County",
+   "pop": 14658,
+   "tier": "A-unverified",
+   "ems_district_coverage": 1.0,
+   "overlap_share": 0.0285,
+   "services": [
+    {
+     "name": "Livingston AD",
+     "share": 0.9978,
+     "dhss_name_match": []
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Carroll CAD",
+     "share": 0.0099
+    },
+    {
+     "name": "Linn CAD",
+     "share": 0.0091
+    },
+    {
+     "name": "Daviess CAD",
+     "share": 0.0046
+    },
+    {
+     "name": "Caldwell CAD",
+     "share": 0.0046
+    },
+    {
+     "name": "Chariton CAD",
+     "share": 0.003
+    }
+   ]
+  },
+  "29135": {
+   "county": "Moniteau County",
+   "pop": 15294,
+   "tier": "A",
+   "ems_district_coverage": 0.9989,
+   "overlap_share": 0.0045,
+   "services": [
+    {
+     "name": "Cooper CAD",
+     "share": 0.0116,
+     "dhss_name_match": [
+      "Cooper County Ambulance District"
+     ]
+    },
+    {
+     "name": "Mid-Mo AD",
+     "share": 0.9918,
+     "dhss_name_match": [
+      "Mid-Mo Ambulance District"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [],
+   "basis": "several districts tile the county; all named, none picked"
+  },
+  "29177": {
+   "county": "Ray County",
+   "pop": 23199,
+   "tier": "partial",
+   "ems_district_coverage": 0.86,
+   "overlap_share": 0.0092,
+   "services": [
+    {
+     "name": "Ray CAD",
+     "share": 0.8589,
+     "dhss_name_match": [
+      "Ray County Ambulance District"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Caldwell CAD",
+     "share": 0.0074
+    },
+    {
+     "name": "Carroll CAD",
+     "share": 0.0028
+    },
+    {
+     "name": "Tri-County AD",
+     "share": 0.0001
+    }
+   ],
+   "page_note": "Ambulance-district polygons cover 86% of the county; the rest is outside any district (city or county EMS, private, or not compiled). Districts named are only the covered part."
+  },
+  "29131": {
+   "county": "Miller County",
+   "pop": 25668,
+   "tier": "A",
+   "ems_district_coverage": 0.9972,
+   "overlap_share": 0.0161,
+   "services": [
+    {
+     "name": "Miller CAD",
+     "share": 0.9893,
+     "dhss_name_match": [
+      "Miller County Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Mid-Mo AD",
+     "share": 0.0081
+    },
+    {
+     "name": "Camden CAD",
+     "share": 0.0073
+    },
+    {
+     "name": "Pulaski CAD",
+     "share": 0.0052
+    },
+    {
+     "name": "Dixon AD",
+     "share": 0.0019
+    },
+    {
+     "name": "Cam-Mo AD",
+     "share": 0.0013
+    },
+    {
+     "name": "Maries-Osage AD",
+     "share": 0.0004
+    }
+   ]
+  },
+  "29027": {
+   "county": "Callaway County",
+   "pop": 45126,
+   "tier": "A",
+   "ems_district_coverage": 0.9971,
+   "overlap_share": 0.009,
+   "services": [
+    {
+     "name": "Callaway CAD",
+     "share": 0.9955,
+     "dhss_name_match": [
+      "Callaway County Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Osage AD",
+     "share": 0.0051
+    },
+    {
+     "name": "Audrain CAD",
+     "share": 0.0029
+    },
+    {
+     "name": "Hermann Area AD",
+     "share": 0.0024
+    },
+    {
+     "name": "Montgomery CAD",
+     "share": 0.0001
+    }
+   ]
+  },
+  "29055": {
+   "county": "Crawford County",
+   "pop": 22808,
+   "tier": "A",
+   "ems_district_coverage": 0.9976,
+   "overlap_share": 0.0275,
+   "services": [
+    {
+     "name": "North Crawford CAD",
+     "share": 0.4247,
+     "dhss_name_match": [
+      "North Crawford County Ambulance District"
+     ]
+    },
+    {
+     "name": "Steelville AD",
+     "share": 0.5791,
+     "dhss_name_match": [
+      "Steelville Ambulance District"
+     ]
+    },
+    {
+     "name": "Washington CAD",
+     "share": 0.0108,
+     "dhss_name_match": [
+      "Washington County Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "St. James AD",
+     "share": 0.0071
+    },
+    {
+     "name": "Owensville Area AD",
+     "share": 0.0025
+    },
+    {
+     "name": "Iron CAD",
+     "share": 0.0009
+    }
+   ],
+   "basis": "several districts tile the county; all named, none picked"
+  },
+  "29045": {
+   "county": "Clark County",
+   "pop": 6623,
+   "tier": "A",
+   "ems_district_coverage": 0.9908,
+   "overlap_share": 0.0043,
+   "services": [
+    {
+     "name": "Clark CAD",
+     "share": 0.9907,
+     "dhss_name_match": [
+      "Clark County Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Scotland CAD",
+     "share": 0.0042
+    },
+    {
+     "name": "Lewis CAD",
+     "share": 0.0002
+    }
+   ]
+  },
+  "29227": {
+   "county": "Worth County",
+   "pop": 1872,
+   "tier": "A",
+   "ems_district_coverage": 1.0,
+   "overlap_share": 0.0307,
+   "services": [
+    {
+     "name": "Nodaway CAD",
+     "share": 0.0108,
+     "dhss_name_match": [
+      "Nodaway County Ambulance Dist"
+     ]
+    },
+    {
+     "name": "North Harrison CAD",
+     "share": 0.0126,
+     "dhss_name_match": [
+      "North Harrison Co Amb Dist"
+     ]
+    },
+    {
+     "name": "Worth CAD",
+     "share": 0.9991,
+     "dhss_name_match": [
+      "Worth County Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Grand River Regional AD",
+     "share": 0.0082
+    }
+   ],
+   "basis": "several districts tile the county; all named, none picked"
+  },
+  "29053": {
+   "county": "Cooper County",
+   "pop": 17122,
+   "tier": "A",
+   "ems_district_coverage": 0.9999,
+   "overlap_share": 0.0124,
+   "services": [
+    {
+     "name": "Cooper CAD",
+     "share": 0.9961,
+     "dhss_name_match": [
+      "Cooper County Ambulance District"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Mid-Mo AD",
+     "share": 0.0073
+    },
+    {
+     "name": "Pettis CAD",
+     "share": 0.0045
+    },
+    {
+     "name": "Howard CAD",
+     "share": 0.0034
+    },
+    {
+     "name": "Saline CAD",
+     "share": 0.0011
+    }
+   ]
+  },
+  "29105": {
+   "county": "Laclede County",
+   "pop": 36738,
+   "tier": "partial",
+   "ems_district_coverage": 0.0112,
+   "overlap_share": 0.0001,
+   "services": [],
+   "slivers_under_1pct": [
+    {
+     "name": "Pulaski CAD",
+     "share": 0.0086
+    },
+    {
+     "name": "Camden CAD",
+     "share": 0.0026
+    }
+   ],
+   "page_note": "Ambulance-district polygons cover 1% of the county; the rest is outside any district (city or county EMS, private, or not compiled). Districts named are only the covered part."
+  },
+  "29153": {
+   "county": "Ozark County",
+   "pop": 9090,
+   "tier": "A",
+   "ems_district_coverage": 1.0,
+   "overlap_share": 0.0088,
+   "services": [
+    {
+     "name": "Ozark CAD",
+     "share": 1.0,
+     "dhss_name_match": [
+      "Ozark County Ambulance District"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Taney CAD",
+     "share": 0.0059
+    },
+    {
+     "name": "South Howell CAD",
+     "share": 0.0029
+    }
+   ]
+  },
+  "29023": {
+   "county": "Butler County",
+   "pop": 41814,
+   "tier": "partial",
+   "ems_district_coverage": 0.3104,
+   "overlap_share": 0.0011,
+   "services": [
+    {
+     "name": "Clearwater AD",
+     "share": 0.1107,
+     "dhss_name_match": [
+      "Clearwater Ambulance District"
+     ]
+    },
+    {
+     "name": "East Wayne CAD",
+     "share": 0.0127,
+     "dhss_name_match": [
+      "East Wayne County Ambulance Dist"
+     ]
+    },
+    {
+     "name": "Naylor-Neelyville AD",
+     "share": 0.171,
+     "dhss_name_match": []
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Stoddard CAD",
+     "share": 0.0077
+    },
+    {
+     "name": "Dunklin CAD",
+     "share": 0.0053
+    },
+    {
+     "name": "Ripley CAD",
+     "share": 0.004
+    }
+   ],
+   "page_note": "Ambulance-district polygons cover 31% of the county; the rest is outside any district (city or county EMS, private, or not compiled). Districts named are only the covered part."
+  },
+  "29199": {
+   "county": "Scotland County",
+   "pop": 4698,
+   "tier": "A",
+   "ems_district_coverage": 1.0,
+   "overlap_share": 0.0275,
+   "services": [
+    {
+     "name": "Knox CAD",
+     "share": 0.0101,
+     "dhss_name_match": [
+      "Knox County Ambulance District"
+     ]
+    },
+    {
+     "name": "Scotland CAD",
+     "share": 0.9983,
+     "dhss_name_match": [
+      "Scotland County Ambulance District"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Clark CAD",
+     "share": 0.0099
+    },
+    {
+     "name": "Schuyler CAD",
+     "share": 0.008
+    },
+    {
+     "name": "Adair CAD",
+     "share": 0.0016
+    }
+   ],
+   "basis": "several districts tile the county; all named, none picked"
+  },
+  "29167": {
+   "county": "Polk County",
+   "pop": 33070,
+   "tier": "partial",
+   "ems_district_coverage": 0.0117,
+   "overlap_share": 0.0,
+   "services": [],
+   "slivers_under_1pct": [
+    {
+     "name": "Cedar CAD",
+     "share": 0.0062
+    },
+    {
+     "name": "Dade CAD",
+     "share": 0.0054
+    }
+   ],
+   "page_note": "Ambulance-district polygons cover 1% of the county; the rest is outside any district (city or county EMS, private, or not compiled). Districts named are only the covered part."
+  },
+  "29091": {
+   "county": "Howell County",
+   "pop": 40762,
+   "tier": "partial",
+   "ems_district_coverage": 0.6708,
+   "overlap_share": 0.0025,
+   "services": [
+    {
+     "name": "South Howell CAD",
+     "share": 0.6708,
+     "dhss_name_match": [
+      "South Howell Co Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Ozark CAD",
+     "share": 0.0023
+    },
+    {
+     "name": "Oregon CAD",
+     "share": 0.0002
+    }
+   ],
+   "page_note": "Ambulance-district polygons cover 67% of the county; the rest is outside any district (city or county EMS, private, or not compiled). Districts named are only the covered part."
+  },
+  "29013": {
+   "county": "Bates County",
+   "pop": 16394,
+   "tier": "none",
+   "ems_district_coverage": 0.0065,
+   "overlap_share": 0.0,
+   "services": [],
+   "slivers_under_1pct": [
+    {
+     "name": "Vernon CAD",
+     "share": 0.0065
+    }
+   ],
+   "page_note": "No ambulance district polygon covers this county; provider not in the layer."
+  },
+  "29159": {
+   "county": "Pettis County",
+   "pop": 43791,
+   "tier": "partial",
+   "ems_district_coverage": 0.8952,
+   "overlap_share": 0.015,
+   "services": [
+    {
+     "name": "Pettis CAD",
+     "share": 0.7968,
+     "dhss_name_match": [
+      "Pettis County Ambulance District"
+     ]
+    },
+    {
+     "name": "Sweet Springs AD",
+     "share": 0.0978,
+     "dhss_name_match": [
+      "Sweet Springs Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Johnson CAD",
+     "share": 0.0085
+    },
+    {
+     "name": "Cooper CAD",
+     "share": 0.0031
+    },
+    {
+     "name": "Mid-Mo AD",
+     "share": 0.0028
+    },
+    {
+     "name": "Cole Camp Ambulance",
+     "share": 0.0011
+    },
+    {
+     "name": "Saline CAD",
+     "share": 0.0001
+    }
+   ],
+   "page_note": "Ambulance-district polygons cover 90% of the county; the rest is outside any district (city or county EMS, private, or not compiled). Districts named are only the covered part."
+  },
+  "29121": {
+   "county": "Macon County",
+   "pop": 15177,
+   "tier": "A",
+   "ems_district_coverage": 0.9953,
+   "overlap_share": 0.0141,
+   "services": [
+    {
+     "name": "Macon CAD",
+     "share": 0.9905,
+     "dhss_name_match": [
+      "Macon County Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Shelby CAD",
+     "share": 0.009
+    },
+    {
+     "name": "Linn CAD",
+     "share": 0.0045
+    },
+    {
+     "name": "Randolph CAD",
+     "share": 0.0032
+    },
+    {
+     "name": "Knox CAD",
+     "share": 0.0014
+    },
+    {
+     "name": "Chariton CAD",
+     "share": 0.0008
+    },
+    {
+     "name": "Monroe CAD",
+     "share": 0.0001
+    }
+   ]
+  },
+  "29061": {
+   "county": "Daviess County",
+   "pop": 8541,
+   "tier": "A",
+   "ems_district_coverage": 1.0,
+   "overlap_share": 0.0134,
+   "services": [
+    {
+     "name": "Daviess CAD",
+     "share": 0.8127,
+     "dhss_name_match": [
+      "Community Amb Dist Of Daviess Co."
+     ]
+    },
+    {
+     "name": "NTA Ambulance District",
+     "share": 0.1883,
+     "dhss_name_match": [
+      "NTA Ambulance"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Livingston AD",
+     "share": 0.0058
+    },
+    {
+     "name": "Grand River Regional AD",
+     "share": 0.0033
+    },
+    {
+     "name": "Cameron AD",
+     "share": 0.0021
+    },
+    {
+     "name": "Dekalb-Clinton AD",
+     "share": 0.0012
+    },
+    {
+     "name": "Caldwell CAD",
+     "share": 0.0001
+    }
+   ],
+   "basis": "several districts tile the county; all named, none picked"
+  },
+  "29125": {
+   "county": "Maries County",
+   "pop": 8506,
+   "tier": "partial",
+   "ems_district_coverage": 0.4657,
+   "overlap_share": 0.0081,
+   "services": [
+    {
+     "name": "Dixon AD",
+     "share": 0.0773,
+     "dhss_name_match": [
+      "Dixon Ambulance District"
+     ]
+    },
+    {
+     "name": "Maries-Osage AD",
+     "share": 0.1187,
+     "dhss_name_match": []
+    },
+    {
+     "name": "Ozark Central AD",
+     "share": 0.2132,
+     "dhss_name_match": [
+      "Ozark Central Ambulance Dist"
+     ]
+    },
+    {
+     "name": "St. James AD",
+     "share": 0.0577,
+     "dhss_name_match": [
+      "St. James Ambulance District"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Miller CAD",
+     "share": 0.0068
+    }
+   ],
+   "page_note": "Ambulance-district polygons cover 47% of the county; the rest is outside any district (city or county EMS, private, or not compiled). Districts named are only the covered part."
+  },
+  "29109": {
+   "county": "Lawrence County",
+   "pop": 39151,
+   "tier": "partial",
+   "ems_district_coverage": 0.1916,
+   "overlap_share": 0.0022,
+   "services": [
+    {
+     "name": "Barry/Lawrence CAD",
+     "share": 0.1878,
+     "dhss_name_match": [
+      "Barry-Lawrence Co Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Newton CAD",
+     "share": 0.0039
+    },
+    {
+     "name": "Dade CAD",
+     "share": 0.0021
+    }
+   ],
+   "page_note": "Ambulance-district polygons cover 19% of the county; the rest is outside any district (city or county EMS, private, or not compiled). Districts named are only the covered part."
+  },
+  "29051": {
+   "county": "Cole County",
+   "pop": 77625,
+   "tier": "partial",
+   "ems_district_coverage": 0.0325,
+   "overlap_share": 0.0,
+   "services": [
+    {
+     "name": "Mid-Mo AD",
+     "share": 0.011,
+     "dhss_name_match": [
+      "Mid-Mo Ambulance District"
+     ]
+    },
+    {
+     "name": "Miller CAD",
+     "share": 0.0144,
+     "dhss_name_match": [
+      "Miller County Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Osage AD",
+     "share": 0.0035
+    },
+    {
+     "name": "Callaway CAD",
+     "share": 0.0035
+    }
+   ],
+   "page_note": "Ambulance-district polygons cover 3% of the county; the rest is outside any district (city or county EMS, private, or not compiled). Districts named are only the covered part."
+  },
+  "29185": {
+   "county": "St. Clair County",
+   "pop": 9848,
+   "tier": "none",
+   "ems_district_coverage": 0.0081,
+   "overlap_share": 0.0001,
+   "services": [],
+   "slivers_under_1pct": [
+    {
+     "name": "Cedar CAD",
+     "share": 0.0034
+    },
+    {
+     "name": "Warsaw-Lincoln Ambulance",
+     "share": 0.0024
+    },
+    {
+     "name": "Vernon CAD",
+     "share": 0.0024
+    }
+   ],
+   "page_note": "No ambulance district polygon covers this county; provider not in the layer."
+  },
+  "29129": {
+   "county": "Mercer County",
+   "pop": 3452,
+   "tier": "A",
+   "ems_district_coverage": 0.9843,
+   "overlap_share": 0.0112,
+   "services": [
+    {
+     "name": "Mercer CAD",
+     "share": 0.981,
+     "dhss_name_match": [
+      "Mercer County Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "North Harrison CAD",
+     "share": 0.0063
+    },
+    {
+     "name": "Putnam CAD",
+     "share": 0.0046
+    },
+    {
+     "name": "NTA Ambulance District",
+     "share": 0.0036
+    }
+   ]
+  },
+  "29101": {
+   "county": "Johnson County",
+   "pop": 55880,
+   "tier": "A",
+   "ems_district_coverage": 0.9558,
+   "overlap_share": 0.0032,
+   "services": [
+    {
+     "name": "Johnson CAD",
+     "share": 0.9555,
+     "dhss_name_match": [
+      "Johnson County Ambulance District"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Pettis CAD",
+     "share": 0.0019
+    },
+    {
+     "name": "Sweet Springs AD",
+     "share": 0.0017
+    }
+   ]
+  },
+  "29205": {
+   "county": "Shelby County",
+   "pop": 5926,
+   "tier": "A-unverified",
+   "ems_district_coverage": 1.0,
+   "overlap_share": 0.0276,
+   "services": [
+    {
+     "name": "Macon CAD",
+     "share": 0.0142,
+     "dhss_name_match": [
+      "Macon County Ambulance Dist"
+     ]
+    },
+    {
+     "name": "Monroe City AD",
+     "share": 0.0512,
+     "dhss_name_match": [
+      "Monroe City Ambulance District"
+     ]
+    },
+    {
+     "name": "Shelby CAD",
+     "share": 0.947,
+     "dhss_name_match": []
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Monroe CAD",
+     "share": 0.0088
+    },
+    {
+     "name": "Marion CAD",
+     "share": 0.0043
+    },
+    {
+     "name": "Knox CAD",
+     "share": 0.0025
+    }
+   ],
+   "basis": "several districts tile the county; all named, none picked"
+  },
+  "29039": {
+   "county": "Cedar County",
+   "pop": 15023,
+   "tier": "A",
+   "ems_district_coverage": 0.9991,
+   "overlap_share": 0.0081,
+   "services": [
+    {
+     "name": "Cedar CAD",
+     "share": 0.9964,
+     "dhss_name_match": [
+      "Cedar County Ambulance District"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Vernon CAD",
+     "share": 0.009
+    },
+    {
+     "name": "Barton CAD",
+     "share": 0.0018
+    },
+    {
+     "name": "Dade CAD",
+     "share": 0.0001
+    }
+   ]
+  },
+  "29145": {
+   "county": "Newton County",
+   "pop": 61519,
+   "tier": "A",
+   "ems_district_coverage": 0.9896,
+   "overlap_share": 0.0063,
+   "services": [
+    {
+     "name": "Newton CAD",
+     "share": 0.9895,
+     "dhss_name_match": [
+      "Newton County Ambulance District"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Barry/Lawrence CAD",
+     "share": 0.0054
+    },
+    {
+     "name": "South Barryl CAD",
+     "share": 0.0012
+    }
+   ]
+  },
+  "29203": {
+   "county": "Shannon County",
+   "pop": 7275,
+   "tier": "none",
+   "ems_district_coverage": 0.0097,
+   "overlap_share": 0.0001,
+   "services": [],
+   "slivers_under_1pct": [
+    {
+     "name": "Reynolds CAD",
+     "share": 0.0057
+    },
+    {
+     "name": "West Carter AD",
+     "share": 0.004
+    },
+    {
+     "name": "Oregon CAD",
+     "share": 0.0001
+    }
+   ],
+   "page_note": "No ambulance district polygon covers this county; provider not in the layer."
+  },
+  "29097": {
+   "county": "Jasper County",
+   "pop": 126479,
+   "tier": "none",
+   "ems_district_coverage": 0.0087,
+   "overlap_share": 0.0002,
+   "services": [],
+   "slivers_under_1pct": [
+    {
+     "name": "Newton CAD",
+     "share": 0.0052
+    },
+    {
+     "name": "Dade CAD",
+     "share": 0.0026
+    },
+    {
+     "name": "Barry/Lawrence CAD",
+     "share": 0.0007
+    },
+    {
+     "name": "Barton CAD",
+     "share": 0.0003
+    }
+   ],
+   "page_note": "No ambulance district polygon covers this county; provider not in the layer."
+  },
+  "29073": {
+   "county": "Gasconade County",
+   "pop": 14655,
+   "tier": "A",
+   "ems_district_coverage": 1.0,
+   "overlap_share": 0.0346,
+   "services": [
+    {
+     "name": "Gerald Area AD",
+     "share": 0.1153,
+     "dhss_name_match": [
+      "Gerald Area Ambulance District"
+     ]
+    },
+    {
+     "name": "Hermann Area AD",
+     "share": 0.3665,
+     "dhss_name_match": [
+      "Hermann Area Ambulance District"
+     ]
+    },
+    {
+     "name": "Owensville Area AD",
+     "share": 0.3849,
+     "dhss_name_match": [
+      "Owensville Area Ambulance Dist"
+     ]
+    },
+    {
+     "name": "Ozark Central AD",
+     "share": 0.1479,
+     "dhss_name_match": [
+      "Ozark Central Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Osage AD",
+     "share": 0.0094
+    },
+    {
+     "name": "North Crawford CAD",
+     "share": 0.0052
+    },
+    {
+     "name": "New Haven AD",
+     "share": 0.0034
+    },
+    {
+     "name": "St. James AD",
+     "share": 0.0023
+    }
+   ],
+   "basis": "several districts tile the county; all named, none picked"
+  },
+  "29181": {
+   "county": "Ripley County",
+   "pop": 10715,
+   "tier": "A",
+   "ems_district_coverage": 0.9902,
+   "overlap_share": 0.0164,
+   "services": [
+    {
+     "name": "Naylor-Neelyville AD",
+     "share": 0.1523,
+     "dhss_name_match": []
+    },
+    {
+     "name": "Ripley CAD",
+     "share": 0.8419,
+     "dhss_name_match": [
+      "Ripley County Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Oregon CAD",
+     "share": 0.0097
+    },
+    {
+     "name": "West Carter AD",
+     "share": 0.0021
+    },
+    {
+     "name": "Clearwater AD",
+     "share": 0.0006
+    }
+   ],
+   "basis": "several districts tile the county; all named, none picked"
+  },
+  "29163": {
+   "county": "Pike County",
+   "pop": 17961,
+   "tier": "partial",
+   "ems_district_coverage": 0.0427,
+   "overlap_share": 0.0001,
+   "services": [
+    {
+     "name": "Van-Far AD",
+     "share": 0.0326,
+     "dhss_name_match": [
+      "Van-Far Ambulance"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Lincoln CAD",
+     "share": 0.0075
+    },
+    {
+     "name": "Ralls CAD",
+     "share": 0.0021
+    },
+    {
+     "name": "Montgomery CAD",
+     "share": 0.0007
+    }
+   ],
+   "page_note": "Ambulance-district polygons cover 4% of the county; the rest is outside any district (city or county EMS, private, or not compiled). Districts named are only the covered part."
+  },
+  "29201": {
+   "county": "Scott County",
+   "pop": 37957,
+   "tier": "A",
+   "ems_district_coverage": 0.9983,
+   "overlap_share": 0.0183,
+   "services": [
+    {
+     "name": "North Scott CAD",
+     "share": 0.5434,
+     "dhss_name_match": [
+      "North Scott Co Ambulance Dist"
+     ]
+    },
+    {
+     "name": "South Scott CAD",
+     "share": 0.4507,
+     "dhss_name_match": [
+      "South Scott Co Ambulance Dist"
+     ]
+    },
+    {
+     "name": "Stoddard CAD",
+     "share": 0.01,
+     "dhss_name_match": [
+      "Stoddard Co Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Mississippi CAD",
+     "share": 0.0083
+    },
+    {
+     "name": "New Madrid CAD",
+     "share": 0.0046
+    }
+   ],
+   "basis": "several districts tile the county; all named, none picked"
+  },
+  "29173": {
+   "county": "Ralls County",
+   "pop": 10499,
+   "tier": "A",
+   "ems_district_coverage": 0.997,
+   "overlap_share": 0.0283,
+   "services": [
+    {
+     "name": "Monroe City AD",
+     "share": 0.191,
+     "dhss_name_match": [
+      "Monroe City Ambulance District"
+     ]
+    },
+    {
+     "name": "Ralls CAD",
+     "share": 0.6935,
+     "dhss_name_match": [
+      "Ralls County Ambulance Dist"
+     ]
+    },
+    {
+     "name": "Van-Far AD",
+     "share": 0.1265,
+     "dhss_name_match": [
+      "Van-Far Ambulance"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Marion CAD",
+     "share": 0.0064
+    },
+    {
+     "name": "Monroe CAD",
+     "share": 0.0058
+    },
+    {
+     "name": "Audrain CAD",
+     "share": 0.0025
+    }
+   ],
+   "basis": "several districts tile the county; all named, none picked"
+  },
+  "29003": {
+   "county": "Andrew County",
+   "pop": 18091,
+   "tier": "A",
+   "ems_district_coverage": 0.9934,
+   "overlap_share": 0.0209,
+   "services": [
+    {
+     "name": "Andrew CAD",
+     "share": 0.8407,
+     "dhss_name_match": [
+      "Andrew County Ambulance Dist"
+     ]
+    },
+    {
+     "name": "Grand River Regional AD",
+     "share": 0.1598,
+     "dhss_name_match": [
+      "Grand River Regional Ambulance Dist"
+     ]
+    },
+    {
+     "name": "Nodaway CAD",
+     "share": 0.0109,
+     "dhss_name_match": [
+      "Nodaway County Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Dekalb-Clinton AD",
+     "share": 0.003
+    }
+   ],
+   "basis": "several districts tile the county; all named, none picked"
+  },
+  "29139": {
+   "county": "Montgomery County",
+   "pop": 11511,
+   "tier": "A",
+   "ems_district_coverage": 1.0,
+   "overlap_share": 0.0257,
+   "services": [
+    {
+     "name": "Hermann Area AD",
+     "share": 0.2165,
+     "dhss_name_match": [
+      "Hermann Area Ambulance District"
+     ]
+    },
+    {
+     "name": "Montgomery CAD",
+     "share": 0.7852,
+     "dhss_name_match": [
+      "Montgomery County Ambulance Dist"
+     ]
+    },
+    {
+     "name": "Warren CAD",
+     "share": 0.0105,
+     "dhss_name_match": [
+      "Warren County Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Callaway CAD",
+     "share": 0.0084
+    },
+    {
+     "name": "Lincoln CAD",
+     "share": 0.0033
+    },
+    {
+     "name": "Audrain CAD",
+     "share": 0.002
+    },
+    {
+     "name": "Osage AD",
+     "share": 0.0001
+    }
+   ],
+   "basis": "several districts tile the county; all named, none picked"
+  },
+  "29195": {
+   "county": "Saline County",
+   "pop": 23325,
+   "tier": "A",
+   "ems_district_coverage": 0.9866,
+   "overlap_share": 0.0286,
+   "services": [
+    {
+     "name": "Saline CAD",
+     "share": 0.4491,
+     "dhss_name_match": [
+      "Saline County Ambulance Dist #3"
+     ]
+    },
+    {
+     "name": "Slater AD",
+     "share": 0.3115,
+     "dhss_name_match": [
+      "Slater Ambulance District # 1"
+     ]
+    },
+    {
+     "name": "Sweet Springs AD",
+     "share": 0.2377,
+     "dhss_name_match": [
+      "Sweet Springs Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Carroll CAD",
+     "share": 0.0075
+    },
+    {
+     "name": "Chariton CAD",
+     "share": 0.004
+    },
+    {
+     "name": "Howard CAD",
+     "share": 0.0029
+    },
+    {
+     "name": "Cooper CAD",
+     "share": 0.0023
+    },
+    {
+     "name": "Pettis CAD",
+     "share": 0.0005
+    }
+   ],
+   "basis": "several districts tile the county; all named, none picked"
+  },
+  "29071": {
+   "county": "Franklin County",
+   "pop": 107256,
+   "tier": "partial",
+   "ems_district_coverage": 0.8608,
+   "overlap_share": 0.0225,
+   "services": [
+    {
+     "name": "Gerald Area AD",
+     "share": 0.1469,
+     "dhss_name_match": [
+      "Gerald Area Ambulance District"
+     ]
+    },
+    {
+     "name": "Hermann Area AD",
+     "share": 0.032,
+     "dhss_name_match": [
+      "Hermann Area Ambulance District"
+     ]
+    },
+    {
+     "name": "Meramec AD",
+     "share": 0.1481,
+     "dhss_name_match": [
+      "Meramec Ambulance District"
+     ]
+    },
+    {
+     "name": "New Haven AD",
+     "share": 0.1381,
+     "dhss_name_match": [
+      "New Haven Ambulance District"
+     ]
+    },
+    {
+     "name": "St. Clair AD",
+     "share": 0.2026,
+     "dhss_name_match": [
+      "St. Clair Ambulance District"
+     ]
+    },
+    {
+     "name": "Union AD",
+     "share": 0.1235,
+     "dhss_name_match": [
+      "Union Ambulance District"
+     ]
+    },
+    {
+     "name": "Washington Area AD",
+     "share": 0.0793,
+     "dhss_name_match": [
+      "Washington Area Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "North Crawford CAD",
+     "share": 0.0039
+    },
+    {
+     "name": "Big River AD",
+     "share": 0.002
+    },
+    {
+     "name": "Marthasville AD",
+     "share": 0.0019
+    },
+    {
+     "name": "St. Charles CAD",
+     "share": 0.0019
+    },
+    {
+     "name": "Owensville Area AD",
+     "share": 0.0018
+    },
+    {
+     "name": "Washington CAD",
+     "share": 0.0013
+    }
+   ],
+   "page_note": "Ambulance-district polygons cover 86% of the county; the rest is outside any district (city or county EMS, private, or not compiled). Districts named are only the covered part."
+  },
+  "29063": {
+   "county": "DeKalb County",
+   "pop": 9884,
+   "tier": "A",
+   "ems_district_coverage": 1.0,
+   "overlap_share": 0.0289,
+   "services": [
+    {
+     "name": "Cameron AD",
+     "share": 0.1116,
+     "dhss_name_match": [
+      "Cameron Ambulance District"
+     ]
+    },
+    {
+     "name": "Dekalb-Clinton AD",
+     "share": 0.7753,
+     "dhss_name_match": [
+      "Dekalb-Clinton Ambulance Dist #1"
+     ]
+    },
+    {
+     "name": "Grand River Regional AD",
+     "share": 0.1277,
+     "dhss_name_match": [
+      "Grand River Regional Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Daviess CAD",
+     "share": 0.0077
+    },
+    {
+     "name": "Andrew CAD",
+     "share": 0.004
+    },
+    {
+     "name": "Tri-County AD",
+     "share": 0.0016
+    },
+    {
+     "name": "Caldwell CAD",
+     "share": 0.0015
+    }
+   ],
+   "basis": "several districts tile the county; all named, none picked"
+  },
+  "29209": {
+   "county": "Stone County",
+   "pop": 32630,
+   "tier": "partial",
+   "ems_district_coverage": 0.1474,
+   "overlap_share": 0.0001,
+   "services": [
+    {
+     "name": "Christian CAD",
+     "share": 0.1249,
+     "dhss_name_match": [
+      "Cox Health Christian County Amb Dist"
+     ]
+    },
+    {
+     "name": "South Barryl CAD",
+     "share": 0.0143,
+     "dhss_name_match": []
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Taney CAD",
+     "share": 0.0082
+    }
+   ],
+   "page_note": "Ambulance-district polygons cover 15% of the county; the rest is outside any district (city or county EMS, private, or not compiled). Districts named are only the covered part."
+  },
+  "29229": {
+   "county": "Wright County",
+   "pop": 19505,
+   "tier": "none",
+   "ems_district_coverage": 0.0007,
+   "overlap_share": 0.0,
+   "services": [],
+   "slivers_under_1pct": [
+    {
+     "name": "Ava Area A.D.",
+     "share": 0.0007
+    }
+   ],
+   "page_note": "No ambulance district polygon covers this county; provider not in the layer."
+  },
+  "29007": {
+   "county": "Audrain County",
+   "pop": 24304,
+   "tier": "A",
+   "ems_district_coverage": 0.9982,
+   "overlap_share": 0.0073,
+   "services": [
+    {
+     "name": "Audrain CAD",
+     "share": 0.8186,
+     "dhss_name_match": [
+      "Audrain Ambulance District"
+     ]
+    },
+    {
+     "name": "Van-Far AD",
+     "share": 0.1829,
+     "dhss_name_match": [
+      "Van-Far Ambulance"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Montgomery CAD",
+     "share": 0.002
+    },
+    {
+     "name": "Randolph CAD",
+     "share": 0.0019
+    },
+    {
+     "name": "Ralls CAD",
+     "share": 0.0002
+    },
+    {
+     "name": "Monroe CAD",
+     "share": 0.0001
+    },
+    {
+     "name": "Callaway CAD",
+     "share": 0.0001
+    }
+   ],
+   "basis": "several districts tile the county; all named, none picked"
+  },
+  "29087": {
+   "county": "Holt County",
+   "pop": 4241,
+   "tier": "partial",
+   "ems_district_coverage": 0.0118,
+   "overlap_share": 0.0001,
+   "services": [],
+   "slivers_under_1pct": [
+    {
+     "name": "Andrew CAD",
+     "share": 0.0066
+    },
+    {
+     "name": "Nodaway CAD",
+     "share": 0.0052
+    },
+    {
+     "name": "Atchison-Holt CAD (Atchison County)",
+     "share": 0.0001
+    }
+   ],
+   "page_note": "Ambulance-district polygons cover 1% of the county; the rest is outside any district (city or county EMS, private, or not compiled). Districts named are only the covered part."
+  },
+  "29093": {
+   "county": "Iron County",
+   "pop": 9420,
+   "tier": "A",
+   "ems_district_coverage": 1.0,
+   "overlap_share": 0.0262,
+   "services": [
+    {
+     "name": "Iron CAD",
+     "share": 0.9932,
+     "dhss_name_match": [
+      "Iron County Ambulance District"
+     ]
+    },
+    {
+     "name": "Reynolds CAD",
+     "share": 0.0131,
+     "dhss_name_match": []
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Madison CAD",
+     "share": 0.0098
+    },
+    {
+     "name": "Clearwater AD",
+     "share": 0.0028
+    },
+    {
+     "name": "Washington CAD",
+     "share": 0.0026
+    },
+    {
+     "name": "East Wayne CAD",
+     "share": 0.0023
+    },
+    {
+     "name": "Steelville AD",
+     "share": 0.0016
+    },
+    {
+     "name": "St. Francois CAD",
+     "share": 0.0012
+    }
+   ],
+   "basis": "several districts tile the county; all named, none picked"
+  },
+  "29213": {
+   "county": "Taney County",
+   "pop": 56744,
+   "tier": "A",
+   "ems_district_coverage": 0.9988,
+   "overlap_share": 0.0035,
+   "services": [
+    {
+     "name": "Taney CAD",
+     "share": 0.9954,
+     "dhss_name_match": [
+      "Taney County Ambulance District"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Ozark CAD",
+     "share": 0.0069
+    },
+    {
+     "name": "Christian CAD",
+     "share": 0.0001
+    }
+   ]
+  },
+  "29115": {
+   "county": "Linn County",
+   "pop": 11910,
+   "tier": "A",
+   "ems_district_coverage": 0.9985,
+   "overlap_share": 0.0074,
+   "services": [
+    {
+     "name": "Linn CAD",
+     "share": 0.9895,
+     "dhss_name_match": [
+      "Linn County Ambulance District"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Macon CAD",
+     "share": 0.0075
+    },
+    {
+     "name": "Livingston AD",
+     "share": 0.006
+    },
+    {
+     "name": "Sullivan CAD",
+     "share": 0.0029
+    }
+   ]
+  },
+  "29085": {
+   "county": "Hickory County",
+   "pop": 8766,
+   "tier": "partial",
+   "ems_district_coverage": 0.0121,
+   "overlap_share": 0.0001,
+   "services": [],
+   "slivers_under_1pct": [
+    {
+     "name": "Warsaw-Lincoln Ambulance",
+     "share": 0.0062
+    },
+    {
+     "name": "Camden CAD",
+     "share": 0.006
+    }
+   ],
+   "page_note": "Ambulance-district polygons cover 1% of the county; the rest is outside any district (city or county EMS, private, or not compiled). Districts named are only the covered part."
+  },
+  "29009": {
+   "county": "Barry County",
+   "pop": 35618,
+   "tier": "partial",
+   "ems_district_coverage": 0.8903,
+   "overlap_share": 0.006,
+   "services": [
+    {
+     "name": "Barry/Lawrence CAD",
+     "share": 0.1784,
+     "dhss_name_match": [
+      "Barry-Lawrence Co Ambulance Dist"
+     ]
+    },
+    {
+     "name": "South Barryl CAD",
+     "share": 0.713,
+     "dhss_name_match": []
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Newton CAD",
+     "share": 0.005
+    }
+   ],
+   "page_note": "Ambulance-district polygons cover 89% of the county; the rest is outside any district (city or county EMS, private, or not compiled). Districts named are only the covered part."
+  },
+  "29151": {
+   "county": "Osage County",
+   "pop": 13478,
+   "tier": "partial",
+   "ems_district_coverage": 0.9154,
+   "overlap_share": 0.021,
+   "services": [
+    {
+     "name": "Hermann Area AD",
+     "share": 0.0116,
+     "dhss_name_match": [
+      "Hermann Area Ambulance District"
+     ]
+    },
+    {
+     "name": "Maries-Osage AD",
+     "share": 0.1513,
+     "dhss_name_match": []
+    },
+    {
+     "name": "Osage AD",
+     "share": 0.6117,
+     "dhss_name_match": [
+      "Maries-Osage Ambulance District",
+      "Osage Ambulance District"
+     ]
+    },
+    {
+     "name": "Ozark Central AD",
+     "share": 0.1502,
+     "dhss_name_match": [
+      "Ozark Central Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Owensville Area AD",
+     "share": 0.0059
+    },
+    {
+     "name": "Callaway CAD",
+     "share": 0.0059
+    },
+    {
+     "name": "Miller CAD",
+     "share": 0.0011
+    }
+   ],
+   "page_note": "Ambulance-district polygons cover 92% of the county; the rest is outside any district (city or county EMS, private, or not compiled). Districts named are only the covered part."
+  },
+  "29041": {
+   "county": "Chariton County",
+   "pop": 7397,
+   "tier": "A",
+   "ems_district_coverage": 0.9983,
+   "overlap_share": 0.0184,
+   "services": [
+    {
+     "name": "Chariton CAD",
+     "share": 0.9867,
+     "dhss_name_match": [
+      "Chariton County Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Carroll CAD",
+     "share": 0.0075
+    },
+    {
+     "name": "Randolph CAD",
+     "share": 0.0064
+    },
+    {
+     "name": "Linn CAD",
+     "share": 0.0044
+    },
+    {
+     "name": "Macon CAD",
+     "share": 0.004
+    },
+    {
+     "name": "Livingston AD",
+     "share": 0.0029
+    },
+    {
+     "name": "Slater AD",
+     "share": 0.0027
+    }
+   ]
+  },
+  "29089": {
+   "county": "Howard County",
+   "pop": 10150,
+   "tier": "A",
+   "ems_district_coverage": 0.9998,
+   "overlap_share": 0.0098,
+   "services": [
+    {
+     "name": "Howard CAD",
+     "share": 0.996,
+     "dhss_name_match": [
+      "Howard County Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Cooper CAD",
+     "share": 0.0063
+    },
+    {
+     "name": "Slater AD",
+     "share": 0.0038
+    },
+    {
+     "name": "Chariton CAD",
+     "share": 0.003
+    },
+    {
+     "name": "Saline CAD",
+     "share": 0.0008
+    }
+   ]
+  },
+  "29019": {
+   "county": "Boone County",
+   "pop": 192154,
+   "tier": "partial",
+   "ems_district_coverage": 0.0231,
+   "overlap_share": 0.0001,
+   "services": [
+    {
+     "name": "Callaway CAD",
+     "share": 0.0102,
+     "dhss_name_match": [
+      "Callaway County Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Howard CAD",
+     "share": 0.0046
+    },
+    {
+     "name": "Mid-Mo AD",
+     "share": 0.0045
+    },
+    {
+     "name": "Audrain CAD",
+     "share": 0.0033
+    },
+    {
+     "name": "Cooper CAD",
+     "share": 0.0007
+    },
+    {
+     "name": "Randolph CAD",
+     "share": 0.0001
+    }
+   ],
+   "page_note": "Ambulance-district polygons cover 2% of the county; the rest is outside any district (city or county EMS, private, or not compiled). Districts named are only the covered part."
+  },
+  "29187": {
+   "county": "St. Francois County",
+   "pop": 67503,
+   "tier": "A",
+   "ems_district_coverage": 1.0,
+   "overlap_share": 0.0271,
+   "services": [
+    {
+     "name": "Iron CAD",
+     "share": 0.01,
+     "dhss_name_match": [
+      "Iron County Ambulance District"
+     ]
+    },
+    {
+     "name": "Madison CAD",
+     "share": 0.0141,
+     "dhss_name_match": [
+      "Madison County Ambulance District"
+     ]
+    },
+    {
+     "name": "St. Francois CAD",
+     "share": 0.9827,
+     "dhss_name_match": [
+      "St. Francois County Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "St. Genevieve CAD",
+     "share": 0.0097
+    },
+    {
+     "name": "Washington CAD",
+     "share": 0.0074
+    },
+    {
+     "name": "Valle AD",
+     "share": 0.0034
+    }
+   ],
+   "basis": "several districts tile the county; all named, none picked"
+  },
+  "29069": {
+   "county": "Dunklin County",
+   "pop": 27002,
+   "tier": "A",
+   "ems_district_coverage": 0.9636,
+   "overlap_share": 0.0091,
+   "services": [
+    {
+     "name": "Dunklin CAD",
+     "share": 0.9625,
+     "dhss_name_match": [
+      "Dunklin County Ambulance District dba Medic One"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "New Madrid CAD",
+     "share": 0.0065
+    },
+    {
+     "name": "Stoddard CAD",
+     "share": 0.0038
+    }
+   ]
+  },
+  "29221": {
+   "county": "Washington County",
+   "pop": 23583,
+   "tier": "A",
+   "ems_district_coverage": 1.0,
+   "overlap_share": 0.0143,
+   "services": [
+    {
+     "name": "Washington CAD",
+     "share": 0.9939,
+     "dhss_name_match": [
+      "Washington County Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Steelville AD",
+     "share": 0.0052
+    },
+    {
+     "name": "Iron CAD",
+     "share": 0.005
+    },
+    {
+     "name": "St. Francois CAD",
+     "share": 0.0049
+    },
+    {
+     "name": "St. Clair AD",
+     "share": 0.0032
+    },
+    {
+     "name": "Valle AD",
+     "share": 0.0022
+    }
+   ]
+  },
+  "29049": {
+   "county": "Clinton County",
+   "pop": 21721,
+   "tier": "partial",
+   "ems_district_coverage": 0.9129,
+   "overlap_share": 0.0276,
+   "services": [
+    {
+     "name": "Cameron AD",
+     "share": 0.1393,
+     "dhss_name_match": [
+      "Cameron Ambulance District"
+     ]
+    },
+    {
+     "name": "Dekalb-Clinton AD",
+     "share": 0.1167,
+     "dhss_name_match": [
+      "Dekalb-Clinton Ambulance Dist #1"
+     ]
+    },
+    {
+     "name": "Tri-County AD",
+     "share": 0.6787,
+     "dhss_name_match": [
+      "Tri-County Ambulance District"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Caldwell CAD",
+     "share": 0.0046
+    },
+    {
+     "name": "Northland Regional AD",
+     "share": 0.0013
+    }
+   ],
+   "page_note": "Ambulance-district polygons cover 91% of the county; the rest is outside any district (city or county EMS, private, or not compiled). Districts named are only the covered part."
+  },
+  "29171": {
+   "county": "Putnam County",
+   "pop": 4539,
+   "tier": "A",
+   "ems_district_coverage": 0.9999,
+   "overlap_share": 0.0319,
+   "services": [
+    {
+     "name": "Putnam CAD",
+     "share": 0.998,
+     "dhss_name_match": [
+      "Putnam County Ambulance District"
+     ]
+    },
+    {
+     "name": "Schuyler CAD",
+     "share": 0.0116,
+     "dhss_name_match": [
+      "Schuyler County Ambulance Dist"
+     ]
+    },
+    {
+     "name": "Sullivan CAD",
+     "share": 0.0133,
+     "dhss_name_match": [
+      "Sullivan County Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Mercer CAD",
+     "share": 0.0056
+    },
+    {
+     "name": "Adair CAD",
+     "share": 0.0038
+    }
+   ],
+   "basis": "several districts tile the county; all named, none picked"
+  },
+  "29079": {
+   "county": "Grundy County",
+   "pop": 9766,
+   "tier": "partial",
+   "ems_district_coverage": 0.0339,
+   "overlap_share": 0.0003,
+   "services": [],
+   "slivers_under_1pct": [
+    {
+     "name": "Mercer CAD",
+     "share": 0.0098
+    },
+    {
+     "name": "Daviess CAD",
+     "share": 0.0081
+    },
+    {
+     "name": "Sullivan CAD",
+     "share": 0.0073
+    },
+    {
+     "name": "NTA Ambulance District",
+     "share": 0.0041
+    },
+    {
+     "name": "Livingston AD",
+     "share": 0.0026
+    },
+    {
+     "name": "Linn CAD",
+     "share": 0.0022
+    }
+   ],
+   "page_note": "Ambulance-district polygons cover 3% of the county; the rest is outside any district (city or county EMS, private, or not compiled). Districts named are only the covered part."
+  },
+  "29225": {
+   "county": "Webster County",
+   "pop": 42041,
+   "tier": "none",
+   "ems_district_coverage": 0.0008,
+   "overlap_share": 0.0001,
+   "services": [],
+   "slivers_under_1pct": [
+    {
+     "name": "Ava Area A.D.",
+     "share": 0.0005
+    },
+    {
+     "name": "Christian CAD",
+     "share": 0.0004
+    }
+   ],
+   "page_note": "No ambulance district polygon covers this county; provider not in the layer."
+  },
+  "29165": {
+   "county": "Platte County",
+   "pop": 113207,
+   "tier": "partial",
+   "ems_district_coverage": 0.5866,
+   "overlap_share": 0.0103,
+   "services": [
+    {
+     "name": "Northland Regional AD",
+     "share": 0.4001,
+     "dhss_name_match": [
+      "Northland Regional Ambulance Dist"
+     ]
+    },
+    {
+     "name": "South Platte AD",
+     "share": 0.1745,
+     "dhss_name_match": []
+    },
+    {
+     "name": "Tri-County AD",
+     "share": 0.0223,
+     "dhss_name_match": [
+      "Tri-County Ambulance District"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [],
+   "page_note": "Ambulance-district polygons cover 59% of the county; the rest is outside any district (city or county EMS, private, or not compiled). Districts named are only the covered part."
+  },
+  "29021": {
+   "county": "Buchanan County",
+   "pop": 83574,
+   "tier": "partial",
+   "ems_district_coverage": 0.2305,
+   "overlap_share": 0.0002,
+   "services": [
+    {
+     "name": "Tri-County AD",
+     "share": 0.2209,
+     "dhss_name_match": [
+      "Tri-County Ambulance District"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Andrew CAD",
+     "share": 0.0073
+    },
+    {
+     "name": "Dekalb-Clinton AD",
+     "share": 0.0025
+    }
+   ],
+   "page_note": "Ambulance-district polygons cover 23% of the county; the rest is outside any district (city or county EMS, private, or not compiled). Districts named are only the covered part."
+  },
+  "29001": {
+   "county": "Adair County",
+   "pop": 25660,
+   "tier": "A",
+   "ems_district_coverage": 1.0,
+   "overlap_share": 0.0343,
+   "services": [
+    {
+     "name": "Adair CAD",
+     "share": 0.9904,
+     "dhss_name_match": [
+      "Adair County Ambulance Dist"
+     ]
+    },
+    {
+     "name": "Macon CAD",
+     "share": 0.0191,
+     "dhss_name_match": [
+      "Macon County Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Knox CAD",
+     "share": 0.008
+    },
+    {
+     "name": "Sullivan CAD",
+     "share": 0.0074
+    },
+    {
+     "name": "Schuyler CAD",
+     "share": 0.0054
+    },
+    {
+     "name": "Putnam CAD",
+     "share": 0.0033
+    },
+    {
+     "name": "Scotland CAD",
+     "share": 0.0011
+    },
+    {
+     "name": "Linn CAD",
+     "share": 0.0001
+    }
+   ],
+   "basis": "several districts tile the county; all named, none picked"
+  },
+  "29189": {
+   "county": "St. Louis County",
+   "pop": 992929,
+   "tier": "partial",
+   "ems_district_coverage": 0.0276,
+   "overlap_share": 0.0002,
+   "services": [
+    {
+     "name": "St. Charles CAD",
+     "share": 0.0109,
+     "dhss_name_match": [
+      "St. Charles County Ambulance Dist",
+      "St. Charles Fire Dept"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Meramec AD",
+     "share": 0.0093
+    },
+    {
+     "name": "Rock Township AD",
+     "share": 0.0052
+    },
+    {
+     "name": "North Jefferson CAD",
+     "share": 0.0023
+    }
+   ],
+   "page_note": "Ambulance-district polygons cover 3% of the county; the rest is outside any district (city or county EMS, private, or not compiled). Districts named are only the covered part."
+  },
+  "29057": {
+   "county": "Dade County",
+   "pop": 7622,
+   "tier": "A",
+   "ems_district_coverage": 0.9963,
+   "overlap_share": 0.0033,
+   "services": [
+    {
+     "name": "Dade CAD",
+     "share": 0.9953,
+     "dhss_name_match": [
+      "Cox Paramedics-Dade County A. D."
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Barton CAD",
+     "share": 0.0041
+    },
+    {
+     "name": "Cedar CAD",
+     "share": 0.0003
+    }
+   ]
+  },
+  "29169": {
+   "county": "Pulaski County",
+   "pop": 53964,
+   "tier": "partial",
+   "ems_district_coverage": 0.8801,
+   "overlap_share": 0.0087,
+   "services": [
+    {
+     "name": "Dixon AD",
+     "share": 0.1733,
+     "dhss_name_match": [
+      "Dixon Ambulance District"
+     ]
+    },
+    {
+     "name": "Pulaski CAD",
+     "share": 0.7155,
+     "dhss_name_match": [
+      "Pulaski County Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Miller CAD",
+     "share": 0.0001
+    }
+   ],
+   "page_note": "Ambulance-district polygons cover 88% of the county; the rest is outside any district (city or county EMS, private, or not compiled). Districts named are only the covered part."
+  },
+  "29137": {
+   "county": "Monroe County",
+   "pop": 8890,
+   "tier": "A",
+   "ems_district_coverage": 1.0,
+   "overlap_share": 0.0155,
+   "services": [
+    {
+     "name": "Audrain CAD",
+     "share": 0.0102,
+     "dhss_name_match": [
+      "Audrain Ambulance District"
+     ]
+    },
+    {
+     "name": "Monroe CAD",
+     "share": 0.8058,
+     "dhss_name_match": [
+      "Monroe County Ambulance Dist"
+     ]
+    },
+    {
+     "name": "Monroe City AD",
+     "share": 0.1912,
+     "dhss_name_match": [
+      "Monroe City Ambulance District"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Randolph CAD",
+     "share": 0.0045
+    },
+    {
+     "name": "Ralls CAD",
+     "share": 0.0021
+    },
+    {
+     "name": "Shelby CAD",
+     "share": 0.0018
+    }
+   ],
+   "basis": "several districts tile the county; all named, none picked"
+  },
+  "29011": {
+   "county": "Barton County",
+   "pop": 11717,
+   "tier": "A",
+   "ems_district_coverage": 1.0,
+   "overlap_share": 0.0113,
+   "services": [
+    {
+     "name": "Barton CAD",
+     "share": 1.0,
+     "dhss_name_match": [
+      "Barton County Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Dade CAD",
+     "share": 0.0086
+    },
+    {
+     "name": "Cedar CAD",
+     "share": 0.0028
+    },
+    {
+     "name": "Vernon CAD",
+     "share": 0.0001
+    }
+   ]
+  },
+  "29095": {
+   "county": "Jackson County",
+   "pop": 727362,
+   "tier": "none",
+   "ems_district_coverage": 0.0024,
+   "overlap_share": 0.0,
+   "services": [],
+   "slivers_under_1pct": [
+    {
+     "name": "Ray CAD",
+     "share": 0.0021
+    },
+    {
+     "name": "Johnson CAD",
+     "share": 0.0003
+    }
+   ],
+   "page_note": "No ambulance district polygon covers this county; provider not in the layer."
+  },
+  "29119": {
+   "county": "McDonald County",
+   "pop": 24054,
+   "tier": "none",
+   "ems_district_coverage": 0.0095,
+   "overlap_share": 0.0,
+   "services": [],
+   "slivers_under_1pct": [
+    {
+     "name": "South Barryl CAD",
+     "share": 0.0095
+    }
+   ],
+   "page_note": "No ambulance district polygon covers this county; provider not in the layer."
+  },
+  "29157": {
+   "county": "Perry County",
+   "pop": 19100,
+   "tier": "none",
+   "ems_district_coverage": 0.0087,
+   "overlap_share": 0.0002,
+   "services": [],
+   "slivers_under_1pct": [
+    {
+     "name": "St. Genevieve CAD",
+     "share": 0.0061
+    },
+    {
+     "name": "St. Francois CAD",
+     "share": 0.0014
+    },
+    {
+     "name": "Madison CAD",
+     "share": 0.0014
+    }
+   ],
+   "page_note": "No ambulance district polygon covers this county; provider not in the layer."
+  },
+  "29217": {
+   "county": "Vernon County",
+   "pop": 19787,
+   "tier": "A",
+   "ems_district_coverage": 0.9926,
+   "overlap_share": 0.0047,
+   "services": [
+    {
+     "name": "Vernon CAD",
+     "share": 0.9851,
+     "dhss_name_match": [
+      "Vernon County Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Barton CAD",
+     "share": 0.0077
+    },
+    {
+     "name": "Cedar CAD",
+     "share": 0.0046
+    }
+   ]
+  },
+  "29215": {
+   "county": "Texas County",
+   "pop": 25715,
+   "tier": "none",
+   "ems_district_coverage": 0.0,
+   "overlap_share": 0.0,
+   "services": [],
+   "slivers_under_1pct": [],
+   "page_note": "No ambulance district polygon covers this county; provider not in the layer."
+  },
+  "29005": {
+   "county": "Atchison County",
+   "pop": 5139,
+   "tier": "A",
+   "ems_district_coverage": 0.9915,
+   "overlap_share": 0.0067,
+   "services": [
+    {
+     "name": "Atchison-Holt CAD (Atchison County)",
+     "share": 0.9887,
+     "dhss_name_match": [
+      "Atchison-Holt Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Nodaway CAD",
+     "share": 0.0095
+    }
+   ]
+  },
+  "29025": {
+   "county": "Caldwell County",
+   "pop": 9000,
+   "tier": "A",
+   "ems_district_coverage": 0.9712,
+   "overlap_share": 0.0147,
+   "services": [
+    {
+     "name": "Caldwell CAD",
+     "share": 0.9684,
+     "dhss_name_match": [
+      "Caldwell County Ambulance District"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Cameron AD",
+     "share": 0.0065
+    },
+    {
+     "name": "Livingston AD",
+     "share": 0.0058
+    },
+    {
+     "name": "Carroll CAD",
+     "share": 0.003
+    },
+    {
+     "name": "Tri-County AD",
+     "share": 0.0021
+    },
+    {
+     "name": "Ray CAD",
+     "share": 0.0002
+    },
+    {
+     "name": "Daviess CAD",
+     "share": 0.0001
+    }
+   ]
+  },
+  "29111": {
+   "county": "Lewis County",
+   "pop": 9852,
+   "tier": "A",
+   "ems_district_coverage": 0.9977,
+   "overlap_share": 0.0072,
+   "services": [
+    {
+     "name": "Lewis CAD",
+     "share": 0.9976,
+     "dhss_name_match": [
+      "Lewis County Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Knox CAD",
+     "share": 0.0048
+    },
+    {
+     "name": "Shelby CAD",
+     "share": 0.0025
+    },
+    {
+     "name": "Marion CAD",
+     "share": 0.0002
+    },
+    {
+     "name": "Clark CAD",
+     "share": 0.0001
+    }
+   ]
+  },
+  "29207": {
+   "county": "Stoddard County",
+   "pop": 28438,
+   "tier": "A",
+   "ems_district_coverage": 0.9957,
+   "overlap_share": 0.0109,
+   "services": [
+    {
+     "name": "Stoddard CAD",
+     "share": 0.9931,
+     "dhss_name_match": [
+      "Stoddard Co Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "New Madrid CAD",
+     "share": 0.0045
+    },
+    {
+     "name": "South Scott CAD",
+     "share": 0.0027
+    },
+    {
+     "name": "Dunklin CAD",
+     "share": 0.0026
+    },
+    {
+     "name": "East Wayne CAD",
+     "share": 0.0025
+    },
+    {
+     "name": "North Scott CAD",
+     "share": 0.0013
+    }
+   ]
+  },
+  "29107": {
+   "county": "Lafayette County",
+   "pop": 33511,
+   "tier": "partial",
+   "ems_district_coverage": 0.0221,
+   "overlap_share": 0.0003,
+   "services": [],
+   "slivers_under_1pct": [
+    {
+     "name": "Sweet Springs AD",
+     "share": 0.0057
+    },
+    {
+     "name": "Ray CAD",
+     "share": 0.0055
+    },
+    {
+     "name": "Johnson CAD",
+     "share": 0.0046
+    },
+    {
+     "name": "Carroll CAD",
+     "share": 0.0034
+    },
+    {
+     "name": "Saline CAD",
+     "share": 0.0032
+    }
+   ],
+   "page_note": "Ambulance-district polygons cover 2% of the county; the rest is outside any district (city or county EMS, private, or not compiled). Districts named are only the covered part."
+  },
+  "29186": {
+   "county": "Ste. Genevieve County",
+   "pop": 18546,
+   "tier": "A",
+   "ems_district_coverage": 0.9917,
+   "overlap_share": 0.0122,
+   "services": [
+    {
+     "name": "St. Francois CAD",
+     "share": 0.0163,
+     "dhss_name_match": [
+      "St. Francois County Ambulance Dist"
+     ]
+    },
+    {
+     "name": "St. Genevieve CAD",
+     "share": 0.9859,
+     "dhss_name_match": [
+      "Sainte Genevieve County Ambulance District"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Joachim-Plattin CAD",
+     "share": 0.0018
+    }
+   ],
+   "basis": "several districts tile the county; all named, none picked"
+  },
+  "29127": {
+   "county": "Marion County",
+   "pop": 28425,
+   "tier": "A",
+   "ems_district_coverage": 0.9984,
+   "overlap_share": 0.018,
+   "services": [
+    {
+     "name": "Marion CAD",
+     "share": 0.7413,
+     "dhss_name_match": [
+      "Marion County Ambulance District"
+     ]
+    },
+    {
+     "name": "Monroe City AD",
+     "share": 0.2655,
+     "dhss_name_match": [
+      "Monroe City Ambulance District"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Ralls CAD",
+     "share": 0.0053
+    },
+    {
+     "name": "Shelby CAD",
+     "share": 0.0045
+    },
+    {
+     "name": "Lewis CAD",
+     "share": 0.0001
+    }
+   ],
+   "basis": "several districts tile the county; all named, none picked"
+  },
+  "29047": {
+   "county": "Clay County",
+   "pop": 263370,
+   "tier": "partial",
+   "ems_district_coverage": 0.182,
+   "overlap_share": 0.0038,
+   "services": [
+    {
+     "name": "Northland Regional AD",
+     "share": 0.1762,
+     "dhss_name_match": [
+      "Northland Regional Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Ray CAD",
+     "share": 0.0059
+    },
+    {
+     "name": "Tri-County AD",
+     "share": 0.0038
+    }
+   ],
+   "page_note": "Ambulance-district polygons cover 18% of the county; the rest is outside any district (city or county EMS, private, or not compiled). Districts named are only the covered part."
+  },
+  "29149": {
+   "county": "Oregon County",
+   "pop": 8699,
+   "tier": "A",
+   "ems_district_coverage": 0.9982,
+   "overlap_share": 0.0085,
+   "services": [
+    {
+     "name": "Oregon CAD",
+     "share": 0.9913,
+     "dhss_name_match": [
+      "Oregon County Ambulance Dist"
+     ]
+    },
+    {
+     "name": "South Howell CAD",
+     "share": 0.0126,
+     "dhss_name_match": [
+      "South Howell Co Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "West Carter AD",
+     "share": 0.0017
+    },
+    {
+     "name": "Ripley CAD",
+     "share": 0.0013
+    }
+   ],
+   "basis": "several districts tile the county; all named, none picked"
+  },
+  "29099": {
+   "county": "Jefferson County",
+   "pop": 231888,
+   "tier": "A-unverified",
+   "ems_district_coverage": 0.9723,
+   "overlap_share": 0.0282,
+   "services": [
+    {
+     "name": "Big River AD",
+     "share": 0.1881,
+     "dhss_name_match": [
+      "Big River Ambulance District"
+     ]
+    },
+    {
+     "name": "Joachim-Plattin CAD",
+     "share": 0.2849,
+     "dhss_name_match": [
+      "Joachim-Plattin Ambulance Dist"
+     ]
+    },
+    {
+     "name": "Meramec AD",
+     "share": 0.0278,
+     "dhss_name_match": [
+      "Meramec Ambulance District"
+     ]
+    },
+    {
+     "name": "North Jefferson CAD",
+     "share": 0.0461,
+     "dhss_name_match": [
+      "North Jefferson Co / SEMS Ambulance Dist"
+     ]
+    },
+    {
+     "name": "Rock Township AD",
+     "share": 0.1388,
+     "dhss_name_match": [
+      "Rock Township Ambulance Dist"
+     ]
+    },
+    {
+     "name": "Valle AD",
+     "share": 0.2984,
+     "dhss_name_match": [
+      "Valle Ambulance District"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Washington CAD",
+     "share": 0.0056
+    },
+    {
+     "name": "St. Clair AD",
+     "share": 0.0055
+    },
+    {
+     "name": "St. Francois CAD",
+     "share": 0.0036
+    },
+    {
+     "name": "St. Genevieve CAD",
+     "share": 0.002
+    }
+   ],
+   "basis": "several districts tile the county; all named, none picked"
+  },
+  "29113": {
+   "county": "Lincoln County",
+   "pop": 65888,
+   "tier": "A",
+   "ems_district_coverage": 0.998,
+   "overlap_share": 0.0132,
+   "services": [
+    {
+     "name": "Lincoln CAD",
+     "share": 0.996,
+     "dhss_name_match": [
+      "Lincoln Co Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Warren CAD",
+     "share": 0.0073
+    },
+    {
+     "name": "St. Charles CAD",
+     "share": 0.0063
+    },
+    {
+     "name": "Montgomery CAD",
+     "share": 0.0016
+    }
+   ]
+  },
+  "29015": {
+   "county": "Benton County",
+   "pop": 20614,
+   "tier": "A",
+   "ems_district_coverage": 0.9574,
+   "overlap_share": 0.0171,
+   "services": [
+    {
+     "name": "Cole Camp Ambulance",
+     "share": 0.2867,
+     "dhss_name_match": [
+      "Cole Camp EMS"
+     ]
+    },
+    {
+     "name": "Warsaw-Lincoln Ambulance",
+     "share": 0.6769,
+     "dhss_name_match": [
+      "Warsaw-Lincoln Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Mid-Mo AD",
+     "share": 0.0068
+    },
+    {
+     "name": "Camden CAD",
+     "share": 0.0041
+    }
+   ],
+   "basis": "several districts tile the county; all named, none picked"
+  },
+  "29065": {
+   "county": "Dent County",
+   "pop": 14721,
+   "tier": "none",
+   "ems_district_coverage": 0.0064,
+   "overlap_share": 0.0001,
+   "services": [],
+   "slivers_under_1pct": [
+    {
+     "name": "Reynolds CAD",
+     "share": 0.0034
+    },
+    {
+     "name": "Iron CAD",
+     "share": 0.0021
+    },
+    {
+     "name": "Steelville AD",
+     "share": 0.0009
+    }
+   ],
+   "page_note": "No ambulance district polygon covers this county; provider not in the layer."
+  },
+  "29179": {
+   "county": "Reynolds County",
+   "pop": 5927,
+   "tier": "A-unverified",
+   "ems_district_coverage": 0.998,
+   "overlap_share": 0.0142,
+   "services": [
+    {
+     "name": "Reynolds CAD",
+     "share": 0.9978,
+     "dhss_name_match": []
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Iron CAD",
+     "share": 0.0079
+    },
+    {
+     "name": "Clearwater AD",
+     "share": 0.0044
+    },
+    {
+     "name": "West Carter AD",
+     "share": 0.0022
+    }
+   ]
+  },
+  "29075": {
+   "county": "Gentry County",
+   "pop": 6298,
+   "tier": "A",
+   "ems_district_coverage": 1.0,
+   "overlap_share": 0.0181,
+   "services": [
+    {
+     "name": "Grand River Regional AD",
+     "share": 0.996,
+     "dhss_name_match": [
+      "Grand River Regional Ambulance Dist"
+     ]
+    },
+    {
+     "name": "Nodaway CAD",
+     "share": 0.0114,
+     "dhss_name_match": [
+      "Nodaway County Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Worth CAD",
+     "share": 0.0085
+    },
+    {
+     "name": "NTA Ambulance District",
+     "share": 0.0018
+    },
+    {
+     "name": "Daviess CAD",
+     "share": 0.0006
+    },
+    {
+     "name": "Dekalb-Clinton AD",
+     "share": 0.0002
+    },
+    {
+     "name": "North Harrison CAD",
+     "share": 0.0001
+    }
+   ],
+   "basis": "several districts tile the county; all named, none picked"
+  },
+  "29081": {
+   "county": "Harrison County",
+   "pop": 8186,
+   "tier": "A",
+   "ems_district_coverage": 0.9966,
+   "overlap_share": 0.018,
+   "services": [
+    {
+     "name": "Grand River Regional AD",
+     "share": 0.0949,
+     "dhss_name_match": [
+      "Grand River Regional Ambulance Dist"
+     ]
+    },
+    {
+     "name": "NTA Ambulance District",
+     "share": 0.4703,
+     "dhss_name_match": [
+      "NTA Ambulance"
+     ]
+    },
+    {
+     "name": "North Harrison CAD",
+     "share": 0.4379,
+     "dhss_name_match": [
+      "North Harrison Co Amb Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Mercer CAD",
+     "share": 0.006
+    },
+    {
+     "name": "Worth CAD",
+     "share": 0.0038
+    },
+    {
+     "name": "Daviess CAD",
+     "share": 0.0018
+    }
+   ],
+   "basis": "several districts tile the county; all named, none picked"
+  },
+  "29223": {
+   "county": "Wayne County",
+   "pop": 10820,
+   "tier": "A",
+   "ems_district_coverage": 0.9993,
+   "overlap_share": 0.0187,
+   "services": [
+    {
+     "name": "Clearwater AD",
+     "share": 0.3751,
+     "dhss_name_match": [
+      "Clearwater Ambulance District"
+     ]
+    },
+    {
+     "name": "East Wayne CAD",
+     "share": 0.6279,
+     "dhss_name_match": [
+      "East Wayne County Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Reynolds CAD",
+     "share": 0.0049
+    },
+    {
+     "name": "Madison CAD",
+     "share": 0.0048
+    },
+    {
+     "name": "Stoddard CAD",
+     "share": 0.0037
+    },
+    {
+     "name": "Iron CAD",
+     "share": 0.0015
+    }
+   ],
+   "basis": "several districts tile the county; all named, none picked"
+  },
+  "29037": {
+   "county": "Cass County",
+   "pop": 113873,
+   "tier": "none",
+   "ems_district_coverage": 0.006,
+   "overlap_share": 0.0,
+   "services": [],
+   "slivers_under_1pct": [
+    {
+     "name": "Johnson CAD",
+     "share": 0.006
+    }
+   ],
+   "page_note": "No ambulance district polygon covers this county; provider not in the layer."
+  },
+  "29067": {
+   "county": "Douglas County",
+   "pop": 12290,
+   "tier": "partial",
+   "ems_district_coverage": 0.4754,
+   "overlap_share": 0.0093,
+   "services": [
+    {
+     "name": "Ava Area A.D.",
+     "share": 0.4639,
+     "dhss_name_match": []
+    },
+    {
+     "name": "Ozark CAD",
+     "share": 0.013,
+     "dhss_name_match": [
+      "Ozark County Ambulance District"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Christian CAD",
+     "share": 0.0046
+    },
+    {
+     "name": "Taney CAD",
+     "share": 0.002
+    },
+    {
+     "name": "South Howell CAD",
+     "share": 0.0012
+    }
+   ],
+   "page_note": "Ambulance-district polygons cover 48% of the county; the rest is outside any district (city or county EMS, private, or not compiled). Districts named are only the covered part."
+  },
+  "29123": {
+   "county": "Madison County",
+   "pop": 12852,
+   "tier": "A",
+   "ems_district_coverage": 0.9948,
+   "overlap_share": 0.0168,
+   "services": [
+    {
+     "name": "East Wayne CAD",
+     "share": 0.0105,
+     "dhss_name_match": [
+      "East Wayne County Ambulance Dist"
+     ]
+    },
+    {
+     "name": "Iron CAD",
+     "share": 0.01,
+     "dhss_name_match": [
+      "Iron County Ambulance District"
+     ]
+    },
+    {
+     "name": "Madison CAD",
+     "share": 0.9913,
+     "dhss_name_match": [
+      "Madison County Ambulance District"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [],
+   "basis": "several districts tile the county; all named, none picked"
+  },
+  "29035": {
+   "county": "Carter County",
+   "pop": 5359,
+   "tier": "partial",
+   "ems_district_coverage": 0.771,
+   "overlap_share": 0.0033,
+   "services": [
+    {
+     "name": "Clearwater AD",
+     "share": 0.1639,
+     "dhss_name_match": [
+      "Clearwater Ambulance District"
+     ]
+    },
+    {
+     "name": "Ripley CAD",
+     "share": 0.0104,
+     "dhss_name_match": [
+      "Ripley County Ambulance Dist"
+     ]
+    },
+    {
+     "name": "West Carter AD",
+     "share": 0.5954,
+     "dhss_name_match": [
+      "West  Carter County Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Oregon CAD",
+     "share": 0.003
+    },
+    {
+     "name": "Reynolds CAD",
+     "share": 0.0016
+    }
+   ],
+   "page_note": "Ambulance-district polygons cover 77% of the county; the rest is outside any district (city or county EMS, private, or not compiled). Districts named are only the covered part."
+  },
+  "29161": {
+   "county": "Phelps County",
+   "pop": 45672,
+   "tier": "partial",
+   "ems_district_coverage": 0.2466,
+   "overlap_share": 0.0063,
+   "services": [
+    {
+     "name": "Dixon AD",
+     "share": 0.0233,
+     "dhss_name_match": [
+      "Dixon Ambulance District"
+     ]
+    },
+    {
+     "name": "St. James AD",
+     "share": 0.2233,
+     "dhss_name_match": [
+      "St. James Ambulance District"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "North Crawford CAD",
+     "share": 0.004
+    },
+    {
+     "name": "Ozark Central AD",
+     "share": 0.0017
+    },
+    {
+     "name": "Steelville AD",
+     "share": 0.0007
+    }
+   ],
+   "page_note": "Ambulance-district polygons cover 25% of the county; the rest is outside any district (city or county EMS, private, or not compiled). Districts named are only the covered part."
+  },
+  "29141": {
+   "county": "Morgan County",
+   "pop": 22399,
+   "tier": "A",
+   "ems_district_coverage": 0.9997,
+   "overlap_share": 0.0178,
+   "services": [
+    {
+     "name": "Cam-Mo AD",
+     "share": 0.0815,
+     "dhss_name_match": [
+      "Cam-MO Ambulance District; DBA Lake West Ambulance"
+     ]
+    },
+    {
+     "name": "Mid-Mo AD",
+     "share": 0.9183,
+     "dhss_name_match": [
+      "Mid-Mo Ambulance District"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Camden CAD",
+     "share": 0.0058
+    },
+    {
+     "name": "Cole Camp Ambulance",
+     "share": 0.0047
+    },
+    {
+     "name": "Miller CAD",
+     "share": 0.0038
+    },
+    {
+     "name": "Pettis CAD",
+     "share": 0.0032
+    },
+    {
+     "name": "Cooper CAD",
+     "share": 0.0004
+    }
+   ],
+   "basis": "several districts tile the county; all named, none picked"
+  },
+  "29219": {
+   "county": "Warren County",
+   "pop": 38478,
+   "tier": "A",
+   "ems_district_coverage": 1.0,
+   "overlap_share": 0.0402,
+   "services": [
+    {
+     "name": "Hermann Area AD",
+     "share": 0.0719,
+     "dhss_name_match": [
+      "Hermann Area Ambulance District"
+     ]
+    },
+    {
+     "name": "Marthasville AD",
+     "share": 0.4131,
+     "dhss_name_match": [
+      "Marthasville Community Amb Dist"
+     ]
+    },
+    {
+     "name": "St. Charles CAD",
+     "share": 0.0168,
+     "dhss_name_match": [
+      "St. Charles County Ambulance Dist",
+      "St. Charles Fire Dept"
+     ]
+    },
+    {
+     "name": "Warren CAD",
+     "share": 0.5184,
+     "dhss_name_match": [
+      "Warren County Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Montgomery CAD",
+     "share": 0.007
+    },
+    {
+     "name": "Lincoln CAD",
+     "share": 0.0068
+    },
+    {
+     "name": "Washington Area AD",
+     "share": 0.0034
+    },
+    {
+     "name": "New Haven AD",
+     "share": 0.0033
+    }
+   ],
+   "basis": "several districts tile the county; all named, none picked"
+  },
+  "29031": {
+   "county": "Cape Girardeau County",
+   "pop": 83658,
+   "tier": "partial",
+   "ems_district_coverage": 0.0118,
+   "overlap_share": 0.0001,
+   "services": [],
+   "slivers_under_1pct": [
+    {
+     "name": "North Scott CAD",
+     "share": 0.0079
+    },
+    {
+     "name": "Stoddard CAD",
+     "share": 0.0039
+    }
+   ],
+   "page_note": "Ambulance-district polygons cover 1% of the county; the rest is outside any district (city or county EMS, private, or not compiled). Districts named are only the covered part."
+  },
+  "29133": {
+   "county": "Mississippi County",
+   "pop": 11750,
+   "tier": "A",
+   "ems_district_coverage": 0.9677,
+   "overlap_share": 0.0185,
+   "services": [
+    {
+     "name": "Mississippi CAD",
+     "share": 0.9654,
+     "dhss_name_match": [
+      "Mississippi County Ambulance Dist"
+     ]
+    },
+    {
+     "name": "New Madrid CAD",
+     "share": 0.0127,
+     "dhss_name_match": [
+      "New Madrid County Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "South Scott CAD",
+     "share": 0.0082
+    }
+   ],
+   "basis": "several districts tile the county; all named, none picked"
+  },
+  "29077": {
+   "county": "Greene County",
+   "pop": 307942,
+   "tier": "none",
+   "ems_district_coverage": 0.0033,
+   "overlap_share": 0.0,
+   "services": [],
+   "slivers_under_1pct": [
+    {
+     "name": "Dade CAD",
+     "share": 0.0033
+    },
+    {
+     "name": "Christian CAD",
+     "share": 0.0001
+    }
+   ],
+   "page_note": "No ambulance district polygon covers this county; provider not in the layer."
+  },
+  "29183": {
+   "county": "St. Charles County",
+   "pop": 423726,
+   "tier": "A",
+   "ems_district_coverage": 0.9841,
+   "overlap_share": 0.0137,
+   "services": [
+    {
+     "name": "St. Charles CAD",
+     "share": 0.9813,
+     "dhss_name_match": [
+      "St. Charles County Ambulance Dist",
+      "St. Charles Fire Dept"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Lincoln CAD",
+     "share": 0.008
+    },
+    {
+     "name": "Meramec AD",
+     "share": 0.0028
+    },
+    {
+     "name": "Warren CAD",
+     "share": 0.0028
+    },
+    {
+     "name": "Marthasville AD",
+     "share": 0.0024
+    },
+    {
+     "name": "Washington Area AD",
+     "share": 0.0006
+    }
+   ]
+  },
+  "29211": {
+   "county": "Sullivan County",
+   "pop": 5750,
+   "tier": "A",
+   "ems_district_coverage": 1.0,
+   "overlap_share": 0.0165,
+   "services": [
+    {
+     "name": "Sullivan CAD",
+     "share": 0.9981,
+     "dhss_name_match": [
+      "Sullivan County Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Putnam CAD",
+     "share": 0.0094
+    },
+    {
+     "name": "Adair CAD",
+     "share": 0.0066
+    },
+    {
+     "name": "Mercer CAD",
+     "share": 0.0026
+    }
+   ]
+  },
+  "29083": {
+   "county": "Henry County",
+   "pop": 22575,
+   "tier": "partial",
+   "ems_district_coverage": 0.0182,
+   "overlap_share": 0.0,
+   "services": [
+    {
+     "name": "Warsaw-Lincoln Ambulance",
+     "share": 0.0182,
+     "dhss_name_match": [
+      "Warsaw-Lincoln Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Johnson CAD",
+     "share": 0.0001
+    }
+   ],
+   "page_note": "Ambulance-district polygons cover 2% of the county; the rest is outside any district (city or county EMS, private, or not compiled). Districts named are only the covered part."
+  },
+  "29147": {
+   "county": "Nodaway County",
+   "pop": 20503,
+   "tier": "A",
+   "ems_district_coverage": 0.9994,
+   "overlap_share": 0.0102,
+   "services": [
+    {
+     "name": "Nodaway CAD",
+     "share": 0.9992,
+     "dhss_name_match": [
+      "Nodaway County Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Grand River Regional AD",
+     "share": 0.0042
+    },
+    {
+     "name": "Atchison-Holt CAD (Atchison County)",
+     "share": 0.0038
+    },
+    {
+     "name": "Worth CAD",
+     "share": 0.0024
+    },
+    {
+     "name": "Andrew CAD",
+     "share": 0.0
+    }
+   ]
+  },
+  "29155": {
+   "county": "Pemiscot County",
+   "pop": 14407,
+   "tier": "partial",
+   "ems_district_coverage": 0.0153,
+   "overlap_share": 0.0001,
+   "services": [
+    {
+     "name": "Dunklin CAD",
+     "share": 0.011,
+     "dhss_name_match": [
+      "Dunklin County Ambulance District dba Medic One"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "New Madrid CAD",
+     "share": 0.0044
+    }
+   ],
+   "page_note": "Ambulance-district polygons cover 2% of the county; the rest is outside any district (city or county EMS, private, or not compiled). Districts named are only the covered part."
+  },
+  "29510": {
+   "county": "St. Louis city",
+   "pop": 279695,
+   "tier": "none",
+   "ems_district_coverage": 0.0,
+   "overlap_share": 0.0,
+   "services": [],
+   "slivers_under_1pct": [],
+   "page_note": "No ambulance district polygon covers this county; provider not in the layer."
+  },
+  "29017": {
+   "county": "Bollinger County",
+   "pop": 10610,
+   "tier": "partial",
+   "ems_district_coverage": 0.0176,
+   "overlap_share": 0.0,
+   "services": [],
+   "slivers_under_1pct": [
+    {
+     "name": "Stoddard CAD",
+     "share": 0.0072
+    },
+    {
+     "name": "Madison CAD",
+     "share": 0.0054
+    },
+    {
+     "name": "East Wayne CAD",
+     "share": 0.005
+    }
+   ],
+   "page_note": "Ambulance-district polygons cover 2% of the county; the rest is outside any district (city or county EMS, private, or not compiled). Districts named are only the covered part."
+  },
+  "29033": {
+   "county": "Carroll County",
+   "pop": 8414,
+   "tier": "A",
+   "ems_district_coverage": 0.9946,
+   "overlap_share": 0.0129,
+   "services": [
+    {
+     "name": "Carroll CAD",
+     "share": 0.9876,
+     "dhss_name_match": [
+      "Carroll County Ambulance District"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Chariton CAD",
+     "share": 0.0067
+    },
+    {
+     "name": "Ray CAD",
+     "share": 0.0064
+    },
+    {
+     "name": "Saline CAD",
+     "share": 0.0053
+    },
+    {
+     "name": "Slater AD",
+     "share": 0.0015
+    },
+    {
+     "name": "Livingston AD",
+     "share": 0.0001
+    }
+   ]
+  },
+  "29143": {
+   "county": "New Madrid County",
+   "pop": 15212,
+   "tier": "A",
+   "ems_district_coverage": 0.9867,
+   "overlap_share": 0.0156,
+   "services": [
+    {
+     "name": "New Madrid CAD",
+     "share": 0.986,
+     "dhss_name_match": [
+      "New Madrid County Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Mississippi CAD",
+     "share": 0.0069
+    },
+    {
+     "name": "Dunklin CAD",
+     "share": 0.0044
+    },
+    {
+     "name": "Stoddard CAD",
+     "share": 0.0027
+    },
+    {
+     "name": "South Scott CAD",
+     "share": 0.0024
+    }
+   ]
+  },
+  "29029": {
+   "county": "Camden County",
+   "pop": 44135,
+   "tier": "A",
+   "ems_district_coverage": 0.9774,
+   "overlap_share": 0.0227,
+   "services": [
+    {
+     "name": "Cam-Mo AD",
+     "share": 0.1478,
+     "dhss_name_match": [
+      "Cam-MO Ambulance District; DBA Lake West Ambulance"
+     ]
+    },
+    {
+     "name": "Camden CAD",
+     "share": 0.7639,
+     "dhss_name_match": [
+      "Mercy Camden County Ambulance District"
+     ]
+    },
+    {
+     "name": "Pulaski CAD",
+     "share": 0.0776,
+     "dhss_name_match": [
+      "Pulaski County Ambulance Dist"
+     ]
+    }
+   ],
+   "slivers_under_1pct": [
+    {
+     "name": "Miller CAD",
+     "share": 0.0043
+    },
+    {
+     "name": "Warsaw-Lincoln Ambulance",
+     "share": 0.0032
+    },
+    {
+     "name": "Mid-Mo AD",
+     "share": 0.0032
+    },
+    {
+     "name": "Cole Camp Ambulance",
+     "share": 0.0001
+    }
+   ],
+   "basis": "several districts tile the county; all named, none picked"
+  }
+ }
+}
