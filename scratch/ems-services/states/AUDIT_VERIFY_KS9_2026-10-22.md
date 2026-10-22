@@ -1,0 +1,7 @@
+# KS audit of verify pass 9 A rows, 2026-10-22
+
+Pages re-fetched to web_raw/KS/audit9/ (sa_ems_id.html, sa_fd_id.html, sa_ems_2023.html, lt_*.html, n_*.txt; helpers sp.py, promote.py). Held rows (Sedgwick, Shawnee, Rush, Atchison, Cherokee) not audited or promoted.
+
+- 20169 Saline: PASS. Wayback id_ copy 20251013161406 (CDX confirms 200 capture that day) carries both quoted sentences verbatim: covers "not only the City of Salina but for all of Saline County" and "the only provider of 911 EMS in Saline County" plus inter-facility ambulance transfers (transport). Same sentence on the 2023-10-03 capture and every capture since (text unchanged 2023-2025, no sign of change). Second page (city /fire-department, 2025): EMS "extended into Saline County by governmental agreement". Licences (KS_imagetrend): only Salina FD and LIFE TOUCH EMS INC; Life Touch (lifetouchems.com, fetched) is a private Salina service with its own dispatch line 785.643.6888 listing emergent/non-emergent, hospice, standby transports; no 911 role named, and the city page excludes it as a 911 provider. Salina is the only city over 20k. Own search (Google News RSS, KSAL, Salina Post, Salina Journal, 2024-2026): no change to the county role, no other 911 provider, no contract change; KSAL 2026-08-11 new Salina Fire station opens with a truck and ambulance crew. Saline County sites (salinecountyks.gov 403, saline.org) have no EMS page in Wayback 2024+.
+
+Result: 1 audited, 1 PASS (pop 53,459), 0 FAIL. Residual: the county-city agreement itself was not seen; the city page states its effect.
