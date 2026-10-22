@@ -1,0 +1,38 @@
+{
+ "meta": {
+  "state": "HI",
+  "retrieved": "2026-10-22",
+  "via": "NPS Kalaupapa NHP pages, Maui Now and Honolulu Civil Beat articles (WordPress search), Google News RSS"
+ },
+ "county_verdict": {
+  "15005": {
+   "county": "Kalawao",
+   "tier": "held",
+   "services": [
+    {
+     "name": "American Medical Response (Maui County 911 air ambulance, with REACH Air Medical Services helicopter)",
+     "transport": true,
+     "ownership": "private contractor (state DOH / Maui County)",
+     "partial": false,
+     "area": "Kalaupapa settlement (whole county)",
+     "source_url": "https://mauinow.com/2019/03/31/new-helicopter-medevac-to-service-maui-county/",
+     "evidence": "Maui Now, 2019-03-31: \"A new Emergency Medical Services helicopter will soon provide 911 service for Maui, Molokaʻi and Lānaʻi.\" Mayor: \"...especially those located in our rural areas such as Kalaupapa, Hāna, and Lānaʻi\". \"REACH Air Medical Services is supplying the new medically-configured, twin-engine Airbus H-135 helicopter ... while American Medical Response will provide the medical flight staff.\" Corroborated by Maui Now 2021-05-27 (HDOT/DOH/NPS night medevac drill at Kalaupapa Airport with \"an American Medical Response helicopter\").",
+     "vintage": "2019"
+    }
+   ],
+   "other_sources": [
+    {
+     "url": "https://www.nps.gov/kala/planyourvisit/safety.htm",
+     "quote": "There are no medical facilities available in the Kalaupapa Settlement. Any emergency medical response requires a helicopter flight to Oʻahu or Maui. ... If an emergency arises, call 911. You may also contact Kalaupapa NHP Dispatch at 1-877-428-6911 (24 hours)",
+     "vintage": "current, undated"
+    },
+    {
+     "url": "https://www.civilbeat.org/2026/10/kalaupapa-evacuated-with-no-return-date-after-crucial-infrastructure-fails/",
+     "quote": "State officials on Sept. 11 took the unusual step of airlifting dozens of residents from the isolated peninsula ... Kalaupapa will remain eerily deserted — except for a few National Park Service law enforcement officers — until the power outage ends.",
+     "vintage": "2026-10-01"
+    }
+   ],
+   "page_note": "Kalaupapa has no ambulance or medical facility; emergency patients leave by helicopter to Maui or Oʻahu. A 2019 report names Maui County's 911 medical helicopter (American Medical Response flight crew, REACH Air Medical Services aircraft) as serving Kalaupapa; no 2024 or later page confirming who flies Kalaupapa patients was found, and flights to Oʻahu may use other carriers. Since September 2026 the settlement has been evacuated after water and power failures, with no return date."
+  }
+ }
+}

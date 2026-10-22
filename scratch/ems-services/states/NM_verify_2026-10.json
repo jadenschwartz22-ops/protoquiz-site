@@ -1,0 +1,265 @@
+{
+ "meta": {
+  "state": "NM",
+  "retrieved": "2026-10-22",
+  "via": "NM 911 Program (DFA) EMS boundary layer overlaid on counties + NM DOH EMS Bureau list, provided by the EMS Bureau 2026-10-21 (combined ambulance list 2024-08-06, all-agency list 2025-04-30, first-responder list 2026-06-18) + ImageTrend licence records + agency pages (verify pass)"
+ },
+ "county_verdict": {
+  "35045": {
+   "county": "San Juan",
+   "tier": "A",
+   "services": [
+    {
+     "name": "San Juan Regional Medical Center EMS",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": false,
+     "area": "San Juan County EMS area (everything outside the Navajo Nation boundary; its ALS ambulances also run county-wide)",
+     "source_url": "https://www.sanjuanregional.com/ems-ambulance",
+     "evidence": "\"providing both Advanced Life Support (ALS) and Basic Life Support (BLS) ambulance services in cooperation with San Juan County and the cities of Farmington, Aztec and Bloomfield 24 hours a day ... If you need emergency ambulance transport, call 911. ... Our ALS ambulances are stationed throughout San Juan County and cover 5,500 square miles.\" | NM 911 Program (DFA) EMS boundary layer assigns San Juan County EMS area (everything outside the Navajo Nation boundary; its ALS ambulances also run county-wide) to Agency_ID \"ems.co-sanjuan.911-sanjuan.nm.us\" (57% of the county). NM DOH EMS Bureau list, provided by the EMS Bureau 2026-10-21: combined ambulance list 2024 \"SAN JUAN REGIONAL MEDICAL CENTER, INC DBA SAN JUAN REGIONAL MEDICAL CENTER AMBULANCE SERVICE ... AMBULANCE ... CERTIFIED\"; 2025 list \"San Juan Regional EMS | DOT Service | ALS\".",
+     "vintage": "page undated, opened 2026-10-22; Bureau 2026-06-18 list still lists it"
+    },
+    {
+     "name": "Navajo Nation EMS (Shiprock)",
+     "transport": true,
+     "ownership": "tribal",
+     "partial": true,
+     "area": "Navajo Nation lands in San Juan County",
+     "source_url": "https://www.navajoems.org/our-mission",
+     "evidence": "\"Navajo EMS is a dedicated and progressive service with a focus on quality care. Expanded life-support capabilities and transport service are pre-eminent.\" | NM 911 Program (DFA) EMS boundary layer assigns Navajo Nation lands in San Juan County to Agency_ID \"ems.na-navajo.911-sanjuan.nm.us\" (43% of the county). NM DOH EMS Bureau list, provided by the EMS Bureau 2026-10-21: 2025 list \"Navajo Nation EMS- Shiprock | Certified Medical Rescue (Transport Capable) | ALS | Shiprock | Tribal | 4 vehicles\"; 2026 first-responder list \"Navajo Nation EMS- Shiprock\".",
+     "vintage": "page undated, opened 2026-10-22; Bureau 2026-06-18 list"
+    }
+   ],
+   "page_note": "San Juan Regional Medical Center EMS runs the 911 ambulances for San Juan County, with ambulances stationed across the county. Navajo Nation EMS (Shiprock) also answers 911 and transports on Navajo Nation lands in the county. AIT Ambulance in Farmington is licensed for specialty-care and transfer transport.",
+   "second_source": "NM DOH EMS Bureau 2026-06-18 first-responder list (San Juan Regional EMS, Navajo Nation EMS- Shiprock); ImageTrend licence record: San Juan Regional EMS \"911 Response (Scene) with Transport Capability\"; AIT Ambulance \"Specialty Care Transport\""
+  },
+  "35029": {
+   "county": "Luna",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Deming Fire Department (City of Deming Fire/EMS)",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": true,
+     "area": "Deming and surrounding Luna County",
+     "source_url": "https://services3.arcgis.com/5GeA0r0IN0Q5uQUC/arcgis/rest/services/EMS_boundaries/FeatureServer/1",
+     "evidence": "NM 911 Program (DFA) EMS boundary layer assigns Deming and surrounding Luna County to Agency_ID \"ems.ci-deming.911-luna.nm.us\" (70% of the county). NM DOH EMS Bureau list, provided by the EMS Bureau 2026-10-21: combined ambulance list 2024 \"CITY OF DEMING DBA DEMING FIRE/EMS DEPARTMENT ... AMBULANCE ... CERTIFIED\"; 2025 list \"Deming Fire Department | DOT Service\".",
+     "vintage": "boundary layer 2023-04-26; Bureau lists 2024-08-06, 2025-04-30, 2026-06-18 (no sign of change)"
+    },
+    {
+     "name": "Columbus Fire & EMS (Village of Columbus)",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": true,
+     "area": "Columbus and southern Luna County",
+     "source_url": "https://services3.arcgis.com/5GeA0r0IN0Q5uQUC/arcgis/rest/services/EMS_boundaries/FeatureServer/1",
+     "evidence": "NM 911 Program (DFA) EMS boundary layer assigns Columbus and southern Luna County to Agency_ID \"ems.vi-columbus.911-luna.nm.us\" (30% of the county). NM DOH EMS Bureau list, provided by the EMS Bureau 2026-10-21: combined ambulance list 2024 \"VILLAGE OF COLUMBUS ... AMBULANCE ... CERTIFIED\"; 2025 list \"Columbus Fire & EMS | DOT Service\".",
+     "vintage": "boundary layer 2023-04-26; Bureau lists 2024-08-06, 2025-04-30, 2026-06-18 (no sign of change)"
+    }
+   ],
+   "page_note": "Deming Fire/EMS runs the 911 ambulance for Deming and most of Luna County; Columbus Fire & EMS covers Columbus and the southern part of the county. Elite Medical Transport in Deming is licensed for non-emergency (convalescent) transport.",
+   "second_source": "ImageTrend licence record: Elite Medical Transport \"Medical Transport (Convalescent)\"; Deming and Columbus \"911 Response (Scene) with Transport Capability\""
+  },
+  "35028": {
+   "county": "Los Alamos",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Los Alamos County Fire Department",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://services3.arcgis.com/5GeA0r0IN0Q5uQUC/arcgis/rest/services/EMS_boundaries/FeatureServer/1",
+     "evidence": "NM 911 Program (DFA) EMS boundary layer assigns whole county to Agency_ID \"ems.co-losalamos.911-losalamos.nm.us\" (100% of the county). NM DOH EMS Bureau list, provided by the EMS Bureau 2026-10-21: combined ambulance list 2024 \"INCORPORATED COUNTY OF LOS ALAMOS ... AMBULANCE ... CERTIFIED\"; 2025 list \"Los Alamos County Fire Dept. | DOT Service | ALS | 6 vehicles\".",
+     "vintage": "boundary layer 2023-04-26; Bureau lists 2024-08-06, 2025-04-30, 2026-06-18 (no sign of change)"
+    }
+   ],
+   "page_note": "Los Alamos County Fire Department runs the 911 ambulances for all of Los Alamos County.",
+   "second_source": "ImageTrend licence record: only transport licence based in the county (Los Alamos Auxiliary Fire Brigade is non-transport; Classic Air Medical is air only)"
+  },
+  "35041": {
+   "county": "Roosevelt",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Portales Fire Dept. (City of Portales)",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": true,
+     "area": "Portales area",
+     "source_url": "https://services3.arcgis.com/5GeA0r0IN0Q5uQUC/arcgis/rest/services/EMS_boundaries/FeatureServer/1",
+     "evidence": "NM 911 Program (DFA) EMS boundary layer assigns Portales area to Agency_ID \"ems.ci-portales.911-roosevelt.nm.us\" (13% of the county). NM DOH EMS Bureau list, provided by the EMS Bureau 2026-10-21: combined ambulance list 2024 \"CITY OF PORTALES ... AMBULANCE ... CERTIFIED\"; 2025 list \"Portales Fire Dept. | DOT Service | ALS\".",
+     "vintage": "boundary layer 2023-04-26; Bureau lists 2024-08-06, 2025-04-30, 2026-06-18 (no sign of change)"
+    },
+    {
+     "name": "Elida Fire Dept. (Town of Elida Ambulance Service)",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": true,
+     "area": "Elida area",
+     "source_url": "https://services3.arcgis.com/5GeA0r0IN0Q5uQUC/arcgis/rest/services/EMS_boundaries/FeatureServer/1",
+     "evidence": "NM 911 Program (DFA) EMS boundary layer assigns Elida area to Agency_ID \"ems.to-elida.911-roosevelt.nm.us\" (21% of the county). NM DOH EMS Bureau list, provided by the EMS Bureau 2026-10-21: combined ambulance list 2024 \"TOWN OF ELIDA AMBULANCE SERVICE\"; 2025 list \"Elida Fire Dept. | DOT Service\".",
+     "vintage": "boundary layer 2023-04-26; Bureau lists 2024-08-06, 2025-04-30, 2026-06-18 (no sign of change)"
+    },
+    {
+     "name": "Milnesand Fire & EMS",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": true,
+     "area": "Milnesand area",
+     "source_url": "https://services3.arcgis.com/5GeA0r0IN0Q5uQUC/arcgis/rest/services/EMS_boundaries/FeatureServer/1",
+     "evidence": "NM 911 Program (DFA) EMS boundary layer assigns Milnesand area to Agency_ID \"ems.ci-milnesand.911-roosevelt.nm.us\" (15% of the county). NM DOH EMS Bureau list, provided by the EMS Bureau 2026-10-21: combined ambulance list 2024 \"MILNESAND & ARCH VOLUNTEER FIRE DISTRICT ... AMBULANCE\"; 2025 list \"Milnesand Fire & EMS | DOT Service\".",
+     "vintage": "boundary layer 2023-04-26; Bureau lists 2024-08-06, 2025-04-30, 2026-06-18 (no sign of change)"
+    },
+    {
+     "name": "Village of Dora Ambulance",
+     "transport": true,
+     "ownership": "municipal EMS",
+     "partial": true,
+     "area": "Dora area",
+     "source_url": "https://services3.arcgis.com/5GeA0r0IN0Q5uQUC/arcgis/rest/services/EMS_boundaries/FeatureServer/1",
+     "evidence": "NM 911 Program (DFA) EMS boundary layer assigns Dora area to Agency_ID \"ems.vi-dora.911-roosevelt.nm.us\" (12% of the county). NM DOH EMS Bureau list, provided by the EMS Bureau 2026-10-21: combined ambulance list 2024 \"VILLAGE OF DORA AMBULANCE\"; 2025 list \"Village of Dora | DOT Service\".",
+     "vintage": "boundary layer 2023-04-26; Bureau lists 2024-08-06, 2025-04-30, 2026-06-18 (no sign of change)"
+    },
+    {
+     "name": "Floyd Fire and EMS (Floyd Ambulance Service)",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": true,
+     "area": "Floyd area",
+     "source_url": "https://services3.arcgis.com/5GeA0r0IN0Q5uQUC/arcgis/rest/services/EMS_boundaries/FeatureServer/1",
+     "evidence": "NM 911 Program (DFA) EMS boundary layer assigns Floyd area to Agency_ID \"ems.vi-floyd.911-roosevelt.nm.us\" (12% of the county). NM DOH EMS Bureau list, provided by the EMS Bureau 2026-10-21: combined ambulance list 2024 \"FLOYD AMBULANCE SERVICE\"; 2025 list \"Floyd Fire and EMS | DOT Service\".",
+     "vintage": "boundary layer 2023-04-26; Bureau lists 2024-08-06, 2025-04-30, 2026-06-18 (no sign of change)"
+    },
+    {
+     "name": "Causey Ambulance Service (Village of Causey)",
+     "transport": true,
+     "ownership": "municipal EMS",
+     "partial": true,
+     "area": "Causey area",
+     "source_url": "https://services3.arcgis.com/5GeA0r0IN0Q5uQUC/arcgis/rest/services/EMS_boundaries/FeatureServer/1",
+     "evidence": "NM 911 Program (DFA) EMS boundary layer assigns Causey area to Agency_ID \"ems.vi-causey.911-roosevelt.nm.us\" (10% of the county). NM DOH EMS Bureau list, provided by the EMS Bureau 2026-10-21: combined ambulance list 2024 \"VILLAGE OF CAUSEY AMBULANCE\"; 2025 list \"Causey Ambulance Service | DOT Service\".",
+     "vintage": "boundary layer 2023-04-26; Bureau lists 2024-08-06, 2025-04-30, 2026-06-18 (no sign of change)"
+    },
+    {
+     "name": "Melrose Fire and Ambulance",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": true,
+     "area": "northwest Roosevelt County (Melrose response area)",
+     "source_url": "https://services3.arcgis.com/5GeA0r0IN0Q5uQUC/arcgis/rest/services/EMS_boundaries/FeatureServer/1",
+     "evidence": "NM 911 Program (DFA) EMS boundary layer assigns northwest Roosevelt County (Melrose response area) to Agency_ID \"ems.ci-melrosefield.911-roosevelt.nm.us\" (9% of the county). NM DOH EMS Bureau list, provided by the EMS Bureau 2026-10-21: combined ambulance list 2024 \"MELROSE FIRE AND AMBULANCE ... MELROSE NM\"; 2025 list \"Melrose Fire and Ambulance | DOT Service\".",
+     "vintage": "boundary layer 2023-04-26; Bureau lists 2024-08-06, 2025-04-30, 2026-06-18 (no sign of change)"
+    },
+    {
+     "name": "Arch Vol. Fire & Ambulance",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": true,
+     "area": "Arch area",
+     "source_url": "https://services3.arcgis.com/5GeA0r0IN0Q5uQUC/arcgis/rest/services/EMS_boundaries/FeatureServer/1",
+     "evidence": "NM 911 Program (DFA) EMS boundary layer assigns Arch area to Agency_ID \"ems.ci-arch.911-roosevelt.nm.us\" (4% of the county). NM DOH EMS Bureau list, provided by the EMS Bureau 2026-10-21: combined ambulance list 2024 \"MILNESAND & ARCH VOLUNTEER FIRE DISTRICT\"; 2025 list \"Arch Vol. Fire & Ambulance | DOT Service\".",
+     "vintage": "boundary layer 2023-04-26; Bureau lists 2024-08-06, 2025-04-30, 2026-06-18 (no sign of change)"
+    }
+   ],
+   "page_note": "Eight local ambulance services split Roosevelt County by area: Portales Fire Department (Portales), Elida, Milnesand, Dora, Floyd, Causey, Arch, and Melrose Fire and Ambulance for the northwest corner. The Melrose Air Force Range in the county has no public 911 service area.",
+   "second_source": "ImageTrend licence records for all eight list \"911 Response (Scene) with Transport Capability\"; the remaining 4% of the county is the Cannon AFB boundary (Melrose Air Force Range)"
+  },
+  "35033": {
+   "county": "Mora",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Mora County Ambulance Service",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://services3.arcgis.com/5GeA0r0IN0Q5uQUC/arcgis/rest/services/EMS_boundaries/FeatureServer/1",
+     "evidence": "NM 911 Program (DFA) EMS boundary layer assigns whole county to Agency_ID \"ems.co-mora.911-dps2lasvegas.nm.us\" (100% of the county). NM DOH EMS Bureau list, provided by the EMS Bureau 2026-10-21: combined ambulance list 2024 \"MORA COUNTY AMBULANCE SERVICE ... AMBULANCE ... CERTIFIED\"; 2025 list \"Mora County Ambulance Service | DOT Service | 3 vehicles\".",
+     "vintage": "boundary layer 2023-04-26; Bureau lists 2024-08-06, 2025-04-30, 2026-06-18 (no sign of change)"
+    }
+   ],
+   "page_note": "Mora County Ambulance Service runs the 911 ambulance for all of Mora County.",
+   "second_source": "ImageTrend licence record: the only transport licence based in Mora County"
+  },
+  "35023": {
+   "county": "Hidalgo",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Hidalgo County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": true,
+     "area": "Lordsburg and central Hidalgo County",
+     "source_url": "https://hidalgocounty.org/ems/",
+     "evidence": "\"Hidalgo County's EMS system incorporates one full-time department located in Lordsburg and four other volunteer departments situated in the county's most rural areas. With this system, virtually the entire county and parts of southern Grant County are assured 24/7 coverage.\" County Ambulance Departments listed: Animas EMS, Cotton City EMS. | NM 911 Program (DFA) EMS boundary layer assigns Lordsburg and central Hidalgo County to Agency_ID \"ems.co-lordsburghidalgo.911-hidalgo.nm.us\" (27% of the county). NM DOH EMS Bureau list, provided by the EMS Bureau 2026-10-21: combined ambulance list 2024 \"HIDALGO COUNTY AMBULANCE SERVICE ... LORDSBURG\"; 2025 list \"Hidalgo County EMS | DOT Service\".",
+     "vintage": "county page (c) 2023; Bureau lists 2024-2026, no sign of change"
+    },
+    {
+     "name": "Playas EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": true,
+     "area": "Playas area",
+     "source_url": "https://hidalgocounty.org/ems/",
+     "evidence": "\"Hidalgo County's EMS system incorporates one full-time department located in Lordsburg and four other volunteer departments situated in the county's most rural areas. With this system, virtually the entire county and parts of southern Grant County are assured 24/7 coverage.\" County Ambulance Departments listed: Animas EMS, Cotton City EMS. | NM 911 Program (DFA) EMS boundary layer assigns Playas area to Agency_ID \"ems.cm-playas.911-hidalgo.nm.us\" (35% of the county). NM DOH EMS Bureau list, provided by the EMS Bureau 2026-10-21: combined ambulance list 2024 \"Playas EMS\"; 2025 list \"Playas EMS | DOT Service\".",
+     "vintage": "county page (c) 2023; Bureau lists 2024-2026, no sign of change"
+    },
+    {
+     "name": "Animas EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": true,
+     "area": "Animas area",
+     "source_url": "https://hidalgocounty.org/ems/",
+     "evidence": "\"Hidalgo County's EMS system incorporates one full-time department located in Lordsburg and four other volunteer departments situated in the county's most rural areas. With this system, virtually the entire county and parts of southern Grant County are assured 24/7 coverage.\" County Ambulance Departments listed: Animas EMS, Cotton City EMS. | NM 911 Program (DFA) EMS boundary layer assigns Animas area to Agency_ID \"ems.cm-animas.911-hidalgo.nm.us\" (29% of the county). NM DOH EMS Bureau list, provided by the EMS Bureau 2026-10-21: combined ambulance list 2024 \"Animas EMS\"; 2025 list \"Animas EMS | DOT Service\".",
+     "vintage": "county page (c) 2023; Bureau lists 2024-2026, no sign of change"
+    },
+    {
+     "name": "Cotton City EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": true,
+     "area": "Cotton City area",
+     "source_url": "https://hidalgocounty.org/ems/",
+     "evidence": "\"Hidalgo County's EMS system incorporates one full-time department located in Lordsburg and four other volunteer departments situated in the county's most rural areas. With this system, virtually the entire county and parts of southern Grant County are assured 24/7 coverage.\" County Ambulance Departments listed: Animas EMS, Cotton City EMS. | NM 911 Program (DFA) EMS boundary layer assigns Cotton City area to Agency_ID \"ems.to-cottoncity.911-hidalgo.nm.us\" (8% of the county). NM DOH EMS Bureau list, provided by the EMS Bureau 2026-10-21: combined ambulance list 2024 \"Cotton City EMS\"; 2025 list \"Cotton City EMS | DOT Service\".",
+     "vintage": "county page (c) 2023; Bureau lists 2024-2026, no sign of change"
+    }
+   ],
+   "page_note": "Hidalgo County EMS in Lordsburg and the county's volunteer ambulance services in Playas, Animas and Cotton City answer 911 and transport across Hidalgo County.",
+   "second_source": "ImageTrend licence records: these four are the only transport licences based in Hidalgo County"
+  },
+  "35025": {
+   "county": "Lea",
+   "tier": "held",
+   "services": [],
+   "page_note": "Hobbs, Lovington, Eunice, Jal and Tatum each run a licensed 911 ambulance for their part of Lea County. Kent EMS, a private ambulance service licensed in Hobbs, is not yet confirmed as 911 or transfer-only.",
+   "second_source": ""
+  },
+  "35015": {
+   "county": "Eddy",
+   "tier": "held",
+   "services": [],
+   "page_note": "Carlsbad Fire Department and Artesia Fire Department run the 911 ambulances for their halves of Eddy County. Whether Eddy County Fire & Rescue, which holds a transport-capable rescue licence, also transports in rural areas is not yet confirmed.",
+   "second_source": ""
+  },
+  "35011": {
+   "county": "De Baca",
+   "tier": "held",
+   "services": [],
+   "page_note": "Fort Sumner Ambulance answers 911 for De Baca County. Whether Lake Sumner Fire & Rescue, which holds a transport-capable rescue licence, also transports near Sumner Lake is not yet confirmed.",
+   "second_source": ""
+  },
+  "35051": {
+   "county": "Sierra",
+   "tier": "held",
+   "services": [],
+   "page_note": "Sierra Vista Hospital Ambulance answers 911 across most of Sierra County. Whether Las Palomas EMS and Hillsboro Fire, which hold transport-capable rescue licences, also transport in their areas is not yet confirmed.",
+   "second_source": ""
+  }
+ }
+}

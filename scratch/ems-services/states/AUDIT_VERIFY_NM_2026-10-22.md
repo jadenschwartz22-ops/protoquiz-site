@@ -1,0 +1,10 @@
+# NM verify audit, 2026-10-22 (6 A audited: 4 PASS, 2 FAIL)
+
+- San Juan (35045): PASS. sanjuanregional.com/ems-ambulance quotes found live (ALS/BLS ambulance with county + Farmington/Aztec/Bloomfield, "call 911"); navajoems.org/our-mission quote found live (transport service), ImageTrend "911 Response with Transport". Every other San Juan licence non-transport (Farmington FD, Aztec FD, Bloomfield FD, all SJCFR zones/districts); AIT Ambulance = specialty-care transport, Air Care = air. Farmington (46k) covered by SJRMC page. No contrary news.
+- Luna (35029): PASS. Deming Fire and Village of Columbus both on the Bureau 2024 ambulance list (CERTIFIED) and 911 transport in ImageTrend; 911 layer gives 70/30. Elite Medical Transport = convalescent (ImageTrend); Luna Fire & Ambulance is the village of Luna in Catron County. No contrary news.
+- Los Alamos (35028): PASS. Single Bureau-listed ambulance service, 100% of the 911 layer; other licences are air/non-transport/dispatch.
+- Roosevelt (35041): PASS. All 8 services on the Bureau 2024 ambulance list (Milnesand and Arch via "Milnesand & Arch Volunteer Fire District", Melrose as "MELROSE FIRE AND AMBULANCE ... AMBULANCE ... CERTIFIED") and DOT Service in 2025. Melrose's area is the 911 layer polygon displayed "MELROSE / FIELD" by Roosevelt County GIS. No city over 20k; no other transport licence in the county.
+- Mora (35033): FAIL. Mora County Ambulance confirmed (Bureau list; Las Vegas Optic 2025-10-01: county's three ambulances serve a 50-mile radius over Mora County), but "Wagon Mound Medical Rescue" (119095) is new on the 2026 first-responder list, absent from the 2025 licence list and ImageTrend, licence level unknown.
+- Hidalgo (35023): FAIL. County EMS page says one full-time + four volunteer departments; Bureau lists name three (Playas, Animas, Cotton City). County fire page lists Rodeo VFD and Hidalgo County Fire and Rescue District 1 as fire departments only; no fourth ambulance service found.
+
+Step 5: Bing News RSS per county + lasvegasoptic.com site search; nothing contradicted the passes. Helper TSVs in web_raw/NM/audit/.
