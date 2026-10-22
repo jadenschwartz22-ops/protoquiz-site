@@ -15,17 +15,21 @@
      "transport": true,
      "ownership": "county EMS",
      "partial": false,
-     "area": "whole county",
-     "source_url": "https://www.greenvillecounty.org/EmergencyMedicalServices/Operations.aspx",
-     "evidence": "Being a dual-tier system, there are basic and advanced life support ambulances scheduled around the clock. The fleet consists of 49 type-1 extended cab ambulances",
-     "vintage": "2026"
+     "area": "whole county (795 square miles)",
+     "source_url": "https://www.greenvillecounty.org/EmergencyMedicalServices/SystemOverview.aspx",
+     "evidence": "Greenville County EMS is a third-service municipal department responsible for providing primary 9-1-1 emergency medical response across 795 square miles within Greenville County. ... The service operates with a dual-tiered approach, offering both advanced life support (ALS)",
+     "vintage": "current county page, fetched 2026-10-22"
     }
    ],
-   "page_note": "Greenville County EMS lists \"Emergencies 9-1-1\" on its home page. Prisma Health Ambulance Service also holds a state 911-response transport licence in Greenville County and answered Upstate 911 calls in 2020; not yet confirmed how the two divide 911 calls.",
-   "second_source": "https://wiki.radioreference.com/index.php/Greenville_County_(SC) (lists Greenville County EMS)",
-   "licence_flags": [
-    "Prisma Health Ambulance Service"
-   ]
+   "page_note": "Greenville County EMS is the county's 911 ambulance service and also runs the county's EMS dispatch centre (MedCom). Prisma Health Ambulance Service also holds a state ambulance licence in the county; its administrator describes its role as moving patients in and out of Prisma Health facilities, not running a county's 911 operations (The State, April 2026). Prisma Health Ambulance Service also lists 911 response among its services and in June 2025 described reaching heatstroke patients on Jones Gap trails in Greenville County, so whether it answers any 911 calls in the county is not yet confirmed.",
+   "second_source": "https://www.greenvillecounty.org/EmergencyMedicalServices/Communications.aspx",
+   "second_evidence": "Greenville County EMS operates its own EMS Communications system known as “MedCom.” Functioning as a secondary communications center, MedCom handles all EMS",
+   "prisma_evidence": {
+    "source_url": "https://web.archive.org/web/2026id_/https://www.thestate.com/news/local/article315326224.html",
+    "evidence": "Instead of being responsible for one county and its 911 operations, we are responsible for the movement of patients in and out of all the Prisma Health facilities throughout South Carolina,",
+    "vintage": "2026-04-09"
+   },
+   "licence_check": "DPH roster: Greenville County EMS is the only county service with a 911 transport licence that runs county-wide; Prisma Health Ambulance Service (hospital) also holds a 911-with-transport licence, explained by the State quote above (its 911 response page lists Oconee County dispatch); Thorne Ambulance Service, Tandem Transport are convalescent only; Greenville, Greer, Mauldin, Simpsonville, Fountain Inn and all other fire departments hold non-transport licences."
   },
   "45019": {
    "county": "Charleston",
@@ -531,7 +535,7 @@
   },
   "45047": {
    "county": "Greenwood",
-   "tier": "held",
+   "tier": "A",
    "services": [
     {
      "name": "Greenwood County EMS",
@@ -539,13 +543,15 @@
      "ownership": "county EMS",
      "partial": false,
      "area": "whole county",
-     "source_url": "https://www.greenwoodcounty-sc.gov/emergency-medical-services",
-     "evidence": "Our service was formed through a joint city and county effort, and began initial operations on July 1, 1975 ... On October 1, 1981, Greenwood County assumed total control of EMS operations.",
-     "vintage": "page shows 2022 items; no sign of change"
+     "source_url": "https://www.indexjournal.com/news/month-of-gratitude-greenwood-county-extends-ems-week-to-celebrate-first-responders/article_cdc83d6b-849e-4c1c-9f2e-91b6905995ad.html",
+     "evidence": "it’s EMS that has the training and equipment to stabilize and transport patients to higher levels of care. ... returning to 911 operations after a hiatus in the non-emergent sector ... (county page) On October 1, 1981, Greenwood County assumed total control of EMS operations.",
+     "vintage": "2025-05-21 (Index-Journal); county EMS page undated, current"
     }
    ],
-   "page_note": "Greenwood County EMS is the only 911 transporter licensed in the county by the state health department. Not yet confirmed from a current source that it holds the 911 ambulance role; the county page is a history whose latest item is from 2006.",
-   "second_source": ""
+   "page_note": "Greenwood County EMS, a county department, runs the county's 911 ambulances; the county's emergency services director described its crews in May 2025 as the ones who stabilize and transport patients.",
+   "second_source": "https://www.indexjournal.com/news/answering-the-call-after-more-than-40-years-in-ems-longtime-paramedic-ray-pettit-prepares/article_45e21c9d-5755-4032-b33b-035f8db5f910.html",
+   "second_evidence": "Ray Pettit, a nationally registered paramedic with Greenwood County EMS, is retiring April 21 after more than 40 years in emergency medical services.",
+   "licence_check": "DPH roster: Greenwood County EMS is the only 911 transport licence based in the county; Riverside Ambulance Service is convalescent, MedTrans One is air medical. Greenwood (about 23,000 people) has no fire-department transport licence."
   },
   "45029": {
    "county": "Colleton",
