@@ -825,6 +825,72 @@
    ],
    "page_note": "Lincoln County EMS is the primary 911 ambulance provider for the whole county. The all-volunteer West Lincoln Rescue Squad, based in Vale, provides back-up ambulance support to the county service.",
    "second_source": "https://www.lincolncountync.gov/DocumentCenter/View/26019/FY-2027-Approved-Budget-for-Website"
+  },
+  "37189": {
+   "county": "Watauga",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Watauga County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.wataugacounty.org/App_Pages/Dept/Administration/Budgets/2027approvedbudget.pdf",
+     "evidence": "Treatment provided, no transport $150.00 911/Convalescent Transports",
+     "vintage": "FY2026-27 adopted budget (fiscal year beginning July 1, 2026; EMS fees, 2026 ambulance purchases and a county EMS department with its own payroll)"
+    },
+    {
+     "name": "Watauga County Emergency and Rescue Squad",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": true,
+     "area": "back-up ambulance service for the county (2 ALS ambulances)",
+     "source_url": "https://www.wataugarescue.org/",
+     "evidence": "We are the back-up ambulance service and the primary rescue service (extrication, carry-outs, searches, specialized rescue) for Watauga County, NC.",
+     "vintage": "2024 site, funded in the FY2026-27 county budget (\"CONTRACTED SERV-WAT. RESCUE SQUAD\")"
+    },
+    {
+     "name": "Appalachian Regional Healthcare System (UNC Health Appalachian)",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": true,
+     "area": "mainly hospital-to-hospital patient transports under a one-year county franchise granted Feb 17, 2026 (county EMS keeps first right of refusal on interfacility transports; the franchise also adds a back-up resource)",
+     "source_url": "https://www.wataugacounty.org/App_Pages/Dept/BOC/Forms/Minutes/2-17-2026%20BCC%20Minutes.pdf",
+     "evidence": "a public hearing was held on January 13, 2026, to allow input on granting a one-year ambulance franchise to ARHS.",
+     "vintage": "Feb 17, 2026 commissioners minutes"
+    }
+   ],
+   "page_note": "Since mid-December 2025 Watauga County runs the 911 ambulance service itself, taking it over from Watauga Medics. The Watauga County Rescue Squad is the back-up ambulance service, and UNC Health Appalachian holds a one-year county franchise mainly for hospital-to-hospital transports. The county's fire departments respond to medical calls as first responders.",
+   "second_source": "https://www.wataugacounty.org/App_Pages/Dept/BOC/Forms/Minutes/2025-12-16%20BCC%20Minutes.pdf"
+  },
+  "37141": {
+   "county": "Pender",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Pender County Emergency Services (formerly Pender EMS & Fire)",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.pendercountync.gov/1969/Emergency-Services-Merger",
+     "evidence": "Pender EMS & Fire provides paramedic-level coverage throughout the county on their Quick Response Vehicles (QRV) and staffs their ambulances with Advanced-level EMTs and Basic-level EMTs.",
+     "vintage": "page updated 10/22/25; staff and assets moved to the county July 1, 2026; county news item Oct 13, 2026 names the newly established Pender County Emergency Services with EMS personnel"
+    },
+    {
+     "name": "Union Rescue Squad",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": true,
+     "area": "Union district (the Willard and Watha area)",
+     "source_url": "https://www.pendercountync.gov/1969/Emergency-Services-Merger",
+     "evidence": "Union Rescue Squad operates primarily in the Union district and staffs their ambulances with Basic-level EMTs.",
+     "vintage": "page updated 10/22/25; county contract from August 2025 for the Willard and Watha area (FY2025-26 adopted budget document, https://www.pendercountync.gov/DocumentCenter/View/4782/Pender-County-Adopted-Budget-Document-FY-2025-26-Final); $600,000 to Union Rescue Squad in the EMS fund of the approved FY2026-27 budget ordinance"
+    }
+   ],
+   "page_note": "Pender County Emergency Services, formed when the county took over Pender EMS & Fire on July 1, 2026, answers 911 medical calls across the county with ambulances and paramedic quick-response vehicles. Union Rescue Squad also runs ambulances in the Willard and Watha area under a county contract.",
+   "second_source": "https://www.pendercountync.gov/DocumentCenter/View/5681/FY-2026-2027-Budget-Ordinance"
   }
  }
 }
