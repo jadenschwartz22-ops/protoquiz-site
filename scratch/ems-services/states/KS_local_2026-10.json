@@ -1,0 +1,189 @@
+{
+ "meta": {
+  "state": "KS",
+  "retrieved": "2026-10-22",
+  "via": "county and city EMS pages, Johnson County Post, KBEMS licence lookup (KEMSIS), Kansas NG911 ESB layer as lead only (verify pass)"
+ },
+ "county_verdict": {
+  "20091": {
+   "county": "Johnson",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Johnson County MED-ACT",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.jocogov.org/department/med-act/9-1-1-response",
+     "evidence": "We provide 9-1-1 response to over 600,000 citizens across 479 square miles and operate dual clinician ambulances from 19 fixed ambulance stations ... Response to medical emergencies in Johnson County is a coordinated system consisting of response by MED-ACT ambulances, often augmented by local fire department personnel",
+     "vintage": "2026 (page copyright 2026)"
+    }
+   ],
+   "page_note": "Johnson County MED-ACT runs the 911 ambulances across Johnson County; city fire departments respond alongside it but do not run their own ambulances.",
+   "second_source": "https://johnsoncountypost.com/2026/03/29/6-people-hospitalized-95th-metcalf-crash-282788/ (2026-03, Overland Park: 'two Med-Act Battalion Chiefs and six ambulances responded'); KBEMS licence lookup (KEMSIS, pulled 2026-09-11): JOHNSON COUNTY MED ACT is the only Ground Ambulance licence based in the county"
+  },
+  "20103": {
+   "county": "Leavenworth",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Leavenworth County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.leavenworthcounty.gov/departments/ems/index.php",
+     "evidence": "EMS is a department within county government and provides services to the entire county. We hold an exclusive provider-ship, which means all calls for an ambulance, which originate within the geographic boundaries of Leavenworth, require our permission to respond. Our daily system consists of five Advanced Life Support ambulances",
+     "vintage": "2026 (page undated, read live 2026-10-22; licence active 2026-09-11, no sign of change)"
+    }
+   ],
+   "page_note": "Leavenworth County EMS is the 911 ambulance provider for Leavenworth County, including the cities of Leavenworth and Lansing. Since May 2026 Fort Leavenworth has run its own ambulance service on the post, and who now operates it has not yet been confirmed.",
+   "second_source": "KBEMS licence lookup (KEMSIS, pulled 2026-09-11): LEAVENWORTH COUNTY EMS is the only Ground Ambulance licence based in the county; https://www.army.mil/article/292055/fort_leavenworth_transitions_to_in_house_emergency_services_ambulance_transport (2026: Fort Leavenworth in-house EMS from May 1, 2026, third-party EMS contract from June; county EMS no longer serves the post)"
+  },
+  "20015": {
+   "county": "Butler",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Butler County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county (HQ El Dorado; stations Andover, Augusta, Rose Hill)",
+     "source_url": "https://www.bucoks.gov/242/Emergency-Medical-Service",
+     "evidence": "Since the 1970's, Butler County Emergency Medical Service has served the citizens and visitors of Kansas's largest county. ... Today, BCEMS responds to over 7,200 requests for service utilizing five ambulances 24-hours a day, 7-day a week. Our headquarters are located in El Dorado with outlying stations in Andover, Augusta, and Rose Hill.",
+     "vintage": "2026 (page undated, read live 2026-10-22; licence active 2026-09-11, no sign of change)"
+    }
+   ],
+   "page_note": "Butler County EMS runs the 911 ambulances for Butler County from El Dorado, Andover, Augusta and Rose Hill.",
+   "second_source": "Kansas NG911 EMS boundary layer (2026-10-13) covers 100% of Butler with one set of EMS response zones; KBEMS licence lookup (KEMSIS, pulled 2026-09-11): BUTLER COUNTY EMS is the only Ground Ambulance licence based in the county"
+  },
+  "20055": {
+   "county": "Finney",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Finney County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county (stations Garden City, Holcomb)",
+     "source_url": "https://www.finneycounty.org/132/Emergency-Medical-Services-EMS",
+     "evidence": "Finney County EMS is the primary agency responsible for the out-of-hospital care and transportation of persons who become acutely ill or injured and in need of ambulance transport to a hospital. We staff three ambulances 24 hours a day, 365 days a year.",
+     "vintage": "2023-2026 (page refers to a station to be built in 2024; licence active 2026-09-11)"
+    }
+   ],
+   "page_note": "Finney County EMS carries 911 patients across Finney County, including Garden City and Holcomb.",
+   "second_source": "Kansas NG911 EMS boundary layer (2026-10-13): 'FINNEY COUNTY EMS' polygon covers 100% of the county; KBEMS licence lookup (KEMSIS, pulled 2026-09-11): FINNEY COUNTY EMS is the only Ground Ambulance licence based in the county"
+  },
+  "20121": {
+   "county": "Miami",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Miami County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.miamicountyks.gov/199/Emergency-Medical-Services",
+     "evidence": "Miami County EMS is proud to provide emergency medical services to Miami County, Kansas. In 2020, the department responded to 4095 calls serving a resident population of approximately 33,000 and covering an area of 590-square miles. ... the revenue generated from emergency services and patient transport.",
+     "vintage": "2020 figures; licence active 2026-09-11, no sign of change"
+    }
+   ],
+   "page_note": "Miami County EMS runs the 911 ambulances for Miami County, including Paola, Osawatomie and Louisburg.",
+   "second_source": "https://www.miamicountyks.gov/201/Ambulances-Stations-Special-Operations (station and ambulance list); KBEMS licence lookup (KEMSIS, pulled 2026-09-11): MIAMI COUNTY EMS is the only Ground Ambulance licence based in the county"
+  },
+  "20111": {
+   "county": "Lyon",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Lyon County/City of Emporia Ambulance Service (Emporia Fire Department)",
+     "transport": true,
+     "ownership": "mixed: county and city service run by Emporia Fire Department",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.emporiaks.gov/1193/Emergency-Medical-Services",
+     "evidence": "The Lyon County/City of Emporia Ambulance Service offers Basic Life Support and Advanced Life Support services to our customers. ... We operate five ambulances out of two stations, and provide emergency medical services to all of Lyon County.",
+     "vintage": "2026 (page undated, read live 2026-10-22; licence active 2026-09-11, no sign of change)"
+    }
+   ],
+   "page_note": "The Lyon County/City of Emporia Ambulance Service, run by the Emporia Fire Department, carries 911 patients across all of Lyon County.",
+   "second_source": "Kansas NG911 EMS boundary layer (2026-10-13): 'LYON COUNTY EMS' covers 100% of the county; KBEMS licence lookup (KEMSIS, pulled 2026-09-11): LYON COUNTY CITY OF EMPORIA is the only Ground Ambulance licence based in the county"
+  },
+  "20057": {
+   "county": "Ford",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Ford County Fire & EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county (Dodge City, Spearville, Bucklin stations)",
+     "source_url": "https://www.fordcounty.net/456/Emergency-Medical-Service",
+     "evidence": "There are five ambulances housed at Station One that can be dispatched to anywhere in Ford County or even the surrounding counties if necessary. The Spearville and Bucklin stations house one ambulance each.",
+     "vintage": "2026 (page undated, read live 2026-10-22; licence active 2026-09-11, no sign of change)"
+    }
+   ],
+   "page_note": "Ford County Fire & EMS runs the 911 ambulances for Ford County from Dodge City, Spearville and Bucklin.",
+   "second_source": "Kansas NG911 EMS boundary layer (2026-10-13) covers the county with three EMS station zones; KBEMS licence lookup (KEMSIS, pulled 2026-09-11): FORD COUNTY FIRE & EMS is the only Ground Ambulance licence based in the county"
+  },
+  "20051": {
+   "county": "Ellis",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Ellis County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county (Hays, Ellis, Victoria stations)",
+     "source_url": "https://www.ellisco.net/94/Emergency-Medical-Services",
+     "evidence": "We serve a 900 square mile county with three staffed stations. Staffing 4 ambulances across Hays, Ellis, and Victoria at all times, we provide speedy response times to every area of Ellis County.",
+     "vintage": "2026 (page undated, read live 2026-10-22; licence active 2026-09-11, no sign of change)"
+    }
+   ],
+   "page_note": "Ellis County EMS runs the 911 ambulances for all of Ellis County from Hays, Ellis and Victoria.",
+   "second_source": "Kansas NG911 EMS boundary layer (2026-10-13): zones 'EMS STATION 1 - HAYS', '2 - ELLIS', '3 - VICTORIA' cover the county; KBEMS licence lookup (KEMSIS, pulled 2026-09-11): ELLIS COUNTY EMS is the only Ground Ambulance licence based in the county"
+  },
+  "20059": {
+   "county": "Franklin",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Franklin County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county (Ottawa, Wellsville stations)",
+     "source_url": "https://www.franklincoks.org/172/Ambulance",
+     "evidence": "Franklin County Emergency Medical Services (EMS) is dedicated to providing optimal care and transport for the sick and injured in the pre-hospital setting. We proudly serve the residents and visitors of Franklin County, Kansas, covering 574 square miles",
+     "vintage": "2026 (page undated, read live 2026-10-22; licence active 2026-09-11, no sign of change)"
+    }
+   ],
+   "page_note": "Franklin County EMS carries 911 patients across Franklin County from two Ottawa stations and one in Wellsville.",
+   "second_source": "Kansas NG911 EMS boundary layer (2026-10-13): 'FRANKLIN CO EMS' covers 99% of the county; KBEMS licence lookup (KEMSIS, pulled 2026-09-11): FRANKLIN COUNTY EMS is the only Ground Ambulance licence based in the county"
+  },
+  "20087": {
+   "county": "Jefferson",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Jefferson County Ambulance Service",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.jfcountyks.com/90/Ambulance",
+     "evidence": "Jefferson County Ambulance Service, a taxpayer-owned and operated EMS provider, is dedicated to delivering timely, advanced, and compassionate medical and trauma care throughout all of Jefferson County.",
+     "vintage": "2026 (page undated, read live 2026-10-22; licence active 2026-09-11, no sign of change)"
+    }
+   ],
+   "page_note": "Jefferson County Ambulance Service, run by the county, carries 911 patients throughout Jefferson County.",
+   "second_source": "https://www.jfcountyks.com/91/EMS-Information ('Recognizing the need for a county-wide ambulance service, Jefferson County ... JCAS was established in 1973'); KBEMS licence lookup (KEMSIS, pulled 2026-09-11): JEFFERSON COUNTY AMBULANCE SERVICE is the only Ground Ambulance licence based in the county"
+  }
+ }
+}

@@ -1,0 +1,27 @@
+{
+ "meta": {
+  "state": "NE",
+  "retrieved": "2026-10-22",
+  "via": "county, city and hospital websites; NE state 911 response-area layer for leads"
+ },
+ "county_verdict": {
+  "31105": {
+   "county": "Kimball",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Kimball Health Services EMS",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://kimballhealth.org/services/emergency-care/",
+     "evidence": "Since November 2022, Kimball County has entrusted Kimball Health Services EMS to provide emergency medical services. ... Our ALS ambulances are always ready to respond to emergencies and patient transfers to regional facilities.",
+     "vintage": "2022 (current page, no sign of change)"
+    }
+   ],
+   "page_note": "Kimball Health Services EMS runs the ambulances for Kimball County under the county's arrangement since November 2022.",
+   "second_source": "https://gis.ne.gov/Enterprise/rest/services/Rescue_District_Response_Area/FeatureServer/0 (state 911 response-area layer: one polygon, KIMBALL COUNTY AMBULANCE, 99.9% of the county)"
+  }
+ }
+}
