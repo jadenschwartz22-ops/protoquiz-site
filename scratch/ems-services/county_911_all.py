@@ -16,6 +16,10 @@ from irs_match import norm
 from report_who import PUBLIC
 # Only rosters that ARE a 911 service-area grant (AZ certificates of necessity, HI, DC). CA, MN, MS, GA rosters locate an agency by address, so they stay inferred (AUDIT_TIER_A_2026-10-22.md).
 SERVES = {'AZ', 'HI', 'DC'}
+# Families that failed the 10-22 spot audit, and the counties an audit confirmed individually (kept named).
+AUDIT_DEMOTE = {'AL','AK','AR','CA','CO','DE','DC','FL','GA','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VA','WA','WV','WI','WY'}   # every state but the families that passed: VT, AZ, CT, HI
+AUDIT_KEEP = {'48181', '48441', '29183', '29073', '29227', '20155', '20071', '40131', '49041', '49013', '49009', '08031', '08093', '28049', '28033', '28081', '28055',
+              '21047', '21145', '21189', '21103', '37183', '37119', '12103', '12113', '12037', '24031', '24510', '51153', '51810', '51085', '36001', '26085', '26127'}
 FIPS = {}
 for r in csv.DictReader(open('states/census_county_pop_2024.csv', encoding='latin-1')):
     if r['SUMLEV'] == '040': FIPS[r['STATE']] = r['STNAME']
@@ -272,6 +276,13 @@ def build():
     for o in json.load(open('cms/orgs/2024_labeled.json')):
         z = zc.get(o['zip'])
         if z and z[0] in S: S[z[0]]['medicare'].append({'name': o['name'], 'own': o['own'], 'sub': o['subtype'], 'E': int(o['E']), 'share': round(o['share'], 2), 'emerg': o['share'] >= .5})
+    # Audit 10-22 (states/AUDIT_*_2026-10-22*.md): a source family stays named only if every county checked was correct. A failed family falls
+    # back to inferred except counties an audit confirmed one by one; county-by-county lane rows were audited separately and keep their basis.
+    for k, d in S.items():
+        if d['st'] == 'AZ': d['providers'] = [p for p in d['providers'] if not re.search(r'Alliance Ambulance|Critical Air|Ponderosa', p['name'])]   # interfacility-only certificates
+        if d['st'] in AUDIT_DEMOTE and k not in AUDIT_KEEP:
+            for p in d['providers']:
+                if p['basis'] == 'serves' and '(local sources)' not in (p.get('via') or ''): p['basis'] = 'located'
     for k, d in S.items():
         d['medicare'].sort(key=lambda m: -m['E']); mnames = {norm(m['name']) for m in d['medicare'] if m['emerg']}
         seen = {}; ps = []
