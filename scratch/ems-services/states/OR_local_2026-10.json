@@ -7,7 +7,7 @@
  "county_verdict": {
   "41029": {
    "county": "Jackson",
-   "tier": "A",
+   "tier": "held",
    "services": [
     {
      "name": "Mercy Flights",
@@ -40,8 +40,8 @@
      "vintage": "2024-11 county layer; 2025 site"
     }
    ],
-   "page_note": "Jackson County has three ambulance service areas: Mercy Flights (Medford and most of the county), Ashland Fire & Rescue (Ashland and Talent) and Rogue River Fire District (Rogue River and Gold Hill area).",
-   "second_source": "https://spatial.jacksoncountyor.gov/arcgis/rest/services/OpenData/BoundaryData/MapServer/1"
+   "page_note": "Jackson County has three ambulance service areas: Mercy Flights (Medford and most of the county), Ashland Fire & Rescue (Ashland and Talent) and Rogue River Fire District (Rogue River and Gold Hill area). Tri-County Ambulance Service, Inc. of Ashland, registered with the state in August 2025, also holds a state ambulance transport licence, and what service it provides in Jackson County is not yet confirmed.",
+   "second_source": "https://spatial.jacksoncountyor.gov/arcgis/rest/services/OpenData/BoundaryData/MapServer/1; Oregon Health Authority, licensed transport agencies as of 2026-10-01 (public records release 2026-10-22): Jackson County licences Mercy Flights, City of Ashland, Jackson County Fire District 1 (Rogue River FD), Jackson County Fire District #3, and Tri-County Ambulance Service, Inc. (768 Reiten Dr, Ashland); Oregon SOS business registry (data.oregon.gov tckn-sxa6) reg. 246016596, domestic business corporation registered 2025-08-26, mailing address Wakarusa, IN"
   },
   "41027": {
    "county": "Hood River",
@@ -314,6 +314,98 @@
    "services": [],
    "page_note": "Linn County's ambulance service area map (August 2026) names areas for Albany, Lebanon, Sweet Home, Santiam, Lyons, Jefferson, Idanha/Detroit, Corvallis, Sisters, Eugene and Springfield. Which of these reach into Linn County and the service running each are not yet confirmed by a recent source.",
    "second_source": ""
+  },
+  "41023": {
+   "county": "Grant",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Blue Mountain Hospital District EMS",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://bluemountainhospital.org/services/ambulance-and-emergency-room/",
+     "evidence": "Blue Mountain Hospital District Emergency Medical Services provide Advanced Life Support (ALS) 24 hours a day, 7 days a week. Our ambulance service area (ASA) encompasses the entirety of Grant County (over 5000 square miles) ... Fully staffed life support units are based at Blue Mountain Hospital in John Day, supporting volunteer life support units in Prairie City, Long Creek, Seneca, Monument, and Dayville.",
+     "vintage": "2026 (page modified 2026-07-06)"
+    }
+   ],
+   "page_note": "",
+   "second_source": "Oregon Health Authority, licensed transport agencies as of 2026-10-01 (public records release 2026-10-22): Blue Mountain Hospital District, John Day, Agencies-Transport; the only transport licence based in Grant County.; Blue Mountain Eagle 2026-02-03 (bluemountaineagle.com/2026/02/03/sheriffs-office-cites-man-after-crash-in-canyon-city/): \"ambulances took them to Blue Mountain Hospital in John Day\"; OHA ASA layer: one ASA in Grant County (licence 1201)"
+  },
+  "41025": {
+   "county": "Harney",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Harney District Hospital EMS",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://harneydh.com/services/emergency-medical-services/",
+     "evidence": "The Harney District Hospital (HDH) Emergency Medical Services (EMS) Department was formed in 2000 when the City of Burns Volunteer Fire Department passed ambulance service responsibilities on to HDH. Our service area encompasses the Burns and Hines communities as well as all of Harney County — more than 10,000 square miles!",
+     "vintage": "2025-10 (page modified 2025-10-13)"
+    }
+   ],
+   "page_note": "",
+   "second_source": "Oregon Health Authority, licensed transport agencies as of 2026-10-01 (public records release 2026-10-22): Harney District Hospital, Burns, Agencies-Transport; the only transport licence based in Harney County.; OHA ASA layer: one ASA in Harney County (\"HARNEY COUNTY ASA\", licence 1304)"
+  },
+  "41063": {
+   "county": "Wallowa",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Wallowa Memorial Hospital EMS (Wallowa County Health Care District)",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://wchcd.org/hospital-services/",
+     "evidence": "Our Services: Wallowa County EMS provides a full spectrum of emergency services, including: Scene and Inter-Facility Ambulance Care: Rapid response and safe transport throughout Wallowa County. 24/7 Emergency Care: We are always available to provide immediate medical attention.",
+     "vintage": "2025-05 (page modified 2025-05-06); EMS page modified 2026-05-19"
+    }
+   ],
+   "page_note": "",
+   "second_source": "Oregon Health Authority, licensed transport agencies as of 2026-10-01 (public records release 2026-10-22): Wallowa Memorial Hospital, Enterprise, Agencies-Transport; the only transport licence based in Wallowa County (no Joseph, Enterprise or Wallowa fire agency holds one). EMS page https://wchcd.org/services/emergency-department-2/ (2026-05-19): \"We provide comprehensive and advanced emergency medical care to all of Wallowa County\"; foundation pages list hospital-bought 4x4 ambulances (2019, 2023); OHA ASA layer: one ASA in Wallowa County (licence 3201)"
+  },
+  "41013": {
+   "county": "Crook",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Crook County Fire & Rescue",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": true,
+     "area": "ASA 1, about 88% of the county (Prineville and nearly all of Crook County)",
+     "source_url": "https://crookcountyor.gov/DocumentCenter/View/4578",
+     "evidence": "Crook County is divided into three separate Ambulance Service Areas covering the entire 2,978 square miles of Crook County ... ASA (1) is assigned to Crook County Fire and Rescue. ASA (1) covers roughly 88% of Crook County. (Crook County ASA Plan, revision log through 04/2025; also https://crookcountyfireandrescue.com/ambulance-billing/ 'Ambulance Billing', 2026 site, hiring Firefighter/Paramedics)",
+     "vintage": "2025-04 plan; 2026 site"
+    },
+    {
+     "name": "Redmond Fire & Rescue",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": true,
+     "area": "ASA 2, about 2.5% of the county (Powell Butte area west of Reif Road)",
+     "source_url": "https://crookcountyor.gov/DocumentCenter/View/4578",
+     "evidence": "ASA (2) is assigned to Redmond Fire and Rescue. ASA (2) covers roughly 2.5% of Crook County. (plan lists 'Redmond Fire & Rescue (Ground Ambulance) - Redmond, Oregon'; redmondfireandrescue.org 2026 home page lists an 'Ambulance Services' department)",
+     "vintage": "2025-04 plan; 2026 site"
+    },
+    {
+     "name": "Bend Fire & Rescue",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": true,
+     "area": "ASA 3, about 9% of the county (southwest corner)",
+     "source_url": "https://crookcountyor.gov/DocumentCenter/View/4578",
+     "evidence": "ASA (3) is assigned to Bend Fire and Rescue. This area covers roughly 9% of Crook County. (Deschutes County ASA Committee roster 'Updated September 2026' lists Bend Fire as an ambulance service provider representative; Central Oregon Daily 2025-10-20: 'Bend Fire's ambulance service area is about 1,450 square miles')",
+     "vintage": "2025-04 plan; 2026 roster"
+    }
+   ],
+   "page_note": "Crook County has three ambulance service areas covering the whole county: Crook County Fire & Rescue (about 88%, including Prineville), Redmond Fire & Rescue (about 2.5%, Powell Butte area) and Bend Fire & Rescue (about 9%, the southwest corner). Rager Emergency Services responds first but does not transport. Alfalfa Fire District, whose boundaries reach into southwest Crook County, began its own ambulance transports in October 2025, and whether it carries patients from the Crook County part of its district is not yet confirmed.",
+   "second_source": "Oregon Health Authority, licensed transport agencies as of 2026-10-01 (public records release 2026-10-22): Crook County Fire and Rescue is the only transport licence based in Crook County; Redmond Fire & Rescue and City of Bend Fire & Rescue are licensed in Deschutes County. Open point for the auditor: Alfalfa Fire District (Deschutes licence) began its own BLS transports in 2025-10 under an agreement with Bend Fire; the Crook plan (04/2025) says Alfalfa does not transport and places part of Alfalfa's area in SW Crook, so whether Alfalfa transports inside Crook's ASA 3 is unproven.; Alfalfa Fire District About page (alfalfafiredistrict.org/about): \"Boundaries of the AFD are within Deschutes and Crook Counties\"; Central Oregon Daily 2025-10-20: \"The Alfalfa Fire District will begin making its own medical transports\""
   }
  }
 }
