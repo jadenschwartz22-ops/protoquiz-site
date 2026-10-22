@@ -703,6 +703,34 @@
    ],
    "page_note": "Fayette County Fire and Emergency Services runs the 911 ambulances for the unincorporated county, Tyrone, Brooks, Woolsey and Fayetteville, with an advanced life support ambulance at each of its nine stations since April 2026. Peachtree City Fire and EMS runs its own five advanced life support ambulances inside Peachtree City.",
    "second_source": "https://thecitizen.com/2026/10/09/fayette-county-fire-and-emergency-services-invites-community-to-blood-drives-supporting-pre-hospital-transfusion-program/"
+  },
+  "13313": {
+   "county": "Whitfield",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Hamilton EMS (Vitruvian Health)",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.hamiltonems.com/",
+     "evidence": "Hamilton EMS (HEMS) is the sole Emergency Medical Transport service in Whitfield County.",
+     "vintage": "2024 (page copyright 2024; same wording in a 2025 archive copy)"
+    },
+    {
+     "name": "Dalton Fire Department",
+     "transport": false,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "City of Dalton (first response only)",
+     "source_url": "https://www.daltonga.gov/314/Fire",
+     "evidence": "The department has 35 Emergency Medical Technicians, 2 Paramedics, 60 Emergency Medical Responders",
+     "vintage": "undated"
+    }
+   ],
+   "page_note": "Hamilton EMS, part of Hamilton Health Care System (now Vitruvian Health) in Dalton, is the 911 ambulance service for Whitfield County and describes itself as the sole emergency medical transport service in the county; it answers more than 15,000 911 calls a year. Dalton Fire Department and Whitfield County Fire Department respond with medically trained firefighters but no ambulance service was found for them.",
+   "second_source": "https://www.whitfieldcountyga.com/government/public_safety/e911/emergency_agency_links.php"
   }
  }
 }
