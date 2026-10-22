@@ -327,6 +327,78 @@
    ],
    "page_note": "No county coverage statement was found. 2022 run data attributes 62% of runs to St. Vincent Kokomo, and Cass County EMS may be newer.",
    "second_source": ""
+  },
+  "18143": {
+   "county": "Scott",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Scott County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://scottcounty.in.gov/240/EMS",
+     "evidence": "Scott County EMS is a county owned and operated ambulance service that serves the citizens of Scott County, Indiana. This service is the exclusive ambulance provider for all emergency and non-emergency transports in Scott County, Indiana.",
+     "vintage": "2026 (page live 2026-10-22; identical Wayback capture 2026-02-01)"
+    }
+   ],
+   "page_note": "Scott County EMS, run by the county, is the exclusive ambulance provider for all emergency and non-emergency transports in Scott County, according to the county's website. It answers 911 calls and staffs two ambulances around the clock.",
+   "second_source": "IndianaMap state EMS run records 2022: Scott County EMS ran 97% of the county's 911 scene runs (gisdata.in.gov/server/rest/services/Hosted/EMS/FeatureServer/0)"
+  },
+  "18001": {
+   "county": "Adams",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Adams County EMS (Adams Health)",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": false,
+     "area": "whole county (stations in Decatur and Berne)",
+     "source_url": "https://adamshospital.org/services/emergency-care/emergency-medical-services/",
+     "evidence": "Adams County EMS responds to an average of 2,500 calls per year. Of those, approximately 75% are 911 emergency calls ... Adams Health supports three full-time ambulance crews 24/7 – two are based in Decatur and one is located in Berne.",
+     "vintage": "2026 (page footer 2026)"
+    }
+   ],
+   "page_note": "Adams County EMS, run by Adams Health (Adams Memorial Hospital), answers 911 calls in Adams County with three ambulance crews around the clock, two based in Decatur and one in Berne. No other 911 ambulance service was found based in the county.",
+   "second_source": "https://adamshospital.org/wp-content/uploads/2026/10/EMS-50th-Anniversary.pdf (Oct 2026: a system 'designed to serve the entire county'); 2022 state run records: Adams County EMS 98% of runs"
+  },
+  "18051": {
+   "county": "Gibson",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Gibson County Ambulance Service (Gibson County EMS)",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county (four stations: Princeton, Oakland City, Fort Branch, Owensville)",
+     "source_url": "https://gibsoncounty-in.gov/ems/",
+     "evidence": "Currently we man four stations in the county 24/7. The Gibson County Ambulance Service has provided the community with a Paramedic level service since January 1, 2000. ... Crews respond to a variety of 911 calls as well as emergent and non-emergent transfers.",
+     "vintage": "2025-07-29 (news) and county page, copyright 2023, live 2026-10-22"
+    }
+   ],
+   "page_note": "Gibson County EMS, a county department with ambulance stations in Princeton, Oakland City, Fort Branch and Owensville, answers 911 calls in Gibson County. No other 911 ambulance service based in the county was found.",
+   "second_source": "https://www.pdclarion.com/news/countys-new-princeton-ems-base-unveiled/article_faf3ad9c-0b86-5ec2-8c56-c5933d2a596f.html (2025-07-29, new county ambulance base in Princeton); 2022 state run records: Gibson County EMS 96% of runs"
+  },
+  "18049": {
+   "county": "Fulton",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Parkview EMS",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": false,
+     "area": "whole county (ambulances in Rochester, Kewanna and Akron)",
+     "source_url": "https://www.inkfreenews.com/2024/07/11/fulton-county-switches-to-parkview-ems/",
+     "evidence": "Fulton County Council President Ron Dittman confirmed Parkview EMS started serving the county on Monday, July 1. Parkview replaced Lutheran EMS ... The other ambulances are in Rochester and Kewanna.",
+     "vintage": "2024-07-11"
+    }
+   ],
+   "page_note": "Since July 1, 2024 Parkview EMS (Parkview Health) has been Fulton County's 911 ambulance provider under a county contract running through 2027, with ambulances in Rochester, Kewanna and Akron. It replaced Lutheran EMS. Crash reports through July 2026 name Parkview EMS at Fulton County scenes.",
+   "second_source": "https://www.giant.fm/fulton-county/news/local-news/fulton-county-ambulance-service-transitions-to-parkview-ems/ (2024-07-07); https://www.inkfreenews.com/2026/07/16/michigan-woman-dies-in-fulton-county-crash/ (Parkview EMS at the scene, 2026-07-16)"
   }
  }
 }

@@ -561,6 +561,168 @@
    "tier": "held",
    "services": [],
    "page_note": "Yancey County's page describes its own paramedic ambulances, but the state licence list names the county's only transporter as Heritage EMS. How the two names relate is not confirmed."
+  },
+  "37107": {
+   "county": "Lenoir",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Lenoir County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://lenoircountync.gov/emergency-services-department/emergency-medical-services/",
+     "evidence": "The Lenoir County EMS is a division of Lenoir County Emergency Services that provides treatment and transport for the sick and injured in Lenoir County.",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "",
+   "second_source": "https://lenoircountync.gov/emergency-services-department/emergency-medical-services/ (same page: six EMS stations located throughout the county); NC OEMS Continuum: Lenoir County EMS is the only agency in the Lenoir system whose primary service is 911 scene response with transport (other Lenoir-system ambulance companies are licensed for convalescent transport)"
+  },
+  "37111": {
+   "county": "McDowell",
+   "tier": "held",
+   "services": [
+    {
+     "name": "McDowell County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county (437 square miles)",
+     "source_url": "https://www.mcdowellems.com/ems.html",
+     "evidence": "McDowell County Emergency Medical Services (EMS) is responsible for providing emergency medical care to all citizens and visitors of McDowell County. EMS covers 437 square miles",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "McDowell County EMS is responsible for emergency medical care across all 437 square miles and runs five ambulances daily. The McDowell County Rescue Squad also holds a state ambulance licence with three permitted ambulances, and whether it transports 911 patients has not been confirmed.",
+   "second_source": "https://wlos.com/news/local/mcdowell-county-ems-ends-pause-transfers-to-mission-hospital-emergency-services-director-will-kehler-mission-health-hca-healthcare-significant-improvements-wait-times-no-delay (Jan 2024: McDowell County EMS ambulances transfer patients to Mission Hospital)"
+  },
+  "37065": {
+   "county": "Edgecombe",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Edgecombe County Emergency Services (EMS Division)",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.edgecombecountync.gov/departments/emergency_services/index.php",
+     "evidence": "Our prehospital professionals staff six ambulances 24/7, one \"peak-time\" ambulance from 7a-8p",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "",
+   "second_source": "https://www.edgecombecountync.gov/departments/emergency_services/edgecombe_medical_services/station_locations.php (2026: \"Covering approximately 506 square miles\"; Station 500 primary district \"covers Rocky Mount, West Edgecombe, Sharpsburg\"); state agency licence for Edgecombe County EMS issued 01/2021, after the county took over the rescue squad; https://www.rockymounttelegram.com/news/local/edgecombe-county-set-to-take-over-rescue-squad/article_5098f02c-0d51-539d-ab54-5468079b1c5a.html (Oct 2020: the rescue squad \"is the sole 911 provider in Edgecombe County\" and was folded into county Emergency Services by Jan. 2021)"
+  },
+  "37053": {
+   "county": "Currituck",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Currituck County Fire & Emergency Medical Services",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county (stations Moyock, Sligo, Waterlily, Grandy, Powells Point, Corolla, Carova, Knotts Island)",
+     "source_url": "https://currituckcountync.gov/ems/",
+     "evidence": "Staffs 9 ambulances and 3 fire engines (The 3 staffed engines are Advanced Life Support certified) 24-hours-a-day.",
+     "vintage": "2024+"
+    }
+   ],
+   "page_note": "",
+   "second_source": "same page: Provides Advanced Life Support emergency medical treatment/transport, vehicle extrication"
+  },
+  "37187": {
+   "county": "Washington",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Washington County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://washconc.org/departments/emergency-medical-services/",
+     "evidence": "Washington County EMS is the sole provider of Paramedic pre-hospital services to the entire population of Washington County.",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "",
+   "second_source": "https://albemarleobserver.news/2026/04/09/solar-permit-ems-overhaul-headline-washington-county-commission/ (Apr 2026: county moves EMS under Emergency Management, still a county department)"
+  },
+  "37177": {
+   "county": "Tyrrell",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Washington-Tyrrell EMS (Washington County EMS under contract to Tyrrell County)",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county (contracted to Washington County)",
+     "source_url": "https://albemarleobserver.news/2026/04/07/tyrrell-county-commissioner-hear-concerns-over-ems-response-times-library-dispute/",
+     "evidence": "emergency medical services, which Tyrrell County contracts with Washington County to provide.",
+     "vintage": "2026-04"
+    }
+   ],
+   "page_note": "",
+   "second_source": "https://dl.agd.cc/TyrrellWeb/2026budget.pdf (Tyrrell County FY 2026-2027 budget, presented 5/19/2026: \"AGREEMENTS - WASH. CO. EMS. 675,000.00\"); https://washconc.org/departments/emergency-medical-services/; https://washconc.org/departments/emergency-medical-services/ (Washington County EMS page)"
+  },
+  "37033": {
+   "county": "Caswell",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Caswell County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.caswellcountync.gov/emergency-services",
+     "evidence": "We deliver prompt pre-hospital care and medical transport, using advanced equipment, proven protocols, and a deep commitment to patient well-beling.",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "",
+   "second_source": "same page: Whether it's a 911 call or a community event, our mission remains the same."
+  },
+  "37121": {
+   "county": "Mitchell",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Mitchell County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.mitchellcountync.gov/departments/ems/",
+     "evidence": "Our core service is rapid pre-hospital care, lifesaving emergency medical services, expert patient stabilization, and transport.",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "",
+   "second_source": "Mitchell County EMS state agency licence issued 07/30/2025 (county took over from Mitchell Medics); county page ©2018-2026 describes the county-run service; same page: provide quality, efficient, and professional emergency services to the citizens and visitors of Mitchell County, 24 hours a day, 7 days a week"
+  },
+  "37143": {
+   "county": "Perquimans",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Perquimans County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.dailyadvance.com/perquimans/news/local/perquimans-ems-helps-sentara-move-to-new-hospital/article_54d5e922-ef0a-4a1a-b474-1475b301d805.html",
+     "evidence": "We were able to staff the two ambulances for the move, as well as maintain the three crews (in Perquimans County) for normal emergency response,",
+     "vintage": "2025-08"
+    }
+   ],
+   "page_note": "",
+   "second_source": "https://www.perquimanscountync.gov/departments/emergency-services/ems (county EMS page, Perquimans EMS fee schedule FY 2025-2026)"
   }
  }
 }
