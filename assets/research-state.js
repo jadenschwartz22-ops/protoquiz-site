@@ -7,6 +7,10 @@
   window.ATLAS_STATES = NAMES;
   var OWN = { public: ['Public', '#0072B2'], private: ['Private', '#D55E00'], hospital: ['Hospital', '#009E73'], mixed: ['Mixed', '#8C6BB1'] };
   var OPA = { A: 1, B: 0.85, C: 0.62, D: 0.38 };
+  // Named (tier A) counties are solid; inferred ones are striped, so the difference reads in
+  // any colour, not only blue where the opacity steps happen to show.
+  var RANK = { A: 0, B: 1, C: 1, D: 1, '-': 2 };
+  var STRIPE = 'repeating-linear-gradient(45deg,rgba(255,255,255,.6) 0 2px,transparent 2px 5px),';
   var TIER = { A: 'Named by a state record', B: 'Inferred, strong sourcing', C: 'Inferred', D: 'Inferred, weak sourcing' };
   var pick = document.getElementById('st-pick');
   if (pick) {
@@ -47,7 +51,8 @@
   });
 
   function render(geo, D) {
-    var F = Object.keys(D).sort(function (a, b) { return D[b].pop - D[a].pop; });
+    var F = Object.keys(D).sort(function (a, b) { return RANK[D[a].tier] - RANK[D[b].tier] || D[b].pop - D[a].pop; });
+    var GRP = ['Named by a record', 'Inferred: a lead, not a fact', 'No usable source'];
     var tot = F.reduce(function (s, f) { return s + D[f].pop; }, 0);
     var named = F.filter(function (f) { return D[f].tier === 'A'; });
     var namedPop = named.reduce(function (s, f) { return s + D[f].pop; }, 0);
@@ -70,21 +75,23 @@
       + '<div class="ss-bar" role="img" aria-label="Counties by ownership of the agency that answers">'
       + Object.keys(OWN).filter(function (k) { return cnt[k]; }).map(function (k) { return '<i style="width:' + (100 * cnt[k] / withOwn).toFixed(1) + '%;background:' + OWN[k][1] + '"><span>' + Math.round(100 * cnt[k] / withOwn) + '%</span></i>'; }).join('')
       + '</div>'
-      + '<div class="bar-key">' + Object.keys(OWN).filter(function (k) { return cnt[k]; }).map(function (k) { return '<span class="key"><i style="background:' + OWN[k][1] + '"></i>' + OWN[k][0] + ' &middot; ' + cnt[k] + '</span>'; }).join('') + '<span class="key ss-faint"><i></i>fainter = weaker evidence</span>' + (nogrey ? '<span class="key"><i style="background:#e4e0d6"></i>No source or model not established &middot; ' + nogrey + '</span>' : '') + '</div>'
+      + '<div class="bar-key">' + Object.keys(OWN).filter(function (k) { return cnt[k]; }).map(function (k) { return '<span class="key"><i style="background:' + OWN[k][1] + '"></i>' + OWN[k][0] + ' &middot; ' + cnt[k] + '</span>'; }).join('') + '<span class="key"><i style="background:#6b6b6b"></i>Solid = named by a record</span><span class="key"><i style="background:' + STRIPE + '#6b6b6b"></i>Striped = inferred, fainter = weaker</span>' + (nogrey ? '<span class="key"><i style="background:#e4e0d6"></i>No source or model not established &middot; ' + nogrey + '</span>' : '') + '</div>'
       + '<div class="ss-grid"><div class="ss-mapbox"><div class="rm-tip" role="presentation"></div>'
-      + '<svg class="ss-svg" viewBox="0 0 ' + geo.vb[0] + ' ' + geo.vb[1] + '" role="img" aria-label="' + esc(name) + ' counties coloured by who owns the agency that answers 911">'
+      + '<svg class="ss-svg" viewBox="0 0 ' + geo.vb[0] + ' ' + geo.vb[1] + '" role="img" aria-label="' + esc(name) + ' counties coloured by who owns the agency that answers 911; inferred counties are striped">'
+      + '<defs>' + Object.keys(OWN).map(function (k) { return '<pattern id="ss-h-' + k + '" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" fill="' + OWN[k][1] + '"/><rect width="2.6" height="7" fill="#fff" fill-opacity=".6"/></pattern>'; }).join('') + '</defs>'
       + F.map(function (f) {
           var c = D[f], o = OWN[c.ownership];
-          return '<path class="cty" data-f="' + f + '" d="' + (geo.c[f] || '') + '" fill="' + (c.tier === '-' || !o ? '#e4e0d6' : o[1]) + '" fill-opacity="' + (OPA[c.tier] || 1) + '"/>';
+          return '<path class="cty" data-f="' + f + '" d="' + (geo.c[f] || '') + '" fill="' + (c.tier === '-' || !o ? '#e4e0d6' : c.tier === 'A' ? o[1] : 'url(#ss-h-' + c.ownership + ')') + '" fill-opacity="' + (OPA[c.tier] || 1) + '"/>';
         }).join('') + '</svg></div>'
       + '<aside class="ss-card" aria-live="polite"></aside></div>'
       + '<div class="ss-tools"><input type="search" id="ss-q" placeholder="Find a county or an agency" aria-label="Find a county or an agency" autocomplete="off"></div>'
       + '<p class="ss-none" role="status" hidden></p>'
       + '<div class="table-scroll"><table class="res-table ss-table"><thead><tr><th scope="col">County</th><th scope="col" class="num">Residents</th><th scope="col">Who answers / on record</th><th scope="col">Evidence</th></tr></thead><tbody>'
-      + F.map(function (f) {
-          var c = D[f], o = OWN[c.ownership];
-          return '<tr data-f="' + f + '" tabindex="0"><th scope="row">' + esc(c.name) + '</th><td class="num">' + n0(c.pop) + '</td><td>'
-            + (c.tier === '-' ? '<span class="ss-mute">No usable source</span>' : (o ? '<span class="rm-swatch" style="background:' + o[1] + ';opacity:' + (OPA[c.tier] || 1) + '"></span>' + o[0] : '<span class="ss-mute">Not established</span>'))
+      + F.map(function (f, i) {
+          var c = D[f], o = OWN[c.ownership], g = RANK[c.tier];
+          return (i && RANK[D[F[i - 1]].tier] === g ? '' : '<tr class="ss-grp" data-g="' + g + '"><th colspan="4" scope="rowgroup">' + GRP[g] + ' &middot; ' + F.filter(function (x) { return RANK[D[x].tier] === g; }).length + '</th></tr>')
+            + '<tr data-f="' + f + '" tabindex="0"><th scope="row">' + esc(c.name) + '</th><td class="num">' + n0(c.pop) + '</td><td>'
+            + (c.tier === '-' ? '<span class="ss-mute">No usable source</span>' : (o ? '<span class="rm-swatch" style="background:' + (c.tier === 'A' ? '' : STRIPE) + o[1] + ';opacity:' + (OPA[c.tier] || 1) + '"></span>' + o[0] : '<span class="ss-mute">Not established</span>'))
             + (c.a.length ? '<span class="ss-ag">' + (c.tier === 'A' ? '' : '<em>' + (c.tier === 'D' ? 'Medicare billing name, unconfirmed:' : 'On record, unconfirmed:') + '</em> ') + esc(c.a.slice(0, 2).join(', ')) + (c.n > 2 ? ' +' + (c.n - 2) : '') + '</span>' : '') + '</td><td>' + tierText(c) + (c.partial ? ' (some towns)' : '') + '</td></tr>';
         }).join('') + '</tbody></table></div>';
 
@@ -155,7 +162,7 @@
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') clear(); });
     svg.addEventListener('pointerleave', function () { tip.classList.remove('on'); });
     svg.addEventListener('click', function (e) { var p = e.target.closest && e.target.closest('.cty'); if (p) select(p.getAttribute('data-f'), true); });
-    host.querySelector('tbody').addEventListener('click', function (e) { var r = e.target.closest('tr'); if (r) select(r.getAttribute('data-f'), false); box.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); });
+    host.querySelector('tbody').addEventListener('click', function (e) { var r = e.target.closest('tr[data-f]'); if (r) select(r.getAttribute('data-f'), false); box.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); });
     host.querySelector('tbody').addEventListener('keydown', function (e) { if (e.key === 'Enter' && e.target.matches('tr')) select(e.target.getAttribute('data-f'), false); });
 
     var q = host.querySelector('#ss-q'), none = host.querySelector('.ss-none');
@@ -165,6 +172,9 @@
         var c = D[f], hit = !t || (c.name + ' ' + c.a.join(' ')).toLowerCase().indexOf(t) >= 0;
         if (hit) hits++;
         rows[f].hidden = !hit; paths[f].classList.toggle('is-dim', !hit);
+      });
+      Array.prototype.forEach.call(host.querySelectorAll('.ss-grp'), function (r) {
+        r.hidden = !F.some(function (f) { return String(RANK[D[f].tier]) === r.getAttribute('data-g') && !rows[f].hidden; });
       });
       none.hidden = hits > 0;
       if (!hits) { none.innerHTML = 'No county or agency in ' + esc(want) + ' matches &ldquo;' + esc(q.value.trim()) + '&rdquo;. <button type="button">Clear search</button>'; none.querySelector('button').onclick = function () { q.value = ''; q.dispatchEvent(new Event('input')); q.focus(); }; }

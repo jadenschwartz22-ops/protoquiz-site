@@ -790,7 +790,6 @@ main{padding-bottom:64px;}
 .res-state .res-eyebrow a:hover{color:var(--ink);text-decoration:underline;}
 .ss-bar{display:flex;height:26px;border-radius:5px;overflow:hidden;margin:18px 0 8px;}
 .ss-bar i{display:block;font-style:normal;color:#fff;font-size:.72rem;line-height:26px;text-align:center;overflow:hidden;}
-.ss-faint i{background:linear-gradient(90deg,#0072B2,#9cc4dd);}
 .ss-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:20px;align-items:start;margin:18px 0 28px;}
 .ss-mapbox{position:relative;background:#f7f5f0;border-radius:10px;padding:14px;}
 .ss-svg{display:block;width:100%;height:auto;max-height:78vh;margin:0 auto;}
@@ -809,6 +808,8 @@ main{padding-bottom:64px;}
 .ss-tools input{width:100%;max-width:360px;font:inherit;font-size:.9rem;padding:8px 12px;border:1px solid var(--rule);border-radius:var(--r);background:#fff;color:var(--ink);}
 .ss-table{min-width:640px;}
 .ss-table tbody tr{cursor:pointer;}
+.ss-table tbody tr.ss-grp,.ss-table tbody tr.ss-grp:hover{cursor:default;background:none;}
+.ss-table tr.ss-grp th{text-align:left;padding:22px 0 6px;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;border-bottom:1px solid var(--ink);}
 .ss-table tbody tr:hover,.ss-table tbody tr.is-sel{background:var(--panel);}
 .ss-table th[scope=row]{text-align:left;font-weight:600;}
 .ss-ag{display:block;font-size:.78rem;color:var(--muted);margin-top:2px;}
