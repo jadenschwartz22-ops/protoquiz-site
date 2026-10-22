@@ -454,6 +454,96 @@
    ],
    "page_note": "",
    "second_source": "MO DHSS ground-ambulance station layer (edited 2025-04) lists stations in the county only for: Mercer County Ambulance Dist; MO DHSS licence list (data.mo.gov e7p8-a69d, 2026-09-28) shows no other transport licence based in the county; ambulance-district compilation (2023) covers the county: Mercer CAD 98%"
+  },
+  "29053": {
+   "county": "Cooper",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Cooper County Ambulance District",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.cooperems.com/",
+     "evidence": "Proudly serving the residents of Cooper County, Missouri, with Advanced Life Support (ALS) emergency medical care 24 hours a day, 7 days a week",
+     "vintage": "2026 (live page 2026-10-22)"
+    }
+   ],
+   "page_note": "",
+   "second_source": "https://www.kttn.com/one-dead-after-crash-on-highway-135-in-cooper-county/ (2026-03-17): \"transported by Cooper County Ambulance to University Hospital\"; MO DHSS ground-ambulance station layer (edited 2025-04) lists stations in the county only for: Cooper County Ambulance District; MO DHSS licence list (data.mo.gov e7p8-a69d, 2026-09-28) shows no other transport licence based in the county; ambulance-district compilation (2023) covers the county: Cooper CAD 100%"
+  },
+  "29186": {
+   "county": "Ste. Genevieve",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Ste. Genevieve County Ambulance District",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "http://sgcad.org/mission.html",
+     "evidence": "SGCAD serves all 502 square miles of Ste. Genevieve County and its population of over 18,000.",
+     "vintage": "undated district page (site files 2019); same service confirmed 2025-12-22"
+    }
+   ],
+   "page_note": "",
+   "second_source": "https://www.kttn.com/woman-dies-in-four-vehicle-crash-in-ste-genevieve-county/ (2025-12-22): \"She was transported by Ste. Genevieve County Ambulance to Mercy Hospital South.\"; MO DHSS ground-ambulance station layer (edited 2025-04) lists stations in the county only for: Sainte Genevieve County Ambulance District; MO DHSS licence list (data.mo.gov e7p8-a69d, 2026-09-28) shows no other transport licence based in the county; ambulance-district compilation (2023) covers the county: St. Francois CAD 2%, St. Genevieve CAD 99%"
+  },
+  "29117": {
+   "county": "Livingston",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Chillicothe Fire Department (ambulance service of the Livingston County Ambulance District)",
+     "transport": true,
+     "ownership": "mixed: city fire department runs the ambulances for the county ambulance district",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.chillicothecity.org/1293/Ambulance-Service",
+     "evidence": "Chillicothe Fire Department works in conjunction with the Livingston County Ambulance District in order to provide superior emergency medical services to Chillicothe and all of Livingston County.",
+     "vintage": "undated city page; same service confirmed 2026-07-15 and 2026-10-16"
+    }
+   ],
+   "page_note": "",
+   "second_source": "https://www.kttn.com/three-injured-in-highway-65-crash-north-of-chillicothe/ (2026-07-15): \"transported by Livingston County EMS to Hedrick Medical Center\"; https://www.kttn.com/trenton-woman-injured-in-highway-36-crash-near-chillicothe/ (2026-10-16): \"She was transported by Chillicothe EMS to Hedrick Medical Center for treatment.\"; MO DHSS ground-ambulance station layer (edited 2025-04) lists stations in the county only for: Chillicothe Fire Department; Life Flight Eagle; MO DHSS licence list (data.mo.gov e7p8-a69d, 2026-09-28) shows no other transport licence based in the county; ambulance-district compilation (2023) covers the county: Livingston AD 100%; the only state licence in the county is Chillicothe Fire Department (ground ambulance), matching the city page; https://www.kttn.com/livingston-county-rollover-crash-injures-chillicothe-woman/ (2026-05-12): \"She was transported by the Chillicothe Fire Department to Wright Memorial Hospital in Trenton for treatment.\""
+  },
+  "29057": {
+   "county": "Dade",
+   "tier": "A",
+   "services": [
+    {
+     "name": "CoxHealth EMS, Dade County (licensed as Cox Paramedics-Dade County A. D.)",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.coxhealth.com/services/emergency/ems/",
+     "evidence": "Dade County, with ambulance stations in Greenfield and Lockwood",
+     "vintage": "2026 (live page 2026-10-22; page also lists \"Emergency and non-emergency 911 responses\")"
+    }
+   ],
+   "page_note": "",
+   "second_source": "https://www.kttn.com/greenfield-man-dies-after-car-lands-in-river-in-dade-county/ (2024-09-29): \"Cox Ambulance EMS assisted at the scene of the crash\"; MO DHSS ground-ambulance station layer (edited 2025-04) lists stations in the county only for: Cox Paramedics-Dade County A. D.; MO DHSS licence list (data.mo.gov e7p8-a69d, 2026-09-28) shows no other transport licence based in the county; ambulance-district compilation (2023) covers the county: Dade CAD 100%; the state licence for Cox Paramedics-Dade County A. D. is registered to a Springfield address (Greene) but its stations (Greenfield, Lockwood) are in Dade; https://www.koamnewsnow.com/news/joplin-news-first/5-year-old-drowns-at-stockton-lake-sheriff-says-child-rushed-to-hospital/article_e41434c5-6d37-4bcb-979d-4465f1b4c388.html (2026-06-22, Ruark East Campground, Stockton Lake, Dade County): \"EMS then rushed the child to a hospital for advanced medical care.\" The sheriff names Cox EMS as the EMS agency at the scene."
+  },
+  "29135": {
+   "county": "Moniteau",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Mid-Mo Ambulance District",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://midmoambulance.com/about-us",
+     "evidence": "Mid-Mo Ambulance District provides Advanced Life Support to citizens in Moniteau and Morgan counties.",
+     "vintage": "2026 (live page 2026-10-22; site lists current openings)"
+    }
+   ],
+   "page_note": "Mid-Mo Ambulance District, with bases in California, Tipton and Versailles, is the only licensed ground ambulance service based in Moniteau County, and Highway Patrol crash reports from 2024 to 2026 show it carrying patients from crashes there. A September 2025 crash report on Route 179 in Moniteau County names Cooper County EMS as the service that carried one of the two injured riders, and no page explains that service's role in the county.",
+   "second_source": "https://www.kttn.com/two-year-old-girl-from-gravois-mills-drowns-in-lake-of-the-ozarks/ (2025-08-14 (Morgan County)): \"She was transported by Mid-Mo Ambulance to Lake Regional Hospital\"; MO DHSS ground-ambulance station layer (edited 2025-04) lists stations in the county only for: Mid-Mo Ambulance District; MO DHSS licence list (data.mo.gov e7p8-a69d, 2026-09-28) shows no other transport licence based in the county; ambulance-district compilation (2023) covers the county: Cooper CAD 1%, Mid-Mo AD 99%; https://www.komu.com/news/midmissourinews/man-and-woman-taken-to-hospital-after-atv-crash-in-moniteau-county/article_53236ffe-7003-43c3-b735-ed0d4190f00a.html (2026-06-24): \"Both were transported to University Hospital by Mid-MO Ambulance, according to the crash report.\""
   }
  }
 }
