@@ -31,3 +31,11 @@ Method: every source re-opened (raw in web_raw/KY/audit/), every quote found; KB
 - 21003 Allen (22,037): PASS. County page quotes found; added WBKO 2026-09-09 on Allen County EMS ambulances; "unified Fire and EMS district" news is Allen County, Indiana.
 
 Audited 18, passed 18, failed 0; population passed 646,651.
+
+## Audit 4, 2026-10-22: 4 A audited, 4 PASS, 0 FAIL; pop passed 121,610
+All quotes re-found (web_raw/KY/audit4/). Licences KY_public_2026-10.json by service-area FIPS and address county. KY rule applied: whole-county Ia transport licence plus an opened local page naming the service in that county.
+- Meade 21163 PASS: licence 1091 Ia whole county; WNKY 2026-09 names Meade County EMS at scene, 2022 transport quote; NG911 Med 1-3 polygons are Meade 911; the 9.8% uncovered is the Fort Knox reservation (noted on page, same as Hardin).
+- Henderson 21101 PASS: undated Deaconess page backed by WEHT 2026-10-08 (Deaconess EMS responding in Henderson County, dispatched by Henderson Dispatch), added to second_source; only Ia licence is Deaconess 1043; Century Aluminum (plant, non-transport) and Deaconess Women's (critical care, non-911) excluded; no AMR licence despite NG911 label; Henderson city has no fire ambulance licence.
+- Hart 21099 PASS: licence 1423; WNKY 2026-05 transport by Hart County EMS.
+- Grayson 21085 PASS: licence 1081; WNKY 2026-10 names Grayson County EMS at scene; Vanderbilt ground licence is non-911.
+Held rows promoted as empty-service notes: Oldham, Bullitt, Breckinridge, Russell, Simpson.

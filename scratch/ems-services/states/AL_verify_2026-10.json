@@ -2,144 +2,108 @@
  "meta": {
   "state": "AL",
   "retrieved": "2026-10-22",
-  "via": "county 911 sites, local news (Google News RSS, decoded), ADPH licence list cross-check (AL_adph.json, pulled 2026-09-10)"
+  "via": "county and agency websites, local newspapers, ADPH licence list (verify pass 3)"
  },
  "county_verdict": {
-  "01127": {
-   "county": "Walker",
+  "01091": {
+   "county": "Marengo",
    "tier": "A",
    "services": [
     {
-     "name": "Regional Paramedical Services (RPS)",
+     "name": "AmStar Emergency Medical Services",
      "transport": true,
-     "ownership": "private (contractor to Walker County 911)",
+     "ownership": "private",
      "partial": false,
-     "area": "whole county",
-     "source_url": "https://walker911.org/agencies",
-     "evidence": "EMS/Rescue Squads Carbon Hill Volunteer Rescue Squad Regional Paramedics Ambulance Service Walker County Volunteer Rescue Squad",
-     "vintage": "2024"
+     "area": "whole county (based in Demopolis; stations in Linden and Dixons Mills)",
+     "source_url": "https://amstarems.com/about-us/",
+     "evidence": "Based in Demopolis , with additional stations in Linden and Dixons Mills , we are committed to providing dependable, high-quality emergency and non-emergency medical transportation across Marengo County and surrounding communities. ... We provide a full range of EMS Services including 911 Emergency Response, Hospital-to-Hospital Transfers, Non-Emergency Medical Transportation and Dialysis Transport Services.",
+     "vintage": "2026 (site has a May 2026 post; page undated)"
     }
    ],
-   "page_note": "Regional Paramedical Services (RPS) is the ambulance service that answers 911 calls in Walker County. City fire departments and volunteer rescue squads respond to medical calls but do not transport.",
-   "second_source": "https://abc3340.com/news/local/woman-dies-waiting-on-ambulance-after-911-call-industry-leaders-call-for-more-funding-walker-county-ems-emergency-medical (2024-06-18: \"there was no other ambulance service to roll over to. Walker County 911 confirmed the call was transferred to RPS successfully for ambulance service\")"
+   "page_note": "AmStar EMS, based in Demopolis with stations in Linden and Dixons Mills, provides 911 ambulance service across Marengo County.",
+   "second_source": "https://amstarems.com/ (\"AmStar EMS is an Ambulance Provider in Marengo county in West Alabama\"); ADPH licence list: AmStar is the only transport licence based in Marengo"
   },
-  "01033": {
-   "county": "Colbert",
+  "01079": {
+   "county": "Lawrence",
    "tier": "A",
    "services": [
     {
-     "name": "Keller EMS (Helen Keller Hospital, HH Health System)",
+     "name": "Lawrence County EMS (Greg's Ambulance Service)",
      "transport": true,
-     "ownership": "hospital",
+     "ownership": "private",
      "partial": false,
-     "area": "whole county",
-     "source_url": "https://colbert911.org/agencies-we-serve-1",
-     "evidence": "Emergency Medical Services Keller Ambulance Service Air Evac Lifeteam Paid Fire Departments Muscle Shoals Fire Department Sheffield Fire Department Tuscumbia Fire Department",
+     "area": "whole county; a backup ambulance is housed at Speake Fire and Rescue",
+     "source_url": "https://www.moultonadvertiser.com/news/article_4da4302c-2e6d-4c16-a334-d1360077d354.html",
+     "evidence": "He was transferred to Lawrence County EMS and taken to a local hospital for further evaluation.",
+     "vintage": "2025-12-10"
+    }
+   ],
+   "page_note": "Lawrence County EMS (Greg's Ambulance Service) answers 911 calls and transports patients in Lawrence County. A backup Lawrence County EMS ambulance is kept at the Speake fire station.",
+   "second_source": "https://www.moultonadvertiser.com/news/article_6b3ad657-a821-4981-8cc3-a0d2c4c1b980.html (2026-01: Speake Fire 'new partnership with Lawrence County EMS, allowing a backup ambulance to be housed at its station'); https://www.moultonadvertiser.com/news/article_7934a042-d0f1-40ca-8066-6e46954e2caf.html (2025-09: ambulance donated to Speake by Greg's Ambulance Service)"
+  },
+  "01011": {
+   "county": "Bullock",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Haynes Ambulance (Bullock station)",
+     "transport": true,
+     "ownership": "private",
+     "partial": false,
+     "area": "station in Union Springs",
+     "source_url": "https://www.haynesambulance.com/",
+     "evidence": "Bullock Station – 212 N. Baskin Street, Union Springs, Alabama 36089",
      "vintage": "2026"
     }
    ],
-   "page_note": "Keller EMS, run by Helen Keller Hospital, is the ground ambulance service for Colbert County 911. The Muscle Shoals, Sheffield and Tuscumbia fire departments and the volunteer fire departments respond but do not transport.",
-   "second_source": "https://www.waff.com/2025/06/11/keller-ems-becomes-first-shoals-offer-blood-transfusions-field/ (2025-06-11: \"Keller EMS becomes the first ground ambulance service in the Shoals to carry and provide blood\")"
+   "page_note": "Haynes Ambulance runs an ambulance station in Union Springs and is the only ground ambulance service licensed in Bullock County. A page naming it as the county's 911 ambulance provider has not been found yet.",
+   "second_source": "https://governor.alabama.gov/newsroom/2026/08/governor-ivey-announces-first-grants-in-major-new-rural-healthcare-program-totaling-more-than-144-million/ (Haynes grant for 'rural emergency medical service stations' incl. Bullock)"
   },
-  "01087": {
-   "county": "Macon",
-   "tier": "A",
-   "services": [
-    {
-     "name": "Haynes Ambulance of Macon County",
-     "transport": true,
-     "ownership": "private (contractor to Macon County Commission)",
-     "partial": false,
-     "area": "whole county",
-     "source_url": "https://cnaw2news.com/2026/02/11/multiple-fire-agencies-extinguish-large-house-fire-in-notasulga/",
-     "evidence": "One firefighter was evaluated and transported by Haynes Ambulance of Alabama from the scene with minor injuries.",
-     "vintage": "2026-02-11"
-    }
-   ],
-   "page_note": "Haynes Ambulance runs the ambulance service in Macon County, with stations in the county, and transports patients from emergency scenes there. It is the only ambulance service licensed in the county. Local volunteer fire departments respond but do not transport.",
-   "second_source": "https://www.lowndessignal.com/news/ivey-announces-first-grants-of-new-rural-healthcare-program-ab505510 (2026-08-24 grants: \"Haynes Ambulance of Alabama Inc. was granted $283,314 to strengthen cybersecurity and information technology systems across its rural emergency medical service stations to protect patient information and improve operational reliability in eight counties: Bullock, Covington, Crenshaw, Elmore, Lowndes, Macon, Pike, Tallapoosa.\"); https://www.wsfa.com/2018/09/29/haynes-ambulance-start-serving-macon-county-monday/ (2018: Haynes replaced CARE Ambulance in Macon County)"
-  },
-  "01085": {
-   "county": "Lowndes",
-   "tier": "A",
-   "services": [
-    {
-     "name": "Haynes Ambulance (Haynes Ambulance of Troy, LLC - Lowndes)",
-     "transport": true,
-     "ownership": "private (contractor to Lowndes County Commission)",
-     "partial": false,
-     "area": "whole county",
-     "source_url": "https://www.lowndessignal.com/news/lowndesboro-fire-department-responds-to-rollover-crash-on-us-highway-80-31792b22",
-     "evidence": "Blair said his department responded to the call where they discovered the river on passenger side of the vehicle. The individual was transported for treatment by Haynes Ambulance.",
-     "vintage": "2026-07-25"
-    }
-   ],
-   "page_note": "Haynes Ambulance runs the ambulance service in Lowndes County, with stations in the county, and transports patients from emergency scenes there. It is the only ambulance service licensed in the county.",
-   "second_source": "https://www.lowndessignal.com/news/ivey-announces-additional-55m-rural-health-grants-e69bf22a (2026-10: \"An organization serving Lowndes County, Haynes Ambulance of Alabama Inc., received a $1.4 million EMS Trauma and Stroke Initiative award\"); https://www.lowndessignal.com/news/ivey-announces-first-grants-of-new-rural-healthcare-program-ab505510 (2026-08: Haynes rural emergency medical service stations in eight counties including Lowndes); https://www.wsfa.com/2020/07/02/new-ambulance-service-coming-lowndes-county/ (2020: county and Haynes agreed a contract)"
-  },
-  "01105": {
-   "county": "Perry",
-   "tier": "A",
-   "services": [
-    {
-     "name": "Perry County Ambulance Service (PC Ambulance, Inc.)",
-     "transport": true,
-     "ownership": "county EMS",
-     "partial": false,
-     "area": "whole county",
-     "source_url": "https://www.blackbeltnewsnetwork.com/news/perry-county-starts-county-run-ambulance-service-in-effort-to-rebuild-medical-community/article_15536f54-2587-11ee-b667-e3e310d8b49d.html",
-     "evidence": "Perry County's new county-owned ambulance service has been operating since July 11 ... For citizens needing ambulance service, nothing has changed. You just dial 911 as usual.",
-     "vintage": "2023 (no sign of change; it holds the county's only transport licence, 2026)"
-    }
-   ],
-   "page_note": "Perry County runs its own ambulance service, which answers 911 calls across the county, including Marion and Uniontown.",
-   "second_source": ""
-  },
-  "01019": {
-   "county": "Cherokee",
+  "01047": {
+   "county": "Dallas",
    "tier": "held",
    "services": [
     {
-     "name": "Atrium Health Floyd Cherokee EMS",
+     "name": "Jackson Emergency Transport Service",
+     "transport": true,
+     "ownership": "private",
+     "partial": false,
+     "area": "unconfirmed",
+     "source_url": "",
+     "evidence": "",
+     "vintage": ""
+    },
+    {
+     "name": "Dallas County volunteer fire and rescue squads (15)",
+     "transport": false,
+     "ownership": "mixed: volunteer",
+     "partial": true,
+     "area": "outlying areas",
+     "source_url": "https://www.blackbeltnewsnetwork.com/news/county-commission-provides-mechanical-cpr-devices-to-all-15-county-volunteer-rescue-squads/article_993252b0-cd83-11ed-9d6d-03992926f06b.html",
+     "evidence": "The LUCAS devices will keep people alive until the ambulance arrives and can stay with the patient in the ambulance until they get to the hospital.",
+     "vintage": "2023-03"
+    }
+   ],
+   "page_note": "Dallas County's volunteer rescue squads respond first and wait for an ambulance. The only licensed ground ambulance service based in the county is Jackson Emergency Transport Service, but a page naming it as the 911 ambulance provider has not been found yet.",
+   "second_source": ""
+  },
+  "01029": {
+   "county": "Cleburne",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Cleburne County EMS",
      "transport": true,
      "ownership": "hospital",
      "partial": false,
-     "area": "whole county",
-     "source_url": "https://web.archive.org/web/20251206210309id_/https://businessalabama.com/spotlight-on-jackson-marshall-dekalb-cherokee-health-care-2/",
-     "evidence": "Atrium Health Floyd operates rural health clinics in Piedmont and Centre, providing primary and urgent care services, and is the E-911 ambulance provider for Cherokee County with three EMS stations covering the county.",
-     "vintage": "2023"
+     "area": "unconfirmed",
+     "source_url": "https://www.annistonstar.com/cleburne_news/cleburne-county-ems-prepares-for-the-covid-19/article_c2e2de28-6967-11ea-b916-034a9300f138.html",
+     "evidence": "(headline) Cleburne County EMS prepares for the COVID-19",
+     "vintage": "2020-03"
     }
    ],
-   "page_note": "Atrium Health Floyd is the 911 ambulance provider for Cherokee County. Not yet confirmed: whether Piedmont Rescue & EMS also carries patients from the Cherokee County part of Piedmont.",
-   "second_source": "https://abc3340.com/news/local/new-ambulance-service-servicing-cherokee-county (2018: \"After the evaluation process was done, Floyd EMS was awarded the bid\")"
-  },
-  "01093": {
-   "county": "Marion",
-   "tier": "held",
-   "services": [],
-   "page_note": "Marion County EMS is the only ambulance service based in the county. The county 911 centre says it works with two emergency medical services; the second one is not yet confirmed.",
-   "second_source": "https://www.marion911.org/ (\"We also coordinate with 2 emergency medical services, 4 air-ambulance services\")"
-  },
-  "01049": {
-   "county": "DeKalb",
-   "tier": "held",
-   "services": [],
-   "page_note": "DeKalb Ambulance Service is the only ambulance service based in the county, but a current public page naming it as the county's 911 ambulance provider has not been found yet.",
-   "second_source": "https://www.waff.com/2024/11/19/dekalb-ambulance-service-offering-home-holidays-program/ (2024, names the DeKalb Ambulance Service area but not its 911 role)"
-  },
-  "01071": {
-   "county": "Jackson",
-   "tier": "held",
-   "services": [],
-   "page_note": "Highlands EMS, run by Highlands Medical Center, is the only ground ambulance service based in the county, but a public page naming it as the 911 ambulance provider for the whole county has not been found yet.",
+   "page_note": "Cleburne County EMS is the only ground ambulance service licensed in Cleburne County. A current page describing its 911 role has not been found yet, and a 2019 report of a Georgia company planning service in Ranburne is unresolved.",
    "second_source": ""
-  },
-  "01031": {
-   "county": "Coffee",
-   "tier": "held",
-   "services": [],
-   "page_note": "Enterprise Rescue says its ground operations are based in Coffee County and it is the only ground ambulance service licensed there. Not yet confirmed: that it covers all of the county, including Elba and the Fort Novosel area.",
-   "second_source": "https://enterpriserescue.com/ (\"Enterprise Rescue provides 24/7 pre-hospital ambulance services to thousands of citizens across South Alabama with ground operations based in Coffee, Monroe, Clarke and Butler counties\")"
   }
  }
 }

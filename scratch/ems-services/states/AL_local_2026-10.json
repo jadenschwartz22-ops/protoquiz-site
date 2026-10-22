@@ -560,6 +560,60 @@
    "tier": "held",
    "services": [],
    "page_note": "Enterprise Rescue says its ground operations are based in Coffee County and it is the only ground ambulance service licensed there. Not yet confirmed: that it covers all of the county, including Elba and the Fort Novosel area."
+  },
+  "01091": {
+   "county": "Marengo",
+   "tier": "A",
+   "services": [
+    {
+     "name": "AmStar Emergency Medical Services",
+     "transport": true,
+     "ownership": "private",
+     "partial": false,
+     "area": "whole county (based in Demopolis; stations in Linden and Dixons Mills)",
+     "source_url": "https://amstarems.com/about-us/",
+     "evidence": "Based in Demopolis , with additional stations in Linden and Dixons Mills , we are committed to providing dependable, high-quality emergency and non-emergency medical transportation across Marengo County and surrounding communities. ... We provide a full range of EMS Services including 911 Emergency Response, Hospital-to-Hospital Transfers, Non-Emergency Medical Transportation and Dialysis Transport Services.",
+     "vintage": "2026 (site has a May 2026 post; page undated)"
+    }
+   ],
+   "page_note": "AmStar EMS, based in Demopolis with stations in Linden and Dixons Mills, provides 911 ambulance service across Marengo County.",
+   "second_source": "https://amstarems.com/ (\"AmStar EMS is an Ambulance Provider in Marengo county in West Alabama\"); ADPH licence list: AmStar is the only transport licence based in Marengo"
+  },
+  "01079": {
+   "county": "Lawrence",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Lawrence County EMS (Greg's Ambulance Service)",
+     "transport": true,
+     "ownership": "private",
+     "partial": false,
+     "area": "whole county; a backup ambulance is housed at Speake Fire and Rescue",
+     "source_url": "https://www.moultonadvertiser.com/news/article_4da4302c-2e6d-4c16-a334-d1360077d354.html",
+     "evidence": "He was transferred to Lawrence County EMS and taken to a local hospital for further evaluation.",
+     "vintage": "2025-12-10"
+    }
+   ],
+   "page_note": "Lawrence County EMS (Greg's Ambulance Service) answers 911 calls and transports patients in Lawrence County. A backup Lawrence County EMS ambulance is kept at the Speake fire station.",
+   "second_source": "https://www.moultonadvertiser.com/news/article_6b3ad657-a821-4981-8cc3-a0d2c4c1b980.html (2026-01: Speake Fire 'new partnership with Lawrence County EMS, allowing a backup ambulance to be housed at its station'); https://www.moultonadvertiser.com/news/article_7934a042-d0f1-40ca-8066-6e46954e2caf.html (2025-09: ambulance donated to Speake by Greg's Ambulance Service)"
+  },
+  "01011": {
+   "county": "Bullock",
+   "tier": "held",
+   "services": [],
+   "page_note": "Haynes Ambulance runs an ambulance station in Union Springs and is the only ground ambulance service licensed in Bullock County. A page naming it as the county's 911 ambulance provider has not been found yet."
+  },
+  "01047": {
+   "county": "Dallas",
+   "tier": "held",
+   "services": [],
+   "page_note": "Dallas County's volunteer rescue squads respond first and wait for an ambulance. The only licensed ground ambulance service based in the county is Jackson Emergency Transport Service, but a page naming it as the 911 ambulance provider has not been found yet."
+  },
+  "01029": {
+   "county": "Cleburne",
+   "tier": "held",
+   "services": [],
+   "page_note": "Cleburne County EMS is the only ground ambulance service licensed in Cleburne County. A current page describing its 911 role has not been found yet, and a 2019 report of a Georgia company planning service in Ranburne is unresolved."
   }
  }
 }

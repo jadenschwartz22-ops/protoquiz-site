@@ -1229,6 +1229,138 @@
    "tier": "held",
    "services": [],
    "page_note": "Bledsoe County EMS is the only ambulance service licensed in the county; a current source stating that it answers 911 calls and transports patients has not yet been found."
+  },
+  "47103": {
+   "county": "Lincoln",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Lincoln Health Ambulance Services (HH Health System; licence 10327)",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://hhlincolnhealth.org/services/ambulance-service/",
+     "evidence": "At Lincoln Health Ambulance Services, we strive to provide superior service to the citizens of Lincoln County and all who pass through. We currently staff three ALS ambulances [...] Services 911 emergency response Community outreach Non-emergency transport Inter-facility transport",
+     "vintage": "2026 (page modified 2026-02-25)"
+    }
+   ],
+   "page_note": "Lincoln Health Ambulance Services, run by Lincoln Health (part of the Huntsville Hospital Health System), answers 911 calls across Lincoln County. It is the only ambulance service licensed in the county.",
+   "second_source": "TN EMS Directory 2026-10-22 (internet.health.tn.gov/EMSDirectory): only ambulance licence based in Lincoln, HH Health System Emergency Medical Service, Fayetteville, licence 10327, *PRIMARY 911"
+  },
+  "47045": {
+   "county": "Dyer",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Medical Center EMS (West Tennessee Healthcare; licence 10248)",
+     "transport": true,
+     "ownership": "hospital (contractor to Dyer County)",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.stategazette.com/news/ems-requests-new-annual-subsidy-of-1-537m-quality-of-local-hospital-care-comes-into/article_b53b09a9-8cd0-5323-8ec4-68b0354a3310.html",
+     "evidence": "Dyer County began paying a $1.037M subsidy in July 2023, following a letter received from Medical Center EMS prompting local government officials of its plans to pull services without additional funding. [...] Medical Center EMS has fulfilled its contractual obligation to response times throughout the entirety of its contract.",
+     "vintage": "2025-01-24"
+    }
+   ],
+   "page_note": "Medical Center EMS, part of West Tennessee Healthcare, provides ambulance service in Dyer County under a county-subsidised contract. It is the only ambulance service licensed in the county.",
+   "second_source": "https://www.stategazette.com/news/freon-leak-prompts-evacuation-at-st-joseph-manor/article_bafac78e-3a3a-55a9-b247-0bc426a24c6a.html (2026-03-19, Dyersburg: Those transported included a Dyersburg firefighter [...] and two Medical Center EMS team members; the fire department thanked Medical Center EMS); State Gazette 2026-01-21 Dyer County house fire: fire departments responded 'along with Medical Center EMS'; TN EMS Directory 2026-10-22 (internet.health.tn.gov/EMSDirectory): sole licence, Medical Center EMS-Dyer County, licence 10248, *PRIMARY 911"
+  },
+  "47133": {
+   "county": "Overton",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Overton County EMS (Overton County Ambulance Service; licence 6702)",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://livingstonenterprise.net/stories/overton-countys-sky-ignites-with-15th-annual-ems-fireworks-show,258561",
+     "evidence": "Overton County EMS operates stations in both Livingston and Hanging Limb, providing emergency services to the citizens of Overton County.",
+     "vintage": "2025-06-30"
+    }
+   ],
+   "page_note": "Overton County EMS runs the county's ambulance service from stations in Livingston and Hanging Limb. It is the only ambulance service licensed in the county.",
+   "second_source": "https://www.overtoncountynews.com/news/three-injured-in-hwy-84-collision-thursday/article_d02964e0-1268-4d6b-8124-748b76cbbc54.html (2025-07-22: were transported to Livingston Regional Hospital by Overton County EMS); https://theucnow.com/2026/10/19/split-vote-confirms-caleb-sells-as-overton-ems-director/ (2026-10-19, county commission confirms EMS director); TN EMS Directory 2026-10-22 (internet.health.tn.gov/EMSDirectory): the other licence, Med-X Services, is an invalid vehicle (wheelchair) service, not an ambulance"
+  },
+  "47139": {
+   "county": "Polk",
+   "tier": "held",
+   "services": [
+    {
+     "name": "AmeriPro Health Tennessee (AmeriPro EMS of Tennessee, LLC; licence 10324)",
+     "transport": true,
+     "ownership": "private",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.ameriprohealth.com/locations/",
+     "evidence": "AmeriPro Health Tennessee provides 911, BLS/ALS, CCT, and interfacility ambulance services in Polk County.",
+     "vintage": "current page, retrieved 2026-10-22 (undated)"
+    }
+   ],
+   "page_note": "AmeriPro Health Tennessee (AmeriPro EMS of Tennessee, LLC; licence 10324) is the only ambulance service licensed in Polk County and names it as a 911 service area. Not yet confirmed from a local or county source: that it holds the county's 911 ambulance role.",
+   "second_source": "TN EMS Directory 2026-10-22 (internet.health.tn.gov/EMSDirectory): only ambulance licence based in Polk, AmeriPro EMS of Tennessee, LLC, Copperhill, licence 10324, *PRIMARY 911"
+  },
+  "47047": {
+   "county": "Fayette",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Fayette County Ambulance Service (Fayette County EMS; licence 2401)",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://fayettetn.us/departments/ems/",
+     "evidence": "We have established an outstanding reputation for high quality patient care and medical transportation services. EMS Stations Headquarters EMS Station #1 [...] Somerville [...] Oakland EMS Station #4 [...] Rossville EMS Station # 6 [...] West Fayette Substation EMS # 10 [...] Glenn Miller Director",
+     "vintage": "2017 (page modified 2017-12-04); no sign of change: same director in 2026 licence list; county job posting 2026-10-09 shows the service taking emergency calls from dispatch"
+    }
+   ],
+   "page_note": "Fayette County EMS, the county's own ambulance service, covers the county from stations in Somerville, Oakland, Rossville and west Fayette. It is the only ground ambulance service licensed in the county.",
+   "second_source": "TN EMS Directory 2026-10-22 (internet.health.tn.gov/EMSDirectory): Fayette County Ambulance Service, Somerville, licence 2401, director Glenn Miller, *PRIMARY 911 (same director as the county page); the only other licence, PHI Health, is a Kentucky-based helicopter service ; https://fayettetn.us/jobs/advanced-emergency-medical-technician/ (county job posting, published 2026-10-09: \"Under the ambulance Assistant Director and Fayette County Ambulance Service management\" ... \"Responding to instructions from a dispatcher and driving and operating specially equipped emergency vehicles to specified locations\" ... \"Receiving requests for emergency and non-emergency ambulance service\")"
+  },
+  "47023": {
+   "county": "Chester",
+   "tier": "held",
+   "services": [],
+   "page_note": "Medical Center EMS (West Tennessee Healthcare) provided Chester County's ambulance service as of May 2026, month to month, while the county considered a new provider. Whether the county has since changed provider is not yet confirmed."
+  },
+  "47041": {
+   "county": "DeKalb",
+   "tier": "held",
+   "services": [],
+   "page_note": "DeKalb County EMS runs the county's ambulance service. A second licensed ambulance service, Saint Thomas Emergency Medical Service in Smithville, is not yet confirmed as answering or not answering 911 calls."
+  },
+  "47177": {
+   "county": "Warren",
+   "tier": "held",
+   "services": [],
+   "page_note": "Warren County EMS runs the county's ambulance service. Ascension Saint Thomas also stationed an ambulance in McMinnville in 2022 to serve Warren County; whether it takes 911 calls is not yet confirmed."
+  },
+  "47061": {
+   "county": "Grundy",
+   "tier": "held",
+   "services": [],
+   "page_note": "Grundy EMS is the ambulance service licensed in Grundy County. In 2025 Warren County approved an agreement to send its ambulances to valley areas of Grundy County near the Warren line; whether that agreement took effect, and a current source saying Grundy EMS transports patients, are not yet confirmed."
+  },
+  "47143": {
+   "county": "Rhea",
+   "tier": "held",
+   "services": [],
+   "page_note": "Rhea County Ambulance Service is the only ambulance service licensed in Rhea County and is active in 2026; a current source saying it carries 911 patients is not yet confirmed."
+  },
+  "47137": {
+   "county": "Pickett",
+   "tier": "held",
+   "services": [],
+   "page_note": "Pickett County Ambulance Service is the only ambulance service licensed in Pickett County; a current source saying it carries 911 patients is not yet confirmed."
+  },
+  "47043": {
+   "county": "Dickson",
+   "tier": "held",
+   "services": [],
+   "page_note": "Dickson County EMS runs the county's ambulance service. A second licensed service, First Call Ambulance (basic life support), is based in Dickson; that it does only non-emergency work is not yet confirmed."
   }
  }
 }

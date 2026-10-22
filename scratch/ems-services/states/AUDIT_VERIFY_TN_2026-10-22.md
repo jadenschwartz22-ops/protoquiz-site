@@ -15,3 +15,12 @@ All cited quotes re-found on re-opened pages (Grainger via archive). Licence che
 - Jackson 47087 PASS: WSMV 2026-01 transport by Jackson County EMS.
 - Clay 47027 PASS: UC Now 2026-07, two ambulances serve the entire county.
 - Henderson 47077 PASS: source replaced by WBBJ 2026-08 (Henderson County EMS dispatched, ground crews transported); operator BradenHealth from 2021 with no sign of change.
+
+## Audit 4, 2026-10-22: 5 A audited, 5 PASS, 0 FAIL; pop passed 159,519
+All quotes re-found (web_raw/TN/audit4/). Licence check web_raw/TN/v/dir50.txt: one ambulance licence each (Overton's Med-X is invalid-vehicle; Fayette's PHI is rotorwing). No city over 20k.
+- Lincoln 47103 PASS: Lincoln Health page (2026-02) 911 emergency response, Lincoln County; sole licence 10327.
+- Dyer 47045 PASS: 2025-01 subsidy dispute (county mulled own service) followed by 2026 sources (State Gazette 2026-03 Medical Center EMS at Dyersburg scene) and 2026-10 directory still sole licence 10248, no county licence.
+- Overton 47133 PASS: Livingston Enterprise 2025-06 stations; Overton County News 2025-07 transport; 2026-10 director confirmed.
+- Polk 47139 PASS: AmeriPro Tennessee location page names Polk County alone for 911 (brand list also overstates in KY, so weighed with sole licence 10324 in Copperhill); own searches found no other Polk provider. Weakest pass.
+- Fayette 47047 PASS: 2017 county page backed by a 2024+ source: county job posting 2026-10-09 (Fayette County Ambulance Service crews responding to dispatcher, emergency ambulance requests); sole licence 2401. Added to second_source.
+Held rows promoted as empty-service notes: Chester, DeKalb, Warren, Grundy, Rhea, Pickett, Dickson.

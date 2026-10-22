@@ -28,3 +28,10 @@ All 14 evidence fragments found on freshly fetched pages (James City, Winchester
 - 51075 Goochland County (pop 28,223): PASS. Quote found (billing for EMS transports since 2013); Station 8 page 2025 ambulance; only Goochland Fire-Rescue licence.
 
 Audited 10, passed 10, failed 0; population passed 347,982. Promoted all 10 into VA_local_2026-10.json (17 -> 27 FIPS; pre-promote copy web_raw/VA/audit/VA_local_before_promote.json).
+
+## Audit 4 (verify run 2), 2026-10-22: 3 A audited, 3 PASS, 0 FAIL; pop passed 81,440
+All quotes re-found (web_raw/VA/audit4/). Licences: VA_oems.json ground licences grepped by place names and county ZIPs.
+- Caroline 51033 PASS: county Fire-Rescue page, ~2,850 EMS transports/yr; only ground licence in county ZIPs/places is CCFR 00944; Fort Walker (military, unlicensed) not a public 911 transporter; own search: no contrary provider.
+- Botetourt 51023 PASS: county About Us, 5 ALS ambulances 24/7 (post Nov 2024 Read Mountain change); only ground licence is 01128 (Roanoke Co F&R 5925 Cove Rd and Blue Ridge VFC/VRS are other counties); own search 2026 (whole-blood program) agrees.
+- Martinsville city 51690 PASS: city page, two ALS ambulances, "advanced life support EMS transport", 11 sq mi; Henry County DPS licence 00647 at 1024 DuPont Rd: OSM places Dupont Road in Henry County, Census geocodes 1000 Dupont Rd to Henry County, so not city-based; own search (Google News titles only): WDBJ 2024-11 "Martinsville EMS expands non-emergency transportation", 2026-09 chief retiring; no contrary provider.
+Held rows promoted as empty-service notes: Wythe, Danville, Bristol, Manassas.

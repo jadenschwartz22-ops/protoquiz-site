@@ -5,357 +5,221 @@
   "via": "county, company and local news pages (local sources); Tennessee Department of Health EMS Directory pulled per county 2026-10-22 as the licence cross-check"
  },
  "county_verdict": {
-  "47017": {
-   "county": "Carroll",
+  "47103": {
+   "county": "Lincoln",
    "tier": "A",
    "services": [
     {
-     "name": "Baptist Ambulance (Priority Ambulance; licence 10222, Shoals Ambulance dba Baptist-Carroll County)",
-     "transport": true,
-     "ownership": "private (Priority Ambulance, partner of Baptist Memorial Hospital-Carroll County)",
-     "partial": false,
-     "area": "whole county",
-     "source_url": "https://www.mckenziebanner.com/stories/chiefgaskins-statement-ambulanceissuescc",
-     "evidence": "At the same time, I have serious concerns about Priority’s current ambulance service in Carroll County. [...] My goal is a dependable, reliable ambulance service that responds when our citizens call 911 and provides timely transports for Baptist Hospital",
-     "vintage": "2026-10-10"
-    }
-   ],
-   "page_note": "Baptist Ambulance, part of Priority Ambulance, runs the county's 911 ambulance service with Baptist Memorial Hospital-Carroll County. It is the only ambulance service licensed in the county.",
-   "second_source": "https://priorityambulance.com/brands/baptist-ambulance/ (2026-09-03: Today, Baptist Ambulance operates hubs across Carroll, Obion, Shelby, and Tipton counties in Tennessee [...] TN Service Areas: [...] Carroll Obion Shelby Tipton McNairy Services Provided Emergency 9-1-1); TN EMS Directory 2026-10-22 (internet.health.tn.gov/EMSDirectory): only ambulance licence based in Carroll, licence 10222, *PRIMARY 911"
-  },
-  "47131": {
-   "county": "Obion",
-   "tier": "A",
-   "services": [
-    {
-     "name": "Baptist Ambulance (Priority Ambulance; licence 10224, Shoals Ambulance dba Baptist-Obion County)",
-     "transport": true,
-     "ownership": "private (Priority Ambulance, partner of Baptist Memorial Hospital-Union City)",
-     "partial": false,
-     "area": "whole county",
-     "source_url": "https://priorityambulance.com/brands/baptist-ambulance/",
-     "evidence": "Today, Baptist Ambulance operates hubs across Carroll, Obion, Shelby, and Tipton counties in Tennessee [...] TN Service Areas: [...] Carroll Obion Shelby Tipton McNairy Services Provided Emergency 9-1-1",
-     "vintage": "2026 (page modified 2026-09-03)"
-    }
-   ],
-   "page_note": "Baptist Ambulance, part of Priority Ambulance, provides 911 ambulance service in Obion County from its Union City base. It is the only ambulance service licensed in the county.",
-   "second_source": "TN EMS Directory 2026-10-22 (internet.health.tn.gov/EMSDirectory): only ambulance licence based in Obion, Shoals Ambulance dba Baptist-Obion County, Union City, licence 10224, *PRIMARY 911; https://www.wpsdlocal6.com/news/obion-fire-leads-water-recovery-in-elbridge-community/article_2e60aa59-12b4-423e-8f35-f40c0d348d5a.html (2026-08-20: \"Obion County Sheriff's Department, Obion County EMA Director, TWRA, Baptist Ambulance Service, Obion County 911 Dispatch and Obion Sheriff's Department Dispatch assisted in the recovery effort.\"); https://www.radionwtn.com/2025/12/15/willow-tree-restaurant-destroyed-by-fire/ (2025-12: Baptist Ambulance Service at an Obion County fire scene with Obion County 911)"
-  },
-  "47109": {
-   "county": "McNairy",
-   "tier": "held",
-   "services": [
-    {
-     "name": "Baptist Ambulance (Priority Ambulance; licence 10358, Shoals Ambulance dba Baptist-McNairy County)",
-     "transport": true,
-     "ownership": "private (Priority Ambulance)",
-     "partial": false,
-     "area": "whole county",
-     "source_url": "https://priorityambulance.com/brands/baptist-ambulance/",
-     "evidence": "TN Service Areas: [...] Carroll Obion Shelby Tipton McNairy Services Provided Emergency 9-1-1 Emergency 9-1-1 Advanced Life Support Transports",
-     "vintage": "2026 (page modified 2026-09-03)"
-    }
-   ],
-   "page_note": "Baptist Ambulance, part of Priority Ambulance, provides 911 ambulance service in McNairy County from its Selmer base. It is the only ambulance service licensed in the county. No page yet names Baptist Ambulance as the 911 ambulance service for McNairy County itself; its company page lists McNairy only in a multi-county service list.",
-   "second_source": "TN EMS Directory 2026-10-22 (internet.health.tn.gov/EMSDirectory): only ambulance licence based in McNairy, Shoals Ambulance dba Baptist-McNairy County, Selmer, licence 10358, *PRIMARY 911"
-  },
-  "47085": {
-   "county": "Humphreys",
-   "tier": "A",
-   "services": [
-    {
-     "name": "First Call Ambulance (Priority Ambulance; licence 10337, First Call Ambulance LLC-Humphreys County)",
-     "transport": true,
-     "ownership": "private (Priority Ambulance)",
-     "partial": false,
-     "area": "whole county",
-     "source_url": "https://priorityambulance.com/brands/firstcall-ambulance/",
-     "evidence": "including a milestone achievement in 2023 when we became the exclusive provider of both emergency and non-emergency ambulance services for Humphreys County",
-     "vintage": "2026 (page modified 2026-09-03)"
-    }
-   ],
-   "page_note": "First Call Ambulance, part of Priority Ambulance, has been the only provider of emergency and non-emergency ambulance service in Humphreys County since 2023, from its Waverly base. It is the only ambulance service licensed in the county.",
-   "second_source": "https://www.wsmv.com/2026/05/23/five-injured-crash-dickson-humphreys-county-line/ (2026-05: First Call EMS among responders at a crash on the Dickson-Humphreys county line); TN EMS Directory 2026-10-22: only ambulance licence based in Humphreys, licence 10337, *PRIMARY 911"
-  },
-  "47127": {
-   "county": "Moore",
-   "tier": "A",
-   "services": [
-    {
-     "name": "Metro Moore County EMS (Metro Moore County Ambulance Service, licence 6401)",
-     "transport": true,
-     "ownership": "county EMS (Metro Lynchburg-Moore County government)",
-     "partial": false,
-     "area": "whole county",
-     "source_url": "https://thelynchburgtimes.com/metro-ems-lifepak-35-monitors/",
-     "evidence": "A major upgrade to Metro Moore County EMS could mean the difference between life and death for residents in critical moments. Thanks to a state-funded grant, local ambulances are now equipped with cutting-edge Lifepak 35 cardiac monitors",
-     "vintage": "2025-05-01"
-    }
-   ],
-   "page_note": "Metro Moore County EMS, run by the Metropolitan Lynchburg-Moore County government, answers 911 calls and transports patients across the county. It is the only ambulance service licensed in the county.",
-   "second_source": "TN EMS Directory 2026-10-22 (internet.health.tn.gov/EMSDirectory): only ambulance licence based in Moore, licence 6401, *PRIMARY 911"
-  },
-  "47069": {
-   "county": "Hardeman",
-   "tier": "A",
-   "services": [
-    {
-     "name": "Hardeman County Ambulance Service (licence 3502)",
-     "transport": true,
-     "ownership": "county EMS",
-     "partial": false,
-     "area": "whole county",
-     "source_url": "https://tippahnews.com/public-service/middleton-ambulance-station-lone-oaks/",
-     "evidence": "Families in the south end of Hardeman County could soon get help faster in a medical emergency. A new Middleton ambulance station is being set up at the University of Tennessee’s Lone Oaks Farm. Hardeman County Ambulance Service (HCAS) is partnering with the farm to keep an ambulance at one of its residences",
-     "vintage": "2026-10-09"
-    }
-   ],
-   "page_note": "Hardeman County Ambulance Service, run by the county, answers 911 calls and transports patients across the county, and is adding a station in Middleton. It is the only ambulance service licensed in the county.",
-   "second_source": "TN EMS Directory 2026-10-22 (internet.health.tn.gov/EMSDirectory): only ambulance licence based in Hardeman, licence 3502, *PRIMARY 911"
-  },
-  "47111": {
-   "county": "Macon",
-   "tier": "A",
-   "services": [
-    {
-     "name": "Macon County EMS (licence 5601)",
-     "transport": true,
-     "ownership": "county EMS",
-     "partial": false,
-     "area": "whole county",
-     "source_url": "https://www.maconcountychronicle.com/2026/09/15/macon-county-ems-reports/",
-     "evidence": "According to the report, all three county ambulance stations — Lafayette, Red Boiling Springs and Westside — remained open throughout the month of July. Together, the three stations responded to 405 calls, resulting in 250 transports.",
-     "vintage": "2026-09-15"
-    }
-   ],
-   "page_note": "Macon County EMS, run by the county, answers 911 calls and transports patients from stations in Lafayette, Red Boiling Springs and Westside. It is the only ambulance service licensed in the county.",
-   "second_source": "TN EMS Directory 2026-10-22 (internet.health.tn.gov/EMSDirectory): only ambulance licence based in Macon, licence 5601, *PRIMARY 911"
-  },
-  "47091": {
-   "county": "Johnson",
-   "tier": "A",
-   "services": [
-    {
-     "name": "Johnson County Rescue Squad & EMS (licence 4602)",
-     "transport": true,
-     "ownership": "nonprofit",
-     "partial": false,
-     "area": "whole county",
-     "source_url": "https://www.firefighterclosecalls.com/tennessee-rescue-squad-member-lodd-dies-from-crash-injuries/",
-     "evidence": "a civilian driver crossed the center line of a northeast Tennessee highway, crashing into the rescue squad’s ambulance, killing the patient being transported. [...] McCoy was the patient being transported to a hospital by the Johnson County Rescue Squad.",
-     "vintage": "2026-09-18"
-    }
-   ],
-   "page_note": "Johnson County Rescue Squad & EMS answers 911 calls and transports patients across the county. It is the only ambulance service licensed in the county.",
-   "second_source": "TN EMS Directory 2026-10-22 (internet.health.tn.gov/EMSDirectory): only ambulance licence based in Johnson, licence 4602, PRIMARY 911, *PRIMARY 911"
-  },
-  "47057": {
-   "county": "Grainger",
-   "tier": "A",
-   "services": [
-    {
-     "name": "Grainger County EMS (Grainger County Ambulance Authority, licence 2901)",
-     "transport": true,
-     "ownership": "county EMS",
-     "partial": false,
-     "area": "whole county",
-     "source_url": "https://graingercountyems.com/",
-     "evidence": "Grainger County Ambulance Authority, also known as Grainger County Emergency Medical Service, is a licensed municipal ambulance [...] Utilizing four strategically placed stations we are proud to provide around-the-clock advanced life support emergency and non-emergency medical services to the communities of Bean Station, Blaine, Rutledge, Thorn Hill, Powder Springs, Washburn, Joppa, and surrounding areas.",
-     "vintage": "2025 (page dated 2025-06-16)"
-    }
-   ],
-   "page_note": "Grainger County EMS, the county's ambulance authority, answers 911 calls and transports patients from four stations across the county. It is the only ambulance service licensed in the county.",
-   "second_source": "TN EMS Directory 2026-10-22 (internet.health.tn.gov/EMSDirectory): only ambulance licence based in Grainger, licence 2901, *PRIMARY 911"
-  },
-  "47135": {
-   "county": "Perry",
-   "tier": "A",
-   "services": [
-    {
-     "name": "Perry County EMS (operated by Ambulance Services of Lexington; licence 10361)",
-     "transport": true,
-     "ownership": "private (contractor to Perry County)",
-     "partial": false,
-     "area": "whole county",
-     "source_url": "https://www.lewisherald.com/story/2025/08/07/health/ambulance-services-of-lexington-assumes-operations-of-perry-county-ems/10721.html",
-     "evidence": "Ambulance Services of Lexington is proud to announce through diligent work alongside the Perry County Commissioners and Perry County Mayor, as well as the city of Linden and Lobelville and their Aldermen, it has officially been granted the contract to assume operations of Perry County EMS.",
-     "vintage": "2025-08-07"
-    }
-   ],
-   "page_note": "Perry County EMS answers 911 calls and transports patients across the county; since August 2025 it has been operated under county contract by Ambulance Services of Lexington. It is the only ambulance service licensed in the county.",
-   "second_source": "https://www.wbbjtv.com/2026/05/28/perry-county-ems-involved-3-vehicle-collision-thursday/ (2026-05-28: Perry County EMS ambulance in Linden; Glynn Mooney, CEO of Perry County EMS); TN EMS Directory 2026-10-22 (internet.health.tn.gov/EMSDirectory): only ambulance licence based in Perry, licence 10361, *PRIMARY 911"
-  },
-  "47181": {
-   "county": "Wayne",
-   "tier": "A",
-   "services": [
-    {
-     "name": "Wayne County EMS (Maury Regional Hospital dba Wayne Medical Center, licence 9960)",
+     "name": "Lincoln Health Ambulance Services (HH Health System; licence 10327)",
      "transport": true,
      "ownership": "hospital",
      "partial": false,
      "area": "whole county",
-     "source_url": "https://waynecountynews.net/stories/new-county-commission-hears-hospital-ems-statistics-from-maury-regional,155882",
-     "evidence": "Wayne County EMS operates three Advanced Life Support (ALS) ambulances per shift. [...] In the last fiscal year, the total number of 911 EMS calls was 2,578, an average of seven per day.",
-     "vintage": "2026-10-13"
+     "source_url": "https://hhlincolnhealth.org/services/ambulance-service/",
+     "evidence": "At Lincoln Health Ambulance Services, we strive to provide superior service to the citizens of Lincoln County and all who pass through. We currently staff three ALS ambulances [...] Services 911 emergency response Community outreach Non-emergency transport Inter-facility transport",
+     "vintage": "2026 (page modified 2026-02-25)"
     }
    ],
-   "page_note": "Wayne County EMS, run by Maury Regional's Wayne Medical Center, answers 911 calls and transports patients across the county with three advanced life support ambulances per shift. It is the only ambulance service licensed in the county.",
-   "second_source": "TN EMS Directory 2026-10-22 (internet.health.tn.gov/EMSDirectory): only ambulance licence based in Wayne, licence 9960, *PRIMARY 911"
+   "page_note": "Lincoln Health Ambulance Services, run by Lincoln Health (part of the Huntsville Hospital Health System), answers 911 calls across Lincoln County. It is the only ambulance service licensed in the county.",
+   "second_source": "TN EMS Directory 2026-10-22 (internet.health.tn.gov/EMSDirectory): only ambulance licence based in Lincoln, HH Health System Emergency Medical Service, Fayetteville, licence 10327, *PRIMARY 911"
   },
-  "47169": {
-   "county": "Trousdale",
+  "47045": {
+   "county": "Dyer",
    "tier": "A",
    "services": [
     {
-     "name": "Trousdale County EMS (Hartsville/Trousdale Ambulance Service, licence 10063)",
+     "name": "Medical Center EMS (West Tennessee Healthcare; licence 10248)",
      "transport": true,
-     "ownership": "county EMS (Hartsville/Trousdale metro government)",
+     "ownership": "hospital (contractor to Dyer County)",
      "partial": false,
      "area": "whole county",
-     "source_url": "https://www.lebanondemocrat.com/hartsville/the-first-chain-of-survival/article_ad2c5e28-e035-597b-84c1-0630b3ba7c36.html",
-     "evidence": "According to Batey, Trousdale County EMS is made up of the ambulance service that includes both paramedics and emergency medical technicians (EMT), who are always ready to respond to calls 24 hours a day, seven days a week, 365 days a year.",
-     "vintage": "2024-05-25"
+     "source_url": "https://www.stategazette.com/news/ems-requests-new-annual-subsidy-of-1-537m-quality-of-local-hospital-care-comes-into/article_b53b09a9-8cd0-5323-8ec4-68b0354a3310.html",
+     "evidence": "Dyer County began paying a $1.037M subsidy in July 2023, following a letter received from Medical Center EMS prompting local government officials of its plans to pull services without additional funding. [...] Medical Center EMS has fulfilled its contractual obligation to response times throughout the entirety of its contract.",
+     "vintage": "2025-01-24"
     }
    ],
-   "page_note": "Trousdale County EMS, run by the Hartsville/Trousdale County government, answers 911 calls around the clock and transports patients across the county. It is the only ambulance service licensed in the county.",
-   "second_source": "TN EMS Directory 2026-10-22 (internet.health.tn.gov/EMSDirectory): only ambulance licence based in Trousdale, licence 10063, director Matt Batey, *PRIMARY 911"
+   "page_note": "Medical Center EMS, part of West Tennessee Healthcare, provides ambulance service in Dyer County under a county-subsidised contract. It is the only ambulance service licensed in the county.",
+   "second_source": "https://www.stategazette.com/news/freon-leak-prompts-evacuation-at-st-joseph-manor/article_bafac78e-3a3a-55a9-b247-0bc426a24c6a.html (2026-03-19, Dyersburg: Those transported included a Dyersburg firefighter [...] and two Medical Center EMS team members; the fire department thanked Medical Center EMS); State Gazette 2026-01-21 Dyer County house fire: fire departments responded 'along with Medical Center EMS'; TN EMS Directory 2026-10-22 (internet.health.tn.gov/EMSDirectory): sole licence, Medical Center EMS-Dyer County, licence 10248, *PRIMARY 911"
   },
-  "47087": {
-   "county": "Jackson",
+  "47133": {
+   "county": "Overton",
    "tier": "A",
    "services": [
     {
-     "name": "Jackson County EMS (Jackson County Ambulance Service, licence 4401)",
-     "transport": true,
-     "ownership": "county EMS",
-     "partial": false,
-     "area": "whole county",
-     "source_url": "https://www.wsmv.com/2026/01/23/emergency-personnel-respond-10-weather-related-incidents-jackson-county/",
-     "evidence": "These incidents resulted in three people being injured, who required transport by Jackson County EMS to local hospitals.",
-     "vintage": "2026-01-23"
-    }
-   ],
-   "page_note": "Jackson County EMS, run by the county, answers 911 calls and transports patients across the county. It is the only ambulance service licensed in the county.",
-   "second_source": "TN EMS Directory 2026-10-22 (internet.health.tn.gov/EMSDirectory): only ambulance licence based in Jackson, licence 4401, *PRIMARY 911"
-  },
-  "47027": {
-   "county": "Clay",
-   "tier": "A",
-   "services": [
-    {
-     "name": "Clay County EMS (licence 10335)",
+     "name": "Overton County EMS (Overton County Ambulance Service; licence 6702)",
      "transport": true,
      "ownership": "county EMS",
      "partial": false,
      "area": "whole county",
-     "source_url": "https://theucnow.com/2026/07/29/clay-county-officials-attend-rural-healthcare-forum/",
-     "evidence": "“We’ve been very blessed with our EMS crew that have stepped up to the plate and they’ve done an outstanding job as far as providing emergency ambulance service to our citizen out here [...]” Hall said having a local facility would reduce the reliance on the two ambulances that serve the entire county.",
-     "vintage": "2026-07-29"
+     "source_url": "https://livingstonenterprise.net/stories/overton-countys-sky-ignites-with-15th-annual-ems-fireworks-show,258561",
+     "evidence": "Overton County EMS operates stations in both Livingston and Hanging Limb, providing emergency services to the citizens of Overton County.",
+     "vintage": "2025-06-30"
     }
    ],
-   "page_note": "Clay County EMS, run by the county, answers 911 calls and transports patients across the county with two ambulances. It is the only ambulance service licensed in the county.",
-   "second_source": "TN EMS Directory 2026-10-22 (internet.health.tn.gov/EMSDirectory): only ambulance licence based in Clay, licence 10335, director Andrew Hall, *PRIMARY 911"
+   "page_note": "Overton County EMS runs the county's ambulance service from stations in Livingston and Hanging Limb. It is the only ambulance service licensed in the county.",
+   "second_source": "https://www.overtoncountynews.com/news/three-injured-in-hwy-84-collision-thursday/article_d02964e0-1268-4d6b-8124-748b76cbbc54.html (2025-07-22: were transported to Livingston Regional Hospital by Overton County EMS); https://theucnow.com/2026/10/19/split-vote-confirms-caleb-sells-as-overton-ems-director/ (2026-10-19, county commission confirms EMS director); TN EMS Directory 2026-10-22 (internet.health.tn.gov/EMSDirectory): the other licence, Med-X Services, is an invalid vehicle (wheelchair) service, not an ambulance"
   },
-  "47077": {
-   "county": "Henderson",
+  "47139": {
+   "county": "Polk",
    "tier": "A",
    "services": [
     {
-     "name": "Henderson County EMS (licence 10268)",
+     "name": "AmeriPro Health Tennessee (AmeriPro EMS of Tennessee, LLC; licence 10324)",
      "transport": true,
-     "ownership": "private (BradenHealth)",
+     "ownership": "private",
      "partial": false,
      "area": "whole county",
-     "source_url": "https://www.wbbjtv.com/2026/08/07/henderson-county-fire-department-releases-statement-thursdays-fatal-i-40-crash/",
-     "evidence": "Henderson County EMS was dispatched at approximately 11:16 a.m. on Aug. 6, 2026, to a reported RV accident near mile marker 116. [...] Ground EMS crews assessed, treated, and transported the remaining patients to local hospitals.",
-     "vintage": "2026-08-07"
+     "source_url": "https://www.ameriprohealth.com/locations/",
+     "evidence": "AmeriPro Health Tennessee provides 911, BLS/ALS, CCT, and interfacility ambulance services in Polk County.",
+     "vintage": "current page, retrieved 2026-10-22 (undated)"
     }
    ],
-   "page_note": "Henderson County EMS answers 911 calls and transports patients across the county; it has been operated by BradenHealth (Ambulance Services of Lexington) since 2020. It is the only ambulance service licensed in the county.",
-   "second_source": "https://www.lexingtonprogress.com/2021/02/10/bradenhealth-investing-in-local-ems-and-hcch/ (2021: BradenHealth operates Henderson County EMS, acquired 2020-04-01); https://www.firefighterclosecalls.com/tennessee-ambulance-involved-in-head-on-crash/ (2025-08: Henderson County EMS ambulance crew); https://www.lewisherald.com/story/2025/08/07/health/ambulance-services-of-lexington-assumes-operations-of-perry-county-ems/10721.html (2025-08-07: Ambulance Services of Lexington 'honored to expand our service area to Perry County'); TN EMS Directory 2026-10-22 (internet.health.tn.gov/EMSDirectory): only ambulance licence based in Henderson, licence 10268, *PRIMARY 911"
+   "page_note": "AmeriPro Health Tennessee, a private company, provides 911 ambulance service in Polk County. It is the only ambulance service licensed in the county.",
+   "second_source": "TN EMS Directory 2026-10-22 (internet.health.tn.gov/EMSDirectory): only ambulance licence based in Polk, AmeriPro EMS of Tennessee, LLC, Copperhill, licence 10324, *PRIMARY 911"
   },
-  "47175": {
-   "county": "Van Buren",
+  "47047": {
+   "county": "Fayette",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Fayette County Ambulance Service (Fayette County EMS; licence 2401)",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://fayettetn.us/departments/ems/",
+     "evidence": "We have established an outstanding reputation for high quality patient care and medical transportation services. EMS Stations Headquarters EMS Station #1 [...] Somerville [...] Oakland EMS Station #4 [...] Rossville EMS Station # 6 [...] West Fayette Substation EMS # 10 [...] Glenn Miller Director",
+     "vintage": "2017 (page modified 2017-12-04); no sign of change: same director in 2026 licence list"
+    }
+   ],
+   "page_note": "Fayette County EMS, the county's own ambulance service, covers the county from stations in Somerville, Oakland, Rossville and west Fayette. It is the only ground ambulance service licensed in the county.",
+   "second_source": "TN EMS Directory 2026-10-22 (internet.health.tn.gov/EMSDirectory): Fayette County Ambulance Service, Somerville, licence 2401, director Glenn Miller, *PRIMARY 911 (same director as the county page); the only other licence, PHI Health, is a Kentucky-based helicopter service"
+  },
+  "47023": {
+   "county": "Chester",
    "tier": "held",
    "services": [
     {
-     "name": "Van Buren County EMS (Van Buren County Ambulance Service, licence 9996)",
+     "name": "Medical Center EMS (West Tennessee Healthcare; licence 10067)",
      "transport": true,
-     "ownership": "county EMS",
+     "ownership": "hospital (contractor to Chester County)",
      "partial": false,
      "area": "whole county",
-     "source_url": "https://www.wsmv.com/2026/03/02/two-drivers-airlifted-hospital-following-head-on-crash-van-buren-county/",
-     "evidence": "Piney Fire and Van Buren County EMS personnel worked together to reach both drivers and provide medical care.",
-     "vintage": "2026-03-02"
+     "source_url": "https://www.wbbjtv.com/2026/05/11/ambulance-costs-spark-debate-chester-county-officials-explore-options/",
+     "evidence": "The Chester County Budget Committee is exploring a possible switch in ambulance providers. This comes as Med Center EMS has increased its price from $419,000 to $591,650. [...] “Med Center is willing to let us continue on a month-to-month basis to get this figured out,”",
+     "vintage": "2026-05-11"
     }
    ],
-   "page_note": "Van Buren County EMS is the county's only licensed ambulance service and responds to 911 calls; a source stating that it transports 911 patients has not yet been found.",
-   "second_source": "TN EMS Directory 2026-10-22 (internet.health.tn.gov/EMSDirectory): only ambulance licence based in Van Buren, licence 9996, *PRIMARY 911"
-  },
-  "47185": {
-   "county": "White",
-   "tier": "held",
-   "services": [
-    {
-     "name": "White County EMS (licence 9302)",
-     "transport": true,
-     "ownership": "county EMS",
-     "partial": false,
-     "area": "whole county",
-     "source_url": "https://www.wsmv.com/2026/10/21/1-dead-after-crash-sparta-officials-say/",
-     "evidence": "Other agencies that responded to the crash include Cherry Creek Volunteer Fire Department, BonDeCroft Volunteer Fire Department, North End Volunteer Fire Department, White County EMS and the White County Sheriff’s Office",
-     "vintage": "2026-10-21"
-    }
-   ],
-   "page_note": "White County EMS is the county's only licensed ambulance service and responds to 911 calls; a source stating that it transports 911 patients has not yet been found.",
-   "second_source": "TN EMS Directory 2026-10-22 (internet.health.tn.gov/EMSDirectory): only ambulance licence based in White, licence 9302, *PRIMARY 911"
-  },
-  "47159": {
-   "county": "Smith",
-   "tier": "held",
-   "services": [
-    {
-     "name": "Smith County Ambulance Service (licence 8001)",
-     "transport": true,
-     "ownership": "county EMS",
-     "partial": false,
-     "area": "whole county",
-     "source_url": "https://internet.health.tn.gov/EMSDirectory",
-     "evidence": "Listed under Smith: SMITH COUNTY AMBULANCE SERVICE, Carthage, A - Advanced Life Support, licence 8001, *PRIMARY 911",
-     "vintage": "Directory pulled 2026-10-22"
-    },
-    {
-     "name": "Smith County Rescue Squad",
-     "transport": null,
-     "ownership": "nonprofit",
-     "partial": true,
-     "area": "scene response; transport role unclear",
-     "source_url": "https://www.wsmv.com/2026/05/12/motorcyclist-dies-nashville-hospital-after-crash-smith-county/",
-     "evidence": "“EMS personnel provided care to the motorcycle operator at the scene before transporting to the boat ramp in Stonewall where the Gordonsville Fire Department had established a landing zone,” SCRS said in a Facebook post.",
-     "vintage": "2026-05-12"
-    }
-   ],
-   "page_note": "Smith County Ambulance Service is the only ambulance service licensed in the county. The Smith County Rescue Squad also reports EMS crews moving patients; which agency carries 911 patients to hospital is not yet confirmed.",
+   "page_note": "Medical Center EMS (West Tennessee Healthcare) provided Chester County's ambulance service as of May 2026, month to month, while the county considered a new provider. Whether the county has since changed provider is not yet confirmed.",
    "second_source": ""
   },
-  "47007": {
-   "county": "Bledsoe",
+  "47041": {
+   "county": "DeKalb",
    "tier": "held",
    "services": [
     {
-     "name": "Bledsoe County EMS (licence 9956)",
+     "name": "DeKalb County EMS (DeKalb Ambulance Service; licence 10043)",
      "transport": true,
      "ownership": "county EMS",
      "partial": false,
      "area": "whole county",
-     "source_url": "https://internet.health.tn.gov/EMSDirectory",
-     "evidence": "Listed under Bledsoe: BLEDSOE COUNTY EMS, Pikeville, A - Advanced Life Support, licence 9956 (no primary 911 tag shown)",
-     "vintage": "Directory pulled 2026-10-22"
+     "source_url": "https://www.wjle.com/dekalb-ems-director-seeks-more-funds-and-new-pay-plan-for-staff-in-2026-27-budget/",
+     "evidence": "As for EMS Cost Recovery, Director Austin said the DeKalb Ambulance Service’s rate is not bad. [...] When a patient is treated and transported, the insurance companies are billed",
+     "vintage": "2026-04-29"
     }
    ],
-   "page_note": "Bledsoe County EMS is the only ambulance service licensed in the county; a current source stating that it answers 911 calls and transports patients has not yet been found.",
-   "second_source": "https://www.local3news.com/local-news/pikeville-firefighter-and-longtime-bledsoe-county-ems-responder-dies-at-43/article_286231f3-0218-4807-8acf-1d9d775b028c.html (2026-10-20, names Bledsoe County EMS, no transport wording)"
+   "page_note": "DeKalb County EMS runs the county's ambulance service. A second licensed ambulance service, Saint Thomas Emergency Medical Service in Smithville, is not yet confirmed as answering or not answering 911 calls.",
+   "second_source": ""
+  },
+  "47177": {
+   "county": "Warren",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Warren County Ambulance Service (Warren County EMS; licence 8901)",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.herald-citizen.com/mcminnville/local-services-mount-robust-defense-against-severe-winter-weather/article_f0740b8b-860b-5a22-ac15-3911f75400ea.html",
+     "evidence": "The EMS ambulances and crews are continually poised to roll, but sometimes they have to take a detour to avoid ice-covered hills and other road hazards, Denney noted. “Sometimes we have to carry [patients] from their house to the road to get them into an ambulance,”",
+     "vintage": "2026-02-10"
+    }
+   ],
+   "page_note": "Warren County EMS runs the county's ambulance service. Ascension Saint Thomas also stationed an ambulance in McMinnville in 2022 to serve Warren County; whether it takes 911 calls is not yet confirmed.",
+   "second_source": ""
+  },
+  "47061": {
+   "county": "Grundy",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Grundy EMS Inc. (licence 9955)",
+     "transport": true,
+     "ownership": "private",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://svalleynow.com/2026/09/06/fatal-accident-on-hwy-399/",
+     "evidence": "They were joined on scene by [...] Grundy County Sheriff’s Office, Puckett, and Grundy EMS.",
+     "vintage": "2026-09-06"
+    }
+   ],
+   "page_note": "Grundy EMS is the ambulance service licensed in Grundy County. In 2025 Warren County approved an agreement to send its ambulances to valley areas of Grundy County near the Warren line; whether that agreement took effect, and a current source saying Grundy EMS transports patients, are not yet confirmed.",
+   "second_source": ""
+  },
+  "47143": {
+   "county": "Rhea",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Rhea County Ambulance Service (licence 7201)",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.rheaheraldnews.com/news/article_b43b775d-aeee-496b-97d6-4d53695f378d.html",
+     "evidence": "“The Rhea County Sheriff’s Office would like to thank the Tennessee Highway Patrol, Rhea County Office of Emergency Management and Rhea Ambulance for their assistance and support during this operation,”",
+     "vintage": "2026-10-14"
+    }
+   ],
+   "page_note": "Rhea County Ambulance Service is the only ambulance service licensed in Rhea County and is active in 2026; a current source saying it carries 911 patients is not yet confirmed.",
+   "second_source": ""
+  },
+  "47137": {
+   "county": "Pickett",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Pickett County Ambulance Service (licence 6902)",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://theucnow.com/2026/06/29/seven-rescued-as-floods-damage-pickett-county-roads/",
+     "evidence": "EMS and EMA Director Garry Garrett said the most significant impacts occurred near Highway 127, Moodyville, and Caney Creek.",
+     "vintage": "2026-06-29"
+    }
+   ],
+   "page_note": "Pickett County Ambulance Service is the only ambulance service licensed in Pickett County; a current source saying it carries 911 patients is not yet confirmed.",
+   "second_source": ""
+  },
+  "47043": {
+   "county": "Dickson",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Dickson County EMS (Dickson County Ambulance Service; licence 2201)",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.wsmv.com/2024/07/08/dickson-county-ems-paramedic-dies-tragic-off-duty-accident/",
+     "evidence": "“To the EMS services that sent ambulances to help us cover calls yesterday, we appreciate you more than you know.”",
+     "vintage": "2024-07-08"
+    }
+   ],
+   "page_note": "Dickson County EMS runs the county's ambulance service. A second licensed service, First Call Ambulance (basic life support), is based in Dickson; that it does only non-emergency work is not yet confirmed.",
+   "second_source": ""
   }
  }
 }

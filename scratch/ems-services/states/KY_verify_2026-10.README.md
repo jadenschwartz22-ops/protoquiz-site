@@ -1,34 +1,30 @@
-# KY verify lane, 2026-10-22 (second KY lane, 60 min, no sub-agents, 0 WebSearch)
+# KY verify lane, 2026-10-22 (third KY lane, ~55 min, no sub-agents, 0 WebSearch)
 
-File: `states/KY_verify_2026-10.json` (builder: session scratchpad `kyv.py`, not kept). Raw captures: `states/web_raw/KY/v/`.
-Skipped: every county in `KY_local_2026-10.json`, plus Christian and McCracken (already tier A on the atlas).
+File: `states/KY_verify_2026-10.json` (overwritten; only the 9 counties researched this time). Raw captures and helper
+scripts: `states/web_raw/KY/v4/` (f.py fetch, g.py Google News titles, b.py Bing News RSS, ss.py/sb.py site search).
+Skipped: every county in `KY_local_2026-10.json`.
 
 ## Result
-- A (18, pop 646,651): Scott, Jessamine, Franklin, Nelson, Barren, Hopkins, Calloway, Marshall, Boyle, Montgomery,
-  Logan, Woodford, Taylor, Carter, Lincoln, Anderson, Rowan, Allen.
-- held (2): Clark (Cross Medical Response licence 1700, Class Ia with a 911 permit, area Clark County, unexplained;
-  Winchester source is 2019), Graves (only a 2025 news line naming "Mayfield EMS"; no page from the service).
-- Not reached (biggest first): Bullitt, Oldham, Pulaski, Laurel, Pike, Shelby, Boyd, Henderson, Whitley, Greenup,
-  Floyd, Muhlenberg, Meade, Knox, Grayson, Perry, Grant, Harlan, Ohio, Mercer, Bell, Johnson, Breckinridge and smaller.
-  Stopped after Allen (pop 22k).
+- A (4, pop 121,610): Henderson, Meade, Grayson, Hart.
+- held (5): Bullitt (Mt. Washington Fire & EMS licence 1697 unconfirmed by a page), Oldham (see WRONG below),
+  Breckinridge / Russell / Simpson (2026 news names "<County> EMS" responding; name differs from the licence holder or
+  no transport wording).
+- WRONG on the current map: Oldham. Map names AmeriPro; the county's 911 service is Oldham County EMS (Baptist Health
+  operates it for the Oldham County Ambulance Taxing District; KBEMS 1633 mislabels it "without transport"). AmeriPro's
+  licence 1707 lists Oldham but its found 911 contract is Henry County (from 2025-03).
+- Not reached (biggest first): Pulaski, Laurel, Pike, Shelby, Boyd, Whitley, Greenup, Floyd, Muhlenberg, Knox, Perry,
+  Grant, Harlan, Ohio, Mercer, Bell, Johnson, Spencer, Bourbon, Letcher, Marion, Wayne, Clay, Harrison, Adair, Garrard,
+  Mason, McCreary, Rockcastle and smaller. Shelby, Muhlenberg, Perry, Mercer, Spencer, Adair: searched, nothing usable.
 
-## Method (every A row)
-1. Step 4 first: KBEMS EMS Directory 2026-08-01 (`KY_public_2026-10.json`) lists exactly one Class Ia 911-transport
-   licence whose area is the whole county (Logan: two licences, both Logan County EMS; IFT-typed AmeriPro/SkyLife/
-   Vanderbilt, Class III/V/VIII and plant-only Class IV rows explained as non-911). That row is quoted as `licence_evidence`.
-2. One opened local page (agency/county site or 2024+ news) confirming the agency runs the county's ambulance service now.
-3. Cities over 20k checked: Georgetown (joint city-county EMS), Nicholasville (Jessamine EMS), Frankfort (city FD is the
-   licensee). No other KY city over 20k falls in these counties.
-4. `second_source` = NG911 EMS boundary label only where the label names the agency (blank where it names a PSAP).
+## Method
+KY rule as in the audited second lane: one Class Ia whole-county 911 transport licence (KBEMS 2026-08-01) + an opened
+2024+ local page naming the service for the county. Grayson and Meade's 2026 pages say "assisted/responded" (as Logan);
+Meade adds a 2022 "transported" line. Henderson rests on the live undated Deaconess EMS page; the NG911 label
+"AMR-Henderson" is an old name with no AMR licence in the county.
 
-## Weak points (audit first)
-- Page does not itself say "transport" (rests on KBEMS licence text): Scott (EMS1 2026), Hopkins (2026 news, "life-saving
-  measures"), Logan (2026 news, "assisted at the scene"), Woodford (2026 news on its director), Franklin (chief's
-  statement + Med 1-5 apparatus), Lincoln (2024-10 archive), Allen.
-- Anderson source is a 2022 archived county page ("only certificate of need"); KBEMS 2026 shows no change.
-- Jessamine and Lincoln pages are Wayback captures (2025-08, 2024-10); live sites refused curl.
-- No contradictions with the current map found in the 20 counties researched (all already named the same agency).
-
-## Search tips
-- KY county sites are often ky.gov SharePoint or CivicPlus; `/sitemap.xml` worked for boylecountyky.gov, marshallcountyky.gov,
-  frankfort.ky.gov, mcfdems.com. Google News RSS "<agency>" transported finds dated news quotes quickly.
+## Search tips (2026-10-22)
+- Google News link decoding (batchexecute) gets a Google "sorry" block quickly; titles + `<source url>` still work.
+- Bing News RSS (`bing.com/news/search?q=...&format=rss`) gives direct URLs; Bing web RSS is junk.
+- WNKY site search (`wnky.com/?s=`) + article fetch works and covers south-central KY well. WHAS11 blocks curl
+  (Akamai); MSN copies of WAVE/WHAS stories open via `assets.msn.com/content/view/v2/Detail/en-us/<id>`.
+- Wayback was offline during this lane.

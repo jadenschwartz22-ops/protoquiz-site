@@ -928,6 +928,123 @@
    "tier": "held",
    "services": [],
    "page_note": "Mayfield-Graves County Ambulance Service holds the only 911 ambulance licence for Graves County. No current page from the service itself has been found yet confirming who operates it."
+  },
+  "21163": {
+   "county": "Meade",
+   "tier": "A",
+   "population": 30442,
+   "services": [
+    {
+     "name": "Meade County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.wnky.com/2-dead-after-head-on-crash-in-meade-county/",
+     "evidence": "\"KSP was assisted at the scene by Meade County Sheriff's Office, Meade County EMS, Muldraugh Fire Department, Flaherty Fire Department, ...\"",
+     "vintage": "2026-09-21",
+     "licence_source": "https://kbems.ky.gov/Legal/Documents/EMS_Agencies_2026-08-01.xlsx",
+     "licence_evidence": "KBEMS EMS Directory 2026-08-01, licence 1091, Class Ia: \"911 Response (Scene) with Transport Capability\"; service area \"Meade County\"",
+     "confirm_url": "https://www.wnky.com/4-year-old-boy-woman-killed-in-meade-county-crash/",
+     "confirm_vintage": "2022-10-30",
+     "confirm_evidence": "\"Meade County EMS transported the operator of the truck to Baptist Health Hardin for possible injuries.\""
+    }
+   ],
+   "page_note": "Meade County EMS carries 911 patients in Meade County and is the only 911 ambulance licence in the county. Fort Knox has its own on-post ambulance transport.",
+   "second_source": ""
+  },
+  "21101": {
+   "county": "Henderson",
+   "tier": "A",
+   "population": 44175,
+   "services": [
+    {
+     "name": "Deaconess EMS",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.deaconess.com/ems",
+     "evidence": "\"If you or a loved one experience a medical emergency, call 9-1-1. Skilled medical professionals will provide crucial pre-hospital care during transport to the most appropriate Deaconess facility. ... Our Kentucky/ Indiana teams serve Henderson & Union County\"",
+     "vintage": "live page 2026-10-22 (undated)",
+     "licence_source": "https://kbems.ky.gov/Legal/Documents/EMS_Agencies_2026-08-01.xlsx",
+     "licence_evidence": "KBEMS EMS Directory 2026-08-01, licence 1043, Class Ia: \"911 Response (Scene) with Transport Capability\"; service area \"Henderson & Union County\""
+    }
+   ],
+   "page_note": "Deaconess EMS carries 911 patients in all of Henderson County, including the city of Henderson. It is the only 911 ambulance licence in the county; Henderson Fire Department does not run ambulances.",
+   "second_source": "https://assets.msn.com/content/view/v2/Detail/en-us/AA2dNCiq (WEHT 2026-10-08, Henderson County water rescue: \"The Henderson City County Rescue Squad, Henderson County Sheriff's Office, fire department and Deaconess EMS all responded to the call\"); Kentucky NG911 EMS boundary layer still labels the area 'AMR-Henderson' (older operator name); no AMR licence exists for Henderson County in the 2026-08-01 state list"
+  },
+  "21099": {
+   "county": "Hart",
+   "tier": "A",
+   "population": 19923,
+   "services": [
+    {
+     "name": "Hart County Ambulance Service (Hart County EMS)",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.wnky.com/1-dead-1-flown-for-treatment-after-collision-between-vehicle-and-buggy-in-hart-county/",
+     "evidence": "\"Sara Miller, 81, of Horse Cave, a passenger in the carriage, was transported by Hart County EMS to the Medical Center at Caverna\"",
+     "vintage": "2026-05-12",
+     "licence_source": "https://kbems.ky.gov/Legal/Documents/EMS_Agencies_2026-08-01.xlsx",
+     "licence_evidence": "KBEMS EMS Directory 2026-08-01, licence 1423, Class Ia: \"911 Response (Scene) with Transport Capability\"; service area \"Hart County and an area limited to a 30 minute response time for 95% of the population served from the above address\""
+    }
+   ],
+   "page_note": "Hart County Ambulance Service (Hart County EMS) carries 911 patients in all of Hart County. It is the only 911 ambulance licence in the county.",
+   "second_source": ""
+  },
+  "21085": {
+   "county": "Grayson",
+   "tier": "A",
+   "population": 27070,
+   "services": [
+    {
+     "name": "Grayson County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.wnky.com/multiple-agencies-respond-to-house-fire-in-grayson-county/",
+     "evidence": "\"Leitchfield and Clarkson fire departments responded to the scene, along with the Grayson County Sheriff's Office, Grayson County EMS, Warren RECC and Grayson County Emergency Management.\"",
+     "vintage": "2026-10-12",
+     "licence_source": "https://kbems.ky.gov/Legal/Documents/EMS_Agencies_2026-08-01.xlsx",
+     "licence_evidence": "KBEMS EMS Directory 2026-08-01, licence 1081, Class Ia: \"911 Response (Scene) with Transport Capability\"; service area \"Grayson County and an area limited to a 30 minute response time for 95% of the population served from the agency address\""
+    }
+   ],
+   "page_note": "Grayson County EMS carries 911 patients in all of Grayson County, including Leitchfield. It is the only 911 ambulance licence in the county.",
+   "second_source": ""
+  },
+  "21185": {
+   "county": "Oldham",
+   "tier": "held",
+   "services": [],
+   "page_note": "Oldham County EMS, run by Baptist Health for the county ambulance taxing district, provides 911 ambulance service to Oldham County. AmeriPro EMS is also licensed for Oldham County; its confirmed 911 contract is in neighbouring Henry County, and whether it carries 911 patients in Oldham County is not yet confirmed."
+  },
+  "21029": {
+   "county": "Bullitt",
+   "tier": "held",
+   "services": [],
+   "page_note": "Bullitt County EMS carries 911 patients across Bullitt County. Mt. Washington Fire & EMS is licensed for 911 ambulance service in the Mt. Washington fire district (it added an EMS unit in 2021); a current page confirming it transports patients is not yet found. Zoneton Fire has proposed, but not started, its own ambulances."
+  },
+  "21027": {
+   "county": "Breckinridge",
+   "tier": "held",
+   "services": [],
+   "page_note": "Breckinridge County EMS answers 911 calls in Breckinridge County, and Breck Central Ambulance holds the county's only 911 ambulance licence. A page confirming these are the same service is not yet found."
+  },
+  "21207": {
+   "county": "Russell",
+   "tier": "held",
+   "services": [],
+   "page_note": "Russell County EMS answers 911 calls in Russell County and Russell County Ambulance Service holds the county's only 911 ambulance licence. A page saying it transports patients is not yet found."
+  },
+  "21213": {
+   "county": "Simpson",
+   "tier": "held",
+   "services": [],
+   "page_note": "Franklin-Simpson County Ambulance Service (Simpson County EMS) answers 911 calls in Simpson County and holds the county's only 911 ambulance licence. A current page saying it transports patients is not yet found."
   }
  }
 }
