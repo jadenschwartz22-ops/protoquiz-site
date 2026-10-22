@@ -1,0 +1,10 @@
+{"meta": {"state": "GA", "retrieved": "2026-10-22", "via": "county government and agency sources (local sources)"},
+ "county_verdict": {
+  "13089": {"county": "DeKalb", "tier": "A",
+   "services": [
+    {"name": "American Medical Response (AMR)", "transport": true, "ownership": "private (contractor to DeKalb County)", "partial": false, "area": "whole county, under county contract",
+     "source_url": "https://www.dekalbcountyga.gov/node/1210060", "evidence": "DeKalb County Board of Commissioners Unanimously Approves $78 Million Contract for Emergency Medical Services (AMR; county contract held since 2013)", "vintage": "2025"},
+    {"name": "DeKalb County Fire Rescue", "transport": true, "ownership": "county EMS", "partial": false, "area": "whole county, alongside AMR",
+     "source_url": "https://www.dekalbcountyga.gov/node/1210060", "evidence": "DeKalb County Fire Rescue and AMR coordinate ambulance resources and unit hours across the county", "vintage": "2025"}],
+   "page_note": "AMR carries most 911 patients under the county contract; DeKalb County Fire Rescue runs ambulances alongside it.",
+   "second_source": "https://www.firehouse.com/ems/news/55331618"}}}
