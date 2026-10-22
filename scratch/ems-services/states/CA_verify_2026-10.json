@@ -1,0 +1,183 @@
+{
+ "meta": {
+  "state": "CA",
+  "retrieved": "2026-10-22",
+  "via": "EMSA Ambulance Areas/EOA Status (rev. 1/14/2026) + LEMSA plans, county board items"
+ },
+ "county_verdict": {
+  "06111": {
+   "county": "Ventura",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Gold Coast Ambulance (AMR subsidiary)",
+     "transport": true,
+     "ownership": "private (contractor to Ventura County EMS)",
+     "partial": true,
+     "area": "ASA 1 (Ojai area) and ASA 6 (Oxnard, Port Hueneme)",
+     "source_url": "https://emsa.ca.gov/wp-content/uploads/sites/71/2025/09/Ventura-County-2024-EMS-Post-Plan.pdf",
+     "evidence": "Area or subarea (Zone) Name or Title: ASA 1 / Name of Current Provider(s): Gold Coast Ambulance ... Emergency Ambulance for 911 calls only ... ASA 6 / Name of Current Provider(s): Gold Coast Ambulance",
+     "vintage": "2024 plan, letter dated July 23, 2025"
+    },
+    {
+     "name": "American Medical Response",
+     "transport": true,
+     "ownership": "private (contractor to Ventura County EMS)",
+     "partial": true,
+     "area": "ASA 2, 3, 4, 5, 7 (Fillmore/Santa Paula, Simi Valley, Moorpark/Thousand Oaks, Camarillo, Ventura)",
+     "source_url": "https://emsa.ca.gov/wp-content/uploads/sites/71/2025/09/Ventura-County-2024-EMS-Post-Plan.pdf",
+     "evidence": "American Medical Response currently provides service to ASA 2. ... ASA 3 ... ASA 4 ... ASA 5 ... ASA 7.",
+     "vintage": "2024 plan, July 2025"
+    },
+    {
+     "name": "Ventura County Fire Department (rescue ambulances, AMR/Gold Coast subcontract)",
+     "transport": true,
+     "ownership": "mixed: county fire subcontract to AMR",
+     "partial": true,
+     "area": "augments Camarillo, Santa Paula, Simi Valley, Thousand Oaks",
+     "source_url": "https://emsa.ca.gov/wp-content/uploads/sites/71/2025/09/Ventura-County-2024-EMS-Post-Plan.pdf",
+     "evidence": "Our seven exclusive operating areas remain contracted to our grandfathered providers, who also maintain a subcontract to Ventura County Fire Department for four rescue ambulances to augment ambulance coverage in the cities of Camarillo, Santa Paula, Simi Valley and Thousand Oaks.",
+     "vintage": "July 2025"
+    }
+   ],
+   "page_note": "Seven ASAs tile the county; LEMSA letter: 'no changes to the seven exclusive operating areas during the 2024 reporting period'. RFP for future providers pending (watch). County provider page lists 'Lifeline Medical Transport' but the plan records Lifeline's assets moved to Gold Coast in June 2021.",
+   "second_source": "https://emsa.ca.gov/wp-content/uploads/sites/71/2026/01/Jan_26_AmbulanceEOAStatus.pdf (Jan 2026: ASA 1 & 6 Gold Coast Ambulance, ASA 2-5,7 AMR)"
+  },
+  "06081": {
+   "county": "San Mateo",
+   "tier": "A",
+   "services": [
+    {
+     "name": "American Medical Response",
+     "transport": true,
+     "ownership": "private (contractor to San Mateo County)",
+     "partial": true,
+     "area": "all of San Mateo County except City of South San Francisco",
+     "source_url": "https://emsa.ca.gov/wp-content/uploads/sites/71/2026/01/Jan_26_AmbulanceEOAStatus.pdf",
+     "evidence": "SAN MATEO | San Mateo County | San Mateo County, except the City of South San Francisco | AMR | Exclusive | Emergency Ambulance",
+     "vintage": "Jan 2026"
+    },
+    {
+     "name": "South San Francisco Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": true,
+     "area": "City of South San Francisco",
+     "source_url": "https://emsa.ca.gov/wp-content/uploads/sites/71/2026/01/Jan_26_AmbulanceEOAStatus.pdf",
+     "evidence": "SAN MATEO | San Mateo County | City of South San Francisco | City of South San Francisco Fire Department | Exclusive | Emergency Ambulance",
+     "vintage": "Jan 2026"
+    }
+   ],
+   "page_note": "Two zones tile the county. Fire agencies (JPA) do paramedic first response only. AUDIT 2026-10-22: San Mateo BOS 19-377 (AMR EOA term 7/1/2019-6/30/2024, option to 6/30/2029); BOS 25-176 (Feb 2025) still names the 'County-wide exclusive emergency ambulance contractor', so the option term runs to 2029.",
+   "second_source": "https://www.smcgov.org/911dispatch/services ('Ambulance Contractor American Medical Response (AMR) and the South San Francisco Rescue Ambulances'); https://www.acgov.org/board/bos_calendar/documents/DocsAgendaReg_06_17_25/HEALTH%20CARE%20SERVICES/Set%20Matter%20Calendar/HCSA_388852.pdf (June 2025: 'AMR provides primary 911 ambulance transport services in ... San Mateo County')"
+  },
+  "06013": {
+   "county": "Contra Costa",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Contra Costa County Fire Protection District (subcontractor AMR)",
+     "transport": true,
+     "ownership": "mixed: fire district holds EOA, AMR subcontract",
+     "partial": true,
+     "area": "ERA I (West County), ERA II (Central), ERA V (East County)",
+     "source_url": "https://emsa.ca.gov/wp-content/uploads/sites/71/2026/01/Jan_26_AmbulanceEOAStatus.pdf",
+     "evidence": "CONTRA COSTA | ERA I | El Cerrito, Richmond, Pinole, Hercules, San Pablo, Kensington, Martinez, Pleasant Hill, Lafayette, Walnut Creek ... | Contra Costa County Fire Protection District (subcontractor AMR) | Exclusive; ERA II ... ; ERA V | East County - Pittsburg, Bay Point, Antioch, Brentwood and unincorporated areas.",
+     "vintage": "Jan 2026"
+    },
+    {
+     "name": "Moraga-Orinda Fire Protection District",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": true,
+     "area": "ERA III (district territory)",
+     "source_url": "https://emsa.ca.gov/wp-content/uploads/sites/71/2026/01/Jan_26_AmbulanceEOAStatus.pdf",
+     "evidence": "ERA III | Moraga-Orinda Fire Protection District territory | Moraga-Orinda Fire Protection District | Exclusive",
+     "vintage": "Jan 2026"
+    },
+    {
+     "name": "San Ramon Valley Fire Protection District",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": true,
+     "area": "ERA IV (San Ramon, Alamo, Danville, Tassajara)",
+     "source_url": "https://emsa.ca.gov/wp-content/uploads/sites/71/2026/01/Jan_26_AmbulanceEOAStatus.pdf",
+     "evidence": "ERA IV | San Ramon Valley Fire Protection District San Ramon, Alamo, Danville, and Tassajara | San Ramon Valley Fire Protection District | Non-Exclusive",
+     "vintage": "Jan 2026"
+    }
+   ],
+   "page_note": "Five ERAs tile the county. Con Fire FAQ page (cccfpd.org/faq-ems) now 404; no LEMSA page opened, AUDIT should confirm on cchealth.org if it wants a local cite. AUDIT 2026-10-22 local cite: cchealth.org EMS Ambulance Operations page (Wayback 2026-06-09) lists 'Emergency Ground Ambulance Providers Contra Costa County Fire through American Medical Response, West, Inc. ... Moraga-Orinda Fire ... San Ramon Valley Fire'.",
+   "second_source": "https://www.acgov.org/board/bos_calendar/documents/DocsAgendaReg_06_17_25/HEALTH%20CARE%20SERVICES/Set%20Matter%20Calendar/HCSA_388852.pdf (June 2025: 'AMR provides primary 911 ambulance transport services in major regions such as Contra Costa County')"
+  },
+  "06001": {
+   "county": "Alameda",
+   "tier": "held",
+   "services": [],
+   "page_note": "EOA (all cities + unincorporated except Alameda, Albany, Berkeley, Piedmont, LLNL) moved to AMR West: BOS agreement 7/1/25-6/30/31, 'five year service period commencing on 7/1/2026' (https://www.acgov.org/board/bos_calendar/documents/DocsAgendaReg_06_17_25/HEALTH%20CARE%20SERVICES/Set%20Matter%20Calendar/HCSA_388852.pdf). City FDs Alameda, Albany, Berkeley, Piedmont run their own EOAs; LLNL = Alameda County Fire (EMSA Jan 2026). EMSA Jan 2026 still names Falck (pre-start). Held: no source dated after the 7/1/2026 start; map answer (Paramedics Plus, NorCal, Royal) is WRONG.",
+   "second_source": ""
+  },
+  "06065": {
+   "county": "Riverside",
+   "tier": "held",
+   "services": [],
+   "page_note": "EMSA Jan 2026: AMR 7 zones, Riverside Co FD/CAL FIRE (Cove Cities, Indio), Cathedral City FD, Idyllwild FPD, Blythe Ambulance. AMR contract expiration 'June 30, 2026' and extensions denied (idyllwildtowncrier.com/?p=74875, Nov 2023). Post-July-2026 provider unknown; map answer (Idyllwild FPD only) is incomplete.",
+   "second_source": ""
+  },
+  "06077": {
+   "county": "San Joaquin",
+   "tier": "held",
+   "services": [],
+   "page_note": "BOS 2026-02-10: CENCAL Fire and EMS Authority exclusive emergency ambulance in Zones X and Y, May 1 2026-May 1 2031 (sanjoaquin.gov board news). Other zones per EMSA Jan 2026: Manteca District Ambulance (D), Ripon FPD (E), Escalon Community Ambulance (F). Zone X (Lodi) row still says AMR in EMSA; Zone Y boundaries and any other zones not confirmed. Map answer (Escalon only) incomplete.",
+   "second_source": ""
+  },
+  "06095": {
+   "county": "Solano",
+   "tier": "held",
+   "services": [],
+   "page_note": "EMSA Jan 2026: Medic Ambulance (county except Vacaville area), Vacaville Fire Dept (Vacaville + surrounding unincorporated). Contract on short extensions; new RFP with a Fairfield/Medic joint bid in progress (dailyrepublic.com), award not confirmed. Travis AFB not named.",
+   "second_source": ""
+  },
+  "06037": {
+   "county": "Los Angeles",
+   "tier": "held",
+   "services": [],
+   "page_note": "Not completed (time). EMSA Jan 2026 lists 34 zones: 9 county EOAs (AMR Area 1; Care Areas 2-5; McCormick Areas 6-9) plus city FDs Alhambra, Arcadia, Avalon, Beverly Hills, Burbank, Culver City, Downey, El Segundo, Glendale, Hermosa Beach (+McCormick), La Verne, Long Beach, Los Angeles (also San Fernando), Manhattan Beach, Monterey Park, Pasadena, San Gabriel, San Marino, Santa Monica, Sierra Madre, South Pasadena, Torrance, Vernon, West Covina. Needs LA County EMS Agency EOA page. Map answer (Ambulife, APA, Antelope, Vital Care: IFT/licence-roster names) is WRONG.",
+   "second_source": ""
+  },
+  "06073": {
+   "county": "San Diego",
+   "tier": "held",
+   "services": [],
+   "page_note": "EMSA Jan 2026 names 30 of 31 areas (Falck City of SD; AMR CSA-17/El Cajon/Grossmont/National City; SD County FPD Inland areas; city FDs Carlsbad, Chula Vista, Coronado, Escondido, Oceanside, Poway, San Marcos, Vista, Santee/Lakeside, North County FPD; tribal and DOD). 'Harmony Grove Service Area: closest available resource' is unnamed; no LEMSA page opened.",
+   "second_source": ""
+  },
+  "06059": {
+   "county": "Orange",
+   "tier": "held",
+   "services": [],
+   "page_note": "EMSA Jan 2026: OCFA Regions A-E (Emergency Ambulance Service, Care) and city OAs (Care; Huntington Beach FD, Newport Beach FD, Orange FD, La Habra, Doctor's Ambulance Laguna Beach, San Clemente city/OCFA). Not confirmed against OCEMS page; city transitions since 2024 unchecked.",
+   "second_source": ""
+  },
+  "06071": {
+   "county": "San Bernardino",
+   "tier": "held",
+   "services": [],
+   "page_note": "EMSA Jan 2026: 26 areas, 'Unified Area (EOA 1-4) HOLD until contract received', OA 26 Havasu Lake 'No approved provider'. Cannot be A.",
+   "second_source": ""
+  },
+  "06085": {
+   "county": "Santa Clara",
+   "tier": "held",
+   "services": [],
+   "page_note": "EMSA Jan 2026: Rural/Metro of California (AMR) county except Palo Alto (Non-Exclusive); Palo Alto FD. County RFP for a new EOA in draft July 2026. Not confirmed on LEMSA page.",
+   "second_source": ""
+  },
+  "06067": {
+   "county": "Sacramento",
+   "tier": "held",
+   "services": [],
+   "page_note": "EMSA Jan 2026 lists one non-exclusive county zone with licensees (Alpha One, AMR, Bay Medic, CHP, CALSTAR...) not 911 transporters. Fire-based 911 transport (Sacramento FD, Sac Metro Fire, Cosumnes, Folsom, etc.) needs a Sacramento County EMS source.",
+   "second_source": ""
+  }
+ }
+}

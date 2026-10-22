@@ -1,0 +1,137 @@
+{
+ "meta": {
+  "state": "TN",
+  "retrieved": "2026-10-22",
+  "via": "county, company and local news pages (local sources); Tennessee Department of Health EMS Directory pulled per county 2026-10-22 as the licence cross-check"
+ },
+ "county_verdict": {
+  "47029": {
+   "county": "Cocke",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Priority Ambulance (Shoals Ambulance dba Priority Ambulance, licence 10326)",
+     "transport": true,
+     "ownership": "private (contractor to Cocke County)",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://priorityambulance.com/brands/priority-ambulance/",
+     "evidence": "We are also proud to serve as the exclusive 9-1-1 emergency ambulance provider in Cocke and Franklin counties.",
+     "vintage": "2026 (company page, current)"
+    }
+   ],
+   "page_note": "Priority Ambulance is the county's 911 ambulance provider under an exclusive contract with Cocke County. It is the only ambulance service licensed in the county.",
+   "second_source": "https://www.newportplaintalk.com/news/article_ce1ab4f5-64b1-47e5-8adc-9aad58efa9b1.html (2026-09-16: Priority Ambulance of East Tennessee at the local Priority Ambulance station in Newport); TN EMS Directory 2026-10-22: only licence in Cocke, *PRIMARY 911"
+  },
+  "47049": {
+   "county": "Fentress",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Fentress County EMS (Fentress County Ambulance Service, licence 2501)",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://fentresscountytn.gov/ambulance/",
+     "evidence": "Fentress County Emergency Medical Services is an award-winning service responsible for providing prehospital care to the citizens and visitors of Fentress County. Our services include emergency, critical care, non-emergency, and convalescent transport",
+     "vintage": "2026 (page modified 2026-08-16)"
+    }
+   ],
+   "page_note": "Fentress County EMS, run by the county, answers 911 calls and transports patients across the county with seven advanced life support ambulances. It is the only ambulance service licensed in the county.",
+   "second_source": "TN EMS Directory 2026-10-22: only licence in Fentress, *PRIMARY 911"
+  },
+  "47079": {
+   "county": "Henry",
+   "tier": "A",
+   "services": [
+    {
+     "name": "American Medical Response, Henry County (AMR Henry County, licence 4001)",
+     "transport": true,
+     "ownership": "private (contractor through Henry County Hospital)",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.radionwtn.com/2025/01/03/henry-county-amr-medics-credited-with-saving-patients-life/",
+     "evidence": "American Medical Response in Henry County is recognizing two of its medics ... Patient was transported to an ICU ... American Medical Response provides emergency medical services through the Henry County Hospital.",
+     "vintage": "2025-01-03"
+    }
+   ],
+   "page_note": "American Medical Response provides the county's emergency ambulance service through Henry County Hospital. It is the only ambulance service licensed in the county. The source does not name the contract terms.",
+   "second_source": "TN EMS Directory 2026-10-22: only licence in Henry, AMR HENRY COUNTY, *PRIMARY 911"
+  },
+  "47183": {
+   "county": "Weakley",
+   "tier": "held",
+   "services": [
+    {
+     "name": "American Medical Response (AMR Weakley County EMS, licence 10373)",
+     "transport": true,
+     "ownership": "private (contractor to Weakley County)",
+     "partial": false,
+     "area": "county 911 contract from 2026-09-01; bases in Martin, Dresden and Greenfield",
+     "source_url": "https://www.wbbjtv.com/2026/08/31/amr-begin-providing-emergency-medical-services-weakley-county/",
+     "evidence": "On September 1, Weakley County residents will begin receiving 24-hour emergency medical care from locally based paramedics and EMTs as American Medical Response (AMR), a division of Global Medical Response (GMR), begins providing 911 and interfacility ambulance services for the county.",
+     "vintage": "2026-08-31"
+    },
+    {
+     "name": "Martin Fire & EMS (licence 10260)",
+     "transport": null,
+     "ownership": "municipal fire",
+     "partial": true,
+     "area": "City of Martin",
+     "source_url": "https://internet.health.tn.gov/EMSDirectory",
+     "evidence": "Listed under Weakley: MARTIN FIRE & EMS, Martin, A - Advanced Life Support, licence 10260 (no primary 911 tag).",
+     "vintage": "Directory pulled 2026-10-22"
+    }
+   ],
+   "page_note": "American Medical Response took over 911 ambulance service for Weakley County on September 1, 2026. The City of Martin's fire department also holds an advanced life support ambulance licence; whether it still transports 911 patients in Martin since AMR started is not yet confirmed.",
+   "second_source": "Medicare 2024 billers: Weakley County Ambulance Service and City of Martin both bill emergency transports"
+  },
+  "47107": {
+   "county": "McMinn",
+   "tier": "held",
+   "services": [
+    {
+     "name": "American Medical Response of Tennessee (licence 10242)",
+     "transport": true,
+     "ownership": "private (contractor to McMinn County)",
+     "partial": false,
+     "area": "county contract",
+     "source_url": "https://www.dailypostathenian.com/news/article_a2fb47ee-d442-11ef-9156-e3ca9ebbc861.html",
+     "evidence": "McMinn County's contract is set to expire with American Medical Response (AMR) for their EMS and ambulance services early next year",
+     "vintage": "2025-01-17"
+    }
+   ],
+   "page_note": "American Medical Response held McMinn County's ambulance contract in January 2025, with the contract due to end early in 2026. Who holds it now is not yet confirmed. Resolute EMS (Calhoun, advanced life support) and Englewood Rural Fire Department (basic life support) also hold ambulance licences in the county; their 911 role is not yet confirmed.",
+   "second_source": "TN EMS Directory 2026-10-22: AMR *PRIMARY 911; Resolute EMS (5402) and Englewood Rural FD (9952) untagged"
+  },
+  "47051": {
+   "county": "Franklin",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Priority Ambulance (Shoals Ambulance dba Priority Ambulance, licence 10272)",
+     "transport": true,
+     "ownership": "private (contractor to Franklin County)",
+     "partial": false,
+     "area": "county 911 contract",
+     "source_url": "https://priorityambulance.com/brands/priority-ambulance/",
+     "evidence": "We are also proud to serve as the exclusive 9-1-1 emergency ambulance provider in Cocke and Franklin counties.",
+     "vintage": "2026 (company page, current)"
+    },
+    {
+     "name": "Grundy EMS Inc.-Franklin County (licence 10062, Sewanee)",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": true,
+     "area": "Sewanee area (not confirmed)",
+     "source_url": "https://internet.health.tn.gov/EMSDirectory",
+     "evidence": "Listed under Franklin: GRUNDY EMS INC.-FRANKLIN COUNTY, Sewanee, Advanced Life Support, licence 10062, *PRIMARY 911.",
+     "vintage": "Directory pulled 2026-10-22"
+    }
+   ],
+   "page_note": "Priority Ambulance says it is the exclusive 911 ambulance provider for Franklin County. The state also records Grundy EMS, based in Sewanee, as a primary 911 provider in the county. Which parts of the county each one answers is not yet confirmed.",
+   "second_source": "https://thesewaneepurple.org/2014/12/07/sewanee-ems-to-merge-with-grundy-county/ (title only, not opened)"
+  }
+ }
+}

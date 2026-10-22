@@ -1,0 +1,113 @@
+{
+ "meta": {
+  "state": "CA",
+  "retrieved": "2026-10-22",
+  "via": "EMSA Ambulance Areas/EOA Status (rev. 1/14/2026) + LEMSA plans, county board items (local sources)"
+ },
+ "county_verdict": {
+  "06111": {
+   "county": "Ventura",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Gold Coast Ambulance (AMR subsidiary)",
+     "transport": true,
+     "ownership": "private (contractor to Ventura County EMS)",
+     "partial": true,
+     "area": "ASA 1 (Ojai area) and ASA 6 (Oxnard, Port Hueneme)",
+     "source_url": "https://emsa.ca.gov/wp-content/uploads/sites/71/2025/09/Ventura-County-2024-EMS-Post-Plan.pdf",
+     "evidence": "Area or subarea (Zone) Name or Title: ASA 1 / Name of Current Provider(s): Gold Coast Ambulance ... Emergency Ambulance for 911 calls only ... ASA 6 / Name of Current Provider(s): Gold Coast Ambulance",
+     "vintage": "2024 plan, letter dated July 23, 2025"
+    },
+    {
+     "name": "American Medical Response",
+     "transport": true,
+     "ownership": "private (contractor to Ventura County EMS)",
+     "partial": true,
+     "area": "ASA 2, 3, 4, 5, 7 (Fillmore/Santa Paula, Simi Valley, Moorpark/Thousand Oaks, Camarillo, Ventura)",
+     "source_url": "https://emsa.ca.gov/wp-content/uploads/sites/71/2025/09/Ventura-County-2024-EMS-Post-Plan.pdf",
+     "evidence": "American Medical Response currently provides service to ASA 2. ... ASA 3 ... ASA 4 ... ASA 5 ... ASA 7.",
+     "vintage": "2024 plan, July 2025"
+    },
+    {
+     "name": "Ventura County Fire Department (rescue ambulances, AMR/Gold Coast subcontract)",
+     "transport": true,
+     "ownership": "mixed: county fire subcontract to AMR",
+     "partial": true,
+     "area": "augments Camarillo, Santa Paula, Simi Valley, Thousand Oaks",
+     "source_url": "https://emsa.ca.gov/wp-content/uploads/sites/71/2025/09/Ventura-County-2024-EMS-Post-Plan.pdf",
+     "evidence": "Our seven exclusive operating areas remain contracted to our grandfathered providers, who also maintain a subcontract to Ventura County Fire Department for four rescue ambulances to augment ambulance coverage in the cities of Camarillo, Santa Paula, Simi Valley and Thousand Oaks.",
+     "vintage": "July 2025"
+    }
+   ],
+   "page_note": "Seven exclusive ambulance areas cover the county: Gold Coast Ambulance runs areas 1 and 6, AMR runs areas 2-5 and 7, and Ventura County Fire rescue ambulances run under subcontract. A county bid for future providers is in preparation.",
+   "second_source": "https://emsa.ca.gov/wp-content/uploads/sites/71/2026/01/Jan_26_AmbulanceEOAStatus.pdf (Jan 2026: ASA 1 & 6 Gold Coast Ambulance, ASA 2-5,7 AMR)"
+  },
+  "06081": {
+   "county": "San Mateo",
+   "tier": "A",
+   "services": [
+    {
+     "name": "American Medical Response",
+     "transport": true,
+     "ownership": "private (contractor to San Mateo County)",
+     "partial": true,
+     "area": "all of San Mateo County except City of South San Francisco",
+     "source_url": "https://emsa.ca.gov/wp-content/uploads/sites/71/2026/01/Jan_26_AmbulanceEOAStatus.pdf",
+     "evidence": "SAN MATEO | San Mateo County | San Mateo County, except the City of South San Francisco | AMR | Exclusive | Emergency Ambulance",
+     "vintage": "Jan 2026"
+    },
+    {
+     "name": "South San Francisco Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": true,
+     "area": "City of South San Francisco",
+     "source_url": "https://emsa.ca.gov/wp-content/uploads/sites/71/2026/01/Jan_26_AmbulanceEOAStatus.pdf",
+     "evidence": "SAN MATEO | San Mateo County | City of South San Francisco | City of South San Francisco Fire Department | Exclusive | Emergency Ambulance",
+     "vintage": "Jan 2026"
+    }
+   ],
+   "page_note": "AMR holds the county-wide exclusive 911 ambulance contract except South San Francisco, where South San Francisco Fire transports. Other fire agencies give paramedic first response only.",
+   "second_source": "https://www.smcgov.org/911dispatch/services ('Ambulance Contractor American Medical Response (AMR) and the South San Francisco Rescue Ambulances'); https://www.acgov.org/board/bos_calendar/documents/DocsAgendaReg_06_17_25/HEALTH%20CARE%20SERVICES/Set%20Matter%20Calendar/HCSA_388852.pdf (June 2025: 'AMR provides primary 911 ambulance transport services in ... San Mateo County')"
+  },
+  "06013": {
+   "county": "Contra Costa",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Contra Costa County Fire Protection District (subcontractor AMR)",
+     "transport": true,
+     "ownership": "mixed: fire district holds EOA, AMR subcontract",
+     "partial": true,
+     "area": "ERA I (West County), ERA II (Central), ERA V (East County)",
+     "source_url": "https://emsa.ca.gov/wp-content/uploads/sites/71/2026/01/Jan_26_AmbulanceEOAStatus.pdf",
+     "evidence": "CONTRA COSTA | ERA I | El Cerrito, Richmond, Pinole, Hercules, San Pablo, Kensington, Martinez, Pleasant Hill, Lafayette, Walnut Creek ... | Contra Costa County Fire Protection District (subcontractor AMR) | Exclusive; ERA II ... ; ERA V | East County - Pittsburg, Bay Point, Antioch, Brentwood and unincorporated areas.",
+     "vintage": "Jan 2026"
+    },
+    {
+     "name": "Moraga-Orinda Fire Protection District",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": true,
+     "area": "ERA III (district territory)",
+     "source_url": "https://emsa.ca.gov/wp-content/uploads/sites/71/2026/01/Jan_26_AmbulanceEOAStatus.pdf",
+     "evidence": "ERA III | Moraga-Orinda Fire Protection District territory | Moraga-Orinda Fire Protection District | Exclusive",
+     "vintage": "Jan 2026"
+    },
+    {
+     "name": "San Ramon Valley Fire Protection District",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": true,
+     "area": "ERA IV (San Ramon, Alamo, Danville, Tassajara)",
+     "source_url": "https://emsa.ca.gov/wp-content/uploads/sites/71/2026/01/Jan_26_AmbulanceEOAStatus.pdf",
+     "evidence": "ERA IV | San Ramon Valley Fire Protection District San Ramon, Alamo, Danville, and Tassajara | San Ramon Valley Fire Protection District | Non-Exclusive",
+     "vintage": "Jan 2026"
+    }
+   ],
+   "page_note": "Five emergency response areas cover the county: Contra Costa County Fire (with AMR as its subcontractor), Moraga-Orinda Fire District and San Ramon Valley Fire District.",
+   "second_source": "https://www.acgov.org/board/bos_calendar/documents/DocsAgendaReg_06_17_25/HEALTH%20CARE%20SERVICES/Set%20Matter%20Calendar/HCSA_388852.pdf (June 2025: 'AMR provides primary 911 ambulance transport services in major regions such as Contra Costa County')"
+  }
+ }
+}

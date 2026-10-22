@@ -417,6 +417,132 @@
    "services": [],
    "page_note": "Harnett County EMS backs up all contract EMS agencies, which the county lists by district (Anderson Creek, Benhaven, Boone Trail, Dunn, Erwin and others). Not yet confirmed: how these match the eight transport licences.",
    "second_source": ""
+  },
+  "37023": {
+   "county": "Burke",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Burke County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.burkenc.org/1164/Emergency-Medical-Services---EMS",
+     "evidence": "Burke County EMS is the sole provider of 911 medical services in the 514 square miles of Burke County. ... In addition to emergency 911 response, Burke County EMS offers non-emergency medical transport",
+     "vintage": "undated, current (89,000 population figure)"
+    }
+   ],
+   "page_note": "Burke County EMS answers every 911 medical call in the county and transports patients. Fire and rescue departments are first responders only. No other ambulance service is licensed in the county.",
+   "second_source": ""
+  },
+  "37167": {
+   "county": "Stanly",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Stanly County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.stanlycountync.gov/184/Emergency-Medical-Services",
+     "evidence": "Stanly County Emergency Medical Services (EMS) is the primary 911 emergency medical provider for Stanly County, North Carolina ... Coverage is provided across the entire county with strategically placed bases and units",
+     "vintage": "undated, current (16,000 calls a year, Atrium medical direction)"
+    }
+   ],
+   "page_note": "Stanly County EMS is the 911 ambulance service for the whole county; its published data includes patient transports by destination. No other ambulance service is licensed in the county.",
+   "second_source": "https://www.stanlycountync.gov/505/Operational-Data (lists 'Transports By Destination-summary') ; https://www.ems1.com/ems-products/patient-handling/stanly-county-ems-enhances-operations-through-adoption-of-hinckley-medicals-onedose-system (2025-09: \"Stanly County EMS staffs six full-time advanced life support ambulances\")"
+  },
+  "37165": {
+   "county": "Scotland",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Scotland County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.scotlandcounty.org/326/Emergency-Medical-Services",
+     "evidence": "Scotland County Emergency Medical Service is a countywide paramedic level EMS organization ... The system operates 3 ambulances and 1 supervisor QRV on 24 hour shifts. Patients are transported to Scotland Memorial Hospital and Moore Regional Hospital.",
+     "vintage": "page carries 2026-2027 fee schedule"
+    }
+   ],
+   "page_note": "Scotland County EMS runs the ambulances for the whole county. No other ambulance service is licensed in the county.",
+   "second_source": ""
+  },
+  "37131": {
+   "county": "Northampton",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Northampton County Ambulance Service",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.northamptonnc.com/220/Ambulance-Service",
+     "evidence": "The mission of the Ambulance Service is to provide primary Advance Life Support emergency care to the citizens of Northampton County on a first-out basis 24 hours per day, seven days per week.",
+     "vintage": "undated; no sign of change"
+    }
+   ],
+   "page_note": "The county-run Northampton County Ambulance Service answers 911 calls across the county; it opened a fourth station in Conway for the eastern end. No other ambulance service is licensed in the county.",
+   "second_source": "https://www.northamptonnc.com/219/Emergency-Medical-Services (Station 4 in Conway)"
+  },
+  "37041": {
+   "county": "Chowan",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Chowan County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.chowancounty-nc.gov/emergency-medical",
+     "evidence": "Chowan County EMS (CCEMS), a county owned and operated service, started in 1965 and currently serves as the primary emergency and non-emergency medical service provider for all 233 square miles of Chowan County to include the town of Edenton. ... Chowan County EMS operates a fleet of 6 type III advanced life support ambulances",
+     "vintage": "undated; no sign of change"
+    }
+   ],
+   "page_note": "Chowan County EMS runs the ambulances for the whole county, Edenton included. No other ambulance service is licensed in the county.",
+   "second_source": ""
+  },
+  "37029": {
+   "county": "Camden",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Camden County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.camdencountync.gov/232/Emergency-Medical-Services",
+     "evidence": "Camden County EMS is a county-operated emergency medical service established February 15th, 2025 to bring dedicated coverage to the residents and visitors of Camden County. ... 24/7 Ambulance Coverage One ambulance based in Shiloh One ambulance based in South Mills",
+     "vintage": "2025+"
+    }
+   ],
+   "page_note": "Since February 2025 Camden County runs its own ambulance service, with ambulances in Shiloh and South Mills and a surge unit at the courthouse. Neighbouring services may still help on busy days. No other ambulance service is licensed in the county.",
+   "second_source": ""
+  },
+  "37137": {
+   "county": "Pamlico",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Pamlico County Rescue Squad (Pamlico Rescue)",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.pamlicocounty.org/departments/emergency_management_fire_marshal/index.php",
+     "evidence": "Emergency Medical Services are provided by Pamlico Rescue who maintain staffing around the clock at the Main Station in Bayboro ... Transportation of Medical Emergencies are made to Carolina East Hospital in New Bern, NC.",
+     "vintage": "page predates 2023 (names Vidant); no sign of change: still the only licensed transporter in Sept 2026"
+    }
+   ],
+   "page_note": "Pamlico Rescue, a nonprofit rescue squad, runs the 911 ambulances for the county from Bayboro, with a daytime unit near Oriental. Fire departments are first responders only. No other ambulance service is licensed in the county.",
+   "second_source": ""
   }
  }
 }

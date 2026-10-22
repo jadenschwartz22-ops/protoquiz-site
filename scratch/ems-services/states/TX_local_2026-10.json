@@ -1,0 +1,73 @@
+{
+ "meta": {
+  "state": "TX",
+  "retrieved": "2026-10-22",
+  "via": "county, city and agency websites; DSHS EMS provider roster 2026-10-02 for licence cross-check (local sources)"
+ },
+ "county_verdict": {
+  "48339": {
+   "county": "Montgomery",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Montgomery County Hospital District EMS (MCHD)",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://web.archive.org/web/20260103022824/https://www.mchd-tx.org/about/",
+     "evidence": "MCHD operates the county's 911 ambulance service, manages the county's Public Health District and offers a variety of community and professional education programs.",
+     "vintage": "2026-01 capture"
+    },
+    {
+     "name": "Houston Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": true,
+     "area": "City of Houston limits within Montgomery County (Kingwood/Lake Houston fringe)",
+     "source_url": "https://www.houstontx.gov/fire/about/index.html",
+     "evidence": "We operate over 100 ambulances and transport units staffed by highly trained paramedics.",
+     "vintage": "2026 (page live 2026-10-22)"
+    }
+   ],
+   "page_note": "Confirmed: Montgomery County Hospital District (MCHD) runs the county's 911 ambulance service. Not yet confirmed from a public source: who transports in the part of the City of Houston inside the county.",
+   "second_source": "https://www.fisdap.net/blog/pdfs/2022/07/07/customer-spotlight-q-a-montgomery-county-hospital-district (search result, not opened: MCHD-EMS is the 911 EMS provider for Montgomery County, 1,100 sq mi)"
+  },
+  "48451": {
+   "county": "Tom Green",
+   "tier": "A",
+   "services": [
+    {
+     "name": "San Angelo Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.sanangelo.gov/234/Fire-Department",
+     "evidence": "The SAFD provides ambulance service to all of Tom Green County, responding to more than 12,500 ambulance calls a year. The Fire Department's EMS provides advanced life support and transports patients to medical facilities within Tom Green County.",
+     "vintage": "2026 (page live 2026-10-22)"
+    }
+   ],
+   "page_note": "San Angelo Fire Department provides ground 911 ambulance service to all of Tom Green County; the city's private ambulance permits are for non-emergencies only.",
+   "second_source": ""
+  },
+  "48135": {
+   "county": "Ector",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Odessa Fire Rescue",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "whole county (904 sq mi; Ector County is ~901 sq mi)",
+     "source_url": "https://www.odessa-tx.gov/271/Fire-Rescue",
+     "evidence": "Odessa Fire Rescue has provided emergency medical services since 1973 ... Operates : 9 Mobile Intensive Care Unit ambulances and 5 reserves ... Covers 904 square miles and serves about 200,000 people",
+     "vintage": "2026 (page carries a 2026-09-28 ambulance billing notice)"
+    }
+   ],
+   "page_note": "Confirmed: Odessa Fire Rescue transports in Odessa. Not yet confirmed from a public source: who serves the rest of the county since two new emergency services districts formed in 2025.",
+   "second_source": ""
+  }
+ }
+}

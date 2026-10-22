@@ -1,0 +1,6 @@
+# Audit of TX_verify_2026-10.json, 2026-10-22 (3 A audited, 1 PASS, 2 FAIL)
+Search: WebSearch exhausted, DuckDuckGo html returns a captcha and Bing news is JS-only; step 5 used Google News RSS (news.google.com/rss/search) instead.
+
+- Montgomery 48339: FAIL. MCHD quote verified (Wayback 2026-01), roster: only 911 licence in county is MCHD (others Transfer-only: Acute Care, Greater Care, D&L, Republic). But the HFD row rests only on Houston city limits; the HFD page does not mention Montgomery County and no page shows who transports in the Houston part.
+- Tom Green 48451: PASS. sanangelo.gov/234 quote verified ("ambulance service to all of Tom Green County"). Roster: Shannon AirMed 1 = air; Shannon Business Services = Transfer (hospital). Search: the 2021 private ambulances SAFD allowed are "for non-emergencies only" (ConchoValleyHomepage 2021-03-22); no 2024+ change found.
+- Ector 48135: FAIL. odessa-tx.gov/271 quote verified (EMS "Covers 904 square miles"; "protects the City of Odessa and Ector County"); roster has only Odessa Fire Rescue. But Ector County ESD 1/2 (voted May 2025) planned "to begin stationing an ambulance in the county" (CBS7 2026-05-18), and the 2026-10-15 Yourbasin story "Ector County expands emergency resources and facilities" returned 403 to curl, Wayback and WebFetch, so the current non-Odessa provider cannot be confirmed.

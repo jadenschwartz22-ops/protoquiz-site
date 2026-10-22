@@ -1,0 +1,165 @@
+{
+ "meta": {
+  "state": "TX",
+  "retrieved": "2026-10-22",
+  "via": "county, city and agency websites; DSHS EMS provider roster 2026-10-02 for licence cross-check",
+  "lane": "verify"
+ },
+ "county_verdict": {
+  "48339": {
+   "county": "Montgomery",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Montgomery County Hospital District EMS (MCHD)",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://web.archive.org/web/20260103022824/https://www.mchd-tx.org/about/",
+     "evidence": "MCHD operates the county's 911 ambulance service, manages the county's Public Health District and offers a variety of community and professional education programs.",
+     "vintage": "2026-01 capture"
+    },
+    {
+     "name": "Houston Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": true,
+     "area": "City of Houston limits within Montgomery County (Kingwood/Lake Houston fringe)",
+     "source_url": "https://www.houstontx.gov/fire/about/index.html",
+     "evidence": "We operate over 100 ambulances and transport units staffed by highly trained paramedics.",
+     "vintage": "2026 (page live 2026-10-22)"
+    }
+   ],
+   "page_note": "DSHS roster (2026-10-02): the only 911 licence based in Montgomery County is MCHD (58 vehicles); Conroe (114k) and The Woodlands have no transport licence. Houston city limits extend into Montgomery County (Wikipedia: 'portions of the city extend into Fort Bend and Montgomery counties'); HFD listed for that sliver as the city's transporter (inference from city limits, small population). AUDIT 2026-10-22: held because the Houston FD slice rests only on city limits; no opened page shows HFD (or MCHD) carrying 911 patients in the Houston part of Montgomery County.",
+   "second_source": "https://www.fisdap.net/blog/pdfs/2022/07/07/customer-spotlight-q-a-montgomery-county-hospital-district (search result, not opened: MCHD-EMS is the 911 EMS provider for Montgomery County, 1,100 sq mi)"
+  },
+  "48451": {
+   "county": "Tom Green",
+   "tier": "A",
+   "services": [
+    {
+     "name": "San Angelo Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.sanangelo.gov/234/Fire-Department",
+     "evidence": "The SAFD provides ambulance service to all of Tom Green County, responding to more than 12,500 ambulance calls a year. The Fire Department's EMS provides advanced life support and transports patients to medical facilities within Tom Green County.",
+     "vintage": "2026 (page live 2026-10-22)"
+    }
+   ],
+   "page_note": "Roster: San Angelo FD (911) + Shannon AirMed 1 (air ambulance, not ground 911). San Angelo is the only city over 20k. Current map also lists Med-Trans Corporation (air medical); SAFD is the ground 911 transporter for the whole county.",
+   "second_source": ""
+  },
+  "48135": {
+   "county": "Ector",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Odessa Fire Rescue",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "whole county (904 sq mi; Ector County is ~901 sq mi)",
+     "source_url": "https://www.odessa-tx.gov/271/Fire-Rescue",
+     "evidence": "Odessa Fire Rescue has provided emergency medical services since 1973 ... Operates : 9 Mobile Intensive Care Unit ambulances and 5 reserves ... Covers 904 square miles and serves about 200,000 people",
+     "vintage": "2026 (page carries a 2026-09-28 ambulance billing notice)"
+    }
+   ],
+   "page_note": "Roster: Odessa Fire Rescue is the only 911 licence based in Ector County. Coverage area equals the county (page does not literally say 'all of Ector County'; it offers smoke detectors to 'homeowners in Odessa and Ector County'). Goldsmith is the only other town (tiny). AUDIT 2026-10-22: held because Ector County ESD 1/2 (created May 2025) planned to station an ambulance outside Odessa (CBS7 2026-05-18) and the 2026-10-15 Yourbasin article 'Ector County expands emergency resources and facilities' could not be opened (403), so no source after it shows who carries 911 patients outside Odessa now.",
+   "second_source": ""
+  },
+  "48201": {
+   "county": "Harris",
+   "tier": "held",
+   "services": [],
+   "page_note": "Not completed. Roster lists 41 911 licences based in Harris: ATASCOCITA FIRE DEPARTMENT; BAYTOWN FIRE DEPARTMENT; CHANNELVIEW FIRE DEPARTMENT; CITY AMBULANCE SERVICE, FIRST MEDICAL RESPONSE, CYPRESS CREEK EMS; CITY OF BELLAIRE FIRE DEPT; CITY OF LA PORTE EMS; CITY OF NASSAU BAY EMS; CITY OF SEABROOK; CITY OF SOUTH HOUSTON EMS DEPARTMENT; COMMUNITY PROTECTION AGENCY INC; CY-FAIR FIRE DEPARTMENT; DEER PARK VOLUNTEER FIRE DEPARTMENT; ELITE MEDICAL RESPONSE MANAGEMENT INC; EVENT EMS; GALENA PARK FIRE DEPARTMENT; HARRIS COUNTY EMERGENCY CORPS; HARRIS COUNTY ESD 11 MOBILE HEALTHCARE; HARRIS COUNTY ESD 3; SPRING CREEK EMERGENCY MEDICAL SERVICES; HARRIS COUNTY ESD 4; HCESD 48 FIRE DEPARTMENT; HCESD5;CROSBY EMS; HEALTH QUEST EMS LLC; HIGHLANDS VOLUNTEER FIRE DEPARTMENT; HOUSTON FIRE DEPARTMENT; HUMBLE FD EMS; JACINTO CITY FIRE DEPARTMENT; JERSEY VILLAGE FIRE DEPARTMENT; KATY FIRE DEPARTMENT; LIFE LINE EMS LLC; LONGHORN AMBULANCE SERVICES; NORTH CHANNEL EMS; NORTHWEST COMMUNITY HEALTH; PREMIUM CARE EMS LLC; RELIEF AMBULANCE SERVICES; SOUTH LAKE HOUSTON EMS; SOUTHEAST FIRE DEPARTMENT; VILLAGE FIRE DEPARTMENT; WEBSTER FIRE DEPARTMENT; WEST UNIVERSITY PLACE FD; WESTLAKE VOLUNTEER FIRE DEPARTMENT INC; WINDSOR EMS INC. Confirmed only HFD (houstontx.gov/fire/about: 'over 100 ambulances and transport units'). Each ESD/city service must be opened; private 'Both 911 & Transfer' licences (Cypress Creek EMS/Viking 266 units, Windsor, Health Quest...) need their 911 role explained.",
+   "second_source": ""
+  },
+  "48113": {
+   "county": "Dallas",
+   "tier": "held",
+   "services": [],
+   "page_note": "Not completed. Roster 911 licences: ADDISON FIRE DEPARTMENT; CAREFLITE-GROUND; CARROLLTON FIRE RESCUE; CEDAR HILL FIRE DEPARTMENT; CHILDREN'S MEDICAL CENTER PLANO DBA CHILDRENS HEALTH SYSTEM; CITY OF DALLAS FIRE-RESCUE DEPARTMENT; CITY OF SACHSE FIRE DEPARTMENT; COPPELL FIRE DEPARTMENT; DESOTO FIRE RESCUE; DFW AIRPORT DPS; DUNCANVILLE FIRE DEPARTMENT; FARMERS BRANCH FIRE DEPARTMENT; GARLAND FIRE DEPARTMENT; GLENN HEIGHTS FIRE DEPT; GRAND PRAIRE FIRE DEPARTMENT; HIGHLAND PARK DPS; HUTCHINS FIRE RESCUE; IRVING FIRE DEPARTMENT; LANCASTER FIRE DEPARTMENT; MESQUITE FIRE DEPT; RICHARDSON FIRE DEPARTMENT; ROWLETT FIRE RESCUE; SUNNYVALE FIRE RESCUE DEPARTMENT; TEXAS REGIONAL EMS; UNIVERSITY PARK FD; WILMER FIRE DEPARTMENT. Every city FD listed runs its own ambulances per the roster; none opened this lane. CareFlite and Texas Regional EMS (Sterling) roles unexplained.",
+   "second_source": ""
+  },
+  "48439": {
+   "county": "Tarrant",
+   "tier": "held",
+   "services": [],
+   "page_note": "Not completed. Roster 911 licences: AMERICAN MEDICAL RESPONSE DBA AMR DBA ARLINGTON EMS; AMERICAN MEDICAL RESPONSE DBA AMR DBA TARRANT CNTY / ELLIS CNTY; AZLE FIRE DEPARTMENT; BEDFORD FIRE DEPARTMENT; BENBROOK FIRE DEPARTMENT; CAREFLITE-AIR; CITY OF COLLEYVILLE; CITY OF EULESS FIRE DEPARTMENT; CITY OF HURST FIRE DEPARTMENT; CITY OF WATAUGA DBA; CROWLEY FIRE DEPARTMENT; EAGLE MOUNTAIN VOLUNTEER FIRE DEPARTMENT; EVERMAN FIRE DEPARTMENT; FORT WORTH FIRE DEPARTMENT; GRAPEVINE FIRE DEPARTMENT; KELLER FIRE RESCUE; KENNEDALE FIRE/RESCUE; MANSFIELD FIRE RESCUE; MEDSTAR; NORTH RICHLAND HILLS FIRE DEPARTMENT; PANTEGO FIRE DEPARTMENT; RENDON FIRE DEPARTMENT; SOUTHLAKE DPS; TARRANT COUNTY ESD 1; TOWN OF WESTLAKE FIRE EMS DEPARTMENT; TRANS-CARE MEDICAL TRANSPORT. MedStar (MAEMSA) + AMR Arlington + ~20 city FDs; none opened.",
+   "second_source": ""
+  },
+  "48029": {
+   "county": "Bexar",
+   "tier": "held",
+   "services": [],
+   "page_note": "Not completed. Roster 911 licences: ALAMO HEIGHTS FIRE/EMS DEPARTMENT; ARCLIGHT MOBILE INTEGRATED HEALTHCARE; BEXAR COUNTY EMERGENCY SERVICE DISTRICT 4; BEXAR COUNTY ESD 2; CITY OF HELOTES FIRE DEPARTMENT; CITY OF LEON VALLEY FIRE DEPT; CONVERSE FIRE AND EMS; DISTRICT 7 FIRE RESCUE; KIRBY FIRE EMS; LONE STAR AMBULANCE; SAN ANTONIO FIRE DEPARTMENT EMS; SHAVANO PARK EMS; SUPERIORCARE AMBULANCE. SAFD + suburb FDs + ESDs; private Lone Star, Arclight, SuperiorCare 911 roles unexplained.",
+   "second_source": ""
+  },
+  "48453": {
+   "county": "Travis",
+   "tier": "held",
+   "services": [],
+   "page_note": "ATCEMS page (austintexas.gov/ems/divisions/divisions-information): 'Austin-Travis County EMS serves over 1,300 square miles, including all of Travis County and parts of Williamson and Hays Counties.' BUT Pflugerville moved ambulance service from Allegiance Mobile Health to Travis County ESD 2 effective 2026-10-01 (Community Impact 2026-07-15: 'transition ambulance and emergency medical services from Allegiance Mobile Health to Travis County ESD 2, effective Oct. 1'). Travis ESD 1 (Lago Vista, 6 vehicles) and ESD 11 (TCFR, 2) hold 911 licences, roles not opened. Acadian/AMR Austin licences unexplained. Map's Allegiance row is now outdated.",
+   "second_source": ""
+  },
+  "48491": {
+   "county": "Williamson",
+   "tier": "held",
+   "services": [],
+   "page_note": "Near-A. WilCo EMS (wilcotx.gov/1983, archived 2025): '911 emergency medical services across 1,100 square miles ... 21 ambulances ... all of Williamson County has a dedicated emergency medical presence nearby.' Georgetown FD runs ambulances for city + ESD 8 (Community Impact 2025-03-06: 'With five total ambulances'; ESD 8 and city cost-share fire and EMS). ATCEMS serves 'parts of Williamson' (Austin city portion). Travis ESD 2 serves Pflugerville city (small part in Williamson) since 2026-10-01. Held because Georgetown franchised private ambulances for backup EMS in 2015 and no current source names/ends that franchise. Map is missing ATCEMS and ESD 2.",
+   "second_source": ""
+  },
+  "48085": {
+   "county": "Collin",
+   "tier": "held",
+   "services": [],
+   "page_note": "Not completed. Roster 911 licences (all city FDs): ALLEN FIRE RESCUE; CITY OF ANNA; CITY OF CELINA FIRE DEPARTMENT; CITY OF LUCAS FIRE~RESCUE; CITY OF WYLIE FIRE RESCUE; FRISCO FIRE DEPARTMENT; MCKINNEY FIRE DEPARTMENT; MELISSA FIRE DEPARTMENT; MURPHY FIRE RESCUE; PLANO FIRE RESCUE; PROSPER FIRE DEPARTMENT; TOWN OF FAIRVIEW. Unincorporated coverage and Dallas/Richardson/Wylie cross-county parts not opened.",
+   "second_source": ""
+  },
+  "48121": {
+   "county": "Denton",
+   "tier": "held",
+   "services": [],
+   "page_note": "Not completed. Roster 911 licences: AKIN AMBULANCE INC; AUBREY FIRE DEPARTMENT; CITY OF OAK POINT; DENTON COUNTY ESD NO 1; DENTON FIRE DEPARTMENT; FLOWER MOUND FIRE DEPARTMENT; HIGHLAND VILLAGE FIRE DEPARTMENT; JUSTIN FIRE DEPARTMENT; KRUM FIRE DEPARTMENT; LAKE CITIES FIRE DEPARTMENT; LEWISVILLE FIRE DEPARTMENT; LITTLE ELM FIRE DEPARTMENT; PILOT POINT FIRE RESCUE; PONDER FIRE DEPARTMENT; ROANOKE FIRE DEPARTMENT; SACRED CROSS EMS INC; SANGER FIRE DEPARTMENT; THE COLONY FIRE DEPARTMENT; TROPHY CLUB EMS.",
+   "second_source": ""
+  },
+  "48157": {
+   "county": "Fort Bend",
+   "tier": "held",
+   "services": [],
+   "page_note": "Not completed. Fort Bend County EMS is countywide base; Sugar Land Fire-EMS (own EMS since 2015), Katy Fire/EMS, Harris County ESD 48, ESD 100/Community VFD named as 911 EMS providers in a 2020 county memo (search result, not opened); Houston city portion = HFD. FMR (First Medical Response) and Healthsource 911 roles unexplained.",
+   "second_source": ""
+  },
+  "48215": {
+   "county": "Hidalgo",
+   "tier": "held",
+   "services": [],
+   "page_note": "Not completed. Roster 911 licences: AMBULANCE TRANSPORTATION SERVICES LLC; CITY OF ALTON FIRE DEPARTMENT EMS; CITY OF MISSION FIRE DEPARTMENT EMS; CITY OF PALMVIEW FIRE / EMS; CITY OF PHARR EMERGENCY MEDICAL SERVICES; INTERCITY AMBULANCE FOR EMERGENCY MEDICAL TRANSPORT LLC; LA JOYA FIRE / EMS DEPARTMENT; LIFELINE RGV LLC; MED CARE EMS, MED CARE EMERGENCY MEDICAL SERVICES INC.; MEDEX TRANSPORTATION SERVICES INC; MEDICAL & TRAUMA SPECIALISTS LP; MERCEDES FIRE DEPARTMENT EMS; SKYLINE EMS INC; WESLACO FIRE DEPARTMENT EMS. Many private 911 licences; city contracts not opened.",
+   "second_source": ""
+  },
+  "48141": {
+   "county": "El Paso",
+   "tier": "held",
+   "services": [],
+   "page_note": "Not completed. Roster 911 licences: DOMINION AMBULANCE; EL PASO FIRE DEPARTMENT; ELITE MEDICAL TRANSPORT; EMERGENT AIR; LIFE AMBULANCE SERVICE INC; UNIVERSITY MEDICAL CENTER OF EL PASO. EPFD for city; county ESD contractors not opened.",
+   "second_source": ""
+  },
+  "48329": {
+   "county": "Midland",
+   "tier": "held",
+   "services": [],
+   "page_note": "Midland FD news (midlandtexas.gov/CivicAlerts.aspx?AID=1767, 2025-08-19): 'The Midland Fire Department responds to fire and EMS calls inside the city of Midland and throughout the county.' Held: no page sentence says MFD transports (only 'EMS Billing'), and the Odessa city part inside Midland County (Odessa Fire Rescue) not confirmed.",
+   "second_source": ""
+  },
+  "48423": {
+   "county": "Smith",
+   "tier": "held",
+   "services": [],
+   "page_note": "UT Health East Texas EMS page (uthealtheasttexas.com/patients-and-visitors/ems/): 'all of Henderson and Panola Counties, most of Smith, Cherokee and Wood Counties'. Held: the rest of Smith not named.",
+   "second_source": ""
+  }
+ }
+}
