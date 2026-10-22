@@ -1,0 +1,245 @@
+{
+ "meta": {
+  "state": "MS",
+  "retrieved": "2026-10-22",
+  "via": "Mississippi State Department of Health ambulance licence records plus county, city, provider and local news pages"
+ },
+ "county_verdict": {
+  "28047": {
+   "county": "Harrison",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Acadian Ambulance Service",
+     "transport": true,
+     "ownership": "private (contractor to Harrison County and three cities)",
+     "partial": true,
+     "area": "Harrison County and D'Iberville, Long Beach, Pass Christian (all but Biloxi and Gulfport)",
+     "source_url": "https://www.wxxv25.com/acadian-ambulance-commences-operations-in-harrison-county-ms/",
+     "evidence": "Acadian Ambulance Service is beginning 911 emergency response service in Harrison County and the cities of D’Iberville, Long Beach, and Pass Christian, effective 7:00 a.m. May 1, 2024.",
+     "vintage": "2024"
+    },
+    {
+     "name": "Pafford EMS of Mississippi",
+     "transport": true,
+     "ownership": "private (contractor to the two cities)",
+     "partial": true,
+     "area": "Cities of Biloxi and Gulfport",
+     "source_url": "https://www.wlox.com/2025/01/21/delayed-medical-response-possible-during-winter-storm-pafford-ems-says/",
+     "evidence": "The ambulance company services the cities of Biloxi and Gulfport, along with Hancock and Stone counties.",
+     "vintage": "2025"
+    }
+   ],
+   "page_note": "Acadian Ambulance Service answers 911 ambulance calls in Harrison County outside Biloxi and Gulfport, including D'Iberville, Long Beach and Pass Christian (county contract since May 1, 2024; still operating in 2026). Pafford EMS answers 911 ambulance calls in the cities of Biloxi and Gulfport.",
+   "second_source": "https://www.supertalk.fm/harrison-county-signs-contract-with-acadian-ambulance-service-ousting-amr-after-50-years/"
+  },
+  "28059": {
+   "county": "Jackson",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Acadian Ambulance Service",
+     "transport": true,
+     "ownership": "private (county operations contractor)",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.wxxv25.com/acadian-ambulance-expands-operations-in-mississippi/",
+     "evidence": "Acadian Ambulance has been honored to serve the residents of Jackson County since 2000",
+     "vintage": "2024"
+    }
+   ],
+   "page_note": "Acadian Ambulance Service is the Jackson County ambulance provider under a county contract (renewed by the Board of Supervisors in 2016; Acadian says it has served the county since 2000 and still does in 2026). The county ordinance names a single operations contractor for all emergency ambulance calls in the county.",
+   "second_source": "https://www.co.jackson.ms.us/641/Ambulance-Service"
+  },
+  "28121": {
+   "county": "Rankin",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Pafford EMS of Mississippi",
+     "transport": true,
+     "ownership": "private (contractor)",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.wlbt.com/2026/09/12/1-killed-2-seriously-injured-after-vehicle-overturns-catches-fire-rankin-county/",
+     "evidence": "Deputies, Rankin County Emergency Operations, the Star Fire Department and Pafford Ambulance Service responded to the scene.",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Pafford EMS answers 911 ambulance calls in Rankin County: it took the cities of Pearl and Brandon from AMR in 2015 and began an exclusive county contract in June 2016, and it was the ambulance at 2024-2026 calls in Pearl, Brandon, Flowood, Star, Reservoir and Puckett. No fire department in the county holds an ambulance transport licence.",
+   "second_source": "https://www.wjtv.com/news/new-fleet-of-pafford-ambulances-in-rankin-county/"
+  },
+  "28089": {
+   "county": "Madison",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Pafford EMS of Mississippi",
+     "transport": true,
+     "ownership": "private (contractor)",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://darkhorsepressnow.com/news/top-story/2024-10-02/8-year-old-in-critical-condition-after-hit-by-school-bus-in-madison-neighborhood/",
+     "evidence": "the child was transported to UMMC by Pafford",
+     "vintage": "2024"
+    }
+   ],
+   "page_note": "Pafford EMS answers 911 ambulance calls in Madison County: the Board of Supervisors replaced AMR with Pafford as the county ambulance provider in May 2016, and Pafford transported patients from Madison (2024), Ridgeland (2024) and Gluckstadt (2026). The Madison and Ridgeland fire departments are licensed for non-transport care only.",
+   "second_source": "https://www.wjtv.com/news/madison-county-introduces-new-ambulance-service/"
+  },
+  "28075": {
+   "county": "Lauderdale",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Pafford EMS of Mississippi",
+     "transport": true,
+     "ownership": "private (contractor to the City of Meridian EMS district)",
+     "partial": true,
+     "area": "City of Meridian (since September 2026)",
+     "source_url": "https://meridianstar.com/2026/10/09/hospital-administrators-pleased-with-the-work-of-pafford-ems-thus-far/",
+     "evidence": "It was explained though that Pafford is the city’s EMS provider, while Metro remains the provider for Lauderdale County.",
+     "vintage": "2026"
+    },
+    {
+     "name": "Metro Ambulance Service",
+     "transport": true,
+     "ownership": "mixed: government department formed by the city and county, funded by billing",
+     "partial": true,
+     "area": "Lauderdale County outside the City of Meridian",
+     "source_url": "https://www.wtok.com/2026/07/22/lauderdale-county-ambulance-service-unchanged-after-meridian-vote/",
+     "evidence": "Lauderdale County residents outside the city limits will continue to receive service from Metro Ambulance.",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Since September 18, 2026 Pafford EMS answers 911 ambulance calls inside the City of Meridian and Metro Ambulance Service answers them in the rest of Lauderdale County.",
+   "second_source": "https://www.wtok.com/2026/09/18/pafford-ems-now-operating-meridian/"
+  },
+  "28067": {
+   "county": "Jones",
+   "tier": "held",
+   "services": [
+    {
+     "name": "EMServ Ambulance Service",
+     "transport": true,
+     "ownership": "private",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://darkhorsepressnow.com/news/2025-10-17/early-morning-crash-injures-two-knocks-out-power-in-powers-community/",
+     "evidence": "Both patients were transported by EMServ to South Central Medical Center for treatment.",
+     "vintage": "2025"
+    }
+   ],
+   "page_note": "EMServ Ambulance Service answers 911 ambulance calls in Jones County: it transported patients from Powers, Moselle, Glade, Laurel and Ellisville in 2025-2026. A county or city page, contract or board record naming the 911 ambulance provider for Jones County, including Laurel, has not been found.",
+   "second_source": "https://www.wlbt.com/2026/08/24/2-men-suffer-life-threatening-injuries-moselle-head-on-collision/"
+  },
+  "28071": {
+   "county": "Lafayette",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Baptist Ambulance (Baptist Memorial Hospital-North Mississippi, operated with Priority Ambulance)",
+     "transport": true,
+     "ownership": "hospital (operated with Priority Ambulance, a private contractor)",
+     "partial": false,
+     "area": "whole county, Oxford city and county",
+     "source_url": "https://oxfordeagle.com/2021/12/21/county-contracts-with-baptist-for-ambulance-service/",
+     "evidence": "Lafayette County Board of Supervisors has granted Baptist Ambulance of Baptist Memorial Hospital North Mississippi priority on all 911 calls",
+     "vintage": "2021, still operating 2026"
+    }
+   ],
+   "page_note": "Baptist Ambulance (Baptist Memorial Hospital-North Mississippi, run with Priority Ambulance) holds the Lafayette County 911 ambulance priority under a county agreement and was still the ambulance at calls in Oxford and the county in 2026. CareMed EMS does private transports only.",
+   "second_source": "https://oxfordeagle.com/2026/09/15/missing-atv-rider-found-alive-after-sardis-lake-search/"
+  },
+  "28109": {
+   "county": "Pearl River",
+   "tier": "A",
+   "services": [
+    {
+     "name": "AAA Ambulance Service",
+     "transport": true,
+     "ownership": "private (contractor to the county and two cities)",
+     "partial": false,
+     "area": "whole county incl. Picayune and Poplarville",
+     "source_url": "https://picayuneitem.com/2020/05/aldermen-requests-congress-to-support-municipalities/",
+     "evidence": "The Board did approve a contract with AAA Ambulance Services to provide five ambulances instead of four to the county and the cities of Poplarville and Picayune.",
+     "vintage": "2020, still in force 2025-2026"
+    }
+   ],
+   "page_note": "AAA Ambulance Service holds the Pearl River County ambulance contract (county and the cities of Picayune and Poplarville); the Board of Supervisors accepted its monthly report in 2025 and Picayune extended its contract in April 2026.",
+   "second_source": "https://picayuneitem.com/2026/04/picayune-city-council-april-7-minutes/"
+  },
+  "28045": {
+   "county": "Hancock",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Pafford EMS of Mississippi",
+     "transport": true,
+     "ownership": "private (contractor)",
+     "partial": false,
+     "area": "whole county (Kiln, Waveland, Bay St. Louis, Diamondhead)",
+     "source_url": "https://www.wlox.com/2024/05/24/pafford-ems-brings-services-hancock-county/",
+     "evidence": "Pafford Emergency Services is taking over in Hancock County.",
+     "vintage": "2024"
+    }
+   ],
+   "page_note": "Pafford EMS took over 911 ambulance service in Hancock County on May 24, 2024 and still serves it in 2025.",
+   "second_source": "https://www.wlox.com/2025/01/21/delayed-medical-response-possible-during-winter-storm-pafford-ems-says/"
+  },
+  "28151": {
+   "county": "Washington",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Pafford EMS of Mississippi",
+     "transport": true,
+     "ownership": "private (contractor)",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://darkhorsepressnow.com/news/2026-08-10/greenville-woman-charged-with-murder-in-fatal-north-broadway-street-shooting/",
+     "evidence": "Officers began providing aid until Pafford Ambulance Service arrived",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Pafford EMS answers 911 ambulance calls in Washington County: it was the ambulance at a Greenville call in 2026, and its station list names Greenville, Leland and Hollandale. A county or city page, contract or board record naming the 911 ambulance provider for Washington County, including Greenville, has not been found.",
+   "second_source": "https://www.paffordems.com/locations/"
+  },
+  "28131": {
+   "county": "Stone",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Pafford EMS of Mississippi",
+     "transport": true,
+     "ownership": "private (contractor to the county, Wiggins and Memorial Hospital at Stone County)",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.stonecountyenterprise.com/news/county-city-hospital-to-sign-with-new-ambulance-service/article_f143f0c4-bc94-11ef-82c7-cff43555d403.html",
+     "evidence": "The Stone County Board of Supervisors approved a three-year contract with Pafford Emergency Medical Services for ground ambulance for Stone County, Wiggins, and Memorial Hospital at Stone County.",
+     "vintage": "2024 (three-year contract from November 4, 2024)"
+    }
+   ],
+   "page_note": "Pafford EMS holds a three-year ground ambulance contract with Stone County, the City of Wiggins and Memorial Hospital at Stone County, in effect since November 4, 2024, and still served the county in 2025.",
+   "second_source": "https://www.wlox.com/2025/01/21/delayed-medical-response-possible-during-winter-storm-pafford-ems-says/"
+  },
+  "28039": {
+   "county": "George",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Acadian Ambulance Service",
+     "transport": true,
+     "ownership": "private (county contractor)",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://acadian.com/acadian-ambulance-begins-operations-in-george-county-ms/",
+     "evidence": "Acadian Ambulance Service has begun 911 emergency response service in George County, Mississippi, effective 8:00 a.m. October 6, 2026.",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Acadian Ambulance Service has answered 911 ambulance calls in George County since October 6, 2026, replacing AmeriPro Health.",
+   "second_source": "https://www.wlox.com/2026/10/09/acadian-ambulance-begins-handling-emergency-services-george-county/"
+  }
+ }
+}
