@@ -698,6 +698,130 @@
    ],
    "page_note": "Chesterfield County has no county EMS; six volunteer rescue squads (Cheraw, Chesterfield, Jefferson, McBee, Pageland, Patrick) and Lifeguard EMS are licensed. Not yet confirmed: the area each covers.",
    "second_source": ""
+  },
+  "45059": {
+   "county": "Laurens",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Laurens County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.laurenscountyems.org/about",
+     "evidence": "Laurens County EMS started in 1976 and serves as the sole 911 provider for Laurens County citizens and visitors. Operating five ambulances and five quick response vehicles stationed strategically throughout the county.",
+     "vintage": "undated page, current 2026; county council budget debate 2026-06-27 confirms full-time county EMS"
+    },
+    {
+     "name": "Prisma Health (contract ambulance)",
+     "transport": true,
+     "ownership": "private (contractor to Laurens County)",
+     "partial": true,
+     "area": "contract ambulance within the county 911 system; zone not stated",
+     "source_url": "https://www.golaurens.com/news/laurens-county-approves-52m-budget-despite-split-vote-tax-increase/article_38f9acef-5340-408d-bb32-dda92aaea913.html",
+     "evidence": "which basically attacks a contract that the County has with Prisma Healthcare. “I am thanking, personally, Prisma Health for their staffing. The rates are extraordinary for us. It costs a lot of money to provide an ambulance with paramedics 24/7.",
+     "vintage": "2026-06-27"
+    }
+   ],
+   "page_note": "Laurens County EMS runs the county's 911 ambulances. The county also contracts with Prisma Health to staff an ambulance with paramedics around the clock (county council, June 2026). Whether the Prisma Health contract ambulance answers 911 calls on its own or staffs a county unit, and in which part of the county, is not yet confirmed.",
+   "second_source": "https://www.golaurens.com/news/laurens-county-approves-52m-budget-despite-split-vote-tax-increase/article_38f9acef-5340-408d-bb32-dda92aaea913.html",
+   "licence_check": "DPH roster: only Laurens County EMS holds a 911 transport licence based in the county (ZF EMS and Laurens County Fire Service are non-transport); Prisma Health Ambulance Service is licensed in Greenville County. No city over 20k."
+  },
+  "45039": {
+   "county": "Fairfield",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Fairfield County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.fairfieldsc.com/departments/emergency-medical-services",
+     "evidence": "We are an ALS rural county 911 service. We operate 6 ambulances from 6 substations throughout the county with an annual call volume of approximately 5,000 calls.",
+     "vintage": "2026 (page footer); WIS 2024-09-26 on the county EMS ambulance fleet"
+    }
+   ],
+   "page_note": "Fairfield County EMS runs the county's 911 ambulances from six stations across the county.",
+   "second_source": "https://www.wistv.com/2024/09/26/fairfield-county-ems-be-first-state-with-new-life-saving-technology/",
+   "licence_check": "DPH roster: Fairfield County EMS is the only transport licence based in the county; county Rescue Squad page lists extrication/rescue only (EMR level). No city over 20k."
+  },
+  "45011": {
+   "county": "Barnwell",
+   "tier": "A",
+   "services": [
+    {
+     "name": "AmeriPro EMS of South Carolina",
+     "transport": true,
+     "ownership": "private (contractor to Barnwell County)",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.ameriprohealth.com/locations/",
+     "evidence": "AmeriPro Health South Carolina provides 911, BLS/ALS, CCT, and interfacility ambulance services in Barnwell County.",
+     "vintage": "current page, fetched 2026-10-22; county contract effective 2024-04-01 for three years"
+    }
+   ],
+   "page_note": "AmeriPro EMS runs Barnwell County's 911 ambulance service under a county contract that began April 2024.",
+   "second_source": "https://www.wrdw.com/2024/03/05/barnwell-county-approves-new-ambulance-provider-after-ending-contract/",
+   "licence_check": "DPH roster: AmeriPro EMS of South Carolina is the only transport licence based in the county. No city over 20k."
+  },
+  "45081": {
+   "county": "Saluda",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Saluda County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.wrdw.com/2026/07/28/roaches-mice-force-saluda-county-ems-substation-temporarily-close/",
+     "evidence": "The Traffic Circle substation has served the northeastern and southeastern parts of Saluda County since 2015. According to Starnes, last year, it responded to 890 emergency calls. So far this year, it has responded to 525 calls — all handled by a single ambulance based at the facility.",
+     "vintage": "2026-07-28"
+    }
+   ],
+   "page_note": "Saluda County EMS, a county department, runs the county's 911 ambulances from its Saluda headquarters and substations.",
+   "second_source": "https://saludacounty.sc.gov/departments/emergency-medical-services",
+   "licence_check": "DPH roster: Saluda County EMS is the only transport licence for Saluda. No city over 20k."
+  },
+  "45061": {
+   "county": "Lee",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Lee County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.leecountysc.org/directory/departments___elected_officials/ems_(emergency_medical_services).php",
+     "evidence": "Lee County Emergency Medical Services is a department of Lee County Emergency Services authorized by the Lee County Council to provide emergency medical services to county residents and visitors. EMS runs four full-time ambulances ... The Lee County EMS service area encompasses 411 square miles",
+     "vintage": "undated county page, current 2026; no sign of change"
+    }
+   ],
+   "page_note": "Lee County EMS, a county department, runs four full-time ambulances covering the whole county. A 2024 plan for Lee County Fire Department volunteers to carry patients to hospitals is not yet confirmed as running or as part of the county EMS service.",
+   "second_source": "",
+   "licence_check": "DPH roster: Lee County EMS is the only transport licence based in the county. No city over 20k."
+  },
+  "45027": {
+   "county": "Clarendon",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Clarendon County Fire Rescue",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://manninglive.com/stories/the-ride-along-my-day-with-clarendon-county-fire-rescue-part-2,149155",
+     "evidence": "Clarendon County Fire Rescue EMTs and medics treat the female passenger from the hydroplane crash on the roadside, working to stabilize her before transport. ... Inside the ambulance, EMTs and medics continue care for the female patient, monitoring her condition and keeping her calm during transport.",
+     "vintage": "2025-09-04"
+    }
+   ],
+   "page_note": "Clarendon County Fire Rescue, the county's combined fire and EMS department, runs the 911 ambulances. East Palmetto Ambulance Service does non-emergency transport only.",
+   "second_source": "https://manninglive.com/stories/lauren-beaty-named-south-carolina-advanced-emt-of-the-year,128369",
+   "licence_check": "DPH roster: Clarendon County Fire / Rescue is the only 911 transport licence; East Palmetto Ambulance Service is convalescent only. No city over 20k."
   }
  }
 }
