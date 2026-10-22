@@ -7,7 +7,7 @@
  "county_verdict": {
   "10003": {
    "county": "New Castle",
-   "tier": "A",
+   "tier": "held",
    "services": [
     {
      "name": "New Castle County EMS (County Paramedics)",
@@ -40,12 +40,12 @@
      "vintage": "2024"
     }
    ],
-   "page_note": "Two-tier system: county paramedics (ALS, non-transport) ride with BLS ambulances run by the volunteer fire companies; Wilmington BLS is contracted (Saint Francis EMS). Individual fire companies not listed one by one.",
+   "page_note": "County paramedics treat; volunteer fire company ambulances transport, but no source names them. Held until sourced.",
    "second_source": "https://www.newcastlede.gov/341"
   },
   "10005": {
    "county": "Sussex",
-   "tier": "A",
+   "tier": "held",
    "services": [
     {
      "name": "Sussex County EMS (SCEMS)",
@@ -68,7 +68,7 @@
      "vintage": "2026"
     }
    ],
-   "page_note": "County paramedics do not transport; 21 BLS services (mostly volunteer fire companies) carry patients. Individual services not named by the source.",
+   "page_note": "County paramedics treat; 21 BLS services transport, but no source names them. Held until sourced.",
    "second_source": ""
   },
   "10001": {

@@ -7,7 +7,7 @@
  "county_verdict": {
   "05119": {
    "county": "Pulaski",
-   "tier": "A",
+   "tier": "held",
    "services": [
     {
      "name": "Metropolitan Emergency Medical Services (MEMS / Little Rock Ambulance Authority)",
@@ -20,12 +20,12 @@
      "vintage": "2025"
     }
    ],
-   "page_note": "Jacksonville Fire Department appears in the 2021 state layer (3.6%); the exclusive franchise covers the county. MEMS is a public non-profit governed by the LRAA (agency of Little Rock).",
+   "page_note": "MEMS holds the franchise, but Jacksonville Fire Department is licensed to transport; whole-county coverage unconfirmed. Held until sourced.",
    "second_source": "https://metroems.org/about"
   },
   "05045": {
    "county": "Faulkner",
-   "tier": "A",
+   "tier": "held",
    "services": [
     {
      "name": "Metropolitan Emergency Medical Services (MEMS / Little Rock Ambulance Authority)",
@@ -38,12 +38,12 @@
      "vintage": "2022"
     }
    ],
-   "page_note": "2022 vintage, term runs to 2027-02-01. metroems.org/about now lists only Pulaski and Grant counties, Maumelle, Sherwood, Cabot (no Faulkner); the 2021 state layer independently shows 'MEMS - Conway' at 99.96%. Renewal due 2027.",
+   "page_note": "Pafford, not MEMS, has been the county provider since March 2022 (county ordinance 22-08; state licence list Dec 2025). Held until sourced.",
    "second_source": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0"
   },
   "05143": {
    "county": "Washington",
-   "tier": "A",
+   "tier": "held",
    "services": [
     {
      "name": "Washington County Regional Ambulance Authority (Central EMS)",
@@ -66,7 +66,7 @@
      "vintage": "2021"
     }
    ],
-   "page_note": "Site undated and says 'quasi-governmental authority'/'governmental, non-profit'. Whether Springdale FD transports was not confirmed (springdalear.gov blocked); if it does, it is a small overlap inside the county."
+   "page_note": "Springdale Fire Department runs its own licensed paramedic ambulances alongside Central EMS. Held until sourced."
   },
   "05007": {
    "county": "Benton",
