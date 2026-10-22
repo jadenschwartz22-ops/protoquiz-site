@@ -1,0 +1,79 @@
+{
+ "meta": {
+  "state": "WI",
+  "retrieved": "2026-10-22",
+  "via": "county and agency websites and the Wisconsin EMS licence list (local sources)"
+ },
+ "county_verdict": {
+  "55029": {
+   "county": "Door",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Door County Emergency Services (Door County Emergency Medical Service)",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county, including Washington Island and Rock Island",
+     "source_url": "https://www.co.door.wi.gov/505/Stations",
+     "evidence": "The service is classified as a 3rd municipal service licensed to provide ALS 911 transport. DCES provides EMS to all towns, villages, cities and islands from ambulances and crews based out of the following four stations",
+     "vintage": "2023+ (page cites the 2022 Washington Island move; history page cites 2023)"
+    }
+   ],
+   "page_note": "",
+   "second_source": "https://www.wi-emss.org/lms/public/portal#/lookup",
+   "licence_check": "Wisconsin DHS E-Licensing service lookup (pulled 2026-10-22, states/WI_lms_2026-10.json): the only 911 transporting licence based in Door County is Door County Emergency Medical Service (Sturgeon Bay, Paramedic); Sturgeon Bay FD, Sister Bay/Liberty Grove FD, Washington Island FD and 9 other Door groups are 911 non-transporting (first responders)."
+  },
+  "55077": {
+   "county": "Marquette",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Marquette County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.marquettecountywi.gov/ems/about-us-2/",
+     "evidence": "Marquette County is a county wide EMS system that covers the 464 square miles of Marquette County in the heart of Wisconsin. We are licensed at the Paramedic Level and are prepared to provide 24/7/365 service to those that are sick and injured ... We operate out of 3 stations and we have 4 ambulances",
+     "vintage": "2025-2026 (page dates)"
+    }
+   ],
+   "page_note": "Marquette County EMS runs the county ambulance service from three stations. Waushara County EMS has carried patients from the village and town of Neshkoro and the town of Crystal Lake under a contract with Marquette County, and no current source confirms who serves that area today.",
+   "second_source": "https://www.wi-emss.org/lms/public/portal#/lookup",
+   "licence_check": "Wisconsin DHS E-Licensing service lookup (pulled 2026-10-22, states/WI_lms_2026-10.json): Marquette County EMS (Montello, Paramedic) is the only 911 transporting licence based in the county, licence type '911 Transporting Service'; Neshkoro Fire District First Responders is non-transporting."
+  },
+  "55037": {
+   "county": "Florence",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Florence County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county (stations Florence, Aurora, Long Lake/Tipler)",
+     "source_url": "https://www.ironmountaindailynews.com/news/local-news/2024/02/florence-county-gets-new-three-station-ems-service/",
+     "evidence": "Over a year in the making, residents of Florence County now have a county-run EMS service. As of January, all three EMS stations -- Florence, Aurora and Long Lake/Tipler -- are operational ... For the Aurora station, transport does sometimes come from Florence. ... we needed to move to a full-time countywide system",
+     "vintage": "2024-02-10"
+    }
+   ],
+   "page_note": "Florence County EMS has run the county ambulance service from stations in Florence, Aurora and Long Lake/Tipler since January 2024. The county's own emergency records still pair Integrity Care EMS of Iron Mountain and Aspirus with these areas, and no current source confirms whether Integrity Care also carries patients here.",
+   "second_source": "https://www.wi-emss.org/lms/public/portal#/lookup",
+   "licence_check": "Wisconsin DHS E-Licensing service lookup (pulled 2026-10-22, states/WI_lms_2026-10.json): Florence County EMS (Florence, '911 Transporting Service', Paramedic with Critical Care Endorsement) is current; the other licence based in the county, 'Long Lake-Tipler Rescue Squad, Ltd. (DROPPED)', is marked dropped, matching the article (the new county service first ran under the former services' licences).",
+   "map_was": "Aspirus/Integrity/Long Lake/Tipler/Florence Rescue combinations from the NG911 layer: WRONG"
+  },
+  "55137": {
+   "county": "Waushara",
+   "tier": "held",
+   "services": [],
+   "page_note": "Waushara County EMS runs ambulances from Wautoma, Wild Rose, Poy Sippi and Hancock and is the only ambulance service licensed in the county. Its pages do not yet confirm that it covers every part of the county."
+  },
+  "55107": {
+   "county": "Rusk",
+   "tier": "held",
+   "services": [],
+   "page_note": "Rusk County Ambulance Service in Ladysmith is the only ambulance service licensed in the county. Who carries patients from the Bruce, Hawkins, Sheldon, Chetek and Birchwood areas is not yet confirmed."
+  }
+ }
+}
