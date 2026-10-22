@@ -1,0 +1,459 @@
+{
+ "meta": {
+  "state": "MO",
+  "retrieved": "2026-10-22",
+  "via": "ambulance-district websites, Highway Patrol crash reports carried by local news (KTTN, KOMU, Herald-Whig, Ozark Radio News, Warren County Record, Daily Journal, KOAM), MO DHSS ground-ambulance station layer and licence list"
+ },
+ "county_verdict": {
+  "29113": {
+   "county": "Lincoln",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Lincoln County Ambulance District",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.lcad.net/about-us/",
+     "evidence": "LCAD covers approximately 630 square miles, all of Lincoln County.",
+     "vintage": "2026 (site shows 2026 notices)"
+    }
+   ],
+   "page_note": "",
+   "second_source": "https://www.warrencountyrecord.com/stories/three-teens-injured-in-lincoln-county-rollover-crash,206026 (2026-08-14): \"transported by Lincoln County Ambulance DIstrict personnel to SSM Health St. Joseph Hospital - Lake St. Louis\"; MO DHSS ground-ambulance station layer (edited 2025-04) lists stations in the county only for: Lincoln Co Ambulance Dist; MO DHSS licence list (data.mo.gov e7p8-a69d, 2026-09-28) shows no other transport licence based in the county; ambulance-district compilation (2023) covers the county: Lincoln CAD 100%"
+  },
+  "29213": {
+   "county": "Taney",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Taney County Ambulance District (TCAD)",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.tcad.net/",
+     "evidence": "is an emergency medical service (EMS) providing exclusive ambulance transport for Taney County, Missouri",
+     "vintage": "2026 (live page 2026-10-22)"
+    }
+   ],
+   "page_note": "Taney County Ambulance District (TCAD) is confirmed carrying 911 patients in Taney County (2026). A Highway Patrol report of a July 2026 incident on Table Rock Lake in Taney County names Stone County Ambulance as the transporting service, so whether another service answers part of the county has not been confirmed.",
+   "second_source": "MO DHSS ground-ambulance station layer (edited 2025-04) lists stations in the county only for: Taney County Ambulance District; MO DHSS licence list (data.mo.gov e7p8-a69d, 2026-09-28) shows no other transport licence based in the county; ambulance-district compilation (2023) covers the county: Taney CAD 100%"
+  },
+  "29101": {
+   "county": "Johnson",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Johnson County Ambulance District",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://jocoamb.com/about/",
+     "evidence": "complete more than 6,000 patient transports, proudly serving a coverage area of over 830 square miles in Johnson County",
+     "vintage": "2026 (live page 2026-10-22)"
+    }
+   ],
+   "page_note": "Johnson County Ambulance District is confirmed carrying 911 patients in Johnson County (2026). The Windsor Ambulance District, which reaches into southern Johnson County and has been served by Pettis County Ambulance District from Windsor (Sedalia Democrat, 2015-2016), may answer the southern edge of the county; that area has not been confirmed.",
+   "second_source": "MO DHSS ground-ambulance station layer (edited 2025-04) lists stations in the county only for: Johnson County Ambulance District; MO DHSS licence list (data.mo.gov e7p8-a69d, 2026-09-28) shows no other transport licence based in the county; ambulance-district compilation (2023) covers the county: Johnson CAD 96%"
+  },
+  "29027": {
+   "county": "Callaway",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Callaway County Ambulance District (Callaway County EMS)",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.callawayambulance.org/about",
+     "evidence": "Callaway County Ambulance District is a career emergency medical service agency serving 44,359 residents within Callaway County's 839 square miles.",
+     "vintage": "2026 (site lists a 2026-09-15 board meeting)"
+    }
+   ],
+   "page_note": "Callaway County Ambulance District (Callaway County EMS) is confirmed carrying 911 patients in Callaway County (2026). A Highway Patrol report of an October 2024 crash on U.S. 63 in Callaway County names Cole County EMS as the transporting service, so whether Cole County EMS answers part of the county has not been confirmed.",
+   "second_source": "MO DHSS ground-ambulance station layer (edited 2025-04) lists stations in the county only for: Callaway County Ambulance Dist; MO DHSS licence list (data.mo.gov e7p8-a69d, 2026-09-28) shows no other transport licence based in the county; ambulance-district compilation (2023) covers the county: Callaway CAD 100%"
+  },
+  "29207": {
+   "county": "Stoddard",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Stoddard County Ambulance District",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://stoddems.com/about-us",
+     "evidence": "The district consists of 4 stations throughout the county with 10 ambulances",
+     "vintage": "2026 (copyright 2026)"
+    }
+   ],
+   "page_note": "",
+   "second_source": "MO DHSS ground-ambulance station layer (edited 2025-04) lists stations in the county only for: Stoddard Co Ambulance Dist; MO DHSS licence list (data.mo.gov e7p8-a69d, 2026-09-28) shows no other transport licence based in the county; ambulance-district compilation (2023) covers the county: Stoddard CAD 99%"
+  },
+  "29143": {
+   "county": "New Madrid",
+   "tier": "A",
+   "services": [
+    {
+     "name": "New Madrid County Ambulance District",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.nmcad.net/",
+     "evidence": "providing emergency medical care and transport to the citizens and visitors of New Madrid County, Missouri",
+     "vintage": "2026 (live page 2026-10-22)"
+    }
+   ],
+   "page_note": "",
+   "second_source": "MO DHSS ground-ambulance station layer (edited 2025-04) lists stations in the county only for: New Madrid County Ambulance Dist; MO DHSS licence list (data.mo.gov e7p8-a69d, 2026-09-28) shows no other transport licence based in the county; ambulance-district compilation (2023) covers the county: New Madrid CAD 99%"
+  },
+  "29217": {
+   "county": "Vernon",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Vernon County Ambulance District",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.vernoncountyambulancedistrict.com/",
+     "evidence": "Vernon County Ambulance District has proudly served the 837 square miles and 20,437 residents of Vernon County, Missouri",
+     "vintage": "2026 (live page 2026-10-22)"
+    }
+   ],
+   "page_note": "",
+   "second_source": "https://www.koamnewsnow.com/news/joplin-news-first/house-fire-intentionally-set-say-nevada-officials/article_34479223-5119-4dd7-9431-120e19e2371e.html (2026-01-13): \"One firefighter was transported by Vernon County Ambulance to Nevada Regional Medical Center\"; MO DHSS ground-ambulance station layer (edited 2025-04) lists stations in the county only for: Vernon County Ambulance Dist; MO DHSS licence list (data.mo.gov e7p8-a69d, 2026-09-28) shows no other transport licence based in the county; ambulance-district compilation (2023) covers the county: Vernon CAD 99%"
+  },
+  "29001": {
+   "county": "Adair",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Adair County Ambulance District (Adair County Ambulance)",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.kttn.com/three-injured-in-highway-6-crash-west-of-kirksville/",
+     "evidence": "Both women were transported by Adair County Ambulance to Northeast Regional Medical Center for treatment.",
+     "vintage": "2026-09-13"
+    }
+   ],
+   "page_note": "Adair County Ambulance District (Adair County Ambulance) is confirmed carrying 911 patients in Adair County (2026). Macon County Ambulance was the ambulance named at a September 2025 crash east of La Plata in Adair County, so who answers the area near La Plata has not been confirmed.",
+   "second_source": "https://www.kttn.com/highway-63-collision-injures-two-south-of-kirksville/ (2026-08-07): \"She was transported by Adair County Ambulance to Northeast Regional Medical Center.\"; MO DHSS ground-ambulance station layer (edited 2025-04) lists stations in the county only for: Adair County Ambulance Dist; Air Evac EMS, Inc. dba MU Health; MO DHSS licence list (data.mo.gov e7p8-a69d, 2026-09-28) shows no other transport licence based in the county; ambulance-district compilation (2023) covers the county: Adair CAD 99%, Macon CAD 2%"
+  },
+  "29175": {
+   "county": "Randolph",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Randolph County Ambulance District (Randolph County EMS)",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.kttn.com/moberly-police-patrol-investigate-fatal-morehead-street-shooting/",
+     "evidence": "The Randolph County Ambulance District transported the woman to a local hospital",
+     "vintage": "2026-08-25"
+    }
+   ],
+   "page_note": "",
+   "second_source": "https://www.kttn.com/woman-killed-and-three-hurt-in-highway-63-crash/ (2026-02-12): \"She was transported by the Randolph County Ambulance District to University Hospital in Columbia\"; MO DHSS ground-ambulance station layer (edited 2025-04) lists stations in the county only for: Air Evac EMS, Inc. dba MU Health; Randolph County EMS; MO DHSS licence list (data.mo.gov e7p8-a69d, 2026-09-28) shows no other transport licence based in the county; ambulance-district compilation (2023) covers the county: Randolph CAD 99%"
+  },
+  "29221": {
+   "county": "Washington",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Washington County Ambulance District",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.dailyjournalonline.com/news/mshp-accident-reports-1ec11d57",
+     "evidence": "transported to Washington County Memorial Hospital by Washington County ambulance",
+     "vintage": "2026-06-14"
+    }
+   ],
+   "page_note": "",
+   "second_source": "https://www.kttn.com/six-year-old-girl-killed-and-three-injured-in-highway-21-crash-near-potosi/ (2025-05-20): \"She was transported by Washington County Ambulance along with two other children\"; MO DHSS ground-ambulance station layer (edited 2025-04) lists stations in the county only for: Washington County Ambulance Dist; MO DHSS licence list (data.mo.gov e7p8-a69d, 2026-09-28) shows no other transport licence based in the county; ambulance-district compilation (2023) covers the county: Washington CAD 99%"
+  },
+  "29121": {
+   "county": "Macon",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Macon County Ambulance District",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.kttn.com/elmer-man-injured-after-pickup-overturns-into-river-near-macon/",
+     "evidence": "transported by Macon County Ambulance to Samaritan Hospital in Macon for treatment of minor injuries",
+     "vintage": "2026-09-18"
+    }
+   ],
+   "page_note": "Macon County Ambulance District is confirmed carrying 911 patients in Macon County (2026). Linn County Ambulance transported patients from Highway 36 crashes near New Cambria in Macon County (October 2024, June 2025, October 2026), so who answers the area near New Cambria has not been confirmed.",
+   "second_source": "https://www.kttn.com/motorcyclist-injured-in-highway-63-crash-south-of-excello/ (2026-06-29): \"Macon County Ambulance transported him to University of Missouri Hospital\"; MO DHSS ground-ambulance station layer (edited 2025-04) lists stations in the county only for: Macon County Ambulance Dist; MO DHSS licence list (data.mo.gov e7p8-a69d, 2026-09-28) shows no other transport licence based in the county; ambulance-district compilation (2023) covers the county: Macon CAD 99%"
+  },
+  "29115": {
+   "county": "Linn",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Linn County Ambulance District",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.kttn.com/v2-wo-injured-in-highway-36-crash-west-of-brookfield/",
+     "evidence": "He was transported by Linn County Ambulance to Pershing Memorial Hospital.",
+     "vintage": "2026-03-18"
+    }
+   ],
+   "page_note": "",
+   "second_source": "https://www.kttn.com/rollover-crash-east-of-marceline-sends-two-to-hospitals/ (2025-12-17): \"He sustained minor injuries and was transported by Linn County Ambulance to Pershing Memorial Hospital.\"; MO DHSS ground-ambulance station layer (edited 2025-04) lists stations in the county only for: Linn County Ambulance District; MO DHSS licence list (data.mo.gov e7p8-a69d, 2026-09-28) shows no other transport licence based in the county; ambulance-district compilation (2023) covers the county: Linn CAD 99%"
+  },
+  "29025": {
+   "county": "Caldwell",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Caldwell County Ambulance District",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.kttn.com/kidder-man-hurt-in-caldwell-county-pickup-and-van-collision/",
+     "evidence": "transported by Caldwell County Ambulance to Liberty Hospital for treatment",
+     "vintage": "2026-06-19"
+    }
+   ],
+   "page_note": "Caldwell County Ambulance District is confirmed carrying 911 patients in Caldwell County (2026). Cameron Ambulance transported patients from several crashes in western Caldwell County near Cameron and Kidder (2024-2026) and Livingston County Ambulance from a January 2026 crash in Braymer, so which parts of the county other services answer has not been confirmed.",
+   "second_source": "https://www.kttn.com/braymer-woman-faces-felony-after-injury-crash-on-highway-116/ (2026-06-13): \"transported by Caldwell County Ambulance to Liberty Hospital for treatment\"; MO DHSS ground-ambulance station layer (edited 2025-04) lists stations in the county only for: Caldwell County Ambulance District; MO DHSS licence list (data.mo.gov e7p8-a69d, 2026-09-28) shows no other transport licence based in the county; ambulance-district compilation (2023) covers the county: Caldwell CAD 97%"
+  },
+  "29041": {
+   "county": "Chariton",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Chariton County Ambulance District",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.komu.com/news/midmissourinews/brookfield-woman-injured-in-crash-after-falling-asleep-at-the-wheel/article_34859986-ffeb-4b41-bd7b-670a65650ef2.html",
+     "evidence": "The woman was transported by the Chariton County Ambulance District to University Hospital.",
+     "vintage": "2026-07-30"
+    }
+   ],
+   "page_note": "Chariton County Ambulance District is confirmed carrying 911 patients in Chariton County (2026). An August 2025 crash south of Marceline in Chariton County was transported by an MU ambulance with no Chariton County unit named, so who answers the area near Marceline has not been confirmed.",
+   "second_source": "MO DHSS ground-ambulance station layer (edited 2025-04) lists stations in the county only for: Chariton County Ambulance Dist; MO DHSS licence list (data.mo.gov e7p8-a69d, 2026-09-28) shows no other transport licence based in the county; ambulance-district compilation (2023) covers the county: Chariton CAD 99%"
+  },
+  "29045": {
+   "county": "Clark",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Clark County Ambulance District",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://whig.com/2026/07/06/missouri-highways-july-4th-accidents/",
+     "evidence": "The child was transported by the Clark County Ambulance to Blessing Hospital.",
+     "vintage": "2026-07-06"
+    }
+   ],
+   "page_note": "Clark County Ambulance District is confirmed carrying 911 patients in Clark County (2026). Lee County, Iowa, Ambulance also transported a patient from a January 2024 crash on U.S. 61 in Clark County, so whether it answers part of the county has not been confirmed.",
+   "second_source": "https://www.kttn.com/accident-on-highway-136-east-of-luray-injures-alexandria-man/ (2023-12-06): \"He was transported by Clark County Ambulance to Scotland County Memorial Hospital\"; MO DHSS ground-ambulance station layer (edited 2025-04) lists stations in the county only for: Clark County Ambulance Dist; MO DHSS licence list (data.mo.gov e7p8-a69d, 2026-09-28) shows no other transport licence based in the county; ambulance-district compilation (2023) covers the county: Clark CAD 99%"
+  },
+  "29103": {
+   "county": "Knox",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Knox County Ambulance District",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://whig.com/2026/08/18/queen-city-man-and-toddler-injured-after-semi-truck-flips-on-mo-11/",
+     "evidence": "Both sustained minor injuries and were transported by Knox County Ambulance to Northeast Regional Medical Center for treatment.",
+     "vintage": "2026-08-18"
+    }
+   ],
+   "page_note": "Knox County Ambulance District is confirmed carrying 911 patients in Knox County (2026). Lewis County Ambulance transported a patient from a July 2025 crash west of Novelty in Knox County with no Knox County unit named, so who answers that part of the county has not been confirmed.",
+   "second_source": "https://www.kttn.com/man-injured-after-car-hits-pole-and-mailbox-in-knox-county/ (2026-04-26): \"He was transported by Knox County Ambulance to Blessing Hospital for treatment.\"; MO DHSS ground-ambulance station layer (edited 2025-04) lists stations in the county only for: Knox County Ambulance District; MO DHSS licence list (data.mo.gov e7p8-a69d, 2026-09-28) shows no other transport licence based in the county; ambulance-district compilation (2023) covers the county: Knox CAD 99%, Lewis CAD 2%"
+  },
+  "29111": {
+   "county": "Lewis",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Lewis County Ambulance District",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://whig.com/2026/09/18/la-belle-teenager-injured-in-lewistown-electric-scooter-crash/",
+     "evidence": "transported by Lewis County Ambulance to Blessing Hospital in Quincy for treatment",
+     "vintage": "2026-09-18"
+    }
+   ],
+   "page_note": "Lewis County Ambulance District is confirmed carrying 911 patients in Lewis County (2026). Knox County Ambulance was the only ambulance named at a June 2024 crash west of LaBelle in Lewis County, so who answers the western part of the county has not been confirmed.",
+   "second_source": "MO DHSS ground-ambulance station layer (edited 2025-04) lists stations in the county only for: Lewis County Ambulance Dist; MO DHSS licence list (data.mo.gov e7p8-a69d, 2026-09-28) shows no other transport licence based in the county; ambulance-district compilation (2023) covers the county: Lewis CAD 100%"
+  },
+  "29149": {
+   "county": "Oregon",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Oregon County Ambulance District",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://ozarkradionews.com/local-news/393732",
+     "evidence": "Oregon County Ambulance transported both children to Ozarks Healthcare in West Plains for treatment",
+     "vintage": "2026-10-18"
+    }
+   ],
+   "page_note": "",
+   "second_source": "MO DHSS ground-ambulance station layer (edited 2025-04) lists stations in the county only for: Oregon County Ambulance Dist; MO DHSS licence list (data.mo.gov e7p8-a69d, 2026-09-28) shows no other transport licence based in the county; ambulance-district compilation (2023) covers the county: Oregon CAD 99%, South Howell CAD 1%"
+  },
+  "29153": {
+   "county": "Ozark",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Ozark County Ambulance District",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://ozarkradionews.com/local-news/mountain-home-man-injured-in-friday-accident",
+     "evidence": "was taken by Ozark County Ambulance to Mercy Hospital in Springfield",
+     "vintage": "2026-06-13"
+    }
+   ],
+   "page_note": "",
+   "second_source": "MO DHSS ground-ambulance station layer (edited 2025-04) lists stations in the county only for: Ozark County Ambulance District; MO DHSS licence list (data.mo.gov e7p8-a69d, 2026-09-28) shows no other transport licence based in the county; ambulance-district compilation (2023) covers the county: Ozark CAD 100%"
+  },
+  "29171": {
+   "county": "Putnam",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Putnam County Ambulance District",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.kttn.com/rear-end-crash-injures-two-on-highway-136-in-putnam-county/",
+     "evidence": "was transported by Putnam County Ambulance to Putnam County Hospital",
+     "vintage": "2026-07-29"
+    }
+   ],
+   "page_note": "Putnam County Ambulance District is confirmed carrying 911 patients in Putnam County (2026). Sullivan County Ambulance (October 2026, south of Unionville) and Adair County Ambulance (December 2025, east of Unionville) also transported patients from crashes in Putnam County, so whether they answer part of the county has not been confirmed.",
+   "second_source": "https://www.kttn.com/man-injured-in-rollover-crash-in-putnam-county/ (2026-04-20): \"transported by Putnam County Ambulance to Putnam County Memorial Hospital for treatment\"; MO DHSS ground-ambulance station layer (edited 2025-04) lists stations in the county only for: Putnam County Ambulance District; MO DHSS licence list (data.mo.gov e7p8-a69d, 2026-09-28) shows no other transport licence based in the county; ambulance-district compilation (2023) covers the county: Putnam CAD 100%, Schuyler CAD 1%, Sullivan CAD 1%"
+  },
+  "29197": {
+   "county": "Schuyler",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Schuyler County Ambulance District",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.kttn.com/queen-city-woman-hurt-after-car-hits-horse-on-highway-63/",
+     "evidence": "transported by Schuyler County Ambulance to Northeast Regional Medical Center",
+     "vintage": "2026-03-27"
+    }
+   ],
+   "page_note": "Schuyler County Ambulance District is confirmed carrying 911 patients in Schuyler County (2026). Adair County Ambulance transported a patient from an April 2025 crash on Highway 63 in Schuyler County near Greentop, so who answers the area near Greentop has not been confirmed.",
+   "second_source": "https://www.kttn.com/amish-buggy-driver-ejected-in-schuyler-county-crash/ (2026-02-15): \"transported by Schuyler County Ambulance to Northeast Regional Medical Center\"; MO DHSS ground-ambulance station layer (edited 2025-04) lists stations in the county only for: Schuyler County Ambulance Dist; MO DHSS licence list (data.mo.gov e7p8-a69d, 2026-09-28) shows no other transport licence based in the county; ambulance-district compilation (2023) covers the county: Putnam CAD 2%, Schuyler CAD 100%, Scotland CAD 2%"
+  },
+  "29211": {
+   "county": "Sullivan",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Sullivan County Ambulance District",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.kttn.com/milan-driver-injured-after-striking-a-deer-on-highway-139/",
+     "evidence": "transported by Sullivan County Ambulance to Sullivan County Memorial Hospital for treatment of his injuries",
+     "vintage": "2026-09-28"
+    }
+   ],
+   "page_note": "",
+   "second_source": "https://jcpost.com/posts/cc8ffe33-3ae8-4f7a-b1e1-8339f0f04499 (2026-01-06): \"Sullivan County Ambulance transported the Trooper, the pickup driver and three additional passengers\"; MO DHSS ground-ambulance station layer (edited 2025-04) lists stations in the county only for: Sullivan County Ambulance Dist; MO DHSS licence list (data.mo.gov e7p8-a69d, 2026-09-28) shows no other transport licence based in the county; ambulance-district compilation (2023) covers the county: Sullivan CAD 100%"
+  },
+  "29199": {
+   "county": "Scotland",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Scotland County Ambulance District",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.kttn.com/jeep-struck-from-behind-by-ford-in-crash-on-highway-15-near-memphis/",
+     "evidence": "He was transported by Scotland County Ambulance to Scotland County Hospital in Memphis for treatment.",
+     "vintage": "2025-04-22"
+    }
+   ],
+   "page_note": "",
+   "second_source": "https://www.kttn.com/driver-airlifted-after-crash-in-scotland-county-near-arbela/ (2025-05-04): \"transported by Scotland County Ambulance to Scotland County Hospital\"; MO DHSS ground-ambulance station layer (edited 2025-04) lists stations in the county only for: Scotland County Ambulance District; MO DHSS licence list (data.mo.gov e7p8-a69d, 2026-09-28) shows no other transport licence based in the county; ambulance-district compilation (2023) covers the county: Knox CAD 1%, Scotland CAD 100%"
+  },
+  "29033": {
+   "county": "Carroll",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Carroll County Ambulance District",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.kttn.com/woman-from-chillicothe-among-three-injured-in-carroll-county-head-on-crash/",
+     "evidence": "transported by Carroll County Ambulance District to Carroll County Memorial Hospital",
+     "vintage": "2025-03-31"
+    }
+   ],
+   "page_note": "",
+   "second_source": "https://www.kttn.com/carrollton-man-injured-in-highway-65-crash/ (2025-12-12): \"was taken by Carroll County Ambulance to North Kansas City Hospital\"; MO DHSS ground-ambulance station layer (edited 2025-04) lists stations in the county only for: Carroll County Ambulance District; MO DHSS licence list (data.mo.gov e7p8-a69d, 2026-09-28) shows no other transport licence based in the county; ambulance-district compilation (2023) covers the county: Carroll CAD 99%"
+  },
+  "29129": {
+   "county": "Mercer",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Mercer County Ambulance District",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.kttn.com/two-vehicle-crash-near-mercer-claims-life-of-iowa-driver/",
+     "evidence": "He was transported by Mercer County Ambulance to Wayne County Hospital.",
+     "vintage": "2026-03-11"
+    }
+   ],
+   "page_note": "",
+   "second_source": "MO DHSS ground-ambulance station layer (edited 2025-04) lists stations in the county only for: Mercer County Ambulance Dist; MO DHSS licence list (data.mo.gov e7p8-a69d, 2026-09-28) shows no other transport licence based in the county; ambulance-district compilation (2023) covers the county: Mercer CAD 98%"
+  }
+ }
+}
