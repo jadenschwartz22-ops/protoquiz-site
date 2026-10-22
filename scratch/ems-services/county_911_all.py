@@ -60,8 +60,9 @@ def own_word(t):
     t = (t or '').lower()
     if t.startswith('mixed'): return 'mixed'
     if re.search(r'hospital', t): return 'hospital'
-    if re.search(r'private|commercial|contractor|non-?profit|volunteer', t): return 'private'
-    if re.search(r'fire|municipal|district|public|county|city|third|government', t): return 'public'
+    if re.search(r'private|commercial|contractor', t): return 'private'
+    if re.search(r'fire|municipal|district|public|county|city|third|government', t): return 'public'   # before volunteer: 'county fire (combination career/volunteer)'
+    if re.search(r'non-?profit|volunteer', t): return 'private'
     return None
 def own_of(p):
     m = p['own']
@@ -286,6 +287,7 @@ def build():
             if v['tier'] != 'A': continue
             for s in v['services']:
                 pub(fk, s['name'], g['meta']['via'], s['source_url'], (s.get('area') or 'whole county') + ': ' + s['evidence'], kind='local', partial=s.get('partial', False), transport=s.get('transport'), own=own_word(s.get('ownership')) or None)
+                S[fk]['providers'][-1]['audited'] = True   # a lane row an audit lane passed (LANE_BRIEF_AUDIT.md); never demoted below
     ga = load('GA')['county_verdict']
     for fk in ('13243', '13205', '13027'):
         a = ga[fk]['add'][0]
@@ -299,7 +301,7 @@ def build():
         if d['st'] == 'AZ': d['providers'] = [p for p in d['providers'] if not re.search(r'Alliance Ambulance|Critical Air|Ponderosa', p['name'])]   # interfacility-only certificates
         if d['st'] in AUDIT_DEMOTE and k not in AUDIT_KEEP:
             for p in d['providers']:
-                if p['basis'] == 'serves' and '(local sources)' not in (p.get('via') or ''): p['basis'] = 'located'
+                if p['basis'] == 'serves' and not p.get('audited'): p['basis'] = 'located'
     if ambiguous: print('not placed, county or city not said:', dict(ambiguous))
     for k, d in S.items():
         d['medicare'].sort(key=lambda m: -m['E']); mnames = {norm(m['name']) for m in d['medicare'] if m['emerg']}

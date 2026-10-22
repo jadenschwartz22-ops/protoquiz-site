@@ -1,0 +1,1078 @@
+{
+ "meta": {
+  "state": "UT",
+  "retrieved": "2026-10-22",
+  "via": "Utah Geospatial Resource Center EMS response areas overlaid on county lines, the Utah Bureau of EMS licence list, the Utah Medicaid ambulance assessment (January 2026, 2024 ground transports), and agency pages where found (local sources)",
+  "note": "Sevier, Duchesne, Daggett confirmed earlier and not rebuilt here."
+ },
+ "county_verdict": {
+  "49035": {
+   "county": "Salt Lake",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Unified Fire Authority",
+     "transport": true,
+     "ownership": "mixed: interlocal fire authority",
+     "partial": false,
+     "area": "unincorporated county, Millcreek, Holladay, Cottonwood Heights, Taylorsville, Kearns, Magna, Midvale, Herriman, Riverton, Alta, Brighton, Emigration Canyon, White City (and Eagle Mountain in Utah County)",
+     "source_url": "https://unifiedfireut.gov/911-emergency-transport/",
+     "evidence": "UFA 911 Emergency Transport page: \"UFA began providing 911 emergency ambulance services to all communities within UFA jurisdiction July 2009.\" Also Medicaid Ambulance Assessment 1/12/2026: \"UNIFIED FIRE AUTHORITY\" 11,867 ground transports (CY2024). Brighton resolution 2025-R-12-2 (12/9/2025) designates UFA for 911 ambulance. Bureau of EMS licence roster: \"Unified Fire Authority - Primary license #1867L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Gold Cross Ambulance (Salt Lake City)",
+     "transport": true,
+     "ownership": "private (licensed by Bureau of EMS)",
+     "partial": false,
+     "area": "Salt Lake City (Salt Lake City Fire Department is a licensed non-transport paramedic rescue, #1804L)",
+     "source_url": "https://police.slc.gov/2025/10/21/slcpd-investigating-deadly-auto-bicyclist-crash-in-downtown-salt-lake-city/",
+     "evidence": "SLCPD release 10/21/2025 (SLC911 call at 500 South 300 West): \"Officers from the SLCPD Central Patrol Division, Salt Lake City Fire, and Gold Cross responded and treated 59-year-old Scott Hunt ... Paramedics took Hunt to a local hospital.\" Utah Legislative Auditor General (2024, le.utah.gov/interim/2024/pdf/00004082.pdf): \"Gold Cross is licensed to perform ground transportation and interfacility transfer services within Salt Lake City.\" Medicaid 1/12/2026: GOLD CROSS AMBULANCE 59,885 ground transports (all Gold Cross licences). Gold Cross press release 5/18/2026: provides \"911 services\" in Salt Lake County. Bureau of EMS licence roster: \"Gold Cross Ambulance Services Inc-Slc - Primary license #1812L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "West Valley City Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "West Valley City",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"WEST VALLEY CITY FIRE AMB\" listed with 4,162 ground transports, calendar year 2024. Bureau of EMS licence roster: \"West Valley City Fire Department - Primary license #1865L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "West Jordan Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "West Jordan",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"WEST JORDAN FIRE and AMBUL\" listed with 2,378 ground transports, calendar year 2024. Bureau of EMS licence roster: \"West Jordan Fire Department - Primary license #1861L\". westjordan.utah.gov/fire/ links \"Pay My Ambulance Bill\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Sandy City Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "Sandy",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"SANDY CITY AMBULANCE\" listed with 3,249 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Sandy City Fire Department - Primary license #1809L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Draper City Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "Draper",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"DRAPER CITY AMBULANCE\" listed with 1,724 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Draper City Fire Department-Primary # 1852L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "South Jordan Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "South Jordan",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"SOUTH JORDAN FIRE DEPT\" listed with 4,010 ground transports, calendar year 2024. Bureau of EMS licence roster: \"South Jordan Fire Department - Primary license #1858L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Murray City Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "Murray",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"MURRAY CITY FIRE DEPT\" listed with 2,506 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Murray City Fire Department - Primary license #1868L\". murray.utah.gov/172/Fire-Department lists \"EMS/Ambulance Service & Response\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Bluffdale Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "Bluffdale (Salt Lake County part)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"BLUFFDALE FIRE DEPT\" listed with 242 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Bluffdale Fire Department - Primary license #1869L\". bluffdale.gov/fire links \"Pay Ambulance Transport Bill\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "South Salt Lake Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "South Salt Lake",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"CITY OF SOUTH SALT LAKE\" listed with 2,977 ground transports, calendar year 2024. Bureau of EMS licence roster: \"South Salt Lake Fire Department - Primary license #1821L\".",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "All 10 EMS response-area agencies in the county, with Gold Cross Ambulance covering Salt Lake City, have ground transports on the state Medicaid list. Arches and Guardian Transportation provide behavioral-health transport, and Gold Cross Utah/Juab is interfacility.",
+   "second_source": "https://www.slc.gov/ (SLC FD page returned 404 on 10-22); le.utah.gov/interim/2024/pdf/00004082.pdf"
+  },
+  "49049": {
+   "county": "Utah",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Spanish Fork Ambulance",
+     "transport": true,
+     "ownership": "municipal EMS",
+     "partial": false,
+     "area": "Spanish Fork and south-east county",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"SPANISH FORK AMBULANCE\" listed with 2,250 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Spanish Fork Ambulance - Primary license #2509L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Santaquin City Ambulance",
+     "transport": true,
+     "ownership": "municipal EMS",
+     "partial": false,
+     "area": "Santaquin and south-west county",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"SANTAQUIN AMBULANCE\" listed with 376 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Santaquin City Ambulance - Primary license #2513L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Unified Fire Authority (Eagle Mountain Ambulance)",
+     "transport": true,
+     "ownership": "mixed: interlocal fire authority",
+     "partial": false,
+     "area": "Eagle Mountain",
+     "source_url": "https://unifiedfireut.gov/911-emergency-transport/",
+     "evidence": "UFA 911 Emergency Transport page: \"UFA Transport services expanded in 2011 with Midvale City and in 2013 with Eagle Mountain City joining the UFA.\" UFA About page: Eagle Mountain is the one municipality in Utah County. Medicaid 1/12/2026: UNIFIED FIRE AUTHORITY 11,867 transports (CY2024). Bureau of EMS licence roster: \"Unified Fire Authority - Primary license #1867L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Mapleton Fire and Rescue",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "Mapleton",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"MAPLETON CITY AMBULANCE\" listed with 362 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Mapleton Fire and Rescue - Primary license #2518L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Payson Fire & Rescue",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "Payson, Elk Ridge, Genola",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"PAYSON AMBULANCE\" listed with 1,294 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Payson Fire & Rescue - Primary license #2503L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Lone Peak Public Safety District",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "Highland, Alpine, Cedar Hills area",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"LONE PEAK AMBULANCE\" listed with 418 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Lone Peak Public Safety District - Primary license #2535L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Provo City Fire and Rescue",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "Provo",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"PROVO CITY CORP\" listed with 2,581 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Provo City Fire and Rescue - Primary license #2505L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Saratoga Springs Fire & Rescue",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "Saratoga Springs",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"CITY OF SARATOGA SPRINGS\" listed with 1,461 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Saratoga Springs Fire & Rescue - Primary license #2551L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "North Fork Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "Provo Canyon / North Fork",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"North Fork Fire Department\" listed with 75 ground transports, calendar year 2024. Bureau of EMS licence roster: \"North Fork Fire Department - Primary license #2541L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Orem Department of Public Safety",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "Orem, Vineyard, Lindon",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"OREM FIRE DEPARTMENT\" listed with 3,002 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Orem Department Of Public Safety - Primary license #2506L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Lehi Fire and EMS",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "Lehi",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"LEHI CITY AMBULANCE\" listed with 2,253 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Lehi Fire/Emergency Medical Services - Primary license #2550L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Salem Fire & Rescue",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "Salem, Woodland Hills area",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"SALEM EMERGENCY MED AMB\" listed with 287 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Salem Fire & Rescue - Primary license #2517L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Pleasant Grove Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "Pleasant Grove, Lindon edge (0.8% of county area; dropped by the old 1% cutoff)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"PLEASANT GROVE AMBULANCE\" listed with 730 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Pleasant Grove Fire Department - Primary license #2545L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Springville Fire and Rescue",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "Springville (0.8% of county area; dropped by the old 1% cutoff)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"SPRINGVILLE AMBULANCE SRVC\" listed with 858 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Springville Fire And Rescue - Primary license #2508L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "American Fork City Fire & Rescue",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "American Fork, Cedar Hills (0.8% of county area; dropped by the old 1% cutoff)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"AMERICAN FORK AMBULANCE\" listed with 2,482 ground transports, calendar year 2024. Bureau of EMS licence roster: \"American Fork City - Primary license #2540L\".",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Carbon County Ambulance covers a Soldier Summit corner of the county (2.8%) and Juab County EMS the south-west edge (1.9%). Utah County Sheriff Search and Rescue (6.4%, wilderness) does not transport.",
+   "second_source": "UGRC Utah EMS Response Areas (ugrc_ems.geojson, raw in states/web_raw/UT): polygon assigns the area to this agency."
+  },
+  "49011": {
+   "county": "Davis",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Syracuse City Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "Syracuse (66% of county area is mostly Great Salt Lake)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"SYRACUSE CITY CORPORATION\" listed with 704 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Syracuse City Fire Department - Primary license #0618L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "South Davis Metro Fire Agency",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": false,
+     "area": "Bountiful, Centerville, North Salt Lake, Woods Cross, West Bountiful",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"SOUTH DAVIS METRO FIRE\" listed with 3,580 ground transports, calendar year 2024. Bureau of EMS licence roster: \"South Davis Metro Fire Agency - Primary license #0635L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Layton City Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "Layton",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"LAYTON CITY FIRE DEPT AMB\" listed with 4,764 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Layton City Fire Department - Primary license #0631L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Farmington City Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "Farmington",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"FARMINGTON FIRE DEPT AMB\" listed with 825 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Farmington City Fire Department - Primary license #0630L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Kaysville City Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "Kaysville, Fruit Heights",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"KAYSVILLE CITY FIRE DEPT\" listed with 701 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Kaysville City Fire Department - Primary license #0606L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "North Davis Fire District",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": false,
+     "area": "Clearfield, Sunset, West Point (point test: Clearfield and Sunset fall in this polygon)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"North Davis Fire District\" listed with 1,629 ground transports, calendar year 2024. Bureau of EMS licence roster: \"North Davis Fire District - Primary license #0620L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "South Weber City Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "South Weber",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"South Weber Fire\" listed with 139 ground transports, calendar year 2024. Bureau of EMS licence roster: \"South Weber City Fire Department 0637L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Clinton City Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "Clinton",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"Clinton City Fire Department\" listed with 503 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Clinton City Fire Department - Primary license #0612L\".",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Hill Air Force Base Fire and Emergency Services (1.5%) is an on-base federal department, and the Chevron refinery fire department covers 0.1%.",
+   "second_source": "UGRC Utah EMS Response Areas (ugrc_ems.geojson, raw in states/web_raw/UT): polygon assigns the area to this agency."
+  },
+  "49053": {
+   "county": "Washington",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Gold Cross Ambulance (Southern)",
+     "transport": true,
+     "ownership": "private (licensed by Bureau of EMS)",
+     "partial": false,
+     "area": "St. George, Washington City and the central county",
+     "source_url": "https://www.stgeorgeutah.com/news/archive/2013/05/28/kessler-officials-satisfied-with-gold-cross-service-thus-far-yet-continue-to-watch",
+     "evidence": "Medicaid 1/12/2026: GOLD CROSS AMBULANCE 59,885 ground transports (all Gold Cross licences). Bureau of EMS licence roster: \"Gold Cross Ambulance Services, Inc-Southern - Primary license #2765L\". Gold Cross press release 5/18/2026: \"serves counties of Salt Lake, Uintah, Utah, Washington, and Iron.\" St George news 2022: Gold Cross is the St. George emergency provider.",
+     "vintage": "2026"
+    },
+    {
+     "name": "Hurricane Valley Fire Special Service District",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "Hurricane, La Verkin, Toquerville, Springdale",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"HURRICANE VALLEY FIRE\" listed with 3,370 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Hurricane Valley Fire Special Services District - Primary license #2703L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Santa Clara-Ivins Public Safety",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "Santa Clara, Ivins",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"Santa Clara Ivins Fire and Rescue\" listed with 500 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Santa Clara- Ivins #2746L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Enterprise Ambulance Service",
+     "transport": true,
+     "ownership": "municipal EMS",
+     "partial": false,
+     "area": "north-west county (Enterprise)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"CITY OF ENTERPRISE AMBU\" listed with 155 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Enterprise Ambulance Service - Primary license #2701L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Hildale Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "Hildale",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"HILDALE FIRE DEPARTMENT\" listed with 186 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Hildale Fire Department - Primary license #2720L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Zion National Park ambulance (NPS)",
+     "transport": true,
+     "ownership": "federal (National Park Service)",
+     "partial": false,
+     "area": "Zion National Park (5.4% of county area)",
+     "source_url": "https://www.nps.gov/zion/blogs/two-rescues-off-angels-landing-in-one-day.htm",
+     "evidence": "NPS Zion blog: \"The patient was then transported via Zion Ambulance to Dixie Regional at 2:30pm.\" Not a state-licensed agency (federal).",
+     "vintage": "2025"
+    }
+   ],
+   "page_note": "Confirmed: the six services listed. Not yet confirmed from a public source: who operates the Cedar City Ambulance area (5.0% of the county, including New Harmony), which may be Gold Cross's Iron County service.",
+   "second_source": "UGRC Utah EMS Response Areas (ugrc_ems.geojson, raw in states/web_raw/UT): polygon assigns the area to this agency."
+  },
+  "49021": {
+   "county": "Iron",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Gold Cross Ambulance (Iron County: Cedar City, Parowan, Beryl stations)",
+     "transport": true,
+     "ownership": "private (licensed by Bureau of EMS)",
+     "partial": false,
+     "area": "whole county (UGRC polygons \"Cedar City Ambulance\", \"Parowan Ambulance\", \"Beryl Ambulance\" are the licence #1110L stations; Beaver 1.4%, Milford Valley 4.0%, Enterprise 1.9% edge slivers)",
+     "source_url": "https://www.stgeorgeutah.com/news/archive/2015/03/09/dsc-county-commission-votes-to-privatize-iron-county-ambulance",
+     "evidence": "St George News 3/9/2015: \"the Iron County Commission voted to sell the county-owned ambulance service to Gold Cross Ambulance.\" Gold Cross press release 5/18/2026: serves counties of \"Salt Lake, Uintah, Utah, Washington, and Iron\" and provides \"911 services.\" Medicaid 1/12/2026: GOLD CROSS AMBULANCE 59,885 transports (all licences). The roster lists only one Iron County ground licence (Gold Cross). Bureau of EMS licence roster: \"Gold Cross Ambulance Services, Inc.-Iron County - Primary license #1110L\".",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Gold Cross Ambulance is the only ground-ambulance licence based in Iron County. Not yet confirmed from a public source: that the Parowan and Beryl response areas (62% of the county) are Gold Cross stations.",
+   "second_source": "stgeorgeutah.com 2026 Gold Cross article (search result) says Gold Cross took control of Iron County 911 in 2015"
+  },
+  "49043": {
+   "county": "Summit",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Park City Fire District",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": false,
+     "area": "Park City and the west county (56.9% of county area)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"PARK CITY AMBULANCE\" listed with 2,564 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Park City Fire District Primary License #2220L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "North Summit Fire District",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": false,
+     "area": "Coalville / north-east county (22.1%)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"North Summit Fire District\" listed with 171 ground transports, calendar year 2024. Bureau of EMS licence roster: \"North Summit Fire District - Primary license #2205L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "South Summit Fire Protection District (South Summit Ambulance Service)",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": false,
+     "area": "Kamas, Oakley, Francis (21.0%)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "Medicaid Ambulance Assessment 1/12/2026: provider \"SOUTH SUMMIT FIRE PROTECTION DISTRICT\" listed with 257 ground transports (CY2024). Interlocal agreement eff. 1/1/2024 names the South Summit Fire Protection District among Summit County fire districts (utah.gov/pmn notice).",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "EMS changed on January 1, 2024 under a county interlocal agreement: each district runs EMS in its boundaries or contracts with another. Not yet confirmed from a public source: who transports in Kamas and Coalville now (South Summit contracted Wasatch Fire for 2024 through 2025).",
+   "second_source": "UGRC Utah EMS Response Areas (ugrc_ems.geojson, raw in states/web_raw/UT): polygon assigns the area to this agency."
+  },
+  "49047": {
+   "county": "Uintah",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Gold Cross Ambulance (Eastern, Vernal)",
+     "transport": true,
+     "ownership": "private (licensed by Bureau of EMS)",
+     "partial": false,
+     "area": "Vernal and Uintah County (65.3%)",
+     "source_url": "https://dutchjohn.gov/news/ambulance-service",
+     "evidence": "Town of Dutch John, 3/13/2025: \"The Town has entered into an agreement with Gold Cross Ambulance out of Vernal t[o provide emergency medical services].\" Gold Cross press release 5/18/2026: serves Uintah County, provides \"911 services.\" Bureau of EMS licence roster: \"Gold Cross Ambulance Services, Inc-Eastern - Primary license #2404L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Ute Tribe Ambulance Service",
+     "transport": true,
+     "ownership": "tribal",
+     "partial": false,
+     "area": "Uintah and Ouray reservation lands in the county (34.0%)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"UTE TRIBE AMBULANCE\" listed with 320 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Ute Tribe Ambulance Service - Primary license #2403L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Uintah Basin Medical Center",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": false,
+     "area": "western edge (0.7%)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"UINTAH BASIN MED CTR\" listed with 1,059 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Uintah Basin Medical Center - Primary license #0714L\".",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Deseret Generation & Transmission (Bonanza plant, 0.1%) runs an industrial plant ambulance, not public 911. The Ute Tribe service's coverage is confirmed by its response area and transport count only.",
+   "second_source": "UGRC Utah EMS Response Areas (ugrc_ems.geojson, raw in states/web_raw/UT): polygon assigns the area to this agency."
+  },
+  "49051": {
+   "county": "Wasatch",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Wasatch County Fire District (Wasatch County EMS)",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": false,
+     "area": "Heber, Midway, Charleston and the county (90.2%)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"WASATCH COUNTY FIRE DISTRICT\" listed with 1,771 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Wasatch County Fire Protection Special Service District- Primary license #2601L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Carbon County Ambulance",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "south-east Strawberry / Soldier Summit corner (8.6%)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"CARBON COUNTY AMBULANCE\" listed with 1,339 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Carbon County Ambulance - Primary license #0402L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Lone Peak Public Safety District",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "Utah County border sliver (1.3%)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"LONE PEAK AMBULANCE\" listed with 418 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Lone Peak Public Safety District - Primary license #2535L\".",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "",
+   "second_source": "UGRC Utah EMS Response Areas (ugrc_ems.geojson, raw in states/web_raw/UT): polygon assigns the area to this agency."
+  },
+  "49039": {
+   "county": "Sanpete",
+   "tier": "A",
+   "services": [
+    {
+     "name": "North Sanpete Ambulance",
+     "transport": true,
+     "ownership": "municipal EMS",
+     "partial": false,
+     "area": "north county, Moroni (39.4%)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"NORTH SANPETE AMBULANCE\" listed with 572 ground transports, calendar year 2024. Bureau of EMS licence roster: \"North Sanpete Ambulance - Primary license #2002L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Gunnison Valley Hospital Ambulance",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": false,
+     "area": "Gunnison / south county (34.1%)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"GUNNISON VALLEY HOSP-AMBUL\" listed with 438 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Gunnison Valley Hospital Special Service Ambulance - Primary license #2001L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Manti Ambulance Association",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": false,
+     "area": "Manti area (17.2%)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"MANTI AMBULANCE ASSOC\" listed with 185 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Manti Ambulance Association/Manti City Corporation - Primary license #2008L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Ephraim Ambulance Association",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": false,
+     "area": "Ephraim area (9.3%)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"EPHRAIM AMBULANCE ASSOC\" listed with 300 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Ephraim Ambulance Association - Primary license #2007L\".",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "All four ground ambulance licences based in the county match the four response areas.",
+   "second_source": "UGRC Utah EMS Response Areas (ugrc_ems.geojson, raw in states/web_raw/UT): polygon assigns the area to this agency."
+  },
+  "49007": {
+   "county": "Carbon",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Carbon County Ambulance",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "county (91.8%)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"CARBON COUNTY AMBULANCE\" listed with 1,339 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Carbon County Ambulance - Primary license #0402L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "East Carbon City Sunnyside Ambulance",
+     "transport": true,
+     "ownership": "municipal EMS",
+     "partial": false,
+     "area": "East Carbon / Sunnyside (8.2%)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"SUNNYSIDE AMBULANCE SRVC\" listed with 149 ground transports, calendar year 2024. Bureau of EMS licence roster: \"East Carbon City Sunnyside Ambulance #0401L\".",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Both licensed ground ambulances in the county are listed.",
+   "second_source": "UGRC Utah EMS Response Areas (ugrc_ems.geojson, raw in states/web_raw/UT): polygon assigns the area to this agency."
+  },
+  "49015": {
+   "county": "Emery",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Emery County Ambulance (Emery Emergency Medical Special Service District)",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "county (99.2%)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"EMERY COUNTY AMBULANCE\" listed with 603 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Emery County Ambulance - Primary license #0801L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Carbon County Ambulance",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "north edge (0.8%)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"CARBON COUNTY AMBULANCE\" listed with 1,339 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Carbon County Ambulance - Primary license #0402L\".",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "",
+   "second_source": "UGRC Utah EMS Response Areas (ugrc_ems.geojson, raw in states/web_raw/UT): polygon assigns the area to this agency."
+  },
+  "49019": {
+   "county": "Grand",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Grand County Emergency Medical Services Special Service District",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "county (98.0%)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"Grand County Emergency Medical Services Special Se\" listed with 945 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Grand County Emergency Medical Services Special Service District- Primary license #1001L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Emery County Ambulance",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "Green River side (0.9%)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"EMERY COUNTY AMBULANCE\" listed with 603 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Emery County Ambulance - Primary license #0801L\".",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Lower Valley Fire Department (Fruita, Colorado) covers a 1.1% unpopulated strip along the Colorado line.",
+   "second_source": "UGRC Utah EMS Response Areas (ugrc_ems.geojson, raw in states/web_raw/UT): polygon assigns the area to this agency."
+  },
+  "49025": {
+   "county": "Kane",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Kane County Ambulance",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "county (86.0%)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"KANE COUNTY AMBULANCE\" listed with 784 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Kane County Ambulance - Primary license #1301L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Cedar Mountain Service District (Cedar Mountain Fire)",
+     "transport": true,
+     "ownership": "public special district",
+     "partial": false,
+     "area": "Duck Creek Village / Cedar Mountain (14.0%)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"Cedar Mountain Fire\" listed with 99 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Cedar Mountain Service District - Primary License #1305L\".",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "",
+   "second_source": "UGRC Utah EMS Response Areas (ugrc_ems.geojson, raw in states/web_raw/UT): polygon assigns the area to this agency."
+  },
+  "49001": {
+   "county": "Beaver",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Milford Valley Ambulance Service (Milford Memorial Hospital)",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": false,
+     "area": "Milford and west county (74.9%)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"MILFORD MEM HOSP PHYS GRP\" listed with 140 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Milford Valley Ambulance Service - Primary license #0102L\". Medicaid name mapped by me to the roster licence (Milford, hospital-owned).",
+     "vintage": "2026"
+    },
+    {
+     "name": "Beaver Ambulance Service",
+     "transport": true,
+     "ownership": "municipal EMS",
+     "partial": false,
+     "area": "Beaver and east county (25.1%)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"BEAVER AMBULANCE\" listed with 284 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Beaver Ambulance Service - Primary license #0101L\".",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "",
+   "second_source": "UGRC Utah EMS Response Areas (ugrc_ems.geojson, raw in states/web_raw/UT): polygon assigns the area to this agency."
+  },
+  "49017": {
+   "county": "Garfield",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Garfield County Ambulance",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county (100%)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"GARFIELD COUNTY AMBULANCE\" listed with 362 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Garfield County Ambulance - Primary license #0901L\".",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "",
+   "second_source": "UGRC Utah EMS Response Areas (ugrc_ems.geojson, raw in states/web_raw/UT): polygon assigns the area to this agency."
+  },
+  "49033": {
+   "county": "Rich",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Rich County Ambulance",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county (100%)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"RICH COUNTY AMBULANCE\" listed with 91 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Rich County Ambulance - Primary license #1701L\".",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "",
+   "second_source": "UGRC Utah EMS Response Areas (ugrc_ems.geojson, raw in states/web_raw/UT): polygon assigns the area to this agency."
+  },
+  "49055": {
+   "county": "Wayne",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Wayne County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county (100%)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"WAYNE COUNTY AMBULANCE\" listed with 108 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Wayne County EMS - Primary license #2801L\".",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "",
+   "second_source": "UGRC Utah EMS Response Areas (ugrc_ems.geojson, raw in states/web_raw/UT): polygon assigns the area to this agency."
+  },
+  "49031": {
+   "county": "Piute",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Piute County Ambulance",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county (100%)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"PIUTE CO AMBULANCE SRVC\" listed with 79 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Piute County Ambulance - Primary license #1601L\".",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "",
+   "second_source": "UGRC Utah EMS Response Areas (ugrc_ems.geojson, raw in states/web_raw/UT): polygon assigns the area to this agency."
+  },
+  "49023": {
+   "county": "Juab",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Juab County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county (100%)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"JUAB COUNTY AMBULANCE\" listed with 721 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Juab County EMS Department - Primary license #1201L\".",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Gold Cross Utah/Juab is interfacility only.",
+   "second_source": "UGRC Utah EMS Response Areas (ugrc_ems.geojson, raw in states/web_raw/UT): polygon assigns the area to this agency."
+  },
+  "49027": {
+   "county": "Millard",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Millard County Ambulance",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "Fillmore, Delta and most of the county (73.6%)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"MILLARD COUNTY AMBULANCE\" listed with 655 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Millard County Ambulance - Primary license #1401L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Milford Valley Ambulance Service",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": false,
+     "area": "south-west corner (24.3%)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"MILFORD MEM HOSP PHYS GRP\" listed with 140 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Milford Valley Ambulance Service - Primary license #0102L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Scipio Ambulance",
+     "transport": true,
+     "ownership": "municipal EMS",
+     "partial": false,
+     "area": "Scipio (2.1%)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"Scipio Ambulance\" listed with 30 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Scipio Ambulance - Primary license #1403L\".",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Intermountain Power Service Corp (Delta, BLS) runs a power-plant ambulance, treated as industrial rather than public 911.",
+   "second_source": "UGRC Utah EMS Response Areas (ugrc_ems.geojson, raw in states/web_raw/UT): polygon assigns the area to this agency."
+  },
+  "49057": {
+   "county": "Weber",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Weber Fire District",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": false,
+     "area": "Farr West, Hooper, Eden, unincorporated (49.1%)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"WEBER FIRE DISTRICT\" listed with 1,241 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Weber Fire District - Primary license #2945L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Ogden City Fire Department (Weber Co/Ogden City FD)",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "Ogden (21.3%)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"Ogden City Corporation\" listed with 9,581 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Weber Co/Ogden City FD - Primary license #2917L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Roy City Fire and Rescue",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "Roy (20.3%)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"ROY CITY AMBULANCE\" listed with 2,303 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Roy City Fire And Rescue Department - Primary license #2940L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "North View Fire District",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": false,
+     "area": "North Ogden, Pleasant View, Harrisville (4.6%)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"NORTH VIEW FIRE AGENCY\" listed with 1,595 ground transports, calendar year 2024. Bureau of EMS licence roster: \"North View Fire District - Primary license #2919L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "South Ogden City Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "South Ogden (1.8%)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"SOUTH OGDEN CITY FIRE DEPT\" listed with 1,253 ground transports, calendar year 2024. Bureau of EMS licence roster: \"South Ogden City Fire Department - Primary license #2933L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Riverdale Fire Services",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "Riverdale (0.6%)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"RIVERDALE CITY AMBULANCE\" listed with 355 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Riverdale Fire Services - Primary license #2934L\".",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Confirmed: the six services listed. Not yet confirmed from a public source: which agency transports from Plain City (1.8% of the county) and Washington Terrace (0.3%), whose fire departments are licensed as non-transport first responders.",
+   "second_source": "UGRC Utah EMS Response Areas (ugrc_ems.geojson, raw in states/web_raw/UT): polygon assigns the area to this agency."
+  },
+  "49005": {
+   "county": "Cache",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Logan City Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "Logan, North Logan, central county",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"Logan City Fire Department\" listed with 3,544 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Logan City Fire Department #0337L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Smithfield Fire & EMS",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "Smithfield and north",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"Smithfield Fire and EMS\" listed with 783 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Smithfield Fire & EMS #0336L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Cache County Fire District ambulance",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": false,
+     "area": "south county: Hyrum, Wellsville, Mendon, Millville, Nibley, Paradise, Avon",
+     "source_url": "https://cachecounty.gov/assets/department/fire/Cache%20County%20Ambulance%20Service%20RFP%20(12.10.2025).pdf",
+     "evidence": "Cache County RFP (12/10/2025): \"soliciting proposals from qualified Emergency Medical Service (EMS) providers to furnish 911 emergency medical response and limited inter-facility ground ambulance transport services within the Cache County Fire District service area\" (Hyrum, Wellsville, Mendon, Millville, Nibley, Paradise, Avon). Medicaid 1/12/2026: Cache County Fire District 561 transports (CY2024). Bureau of EMS licence roster: \"Cache County dba Cache County Fire District-Primary License 0338L\".",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "The Cache County Fire District ambulance contract went out to bid with proposals due January 2, 2026; the outcome is not yet confirmed. Not yet confirmed from a public source: who transports in the northern towns (Lewiston, Newton, Trenton, Clarkston, Richmond), where only non-transport first responders were found.",
+   "second_source": "UGRC Utah EMS Response Areas (ugrc_ems.geojson, raw in states/web_raw/UT): polygon assigns the area to this agency."
+  },
+  "49003": {
+   "county": "Box Elder",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Brigham City Fire Department (Brigham City Ambulance)",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "Brigham City",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"BRIGHAM CITY CORP AMB\" listed with 1,595 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Brigham City Fire Department - Primary license #0201L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Tremonton City Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "Tremonton",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"TREMONTON CITY CORP\" listed with 851 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Tremonton City Fire Department - Primary license #0202L\".",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Confirmed: Brigham City and Tremonton fire departments. Not yet confirmed from a public source: Box Elder County Ambulance (55% of the county, with only 8 Medicaid transports), the outcome of Tremonton's August 2026 EMS bid, and the Snowville, Wendover and military areas.",
+   "second_source": "UGRC Utah EMS Response Areas (ugrc_ems.geojson, raw in states/web_raw/UT): polygon assigns the area to this agency."
+  },
+  "49045": {
+   "county": "Tooele",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Mountain West Ambulance",
+     "transport": true,
+     "ownership": "private (contractor to Tooele County)",
+     "partial": false,
+     "area": "Tooele Valley (42.1%)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"MOUNTAIN WEST INC\" listed with 453 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Mountain West Ambulance - Primary license #2320L\".",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Confirmed: Mountain West Ambulance. Not yet confirmed from a public source: whether Dugway Ambulance (29.3%, Army), Wendover Ambulance Service (24.4%, licensed in Elko, Nevada), UTTR Fire and EMS (3.3%) and Tooele Army Depot transport or answer the public, and the Mountain West county contract.",
+   "second_source": "UGRC Utah EMS Response Areas (ugrc_ems.geojson, raw in states/web_raw/UT): polygon assigns the area to this agency."
+  },
+  "49029": {
+   "county": "Morgan",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Morgan County Ambulance",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "county (97.9%)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"MORGAN COUNTY AMBULANCE\" listed with 238 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Morgan County Ambulance - Primary license #1501L\".",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Confirmed: Morgan County Ambulance. Mountain Green Fire Protection Agency (2.1% of the county, about a quarter of its population) is a licensed non-transport ALS designation; not yet confirmed that Morgan County Ambulance covers Mountain Green.",
+   "second_source": "UGRC Utah EMS Response Areas (ugrc_ems.geojson, raw in states/web_raw/UT): polygon assigns the area to this agency."
+  },
+  "49037": {
+   "county": "San Juan",
+   "tier": "held",
+   "services": [
+    {
+     "name": "San Juan County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "Monticello, Blanding, most of the county (70.2%)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"SAN JUAN CO EMERGENCY\" listed with 472 ground transports, calendar year 2024. Bureau of EMS licence roster: \"San Juan County Ems - Primary license #1904L\".",
+     "vintage": "2026"
+    },
+    {
+     "name": "Utah Navajo Health System",
+     "transport": true,
+     "ownership": "tribal",
+     "partial": false,
+     "area": "Montezuma Creek / Navajo Nation (17.6%)",
+     "source_url": "https://medicaid-documents.dhhs.utah.gov/Documents/pdfs/ltc/hcbstransition/Files/2026Q2AmbulanceAssessment.htm",
+     "evidence": "State of Utah Medicaid Ambulance Assessment (1/12/2026): provider \"UTAH NAVAJO HLTH SYST AMB\" listed with 393 ground transports, calendar year 2024. Bureau of EMS licence roster: \"Utah Navajo Health System - Primary license #1915L\".",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Confirmed: San Juan County EMS and Utah Navajo Health System. Not yet confirmed: Bluff EMS (7.3%) and Inscription House EMS (4.9%, Arizona, Navajo Nation), which have no state licence or Medicaid record.",
+   "second_source": "UGRC Utah EMS Response Areas (ugrc_ems.geojson, raw in states/web_raw/UT): polygon assigns the area to this agency."
+  }
+ }
+}

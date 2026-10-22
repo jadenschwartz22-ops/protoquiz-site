@@ -138,7 +138,7 @@
      "vintage": "2026 (live page, board meetings 11/2026)"
     }
    ],
-   "page_note": "Coverage statement implied, not explicit; run data supplies the 'whole county'.",
+   "page_note": "The county page does not state a coverage area; 2022 run data shows Greene County Ambulance Service covering the whole county.",
    "second_source": "IN_public_2026-10.json (IndianaMap EMS run records 2022): Greene County Ambulance Service 98%"
   },
   "18133": {
@@ -174,7 +174,7 @@
      "vintage": "2026 (live page)"
     }
    ],
-   "page_note": "Page names the county department but states no coverage area; run data supplies it.",
+   "page_note": "The county page names the department but does not state a coverage area; 2022 run data shows it covering the whole county.",
    "second_source": "IN_public_2026-10.json (IndianaMap EMS run records 2022): Washington County Ambulance Service 98%"
   },
   "18121": {
@@ -192,7 +192,7 @@
      "vintage": "2026 (live page)"
     }
    ],
-   "page_note": "The county page names Parke County EMS-Ambulance Service but does not say it answers 911 countywide. Held until a county source confirms.",
+   "page_note": "The county page names Parke County EMS-Ambulance Service. Not yet confirmed from a county source that it answers 911 countywide.",
    "second_source": "IN_public_2026-10.json (IndianaMap EMS run records 2022): Parke County EMS & Transportation Service 94%"
   },
   "18129": {
@@ -210,7 +210,7 @@
      "vintage": "2026 (live page)"
     }
    ],
-   "page_note": "The county page names Posey County EMS but does not say it answers 911 countywide. Held until a county source confirms.",
+   "page_note": "The county page names Posey County EMS. Not yet confirmed from a county source that it answers 911 countywide.",
    "second_source": "IN_public_2026-10.json (IndianaMap EMS run records 2022): Posey County EMS 98%"
   },
   "18075": {
@@ -228,7 +228,7 @@
      "vintage": "2026 (live page)"
     }
    ],
-   "page_note": "Coverage area from run data.",
+   "page_note": "Coverage area is based on run data.",
    "second_source": "IN_public_2026-10.json (IndianaMap EMS run records 2022): Jay County EMS 98%"
   },
   "18147": {
@@ -246,7 +246,7 @@
      "vintage": "2026 (live page; grant text 2006)"
     }
    ],
-   "page_note": "Spencer County Emergency Ambulance Service is listed as a county department; no source says it answers 911 countywide. Held until a county source confirms.",
+   "page_note": "Spencer County Emergency Ambulance Service is listed as a county department. Not yet confirmed from a county source that it answers 911 countywide.",
    "second_source": "IN_public_2026-10.json (IndianaMap EMS run records 2022): Spencer County Emergency Ambulance Service 95%"
   },
   "18101": {
@@ -264,7 +264,7 @@
      "vintage": "2026 (live page)"
     }
    ],
-   "page_note": "CONFLICT: 2022 run data shows Knox County EMS 54% vs Martin County Ambulance 37%; held until the split is explained.",
+   "page_note": "2022 run data splits Martin County between Knox County EMS (54%) and Martin County Ambulance Service (37%). Not yet confirmed which serves which part.",
    "second_source": ""
   },
   "18163": {
@@ -282,14 +282,14 @@
      "vintage": "2026-06"
     }
    ],
-   "page_note": "CONTRADICTS MAP: AMR no longer the city or county 911 provider (EFD took city EMS 2026-07-01). Northern townships Armstrong, German, Scott not confirmed.",
+   "page_note": "Evansville Fire Department took over city EMS on July 1, 2026, and American Medical Response is no longer the city or county 911 provider. Not yet confirmed: the northern townships (Armstrong, German, Scott).",
    "second_source": "https://news.wnin.org/2026-05-26/3-agencies-seeking-county-ambulance-contract"
   },
   "18019": {
    "county": "Clark",
    "tier": "held",
    "services": [],
-   "page_note": "CONTRADICTS 2022 DATA: New Chapel EMS stopped Clark County 911 service 2024-09-01; Heartland Ambulance took a 90-day county contract from 2024-08-01 (WDRB/WHAS 2024). Current provider and Jeffersonville's own EMS plan not confirmed.",
+   "page_note": "New Chapel EMS stopped Clark County 911 service on September 1, 2024, and Heartland Ambulance took a 90-day county contract from August 1, 2024 (WDRB, WHAS). Not yet confirmed: the current provider and Jeffersonville's own EMS plan.",
    "second_source": "https://www.wdrb.com/news/new-chapel-ems-to-stop-providing-911-ambulance-service-in-clark-county/article_86d5229e-55ce-11ef-8f00-332abbec4fc2.html"
   },
   "18135": {
@@ -307,7 +307,7 @@
      "vintage": "2026"
     }
    ],
-   "page_note": "Four agencies named, areas not stated; Union City FD/EMS and Winchester FD/EMS transport per 2022 run data.",
+   "page_note": "Four agencies are named without coverage areas; 2022 run data shows Union City and Winchester fire/EMS transporting.",
    "second_source": ""
   },
   "18017": {
@@ -325,7 +325,7 @@
      "vintage": "2026"
     }
    ],
-   "page_note": "2022 run data: St. Vincent Kokomo 62%; county EMS may be newer. No coverage statement.",
+   "page_note": "No county coverage statement was found. 2022 run data attributes 62% of runs to St. Vincent Kokomo, and Cass County EMS may be newer.",
    "second_source": ""
   }
  }

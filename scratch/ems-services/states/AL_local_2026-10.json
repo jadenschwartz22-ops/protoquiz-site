@@ -1,0 +1,321 @@
+{
+ "meta": {
+  "state": "AL",
+  "retrieved": "2026-10-22",
+  "via": "Alabama Department of Public Health licensee list and agency websites (local sources)"
+ },
+ "county_verdict": {
+  "01089": {
+   "county": "Madison",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Huntsville Emergency Medical Services, Inc. (HEMSI)",
+     "transport": true,
+     "ownership": "nonprofit (owned by Huntsville Hospital system; ADPH licensee \"HH Health System - Emergency Medical Services, LLC\")",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.hemsi.org/",
+     "evidence": "Local Emergencies: CALL 911 ... Serving 370,000+ residents in over 800 square miles, HEMSI is Madison County's not-for-profit emergency medical services provider ... HEMSI's 911 Communications Center; \"HEMSI has fourteen EMS stations with 36 ambulances located throughout Madison County\" (hemsi.org/locations)",
+     "vintage": "2026 (live site)"
+    }
+   ],
+   "page_note": "HEMSI is the only transport-licensed service in Madison County. Huntsville Fire & Rescue and other fire departments respond but are not licensed to transport.",
+   "second_source": "https://cm.hsvchamber.org/list/member/huntsville-emergency-medical-services-inc-hemsi-788"
+  },
+  "01081": {
+   "county": "Lee",
+   "tier": "held",
+   "services": [
+    {
+     "name": "East Alabama Emergency Medical Services (EAMC \"ETS\")",
+     "transport": true,
+     "ownership": "hospital (East Alabama Medical Center)",
+     "partial": true,
+     "area": "Lee County (Auburn, Opelika, Smiths Station stations)",
+     "source_url": "https://www.theplainsman.com/article/2019/12/auburn-residents-increasingly-approve-of-ambulance-service",
+     "evidence": "Plainsman 2019-12: agreement covers both cities and the county; \"those ambulances that are dispatched to emergencies often don't come from Auburn\"",
+     "vintage": "2019"
+    },
+    {
+     "name": "Auburn Fire Department EMS",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": true,
+     "area": "City of Auburn (extent unverified)",
+     "source_url": "",
+     "evidence": "ADPH roster: transport licensee \"AUBURN FIRE DEPARTMENT EMS\" ALS1",
+     "vintage": "roster 2026"
+    }
+   ],
+   "page_note": "Confirmed: East Alabama EMS (EAMC) and Auburn Fire Department EMS are both licensed to transport. Not yet confirmed from a current public source: which one transports 911 patients in Auburn and Opelika.",
+   "second_source": ""
+  },
+  "01073": {
+   "county": "Jefferson",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Birmingham Fire & Rescue Service",
+     "transport": true,
+     "ownership": "various",
+     "partial": true,
+     "area": "unmapped",
+     "source_url": "",
+     "evidence": "ADPH roster: transport licensee (ALS1/BLS)",
+     "vintage": "roster 2026"
+    },
+    {
+     "name": "Hoover Fire Department",
+     "transport": true,
+     "ownership": "various",
+     "partial": true,
+     "area": "unmapped",
+     "source_url": "",
+     "evidence": "ADPH roster: transport licensee (ALS1/BLS)",
+     "vintage": "roster 2026"
+    },
+    {
+     "name": "Irondale Fire Department",
+     "transport": true,
+     "ownership": "various",
+     "partial": true,
+     "area": "unmapped",
+     "source_url": "",
+     "evidence": "ADPH roster: transport licensee (ALS1/BLS)",
+     "vintage": "roster 2026"
+    },
+    {
+     "name": "Midfield Fire Department",
+     "transport": true,
+     "ownership": "various",
+     "partial": true,
+     "area": "unmapped",
+     "source_url": "",
+     "evidence": "ADPH roster: transport licensee (ALS1/BLS)",
+     "vintage": "roster 2026"
+    },
+    {
+     "name": "Mountain Brook Fire Department",
+     "transport": true,
+     "ownership": "various",
+     "partial": true,
+     "area": "unmapped",
+     "source_url": "",
+     "evidence": "ADPH roster: transport licensee (ALS1/BLS)",
+     "vintage": "roster 2026"
+    },
+    {
+     "name": "Trussville Fire and Rescue",
+     "transport": true,
+     "ownership": "various",
+     "partial": true,
+     "area": "unmapped",
+     "source_url": "",
+     "evidence": "ADPH roster: transport licensee (ALS1/BLS)",
+     "vintage": "roster 2026"
+    },
+    {
+     "name": "Vestavia Hills Fire Department",
+     "transport": true,
+     "ownership": "various",
+     "partial": true,
+     "area": "unmapped",
+     "source_url": "",
+     "evidence": "ADPH roster: transport licensee (ALS1/BLS)",
+     "vintage": "roster 2026"
+    },
+    {
+     "name": "Center Point Fire District",
+     "transport": true,
+     "ownership": "various",
+     "partial": true,
+     "area": "unmapped",
+     "source_url": "",
+     "evidence": "ADPH roster: transport licensee (ALS1/BLS)",
+     "vintage": "roster 2026"
+    },
+    {
+     "name": "Concord Fire District",
+     "transport": true,
+     "ownership": "various",
+     "partial": true,
+     "area": "unmapped",
+     "source_url": "",
+     "evidence": "ADPH roster: transport licensee (ALS1/BLS)",
+     "vintage": "roster 2026"
+    },
+    {
+     "name": "Forestdale Fire District",
+     "transport": true,
+     "ownership": "various",
+     "partial": true,
+     "area": "unmapped",
+     "source_url": "",
+     "evidence": "ADPH roster: transport licensee (ALS1/BLS)",
+     "vintage": "roster 2026"
+    },
+    {
+     "name": "Graysville Fire & Rescue",
+     "transport": true,
+     "ownership": "various",
+     "partial": true,
+     "area": "unmapped",
+     "source_url": "",
+     "evidence": "ADPH roster: transport licensee (ALS1/BLS)",
+     "vintage": "roster 2026"
+    },
+    {
+     "name": "Fairfield Fire & Rescue",
+     "transport": true,
+     "ownership": "various",
+     "partial": true,
+     "area": "unmapped",
+     "source_url": "",
+     "evidence": "ADPH roster: transport licensee (ALS1/BLS)",
+     "vintage": "roster 2026"
+    },
+    {
+     "name": "Rocky Ridge Fire Department",
+     "transport": true,
+     "ownership": "various",
+     "partial": true,
+     "area": "unmapped",
+     "source_url": "",
+     "evidence": "ADPH roster: transport licensee (ALS1/BLS)",
+     "vintage": "roster 2026"
+    },
+    {
+     "name": "Warrior Fire Department",
+     "transport": true,
+     "ownership": "various",
+     "partial": true,
+     "area": "unmapped",
+     "source_url": "",
+     "evidence": "ADPH roster: transport licensee (ALS1/BLS)",
+     "vintage": "roster 2026"
+    },
+    {
+     "name": "McAdory Fire Department",
+     "transport": true,
+     "ownership": "various",
+     "partial": true,
+     "area": "unmapped",
+     "source_url": "",
+     "evidence": "ADPH roster: transport licensee (ALS1/BLS)",
+     "vintage": "roster 2026"
+    },
+    {
+     "name": "Cahaba Valley Fire",
+     "transport": true,
+     "ownership": "various",
+     "partial": true,
+     "area": "unmapped",
+     "source_url": "",
+     "evidence": "ADPH roster: transport licensee (ALS1/BLS)",
+     "vintage": "roster 2026"
+    },
+    {
+     "name": "RPS - Jefferson (Regional Paramedical Services)",
+     "transport": true,
+     "ownership": "various",
+     "partial": true,
+     "area": "unmapped",
+     "source_url": "",
+     "evidence": "ADPH roster: transport licensee (ALS1/BLS)",
+     "vintage": "roster 2026"
+    },
+    {
+     "name": "Northstar Paramedic Services",
+     "transport": true,
+     "ownership": "various",
+     "partial": true,
+     "area": "unmapped",
+     "source_url": "",
+     "evidence": "ADPH roster: transport licensee (ALS1/BLS)",
+     "vintage": "roster 2026"
+    },
+    {
+     "name": "Lifeguard Ambulance Service",
+     "transport": true,
+     "ownership": "various",
+     "partial": true,
+     "area": "unmapped",
+     "source_url": "",
+     "evidence": "ADPH roster: transport licensee (ALS1/BLS)",
+     "vintage": "roster 2026"
+    },
+    {
+     "name": "Shoals Ambulance",
+     "transport": true,
+     "ownership": "various",
+     "partial": true,
+     "area": "unmapped",
+     "source_url": "",
+     "evidence": "ADPH roster: transport licensee (ALS1/BLS)",
+     "vintage": "roster 2026"
+    },
+    {
+     "name": "Advantage Emergency Medical Services",
+     "transport": true,
+     "ownership": "various",
+     "partial": true,
+     "area": "unmapped",
+     "source_url": "",
+     "evidence": "ADPH roster: transport licensee (ALS1/BLS)",
+     "vintage": "roster 2026"
+    },
+    {
+     "name": "CareLink EMS (BLS)",
+     "transport": true,
+     "ownership": "various",
+     "partial": true,
+     "area": "unmapped",
+     "source_url": "",
+     "evidence": "ADPH roster: transport licensee (ALS1/BLS)",
+     "vintage": "roster 2026"
+    }
+   ],
+   "page_note": "About 25 services are licensed to transport in Jefferson County, mostly city and district fire departments plus private ambulance companies. Not yet confirmed from a public source: the county 911 EMS zone plan, so no single provider is shown.",
+   "second_source": ""
+  },
+  "01101": {
+   "county": "Montgomery",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Montgomery Fire/Rescue Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": true,
+     "area": "City of Montgomery",
+     "source_url": "",
+     "evidence": "ADPH roster: transport licensee ALS1",
+     "vintage": "roster 2026"
+    },
+    {
+     "name": "Haynes Ambulance (Montgomery) / Care Ambulance",
+     "transport": true,
+     "ownership": "private",
+     "partial": true,
+     "area": "Montgomery area",
+     "source_url": "",
+     "evidence": "ADPH roster: transport licensee",
+     "vintage": "roster 2026"
+    },
+    {
+     "name": "Excelsior Ambulance Service - Montgomery",
+     "transport": true,
+     "ownership": "private",
+     "partial": true,
+     "area": "Montgomery area",
+     "source_url": "",
+     "evidence": "ADPH roster: transport licensee",
+     "vintage": "roster 2026"
+    }
+   ],
+   "page_note": "Montgomery Fire/Rescue provides ALS first response (2018 state newsletter). Not yet confirmed from a current public source: which ambulance companies take 911 transports; older news reports describe a two-company rotation.",
+   "second_source": ""
+  }
+ }
+}

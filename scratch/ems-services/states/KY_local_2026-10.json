@@ -1,0 +1,519 @@
+{
+ "meta": {
+  "state": "KY",
+  "retrieved": "2026-10-22",
+  "via": "Kentucky Board of EMS licence directory (August 2026), the state NG911 EMS dataset, and Metro, county and agency websites (local sources)"
+ },
+ "county_verdict": {
+  "21111": {
+   "county": "Jefferson",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Louisville Metro EMS",
+     "transport": true,
+     "ownership": "municipal EMS",
+     "partial": false,
+     "area": "whole county (Metro Louisville)",
+     "source_url": "https://web.archive.org/web/2025id_/https://louisvilleky.gov/government/emergency-services/emergency-medical-services",
+     "evidence": "Louisville Metro EMS serves Louisville's entire diverse community of 770,000+ residents as the city's primary 911 emergency medical care provider. | KBEMS EMS Directory 2026-08-01: LOUISVILLE-JEFFERSON CO METRO GOV (1650), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"All of Metro Louisville\"",
+     "vintage": "2025"
+    },
+    {
+     "name": "Anchorage Middletown Fire & EMS",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": true,
+     "area": "Anchorage Middletown FPD + 30-minute response area",
+     "source_url": "https://www.amfems.org/",
+     "evidence": "provide advanced life support EMS response/transport and rescue services | KBEMS EMS Directory 2026-08-01: Anchorage Middletown Fire & EMS (1431), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"Anchorage Middletown Fire and EMS Protection District boundaries\"",
+     "vintage": "2026"
+    },
+    {
+     "name": "Okolona Fire Protection District",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": true,
+     "area": "Okolona FPD (licence text: Okolona and all of Jefferson County per Metro 2023 deck)",
+     "source_url": "https://www.okolonafire.org/ems-division.html",
+     "evidence": "The Okolona Fire District currently has five Type 1 transport ambulances to provide service to the community. | KBEMS EMS Directory 2026-08-01: OKOLONA FIRE PROTECTION DISTRICT (1696), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"Okolona FPD\"",
+     "vintage": "2026"
+    },
+    {
+     "name": "Pleasure Ridge Park Fire Protection District",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": true,
+     "area": "PRP FPD (licence text: Louisville and Jefferson County)",
+     "source_url": "https://www.prpfire.org/",
+     "evidence": "Our mission is accomplished through prevention, education, emergency medical response and transport, fire suppression... In 2025: ... 16,696 Ambulance Responses | KBEMS EMS Directory 2026-08-01: Pleasure Ridge Park FPD (1109), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"Louisville and Jefferson County\"",
+     "vintage": "2025"
+    },
+    {
+     "name": "Fairdale Fire & EMS",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": true,
+     "area": "Fairdale FPD (licence text: Fairdale and Jefferson County)",
+     "source_url": "https://www.fairdalefireky.gov/ems",
+     "evidence": "Fairdale EMS can provide copies of patient statements related to Ambulance transport billing and copies of Patient Care Reports. | KBEMS EMS Directory 2026-08-01: Fairdale Fire Protection District EMS (1720), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"Fairdale and Jefferson County, Kentucky\"",
+     "vintage": "2026"
+    },
+    {
+     "name": "Fern Creek Fire & EMS",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": true,
+     "area": "Fern Creek FPD (licence text: Fern Creek FPD + buffer zone BZ04, 2026-06-15)",
+     "source_url": "https://louisvilleky.gov/sites/default/files/2023-08/Delivery%20of%20EMS%20in%20Jefferson%20County%20PPT%208-24.pdf",
+     "evidence": "Fern Creek | Area(s) Served - License: Fern Creek and All of Jefferson County (Metro 2023 deck) | KBEMS EMS Directory 2026-08-01: Fern Creek Fire & EMS (1695), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"Fern Creek Fire Protection District and the Louisville and Fern Creek Fire Protection Buffer Zone, BZ04, as described on June 15, 2026\"",
+     "vintage": "2023/2026"
+    },
+    {
+     "name": "Jeffersontown Fire & EMS",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": true,
+     "area": "City of Jeffersontown + Jeffersontown FPD",
+     "source_url": "https://louisvilleky.gov/sites/default/files/2023-08/Delivery%20of%20EMS%20in%20Jefferson%20County%20PPT%208-24.pdf",
+     "evidence": "Jeffersontown Fire Protection District and the City of Jeffersontown (licensed area, Metro 2023 deck) | KBEMS EMS Directory 2026-08-01: Jeffersontown Fire & EMS (1688), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"City of Jeffersontown and all areas within the Jeffersontown Fire Protection District\"",
+     "vintage": "2023/2026"
+    },
+    {
+     "name": "St. Matthews Fire Protection District",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": true,
+     "area": "St. Matthews FPD + buffer zone BZ04",
+     "source_url": "https://louisvilleky.gov/sites/default/files/2023-08/Delivery%20of%20EMS%20in%20Jefferson%20County%20PPT%208-24.pdf",
+     "evidence": "St. Matthews and a 30-minute response time from the City of St. Matthews (Metro 2023 deck) | KBEMS EMS Directory 2026-08-01: ST. MATTHEWS FIRE PROTECTION DISTRICT (1685), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"ST. Matthew Fire Protection District Boundary and Buffer Zone BZO4 as described on June 15, 2026\"",
+     "vintage": "2023/2026"
+    }
+   ],
+   "page_note": "Louisville Metro EMS is licensed for all of Louisville Metro, and seven suburban fire districts also hold 911 transport licences for their own districts. Not yet confirmed from an agency page: whether Fern Creek, Jeffersontown and St. Matthews transport, since their areas changed with a June 2026 licence change.",
+   "second_source": "https://louisvilleky.gov/sites/default/files/2023-08/Delivery%20of%20EMS%20in%20Jefferson%20County%20PPT%208-24.pdf"
+  },
+  "21067": {
+   "county": "Fayette",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Lexington Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.lexingtonky.gov/fire",
+     "evidence": "Every person should expect professional medical treatment and prompt transport regardless of their ability to pay | KBEMS EMS Directory 2026-08-01: LEXINGTON FIRE DEPT. AMBULANCE SERVICE (1288), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"Fayette County\"",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Lexington Fire Department holds the only 911 ambulance licence in Fayette County; AmeriPro is convalescent or interfacility transport and UK Hospital provides critical care transport.",
+   "second_source": "NG911 Ky_911_RSB_EMS layer, Lexington Fire Department 98.5% of county"
+  },
+  "21227": {
+   "county": "Warren",
+   "tier": "held",
+   "services": [
+    {
+     "name": "The Medical Center EMS (Med Center Health)",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.wbko.com/content/news/Med-Center-rebukes-report-that-claims-emergency-services-are-underserved-in-Warren-County-498355471.html",
+     "evidence": "With 13 EMS trucks, dispatch onsite and about 100 employees, Med Center EMS is the only ambulance provider in the Warren County-Bowling Green area. | KBEMS EMS Directory 2026-08-01: THE MEDICAL CENTER EMS (1077), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"Warren County, Kentucky\"",
+     "vintage": "undated news (c.2021); KBEMS 2026"
+    }
+   ],
+   "page_note": "Med Center EMS holds the only 911 ambulance licence in Warren County on the state list (August 2026). TriStar Greenview won approval in October 2023 to run a ground ambulance service \"to serve the county along with Med Center EMS\"; not yet confirmed from a 2024 or later source whether it operates.",
+   "second_source": ""
+  },
+  "21093": {
+   "county": "Hardin",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Hardin County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.hardincountyky.gov/DocumentCenter/View/5188/In-depth-analysis-of-emergency-services-system-in-Hardin-County-KY-?bidId=",
+     "evidence": "Emergency medical services (ambulance transport) are provided by Hardin County EMS... This agency is the sole ambulance transport service in Hardin County, apart from Fort Knox. Each day, there are a total of 8 ambulances... | KBEMS EMS Directory 2026-08-01: HARDIN COUNTY EMS (1082), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"Hardin County\"",
+     "vintage": "2024 (PDF created 2025-03)"
+    },
+    {
+     "name": "Fort Knox (US Army) ambulance",
+     "transport": true,
+     "ownership": "military",
+     "partial": true,
+     "area": "Fort Knox post",
+     "source_url": "https://www.hardincountyky.gov/DocumentCenter/View/5188/In-depth-analysis-of-emergency-services-system-in-Hardin-County-KY-?bidId=",
+     "evidence": "sole ambulance transport service in Hardin County, apart from Fort Knox",
+     "vintage": "2024"
+    }
+   ],
+   "page_note": "Elizabethtown and Radcliff fire departments assist through mutual aid only. Fort Knox has its own on-post ambulance transport.",
+   "second_source": ""
+  },
+  "21151": {
+   "county": "Madison",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Madison County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://madisoncountyems.com",
+     "evidence": "Madison County EMS is a county-based EMS service in Kentucky... delivering exceptional emergency medical care to the residents of Madison County. | Emergency: 911 | KBEMS EMS Directory 2026-08-01: Madison County EMS (1268), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"Madison County\"",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Madison County EMS runs four stations covering the whole county.",
+   "second_source": "NG911 Ky_911_RSB_EMS layer: EMS Station 1-4 labels, madisoncountyky.us"
+  },
+  "21059": {
+   "county": "Daviess",
+   "tier": "A",
+   "services": [
+    {
+     "name": "American Medical Response (Owensboro/Daviess Co EMS)",
+     "transport": true,
+     "ownership": "private (contractor to City of Owensboro and Daviess County)",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.ems1.com/ems/articles/ky-county-ambulance-services-transition-ongoing-dAKjFLRN8ANszBkb",
+     "evidence": "American Medical Response Inc. (AMR) will take over emergency medical transport services in Daviess County at 7 p.m. on June 30. | KBEMS EMS Directory 2026-08-01: Owensboro/Daviess Co EMS Operated by AMR (1037), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"Owensboro and Daviess County\"",
+     "vintage": "2019 article; KBEMS 2026; AMR Owensboro page lists 911 Emergency"
+    }
+   ],
+   "page_note": "Daviess County Fire & Rescue does not transport. Owensboro Health is reported to back up AMR under a 2022 agreement.",
+   "second_source": "https://www.amr.net/locations/owensboro"
+  },
+  "21015": {
+   "county": "Boone",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Union Fire Protection District",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": true,
+     "area": "Union FPD, ~49 sq mi south-central Boone",
+     "source_url": "https://unionky911.org/about",
+     "evidence": "We are a department that provides emergency medical treatment and transportation... Our service district is approximately 49 square miles in south-central Boone County, Kentucky",
+     "vintage": "2026"
+    },
+    {
+     "name": "Florence Fire/EMS",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": true,
+     "area": "City of Florence + 30-min area",
+     "source_url": "https://www.florence-ky.gov/our-services/fire-ems",
+     "evidence": "KBEMS EMS Directory 2026-08-01: Florence Fire/EMS (1381), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"City of Florence and an area limited to a 30 minute response time\"",
+     "vintage": "2026"
+    },
+    {
+     "name": "Burlington FPD",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": true,
+     "area": "Burlington + backup for Boone",
+     "source_url": "https://www.burlingtonkyfire.org/",
+     "evidence": "KBEMS EMS Directory 2026-08-01: Burlington Fire Protection District (1490), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"Burlington and backup for Boone County, KY\"",
+     "vintage": "2026"
+    },
+    {
+     "name": "Hebron FPD",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": true,
+     "area": "Northern Boone (Hebron FPD)",
+     "source_url": "https://www.hebronfire.org/",
+     "evidence": "KBEMS EMS Directory 2026-08-01: HEBRON FIRE PROTECTION DISTRICT AMBULANCE SERVICE (1476), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"Northern Boone County-Hebron Fire Protection District\"",
+     "vintage": "2026"
+    },
+    {
+     "name": "Verona Fire/EMS FPD",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": true,
+     "area": "Verona + parts of Grant and Gallatin",
+     "source_url": "",
+     "evidence": "KBEMS EMS Directory 2026-08-01: VERONA FIRE/EMS FIRE PROTECTION DISTRICT (1442), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"Verona and parts of Grant and Gallatin Counties\"",
+     "vintage": "2026"
+    },
+    {
+     "name": "Belleview-McVille FPD",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": true,
+     "area": "Bellview-McVille FPD",
+     "source_url": "",
+     "evidence": "KBEMS EMS Directory 2026-08-01: Belleview-McVille Fire Protection District (1480), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"Boone County Bellview McVille Fire Protection District\"",
+     "vintage": "2026"
+    },
+    {
+     "name": "Walton FPD",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": true,
+     "area": "Southern Boone and Kenton, 5 mile radius of Walton",
+     "source_url": "https://www.waltonfireky.com/",
+     "evidence": "KBEMS EMS Directory 2026-08-01: Walton Fire Prot. Dist. Ambulance Service (1123), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"Southern Boone and Kenton Counties, 5 mile radius of Walton, KY\"",
+     "vintage": "2026"
+    },
+    {
+     "name": "Petersburg VFD Life Squad",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": true,
+     "area": "Northern section of Boone",
+     "source_url": "",
+     "evidence": "KBEMS EMS Directory 2026-08-01: Petersburg VFD Life Squad (1581), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"Northern Section of Boone County\"",
+     "vintage": "2026"
+    },
+    {
+     "name": "Cincinnati/N. KY Intl Airport FD ambulance",
+     "transport": true,
+     "ownership": "airport authority",
+     "partial": true,
+     "area": "CVG airport",
+     "source_url": "",
+     "evidence": "KBEMS EMS Directory 2026-08-01: CINCY./N. KY INTL. AIRPORT FD AMBULANCE SERVICE (1482), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"Greater Cincinnati International Airport\"",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Boone County is served by its fire districts (state data: Union 19.6%, Burlington 14.7%, Hebron 14.7%, Verona 10.9%, Belleview-McVille 10.9%, Walton 9.6%, Florence 8.0%, Petersburg 6.7%). Not yet confirmed from a public source: whether AMR-NKY and First Care Ohio, both licensed for Boone, carry 911 patients there.",
+   "second_source": "NG911 Ky_911_RSB_EMS layer"
+  },
+  "21117": {
+   "county": "Kenton",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Covington Fire Dept. Ambulance Service",
+     "transport": true,
+     "ownership": "municipal fire / fire district",
+     "partial": true,
+     "area": "City of Covington",
+     "source_url": "",
+     "evidence": "KBEMS EMS Directory 2026-08-01: Covington Fire Dept. Ambulance Service (1304), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"City of Covington\"",
+     "vintage": "2026"
+    },
+    {
+     "name": "Erlanger Fire/EMS",
+     "transport": true,
+     "ownership": "municipal fire / fire district",
+     "partial": true,
+     "area": "City of Erlanger",
+     "source_url": "",
+     "evidence": "KBEMS EMS Directory 2026-08-01: Erlanger Fire/EMS (1512), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"City of Erlanger\"",
+     "vintage": "2026"
+    },
+    {
+     "name": "Edgewood Fire & EMS",
+     "transport": true,
+     "ownership": "municipal fire / fire district",
+     "partial": true,
+     "area": "Edgewood, Kenton Vale, Kenton County",
+     "source_url": "",
+     "evidence": "KBEMS EMS Directory 2026-08-01: Edgewood Fire & EMS (1500), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"Edgewood, Kenton Vale, Kenton County\"",
+     "vintage": "2026"
+    },
+    {
+     "name": "Elsmere Fire Protection District",
+     "transport": true,
+     "ownership": "municipal fire / fire district",
+     "partial": true,
+     "area": "Elsmere and Kenton County",
+     "source_url": "",
+     "evidence": "KBEMS EMS Directory 2026-08-01: Elsmere Fire Protection District (1433), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"Elsmere and Kenton County\"",
+     "vintage": "2026"
+    },
+    {
+     "name": "Fort Mitchell Life Squad",
+     "transport": true,
+     "ownership": "municipal fire / fire district",
+     "partial": true,
+     "area": "Fort Mitchell, Lakeside Park, Crestview Hills",
+     "source_url": "",
+     "evidence": "KBEMS EMS Directory 2026-08-01: Fort Mitchell Life Squad (1472), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"Cities of Fort Mitchell, Lakeside Park, Crestview Hills\"",
+     "vintage": "2026"
+    },
+    {
+     "name": "Fort Wright Fire Dept. Ambulance Service",
+     "transport": true,
+     "ownership": "municipal fire / fire district",
+     "partial": true,
+     "area": "30-minute response area",
+     "source_url": "",
+     "evidence": "KBEMS EMS Directory 2026-08-01: Fort Wright Fire Dept. Ambulance Service (1477), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"An area limited to a 30 minute response time\"",
+     "vintage": "2026"
+    },
+    {
+     "name": "Independence Fire District Ambulance Service",
+     "transport": true,
+     "ownership": "municipal fire / fire district",
+     "partial": true,
+     "area": "30-minute response area",
+     "source_url": "",
+     "evidence": "KBEMS EMS Directory 2026-08-01: Independence Fire District Ambulance Service (1475), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"An area limited to a 30 minute response time\"",
+     "vintage": "2026"
+    },
+    {
+     "name": "Ludlow Fire Department Life Squad",
+     "transport": true,
+     "ownership": "municipal fire / fire district",
+     "partial": true,
+     "area": "City of Ludlow",
+     "source_url": "",
+     "evidence": "KBEMS EMS Directory 2026-08-01: Ludlow Fire Department Life Squad (1495), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"City of Ludlow\"",
+     "vintage": "2026"
+    },
+    {
+     "name": "City of Taylor Mill Fire/EMS",
+     "transport": true,
+     "ownership": "municipal fire / fire district",
+     "partial": true,
+     "area": "Taylor Mill and surrounding area",
+     "source_url": "",
+     "evidence": "KBEMS EMS Directory 2026-08-01: City of Taylor Mill Fire/EMS (1446), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"Taylor Mill and Surrounding Area\"",
+     "vintage": "2026"
+    },
+    {
+     "name": "Crescent Springs VFD",
+     "transport": true,
+     "ownership": "municipal fire / fire district",
+     "partial": true,
+     "area": "Crescent Springs, Villa Hills, northern Kenton",
+     "source_url": "",
+     "evidence": "KBEMS EMS Directory 2026-08-01: Crescent Springs VFD (1434), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"City of Crescent Springs, Villa Hills area, and northern section of Kenton County\"",
+     "vintage": "2026"
+    },
+    {
+     "name": "Piner-Fiskburg FPD",
+     "transport": true,
+     "ownership": "municipal fire / fire district",
+     "partial": true,
+     "area": "Southern Kenton + northern Pendleton",
+     "source_url": "",
+     "evidence": "KBEMS EMS Directory 2026-08-01: Piner-Fiskburg FPD (1578), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"Southern portion of Kenton County and Northern portion of Pendleton County\"",
+     "vintage": "2026"
+    },
+    {
+     "name": "Ryland Heights FPD",
+     "transport": true,
+     "ownership": "municipal fire / fire district",
+     "partial": true,
+     "area": "Ryland Heights, Fairview, part of Taylor Mill",
+     "source_url": "",
+     "evidence": "KBEMS EMS Directory 2026-08-01: Ryland Heights FPD (1305), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"City of Ryland Heights, Fairview, portion of Taylor Mill, portion of unincorporated Kenton County\"",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Twelve city and district fire departments hold ambulance licences in Kenton County, and AMR-NKY and First Care Ohio are also licensed. Not yet confirmed from agency pages: which carry 911 patients.",
+   "second_source": "NG911 Ky_911_RSB_EMS layer"
+  },
+  "21201": {
+   "county": "Robertson",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Bracken County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": true,
+     "area": "Bracken County and areas under the Robertson County EMS dissolution contract",
+     "source_url": "",
+     "evidence": "KBEMS 2026-08 Ia 1145, service area: \"Bracken County and other areas as set forth in the contract for the dissolution of Robertson County EMS\"; NG911 layer: Bracken Co Ems 46.6% of Robertson",
+     "vintage": "2026"
+    },
+    {
+     "name": "Nicholas County Ambulance Service",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": true,
+     "area": "Nicholas County; NG911 layer gives it 50.0% of Robertson",
+     "source_url": "",
+     "evidence": "KBEMS 2026-08 Ia 1271 NICHOLAS COUNTY AMBULANCE SERVICE, service area \"Nicholas County\"; NG911 layer: Nicholas Co Ems 50.0% of Robertson",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "State 911 data splits Robertson County between Nicholas County Ambulance Service (50%) and Bracken County EMS (47%). Not yet confirmed from a county page for either.",
+   "second_source": "NG911 Ky_911_RSB_EMS layer"
+  },
+  "21037": {
+   "county": "Campbell",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Campbell Fire/Rescue",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": false,
+     "area": "Campbell County (NG911 77%)",
+     "source_url": "",
+     "evidence": "KBEMS EMS Directory 2026-08-01: Campbell Fire/Rescue (1715), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"Campbell County\"",
+     "vintage": "2026"
+    },
+    {
+     "name": "Fire Department of Bellevue-Dayton",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": true,
+     "area": "Campbell County",
+     "source_url": "",
+     "evidence": "KBEMS EMS Directory 2026-08-01: Fire Department of Bellevue-Dayton (1127), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"Campbell County\"",
+     "vintage": "2026"
+    },
+    {
+     "name": "Newport Fire Dept. Ambulance Service",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": true,
+     "area": "Newport and Campbell County",
+     "source_url": "",
+     "evidence": "KBEMS EMS Directory 2026-08-01: Newport Fire Dept. Ambulance Service (1309), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"Newport and Campbell County\"",
+     "vintage": "2026"
+    },
+    {
+     "name": "Southgate-Wilder EMS",
+     "transport": true,
+     "ownership": "municipal EMS",
+     "partial": true,
+     "area": "Southgate and Campbell County",
+     "source_url": "",
+     "evidence": "KBEMS EMS Directory 2026-08-01: Southgate-Wilder EMS (1539), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"Southgate and Campbell County\"",
+     "vintage": "2026"
+    },
+    {
+     "name": "Fort Thomas Fire Dept. Ambulance Service",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": true,
+     "area": "Fort Thomas + 30-min area",
+     "source_url": "",
+     "evidence": "KBEMS EMS Directory 2026-08-01: Fort Thomas Fire Dept. Ambulance Service (1126), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"Fort Thomas and an area limited to a 30 minute response time\"",
+     "vintage": "2026"
+    },
+    {
+     "name": "Central Campbell County Fire District",
+     "transport": true,
+     "ownership": "fire district",
+     "partial": true,
+     "area": "Cold Spring, Crestview, NKU, FD #2",
+     "source_url": "",
+     "evidence": "KBEMS EMS Directory 2026-08-01: Central Campbell County Fire District (1560), Class Ia, 911 Response (Scene) with Transport Capability, service area: \"Cities of Cold Springs and Crestview, Northern KY University and Campbell County Fire District #2\"",
+     "vintage": "2026"
+    }
+   ],
+   "page_note": "Campbell Fire/Rescue (six ALS ambulances) and the Bellevue-Dayton, Newport, Southgate-Wilder, Fort Thomas and Central Campbell departments hold ambulance licences. Not yet confirmed from agency pages: which carry 911 patients, and whether AMR-NKY and First Care Ohio, also licensed for Campbell, do.",
+   "second_source": "NG911 Ky_911_RSB_EMS layer"
+  }
+ }
+}

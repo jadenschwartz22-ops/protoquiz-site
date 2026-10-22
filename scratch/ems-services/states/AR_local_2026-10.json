@@ -20,7 +20,7 @@
      "vintage": "2025"
     }
    ],
-   "page_note": "MEMS holds the franchise, but Jacksonville Fire Department is licensed to transport; whole-county coverage unconfirmed. Held until sourced.",
+   "page_note": "Confirmed: Metropolitan EMS (MEMS) holds the ambulance franchise. Not yet confirmed: whether it covers the whole county, since Jacksonville Fire Department is also licensed to transport.",
    "second_source": "https://metroems.org/about"
   },
   "05045": {
@@ -38,7 +38,7 @@
      "vintage": "2022"
     }
    ],
-   "page_note": "Pafford, not MEMS, has been the county provider since March 2022 (county ordinance 22-08; state licence list Dec 2025). Held until sourced.",
+   "page_note": "Pafford EMS, not Metropolitan EMS, has been the county provider since March 2022 (county ordinance 22-08; state licence list, December 2025).",
    "second_source": "https://services.arcgis.com/PwY9ZuZRDiI5nXUB/arcgis/rest/services/EMS_20210915_2/FeatureServer/0"
   },
   "05143": {
@@ -66,31 +66,31 @@
      "vintage": "2021"
     }
    ],
-   "page_note": "Springdale Fire Department runs its own licensed paramedic ambulances alongside Central EMS. Held until sourced."
+   "page_note": "Confirmed: Central EMS (Washington County Regional Ambulance Authority). Springdale Fire Department also runs its own licensed paramedic ambulances; not yet confirmed from a public source how the two divide 911 calls."
   },
   "05007": {
    "county": "Benton",
    "tier": "held",
    "services": [],
-   "page_note": "Split among city services (Siloam Springs, Bentonville FD, Rogers, NEBCO, Gravette, Bella Vista, Springdale FD) per the 2021 layer; no 2024+ source reviewed."
+   "page_note": "Ambulance service is split among city services (Siloam Springs, Bentonville Fire, Rogers, NEBCO, Gravette, Bella Vista, Springdale Fire) in 2021 data. Not yet confirmed from a 2024 or later source."
   },
   "05131": {
    "county": "Sebastian",
    "tier": "held",
    "services": [],
-   "page_note": "2021 layer: Sebastian County EMS 84% + Fort Smith EMS 15%; fortsmithar.gov page blocked; no current source."
+   "page_note": "2021 service-area data shows Sebastian County EMS covering 84% of the county and Fort Smith EMS 15%. Not yet confirmed from a current public source."
   },
   "05125": {
    "county": "Saline",
    "tier": "held",
    "services": [],
-   "page_note": "2021 layer only: Medtran EMS 96% + LifeNet HSV 3%; no current source."
+   "page_note": "2021 service-area data shows Medtran EMS covering 96% of the county and LifeNet 3%. Not yet confirmed from a current public source."
   },
   "05051": {
    "county": "Garland",
    "tier": "held",
    "services": [],
-   "page_note": "2021 layer only: LifeNet, Hot Springs 100%; cityhs.net returned no EMS text."
+   "page_note": "2021 service-area data shows LifeNet (Hot Springs) covering the whole county. Not yet confirmed from a current public source."
   }
  }
 }

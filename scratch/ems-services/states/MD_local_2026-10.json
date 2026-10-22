@@ -1,0 +1,203 @@
+{
+ "meta": {
+  "state": "MD",
+  "retrieved": "2026-10-22",
+  "via": "county and agency websites (local sources); Maryland MIEMSS list of jurisdictional EMS programs"
+ },
+ "county_verdict": {
+  "24003": {
+   "county": "Anne Arundel County",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Anne Arundel County Fire Department EMS Division",
+     "transport": true,
+     "ownership": "county fire",
+     "partial": true,
+     "area": "county excl. Annapolis city and BWI",
+     "source_url": "https://www.aacounty.org/fire-department/emergency-medical-services",
+     "evidence": "The Emergency Medical Services (EMS) Division provides emergency and non-emergency medical services to the citizens of Anne Arundel County. ... Transport Unit Locations",
+     "vintage": "2026 page"
+    },
+    {
+     "name": "Volunteer fire companies hosting transport units (Galesville, Woodland Beach, Riva, Herald Harbor, Arundel, Orchard Beach, Earleigh Heights, Riviera Beach, Arnold VFCs/VFDs)",
+     "transport": true,
+     "ownership": "volunteer",
+     "partial": true,
+     "area": "named stations",
+     "source_url": "https://www.aacounty.org/fire-department/emergency-medical-services",
+     "evidence": "Transport Unit Locations ... Co-1 Galesville Volunteer Fire Company ... Co-2 Woodland Beach Volunteer Fire Company ... Co-6 Herald Harbor Volunteer Fire Department",
+     "vintage": "2026 page"
+    }
+   ],
+   "page_note": "Anne Arundel County Fire Department and volunteer fire companies (Galesville, Woodland Beach, Riva, Herald Harbor, Arundel, Orchard Beach, Earleigh Heights, Riviera Beach, Arnold) operate ALS and BLS ambulances. Not yet confirmed from a public source: which units belong to which, and whether Annapolis City Fire Department and BWI Fire Rescue, also listed by the state, transport.",
+   "second_source": ""
+  },
+  "24005": {
+   "county": "Baltimore County",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Baltimore County Fire Department",
+     "transport": true,
+     "ownership": "county fire",
+     "partial": true,
+     "area": "Baltimore County",
+     "source_url": "https://www.baltimorecountymd.gov/departments/fire",
+     "evidence": "The Baltimore County Fire Department (BCoFD) provides quality services to the citizens of and visitors to Baltimore County, including: Fire protection Emergency Medical Services",
+     "vintage": "2026 page (stats Aug 2026)"
+    }
+   ],
+   "page_note": "Baltimore County Fire Department provides EMS with career and volunteer personnel. Not yet confirmed from a public source: who staffs the transporting units, and the role of volunteer companies.",
+   "second_source": ""
+  },
+  "24013": {
+   "county": "Carroll County",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Carroll County Department of Fire & EMS",
+     "transport": true,
+     "ownership": "county fire/EMS",
+     "partial": true,
+     "area": "county",
+     "source_url": "https://www.carrollcountymd.gov/residents/county-news/carroll-county-government-news-release-2025-archive/department-of-fire-and-emergency-services-staffing-plan-becomes-reality/",
+     "evidence": "a combined volunteer/career system where fire operations are run by both career and volunteer personnel, including 16 paramedic ambulances staffed by career employees of Carroll County Department of Fire Emergency Medical Services (DFEMS)",
+     "vintage": "2025 release"
+    },
+    {
+     "name": "14 volunteer Fire/EMS stations (unnamed)",
+     "transport": true,
+     "ownership": "volunteer",
+     "partial": true,
+     "area": "part of county",
+     "source_url": "https://carrollcountymd.gov/government/directory/fire-and-emergency-services/about-us",
+     "evidence": "CCDFEMS continues to develop and grow as an organization, providing administrative oversight to the 14 Volunteer Fire/EMS stations of the county.",
+     "vintage": "about-us page"
+    }
+   ],
+   "page_note": "Confirmed: Carroll County Department of Fire & EMS. Not yet confirmed from a public source: which of its 14 volunteer fire/EMS stations transport.",
+   "second_source": ""
+  },
+  "24017": {
+   "county": "Charles County",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Charles County volunteer EMS companies (14 EMS organizations incl. La Plata rescue squad, Ironsides, Dentsville, Charles County MICU Co. 60)",
+     "transport": true,
+     "ownership": "volunteer",
+     "partial": true,
+     "area": "named in part",
+     "source_url": "https://www.ccvfireems.org/content/history",
+     "evidence": "There are now 14 emergency medical service, (EMS), organizations, composed of 13 basic life support (BLS), companies, and 1 advanced life support (ALS), company in Charles County.",
+     "vintage": "undated history page"
+    },
+    {
+     "name": "Charles County paid EMS/ALS staff (county employees)",
+     "transport": true,
+     "ownership": "county",
+     "partial": true,
+     "area": "Waldorf, La Plata, Bryans Road, Marbury, Newburg, Hughesville",
+     "source_url": "https://www.ccvfireems.org/content/history",
+     "evidence": "paid EMS and ALS personnel supporting the system, (in Waldorf, La Plata, Bryans Road, Marbury, Newburg and Hughesville), they are county employees",
+     "vintage": "undated history page"
+    }
+   ],
+   "page_note": "Charles County has 14 volunteer EMS organizations (including La Plata, Ironsides, Dentsville and MICU Company 60) plus county paid EMS staff. The county page is undated and the volunteer list may be incomplete.",
+   "second_source": ""
+  },
+  "24025": {
+   "county": "Harford County",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Harford County Department of Emergency Services EMS Branch",
+     "transport": true,
+     "ownership": "county",
+     "partial": true,
+     "area": "county",
+     "source_url": "https://www.harfordcountymd.gov/2463/Emergency-Medical-Services",
+     "evidence": "The Department of Emergency Services EMS branch will deliver high quality emergency and prehospital care by Harford County paramedics and ambulances responding countywide.",
+     "vintage": "2026 page"
+    },
+    {
+     "name": "Harford County Volunteer Fire and EMS Association / volunteer companies (unnamed)",
+     "transport": true,
+     "ownership": "volunteer",
+     "partial": true,
+     "area": "part of county",
+     "source_url": "https://www.harfordcountymd.gov/2463/Emergency-Medical-Services",
+     "evidence": "the Harford County Volunteer Fire and EMS Association and the Harford County EMS Foundation",
+     "vintage": "2026 page"
+    }
+   ],
+   "page_note": "Harford County Department of Emergency Services EMS Branch and volunteer fire and EMS companies provide service. Not yet confirmed from a public source: which individual volunteer companies transport.",
+   "second_source": ""
+  },
+  "24027": {
+   "county": "Howard County",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Howard County Department of Fire & Rescue Services",
+     "transport": true,
+     "ownership": "county fire",
+     "partial": true,
+     "area": "county",
+     "source_url": "https://www.howardcountymd.gov/fire-and-rescue-services/about-us",
+     "evidence": "statutorily responsible for administering the affairs of the county in fire suppression and prevention, fire training, arson investigation, rescue services and emergency medical services",
+     "vintage": "2024+ (footer)"
+    }
+   ],
+   "page_note": "Every Howard County fire station has at least one engine and one paramedic unit. Not yet confirmed from a public source: ambulance transport by Howard County Department of Fire & Rescue Services.",
+   "second_source": ""
+  },
+  "24033": {
+   "county": "Prince George's County",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Prince George's County Fire/EMS Department (career + volunteer companies)",
+     "transport": true,
+     "ownership": "county fire + volunteer corporations",
+     "partial": true,
+     "area": "county",
+     "source_url": "https://web.archive.org/web/2025id_/https://princegeorgescountymd.gov/256/Advanced-Emergency-Medical-Services",
+     "evidence": "Almost all fire stations have a basic life support ambulance in service. These 47 units are staffed by both career and volunteer personnel around the clock.",
+     "vintage": "archive capture ~2025"
+    },
+    {
+     "name": "12 ALS paramedic units",
+     "transport": true,
+     "ownership": "county fire",
+     "partial": true,
+     "area": "county",
+     "source_url": "https://web.archive.org/web/2025id_/https://princegeorgescountymd.gov/256/Advanced-Emergency-Medical-Services",
+     "evidence": "The AEMS office supervises 12 Paramedic Units that provide Advanced Life Support (ALS) to the entire county",
+     "vintage": "archive capture ~2025"
+    }
+   ],
+   "page_note": "Prince George's County Fire/EMS Department and its volunteer companies provide transport, including 12 ALS paramedic units. Not yet confirmed from a public source: which volunteer companies (Laurel, Beltsville, Bowie, Kentland and others) own and run their ambulances.",
+   "second_source": ""
+  },
+  "24023": {
+   "county": "Garrett County",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Garrett County volunteer rescue squads (unnamed on opened page)",
+     "transport": true,
+     "ownership": "volunteer",
+     "partial": true,
+     "area": "county",
+     "source_url": "https://mgaleg.maryland.gov/2017RS/fnotes/bil_0008/hb0758.pdf",
+     "evidence": "This bill enables the Garrett County Commissioners to provide the statutorily required local funding for volunteer rescue squads",
+     "vintage": "2017 fiscal note"
+    }
+   ],
+   "page_note": "Garrett County is served by volunteer rescue squads. Northern Garrett and Southern Garrett Rescue Squads and Bittinger VFD appear in 2025 commission minutes but are not yet confirmed from a county page.",
+   "second_source": ""
+  }
+ }
+}

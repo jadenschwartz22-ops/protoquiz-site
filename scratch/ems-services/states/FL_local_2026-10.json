@@ -1,0 +1,198 @@
+{
+ "meta": {
+  "state": "FL",
+  "retrieved": "2026-10-22",
+  "via": "county and agency websites (local sources)",
+  "skipped": "Pinellas, Santa Rosa, Franklin (already confirmed)"
+ },
+ "county_verdict": {
+  "12011": {
+   "county": "Broward",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Broward Sheriff's Office Dept. of Fire Rescue",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": true,
+     "area": "unincorporated Broward and BSO contract cities (Cooper City, Dania Beach, Deerfield Beach, Hillsboro Beach?, Lauderdale Lakes, Pembroke Park, West Park, Weston, FLL airport, Port Everglades); Hallandale Beach since 2020",
+     "source_url": "https://web.archive.org/web/2023id_/https://www.broward.org/BrowardEMS/Documents/EMS-Providers.pdf",
+     "evidence": "ALS RESCUE PROVIDERS: Sheriff of Broward County, Florida, Dept. of Fire Rescue (also listed under CLASS 2 COPCN)",
+     "vintage": "2023-07-06"
+    },
+    {
+     "name": "Lighthouse Point Fire Dept.",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": true,
+     "area": "City of Lighthouse Point",
+     "source_url": "https://web.archive.org/web/2023id_/https://www.broward.org/BrowardEMS/Documents/EMS-Providers.pdf",
+     "evidence": "ALS RESCUE PROVIDERS: Lighthouse Point Fire Dept. 3740 NE 22nd Avenue",
+     "vintage": "2023-07-06"
+    },
+    {
+     "name": "Seminole Tribe of Florida, Dept. of EMS",
+     "transport": true,
+     "ownership": "tribal",
+     "partial": true,
+     "area": "Hollywood and Big Cypress reservations (Hollywood main; Clewiston/Big Cypress)",
+     "source_url": "https://web.archive.org/web/2023id_/https://www.broward.org/BrowardEMS/Documents/EMS-Providers.pdf",
+     "evidence": "ALS RESCUE PROVIDERS and CLASS 2 COPCN: Seminole Tribe of Florida, Dept. of EMS, 3105 N State Road 7, Hollywood",
+     "vintage": "2023-07-06"
+    },
+    {
+     "name": "American Medical Response (AMR)",
+     "transport": true,
+     "ownership": "private (contractor to Town of Lauderdale-By-The-Sea)",
+     "partial": true,
+     "area": "Town of Lauderdale-By-The-Sea (EMS); Class 2 COPCN",
+     "source_url": "https://web.archive.org/web/2023id_/https://www.broward.org/BrowardEMS/Documents/EMS-Providers.pdf",
+     "evidence": "Town of Lauderdale-By-The-Sea (See AMR for EMS)",
+     "vintage": "2023-07-06"
+    }
+   ],
+   "page_note": "Broward Sheriff's Office Fire Rescue serves much of the county, and Lighthouse Point Fire Department and the Seminole Tribe of Florida EMS also hold state ALS transport licences. Not yet confirmed from a public source: who serves Hallandale Beach, Hillsboro Beach and Deerfield Beach (which voted in January 2026 to end its BSO fire contract).",
+   "second_source": "https://www.floridabulldog.org/2026/04/broward-county-poised-to-retake-control-fire-rescue-services-from-bso (BSO contracted fire rescue to eight municipalities, Pembroke Park still contracts; Deerfield ending)"
+  },
+  "12023": {
+   "county": "Columbia",
+   "tier": "held",
+   "services": [
+    {
+     "name": "AmeriPro EMS of Florida LLC",
+     "transport": true,
+     "ownership": "private (contractor to Columbia County)",
+     "partial": false,
+     "area": "entire county incl. City of Lake City and Town of Fort White",
+     "source_url": "https://www.jems.com/industry-news/ameripro-health-inks-new-911-ems-agreement-with-columbia-county-fl/",
+     "evidence": "has been selected to provide primary 911 emergency medical services for Columbia County, Florida ... The countywide service area includes approximately 75,000 residents.",
+     "vintage": "2026-03-06"
+    },
+    {
+     "name": "Columbia Emergency Services, Inc. d/b/a Columbia EMS",
+     "transport": true,
+     "ownership": "private (contractor to Columbia County)",
+     "partial": false,
+     "area": "entire county until its agreement ended",
+     "source_url": "https://www.columbiacountyfla.com/MeetingDocuments/2026/02-February/24/20260526102205192-BCC-EM%20(MINUTES)-rev1.pdf",
+     "evidence": "The contractor has agreed to separation from the County. The terms of the service agreement will end in 90 days with May 25, 2026, being the last day.",
+     "vintage": "2026-02-24 (ended 2026-05-25)"
+    }
+   ],
+   "page_note": "AmeriPro EMS has been the primary 911 ambulance contractor since February-March 2026, and Columbia EMS stopped service in May 2026. Lake City Fire Department and Legacy of North Florida also hold state transport licences; their 911 role is not yet confirmed from a public source.",
+   "second_source": "https://www.columbiacountyfla.com/MeetingDocuments/2026/02-February/24/20260225094421370-BCC-EM%20(BACKUP)-rev1.pdf (backup agreement: contractor will provide the entire area of Columbia County, including Lake City and Fort White)"
+  },
+  "12099": {
+   "county": "Palm Beach",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Palm Beach County Fire Rescue",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": true,
+     "area": "unincorporated plus 19 municipalities: Belle Glade, Cloud Lake, Glen Ridge, Haverhill, Jupiter, Juno Beach, Lake Clarke Shores, Lake Park, Lake Worth Beach, Lantana, Loxahatchee Groves, Manalapan, Pahokee, Palm Springs, Royal Palm Beach, South Bay, South Palm Beach, Wellington, Westlake",
+     "source_url": "https://discover.pbcgov.org/pbcfr/PDF/Fact%20Sheet%20FY2026.pdf",
+     "evidence": "Services Provided: Fire Protection, Emergency Medical Services, ALS/BLS Transport ... this includes unincorporated Palm Beach County and 19 municipalities",
+     "vintage": "2026-01-29"
+    }
+   ],
+   "page_note": "Confirmed: Palm Beach County Fire Rescue. Not yet confirmed from a public source: whether the city fire departments that hold their own state transport licences (Boca Raton, Boynton Beach, Delray Beach, West Palm Beach, Riviera Beach and others) transport 911 patients themselves."
+  },
+  "12057": {
+   "county": "Hillsborough",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Hillsborough County Fire Rescue",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": true,
+     "area": "unincorporated Hillsborough (and wider scope unverified)",
+     "source_url": "https://hcfl.gov/newsroom/2024/01/08/-neighbors-helping-neighbors",
+     "evidence": "(not opened; hcfl.gov page returned 404 via WebFetch; only a search summary seen)",
+     "vintage": "unverified"
+    },
+    {
+     "name": "Sun City Center Emergency Squad",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": true,
+     "area": "Sun City Center",
+     "source_url": "https://hcfl.gov/newsroom/2024/01/08/-neighbors-helping-neighbors",
+     "evidence": "(not opened) search summary: all-volunteer free BLS ambulance service, 4 ambulances; FL DOH BLS/T licence 2910",
+     "vintage": "2024"
+    }
+   ],
+   "page_note": "Confirmed: Hillsborough County Fire Rescue and the volunteer Sun City Center Emergency Squad (BLS). Tampa Fire Rescue, Temple Terrace Fire Department and Plant City Fire Rescue also hold state transport licences; not yet confirmed from a public source whether they transport or only first respond."
+  },
+  "12086": {
+   "county": "Miami-Dade",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Miami-Dade Fire Rescue",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": true,
+     "area": "unincorporated Miami-Dade and 29 municipalities",
+     "source_url": "https://www.miamidade.gov/resources/management/documents/performance/quarterly-reports/FY2024-25/Q4/fire-rescue.pdf",
+     "evidence": "Miami-Dade Fire Rescue (MDFR) provides emergency response and transport services",
+     "vintage": "2025-09-30"
+    }
+   ],
+   "page_note": "Confirmed: Miami-Dade Fire Rescue. Miami, Hialeah, Miami Beach, Coral Gables and Key Biscayne hold their own state transport licences; not yet confirmed from a public source whether those city departments transport 911 patients."
+  },
+  "12095": {
+   "county": "Orange",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Orange County Fire Rescue Department",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": true,
+     "area": "unincorporated Orange County and four municipalities (existing map answer, source captured 2026-09-23)",
+     "source_url": "states/FL_911.json",
+     "evidence": "existing row",
+     "vintage": "2026-09-23"
+    }
+   ],
+   "page_note": "Confirmed: Orange County Fire Rescue. Orlando Fire Department and other city departments (Apopka, Ocoee, Winter Garden, Winter Park, Maitland) hold state transport licences, and county and Ocoee proposals point to contracted ambulances in the west county; not yet confirmed from a public source who transports there."
+  },
+  "12031": {
+   "county": "Duval",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Jacksonville Fire and Rescue Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": true,
+     "area": "consolidated Jacksonville/Duval (existing map row)",
+     "source_url": "states/FL_911.json",
+     "evidence": "existing row",
+     "vintage": "2026-09-23"
+    }
+   ],
+   "page_note": "Jacksonville Fire and Rescue Department is the main provider, reportedly with 65 ALS transport units and service in Jacksonville Beach since 2019. Not yet confirmed from a public source: Atlantic Beach (arrangement changing after May 2026) and Baldwin."
+  },
+  "12105": {
+   "county": "Polk",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Polk County Fire Rescue",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": true,
+     "area": "countywide (existing map row)",
+     "source_url": "https://www.polkfl.gov/news/polk-county-fire-rescue-places-two-ambulance-units-in-service/",
+     "evidence": "transport needs in the South Lakeland/North Mulberry areas and East Lakeland/West Auburndale areas (opened page; 'all residents' sentence only in search snippet)",
+     "vintage": "2024-06-04"
+    }
+   ],
+   "page_note": "Polk County Fire Rescue is the only public agency on the state transport list. Not yet confirmed from a public source: the 911 role of three private licensees (Metro EMS, Express Medical Transport, STAT Ambulance) and of any Lakeland or Winter Haven service."
+  }
+ }
+}

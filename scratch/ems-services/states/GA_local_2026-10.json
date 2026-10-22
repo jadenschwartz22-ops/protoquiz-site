@@ -2,7 +2,7 @@
  "meta": {
   "state": "GA",
   "retrieved": "2026-10-22",
-  "via": "county government and agency sources (local sources)"
+  "via": "county government, agency and news sources (local sources)"
  },
  "county_verdict": {
   "13089": {
@@ -14,24 +14,375 @@
      "transport": true,
      "ownership": "private (contractor to DeKalb County)",
      "partial": false,
-     "area": "whole county, under county contract",
-     "source_url": "https://www.dekalbcountyga.gov/node/1210060",
-     "evidence": "DeKalb County Board of Commissioners Unanimously Approves $78 Million Contract for Emergency Medical Services (AMR; county contract held since 2013)",
-     "vintage": "2025"
+     "area": "whole county",
+     "source_url": "https://www.firehouse.com/ems/news/55331618/dekalb-county-ga-awards-77m-ambulance-contract-to-amr",
+     "evidence": "The commissioners unanimously voted to award American Medical Response a new five-year contract to serve as the primary emergency transportation service for the county.",
+     "vintage": "2025-11-20"
     },
     {
      "name": "DeKalb County Fire Rescue",
+     "transport": false,
+     "ownership": "county EMS",
+     "partial": true,
+     "area": "medical first response",
+     "source_url": "https://www.firehouse.com/ems/news/55331618/dekalb-county-ga-awards-77m-ambulance-contract-to-amr",
+     "evidence": "DeKalb County Fire Rescue's travel time to medical emergencies was 9.1 minutes or less in 90% of calls",
+     "vintage": "2025-11-20"
+    }
+   ],
+   "page_note": "Confirmed: American Medical Response is the primary 911 ambulance provider (Firehouse and AJC, November 2025). Not yet confirmed: whether DeKalb County Fire Rescue also transports, and who serves the part of DeKalb inside Atlanta.",
+   "second_source": ""
+  },
+  "13135": {
+   "county": "Gwinnett",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Gwinnett County Fire and Emergency Services",
      "transport": true,
      "ownership": "county EMS",
      "partial": false,
-     "area": "whole county, alongside AMR",
-     "source_url": "https://www.dekalbcountyga.gov/node/1210060",
-     "evidence": "DeKalb County Fire Rescue and AMR coordinate ambulance resources and unit hours across the county",
-     "vintage": "2025"
+     "area": "whole county",
+     "source_url": "https://gwinnettcounty.com/departments/FireandEmergencyServices/FireFAQ",
+     "evidence": "Gwinnett County Fire & Emergency Services provides emergency medical services and fire protection to a population of over one million people ... 31 engine companies, 12 ladder trucks, 34 ambulances, and 4 rescues. All response vehicles are equipped to deliver advanced life support.",
+     "vintage": "2026 (page copyright 2026, read 2026-10-22)"
     }
    ],
-   "page_note": "AMR holds the county 911 ambulance contract (renewed November 2025). Whether DeKalb Fire Rescue or Grady also transport in parts of the county is not confirmed. Held until sourced.",
-   "second_source": "https://www.firehouse.com/ems/news/55331618"
+   "page_note": "Gwinnett County Fire and Emergency Services serves the whole county of about one million residents, and no city ambulance service was found. Not yet confirmed from a current public source that it answers 911 transports; the only evidence is a 2011 news story on transport fees.",
+   "second_source": "https://ems1.com/ambulances-emergency-vehicles/articles/ambulance-fee-rises-to-975-in-ga-county-4tw5CNqJV5z7Qddy"
+  },
+  "13139": {
+   "county": "Hall",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Hall County Fire Services (EMS Division)",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.hallcounty.org/857/Emergency-Medical-Services-EMS",
+     "evidence": "Hall County Fire Services is the 9-1-1 zone provider for Hall County, averaging 1,100 EMS calls monthly.",
+     "vintage": "2026 (page read 2026-10-22)"
+    }
+   ],
+   "page_note": "Hall County's zone language implies Hall County Fire Services is exclusive. Gainesville city fire has not been checked for its own ambulances.",
+   "second_source": ""
+  },
+  "13297": {
+   "county": "Walton",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Walton County EMS",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.waltoncountyga.gov/291/Area-of-Coverage",
+     "evidence": "Walton County Emergency Medical Service provides advanced life support to the citizens of Walton County and those who travel through our county. We staff 6 ALS ambulances twenty-four hours a day, 7 days a week throughout the county.",
+     "vintage": "2026 (page read 2026-10-22)"
+    }
+   ],
+   "page_note": "Ambulances are posted at county stations and at the Monroe and Social Circle city fire stations.",
+   "second_source": "https://www.waltoncountyga.gov/159/Emergency-Medical-Services"
+  },
+  "13117": {
+   "county": "Forsyth",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Central EMS (Priority Ambulance family)",
+     "transport": true,
+     "ownership": "private (contractor to Forsyth County)",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://web.archive.org/web/2025id_/https://priorityambulance.com/2023/11/08/central-ems-wins-contract-to-continue-ambulance-services-in-forsyth-county",
+     "evidence": "Central EMS ... has been awarded a new contract term to continue as the exclusive provider of 911 emergency ambulance services in Forsyth County, Georgia. The Forsyth County Board of Commissioners approved the new contract during its November 2, 2023, meeting.",
+     "vintage": "2023-11-08 (contract from 2024-01-01, five years)"
+    }
+   ],
+   "page_note": "Central EMS holds an exclusive county contract. Forsyth County Fire Department also holds a transport licence for a county-owned ambulance, so its own transport role is not ruled out.",
+   "second_source": "https://forsythnews.com/news/public-safety/central-ems-continue-ambulance-service-forsyth-county"
+  },
+  "13245": {
+   "county": "Richmond",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Central EMS (Priority Ambulance family)",
+     "transport": true,
+     "ownership": "private (contractor to Augusta-Richmond County)",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://web.archive.org/web/2025id_/https://priorityambulance.com/2023/03/10/central-ems-awarded-augusta-richmond-county-911-emergency-response-zone",
+     "evidence": "Central EMS has been awarded the 911 Emergency Response Zone by the Georgia Department of Public Health (DPH) to provide exclusive 911 emergency ambulance services to the citizens of Augusta-Richmond County.",
+     "vintage": "2023-03-10"
+    }
+   ],
+   "page_note": "Central EMS provides 911 ambulance service in Richmond County; Gold Cross EMS pulled out in April 2023 after the city did not renew its contract.",
+   "second_source": "https://www.wrdw.com/2023/11/17/progress-report-augustas-new-ambulance-provider"
+  },
+  "13217": {
+   "county": "Newton",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Central EMS / National EMS (Priority Ambulance family), under Piedmont Newton Hospital zone",
+     "transport": true,
+     "ownership": "mixed: hospital zone holder with private contractor",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.jems.com/ems-management/ems-recruitment-retention/piedmont-newton-partners-with-priority-ambulance-ga-for-911-interfacility-services/",
+     "evidence": "Piedmont Newton holds the designated 911 zone for ambulance service that encompasses Newton County and will contract with National EMS to provide 911 service to its zone.",
+     "vintage": "2021-04-03"
+    }
+   ],
+   "page_note": "Central EMS is the 911 provider for Newton County, operating the zone that belongs to Piedmont Newton Hospital (some sources call the operator National EMS).",
+   "second_source": "https://priorityambulance.com/brands/central-ems/"
+  },
+  "13247": {
+   "county": "Rockdale",
+   "tier": "held",
+   "services": [
+    {
+     "name": "National EMS (Priority Ambulance family)",
+     "transport": true,
+     "ownership": "private (zone provider)",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://priorityambulance.com/brands/national-ems/",
+     "evidence": "As Georgia's first nationally accredited EMS provider, we proudly serve Athens-Clarke, Morgan, Oconee, and Rockdale counties",
+     "vintage": "2026 (page read 2026-10-22)"
+    }
+   ],
+   "page_note": "Confirmed: National EMS is listed among Priority Ambulance's exclusive 911 zones (2023 company release). Not yet confirmed from a county source: Rockdale County Fire lists ambulances at headquarters and Stations 1, 2 and 7, and their transport role is unexplained.",
+   "second_source": ""
+  },
+  "13059": {
+   "county": "Clarke",
+   "tier": "A",
+   "services": [
+    {
+     "name": "National EMS (Priority Ambulance family)",
+     "transport": true,
+     "ownership": "private (zone provider)",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://priorityambulance.com/brands/national-ems/",
+     "evidence": "As Georgia's first nationally accredited EMS provider, we proudly serve Athens-Clarke, Morgan, Oconee, and Rockdale counties",
+     "vintage": "2026 (page read 2026-10-22)"
+    }
+   ],
+   "page_note": "Athens-Clarke County is listed among Priority Ambulance's exclusive 911 zones (2023 company release). Athens-Clarke Fire's first-response role has not been checked.",
+   "second_source": ""
+  },
+  "13211": {
+   "county": "Morgan",
+   "tier": "A",
+   "services": [
+    {
+     "name": "National EMS (Priority Ambulance family)",
+     "transport": true,
+     "ownership": "private (zone provider)",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://priorityambulance.com/brands/national-ems/",
+     "evidence": "As Georgia's first nationally accredited EMS provider, we proudly serve Athens-Clarke, Morgan, Oconee, and Rockdale counties",
+     "vintage": "2026 (page read 2026-10-22)"
+    }
+   ],
+   "page_note": "Morgan County is listed among Priority Ambulance's exclusive 911 zones (2023 company release).",
+   "second_source": ""
+  },
+  "13047": {
+   "county": "Catoosa",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Puckett EMS (Priority Ambulance family)",
+     "transport": true,
+     "ownership": "private (zone provider)",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://priorityambulance.com/brands/puckett-ems/",
+     "evidence": "We're particularly proud to serve as the trusted 9-1-1 provider for Southwest Cobb County in Georgia, along with Catoosa, Sequatchie, and Marion counties in Tennessee.",
+     "vintage": "2026 (page read 2026-10-22)"
+    }
+   ],
+   "page_note": "Priority Ambulance's 2023 release lists Catoosa among its exclusive 911 zones, but the Puckett EMS company page places Catoosa in Tennessee. Angel EMS (Fort Oglethorpe) was earlier named the 911 provider; not yet confirmed from a county source who serves Catoosa now.",
+   "second_source": ""
+  },
+  "13129": {
+   "county": "Gordon",
+   "tier": "A",
+   "services": [
+    {
+     "name": "AdventHealth Gordon EMS",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.gordoncountyga.gov/477/Ambulance-Service",
+     "evidence": "Gordon County provides ambulance services through a contract with AdventHealth Gordon. AdventHealth Gordon EMS operates as a department of the hospital to supply this service to the citizens and visitors of Gordon County.",
+     "vintage": "2026 (page read 2026-10-22)"
+    }
+   ],
+   "page_note": "Stations are in Calhoun and Fairmount, with four 24-hour ALS ambulances.",
+   "second_source": ""
+  },
+  "13143": {
+   "county": "Haralson",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Ambucare (Priority Ambulance family)",
+     "transport": true,
+     "ownership": "private (contractor to Haralson County)",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.haralsoncountyga.gov/ambulance-service.cfm",
+     "evidence": "Emergency medical ambulance service is provided by Ambucare under a contract with the Haralson County Commissioners. In addition to being the emergency 911 provider for Haralson County, Ambucare provides critical care transport services",
+     "vintage": "2026 (page read 2026-10-22)"
+    }
+   ],
+   "page_note": "Priority Ambulance's 2023 release also lists Haralson County among its exclusive 911 zones.",
+   "second_source": "https://priorityambulance.com/2023/03/10/central-ems-awarded-augusta-richmond-county-911-emergency-response-zone"
+  },
+  "13177": {
+   "county": "Lee",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Lee County Fire & Emergency Services",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.leecountyga.gov/departments/fire-emergency-services",
+     "evidence": "The Lee County Fire & Emergency Services department is responsible for protecting all County, Leesburg, and Smithville citizens ... The department also operates ALS ambulances at each station.",
+     "vintage": "2026 (page read 2026-10-22)"
+    }
+   ],
+   "page_note": "Lee County Fire & Emergency Services operates ALS ambulances from stations in Leesburg, Century, Palmyra, Smithville and Redbone. Not yet confirmed from a county source that it holds the 911 transport role.",
+   "second_source": ""
+  },
+  "13121": {
+   "county": "Fulton",
+   "tier": "held",
+   "services": [
+    {
+     "name": "American Medical Response (AMR)",
+     "transport": true,
+     "ownership": "private (zone provider)",
+     "partial": true,
+     "area": "North Fulton",
+     "source_url": "https://www.roughdraftatlanta.com",
+     "evidence": "AMR is the designated provider to North Fulton County per the Georgia Department of Public Health approved Regional Ambulance Zoning Plan (per audit file, roughdraftatlanta.com 2024-06-06; not re-opened)",
+     "vintage": "2024-06-06"
+    },
+    {
+     "name": "Grady EMS",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": true,
+     "area": "Atlanta, College Park, East Point",
+     "source_url": "https://www.gradyhealth.org/ems-services/",
+     "evidence": "Grady EMS E-911 Communications Center is a secondary public service answering point (PSAP), receiving all emergency calls through the city of Atlanta, College Park, and East Point.",
+     "vintage": "2026 (page read 2026-10-22)"
+    }
+   ],
+   "page_note": "Fulton County has five zones. AMR is reported to serve the north and Grady EMS Atlanta and the south; not yet confirmed from a current public source, nor who serves Union City, Fairburn, Palmetto, Chattahoochee Hills, Hapeville and South Fulton.",
+   "second_source": ""
+  },
+  "13067": {
+   "county": "Cobb",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Metro Atlanta Ambulance Service (MAAS)",
+     "transport": true,
+     "ownership": "private (zone provider)",
+     "partial": true,
+     "area": "Acworth, Kennesaw, Marietta, Smyrna and most of the county (MAAS company page, undated)",
+     "source_url": "https://www.ems1.com/ambulances-emergency-vehicles/articles/you-get-replaced-if-you-dont-do-a-good-job-ga-town-gets-new-provider-eklWqddYjrlniLac/",
+     "evidence": "Georgia Public Health gives local councils the power to assign coverage zones ... (2012 article: MAAS replaced Georgia EMS in Kennesaw)",
+     "vintage": "2012"
+    },
+    {
+     "name": "Puckett EMS",
+     "transport": true,
+     "ownership": "private (zone provider)",
+     "partial": true,
+     "area": "Southwest Cobb",
+     "source_url": "https://priorityambulance.com/brands/puckett-ems/",
+     "evidence": "We're particularly proud to serve as the trusted 9-1-1 provider for Southwest Cobb County in Georgia",
+     "vintage": "2026 (page read 2026-10-22)"
+    }
+   ],
+   "page_note": "Metro Atlanta Ambulance Service and Puckett EMS each hold a zone. Not yet confirmed from a 2024 or later source: the MAAS zone and the boundary between them.",
+   "second_source": ""
+  },
+  "13151": {
+   "county": "Henry",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Henry County Fire Department",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://ajc.com/news/local/henry-county-provide-mcdonough-ambulance/szEaLQMcJX5tT4u8P7mrgK",
+     "evidence": "The Henry County Fire Department is the sole 911 ambulance provider for all of Henry County, according to a staff report",
+     "vintage": "2018-11-19"
+    }
+   ],
+   "page_note": "Henry County Fire Department is named for 911 ambulance service in a 2018 source. Not yet confirmed from a 2024 or later source.",
+   "second_source": ""
+  },
+  "13063": {
+   "county": "Clayton",
+   "tier": "held",
+   "services": [],
+   "page_note": "Not yet confirmed from a public source: who holds the zone in Clayton County. The county page text is decades old and names no zone holder.",
+   "second_source": ""
+  },
+  "13057": {
+   "county": "Cherokee",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Cherokee County Fire & Emergency Services",
+     "transport": true,
+     "ownership": "county EMS",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://cherokeega.com/County-Manager/_resources/documents/County government presentation 220628.pdf",
+     "evidence": "Cherokee Fire & Emergency Services ... responsible for the public safety side of fire service and medical transport services (search snippet; PDF not opened, cherokeega.com blocks fetch)",
+     "vintage": "2022"
+    }
+   ],
+   "page_note": "Cherokee County Fire & Emergency Services is the likely provider. Not yet confirmed from a county page.",
+   "second_source": ""
+  },
+  "13051": {
+   "county": "Chatham",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Chatham Emergency Services (CES, nonprofit; map shows Mercy Ambulance)",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://news.yahoo.com/seconds-count-ems-response-times-090604830.html",
+     "evidence": "(search summary only) Chatham Emergency Services is the county sole provider",
+     "vintage": "2023"
+    }
+   ],
+   "page_note": "Chatham Emergency Services (CES, a nonprofit) is named in news reports as the county's ambulance service. Not yet confirmed from a county page.",
+   "second_source": ""
   }
  }
 }

@@ -1,0 +1,365 @@
+{
+ "meta": {
+  "state": "VA",
+  "retrieved": "2026-10-22",
+  "via": "county and city websites and the Virginia OEMS licensed-agency list (local sources)"
+ },
+ "county_verdict": {
+  "51059": {
+   "county": "Fairfax County",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Fairfax County Fire and Rescue Department",
+     "transport": true,
+     "ownership": "county fire (combination career/volunteer)",
+     "partial": false,
+     "area": "Fairfax County excl. independent cities of Fairfax and Falls Church",
+     "source_url": "https://www.fairfaxcounty.gov/fire-ems/emergency-medical-services-transport-billing",
+     "evidence": "Emergency Medical Service (EMS) transport billing began on April 1, 2005 in Fairfax County. ... FCFRD contracts with an outside company, Digitech Computer LLC , to handle EMS transport billing, coding, and processing.",
+     "vintage": "2026 undated page"
+    }
+   ],
+   "page_note": "Fairfax County Fire and Rescue holds the only ground-ambulance licence in the county. This covers the county only; independent cities such as Fairfax city are listed separately, and Falls Church, Fort Belvoir and Dulles Airport were not separately checked.",
+   "second_source": "OEMS roster FAIRFAX COUNTY FIRE & RESCUE ALS/BLS"
+  },
+  "51600": {
+   "county": "Fairfax city",
+   "tier": "A",
+   "services": [
+    {
+     "name": "City of Fairfax Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "City of Fairfax",
+     "source_url": "https://web.archive.org/web/2025id_/https://www.fairfaxva.gov/government/fire-department/operations/ems-transport-billing",
+     "evidence": "The City of Fairfax, as well as the majority of our surrounding jurisdictions, charge medical insurance carriers for ambulance transport services. ... Cost recovery from EMS billing is directed back to the fire department for the purchase of ambulances and other emergency equipment.",
+     "vintage": "2025 (archive capture)"
+    }
+   ],
+   "page_note": "The City of Fairfax runs its own fire department, separate from Fairfax County.",
+   "second_source": "OEMS roster"
+  },
+  "51013": {
+   "county": "Arlington County",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Arlington County Fire Department",
+     "transport": true,
+     "ownership": "county fire",
+     "partial": false,
+     "area": "Arlington County",
+     "source_url": "https://www.arlingtonva.us/Government/Departments/Fire/Emergency-Medical-Services",
+     "evidence": "The Arlington County Fire Department's highly skilled personnel provide Emergency Medical Services (EMS), including ambulance transportation, over 15,000 times per year.",
+     "vintage": "2026 (WebFetch; curl/archive 403)"
+    }
+   ],
+   "page_note": "Arlington County Fire Department is the only licensed ground-ambulance agency in Arlington.",
+   "second_source": "OEMS roster"
+  },
+  "51710": {
+   "county": "Norfolk city",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Norfolk Fire-Rescue",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "City of Norfolk",
+     "source_url": "https://www.norfolk.gov/6016/Fire-Rescue",
+     "evidence": "Norfolk Fire-Rescue ( NFR ) is responsible for providing all emergency medical service within the City of Norfolk. This is accomplished with a medic (ambulance) fleet that consists of 14 advanced life support licensed units that are in service 24/7.",
+     "vintage": "2026 undated page"
+    }
+   ],
+   "page_note": "Norfolk Fire-Rescue provides ALS; the other licences in Norfolk are a children's hospital neonatal service and air ambulance.",
+   "second_source": "OEMS roster"
+  },
+  "51510": {
+   "county": "Alexandria city",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Alexandria Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "City of Alexandria",
+     "source_url": "https://www.alexandriava.gov/fire-department/ambulance-billing-faqs",
+     "evidence": "What is the charge for being transported to the hospital by a medic unit? ... The City of Alexandria Fire Department’s ambulance billing is handled by a third-party company EMS/MC Management Consultants",
+     "vintage": "2026 undated page"
+    }
+   ],
+   "page_note": "Alexandria Fire Department provides ALS and BLS. RIDE24 is a commercial licence and is not shown as a 911 provider.",
+   "second_source": "OEMS roster"
+  },
+  "51700": {
+   "county": "Newport News city",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Newport News Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "City of Newport News",
+     "source_url": "https://www.nnva.gov/2078/Ambulance-Fee-Information",
+     "evidence": "The ambulance transport fees (\"the Fees\") established by City code Section 16-60 shall be charged to every patient transported by the Newport News Fire Department in an emergency medical services vehicle without regard to that patient's ability to pay.",
+     "vintage": "2026 undated page"
+    }
+   ],
+   "page_note": "Newport News Fire Department provides ALS; Newport News Shipbuilding's fire department is an industrial licence.",
+   "second_source": "OEMS roster"
+  },
+  "51550": {
+   "county": "Chesapeake city",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Chesapeake Fire Department",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "City of Chesapeake",
+     "source_url": "https://www.cityofchesapeake.net/fire",
+     "evidence": "From our 15 fire stations, we provide fire protection, rescue, and emergency medical services for the 353 square miles of urban, suburban, and rural areas within our city limits.",
+     "vintage": "2026 undated page"
+    }
+   ],
+   "page_note": "Chesapeake Fire Department is licensed for ALS ground ambulance, but its page says EMS rather than transport. Not yet confirmed from a city page: that it transports, or the role of the commercial licensees Fast Track EMS and LifeWay.",
+   "second_source": "OEMS roster"
+  },
+  "51650": {
+   "county": "Hampton city",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Hampton Division of Fire & Rescue",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "City of Hampton",
+     "source_url": "https://web.archive.org/web/2025id_/https://hampton.gov/3254/EMS-Cost-Recovery",
+     "evidence": "The City of Hampton's EMS Cost Recovery Program is designed to recover the costs of emergency medical services associated with a patient assessment and/or patient transport to the hospital by ambulance.",
+     "vintage": "archive capture, program since 2002"
+    }
+   ],
+   "page_note": "Hampton Division of Fire & Rescue is licensed for ALS. Cardinal Ambulance Service (BLS, Hampton) is also licensed; not yet confirmed from a public source whether it answers 911.",
+   "second_source": "OEMS roster"
+  },
+  "51800": {
+   "county": "Suffolk city",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Suffolk Department of Fire & Rescue",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "City of Suffolk",
+     "source_url": "https://www.suffolkva.us/220/Fire-Rescue",
+     "evidence": "1 Citywide Shift Commander 2 Battalion Chiefs 2 EMS Supervisors 11 Engine Companies 4 Ladder Companies 2 Heavy Rescue Companies 9 Advanced Life Support Ambulances",
+     "vintage": "2026 undated page"
+    }
+   ],
+   "page_note": "Suffolk Fire & Rescue holds the only ALS ground-ambulance licence in Suffolk.",
+   "second_source": "OEMS roster"
+  },
+  "51179": {
+   "county": "Stafford County",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Stafford County Fire and Rescue Department",
+     "transport": true,
+     "ownership": "county fire",
+     "partial": false,
+     "area": "Stafford County",
+     "source_url": "https://staffordcountyva.gov/government/departments_f-o/fire_and_rescue/about_us/branches/operations/ems_billing.php",
+     "evidence": "Emergency Medical Service (EMS) transport billing started October 1, 2006 in Stafford County. Stafford County Fire and Rescue Department is committed to providing the finest emergency medic",
+     "vintage": "2026 undated page"
+    }
+   ],
+   "page_note": "Stafford County Fire and Rescue is a county fire department. Incarnate Ambulance (Woodbridge) holds a BLS commercial licence.",
+   "second_source": "OEMS roster"
+  },
+  "51041": {
+   "county": "Chesterfield County",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Chesterfield Fire and EMS (CFEMS)",
+     "transport": true,
+     "ownership": "county fire-EMS",
+     "partial": false,
+     "area": "Chesterfield County",
+     "source_url": "https://www.chesterfield.gov/DocumentCenter/View/46569/Chesterfield-Fire-and-EMS-Community-Risk-Assessment-and-Standards-of-Cover-PDF",
+     "evidence": "CFEMS operates 21 staffed engine companies, 6 staffed truck companies, and 22 staffed transport units. CFEMS is supported by four volunteer rescue squads operating from seven stations providing 174 EMS providers responding primarily nights and weekends. (PDF p.67) ... The revenue generated through transports by the four volunteer rescue squads is forwarded to the appropriate squad on a quarterly basis. (PDF p.75)",
+     "vintage": "2026 CRA/SOC"
+    },
+    {
+     "name": "Bensley-Bermuda Volunteer Rescue Squad",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": true,
+     "area": "part of county (RB1 Chester, RB3 South Chesterfield)",
+     "source_url": "https://www.chesterfield.gov/DocumentCenter/View/46569/Chesterfield-Fire-and-EMS-Community-Risk-Assessment-and-Standards-of-Cover-PDF",
+     "evidence": "The Bensley-Bermuda Volunteer Rescue Squad (BBVRS) ... operates from two stations ... BBVRS units combined to provide 1,886 responses",
+     "vintage": "2026 CRA/SOC"
+    },
+    {
+     "name": "Ettrick-Matoaca Volunteer Rescue Squad",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": true,
+     "area": "part of county (RE1 River Road; 24/7)",
+     "source_url": "https://www.chesterfield.gov/DocumentCenter/View/46569/Chesterfield-Fire-and-EMS-Community-Risk-Assessment-and-Standards-of-Cover-PDF",
+     "evidence": "The Ettrick-Matoaca Volunteer Rescue Squad (EMVRS) ... operates from a single station (RE1) ... EMVRS units combined to provide 3,771 responses",
+     "vintage": "2026 CRA/SOC"
+    },
+    {
+     "name": "Forest View Volunteer Rescue Squad",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": true,
+     "area": "part of county (RF3, RF5 Midlothian Tpk)",
+     "source_url": "https://www.chesterfield.gov/DocumentCenter/View/46569/Chesterfield-Fire-and-EMS-Community-Risk-Assessment-and-Standards-of-Cover-PDF",
+     "evidence": "The Forest View Volunteer Rescue Squad (FVVRS) ... operates from two stations ... FVVRS units combined to provide 6,673 responses",
+     "vintage": "2026 CRA/SOC"
+    },
+    {
+     "name": "Manchester Volunteer Rescue Squad",
+     "transport": true,
+     "ownership": "nonprofit",
+     "partial": true,
+     "area": "part of county (RM1, RM2)",
+     "source_url": "https://www.chesterfield.gov/DocumentCenter/View/46569/Chesterfield-Fire-and-EMS-Community-Risk-Assessment-and-Standards-of-Cover-PDF",
+     "evidence": "The Manchester Volunteer Rescue Squad (MVRS) ... operates out of two stations ... The MVRS units combined to provide 2,377 responses",
+     "vintage": "2026 CRA/SOC"
+    }
+   ],
+   "page_note": "Each volunteer rescue squad owns and operates its apparatus and is a separate EMS agency within the Chesterfield Fire and EMS system (county standards-of-cover document). HCA Virginia Medical Transport is a hospital interfacility licence.",
+   "second_source": "OEMS roster (CHESTERFIELD FIRE AND EMS, MANCHESTER VRS, BENSLEY-BERMUDA VRS, FOREST VIEW VRS, ETTRICK-MATOACA VRS)"
+  },
+  "51107": {
+   "county": "Loudoun County",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Loudoun County Combined Fire and Rescue System",
+     "transport": true,
+     "ownership": "county fire-rescue + volunteer companies",
+     "partial": true,
+     "area": "Loudoun County",
+     "source_url": "https://www.loudoun.gov/3576/Questions-About-Your-Ambulance-Bill",
+     "evidence": "Loudoun County Combined Fire-Rescue System has partnered with EMS-MC",
+     "vintage": "2026 billing page"
+    }
+   ],
+   "page_note": "Loudoun County Combined Fire and Rescue System bills for ambulance transport. The state also licenses the Loudoun County, Ashburn, Arcola, Lovettsville, Round Hill, Purcellville, Sterling, Blue Ridge and Hamilton volunteer companies; not yet confirmed from a county page which ones transport.",
+   "second_source": ""
+  },
+  "51087": {
+   "county": "Henrico County",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Henrico County Division of Fire",
+     "transport": true,
+     "ownership": "county fire",
+     "partial": true,
+     "area": "Henrico County",
+     "source_url": "https://henrico.gov/fire/about-us/",
+     "evidence": "Utilizing the above staff and equipment we provide the following services: Urban and Rural fire services and response Emergency Medical Advanced life support services and transport",
+     "vintage": "2026 undated page"
+    }
+   ],
+   "page_note": "Confirmed: Henrico County Division of Fire transports. Tuckahoe and Lakeside Volunteer Rescue Squads are also licensed; their role is not yet confirmed from a public source.",
+   "second_source": ""
+  },
+  "51760": {
+   "county": "Richmond city",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Richmond Ambulance Authority",
+     "transport": true,
+     "ownership": "public authority (franchise)",
+     "partial": false,
+     "area": "City of Richmond",
+     "source_url": "https://raaems.org/about/",
+     "evidence": "On March 20, 1991, the Virginia General Assembly passed the Richmond Ambulance Authority Act and on September 23, 1991, the City of Richmond granted the franchise to Richmond Ambulance Authority (RAA) to provide EMS to the City.",
+     "vintage": "raaems.org/about, 2026 capture"
+    },
+    {
+     "name": "Richmond Fire & Emergency Services",
+     "transport": false,
+     "ownership": "municipal fire",
+     "partial": false,
+     "area": "City of Richmond",
+     "source_url": "states/VA_oems.json",
+     "evidence": "Non Transport First Response - BLS (OEMS roster)",
+     "vintage": "2026-09"
+    }
+   ],
+   "page_note": "Confirmed: Richmond Ambulance Authority holds the franchise. American Medical Response Mid-Atlantic, Richmond Volunteer Rescue Squad and MetroHealth EMS are also licensed at Richmond addresses; their role is not yet confirmed from a public source.",
+   "second_source": ""
+  },
+  "51177": {
+   "county": "Spotsylvania County",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Spotsylvania County Fire, Rescue & Emergency Management",
+     "transport": true,
+     "ownership": "county fire",
+     "partial": true,
+     "area": "Spotsylvania County",
+     "source_url": "https://www.spotsylvania.va.us/609/EMS-Billing",
+     "evidence": "On April 5, 2005, the Spotsylvania County Board of Supervisors adopted Section 9-39 of the Spotsylvania County Code which will allow the county to charge for ambulance service effective October 1, 2005.",
+     "vintage": "2026 undated page"
+    }
+   ],
+   "page_note": "Confirmed: Spotsylvania County Fire, Rescue & Emergency Management. Spotsylvania Volunteer Rescue Squad is also licensed; not yet confirmed from a public source how the two divide calls.",
+   "second_source": ""
+  },
+  "51770": {
+   "county": "Roanoke city",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Roanoke Fire-EMS",
+     "transport": true,
+     "ownership": "municipal fire",
+     "partial": true,
+     "area": "City of Roanoke",
+     "source_url": "https://web.archive.org/web/2025id_/https://www.roanokeva.gov/DocumentCenter/View/19741/FY2025-City-of-Roanoke-Fee-Compendium",
+     "evidence": "Fire-Emergency Medical Services Fees Department Fire-EMS ... Fee for ground transportation by ambulance vehicle for providing a level of Basic Life Support medical care",
+     "vintage": "FY2024-25 fee compendium"
+    }
+   ],
+   "page_note": "Roanoke Fire-EMS charges ambulance transport fees and serves the city. Roanoke Emergency Medical Services Inc. is also licensed with a Roanoke address; not yet confirmed what it does.",
+   "second_source": ""
+  },
+  "51161": {
+   "county": "Roanoke County",
+   "tier": "held",
+   "services": [
+    {
+     "name": "Roanoke County Fire & Rescue Department",
+     "transport": true,
+     "ownership": "county fire (combination)",
+     "partial": true,
+     "area": "Roanoke County excl. Roanoke and Salem",
+     "source_url": "https://www.roanokecountyva.gov/75/Fire-Rescue",
+     "evidence": "Ambulance transport billing and related requests are handled by our third-party billing partner, Medusind .",
+     "vintage": "2026 page"
+    }
+   ],
+   "page_note": "Roanoke County Fire & Rescue is a combination system using career and volunteer personnel. Cave Spring First Aid & Rescue Squad and Vinton First Aid Crew are also licensed as ground ambulances; not yet confirmed from a public source what role they play.",
+   "second_source": ""
+  }
+ }
+}
