@@ -623,7 +623,7 @@
    "source_url": "https://services1.arcgis.com/z3DZ2dwxv2tyH8pc/arcgis/rest/services/DETCOG_Regional_EMS_Agency/FeatureServer/140",
    "layer_edit": "2026-10-20",
    "unverified_placeholder_share": 0.101,
-   "page_note": "San Augustine County: the Deep East Texas COG regional 911 GIS \"EMS Agency\" layer (primary service areas) names services for 90% of the county; the rest is unassigned or marked Verify. Tier left alone."
+   "page_note": "San Augustine County: the Deep East Texas COG regional 911 GIS \"EMS Agency\" layer (primary service areas) names services for 90% of the county; the rest is unassigned or marked Verify."
   },
   "48373": {
    "county": "Polk",
@@ -639,7 +639,7 @@
    "source": "Deep East Texas COG regional 911 GIS \"EMS Agency\" layer (primary service areas)",
    "source_url": "https://services1.arcgis.com/z3DZ2dwxv2tyH8pc/arcgis/rest/services/DETCOG_Regional_EMS_Agency/FeatureServer/140",
    "layer_edit": "2026-10-20",
-   "page_note": "Polk: the DETCOG layer names Allegiance Mobile Health EMS for 100% of the county, but the DSHS roster of 2026-10-02 lists Texan EMS LLC (Livingston, 911 & Transfer, 3 stations) as the Polk licensee. Conflict; tier left alone."
+   "page_note": "Polk: the DETCOG layer names Allegiance Mobile Health EMS for 100% of the county, but the DSHS roster of 2026-10-02 lists Texan EMS LLC (Livingston, 911 & Transfer, 3 stations) as the Polk licensee. The two sources conflict."
   },
   "48419": {
    "county": "Shelby",
@@ -698,7 +698,7 @@
    "source_url": "https://services1.arcgis.com/z3DZ2dwxv2tyH8pc/arcgis/rest/services/DETCOG_Regional_EMS_Agency/FeatureServer/140",
    "layer_edit": "2026-10-20",
    "unverified_placeholder_share": 0.8172,
-   "page_note": "Newton County: the Deep East Texas COG regional 911 GIS \"EMS Agency\" layer (primary service areas) names services for 18% of the county; the rest is unassigned or marked Verify. Tier left alone."
+   "page_note": "Newton County: the Deep East Texas COG regional 911 GIS \"EMS Agency\" layer (primary service areas) names services for 18% of the county; the rest is unassigned or marked Verify."
   },
   "48225": {
    "county": "Houston",
@@ -785,7 +785,7 @@
    "source_url": "https://services1.arcgis.com/z3DZ2dwxv2tyH8pc/arcgis/rest/services/DETCOG_Regional_EMS_Agency/FeatureServer/140",
    "layer_edit": "2026-10-20",
    "unverified_placeholder_share": 0.1487,
-   "page_note": "Sabine County: the Deep East Texas COG regional 911 GIS \"EMS Agency\" layer (primary service areas) names services for 85% of the county; the rest is unassigned or marked Verify. Tier left alone."
+   "page_note": "Sabine County: the Deep East Texas COG regional 911 GIS \"EMS Agency\" layer (primary service areas) names services for 85% of the county; the rest is unassigned or marked Verify."
   },
   "48455": {
    "county": "Trinity",
@@ -1408,7 +1408,7 @@
    "source": "Bastrop County GIS \"Emergency Service Boundary for Medical (EMS)\" (NG911 ESB)",
    "source_url": "https://services3.arcgis.com/wdTkTU0MdZbNBEZy/arcgis/rest/services/EmergencyServiceBoundaryMedical/FeatureServer/0",
    "layer_edit": "2026-09-23",
-   "page_note": "Bastrop: the county NG911 medical boundary (edited 2026-09-23) names Acadian EMS for the whole county, but the DSHS roster of 2026-10-02 shows a new licence for Bastrop County ESD 3 (county government, Emergency 911, 16 units, first licensed 2026-02-23). Likely a transition; confirm with the county before changing the tier."
+   "page_note": "Bastrop: the county NG911 medical boundary (edited 2026-09-23) names Acadian EMS for the whole county, but the DSHS roster of 2026-10-02 shows a new licence for Bastrop County ESD 3 (county government, Emergency 911, 16 units, first licensed 2026-02-23). Likely a transition; to be confirmed with the county."
   }
  }
 }
