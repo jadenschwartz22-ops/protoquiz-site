@@ -10,7 +10,8 @@ emergency-majority billers located in the county by ZIP, and a confidence tier:
   -  nothing
 Answer ownership = public / private / hospital / mixed from the best available basis."""
 import json, csv, collections, re, glob, os
-from dedupe import agencies
+from dedupe import agencies, key as agency_key
+from report import load as source_rows
 from transport import transport
 from irs_match import norm
 from report_who import PUBLIC
@@ -24,12 +25,13 @@ FIPS = {}
 for r in csv.DictReader(open('states/census_county_pop_2024.csv', encoding='latin-1')):
     if r['SUMLEV'] == '040': FIPS[r['STATE']] = r['STNAME']
 ST_ABBR = {'Alabama':'AL','Alaska':'AK','Arizona':'AZ','Arkansas':'AR','California':'CA','Colorado':'CO','Connecticut':'CT','Delaware':'DE','District of Columbia':'DC','Florida':'FL','Georgia':'GA','Hawaii':'HI','Idaho':'ID','Illinois':'IL','Indiana':'IN','Iowa':'IA','Kansas':'KS','Kentucky':'KY','Louisiana':'LA','Maine':'ME','Maryland':'MD','Massachusetts':'MA','Michigan':'MI','Minnesota':'MN','Mississippi':'MS','Missouri':'MO','Montana':'MT','Nebraska':'NE','Nevada':'NV','New Hampshire':'NH','New Jersey':'NJ','New Mexico':'NM','New York':'NY','North Carolina':'NC','North Dakota':'ND','Ohio':'OH','Oklahoma':'OK','Oregon':'OR','Pennsylvania':'PA','Rhode Island':'RI','South Carolina':'SC','South Dakota':'SD','Tennessee':'TN','Texas':'TX','Utah':'UT','Vermont':'VT','Virginia':'VA','Washington':'WA','West Virginia':'WV','Wisconsin':'WI','Wyoming':'WY'}
-def cname(n): return re.sub(r' (County|Parish|Borough|Census Area|Municipality|City and Borough|city)$', '', n).strip()
+# Lookup key for a county name as a source writes it: suffix and punctuation dropped (MN 'St Louis' / 'Ottertail' vs Census 'St. Louis' / 'Otter Tail').
+def ckey(n): return re.sub(r'[^a-z0-9]', '', re.sub(r' (county|parish|borough|census area|municipality|city and borough|city)$', '', n.strip().lower()))
 def counties():
     out = {}
     for r in csv.DictReader(open('states/census_county_pop_2024.csv', encoding='latin-1')):
         if r['SUMLEV'] == '050':
-            st = ST_ABBR[r['STNAME']]; out[r['STATE'] + r['COUNTY']] = {'st': st, 'name': r['CTYNAME'], 'key': (st, cname(r['CTYNAME']).lower()), 'pop': int(r['POPESTIMATE2024'])}
+            st = ST_ABBR[r['STNAME']]; out[r['STATE'] + r['COUNTY']] = {'st': st, 'name': r['CTYNAME'], 'key': (st, ckey(r['CTYNAME'])), 'pop': int(r['POPESTIMATE2024'])}
     return out
 def zip_county():
     best = {}
@@ -66,8 +68,20 @@ def own_of(p):
     if m in ('public', 'private', 'hospital', 'mixed'): return m      # Medicare / provider-of-record vocabulary
     return 'public' if m in PUBLIC or m == 'federal' else 'hospital' if m == 'hospital' else 'private' if m == 'private' else 'other'
 def build():
-    C = counties(); bykey = {v['key']: k for k, v in C.items()}
+    C = counties(); bykey = collections.defaultdict(list); ambiguous = collections.Counter()
+    for k, v in C.items(): bykey[v['key']].append(k)
+    def fips(st, county):
+        ks = bykey.get((st, ckey(county)), [])
+        if len(ks) > 1:   # a county and an independent city share the name (VA Fairfax/Richmond/Roanoke/Franklin, MD Baltimore, MO St. Louis): the source must say which, or the row is not placed
+            said = re.search(r'\b(county|city)\b', county, re.I)
+            ks = [k for k in ks if said and C[k]['name'].lower().endswith(' ' + said[1].lower())]
+            if not ks: ambiguous[(st, county.strip())] += 1
+        return ks[0] if len(ks) == 1 else None
     rows = [r for r in agencies() if transport(r) == 'transport' and r.get('response') != 'Transfer']   # TX roster flags interfacility-only licences
+    # every county a source names for an agency: dedupe keeps one row per agency, so a roster written per service area (MN, WA, CA) would otherwise keep one county of many
+    named = collections.defaultdict(set)
+    for r in source_rows():
+        if transport(r) == 'transport': named[agency_key(r)].update(c.strip() for c in re.split(r'[/,;]', r.get('county') or '') if c.strip())
     try: rec = json.load(open('states/county_recovered.json'))
     except FileNotFoundError: rec = {}
     zc = zip_county(); ctm = ct_town_county(); ora = or_asa()
@@ -75,7 +89,7 @@ def build():
     extra = {f: json.load(open(f)) for f in ['states/GA_zoning.json', 'states/CO_metro_911.json'] + sorted(glob.glob('states/[A-Z][A-Z]_911.json'))}
     S = {k: dict(v, providers=[], medicare=[]) for k, v in C.items()}
     def add(st, county, p):
-        k = bykey.get((st, cname(county).strip().lower()))
+        k = fips(st, county)
         if k: S[k]['providers'].append(p); return True
         return False
     for r in rows:
@@ -88,7 +102,7 @@ def build():
         if st == 'OR':
             for c in ora.get(norm(r['provider']), []): add('OR', c, dict(p, basis='serves'))
             continue
-        cty = r.get('county') or rec.get(f"{st}|{r['provider']}") or ''
+        cty = '/'.join(sorted(named[agency_key(r)])) or r.get('county') or rec.get(f"{st}|{r['provider']}") or ''
         for c in re.split(r'[/,;]', cty):
             if c.strip(): add(st, c, dict(p))
     # official provider-of-record lists from the agents (GA zoning, CO metro), basis 'serves', tier A
@@ -96,15 +110,18 @@ def build():
     for f in json.load(open('states/OR_ASA.json'))['features']:
         a = f['attributes']; nm = a.get('ASA_AMBULANCE_PROVIDER_NAME'); c = a.get('COUNTY_NAME')
         if nm and c: add('OR', c.title(), {'name': nm.strip(), 'own': model_of(nm), 'sub': None, 'src': 'derived', 'basis': 'located', 'note': a.get('ASA_NAME')})
-    for e in json.load(open('states/MS_county_providers.json')):
+    for e in json.load(open('states/MS_county_providers.json')):   # 'Harrison - Cities of Biloxi and Gulfport': a named part of the county, kept partial
         for c in (e['county'] if isinstance(e['county'], list) else re.split(r'[/,;]', e['county'] or '')):
-            add('MS', re.sub(r'\s+MS$', '', c.strip()), {'name': e['provider'], 'own': model_of(e['provider']), 'sub': None, 'src': 'derived', 'basis': 'serves', 'note': e.get('level')})
+            c, _, area = re.sub(r'\s+MS$', '', c.strip()).partition(' - ')
+            add('MS', c, {'name': e['provider'], 'own': model_of(e['provider']), 'sub': None, 'src': 'derived', 'basis': 'serves', 'partial': bool(area), 'note': '; '.join(x for x in (area.strip(), e.get('level')) if x)})
+    ncid = {r['agency_number']: r['agency_id'] for r in json.load(open('states/NC_ownership.json'))}   # the OEMS Continuum record behind an NC roster row, so the row opens
     for f, d in extra.items():
         for e in d:
             if not e.get('provider') or e.get('transport', True) is not True: continue   # zoning rows carry no flag: a 911 zone IS the designation
             if re.search(r'SUPERSEDED|not named verbatim', (e.get('zone_note') or '') + (e.get('provider') or ''), re.I): continue
             url = e.get('source_url') or ''
             kind = 'state' if url.startswith('states/') or e.get('source_type') == 'regional council' else 'local'
+            if url == 'states/NC_ownership.json': url = 'https://continuum.emspic.org/auth/agency/' + ncid[re.search(r'agency record (\d+)', e['evidence'])[1]]
             note = '; '.join(x for x in (e.get('zone_note') or e.get('area'), e.get('flag')) if x)   # flag: an unresolved conflict or a dated change
             est = e.get('st') or os.path.basename(f)[:2]
             part = est in PARTIAL_STATES and (est, e['county']) not in WHOLE_COUNTY
@@ -114,7 +131,7 @@ def build():
         add('TN', e['county'], {'name': e['provider'], 'own': model_of(e['provider']), 'sub': None, 'src': 'directory', 'basis': 'located', 'note': e['evidence'], 'url': e['source_url']})
     # KY KBEMS EMS Directory (2026-08-01): each licence carries a verbatim Service Area Description, parsed per county (states/KY_public_2026-10.README.md).
     # A licence area is not an exclusive or dispatch assignment, so several operators may name one county; all are kept (tier A, several named providers, like GA zones).
-    # Counties where the NG911 boundary layer names another operator are held at 'located' (B/C); part-county licences are 'located' + partial.
+    # Counties where the NG911 boundary layer names another operator are held at 'located' (B/C); part-county licences are listed beside the whole-county ones, 'located' + partial.
     KY_VIA = 'Kentucky Board of EMS licensed service areas (EMS Directory, 2026-08-01)'
     KY_OWN = {'Governmental, Non-Fire': 'public', 'Fire Department': 'public', 'Private, Non-Hospital': 'private', 'Community, Non-Profit': 'private', 'Hospital': 'hospital'}
     KY_CONFLICT = {'Lewis': 'NG911 EMS layer: PORTSMOUTH AMBULANCE SERVICE', 'Henderson': 'NG911 EMS layer: AMR-Henderson', 'Martin': 'NG911 EMS layer: PATRIOT EMS', 'Warren': 'NG911 EMS layer: Bowling Green Police Department (the PSAP)'}
@@ -123,10 +140,10 @@ def build():
     KY_SPLIT = {'Kenton', 'Campbell'}
     ky = json.load(open('states/KY_public_2026-10.json')); kyrow = {r['name']: r for r in ky['rows']}
     for v in ky['county_verdict'].values():
-        c = cname(v['county']); held = c in KY_CONFLICT
-        if v.get('page_note'): S[bykey[('KY', c.lower())]]['note'] = v['page_note']
-        for n in v['whole_county_services'] or v['part_county_services']:
-            r = kyrow[n]; part = not v['whole_county_services'] or c in KY_SPLIT
+        c = v['county'].replace(' County', ''); held = c in KY_CONFLICT
+        if v.get('page_note'): S[fips('KY', v['county'])]['note'] = v['page_note']
+        for n in v['whole_county_services'] + v['part_county_services']:
+            r = kyrow[n]; part = n in v['part_county_services'] or c in KY_SPLIT
             add('KY', c, {'name': re.sub(r' \(\d+\)$', '', n), 'own': KY_OWN[r['org_type']], 'sub': None, 'src': 'provider-of-record', 'basis': 'located' if held or part else 'serves', 'partial': part, 'kind': 'state', **({'show': True} if c in KY_SPLIT else {}),
                           'note': r['service_area_text'] + ('; ' + KY_CONFLICT[c] if held else ''), 'url': r['source_url'], 'via': KY_VIA})
     # ND HHS EMS service-area atlas (official, ND GIS Hub ambulance boundary layer, 2026-10-21): polygon-vs-county overlay, tier A where the ambulance polygons cover >=95% of the county (states/ND_public_2026-10.README.md).
@@ -145,7 +162,7 @@ def build():
         for k in [k for k, d in S.items() if d['st'] == st and sn]: S[k]['note'] = sn
         for fk, v in g.get('county_verdict', {}).items():
             if st == 'FL' and v['tier'] != 'A': continue
-            k = fk if fk in S else bykey[(st, cname(v['county']).lower())]; gone = set(v.get('drop', [])) | {a['name'] for a in v.get('add', [])}
+            k = fk if fk in S else fips(st, v['county']); gone = set(v.get('drop', [])) | {a['name'] for a in v.get('add', [])}
             if v.get('page_note'): S[k]['note'] = v['page_note']
             S[k]['providers'] = [p for p in S[k]['providers'] if p['name'] not in gone]
             for p in S[k]['providers']:
@@ -157,7 +174,7 @@ def build():
     def pub(k, name, via, url, note, kind='state', basis='serves', partial=False, transport=None, own=None):
         S[k]['providers'].append({'name': name, 'own': own or model_of(name), 'sub': None, 'src': 'provider-of-record', 'basis': basis, 'partial': partial, 'kind': kind, 'note': note, 'url': url, 'via': via, 'transport': transport})
     def load(st): return json.load(open(f'states/{st}_public_2026-10.json'))
-    def ck(st, v): return bykey[(st, cname(v['county']).lower())]
+    def ck(st, v): return fips(st, v['county'])
     NOT_SAID = 'the source does not say this service carries patients'
     # UT: UGRC EMS Response Areas (NG911, compiled from Bureau of EMS licence descriptions + dispatch data). 29 of 29 counties >=97% covered. Confirmed non-transport units (QRU, SAR, training centres) are not read; unmatched names stay, transport unknown.
     UT_VIA = 'Utah UGRC EMS response areas, the state NG911 service areas layer (compiled from Bureau of EMS licence descriptions; not a licence record)'
@@ -283,13 +300,15 @@ def build():
         if d['st'] in AUDIT_DEMOTE and k not in AUDIT_KEEP:
             for p in d['providers']:
                 if p['basis'] == 'serves' and '(local sources)' not in (p.get('via') or ''): p['basis'] = 'located'
+    if ambiguous: print('not placed, county or city not said:', dict(ambiguous))
     for k, d in S.items():
         d['medicare'].sort(key=lambda m: -m['E']); mnames = {norm(m['name']) for m in d['medicare'] if m['emerg']}
         seen = {}; ps = []
         for p in d['providers']:
             key = (norm(p['name']), p['basis'])
             if key in seen:
-                if p.get('via') and not ps[seen[key]].get('via'): ps[seen[key]] = dict(p, confirmed=norm(p['name']) in mnames)   # the sourced row replaces a bare roster row
+                src = lambda x: x.get('via') or x.get('url')
+                if src(p) and not src(ps[seen[key]]): ps[seen[key]] = dict(p, confirmed=norm(p['name']) in mnames)   # the sourced row replaces a bare roster row
                 continue
             seen[key] = len(ps); p['confirmed'] = norm(p['name']) in mnames; ps.append(p)
         d['providers'] = ps
