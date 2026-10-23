@@ -1,39 +1,39 @@
 {
-  "generatedAt": "2026-10-22T18:07:19.394Z",
-  "totalUploads": 716,
-  "distinctProtocols": 506,
-  "activeStudiers": 589,
-  "pagesProcessed": 133763,
+  "generatedAt": "2026-10-23T18:07:25.689Z",
+  "totalUploads": 731,
+  "distinctProtocols": 517,
+  "activeStudiers": 599,
+  "pagesProcessed": 136346,
   "statesRepresented": 47,
   "countriesRepresented": 3,
   "internationalUploads": 9,
   "byState": {
     "CO": 96,
+    "MI": 56,
     "CA": 54,
-    "MI": 53,
+    "MA": 32,
     "NY": 32,
+    "TX": 30,
     "PA": 30,
-    "MA": 30,
-    "TX": 29,
     "NC": 22,
     "VA": 20,
     "OR": 19,
     "WA": 17,
-    "CT": 15,
+    "CT": 16,
+    "FL": 15,
+    "MD": 15,
     "IL": 14,
-    "FL": 14,
-    "MD": 14,
     "NV": 13,
     "AZ": 12,
     "WY": 10,
-    "GA": 8,
+    "GA": 9,
+    "IN": 8,
+    "WV": 7,
     "SC": 7,
     "TN": 7,
     "UT": 7,
     "OH": 6,
     "AL": 6,
-    "WV": 6,
-    "IN": 6,
     "RI": 5,
     "LA": 5,
     "MO": 4,
@@ -49,12 +49,12 @@
     "IA": 3,
     "DC": 3,
     "OK": 3,
+    "MT": 2,
     "MN": 2,
     "AR": 2,
     "AK": 1,
     "KS": 1,
-    "SD": 1,
-    "MT": 1
+    "SD": 1
   },
   "byCountry": {
     "ZA": 5,
@@ -89,7 +89,7 @@
       "city": "Michigan statewide",
       "x": 662,
       "y": 172,
-      "count": 36,
+      "count": 38,
       "tier": "hot",
       "topProtocols": [
         {
@@ -101,7 +101,7 @@
           "count": 2
         },
         {
-          "title": "WLMCA Combined Protocols",
+          "title": "1.12 Citizen Assist Lift Assist",
           "count": 1
         }
       ],
@@ -112,12 +112,12 @@
       "city": "Massachusetts statewide",
       "x": 869,
       "y": 160,
-      "count": 30,
+      "count": 32,
       "tier": "hot",
       "topProtocols": [
         {
           "title": "download",
-          "count": 7
+          "count": 8
         },
         {
           "title": "statewide treatment protocols 2026 2",
@@ -125,7 +125,7 @@
         },
         {
           "title": "statewide treatment protocols 2026 2 updated",
-          "count": 4
+          "count": 5
         }
       ],
       "statewide": true
@@ -203,20 +203,43 @@
       "city": "Connecticut statewide",
       "x": 858,
       "y": 178,
-      "count": 15,
+      "count": 16,
       "tier": "warm",
       "topProtocols": [
+        {
+          "title": "v2025 2 ctemsstatewideprotocolsFINALver1",
+          "count": 7
+        },
         {
           "title": "v2025 2 ctemsstatewideprotocolsfinalver1",
           "count": 6
         },
         {
-          "title": "v2025 2 ctemsstatewideprotocolsFINALver1",
-          "count": 6
-        },
-        {
           "title": "CT 2025 V.2 AIRWAY",
           "count": 1
+        }
+      ],
+      "statewide": true
+    },
+    {
+      "state": "MD",
+      "city": "Maryland statewide",
+      "x": 805,
+      "y": 248,
+      "count": 14,
+      "tier": "warm",
+      "topProtocols": [
+        {
+          "title": "MD Medical Protocols 2026 Print",
+          "count": 5
+        },
+        {
+          "title": "MD Medical Protocols 2026 Print",
+          "count": 3
+        },
+        {
+          "title": "MD Medical Protocols 2026 Hyperlinked",
+          "count": 3
         }
       ],
       "statewide": true
@@ -240,29 +263,6 @@
         {
           "title": "WASHCO Combined Protocol",
           "count": 1
-        }
-      ],
-      "statewide": true
-    },
-    {
-      "state": "MD",
-      "city": "Maryland statewide",
-      "x": 805,
-      "y": 248,
-      "count": 13,
-      "tier": "warm",
-      "topProtocols": [
-        {
-          "title": "MD Medical Protocols 2026 Print",
-          "count": 5
-        },
-        {
-          "title": "MD Medical Protocols 2026 Hyperlinked",
-          "count": 3
-        },
-        {
-          "title": "MD Medical Protocols 2026 Print",
-          "count": 2
         }
       ],
       "statewide": true
@@ -759,6 +759,24 @@
       "statewide": true
     },
     {
+      "state": "GA",
+      "city": "Athens",
+      "x": 710,
+      "y": 379,
+      "count": 3,
+      "tier": "on",
+      "topProtocols": [
+        {
+          "title": "National EMS Patient Care Guidelines Sept 2024 Revision 01.66…",
+          "count": 2
+        },
+        {
+          "title": "national ems guidelines",
+          "count": 1
+        }
+      ]
+    },
+    {
       "state": "NC",
       "city": "Charlotte",
       "x": 751,
@@ -994,6 +1012,24 @@
       "statewide": true
     },
     {
+      "state": "WV",
+      "city": "Charleston",
+      "x": 726,
+      "y": 278,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": []
+    },
+    {
+      "state": "MT",
+      "city": "Billings",
+      "x": 289,
+      "y": 119,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": []
+    },
+    {
       "state": "FL",
       "city": "Bradenton",
       "x": 744,
@@ -1080,15 +1116,6 @@
       "city": "Salem",
       "x": 64,
       "y": 91,
-      "count": 2,
-      "tier": "on",
-      "topProtocols": []
-    },
-    {
-      "state": "GA",
-      "city": "Athens",
-      "x": 710,
-      "y": 379,
       "count": 2,
       "tier": "on",
       "topProtocols": []
@@ -1288,6 +1315,43 @@
       "topProtocols": []
     },
     {
+      "state": "IN",
+      "city": "La Porte",
+      "x": 633,
+      "y": 217,
+      "count": 2,
+      "tier": "on",
+      "topProtocols": []
+    },
+    {
+      "state": "FL",
+      "city": "Florida statewide",
+      "x": 742,
+      "y": 492,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": [],
+      "statewide": true
+    },
+    {
+      "state": "MI",
+      "city": "Detroit",
+      "x": 690,
+      "y": 194,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": []
+    },
+    {
+      "state": "TX",
+      "city": "Montgomery County",
+      "x": 490,
+      "y": 475,
+      "count": 1,
+      "tier": "tiny",
+      "topProtocols": []
+    },
+    {
       "state": "NM",
       "city": "Grant County",
       "x": 253,
@@ -1328,15 +1392,6 @@
       "city": "Nome",
       "x": 52,
       "y": 492,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": []
-    },
-    {
-      "state": "WV",
-      "city": "Charleston",
-      "x": 726,
-      "y": 278,
       "count": 1,
       "tier": "tiny",
       "topProtocols": []
@@ -1401,15 +1456,6 @@
       "city": "Sioux Falls",
       "x": 469,
       "y": 181,
-      "count": 1,
-      "tier": "tiny",
-      "topProtocols": []
-    },
-    {
-      "state": "MT",
-      "city": "Billings",
-      "x": 289,
-      "y": 119,
       "count": 1,
       "tier": "tiny",
       "topProtocols": []
@@ -2242,6 +2288,24 @@
   ],
   "belt": [
     {
+      "agency": "Denver Metro EMS Medical Directors",
+      "state": "Colorado",
+      "year": 2026,
+      "pages": 193
+    },
+    {
+      "agency": "National Emergency Medical Services",
+      "state": "Georgia",
+      "year": 2024,
+      "pages": 180
+    },
+    {
+      "agency": "HealthNet Aeromedical Services, Inc.",
+      "state": "West Virginia",
+      "year": 2025,
+      "pages": 171
+    },
+    {
       "agency": "Mecklenburg EMS Agency",
       "state": "North Carolina",
       "year": 2026,
@@ -2254,12 +2318,6 @@
       "pages": 186
     },
     {
-      "agency": "Denver Metro EMS Medical Directors",
-      "state": "Colorado",
-      "year": 2026,
-      "pages": 193
-    },
-    {
       "agency": "Vermont Department of Health",
       "state": "Vermont",
       "year": 2025,
@@ -2270,12 +2328,6 @@
       "state": "New Jersey",
       "year": 2025,
       "pages": 248
-    },
-    {
-      "agency": "MetroAtlanta Ambulance Service",
-      "state": "Georgia",
-      "year": 2026,
-      "pages": 219
     },
     {
       "agency": "Palm Beach Gardens Fire Rescue",
@@ -2306,12 +2358,6 @@
       "state": "Alaska",
       "year": 2024,
       "pages": 276
-    },
-    {
-      "agency": "HealthNet Aeromedical Services, Inc.",
-      "state": "West Virginia",
-      "year": 2025,
-      "pages": 171
     },
     {
       "agency": "Pierce County Emergency Medical Services",
