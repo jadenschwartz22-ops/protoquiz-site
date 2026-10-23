@@ -110,7 +110,7 @@ def build():
     from model_of import model_of
     for f in json.load(open('states/OR_ASA.json'))['features']:
         a = f['attributes']; nm = a.get('ASA_AMBULANCE_PROVIDER_NAME'); c = a.get('COUNTY_NAME')
-        if nm and c: add('OR', c.title(), {'name': nm.strip(), 'own': model_of(nm), 'sub': None, 'src': 'derived', 'basis': 'located', 'note': a.get('ASA_NAME')})
+        if nm and c and nm.strip().upper() != 'NO ASA': add('OR', c.title(), {'name': nm.strip(), 'own': model_of(nm), 'sub': None, 'src': 'derived', 'basis': 'located', 'note': a.get('ASA_NAME')})
     for e in json.load(open('states/MS_county_providers.json')):   # 'Harrison - Cities of Biloxi and Gulfport': a named part of the county, kept partial
         for c in (e['county'] if isinstance(e['county'], list) else re.split(r'[/,;]', e['county'] or '')):
             c, _, area = re.sub(r'\s+MS$', '', c.strip()).partition(' - ')
