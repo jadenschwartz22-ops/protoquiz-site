@@ -261,10 +261,6 @@ def build():
     for s in mt['county_verdict']['30009']['services']:
         pub('30009', s['name'], MT_VIA, mt['rows'][0]['source_url'], ('Red Lodge Fire Rescue EMS: 911 medical response and interfacility transfers (redlodgefire.com/ems)' if s['name'] == 'Red Lodge' else 'named in the county EMS district layer; the layer does not say this district carries patients'), kind='local')
     S['30009']['note'] = mt['county_verdict']['30009']['page_note']
-    orr = load('OR'); OR_VIA = 'Marion County, Oregon HHS ambulance service area layer (county-published; the holder of each ASA, not a licence record)'; orrow = {r['name']: r for r in orr['rows']}
-    for s in orr['county_verdict']['41047']['services']:
-        pub('41047', s['name'], OR_VIA, orrow[s['name']]['source_url'], 'holds an ambulance service area (ASA) in the county HHS layer; the layer does not say it transports', kind='local')
-    S['41047']['note'] = 'The county layer names who holds each ambulance service area. Woodburn Ambulance and Marion County Fire District #1 are confirmed on their own sites; Lyons RFPD (the largest area share) and the other holders are unverified, and some fire districts may contract operation out.'
     # NE: page note only, no promotion (spot check weak: town and acronym labels, Buffalo had no source)
     for fk in load('NE')['county_verdict']: S[fk]['note'] = 'Named loosely from the state response-area layer (town and acronym labels); transport not confirmed.'
     # Read-only page notes, NO tier change and no providers: a stale, unnamed or non-911 source is a note on the card, never evidence.
