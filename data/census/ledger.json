@@ -2,9 +2,9 @@
  "schemaVersion": 3,
  "rows": [
   {
-   "at": "2026-10-21T00:00:00Z",
-   "hash": "022e71fac519f8ad4a75bff3baf2c1e8ad4ec1c0efed95787e4934a3295d38ee",
-   "agencyKey": "charleston-county-ems",
+   "at": "2026-10-23T00:00:00Z",
+   "hash": "0be5148ad5b0b80b74493152aaff735cef0919fa81b34d6f45e0ad467d509e6c",
+   "agencyKey": "la-porte-county-emergency-medical-service",
    "change": "added",
    "from": null,
    "to": "listed_named",
@@ -12,8 +12,8 @@
    "reason": null
   },
   {
-   "at": "2026-10-21T00:00:00Z",
-   "hash": "0495c7f30431c2ca882efee91e7c488e3d47acc688f82fc6cc58e6ebbfd33c25",
+   "at": "2026-10-23T00:00:00Z",
+   "hash": "0f99ad339b7e7ee7ddbeaf1e5b42c8d34289f47423989ffe47eee1890db03d29",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -22,8 +22,28 @@
    "reason": null
   },
   {
-   "at": "2026-10-21T00:00:00Z",
-   "hash": "0e1f9d4652a5ff89b044e78a70439595dce02d05e75b21a78a0918c963a0e1e4",
+   "at": "2026-10-23T00:00:00Z",
+   "hash": "1c4d45ead1f1efa2cf122341dc9aa3a6e258f5646c64aa17739c211ab22c04d0",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-23T00:00:00Z",
+   "hash": "26e895286304692f1f3a9192be8454e85d8a1ca3e5b7ed13fdc188c001e1cf3b",
+   "agencyKey": "crowley-fire-department",
+   "change": "superseded",
+   "from": "current",
+   "to": "superseded",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-23T00:00:00Z",
+   "hash": "2ae59d19d232ecce55d863a8816efdeb1157b4fd49ac4c2faecd86a224dc9002",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -32,8 +52,28 @@
    "reason": null
   },
   {
-   "at": "2026-10-21T00:00:00Z",
-   "hash": "260bb62125426744e02df719225bc13b1fd2b006984978d474aaabe9c16c204e",
+   "at": "2026-10-23T00:00:00Z",
+   "hash": "3306d112a9ed6e516543593d4d998243f69b71d239e02f06a0244c32e96d03a2",
+   "agencyKey": "national-emergency-medical-services",
+   "change": "superseded",
+   "from": "current",
+   "to": "superseded",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-23T00:00:00Z",
+   "hash": "38de1509dddf7634eecd4bd4b4b9540b",
+   "agencyKey": "ada-county-city-emergency-services-system",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-23T00:00:00Z",
+   "hash": "3cb7084faa0f1e47824a0737b441c49f",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -42,18 +82,8 @@
    "reason": null
   },
   {
-   "at": "2026-10-21T00:00:00Z",
-   "hash": "2a6c3878490733134e636112fc5008ed84caebc073a65737829100506e8d7420",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "listed_aggregate",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-21T00:00:00Z",
-   "hash": "2a93e04b6f88aa75111cc52d5f8e1edf4a9e5bcf621639c153652f80f1de02ff",
+   "at": "2026-10-23T00:00:00Z",
+   "hash": "43fe3389cec32e2dee5a12e33a48bea2ea0a8049b67cd0c546d71ea7c33cdb0b",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -62,58 +92,8 @@
    "reason": null
   },
   {
-   "at": "2026-10-21T00:00:00Z",
-   "hash": "2fa3583bc2697621f226022df7132c5c02bfb4838902722f608509bcf788d6a7",
-   "agencyKey": "region-one-metropolitan-ambulance-council",
-   "change": "added",
-   "from": null,
-   "to": "listed_named",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-21T00:00:00Z",
-   "hash": "4a47ea783eeb4334cd3573a37e4af558ffba3d6c0bb10a6c560ee1a42e53b9a9",
-   "agencyKey": "michigan-department-of-health-and-human-services-mdhhs",
-   "change": "added",
-   "from": null,
-   "to": "listed_named",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-21T00:00:00Z",
-   "hash": "5b5b6a64d1b3585d5a2f19f0a249372fc97115aecef6113864b74ea016d4e25d",
-   "agencyKey": "new-york-state-department-of-health-bureau-of-emergency-medical-services-and-trauma-systems",
-   "change": "added",
-   "from": null,
-   "to": "listed_named",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-21T00:00:00Z",
-   "hash": "5f8ab279fc0ee7380ea08bc9dadc1a9040000895a279c126ac00ae32a919e9a3",
-   "agencyKey": "palm-beach-gardens-fire-rescue",
-   "change": "added",
-   "from": null,
-   "to": "listed_named",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-21T00:00:00Z",
-   "hash": "8940c1e8fc059b23eb8e64928792955964e93244ec70a5947d54567e70ca3eb2",
-   "agencyKey": "illinois-emergency-medical-services-for-children",
-   "change": "added",
-   "from": null,
-   "to": "listed_named",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-21T00:00:00Z",
-   "hash": "8e89a262c58cf67b9e7a8e01868f12e3b9c796527ee16967cb15103f4cb840fb",
+   "at": "2026-10-23T00:00:00Z",
+   "hash": "44930566449c6a508da97cbe6ca170803bb75eb1ba69e3e11fb6f373333a9c87",
    "agencyKey": null,
    "change": "superseded",
    "from": "current",
@@ -122,19 +102,9 @@
    "reason": null
   },
   {
-   "at": "2026-10-21T00:00:00Z",
-   "hash": "97142aeeeb5dc442f04f86a66cd2679df541653fb0287a3bd04ac2a55afb15b5",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "pending_review",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-21T00:00:00Z",
-   "hash": "a113df0210f7e35c61b0f49aebdfa37d4bab3695465a19b3811b38e40a0032a2",
-   "agencyKey": "department-of-aviation-medicine",
+   "at": "2026-10-23T00:00:00Z",
+   "hash": "4ab4b643763e86548794a9e4690e1253cc1e4841350efee424fc6b63dc4f27b1",
+   "agencyKey": "massachusetts-department-of-public-health-office-of-emergency-medical-services",
    "change": "added",
    "from": null,
    "to": "listed_named",
@@ -142,28 +112,8 @@
    "reason": null
   },
   {
-   "at": "2026-10-21T00:00:00Z",
-   "hash": "a4a36f680931be0764d68bcf4fa3a00136cbdbfa7498cb9a3ae8d126c587384b",
-   "agencyKey": "norton-sound-health-corporation",
-   "change": "added",
-   "from": null,
-   "to": "listed_named",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-21T00:00:00Z",
-   "hash": "a8819f30b0665404120e67aa6e6a59f8",
-   "agencyKey": "reno-county-emergency-medical-services",
-   "change": "added",
-   "from": null,
-   "to": "listed_named",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-21T00:00:00Z",
-   "hash": "af13f3996508773ec43015455028bcfdce3086cb92646f47d5fc92e4b41a49b3",
+   "at": "2026-10-23T00:00:00Z",
+   "hash": "5021d1fd40a6c4581870251762422a59b4b48a5664c060619a449ad028eccb70",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -172,8 +122,118 @@
    "reason": null
   },
   {
-   "at": "2026-10-21T00:00:00Z",
-   "hash": "c15ec8e6197847f7c27c7fa29b21b5b63c5f838b477812cd9c9b0ffb27f7b5c9",
+   "at": "2026-10-23T00:00:00Z",
+   "hash": "53257a422463f386b87c978a4c52c8dfdf667bb782620b9788ec143ba6ab6c82",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "listed_aggregate",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-23T00:00:00Z",
+   "hash": "5cb07c82ca807a282501051bf814d882e8416ba004475064e10515f0cbbacce6",
+   "agencyKey": "maryland-institute-for-emergency-medical-services-systems",
+   "change": "effective_date_changed",
+   "from": null,
+   "to": "2026-07-01",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-23T00:00:00Z",
+   "hash": "5cb07c82ca807a282501051bf814d882e8416ba004475064e10515f0cbbacce6",
+   "agencyKey": "maryland-institute-for-emergency-medical-services-systems",
+   "change": "state_changed",
+   "from": "pending_review",
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-23T00:00:00Z",
+   "hash": "5f8c969da432ab49f1f97b38149f2bb71335cb07905464459eac2444817e1117",
+   "agencyKey": "detroit-east-medical-control-authority",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-23T00:00:00Z",
+   "hash": "6f83c1dd2a75c639f57c6e7e9776097e",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-23T00:00:00Z",
+   "hash": "7a71bfa1d351a1091a331de351b087597e03cece2c442a29ca6962bcc57533a2",
+   "agencyKey": "wake-county-ems-system",
+   "change": "superseded",
+   "from": "current",
+   "to": "superseded",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-23T00:00:00Z",
+   "hash": "7aaf8d7bf527097edc6a0b871a23810b4dcb95d070ad92d5dd3002d96bd74b74",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-23T00:00:00Z",
+   "hash": "a1f7b9e7bb212da028a012ee751c6a367e6f73dc8f7281d8bb10ddf0aef4215b",
+   "agencyKey": "lake-emergency-medical-system",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-23T00:00:00Z",
+   "hash": "a278f41102237fc2a2d448c7035c631f36d3e68ed7a1ba5381acdc9b504fcbde",
+   "agencyKey": "michigan-department-of-health-and-human-services-mdhhs",
+   "change": "superseded",
+   "from": "current",
+   "to": "superseded",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-23T00:00:00Z",
+   "hash": "a48cc71aaa02e417f66c1f3b25222f4826cd2e11b0e3c952670f6f45c2bab9b5",
+   "agencyKey": "massachusetts-department-of-public-health-office-of-emergency-medical-services",
+   "change": "superseded",
+   "from": "current",
+   "to": "superseded",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-23T00:00:00Z",
+   "hash": "b114a4cb2f1ef5d6e97198396583f0891bef150dc27fe9d36553026ef43a712e",
+   "agencyKey": null,
+   "change": "added",
+   "from": null,
+   "to": "pending_review",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-23T00:00:00Z",
+   "hash": "b98c0fa0d477a17ecc76102fa73b8aacded57bc93de03048ccadfc84134eb18b",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -182,49 +242,9 @@
    "reason": null
   },
   {
-   "at": "2026-10-21T00:00:00Z",
-   "hash": "c3002fc6d7a6093aee5747fcee23dec8376a74d72284315e41534478f70b8208",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "pending_review",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-21T00:00:00Z",
-   "hash": "c8cbdd2f9427cfdf7b0380cf490bea5eb821e54b23c8a621fb7f7b8deabd3766",
-   "agencyKey": "grant-county",
-   "change": "added",
-   "from": null,
-   "to": "listed_named",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-21T00:00:00Z",
-   "hash": "c9bcdf84c30785ba7ca065982f27e544eda15ed145699f9b0b3aa142caabfada",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "pending_review",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-21T00:00:00Z",
-   "hash": "ce968ba2c41c549be1e392a1cd57915c",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "listed_aggregate",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-21T00:00:00Z",
-   "hash": "d6d868a70eeeadf5a8adcc50a699c6287b9fb3ff20eceeda5ed62e060aa51adb",
-   "agencyKey": "palm-beach-gardens-fire-rescue",
+   "at": "2026-10-23T00:00:00Z",
+   "hash": "c1fa8b8af1b730f3e54e2c0b3dbc824b0bc26c297c0337740a22acad899df61b",
+   "agencyKey": "maryland-institute-for-emergency-medical-services-systems",
    "change": "superseded",
    "from": "current",
    "to": "superseded",
@@ -232,9 +252,39 @@
    "reason": null
   },
   {
-   "at": "2026-10-21T00:00:00Z",
-   "hash": "df87336c99e39b4c7f10255658105e5bf6c08652477dd3928a605ef8880d9a2e",
-   "agencyKey": "lake-county-emergency-medical-system",
+   "at": "2026-10-23T00:00:00Z",
+   "hash": "c9bcdf84c30785ba7ca065982f27e544eda15ed145699f9b0b3aa142caabfada",
+   "agencyKey": "greater-elgin-area-ems-system",
+   "change": "effective_date_changed",
+   "from": null,
+   "to": "2022-12-01",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-23T00:00:00Z",
+   "hash": "c9bcdf84c30785ba7ca065982f27e544eda15ed145699f9b0b3aa142caabfada",
+   "agencyKey": "greater-elgin-area-ems-system",
+   "change": "state_changed",
+   "from": "pending_review",
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-23T00:00:00Z",
+   "hash": "e5d84f9a6b537092706c3c76e81e936af3d190bc2f94efd6338b8e671937ec50",
+   "agencyKey": "manatee-county-emergency-medical-services",
+   "change": "superseded",
+   "from": "current",
+   "to": "superseded",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-23T00:00:00Z",
+   "hash": "eb2875d35b20dbe6c74a8a32db1c32f0e07852e86bc174c0cb2d12f8d9cb9032",
+   "agencyKey": "manatee-county-emergency-medical-services",
    "change": "added",
    "from": null,
    "to": "listed_named",
@@ -242,18 +292,8 @@
    "reason": null
   },
   {
-   "at": "2026-10-21T00:00:00Z",
-   "hash": "e14a85000b6d6db8d54757ccd952e71db7678b7346e0ad39d6ff95329d20b7e0",
-   "agencyKey": null,
-   "change": "added",
-   "from": null,
-   "to": "listed_aggregate",
-   "by": "build",
-   "reason": null
-  },
-  {
-   "at": "2026-10-21T00:00:00Z",
-   "hash": "f6b9907528608b6326bfc73d2191eaca1077ce35b26f386506a47ed3790fe64d",
+   "at": "2026-10-23T00:00:00Z",
+   "hash": "edd0d3b165f6ba2958ce93e9bd95e31077ea7e3aabd3f325fca5ede6b82a338e",
    "agencyKey": null,
    "change": "added",
    "from": null,
@@ -262,8 +302,28 @@
    "reason": null
   },
   {
-   "at": "2026-10-21T00:00:00Z",
-   "hash": "fda9d268dd7acb94ea4cb4cb154aaefa",
+   "at": "2026-10-23T00:00:00Z",
+   "hash": "eee07994e0a9b9b9aebb7d2688007748",
+   "agencyKey": "wake-county-ems-system",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-23T00:00:00Z",
+   "hash": "f0af67c331d00f0ae0533e8b74caf01dc299fe89cbef61c291ed5ab219b9a0ab",
+   "agencyKey": "michigan-department-of-health-and-human-services-mdhhs",
+   "change": "added",
+   "from": null,
+   "to": "listed_named",
+   "by": "build",
+   "reason": null
+  },
+  {
+   "at": "2026-10-23T00:00:00Z",
+   "hash": "f46005cdeedd519a256f5c02432f82278594c6b3e20789c65507b28f9ae0e054",
    "agencyKey": "michigan-department-of-health-and-human-services-mdhhs",
    "change": "added",
    "from": null,

@@ -19,9 +19,9 @@
    "versionLabel": null,
    "publicationState": "listed_named",
    "status": "superseded",
-   "pageCount": null,
+   "pageCount": 576,
    "sourceUrl": null,
-   "corpusDocId": "adap",
+   "corpusDocId": "2cd72e22d491e0d8089d3da6e7bea66c3092a81195799b2082f2ab428cfb7291",
    "doseCount": 256
   },
   {
@@ -133,11 +133,11 @@
    "origin": "app",
    "versionLabel": "September 2024",
    "publicationState": "listed_named",
-   "status": "superseded",
+   "status": "current",
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "census-01d40e274fe2dca30ed48c6419886c7fc72f0cdc2d6e2d30cccb5159a5bb5369",
-   "doseCount": 140
+   "doseCount": 305
   },
   {
    "hash": "01f0a90f413d9088b1e4448cf8fb89878c7cea429cb67b00729c5e9c16bdcbe0",
@@ -156,11 +156,11 @@
    "origin": "app",
    "versionLabel": "April 2026",
    "publicationState": "listed_named",
-   "status": "superseded",
+   "status": "current",
    "pageCount": 206,
    "sourceUrl": null,
    "corpusDocId": "2aa64fd756753b2daf894c37cd3228fed2e1be4903823a2507f1e40cee70efb1",
-   "doseCount": 192
+   "doseCount": 193
   },
   {
    "hash": "022e71fac519f8ad4a75bff3baf2c1e8ad4ec1c0efed95787e4934a3295d38ee",
@@ -226,9 +226,9 @@
    "versionLabel": null,
    "publicationState": "listed_named",
    "status": "superseded",
-   "pageCount": null,
+   "pageCount": 193,
    "sourceUrl": null,
-   "corpusDocId": "dmemsmd-protocols-july-2026-final-2026-07-20",
+   "corpusDocId": "fddf8dc29d3cd7492f5f7b0c8a3cafbcf604018cd8b5f8cae766360ee65226d6",
    "doseCount": 148
   },
   {
@@ -988,7 +988,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "2024-02-remac-unified-prehospital-treatment-protocols-07-09-25",
-   "doseCount": 131
+   "doseCount": 140
   },
   {
    "hash": "0a70a9fa015b251fe2d5e4b3cb1c693cd27fab1d9830f15a465868896f97cdd9",
@@ -1150,6 +1150,29 @@
    "sourceUrl": null,
    "corpusDocId": "census-0bd4815f62996b5d6255f3e948578bd6",
    "doseCount": 151
+  },
+  {
+   "hash": "0be5148ad5b0b80b74493152aaff735cef0919fa81b34d6f45e0ad467d509e6c",
+   "hashSource": "pdf_hash",
+   "agencyKey": "la-porte-county-emergency-medical-service",
+   "agencyName": "La Porte County Emergency Medical Service",
+   "state": "IN",
+   "country": "US",
+   "city": "La Porte",
+   "jurisdiction": "county",
+   "publicRecord": true,
+   "confidence": "high",
+   "effectiveDate": "2024-03-01",
+   "capturedDate": null,
+   "effectiveDateSource": "printed",
+   "origin": "app",
+   "versionLabel": null,
+   "publicationState": "listed_named",
+   "status": "current",
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": "0be5148ad5b0b80b",
+   "doseCount": 205
   },
   {
    "hash": "0cfdd3405a0c95bfcddf114e1ccbf3def834930ba4643352c9f013536042f9ee",
@@ -1356,7 +1379,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "hn-critical-care-guidelines_10-23-25_v1-1-05222026104412",
-   "doseCount": 211
+   "doseCount": 337
   },
   {
    "hash": "0e405025532a52bd5566785b838ecbf55add7b199b7486e43a43a4be74f4e286",
@@ -1378,7 +1401,7 @@
    "status": "current",
    "pageCount": null,
    "sourceUrl": "https://www.mchd-tx.org/media/protocols/MCHD_Protocols.pdf",
-   "corpusDocId": "census-0e405025532a52bd5566785b838ecbf55add7b199b7486e43a43a4be74f4e286",
+   "corpusDocId": "mchd_protocols",
    "doseCount": 149
   },
   {
@@ -1494,7 +1517,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "wvems-protocols-v2026",
-   "doseCount": 173
+   "doseCount": 159
   },
   {
    "hash": "0efc3830c5d5043584449fab8e62ac1be30f3f7df6cefbfa513e71df4234f6c4",
@@ -1610,6 +1633,29 @@
    "sourceUrl": null,
    "corpusDocId": "census-0f8fc084bffb5ca368f4ac63d7f73bfc614b79ae8644ae0c34898c4bf43065b2",
    "doseCount": 128
+  },
+  {
+   "hash": "0f99ad339b7e7ee7ddbeaf1e5b42c8d34289f47423989ffe47eee1890db03d29",
+   "hashSource": "pdf_hash",
+   "agencyKey": null,
+   "agencyName": null,
+   "state": null,
+   "country": "US",
+   "city": null,
+   "jurisdiction": "private",
+   "publicRecord": false,
+   "confidence": "medium",
+   "effectiveDate": "2026-06-22",
+   "capturedDate": null,
+   "effectiveDateSource": "printed",
+   "origin": "app",
+   "versionLabel": "2026",
+   "publicationState": "pending_review",
+   "status": null,
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": "aeromedical-standing-orders-2026",
+   "doseCount": 165
   },
   {
    "hash": "0fcb420f709bb2a30cc30b4468d31255c3acae3eec005a97899581274709d574",
@@ -2250,9 +2296,9 @@
    "versionLabel": "3.2",
    "publicationState": "listed_aggregate",
    "status": "superseded",
-   "pageCount": null,
+   "pageCount": 462,
    "sourceUrl": null,
-   "corpusDocId": "protocols-2026",
+   "corpusDocId": "0d7383ad12ac22005026f67d2cca12289976ac7bd86e969407008fb43d99b666",
    "doseCount": 203
   },
   {
@@ -2433,7 +2479,7 @@
    "origin": "app",
    "versionLabel": "V1.0",
    "publicationState": "listed_named",
-   "status": "superseded",
+   "status": "current",
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "ems-model-protocols",
@@ -2599,6 +2645,29 @@
    "sourceUrl": null,
    "corpusDocId": null,
    "doseCount": 0
+  },
+  {
+   "hash": "1c4d45ead1f1efa2cf122341dc9aa3a6e258f5646c64aa17739c211ab22c04d0",
+   "hashSource": "pdf_hash",
+   "agencyKey": null,
+   "agencyName": null,
+   "state": "NC",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "county",
+   "publicRecord": true,
+   "confidence": "high",
+   "effectiveDate": null,
+   "capturedDate": null,
+   "effectiveDateSource": "none",
+   "origin": "app",
+   "versionLabel": null,
+   "publicationState": "pending_review",
+   "status": null,
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": "wcemss_sp_2026_final_7.15.26",
+   "doseCount": 144
   },
   {
    "hash": "1c60cb2a4c2fc129b3e8262c9f70c703f275b83269888d273c14fb465f1e3816",
@@ -3288,7 +3357,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "census-2256791bd47a28032ae7957d85e341cfbbad252c7c5172554b0e4208e251a092",
-   "doseCount": 147
+   "doseCount": 149
   },
   {
    "hash": "22a01e6b90ef4e591bdbb7dda0ad1e390f9ab2f181656385439eb7fe342afbf4",
@@ -3656,7 +3725,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "qas-drug-therapy-protocols-2026",
-   "doseCount": 261
+   "doseCount": 277
   },
   {
    "hash": "269746a5348ff61509c971eeb8bf1bfd2aa9a3eb4a817e70432643a0e04a0888",
@@ -3721,11 +3790,11 @@
    "origin": "app",
    "versionLabel": null,
    "publicationState": "listed_named",
-   "status": "current",
+   "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "cfd-protocols",
-   "doseCount": 145
+   "doseCount": 134
   },
   {
    "hash": "274bb880fa97a31f25118f5a766534225b2f4448962b8b873b8d0928ac91ffc0",
@@ -4073,6 +4142,29 @@
    "doseCount": 284
   },
   {
+   "hash": "2ae59d19d232ecce55d863a8816efdeb1157b4fd49ac4c2faecd86a224dc9002",
+   "hashSource": "pdf_hash",
+   "agencyKey": null,
+   "agencyName": null,
+   "state": "IL",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "hospital",
+   "publicRecord": false,
+   "confidence": "high",
+   "effectiveDate": "2025-01-01",
+   "capturedDate": null,
+   "effectiveDateSource": "printed",
+   "origin": "app",
+   "versionLabel": "2025",
+   "publicationState": "listed_aggregate",
+   "status": "current",
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": "2025-mercyhealth-react-patient-care-guidelines-2025-final",
+   "doseCount": 202
+  },
+  {
    "hash": "2b27033f82a1ef18a52adaa92d63805475953503b9b8e56bf783f1a3fb1c7b13",
    "hashSource": "pdf_hash",
    "agencyKey": "north-carolina-office-of-emergency-medical-services",
@@ -4345,7 +4437,7 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": "dmems-july26",
+   "corpusDocId": "dmemsmd-protocols-july-2026-final-2026-07-20",
    "doseCount": 150
   },
   {
@@ -4391,7 +4483,7 @@
    "status": "current",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": "red-book-chapter-3-2026",
+   "corpusDocId": "2e6360d1d7360eac",
    "doseCount": 130
   },
   {
@@ -4457,11 +4549,11 @@
    "origin": "seed",
    "versionLabel": "26.2",
    "publicationState": "listed_named",
-   "status": "superseded",
+   "status": "current",
    "pageCount": null,
    "sourceUrl": "https://www.health.ny.gov/professionals/ems/pdf/collaborative_protocols_v.26.2.pdf",
    "corpusDocId": "census-2f6ddfdd8acec758761e4c1b8970da61bd3d9591bb68f5dd22309fccb1f3adff",
-   "doseCount": 144
+   "doseCount": 158
   },
   {
    "hash": "2fa3583bc2697621f226022df7132c5c02bfb4838902722f608509bcf788d6a7",
@@ -4779,7 +4871,7 @@
    "origin": "app",
    "versionLabel": null,
    "publicationState": "listed_named",
-   "status": "current",
+   "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "census-3306d112a9ed6e516543593d4d998243f69b71d239e02f06a0244c32e96d03a2",
@@ -4829,7 +4921,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "clinical-practice-guidelines--protocols-july-2018-6-more",
-   "doseCount": 172
+   "doseCount": 162
   },
   {
    "hash": "336eb7926258e46268becd25f7cf4abe11a80ed099435939e443bc56626ed53f",
@@ -4874,8 +4966,8 @@
    "status": "current",
    "pageCount": null,
    "sourceUrl": "https://www.healthvermont.gov/sites/default/files/document/eprip-2025-EMS-Protocols_0.pdf",
-   "corpusDocId": "census-33aa4e7abd3d5e3663b2485d5513950f8374304dca469ac3acb48ee7b9e15051",
-   "doseCount": 233
+   "corpusDocId": "eprip-2025-ems-protocols_0",
+   "doseCount": 272
   },
   {
    "hash": "33b458a6247e9dc5a77e862ab9d08417a7b778e30c347f3c90a910dba494a3f5",
@@ -5407,6 +5499,29 @@
    "doseCount": 182
   },
   {
+   "hash": "38de1509dddf7634eecd4bd4b4b9540b",
+   "hashSource": "md5",
+   "agencyKey": "ada-county-city-emergency-services-system",
+   "agencyName": "Ada County-City Emergency Services System",
+   "state": "ID",
+   "country": "US",
+   "city": "Ada County",
+   "jurisdiction": "county",
+   "publicRecord": true,
+   "confidence": "high",
+   "effectiveDate": "2026-02-01",
+   "capturedDate": null,
+   "effectiveDateSource": "printed",
+   "origin": "app",
+   "versionLabel": null,
+   "publicationState": "listed_named",
+   "status": "superseded",
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": "census-38de1509dddf7634eecd4bd4b4b9540b",
+   "doseCount": 184
+  },
+  {
    "hash": "38e4bb5ea236785768eb8c7b138d5dd8",
    "hashSource": "md5",
    "agencyKey": null,
@@ -5680,7 +5795,7 @@
    "pageCount": null,
    "sourceUrl": "https://www.myokaloosa.com/sites/default/files/OCEMS%20ALS-BLS%20Protocol%2006.01.2026.pdf",
    "corpusDocId": "census-3c06a1ff4d31aff8f52e6295b0ce67200d33a906d5770909bcd6f76ce847d321",
-   "doseCount": 132
+   "doseCount": 131
   },
   {
    "hash": "3c08021d606f2a04e142be06c5fc82a2",
@@ -5704,6 +5819,29 @@
    "sourceUrl": null,
    "corpusDocId": "census-3c08021d606f2a04e142be06c5fc82a2",
    "doseCount": 135
+  },
+  {
+   "hash": "3cb7084faa0f1e47824a0737b441c49f",
+   "hashSource": "md5",
+   "agencyKey": null,
+   "agencyName": null,
+   "state": "NC",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "county",
+   "publicRecord": true,
+   "confidence": "high",
+   "effectiveDate": null,
+   "capturedDate": null,
+   "effectiveDateSource": "none",
+   "origin": "app",
+   "versionLabel": null,
+   "publicationState": "pending_review",
+   "status": null,
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": "census-3cb7084faa0f1e47824a0737b441c49f",
+   "doseCount": 63
   },
   {
    "hash": "3cd8572f0dbb3b51aae080a5188aa0621dee54864730ecad28006d6035cc25da",
@@ -6074,29 +6212,6 @@
    "doseCount": 95
   },
   {
-   "hash": "40de379212449f0118daeb39e0038e513b8af790705f91c68d670d4471664e53",
-   "hashSource": "pdf_hash",
-   "agencyKey": "massachusetts-department-of-public-health-office-of-emergency-medical-services",
-   "agencyName": "Massachusetts Department of Public Health, Office of Emergency Medical Services",
-   "state": "MA",
-   "country": "US",
-   "city": null,
-   "jurisdiction": "statewide",
-   "publicRecord": true,
-   "confidence": "high",
-   "effectiveDate": "2026-09-01",
-   "capturedDate": null,
-   "effectiveDateSource": "printed",
-   "origin": "app",
-   "versionLabel": "2026.2",
-   "publicationState": "listed_named",
-   "status": "superseded",
-   "pageCount": null,
-   "sourceUrl": null,
-   "corpusDocId": "www-mass-gov-combined",
-   "doseCount": 191
-  },
-  {
    "hash": "4130228f9522fd1c910fffed262b3372db61ab66d526af7b74d1013d9abdc88c",
    "hashSource": "pdf_hash",
    "agencyKey": "northeast-ohio-regional-ems-protocol-committee",
@@ -6233,29 +6348,6 @@
    "sourceUrl": "https://www.sandiegocounty.gov/content/dam/sdc/ems/Policies_Protocols/2025/2025-2026%20Protocol%20Packet.pdf",
    "corpusDocId": "census-42932d04cd1ca1badf0ca36f5dad338df89fb67725c0d06845534463fcb85128",
    "doseCount": 110
-  },
-  {
-   "hash": "429929f7418a1d5d8df9556c9e6509ef19e9ea453ec6892ef07b246c0c3d8ab2",
-   "hashSource": "pdf_hash",
-   "agencyKey": "clark-county-ems-system",
-   "agencyName": "Clark County EMS",
-   "state": "WA",
-   "country": "US",
-   "city": null,
-   "jurisdiction": "county",
-   "publicRecord": true,
-   "confidence": "high",
-   "effectiveDate": "2026-03-01",
-   "capturedDate": null,
-   "effectiveDateSource": "printed",
-   "origin": "app",
-   "versionLabel": "Revised March 2026",
-   "publicationState": "listed_named",
-   "status": "superseded",
-   "pageCount": null,
-   "sourceUrl": null,
-   "corpusDocId": "429929f7418a1d5d",
-   "doseCount": 176
   },
   {
    "hash": "432f7af5cb99e7dc389ada165987288868b4e049cc26af6e07c99abb371fe5c3",
@@ -6396,6 +6488,29 @@
    "doseCount": 0
   },
   {
+   "hash": "43fe3389cec32e2dee5a12e33a48bea2ea0a8049b67cd0c546d71ea7c33cdb0b",
+   "hashSource": "pdf_hash",
+   "agencyKey": null,
+   "agencyName": null,
+   "state": null,
+   "country": "US",
+   "city": null,
+   "jurisdiction": null,
+   "publicRecord": false,
+   "confidence": "low",
+   "effectiveDate": "2025-02-12",
+   "capturedDate": null,
+   "effectiveDateSource": "printed",
+   "origin": "app",
+   "versionLabel": null,
+   "publicationState": "pending_review",
+   "status": null,
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": "download-2-8-more",
+   "doseCount": 172
+  },
+  {
    "hash": "4411cd2bfba43438058013922763a75d35fe444d5484bed3189937ea42f87696",
    "hashSource": "pdf_hash",
    "agencyKey": null,
@@ -6458,7 +6573,7 @@
    "origin": "app",
    "versionLabel": "2025 R1.1",
    "publicationState": "listed_aggregate",
-   "status": "current",
+   "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "census-44930566449c6a508da97cbe6ca170803bb75eb1ba69e3e11fb6f373333a9c87",
@@ -6580,29 +6695,6 @@
    "doseCount": 242
   },
   {
-   "hash": "46190c373453fb18b1dad460f75d15df808bd30bae0e902ef34c137bca0bc431",
-   "hashSource": "pdf_hash",
-   "agencyKey": "clark-county-ems-system",
-   "agencyName": "Clark County EMS System",
-   "state": "NV",
-   "country": "US",
-   "city": "Las Vegas",
-   "jurisdiction": "county",
-   "publicRecord": true,
-   "confidence": "high",
-   "effectiveDate": "2026-07-01",
-   "capturedDate": "2026-08-29",
-   "effectiveDateSource": "printed",
-   "origin": "seed",
-   "versionLabel": null,
-   "publicationState": "listed_named",
-   "status": "superseded",
-   "pageCount": null,
-   "sourceUrl": "https://media.southernnevadahealthdistrict.org/download/ems/ems-protocol-manual.pdf",
-   "corpusDocId": "ems-protocol-manual",
-   "doseCount": 146
-  },
-  {
    "hash": "463407cffbbd7700cbb62e739d9fb8a946c8ecdd1bdec7e9a3186c371aef3fb5",
    "hashSource": "pdf_hash",
    "agencyKey": null,
@@ -6669,7 +6761,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "census-4666adb5f10dbce2675bd2682c8aaf2b30c93a694bb551fe09416befa01c0831",
-   "doseCount": 140
+   "doseCount": 138
   },
   {
    "hash": "46c65be16e2ec012753f6c0b779b9c99",
@@ -6902,29 +6994,6 @@
    "doseCount": 173
   },
   {
-   "hash": "4a0b872458ea17b733d208b51c55879b8b3a5457afea8ccf259bb5b55d67d3f4",
-   "hashSource": "pdf_hash",
-   "agencyKey": null,
-   "agencyName": null,
-   "state": null,
-   "country": null,
-   "city": null,
-   "jurisdiction": null,
-   "publicRecord": false,
-   "confidence": "low",
-   "effectiveDate": null,
-   "capturedDate": null,
-   "effectiveDateSource": "none",
-   "origin": "app",
-   "versionLabel": null,
-   "publicationState": "excluded",
-   "status": null,
-   "pageCount": null,
-   "sourceUrl": null,
-   "corpusDocId": "reuse:41b661d3f48df2f31a7f5089e150e85619e624d9c7a214bee99225fa3f3d4423",
-   "doseCount": 125
-  },
-  {
    "hash": "4a1cb23431400b7597a2c2489c6c9480b1acdcb427de334545bbfc1aaa53350c",
    "hashSource": "pdf_hash",
    "agencyKey": "muskegon-county",
@@ -7015,6 +7084,29 @@
    "sourceUrl": null,
    "corpusDocId": "census-4aa390b1ae591b87e2f58e25a5ad077a029e4249fc142870a510c61295bf73e6",
    "doseCount": 2
+  },
+  {
+   "hash": "4ab4b643763e86548794a9e4690e1253cc1e4841350efee424fc6b63dc4f27b1",
+   "hashSource": "pdf_hash",
+   "agencyKey": "massachusetts-department-of-public-health-office-of-emergency-medical-services",
+   "agencyName": "Massachusetts Office of Emergency Medical Services",
+   "state": "MA",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "publicRecord": true,
+   "confidence": "high",
+   "effectiveDate": "2026-09-01",
+   "capturedDate": null,
+   "effectiveDateSource": "printed",
+   "origin": "app",
+   "versionLabel": "2026.2",
+   "publicationState": "listed_named",
+   "status": "current",
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": "download",
+   "doseCount": 344
   },
   {
    "hash": "4adc09af19e5908041f884c65b3acde6c4a56e9114e4cdccfd19abdf8beb92e9",
@@ -7638,6 +7730,29 @@
    "doseCount": 126
   },
   {
+   "hash": "5021d1fd40a6c4581870251762422a59b4b48a5664c060619a449ad028eccb70",
+   "hashSource": "pdf_hash",
+   "agencyKey": null,
+   "agencyName": null,
+   "state": "GA",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "commercial",
+   "publicRecord": false,
+   "confidence": "high",
+   "effectiveDate": "2026-07-01",
+   "capturedDate": null,
+   "effectiveDateSource": "printed",
+   "origin": "app",
+   "versionLabel": "V. 38",
+   "publicationState": "listed_aggregate",
+   "status": "superseded",
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": "protocols-2026",
+   "doseCount": 106
+  },
+  {
    "hash": "502fb4f8a7ec5bf2bab7742f3cfbd44ecb87b7dd1a3e2773708a0fe058818d98",
    "hashSource": "pdf_hash",
    "agencyKey": "berrien-county-medical-control-authority",
@@ -7819,7 +7934,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "acadian_2026_protocols_searchable_ocr",
-   "doseCount": 130
+   "doseCount": 129
   },
   {
    "hash": "52c94e95102f78d5b02aa64beef95aa904f074a3618725385d4c86886f93ba93",
@@ -7889,6 +8004,29 @@
    "sourceUrl": null,
    "corpusDocId": "cgt-pharamcology-reference",
    "doseCount": 126
+  },
+  {
+   "hash": "53257a422463f386b87c978a4c52c8dfdf667bb782620b9788ec143ba6ab6c82",
+   "hashSource": "pdf_hash",
+   "agencyKey": null,
+   "agencyName": null,
+   "state": "OH",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "hospital",
+   "publicRecord": false,
+   "confidence": "high",
+   "effectiveDate": "2026-02-19",
+   "capturedDate": null,
+   "effectiveDateSource": "printed",
+   "origin": "app",
+   "versionLabel": "2026 R1.11",
+   "publicationState": "listed_aggregate",
+   "status": "current",
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": "prehospital-care-protocol-and-treatment-guidelines-2026-r1.11",
+   "doseCount": 231
   },
   {
    "hash": "542e4082722a1d246799fd9c1497a4c2",
@@ -8466,29 +8604,6 @@
    "doseCount": 0
   },
   {
-   "hash": "5a720179e60dfc3915acc9fb4ea200fbe937e6d239c3854c83c98ab5efcdc466",
-   "hashSource": "pdf_hash",
-   "agencyKey": null,
-   "agencyName": null,
-   "state": null,
-   "country": "US",
-   "city": null,
-   "jurisdiction": "education",
-   "publicRecord": false,
-   "confidence": "high",
-   "effectiveDate": null,
-   "capturedDate": null,
-   "effectiveDateSource": "none",
-   "origin": "app",
-   "versionLabel": "7.9.2026",
-   "publicationState": "excluded",
-   "status": null,
-   "pageCount": 231,
-   "sourceUrl": null,
-   "corpusDocId": "cb663d96f62fa8f09f0b61c9aec7b3376a21f66421a62ef995464275aaecb0e2",
-   "doseCount": 152
-  },
-  {
    "hash": "5aa2b55f3be61a4d5229563da04f9579fdf9ea356f9cde075c82e8f7d86e4489",
    "hashSource": "pdf_hash",
    "agencyKey": "giles-county-ems",
@@ -8675,25 +8790,25 @@
   {
    "hash": "5cb07c82ca807a282501051bf814d882e8416ba004475064e10515f0cbbacce6",
    "hashSource": "pdf_hash",
-   "agencyKey": null,
-   "agencyName": null,
-   "state": null,
-   "country": null,
+   "agencyKey": "maryland-institute-for-emergency-medical-services-systems",
+   "agencyName": "Maryland Institute for Emergency Medical Services Systems",
+   "state": "MD",
+   "country": "US",
    "city": null,
-   "jurisdiction": null,
-   "publicRecord": false,
-   "confidence": null,
-   "effectiveDate": null,
+   "jurisdiction": "statewide",
+   "publicRecord": true,
+   "confidence": "high",
+   "effectiveDate": "2026-07-01",
    "capturedDate": null,
-   "effectiveDateSource": "none",
+   "effectiveDateSource": "printed",
    "origin": "app",
    "versionLabel": null,
-   "publicationState": "pending_review",
-   "status": null,
+   "publicationState": "listed_named",
+   "status": "current",
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "md-medical-protocols-2026-print-20260720",
-   "doseCount": 236
+   "doseCount": 456
   },
   {
    "hash": "5cc843a3ed94a646d8137a926982c72a",
@@ -8855,6 +8970,29 @@
    "sourceUrl": null,
    "corpusDocId": "palmbeachgardensfirerescuepatientcareprotocols2026-69e1c052cc670de622096",
    "doseCount": 158
+  },
+  {
+   "hash": "5f8c969da432ab49f1f97b38149f2bb71335cb07905464459eac2444817e1117",
+   "hashSource": "pdf_hash",
+   "agencyKey": "detroit-east-medical-control-authority",
+   "agencyName": "Detroit East Medical Control Authority",
+   "state": "MI",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "regional",
+   "publicRecord": true,
+   "confidence": "high",
+   "effectiveDate": "2023-01-01",
+   "capturedDate": null,
+   "effectiveDateSource": "printed",
+   "origin": "app",
+   "versionLabel": null,
+   "publicationState": "listed_named",
+   "status": "current",
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": null,
+   "doseCount": 0
   },
   {
    "hash": "5f9727312807bef69fd70a6659b6049b28a413cd08181b7d09718bc516b86b9c",
@@ -9222,7 +9360,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "2026-protocol-booklet-final-april-2026---interactive",
-   "doseCount": 146
+   "doseCount": 151
   },
   {
    "hash": "6386f52f2bec9091c0c072ddf3800c42",
@@ -9567,7 +9705,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "clinicalcareguidelines-ab36c572b0c6bd3f406cf",
-   "doseCount": 231
+   "doseCount": 230
   },
   {
    "hash": "67a6379f18d7786adcba004a282d371be0e0547771072f3a759461c5718d9689",
@@ -9798,29 +9936,6 @@
    "sourceUrl": null,
    "corpusDocId": "530.04-cardiac-arrest-medical-a-17-more",
    "doseCount": 38
-  },
-  {
-   "hash": "6ae1290c406712967db722faecc79720cd8f646734f3d00810a734995dedae53",
-   "hashSource": "pdf_hash",
-   "agencyKey": "davidson-county-emergency-services",
-   "agencyName": "Davidson County Emergency Services",
-   "state": "NC",
-   "country": "US",
-   "city": null,
-   "jurisdiction": "county",
-   "publicRecord": true,
-   "confidence": "high",
-   "effectiveDate": "2025-08-15",
-   "capturedDate": null,
-   "effectiveDateSource": "printed",
-   "origin": "app",
-   "versionLabel": null,
-   "publicationState": "listed_named",
-   "status": "superseded",
-   "pageCount": null,
-   "sourceUrl": null,
-   "corpusDocId": "2025-dcems-protocols-9-5-2025",
-   "doseCount": 141
   },
   {
    "hash": "6aeae39e2ccba1370a6a34cc9d5cf533fc978afd1e544f83c1ad2c2db7ff6f64",
@@ -10234,7 +10349,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "current-als-protocols-version08222024145357",
-   "doseCount": 118
+   "doseCount": 126
   },
   {
    "hash": "6f3ed7c2104ee4eee2ac09f53934d6799d55be343da6388aeec7e768c0df101a",
@@ -10281,6 +10396,29 @@
    "sourceUrl": "https://chicagoems.org/wp-content/uploads/sites/2/2017/03/BLS-SMO-MDC_APPROVED.pdf",
    "corpusDocId": "census-6f6858e6187248f2f6cb5840c59be29d2b4941a0d0a98ac0727c6fc5dcd435a0",
    "doseCount": 18
+  },
+  {
+   "hash": "6f83c1dd2a75c639f57c6e7e9776097e",
+   "hashSource": "md5",
+   "agencyKey": null,
+   "agencyName": null,
+   "state": null,
+   "country": "US",
+   "city": null,
+   "jurisdiction": "regional",
+   "publicRecord": true,
+   "confidence": "medium",
+   "effectiveDate": "2022-05-01",
+   "capturedDate": null,
+   "effectiveDateSource": "printed",
+   "origin": "app",
+   "versionLabel": null,
+   "publicationState": "pending_review",
+   "status": null,
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": "census-6f83c1dd2a75c639f57c6e7e9776097e",
+   "doseCount": 300
   },
   {
    "hash": "6f88fef76a845cf0502c30e7d0f7bdbe7316a2c48cc0cb8e1e1b37015a341c29",
@@ -10533,7 +10671,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "census-72bca9a994c3b1d1cfcb3deae96b71ea",
-   "doseCount": 270
+   "doseCount": 273
   },
   {
    "hash": "72ef67464dc78571c3973a1a856c79d859f99e672bf3038207d911b8bbc9ae22",
@@ -10649,29 +10787,6 @@
    "sourceUrl": null,
    "corpusDocId": "section-9-peds-medical-revised-racemic_epi-20221201",
    "doseCount": 47
-  },
-  {
-   "hash": "735c666a0ac59ebb66ef114b6674434a",
-   "hashSource": "md5",
-   "agencyKey": "alameda-county-emergency-medical-services",
-   "agencyName": "Alameda County Emergency Medical Services",
-   "state": "CA",
-   "country": "US",
-   "city": "San Leandro",
-   "jurisdiction": "county",
-   "publicRecord": true,
-   "confidence": "high",
-   "effectiveDate": "2025-01-01",
-   "capturedDate": null,
-   "effectiveDateSource": "printed",
-   "origin": "app",
-   "versionLabel": "2025",
-   "publicationState": "listed_named",
-   "status": "superseded",
-   "pageCount": null,
-   "sourceUrl": null,
-   "corpusDocId": "census-735c666a0ac59ebb66ef114b6674434a",
-   "doseCount": 88
   },
   {
    "hash": "73b2c01ad78740113a29c01087f4b0dafac262035c5c4e84b4d0c653add5ee27",
@@ -10924,7 +11039,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "fw-regional-ems-system-protocol-10.1.26.v1",
-   "doseCount": 179
+   "doseCount": 176
   },
   {
    "hash": "78719ba0bcaadc3ccafd652878a357a97b08ca19b5496d891228602d2c7d61d9",
@@ -11104,11 +11219,34 @@
    "origin": "seed",
    "versionLabel": null,
    "publicationState": "listed_named",
-   "status": "current",
+   "status": "superseded",
    "pageCount": null,
    "sourceUrl": "https://s3.us-west-2.amazonaws.com/wakegov.com.if-us-west-2/prod/documents/2021-08/WCEMSS%20Standards%20Practice%202021%209.1.21.pdf",
    "corpusDocId": "census-7a71bfa1d351a1091a331de351b087597e03cece2c442a29ca6962bcc57533a2",
    "doseCount": 164
+  },
+  {
+   "hash": "7aaf8d7bf527097edc6a0b871a23810b4dcb95d070ad92d5dd3002d96bd74b74",
+   "hashSource": "pdf_hash",
+   "agencyKey": null,
+   "agencyName": null,
+   "state": null,
+   "country": "US",
+   "city": null,
+   "jurisdiction": "county",
+   "publicRecord": true,
+   "confidence": "medium",
+   "effectiveDate": "2023-01-01",
+   "capturedDate": null,
+   "effectiveDateSource": "printed",
+   "origin": "app",
+   "versionLabel": "2023",
+   "publicationState": "pending_review",
+   "status": null,
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": "crs-ems-guidelines-2023",
+   "doseCount": 172
   },
   {
    "hash": "7aed2ee7c84e8de16764f21444edcf8da1634d8f756547bf0d7a49786db7efb6",
@@ -11269,7 +11407,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "remsaprotocolspdf-43f35fee79d06b3bb5a22",
-   "doseCount": 124
+   "doseCount": 122
   },
   {
    "hash": "7cbb40fe6ba9dfa6b4640966344d159417a558b64d787654428ee858e265e441",
@@ -11523,29 +11661,6 @@
    "sourceUrl": null,
    "corpusDocId": "8cb9e8450fc84912fd4250179a4614f654a75b118ff0de37df4d242e7e748d2e",
    "doseCount": 174
-  },
-  {
-   "hash": "7fae267e130e8b7191fc78e94f71e582a06992e6e6050ff7607c0b17262c4ba5",
-   "hashSource": "pdf_hash",
-   "agencyKey": "boulder-county-ems",
-   "agencyName": "Boulder County Protocol Committee",
-   "state": "CO",
-   "country": "US",
-   "city": "Boulder",
-   "jurisdiction": "county",
-   "publicRecord": true,
-   "confidence": "high",
-   "effectiveDate": "2026-04-22",
-   "capturedDate": null,
-   "effectiveDateSource": "printed",
-   "origin": "app",
-   "versionLabel": null,
-   "publicationState": "listed_named",
-   "status": "superseded",
-   "pageCount": null,
-   "sourceUrl": null,
-   "corpusDocId": "boco-20protocols_apr-202026",
-   "doseCount": 178
   },
   {
    "hash": "7ff4ebcf4168750857cff07d9faba779e18126f7c6d4ae608804746c9b4d2774",
@@ -12281,7 +12396,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "bls-protocols_6_1_26",
-   "doseCount": 66
+   "doseCount": 64
   },
   {
    "hash": "8b7d229e16703096d97639b60f96f3a47071fcbbf7c7f43a908261f2395a9df7",
@@ -12376,29 +12491,6 @@
    "doseCount": 4
   },
   {
-   "hash": "8d36ea3d4a1088202504198a82ac1eac09acccf32a4f00483054b9181f5ac839",
-   "hashSource": "pdf_hash",
-   "agencyKey": "nebraska-board-of-emergency-medical-services",
-   "agencyName": "Nebraska Medicine Division of Prehospital and Emergency Medical Services",
-   "state": "NE",
-   "country": "US",
-   "city": null,
-   "jurisdiction": "statewide",
-   "publicRecord": true,
-   "confidence": "high",
-   "effectiveDate": "2026-05-01",
-   "capturedDate": "2026-08-28",
-   "effectiveDateSource": "printed",
-   "origin": "seed",
-   "versionLabel": "V1.0",
-   "publicationState": "listed_named",
-   "status": "current",
-   "pageCount": null,
-   "sourceUrl": "https://dhhs.ne.gov/OEHS%20Program%20Documents/EMS%20Model%20Protocols.pdf",
-   "corpusDocId": "census-8d36ea3d4a1088202504198a82ac1eac09acccf32a4f00483054b9181f5ac839",
-   "doseCount": 182
-  },
-  {
    "hash": "8da13036e82ef9beab942cde7811ad321b9c8d45cb8ca8e901691f9f0db6722c",
    "hashSource": "pdf_hash",
    "agencyKey": null,
@@ -12484,11 +12576,11 @@
    "origin": "app",
    "versionLabel": "2024",
    "publicationState": "listed_named",
-   "status": "superseded",
+   "status": "current",
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "delaware-als-protocols---2024",
-   "doseCount": 119
+   "doseCount": 123
   },
   {
    "hash": "8edb54f8745e03baedfe142827d90b4fc515c149fbb8ee4edd3a21625da8d580",
@@ -12577,9 +12669,9 @@
    "versionLabel": null,
    "publicationState": "excluded",
    "status": null,
-   "pageCount": null,
+   "pageCount": 283,
    "sourceUrl": null,
-   "corpusDocId": "eprip-2025-ems-protocols_0",
+   "corpusDocId": "9b32cbef3d61107edc814ed59cdb8644220d50ffa67e29374d8c80e201a6af59",
    "doseCount": 211
   },
   {
@@ -12813,52 +12905,6 @@
    "doseCount": 128
   },
   {
-   "hash": "93965ff9e7d11f622cdd12003c663df28dabd1c42e3849db0436ee3bc0ba1322",
-   "hashSource": "pdf_hash",
-   "agencyKey": "pennsylvania-department-of-health-bureau-of-emergency-medical-services",
-   "agencyName": "Pennsylvania Department of Health, Bureau of Emergency Medical Services",
-   "state": "PA",
-   "country": "US",
-   "city": null,
-   "jurisdiction": "statewide",
-   "publicRecord": true,
-   "confidence": "high",
-   "effectiveDate": "2023-12-29",
-   "capturedDate": null,
-   "effectiveDateSource": "printed",
-   "origin": "app",
-   "versionLabel": "2023 v1.2",
-   "publicationState": "listed_named",
-   "status": "superseded",
-   "pageCount": null,
-   "sourceUrl": null,
-   "corpusDocId": "93965ff9e7d11f62",
-   "doseCount": 15
-  },
-  {
-   "hash": "9502ee6551860938bf894f3cc959734d",
-   "hashSource": "md5",
-   "agencyKey": null,
-   "agencyName": null,
-   "state": "WI",
-   "country": "US",
-   "city": null,
-   "jurisdiction": "education",
-   "publicRecord": false,
-   "confidence": "high",
-   "effectiveDate": "2023-04-27",
-   "capturedDate": null,
-   "effectiveDateSource": "printed",
-   "origin": "app",
-   "versionLabel": null,
-   "publicationState": "excluded",
-   "status": null,
-   "pageCount": null,
-   "sourceUrl": null,
-   "corpusDocId": "census-9502ee6551860938bf894f3cc959734d",
-   "doseCount": 136
-  },
-  {
    "hash": "953d2ac12419e0afe3e2efba663e60b5ed01e0359ee6fabc59954519063820df",
    "hashSource": "pdf_hash",
    "agencyKey": "denver-metro-ems-medical-directors",
@@ -12880,29 +12926,6 @@
    "sourceUrl": null,
    "corpusDocId": "den-ems-protocols",
    "doseCount": 140
-  },
-  {
-   "hash": "955429bafea69411506d0718e60df07485de126af4ee65ef9f1886fdb8a54b97",
-   "hashSource": "pdf_hash",
-   "agencyKey": "queensland-ambulance-service",
-   "agencyName": "Queensland Ambulance Service",
-   "state": "QLD",
-   "country": "AU",
-   "city": null,
-   "jurisdiction": "statewide",
-   "publicRecord": true,
-   "confidence": "high",
-   "effectiveDate": "2026-06-01",
-   "capturedDate": null,
-   "effectiveDateSource": "printed",
-   "origin": "app",
-   "versionLabel": null,
-   "publicationState": "listed_named",
-   "status": "superseded",
-   "pageCount": null,
-   "sourceUrl": null,
-   "corpusDocId": "census-955429bafea69411506d0718e60df07485de126af4ee65ef9f1886fdb8a54b97",
-   "doseCount": 258
   },
   {
    "hash": "955c5f5380514f1f4e526ed49486f107a85f57178dbd1900ef20669daa8104b5",
@@ -13017,7 +13040,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "standing-orders-2024--final",
-   "doseCount": 141
+   "doseCount": 146
   },
   {
    "hash": "972f5396c57f15d8fdb300134f209a8d9fbcca61fa3f4889973de94fa3ffb33d",
@@ -13618,6 +13641,29 @@
    "doseCount": 6
   },
   {
+   "hash": "a1f7b9e7bb212da028a012ee751c6a367e6f73dc8f7281d8bb10ddf0aef4215b",
+   "hashSource": "pdf_hash",
+   "agencyKey": "lake-emergency-medical-system",
+   "agencyName": "Lake Emergency Medical System",
+   "state": "FL",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "county",
+   "publicRecord": true,
+   "confidence": "high",
+   "effectiveDate": "2022-03-01",
+   "capturedDate": null,
+   "effectiveDateSource": "printed",
+   "origin": "app",
+   "versionLabel": "March 2022",
+   "publicationState": "listed_named",
+   "status": "current",
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": "clinical-care-guidelines-3.2022",
+   "doseCount": 243
+  },
+  {
    "hash": "a278f41102237fc2a2d448c7035c631f36d3e68ed7a1ba5381acdc9b504fcbde",
    "hashSource": "pdf_hash",
    "agencyKey": "michigan-department-of-health-and-human-services-mdhhs",
@@ -13634,7 +13680,7 @@
    "origin": "app",
    "versionLabel": null,
    "publicationState": "listed_named",
-   "status": "current",
+   "status": "superseded",
    "pageCount": 424,
    "sourceUrl": null,
    "corpusDocId": "3e116674b378191e32829d09c562e52c8dd5596d32cb36679204fcc102f0c625",
@@ -13662,29 +13708,6 @@
    "sourceUrl": null,
    "corpusDocId": "f7aa75a60d9a55b54bb1dde584b9519550741ea46dd555d0a60c4297ff34d6f0",
    "doseCount": 12
-  },
-  {
-   "hash": "a2882beb67f11890db916f18119761c648594a4327a8b832db2c02345d0355c3",
-   "hashSource": "pdf_hash",
-   "agencyKey": "new-york-state-department-of-health-bureau-of-emergency-medical-services-and-trauma-systems",
-   "agencyName": "New York State Department of Health, Bureau of Emergency Medical Services and Trauma Systems",
-   "state": "NY",
-   "country": "US",
-   "city": null,
-   "jurisdiction": "statewide",
-   "publicRecord": true,
-   "confidence": "high",
-   "effectiveDate": "2026-09-11",
-   "capturedDate": null,
-   "effectiveDateSource": "printed",
-   "origin": "app",
-   "versionLabel": "26.2",
-   "publicationState": "listed_named",
-   "status": "superseded",
-   "pageCount": 182,
-   "sourceUrl": null,
-   "corpusDocId": "e827ffd85fdc529a470593b6d163db941bcc709d12148c63a301537885e061db",
-   "doseCount": 157
   },
   {
    "hash": "a3b3cbfb68d8f38af1face1bdfd045f80f9806374dbfe9e091cea4299e4120e2",
@@ -13772,7 +13795,7 @@
    "origin": "app",
    "versionLabel": "2026.2",
    "publicationState": "listed_named",
-   "status": "current",
+   "status": "superseded",
    "pageCount": 176,
    "sourceUrl": null,
    "corpusDocId": "65c0ad564b08e8d0a7dcae20239c8e63b73bddcdfecbf7e7e326b911448e7bd1",
@@ -13823,29 +13846,6 @@
    "sourceUrl": null,
    "corpusDocId": null,
    "doseCount": 0
-  },
-  {
-   "hash": "a5033658cbdf318f2d81643bfad4eddfdd80af21ce4a16718a91a4b0dd8dbadd",
-   "hashSource": "pdf_hash",
-   "agencyKey": "boulder-county-ems",
-   "agencyName": "Boulder County Protocol Committee",
-   "state": "CO",
-   "country": "US",
-   "city": null,
-   "jurisdiction": "county",
-   "publicRecord": true,
-   "confidence": "high",
-   "effectiveDate": "2026-04-22",
-   "capturedDate": null,
-   "effectiveDateSource": "printed",
-   "origin": "app",
-   "versionLabel": null,
-   "publicationState": "listed_named",
-   "status": "current",
-   "pageCount": null,
-   "sourceUrl": null,
-   "corpusDocId": "a5033658cbdf318f",
-   "doseCount": 193
   },
   {
    "hash": "a551384d42e83d9efc6d825bd879248b",
@@ -13979,7 +13979,7 @@
    "origin": "app",
    "versionLabel": null,
    "publicationState": "listed_named",
-   "status": "superseded",
+   "status": "current",
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "binder",
@@ -14216,29 +14216,6 @@
    "doseCount": 145
   },
   {
-   "hash": "ab2dd85f9ecf5eccdb72e9d004fd4eb63f0df8b81034c05822ec682d9cfe49a5",
-   "hashSource": "pdf_hash",
-   "agencyKey": "west-virginia-department-of-health-office-of-emergency-medical-services",
-   "agencyName": "West Virginia Department of Health, Office of Emergency Medical Services",
-   "state": "WV",
-   "country": "US",
-   "city": null,
-   "jurisdiction": "statewide",
-   "publicRecord": true,
-   "confidence": "high",
-   "effectiveDate": "2026-04-01",
-   "capturedDate": null,
-   "effectiveDateSource": "printed",
-   "origin": "app",
-   "versionLabel": "2026 EDITION",
-   "publicationState": "listed_named",
-   "status": "superseded",
-   "pageCount": null,
-   "sourceUrl": null,
-   "corpusDocId": "safari",
-   "doseCount": 145
-  },
-  {
    "hash": "abb159b2b9b3137df5c000f8e5513840",
    "hashSource": "md5",
    "agencyKey": "coos-county-emergency-medical-services",
@@ -14329,52 +14306,6 @@
    "sourceUrl": null,
    "corpusDocId": "master-cog",
    "doseCount": 156
-  },
-  {
-   "hash": "ac86274be3e1e5d5f4505346ef1950d04492700eeed195a0cb25a3d110d52899",
-   "hashSource": "pdf_hash",
-   "agencyKey": "marin-county-emergency-medical-services-agency",
-   "agencyName": "Marin County Emergency Medical Services Agency",
-   "state": "CA",
-   "country": "US",
-   "city": "Marin County",
-   "jurisdiction": "county",
-   "publicRecord": true,
-   "confidence": "high",
-   "effectiveDate": "2025-04-01",
-   "capturedDate": null,
-   "effectiveDateSource": "printed",
-   "origin": "app",
-   "versionLabel": null,
-   "publicationState": "listed_named",
-   "status": "superseded",
-   "pageCount": null,
-   "sourceUrl": null,
-   "corpusDocId": "census-ac86274be3e1e5d5f4505346ef1950d04492700eeed195a0cb25a3d110d52899",
-   "doseCount": 86
-  },
-  {
-   "hash": "ad133cf096f389c37cec11b46d6a7807c15a0aa0dd0a241206b51046840866db",
-   "hashSource": "pdf_hash",
-   "agencyKey": null,
-   "agencyName": null,
-   "state": "VA",
-   "country": "US",
-   "city": null,
-   "jurisdiction": "regional",
-   "publicRecord": true,
-   "confidence": "high",
-   "effectiveDate": null,
-   "capturedDate": null,
-   "effectiveDateSource": "none",
-   "origin": "app",
-   "versionLabel": "2026",
-   "publicationState": "pending_review",
-   "status": null,
-   "pageCount": null,
-   "sourceUrl": null,
-   "corpusDocId": "wvems-protocols-2026",
-   "doseCount": 131
   },
   {
    "hash": "ad3700288ba1713ffa6042a903e26309b81b4dd429a62eddd7d40da48d9fbfd7",
@@ -14490,29 +14421,6 @@
    "sourceUrl": null,
    "corpusDocId": "census-adfee6bbc4dbeacf53db1e989c5cf473",
    "doseCount": 105
-  },
-  {
-   "hash": "ae247823bbd708afdb23a84984eaf93a07787ee0cee8df0b7283e5cf97c9a270",
-   "hashSource": "pdf_hash",
-   "agencyKey": "central-california-emergency-medical-services",
-   "agencyName": "Central California Emergency Medical Services",
-   "state": "CA",
-   "country": "US",
-   "city": null,
-   "jurisdiction": "regional",
-   "publicRecord": true,
-   "confidence": "high",
-   "effectiveDate": "2011-10-15",
-   "capturedDate": null,
-   "effectiveDateSource": "printed",
-   "origin": "app",
-   "versionLabel": null,
-   "publicationState": "listed_named",
-   "status": "superseded",
-   "pageCount": null,
-   "sourceUrl": null,
-   "corpusDocId": "census-ae247823bbd708afdb23a84984eaf93a07787ee0cee8df0b7283e5cf97c9a270",
-   "doseCount": 5
   },
   {
    "hash": "ae467a5d64b01810622a1127ed0bc9d31ed6734c5e9e31ebe3cb23761221cf50",
@@ -14650,7 +14558,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "ocmca",
-   "doseCount": 124
+   "doseCount": 127
   },
   {
    "hash": "af13f3996508773ec43015455028bcfdce3086cb92646f47d5fc92e4b41a49b3",
@@ -14768,29 +14676,6 @@
    "doseCount": 2
   },
   {
-   "hash": "b0317d15384f7942279399cbed330b1c",
-   "hashSource": "md5",
-   "agencyKey": "regional-emergency-medical-advisory-committee-of-new-york-city",
-   "agencyName": "Regional Emergency Medical Advisory Committee of New York City",
-   "state": "NY",
-   "country": "US",
-   "city": "New York City",
-   "jurisdiction": "regional",
-   "publicRecord": true,
-   "confidence": "high",
-   "effectiveDate": "2025-04-08",
-   "capturedDate": null,
-   "effectiveDateSource": "printed",
-   "origin": "unknown",
-   "versionLabel": "2024-02",
-   "publicationState": "listed_named",
-   "status": "superseded",
-   "pageCount": null,
-   "sourceUrl": null,
-   "corpusDocId": "census-b0317d15384f7942279399cbed330b1c",
-   "doseCount": 140
-  },
-  {
    "hash": "b0c755e693a0076609a34189d5a8f0efa28c4a3d1b011ff6ae0b171dfda453dd",
    "hashSource": "pdf_hash",
    "agencyKey": "northwest-community-ems-system",
@@ -14812,6 +14697,29 @@
    "sourceUrl": "https://www.nwcemss.org/assets/1/standard_operating_procedures/NWC_EMSS_Edition_Rev_1-11-23.pdf",
    "corpusDocId": "census-b0c755e693a0076609a34189d5a8f0efa28c4a3d1b011ff6ae0b171dfda453dd",
    "doseCount": 121
+  },
+  {
+   "hash": "b114a4cb2f1ef5d6e97198396583f0891bef150dc27fe9d36553026ef43a712e",
+   "hashSource": "pdf_hash",
+   "agencyKey": null,
+   "agencyName": null,
+   "state": null,
+   "country": "US",
+   "city": null,
+   "jurisdiction": "county",
+   "publicRecord": true,
+   "confidence": "medium",
+   "effectiveDate": "2026-08-01",
+   "capturedDate": null,
+   "effectiveDateSource": "printed",
+   "origin": "app",
+   "versionLabel": "Revised: 08/2026",
+   "publicationState": "pending_review",
+   "status": null,
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": "2026-rcems-adult-protocols",
+   "doseCount": 136
   },
   {
    "hash": "b16334113b253972be62848534da50ee13b85875c0e2676f804a9d1c2c5701bc",
@@ -15110,7 +15018,7 @@
    "pageCount": null,
    "sourceUrl": "https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf",
    "corpusDocId": "census-b59cce67fb7057a27060e3b8aedeff0f7389571139c30abce65e79e3d996daae",
-   "doseCount": 231
+   "doseCount": 229
   },
   {
    "hash": "b5e8889e37ad6b8f13ff9d33a7a6936d",
@@ -15153,9 +15061,9 @@
    "versionLabel": "24.1",
    "publicationState": "listed_named",
    "status": "superseded",
-   "pageCount": null,
+   "pageCount": 184,
    "sourceUrl": null,
-   "corpusDocId": "new-protocols",
+   "corpusDocId": "9576aaa87194549847d6581f5d0458480dae0c934a42a6abcd9e59feba896276",
    "doseCount": 137
   },
   {
@@ -15202,7 +15110,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "101--remsa-approved-definitions-13-more",
-   "doseCount": 171
+   "doseCount": 170
   },
   {
    "hash": "b79822f5d2cfc64a00b8601f816dad2847d160bf43a58fa3f6fb6ec67428e545",
@@ -15435,6 +15343,29 @@
    "doseCount": 13
   },
   {
+   "hash": "b98c0fa0d477a17ecc76102fa73b8aacded57bc93de03048ccadfc84134eb18b",
+   "hashSource": "pdf_hash",
+   "agencyKey": null,
+   "agencyName": null,
+   "state": "NC",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "education",
+   "publicRecord": false,
+   "confidence": "high",
+   "effectiveDate": "2025-08-01",
+   "capturedDate": null,
+   "effectiveDateSource": "printed",
+   "origin": "app",
+   "versionLabel": null,
+   "publicationState": "excluded",
+   "status": null,
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": "2025-20emt-20class-20drugs-20-26-20norms-2",
+   "doseCount": 35
+  },
+  {
    "hash": "b9d123a62050ebe7f0181d1b3b5b0e1d034860bbeb0a34241e39baada98df306",
    "hashSource": "pdf_hash",
    "agencyKey": "denver-health-paramedic-division",
@@ -15593,7 +15524,7 @@
    "pageCount": null,
    "sourceUrl": "https://sweethomefireor.gov/wp-content/uploads/2026/04/Linn-Clinical-Guidelines-2026.pdf",
    "corpusDocId": "census-bc209a5ab72067a7734e45724e3700a6202eeb5f4bd87fee4ea4cd210e79bdac",
-   "doseCount": 133
+   "doseCount": 130
   },
   {
    "hash": "bc8896e06c4feba2846f9031472d1229c8b1f686594a0161572b8753e4a22f36",
@@ -15731,7 +15662,7 @@
    "pageCount": null,
    "sourceUrl": "https://www.bonnercountyid.gov/media/EMS/BCEMS%20Protocols.pdf",
    "corpusDocId": "census-bebfea4f4aec6186adee11ee041e8946947035fbd8bf63635de849f1429f96d0",
-   "doseCount": 123
+   "doseCount": 122
   },
   {
    "hash": "befee57397af6094f3acc686485b32e8a8e9ecd63b62aff33ad898f50ba1219b",
@@ -15755,29 +15686,6 @@
    "sourceUrl": "https://em.danecounty.gov/documents/pdf/ems/2021-2022-Protocol-Update/Interactive-Protocol-Book--Protected.pdf",
    "corpusDocId": null,
    "doseCount": 0
-  },
-  {
-   "hash": "bf09b06765e81ac2093fa3e466349c1ad5bae953615d2b55288a0bb8c1249e6e",
-   "hashSource": "pdf_hash",
-   "agencyKey": "delaware-office-of-emergency-medical-services",
-   "agencyName": "Delaware Office of Emergency Medical Services",
-   "state": "DE",
-   "country": "US",
-   "city": null,
-   "jurisdiction": "statewide",
-   "publicRecord": true,
-   "confidence": "high",
-   "effectiveDate": "2024-11-01",
-   "capturedDate": null,
-   "effectiveDateSource": "printed",
-   "origin": "app",
-   "versionLabel": "2024",
-   "publicationState": "listed_named",
-   "status": "current",
-   "pageCount": null,
-   "sourceUrl": null,
-   "corpusDocId": "delaware-20als-20protocols-20-202024",
-   "doseCount": 125
   },
   {
    "hash": "bf7de119a90ea5d0615d4b4f2e07182f",
@@ -16049,7 +15957,7 @@
    "origin": "app",
    "versionLabel": null,
    "publicationState": "listed_named",
-   "status": "current",
+   "status": "superseded",
    "pageCount": 514,
    "sourceUrl": null,
    "corpusDocId": "3e88f8c68cbe70e2469bccb3d6f726e1977e3cc8e371ac1613c763f6e16ee189",
@@ -16098,7 +16006,7 @@
    "status": "current",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": "a-medication-reference",
+   "corpusDocId": "c28a3fdff5e3d48b",
    "doseCount": 123
   },
   {
@@ -16121,7 +16029,7 @@
    "status": null,
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": "mecklenburg-ems--als-protocols",
+   "corpusDocId": "als-protocols-6.15.26",
    "doseCount": 118
   },
   {
@@ -16257,9 +16165,9 @@
    "versionLabel": null,
    "publicationState": "listed_named",
    "status": "current",
-   "pageCount": null,
+   "pageCount": 524,
    "sourceUrl": null,
-   "corpusDocId": "scems-protocols-2026",
+   "corpusDocId": "49fb01132d08acb23b73653b2a92e2a1222b3546ecc092bdad314483c3272fca",
    "doseCount": 179
   },
   {
@@ -16305,7 +16213,7 @@
    "status": "superseded",
    "pageCount": null,
    "sourceUrl": "https://www.nj.gov/health/ems/documents/NEWJERSEYEMSCLINICALPRACTICEPROTOCOLS_GUIDELINES_FINAL8.21.2025v1.pdf",
-   "corpusDocId": "census-c676ce913d12b69a2cddf889e5a9483b85019c9aebb2bf15d1d6703883b739ea",
+   "corpusDocId": "newjerseyemsclinicalpracticeprotocols_guidelines_final8.21.2025v1",
    "doseCount": 191
   },
   {
@@ -16518,25 +16426,25 @@
   {
    "hash": "c9bcdf84c30785ba7ca065982f27e544eda15ed145699f9b0b3aa142caabfada",
    "hashSource": "pdf_hash",
-   "agencyKey": null,
-   "agencyName": null,
-   "state": null,
-   "country": null,
-   "city": null,
-   "jurisdiction": null,
-   "publicRecord": false,
-   "confidence": null,
-   "effectiveDate": null,
+   "agencyKey": "greater-elgin-area-ems-system",
+   "agencyName": "Greater Elgin Area EMS System",
+   "state": "IL",
+   "country": "US",
+   "city": "Elgin",
+   "jurisdiction": "regional",
+   "publicRecord": true,
+   "confidence": "high",
+   "effectiveDate": "2022-12-01",
    "capturedDate": null,
-   "effectiveDateSource": "none",
-   "origin": "unknown",
-   "versionLabel": null,
-   "publicationState": "pending_review",
-   "status": null,
+   "effectiveDateSource": "printed",
+   "origin": "app",
+   "versionLabel": "2022",
+   "publicationState": "listed_named",
+   "status": "current",
    "pageCount": null,
    "sourceUrl": null,
-   "corpusDocId": null,
-   "doseCount": 0
+   "corpusDocId": "smos",
+   "doseCount": 130
   },
   {
    "hash": "ca9fd72571451f6c1ddbff5871d2bb0a285f249438db788600200250d824aaa3",
@@ -17321,29 +17229,6 @@
    "doseCount": 0
   },
   {
-   "hash": "d2a5b7d06563853e36a1df47fd6cc3158204d9c5e5ee98823c24dbbc4cfdd455",
-   "hashSource": "pdf_hash",
-   "agencyKey": "crowley-fire-department",
-   "agencyName": "Crowley Fire Department",
-   "state": "TX",
-   "country": "US",
-   "city": "Crowley",
-   "jurisdiction": "fire-district",
-   "publicRecord": true,
-   "confidence": "high",
-   "effectiveDate": "2025-02-01",
-   "capturedDate": null,
-   "effectiveDateSource": "printed",
-   "origin": "app",
-   "versionLabel": null,
-   "publicationState": "listed_named",
-   "status": "superseded",
-   "pageCount": null,
-   "sourceUrl": null,
-   "corpusDocId": "reuse:cf52725a2f724b43816e2160a8679b67463a7c3e1ba97f1a5b15dd90aef76945",
-   "doseCount": 138
-  },
-  {
    "hash": "d2bd4d9c86103cbadc50cbc2efca1229",
    "hashSource": "md5",
    "agencyKey": "sierra-sacramento-valley-ems-agency",
@@ -17459,29 +17344,6 @@
    "doseCount": 17
   },
   {
-   "hash": "d485d479374be738d913197d5b928cda",
-   "hashSource": "md5",
-   "agencyKey": "city-of-austin-austin-travis-county-ems-system",
-   "agencyName": "City of Austin Office of the Chief Medical Officer",
-   "state": "TX",
-   "country": "US",
-   "city": "Austin",
-   "jurisdiction": "city",
-   "publicRecord": true,
-   "confidence": "high",
-   "effectiveDate": "2024-12-01",
-   "capturedDate": null,
-   "effectiveDateSource": "printed",
-   "origin": "app",
-   "versionLabel": null,
-   "publicationState": "listed_named",
-   "status": "superseded",
-   "pageCount": null,
-   "sourceUrl": null,
-   "corpusDocId": "atcems-clinical-operating-guidelines-2026-09-17",
-   "doseCount": 149
-  },
-  {
    "hash": "d501dfb6360aea159498add6dbd91422697c680e0bcb7fdf34f9ff13e0e5e66d",
    "hashSource": "pdf_hash",
    "agencyKey": "health-professions-council-of-south-africa-hpcsa",
@@ -17521,7 +17383,7 @@
    "origin": "app",
    "versionLabel": null,
    "publicationState": "listed_named",
-   "status": "superseded",
+   "status": "current",
    "pageCount": 210,
    "sourceUrl": null,
    "corpusDocId": "2e118b7ff3a373d6c9f9967123a25fb6e6477d75d40cf3e992d67512004cfd4a",
@@ -17732,7 +17594,7 @@
    "pageCount": null,
    "sourceUrl": "https://www.parklandhealth.org/Uploads/Public/Documents/BioTel/BioTel%20Clinical%20Practice%20Guidelines_20260101.pdf",
    "corpusDocId": "census-da650fdc3ba03e73257bf24dab60b1e91976212731ac40d0b9f6032efb2f235b",
-   "doseCount": 114
+   "doseCount": 112
   },
   {
    "hash": "db25e303e588e44119ee8379835c768bc5c19bce74934b0d886ef131ba6bc419",
@@ -17962,7 +17824,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "census-ddd7b2b707167989bfda28decd34e6cf",
-   "doseCount": 319
+   "doseCount": 317
   },
   {
    "hash": "dde0a0697a8b03f0908e15487d01a06c",
@@ -18169,30 +18031,7 @@
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "1--comprehensive-personnel-document-cpd-b-required",
-   "doseCount": 30
-  },
-  {
-   "hash": "e02eb2e4c9c2cc95fdbc47be74b32d62",
-   "hashSource": "md5",
-   "agencyKey": "massachusetts-department-of-public-health-office-of-emergency-medical-services",
-   "agencyName": "Massachusetts Department of Public Health, Office of Emergency Medical Services",
-   "state": "MA",
-   "country": "US",
-   "city": null,
-   "jurisdiction": "statewide",
-   "publicRecord": true,
-   "confidence": "high",
-   "effectiveDate": "2025-06-16",
-   "capturedDate": null,
-   "effectiveDateSource": "printed",
-   "origin": "app",
-   "versionLabel": "2025.1",
-   "publicationState": "listed_named",
-   "status": "superseded",
-   "pageCount": null,
-   "sourceUrl": null,
-   "corpusDocId": "census-e02eb2e4c9c2cc95fdbc47be74b32d62",
-   "doseCount": 172
+   "doseCount": 31
   },
   {
    "hash": "e07a713664ee0b5fe534a72b317ca83a4aa74ad2c8589c9a698a544a1d9c9ad3",
@@ -18533,7 +18372,7 @@
    "origin": "app",
    "versionLabel": null,
    "publicationState": "listed_named",
-   "status": "current",
+   "status": "superseded",
    "pageCount": null,
    "sourceUrl": null,
    "corpusDocId": "2026:7-manatee-ems-protocols-",
@@ -18584,29 +18423,6 @@
    "sourceUrl": null,
    "corpusDocId": "260109-section-1-general-treatment-102425",
    "doseCount": 40
-  },
-  {
-   "hash": "e6b7090d64e5f40d955c3f7b2c6ec49c562df8f79de9bf14c8708900e789844b",
-   "hashSource": "pdf_hash",
-   "agencyKey": "oakland-county-medical-control-authority",
-   "agencyName": "Oakland County Medical Control Authority (OCMCA)",
-   "state": "MI",
-   "country": "US",
-   "city": null,
-   "jurisdiction": "county",
-   "publicRecord": true,
-   "confidence": "high",
-   "effectiveDate": "2026-06-22",
-   "capturedDate": null,
-   "effectiveDateSource": "printed",
-   "origin": "app",
-   "versionLabel": null,
-   "publicationState": "listed_named",
-   "status": "superseded",
-   "pageCount": null,
-   "sourceUrl": null,
-   "corpusDocId": "combined-suite-8_3_26",
-   "doseCount": 124
   },
   {
    "hash": "e7cfaf51d9bbee173c32169edae51191d0a13c486bafae6974eab48f82380350",
@@ -18701,6 +18517,29 @@
    "doseCount": 136
   },
   {
+   "hash": "eb2875d35b20dbe6c74a8a32db1c32f0e07852e86bc174c0cb2d12f8d9cb9032",
+   "hashSource": "pdf_hash",
+   "agencyKey": "manatee-county-emergency-medical-services",
+   "agencyName": "Manatee County Emergency Medical Services",
+   "state": "FL",
+   "country": "US",
+   "city": "Bradenton",
+   "jurisdiction": "county",
+   "publicRecord": true,
+   "confidence": "high",
+   "effectiveDate": "2026-07-01",
+   "capturedDate": null,
+   "effectiveDateSource": "printed",
+   "origin": "app",
+   "versionLabel": null,
+   "publicationState": "listed_named",
+   "status": "current",
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": "new-protocols",
+   "doseCount": 124
+  },
+  {
    "hash": "ec4b960756496069e5def30c6edd212bc41e55d99b9db9190d336ca06192bcb8",
    "hashSource": "pdf_hash",
    "agencyKey": "city-of-austin-austin-travis-county-ems-system",
@@ -18745,6 +18584,29 @@
    "sourceUrl": null,
    "corpusDocId": "census-ec96e3301c05a739df9f4d0d2f2ee76a",
    "doseCount": 4
+  },
+  {
+   "hash": "edd0d3b165f6ba2958ce93e9bd95e31077ea7e3aabd3f325fca5ede6b82a338e",
+   "hashSource": "pdf_hash",
+   "agencyKey": null,
+   "agencyName": null,
+   "state": "WA",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "county",
+   "publicRecord": true,
+   "confidence": "high",
+   "effectiveDate": null,
+   "capturedDate": null,
+   "effectiveDateSource": "none",
+   "origin": "app",
+   "versionLabel": null,
+   "publicationState": "pending_review",
+   "status": null,
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": "scems-protocols-2026",
+   "doseCount": 178
   },
   {
    "hash": "ee281b79af177a39e1b73ed6e31b6175d5ac773d01ac5f67228a4ee8325c5fe7",
@@ -18814,6 +18676,52 @@
    "sourceUrl": "https://rvfca.specialdistrict.org/files/0df4a49d6/Standing-Orders-2022-FINAL.pdf",
    "corpusDocId": "census-eeb6be585634d8d1a5d731d547a91ff0aeba094aeef782097d5c63c0e7602486",
    "doseCount": 145
+  },
+  {
+   "hash": "eee07994e0a9b9b9aebb7d2688007748",
+   "hashSource": "md5",
+   "agencyKey": "wake-county-ems-system",
+   "agencyName": "Wake County EMS System",
+   "state": "NC",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "county",
+   "publicRecord": true,
+   "confidence": "high",
+   "effectiveDate": "2026-04-01",
+   "capturedDate": null,
+   "effectiveDateSource": "printed",
+   "origin": "app",
+   "versionLabel": "UP 24",
+   "publicationState": "listed_named",
+   "status": "current",
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": "census-eee07994e0a9b9b9aebb7d2688007748",
+   "doseCount": 130
+  },
+  {
+   "hash": "f0af67c331d00f0ae0533e8b74caf01dc299fe89cbef61c291ed5ab219b9a0ab",
+   "hashSource": "pdf_hash",
+   "agencyKey": "michigan-department-of-health-and-human-services-mdhhs",
+   "agencyName": "Michigan Department of Health and Human Services",
+   "state": "MI",
+   "country": "US",
+   "city": "Detroit",
+   "jurisdiction": "statewide",
+   "publicRecord": true,
+   "confidence": "high",
+   "effectiveDate": "2024-02-01",
+   "capturedDate": null,
+   "effectiveDateSource": "printed",
+   "origin": "app",
+   "versionLabel": null,
+   "publicationState": "listed_named",
+   "status": "superseded",
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": null,
+   "doseCount": 0
   },
   {
    "hash": "f1137c4358d5b2b4b709c010ab3a5944578536f64fe68d164f395eb0f7efb63d",
@@ -18931,6 +18839,29 @@
    "doseCount": 104
   },
   {
+   "hash": "f46005cdeedd519a256f5c02432f82278594c6b3e20789c65507b28f9ae0e054",
+   "hashSource": "pdf_hash",
+   "agencyKey": "michigan-department-of-health-and-human-services-mdhhs",
+   "agencyName": "Michigan Department of Health and Human Services",
+   "state": "MI",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "statewide",
+   "publicRecord": true,
+   "confidence": "high",
+   "effectiveDate": "2026-02-25",
+   "capturedDate": null,
+   "effectiveDateSource": "printed",
+   "origin": "app",
+   "versionLabel": null,
+   "publicationState": "listed_named",
+   "status": "current",
+   "pageCount": null,
+   "sourceUrl": null,
+   "corpusDocId": "1.3-nausea-and-vomiting",
+   "doseCount": 9
+  },
+  {
    "hash": "f4732795b92fde720f3eaa8b359cc7a84106ae36de10ca69b5ba79bd5a2ebd6a",
    "hashSource": "pdf_hash",
    "agencyKey": "lincoln-county-ems",
@@ -19021,29 +18952,6 @@
    "sourceUrl": "https://ems.utah.gov/wp-content/uploads/sites/34/2025/12/2025-Utah-EMS-Protocol-Guidelines-3.pdf",
    "corpusDocId": "census-f4f8d742db663cc5de77ded0eb4c65ed68464348add5ae8578fea9a52ad9a1e0",
    "doseCount": 146
-  },
-  {
-   "hash": "f52482c2fb319aa0c6a42c24f5815d389286ac3f3710de3c04864005df2df2a9",
-   "hashSource": "pdf_hash",
-   "agencyKey": "new-york-state-department-of-health-bureau-of-emergency-medical-services-and-trauma-systems",
-   "agencyName": "New York State Department of Health, Bureau of Emergency Medical Services and Trauma Systems",
-   "state": "NY",
-   "country": "US",
-   "city": null,
-   "jurisdiction": "statewide",
-   "publicRecord": true,
-   "confidence": "high",
-   "effectiveDate": "2026-09-11",
-   "capturedDate": null,
-   "effectiveDateSource": "printed",
-   "origin": "app",
-   "versionLabel": "26.2",
-   "publicationState": "listed_named",
-   "status": "current",
-   "pageCount": null,
-   "sourceUrl": null,
-   "corpusDocId": "collaborative_protocols_v.26.2",
-   "doseCount": 163
   },
   {
    "hash": "f55b54a5e012fbc6eab6b22e02a35ffbf1c8f3c473439a151c975e47bdf3480f",
@@ -19274,29 +19182,6 @@
    "sourceUrl": null,
    "corpusDocId": "fluvanna-ems-protocols-highlighted-changes",
    "doseCount": 153
-  },
-  {
-   "hash": "f922459bbbbe97d89f65b1ccfbc4776e",
-   "hashSource": "md5",
-   "agencyKey": "health-professions-council-of-south-africa-hpcsa",
-   "agencyName": "Health Professions Council of South Africa",
-   "state": null,
-   "country": "ZA",
-   "city": null,
-   "jurisdiction": "statewide",
-   "publicRecord": true,
-   "confidence": "high",
-   "effectiveDate": "2018-07-01",
-   "capturedDate": null,
-   "effectiveDateSource": "printed",
-   "origin": "app",
-   "versionLabel": null,
-   "publicationState": "listed_named",
-   "status": "superseded",
-   "pageCount": null,
-   "sourceUrl": null,
-   "corpusDocId": "census-f922459bbbbe97d89f65b1ccfbc4776e",
-   "doseCount": 164
   },
   {
    "hash": "f93b5416e476ae4f843fcb653facf1a6e8ca45d88104e715faf914296f5e7c2b",
@@ -19849,29 +19734,6 @@
    "sourceUrl": null,
    "corpusDocId": "2026protocol",
    "doseCount": 177
-  },
-  {
-   "hash": "ffdf5ce08afe7353fdb5932f0a9e44fed946f2a3befb54be4947243f3194e544",
-   "hashSource": "pdf_hash",
-   "agencyKey": "berrien-county-medical-control-authority",
-   "agencyName": "Berrien County Medical Control Authority",
-   "state": "MI",
-   "country": "US",
-   "city": null,
-   "jurisdiction": "county",
-   "publicRecord": true,
-   "confidence": "high",
-   "effectiveDate": "2026-08-15",
-   "capturedDate": null,
-   "effectiveDateSource": "printed",
-   "origin": "app",
-   "versionLabel": null,
-   "publicationState": "listed_named",
-   "status": "current",
-   "pageCount": null,
-   "sourceUrl": null,
-   "corpusDocId": "berrien-county-protocols-as-of-august-2026",
-   "doseCount": 162
   },
   {
    "hash": "fff089910b34fc912d03c9037617517687d4806aaf5e3e686e132d923c811f74",
