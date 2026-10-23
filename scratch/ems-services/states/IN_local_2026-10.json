@@ -7,7 +7,7 @@
  "county_verdict": {
   "18091": {
    "county": "LaPorte",
-   "tier": "A",
+   "tier": "held",
    "services": [
     {
      "name": "La Porte County EMS",
@@ -20,12 +20,12 @@
      "vintage": "2026 (live county page)"
     }
    ],
-   "page_note": "Fire departments assist on medical calls (first response).",
+   "page_note": "Confirmed: La Porte County EMS answers 911 across the county, including Michigan City. Not yet confirmed from a public source: the part of the county near Hudson Lake and New Carlisle, where the New Carlisle Fire Department (St. Joseph County) carried many patients, and the role of the Franciscan Health Michigan City and Preferred One ambulance services, both certified in the county.",
    "second_source": "IN_public_2026-10.json (IndianaMap EMS run records 2022): La Porte County EMS 96% of county runs"
   },
   "18157": {
    "county": "Tippecanoe",
-   "tier": "A",
+   "tier": "held",
    "services": [
     {
      "name": "Tippecanoe Emergency Ambulance Service (TEAS)",
@@ -38,7 +38,7 @@
      "vintage": "2026 (live page)"
     }
    ],
-   "page_note": "Purdue University FD runs campus calls (5% of 2022 runs); private Prompt/Trans-Care/Spirit do interfacility.",
+   "page_note": "Confirmed: Tippecanoe Emergency Ambulance Service (TEAS) answers 911 across the county. Not yet confirmed from a public source: whether the West Point, Clarks Hill-Lauramie and Otterbein volunteer fire departments, each certified by the state as an ambulance service, carry 911 patients in their own townships, and which calls the Purdue University Fire Department ambulance carries off campus.",
    "second_source": "IN_public_2026-10.json (IndianaMap EMS run records 2022): TEAS 63% of runs, rest mostly interfacility privates"
   },
   "18005": {
@@ -125,7 +125,7 @@
   },
   "18055": {
    "county": "Greene",
-   "tier": "A",
+   "tier": "held",
    "services": [
     {
      "name": "Greene County Ambulance Service (GCAS)",
@@ -138,12 +138,12 @@
      "vintage": "2026 (live page, board meetings 11/2026)"
     }
    ],
-   "page_note": "The county page does not state a coverage area; 2022 run data shows Greene County Ambulance Service covering the whole county.",
+   "page_note": "Confirmed: Greene County Ambulance Service answers 911 across the county. Not yet confirmed from a public source: the role of the Center Township fire department near Bloomfield, certified by the state as an ambulance service, which has carried patients from homes around Bloomfield, Solsberry and Hobbieville.",
    "second_source": "IN_public_2026-10.json (IndianaMap EMS run records 2022): Greene County Ambulance Service 98%"
   },
   "18133": {
    "county": "Putnam",
-   "tier": "A",
+   "tier": "held",
    "services": [
     {
      "name": "Putnam County EMS (PCEMS)",
@@ -156,7 +156,7 @@
      "vintage": "2026 (live page)"
     }
    ],
-   "page_note": "Statewide Transfer Ambulance (23% of 2022 runs) is non-911 interfacility.",
+   "page_note": "Confirmed: Putnam County EMS answers 911 across the county. Not yet confirmed from a public source: the role of P.M.H. Ambulance in Roachdale, a volunteer ambulance service certified by the state in the north of the county.",
    "second_source": "IN_public_2026-10.json (IndianaMap EMS run records 2022): Putnam County EMS 76%, rest Statewide Transfer (interfacility)"
   },
   "18175": {
@@ -591,6 +591,24 @@
    ],
    "page_note": "Wabash County is served by two ambulance services. The City of Wabash Fire Department provides ambulance and rescue service to most of the county under a five-year county contract approved in December 2023. Parkview Health provides ambulance service to the two townships around North Manchester under a separate county agreement.",
    "second_source": "https://www.plaindealerin.com/news/oswalt-eager-to-serve-community-as-new-fire-chief/article_08de167a-c50c-5353-8f34-935fe6196a43.html (2024-01-11, same contract and North Manchester exception); https://www.plaindealerin.com/news/area-news-briefs/article_653daaff-99d7-5c12-8e02-2ef0f124185a.html (2026-05-20: 'Wabash Fire Department paramedics immediately responded to the scene and provided medical aid. ... transported by ambulance to the helipad of Parkview Wabash Hospital'); https://www.inkfreenews.com/2025/03/11/1-dead-6-injured-in-two-vehicle-accident-in-wabash-county/ (2025-03-11 Roann crash: 'Wabash Fire EMS'); 2022 state EMS run records: Wabash FD 2,921 and Parkview Huntington 3,506 of 6,608 runs"
+  },
+  "18037": {
+   "county": "Dubois",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Deaconess EMS, LLC (Memorial Hospital Ambulance Service, Jasper)",
+     "transport": true,
+     "ownership": "hospital",
+     "partial": false,
+     "area": "Dubois County (scenes reported in Jasper, Huntingburg, Celestine and Holland)",
+     "source_url": "https://www.duboiscountyherald.com/news/local/huntingburg-crash-claims-life-of-jasper-man/article_088dd556-1cd1-59f1-b93b-33e2a5809e9d.html",
+     "evidence": "Huntingburg firefighters extricated Blessinger from his truck, and emergency medical crews transported both men to the hospital. ... The Huntingburg Fire Department, Dubois County Sheriff’s Department, Deaconess Memorial Urgent Care and Deaconess Memorial EMS assisted at the scene.",
+     "vintage": "2026-10-15"
+    }
+   ],
+   "page_note": "Deaconess EMS (formerly Memorial Hospital's ambulance service in Jasper) is the 911 ambulance service for Dubois County. It is the only ambulance service on Indiana's certified list based in the county, and local newspaper reports from 2025 and 2026 name it at crash scenes in Huntingburg, Celestine and Holland. No city or fire department in Dubois County was found running its own ambulance. A March 2026 report also names Deaconess Memorial EMS taking a patient by ambulance in rural Ferdinand, at the south end of the county.",
+   "second_source": "https://www.duboiscountyherald.com/news/local/memorial-hospital-ambulance-services-transition/article_b751c66b-fd2a-5a69-9e2d-392e2711274b.html (2024-10-10: Memorial Hospital Ambulance Services transitioned to Deaconess EMS, LLC, same local staff); https://www.duboiscountyherald.com/news/local/celestine-firefighter-lost-in-fatal-crash-en-route-to-scene/article_8d8fb30b-351c-5e9f-b471-8f00b886c722.html (2025-09-11); https://www.duboiscountyherald.com/news/local/one-dead-two-juveniles-injured-in-dubois-county-crash/article_3e1e0c12-4c05-554b-b237-5057d859a203.html (2026-05-23); Indiana Department of Homeland Security, certified ambulance service provider list (APRA reply, 2026-10-23); 2022 state EMS run records: Memorial Hospital Ambulance Service 7,677 of 7,782 runs, the other agencies are at the hospital (800 W 9th St) as transfers.; https://www.duboiscountyherald.com/news/local/armed-standoff-in-ferdinand-ends-with-arrest/article_57784ac9-103f-5901-84b5-de0f65250a43.html (2026-03: Deaconess Memorial EMS, rural Ferdinand)"
   }
  }
 }

@@ -863,6 +863,62 @@
    ],
    "page_note": "",
    "second_source": "https://www.hopewellva.gov/510/Operations"
+  },
+  "51149": {
+   "county": "Prince George County",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Prince George County Fire and EMS",
+     "transport": true,
+     "ownership": "county fire-EMS",
+     "partial": false,
+     "area": "Prince George County outside Fort Gregg-Adams",
+     "source_url": "https://www.princegeorgecountyva.gov/public_safety/fire_and_ems/revenue_recovery_program.php",
+     "evidence": "When citizens call 911, ambulances are dispatched immediately. Patients will be treated and, if necessary, transported to a hospital emergency department.",
+     "vintage": "2026 (page live 2026-10-23 with current rates; site footer 2024)"
+    },
+    {
+     "name": "Prince George County Fire and EMS",
+     "transport": true,
+     "ownership": "county fire-EMS",
+     "partial": false,
+     "area": "Prince George County outside Fort Gregg-Adams",
+     "source_url": "https://www.princegeorgecountyva.gov/public_safety/fire_and_ems/revenue_recovery_program.php",
+     "evidence": "Prince George County current ambulance transport rates are: Advanced Life Support (ALS): $600.00",
+     "vintage": "2026 (page live 2026-10-23 with current rates; site footer 2024)"
+    }
+   ],
+   "page_note": "Prince George County Fire and EMS answers 911 and bills for emergency ambulance transport. It is the only Prince George agency on the state's list of 911 response agencies with transport (October 2026). Fort Gregg-Adams, the Army post inside the county, has its own fire and emergency services and is not covered here.",
+   "second_source": "Virginia Office of EMS, \"Virginia 911 Response Agencies\" list, 2026-10-22 (records reply)"
+  },
+  "51053": {
+   "county": "Dinwiddie County",
+   "tier": "A",
+   "services": [
+    {
+     "name": "Dinwiddie County Fire and EMS",
+     "transport": true,
+     "ownership": "county fire-EMS (career and volunteer)",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.dinwiddieva.us/265/Fire-EMS-Emergency-Management",
+     "evidence": "EMS provides first response and transport services at the basic and advanced life support levels.",
+     "vintage": "2026 (main page updated 2026-08-25 per the county sitemap)"
+    },
+    {
+     "name": "Dinwiddie County Fire and EMS",
+     "transport": true,
+     "ownership": "county fire-EMS (career and volunteer)",
+     "partial": false,
+     "area": "whole county",
+     "source_url": "https://www.dinwiddieva.us/908/EMS",
+     "evidence": "DCFEMS operates eight (8) ALS equipped PL Custom Medium Duty and Type 1 ambulances.",
+     "vintage": "2023 page (updated 2023-04-14 per the county sitemap), still live 2026-10-23"
+    }
+   ],
+   "page_note": "Dinwiddie County Fire and EMS (career staff with volunteer companies) provides ambulance transport from four of the county's six stations and runs eight advanced life support ambulances. It is the only Dinwiddie agency on the state's list of 911 response agencies with transport (October 2026).",
+   "second_source": "Virginia Office of EMS, \"Virginia 911 Response Agencies\" list, 2026-10-22 (records reply)"
   }
  }
 }
