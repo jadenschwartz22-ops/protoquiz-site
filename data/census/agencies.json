@@ -1985,6 +1985,27 @@
    }
   },
   {
+   "agencyKey": "kosciusko-county-paramedics",
+   "name": "Kosciusko County Paramedics",
+   "aliases": [
+    "Kosciusko County Paramedics"
+   ],
+   "state": "IN",
+   "country": "US",
+   "city": null,
+   "jurisdiction": "county",
+   "currentHash": "42f1d170851362d7c8c06e3b29cbca11",
+   "currentEffectiveDate": "2026-01-01",
+   "documentCount": 1,
+   "doseCount": 145,
+   "pendingReview": null,
+   "mayBeOutdated": false,
+   "coverage": {
+    "hasProtocol": true,
+    "jurisdiction": "county"
+   }
+  },
+  {
    "agencyKey": "la-porte-county-emergency-medical-service",
    "name": "La Porte County Emergency Medical Service",
    "aliases": [
